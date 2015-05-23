@@ -1,6 +1,6 @@
 var module = angular.module("utopia-card-loader", ["utopia-card-rules"]);
 
-module.factory( "cardLoader", function($http, $filter, cardRules) {
+module.factory( "cardLoader", function($http, $filter, cardRules, $factions) {
 
 	function convertIconTags(str) {
 		str = str.replace( /\[hit\]/ig, "[hit]" );
@@ -34,6 +34,7 @@ module.factory( "cardLoader", function($http, $filter, cardRules) {
 		$http.get( "data/data.xml" ).success( function(data) {
 			var doc = $( $.parseXML(data) );
 
+			// Load ships
 			doc.find("Ship").each( function(i, data) {
 
 				data = $(data);
@@ -52,16 +53,22 @@ module.factory( "cardLoader", function($http, $filter, cardRules) {
 					cost: Number( data.find("Cost").text() ),
 					text: convertIconTags( data.find("Ability").text() ),
 					unique: (data.find("Unique").text() == "Y") || (data.find("MirrorUniverseUnique").text() == "Y"),
-					faction: data.find("Faction").text().toLowerCase(),
+					factions: [data.find("Faction").text().toLowerCase()],
 					intercept: { ship: {}, fleet: {} },
 					canJoinFleet: true
 				};
+				
+				var additionalFaction = data.find("AdditionalFaction").text().toLowerCase();
+				if( additionalFaction )
+					ship.factions.push(additionalFaction);
 
-				if( ship.faction == "mirror universe" ) {
-					ship.faction = "mirror";
-					ship.mirror = true;
-				} else if(ship.faction == "species 8472")
-					ship.faction = "species-8472"
+				for( var i = 0; i < ship.factions.length; i++ ) {
+					if( ship.factions[i] == "mirror universe" ) {
+						ship.factions[i] = "mirror";
+						ship.mirror = true;
+					} else if(ship.factions[i] == "species 8472")
+						ship.factions[i] = "species-8472"
+				}
 				
 				if( data.find("EvasiveManeuvers").text() == "1" )
 					ship.actions.push( { name: "evade", source: "ship" } );
@@ -118,7 +125,7 @@ module.factory( "cardLoader", function($http, $filter, cardRules) {
 				ship.intercept.ship.cost = function(upgrade, ship, fleet, cost) {
 					if( costIntercept )
 						cost = costIntercept(upgrade, ship, fleet, cost);
-					if( upgrade.faction != ship.faction ) {
+					if( !$factions.match( upgrade, ship ) ) {
 						var penalty = valueOf(upgrade,"factionPenalty",ship,fleet);
 						console.log("penalty",penalty);
 						return (cost instanceof Function ? cost(upgrade, ship, fleet, 0) : cost ) + penalty;
@@ -139,7 +146,7 @@ module.factory( "cardLoader", function($http, $filter, cardRules) {
 					name: data.find("Title").text(),
 					unique: (data.find("Unique").text() == "Y") || (data.find("MirrorUniverseUnique").text() == "Y"),
 					text: convertIconTags( data.find("Ability").text() ),
-					faction: data.find("Faction").text().toLowerCase(),
+					factions: [data.find("Faction").text().toLowerCase()],
 					cost: Number( data.find("Cost").text() ),
 					skill: Number( data.find("Skill").text() ),
 					talents: Number( data.find("Talent").text() ),
@@ -151,11 +158,17 @@ module.factory( "cardLoader", function($http, $filter, cardRules) {
 					canEquipFaction: true
 				}
 
-				if( captain.faction == "mirror universe" ) {
-					captain.faction = "mirror";
-					captain.mirror = true;
-				} else if(captain.faction == "species 8472")
-					captain.faction = "species-8472"
+				var additionalFaction = data.find("AdditionalFaction").text().toLowerCase();
+				if( additionalFaction )
+					captain.factions.push(additionalFaction);
+
+				for( var i = 0; i < captain.factions.length; i++ ) {
+					if( captain.factions[i] == "mirror universe" ) {
+						captain.factions[i] = "mirror";
+						captain.mirror = true;
+					} else if(captain.factions[i] == "species 8472")
+						captain.factions[i] = "species-8472"
+				}
 
 				// Filter out duplicates (xml has a dupe captains for each slot type they could add - Picard 8, Chak 5, Cal Hudson)
 				// TODO Make this better - A pre-filter based on ID?
@@ -163,7 +176,7 @@ module.factory( "cardLoader", function($http, $filter, cardRules) {
 					captain = false;
 				else {
 					$.each( cards, function(i, upg) {
-						if( upg.type == captain.type && upg.name == captain.name && upg.set == captain.set && upg.faction == captain.faction ) {
+						if( upg.type == captain.type && upg.name == captain.name && upg.set == captain.set && upg.factions == captain.factions ) {
 							captain = false;
 						}
 					});
@@ -195,7 +208,7 @@ module.factory( "cardLoader", function($http, $filter, cardRules) {
 					name: data.find("Title").text(),
 					unique: (data.find("Unique").text() == "Y") || (data.find("MirrorUniverseUnique").text() == "Y"),
 					text: convertIconTags( data.find("Ability").text() ),
-					faction: data.find("Faction").text().toLowerCase(),
+					factions: [data.find("Faction").text().toLowerCase()],
 					cost: Number( data.find("AdmiralCost").text() ),
 					skill: Number( data.find("SkillModifier").text() ),
 					talents: Number( data.find("AdmiralTalent").text() ),
@@ -207,11 +220,17 @@ module.factory( "cardLoader", function($http, $filter, cardRules) {
 					canEquipFaction: true
 				}
 
-				if( admiral.faction == "mirror universe" ) {
-					admiral.faction = "mirror";
-					admiral.mirror = true;
-				} else if(admiral.faction == "species 8472")
-					admiral.faction = "species-8472"
+				var additionalFaction = data.find("AdditionalFaction").text().toLowerCase();
+				if( additionalFaction )
+					admiral.factions.push(additionalFaction);
+
+				for( var i = 0; i < admiral.factions.length; i++ ) {
+					if( admiral.factions[i] == "mirror universe" ) {
+						admiral.factions[i] = "mirror";
+						admiral.mirror = true;
+					} else if(admiral.factions[i] == "species 8472")
+						admiral.factions[i] = "species-8472"
+				}
 
 				// Add talent slots
 				admiral.upgradeSlots = [];
@@ -244,7 +263,7 @@ module.factory( "cardLoader", function($http, $filter, cardRules) {
 					name: filterName( data.find("Title").text() ),
 					unique: (data.find("Unique").text() == "Y") || (data.find("MirrorUniverseUnique").text() == "Y"),
 					text: convertIconTags( data.find("Ability").text() ),
-					faction: data.find("Faction").text().toLowerCase(),
+					factions: [data.find("Faction").text().toLowerCase()],
 					cost: Number( data.find("Cost").text() ),
 					skill: Number( data.find("Skill").text() ),
 					talents: Number( data.find("Talent").text() ),
@@ -256,11 +275,18 @@ module.factory( "cardLoader", function($http, $filter, cardRules) {
 					canEquipFaction: true
 				}
 
-				if( upgrade.faction == "mirror universe" ) {
-					upgrade.faction = "mirror";
-					upgrade.mirror = true;
-				} else if(upgrade.faction == "species 8472")
-					upgrade.faction = "species-8472"
+				var additionalFaction = data.find("AdditionalFaction").text().toLowerCase();
+				if( additionalFaction )
+					upgrade.factions.push(additionalFaction);
+
+				// TODO make this a function
+				for( var i = 0; i < upgrade.factions.length; i++ ) {
+					if( upgrade.factions[i] == "mirror universe" ) {
+						upgrade.factions[i] = "mirror";
+						upgrade.mirror = true;
+					} else if(upgrade.factions[i] == "species 8472")
+						upgrade.factions[i] = "species-8472"
+				}
 
 				// Add spaces to range strings
 				if( upgrade.range ) {

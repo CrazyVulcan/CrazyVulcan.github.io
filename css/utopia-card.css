@@ -259,6 +259,16 @@
 	background-image: url("../img/faction-mirror.png");
 }
 
+.card-ship .card-factions-multiple {
+	left: -0.25em;
+	top: -0.45em;
+}
+
+.card-ship .card-factions-multiple.card-faction-0 {
+	left: -0.85em;
+	top: -0.15em;
+}
+
 .card-ship-action-bar {
 	background: #f7f3e7;
 	color: black;
@@ -404,7 +414,8 @@
 .card-border-bottom i {
 	font-size: 2em;
 	position: relative;
-	top: -0.25em;
+	top: -0.3em;
+	left: 0.2em;
 	color: white;
 	background: black;
 	border-radius: 1em;
@@ -426,6 +437,9 @@
 	font-size: 1em;
 	border-width: 0.07em;
 	top: 0.05em;
+}
+
+.card-upgrade-cost .card-faction-first {
 	margin-left: -1em;
 }
 

@@ -1,6 +1,30 @@
 var module = angular.module("utopia-card-rules", []);
 
-module.factory( "cardRules", function($filter) {
+module.factory( "$factions", function() {
+	return {
+		hasFaction: function(card, faction) {
+			if( !card )
+				return false;
+			return $.inArray( faction, card.factions ) >= 0;
+		},
+		match: function(card, other) {
+			var match = false;
+			$.each( card.factions, function(i, cardFaction) {
+				$.each( other.factions, function(i, otherFaction) {
+					if( cardFaction == otherFaction ) {
+						match = true;
+						return false;
+					}
+				});
+				if( match )
+					return false;
+			});
+			return match;
+		}
+	}
+} );
+
+module.factory( "cardRules", function($filter, $factions) {
 
 	var valueOf = $filter("valueOf");
 
@@ -10,8 +34,9 @@ module.factory( "cardRules", function($filter) {
 			var alreadyEquipped = false;
 			var slots = $filter("upgradeSlots")(ship);
 			$.each( slots, function(i,slot) {
-				if( slot.occupant && slot.occupant.name == name )
+				if( slot.occupant && slot.occupant != upgrade && slot.occupant.name == name ) {
 					alreadyEquipped = true;
+				}
 			});
 			return !alreadyEquipped;
 			
@@ -272,7 +297,7 @@ module.factory( "cardRules", function($filter) {
 		"captain:2030": {
 			// No faction penalty for Federation ships
 			factionPenalty: function(upgrade, ship, fleet) {
-				return ship.faction == "federation" ? 0 : 1;
+				return $factions.hasFaction( ship, "federation" ) ? 0 : 1;
 			}
 		},
 		
@@ -290,7 +315,7 @@ module.factory( "cardRules", function($filter) {
 				
 				// Find the upgrade with the highest cost
 				$.each( $filter("upgradeSlots")(ship), function(i, slot) {
-					if( slot.occupant && slot.occupant != upgrade && slot.occupant.type != "admiral" && slot.occupant.faction == "dominion" ) {
+					if( slot.occupant && slot.occupant != upgrade && slot.occupant.type != "admiral" && $factions.hasFaction(slot.occupant,"dominion") ) {
 						var occCost = valueOf(slot.occupant,"cost",ship,fleet);
 						if( occCost > candCost ) {
 							candidate = slot.occupant;
@@ -325,7 +350,7 @@ module.factory( "cardRules", function($filter) {
 					intercept: {
 						ship: {
 							cost: function(upgrade, ship, fleet, cost) {
-								if( upgrade.faction == "dominion" )
+								if( $factions.hasFaction(upgrade,"dominion") )
 									cost = (cost instanceof Function ? cost(upgrade, ship, fleet, 0) : cost) - 1;
 								return cost;
 							}
@@ -338,7 +363,7 @@ module.factory( "cardRules", function($filter) {
 					intercept: {
 						ship: {
 							cost: function(upgrade, ship, fleet, cost) {
-								if( upgrade.faction == "dominion" )
+								if( $factions.hasFaction(upgrade,"dominion") )
 									cost = (cost instanceof Function ? cost(upgrade, ship, fleet, 0) : cost) - 1;
 								return cost;
 							}
@@ -391,7 +416,7 @@ module.factory( "cardRules", function($filter) {
 					},
 					// No faction penalty for borg upgrades
 					factionPenalty: function(upgrade, ship, fleet, factionPenalty) {
-						if( upgrade.type != "captain" && upgrade.type != "admiral" && upgrade.faction == "borg" )
+						if( upgrade.type != "captain" && upgrade.type != "admiral" && $factions.hasFaction(upgrade,"borg") )
 							return 0;
 						return factionPenalty;
 					}
@@ -428,7 +453,7 @@ module.factory( "cardRules", function($filter) {
 				ship: {
 					// All Vulcan/Federation tech is -2 SP
 					cost: function(upgrade, ship, fleet, cost) {
-						if( upgrade.type == "tech" && (upgrade.faction == "vulcan" || upgrade.faction == "federation") ) {
+						if( upgrade.type == "tech" && ( $factions.hasFaction(upgrade,"vulcan") || $factions.hasFaction(upgrade,"federation") ) ) {
 							cost = (cost instanceof Function ? cost(upgrade, ship, fleet, 0) : cost) - 2;
 							if( cost < 0 )
 								cost = 0;
@@ -443,7 +468,7 @@ module.factory( "cardRules", function($filter) {
 		"captain:magnus_hansen_71509": {
 			// No faction penalty on Federation ships
 			factionPenalty: function(upgrade, ship, fleet) {
-				return ship.faction == "federation" ? 0 : 1;
+				return $factions.hasFaction(ship,"federation") ? 0 : 1;
 			}
 		},
 		
@@ -521,7 +546,7 @@ module.factory( "cardRules", function($filter) {
 				ship: {
 					// All Kazon weapons are -1 SP
 					cost: function(upgrade, ship, fleet, cost) {
-						if( upgrade.type == "weapon" && upgrade.faction == "kazon" ) {
+						if( upgrade.type == "weapon" && $factions.hasFaction(upgrade,"kazon") ) {
 							cost = (cost instanceof Function ? cost(upgrade, ship, fleet, 0) : cost) - 1;
 							if( cost < 0 )
 								cost = 0;
@@ -823,7 +848,7 @@ module.factory( "cardRules", function($filter) {
 		// Klingon Honor
 		"talent:klingon_honor_71448": {
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return ship.captain && ship.captain.faction == "klingon";
+				return ship.captain && $factions.hasFaction(ship.captain,"klingon");
 			}
 		},
 		
@@ -872,7 +897,7 @@ module.factory( "cardRules", function($filter) {
 		// I Am Kohn-Ma
 		"talent:i_am_kohn_ma_op6prize": {
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return ship.captain && ship.captain.faction == "bajoran";
+				return ship.captain && $factions.hasFaction(ship.captain,"bajoran");
 			}
 		},
 		
@@ -902,56 +927,56 @@ module.factory( "cardRules", function($filter) {
 		// Bio-Electric Interference
 		"tech:bio_electric_interference_71281": {
 			canEquip: function(upgrade,ship,fleet) {
-				return ship.faction == "species-8472";
+				return $factions.hasFaction(ship,"species-8472");
 			}
 		},
 		
 		// Extraordinary Immune Response
 		"tech:extraordinary_immune_response_71281": {
 			canEquip: function(upgrade,ship,fleet) {
-				return ship.faction == "species-8472";
+				return $factions.hasFaction(ship,"species-8472");
 			}
 		},
 		
 		// Kazon Raiding Party
 		"crew:kazon_raiding_party_71282": {
 			canEquip: function(upgrade,ship,fleet) {
-				return ship.faction == "kazon";
+				return $factions.hasFaction(ship,"kazon");
 			}
 		},
 		
 		// Masking Circuitry
 		"tech:masking_circuitry_71282": {
 			cost: function(upgrade,ship,fleet) {
-				return ship && ship.faction != "kazon" ? 8 : 3;
+				return ship &&  $factions.hasFaction(ship,"kazon") ? 8 : 3;
 			}
 		},
 		
 		// Quantum Singularity
 		"tech:quantum_singularity_71281": {
 			canEquip: function(upgrade,ship,fleet) {
-				return ship.faction == "species-8472";
+				return $factions.hasFaction(ship,"species-8472");
 			}
 		},
 		
 		// The Weak Will Perish
 		"talent:the_weak_will_perish_71281": {
 			cost: function(upgrade,ship,fleet) {
-				return ship && ship.faction != "species-8472" ? 10 : 5;
+				return ship && $factions.hasFaction(ship,"species-8472") ? 10 : 5;
 			}
 		},
 		
 		// Biological Attack
 		"weapon:biological_attack_71281": {
 			canEquip: function(upgrade,ship,fleet) {
-				return ship.faction == "species-8472";
+				return $factions.hasFaction(ship,"species-8472");
 			}
 		},
 		
 		// Cutting Beam
 		"tech:cutting_beam_71283": {
 			canEquip: function(upgrade,ship,fleet) {
-				return ship.faction == "borg";
+				return $factions.hasFaction(ship,"borg");
 			}
 		},
 		
@@ -965,7 +990,7 @@ module.factory( "cardRules", function($filter) {
 		// Energy Focusing Ship
 		"weapon:energy_focusing_ship_71281": {
 			canEquip: function(upgrade,ship,fleet) {
-				return ship.faction == "species-8472";
+				return $factions.hasFaction(ship,"species-8472");
 			}
 		},
 		
@@ -995,7 +1020,7 @@ module.factory( "cardRules", function($filter) {
 		// Vulcan High Command
 		"talent:vulcan_high_command_2_0_71446": {
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return ship.captain && ship.captain.faction == "vulcan" && ship.faction == "vulcan";
+				return ship.captain &&  $factions.hasFaction(ship,"vulcan") &&  $factions.hasFaction(ship.captain,"vulcan");
 			},
 			upgradeSlots: [ 
 				{ 
@@ -1027,7 +1052,7 @@ module.factory( "cardRules", function($filter) {
 		// Assimilated Access Codes
 		"talent:assimilated_access_codes_71444": {
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return ship.captain && ship.captain.faction == "borg";
+				return ship.captain && $factions.hasFaction(ship.captain,"borg");
 			}
 		},
 		
@@ -1051,7 +1076,7 @@ module.factory( "cardRules", function($filter) {
 		// Borg Missile
 		"weapon:borg_missile_71444": {
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return ship.faction == "borg";
+				return $factions.hasFaction(ship,"borg");
 			}
 		},
 		
@@ -1093,42 +1118,42 @@ module.factory( "cardRules", function($filter) {
 		// Self-Destruct Sequence
 		"talent:self_destruct_sequence_71523": {
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return ship.faction == "federation";
+				return $factions.hasFaction( ship, "federation" );
 			}
 		},
 		
 		// Experimental Link
 		"talent:experimental_link_71522": {
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return ship.captain && ship.captain.faction == "borg";
+				return ship.captain && $factions.hasFaction(ship.captain,"borg");
 			}
 		},
 		
 		// Transwarp Conduit
 		"borg:transwarp_conduit_71522": {
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return ship.faction == "borg";
+				return $factions.hasFaction(ship,"borg");
 			}
 		},
 		
 		// Unnecessary Bloodshed
 		"talent:unnecessary_bloodshed_71524": {
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return ship.captain && ship.captain.faction == "dominion";
+				return ship.captain && $factions.hasFaction(ship.captain,"dominion");
 			}
 		},
 		
 		// Photon Torpedoes (Borg)
 		"weapon:photon_torpedoes_71522": {
 			attack: function(upgrade,ship,fleet) {
-				return ship && ship.faction == "borg" ? 6 : 5;
+				return ship && $factions.hasFaction(ship,"borg") ? 6 : 5;
 			}
 		},
 		
 		// Forward Weapons Array
 		"weapon:forward_weapons_array_71522": {
 			cost: function(upgrade,ship,fleet) {
-				return ship && ship.faction != "borg" ? 11 : 6;
+				return ship && !$factions.hasFaction(ship,"borg") ? 11 : 6;
 			}
 		},
 		
@@ -1170,7 +1195,7 @@ module.factory( "cardRules", function($filter) {
 		"tech:mutli_adaptive_shields_71509": {
 			name: "Multi-Adaptive Shields",
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return ship.faction == "federation";
+				return $factions.hasFaction(ship,"federation");
 			}
 		},
 		
@@ -1194,7 +1219,7 @@ module.factory( "cardRules", function($filter) {
 								return upgrade.cost <= 5;
 							},
 							canEquipFaction: function(upgrade,ship,fleet) {
-								return upgrade.faction != "borg";
+								return !$factions.hasFaction(upgrade,"borg");
 							},
 							cost: function() {
 								return 0;
@@ -1211,14 +1236,14 @@ module.factory( "cardRules", function($filter) {
 		// Vic Fontaine
 		"crew:vic_fontaine_crew_71786": {
 			factionPenalty: function(upgrade,ship,fleet) {
-				return ship && ship.faction == "federation" ? 0 : 1;
+				return ship && $factions.hasFaction(ship,"federation") ? 0 : 1;
 			}
 		},
 		
 		// Vic Fontaine
 		"tech:vic_fontaine_tech_71786": {
 			factionPenalty: function(upgrade,ship,fleet) {
-				return ship && ship.faction == "federation" ? 0 : 1;
+				return $factions.hasFaction( ship, "federation" ) ? 0 : 1;
 			}
 		},
 		
@@ -1254,7 +1279,7 @@ module.factory( "cardRules", function($filter) {
 			// Only one per ship
 			canEquip: onePerShip("Enhanced Hull Plating"),
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return ship.faction == "federation";
+				return $factions.hasFaction( ship, "federation" );
 			}
 		},
 		
@@ -1267,19 +1292,25 @@ module.factory( "cardRules", function($filter) {
 				}
 			],
 			factionPenalty: function(upgrade,ship,fleet) {
-				return ship && ship.faction == "vulcan" ? 0 : 1;
+				return $factions.hasFaction( ship, "vulcan" ) ? 0 : 1;
 			}
 		},
 		
 		// Vulcan Commandos
 		"crew:vulcan_commandos_71527": {
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return ship.faction == "vulcan";
+				return $factions.hasFaction( ship, "vulcan" );
 			}
 		},
 		
 		// Combat Vessel Variant
 		"tech:combat_vessel_variant_71527": {
+			upgradeSlots: [
+				{
+					type: ["weapon"],
+					source: "Combat Vessel Variant"
+				}
+			],
 			canEquip: function(upgrade,ship,fleet) {
 				
 				if( ship.class != "Suurok Class" )
@@ -1308,7 +1339,7 @@ module.factory( "cardRules", function($filter) {
 						return hull;
 					},
 					// Prevent other CVV while this one equipped
-					canEquip: function(upgrade,ship,fleet,hull) {
+					canEquip: function(upgrade,ship,fleet) {
 						return upgrade.name != "Combat Vessel Variant";
 					}
 				}
@@ -1347,7 +1378,7 @@ module.factory( "cardRules", function($filter) {
 		// Magnetometric Guided Charge
 		"weapon:magnetometric_guided_charge_71525": {
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return ship.faction == "borg";
+				return $factions.hasFaction(ship,"borg");
 			}
 		},
 		
@@ -1376,21 +1407,21 @@ module.factory( "cardRules", function($filter) {
 		// Thought Maker
 		"tech:thought_maker_71646a": {
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return ship.faction == "ferengi";
+				return $factions.hasFaction(ship,"ferengi");
 			}
 		},
 		
 		// Vengeance
 		"talen:vengeance_71646a": {
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return ship.captain && ship.captain.faction == "ferengi" && ship.faction == "ferengi";
+				return ship.captain && $factions.hasFaction(ship.captain,"ferengi") && $factions.hasFaction(ship,"ferengi");
 			}
 		},
 		
 		// Cloaking Device (Mirror)
 		"tech:cloaking_device_71646b": {
 			cost: function(upgrade,ship,fleet) {
-				return ship && ship.faction != "mirror" ? 9 : 4;
+				return ship && !$factions.hasFaction(ship,"mirror") ? 9 : 4;
 			}
 		},
 		
@@ -1403,7 +1434,7 @@ module.factory( "cardRules", function($filter) {
 		// Vulcan Logic
 		"talent:vulcan_logic_71646e": {
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return ship.captain && ship.captain.faction == "vulcan" && ship.faction == "vulcan";
+				return ship.captain && $factions.hasFaction(ship.captain,"vulcan") && $factions.hasFaction(ship,"vulcan");
 			}
 		},
 		
@@ -1418,7 +1449,7 @@ module.factory( "cardRules", function($filter) {
 		"weapon:proton_beam_71646d": {
 			name: "Proton Beam",
 			cost: function(upgrade,ship,fleet) {
-				return ship && ship.faction != "borg" ? 9 : 4;
+				return ship && !$factions.hasFaction(ship,"borg") ? 9 : 4;
 			}
 		},
 		
@@ -1431,7 +1462,7 @@ module.factory( "cardRules", function($filter) {
 		// Borg Alliance
 		"talent:borg_alliance_71511": {
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return ship.captain && ship.captain.faction != "borg" && ship.faction != "borg";
+				return ship.captain && !$factions.hasFaction(ship.captain,"borg") && !$factions.hasFaction(ship,"borg");
 			},
 			upgradeSlots: [ 
 				{ 
@@ -1462,7 +1493,7 @@ module.factory( "cardRules", function($filter) {
 			// Only one per ship
 			canEquip: onePerShip("Transwarp Signal"),
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return ship.faction == "borg";
+				return $factions.hasFaction(ship,"borg");
 			}
 		},
 		
@@ -1499,14 +1530,14 @@ module.factory( "cardRules", function($filter) {
 			},
 			// Equip only on a Federation ship with hull 4 or more
 			canEquip: function(upgrade,ship,fleet) {
-				return ship.faction == "federation" && ship.hull >= 4;
+				return $factions.hasFaction(ship,"federation") && ship.hull >= 4;
 			}
 		},
 		
 		// Multi Kinetic Neutronic Mines
 		"weapon:multi_kinetic_neutronic_mines_71530": {
 			cost: function(upgrade,ship,fleet) {
-				return ship && ship.faction != "borg" ? 15 : 10;
+				return ship && !$factions.hasFaction(ship,"borg") ? 15 : 10;
 			}
 		},
 
@@ -1519,14 +1550,14 @@ module.factory( "cardRules", function($filter) {
 		// Warrior Spirit
 		"talent:warrior_spirit_71512": {
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return ship.captain && ship.captain.faction == "klingon";
+				return ship.captain && $factions.hasFaction(ship.captain,"klingon");
 			}
 		},
 
 		// Command Interface
 		"borg:command_interface_71513a": {
 			cost: function(upgrade,ship,fleet) {
-				return ship && ship.faction != "borg" ? 10 : 5;
+				return ship && !$factions.hasFaction(ship,"borg") ? 10 : 5;
 			}
 		},
 
@@ -1546,7 +1577,7 @@ module.factory( "cardRules", function($filter) {
 		// Cry Havoc
 		"talent:cry_havoc_71532": {
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return ship.captain && ship.captain.faction == "klingon";
+				return ship.captain && $factions.hasFaction(ship.captain,"klingon");
 			}
 		},
 		
@@ -1571,7 +1602,7 @@ module.factory( "cardRules", function($filter) {
 							cost: function() { return 0; },
 							factionPenalty: function() { return 0; },
 							canEquip: function(upgrade) {
-								return upgrade.faction == "romulan";
+								return $factions.hasFaction( upgrade, "romulan" );
 							}
 						}
 						
@@ -1585,7 +1616,7 @@ module.factory( "cardRules", function($filter) {
 							cost: function() { return 0; },
 							factionPenalty: function() { return 0; },
 							canEquip: function(upgrade) {
-								return upgrade.faction == "romulan";
+								return $factions.hasFaction( upgrade, "romulan" );
 							}
 						}
 					}
@@ -1598,7 +1629,7 @@ module.factory( "cardRules", function($filter) {
 							cost: function() { return 0; },
 							factionPenalty: function() { return 0; },
 							canEquip: function(upgrade) {
-								return upgrade.faction == "romulan";
+								return $factions.hasFaction( upgrade, "romulan" );
 							}
 						}
 					}
@@ -1611,7 +1642,7 @@ module.factory( "cardRules", function($filter) {
 							cost: function() { return 0; },
 							factionPenalty: function() { return 0; },
 							canEquip: function(upgrade) {
-								return upgrade.faction == "romulan";
+								return $factions.hasFaction( upgrade, "romulan" );
 							}
 						}
 					}
@@ -1700,7 +1731,7 @@ module.factory( "cardRules", function($filter) {
 			intercept: {
 				ship: {
 					skill: function(upgrade,ship,fleet,skill) {
-						if( upgrade == ship.captain && ship.faction == "mirror" )
+						if( upgrade == ship.captain && $factions.hasFaction(ship,"mirror") )
 							skill = (skill instanceof Function ? skill(upgrade,ship,fleet,0) : skill) + 2;
 						return skill;
 					}
@@ -1820,7 +1851,7 @@ module.factory( "cardRules", function($filter) {
 							cost: function() { return 0; },
 							factionPenalty: function() { return 0; },
 							canEquip: function(upgrade) {
-								return upgrade.faction != "borg" && upgrade.cost <= 5;
+								return !$factions.hasFaction(upgrade,"borg") && upgrade.cost <= 5;
 							}
 						}
 						
@@ -1833,7 +1864,7 @@ module.factory( "cardRules", function($filter) {
 		"crew:william_t_riker_71996": {
 			talents: 1,
 			factionPenalty: function(upgrade,ship,fleet) {
-				return ship && ship.faction == "klingon" ? 0 : 1;
+				return ship && $factions.hasFaction(ship,"klingon") ? 0 : 1;
 			},
 			upgradeSlots: [
 				{
@@ -1846,7 +1877,7 @@ module.factory( "cardRules", function($filter) {
 		// Tunneling Neutrino Beam
 		"tech:tunneling_neutrino_beam_71996": {
 			factionPenalty: function(upgrade,ship,fleet) {
-				return ship && ship.faction == "klingon" ? 0 : 1;
+				return ship && $factions.hasFaction(ship,"klingon") ? 0 : 1;
 			}
 		},
 		
@@ -1869,7 +1900,7 @@ module.factory( "cardRules", function($filter) {
 		// Tholian Assembly
 		"talent:tholian_assembly_71795": {
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return ship.faction.indexOf("Tholian") >= 0 && 
+				return ship.class.indexOf("Tholian") >= 0 && 
 						ship.captain && ( ship.captain.name == "Loskene" || ship.captain.name.indexOf("Tholian") >= 0 );
 			}
 		},
@@ -1877,14 +1908,14 @@ module.factory( "cardRules", function($filter) {
 		// Karden
 		"crew:karden_71793": {
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return ship.faction == "kazon";
+				return $factions.hasFaction(ship,"kazon");
 			}
 		},
 		
 		// Haliz
 		"crew:haliz_71793": {
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return ship.faction == "kazon";
+				return $factions.hasFaction(ship,"kazon");
 			}
 		},
 		
@@ -1892,7 +1923,7 @@ module.factory( "cardRules", function($filter) {
 		// TODO Add a free slot for this on all Kazon ships? :(
 		"talent:first_maje_71793": {
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return ship.faction == "kazon" && ship.captain && ship.captain.faction == "kazon";
+				return $factions.hasFaction(ship,"kazon") && ship.captain && $factions.hasFaction(ship.captain,"kazon");
 			}
 		},
 		
@@ -1905,14 +1936,14 @@ module.factory( "cardRules", function($filter) {
 		// Make Them See Us!
 		"talent:make_them_see_us__71794": {
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return ship.faction == "romulan" && ship.captain && ship.captain.faction == "romulan";
+				return $factions.hasFaction(ship,"romulan") && ship.captain && $factions.hasFaction(ship.captain,"romulan");
 			}
 		},
 		
 		// Romulan Sub Lieutenant
 		"crew:romulan_sub_lieutenant_71794": {
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return ship.faction == "romulan";
+				return $factions.hasFaction( ship, "romulan" );
 			}
 		},
 		
@@ -1926,7 +1957,7 @@ module.factory( "cardRules", function($filter) {
 		// Disruptor Pulse
 		"weapon:disruptor_pulse_71794": {
 			cost: function(upgrade,ship,fleet) {
-				return ship && ship.faction != "romulan" ? 10 : 5;
+				return ship && $factions.hasFaction( ship, "romulan" ) ? 10 : 5;
 			}
 		},
 		
@@ -1948,7 +1979,7 @@ module.factory( "cardRules", function($filter) {
 		// Coded Messages
 		"talent:coded_messages_71798": {
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return ship.faction == "dominion";
+				return $factions.hasFaction( ship, "dominion" );
 			}
 		},
 		
@@ -1958,7 +1989,7 @@ module.factory( "cardRules", function($filter) {
 				return ship.hull >= 4;
 			},
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return ship.faction == "dominion";
+				return $factions.hasFaction( ship, "dominion" );
 			}
 		},
 		
@@ -2007,7 +2038,7 @@ module.factory( "cardRules", function($filter) {
 				return ship.class.indexOf("Shuttlecraft") >= 0;
 			},
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return ship.faction == "federation";
+				return $factions.hasFaction( ship, "federation" );
 			}
 		},
 		
@@ -2017,7 +2048,7 @@ module.factory( "cardRules", function($filter) {
 				return ship.class.indexOf("Shuttlecraft") >= 0 && onePerShip("Warp Drive")(upgrade,ship,fleet);
 			},
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return ship.faction == "federation";
+				return $factions.hasFaction( ship, "federation" );
 			}
 		},
 		

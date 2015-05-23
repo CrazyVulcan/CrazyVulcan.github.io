@@ -1,6 +1,6 @@
 var module = angular.module("utopia", ["ngSanitize", "utopia-card-ship", "utopia-card-upgrade", "utopia-dragdrop", "utopia-fleet-builder", "utopia-card-loader", "utopia-card-rules"]);
 
-module.filter( "cardFilter", function() {
+module.filter( "cardFilter", function($factions) {
 
 	return function( cards, options ) {
 
@@ -23,13 +23,14 @@ module.filter( "cardFilter", function() {
 
 			// Faction selection
 			var noneSelected = true;
+			var hasAFaction = false;
 			$.each( options.factions, function(name, data) {
 				if( data.search ) {
 					noneSelected = false;
-					return false;
+					hasAFaction |= $factions.hasFaction(card,name);
 				}
 			});
-			if( !(noneSelected || options.factions[card.faction].search) )
+			if( !(noneSelected || hasAFaction) )
 				return null;
 
 			// Type selection
@@ -145,14 +146,19 @@ module.controller( "UtopiaCtrl", function($scope, $http, $filter, cardLoader) {
 		$.each( $scope.cards, function(i, card) {
 			if( !$scope.search.types[card.type] )
 				$scope.search.types[card.type] = {};
-			if( !$scope.search.factions[card.faction] )
-				$scope.search.factions[card.faction] = {};
+			$.each( card.factions, function(j, faction) {
+				if( !$scope.search.factions[faction] )
+					$scope.search.factions[faction] = {};
+			} );
+				
 		});
 	
 		$scope.$broadcast("cardsLoaded");
 		$scope.loading = false;
 		
 	});
+	
+	$scope.search.query = "crosis";
 	
 });
 

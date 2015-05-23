@@ -17,7 +17,7 @@ module.directive( "fleetBuilder", function($filter) {
 			$scope.isMobile = isMobile;
 			
 			$scope.$watch( "fleet", function(fleet) {
-				location.hash = angular.toJson( $scope.saveFleet(fleet) );
+				location.hash = btoa( angular.toJson( $scope.saveFleet(fleet) ) );
 			}, true );
 			
 			$scope.$on( "removeFromFleet", function(ev, card) {
@@ -487,7 +487,10 @@ module.directive( "fleetBuilder", function($filter) {
 				
 			}
 			
-			var hashFleet = location.hash ? angular.fromJson( location.hash.substring(1) ) : false;
+			var hashFleet = false;
+			try {
+				hashFleet = location.hash ? angular.fromJson( atob( location.hash.substring(1) ) ) : false;
+			} catch(e) {}
 			
 			$scope.$on("cardsLoaded", function() {
 				console.log("cardsLoaded",$scope.cards.length);
