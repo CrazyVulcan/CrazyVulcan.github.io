@@ -2,14 +2,13 @@
 
 	<div class="fleet-ship-top">
 		<div class="fleet-ship-top-left" ng-class="{'fleet-ship-top-left-first':$first}"></div>
-		<div class="fleet-ship-title font-staw">{{ ship.name }}<span ng-if="!ship.unique && ship.name != ship.class"> ({{ship.class}})</span></div>
+		<div class="fleet-ship-title font-staw" ng-class="{'fleet-ship-title-long': ship.name.length > 20}">{{ ship.name }}</div>
 		<div class="fleet-ship-top-spacer"></div>
 		<div class="fleet-ship-title fleet-ship-cost font-staw">{{ getTotalCost(ship,fleet) }} SP</div>
 		<div class="fleet-ship-top-spacer"></div>
 		<div class="fleet-ship-top-spacer"></div>
 		<div class="toggle-button-value pull-left" ng-class="{'toggle-button-value-active': hideEmptySlots}"></div>
 		<div class="fleet-ship-title fleet-ship-cost font-staw">
-			<!--<label class="toggle"><input ng-hide="true" type="checkbox" ng-model="hideEmptySlots">Hide Empty Slots</label>-->
 			<button class="title-button" ng-click="hideEmptySlots = !hideEmptySlots">Show Empty Slots</button>
 		</div>
 		<div class="fleet-ship-top-right"></div>

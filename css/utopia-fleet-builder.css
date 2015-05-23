@@ -4,7 +4,6 @@
 
 .fleet-ship-top {
 	height: 3em;
-	overflow: auto;
 }
 
 .fleet-ship-top-left {
@@ -22,6 +21,11 @@
 	float: left;
 	padding: 0 0.1em;
 	font-size: 3em;
+}
+
+.fleet-ship-title-long {
+	font-size: 2em;
+	padding-top: 0.25em;
 }
 
 .fleet-ship-cost {

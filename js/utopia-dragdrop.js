@@ -26,6 +26,10 @@ module.directive('draggable', function () {
 			
 			element.on("dragend", function(ev) {
 				element.removeClass("dragging");
+                scope.$apply(function (scope) {
+					delete scope.dragStore.item;
+					delete scope.dragStore.source;
+                });
 			});
 			
 			element.on("click", function(ev) {
@@ -71,7 +75,7 @@ module.directive('droppable', function () {
 			});
 			
 			element.on( "drop", function(ev) {
-				
+
 				element.removeClass("drag-over");
 				
                 scope.$apply(function (scope) {
