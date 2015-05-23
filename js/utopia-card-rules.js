@@ -647,7 +647,6 @@ module.factory( "cardRules", function($filter, $factions) {
 							},
 							// Add talent slots for each talent on the chosen Captain
 							onEquip: function(upgrade, ship, fleet) {
-								console.log("gareb onequip");
 								upgrade.upgradeSlots = [];
 								for( var i = 0; i < upgrade.talents; i++ )
 									upgrade.upgradeSlots.push({

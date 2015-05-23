@@ -11,8 +11,6 @@ module.directive('draggable', function () {
 	
 		link: function (scope, element) {
 			
-			console.log("SAUCE",scope.dragSource);
-			
 			element.prop( "draggable", true );
 
 			element.on("dragstart", function(ev) {

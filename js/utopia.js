@@ -84,7 +84,6 @@ module.filter( "fleetCardNamed", function($filter) {
 	return function( fleet, name ) {
 		
 		if( !fleet ) {
-			console.log("no fleet");
 			return false;
 		}
 
@@ -157,8 +156,6 @@ module.controller( "UtopiaCtrl", function($scope, $http, $filter, cardLoader) {
 		$scope.loading = false;
 		
 	});
-	
-	$scope.search.query = "crosis";
 	
 });
 

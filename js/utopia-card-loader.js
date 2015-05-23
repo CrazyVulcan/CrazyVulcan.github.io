@@ -127,7 +127,6 @@ module.factory( "cardLoader", function($http, $filter, cardRules, $factions) {
 						cost = costIntercept(upgrade, ship, fleet, cost);
 					if( !$factions.match( upgrade, ship ) ) {
 						var penalty = valueOf(upgrade,"factionPenalty",ship,fleet);
-						console.log("penalty",penalty);
 						return (cost instanceof Function ? cost(upgrade, ship, fleet, 0) : cost ) + penalty;
 					}
 					return cost;

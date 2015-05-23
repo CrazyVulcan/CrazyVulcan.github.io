@@ -21,8 +21,7 @@ module.directive( "fleetBuilder", function($filter) {
 			}, true );
 			
 			$scope.$on( "removeFromFleet", function(ev, card) {
-				console.log( "remove", ev, card );
-				
+
 				$scope.removeFromFleet( card, $scope.fleet );
 				
 			} );
@@ -332,8 +331,6 @@ module.directive( "fleetBuilder", function($filter) {
 					savedFleet.ships.push( saveCard(ship) );
 				});
 				
-				console.log( JSON.stringify(savedFleet) );
-				
 				return savedFleet;
 				
 			};
@@ -402,8 +399,6 @@ module.directive( "fleetBuilder", function($filter) {
 				
 				var promulgate = function(card) {
 				
-					console.log("prom",savedCard.id);
-				
 					if( savedCard.captain ) {
 						var result = loadCard(fleet, cards, savedCard.captain, card);
 						if( !result )
@@ -460,8 +455,6 @@ module.directive( "fleetBuilder", function($filter) {
 			
 			$scope.loadFleet = function(cards, savedFleet) {
 				
-				console.log(JSON.stringify(savedFleet));
-				
 				var fleet = [];
 				
 				$.each( savedFleet.ships, function(i, savedShip) {
@@ -475,13 +468,9 @@ module.directive( "fleetBuilder", function($filter) {
 					if( !ship )
 						throw "error";
 					
-					console.log(ship);
-					
 					result.promulgate(ship);
 					
 				});
-				
-				console.log(JSON.stringify(fleet));
 				
 				return fleet;
 				
@@ -493,9 +482,7 @@ module.directive( "fleetBuilder", function($filter) {
 			} catch(e) {}
 			
 			$scope.$on("cardsLoaded", function() {
-				console.log("cardsLoaded",$scope.cards.length);
 				if( hashFleet ) {
-					console.log(hashFleet);
 					hashFleet = $scope.loadFleet( $scope.cards, hashFleet );
 					if( hashFleet )
 						$scope.fleet = hashFleet;

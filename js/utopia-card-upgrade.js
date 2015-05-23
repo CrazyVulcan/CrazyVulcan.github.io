@@ -60,7 +60,6 @@ module.filter( "shipInterceptors", function($filter) {
 				interceptors.push( slot.occupant.intercept[type][field] );
 			if( (upgradeSlot && slot == upgradeSlot) || (card == slot.occupant) ) {
 				if( slot.intercept && slot.intercept[type] && slot.intercept[type][field] ) {
-					console.log("slot intercept", slot);
 					interceptors.push( slot.intercept[type][field] );
 				}
 			}
