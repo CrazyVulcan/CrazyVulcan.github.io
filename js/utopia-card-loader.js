@@ -37,7 +37,7 @@ module.factory( "cardLoader", function($http, $filter, cardRules, $factions) {
 		
 		function loadShip(ship) {
 			
-			$.extend(ship, shipDefaults);
+			$.extend(true, ship, shipDefaults);
 		
 			// Add squadron equip rule
 			// TODO Player can remove ship with hull > 3 after this check
