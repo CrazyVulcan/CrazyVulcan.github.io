@@ -1,5 +1,5 @@
 .card-container {
-	margin: 0.2em;
+	margin: 0.1em;
 	display: inline-block;
 	vertical-align: top;
 	position: relative;
@@ -11,7 +11,8 @@
 .card-outer {
 	border-radius: 0.3em;
 	background: #000;
-	padding: 0.2em;
+	padding: 0.1em;
+	border: 0.1em solid black;
 	width: 10em;
 	height: 14em;
 	position: absolute;
@@ -467,7 +468,7 @@
 
 .card-drop-target {
 	background-color: transparent;
-	border: 0.2em dashed #ccc;
+	border: 0.1em dotted #ccc;
 	text-align: center;
 	text-transform: uppercase;
 }
@@ -503,6 +504,7 @@
 
 .card-outer.dragging {
 	--opacity: 0.8;
+	border-color: red;
 }
 
 .fleet-ship-inner .drag-over  .card-outer[draggable] {

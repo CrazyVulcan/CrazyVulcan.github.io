@@ -15,7 +15,8 @@ module.directive( "cardShip", function() {
 		scope: {
 			ship: "=",
 			fleet: "=",
-			dragStore: "="
+			dragStore: "=",
+			dragSource: "@"
 		},
 
 		templateUrl: "card-ship.html",

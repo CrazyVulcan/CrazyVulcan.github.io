@@ -23,9 +23,9 @@
     </head>
     <body>
 
-		<div class="u-container">
+		<div class="u-container" ng-click="drag.item = false; drag.source = false;">
 
-			<div class="u-search-results text-center" droppable can-drop="true" drop="$broadcast('removeFromFleet',$item)" drag-store="drag">
+			<div class="u-search-results text-center">
 			
 				<div class="u-title"><i class="fs fs-unique card-unique-icon"></i>  Utopia</div>
 			
@@ -67,13 +67,30 @@
 				</div>
 			
 				<div ng-init="resultLimit = 10">
-					<div class="card-container" ng-repeat="card in cards | cardFilter:search | limitTo:resultLimit">
-						<card-ship ng-show="card.type == 'ship'" ship="card" drag-store="drag"></card-ship>
-						<card-upgrade ng-show="card.type != 'ship'" upgrade="card" drag-store="drag"></card-upgrade>
+				
+					<div class="card-container" ng-show="drag.item && drag.source != 'search'" droppable can-drop="true" drop="$broadcast('removeFromFleet',$item)" drag-store="drag">
+						<div class="card-outer card-drop-target font-staw">
+							<div class="card-drop-target-inner">
+								<div class="card-drop-target-type">
+									<i class="fs fs-captain"></i><br/>Remove From Fleet
+								</div>
+							</div>
+						</div>
 					</div>
-					<div>
-						<button class="u-show-more" ng-click="resultLimit = resultLimit + 10">Show More</button>
+					
+					<div ng-hide="drag.item && drag.source != 'search'">
+						
+						<div class="card-container" ng-repeat="card in cards | cardFilter:search | limitTo:resultLimit">
+							<card-ship ng-show="card.type == 'ship'" ship="card" drag-store="drag" drag-source="search"></card-ship>
+							<card-upgrade ng-show="card.type != 'ship'" upgrade="card" drag-store="drag" drag-source="search"></card-upgrade>
+						</div>
+						
+						<div>
+							<button class="u-show-more" ng-click="resultLimit = resultLimit + 10">Show More</button>
+						</div>
+						
 					</div>
+					
 				</div>
 
 			</div>

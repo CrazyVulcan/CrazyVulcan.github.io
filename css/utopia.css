@@ -78,14 +78,19 @@ body {
 	-ms-overflow-style: none;
 }
 
+.u-search-results::-webkit-scrollbar {
+	display: none;
+}
+
 .u-search-results {
-	width: 350px;
+	width: 330px;
 }
 
 .u-search-query {
 	font-weight: normal;
 	padding: 0 0.2em;
 	height: 1.6em;
+	width: 6.5em;
 }
 
 .u-fleet {

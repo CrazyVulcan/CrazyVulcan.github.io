@@ -4,6 +4,7 @@
 
 .fleet-ship-top {
 	height: 3em;
+	overflow: auto;
 }
 
 .fleet-ship-top-left {

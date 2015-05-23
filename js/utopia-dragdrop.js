@@ -5,16 +5,20 @@ module.directive('draggable', function () {
 		
 		scope: {
 			dragItem: "=",
-			dragStore: "="
+			dragStore: "=",
+			dragSource: "=",
 		},
 	
 		link: function (scope, element) {
+			
+			console.log("SAUCE",scope.dragSource);
 			
 			element.prop( "draggable", true );
 
 			element.on("dragstart", function(ev) {
 				scope.$apply(function(){
 					scope.dragStore.item = scope.dragItem;
+					scope.dragStore.source = scope.dragSource;
 				});
 				element.addClass("dragging");
 				ev.originalEvent.dataTransfer.effectAllowed = 'move';
@@ -22,6 +26,18 @@ module.directive('draggable', function () {
 			
 			element.on("dragend", function(ev) {
 				element.removeClass("dragging");
+			});
+			
+			element.on("click", function(ev) {
+				scope.$apply(function(){
+					if( scope.dragStore.item != scope.dragItem) {
+						scope.dragStore.item = scope.dragItem;
+						scope.dragStore.source = scope.dragSource;
+					} else
+						delete scope.dragStore.item;
+				});
+				ev.preventDefault();
+				return false;
 			});
 
 		}
@@ -63,6 +79,16 @@ module.directive('droppable', function () {
 					delete scope.dragStore.item;
                 });
 				
+			});
+			
+			element.on("click", function(ev) {
+				scope.$apply(function(){
+					if( scope.dragStore.item ) {
+						scope.drop( {"$item": scope.dragStore.item} )
+						delete scope.dragStore.item;
+					}
+				});
+				ev.preventDefault();
 			});
 
         }

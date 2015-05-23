@@ -1,4 +1,4 @@
-<div class="card-outer font-staw" ng-class="{ 'card-unique': ship.unique, 'card-mirror': ship.mirror }" draggable drag-item="ship" drag-store="dragStore">
+<div class="card-outer font-staw" ng-class="{ 'card-unique': ship.unique, 'card-mirror': ship.mirror, 'dragging': ship == dragStore.item }" draggable drag-item="ship" drag-store="dragStore" drag-source="dragSource">
 
 	<div class="card-image"></div>
 
