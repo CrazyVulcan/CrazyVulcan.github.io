@@ -124,6 +124,10 @@ body {
 	margin: 1em;
 }
 
+.u-loading {
+	font-size: 2em;
+}
+
 .title-button {
 	line-height: 0.8em;
 	border: none;
