@@ -1,0 +1,16 @@
+<div class="container-fluid">
+
+	<div class="row">
+		<div class="col-xs-12 u-header">
+			<i class="fa fa-space-shuttle"></i> Utopia
+		</div>
+	</div>
+
+	<div class="row" ng-repeat="row in menuItems | group:2">
+		<div class="col-xs-6 u-menu-item" ng-repeat="item in row">
+			<i class="{{item.icon}}"></i>
+			<div class="u-menu-item-text">{{item.text}}</div>
+		</div>
+	</div>
+
+</div>

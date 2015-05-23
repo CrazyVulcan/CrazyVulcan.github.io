@@ -1,0 +1,36 @@
+<div class="card-outer card-upgrade font-staw" ng-class="{ 'card-unique': upgrade.unique, 'card-mirror': upgrade.mirror }" draggable drag-item="upgrade" drag-store="dragStore">
+
+	<div class="card-image"></div>
+
+	<div class="card-corner-top-left pull-left"><i ng-if="upgrade.unique" class="card-unique-icon fs fs-unique pull-left"></i>
+		<div class="card-corner-inner pull-right"></div>
+	</div>
+
+	<div class="card-title-container text-left">
+		<span ng-if="upgrade.type == 'captain' || upgrade.type == 'admiral'" class="card-captain pull-right">{{upgrade.type|uppercase}}</span>
+		<span ng-if="upgrade.attack" class="card-weapon-attack pull-right">{{upgrade|valueOf:'attack':ship:fleet}}</span>
+		<span class="card-title" ng-class="{'card-title-long': upgrade.name.length >= 20 || upgrade.name.length > 15 && (upgrade.type == 'captain'||upgrade.type == 'admiral') }">{{upgrade.name | uppercase}}</span>
+	</div>
+
+	<div class="card-border-left pull-left"></div>
+
+	<div class="card-text">
+		<div ng-if="upgrade.range" class="card-weapon-range pull-right">{{upgrade.range}}</div>
+		<div class="card-text-inner font-staw-alt" ng-bind-html="upgrade.text | icons"></div>
+	</div>
+
+	<div class="card-upgrade-cost pull-right"><i class="card-ship-faction card-faction-{{upgrade.faction}} fs fs-blank"></i><div class="card-upgrade-cost-value">{{upgrade|valueOf:'cost':ship:fleet}}</div></div>
+
+	<div ng-if="upgrade.type == 'captain' || upgrade.type == 'admiral' || upgrade.skill" class="card-skill-container pull-left">
+		<div class="card-skill"><span class="card-skill-plus" ng-show="upgrade.type == 'admiral' && upgrade.skill >= 0">+</span>{{upgrade|valueOf:'skill':ship:fleet}}</div>
+	</div>
+
+	<div ng-if="!upgrade.skill" class="card-upgrade-type pull-left fs fs-{{upgrade.type}}"></div>
+	
+	<div class="card-border-bottom">
+		<i ng-if="upgrade.talents" ng-repeat="talent in range(upgrade.talents) track by $index" class="fs fs-talent"></i>
+	</div>
+
+	<div style="clear: both"></div>
+
+</div>

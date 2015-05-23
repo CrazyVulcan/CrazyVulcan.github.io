@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html ng-app="utopia" ng-controller="UtopiaCtrl">
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+        <link rel="stylesheet" type="text/css" href="css/font-staw.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="css/utopia.css">
+        <link rel="stylesheet" type="text/css" href="css/utopia-card.css">
+		<link rel="stylesheet" type="text/css" href="css/utopia-fleet-builder.css">
+		
+        <title>Utopia: A Fleet Builder for Star Trek Attack Wing</title>
+
+		<script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/angular.js"></script>
+        <script type="text/javascript" src="js/angular-sanitize.js"></script>
+        <script type="text/javascript" src="js/utopia.js"></script>
+        <script type="text/javascript" src="js/utopia-card-ship.js"></script>
+        <script type="text/javascript" src="js/utopia-card-upgrade.js"></script>
+		<script type="text/javascript" src="js/utopia-dragdrop.js"></script>
+		<script type="text/javascript" src="js/utopia-fleet-builder.js"></script>
+		<script type="text/javascript" src="js/utopia-card-rules.js"></script>
+
+    </head>
+    <body>
+
+    	<div class="u-header">
+		
+    		<div class="u-title"><i class="fs fs-unique card-unique-icon"></i>  Utopia</div>
+
+    	</div>
+
+		<div class="u-container">
+
+			<div class="u-search-results text-center" droppable can-drop="true" drop="$broadcast('removeFromFleet',$item)" drag-store="drag">
+			
+				<div class="u-search">
+
+					<label><input class="u-search-query" ng-model="search.query" placeholder="Search"></label>
+					
+					<button ng-click="resetSearch()">Reset</button>
+					<button ng-click="showAdvanced = !showAdvanced">Advanced</button>
+
+					<div ng-show="showAdvanced">
+					
+						<div>
+							<div class="u-search-header"><span>Faction</span></div>
+							<span ng-repeat="(faction,data) in search.factions">
+								<label class="u-label"><input type="checkbox" ng-model="data.search" > <div class="u-faction card-faction-{{faction}}"></div> {{faction}}</label>
+							</span>
+						</div>
+
+						<div>
+							<div class="u-search-header"><span>Type</span></div>
+							<span class="u-search-type" ng-repeat="(type,data) in search.types">
+								<label class="u-label"><input type="checkbox" ng-model="data.search" > <i class="fs fs-{{type}}"></i> {{type}}</label>
+							</span>
+						</div>
+
+						<div>
+							<div class="u-search-header"><span>Uniqueness</span></div>
+							<span>
+								<label class="u-label"><input type="checkbox" ng-model="search.unique"> <i class="fs fs-unique"></i> Unique</label>
+							</span>
+							<span>
+								<label class="u-label"><input type="checkbox" ng-model="search.generic"> <i class="fs"></i> Generic</label>
+							</span>
+						</div>
+						
+					</div>
+
+				</div>
+			
+				<div ng-init="resultLimit = 10">
+					<div class="card-container" ng-repeat="card in cards | cardFilter:search | limitTo:resultLimit">
+						<card-ship ng-show="card.type == 'ship'" ship="card" drag-store="drag"></card-ship>
+						<card-upgrade ng-show="card.type != 'ship'" upgrade="card" drag-store="drag"></card-upgrade>
+					</div>
+					<div>
+						<button class="u-show-more" ng-click="resultLimit = resultLimit + 10">Show More</button>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="u-fleet">
+				<fleet-builder fleet="activeFleet" cards="cards" drag-store="drag"></fleet-builder>
+			</div>
+
+		</div>
+
+    </body>
+</html>

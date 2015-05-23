@@ -1,0 +1,510 @@
+.card-container {
+	margin: 0.2em;
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	font-size: 30px;
+	width: 10em;
+	height: 14em;
+}
+
+.card-outer {
+	border-radius: 0.3em;
+	background: #000;
+	padding: 0.2em;
+	width: 10em;
+	height: 14em;
+	position: absolute;
+}
+
+.card-outer[draggable] {
+	cursor: pointer;
+	box-shadow: 0 0 1em #999;
+}
+
+.card-outer[draggable]:hover {
+	font-size: 30px;
+	box-shadow: 0 0 1em #333;
+}
+
+.card-image {
+	height: 4em;
+}
+
+.card-corner-top-left {
+	background: #a8b6bf;
+	height: 1.6em;
+	width: 1em;
+	border-top-left-radius: 1em;
+}
+
+.card-corner-inner {
+	background: black;
+	width: 0.2em;
+	height: 0.6em;
+	position: relative;
+}
+
+.card-corner-top-left .card-corner-inner {
+	border-top-left-radius: 0.2em;
+	top: 1em;
+}
+
+.card-unique .card-corner-top-left .card-corner-inner {
+	top: -0.3em;
+}
+
+.card-corner-top-right .card-corner-inner {
+	border-top-right-radius: 0.2em;
+	top: 1em;
+}
+
+.card-corner-top-right .card-corner-inner-faction {
+	top: -0.6em;
+}
+
+.card-ship-faction {
+	font-size: 1.4em;
+	width: 1.1em;
+	height: 1.1em;
+	border: 0.05em solid #a8b6bf;
+	border-radius: 1em;
+	background-color: black;
+	--background-size: contain;
+	background-size: 0.95em;
+	background-position: 0.05em 0.05em;
+	background-repeat: no-repeat;
+	color: #e1a825;
+	position: relative;
+	left: -0.5em;
+	top: -0.1em;
+	z-index: 1000;
+	padding: 0.5em;
+}
+
+.card-title-container {
+	background: #a8b6bf;
+	margin-left: 1.2em;
+	margin-right: 1.2em;
+}
+
+.card-title {
+	color: white;
+	background: black;
+	padding: 0.2em 0.2em 0;
+	position: relative;
+	top: 0.05em;
+	height: 1.2em;
+}
+
+.card-title-long {
+	top: 0;
+	font-size: 0.8em;
+	padding-top: 0.3em;
+	padding-bottom: 0.1em;
+}
+
+.card-corner-top-right {
+	background: #a8b6bf;
+	height: 1.6em;
+	width: 1em;
+	border-top-right-radius: 1em;
+}
+
+.card-unique-icon {
+	font-size: 1.3em;
+	border: 0.05em solid #a8b6bf;
+	border-radius: 1em;
+	background: black;
+	color: #e1a825;
+	position: relative;
+	left: 0.1em;
+	top: -0.1em;
+	z-index: 1000;
+	text-align: center;
+}
+
+.card-mirror .card-unique-icon {
+	color: black;
+	background: #e1a825;
+	border-color: black;
+}
+
+.card-ship-class-container {
+	margin-right: 2.2em;
+	margin-bottom: 0.2em;
+}
+
+.card-ship-class {
+	font-size: 0.6em;
+	color: white;
+	border: 0.15em solid #a8b6bf;
+	padding: 0.1em 0.4em 0 0.4em;
+	border-radius: 0.8em;
+}
+
+.card-ship-class-long {
+	font-size: 0.5em;
+}
+
+.card-ship-stats {
+	clear: left;
+	margin-top: 0.1em;
+}
+
+.card-ship-stat {
+	border: 0.1em solid white;
+	border-radius: 0.1em 0.6em 0.6em 0.1em;
+	padding: 0.1em 0.25em 0 0.1em;
+	margin-top: 0.1em;
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 2.3em;
+}
+
+.card-ship-stat-attack {
+	color: #ed1b24;
+	border-color: #ed1b24;
+	background-image: url("../img/ship-stat-attack.png");
+}
+
+.card-ship-stat-agility {
+	color: #00a650;
+	border-color: #00a650;
+	background-image: url("../img/ship-stat-agility.png");
+}
+
+.card-ship-stat-hull {
+	color: #fef200;
+	border-color: #fef200;
+	background-image: url("../img/ship-stat-hull.png");
+}
+
+.card-ship-stat-shields {
+	color: #4dc4e2;
+	border-color: #4dc4e2;
+	background-image: url("../img/ship-stat-shields.png");
+}
+
+.card-text {
+	background: #f7f3e7;
+	color: black;
+	border-radius: 0.3em;
+	margin-top: 0.2em;
+	margin-left: 4.5em;
+	margin-right: 2em;
+	padding: 0.3em;
+	font-size: 0.6em;
+	height: 7em;
+	text-align: center;
+}
+
+.card-text-inner {
+	font-size: 0.8em;
+}
+
+.card-border-right {
+	background: #a8b6bf;
+	width: 0.8em;
+	height: 6.3em;
+	margin-top: 0.2em;
+}
+
+.card-faction-federation {
+	background-image: url("../img/faction-federation.png");
+}
+
+.card-faction-romulan {
+	background-image: url("../img/faction-romulan.png");
+}
+
+.card-faction-klingon {
+	background-image: url("../img/faction-klingon.png");
+}
+
+.card-faction-dominion {
+	background-image: url("../img/faction-dominion.png");
+}
+
+.card-faction-ferengi {
+	background-image: url("../img/faction-ferengi.png");
+}
+
+.card-faction-independent {
+	background-image: url("../img/faction-independent.png");
+}
+
+.card-faction-bajoran {
+	background-image: url("../img/faction-bajoran.png");
+}
+
+.card-faction-borg {
+	background-image: url("../img/faction-borg.png");
+}
+
+.card-faction-kazon {
+	background-image: url("../img/faction-kazon.png");
+}
+
+.card-faction-species-8472 {
+	background-image: url("../img/faction-species-8472.png");
+}
+
+.card-faction-vulcan {
+	background-image: url("../img/faction-vulcan.png");
+}
+
+.card-faction-mirror {
+	background-image: url("../img/faction-mirror.png");
+}
+
+.card-ship-action-bar {
+	background: #f7f3e7;
+	color: black;
+	border-radius: 0.3em;
+	margin-top: 0.4em;
+	margin-left: 4.5em;
+	margin-right: 2em;
+	padding: 0.2em;
+	font-size: 0.6em;
+}
+
+.card-ship-action-bar i {
+	font-size: 1.6em;
+	margin: 0.2em 0.2em;
+}
+
+.card-ship-silhouette {
+	width: 1.85em;
+	height: 1.95em;
+	border: 0.05em solid #a8b6bf;
+	border-radius: 0.1em;
+	clear: left;
+	margin-top: 0.1em;
+}
+
+.card-ship-upgrade-bar {
+	border: 0.1em solid #a8b6bf;
+	border-radius: 0.5em;
+	margin-left: 3.2em;
+	margin-top: 0.3em;
+	text-align: right;
+	padding: 0.2em 0.4em;
+	color: white;
+	margin-right: 4.2em;
+	font-size: 0.6em;
+}
+
+.card-ship-upgrade-bar i {
+	font-size: 1em;
+}
+
+.card-ship-upgrade-occupied {
+	color: #777;
+}
+
+.card-ship-cost {
+	border: 0.1em solid #a8b6bf;
+	border-radius: 0.5em;
+	color: white;
+	padding: 0.1em 0.4em 0;
+	margin-top: 0.2em;
+	margin-right: 0.2em;
+	font-size: 0.8em;
+}
+
+.card-corner-bottom-right {
+	background: #a8b6bf;
+	height: 1em;
+	width: 1em;
+	margin-top: 0.1em;
+	border-bottom-right-radius: 1em;
+}
+
+.card-corner-bottom-right .card-corner-inner {
+	border-bottom-right-radius: 0.2em;
+	height: 0.2em;
+}
+
+
+/* UPGRADES */
+
+.card-upgrade .card-image {
+	height: 6em;
+}
+
+.card-upgrade .card-title-container {
+	margin-right: 0;
+	margin-left: 1em;
+	border-top-right-radius: 1em;
+	border-bottom-right-radius: 1em;
+}
+
+.card-upgrade.card-unique .card-title-container {
+	padding-left: 0.4em;
+	margin-left: 1.2em;
+}
+
+.card-border-left {
+	background: #a8b6bf;
+	width: 0.8em;
+	height: 4em;
+	margin-top: 0.2em;
+	clear: left;
+}
+
+.card-upgrade .card-text {
+	margin-left: 1.7em;
+	margin-right: 0.5em;
+	height: 8em;
+}
+
+.card-captain {
+	font-size: 0.8em;
+	color: #e1a825;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	padding: 0.15em 0.3em;
+}
+
+.card-skill-container {
+	border: 0.05em solid black;
+	border-radius: 0.3em;
+	font-size: 1.4em;
+	width: 1.3em;
+	height: 1.1em;
+	background: red;
+	clear: left;
+	position: relative;
+	top: -0.2em;
+}
+
+.card-skill {
+	color: #e1a825;
+	border: 0.1em solid #3486cf;
+	text-align: center;
+	border-radius: 0.3em;
+	background: black;
+}
+
+.card-skill-plus {
+	font-size: 0.5em;
+	vertical-align: middle;
+	margin-left: -0.2em;
+}
+
+.card-border-bottom {
+	background: #a8b6bf;
+	width: 8em;
+	height: 0.8em;
+	margin-top: 0.2em;
+	text-align: center;
+}
+
+.card-border-bottom i {
+	font-size: 2em;
+	position: relative;
+	top: -0.25em;
+	color: white;
+	background: black;
+	border-radius: 1em;
+}
+
+.card-upgrade-cost-value {
+	color: white;
+	float: right;
+	padding: 0 0.7em 0 1.7em;
+	margin-top: 0.2em;
+	font-size: 0.8em;
+	border: 0.1em solid #3486cf;
+	border-radius: 1em;
+}
+
+.card-upgrade-cost .card-ship-faction {
+	left: 1em;
+	border-color: #3486cf;
+	font-size: 1em;
+	border-width: 0.07em;
+	top: 0.05em;
+	margin-left: -1em;
+}
+
+.card-upgrade-type {
+	color: white;
+	font-size: 1.7em;
+	background: black;
+	border-radius: 1em;
+	border: 0.05em solid black;
+	position: relative;
+	top: -0.2em;
+	left: -0.1em;
+}
+
+.card-weapon-range {
+	color: white;
+	background: black;
+	clear: right;
+	font-size: 1.2em;
+	padding: 0 0.5em;
+	border: 0.2em solid #3486cf;
+	border-radius: 0.7em;
+	position: relative;
+	left: 0.5em;
+	top: -0.2em;
+}
+
+.card-weapon-attack {
+	color: #ed1b24;
+	padding: 0 0.3em;
+	font-size: 1.5em;
+	border: 0.1em solid #3486cf;
+	border-radius: 0.2em;
+	background: black;
+	position: relative;
+	top: -0.2em;
+}
+
+/* Dragdrop */
+
+.card-drop-target {
+	background-color: transparent;
+	border: 0.2em dashed #ccc;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.card-drop-target-type {
+	display: inline-block;
+	margin: 0 0.2em;
+}
+
+.card-drop-target i {
+	font-size: 2em;
+	margin: 0.2em;
+}
+
+.card-drop-target.drag-over , .drag-over .card-drop-target {
+	border-color: #555;
+}
+
+.card-drop-target-subtitle {
+	color: #888;
+	font-size: 0.8em;
+	position: absolute;
+	bottom: 1em;
+	width: 100%;
+	padding-right: 0.5em;
+}
+
+.card-drop-target-inner {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.card-outer.dragging {
+	--opacity: 0.8;
+}
+
+.fleet-ship-inner .drag-over  .card-outer[draggable] {
+	opacity: 0.2;
+}

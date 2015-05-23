@@ -1,0 +1,157 @@
+@font-face {
+  font-family: 'FontSTAW';
+  src: url('../fonts/AttackWingSymbols.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.fs {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontSTAW;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+  text-transform: none;
+}
+
+.fs:before {
+ content: "?";
+}
+
+.fs-blank:before {
+  content: "";
+}
+
+.fs-unique:before {
+  content: "A";
+}
+
+.fs-battlestations:before {
+  content: "B";
+}
+
+.fs-cloak:before {
+  content: "C";
+}
+
+.fs-sensor-echo:before {
+  content: "D";
+}
+
+.fs-evade:before {
+  content: "E";
+}
+
+.fs-ship:before {
+  content: "E";
+}
+
+.fs-hangar:before {
+  content: "F";
+}
+
+.fs-fortress:before {
+  content: "G";
+}
+
+.fs-hit:before {
+  content: "H";
+}
+
+.fs-crit:before {
+  content: "I";
+}
+
+.fs-bank-left:before {
+  content: "J";
+}
+
+.fs-bank-right:before {
+  content: "K";
+}
+
+.fs-turn-left:before {
+  content: "L";
+}
+
+.fs-turn-right:before {
+  content: "M";
+}
+
+.fs-forward:before {
+  content: "N";
+}
+
+.fs-reverse:before {
+  content: "O";
+}
+
+.fs-come-about:before {
+  content: "P";
+}
+
+.fs-full-about:before {
+  content: "Q";
+}
+
+.fs-regenerate:before {
+  content: "R";
+}
+
+.fs-scan:before {
+  content: "S";
+}
+
+.fs-target-lock:before {
+  content: "T";
+  position: relative;
+  left: -0.15em;
+  font-size: 0.7em;
+  top: -0.1em;
+}
+
+.fs-spin-left:before {
+  content: "U";
+}
+
+.fs-spin-right:before {
+  content: "V";
+}
+
+.fs-tech:before {
+  content: "W";
+}
+
+.fs-weapon:before {
+  content: "X";
+}
+
+.fs-crew:before {
+  content: "Y";
+}
+
+.fs-talent:before {
+  content: "Z";
+}
+
+.fs-refit:before {
+  content: "a";
+}
+
+.fs-borg:before {
+  content: "b";
+}
+
+
+.fs-squadron:before {
+  content: "B";
+}
+
+.fs-captain:before {
+  content: "A";
+}
+
+.fs-admiral:before {
+  content: "A";
+}

@@ -1,0 +1,148 @@
+@font-face {
+  font-family: 'STAWSwiss';
+  src: url('../fonts/Swiss1.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'STAWAlternate';
+  src: url('../fonts/Alternate1.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-staw {
+	font: normal normal normal 30px/1 STAWSwiss;
+}
+
+.font-staw-alt {
+	font: normal normal normal 30px/1 STAWAlternate;
+}
+
+body {
+	background: #eee;
+	font-family: STAWAlternate;
+}
+
+.u-header {
+	height: 80px;
+	font-size: 14px;
+	z-index: 10;
+	position: relative;
+	padding: 10px;
+	text-align: center;
+}
+
+.u-title {
+	font-size: 3em;
+}
+
+.u-title i {
+	font-size: 1em;
+}
+
+.u-search {
+	text-align: left;
+	float: left;
+	padding: 0.2em 0.7em;
+	font-size: 1.5em;
+}
+
+.u-search .u-faction {
+	width: 1em;
+	height: 1em;
+	display: inline-block;
+	background-size: contain;
+	position: relative;
+	top: 0.25em;
+	background-repeat: no-repeat;
+}
+
+.u-search .u-label {
+	font-weight: normal;
+	text-transform: capitalize;
+	width: 45%;
+	margin-left: 0.5em;
+	cursor: pointer;
+}
+
+.u-search i.fs {
+	font-size: 1em;
+}
+
+.u-container {
+	display: flex;
+	overflow: hidden;
+	height: 100vh;
+	position: relative;
+	margin-top: -80px;
+	padding-top: 80px;
+	backface-visibility: hidden;
+}
+
+.u-search-results, .u-fleet {
+	overflow: auto;
+	height: auto;
+	padding: .5rem;
+	-webkit-overflow-scrolling: touch;
+	-ms-overflow-style: none;
+}
+
+.u-search-results {
+	width: 350px;
+}
+
+.u-search-query {
+	font-weight: normal;
+	padding: 0 0.2em;
+	height: 1.6em;
+}
+
+.u-fleet {
+	flex: 1;
+}
+
+.u-search-header {
+	background: #999;
+	border-radius: 0.5em;
+	padding-left: 1em;
+}
+
+.u-search-header span {
+	background: #eee;
+	padding: 0.2em;
+}
+
+.card-outer[draggable] {
+	cursor: pointer;
+	box-shadow: 0 0 1em #999;
+}
+
+.card-outer[draggable]:hover {
+	font-size: 30px;
+	box-shadow: 0 0 1em #333;
+}
+
+.u-show-more {
+	font-size: 1.5em;
+	margin: 1em;
+}
+
+.title-button {
+	line-height: 0.8em;
+	border: none;
+	font-size: 0.7em;
+	vertical-align: middle;
+	background: none;
+}
+
+.toggle-button-value {
+	width: 1em;
+	height: 3em;
+	background: #66dd66;
+}
+
+.toggle-button-value-active {
+	background: #dd6666;
+}
