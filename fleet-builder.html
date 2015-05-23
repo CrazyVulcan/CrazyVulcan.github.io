@@ -56,7 +56,7 @@
 							<i class="fs fs-{{type}}"></i><br/>{{type}}
 						</div>
 					</div>
-					<div ng-show="upgradeSlot.source != 'ship'" class="card-drop-target-subtitle">Source: {{upgradeSlot.source}}</div>
+					<div ng-show="upgradeSlot.source && upgradeSlot.source != 'ship'" class="card-drop-target-subtitle">Source: {{upgradeSlot.source}}</div>
 				</div>
 				<card-upgrade ng-if="upgradeSlot.occupant" upgrade="upgradeSlot.occupant" ship="ship" fleet="fleet" drag-store="dragStore"></card-upgrade>
 			</div>

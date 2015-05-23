@@ -30,6 +30,99 @@ module.factory( "cardLoader", function($http, $filter, cardRules, $factions) {
 
 	return function(cards, callback) {
 		
+		var shipDefaults = {
+			canJoinFleet: true,
+			intercept: { ship:{}, fleet: {} }
+		};
+		
+		function loadShip(ship) {
+			
+			$.extend(ship, shipDefaults);
+		
+			// Add squadron equip rule
+			// TODO Player can remove ship with hull > 3 after this check
+			if( ship.squadron ) {
+				ship.canJoinFleet = function(ship,ship2,fleet) {
+					var numShipsHull4Plus = 0;
+					var numSquadrons = 0;
+					$.each(fleet,function(i,ship) {
+						if( ship.squadron )
+							numSquadrons++;
+						else if( ship.hull >= 4 )
+							numShipsHull4Plus++;
+					});
+					return numShipsHull4Plus > numSquadrons;
+				};
+			}
+			
+			// Apply specific card rules
+			if( cardRules[ship.type+":"+ship.id] )
+				$.extend( true, ship, cardRules[ship.type+":"+ship.id] );
+
+			// Add faction penalties to cost calculation
+			var costIntercept = ship.intercept.ship.cost;
+			ship.intercept.ship.cost = function(upgrade, ship, fleet, cost) {
+				if( costIntercept )
+					cost = costIntercept(upgrade, ship, fleet, cost);
+				if( !$factions.match( upgrade, ship ) ) {
+					var penalty = valueOf(upgrade,"factionPenalty",ship,fleet);
+					return (cost instanceof Function ? cost(upgrade, ship, fleet, 0) : cost ) + penalty;
+				}
+				return cost;
+			};
+			
+			cards.push(ship);
+			
+		}
+		
+		function loadCaptain(captain) {
+			
+			// Add talent slots
+			captain.upgradeSlots = [];
+			for( var i = 0; i < captain.talents || 0; i++ )
+				captain.upgradeSlots.push( { type: ["talent"], source: captain.name } );
+
+			// Apply specific card rules
+			if( cardRules[captain.type+":"+captain.id] )
+				$.extend( true, captain, cardRules[captain.type+":"+captain.id] );
+			
+			cards.push( captain );
+			
+		}
+		
+		function loadAdmiral(admiral) {
+			
+			// Add talent slots
+			admiral.upgradeSlots = [];
+			for( var i = 0; i < admiral.talents || 0; i++ )
+				admiral.upgradeSlots.push( { type: ["talent"], source: admiral.name } );
+
+			// Add skill modifier to Captain skill evaluation
+			admiral.intercept.ship.skill = function(upgrade,ship,fleet,skill) {
+				if( upgrade == ship.captain ) {
+					skill = (skill instanceof Function ? skill(upgrade,ship,fleet,0) : skill) + admiral.skill;
+				}
+				return skill;
+			};
+
+			// Apply specific card rules
+			if( cardRules[admiral.type+":"+admiral.id] )
+				$.extend( true, admiral, cardRules[admiral.type+":"+admiral.id] );
+			
+			cards.push( admiral );
+			
+		}
+		
+		function loadUpgrade(upgrade) {
+			
+			// Apply specific card rules
+			if( cardRules[upgrade.type+":"+upgrade.id] )
+				$.extend( true, upgrade, cardRules[upgrade.type+":"+upgrade.id] );
+			
+			cards.push( upgrade );
+			
+		}
+		
 		// Load from Space Dock data file
 		$http.get( "data/data.xml" ).success( function(data) {
 			var doc = $( $.parseXML(data) );
@@ -54,8 +147,7 @@ module.factory( "cardLoader", function($http, $filter, cardRules, $factions) {
 					text: convertIconTags( data.find("Ability").text() ),
 					unique: (data.find("Unique").text() == "Y") || (data.find("MirrorUniverseUnique").text() == "Y"),
 					factions: [data.find("Faction").text().toLowerCase()],
-					intercept: { ship: {}, fleet: {} },
-					canJoinFleet: true
+					intercept: { ship: {}, fleet: {} }
 				};
 				
 				var additionalFaction = data.find("AdditionalFaction").text().toLowerCase();
@@ -71,19 +163,19 @@ module.factory( "cardLoader", function($http, $filter, cardRules, $factions) {
 				}
 				
 				if( data.find("EvasiveManeuvers").text() == "1" )
-					ship.actions.push( { name: "evade", source: "ship" } );
+					ship.actions.push( "evade" );
 				if( data.find("TargetLock").text() == "1" )
-					ship.actions.push( { name: "target-lock", source: "ship" } );
+					ship.actions.push( "target-lock" );
 				if( data.find("Scan").text() == "1" )
-					ship.actions.push( { name: "scan", source: "ship" } );
+					ship.actions.push( "scan" );
 				if( data.find("Battlestations").text() == "1" )
-					ship.actions.push( { name: "battlestations", source: "ship" } );
+					ship.actions.push( "battlestations" );
 				if( data.find("Cloak").text() == "1" )
-					ship.actions.push( { name: "cloak", source: "ship" } );
+					ship.actions.push( "cloak" );
 				if( data.find("SensorEcho").text() == "1" )
-					ship.actions.push( { name: "sensor-echo", source: "ship" } );
+					ship.actions.push( "sensor-echo" );
 				if( data.find("Regenerate").text() == "1" )
-					ship.actions.push( { name: "regenerate", source: "ship" } );
+					ship.actions.push( "regenerate" );
 
 				for( var i = 0; i < Number( data.find("Borg").text() ); i++ )
 					ship.upgrades.push( { type: ["borg"], source: "ship" } );
@@ -99,40 +191,9 @@ module.factory( "cardLoader", function($http, $filter, cardRules, $factions) {
 				
 				// Mark as squadron
 				ship.squadron = squadronUpgradeCount > 0 || ship.class.indexOf("Squadron") >= 0;
-				
-				// Add squadron equip rule
-				// TODO Player can remove ship with hull > 3 after this check
-				if( ship.squadron ) {
-					ship.canJoinFleet = function(ship,ship2,fleet) {
-						var numShipsHull4Plus = 0;
-						var numSquadrons = 0;
-						$.each(fleet,function(i,ship) {
-							if( ship.squadron )
-								numSquadrons++;
-							else if( ship.hull >= 4 )
-								numShipsHull4Plus++;
-						});
-						return numShipsHull4Plus > numSquadrons;
-					};
-				}
-				
-				// Apply specific card rules
-				if( cardRules[ship.type+":"+ship.id] )
-					$.extend( true, ship, cardRules[ship.type+":"+ship.id] );
 
-				// Add faction penalties to cost calculation
-				var costIntercept = ship.intercept.ship.cost;
-				ship.intercept.ship.cost = function(upgrade, ship, fleet, cost) {
-					if( costIntercept )
-						cost = costIntercept(upgrade, ship, fleet, cost);
-					if( !$factions.match( upgrade, ship ) ) {
-						var penalty = valueOf(upgrade,"factionPenalty",ship,fleet);
-						return (cost instanceof Function ? cost(upgrade, ship, fleet, 0) : cost ) + penalty;
-					}
-					return cost;
-				};
-				
-				cards.push(ship);
+				loadShip(ship);
+
 			});
 
 			doc.find("Captain").each( function(i, data) {
@@ -181,19 +242,8 @@ module.factory( "cardLoader", function($http, $filter, cardRules, $factions) {
 					});
 				}
 				
-				if( !captain )
-					return;
-				
-				// Add talent slots
-				captain.upgradeSlots = [];
-				for( var i = 0; i < captain.talents || 0; i++ )
-					captain.upgradeSlots.push( { type: ["talent"], source: captain.name } );
-
-				// Apply specific card rules
-				if( cardRules[captain.type+":"+captain.id] )
-					$.extend( true, captain, cardRules[captain.type+":"+captain.id] );
-				
-				cards.push( captain );
+				if( captain )
+					loadCaptain(captain);
 
 			});
 
@@ -231,24 +281,7 @@ module.factory( "cardLoader", function($http, $filter, cardRules, $factions) {
 						admiral.factions[i] = "species-8472"
 				}
 
-				// Add talent slots
-				admiral.upgradeSlots = [];
-				for( var i = 0; i < admiral.talents || 0; i++ )
-					admiral.upgradeSlots.push( { type: ["talent"], source: admiral.name } );
-
-				// Add skill modifier to Captain skill evaluation
-				admiral.intercept.ship.skill = function(upgrade,ship,fleet,skill) {
-					if( upgrade == ship.captain ) {
-						skill = (skill instanceof Function ? skill(upgrade,ship,fleet,0) : skill) + admiral.skill;
-					}
-					return skill;
-				};
-
-				// Apply specific card rules
-				if( cardRules[admiral.type+":"+admiral.id] )
-					$.extend( true, admiral, cardRules[admiral.type+":"+admiral.id] );
-				
-				cards.push( admiral );
+				loadAdmiral(admiral);
 
 			});
 			
@@ -301,13 +334,28 @@ module.factory( "cardLoader", function($http, $filter, cardRules, $factions) {
 							return;
 				}
 				
-				// Apply specific card rules
-				if( cardRules[upgrade.type+":"+upgrade.id] )
-					$.extend( true, upgrade, cardRules[upgrade.type+":"+upgrade.id] );
-				
-				cards.push( upgrade );
+				loadUpgrade(upgrade);
 
 			});
+			
+			var avenger = {
+				id: "iss_avenger",
+				type: "ship",
+				name: "I.S.S. Avenger",
+				class: "Terran NX Class",
+				text: "During the Roll Attack Dice step, if there is an Auxiliary Power Token beside your ship, gain +2 attack dice when attacking with your Primary Weapon.",
+				factions: ["mirror"],
+				unique: true,
+				attack: 2,
+				agility: 3,
+				hull: 3,
+				shields: 0,
+				actions: ["evade","target-lock","scan","battlestations"],
+				upgrades: [ { type: ["tech"] }, { type: ["weapon"] }, { type: ["crew"] }, { type: ["crew"] } ],
+				cost: 16
+			};
+			
+			loadShip( avenger );
 			
 			if(callback)
 				callback();
