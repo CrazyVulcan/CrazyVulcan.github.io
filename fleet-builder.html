@@ -90,7 +90,9 @@
 							<i class="fs fs-evade"></i><br/>Ship
 						</div>
 					</div>
-					<div class="card-drop-target-subtitle">Drag here to add to fleet</div>
+					<div ng-show="!isMobile" class="card-drop-target-subtitle">Drag here to add to fleet</div>
+					<div ng-show="isMobile && (!dragStore.item || dragStore.item.type != 'ship')" class="card-drop-target-subtitle">Tap a ship card to select it</div>
+					<div ng-show="isMobile && dragStore.item && dragStore.item.type == 'ship'" class="card-drop-target-subtitle">Tap here to add selected ship to fleet</div>
 				</div>
 			</div>
 			
@@ -103,7 +105,3 @@
 	</div>
 
 </div>
-<!-- // TODO remove
-<button ng-click="saveFleet(fleet)">Save</button>
-<button ng-click="fleet = loadFleet( cards, saveFleet(fleet) )">Load</button>
--->

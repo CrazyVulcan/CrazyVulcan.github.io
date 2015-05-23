@@ -12,7 +12,9 @@ module.directive( "fleetBuilder", function($filter) {
 
 		templateUrl: "fleet-builder.html",
 
-		controller: function($scope) {
+		controller: function($scope, isMobile) {
+			
+			$scope.isMobile = isMobile;
 			
 			$scope.$watch( "fleet", function(fleet) {
 				location.hash = angular.toJson( $scope.saveFleet(fleet) );
