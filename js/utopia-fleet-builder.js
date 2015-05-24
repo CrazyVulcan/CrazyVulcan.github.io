@@ -493,8 +493,16 @@ module.directive( "fleetBuilder", function($filter) {
 			$scope.$on("cardsLoaded", function() {
 				if( hashFleet ) {
 					hashFleet = $scope.loadFleet( $scope.cards, hashFleet );
-					if( hashFleet )
+					if( hashFleet ) {
+						
+						// Hide empty slots when loading a fleet.. so it looks nice.
+						$.each( hashFleet, function(i,ship) {
+							ship.hideEmptySlots = true;
+						} );
+						
 						$scope.fleet = hashFleet;
+						
+					}
 				}
 			});
 		
