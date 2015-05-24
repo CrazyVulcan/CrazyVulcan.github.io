@@ -16,6 +16,7 @@
 	width: 10em;
 	height: 14em;
 	position: absolute;
+	cursor: pointer;
 }
 
 .card-outer[draggable] {
@@ -489,7 +490,7 @@
 
 .card-drop-target-type {
 	display: inline-block;
-	margin: 0 0.2em;
+	margin: 0 0.3em;
 }
 
 .card-drop-target i {
@@ -506,6 +507,15 @@
 	font-size: 0.8em;
 	position: absolute;
 	bottom: 1em;
+	width: 100%;
+	padding-right: 0.5em;
+}
+
+.card-drop-target-title {
+	color: #888;
+	font-size: 0.8em;
+	position: absolute;
+	top: 1em;
 	width: 100%;
 	padding-right: 0.5em;
 }

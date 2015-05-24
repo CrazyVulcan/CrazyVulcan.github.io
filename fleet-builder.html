@@ -25,7 +25,7 @@
 			</div><!--
 			Stupid whitespace breaks card alignment
 		 --><div class="card-container" ng-hide="ship.squadron" droppable can-drop="$item.type == 'captain'" drop="setShipCaptain(fleet,ship,$item)" drag-store="dragStore">
-				<div class="card-outer card-drop-target font-staw">
+				<div class="card-outer card-drop-target font-staw" ng-click="setSearchTypes(['captain'])">
 					<div class="card-drop-target-inner">
 						<div class="card-drop-target-type">
 							<i class="fs fs-captain"></i><br/>Captain
@@ -37,7 +37,7 @@
 			
 		 --><div class="card-container" ng-hide="!ship.admiral && ( ship.squadron || hideEmptySlots || fleetHasAdmiral(fleet) )"
 				droppable can-drop="$item.type == 'admiral'" drop="setShipAdmiral(fleet,ship,$item)" drag-store="dragStore">
-				<div class="card-outer card-drop-target font-staw">
+				<div class="card-outer card-drop-target font-staw" ng-click="setSearchTypes(['admiral'])">
 					<div class="card-drop-target-inner">
 						<div class="card-drop-target-type">
 							<i class="fs fs-admiral"></i><br/>Admiral
@@ -48,9 +48,9 @@
 			</div><!--
 			
 		 --><div class="card-container" 
-				ng-repeat="upgradeSlot in ship|upgradeSlots" ng-hide="hideEmptySlots && !upgradeSlot.occupant"
+				ng-repeat="upgradeSlot in ship|upgradeSlots" ng-hide="hideEmptySlots && !upgradeSlot.occupant" 
 				droppable can-drop="isUpgradeCompatible($item, upgradeSlot)" drop="setShipUpgrade(fleet,ship,upgradeSlot,$item)" drag-store="dragStore">
-				<div class="card-outer card-drop-target font-staw" style="position: absolute">
+				<div class="card-outer card-drop-target font-staw" ng-click="setSearchTypes(upgradeSlot.type)">
 					<div class="card-drop-target-inner">
 						<div class="card-drop-target-type" ng-repeat="type in upgradeSlot.type">
 							<i class="fs fs-{{type}}"></i><br/>{{type}}
@@ -83,7 +83,10 @@
 		<div class="fleet-ship-inner">
 
 			<div class="card-container">
-				<div class="card-outer card-drop-target font-staw" droppable can-drop="$item.type == 'ship'" drop="addFleetShip(fleet,$item)" drag-store="dragStore">
+				<div class="card-outer card-drop-target font-staw" ng-click="setSearchTypes(['ship'])"
+					droppable can-drop="$item.type == 'ship'" drop="addFleetShip(fleet,$item)" drag-store="dragStore">
+					<div class="card-drop-target-title" ng-if="!isMobile">Click to search this card type</div>
+					<div class="card-drop-target-title" ng-if="isMobile">Tap to search this card type</div>
 					<div class="card-drop-target-inner">
 						<div class="card-drop-target-type">
 							<i class="fs fs-evade"></i><br/>Ship

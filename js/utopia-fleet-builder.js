@@ -7,6 +7,7 @@ module.directive( "fleetBuilder", function($filter) {
 		scope: {
 			fleet: "=",
 			cards: "=",
+			searchOptions: "=",
 			dragStore: "="
 		},
 
@@ -25,6 +26,14 @@ module.directive( "fleetBuilder", function($filter) {
 				$scope.removeFromFleet( card, $scope.fleet );
 				
 			} );
+			
+			$scope.setSearchTypes = function(types) {
+				
+				$.each( $scope.searchOptions.types, function(typeName,typeOption) {
+					typeOption.search = $.inArray(typeName, types) >= 0;
+				});
+				
+			};
 
 			$scope.addFleetShip = function(fleet, ship) {
 				
