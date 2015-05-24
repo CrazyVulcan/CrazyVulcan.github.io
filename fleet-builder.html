@@ -87,12 +87,44 @@
 					<div class="card-drop-target-title" ng-if="isMobile">Tap to search this card type</div>
 					<div class="card-drop-target-inner">
 						<div class="card-drop-target-type">
-							<i class="fs fs-evade"></i><br/>Ship
+							<i class="fs fs-ship"></i><br/>Ship
 						</div>
 					</div>
 					<div ng-show="!isMobile" class="card-drop-target-subtitle">Drag here to add to fleet</div>
 					<div ng-show="isMobile && (!dragStore.item || dragStore.item.type != 'ship')" class="card-drop-target-subtitle">Tap a ship card to select it</div>
 					<div ng-show="isMobile && dragStore.item && dragStore.item.type == 'ship'" class="card-drop-target-subtitle">Tap here to add selected ship to fleet</div>
+				</div>
+			</div>
+			
+		</div>
+
+	</div>
+
+</div>
+
+<div class="fleet-ship-container">
+
+	<div class="fleet-ship-top">
+		<div class="fleet-ship-top-left"></div>
+		<div class="fleet-ship-title font-staw">{{ fleet.resource ? fleet.resource.name : 'No Resource' }}</div>
+		<div class="fleet-ship-top-spacer"></div>
+		<div class="fleet-ship-title fleet-ship-cost font-staw">{{ fleet.resource ? fleet.resource.cost : 0 }} SP</div>
+		<div class="fleet-ship-top-right"></div>
+	</div>
+	
+	<div class="fleet-ship-middle">
+		<div class="fleet-ship-left"></div>
+		
+		<div class="fleet-ship-inner">
+
+			<div class="card-container">
+				<div class="card-outer card-drop-target font-staw" ng-click="setSearchTypes(['resource'])"
+					droppable can-drop="$item.type == 'resource'" drop="setFleetResource(fleet,$item)" drag-store="dragStore">
+					<div class="card-drop-target-inner">
+						<div class="card-drop-target-type">
+							<i class="fs fs-resource"></i><br/>Resource
+						</div>
+					</div>
 				</div>
 			</div>
 			
