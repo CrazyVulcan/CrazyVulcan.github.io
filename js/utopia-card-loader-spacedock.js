@@ -164,12 +164,7 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 						cost: Number( data.find("AdmiralCost").text() ),
 						skill: Number( data.find("SkillModifier").text() ),
 						talents: Number( data.find("AdmiralTalent").text() ),
-						set: data.find("Set").text(),
-						factionPenalty: 3,
-						intercept: { ship: {}, fleet: {} },
-						canEquip: true,
-						canEquipAdmiral: true,
-						canEquipFaction: true
+						set: data.find("Set").text()
 					}
 
 					var additionalFaction = data.find("AdditionalFaction").text().toLowerCase();

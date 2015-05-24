@@ -34,6 +34,30 @@ module.factory( "cardLoaderSupplemental", function($http, $filter, cardRules, $f
 							actions: ["evade","target-lock","scan","battlestations"],
 							upgrades: ["tech","weapon","crew","crew"],
 							cost: 16
+						},
+						
+						{
+							id: "black_71800",
+							type: "admiral",
+							name: "Black",
+							text: "FLEET ACTION: Perform a [sensor-echo] Action with a 1 [forward] Maneuver Template, even if your ship is not cloaked or does not have the [sensor-echo] icon on its Action Bar. Each time you defend this round, during the Modify Defense Dice step, tou may re-roll one of your blank results. PLace an Auxiliary Power Token beside your ship.",
+							factions: ["mirror"],
+							unique: true,
+							skill: 1,
+							talents: 1,
+							cost: 3
+						},
+						
+						{
+							id: "gardner_71800",
+							type: "admiral",
+							name: "Gardner",
+							text: "FLEET ACTION: When attacking with your Primary Weapon, during the Roll Attack Dice step, gain +1 attach die this round. Each time you defend this round, during the Roll Defense Dice step, roll -1 defense die. You cannot perform any free Actions this round.",
+							factions: ["mirror"],
+							unique: true,
+							skill: 0,
+							talents: 0,
+							cost: 2
 						}
 						
 					]

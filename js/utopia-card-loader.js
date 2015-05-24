@@ -31,6 +31,9 @@ module.factory( "cardLoader", function($http, $filter, cardRules, $factions, car
 				return;
 			}
 			
+			// Set mirror flag
+			ship.mirror = $factions.hasFaction(ship, "mirror");
+			
 			// Expand shorthand upgrade slots
 			for( var i = 0; i < ship.upgrades.length; i++ )
 				if( typeof ship.upgrades[i] == "string" )
@@ -94,12 +97,25 @@ module.factory( "cardLoader", function($http, $filter, cardRules, $factions, car
 			
 		}
 		
+		var admiralDefaults = {
+			factionPenalty: 3,
+			intercept: { ship: {}, fleet: {} },
+			canEquip: true,
+			canEquipAdmiral: true,
+			canEquipFaction: true
+		};
+		
 		function loadAdmiral(admiral) {
 			
 			if( isDuplicate(admiral, cards) ) {
 				console.log( "Duplicate card definition ignored", admiral.id );
 				return;
 			}
+			
+			$.extend(true, admiral, admiralDefaults);
+			
+			// Set mirror flag
+			admiral.mirror = $factions.hasFaction(admiral, "mirror");
 			
 			// Add talent slots
 			admiral.upgradeSlots = [];
