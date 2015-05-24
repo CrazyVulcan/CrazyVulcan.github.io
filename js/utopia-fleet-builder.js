@@ -445,10 +445,10 @@ module.directive( "fleetBuilder", function($filter) {
 					$.each( savedCard.upgradeSlots || [], function(i, savedUpgrade) {
 						
 						if( savedUpgrade && savedUpgrade.id ) {
-							var result = loadCard( fleet, cards, savedUpgrade, ship );
+							var result = loadCard( fleet, cards, savedUpgrade, ship || card );
 							if( !result )
 								throw false;
-							var upgrade = $scope.setShipUpgrade( fleet, ship, card.upgradeSlots[i], result.card );
+							var upgrade = $scope.setShipUpgrade( fleet, ship || card, card.upgradeSlots[i], result.card );
 							if( !upgrade )
 								throw false;
 							result.promulgate(upgrade);
