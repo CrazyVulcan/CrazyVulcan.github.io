@@ -25,7 +25,7 @@
 		<div class="card-skill"><span class="card-skill-plus" ng-show="upgrade.type == 'admiral' && upgrade.skill >= 0">+</span>{{upgrade|valueOf:'skill':ship:fleet}}</div>
 	</div>
 
-	<div ng-if="!upgrade.skill" class="card-upgrade-type pull-left fs fs-{{upgrade.type}}"></div>
+	<div ng-if="!upgrade.skill && upgrade.type != 'captain' && upgrade.type != 'admiral' " class="card-upgrade-type pull-left fs fs-{{upgrade.type}}"></div>
 	
 	<div class="card-border-bottom">
 		<i ng-if="upgrade.talents" ng-repeat="talent in range(upgrade.talents) track by $index" class="fs fs-talent"></i>
