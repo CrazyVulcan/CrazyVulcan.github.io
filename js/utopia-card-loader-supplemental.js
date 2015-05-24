@@ -32,7 +32,7 @@ module.factory( "cardLoaderSupplemental", function($http, $filter, cardRules, $f
 							hull: 3,
 							shields: 0,
 							actions: ["evade","target-lock","scan","battlestations"],
-							upgrades: [ { type: ["tech"] }, { type: ["weapon"] }, { type: ["crew"] }, { type: ["crew"] } ],
+							upgrades: ["tech","weapon","crew","crew"],
 							cost: 16
 						}
 						

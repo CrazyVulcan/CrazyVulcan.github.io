@@ -31,6 +31,11 @@ module.factory( "cardLoader", function($http, $filter, cardRules, $factions, car
 				return;
 			}
 			
+			// Expand shorthand upgrade slots
+			for( var i = 0; i < ship.upgrades.length; i++ )
+				if( typeof ship.upgrades[i] == "string" )
+					ship.upgrades[i] = { type: [ ship.upgrades[i] ], source: "ship" };
+			
 			$.extend(true, ship, shipDefaults);
 		
 			// Add squadron equip rule

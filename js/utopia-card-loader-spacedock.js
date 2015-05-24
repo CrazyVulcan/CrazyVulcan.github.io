@@ -89,16 +89,16 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 						ship.actions.push( "regenerate" );
 
 					for( var i = 0; i < Number( data.find("Borg").text() ); i++ )
-						ship.upgrades.push( { type: ["borg"], source: "ship" } );
+						ship.upgrades.push( "borg" );
 					for( var i = 0; i < Number( data.find("Tech").text() ); i++ )
-						ship.upgrades.push( { type: ["tech"], source: "ship" } );
+						ship.upgrades.push( "tech" );
 					for( var i = 0; i < Number( data.find("Weapon").text() ); i++ )
-						ship.upgrades.push({ type: ["weapon"], source: "ship" } );
+						ship.upgrades.push( "weapon" );
 					for( var i = 0; i < Number( data.find("Crew").text() ); i++ )
-						ship.upgrades.push( { type: ["crew"], source: "ship" } );
+						ship.upgrades.push( "crew" );
 					var squadronUpgradeCount = Number( data.find("SquadronUpgrade").text() );
 					for( var i = 0; i < squadronUpgradeCount; i++ )
-						ship.upgrades.push( { type: ["squadron"], source: "ship" } );
+						ship.upgrades.push( "squadron" );
 					
 					// Mark as squadron
 					ship.squadron = squadronUpgradeCount > 0 || ship.class.indexOf("Squadron") >= 0;
