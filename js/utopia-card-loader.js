@@ -77,12 +77,25 @@ module.factory( "cardLoader", function($http, $filter, cardRules, $factions, car
 			
 		}
 		
+		var captainDefaults = {
+			factionPenalty: 1,
+			intercept: { ship: {}, fleet: {} },
+			canEquip: true,
+			canEquipCaptain: true,
+			canEquipFaction: true
+		};
+		
 		function loadCaptain(captain) {
 			
 			if( isDuplicate(captain, cards) ) {
 				console.log( "Duplicate card definition ignored", captain.id );
 				return;
 			}
+			
+			$.extend(true, captain, captainDefaults);
+			
+			// Set mirror flag
+			captain.mirror = $factions.hasFaction(captain, "mirror");
 			
 			// Add talent slots
 			captain.upgradeSlots = [];

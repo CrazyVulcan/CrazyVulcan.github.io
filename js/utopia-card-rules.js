@@ -2084,7 +2084,19 @@ module.factory( "cardRules", function($filter, $factions) {
 		
 		
 		
-		// SQUADRONS
+		// SUPPLEMENTAL
+		
+		"captain:soval_71800": {
+			intercept: {
+				ship: {
+					factionPenalty: function(upgrade,ship,fleet,factionPenalty) {
+						if( upgrade.type != "captain" && upgrade.type != "admiral" )
+							return 0;
+						return factionPenalty;
+					}
+				}
+			}
+		},
 		
 		
 		

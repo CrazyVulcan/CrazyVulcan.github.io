@@ -58,6 +58,18 @@ module.factory( "cardLoaderSupplemental", function($http, $filter, cardRules, $f
 							skill: 0,
 							talents: 0,
 							cost: 2
+						},
+						
+						{
+							id: "soval_71800",
+							type: "captain",
+							name: "Soval",
+							text: "You do not pay a faction penalty when deploying any Upgrades to your ship.",
+							factions: ["mirror"],
+							unique: true,
+							skill: 4,
+							talents: 1,
+							cost: 3
 						}
 						
 					]
