@@ -24,6 +24,11 @@
 }
 
 .fleet-ship-title-long {
+	font-size: 2.5em;
+	padding-top: 0.15em;
+}
+
+.fleet-ship-title-longer {
 	font-size: 2em;
 	padding-top: 0.25em;
 }
@@ -51,6 +56,7 @@
 .fleet-ship-middle {
 	display: flex;
 	background: #999;
+	clear: both;
 }
 
 .fleet-ship-left {

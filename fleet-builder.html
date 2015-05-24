@@ -2,7 +2,7 @@
 
 	<div class="fleet-ship-top">
 		<div class="fleet-ship-top-left" ng-class="{'fleet-ship-top-left-first':$first}"></div>
-		<div class="fleet-ship-title font-staw" ng-class="{'fleet-ship-title-long': ship.name.length > 20}">{{ ship.name }}</div>
+		<div class="fleet-ship-title font-staw" ng-class="{'fleet-ship-title-long': ship.name.length >= 18, 'fleet-ship-title-longer': ship.name.length >= 21}">{{ ship.name }}</div>
 		<div class="fleet-ship-top-spacer"></div>
 		<div class="fleet-ship-title fleet-ship-cost font-staw">{{ getTotalCost(ship,fleet) }} SP</div>
 		<div class="fleet-ship-top-spacer"></div>
@@ -12,9 +12,7 @@
 			<button class="title-button" ng-click="ship.hideEmptySlots = !ship.hideEmptySlots">Show Empty Slots</button>
 		</div>
 		<div class="fleet-ship-top-right"></div>
-		
 	</div>
-
 	<div class="fleet-ship-middle">
 		<div class="fleet-ship-left"></div>
 		
