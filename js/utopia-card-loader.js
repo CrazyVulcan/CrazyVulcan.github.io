@@ -151,12 +151,24 @@ module.factory( "cardLoader", function($http, $filter, cardRules, $factions, car
 			
 		}
 		
+		var upgradeDefaults = {
+			factionPenalty: 1,
+			intercept: { ship: {}, fleet: {} },
+			canEquip: true,
+			canEquipFaction: true
+		};
+		
 		function loadUpgrade(upgrade) {
 			
 			if( isDuplicate(upgrade, cards) ) {
 				console.log( "Duplicate card definition ignored", upgrade.id );
 				return;
 			}
+			
+			$.extend(true, upgrade, upgradeDefaults);
+			
+			// Set mirror flag
+			upgrade.mirror = $factions.hasFaction(upgrade, "mirror");
 			
 			// Apply specific card rules
 			if( cardRules[upgrade.type+":"+upgrade.id] )

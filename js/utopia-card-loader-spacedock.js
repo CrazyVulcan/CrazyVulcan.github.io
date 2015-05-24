@@ -7,6 +7,7 @@ var module = angular.module("utopia-card-loader-spacedock", ["utopia-card-rules"
 module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $factions) {
 	
 	function convertIconTags(str) {
+		str = str.replace( /\attack: \[target lock\]/ig, "ATTACK: (Target Lock)" );
 		str = str.replace( /\[hit\]/ig, "[hit]" );
 		str = str.replace( /\[crit(ical)?( hit)?\]/ig, "[crit]" );
 		str = str.replace( /\[eva(de|sive|sion)( maneuvers)?\]/ig, "[evade]" );
@@ -193,11 +194,7 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 						skill: Number( data.find("Skill").text() ),
 						talents: Number( data.find("Talent").text() ),
 						attack: Number( data.find("Attack").text() ),
-						range: data.find("Range").text().trim(),
-						factionPenalty: 1,
-						intercept: { ship: {}, fleet: {} },
-						canEquip: true,
-						canEquipFaction: true
+						range: data.find("Range").text().trim()
 					}
 
 					var additionalFaction = data.find("AdditionalFaction").text().toLowerCase();

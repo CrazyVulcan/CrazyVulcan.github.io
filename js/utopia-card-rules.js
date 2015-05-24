@@ -2098,6 +2098,22 @@ module.factory( "cardRules", function($filter, $factions) {
 			}
 		},
 		
+		"crew:orion_tactical_officer_71800": {
+			canEquip: onePerShip("Orion Tactical Officer")
+		},
+		
+		"crew:andorian_helmsman_71800": {
+			canEquip: onePerShip("Andorian Helmsman")
+		},
+		
+		// Enhanced Hull Plating
+		"tech:enhanced_hull_plating_71800": {
+			canEquip: onePerShip("Enhanced Hull Plating"),
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return $factions.hasFaction( ship, "mirror" ) && ship.hull <= 4;
+			}
+		},
+
 		
 		
 	};
