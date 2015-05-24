@@ -17,12 +17,14 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 		str = str.replace( /\[cloak\]/ig, "[cloak]" );
 		str = str.replace( /\[sensor ?echo\]/ig, "[sensor-echo]" );
 		str = str.replace( /\[(elite )?talent\]/ig, "[talent]" );
+		str = str.replace( /\[elite]/ig, "[talent]" );
 		str = str.replace( /\[crew\]/ig, "[crew]" );
 		str = str.replace( /\[tech\]/ig, "[tech]" );
 		str = str.replace( /\[weapon\]/ig, "[weapon]" );
 		str = str.replace( /\[borg\]/ig, "[borg]" );
 		str = str.replace( /\[straight\]/ig, "[forward]" );
 		str = str.replace( /\[reverse\]/ig, "[reverse]" );
+		str = str.replace( /\[double hit\]/ig, "[hit][hit]" );
 		return str;
 	}
 
@@ -33,7 +35,7 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 	
 	return {
 	
-		loadCards: function( loadShip, loadCaptain, loadAdmiral, loadUpgrade, callback ) {
+		loadCards: function( loadShip, loadCaptain, loadAdmiral, loadUpgrade, loadResource, callback ) {
 			
 			// Load from Space Dock data file
 			$http.get( "data/data.xml" ).success( function(data) {
@@ -227,6 +229,23 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 					loadUpgrade(upgrade);
 
 				});
+				
+				
+				doc.find("Resource").each( function(i, data) {
+
+					data = $(data);
+					
+					var resource = {
+						type: "resource",
+						id: data.find("Id").text(),
+						name: data.find("Title").text(),
+						text: convertIconTags( data.find("Ability").text() ),
+						cost: Number( data.find("Cost").text() ),
+					};
+					
+					loadResource( resource );
+					
+				} );
 				
 				if(callback)
 					callback();

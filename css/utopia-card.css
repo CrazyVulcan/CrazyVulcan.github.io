@@ -534,3 +534,16 @@
 .fleet-ship-inner .drag-over  .card-outer[draggable] {
 	opacity: 0.2;
 }
+
+.card-resource-header {
+	background: #a8b6bf;
+	border-radius: 1em;
+}
+
+.card-resource .card-text {
+	margin: 0;
+	margin-top: 0.2em;
+	height: 20.7em;
+	text-align: left;
+	overflow: auto;
+}

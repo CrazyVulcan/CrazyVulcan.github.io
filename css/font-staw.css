@@ -155,3 +155,7 @@
 .fs-admiral:before {
   content: "A";
 }
+
+.fs-resource:before {
+  content: "A";
+}

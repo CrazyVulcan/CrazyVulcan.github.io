@@ -25,22 +25,6 @@ module.filter( "upgradeSlots", function() {
 	
 		return slots;
 		
-		/*
-		var slots = [];
-		
-		if( ship.captain ) {
-			if( ship.captain.upgradeSlots )
-				slots = slots.concat( ship.captain.upgradeSlots );
-		}
-		
-		$.each( ship.upgrades.concat(ship.upgradeSlots || []), function(i,slot) {
-			slots.push( slot );
-			if( slot.occupant && slot.occupant.upgradeSlots )
-				slots = slots.concat( slot.occupant.upgradeSlots );
-		} );
-		
-		return slots;
-		*/
 	}
 	
 } );

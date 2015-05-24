@@ -178,9 +178,24 @@ module.factory( "cardLoader", function($http, $filter, cardRules, $factions, car
 			
 		}
 		
-		cardLoaderSpacedock.loadCards( loadShip, loadCaptain, loadAdmiral, loadUpgrade, function() {
+		// TODO Lots of extra logic for specific resources
+		// Flagship, Fleet Captain, Officer Cards, Attack Fighters, Officer Exchange Program, Sideboard, High Yield Photons
+		// The rest should just be a card with a fixed cost.
+		
+		var resourceDefaults = {
+			intercept: { ship: {}, fleet: {} },
+			canEquip: true,
+			canEquipFaction: true
+		};
+		
+		function loadResource(resource) {
+			$.extend(true, resource, resourceDefaults);
+			cards.push(resource);
+		}
+		
+		cardLoaderSpacedock.loadCards( loadShip, loadCaptain, loadAdmiral, loadUpgrade, loadResource, function() {
 			
-			cardLoaderSupplemental.loadCards( loadShip, loadCaptain, loadAdmiral, loadUpgrade );
+			cardLoaderSupplemental.loadCards( loadShip, loadCaptain, loadAdmiral, loadUpgrade, loadResource );
 
 			if( callback )
 				callback();

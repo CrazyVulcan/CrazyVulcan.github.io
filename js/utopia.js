@@ -1,4 +1,4 @@
-var module = angular.module("utopia", ["ngSanitize", "utopia-card-ship", "utopia-card-upgrade", "utopia-dragdrop", "utopia-fleet-builder", "utopia-card-loader", "utopia-card-rules"]);
+var module = angular.module("utopia", ["ngSanitize", "utopia-card-ship", "utopia-card-upgrade", "utopia-card-resource", "utopia-dragdrop", "utopia-fleet-builder", "utopia-card-loader", "utopia-card-rules"]);
 
 module.filter( "cardFilter", function($factions) {
 
@@ -21,18 +21,6 @@ module.filter( "cardFilter", function($factions) {
 					return null;
 			}
 
-			// Faction selection
-			var noneSelected = true;
-			var hasAFaction = false;
-			$.each( options.factions, function(name, data) {
-				if( data.search ) {
-					noneSelected = false;
-					hasAFaction |= $factions.hasFaction(card,name);
-				}
-			});
-			if( !(noneSelected || hasAFaction) )
-				return null;
-
 			// Type selection
 			var noneSelected = true;
 			$.each( options.types, function(name, data) {
@@ -44,6 +32,22 @@ module.filter( "cardFilter", function($factions) {
 			if( !(noneSelected || options.types[card.type].search) )
 				return null;
 
+			// Resources skip faction
+			if( card.type == "resource" )
+				return card;
+			
+			// Faction selection
+			var noneSelected = true;
+			var hasAFaction = false;
+			$.each( options.factions, function(name, data) {
+				if( data.search ) {
+					noneSelected = false;
+					hasAFaction |= $factions.hasFaction(card,name);
+				}
+			});
+			if( !(noneSelected || hasAFaction) )
+				return null;
+			
 			return card;
 		});
 
@@ -145,7 +149,7 @@ module.controller( "UtopiaCtrl", function($scope, $http, $filter, cardLoader) {
 		$.each( $scope.cards, function(i, card) {
 			if( !$scope.search.types[card.type] )
 				$scope.search.types[card.type] = {};
-			$.each( card.factions, function(j, faction) {
+			$.each( card.factions || [], function(j, faction) {
 				if( !$scope.search.factions[faction] )
 					$scope.search.factions[faction] = {};
 			} );
