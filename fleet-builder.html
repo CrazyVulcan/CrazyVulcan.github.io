@@ -22,7 +22,7 @@
 				<card-ship ship="ship" drag-store="dragStore"></card-ship>
 			</div><!--
 			Stupid whitespace breaks card alignment
-		 --><div class="card-container" ng-hide="ship.squadron" droppable can-drop="$item.type == 'captain'" drop="setShipCaptain(fleet,ship,$item)" drag-store="dragStore">
+		 --><div class="card-container" ng-hide="ship.squadron" droppable can-drop="$item.type == 'captain' && $item != ship.captain" drop="setShipCaptain(fleet,ship,$item)" drag-store="dragStore">
 				<div class="card-outer card-drop-target font-staw" ng-click="setSearchTypes(['captain'])">
 					<div class="card-drop-target-inner">
 						<div class="card-drop-target-type">
@@ -34,7 +34,7 @@
 			</div><!--
 			
 		 --><div class="card-container" ng-hide="!ship.admiral && ( ship.squadron || ship.hideEmptySlots || fleetHasAdmiral(fleet) )"
-				droppable can-drop="$item.type == 'admiral'" drop="setShipAdmiral(fleet,ship,$item)" drag-store="dragStore">
+				droppable can-drop="$item.type == 'admiral' && $item != ship.admiral" drop="setShipAdmiral(fleet,ship,$item)" drag-store="dragStore">
 				<div class="card-outer card-drop-target font-staw" ng-click="setSearchTypes(['admiral'])">
 					<div class="card-drop-target-inner">
 						<div class="card-drop-target-type">
