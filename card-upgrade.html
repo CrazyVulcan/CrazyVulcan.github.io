@@ -19,7 +19,7 @@
 		<div class="card-text-inner font-staw-alt" ng-bind-html="upgrade.text | icons"></div>
 	</div>
 
-	<div class="card-upgrade-cost pull-right"><i ng-repeat="faction in upgrade.factions" class="card-ship-faction card-faction-{{faction}} fs fs-blank" ng-class="{'card-faction-first':$first}"></i><div class="card-upgrade-cost-value">{{upgrade|valueOf:'cost':ship:fleet}}</div></div>
+	<div class="card-upgrade-cost pull-right"><div ng-repeat="faction in upgrade.factions" class="card-upgrade-faction card-faction-{{upgrade.factions.length-$index}}"><div class="card-upgrade-faction-black"></div><div class="card-upgrade-faction-icon card-faction-{{faction}}""></div></div><div class="card-upgrade-cost-value">{{upgrade|valueOf:'cost':ship:fleet}}</div></div>
 
 	<div ng-if="upgrade.type == 'captain' || upgrade.type == 'admiral' || upgrade.skill" class="card-skill-container pull-left">
 		<div class="card-skill"><span class="card-skill-plus" ng-show="upgrade.type == 'admiral' && upgrade.skill >= 0">+</span>{{upgrade|valueOf:'skill':ship:fleet}}</div>
