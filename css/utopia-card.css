@@ -360,7 +360,7 @@
 .card-border-left {
 	background: #a8b6bf;
 	width: 0.8em;
-	height: 4em;
+	height: 4.11em;
 	margin-top: 0.2em;
 	clear: left;
 }
@@ -379,15 +379,16 @@
 }
 
 .card-skill-container {
-	border: 0.05em solid black;
-	border-radius: 0.3em;
+	border-radius: 0.35em;
 	font-size: 1.4em;
 	width: 1.3em;
-	height: 1.1em;
-	background: red;
+	height: 1.3em;
+	background: black;
 	clear: left;
 	position: relative;
 	top: -0.2em;
+	left: -0.05em;
+	padding: 0.05em;
 }
 
 .card-skill {
