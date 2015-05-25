@@ -125,7 +125,7 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 						skill: Number( data.find("Skill").text() ),
 						talents: Number( data.find("Talent").text() ),
 						set: data.find("Set").text()
-					}
+					};
 
 					var additionalFaction = data.find("AdditionalFaction").text().toLowerCase();
 					if( additionalFaction )
@@ -142,9 +142,10 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 					// Filter out duplicates (xml has a dupe captains for each slot type they could add - Picard 8, Chak 5, Cal Hudson)
 					var ignore = [ "jean_luc_picard_71531", "jean_luc_picard_c_71531", "jean_luc_picard_d_71531", "chakotay_b_71528", "calvin_hudson_b_71528", "calvin_hudson_c_71528" ];
 					if( $.inArray( captain.id, ignore ) >= 0 )
-						return false;
+						captain = false;
 
-					loadCaptain(captain);
+					if( captain )
+						loadCaptain(captain);
 
 				});
 
