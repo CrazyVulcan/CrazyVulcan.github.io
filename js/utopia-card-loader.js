@@ -47,7 +47,7 @@ module.factory( "cardLoader", function($http, $filter, cardRules, $factions, car
 				ship.canJoinFleet = function(ship,ship2,fleet) {
 					var numShipsHull4Plus = 0;
 					var numSquadrons = 0;
-					$.each(fleet,function(i,ship) {
+					$.each(fleet.ships,function(i,ship) {
 						if( ship.squadron )
 							numSquadrons++;
 						else if( ship.hull >= 4 )

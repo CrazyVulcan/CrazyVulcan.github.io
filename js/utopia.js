@@ -92,7 +92,7 @@ module.filter( "fleetCardNamed", function($filter) {
 		}
 
 		var match = false;
-		$.each( fleet, function(i, ship) {
+		$.each( fleet.ships, function(i, ship) {
 			match = shipCardNamed(ship, name);
 			if( match )
 				return false;
@@ -141,7 +141,7 @@ module.controller( "UtopiaCtrl", function($scope, $http, $filter, cardLoader) {
 	$scope.drag = {};
 
 	$scope.cards = [];
-	$scope.activeFleet = [];
+	$scope.activeFleet = { ships: [] };
 
 	$scope.loading = true;
 	cardLoader( $scope.cards, function() {

@@ -62,7 +62,7 @@ module.directive( "fleetBuilder", function($filter) {
 				//ship = $.extend(true,{},ship);
 				ship = angular.copy(ship);
 				
-				fleet.push( ship );
+				fleet.ships.push( ship );
 				
 				return ship;
 				
@@ -168,7 +168,7 @@ module.directive( "fleetBuilder", function($filter) {
 				
 				var hasAdmiral = false;
 				
-				$.each( fleet, function(i,ship) {
+				$.each( fleet.ships, function(i,ship) {
 					if( ship.admiral ) {
 						hasAdmiral = true;
 						return false;
@@ -215,7 +215,7 @@ module.directive( "fleetBuilder", function($filter) {
 				
 				var clash = false;
 				
-				$.each( fleet, function(i, ship) {
+				$.each( fleet.ships, function(i, ship) {
 					
 					if( card == ship || isUniqueClash(card, ship) ) {
 						clash = ship;
@@ -254,13 +254,19 @@ module.directive( "fleetBuilder", function($filter) {
 			
 			$scope.removeFromFleet = function( card, fleet, replaceWith ) {
 				
-				$.each( fleet, function(i, ship) {
+				if( !card )
+					return false;
+				
+				if( card == fleet.resource )
+					delete fleet.resource;
+				
+				$.each( fleet.ships, function(i, ship) {
 					
 					if( card == ship ) {
 						if( replaceWith && replaceWith.type == "ship" )
-							fleet[i] = replaceWith;
+							fleet.ships[i] = replaceWith;
 						else
-							fleet.splice(i,1);
+							fleet.ships.splice(i,1);
 						return false;
 					}
 					
@@ -320,9 +326,9 @@ module.directive( "fleetBuilder", function($filter) {
 			
 			$scope.getFleetCost = function(fleet) {
 				
-				var cost = 0;
+				var cost = fleet.resource ? fleet.resource.cost : 0;
 				
-				$.each( fleet, function(i, ship) {
+				$.each( fleet.ships, function(i, ship) {
 					cost += $scope.getTotalCost(ship,fleet);
 				});
 				
@@ -330,13 +336,23 @@ module.directive( "fleetBuilder", function($filter) {
 				
 			};
 			
+			$scope.setFleetResource = function(fleet, resource) {
+				// TODO Might need to trigger some things when switching resource
+				fleet.resource = resource;
+			};
+			
+			// TODO Move save/load to new module
 			$scope.saveFleet = function(fleet) {
 				
 				var savedFleet = {
 					ships: []
 				};
 				
-				$.each( fleet, function(i, ship) {
+				// TODO Might need to save more data for some resources
+				if( fleet.resource )
+					savedFleet.resource = { id: fleet.resource.type+":"+fleet.resource.id };
+				
+				$.each( fleet.ships, function(i, ship) {
 					savedFleet.ships.push( saveCard(ship) );
 				});
 				
@@ -464,7 +480,13 @@ module.directive( "fleetBuilder", function($filter) {
 			
 			$scope.loadFleet = function(cards, savedFleet) {
 				
-				var fleet = [];
+				var fleet = { ships: [] };
+				
+				if( savedFleet.resource ) {
+					result = loadCard( fleet, cards, savedFleet.resource );
+					if( result )
+						fleet.resource = result.card;
+				}
 				
 				$.each( savedFleet.ships, function(i, savedShip) {
 					
@@ -496,7 +518,7 @@ module.directive( "fleetBuilder", function($filter) {
 					if( hashFleet ) {
 						
 						// Hide empty slots when loading a fleet.. so it looks nice.
-						$.each( hashFleet, function(i,ship) {
+						$.each( hashFleet.ships, function(i,ship) {
 							ship.hideEmptySlots = true;
 						} );
 						

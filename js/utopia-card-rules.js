@@ -115,7 +115,7 @@ module.factory( "cardRules", function($filter, $factions) {
 			// Can't join fleet with AV80279 in it
 			canJoinFleet: function(ship, ship2, fleet) {
 				var canJoin = true;
-				$.each( fleet, function(i, other) {
+				$.each( fleet.ships, function(i, other) {
 					if( other.name == "Assimilated Vessel 80279" ) {
 						canJoin = false;
 						return false;
@@ -137,7 +137,7 @@ module.factory( "cardRules", function($filter, $factions) {
 			// Can't join fleet with AV64758 in it
 			canJoinFleet: function(ship, ship2, fleet) {
 				var canJoin = true;
-				$.each( fleet, function(i, other) {
+				$.each( fleet.ships, function(i, other) {
 					if( other.name == "Assimilated Vessel 64758" ) {
 						canJoin = false;
 						return false;
