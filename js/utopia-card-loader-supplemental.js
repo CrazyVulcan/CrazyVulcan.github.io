@@ -11,11 +11,114 @@ module.factory( "cardLoaderSupplemental", function($http, $filter, cardRules, $f
 		loadCards: function( loadShip, loadCaptain, loadAdmiral, loadUpgrade, loadResource ) {
 			
 			var data = [
+
+				{
+					id: "71799",
+					
+					name: "Kyana Prime Expansion",
+					
+					cards: [
+					
+						{
+							type: "ship",
+							name: "Kyana Prime",
+							class: "Krenim Weapon Ship",
+							text: "ACTION: Roll 3 defense dice. For every [evade] result, place 1 [evade] Token beside your ship.",
+							factions: ["independent","mirror"],
+							unique: true,
+							attack: 4,
+							agility: 1,
+							hull: 6,
+							shields: 4,
+							actions: ["target-lock","scan","battlestations"],
+							upgrades: ["tech","tech","weapon","weapon"],
+							cost: 30
+						},
+						
+						{
+							type: "captain",
+							name: "Annorax",
+							text: "Add 1 [tech] Upgrade slot to your Upgrade Bar.\n\nIf Annorax is assinged to a Krenim weapon ship, any time you roll dice, for any reason, you may disable 1 of your Upgrades to choose one of those dice and re-roll it.",
+							factions: ["independent","mirror"],
+							unique: true,
+							skill: 8,
+							talents: 1,
+							cost: 5
+						},
+						
+						{
+							type: "captain",
+							name: "Obrist",
+							text: "At the start of the game, place 1 Mission Token on this card.\n\nACTION: If you performed a Green Maneuver this round, discard the Mission Token from this card and 1 of your [weapon] Upgrades to target a ship at Range 1-3. You cannot attack or be attacked by that ship this round. You cannot perform any free Actions this round.",
+							factions: ["independent","mirror"],
+							unique: true,
+							skill: 4,
+							talents: 0,
+							cost: 3
+						},
+						
+						{
+							type: "talent",
+							name: "Causality Paradox",
+							text: "ACTION: Discard this card to target a ship at Range 1-3. Discard 1 Upgrade of your choice on the target ship. Then remove 1 Disabled Upgrade Token from 1 of your Upgrades, if possible.\n\nThis upgrade may only be purchased for Annorax or any other Krenim Captain assigned to a Krenim weapon ship.",
+							factions: ["independent","mirror"],
+							unique: true,
+							cost: 5
+						},
+					
+						{
+							type: "weapon",
+							name: "Chroniton Torpedoes",
+							text: "ATTACK: (Target Lock) Spend your target lock and disable this card to perform this attack.\n\nAll damage inflicted by this attack ignores the opposing ship's Shields.\n\nYou may fire this weapon from your forward or rear firing arcs. This Upgrade costs +5 SP for any ship other than a Krenim weapon ship.",
+							factions: ["independent","mirror"],
+							cost: 6,
+							range: "2 - 3",
+							attack: 5
+						},
+						
+						{
+							type: "weapon",
+							name: "Temporal Incursion",
+							text: "ATTACK: (Target Lock) Spend your target lock and disable this card to perform this attack.\n\n In addition to normal damage, for every uncancelled [crit] result, discard 1 Upgrade at random on the target ship. Then for every uncancelled [hit] result, disable 1 Upgrade at random on the target ship. This Upgrade may only be purchased for a Krenim weapon ship.",
+							factions: ["independent","mirror"],
+							cost: 9,
+							range: "3",
+							attack: 8
+						},
+						
+						{
+							type: "tech",
+							name: "Temporal Wave Front",
+							text: "ACTION: Discard this card to target every ship in your forward firing arc within Range 1-3. Each target ship must roll 3 defense dice. For every blank result a ship rolls, that ship must disable 1 of its cards at random (Captain, Admiral, or Upgrade card).\n\nThis Upgrade may only be purchased for a Krenim weapon ship.",
+							factions: ["independent","mirror"],
+							unique: true,
+							cost: 6
+						},
+						
+						{
+							type: "tech",
+							name: "Temporal Core",
+							text: "ACTION: Disable this card to perform this Action. When defending this round, all ships roll -2 attack dice against your ship until the End Phase. This Action cannot reduce an attack below 1 attack die. You cannot perform any free Actions this round.\n\nThis Upgrade may only be purchased for a Krenim weapon ship.",
+							factions: ["independent","mirror"],
+							cost: 6
+						},
+						
+						{
+							type: "tech",
+							name: "Spatial Distortion",
+							text: "ACTION: Discard this card to remove your ship from the play area and discard all Tokens that are beside your ship except for Auxiliary Power Tokens. During the End Phase, place your ship back in the play area. You cannot place your ship within Range 1-3 of any enemy ship.\n\nThis Upgrade may only be purchased for a Krenim weapon ship.",
+							factions: ["independent","mirror"],
+							cost: 6
+						},
+					
+					]
+					
+				},
 			
 				{
 					id: "71800",
 					
-					// TODO set data
+					name: "I.S.S. Avenger Expansion",
 					
 					cards: [
 					
@@ -132,7 +235,8 @@ module.factory( "cardLoaderSupplemental", function($http, $filter, cardRules, $f
 						
 					]
 					
-				}
+				},
+
 			
 			];
 			

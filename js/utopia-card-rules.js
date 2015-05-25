@@ -622,6 +622,7 @@ module.factory( "cardRules", function($filter, $factions) {
 		// Miles O'Brien MU
 		"captain:miles_o_brien_71529": {
 			upgradeSlots: [ 
+				{}, // Existing talent slot
 				{ 
 					type: ["tech"], 
 					source: "Miles O'Brien" 
@@ -632,6 +633,7 @@ module.factory( "cardRules", function($filter, $factions) {
 		// Borg Queen
 		"captain:borg_queen_71513a": {
 			upgradeSlots: [ 
+				{}, // Existing talent slot
 				{ 
 					type: ["borg"], 
 					source: "Borg Queen" 
@@ -2085,6 +2087,64 @@ module.factory( "cardRules", function($filter, $factions) {
 		
 		
 		// SUPPLEMENTAL
+		
+		// Kyana
+		
+		"captain:annorax_71799": {
+			upgradeSlots: [
+				{}, // Existing talent slot
+				{ 
+					type: ["tech"],
+					source: "Annorax"
+				}
+			]
+		},
+		
+		// Causality Paradox
+		"talent:causality_paradox_71799": {
+			// Only equip on krenim weapon ship with Annorax or other Krenim captain.
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return ship.class == "Krenim Weapon Ship" && ship.captain && (ship.captain.name == "Annorax" || ship.captain.name == "Obrist" || ship.captain.name.indexOf("Krenim") >= 0 );
+			}
+		},
+		
+		// Chroniton Torpedoes
+		"weapon:chroniton_torpedoes_71799": {
+			cost: function(upgrade,ship,fleet) {
+				return ship && ship.class != "Krenim Weapon Ship" ? 11 : 6;
+			}
+		},
+		
+		// Temporal Incursion
+		"weapon:temporal_incursion_71799": {
+			canEquip: function(upgrade,ship,fleet) {
+				return ship.class == "Krenim Weapon Ship";
+			}
+		},
+		
+		// Temporal Wave Front
+		"tech:temporal_wave_front_71799": {
+			canEquip: function(upgrade,ship,fleet) {
+				return ship.class == "Krenim Weapon Ship";
+			}
+		},
+		
+		// Temporal Core
+		"tech:temporal_core_71799": {
+			canEquip: function(upgrade,ship,fleet) {
+				return ship.class == "Krenim Weapon Ship";
+			}
+		},
+		
+		// Spatial Distortion
+		"tech:spatial_distortion_71799": {
+			canEquip: function(upgrade,ship,fleet) {
+				return ship.class == "Krenim Weapon Ship";
+			}
+		},
+		
+		
+		// Avenger
 		
 		"captain:soval_71800": {
 			intercept: {
