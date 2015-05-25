@@ -65,40 +65,6 @@
 		
 </div>
 
-<div class="fleet-ship-container" ng-show="fleet.ships.length > 0">
-
-	<div class="fleet-ship-top">
-		<div class="fleet-ship-top-left"></div>
-		<div class="fleet-ship-title font-staw">{{ fleet.resource ? fleet.resource.name : 'No Resource' }}</div>
-		<div class="fleet-ship-top-spacer"></div>
-		<div class="fleet-ship-title fleet-ship-cost font-staw">{{ fleet.resource ? fleet.resource.cost : 0 }} SP</div>
-		<div class="fleet-ship-top-right"></div>
-	</div>
-	
-	<div class="fleet-ship-middle">
-		<div class="fleet-ship-left"></div>
-		
-		<div class="fleet-ship-inner">
-
-			<div class="card-container" droppable can-drop="$item.type == 'resource' && $item != fleet.resource" drop="setFleetResource(fleet,$item)" drag-store="dragStore">
-				<div class="card-outer card-drop-target font-staw" ng-click="setSearchTypes(['resource'])">
-					<div class="card-drop-target-title">Not yet fully-featured</div>
-					<div class="card-drop-target-inner">
-						<div class="card-drop-target-type">
-							<i class="fs fs-resource"></i><br/>Resource
-						</div>
-					</div>
-					<div class="card-drop-target-subtitle">Fleet building features like Flagship cards aren't yet implemented, but you can drop the rules card here for the SP cost</div>
-				</div>
-				<card-resource ng-if="fleet.resource" resource="fleet.resource" fleet="fleet" drag-store="dragStore"></card-resource>
-			</div>
-			
-		</div>
-
-	</div>
-
-</div>
-
 <div class="fleet-ship-container" ng-hide="loading">
 
 	<div class="fleet-ship-top">
@@ -128,6 +94,20 @@
 					<div ng-show="isMobile && (!dragStore.item || dragStore.item.type != 'ship')" class="card-drop-target-subtitle">Tap a ship card to select it</div>
 					<div ng-show="isMobile && dragStore.item && dragStore.item.type == 'ship'" class="card-drop-target-subtitle">Tap here to add selected ship to fleet</div>
 				</div>
+			</div><!--
+			
+			--><div class="card-container" ng-show="fleet.ships.length > 0 || fleet.resource"
+				droppable can-drop="$item.type == 'resource' && $item != fleet.resource" drop="setFleetResource(fleet,$item)" drag-store="dragStore">
+				<div class="card-outer card-drop-target font-staw" ng-click="setSearchTypes(['resource'])">
+					<div class="card-drop-target-title">Not yet fully-featured</div>
+					<div class="card-drop-target-inner">
+						<div class="card-drop-target-type">
+							<i class="fs fs-resource"></i><br/>Resource
+						</div>
+					</div>
+					<div class="card-drop-target-subtitle">Fleet building features like Flagship cards aren't yet implemented, but you can drop the rules card here for the SP cost</div>
+				</div>
+				<card-resource ng-if="fleet.resource" resource="fleet.resource" fleet="fleet" drag-store="dragStore"></card-resource>
 			</div>
 			
 		</div>
@@ -135,7 +115,7 @@
 	</div>
 	
 	<div class="fleet-ship-bottom">
-		<div class="fleet-ship-bottom-left"></div>
+		<div class="fleet-ship-bottom-left" ng-class="{'fleet-ship-bottom-left-long': fleet.ships.length > 0 || fleet.resource}"></div>
 	</div>
-
+	
 </div>
