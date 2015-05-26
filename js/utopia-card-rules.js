@@ -1247,7 +1247,12 @@ module.factory( "cardRules", function($filter, $factions) {
 					intercept: {
 						ship: {
 							canEquip: function(upgrade,ship,fleet) {
-								return upgrade.cost <= 5;
+								// Evaluate calculated cost
+								var cost = upgrade.cost instanceof Function ? upgrade.cost(upgrade,ship,fleet,0) : upgrade.cost;
+								// Apply faction penalty before deciding
+								if( !$factions.match(upgrade,ship) )
+									cost += upgrade.factionPenalty instanceof Function ? upgrade.factionPenalty(upgrade,ship,fleet) : upgrade.factionPenalty;
+								return cost <= 5;
 							},
 							canEquipFaction: function(upgrade,ship,fleet) {
 								return !$factions.hasFaction(upgrade,"borg");
