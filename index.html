@@ -35,10 +35,12 @@
 			
 				<div class="u-search">
 
-					<label><input class="u-search-query" ng-model="search.query" placeholder="Search"></label>
 					
-					<button ng-click="resetSearch()">Reset</button>
-					<button ng-click="showAdvanced = !showAdvanced">Advanced</button>
+					<div class="search-query-container">
+						<label><input class="u-search-query" ng-model="search.query" placeholder="Search"></label>
+						<button ng-click="resetSearch()">Reset</button>
+						<button ng-click="showAdvanced = !showAdvanced">Advanced</button>
+					</div>
 
 					<div ng-show="showAdvanced && (!drag.item || drag.source == 'search')">
 					

@@ -35,9 +35,12 @@ body {
 
 .u-search {
 	text-align: left;
-	float: left;
-	padding: 0.2em 0.7em;
+	padding: 0.2em 0.6em;
 	font-size: 1.5em;
+}
+
+.u-search .search-query-container {
+	text-align: center;
 }
 
 .u-search .u-faction {
@@ -102,6 +105,7 @@ body {
 	background: #999;
 	border-radius: 0.5em;
 	padding-left: 1em;
+	margin-top: 0.4em;
 }
 
 .u-search-header span {
@@ -144,4 +148,16 @@ body {
 
 .toggle-button-value-active {
 	background: #dd6666;
+}
+
+@-moz-document url-prefix() {
+    .u-search-results {
+		margin-right: -17px;
+		overflow-x: hidden;
+		width: 347px;
+		padding-left: 9px;
+	}
+	.u-fleet {
+		background: #eee;
+	}
 }
