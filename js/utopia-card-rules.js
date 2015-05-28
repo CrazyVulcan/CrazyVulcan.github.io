@@ -2091,7 +2091,7 @@ module.factory( "cardRules", function($filter, $factions) {
 		
 		
 		
-		// SUPPLEMENTAL
+		// WAVE 14
 		
 		// Kyana
 		
@@ -2180,6 +2180,243 @@ module.factory( "cardRules", function($filter, $factions) {
 		},
 
 		
+		// U.S.S. Pegasus
+		"ship:u_s_s_pegasus_71801": {
+			intercept: {
+				ship: {
+					cost: function(upgrade,ship,fleet,cost) {
+						if( upgrade.type == "tech" ) {
+							cost = cost instanceof Function ? cost(upgrade,ship,fleet,0) : cost;
+							if( cost > 0 )
+								cost -= 1;
+						}
+						return cost;
+					}
+				}
+			}
+		},
+		
+		// Specialized Shields
+		"tech:specialized_shields_71801": {
+			canEquip: function(upgrade,ship,fleet) {
+				return ship.hull <= 3;
+			},
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return $factions.hasFaction( ship, "federation" );
+			}
+		},
+		
+		// Phasing Cloaking Device
+		"tech:phasing_cloaking_device_71801": {
+			cost: function(upgrade,ship,fleet) {
+				return ship && ship.class != "Oberth Class" ? 10 : 5;
+			}
+		},
+		
+		// Eric Motz
+		"crew:eric_motz_71801": {
+			upgradeSlots: [
+				{
+					type: ["tech"],
+					source: "Eric Motz"
+				}
+			]
+		},
+		
+		// William T. Riker
+		"crew:william_t_riker_71801": {
+			intercept: {
+				ship: {
+					skill: function(upgrade,ship,fleet,skill) {
+						if( upgrade == ship.captain ) {
+							skill = skill instanceof Function ? skill(upgrade,ship,fleet,0) : skill;
+							skill += 3;
+						}
+						return skill;
+					}
+				}
+			}
+		},
+		
+		
+		
+		// WAVE 15
+		
+		// Krim
+		"captain:krim_71803": {
+			upgradeSlots: [
+				{}, // Talent
+				{
+					type: ["tech"],
+					source: "Krim"
+				}
+			]
+		},
+		
+		// Jaro Essa
+		"captain:jaro_essa_cap_71803": {
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship, "bajoran");
+			}
+		},
+		
+		"admiral:jaro_essa_71803": {
+			canEquipAdmiral: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship, "bajoran");
+			}
+		},
+		
+		// Assault Vessel Upgrade
+		// TODO Make upgrades multi typed
+		"tech:assault_vessel_upgrade_t_71803": {
+			canEquip: function(upgrade,ship,fleet) {
+				if( ship.class == "Bajoran Scout Ship" ) {
+					return onePerShip("Assault Vessel Upgrade")(upgrade,ship,fleet);
+				}
+				return false;
+			}
+		},
+		"weapon:assault_vessel_upgrade_w_71803": {
+			canEquip: function(upgrade,ship,fleet) {
+				if( ship.class == "Bajoran Scout Ship" ) {
+					return onePerShip("Assault Vessel Upgrade")(upgrade,ship,fleet);
+				}
+				return false;
+			}
+		},
+		"crew:assault_vessel_upgrade_c_71803": {
+			canEquip: function(upgrade,ship,fleet) {
+				if( ship.class == "Bajoran Scout Ship" ) {
+					return onePerShip("Assault Vessel Upgrade")(upgrade,ship,fleet);
+				}
+				return false;
+			}
+		},
+		
+		// Bajoran Militia
+		"crew:bajoran_militia_71803": {
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship, "bajoran");
+			}
+		},
+		
+		
+		
+		// Korinar
+		
+		// TODO It's not clear whether Mauk-to'Vor should get a faction penalty or cost=3 avoids this
+		"captain:kurn_71999p": {
+			upgradeSlots: [
+				{
+					type: ["talent"],
+					source: "Kurn (Mauk-to'Vor Only at 3SP)",
+					canEquip: function(upgrade,ship,fleet) {
+						return upgrade.name == "Mauk-to'Vor";
+					},
+					intercept: {
+						ship: {
+							cost: function() { return 3; }
+						}
+					}
+				}
+			],
+			factionPenalty: function() { return 0; }
+		},
+		
+		// Klingon Stealth Team
+		"crew:klingon_stealth_team_71999p": {
+			canEquip: onePerShip("Klingon Stealth Team"),
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship, "klingon");
+			}
+		},
+		
+		// Mauk-to'Vor
+		"talent:mauk_to_vor_71999p": {
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship, "klingon") && $factions.hasFaction(ship.captain, "klingon");
+			}
+		},
+		
+		// Ambush Attack
+		"weapon:ambush_attack_71999p": {
+			canEquip: onePerShip("Ambush Attack")
+		},
+		
+		
+		// Hood
+		
+		// Systems Upgrade
+		// TODO Make upgrades multi typed
+		"tech:systems_upgrade_71998p": {
+			upgradeSlots: [
+				{
+					type: ["tech"],
+					source: "Systems Upgrade"
+				}
+			],
+			intercept: {
+				ship: {
+					shields: function(upgrade,ship,fleet,shields) {
+						return shields + 1;
+					}
+				}
+			},
+			canEquip: onePerShip("Systems Upgrade"),
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship,"federation");
+			}
+		},
+		
+		"crew:systems_upgrade_c_71998p": {
+			upgradeSlots: [
+				{
+					type: ["tech"],
+					source: "Systems Upgrade"
+				}
+			],
+			intercept: {
+				ship: {
+					shields: function(upgrade,ship,fleet,shields) {
+						return shields + 1;
+					}
+				}
+			},
+			canEquip: onePerShip("Systems Upgrade"),
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship,"federation");
+			}
+		},
+		
+		"weapon:systems_upgrade_w_71998p": {
+			upgradeSlots: [
+				{
+					type: ["tech"],
+					source: "Systems Upgrade"
+				}
+			],
+			intercept: {
+				ship: {
+					shields: function(upgrade,ship,fleet,shields) {
+						return shields + 1;
+					}
+				}
+			},
+			canEquip: onePerShip("Systems Upgrade"),
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship,"federation");
+			}
+		},
+		
+		// Type 8 Phaser Array
+		"weapon:type_8_phaser_array_71998p": {
+			canEquip: function(upgrade,ship,fleet) {
+				if( ship.attack <= 3 ) {
+					return onePerShip("Type 8 Phaser Array")(upgrade,ship,fleet);
+				}
+				return false;
+			}
+		},
 		
 	};
 	
