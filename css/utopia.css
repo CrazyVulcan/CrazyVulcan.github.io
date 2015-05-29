@@ -89,6 +89,32 @@ body {
 	width: 330px;
 }
 
+.u-search-results.u-search-cols-0 {
+	width: 0;
+	padding: 0;
+}
+
+.u-search-results.u-search-cols-1 {
+	width: 330px;
+}
+
+.u-search-results.u-search-cols-2 {
+	width: 630px;
+}
+
+.u-search-results.u-search-cols-3 {
+	width: 930px;
+}
+
+.u-search-results.u-search-cols-4 {
+	width: 1240px;
+}
+
+.u-search-results.u-search-cols-5 {
+	width: 1540px;
+}
+
+
 .u-search-query {
 	font-weight: normal;
 	padding: 0 0.2em;
@@ -160,4 +186,33 @@ body {
 	.u-fleet {
 		background: #eee;
 	}
+}
+
+.u-search-size {
+	text-align: center;
+	border-radius: 1em;
+	margin: 0.5em 0;
+}
+
+.u-search-size span {
+	background: #eee;
+	padding: 0.2em;
+}
+
+.u-search-smaller {
+	float: left;
+	background: #ddd;
+	border-top-left-radius: 1em;
+	border-bottom-left-radius: 1em;
+	border: none;
+	padding: 0 1em;
+}
+
+.u-search-bigger {
+	float: right;
+	background: #ddd;
+	border-top-right-radius: 1em;
+	border-bottom-right-radius: 1em;
+	border: none;
+	padding: 0 1em;
 }

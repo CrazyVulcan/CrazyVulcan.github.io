@@ -119,7 +119,8 @@ module.controller( "UtopiaCtrl", function($scope, $http, $filter, cardLoader) {
 		unique: false,
 		generic: false,
 		factions: {},
-		types: { "ship": {}, "captain": {}, "admiral": {} }
+		types: { "ship": {}, "captain": {}, "admiral": {} },
+		columns: 1
 	};
 	
 	$scope.resetSearch = function() {
@@ -132,6 +133,18 @@ module.controller( "UtopiaCtrl", function($scope, $http, $filter, cardLoader) {
 		$.each( $scope.search.types, function(i,types) {
 			types.search = false;
 		} );
+	};
+	
+	$scope.modifySearchColumns = function(amount) {
+		
+		$scope.search.columns += amount;
+		
+		if( $scope.search.columns < 0 )
+			$scope.search.columns = 0;
+		
+		if( $scope.search.columns > 5 )
+			$scope.search.columns = 5;
+		
 	};
 	
 	$scope.$watch( "search", function() {

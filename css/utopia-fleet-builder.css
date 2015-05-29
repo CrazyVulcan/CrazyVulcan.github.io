@@ -89,3 +89,21 @@
 .fleet-ship-bottom-left-long {
 	width: 43em;
 }
+
+.fleet-open-search {
+	font-size: 2em;
+	position: relative;
+	top: -1.5em;
+	left: -0.2em;	
+	margin-bottom: -1em;
+}
+
+.fleet-search-bigger {
+	background: #ddd;
+	border-top-right-radius: 1em;
+	border-bottom-right-radius: 1em;
+	border: none;
+	padding: 0 1em;
+	font-family: STAWSwiss;
+
+}

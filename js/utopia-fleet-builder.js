@@ -524,6 +524,8 @@ module.directive( "fleetBuilder", function($filter) {
 						
 						$scope.fleet = hashFleet;
 						
+						$scope.searchOptions.columns = 0;
+						
 					}
 				}
 			});
