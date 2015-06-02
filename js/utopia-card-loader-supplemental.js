@@ -5,20 +5,20 @@
 var module = angular.module("utopia-card-loader-supplemental", ["utopia-card-rules"]);
 
 module.factory( "cardLoaderSupplemental", function($http, $filter, cardRules, $factions) {
-	
+
 	return {
-		
-		loadCards: function( loadShip, loadCaptain, loadAdmiral, loadUpgrade, loadResource ) {
-			
+
+		loadCards: function( loadShip, loadCaptain, loadAdmiral, loadUpgrade, loadResource, loadOther ) {
+
 			var data = [
 
 				{
 					id: "71799",
-					
+
 					name: "Kyana Prime Expansion",
-					
+
 					cards: [
-					
+
 						{
 							type: "ship",
 							name: "Kyana Prime",
@@ -34,7 +34,7 @@ module.factory( "cardLoaderSupplemental", function($http, $filter, cardRules, $f
 							upgrades: ["tech","tech","weapon","weapon"],
 							cost: 30
 						},
-						
+
 						{
 							type: "captain",
 							name: "Annorax",
@@ -45,7 +45,7 @@ module.factory( "cardLoaderSupplemental", function($http, $filter, cardRules, $f
 							talents: 1,
 							cost: 5
 						},
-						
+
 						{
 							type: "captain",
 							name: "Obrist",
@@ -56,7 +56,7 @@ module.factory( "cardLoaderSupplemental", function($http, $filter, cardRules, $f
 							talents: 0,
 							cost: 3
 						},
-						
+
 						{
 							type: "talent",
 							name: "Causality Paradox",
@@ -65,7 +65,7 @@ module.factory( "cardLoaderSupplemental", function($http, $filter, cardRules, $f
 							unique: true,
 							cost: 5
 						},
-					
+
 						{
 							type: "weapon",
 							name: "Chroniton Torpedoes",
@@ -75,7 +75,7 @@ module.factory( "cardLoaderSupplemental", function($http, $filter, cardRules, $f
 							range: "2 - 3",
 							attack: 5
 						},
-						
+
 						{
 							type: "weapon",
 							name: "Temporal Incursion",
@@ -85,7 +85,7 @@ module.factory( "cardLoaderSupplemental", function($http, $filter, cardRules, $f
 							range: "3",
 							attack: 8
 						},
-						
+
 						{
 							type: "tech",
 							name: "Temporal Wave Front",
@@ -94,7 +94,7 @@ module.factory( "cardLoaderSupplemental", function($http, $filter, cardRules, $f
 							unique: true,
 							cost: 6
 						},
-						
+
 						{
 							type: "tech",
 							name: "Temporal Core",
@@ -102,7 +102,7 @@ module.factory( "cardLoaderSupplemental", function($http, $filter, cardRules, $f
 							factions: ["independent","mirror"],
 							cost: 6
 						},
-						
+
 						{
 							type: "tech",
 							name: "Spatial Distortion",
@@ -110,18 +110,18 @@ module.factory( "cardLoaderSupplemental", function($http, $filter, cardRules, $f
 							factions: ["independent","mirror"],
 							cost: 6
 						},
-					
+
 					]
-					
+
 				},
-			
+
 				{
 					id: "71800",
-					
+
 					name: "I.S.S. Avenger Expansion",
-					
+
 					cards: [
-					
+
 						{
 							type: "ship",
 							name: "I.S.S. Avenger",
@@ -137,7 +137,7 @@ module.factory( "cardLoaderSupplemental", function($http, $filter, cardRules, $f
 							upgrades: ["tech","weapon","crew","crew"],
 							cost: 16
 						},
-						
+
 						{
 							type: "admiral",
 							name: "Black",
@@ -148,7 +148,7 @@ module.factory( "cardLoaderSupplemental", function($http, $filter, cardRules, $f
 							talents: 1,
 							cost: 3
 						},
-						
+
 						{
 							type: "admiral",
 							name: "Gardner",
@@ -159,7 +159,7 @@ module.factory( "cardLoaderSupplemental", function($http, $filter, cardRules, $f
 							talents: 0,
 							cost: 2
 						},
-						
+
 						{
 							type: "captain",
 							name: "Soval",
@@ -170,7 +170,7 @@ module.factory( "cardLoaderSupplemental", function($http, $filter, cardRules, $f
 							talents: 1,
 							cost: 3
 						},
-						
+
 						{
 							type: "talent",
 							name: "Sabotage",
@@ -179,7 +179,7 @@ module.factory( "cardLoaderSupplemental", function($http, $filter, cardRules, $f
 							unique: true,
 							cost: 3
 						},
-						
+
 						{
 							type: "crew",
 							name: "Orion Tactical Officer",
@@ -187,7 +187,7 @@ module.factory( "cardLoaderSupplemental", function($http, $filter, cardRules, $f
 							factions: ["mirror"],
 							cost: 2
 						},
-						
+
 						{
 							type: "crew",
 							name: "Andorian Helmsman",
@@ -195,7 +195,7 @@ module.factory( "cardLoaderSupplemental", function($http, $filter, cardRules, $f
 							factions: ["mirror"],
 							cost: 2
 						},
-						
+
 						{
 							type: "weapon",
 							name: "Photonic Torpedoes",
@@ -205,7 +205,7 @@ module.factory( "cardLoaderSupplemental", function($http, $filter, cardRules, $f
 							range: "2 - 3",
 							attack: 4
 						},
-						
+
 						{
 							type: "weapon",
 							name: "Plasma Cannons",
@@ -215,7 +215,7 @@ module.factory( "cardLoaderSupplemental", function($http, $filter, cardRules, $f
 							range: "1 - 3",
 							attack: 3
 						},
-						
+
 						{
 							type: "tech",
 							name: "Emergency Bulkheads",
@@ -223,7 +223,7 @@ module.factory( "cardLoaderSupplemental", function($http, $filter, cardRules, $f
 							factions: ["mirror"],
 							cost: 4
 						},
-						
+
 						{
 							type: "tech",
 							name: "Enhanced Hull Plating",
@@ -232,15 +232,15 @@ module.factory( "cardLoaderSupplemental", function($http, $filter, cardRules, $f
 							cost: 4
 						}
 
-						
+
 					]
-					
+
 				},
 
-			
+
 			];
-			
-			
+
+
 			$.each( data, function(i, set) {
 				$.each( set.cards || [], function(i,card) {
 					card.set = set.id;
@@ -253,9 +253,9 @@ module.factory( "cardLoaderSupplemental", function($http, $filter, cardRules, $f
 					}
 				});
 			});
-			
+
 		}
-		
+
 	}
-	
+
 });

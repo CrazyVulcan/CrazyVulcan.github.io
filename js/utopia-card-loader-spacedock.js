@@ -5,7 +5,7 @@
 var module = angular.module("utopia-card-loader-spacedock", ["utopia-card-rules"]);
 
 module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $factions) {
-	
+
 	function convertIconTags(str) {
 		str = str.replace( /\attack: \[target lock\]/ig, "ATTACK: (Target Lock)" );
 		str = str.replace( /\[hit\]/ig, "[hit]" );
@@ -32,11 +32,11 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 		// Remove ship name additions to some photon torps
 		return name.replace( / \(.* Bonus\)/i, "" );
 	}
-	
+
 	return {
-	
-		loadCards: function( loadShip, loadCaptain, loadAdmiral, loadUpgrade, loadResource, callback ) {
-			
+
+		loadCards: function( loadShip, loadCaptain, loadAdmiral, loadUpgrade, loadResource, loadOther, callback ) {
+
 			// Load from Space Dock data file
 			$http.get( "data/data.xml" ).success( function(data) {
 				var doc = $( $.parseXML(data) );
@@ -63,7 +63,7 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 						factions: [data.find("Faction").text().toLowerCase()],
 						intercept: { ship: {}, fleet: {} }
 					};
-					
+
 					var additionalFaction = data.find("AdditionalFaction").text().toLowerCase();
 					if( additionalFaction )
 						ship.factions.push(additionalFaction);
@@ -75,7 +75,7 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 						} else if(ship.factions[i] == "species 8472")
 							ship.factions[i] = "species-8472"
 					}
-					
+
 					if( data.find("EvasiveManeuvers").text() == "1" )
 						ship.actions.push( "evade" );
 					if( data.find("TargetLock").text() == "1" )
@@ -102,7 +102,7 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 					var squadronUpgradeCount = Number( data.find("SquadronUpgrade").text() );
 					for( var i = 0; i < squadronUpgradeCount; i++ )
 						ship.upgrades.push( "squadron" );
-					
+
 					// Mark as squadron
 					ship.squadron = squadronUpgradeCount > 0 || ship.class.indexOf("Squadron") >= 0;
 
@@ -181,7 +181,7 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 					loadAdmiral(admiral);
 
 				});
-				
+
 				doc.find("Upgrade").each( function(i, data) {
 
 					data = $(data);
@@ -217,7 +217,7 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 					if( upgrade.range ) {
 						upgrade.range = upgrade.range.replace( /(.)\-(.)/, "$1 - $2" );
 					}
-					
+
 					// Skip duplicates of VHC and restore original text
 					// TODO move this to rules?
 					if( upgrade.name == "Vulcan High Command" ) {
@@ -226,16 +226,16 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 							else
 								return;
 					}
-					
+
 					loadUpgrade(upgrade);
 
 				});
-				
-				
+
+
 				doc.find("Resource").each( function(i, data) {
 
 					data = $(data);
-					
+
 					var resource = {
 						type: "resource",
 						id: data.find("Id").text(),
@@ -243,19 +243,49 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 						text: convertIconTags( data.find("Ability").text() ),
 						cost: Number( data.find("Cost").text() ),
 					};
-					
+
 					loadResource( resource );
-					
+
 				} );
-				
+
+
+				doc.find("FleetCaptain").each( function(i, data) {
+
+					data = $(data);
+
+					var fleetCaptain = {
+						type: "fleet-captain",
+						id: data.find("Id").text(),
+						name: "Fleet Cap: " + data.find("Title").text(),
+						factions: [data.find("Faction").text().toLowerCase()],
+						skill: Number( data.find("CaptainSkillBonus").text() ),
+						text: convertIconTags( data.find("Ability").text() ),
+						cost: Number( data.find("Cost").text() ),
+						upgradeSlots: [],
+						isSkillModifier: true
+					};
+
+					for( var i = 0; i < Number( data.find("TalentAdd").text() ); i++ )
+						fleetCaptain.upgradeSlots.push( { type: ["talent"], source: "Fleet Captain" } );
+					for( var i = 0; i < Number( data.find("TechAdd").text() ); i++ )
+						fleetCaptain.upgradeSlots.push( { type: ["tech"], source: "Fleet Captain" } );
+					for( var i = 0; i < Number( data.find("WeaponAdd").text() ); i++ )
+						fleetCaptain.upgradeSlots.push( { type: ["weapon"], source: "Fleet Captain" } );
+					for( var i = 0; i < Number( data.find("CrewAdd").text() ); i++ )
+						fleetCaptain.upgradeSlots.push( { type: ["crew"], source: "Fleet Captain" } );
+
+					loadOther( fleetCaptain );
+
+				} );
+
 				if(callback)
 					callback();
 
 			} );
-		
+
 		}
-	
+
 	}
-	
-	
+
+
 });

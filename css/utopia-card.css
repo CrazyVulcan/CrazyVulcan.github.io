@@ -423,6 +423,10 @@
 	border-radius: 1em;
 }
 
+.card-border-bottom i.card-upgrades-long {
+	font-size: 1.5em;
+}
+
 .card-upgrade-faction {
 	background: black;
 	border: 0.08em solid #3486cf;
