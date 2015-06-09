@@ -2630,7 +2630,55 @@ module.factory( "cardRules", function($filter, $factions) {
 				{
 					type: ["faction"],
 				}
-			]
+			],
+			
+			intercept: {
+				fleet: {
+					// Zero faction penalty for captains and admirals
+					factionPenalty: function(card,ship,fleet,factionPenalty) {
+						
+						var factionA = fleet.resource.upgradeSlots[0].occupant;
+						var factionB = fleet.resource.upgradeSlots[1].occupant;
+						
+						// Fail if user hasn't assigned two faction cards yet
+						if( !factionA || !factionB )
+							return factionPenalty;
+						
+						// Only apply to captains and admirals
+						if( card.type != "captain" && card.type != "admiral" )
+							return factionPenalty;
+						
+						// Check that the card and ship are of the chosen factions
+						if( $factions.match( card, factionA ) && $factions.match( ship, factionB ) || $factions.match( card, factionB ) && $factions.match( ship, factionA ) )
+							return 0;
+						
+						return factionPenalty;
+						
+					},
+					
+					// Cost -1 SP for captains and admirals
+					cost: function(card, ship, fleet, cost) {
+						
+						var factionA = fleet.resource.upgradeSlots[0].occupant;
+						var factionB = fleet.resource.upgradeSlots[1].occupant;
+						
+						// Fail if user hasn't assigned two faction cards yet
+						if( !factionA || !factionB )
+							return cost;
+						
+						// Only apply to captains and admirals
+						if( card.type != "captain" && card.type != "admiral" )
+							return cost;
+						
+						// Check that the card and ship are of the chosen factions
+						if( $factions.match( card, factionA ) && $factions.match( ship, factionB ) || $factions.match( card, factionB ) && $factions.match( ship, factionA ) )
+							return (cost instanceof Function ? cost(card, ship, fleet, 0) : cost) - 1;
+						
+						return cost;
+						
+					},
+				}
+			}
 			
 		},
 		

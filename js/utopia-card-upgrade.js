@@ -80,10 +80,17 @@ module.filter( "interceptors", function($filter) {
 		if( ship )
 			interceptors = interceptors.concat( shipInterceptors(card,ship,"ship",field,upgradeSlot) );
 	
-		if( fleet )
+		if( fleet ) {
+
 			$.each( fleet.ships || [], function(i, ship) {
 				interceptors = interceptors.concat( shipInterceptors(card,ship,"fleet",field) );
 			});
+
+			if( fleet.resource ) {
+				interceptors = interceptors.concat( shipInterceptors(card,fleet.resource,"fleet",field) );
+			}
+			
+		}
 		
 		return interceptors;
 		
