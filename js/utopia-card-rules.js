@@ -2626,9 +2626,11 @@ module.factory( "cardRules", function($filter, $factions) {
 			upgradeSlots: [
 				{
 					type: ["faction"],
+					source: "Select Factions for Officer Exchange Program",
 				},
 				{
 					type: ["faction"],
+					source: "Select Factions for Officer Exchange Program",
 				}
 			],
 			

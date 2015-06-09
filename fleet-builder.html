@@ -118,13 +118,13 @@
 			
 			--><div class="card-container" droppable can-drop="$item.type == 'resource' && $item != fleet.resource" drop="setFleetResource(fleet,$item)" drag-store="dragStore">
 				<div class="card-outer card-drop-target font-staw" ng-click="setSearchTypes(['resource'])">
-					<div class="card-drop-target-title">Place rules card here</div>
+					<div class="card-drop-target-title"></div>
 					<div class="card-drop-target-inner">
 						<div class="card-drop-target-type">
 							<i class="fs fs-resource"></i><br/>Resource
 						</div>
 					</div>
-					<div class="card-drop-target-subtitle">Fleet Captain now works. Flagship, Sideboard, Officer Cards and Officer Exchange Program not yet implemented.</div>
+					<div class="card-drop-target-subtitle"></div>
 				</div>
 				<card-resource ng-if="fleet.resource" resource="fleet.resource" fleet="fleet" drag-store="dragStore"></card-resource>
 			</div><!--
