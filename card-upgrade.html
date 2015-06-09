@@ -7,7 +7,7 @@
 	</div>
 
 	<div class="card-title-container text-left">
-		<span ng-if="upgrade.showType" class="card-captain pull-right">{{upgrade.type|uppercase}}</span>
+		<span ng-if="upgrade.showType" class="card-captain pull-right">{{upgrade.type|uppercase|removeDashes}}</span>
 		<span ng-if="upgrade.attack" class="card-weapon-attack pull-right">{{upgrade|valueOf:'attack':ship:fleet}}</span>
 		<span class="card-title" 
 			ng-class="{ 'card-title-long': upgrade.name.length >= 24 || upgrade.showType && upgrade.name.length + upgrade.type.length >= 24,

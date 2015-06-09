@@ -104,6 +104,14 @@ module.filter( "fleetCardNamed", function($filter) {
 
 });
 
+module.filter( "removeDashes", function($filter) {
+
+	return function( str ) {
+		return str.replace(/\-/g," ");
+	}
+
+});
+
 module.factory( "isMobile", function() {
 	// From detectmobilebrowsers.com
 	var userAgent = navigator.userAgent||navigator.vendor||window.opera;
