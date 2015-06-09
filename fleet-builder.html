@@ -77,10 +77,14 @@
 		</div>
 
 	</div>
+	
+	<div class="fleet-ship-bottom" ng-show="$last && searchOptions.columns < 1 && !fleet.resource">
+		<div class="fleet-ship-bottom-left" ng-class="{'fleet-ship-bottom-left-long': fleet.ships.length > 0 || fleet.resource}"></div>
+	</div>
 		
 </div>
 
-<div class="fleet-ship-container" ng-hide="loading">
+<div class="fleet-ship-container" ng-hide="loading || ( searchOptions.columns < 1 && !fleet.resource )">
 
 	<div class="fleet-ship-top">
 		<div class="fleet-ship-top-left" ng-class="{'fleet-ship-top-left-first': fleet.ships.length == 0}"></div>
@@ -95,7 +99,7 @@
 		
 		<div class="fleet-ship-inner">
 
-			<div class="card-container">
+			<div class="card-container" ng-hide="searchOptions.columns < 1">
 				<div class="card-outer card-drop-target font-staw" ng-click="setSearchTypes(['ship'])"
 					droppable can-drop="$item.type == 'ship'" drop="addFleetShip(fleet,$item)" drag-store="dragStore">
 					<div class="card-drop-target-title" ng-if="!isMobile">Click to search this card type</div>

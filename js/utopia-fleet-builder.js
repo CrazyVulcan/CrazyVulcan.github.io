@@ -33,6 +33,9 @@ module.directive( "fleetBuilder", function($filter) {
 					typeOption.search = $.inArray(typeName, types) >= 0;
 				});
 				
+				if( $scope.searchOptions.columns < 1 )
+					$scope.searchOptions.columns = 1;
+				
 			};
 
 			$scope.addFleetShip = function(fleet, ship) {
@@ -568,14 +571,19 @@ module.directive( "fleetBuilder", function($filter) {
 					hashFleet = $scope.loadFleet( $scope.cards, hashFleet );
 					if( hashFleet ) {
 						
-						// Hide empty slots when loading a fleet.. so it looks nice.
-						$.each( hashFleet.ships, function(i,ship) {
-							ship.hideEmptySlots = true;
-						} );
-						
 						$scope.fleet = hashFleet;
 						
-						$scope.searchOptions.columns = 0;
+						if( $scope.fleet.ships.length > 0 ) {
+						
+							// Hide empty slots when loading a fleet.. so it looks nice.
+							$.each( hashFleet.ships, function(i,ship) {
+								ship.hideEmptySlots = true;
+							} );
+
+							// Also hide search
+							$scope.searchOptions.columns = 0;
+							
+						}
 						
 					}
 				}
