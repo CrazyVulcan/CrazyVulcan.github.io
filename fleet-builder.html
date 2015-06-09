@@ -30,7 +30,7 @@
 				<div class="card-outer card-drop-target font-staw" ng-click="setSearchTypes([fleet.resource.slotType])">
 					<div class="card-drop-target-inner">
 						<div class="card-drop-target-type">
-							<i class="fs fs-{{fleet.resource.slotType}}"></i><br/>{{fleet.resource.slotType}}
+							<i class="fs fs-{{fleet.resource.slotType}}"></i><br/>{{fleet.resource.slotType|removeDashes}}
 						</div>
 					</div>
 				</div>
@@ -66,7 +66,7 @@
 				<div class="card-outer card-drop-target font-staw" ng-click="setSearchTypes(upgradeSlot.type)">
 					<div class="card-drop-target-inner">
 						<div class="card-drop-target-type" ng-repeat="type in upgradeSlot.type">
-							<i class="fs fs-{{type}}"></i><br/>{{type}}
+							<i class="fs fs-{{type}}"></i><br/>{{type|removeDashes}}
 						</div>
 					</div>
 					<div ng-show="upgradeSlot.source && upgradeSlot.source != 'ship'" class="card-drop-target-subtitle">Source: {{upgradeSlot.source}}</div>
@@ -114,13 +114,13 @@
 			--><div class="card-container" ng-show="fleet.ships.length > 0 || fleet.resource"
 				droppable can-drop="$item.type == 'resource' && $item != fleet.resource" drop="setFleetResource(fleet,$item)" drag-store="dragStore">
 				<div class="card-outer card-drop-target font-staw" ng-click="setSearchTypes(['resource'])">
-					<div class="card-drop-target-title">Not yet fully-featured</div>
+					<div class="card-drop-target-title">Place rules card here</div>
 					<div class="card-drop-target-inner">
 						<div class="card-drop-target-type">
 							<i class="fs fs-resource"></i><br/>Resource
 						</div>
 					</div>
-					<div class="card-drop-target-subtitle">Fleet building features like Flagship cards aren't yet implemented, but you can drop the rules card here for the SP cost</div>
+					<div class="card-drop-target-subtitle">Fleet Captain now works. Flagship, Sideboard, Officer Cards and Officer Exchange Program not yet implemented.</div>
 				</div>
 				<card-resource ng-if="fleet.resource" resource="fleet.resource" fleet="fleet" drag-store="dragStore"></card-resource>
 			</div>
