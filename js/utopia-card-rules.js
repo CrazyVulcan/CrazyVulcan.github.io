@@ -2865,7 +2865,99 @@ module.factory( "cardRules", function($filter, $factions) {
 						delete ship.resource;
 				} );
 			}
-		}
+		},
+		
+		// Romulan
+		"flagship:6001": {
+			// Only equip if ship matches faction
+			canEquip: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship, "romulan", ship, fleet);
+			}
+		},
+		
+		// Klingon
+		"flagship:6003": {
+			// Only equip if ship matches faction
+			canEquip: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship, "klingon", ship, fleet);
+			}
+		},
+		
+		// Dominion
+		"flagship:6005": {
+			// Only equip if ship matches faction
+			canEquip: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship, "dominion", ship, fleet);
+			}
+		},
+		
+		// Federation
+		"flagship:6007": {
+			// Only equip if ship matches faction
+			canEquip: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship, "federation", ship, fleet);
+			}
+		},
+		
+		// Independent (Rom)
+		"flagship:6002": {
+			intercept: {
+				ship: {
+					// Add independent faction to captain
+					factions: function(card,ship,fleet) {
+						var factions = card.factions;
+						if( card == ship && factions.indexOf("independent") < 0 )
+							return factions.concat(["independent"]);
+						return factions;
+					}
+				}
+			}
+		},
+		
+		// Independent (Klingon)
+		"flagship:6004": {
+			intercept: {
+				ship: {
+					// Add independent faction to captain
+					factions: function(card,ship,fleet) {
+						var factions = card.factions;
+						if( card == ship && factions.indexOf("independent") < 0 )
+							return factions.concat(["independent"]);
+						return factions;
+					}
+				}
+			}
+		},
+		
+		// Independent (Dominion)
+		"flagship:6006": {
+			intercept: {
+				ship: {
+					// Add independent faction to captain
+					factions: function(card,ship,fleet) {
+						var factions = card.factions;
+						if( card == ship && factions.indexOf("independent") < 0 )
+							return factions.concat(["independent"]);
+						return factions;
+					}
+				}
+			}
+		},
+		
+		// Independent (Federation)
+		"flagship:6008": {
+			intercept: {
+				ship: {
+					// Add independent faction to captain
+					factions: function(card,ship,fleet) {
+						var factions = card.factions;
+						if( card == ship && factions.indexOf("independent") < 0 )
+							return factions.concat(["independent"]);
+						return factions;
+					}
+				}
+			}
+		},
 		
 	};
 	

@@ -403,6 +403,10 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 					if( data.find("Regenerate").text() == "1" )
 						flagship.actions.push( "regenerate" );
 
+					for( var i = 0; i < Number( data.find("Talent").text() ); i++ ) {
+						flagship.upgrades.push( { type: ["talent"], source: "Flagship" } );
+						flagship.upgradeSlots.push( { type: ["talent"], source: "Flagship" } );
+					}
 					for( var i = 0; i < Number( data.find("Tech").text() ); i++ ) {
 						flagship.upgrades.push( { type: ["tech"], source: "Flagship" } );
 						flagship.upgradeSlots.push( { type: ["tech"], source: "Flagship" } );
