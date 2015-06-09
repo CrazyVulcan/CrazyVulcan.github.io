@@ -403,6 +403,9 @@ module.directive( "fleetBuilder", function($filter) {
 				var saved = {
 					id: card.type+":"+card.id
 				};
+
+				if( card.resource )
+					saved.resource = saveCard(card.resource);
 				
 				if( card.captain )
 					saved.captain = saveCard(card.captain);
@@ -458,6 +461,16 @@ module.directive( "fleetBuilder", function($filter) {
 					return false;
 				
 				var promulgate = function(card) {
+					
+					if( savedCard.resource ) {
+						var result = loadCard(fleet, cards, savedCard.resource, card);
+						if( !result )
+							return false;
+						var resource = $scope.setShipResource( fleet, card, result.card );
+						if( !resource )
+							return false;
+						result.promulgate(resource);
+					}
 				
 					if( savedCard.captain ) {
 						var result = loadCard(fleet, cards, savedCard.captain, card);
