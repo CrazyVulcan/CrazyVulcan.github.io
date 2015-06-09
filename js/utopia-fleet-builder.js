@@ -337,6 +337,9 @@ module.directive( "fleetBuilder", function($filter) {
 					return !found;
 				});
 				
+				// Trigger onRemove handlers
+				valueOf(card,"onRemove",{},fleet);
+				
 			};
 			
 			$scope.getTotalCost = function(ship, fleet) {

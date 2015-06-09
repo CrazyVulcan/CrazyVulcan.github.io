@@ -60,7 +60,7 @@ module.filter( "shipInterceptors", function($filter) {
 		if( ship.admiral && ship.admiral.intercept[type][field] )
 			interceptors.push( ship.admiral.intercept[type][field] );
 		
-		if( ship.intercept[type][field] )
+		if( ship.intercept && ship.intercept[type][field] )
 			interceptors.push( ship.intercept[type][field] );
 	
 		return interceptors;

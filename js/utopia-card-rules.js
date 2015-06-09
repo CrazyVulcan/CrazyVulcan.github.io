@@ -2436,6 +2436,12 @@ module.factory( "cardRules", function($filter, $factions) {
 						show = false;
 				} );
 				return show;
+			},
+			onRemove: function(resource,ship,fleet) {
+				$.each( fleet.ships, function(i,ship) {
+					if( ship.resource )
+						delete ship.resource;
+				} );
 			}
 		},
 		

@@ -107,7 +107,7 @@ module.filter( "fleetCardNamed", function($filter) {
 module.filter( "removeDashes", function($filter) {
 
 	return function( str ) {
-		return str.replace(/\-/g," ");
+		return str ? str.replace(/\-/g," ") : str;
 	}
 
 });
