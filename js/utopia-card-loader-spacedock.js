@@ -69,11 +69,9 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 						ship.factions.push(additionalFaction);
 
 					for( var i = 0; i < ship.factions.length; i++ ) {
-						if( ship.factions[i] == "mirror universe" ) {
-							ship.factions[i] = "mirror";
+						ship.factions[i] = ship.factions[i].replace(/ /g,"-");
+						if( ship.factions[i] == "mirror-universe" )
 							ship.mirror = true;
-						} else if(ship.factions[i] == "species 8472")
-							ship.factions[i] = "species-8472"
 					}
 
 					if( data.find("EvasiveManeuvers").text() == "1" )
@@ -132,11 +130,9 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 						captain.factions.push(additionalFaction);
 
 					for( var i = 0; i < captain.factions.length; i++ ) {
-						if( captain.factions[i] == "mirror universe" ) {
-							captain.factions[i] = "mirror";
+						captain.factions[i] = captain.factions[i].replace(/ /g,"-");
+						if( captain.factions[i] == "mirror-universe" )
 							captain.mirror = true;
-						} else if(captain.factions[i] == "species 8472")
-							captain.factions[i] = "species-8472"
 					}
 
 					// Filter out duplicates (xml has a dupe captains for each slot type they could add - Picard 8, Chak 5, Cal Hudson)
@@ -171,11 +167,9 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 						admiral.factions.push(additionalFaction);
 
 					for( var i = 0; i < admiral.factions.length; i++ ) {
-						if( admiral.factions[i] == "mirror universe" ) {
-							admiral.factions[i] = "mirror";
+						admiral.factions[i] = admiral.factions[i].replace(/ /g,"-");
+						if( admiral.factions[i] == "mirror-universe" )
 							admiral.mirror = true;
-						} else if(admiral.factions[i] == "species 8472")
-							admiral.factions[i] = "species-8472"
 					}
 
 					loadAdmiral(admiral);
@@ -206,11 +200,9 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 
 					// TODO make this a function
 					for( var i = 0; i < upgrade.factions.length; i++ ) {
-						if( upgrade.factions[i] == "mirror universe" ) {
-							upgrade.factions[i] = "mirror";
+						upgrade.factions[i] = upgrade.factions[i].replace(/ /g,"-");
+						if( upgrade.factions[i] == "mirror-universe" )
 							upgrade.mirror = true;
-						} else if(upgrade.factions[i] == "species 8472")
-							upgrade.factions[i] = "species-8472"
 					}
 
 					// Add spaces to range strings

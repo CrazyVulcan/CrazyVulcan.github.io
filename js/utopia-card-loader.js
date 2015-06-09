@@ -32,7 +32,7 @@ module.factory( "cardLoader", function($http, $filter, cardRules, $factions, car
 			}
 
 			// Set mirror flag
-			ship.mirror = $factions.hasFaction(ship, "mirror");
+			ship.mirror = $factions.hasFaction(ship, "mirror-universe");
 
 			// Expand shorthand upgrade slots
 			for( var i = 0; i < ship.upgrades.length; i++ )
@@ -96,7 +96,7 @@ module.factory( "cardLoader", function($http, $filter, cardRules, $factions, car
 			$.extend(true, captain, captainDefaults);
 
 			// Set mirror flag
-			captain.mirror = $factions.hasFaction(captain, "mirror");
+			captain.mirror = $factions.hasFaction(captain, "mirror-universe");
 
 			// Add talent slots
 			captain.upgradeSlots = [];
@@ -131,7 +131,7 @@ module.factory( "cardLoader", function($http, $filter, cardRules, $factions, car
 			$.extend(true, admiral, admiralDefaults);
 
 			// Set mirror flag
-			admiral.mirror = $factions.hasFaction(admiral, "mirror");
+			admiral.mirror = $factions.hasFaction(admiral, "mirror-universe");
 
 			// Add talent slots
 			admiral.upgradeSlots = [];
@@ -171,7 +171,7 @@ module.factory( "cardLoader", function($http, $filter, cardRules, $factions, car
 			$.extend(true, upgrade, upgradeDefaults);
 
 			// Set mirror flag
-			upgrade.mirror = $factions.hasFaction(upgrade, "mirror");
+			upgrade.mirror = $factions.hasFaction(upgrade, "mirror-universe");
 
 			// Apply specific card rules
 			if( cardRules[upgrade.type+":"+upgrade.id] )

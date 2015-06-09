@@ -1459,7 +1459,7 @@ module.factory( "cardRules", function($filter, $factions) {
 		// Cloaking Device (Mirror)
 		"tech:cloaking_device_71646b": {
 			cost: function(upgrade,ship,fleet) {
-				return ship && !$factions.hasFaction(ship,"mirror", ship, fleet) ? 9 : 4;
+				return ship && !$factions.hasFaction(ship,"mirror-universe", ship, fleet) ? 9 : 4;
 			}
 		},
 		
@@ -1769,7 +1769,7 @@ module.factory( "cardRules", function($filter, $factions) {
 			intercept: {
 				ship: {
 					skill: function(upgrade,ship,fleet,skill) {
-						if( upgrade == ship.captain && $factions.hasFaction(ship,"mirror", ship, fleet) )
+						if( upgrade == ship.captain && $factions.hasFaction(ship,"mirror-universe", ship, fleet) )
 							skill = (skill instanceof Function ? skill(upgrade,ship,fleet,0) : skill) + 2;
 						return skill;
 					}
@@ -2177,7 +2177,7 @@ module.factory( "cardRules", function($filter, $factions) {
 		"tech:enhanced_hull_plating_71800": {
 			canEquip: onePerShip("Enhanced Hull Plating"),
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return $factions.hasFaction( ship, "mirror", ship, fleet ) && ship.hull <= 4;
+				return $factions.hasFaction( ship, "mirror-universe", ship, fleet ) && ship.hull <= 4;
 			}
 		},
 
