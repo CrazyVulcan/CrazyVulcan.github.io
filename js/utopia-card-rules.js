@@ -2636,7 +2636,7 @@ module.factory( "cardRules", function($filter, $factions) {
 			
 			intercept: {
 				fleet: {
-					// Zero faction penalty for captains and admirals
+					// Zero faction penalty for captains, admirals and crew
 					factionPenalty: function(card,ship,fleet,factionPenalty) {
 						
 						var factionA = fleet.resource.upgradeSlots[0].occupant;
@@ -2646,8 +2646,8 @@ module.factory( "cardRules", function($filter, $factions) {
 						if( !factionA || !factionB )
 							return factionPenalty;
 						
-						// Only apply to captains and admirals
-						if( card.type != "captain" && card.type != "admiral" )
+						// Only apply to captains, admirals and crew
+						if( card.type != "captain" && card.type != "admiral" && card.type != "crew" )
 							return factionPenalty;
 						
 						// Check that the card and ship are of the chosen factions
