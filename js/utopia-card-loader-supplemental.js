@@ -260,6 +260,7 @@ module.factory( "cardLoaderSupplemental", function($http, $filter, cardRules, $f
 				
 				var faction = {
 					type: "faction",
+					id: "faction_" + name.toLowerCase().replace(/ /g,"_"),
 					showType: true,
 					name: name,
 					factions: [name.toLowerCase().replace(/ /g,"-")],
@@ -268,6 +269,7 @@ module.factory( "cardLoaderSupplemental", function($http, $filter, cardRules, $f
 					unique: true,
 					canEquip: true,
 					canEquipFaction: true,
+					intercept: { ship: {}, fleet: {} },
 				}
 				
 				loadOther(faction);

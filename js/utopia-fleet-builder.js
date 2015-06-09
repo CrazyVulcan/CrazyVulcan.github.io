@@ -403,7 +403,7 @@ module.directive( "fleetBuilder", function($filter) {
 				
 				// TODO Might need to save more data for some resources
 				if( fleet.resource )
-					savedFleet.resource = { id: fleet.resource.type+":"+fleet.resource.id };
+					savedFleet.resource = saveCard(fleet.resource);
 				
 				$.each( fleet.ships, function(i, ship) {
 					savedFleet.ships.push( saveCard(ship) );
@@ -475,8 +475,10 @@ module.directive( "fleetBuilder", function($filter) {
 				
 				var card = angular.copy( $scope.findCardById(cards, savedCard.id) );
 				
-				if( !card )
+				if( !card ) {
+					console.log("unable to load card",savedCard.id);
 					return false;
+				}
 				
 				var promulgate = function(card) {
 					
@@ -525,7 +527,7 @@ module.directive( "fleetBuilder", function($filter) {
 					} );
 					
 					$.each( savedCard.upgradeSlots || [], function(i, savedUpgrade) {
-						
+
 						if( savedUpgrade && savedUpgrade.id ) {
 							var result = loadCard( fleet, cards, savedUpgrade, ship || card );
 							if( !result )
@@ -550,8 +552,10 @@ module.directive( "fleetBuilder", function($filter) {
 				
 				if( savedFleet.resource ) {
 					result = loadCard( fleet, cards, savedFleet.resource );
-					if( result )
+					if( result ) {
 						fleet.resource = result.card;
+						result.promulgate(fleet.resource);
+					}
 				}
 				
 				$.each( savedFleet.ships, function(i, savedShip) {
