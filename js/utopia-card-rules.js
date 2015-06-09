@@ -21,7 +21,8 @@ module.factory( "$factions", function($filter) {
 					return false;
 			});
 			return match;
-		}
+		},
+		list: [ "Federation", "Klingon", "Romulan", "Dominion", "Borg", "Species 8472", "Kazon", "Bajoran", "Ferengi", "Vulcan", "Independent", "Mirror Universe" ]
 	}
 } );
 
@@ -2618,6 +2619,19 @@ module.factory( "cardRules", function($filter, $factions) {
 					},					
 				}
 			}
+		},
+		
+		"resource:officer_exchange_program_71996a": {
+			
+			upgradeSlots: [
+				{
+					type: ["faction"],
+				},
+				{
+					type: ["faction"],
+				}
+			]
+			
 		},
 		
 	};

@@ -253,6 +253,28 @@ module.factory( "cardLoaderSupplemental", function($http, $filter, cardRules, $f
 					}
 				});
 			});
+			
+			
+			// Create Faction cards for Officer Exchange Program
+			$.each( $factions.list, function(i,name) {
+				
+				var faction = {
+					type: "faction",
+					showType: true,
+					name: name,
+					factions: [name.toLowerCase().replace(/ /g,"-")],
+					text: "This card represents the " + name + " faction and is used with the Officer Exchange Program Resource.",
+					cost: 0,
+					unique: true,
+					canEquip: true,
+					canEquipFaction: true,
+				}
+				
+				loadOther(faction);
+				
+			});
+			
+			
 
 		}
 

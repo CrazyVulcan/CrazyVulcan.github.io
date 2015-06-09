@@ -80,7 +80,7 @@ module.directive( "fleetBuilder", function($filter) {
 			
 			var valueOf = $filter("valueOf");
 			
-			$scope.setShipUpgrade = function(fleet, ship, upgradeSlot, upgrade) {
+			$scope.setUpgrade = function(fleet, ship, upgradeSlot, upgrade) {
 				
 				// Check slot type
 				if( !$scope.isUpgradeCompatible(upgrade, upgradeSlot) ) {
@@ -277,6 +277,14 @@ module.directive( "fleetBuilder", function($filter) {
 					
 				} );
 				
+				if( fleet.resource )
+					$.each( fleet.resource.upgradeSlots || [], function(i, upgradeSlot) {
+						if( card == upgradeSlot.occupant || isUniqueClash(card, upgradeSlot.occupant) ) {
+							clash = upgradeSlot.occupant;
+							return false;
+						}
+					} );
+				
 				return clash;
 				
 			};
@@ -378,8 +386,12 @@ module.directive( "fleetBuilder", function($filter) {
 			};
 			
 			$scope.setFleetResource = function(fleet, resource) {
-				// TODO Might need to trigger some things when switching resource
+				
+				if( fleet.resource )
+					$scope.removeFromFleet(fleet.resource, fleet);
+				
 				fleet.resource = resource;
+				
 			};
 			
 			// TODO Move save/load to new module
@@ -504,7 +516,7 @@ module.directive( "fleetBuilder", function($filter) {
 							var result = loadCard( fleet, cards, savedUpgrade, card );
 							if( !result )
 								throw false;
-							var upgrade = $scope.setShipUpgrade( fleet, card, card.upgrades[i], result.card );
+							var upgrade = $scope.setUpgrade( fleet, card, card.upgrades[i], result.card );
 							if( !upgrade )
 								throw false;
 							result.promulgate(upgrade);
@@ -518,7 +530,7 @@ module.directive( "fleetBuilder", function($filter) {
 							var result = loadCard( fleet, cards, savedUpgrade, ship || card );
 							if( !result )
 								throw false;
-							var upgrade = $scope.setShipUpgrade( fleet, ship || card, card.upgradeSlots[i], result.card );
+							var upgrade = $scope.setUpgrade( fleet, ship || card, card.upgradeSlots[i], result.card );
 							if( !upgrade )
 								throw false;
 							result.promulgate(upgrade);

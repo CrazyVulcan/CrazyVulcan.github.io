@@ -163,3 +163,7 @@
 .fs-fleet-captain:before {
   content: "A";
 }
+
+.fs-faction:before {
+  content: "A";
+}
