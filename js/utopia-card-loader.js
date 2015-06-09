@@ -66,7 +66,7 @@ module.factory( "cardLoader", function($http, $filter, cardRules, $factions, car
 			ship.intercept.ship.cost = function(upgrade, ship, fleet, cost) {
 				if( costIntercept )
 					cost = costIntercept(upgrade, ship, fleet, cost);
-				if( !$factions.match( upgrade, ship ) ) {
+				if( !$factions.match( upgrade, ship, ship, fleet ) ) {
 					var penalty = valueOf(upgrade,"factionPenalty",ship,fleet);
 					return (cost instanceof Function ? cost(upgrade, ship, fleet, 0) : cost ) + penalty;
 				}
@@ -82,7 +82,8 @@ module.factory( "cardLoader", function($http, $filter, cardRules, $factions, car
 			intercept: { ship: {}, fleet: {} },
 			canEquip: true,
 			canEquipCaptain: true,
-			canEquipFaction: true
+			canEquipFaction: true,
+			showType: true,
 		};
 
 		function loadCaptain(captain) {
@@ -116,7 +117,8 @@ module.factory( "cardLoader", function($http, $filter, cardRules, $factions, car
 			canEquip: true,
 			canEquipAdmiral: true,
 			canEquipFaction: true,
-			isSkillModifier: true
+			isSkillModifier: true,
+			showType: true
 		};
 
 		function loadAdmiral(admiral) {
@@ -191,12 +193,23 @@ module.factory( "cardLoader", function($http, $filter, cardRules, $factions, car
 
 		function loadResource(resource) {
 			$.extend(true, resource, resourceDefaults);
+
+			// Apply specific card rules
+			if( cardRules[resource.type+":"+resource.id] )
+				$.extend( true, resource, cardRules[resource.type+":"+resource.id] );
+
 			cards.push(resource);
 		}
 
 		// For resource special cards or anything else that doesn't need any special handling
 		function loadOther(card) {
+			
+			// Apply specific card rules
+			if( cardRules[card.type+":"+card.id] )
+				$.extend( true, card, cardRules[card.type+":"+card.id] );
+			
 			cards.push(card);
+			
 		}
 
 

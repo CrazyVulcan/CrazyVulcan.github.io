@@ -106,6 +106,13 @@
 	padding-bottom: 0.1em;
 }
 
+.card-title-super-long {
+	font-size: 0.6em;
+	padding-top: 0.4em;
+	padding-bottom: 0.3em;
+	top: -0.2em;
+}
+
 .card-corner-top-right {
 	background: #a8b6bf;
 	height: 1.6em;

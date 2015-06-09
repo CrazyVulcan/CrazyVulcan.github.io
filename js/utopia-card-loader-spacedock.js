@@ -242,6 +242,7 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 						name: data.find("Title").text(),
 						text: convertIconTags( data.find("Ability").text() ),
 						cost: Number( data.find("Cost").text() ),
+						showShipResourceSlot: function() {return false;},
 					};
 
 					loadResource( resource );
@@ -256,24 +257,55 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 					var fleetCaptain = {
 						type: "fleet-captain",
 						id: data.find("Id").text(),
-						name: "Fleet Cap: " + data.find("Title").text(),
+						name: data.find("Title").text(),
 						factions: [data.find("Faction").text().toLowerCase()],
 						skill: Number( data.find("CaptainSkillBonus").text() ),
 						text: convertIconTags( data.find("Ability").text() ),
 						cost: Number( data.find("Cost").text() ),
 						upgradeSlots: [],
-						isSkillModifier: true
+						isSkillModifier: true,
+						showType: true,
+						canEquip: true,
+						intercept: { ship: {}, fleet: {} },
+						factionPenalty: 0,
+						unique: true,
 					};
 
 					for( var i = 0; i < Number( data.find("TalentAdd").text() ); i++ )
-						fleetCaptain.upgradeSlots.push( { type: ["talent"], source: "Fleet Captain" } );
+						// Special talent slot, which allows a free talent if captain already has an empty talent slot
+						fleetCaptain.upgradeSlots.push( { 
+							type: ["talent"],
+							source: "Fleet Captain (Free talent if another talent slot is empty)",
+							showOnCard: true,
+							intercept: {
+								ship: {
+									cost: function(upgrade, ship, fleet, cost) {
+										var slots = $filter("upgradeSlots")(ship);
+										var emptyTalentSlot = false;
+										$.each(slots, function(i,slot) {
+											if( slot.type.indexOf("talent") >= 0 && !slot.occupant )
+												emptyTalentSlot = true;
+										});
+										return emptyTalentSlot ? 0 : cost;
+									}
+								}
+							}
+						} );
 					for( var i = 0; i < Number( data.find("TechAdd").text() ); i++ )
-						fleetCaptain.upgradeSlots.push( { type: ["tech"], source: "Fleet Captain" } );
+						fleetCaptain.upgradeSlots.push( { type: ["tech"], source: "Fleet Captain", showOnCard: true } );
 					for( var i = 0; i < Number( data.find("WeaponAdd").text() ); i++ )
-						fleetCaptain.upgradeSlots.push( { type: ["weapon"], source: "Fleet Captain" } );
+						fleetCaptain.upgradeSlots.push( { type: ["weapon"], source: "Fleet Captain", showOnCard: true } );
 					for( var i = 0; i < Number( data.find("CrewAdd").text() ); i++ )
-						fleetCaptain.upgradeSlots.push( { type: ["crew"], source: "Fleet Captain" } );
+						fleetCaptain.upgradeSlots.push( { type: ["crew"], source: "Fleet Captain", showOnCard: true } );
 
+					// Add skill modifier to Captain skill evaluation
+					fleetCaptain.intercept.ship.skill = function(upgrade,ship,fleet,skill) {
+						if( upgrade == ship.captain ) {
+							skill = (skill instanceof Function ? skill(upgrade,ship,fleet,0) : skill) + fleetCaptain.skill;
+						}
+						return skill;
+					};
+					
 					loadOther( fleetCaptain );
 
 				} );

@@ -132,10 +132,40 @@ module.directive( "fleetBuilder", function($filter) {
 				
 			};
 			
+			$scope.setShipResource = function(fleet,ship,resource) {
+				
+				if( !fleet.resource || resource.type != fleet.resource.slotType ) {
+					return false;
+				}
+				
+				// Check interceptors
+				var canEquip = valueOf(resource,"canEquip",ship,fleet);
+				if( !canEquip ) {
+					console.log("equip stopped by special card rule");
+					return false;
+				}
+
+				// Check uniqueness
+				var other = $scope.findOtherInFleet(resource, fleet);
+				
+				// Fail if other
+				if( other && other != upgrade && other != ship.resource ) {
+					console.log("upgrade uniquenes check failed");
+					return false;
+				}
+				
+				ship.resource = angular.copy(resource);
+				
+				return ship.resource;
+				
+			};
+			
 			$scope.setShipCaptain = function(fleet,ship,captain) {
 				
-				if( captain.type != "captain" )
+				if( captain.type != "captain" ) {
+					console.log("card is not a captain");
 					return false;
+				}
 				
 				// Check interceptors
 				var canEquip = valueOf(captain,"canEquipCaptain",ship,fleet);
@@ -267,6 +297,11 @@ module.directive( "fleetBuilder", function($filter) {
 							fleet.ships[i] = replaceWith;
 						else
 							fleet.ships.splice(i,1);
+						return false;
+					}
+					
+					if( card == ship.resource ) {
+						delete ship.resource;
 						return false;
 					}
 					

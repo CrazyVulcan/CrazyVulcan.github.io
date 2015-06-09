@@ -5,6 +5,8 @@ module.filter( "upgradeSlots", function() {
 	return function( ship ) {
 
 		var toCheck = [];
+		if( ship.resource && ship.resource.upgradeSlots )
+			toCheck = toCheck.concat(ship.resource.upgradeSlots);
 		if( ship.captain && ship.captain.upgradeSlots )
 			toCheck = toCheck.concat(ship.captain.upgradeSlots);
 		if( ship.admiral && ship.admiral.upgradeSlots )
@@ -49,6 +51,9 @@ module.filter( "shipInterceptors", function($filter) {
 			}
 		});
 
+		if( ship.resource && ship.resource.intercept[type][field] )
+			interceptors.push( ship.resource.intercept[type][field] );
+		
 		if( ship.captain && ship.captain.intercept[type][field] )
 			interceptors.push( ship.captain.intercept[type][field] );
 
@@ -72,7 +77,8 @@ module.filter( "interceptors", function($filter) {
 
 		var interceptors = [];
 		
-		interceptors = interceptors.concat( shipInterceptors(card,ship,"ship",field,upgradeSlot) );
+		if( ship )
+			interceptors = interceptors.concat( shipInterceptors(card,ship,"ship",field,upgradeSlot) );
 	
 		if( fleet )
 			$.each( fleet.ships || [], function(i, ship) {

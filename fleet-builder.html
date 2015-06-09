@@ -26,6 +26,17 @@
 				<card-ship ship="ship" drag-store="dragStore"></card-ship>
 			</div><!--
 			Stupid whitespace breaks card alignment
+		 --><div class="card-container" ng-show="fleet.resource.showShipResourceSlot(ship,fleet) && !ship.squadron" droppable can-drop="$item.type == fleet.resource.slotType" drop="setShipResource(fleet,ship,$item)" drag-store="dragStore">
+				<div class="card-outer card-drop-target font-staw" ng-click="setSearchTypes([fleet.resource.slotType])">
+					<div class="card-drop-target-inner">
+						<div class="card-drop-target-type">
+							<i class="fs fs-{{fleet.resource.slotType}}"></i><br/>{{fleet.resource.slotType}}
+						</div>
+					</div>
+				</div>
+				<card-upgrade ng-if="ship.resource" upgrade="ship.resource" ship="ship" fleet="fleet" drag-store="dragStore"></card-upgrade>
+			</div><!--
+			
 		 --><div class="card-container" ng-hide="ship.squadron" droppable can-drop="$item.type == 'captain' && $item != ship.captain" drop="setShipCaptain(fleet,ship,$item)" drag-store="dragStore">
 				<div class="card-outer card-drop-target font-staw" ng-click="setSearchTypes(['captain'])">
 					<div class="card-drop-target-inner">
@@ -36,7 +47,7 @@
 				</div>
 				<card-upgrade ng-if="ship.captain" upgrade="ship.captain" ship="ship" fleet="fleet" drag-store="dragStore"></card-upgrade>
 			</div><!--
-			
+
 		 --><div class="card-container" ng-hide="!ship.admiral && ( ship.squadron || ship.hideEmptySlots || fleetHasAdmiral(fleet) )"
 				droppable can-drop="$item.type == 'admiral' && $item != ship.admiral" drop="setShipAdmiral(fleet,ship,$item)" drag-store="dragStore">
 				<div class="card-outer card-drop-target font-staw" ng-click="setSearchTypes(['admiral'])">

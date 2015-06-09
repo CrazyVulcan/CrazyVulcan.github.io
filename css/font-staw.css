@@ -159,3 +159,7 @@
 .fs-resource:before {
   content: "A";
 }
+
+.fs-fleet-captain:before {
+  content: "A";
+}
