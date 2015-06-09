@@ -115,8 +115,7 @@
 				</div>
 			</div><!--
 			
-			--><div class="card-container" ng-show="fleet.ships.length > 0 || fleet.resource"
-				droppable can-drop="$item.type == 'resource' && $item != fleet.resource" drop="setFleetResource(fleet,$item)" drag-store="dragStore">
+			--><div class="card-container" droppable can-drop="$item.type == 'resource' && $item != fleet.resource" drop="setFleetResource(fleet,$item)" drag-store="dragStore">
 				<div class="card-outer card-drop-target font-staw" ng-click="setSearchTypes(['resource'])">
 					<div class="card-drop-target-title">Place rules card here</div>
 					<div class="card-drop-target-inner">
@@ -148,7 +147,7 @@
 	</div>
 	
 	<div class="fleet-ship-bottom">
-		<div class="fleet-ship-bottom-left" ng-class="{'fleet-ship-bottom-left-long': fleet.ships.length > 0 || fleet.resource}"></div>
+		<div class="fleet-ship-bottom-left fleet-ship-bottom-left-long"></div>
 	</div>
 	
 </div>
