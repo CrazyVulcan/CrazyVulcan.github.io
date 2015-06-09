@@ -2741,6 +2741,108 @@ module.factory( "cardRules", function($filter, $factions) {
 			]
 		},
 		
+		// Sideboard
+		"resource:4003": {
+			upgradeSlots: [
+				{
+					type: ["talent"],
+					source: "Sideboard",
+					canEquip: function(card,ship,fleet,upgradeSlot) {
+						
+						var total = 0;
+						$.each( fleet.resource.upgradeSlots, function(i,slot) {
+							if( slot.occupant && slot != upgradeSlot )
+								total += slot.occupant.cost instanceof Function ? slot.occupant.cost() : slot.occupant.cost;
+						} );
+						
+						var cost = card.cost instanceof Function ? card.cost() : card.cost;
+						return total + cost <= 20;
+						
+					},
+					intercept: {
+						ship: {
+							// Remove all restrictions
+							canEquip: function() { return true; },
+							canEquipFaction: function() { return true; },
+							factionPenalty: function() { return 0; }
+						}
+					},
+				},
+				{
+					type: ["crew"],
+					source: "Sideboard",
+					canEquip: function(card,ship,fleet,upgradeSlot) {
+						
+						var total = 0;
+						$.each( fleet.resource.upgradeSlots, function(i,slot) {
+							if( slot.occupant && slot != upgradeSlot )
+								total += slot.occupant.cost instanceof Function ? slot.occupant.cost() : slot.occupant.cost;
+						} );
+						
+						var cost = card.cost instanceof Function ? card.cost() : card.cost;
+						return total + cost <= 20;
+						
+					},
+					intercept: {
+						ship: {
+							// Remove all restrictions
+							canEquip: function() { return true; },
+							canEquipFaction: function() { return true; },
+							factionPenalty: function() { return 0; }
+						}
+					},
+				},
+				{
+					type: ["tech"],
+					source: "Sideboard",
+					canEquip: function(card,ship,fleet,upgradeSlot) {
+						
+						var total = 0;
+						$.each( fleet.resource.upgradeSlots, function(i,slot) {
+							if( slot.occupant && slot != upgradeSlot )
+								total += slot.occupant.cost instanceof Function ? slot.occupant.cost() : slot.occupant.cost;
+						} );
+						
+						var cost = card.cost instanceof Function ? card.cost() : card.cost;
+						return total + cost <= 20;
+						
+					},
+					intercept: {
+						ship: {
+							// Remove all restrictions
+							canEquip: function() { return true; },
+							canEquipFaction: function() { return true; },
+							factionPenalty: function() { return 0; }
+						}
+					},
+				},
+				{
+					type: ["weapon"],
+					source: "Sideboard",
+					canEquip: function(card,ship,fleet,upgradeSlot) {
+
+						var total = 0;
+						$.each( fleet.resource.upgradeSlots, function(i,slot) {
+							if( slot.occupant && slot != upgradeSlot )
+								total += slot.occupant.cost instanceof Function ? slot.occupant.cost() : slot.occupant.cost;
+						} );
+						
+						var cost = card.cost instanceof Function ? card.cost() : card.cost;
+						return total + cost <= 20;
+						
+					},
+					intercept: {
+						ship: {
+							// Remove all restrictions
+							canEquip: function() { return true; },
+							canEquipFaction: function() { return true; },
+							factionPenalty: function() { return 0; }
+						}
+					},
+				},
+			]
+		}
+		
 	};
 	
 } );

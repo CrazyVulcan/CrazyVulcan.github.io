@@ -108,7 +108,7 @@ module.directive( "fleetBuilder", function($filter) {
 				}
 				
 				// Slot-specific restrictions
-				if( upgradeSlot.canEquip && !upgradeSlot.canEquip(upgrade) ) {
+				if( upgradeSlot.canEquip && !upgradeSlot.canEquip(upgrade,ship,fleet,upgradeSlot) ) {
 					console.log("upgrade rejected by slot");
 					return false;
 				}
@@ -301,6 +301,17 @@ module.directive( "fleetBuilder", function($filter) {
 				
 				if( card == fleet.resource )
 					delete fleet.resource;
+				
+				$.each( fleet.resource.upgradeSlots || [], function(j,slot) {
+					if( card == slot.occupant ) {
+						if( replaceWith && $scope.isUpgradeCompatible( replaceWith, slot ) )
+							slot.occupant = replaceWith;
+						else
+							delete slot.occupant;
+						found = true;
+						return false;
+					}
+				} );
 				
 				$.each( fleet.ships, function(i, ship) {
 					
