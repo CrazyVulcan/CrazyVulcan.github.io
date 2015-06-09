@@ -310,6 +310,32 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 
 				} );
 
+				doc.find("Officer").each( function(i, data) {
+
+					data = $(data);
+
+					var officer = {
+						type: "officer",
+						id: data.find("Id").text(),
+						name: data.find("Title").text(),
+						text: convertIconTags( data.find("Ability").text() ),
+						cost: Number( data.find("Cost").text() ),
+						factions: [data.find("Faction").text().toLowerCase()],
+						unique: true,
+						upgradeSlots: [],
+						showType: true,
+						canEquip: true,
+						canEquipFaction: true,
+						intercept: { ship: {}, fleet: {} },
+						factionPenalty: 0,
+					};
+					
+					officer.upgradeSlots.push( { type: ["crew"], source: "Crew to be assigned as "+officer.name } );
+
+					loadOther( officer );
+
+				} );
+				
 				if(callback)
 					callback();
 

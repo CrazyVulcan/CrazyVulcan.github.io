@@ -2682,6 +2682,65 @@ module.factory( "cardRules", function($filter, $factions) {
 			
 		},
 		
+		"resource:officer_cards_collectiveop3": {
+			
+			hideCost: true,
+
+			intercept: {
+				fleet: {
+					// Add the "officer" type to all crew slots
+					type: function(card,ship,fleet,type) {
+						if( $.inArray("crew",type) >= 0 )
+							return type.concat(["officer"]);
+						return type;
+					}
+				}
+			}
+			
+		},
+		
+		"officer:first_officer_collectiveop3": {
+			skill: 4,
+			talents: 1,
+			upgradeSlots: [
+				{/* Crew slot added by loader */},
+				{
+					type: ["talent"],
+					source: "First Officer",
+				}
+			]
+		},
+		
+		"officer:tactical_officer_collectiveop3": {
+			upgradeSlots: [
+				{/* Crew slot added by loader */},
+				{
+					type: ["weapon"],
+					source: "Tactical Officer",
+				}
+			]
+		},
+		
+		"officer:operations_officer_collectiveop3": {
+			upgradeSlots: [
+				{/* Crew slot added by loader */},
+				{
+					type: ["crew"],
+					source: "Operations Officer",
+				}
+			]
+		},
+		
+		"officer:science_officer_collectiveop3": {
+			upgradeSlots: [
+				{/* Crew slot added by loader */},
+				{
+					type: ["tech"],
+					source: "Science Officer",
+				}
+			]
+		},
+		
 	};
 	
 } );

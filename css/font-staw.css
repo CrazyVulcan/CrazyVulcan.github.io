@@ -167,3 +167,7 @@
 .fs-faction:before {
   content: "A";
 }
+
+.fs-officer:before {
+  content: "A";
+}

@@ -74,8 +74,9 @@ module.directive( "fleetBuilder", function($filter) {
 			// TODO replace references
 			$scope.getUpgradeSlots = $filter("upgradeSlots");
 			
-			$scope.isUpgradeCompatible = function(upgrade, upgradeSlot) {
-				return upgrade != upgradeSlot.occupant && $.inArray( upgrade.type, upgradeSlot.type ) >= 0;
+			$scope.isUpgradeCompatible = function(upgrade, upgradeSlot, ship, fleet) {
+				var types = valueOf(upgradeSlot,"type",ship,fleet);
+				return upgrade != upgradeSlot.occupant && $.inArray( upgrade.type, types ) >= 0;
 			};
 			
 			var valueOf = $filter("valueOf");
@@ -83,7 +84,7 @@ module.directive( "fleetBuilder", function($filter) {
 			$scope.setUpgrade = function(fleet, ship, upgradeSlot, upgrade) {
 				
 				// Check slot type
-				if( !$scope.isUpgradeCompatible(upgrade, upgradeSlot) ) {
+				if( !$scope.isUpgradeCompatible(upgrade, upgradeSlot, ship, fleet) ) {
 					console.log("wrong slot type");
 					return false;
 				}
