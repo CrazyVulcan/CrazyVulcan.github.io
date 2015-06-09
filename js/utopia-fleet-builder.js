@@ -302,16 +302,17 @@ module.directive( "fleetBuilder", function($filter) {
 				if( card == fleet.resource )
 					delete fleet.resource;
 				
-				$.each( fleet.resource.upgradeSlots || [], function(j,slot) {
-					if( card == slot.occupant ) {
-						if( replaceWith && $scope.isUpgradeCompatible( replaceWith, slot ) )
-							slot.occupant = replaceWith;
-						else
-							delete slot.occupant;
-						found = true;
-						return false;
-					}
-				} );
+				if( fleet.resource )
+					$.each( fleet.resource.upgradeSlots || [], function(j,slot) {
+						if( card == slot.occupant ) {
+							if( replaceWith && $scope.isUpgradeCompatible( replaceWith, slot ) )
+								slot.occupant = replaceWith;
+							else
+								delete slot.occupant;
+							found = true;
+							return false;
+						}
+					} );
 				
 				$.each( fleet.ships, function(i, ship) {
 					
