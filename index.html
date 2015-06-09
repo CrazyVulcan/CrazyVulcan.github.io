@@ -95,8 +95,8 @@
 					<div ng-hide="drag.item && drag.source != 'search'">
 
 						<div class="card-container" ng-repeat="card in cards | cardFilter:search | limitTo:resultLimit*search.columns">
-							<card-ship ng-if="card.type == 'ship'" ship="card" drag-store="drag" drag-source="search"></card-ship>
-							<card-upgrade ng-if="card.type != 'ship' && card.type != 'resource'" upgrade="card" drag-store="drag" drag-source="search"></card-upgrade>
+							<card-ship ng-if="card.type == 'ship' || card.displayAsShip" ship="card" drag-store="drag" drag-source="search"></card-ship>
+							<card-upgrade ng-if="card.type != 'ship' && !card.displayAsShip && card.type != 'resource'" upgrade="card" drag-store="drag" drag-source="search"></card-upgrade>
 							<card-resource ng-if="card.type == 'resource'" resource="card" drag-store="drag" drag-source="search"></card-resource>
 						</div>
 						

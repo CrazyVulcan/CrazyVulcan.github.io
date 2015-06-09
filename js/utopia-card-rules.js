@@ -2841,6 +2841,30 @@ module.factory( "cardRules", function($filter, $factions) {
 					},
 				},
 			]
+		},
+		
+		// Flagship
+		"resource:4004": {
+			slotType: "flagship",
+			cost: 0,
+			hideCost: true,
+			showShipResourceSlot: function(ship,fleet) {
+				if( ship.resource && ship.resource.type == "flagship" )
+					return true;
+				
+				var show = true;
+				$.each( fleet.ships, function(i,ship) {
+					if( ship.resource )
+						show = false;
+				} );
+				return show;
+			},
+			onRemove: function(resource,ship,fleet) {
+				$.each( fleet.ships, function(i,ship) {
+					if( ship.resource )
+						delete ship.resource;
+				} );
+			}
 		}
 		
 	};

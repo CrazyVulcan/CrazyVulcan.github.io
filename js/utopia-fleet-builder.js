@@ -372,6 +372,10 @@ module.directive( "fleetBuilder", function($filter) {
 				
 				var cost = ship.cost;
 				
+				if( ship.resource ) {
+					cost += valueOf(ship.resource,"cost",ship,fleet);
+				}
+				
 				if( ship.captain )
 					cost += valueOf(ship.captain,"cost",ship,fleet);
 

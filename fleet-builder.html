@@ -34,7 +34,8 @@
 						</div>
 					</div>
 				</div>
-				<card-upgrade ng-if="ship.resource" upgrade="ship.resource" ship="ship" fleet="fleet" drag-store="dragStore"></card-upgrade>
+				<card-upgrade ng-if="ship.resource && !ship.resource.displayAsShip" upgrade="ship.resource" ship="ship" fleet="fleet" drag-store="dragStore"></card-upgrade>
+				<card-ship ng-if="ship.resource && ship.resource.displayAsShip" ship="ship.resource" fleet="fleet" drag-store="dragStore"></card-ship>
 			</div><!--
 			
 		 --><div class="card-container" ng-hide="ship.squadron" droppable can-drop="$item.type == 'captain' && $item != ship.captain" drop="setShipCaptain(fleet,ship,$item)" drag-store="dragStore">

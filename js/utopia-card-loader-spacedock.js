@@ -336,6 +336,90 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 
 				} );
 				
+				doc.find("Flagship").each( function(i, data) {
+
+					data = $(data);
+
+					var flagship = {
+						type: "flagship",
+						id: data.find("Id").text(),
+						name: "Flagship",
+						class: data.find("Title").text(),
+						text: convertIconTags( data.find("Ability").text() ),
+						cost: 10,
+						factions: [data.find("Faction").text().toLowerCase()],
+						unique: true,
+						actions: [],
+						upgrades: [],
+						upgradeSlots: [],
+						attack: Number( data.find("Attack").text() ),
+						agility: Number( data.find("Agility").text() ),
+						hull: Number( data.find("Hull").text() ),
+						shields: Number( data.find("Shield").text() ),
+						showType: true,
+						canEquip: true,
+						canEquipFaction: true,
+						displayAsShip: true,
+						isShipModifier: true,
+						factionPenalty: 0,
+						intercept: { ship: {}, fleet: {} },
+					};
+					
+					flagship.intercept.ship = {
+						attack: function(card,ship,fleet,attack) {
+							if( card == ship && ship.type != "flagship" )
+								return (attack instanceof Function ? attack(card,ship,fleet,0) : attack) + flagship.attack;
+							return attack;
+						},
+						agility: function(card,ship,fleet,agility) {
+							if( card == ship && ship.type != "flagship" )
+								return (agility instanceof Function ? agility(card,ship,fleet,0) : agility) + flagship.agility;
+							return agility;
+						},
+						hull: function(card,ship,fleet,hull) {
+							if( card == ship && ship.type != "flagship" )
+								return (hull instanceof Function ? hull(card,ship,fleet,0) : hull) + flagship.hull;
+							return hull;
+						},
+						shields: function(card,ship,fleet,shields) {
+							if( card == ship && ship.type != "flagship" )
+								return (shields instanceof Function ? shields(card,ship,fleet,0) : shields) + flagship.shields;
+							return shields;
+						},
+					};
+					
+					if( data.find("EvasiveManeuvers").text() == "1" )
+						flagship.actions.push( "evade" );
+					if( data.find("TargetLock").text() == "1" )
+						flagship.actions.push( "target-lock" );
+					if( data.find("Scan").text() == "1" )
+						flagship.actions.push( "scan" );
+					if( data.find("Battlestations").text() == "1" )
+						flagship.actions.push( "battlestations" );
+					if( data.find("Cloak").text() == "1" )
+						flagship.actions.push( "cloak" );
+					if( data.find("SensorEcho").text() == "1" )
+						flagship.actions.push( "sensor-echo" );
+					if( data.find("Regenerate").text() == "1" )
+						flagship.actions.push( "regenerate" );
+
+					for( var i = 0; i < Number( data.find("Tech").text() ); i++ ) {
+						flagship.upgrades.push( { type: ["tech"], source: "Flagship" } );
+						flagship.upgradeSlots.push( { type: ["tech"], source: "Flagship" } );
+					}
+					for( var i = 0; i < Number( data.find("Weapon").text() ); i++ ) {
+						flagship.upgrades.push( { type: ["weapon"], source: "Flagship" } );
+						flagship.upgradeSlots.push( { type: ["weapon"], source: "Flagship" } );
+					}
+					for( var i = 0; i < Number( data.find("Crew").text() ); i++ ) {
+						flagship.upgrades.push( { type: ["crew"], source: "Flagship" } );
+						flagship.upgradeSlots.push( { type: ["crew"], source: "Flagship" } );
+					}
+
+					loadOther( flagship );
+
+				} );
+				
 				if(callback)
 					callback();
 
