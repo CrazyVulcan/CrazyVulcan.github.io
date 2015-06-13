@@ -35,7 +35,7 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 
 	return {
 
-		loadCards: function( loadShip, loadCaptain, loadAdmiral, loadUpgrade, loadResource, loadOther, callback ) {
+		loadCards: function( loadSet, loadShip, loadCaptain, loadAdmiral, loadUpgrade, loadResource, loadOther, callback ) {
 
 			// Load from Space Dock data file
 			$http.get( "data/data.xml" ).success( function(data) {
@@ -414,6 +414,20 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 					}
 
 					loadOther( flagship );
+
+				} );
+				
+				doc.find("Set").each( function(i, data) {
+
+					data = $(data);
+
+					var set = {
+						type: "set",
+						id: data.attr("id"),
+						name: data.text(),
+					};
+
+					loadSet( set );
 
 				} );
 				

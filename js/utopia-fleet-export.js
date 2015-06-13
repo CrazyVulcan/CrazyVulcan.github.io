@@ -6,6 +6,7 @@ module.directive( "fleetExport", function() {
 
 		scope: {
 			fleet: "=",
+			sets: "=",
 			searchOptions: "="
 		},
 
@@ -67,6 +68,17 @@ module.directive( "fleetExport", function() {
 				
 			}, true );
 			
+			function getSetName(id) {
+				var names = "";
+				var sets = id.split(",");
+				$.each( sets, function(i,id) {
+					names += $scope.sets[id] ? $scope.sets[id].name : id;
+					if( i < sets.length-1 )
+						names += ", ";
+				});
+				return names;
+			}
+			
 			function cardToText(card, ship, fleet, indent) {
 				
 				var text = "";
@@ -79,7 +91,7 @@ module.directive( "fleetExport", function() {
 				text += card.name;
 				
 				if( card.type == "captain" )
-					text += " (Captain)";
+					text += " " + card.skill + " (Captain)";
 				if( card.type == "admiral" )
 					text += " (Admiral)";
 				if( card.type == "fleet-captain" )
@@ -92,7 +104,7 @@ module.directive( "fleetExport", function() {
 				if( card.type == "ship" ) {
 					text += (card.unique ? "" : " ("+card.class+")" ) + " [" + cost + "]\n";
 				} else {
-					text += ( card.set ? " (" + card.set + ")" : "" ) + " [" + cost + "]\n";
+					text += ( card.set ? " (" + getSetName(card.set) + ")" : "" ) + " [" + cost + "]\n";
 				}
 
 				if( card.resource ) {
