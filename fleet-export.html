@@ -6,6 +6,8 @@
 
 	<div class="u-search-header"><span>Copy Text Listing</span></div>
 
-	<textarea class="export-text" ng-bind="fleetText"></textarea>
+	<label class="export-option"><input type="checkbox" ng-model="showSetNames"> Include Expansion Names</label>
+	
+	<textarea class="export-text" ng-model="fleetText"></textarea>
 	
 </div>

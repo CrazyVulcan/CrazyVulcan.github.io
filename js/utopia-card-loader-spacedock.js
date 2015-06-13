@@ -417,7 +417,7 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 
 				} );
 				
-				doc.find("Set").each( function(i, data) {
+				doc.find("Sets").find("Set").each( function(i, data) {
 
 					data = $(data);
 

@@ -82,7 +82,8 @@ body {
 	-ms-overflow-style: none;
 }
 
-.u-search-results::-webkit-scrollbar {
+.u-search-results::-webkit-scrollbar,
+.u-fleet::-webkit-scrollbar {
 	display: none;
 }
 
@@ -245,5 +246,5 @@ body {
 }
 
 .u-export {
-	width: 347px;
+	width: 300px;
 }

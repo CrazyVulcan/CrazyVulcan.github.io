@@ -21,6 +21,11 @@
 .export-text {
 	margin: 0.5em;
 	font-size: 0.8em;
-	width: 18em;
+	width: 280px;
 	height: 20em;
+}
+
+.export-option {
+	font-weight: normal;
+	margin-top: 5px;
 }
