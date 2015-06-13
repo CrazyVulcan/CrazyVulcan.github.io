@@ -336,8 +336,8 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 					var flagship = {
 						type: "flagship",
 						id: data.find("Id").text(),
-						name: "Flagship",
-						class: data.find("Title").text(),
+						class: "Flagship",
+						name: data.find("Title").text(),
 						text: convertIconTags( data.find("Ability").text() ),
 						cost: 10,
 						factions: [data.find("Faction").text().toLowerCase()],

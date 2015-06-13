@@ -83,9 +83,9 @@ module.directive( "fleetExport", function() {
 				if( card.type == "admiral" )
 					text += " (Admiral)";
 				if( card.type == "fleet-captain" )
-					text += " (Fleet Captain)";
+					text += " Fleet Captain";
 				if( card.type == "flagship" )
-					text += " (Flagship)";
+					text += " Flagship";
 				if( card.type == "faction" )
 					text += " Faction";
 				
