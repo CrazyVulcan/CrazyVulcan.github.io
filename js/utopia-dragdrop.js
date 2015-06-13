@@ -20,6 +20,7 @@ module.directive('draggable', function () {
 				});
 				element.addClass("dragging");
 				ev.originalEvent.dataTransfer.effectAllowed = 'move';
+				ev.originalEvent.dataTransfer.setData("text/plain","google");
 			});
 			
 			element.on("dragend", function(ev) {
@@ -80,6 +81,8 @@ module.directive('droppable', function () {
 					scope.drop( {"$item": scope.dragStore.item} )
 					delete scope.dragStore.item;
                 });
+				
+				ev.preventDefault();
 				
 			});
 			
