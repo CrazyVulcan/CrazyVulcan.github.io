@@ -100,10 +100,27 @@
 
 .fleet-search-bigger {
 	background: #ddd;
-	border-top-right-radius: 1em;
-	border-bottom-right-radius: 1em;
 	border: none;
 	padding: 0 1em;
 	font-family: STAWSwiss;
 
+}
+
+.fleet-open-search .fleet-search-bigger {
+	border-top-right-radius: 1em;
+	border-bottom-right-radius: 1em;
+}
+
+.fleet-open-export {
+	font-size: 2em;
+	position: relative;
+	top: -1.9em;
+	right: -0.2em;
+	margin-bottom: -1.4em;
+	float: right;
+}
+
+.fleet-open-export .fleet-search-bigger {
+	border-top-left-radius: 1em;
+	border-bottom-left-radius: 1em;
 }

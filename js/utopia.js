@@ -1,4 +1,4 @@
-var module = angular.module("utopia", ["ngSanitize", "utopia-card-ship", "utopia-card-upgrade", "utopia-card-resource", "utopia-dragdrop", "utopia-fleet-builder", "utopia-card-loader", "utopia-card-rules"]);
+var module = angular.module("utopia", ["ngSanitize", "utopia-card-ship", "utopia-card-upgrade", "utopia-card-resource", "utopia-dragdrop", "utopia-fleet-builder", "utopia-fleet-export", "utopia-card-loader", "utopia-card-rules"]);
 
 module.filter( "cardFilter", function($factions) {
 

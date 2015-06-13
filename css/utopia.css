@@ -74,7 +74,7 @@ body {
 	backface-visibility: hidden;
 }
 
-.u-search-results, .u-fleet {
+.u-search-results, .u-fleet, .u-export {
 	overflow: auto;
 	height: auto;
 	padding: .5rem;
@@ -133,6 +133,7 @@ body {
 	border-radius: 0.5em;
 	padding-left: 1em;
 	margin-top: 0.4em;
+	text-align: left;
 }
 
 .u-search-header span {
@@ -243,3 +244,6 @@ body {
 	}
 }
 
+.u-export {
+	width: 347px;
+}

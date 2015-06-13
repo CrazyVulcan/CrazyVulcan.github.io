@@ -2,8 +2,6 @@ var module = angular.module("utopia-card-loader", ["utopia-card-rules", "utopia-
 
 module.factory( "cardLoader", function($http, $filter, cardRules, $factions, cardLoaderSpacedock, cardLoaderSupplemental) {
 
-
-
 	var valueOf = $filter("valueOf");
 
 	return function(cards, callback) {

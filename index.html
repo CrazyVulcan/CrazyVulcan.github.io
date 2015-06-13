@@ -7,6 +7,7 @@
         <link rel="stylesheet" type="text/css" href="css/utopia.css">
         <link rel="stylesheet" type="text/css" href="css/utopia-card.css">
 		<link rel="stylesheet" type="text/css" href="css/utopia-fleet-builder.css">
+		<link rel="stylesheet" type="text/css" href="css/utopia-fleet-export.css">
 		
         <title>Utopia: A Fleet Builder for Star Trek Attack Wing</title>
 
@@ -19,6 +20,7 @@
 		<script type="text/javascript" src="js/utopia-card-resource.js"></script>
 		<script type="text/javascript" src="js/utopia-dragdrop.js"></script>
 		<script type="text/javascript" src="js/utopia-fleet-builder.js"></script>
+		<script type="text/javascript" src="js/utopia-fleet-export.js"></script>
 		<script type="text/javascript" src="js/utopia-card-loader.js"></script>
 		<script type="text/javascript" src="js/utopia-card-loader-spacedock.js"></script>
 		<script type="text/javascript" src="js/utopia-card-loader-supplemental.js"></script>
@@ -114,6 +116,10 @@
 				<fleet-builder fleet="activeFleet" cards="cards" drag-store="drag" search-options="search"></fleet-builder>
 			</div>
 
+			<div class="u-export" ng-show="search.showExport">
+				<fleet-export fleet="activeFleet" search-options="search"></fleet-export>
+			</div>
+			
 		</div>
 
 		<script src="js/analytics.js"></script>

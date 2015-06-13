@@ -184,6 +184,7 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 						type: data.find("Type").text().toLowerCase(),
 						id: data.find("Id").text(),
 						name: filterName( data.find("Title").text() ),
+						set: data.find("Set").text(),
 						unique: (data.find("Unique").text() == "Y") || (data.find("MirrorUniverseUnique").text() == "Y"),
 						text: convertIconTags( data.find("Ability").text() ),
 						factions: [data.find("Faction").text().toLowerCase()],
