@@ -87,7 +87,7 @@ module.directive( "fleetExport", function() {
 				return names;
 			}
 			
-			function cardToText(card, ship, fleet, indent) {
+			function cardToText(card, ship, fleet, indent, hideCost) {
 				
 				var text = "";
 				indent = indent || 0;
@@ -95,6 +95,10 @@ module.directive( "fleetExport", function() {
 					text += "- ";
 				
 				var cost = valueOf(card,"cost",ship,fleet);
+				var countSlotCost = true;
+				
+				if( card.type == "resource" )
+					countSlotCost = false;
 				
 				text += card.name;
 				
@@ -110,11 +114,18 @@ module.directive( "fleetExport", function() {
 					text += " Faction";
 				
 				if( card.type == "ship" ) {
-					text += ( card.unique ? "" : " ("+card.class+")" ) + " [" + cost + "]\n";
-				} else {
-					text += ( $scope.showSetNames && card.set ? " (" + getSetName(card.set) + ")" : "" ) + " [" + cost + "]\n";
+					// Show class name for generic ships
+					text += card.unique ? "" : " ("+card.class+")";
+				} else if( $scope.showSetNames ){
+					// Show set names for non-ships
+					text += card.set ? " (" + getSetName(card.set) + ")" : "";
 				}
-
+				
+				// Show cost if appropriate
+				if( !hideCost )
+					text += " [" + cost + "]";
+				text += "\n";
+				
 				if( card.resource ) {
 					var res = cardToText(card.resource, ship, fleet, indent+1);
 					text += res.text;
@@ -137,15 +148,17 @@ module.directive( "fleetExport", function() {
 					if( slot.occupant ) {
 						var res = cardToText(slot.occupant, ship, fleet, indent+1);
 						text += res.text;
-						cost += res.cost;
+						if( countSlotCost )
+							cost += res.cost;
 					}
 				});
 				
 				$.each( card.upgradeSlots || [], function(i,slot) {
 					if( slot.occupant ) {
-						var res = cardToText(slot.occupant, ship, fleet, indent+1);
+						var res = cardToText(slot.occupant, ship, fleet, indent+1, !countSlotCost);
 						text += res.text;
-						cost += res.cost;
+						if( countSlotCost )
+							cost += res.cost;
 					}
 				});
 				
