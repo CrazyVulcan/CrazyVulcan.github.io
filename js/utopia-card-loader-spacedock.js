@@ -35,7 +35,7 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 
 	return {
 
-		loadCards: function( loadSet, loadShip, loadCaptain, loadAdmiral, loadUpgrade, loadResource, loadOther, callback ) {
+		loadCards: function( loadSet, loadShip, loadShipClass, loadCaptain, loadAdmiral, loadUpgrade, loadResource, loadOther, callback ) {
 			
 			var ignoreCards = [ "jean_luc_picard_71531", "jean_luc_picard_c_71531", "jean_luc_picard_d_71531", "chakotay_b_71528", "calvin_hudson_b_71528", "calvin_hudson_c_71528", "sakharov_c_71997p" ];
 
@@ -443,6 +443,48 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 					};
 
 					loadSet( set );
+
+				} );
+				
+				doc.find("ShipClassDetail").each( function(i, data) {
+
+					data = $(data);
+					
+					var shipClass = {
+						type: "ship-class",
+						id: data.find("Id").text(),
+						name: data.find("Name").text(),
+						frontArc: data.find("FrontArc").text(),
+						rearArc: data.find("RearArc").text(),
+						maneuvers: {
+							min: 9, max: 0,
+						},
+					};
+					
+					data.find("Maneuver").each( function(j,maneuver) {
+						
+						maneuver = $(maneuver);
+						
+						var speed = Number( maneuver.attr("speed") );
+						var type = maneuver.attr("kind");
+						var color = maneuver.attr("color");
+						
+						if( type.indexOf("right-") == 0 ) {
+							type = type.substring(6);
+						} else if( type.indexOf("left-") == 0 )
+							return;
+						
+						shipClass.maneuvers[speed] = shipClass.maneuvers[speed] || {};
+						shipClass.maneuvers[speed][type] = color;
+						
+						if( speed < shipClass.maneuvers.min )
+							shipClass.maneuvers.min = speed;
+						if( speed > shipClass.maneuvers.max )
+							shipClass.maneuvers.max = speed;
+						
+					});
+
+					loadShipClass( shipClass );
 
 				} );
 				

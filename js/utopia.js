@@ -209,10 +209,11 @@ module.controller( "UtopiaCtrl", function($scope, $http, $filter, cardLoader, $f
 	$scope.cards = [];
 	$scope.sets = {};
 	$scope.setList = [];
+	$scope.shipClasses = {};
 	$scope.activeFleet = { ships: [] };
 
 	$scope.loading = true;
-	cardLoader( $scope.cards, $scope.sets, function() {
+	cardLoader( $scope.cards, $scope.sets, $scope.shipClasses, function() {
 
 		// Construct list of card types from those available
 		$.each( $scope.cards, function(i, card) {

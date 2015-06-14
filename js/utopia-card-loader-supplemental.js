@@ -8,7 +8,7 @@ module.factory( "cardLoaderSupplemental", function($http, $filter, cardRules, $f
 
 	return {
 
-		loadCards: function( loadSet, loadShip, loadCaptain, loadAdmiral, loadUpgrade, loadResource, loadOther ) {
+		loadCards: function( loadSet, loadShip, loadShipClass, loadCaptain, loadAdmiral, loadUpgrade, loadResource, loadOther ) {
 
 			var data = [
 

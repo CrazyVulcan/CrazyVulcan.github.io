@@ -4,7 +4,7 @@ module.factory( "cardLoader", function($http, $filter, cardRules, $factions, car
 
 	var valueOf = $filter("valueOf");
 
-	return function(cards, sets, callback) {
+	return function(cards, sets, shipClasses, callback) {
 
 		function isDuplicate(card, cards) {
 			var dupe = false;
@@ -213,16 +213,29 @@ module.factory( "cardLoader", function($http, $filter, cardRules, $factions, car
 		
 		function loadSet(set) {
 			
-			if( sets[set.id] )
+			if( sets[set.id] ) {
 				console.log("Duplicate set",set.id,set.name);
+				return;
+			}
 			
 			sets[set.id] = set;
 			
 		}
+		
+		function loadShipClass(shipClass) {
+			
+			if( shipClasses[shipClass.name] ) {
+				console.log("Duplicate ship class",shipClass.name,shipClass.id,shipClasses[shipClass.name].id);
+				return;
+			}
+			
+			shipClasses[shipClass.name] = shipClass;
+			
+		}
 
-		cardLoaderSpacedock.loadCards( loadSet, loadShip, loadCaptain, loadAdmiral, loadUpgrade, loadResource, loadOther, function() {
+		cardLoaderSpacedock.loadCards( loadSet, loadShip, loadShipClass, loadCaptain, loadAdmiral, loadUpgrade, loadResource, loadOther, function() {
 
-			cardLoaderSupplemental.loadCards( loadSet, loadShip, loadCaptain, loadAdmiral, loadUpgrade, loadResource, loadOther );
+			cardLoaderSupplemental.loadCards( loadSet, loadShip, loadShipClass, loadCaptain, loadAdmiral, loadUpgrade, loadResource, loadOther );
 
 			if( callback )
 				callback();
