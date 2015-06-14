@@ -75,11 +75,20 @@
 
 						<search-filter-group title="Order By" open>
 							<div class="u-search-filter-comment">
-								Order results by <select ng-model="search.sortBy"><option ng-repeat="sortable in sortables" value="{{sortable.value}}">{{sortable.name}}</option><select> <select ng-model="search.ascending"><option value="true">Ascending</option><option value="false">Descending</option></select>
+								Order results by <select ng-model="search.sortBy"><option ng-repeat="sortable in sortables" value="{{sortable.value}}">{{sortable.name}}</option></select>
+								<select ng-model="search.ascending"><option value="true">Ascending</option><option value="false">Descending</option></select>
+							</div>
+						</search-filter-group>
+						
+						<search-filter-group title="Custom Filter" open>
+							<div class="u-search-filter-comment" ng-init="search.filterOperator = '<'">
+								<select ng-model="search.filterField"><option value="">- No Filter -</option><option ng-repeat="sortable in sortables" value="{{sortable.value}}">{{sortable.name}}</option></select>
+								<select ng-model="search.filterOperator"><option value="<">&lt;</option><option value="<=">&lt;=</option><option value="=">=</option><option value=">=">&gt;=</option><option value=">">&gt;</option></select>
+								<input ng-model="search.filterValue" placeholder="Value"></input>
 							</div>
 						</search-filter-group>
 
-						<search-filter-group title="Expansion">
+						<search-filter-group title="Owned Expansions">
 							<div class="u-search-filter-comment">
 								Expansion filter settings are stored in your browser for future sessions. Uncheck the expansions you don't own. New expansions are automatically checked. These settings are not affected by the "Reset" button.
 							</div>
