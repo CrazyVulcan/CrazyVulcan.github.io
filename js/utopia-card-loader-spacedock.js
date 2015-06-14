@@ -54,6 +54,7 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 						set: data.find("Set").text().split(","),
 						name: data.find("Title").text(),
 						class: data.find("ShipClass").text(),
+						classId: data.find("ShipClassDetailsId").text(),
 						actions: [],
 						upgrades: [],
 						attack: Number( data.find("Attack").text() ),

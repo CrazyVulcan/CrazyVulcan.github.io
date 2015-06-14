@@ -207,28 +207,28 @@ module.factory( "cardRules", function($filter, $factions) {
 			// Restore class on card text
 			class: "Galaxy Class",
 			// TODO use this field to pick the correct maneuver card
-			maneuverClass: "Galaxy Class (MU)"
+			classId: "galaxy__class_mu",
 		},
 		
 		"ship:mirror_universe_starship_71510b": {
 			// Restore class on card text
 			class: "Galaxy Class",
 			// TODO use this field to pick the correct maneuver card
-			maneuverClass: "Galaxy Class (MU)"
+			classId: "galaxy__class_mu",
 		},
 		
 		"ship:assimilation_target_prime_71510b": {
 			// Restore class on card text
 			class: "Galaxy Class",
 			// TODO use this field to pick the correct maneuver card
-			maneuverClass: "Galaxy Class (MU)"
+			classId: "galaxy__class_mu",
 		},
 		
 		"ship:mirror_universe_borg_starship_71510b": {
 			// Restore class on card text
 			class: "Galaxy Class",
 			// TODO use this field to pick the correct maneuver card
-			maneuverClass: "Galaxy Class (MU)"
+			classId: "galaxy__class_mu",
 		},
 		
 		

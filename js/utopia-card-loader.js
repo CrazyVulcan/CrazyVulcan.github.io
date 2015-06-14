@@ -224,18 +224,35 @@ module.factory( "cardLoader", function($http, $filter, cardRules, $factions, car
 		
 		function loadShipClass(shipClass) {
 			
-			if( shipClasses[shipClass.name] ) {
-				console.log("Duplicate ship class",shipClass.name,shipClass.id,shipClasses[shipClass.name].id);
+			if( shipClasses[shipClass.id] ) {
+				console.log("Duplicate ship class",shipClass.id,shipClass.name,shipClasses[shipClass.id].name);
 				return;
 			}
 			
-			shipClasses[shipClass.name] = shipClass;
+			shipClasses[shipClass.id] = shipClass;
 			
 		}
 
 		cardLoaderSpacedock.loadCards( loadSet, loadShip, loadShipClass, loadCaptain, loadAdmiral, loadUpgrade, loadResource, loadOther, function() {
 
 			cardLoaderSupplemental.loadCards( loadSet, loadShip, loadShipClass, loadCaptain, loadAdmiral, loadUpgrade, loadResource, loadOther );
+			
+			// Assign classes to ships
+			// TODO This should really be done in the subloader
+			$.each( cards, function(i,card) {
+				if( card.type == "ship" ) {
+					if( !card.classId ) {
+						$.each( shipClasses, function(id,shipClass) {
+							if( shipClass.name == card.class ) {
+								card.classId = id;
+								return false;
+							}
+						} );
+					}
+					if( !card.classId || !shipClasses[card.classId] )
+						console.log( "No class for ship", card.id, card.name, card.classId );
+				}
+			});
 
 			if( callback )
 				callback();
