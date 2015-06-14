@@ -15,7 +15,7 @@
 		<div class="fleet-ship-title fleet-ship-cost font-staw">{{ getTotalCost(ship,fleet) }} SP</div>
 		<div class="fleet-ship-top-spacer"></div>
 		<div class="fleet-ship-top-spacer"></div>
-		<div class="toggle-button-value pull-left" ng-class="{'toggle-button-value-active': ship.hideEmptySlots}"></div>
+		<div class="toggle-button-value pull-left" ng-class="{'toggle-button-value-active': !ship.hideEmptySlots}"></div>
 		<div class="fleet-ship-title fleet-ship-cost font-staw">
 			<button class="title-button" ng-click="ship.hideEmptySlots = !ship.hideEmptySlots">Show Empty Slots</button>
 		</div>

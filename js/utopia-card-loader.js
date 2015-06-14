@@ -85,7 +85,7 @@ module.factory( "cardLoader", function($http, $filter, cardRules, $factions, car
 		};
 
 		function loadCaptain(captain) {
-
+			
 			if( isDuplicate(captain, cards) ) {
 				console.log( "Duplicate card definition ignored", captain.id );
 				return;
@@ -190,6 +190,7 @@ module.factory( "cardLoader", function($http, $filter, cardRules, $factions, car
 		};
 
 		function loadResource(resource) {
+
 			$.extend(true, resource, resourceDefaults);
 
 			// Apply specific card rules

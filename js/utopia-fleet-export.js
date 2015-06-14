@@ -76,9 +76,8 @@ module.directive( "fleetExport", function() {
 				
 			}
 			
-			function getSetName(id) {
+			function getSetNames(sets) {
 				var names = "";
-				var sets = id.split(",");
 				$.each( sets, function(i,id) {
 					names += $scope.sets[id] ? $scope.sets[id].name : id;
 					if( i < sets.length-1 )
@@ -118,7 +117,7 @@ module.directive( "fleetExport", function() {
 					text += card.unique ? "" : " ("+card.class+")";
 				} else if( $scope.showSetNames ){
 					// Show set names for non-ships
-					text += card.set ? " (" + getSetName(card.set) + ")" : "";
+					text += card.set ? " (" + getSetNames(card.set) + ")" : "";
 				}
 				
 				// Show cost if appropriate

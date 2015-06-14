@@ -52,29 +52,38 @@
 							<button class="u-search-bigger" ng-click="modifySearchColumns(1)"><i class="fa fa-chevron-right"></i></button>
 						</div>
 					
-						<div>
-							<div class="u-search-header"><span>Faction</span></div>
+						<search-filter-group title="Faction" open>
 							<span ng-repeat="(faction,data) in search.factions">
 								<label class="u-label"><input type="checkbox" ng-model="data.search" > <div class="u-faction card-faction-{{faction}}"></div> {{faction|removeDashes}}</label>
 							</span>
-						</div>
+						</search-filter-group>
 
-						<div>
-							<div class="u-search-header"><span>Type</span></div>
+						<search-filter-group title="Type" open>
 							<span class="u-search-type" ng-repeat="(type,data) in search.types">
 								<label class="u-label"><input type="checkbox" ng-model="data.search" > <i class="fs fs-{{type}}"></i> {{type|removeDashes}}</label>
 							</span>
-						</div>
+						</search-filter-group>
 
-						<div>
-							<div class="u-search-header"><span>Uniqueness</span></div>
+						<search-filter-group title="Uniqueness" open>
 							<span>
 								<label class="u-label"><input type="checkbox" ng-model="search.unique"> <i class="fs fs-unique"></i> Unique</label>
 							</span>
 							<span>
 								<label class="u-label"><input type="checkbox" ng-model="search.generic"> <i class="fs"></i> Generic</label>
 							</span>
-						</div>
+						</search-filter-group>
+						
+						<search-filter-group title="Expansion">
+							<div class="u-search-filter-comment">
+								Expansion filter settings are stored in your browser for future sessions. Uncheck the expansions you don't own. New expansions are automatically checked. These settings are not affected by the "Reset" button.
+							</div>
+							<div class="u-search-filter-comment">
+								<label class="u-label"><input type="checkbox" ng-model="search.ignoreSetsFilter"> Temporarily show all cards</label>
+							</div>
+							<div ng-repeat="set in sets" class="u-search-set" ng-hide="search.ignoreSetsFilter">
+								<label class="u-label"><input type="checkbox" ng-model="search.sets[set.id].search"> {{set.name}}</label>
+							</div>
+						</search-filter-group>
 						
 					</div>
 

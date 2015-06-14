@@ -12,6 +12,17 @@ module.filter( "cardFilter", function($factions) {
 
 			if( options.generic && card.unique && !options.unique)
 				return null;
+			
+			// Filter by selected expansions
+			if( card.set && !options.ignoreSetsFilter ) {
+				var setSelected = false;
+				$.each( card.set, function(i,id) {
+					if( options.sets[id].search )
+						setSelected = true;
+				});
+				if( !setSelected )
+					return null;
+			}
 
 			// Text search
 			if( options.query ) {
@@ -173,11 +184,29 @@ module.controller( "UtopiaCtrl", function($scope, $http, $filter, cardLoader, $f
 			if( !$scope.search.types[card.type] )
 				$scope.search.types[card.type] = {};
 		});
+		
+		try {
+			$scope.search.sets = localStorage.sets ? angular.fromJson( localStorage.sets ) : {};
+		} catch(e) {
+			$scope.search.sets = {};
+		}
+		$.each( $scope.sets, function(i, set) {
+			if( !$scope.search.sets[set.id] ) {
+				console.log("New set: " + set.name);
+				$scope.search.sets[set.id] = { search: true };
+			}
+		});
 	
 		$scope.$broadcast("cardsLoaded");
 		$scope.loading = false;
 		
 	});
+	
+	// Store changes to expansions filter
+	$scope.$watch( "search.sets", function(sets) {
+		if( sets )
+			localStorage.sets = angular.toJson( sets );
+	}, true);
 	
 	// Construct faction list from hard-coded list in initiative order
 	$.each( $factions.list, function(i, faction) {
@@ -207,3 +236,24 @@ module.filter( "group", function() {
 	};
 
 });
+
+module.directive( "searchFilterGroup", function() {
+	
+	return  {
+		
+		scope: {
+			title: "@",
+		},
+		
+		templateUrl: "search-filter-group.html",
+		
+		transclude: true,
+		
+		link: function(scope,element,attrs) {
+			if( attrs.open != undefined )
+				scope.showContent = true;
+		},
+		
+	};
+	
+} );

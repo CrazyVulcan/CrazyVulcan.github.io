@@ -49,6 +49,7 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 					var ship = {
 						type: "ship",
 						id: data.find("Id").text(),
+						set: data.find("Set").text().split(","),
 						name: data.find("Title").text(),
 						class: data.find("ShipClass").text(),
 						actions: [],
@@ -115,6 +116,7 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 					var captain = {
 						type: "captain",
 						id: data.find("Id").text(),
+						set: data.find("Set").text().split(","),
 						name: data.find("Title").text(),
 						unique: (data.find("Unique").text() == "Y") || (data.find("MirrorUniverseUnique").text() == "Y"),
 						text: convertIconTags( data.find("Ability").text() ),
@@ -122,7 +124,6 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 						cost: Number( data.find("Cost").text() ),
 						skill: Number( data.find("Skill").text() ),
 						talents: Number( data.find("Talent").text() ),
-						set: data.find("Set").text()
 					};
 
 					var additionalFaction = data.find("AdditionalFaction").text().toLowerCase();
@@ -152,6 +153,7 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 					var admiral = {
 						type: "admiral",
 						id: data.find("Id").text(),
+						set: data.find("Set").text().split(","),
 						name: data.find("Title").text(),
 						unique: (data.find("Unique").text() == "Y") || (data.find("MirrorUniverseUnique").text() == "Y"),
 						text: convertIconTags( data.find("Ability").text() ),
@@ -159,7 +161,6 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 						cost: Number( data.find("AdmiralCost").text() ),
 						skill: Number( data.find("SkillModifier").text() ),
 						talents: Number( data.find("AdmiralTalent").text() ),
-						set: data.find("Set").text()
 					}
 
 					var additionalFaction = data.find("AdditionalFaction").text().toLowerCase();
@@ -183,8 +184,8 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 					var upgrade = {
 						type: data.find("Type").text().toLowerCase(),
 						id: data.find("Id").text(),
+						set: data.find("Set").text().split(","),
 						name: filterName( data.find("Title").text() ),
-						set: data.find("Set").text(),
 						unique: (data.find("Unique").text() == "Y") || (data.find("MirrorUniverseUnique").text() == "Y"),
 						text: convertIconTags( data.find("Ability").text() ),
 						factions: [data.find("Faction").text().toLowerCase()],
@@ -232,6 +233,7 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 					var resource = {
 						type: "resource",
 						id: data.find("Id").text(),
+						set: data.find("Set").text().split(","),
 						name: data.find("Title").text(),
 						text: convertIconTags( data.find("Ability").text() ),
 						cost: Number( data.find("Cost").text() ),
@@ -250,6 +252,7 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 					var fleetCaptain = {
 						type: "fleet-captain",
 						id: data.find("Id").text(),
+						set: data.find("Set").text().split(","),
 						name: data.find("Title").text(),
 						factions: [data.find("Faction").text().toLowerCase()],
 						skill: Number( data.find("CaptainSkillBonus").text() ),
@@ -310,6 +313,7 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 					var officer = {
 						type: "officer",
 						id: data.find("Id").text(),
+						set: data.find("Set").text().split(","),
 						name: data.find("Title").text(),
 						text: convertIconTags( data.find("Ability").text() ),
 						cost: Number( data.find("Cost").text() ),
@@ -336,6 +340,7 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 					var flagship = {
 						type: "flagship",
 						id: data.find("Id").text(),
+						set: data.find("Set").text().split(","),
 						class: "Flagship",
 						name: data.find("Title").text(),
 						text: convertIconTags( data.find("Ability").text() ),

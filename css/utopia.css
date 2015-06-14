@@ -56,7 +56,7 @@ body {
 .u-search .u-label {
 	font-weight: normal;
 	text-transform: capitalize;
-	width: 45%;
+	min-width: 7em;
 	margin-left: 0.5em;
 	cursor: pointer;
 	font-size: 0.9em;
@@ -135,6 +135,8 @@ body {
 	padding-left: 1em;
 	margin-top: 0.4em;
 	text-align: left;
+	height: 1.4em;
+	cursor: pointer;
 }
 
 .u-search-header span {
@@ -170,13 +172,13 @@ body {
 }
 
 .toggle-button-value {
-	width: 1em;
-	height: 3em;
-	background: #66dd66;
+	width: 15px;
+	height: inherit;
+	background: #dd6666;
 }
 
 .toggle-button-value-active {
-	background: #dd6666;
+	background: #66dd66;
 }
 
 .u-search-size {
@@ -247,4 +249,9 @@ body {
 
 .u-export {
 	width: 300px;
+}
+
+.u-search-filter-comment {
+	font-size: 0.8em;
+	padding: 5px;
 }
