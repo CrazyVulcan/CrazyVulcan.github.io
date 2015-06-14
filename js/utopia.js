@@ -139,7 +139,9 @@ module.controller( "UtopiaCtrl", function($scope, $http, $filter, cardLoader, $f
 		generic: false,
 		factions: {},
 		types: { "ship": {}, "captain": {}, "admiral": {} },
-		columns: 1
+		columns: 1,
+		sortBy: "name",
+		ascending: "true",
 	};
 	
 	$scope.resetSearch = function() {
@@ -152,6 +154,8 @@ module.controller( "UtopiaCtrl", function($scope, $http, $filter, cardLoader, $f
 		$.each( $scope.search.types, function(i,types) {
 			types.search = false;
 		} );
+		$scope.search.sortBy = "name";
+		$scope.search.ascending = "true";
 	};
 	
 	$scope.modifySearchColumns = function(amount) {
@@ -212,6 +216,49 @@ module.controller( "UtopiaCtrl", function($scope, $http, $filter, cardLoader, $f
 	$.each( $factions.list, function(i, faction) {
 		$scope.search.factions[faction.toLowerCase().replace(/ /g,"-")] = {};
 	});
+	
+	$scope.sortables = [
+		{
+			value: "name",
+			name: "Name"
+		},
+		{
+			value: "cost",
+			name: "Cost"
+		},
+		{
+			value: "attack",
+			name: "Attack"
+		},
+		{
+			value: "agility",
+			name: "Agility"
+		},
+		{
+			value: "hull",
+			name: "Hull"
+		},
+		{
+			value: "shields",
+			name: "Shields"
+		},
+		{
+			value: "skill",
+			name: "Skill Value"
+		}
+	];
+	
+});
+
+module.filter( "sortBy", function($filter) {
+	
+	return function( cards, sortBy, ascending ) {
+		ascending = ascending === true || ascending == "true";
+		return $filter("orderBy")( cards, function(card) { 
+			var value = $filter("valueOf")(card,sortBy); 
+			return value || 0;
+		}, !ascending );
+	};
 	
 });
 
