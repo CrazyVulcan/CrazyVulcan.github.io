@@ -128,7 +128,7 @@ module.directive( "cardUpgrade", function() {
 			ship: "=",
 			fleet: "=",
 			dragStore: "=",
-			dragSource: "@"
+			dragSource: "="
 		},
 
 		templateUrl: "card-upgrade.html",

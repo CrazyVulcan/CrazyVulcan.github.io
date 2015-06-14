@@ -27,7 +27,7 @@
 		<div class="fleet-ship-inner">
 
 			<div class="card-container">
-				<card-ship ship="ship" drag-store="dragStore"></card-ship>
+				<card card="ship" drag-store="dragStore"></card-ship>
 			</div><!--
 			Stupid whitespace breaks card alignment
 		 --><div class="card-container" ng-show="fleet.resource.showShipResourceSlot(ship,fleet) && !ship.squadron" droppable can-drop="$item.type == fleet.resource.slotType" drop="setShipResource(fleet,ship,$item)" drag-store="dragStore">
@@ -38,8 +38,7 @@
 						</div>
 					</div>
 				</div>
-				<card-upgrade ng-if="ship.resource && !ship.resource.displayAsShip" upgrade="ship.resource" ship="ship" fleet="fleet" drag-store="dragStore"></card-upgrade>
-				<card-ship ng-if="ship.resource && ship.resource.displayAsShip" ship="ship.resource" fleet="fleet" drag-store="dragStore"></card-ship>
+				<card card="ship.resource" ship="ship" fleet="fleet" drag-store="dragStore"></card>
 			</div><!--
 			
 		 --><div class="card-container" ng-hide="ship.squadron" droppable can-drop="$item.type == 'captain' && $item != ship.captain" drop="setShipCaptain(fleet,ship,$item)" drag-store="dragStore">
@@ -50,7 +49,7 @@
 						</div>
 					</div>
 				</div>
-				<card-upgrade ng-if="ship.captain" upgrade="ship.captain" ship="ship" fleet="fleet" drag-store="dragStore"></card-upgrade>
+				<card card="ship.captain" ship="ship" fleet="fleet" drag-store="dragStore"></card>
 			</div><!--
 
 		 --><div class="card-container" ng-hide="!ship.admiral && ( ship.squadron || ship.hideEmptySlots || fleetHasAdmiral(fleet) )"
@@ -62,7 +61,7 @@
 						</div>
 					</div>
 				</div>
-				<card-upgrade ng-if="ship.admiral" upgrade="ship.admiral" ship="ship" fleet="fleet" drag-store="dragStore"></card-upgrade>
+				<card card="ship.admiral" ship="ship" fleet="fleet" drag-store="dragStore"></card>
 			</div><!--
 			
 		 --><div class="card-container" 
@@ -76,7 +75,7 @@
 					</div>
 					<div ng-show="upgradeSlot.source && upgradeSlot.source != 'ship'" class="card-drop-target-subtitle">Source: {{upgradeSlot.source}}</div>
 				</div>
-				<card-upgrade ng-if="upgradeSlot.occupant" upgrade="upgradeSlot.occupant" ship="ship" fleet="fleet" drag-store="dragStore"></card-upgrade>
+				<card card="upgradeSlot.occupant" ship="ship" fleet="fleet" drag-store="dragStore"></card>
 			</div>
 			
 		</div>
@@ -130,7 +129,7 @@
 					</div>
 					<div class="card-drop-target-subtitle"></div>
 				</div>
-				<card-resource ng-if="fleet.resource" resource="fleet.resource" fleet="fleet" drag-store="dragStore"></card-resource>
+				<card card="fleet.resource" ship="ship" fleet="fleet" drag-store="dragStore"></card>
 			</div><!--
 			
 			--><div class="card-container" ng-repeat="upgradeSlot in fleet.resource.upgradeSlots"
@@ -144,7 +143,7 @@
 					</div>
 					<div class="card-drop-target-subtitle">{{upgradeSlot.source}}</div>
 				</div>
-				<card-upgrade ng-if="upgradeSlot.occupant" upgrade="upgradeSlot.occupant" fleet="fleet" drag-store="dragStore"></card-upgrade>
+				<card card="upgradeSlot.occupant" ship="ship" fleet="fleet" drag-store="dragStore"></card>
 			</div>
 			
 		</div>

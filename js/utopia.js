@@ -169,8 +169,6 @@ module.controller( "UtopiaCtrl", function($scope, $http, $filter, cardLoader, $f
 			angular.copy( $scope.defaults.search, $scope.search );
 	} catch(e) {}
 	
-	console.log($scope.search.sortBy);
-	
 	$scope.defaults = $scope.defaults || { search: angular.copy($scope.search) };
 	
 	$scope.resetSearch = function() {
@@ -340,6 +338,26 @@ module.directive( "searchFilterGroup", function() {
 			if( attrs.open != undefined )
 				scope.showContent = true;
 		},
+		
+	};
+	
+} );
+
+module.directive( "card", function($parse) {
+	
+	return  {
+		
+		scope: {
+			card: "=",
+			ship: "=",
+			fleet: "=",
+			dragStore: "=",
+			dragSource: "@",
+		},
+		
+		restrict: "E",
+		
+		templateUrl: "card.html",
 		
 	};
 	

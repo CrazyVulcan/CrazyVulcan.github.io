@@ -9,7 +9,7 @@ module.directive( "cardResource", function() {
 			ship: "=",
 			fleet: "=",
 			dragStore: "=",
-			dragSource: "@"
+			dragSource: "="
 		},
 
 		templateUrl: "card-resource.html",
