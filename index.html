@@ -75,8 +75,12 @@
 
 						<search-filter-group title="Order By" open>
 							<div class="u-search-filter-comment">
-								Order results by <select ng-model="search.sortBy"><option ng-repeat="sortable in sortables" value="{{sortable.value}}">{{sortable.name}}</option></select>
+								Order results by <select ng-model="search.sortBy" ng-options="sortable.value as sortable.name for sortable in sortables"></select>
 								<select ng-model="search.ascending"><option value="true">Ascending</option><option value="false">Descending</option></select>
+								<div class="u-order-default" ng-show="search.sortBy != defaults.search.sortBy || search.ascending != defaults.search.ascending">
+									<button ng-click="defaults.search.sortBy = search.sortBy; defaults.search.ascending = search.ascending">Set as Default</button>
+									<div>Default order is saved in browser for future sessions.</div>
+								</div>
 							</div>
 						</search-filter-group>
 						

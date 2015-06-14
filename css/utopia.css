@@ -255,3 +255,11 @@ body {
 	font-size: 0.8em;
 	padding: 5px;
 }
+
+.u-order-default {
+	display: inline;
+}
+
+.u-order-default button {
+	margin: 5px;
+}

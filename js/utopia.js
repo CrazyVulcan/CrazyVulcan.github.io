@@ -163,6 +163,16 @@ module.controller( "UtopiaCtrl", function($scope, $http, $filter, cardLoader, $f
 		filterValue: "",
 	};
 	
+	try {
+		$scope.defaults = localStorage.defaults ? angular.fromJson( localStorage.defaults ) : false;
+		if( $scope.defaults )
+			angular.copy( $scope.defaults.search, $scope.search );
+	} catch(e) {}
+	
+	console.log($scope.search.sortBy);
+	
+	$scope.defaults = $scope.defaults || { search: angular.copy($scope.search) };
+	
 	$scope.resetSearch = function() {
 		$scope.search.query = "";
 		$scope.search.unique = false;
@@ -173,8 +183,8 @@ module.controller( "UtopiaCtrl", function($scope, $http, $filter, cardLoader, $f
 		$.each( $scope.search.types, function(i,types) {
 			types.search = false;
 		} );
-		$scope.search.sortBy = "name";
-		$scope.search.ascending = "true";
+		$scope.search.sortBy = $scope.defaults.search.sortBy || "name";
+		$scope.search.ascending = $scope.defaults.search.ascending || "true";
 		$scope.search.filterField = "";
 		$scope.search.filterOperator = "<";
 		$scope.search.filterValue = "";
@@ -234,6 +244,12 @@ module.controller( "UtopiaCtrl", function($scope, $http, $filter, cardLoader, $f
 	$scope.$watch( "search.sets", function(sets) {
 		if( sets )
 			localStorage.sets = angular.toJson( sets );
+	}, true);
+	
+	// Store changes to defaults
+	$scope.$watch( "defaults", function(defaults) {
+		if( defaults )
+			localStorage.defaults = angular.toJson( defaults );
 	}, true);
 	
 	// Construct faction list from hard-coded list in initiative order
