@@ -2118,7 +2118,7 @@ module.factory( "cardRules", function($filter, $factions) {
 		// Chroniton Torpedoes
 		"weapon:chroniton_torpedoes_71799": {
 			cost: function(upgrade,ship,fleet) {
-				return ship && ship.class != "Krenim Weapon Ship" ? 11 : 6;
+				return ship && ship.class != "Krenim Weapon Ship" ? 12 : 6;
 			}
 		},
 		
@@ -2960,6 +2960,115 @@ module.factory( "cardRules", function($filter, $factions) {
 				}
 			}
 		},
+		
+		"captain:kor_71804": {
+			upgradeSlots: [
+				{/* Talent */},
+				{
+					type: ["crew"],
+					source: "Kor",
+				}
+			]
+		},
+		
+		// Romulan Hijackers
+		"crew:romulan_hijackers_71802": {
+			// Cannot equip if non-Romulan captain or crew
+			canEquip: function(card,ship,fleet){
+				
+				if( ship.captain && !$factions.hasFaction(ship.captain,"romulan", ship, fleet) )
+					return false;
+				
+				var canEquip = true;
+				$.each( $filter("upgradeSlots")(ship), function(i,slot) {
+					if( slot.occupant && slot.occupant.type == "crew" && !$factions.hasFaction(slot.occupant,"romulan", ship, fleet) )
+						canEquip = false;
+				});
+				
+				return canEquip;
+				
+			},
+			intercept: {
+				ship: {
+					// Can only equip Romulan crew
+					canEquip: function(card,ship,fleet) {
+						if( card.type == "crew" && !$factions.hasFaction(card,"romulan", ship, fleet) )
+							return false;
+						return true;
+					},
+					// Can only equip Romulan captain
+					canEquipCaptain: function(card,ship,fleet) {
+						return $factions.hasFaction(card,"romulan", ship, fleet);
+					},
+					// All non-borg tech and weapon upgrades cost -1 SP
+					cost: function(card,ship,fleet,cost) {
+						if( (card.type == "tech" || card.type == "weapon") && !$factions.hasFaction(card,"borg", ship, fleet) )
+							cost = (cost instanceof Function ? cost(card, ship, fleet, 0) : cost) - 1;
+						return cost;
+					},
+					// No faction penalty for romulan upgrades
+					factionPenalty: function(card,ship,fleet,factionPenalty) {
+						if( card.type != "captain" && card.type != "admiral" && $factions.hasFaction(card,"romulan", ship, fleet) )
+							return 0;
+						return factionPenalty;
+					}
+				},
+			}
+		},
+		
+		// Darok
+		"crew:darok_71804": {
+			canEquipFaction: function(card,ship,fleet) {
+				return $factions.hasFaction(ship,"klingon", ship, fleet);
+			},
+		},
+		
+		// Inverse Graviton Burst
+		"tech:inverse_graviton_burst_71804": {
+			cost: function(card,ship,fleet) {
+				return ship && !$factions.hasFaction(ship,"klingon", ship, fleet) ? 10 : 5;
+			},
+		},
+		
+		// Long Live the Empire!
+		"talent:long_live_the_empire__71804": {
+			// Only equip if ship and captain matches faction
+			canEquip: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship, "klingon", ship, fleet) && ( !ship.captain || $factions.hasFaction(ship.captain, "klingon", ship, fleet) );
+			},
+			// Prevent non-faction-matching captain
+			intercept: {
+				ship: {
+					canEquipCaptain: function(captain,ship,fleet) {
+						return $factions.hasFaction(captain, "klingon", ship, fleet);
+					}
+				}
+			}
+		},
+		
+		// Regenerative Shielding
+		"tech:regenerative_shielding_71802": {
+			cost: function(card,ship,fleet) {
+				return ship && ship.name != "U.S.S. Prometheus" ? 8 : 4;
+			},
+			canEquip: onePerShip("Regenerative Shielding")
+		},
+		
+		// Ablative Hull Armor
+		"tech:ablative_hull_armor_71802": {
+			canEquip: function(card,ship,fleet) {
+				return ship.class == "Prometheus Class";
+			},
+		},
+		
+		// Multi-Vector Assault Mode
+		"weapon:multi_vector_assault_mode_71802": {
+			canEquip: function(card,ship,fleet) {
+				return ship.class == "Prometheus Class";
+			},
+		},
+		
+		
 		
 	};
 	
