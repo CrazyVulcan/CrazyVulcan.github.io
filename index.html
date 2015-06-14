@@ -3,11 +3,11 @@
     <head>
         <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
         <link rel="stylesheet" type="text/css" href="css/font-staw.css">
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="css/utopia.css">
         <link rel="stylesheet" type="text/css" href="css/utopia-card.css">
 		<link rel="stylesheet" type="text/css" href="css/utopia-fleet-builder.css">
 		<link rel="stylesheet" type="text/css" href="css/utopia-fleet-export.css">
+		<link rel="stylesheet" type="text/css" href="css/utopia-print.css" media="print">
 		
         <title>Utopia: A Fleet Builder for Star Trek Attack Wing</title>
 
@@ -39,7 +39,7 @@
 
 					
 					<div class="search-query-container">
-						<label><input class="u-search-query" ng-model="search.query" placeholder="Search"></label>
+						<input class="u-search-query" ng-model="search.query" placeholder="Search">
 						<button ng-click="resetSearch()">Reset</button>
 						<button ng-click="showAdvanced = !showAdvanced">Advanced</button>
 					</div>
