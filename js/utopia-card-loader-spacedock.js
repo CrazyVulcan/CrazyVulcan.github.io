@@ -430,6 +430,7 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 						type: "set",
 						id: data.attr("id"),
 						name: data.text(),
+						releaseDate: data.attr("releaseDate"),
 					};
 
 					loadSet( set );

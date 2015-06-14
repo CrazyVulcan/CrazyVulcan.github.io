@@ -200,6 +200,7 @@ module.controller( "UtopiaCtrl", function($scope, $http, $filter, cardLoader, $f
 
 	$scope.cards = [];
 	$scope.sets = {};
+	$scope.setList = [];
 	$scope.activeFleet = { ships: [] };
 
 	$scope.loading = true;
@@ -221,6 +222,7 @@ module.controller( "UtopiaCtrl", function($scope, $http, $filter, cardLoader, $f
 				console.log("New set: " + set.name);
 				$scope.search.sets[set.id] = { search: true };
 			}
+			$scope.setList.push( set );
 		});
 	
 		$scope.$broadcast("cardsLoaded");
