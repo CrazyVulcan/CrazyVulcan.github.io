@@ -113,6 +113,6 @@ module.exports = function(grunt) {
 	grunt.registerTask('build-index', ["copy:index"]);
 	grunt.registerTask('build-data', ["utopia_data"]);
 	
-	grunt.registerTask('default', ["clean","build-templates","build-css","build-index","build-data","copy:misc","clean:templates"]);
+	grunt.registerTask('default', ["clean","build-templates","build-css","build-index","build-data","copy","clean:templates"]);
 	
 };
