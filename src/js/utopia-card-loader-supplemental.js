@@ -4,7 +4,7 @@
 */
 var module = angular.module("utopia-card-loader-supplemental", ["utopia-card-rules"]);
 
-module.factory( "cardLoaderSupplemental", function($http, $filter, cardRules, $factions) {
+module.factory( "cardLoaderSupplemental", [ "$factions", function($factions) {
 
 	return {
 
@@ -282,4 +282,4 @@ module.factory( "cardLoaderSupplemental", function($http, $filter, cardRules, $f
 
 	}
 
-});
+}]);

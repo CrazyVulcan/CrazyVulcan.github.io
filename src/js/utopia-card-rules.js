@@ -1,6 +1,6 @@
 var module = angular.module("utopia-card-rules", []);
 
-module.factory( "$factions", function($filter) {
+module.factory( "$factions", [ "$filter", function($filter) {
 	var valueOf = $filter("valueOf");
 	return {
 		hasFaction: function(card, faction, ship, fleet) {
@@ -24,9 +24,9 @@ module.factory( "$factions", function($filter) {
 		},
 		list: [ "Federation", "Klingon", "Romulan", "Dominion", "Borg", "Species 8472", "Kazon", "Bajoran", "Ferengi", "Vulcan", "Independent", "Mirror Universe" ]
 	}
-} );
+}]);
 
-module.factory( "cardRules", function($filter, $factions) {
+module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factions) {
 
 	var valueOf = $filter("valueOf");
 
@@ -3072,4 +3072,4 @@ module.factory( "cardRules", function($filter, $factions) {
 		
 	};
 	
-} );
+}]);

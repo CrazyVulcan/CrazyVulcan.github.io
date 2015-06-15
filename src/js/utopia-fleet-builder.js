@@ -1,6 +1,6 @@
 var module = angular.module("utopia-fleet-builder", ["utopia-card-upgrade","utopia-dragdrop"]);
 
-module.directive( "fleetBuilder", function($filter) {
+module.directive( "fleetBuilder", [ "$filter", function($filter) {
 
 	return {
 
@@ -13,7 +13,7 @@ module.directive( "fleetBuilder", function($filter) {
 
 		templateUrl: "fleet-builder.html",
 
-		controller: function($scope, isMobile) {
+		controller: [ "$scope", "isMobile", function($scope, isMobile) {
 			
 			$scope.isMobile = isMobile;
 			
@@ -622,8 +622,8 @@ module.directive( "fleetBuilder", function($filter) {
 				}
 			});
 		
-		}
+		}]
 
 	};
 
-} );
+}]);

@@ -33,7 +33,7 @@ module.directive( "fleetExport", function() {
 			
 		},
 
-		controller: function($scope, $filter) {
+		controller: [ "$scope", "$filter", function($scope, $filter) {
 			
 			$scope.fleetText = "";
 			$scope.showSetNames = false;
@@ -164,7 +164,7 @@ module.directive( "fleetExport", function() {
 				return { cost: cost, text: text };
 			}
 
-		}
+		}]
 
 	};
 

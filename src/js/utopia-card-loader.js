@@ -1,6 +1,6 @@
 var module = angular.module("utopia-card-loader", ["utopia-card-rules", "utopia-card-loader-spacedock", "utopia-card-loader-supplemental"]);
 
-module.factory( "cardLoader", function($http, $filter, cardRules, $factions, cardLoaderSpacedock, cardLoaderSupplemental) {
+module.factory( "cardLoader", [ "$filter", "cardRules", "$factions", "cardLoaderSpacedock", "cardLoaderSupplemental", function($filter, cardRules, $factions, cardLoaderSpacedock, cardLoaderSupplemental) {
 
 	var valueOf = $filter("valueOf");
 
@@ -261,4 +261,4 @@ module.factory( "cardLoader", function($http, $filter, cardRules, $factions, car
 
 	};
 
-});
+}]);

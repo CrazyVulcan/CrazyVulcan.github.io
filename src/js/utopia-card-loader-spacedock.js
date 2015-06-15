@@ -4,7 +4,7 @@
 
 var module = angular.module("utopia-card-loader-spacedock", ["utopia-card-rules"]);
 
-module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $factions) {
+module.factory( "cardLoaderSpacedock", [ "$http", "$filter", function($http, $filter) {
 
 	function convertIconTags(str) {
 		str = str.replace( /\attack: \[target lock\]/ig, "ATTACK: (Target Lock)" );
@@ -499,4 +499,4 @@ module.factory( "cardLoaderSpacedock", function($http, $filter, cardRules, $fact
 	}
 
 
-});
+}]);

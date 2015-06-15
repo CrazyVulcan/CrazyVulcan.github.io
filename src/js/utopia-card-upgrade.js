@@ -31,7 +31,7 @@ module.filter( "upgradeSlots", function() {
 	
 } );
 
-module.filter( "shipInterceptors", function($filter) {
+module.filter( "shipInterceptors", [ "$filter", function($filter) {
 	
 	var upgradeSlots = $filter("upgradeSlots");
 	
@@ -67,9 +67,9 @@ module.filter( "shipInterceptors", function($filter) {
 		
 	}
 	
-} );
+}]);
 
-module.filter( "interceptors", function($filter) {
+module.filter( "interceptors", [ "$filter", function($filter) {
 	
 	var shipInterceptors = $filter("shipInterceptors");
 	
@@ -96,9 +96,9 @@ module.filter( "interceptors", function($filter) {
 		
 	}
 	
-} );
+}]);
 
-module.filter( "valueOf", function($filter) {
+module.filter( "valueOf", [ "$filter", function($filter) {
 
 	var interceptorsFilter = $filter("interceptors");
 
@@ -117,7 +117,7 @@ module.filter( "valueOf", function($filter) {
 
 	}
 
-});
+}]);
 
 module.directive( "cardUpgrade", function() {
 
@@ -133,7 +133,7 @@ module.directive( "cardUpgrade", function() {
 
 		templateUrl: "card-upgrade.html",
 
-		controller: function($scope) {
+		controller: [ "$scope", function($scope) {
 
 			$scope.range = function(size) {
 				return new Array(size);
@@ -143,7 +143,7 @@ module.directive( "cardUpgrade", function() {
 				return value !== undefined;
 			};
 		
-		}
+		}]
 
 	};
 

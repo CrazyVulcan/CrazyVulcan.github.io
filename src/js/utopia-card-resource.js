@@ -14,9 +14,9 @@ module.directive( "cardResource", function() {
 
 		templateUrl: "card-resource.html",
 
-		controller: function($scope) {
+		controller: [ "$scope", function($scope) {
 
-		}
+		}]
 
 	};
 

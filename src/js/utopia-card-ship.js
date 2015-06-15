@@ -21,9 +21,9 @@ module.directive( "cardShip", function() {
 
 		templateUrl: "card-ship.html",
 
-		controller: function($scope) {
+		controller: [ "$scope", function($scope) {
 
-		}
+		}]
 
 	};
 
