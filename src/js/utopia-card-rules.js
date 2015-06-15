@@ -2427,7 +2427,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			slotType: "fleet-captain",
 			cost: 0,
 			hideCost: true,
-			showShipResourceSlot: function(ship,fleet) {
+			showShipResourceSlot: function(card,ship,fleet) {
 				if( ship.resource && ship.resource.type == "fleet-captain" )
 					return true;
 				
@@ -2850,7 +2850,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			slotType: "flagship",
 			cost: 0,
 			hideCost: true,
-			showShipResourceSlot: function(ship,fleet) {
+			showShipResourceSlot: function(card,ship,fleet) {
 				if( ship.resource && ship.resource.type == "flagship" )
 					return true;
 				

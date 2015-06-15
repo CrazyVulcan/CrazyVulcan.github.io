@@ -1,6 +1,6 @@
-var module = angular.module("utopia-card-loader", ["utopia-card-rules", "utopia-card-loader-spacedock", "utopia-card-loader-supplemental"]);
+var module = angular.module("utopia-card-loader", ["utopia-card-rules"]);
 
-module.factory( "cardLoader", [ "$filter", "cardRules", "$factions", "cardLoaderSpacedock", "cardLoaderSupplemental", function($filter, cardRules, $factions, cardLoaderSpacedock, cardLoaderSupplemental) {
+module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", function($http, $filter, cardRules, $factions) {
 
 	var valueOf = $filter("valueOf");
 
@@ -203,6 +203,73 @@ module.factory( "cardLoader", [ "$filter", "cardRules", "$factions", "cardLoader
 		// For resource special cards or anything else that doesn't need any special handling
 		function loadOther(card) {
 			
+			// TODO Find a better home for this. Should strictly be in rules, but would be too verbose.
+			if( card.type == "fleet-captain" ) {
+				
+				for( var i = 0; i < card.talentAdd; i++ )
+					// Special talent slot, which allows a free talent if captain already has an empty talent slot
+					card.upgradeSlots.push( { 
+						type: ["talent"],
+						source: "Fleet Captain (Free talent if another talent slot is empty)",
+						showOnCard: true,
+						intercept: {
+							ship: {
+								cost: function(upgrade, ship, fleet, cost) {
+									var slots = $filter("upgradeSlots")(ship);
+									var emptyTalentSlot = false;
+									$.each(slots, function(i,slot) {
+										if( slot.type.indexOf("talent") >= 0 && !slot.occupant )
+											emptyTalentSlot = true;
+									});
+									return emptyTalentSlot ? 0 : cost;
+								}
+							}
+						}
+					} );
+				for( var i = 0; i < card.techAdd; i++ )
+					card.upgradeSlots.push( { type: ["tech"], source: "Fleet Captain", showOnCard: true } );
+				for( var i = 0; i < card.weaponAdd; i++ )
+					card.upgradeSlots.push( { type: ["weapon"], source: "Fleet Captain", showOnCard: true } );
+				for( var i = 0; i < card.crewAdd; i++ )
+					card.upgradeSlots.push( { type: ["crew"], source: "Fleet Captain", showOnCard: true } );
+
+				// Add skill modifier to Captain skill evaluation
+				card.intercept.ship.skill = function(upgrade,ship,fleet,skill) {
+					if( upgrade == ship.captain ) {
+						skill = (skill instanceof Function ? skill(upgrade,ship,fleet,0) : skill) + card.skill;
+					}
+					return skill;
+				};
+
+			}
+			
+			// TODO Same as above
+			if( card.type == "flagship" ) {
+				var flagship = card;
+				flagship.intercept.ship = {
+					attack: function(card,ship,fleet,attack) {
+						if( card == ship && ship.type != "flagship" )
+							return (attack instanceof Function ? attack(card,ship,fleet,0) : attack) + flagship.attack;
+						return attack;
+					},
+					agility: function(card,ship,fleet,agility) {
+						if( card == ship && ship.type != "flagship" )
+							return (agility instanceof Function ? agility(card,ship,fleet,0) : agility) + flagship.agility;
+						return agility;
+					},
+					hull: function(card,ship,fleet,hull) {
+						if( card == ship && ship.type != "flagship" )
+							return (hull instanceof Function ? hull(card,ship,fleet,0) : hull) + flagship.hull;
+						return hull;
+					},
+					shields: function(card,ship,fleet,shields) {
+						if( card == ship && ship.type != "flagship" )
+							return (shields instanceof Function ? shields(card,ship,fleet,0) : shields) + flagship.shields;
+						return shields;
+					},
+				};
+			}
+			
 			// Apply specific card rules
 			if( cardRules[card.type+":"+card.id] )
 				$.extend( true, card, cardRules[card.type+":"+card.id] );
@@ -232,13 +299,43 @@ module.factory( "cardLoader", [ "$filter", "cardRules", "$factions", "cardLoader
 			shipClasses[shipClass.id] = shipClass;
 			
 		}
-
-		cardLoaderSpacedock.loadCards( loadSet, loadShip, loadShipClass, loadCaptain, loadAdmiral, loadUpgrade, loadResource, loadOther, function() {
-
-			cardLoaderSupplemental.loadCards( loadSet, loadShip, loadShipClass, loadCaptain, loadAdmiral, loadUpgrade, loadResource, loadOther );
+		
+		$http.get("data/data.json", { async: false } ).success( function(data) {
+			
+			$.each( data.sets || [], function(i,set) {
+				loadSet(set);
+			});
+			
+			$.each( data.ships || [], function(i,ship) {
+				loadShip(ship);
+			});
+			
+			$.each( data.shipClasses || [], function(i,shipClass) {
+				loadShipClass(shipClass);
+			});
+			
+			$.each( data.captains || [], function(i,captain) {
+				loadCaptain(captain);
+			});
+			
+			$.each( data.admirals || [], function(i,admiral) {
+				loadAdmiral(admiral);
+			});
+			
+			$.each( data.upgrades || [], function(i,upgrade) {
+				loadUpgrade(upgrade);
+			});
+			
+			$.each( data.resources || [], function(i,resource) {
+				loadResource(resource);
+			});
+			
+			$.each( data.others || [], function(i,card) {
+				loadOther(card);
+			});
 			
 			// Assign classes to ships
-			// TODO This should really be done in the subloader
+			// TODO This should really be done in the data converter
 			$.each( cards, function(i,card) {
 				if( card.type == "ship" ) {
 					if( !card.classId ) {
@@ -253,11 +350,11 @@ module.factory( "cardLoader", [ "$filter", "cardRules", "$factions", "cardLoader
 						console.log( "No class for ship", card.id, card.name, card.classId );
 				}
 			});
-
+			
 			if( callback )
 				callback();
-
-		} );
+			
+		});
 
 	};
 

@@ -16,7 +16,7 @@ module.filter( "cardFilter", [ "$factions", "$filter", function($factions, $filt
 				return null;
 			
 			// Filter by selected expansions
-			if( card.set && !options.ignoreSetsFilter ) {
+			if( card.set && !options.ignoreSetsFilter && options.sets ) {
 				var setSelected = false;
 				$.each( card.set, function(i,id) {
 					if( options.sets[id].search )
@@ -213,6 +213,7 @@ module.controller( "UtopiaCtrl", [ "$scope", "$filter", "cardLoader", "$factions
 	$scope.activeFleet = { ships: [] };
 
 	$scope.loading = true;
+	
 	cardLoader( $scope.cards, $scope.sets, $scope.shipClasses, function() {
 
 		// Construct list of card types from those available

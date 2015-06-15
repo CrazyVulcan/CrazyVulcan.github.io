@@ -22,11 +22,15 @@ module.exports = function(grunt) {
 			index: {
 				files: "src/index.html",
 				tasks: ["build-index"],
+			},
+			data: {
+				files: "src/data/*",
+				tasks: ["build-data"],
 			}
 		},
 		
 		clean: {
-			build: ["build/**"],
+			build: ["build/*"],
 			templates: ["build/utopia-templates.js"],
 		},
 		
@@ -61,7 +65,7 @@ module.exports = function(grunt) {
 			misc: {
 				expand: true,
 				cwd: "src",
-				src: [ "js/lib/*", "fonts/*", "img/*", "data/*" ],
+				src: [ "js/lib/*", "fonts/*", "img/*" ],
 				dest: "build/",
 			},
 			css: {
@@ -83,6 +87,14 @@ module.exports = function(grunt) {
 				dest: "build/",
 			},
 		},
+		
+		utopia_data: {
+			spacedock: {
+				files: {
+					"build/data/data.json": "src/data/data.xml",
+				},
+			},
+		}
 	
 	});
 
@@ -93,12 +105,14 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-utopia-data');
 	
 	grunt.registerTask('build-js', ["uglify"]);
-	grunt.registerTask('build-templates', ["ngtemplates","build-js","clean:templates"]);
+	grunt.registerTask('build-templates', ["ngtemplates","build-js"]);
 	grunt.registerTask('build-css', ["cssmin","copy:css"]);
 	grunt.registerTask('build-index', ["copy:index"]);
+	grunt.registerTask('build-data', ["utopia_data"]);
 	
-	grunt.registerTask('default', ["clean","build-templates","build-css","build-index","copy:misc"]);
+	grunt.registerTask('default', ["clean","build-templates","build-css","build-index","build-data","copy:misc","clean:templates"]);
 	
 };
