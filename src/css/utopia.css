@@ -13,11 +13,13 @@
 }
 
 .font-staw {
-	font: normal normal normal 30px/1 STAWSwiss;
+	--font: normal normal normal 30px/1 STAWSwiss;
+	font-family: STAWSwiss;
 }
 
 .font-staw-alt {
-	font: normal normal normal 30px/1 STAWAlternate;
+	--font: normal normal normal 30px/1 STAWAlternate;
+	font-family: STAWAlternate;
 }
 
 * {
@@ -48,9 +50,9 @@ body {
 	background: #eee;
 	font-family: STAWAlternate;
 	font-size: 14px;
-	line-height: 1.42857143;
 	color: #333;
 	margin: 0;
+	line-height: 1;
 }
 
 label {
@@ -62,16 +64,21 @@ button {
 	font-family: inherit;
 	font-size: inherit;
 	cursor: pointer;
-	line-height: inherit;
+	line-height: 1.4;
 }
 
-input, select, textarea{
+input, select, textarea {
 	font: inherit;
 	line-height: inherit;
 }
 
+textarea {
+	line-height: 1.4;
+}
+
 .u-title {
 	font-size: 3em;
+	margin: 7px;
 }
 
 .u-title i {
@@ -82,7 +89,7 @@ input, select, textarea{
 	text-align: left;
 	padding: 0.2em 0.6em;
 	font-size: 1.5em;
-	margin-bottom: 5px;
+	margin-bottom: 8px;
 }
 
 .u-search .search-query-container {
@@ -103,7 +110,7 @@ input, select, textarea{
 	font-weight: normal;
 	text-transform: capitalize;
 	min-width: 7em;
-	margin-left: 0.5em;
+	margin: 0.4em 0.2em;
 	cursor: pointer;
 	font-size: 0.9em;
 }
@@ -166,8 +173,8 @@ input, select, textarea{
 .u-search-query {
 	font-weight: normal;
 	padding: 0 0.2em;
-	height: 1.6em;
 	width: 6.5em;
+	line-height: 1.4;
 }
 
 .u-fleet {
@@ -185,9 +192,14 @@ input, select, textarea{
 	cursor: pointer;
 }
 
-.u-search-header span {
+.u-search-header-text {
 	background: #eee;
 	padding: 0.2em;
+	float: left;
+}
+
+.u-search-content {
+	padding: 0.1em;
 }
 
 .card-outer[draggable] {
@@ -233,7 +245,7 @@ input, select, textarea{
 	margin: 0.5em 0;
 }
 
-.u-search-size span {
+.u-search-size-text {
 	background: #eee;
 	padding: 0.2em;
 }

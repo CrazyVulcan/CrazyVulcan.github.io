@@ -11,9 +11,17 @@ module.exports = function(grunt) {
 				files: "src/js/*.js",
 				tasks: ["build-js"],
 			},
-			html: {
+			templates: {
 				files: "src/templates/*.html",
 				tasks: ["build-templates"],
+			},
+			css: {
+				files: "src/css/**.css",
+				tasks: ["build-css"],
+			},
+			index: {
+				files: "src/index.html",
+				tasks: ["build-index"],
 			}
 		},
 		
@@ -50,10 +58,28 @@ module.exports = function(grunt) {
 		},
 		
 		copy: {
-			all: {
+			misc: {
 				expand: true,
 				cwd: "src",
-				src: [ "index.html", "js/lib/*", "fonts/*", "img/*", "data/*", "css/utopia-print.css" ],
+				src: [ "js/lib/*", "fonts/*", "img/*", "data/*" ],
+				dest: "build/",
+			},
+			css: {
+				expand: true,
+				cwd: "src",
+				src: [ "css/utopia-print.css" ],
+				dest: "build/",
+			},
+			csslib: {
+				expand: true,
+				cwd: "src/css/lib",
+				src: [ "*.css" ],
+				dest: "build/css/",
+			},
+			index: {
+				expand: true,
+				cwd: "src",
+				src: [ "index.html" ],
 				dest: "build/",
 			},
 		},
@@ -67,5 +93,12 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	
+	grunt.registerTask('build-js', ["uglify"]);
+	grunt.registerTask('build-templates', ["ngtemplates","build-js","clean:templates"]);
+	grunt.registerTask('build-css', ["cssmin","copy:css"]);
+	grunt.registerTask('build-index', ["copy:index"]);
+	
+	grunt.registerTask('default', ["clean","build-templates","build-css","build-index","copy:misc"]);
 	
 };

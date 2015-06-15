@@ -20,12 +20,14 @@
 .fleet-ship-title {
 	float: left;
 	padding: 0 0.1em;
-	font-size: 3em;
+	font-size: 2.6em;
+	height: inherit;
+	padding-top: 0.1em;
 }
 
 .fleet-ship-title-long {
 	font-size: 2.5em;
-	padding-top: 0.15em;
+	padding-top: 0.1em;
 }
 
 .fleet-ship-title-longer {
