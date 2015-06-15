@@ -2249,7 +2249,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			upgradeSlots: [
 				{}, // Talent
 				{
-					type: ["tech"],
+					type: ["crew"],
 					source: "Krim"
 				}
 			]
@@ -2276,6 +2276,20 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					return onePerShip("Assault Vessel Upgrade")(upgrade,ship,fleet);
 				}
 				return false;
+			},
+			intercept: {
+				ship: {
+					attack: function(card,ship,fleet,attack) {
+						if( card == ship )
+							attack += 1;
+						return attack;
+					},
+					shields: function(card,ship,fleet,shields) {
+						if( card == ship )
+							shields += 1;
+						return shields;
+					}
+				}
 			}
 		},
 		"weapon:assault_vessel_upgrade_w_71803": {
@@ -2284,6 +2298,20 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					return onePerShip("Assault Vessel Upgrade")(upgrade,ship,fleet);
 				}
 				return false;
+			},
+			intercept: {
+				ship: {
+					attack: function(card,ship,fleet,attack) {
+						if( card == ship )
+							attack += 1;
+						return attack;
+					},
+					shields: function(card,ship,fleet,shields) {
+						if( card == ship )
+							shields += 1;
+						return shields;
+					}
+				}
 			}
 		},
 		"crew:assault_vessel_upgrade_c_71803": {
@@ -2292,6 +2320,20 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					return onePerShip("Assault Vessel Upgrade")(upgrade,ship,fleet);
 				}
 				return false;
+			},
+			intercept: {
+				ship: {
+					attack: function(card,ship,fleet,attack) {
+						if( card == ship )
+							attack += 1;
+						return attack;
+					},
+					shields: function(card,ship,fleet,shields) {
+						if( card == ship )
+							shields += 1;
+						return shields;
+					}
+				}
 			}
 		},
 		

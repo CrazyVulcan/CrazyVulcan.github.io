@@ -13,7 +13,7 @@ module.exports = function(grunt) {
 			},
 			templates: {
 				files: "src/templates/*.html",
-				tasks: ["build-templates"],
+				tasks: ["build-js"],
 			},
 			css: {
 				files: "src/css/**.css",
@@ -107,12 +107,11 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-utopia-data');
 	
-	grunt.registerTask('build-js', ["uglify"]);
-	grunt.registerTask('build-templates', ["ngtemplates","build-js"]);
+	grunt.registerTask('build-js', ["ngtemplates","uglify"]);
 	grunt.registerTask('build-css', ["cssmin","copy:css"]);
 	grunt.registerTask('build-index', ["copy:index"]);
 	grunt.registerTask('build-data', ["utopia_data"]);
 	
-	grunt.registerTask('default', ["clean","build-templates","build-css","build-index","build-data","copy","clean:templates"]);
+	grunt.registerTask('default', ["clean","build-js","build-css","build-index","build-data","copy","clean:templates"]);
 	
 };
