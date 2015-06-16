@@ -75,7 +75,7 @@ body, .fleet-ship-inner, .card-corner-inner, .u-fleet, .fleet-ship-left, .fleet-
 .fleet-ship-container {
 	page-break-after: always;
 }
-.card-title, .card-text, .card-ship-upgrade-bar, .card-ship-cost, .card-ship-class {
+.card-title, .card-text, .card-ship-upgrade-bar, .card-ship-cost, .card-ship-class, .card-faction-name {
 	background-color: white;
 	color: black;
 }

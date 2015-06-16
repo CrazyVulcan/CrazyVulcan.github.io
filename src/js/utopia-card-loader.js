@@ -1,4 +1,4 @@
-var module = angular.module("utopia-card-loader", ["utopia-card-rules"]);
+var module = angular.module("utopia-card-loader", ["utopia-card-rules","utopia-card-ship","utopia-card-upgrade","utopia-card-resource","utopia-card-faction"]);
 
 module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", function($http, $filter, cardRules, $factions) {
 

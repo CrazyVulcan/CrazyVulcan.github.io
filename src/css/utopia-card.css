@@ -613,3 +613,16 @@
  .drag-over.card-resource[draggable] {
 	opacity: 0.2;
 }
+
+.card-faction-image {
+	width: 5em;
+	height: 5em;
+	background-size: contain;
+	margin: 2.3em;
+}
+
+.card-faction-name {
+	font-size: 1.5em;
+	color: white;
+	text-align: center;
+}
