@@ -21,12 +21,12 @@
 
 .card-outer[draggable] {
 	cursor: pointer;
-	box-shadow: 0 0 1em #999;
+	box-shadow: 0 0 0.4em #999;
 }
 
 .card-outer[draggable]:hover {
 	font-size: 30px;
-	box-shadow: 0 0 1em #333;
+	box-shadow: 0 0 0.4em #333;
 }
 
 .card-image {

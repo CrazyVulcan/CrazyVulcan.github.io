@@ -202,16 +202,6 @@ textarea {
 	padding: 0.1em;
 }
 
-.card-outer[draggable] {
-	cursor: pointer;
-	box-shadow: 0 0 1em #999;
-}
-
-.card-outer[draggable]:hover {
-	font-size: 30px;
-	box-shadow: 0 0 1em #333;
-}
-
 .u-show-more {
 	font-size: 1.5em;
 	margin: 1em;
