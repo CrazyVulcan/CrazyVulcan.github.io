@@ -210,8 +210,25 @@
 
 .card-text-inner {
 	font-size: 0.8em;
+	line-height: 1.2em;
+}
+
+.card-text-inner i.fs {
+	font-size: 1.2em;
+}
+
+.card-text-inner-long {
 	line-height: 1em;
 }
+
+.card-text-inner-long i.fs {
+	font-size: 1em;
+}
+
+.card-text-inner-super-long {
+	font-size: 0.7em;
+}
+
 
 .card-border-right {
 	background: #a8b6bf;
@@ -291,7 +308,7 @@
 
 .card-ship-action-bar i {
 	font-size: 1.6em;
-	margin: 0.2em 0.2em;
+	margin: 0.2em 0.15em;
 }
 
 .card-ship-silhouette {
@@ -317,6 +334,7 @@
 
 .card-ship-upgrade-bar i {
 	font-size: 1em;
+	margin: 0 0.02em;
 }
 
 .card-ship-upgrade-occupied {
@@ -625,4 +643,8 @@
 	font-size: 1.5em;
 	color: white;
 	text-align: center;
+}
+
+.card-text .fs-forward {
+	margin: 0 -0.2em;
 }

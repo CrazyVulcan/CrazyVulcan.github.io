@@ -1029,7 +1029,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		
 		// Transphasic Torpedoes
-		"tech:transphasic_torpedoes_71280": {
+		"weapon:transphasic_torpedoes_71280": {
 			// Equip only on Voyager
 			canEquip: function(upgrade,ship,fleet) {
 				return ship.name == "U.S.S. Voyager";
