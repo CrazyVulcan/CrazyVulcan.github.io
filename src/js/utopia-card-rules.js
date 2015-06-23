@@ -1995,7 +1995,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		// Disruptor Pulse
 		"weapon:disruptor_pulse_71794": {
 			cost: function(upgrade,ship,fleet) {
-				return ship && $factions.hasFaction( ship, "romulan", ship, fleet ) ? 10 : 5;
+				return ship && !$factions.hasFaction( ship, "romulan", ship, fleet ) ? 10 : 5;
 			}
 		},
 		
