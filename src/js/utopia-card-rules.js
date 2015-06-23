@@ -742,6 +742,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		// Valdore
 		"captain:valdore_71536": {
 			upgradeSlots: [ 
+				{/* Talent */},
 				{ 
 					type: ["tech"], 
 					source: "Valdore" 
