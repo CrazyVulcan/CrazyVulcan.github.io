@@ -91,7 +91,7 @@ module.exports = function(grunt) {
 		utopia_data: {
 			spacedock: {
 				files: {
-					"build/data/data.json": "src/data/data.xml",
+					"build/data/data.json": "src/data/*",
 				},
 			},
 		}

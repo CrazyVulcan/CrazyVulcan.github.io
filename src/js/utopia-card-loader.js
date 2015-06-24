@@ -300,7 +300,7 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 			
 		}
 		
-		$http.get("data/data.json", { async: false } ).success( function(data) {
+		$http.get( "data/data.json" ).success( function(data) {
 			
 			$.each( data.sets || [], function(i,set) {
 				loadSet(set);

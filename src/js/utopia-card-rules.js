@@ -3111,6 +3111,48 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 		},
 		
+		// DAUNTLESS
+		
+		// Arturis
+		"captain:arturis_71805": {
+			skill: function(card,ship,fleet) {
+				return ship && ship.class == "Dauntless Class" ? 8 : 3;
+			},
+		},
+		
+		// Auto-Navigation
+		"tech:auto_navigation_71805": {
+			skill: function(card,ship,fleet) {
+				return ship && !ship.captain ? 2 : undefined;
+			},
+			upgradeSlots: [
+				{
+					type: ["tech"],
+					source: "Auto-Navigation",
+				}
+			]
+		},
+		
+		// Force Field
+		"tech:force_field_71805": {
+			cost: function(upgrade,ship,fleet) {
+				return ship && ship.class != "Dauntless Class" ? 8 : 3;
+			}
+		},
+		
+		// Navigational Deflector
+		"tech:navigational_deflector_71805": {
+			canEquip: onePerShip("Navigational Deflector")
+		},
+		
+		// Particle Synthesis
+		"tech:particle_synthesis_71805": {
+			canEquip: function(upgrade,ship,fleet) {
+				return ship.class == "Dauntless Class";
+			}
+		},
+		
+		
 		
 		
 	};
