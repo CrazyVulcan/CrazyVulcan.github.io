@@ -3152,7 +3152,23 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 		},
 		
+		// TERIX
 		
+		// Additional Phaser Array 
+		"weapon:additional_phaser_array_72000p": {
+			canEquip: function(upgrade,ship,fleet) {
+				if( ship.class == "D'Deridex Class" )
+					return onePerShip("Additional Phaser Array")(upgrade,ship,fleet);
+				return false;
+			}
+		},
+		
+		// Long Range Scanners
+		"tech:long_range_scanners_72000p": {
+			cost: function(upgrade,ship,fleet) {
+				return ship && ship.class != "D'Deridex Class" ? 5 : 3;
+			}
+		},
 		
 		
 	};
