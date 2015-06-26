@@ -495,12 +495,18 @@
 .card-upgrade-cost-value {
 	color: white;
 	float: right;
-	padding: 0.1em 0.8em 0.05em 1.5em;
+	padding: 0.1em 0.3em 0.05em 1em;
 	margin-top: 0.1em;
 	margin-right: 0.1em;
 	font-size: 0.8em;
 	border: 0.1em solid #3486cf;
 	border-radius: 1em;
+	width: 2.8em;
+	text-align: center;
+}
+
+.card-value-modified:before {
+	content: "*";
 }
 
 .card-upgrade-cost .card-ship-faction {
