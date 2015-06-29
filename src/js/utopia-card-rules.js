@@ -3185,6 +3185,33 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		
 		
+		// KREECHTA
+		
+		// Marauder
+		"talent:marauder_71806": {
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship, "ferengi", ship, fleet) && $factions.hasFaction(ship.captain, "ferengi", ship, fleet);
+			}
+		},
+		
+		// Acquisition
+		"talent:acquisition_71806": {
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship, "ferengi", ship, fleet) && $factions.hasFaction(ship.captain, "ferengi", ship, fleet);
+			}
+		},
+		
+		// Tactical Officer
+		"crew:tactical_officer_71806": {
+			canEquip: onePerShip("Tactical Officer")
+		},
+
+		// Ferengi Probe
+		"tech:ferengi_probe_71806": {
+			canEquip: onePerShip("Ferengi Probe")
+		},
+		
+		
 	};
 	
 }]);
