@@ -1986,6 +1986,20 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 		},
 		
+		// Romulan Security Officer
+		// TODO Limit to max +3
+		"crew:romulan_security_officer_71794": {
+			intercept: {
+				ship: {
+					skill: function(card,ship,fleet,skill) {
+						if( card == ship.captain )
+							skill = (skill instanceof Function ? skill(card,ship,fleet,0) : skill) + 1;
+						return skill;
+					}
+				}
+			}
+		},
+		
 		// Tricobalt Warhead
 		"weapon:tricobalt_warhead_71795": {
 			cost: function(upgrade,ship,fleet) {
