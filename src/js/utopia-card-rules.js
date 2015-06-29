@@ -3212,6 +3212,13 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		
 		
+		// PASTEUR
+
+		// Inverse Tachyon Pulse
+		"tech:inverse_tachyon_pulse_71807": {
+			canEquip: onePerShip("Inverse Tachyon Pulse")
+		},		
+		
 	};
 	
 }]);
