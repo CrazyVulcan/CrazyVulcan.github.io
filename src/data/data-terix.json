@@ -4,7 +4,7 @@
 		{
 			"type": "set",
 			"id": "72000p",
-			"name": "I.R.W. Terix (Facebook Spoiler)",
+			"name": "I.R.W. Terix",
 			"releaseDate": "2015-08-01",
 			"parentSet": "Q Continuum"
 		}
@@ -75,7 +75,7 @@
 			"set": ["72000p"],
 			"name": "Deception",
 			"cost": 5,
-			"text": "At the start of the Combat Phase, before any ships have attacked, if there is not a [battlestations] Token beside your ship, you may Discard this card to place 1 [battlestations] Token beside your ship. In addition, if your ship is Cloaked, you may place 1 [evade] Token beside your ship (even if there is one there already).",
+			"text": "At the start of the Combat Phase, before any ships have attacked, if there is not a [battlestations] Token beside your ship, you may discard this card to place 1 [battlestations] Token beside your ship. In addition, if your ship is Cloaked, you may place 1 [evade] Token beside your ship (even if there is one there already).",
 			"unique": true,
 			"factions": ["mirror-universe"],
 			"intercept": { "ship":{}, "fleet":{} }
@@ -97,7 +97,7 @@
 			"set": ["72000p"],
 			"name": "Long Range Scanners",
 			"cost": 3,
-			"text": "ACTION: Perform a [scan] Action and then place an Auxiliary Power Token beside your ship.\nDuring the End Phase if there is a [scan] Token beside your ship, you may Discard this card to leave that Token beside your ship instead of removing it.\n\nThis Upgrade costs +2 SP for any ship other than a D'Deridex class ship.",
+			"text": "ACTION: Perform a [scan] Action and then place an Auxiliary Power Token beside your ship.\n\nDuring the End Phase if there is a [scan] Token beside your ship, you may Discard this card to leave that Token beside your ship instead of removing it.\n\nThis Upgrade costs +3 SP for any ship other than a D'Deridex class ship.",
 			"unique": false,
 			"factions": ["mirror-universe"],
 			"intercept": { "ship":{}, "fleet":{} }

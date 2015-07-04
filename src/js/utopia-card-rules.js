@@ -3180,7 +3180,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		// Long Range Scanners
 		"tech:long_range_scanners_72000p": {
 			cost: function(upgrade,ship,fleet) {
-				return ship && ship.class != "D'deridex Class" ? 5 : 3;
+				return ship && ship.class != "D'deridex Class" ? 6 : 3;
 			}
 		},
 		
