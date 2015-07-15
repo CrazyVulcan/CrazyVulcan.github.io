@@ -548,10 +548,10 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 						if( savedUpgrade && savedUpgrade.id ) {
 							var result = loadCard( fleet, cards, savedUpgrade, card );
 							if( !result )
-								throw false;
+								return false;
 							var upgrade = $scope.setUpgrade( fleet, card, card.upgrades[i], result.card );
 							if( !upgrade )
-								throw false;
+								return false;
 							result.promulgate(upgrade);
 						}
 						
@@ -562,10 +562,10 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 						if( savedUpgrade && savedUpgrade.id ) {
 							var result = loadCard( fleet, cards, savedUpgrade, ship || card );
 							if( !result )
-								throw false;
+								return false;
 							var upgrade = $scope.setUpgrade( fleet, ship || card, card.upgradeSlots[i], result.card );
 							if( !upgrade )
-								throw false;
+								return false;
 							result.promulgate(upgrade);
 						}
 						
@@ -594,11 +594,11 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 					var result = loadCard( fleet, cards, savedShip );
 					
 					if( !result )
-						throw "error";
+						return;
 					
 					var ship = $scope.addFleetShip( fleet, result.card )
 					if( !ship )
-						throw "error";
+						return;
 					
 					result.promulgate(ship);
 					
