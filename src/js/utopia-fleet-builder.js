@@ -75,8 +75,22 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 			$scope.getUpgradeSlots = $filter("upgradeSlots");
 			
 			$scope.isUpgradeCompatible = function(upgrade, upgradeSlot, ship, fleet) {
-				var types = valueOf(upgradeSlot,"type",ship,fleet);
-				return upgrade != upgradeSlot.occupant && $.inArray( upgrade.type, types ) >= 0;
+				
+				// Ignore drop on self
+				if( upgrade == upgradeSlot.occupant )
+					return false;
+
+				// Construct list of all slot types
+				var slotTypes = valueOf(upgradeSlot,"type",ship,fleet);
+				
+				if( upgrade.type == "question" ) {
+					// Invoke special logic for question type cards
+					return upgrade.isSlotCompatible && upgrade.isSlotCompatible(slotTypes);
+				} else {
+					// Check normal types
+					return $.inArray( upgrade.type, slotTypes ) >= 0;
+				}
+				
 			};
 			
 			var valueOf = $filter("valueOf");

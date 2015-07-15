@@ -2295,52 +2295,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		
 		// Assault Vessel Upgrade
-		// TODO Make upgrades multi typed
 		"tech:assault_vessel_upgrade_t_71803": {
-			canEquip: function(upgrade,ship,fleet) {
-				if( ship.class == "Bajoran Scout Ship" ) {
-					return onePerShip("Assault Vessel Upgrade")(upgrade,ship,fleet);
-				}
-				return false;
+			type: "question",
+			isSlotCompatible: function(slotTypes) {
+				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0;
 			},
-			intercept: {
-				ship: {
-					attack: function(card,ship,fleet,attack) {
-						if( card == ship )
-							attack += 1;
-						return attack;
-					},
-					shields: function(card,ship,fleet,shields) {
-						if( card == ship )
-							shields += 1;
-						return shields;
-					}
-				}
-			}
-		},
-		"weapon:assault_vessel_upgrade_w_71803": {
-			canEquip: function(upgrade,ship,fleet) {
-				if( ship.class == "Bajoran Scout Ship" ) {
-					return onePerShip("Assault Vessel Upgrade")(upgrade,ship,fleet);
-				}
-				return false;
-			},
-			intercept: {
-				ship: {
-					attack: function(card,ship,fleet,attack) {
-						if( card == ship )
-							attack += 1;
-						return attack;
-					},
-					shields: function(card,ship,fleet,shields) {
-						if( card == ship )
-							shields += 1;
-						return shields;
-					}
-				}
-			}
-		},
-		"crew:assault_vessel_upgrade_c_71803": {
 			canEquip: function(upgrade,ship,fleet) {
 				if( ship.class == "Bajoran Scout Ship" ) {
 					return onePerShip("Assault Vessel Upgrade")(upgrade,ship,fleet);
@@ -2419,6 +2378,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		// Systems Upgrade
 		// TODO Make upgrades multi typed
 		"tech:systems_upgrade_71998p": {
+			type: "question",
+			isSlotCompatible: function(slotTypes) {
+				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0;
+			},
 			upgradeSlots: [
 				{
 					type: ["tech"],

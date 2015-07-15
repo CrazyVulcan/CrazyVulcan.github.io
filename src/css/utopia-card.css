@@ -531,6 +531,9 @@
 	position: relative;
 	top: -0.2em;
 	left: -0.1em;
+	width: 1.1em;
+	height: 1.1em;
+	text-align: center;
 }
 
 .card-weapon-range {
