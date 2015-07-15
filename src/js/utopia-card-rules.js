@@ -618,7 +618,18 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					type: ["tech","weapon","crew"], 
 					source: "Calvin Hudson" 
 				}
-			]
+			],
+			// Reduce cost of all Upgrades by 1 SP if on Independent ship
+			intercept: {
+				ship: {
+					cost: function(upgrade,ship,fleet,cost) {
+						if( $factions.hasFaction(ship,"independent", ship, fleet) && $.inArray( upgrade.type, ["talent","crew","tech","weapon"]) >= 0 ) {
+							cost = (cost instanceof Function ? cost(upgrade,ship,fleet,0) : cost) - 1;
+						}
+						return cost;
+					}
+				}
+			}
 		},
 		
 		// Miles O'Brien MU
