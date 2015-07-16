@@ -335,29 +335,34 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		// Luaran
 		"captain:2035": {
 			// One Dominion upgrade is -2 SP. Argh.
-			// This is a messy implementation. It reduces the cost of Luaran instead, so long as there is a valid Dominion upgrade.
-			cost: function(upgrade,ship,fleet) {
-				
-				if( !ship )
-					return 2;
-				
-				var candidate = false;
-				var candCost = 0;
-				
-				// Find the upgrade with the highest cost
-				$.each( $filter("upgradeSlots")(ship), function(i, slot) {
-					if( slot.occupant && slot.occupant != upgrade && slot.occupant.type != "admiral" && $factions.hasFaction(slot.occupant,"dominion", ship, fleet) ) {
-						var occCost = valueOf(slot.occupant,"cost",ship,fleet);
-						if( occCost > candCost ) {
-							candidate = slot.occupant;
-							candCost = valueOf(slot.occupant,"cost",ship,fleet);
-						}
+			// This is a messy implementation. It requires recalculation of the candidate for each upgrade on the ship.
+			intercept: {
+				ship: {
+					cost: function(upgrade,ship,fleet,cost) {
+						
+						var candidate = false;
+						var candCost = 0;
+						
+						// Find the upgrade with the highest cost
+						$.each( $filter("upgradeSlots")(ship), function(i, slot) {
+							if( slot.occupant && $factions.hasFaction(slot.occupant,"dominion", ship, fleet) ) {
+								// Note: This doesn't account for other cost modifiers. Can't use valueOf without huge recursion.
+								var occCost = slot.occupant.cost instanceof Function ? slot.occupant.cost(slot.occupant,ship,fleet,0) : slot.occupant.cost;
+								if( occCost > candCost ) {
+									candidate = slot.occupant;
+									candCost = occCost;
+								}
+							}
+						});
+
+						// Modify cost only if this is the candidate upgrade
+						if( upgrade == candidate )
+							cost = candCost - 2;
+						
+						return cost;
+						
 					}
-				});
-				
-				// Subtract up to 2 from Luaran's cost
-				return candCost > 2 ? 0 : 2 - candCost;
-				
+				}
 			}
 		},
 		
