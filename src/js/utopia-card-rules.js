@@ -22,7 +22,7 @@ module.factory( "$factions", [ "$filter", function($filter) {
 			});
 			return match;
 		},
-		list: [ "Federation", "Klingon", "Romulan", "Dominion", "Borg", "Species 8472", "Kazon", "Bajoran", "Ferengi", "Vulcan", "Independent", "Mirror Universe" ]
+		list: [ "Federation", "Klingon", "Romulan", "Dominion", "Borg", "Species 8472", "Kazon", "Bajoran", "Ferengi", "Vulcan", "Independent", "Mirror Universe", "Q Continuum" ]
 	}
 }]);
 
@@ -3191,7 +3191,16 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		// Inverse Tachyon Pulse
 		"tech:inverse_tachyon_pulse_71807": {
 			canEquip: onePerShip("Inverse Tachyon Pulse")
-		},		
+		},
+		
+		
+		// Q Continuum
+		"question:q2_72000b": {
+			isSlotCompatible: function(slotTypes) {
+				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0 || $.inArray( "talent", slotTypes ) >= 0;
+			},
+		},
+		
 		
 	};
 	

@@ -76,7 +76,6 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 		}
 
 		var captainDefaults = {
-			factionPenalty: 1,
 			intercept: { ship: {}, fleet: {} },
 			canEquip: true,
 			canEquipCaptain: true,
@@ -92,6 +91,9 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 			}
 
 			$.extend(true, captain, captainDefaults);
+			
+			if( captain.factionPenalty == undefined )
+				captain.factionPenalty = 1;
 
 			// Set mirror flag
 			captain.mirror = $factions.hasFaction(captain, "mirror-universe");
@@ -110,7 +112,6 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 		}
 
 		var admiralDefaults = {
-			factionPenalty: 3,
 			intercept: { ship: {}, fleet: {} },
 			canEquip: true,
 			canEquipAdmiral: true,
@@ -127,6 +128,9 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 			}
 
 			$.extend(true, admiral, admiralDefaults);
+			
+			if( admiral.factionPenalty == undefined )
+				admiral.factionPenalty = 3;
 
 			// Set mirror flag
 			admiral.mirror = $factions.hasFaction(admiral, "mirror-universe");
@@ -153,7 +157,6 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 		}
 
 		var upgradeDefaults = {
-			factionPenalty: 1,
 			intercept: { ship: {}, fleet: {} },
 			canEquip: true,
 			canEquipFaction: true
@@ -168,6 +171,9 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 
 			$.extend(true, upgrade, upgradeDefaults);
 
+			if( upgrade.factionPenalty == undefined )
+				upgrade.factionPenalty = 1;
+		
 			// Set mirror flag
 			upgrade.mirror = $factions.hasFaction(upgrade, "mirror-universe");
 
