@@ -3206,6 +3206,19 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 		},
 		
+		// EMERGENCY FORCE FIELD RESOURCE
+		"resource:emergency_force_field_72001r": {
+			cost: function(card,ship,fleet) {
+				if( !fleet )
+					return 0;
+				var shields = 0;
+				$.each( fleet.ships || [], function(i,ship) {
+					shields += valueOf(ship,"shields",ship,fleet);
+				} );
+				return Math.ceil( shields/2 );
+			}
+		},
+		
 		
 	};
 	

@@ -406,7 +406,7 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 			
 			$scope.getFleetCost = function(fleet) {
 				
-				var cost = fleet.resource ? fleet.resource.cost : 0;
+				var cost = fleet.resource ? valueOf(fleet.resource,"cost",{},fleet) : 0;
 				
 				$.each( fleet.ships, function(i, ship) {
 					cost += $scope.getTotalCost(ship,fleet);
