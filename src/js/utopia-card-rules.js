@@ -1270,11 +1270,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					intercept: {
 						ship: {
 							canEquip: function(upgrade,ship,fleet) {
-								// Evaluate calculated cost
-								var cost = upgrade.cost instanceof Function ? upgrade.cost(upgrade,ship,fleet,0) : upgrade.cost;
-								// Apply faction penalty before deciding
-								if( !$factions.match(upgrade,ship) )
-									cost += upgrade.factionPenalty instanceof Function ? upgrade.factionPenalty(upgrade,ship,fleet) : upgrade.factionPenalty;
+								// TODO Prevent use of upgrades without a defined cost (e.g. Dorsal Phaser Array)
+								var cost = valueOf(upgrade,"cost",ship,fleet);
 								return cost <= 5;
 							},
 							canEquipFaction: function(upgrade,ship,fleet) {
