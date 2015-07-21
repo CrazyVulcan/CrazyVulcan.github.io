@@ -1140,13 +1140,17 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			],
 			intercept: {
 				ship: {
-					cost: function(upgrade,ship,fleet,cost) {
-						if( upgrade.type == "weapon" ) {
-							cost = (cost instanceof Function ? cost(upgrade, ship, fleet, 0) : cost);
-							if( cost <= 5 )
-								cost -= 2;
+					cost: {
+						// Run this interceptor after all other penalties and discounts
+						priority: 100,
+						fn: function(upgrade,ship,fleet,cost) {
+							if( upgrade.type == "weapon" ) {
+								cost = resolve(upgrade,ship,fleet,cost);
+								if( cost <= 5 )
+									cost -= 2;
+							}
+							return cost;
 						}
-						return cost;
 					}
 				}
 			}

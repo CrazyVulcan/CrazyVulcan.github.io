@@ -4,9 +4,12 @@ var module = angular.module("utopia-card-upgrade", []);
 module.factory( "globalInterceptors", function() {
 	return {
 		// Prevent all cards from ever having a negative cost
-		cost: function(card,ship,fleet,cost) {
-			cost = cost instanceof Function ? cost(card,ship,fleet) : cost;
-			return cost < 0 ? 0 : cost;
+		cost: {
+			priority: 1000, // Must be last to run
+			fn: function(card,ship,fleet,cost) {
+				cost = cost instanceof Function ? cost(card,ship,fleet) : cost;
+				return cost < 0 ? 0 : cost;
+			}
 		}
 	}
 } );
@@ -120,10 +123,26 @@ module.filter( "valueOf", [ "$filter", function($filter) {
 		
 		data = card[field];
 
-		if( ship )
-			$.each( interceptorsFilter( card, ship, fleet, field, upgradeSlot ), function(i, interceptor) {
-				data = interceptor( card, ship, fleet, data );
+		if( ship ) {
+			
+			var interceptors = interceptorsFilter( card, ship, fleet, field, upgradeSlot );
+			
+			interceptors = $.map( interceptors, function(value) {
+				if( value instanceof Function )
+					return { fn: value, priority: 50 };
+				else if( value.fn && value.priority )
+					return value;
+				return null;
+			} );
+			
+			interceptors.sort( function(a,b) {
+				return a.priority > b.priority ? 1 : -1;
 			});
+			
+			$.each( interceptors, function(i, interceptor) {
+				data = interceptor.fn( card, ship, fleet, data );
+			});
+		}
 	
 		if( data instanceof Function )
 			return data(card, ship, fleet);
