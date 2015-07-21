@@ -84,16 +84,48 @@
 			"intercept": { "ship":{}, "fleet":{} }
 		},
 		{
-			"type": "question",
-			"id": "q2_72000b",
+			"type": "crew",
+			"id": "q2_c_72000b",
 			"set": ["72000b"],
 			"name": "Q2",
 			"cost": 5,
 			"text": "This Upgrade counts as either a [crew], an [talent], a [tech], or a [weapon] Upgrade (your choice).\n\nWhenever a friendly ship within Range 1 of your ship receives damage, you may discard this card to transfer all of that damage to your ship.",
 			"unique": true,
 			"factions": ["q-continuum"],
-			"factionPenalty": 0,
-			"intercept": { "ship":{}, "fleet":{} }
+			"factionPenalty": 0
+		},
+		{
+			"type": "talent",
+			"id": "q2_ta_72000b",
+			"set": ["72000b"],
+			"name": "Q2",
+			"cost": 5,
+			"text": "This Upgrade counts as either a [crew], an [talent], a [tech], or a [weapon] Upgrade (your choice).\n\nWhenever a friendly ship within Range 1 of your ship receives damage, you may discard this card to transfer all of that damage to your ship.",
+			"unique": true,
+			"factions": ["q-continuum"],
+			"factionPenalty": 0
+		},
+		{
+			"type": "tech",
+			"id": "q2_t_72000b",
+			"set": ["72000b"],
+			"name": "Q2",
+			"cost": 5,
+			"text": "This Upgrade counts as either a [crew], an [talent], a [tech], or a [weapon] Upgrade (your choice).\n\nWhenever a friendly ship within Range 1 of your ship receives damage, you may discard this card to transfer all of that damage to your ship.",
+			"unique": true,
+			"factions": ["q-continuum"],
+			"factionPenalty": 0
+		},
+		{
+			"type": "weapon",
+			"id": "q2_w_72000b",
+			"set": ["72000b"],
+			"name": "Q2",
+			"cost": 5,
+			"text": "This Upgrade counts as either a [crew], an [talent], a [tech], or a [weapon] Upgrade (your choice).\n\nWhenever a friendly ship within Range 1 of your ship receives damage, you may discard this card to transfer all of that damage to your ship.",
+			"unique": true,
+			"factions": ["q-continuum"],
+			"factionPenalty": 0
 		}
 	]
 

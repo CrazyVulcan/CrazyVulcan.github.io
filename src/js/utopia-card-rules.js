@@ -3199,14 +3199,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquip: onePerShip("Inverse Tachyon Pulse")
 		},
 		
-		
-		// Q Continuum
-		"question:q2_72000b": {
-			isSlotCompatible: function(slotTypes) {
-				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0 || $.inArray( "talent", slotTypes ) >= 0;
-			},
-		},
-		
+
 		// EMERGENCY FORCE FIELD RESOURCE
 		"resource:emergency_force_field_72001r": {
 			cost: function(card,ship,fleet) {
