@@ -3247,7 +3247,17 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		
 		
-		
+		// Mendak
+		"captain:mendak_cap_71794": {
+			canEquipCaptain: function(card,ship,fleet) {
+				return $factions.hasFaction(ship,"romulan");
+			},
+		},
+		"admiral:mendak_71794": {
+			canEquipAdmiral: function(card,ship,fleet) {
+				return $factions.hasFaction(ship,"romulan");
+			},
+		},
 		
 	};
 	
