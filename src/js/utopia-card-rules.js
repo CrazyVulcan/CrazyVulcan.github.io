@@ -45,6 +45,18 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		};
 	};
 	
+	var upgradeTypes = ["crew","weapon","tech","talent","question"];
+	
+	var isUpgrade = function(card) {
+		return $.inArray( card.type, upgradeTypes ) >= 0;
+	};
+	
+	var resolve = function(card,ship,fleet,value) {
+		return value instanceof Function ? value(card,ship,fleet) : value;
+	};
+	
+	var hasFaction = $factions.hasFaction;
+	
 	return {
 		
 		// SHIPS
@@ -193,8 +205,6 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						ship: {
 							cost: function(upgrade, ship, fleet, cost) {
 								cost = (cost instanceof Function ? cost(upgrade, ship, fleet, cost) : cost) - 2;
-								if( cost < 0 )
-									cost = 0;
 								return cost;
 							}
 						}
@@ -298,8 +308,6 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					cost: function(upgrade, ship, fleet, cost) {
 						if( upgrade.type == "crew") {
 							cost = (cost instanceof Function ? cost(upgrade, ship, fleet, cost) : cost) - 1;
-							if( cost < 0 )
-								cost = 0;
 						}
 						return cost;
 					}
@@ -315,8 +323,6 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					cost: function(upgrade, ship, fleet, cost) {
 						if( upgrade.type == "weapon") {
 							cost = (cost instanceof Function ? cost(upgrade, ship, fleet, cost) : cost) - 1;
-							if( cost < 0 )
-								cost = 0;
 						}
 						return cost;
 					}
@@ -492,8 +498,6 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					cost: function(upgrade, ship, fleet, cost) {
 						if( upgrade.type == "tech" && ( $factions.hasFaction(upgrade,"vulcan", ship, fleet) || $factions.hasFaction(upgrade,"federation", ship, fleet) ) ) {
 							cost = (cost instanceof Function ? cost(upgrade, ship, fleet, 0) : cost) - 2;
-							if( cost < 0 )
-								cost = 0;
 						}
 						return cost;
 					},
@@ -585,8 +589,6 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					cost: function(upgrade, ship, fleet, cost) {
 						if( upgrade.type == "weapon" && $factions.hasFaction(upgrade,"kazon", ship, fleet) ) {
 							cost = (cost instanceof Function ? cost(upgrade, ship, fleet, 0) : cost) - 1;
-							if( cost < 0 )
-								cost = 0;
 						}
 						return cost;
 					},
@@ -628,7 +630,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				ship: {
 					cost: function(upgrade,ship,fleet,cost) {
-						if( $factions.hasFaction(ship,"independent", ship, fleet) && $.inArray( upgrade.type, ["talent","crew","tech","weapon"]) >= 0 ) {
+						if( $factions.hasFaction(ship,"independent", ship, fleet) && isUpgrade(upgrade) ) {
 							cost = (cost instanceof Function ? cost(upgrade,ship,fleet,0) : cost) - 1;
 						}
 						return cost;
@@ -734,8 +736,6 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				var cost = 0;
 				if( captain.upgradeSlots[0].occupant ) {
 					cost = captain.upgradeSlots[0].occupant.cost - 3;
-					if( cost < 0 )
-						cost = 0;
 				}
 				return cost;
 			},
@@ -3224,7 +3224,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		// Luther Sloan
 		"crew:luther_sloan_72001p": {
 			factionPenalty: function(card,ship,fleet) {
-				if( $factions.hasFaction(ship,"federation") )
+				if( $factions.hasFaction(ship,"federation",ship,fleet) )
 					return 0;
 				return 1;
 			}
@@ -3250,14 +3250,98 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		// Mendak
 		"captain:mendak_cap_71794": {
 			canEquipCaptain: function(card,ship,fleet) {
-				return $factions.hasFaction(ship,"romulan");
+				return $factions.hasFaction(ship,"romulan",ship,fleet);
 			},
 		},
 		"admiral:mendak_71794": {
 			canEquipAdmiral: function(card,ship,fleet) {
-				return $factions.hasFaction(ship,"romulan");
+				return $factions.hasFaction(ship,"romulan",ship,fleet);
 			},
 		},
+		
+		
+		// T'Ong
+		
+		// K'Temoc
+		"captain:k_temoc_72009": {
+			// Klingon talent
+			upgradeSlots: [
+				{
+					type: ["talent"],
+					source: "K'Temoc (Klingon Talents Only)",
+					canEquip: function(card,ship,fleet) {
+						return hasFaction(card,"klingon",ship,fleet);
+					}
+				}
+			],
+			intercept: {
+				ship: {
+					// Klingon upgrades cost -1 SP
+					cost: function(card,ship,fleet,cost) {
+						if( isUpgrade(card) && hasFaction(card,"klingon",ship,fleet) )
+							cost = resolve(card,ship,fleet,cost) - 1;
+						return cost;
+					},
+					// Double faction penalty for non-klingon upgrades
+					factionPenalty: function(card,ship,fleet,factionPenalty) {
+						console.log(card.name,factionPenalty,isUpgrade(card));
+						if( isUpgrade(card) && !hasFaction(card,"klingon",ship,fleet) ) {
+							factionPenalty = resolve(card,ship,fleet,factionPenalty) * 2;
+							console.log(card.name,factionPenalty);
+						}
+						return factionPenalty;
+					}
+				}
+			}
+		},
+		
+		"talent:devotion_to_duty_72009": {
+			canEquipFaction: function(card,ship,fleet) {
+				return hasFaction(ship,"klingon",ship,fleet) && hasFaction(ship.captain,"klingon",ship,fleet);
+			},
+		},
+		
+		// Tactical Officer
+		"crew:tactical_officer_72009": {
+			cost: function(card,ship,fleet) {
+				return !ship || hasFaction(ship,"klingon",ship,fleet) ? 2 : 5;
+			},
+			canEquip: onePerShip("Tactical Officer")
+		},
+		
+		// Cryogenic Stasis
+		"tech:cryogenic_stasis_72009": {
+			upgradeSlots: [
+				{
+					type: ["crew"],
+					source: "Cryogenic Stasis (Non-Borg, Cost 5 or less)",
+					canEquip: function(card,ship,fleet) {
+						return !hasFaction(card,"borg",ship,fleet) && valueOf(card,"cost",ship,fleet) <= 5;
+					},
+					intercept: {
+						ship: {
+							cost: function() { return 0; },
+							factionPenalty: function() { return 0; },
+						}
+					}
+				},
+				{
+					type: ["crew"],
+					source: "Cryogenic Stasis (Non-Borg, Cost 5 or less)",
+					canEquip: function(card,ship,fleet) {
+						return !hasFaction(card,"borg",ship,fleet) && valueOf(card,"cost",ship,fleet) <= 5;
+					},
+					intercept: {
+						ship: {
+							cost: function() { return 0; }
+						}
+					}
+				}
+			]
+		},
+		
+		
+		
 		
 	};
 	

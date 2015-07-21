@@ -1,5 +1,16 @@
 var module = angular.module("utopia-card-upgrade", []);
 
+
+module.factory( "globalInterceptors", function() {
+	return {
+		// Prevent all cards from ever having a negative cost
+		cost: function(card,ship,fleet,cost) {
+			cost = cost instanceof Function ? cost(card,ship,fleet) : cost;
+			return cost < 0 ? 0 : cost;
+		}
+	}
+} );
+
 module.filter( "upgradeSlots", function() {
 	
 	return function( ship ) {
@@ -69,7 +80,7 @@ module.filter( "shipInterceptors", [ "$filter", function($filter) {
 	
 }]);
 
-module.filter( "interceptors", [ "$filter", function($filter) {
+module.filter( "interceptors", [ "$filter","globalInterceptors", function($filter, globalInterceptors) {
 	
 	var shipInterceptors = $filter("shipInterceptors");
 	
@@ -91,6 +102,9 @@ module.filter( "interceptors", [ "$filter", function($filter) {
 			}
 			
 		}
+		
+		if( globalInterceptors[field] )
+			interceptors = interceptors.concat( globalInterceptors[field] );
 		
 		return interceptors;
 		
