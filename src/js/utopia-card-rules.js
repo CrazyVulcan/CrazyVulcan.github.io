@@ -3219,6 +3219,35 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 		},
 		
+		// BELLEROPHON
+		
+		// Luther Sloan
+		"crew:luther_sloan_72001p": {
+			factionPenalty: function(card,ship,fleet) {
+				if( $factions.hasFaction(ship,"federation") )
+					return 0;
+				return 1;
+			}
+		},
+		
+		// Tricobalt Device
+		"weapon:tricobalt_device_72001p": {
+			cost: function(upgrade,ship,fleet) {
+				return ship && ship.class != "Intrepid Class" ? 10 : 6;
+			}
+		},
+		
+		// Variable Geometry Pylons
+		"tech:variable_geometry_pylons_72001p": {
+			canEquip: function(card,ship,fleet) {
+				if( ship.class != "Intrepid Class" )
+					return false;
+				return onePerShip("Variable Geometry Pylons")(card,ship,fleet);
+			}
+		},
+		
+		
+		
 		
 	};
 	
