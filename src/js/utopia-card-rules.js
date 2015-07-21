@@ -3284,11 +3284,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					},
 					// Double faction penalty for non-klingon upgrades
 					factionPenalty: function(card,ship,fleet,factionPenalty) {
-						console.log(card.name,factionPenalty,isUpgrade(card));
-						if( isUpgrade(card) && !hasFaction(card,"klingon",ship,fleet) ) {
+						if( isUpgrade(card) && !hasFaction(card,"klingon",ship,fleet) )
 							factionPenalty = resolve(card,ship,fleet,factionPenalty) * 2;
-							console.log(card.name,factionPenalty);
-						}
 						return factionPenalty;
 					}
 				}
