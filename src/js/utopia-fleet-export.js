@@ -94,6 +94,7 @@ module.directive( "fleetExport", function() {
 					text += "- ";
 				
 				var cost = valueOf(card,"cost",ship,fleet);
+				var free = valueOf(card,"free",ship,fleet);
 				var countSlotCost = true;
 				
 				if( card.type == "resource" )
@@ -123,6 +124,10 @@ module.directive( "fleetExport", function() {
 				// Show cost if appropriate
 				if( !hideCost )
 					text += " [" + cost + "]";
+				if( free ) {
+					text += " [Free]";
+					cost = 0;
+				}
 				text += "\n";
 				
 				if( card.resource ) {

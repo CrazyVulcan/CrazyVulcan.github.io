@@ -505,6 +505,10 @@
 	text-align: center;
 }
 
+.card-upgrade-cost-free {
+	color: #777;
+}
+
 .card-value-modified:before {
 	content: "*";
 }

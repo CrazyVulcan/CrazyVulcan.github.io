@@ -57,6 +57,13 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 	
 	var hasFaction = $factions.hasFaction;
 	
+	var cloneSlot = function(count, slot) {
+		var slots = [slot];
+		for( var i = 1; i < count; i++ )
+			slots.push( angular.copy(slot) );
+		return slots;
+	};
+	
 	return {
 		
 		// SHIPS
@@ -1266,7 +1273,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			upgradeSlots: [ 
 				{ 
 					type: ["weapon","tech"], 
-					source: "Quark (Non-Borg, 5SP or less)",
+					source: "Quark",
+					rules: "Non-Borg, 5SP or less",
 					intercept: {
 						ship: {
 							canEquip: function(upgrade,ship,fleet) {
@@ -1277,11 +1285,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 							canEquipFaction: function(upgrade,ship,fleet) {
 								return !$factions.hasFaction(upgrade,"borg", ship, fleet);
 							},
-							cost: function() {
-								return 0;
-							},
-							factionPenalty: function() {
-								return 0;
+							free: function() {
+								return true;
 							}
 						}
 					}
@@ -1901,11 +1906,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			upgradeSlots: [ 
 				{ 
 					type: ["weapon"], 
-					source: "Triphasic Emitter (Non-Borg, 5SP or less)",
+					source: "Triphasic Emitter",
+					rules: "Non-Borg, 5SP or less",
 					intercept: {
 						ship: {
-							cost: function() { return 0; },
-							factionPenalty: function() { return 0; },
+							free: function() { return true; },
 							canEquip: function(upgrade, ship, fleet) {
 								return !$factions.hasFaction(upgrade,"borg", ship, fleet) && upgrade.cost <= 5;
 							}
@@ -3302,33 +3307,30 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 		// Cryogenic Stasis
 		"tech:cryogenic_stasis_72009": {
-			upgradeSlots: [
+			upgradeSlots: cloneSlot( 2 ,
 				{
 					type: ["crew"],
-					source: "Cryogenic Stasis (Non-Borg, Cost 5 or less)",
-					canEquip: function(card,ship,fleet) {
-						return !hasFaction(card,"borg",ship,fleet) && valueOf(card,"cost",ship,fleet) <= 5;
+					source: "Cryogenic Stasis",
+					rules: "Non-Borg, Combined cost 5 or less",
+					canEquip: function(card,ship,fleet,upgradeSlot) {
+						// Non-Borg
+						if( hasFaction(card,"borg",ship,fleet) )
+							return false;
+						// Combined cost of 5 SP or less
+						var otherSlotCost = 0;
+						$.each( $filter("upgradeSlots")(ship), function(i, slot) {
+							if( upgradeSlot != slot && slot.occupant && slot.source == "Cryogenic Stasis" )
+								otherSlotCost = valueOf(slot.occupant,"cost",ship,fleet)
+						});
+						return otherSlotCost + valueOf(card,"cost",ship,fleet) <= 5;
 					},
 					intercept: {
 						ship: {
-							cost: function() { return 0; },
-							factionPenalty: function() { return 0; },
-						}
-					}
-				},
-				{
-					type: ["crew"],
-					source: "Cryogenic Stasis (Non-Borg, Cost 5 or less)",
-					canEquip: function(card,ship,fleet) {
-						return !hasFaction(card,"borg",ship,fleet) && valueOf(card,"cost",ship,fleet) <= 5;
-					},
-					intercept: {
-						ship: {
-							cost: function() { return 0; }
+							free: function() { return true; },
 						}
 					}
 				}
-			]
+			),
 		},
 		
 		

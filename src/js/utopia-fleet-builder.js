@@ -387,18 +387,22 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 				var cost = ship.cost;
 				
 				if( ship.resource ) {
-					cost += valueOf(ship.resource,"cost",ship,fleet);
+					if( !valueOf(ship.resource,"free",ship,fleet) )
+						cost += valueOf(ship.resource,"cost",ship,fleet);
 				}
 				
 				if( ship.captain )
-					cost += valueOf(ship.captain,"cost",ship,fleet);
+					if( !valueOf(ship.captain,"free",ship,fleet) )
+						cost += valueOf(ship.captain,"cost",ship,fleet);
 
 				if( ship.admiral )
-					cost += valueOf(ship.admiral,"cost",ship,fleet);
+					if( !valueOf(ship.admiral,"free",ship,fleet) )
+						cost += valueOf(ship.admiral,"cost",ship,fleet);
 				
 				$.each( $scope.getUpgradeSlots(ship), function(i,slot) {
 					if( slot.occupant )
-						cost += valueOf(slot.occupant,"cost",ship,fleet);
+						if( !valueOf(slot.occupant,"free",ship,fleet) )
+							cost += valueOf(slot.occupant,"cost",ship,fleet);
 				});
 				
 				return cost;
