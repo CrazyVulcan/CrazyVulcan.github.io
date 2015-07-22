@@ -22,7 +22,7 @@
 		<div class="card-text-inner font-staw-alt" ng-bind-html="upgrade.text | icons" ng-class="{'card-text-inner-long': upgrade.text.length > 300, 'card-text-inner-super-long': upgrade.text.length > 530 }"></div>
 	</div>
 
-	<div class="card-upgrade-cost pull-right"><div ng-repeat="faction in upgrade|valueOf:'factions':ship:fleet" class="card-upgrade-faction card-faction-{{ (upgrade|valueOf:'factions':ship:fleet).length - $index}}"><div class="card-upgrade-faction-black"></div><div class="card-upgrade-faction-icon card-faction-{{faction}}"></div></div><div class="card-upgrade-cost-value" ng-class="{'card-upgrade-cost-free': {{upgrade|valueOf:'free':ship:fleet}} }">{{upgrade|valueOf:'cost':ship:fleet}}</div></div>
+	<div class="card-upgrade-cost pull-right"><div ng-repeat="faction in upgrade|valueOf:'factions':ship:fleet" class="card-upgrade-faction card-faction-{{ (upgrade|valueOf:'factions':ship:fleet).length - $index}}"><div class="card-upgrade-faction-black"></div><div class="card-upgrade-faction-icon card-faction-{{faction}}"></div></div><div class="card-upgrade-cost-value" ng-class="{'card-upgrade-cost-free': '{{upgrade|valueOf:'free':ship:fleet}}' }">{{upgrade|valueOf:'cost':ship:fleet}}</div></div>
 
 	<div ng-if="upgrade.type == 'captain' || upgrade.type == 'admiral' || (upgrade|valueOf:'skill':ship:fleet)" class="card-skill-container pull-left">
 		<div class="card-skill"><span class="card-skill-plus" ng-show="upgrade.isSkillModifier && upgrade.skill >= 0">+</span>{{upgrade|valueOf:'skill':ship:fleet}}</div>
