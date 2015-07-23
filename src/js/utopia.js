@@ -364,3 +364,30 @@ module.directive( "card", function() {
 	};
 	
 } );
+
+module.directive( "tooltip", function() {
+	
+	return {
+		
+		scope: {
+			tooltip: "="
+		},
+		
+		restrict: "A",
+		
+		link: function(scope,element,attrs) {
+			
+			console.log("tooltip",$(element));
+			
+			$(element).data("powertipjq",$("<div></div>"));
+			$(element).powerTip({ placement: 'ne-alt' });
+			
+			scope.$watch( "tooltip", function(value) {
+				$(element).data("powertipjq",$("<div>"+value+"</div>"));
+			} );
+			
+		}
+		
+	}
+	
+});

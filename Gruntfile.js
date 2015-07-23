@@ -86,6 +86,18 @@ module.exports = function(grunt) {
 				src: [ "index.html" ],
 				dest: "build/",
 			},
+			powertip: {
+				expand: true,
+				cwd: "node_modules/jquery-powertip/dist",
+				src: [ "jquery.powertip.min.js" ],
+				dest: "build/js/lib/",
+			},
+			powertip_css: {
+				expand: true,
+				cwd: "node_modules/jquery-powertip/dist/css",
+				src: [ "jquery.powertip.min.css" ],
+				dest: "build/css/",
+			}
 		},
 		
 		utopia_data: {
