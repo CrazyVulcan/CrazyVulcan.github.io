@@ -365,29 +365,39 @@ module.directive( "card", function() {
 	
 } );
 
-module.directive( "tooltip", function() {
+module.directive( "tooltip", [ "$filter", function($filter) {
 	
 	return {
 		
 		scope: {
-			tooltip: "="
+			tooltip: "&"
 		},
 		
 		restrict: "A",
 		
 		link: function(scope,element,attrs) {
 			
-			console.log("tooltip",$(element));
-			
 			$(element).data("powertipjq",$("<div></div>"));
 			$(element).powerTip({ placement: 'ne-alt' });
 			
-			scope.$watch( "tooltip", function(value) {
-				$(element).data("powertipjq",$("<div>"+value+"</div>"));
+			var icons = $filter("icons");
+			
+			//scope.$watchCollection( "tooltip", function(value) {
+			
+			$(element).on( "powerTipRender", function() {
+				
+				var div = $("<table class='card-tooltip'></table>");
+				
+				$.each( scope.tooltip(), function(i,mod) {
+					div.append( "<tr><td>" + icons(mod.source) + "</td><td>" + (mod.value > 0 && i > 0 ? "+" : "") + mod.value + "</tr>" );
+				});
+				
+				$("#powerTip").html(div);
+				
 			} );
 			
 		}
 		
 	}
 	
-});
+}]);

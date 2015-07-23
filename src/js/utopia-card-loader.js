@@ -60,16 +60,22 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 				$.extend( true, ship, cardRules[ship.type+":"+ship.id] );
 
 			// Add faction penalties to cost calculation
-			var costIntercept = ship.intercept.ship.cost;
-			ship.intercept.ship.cost = function(upgrade, ship, fleet, cost) {
-				if( costIntercept )
-					cost = costIntercept(upgrade, ship, fleet, cost);
-				if( !$factions.match( upgrade, ship, ship, fleet ) ) {
-					var penalty = valueOf(upgrade,"factionPenalty",ship,fleet);
-					return (cost instanceof Function ? cost(upgrade, ship, fleet, 0) : cost ) + penalty;
+			if( ship.intercept.ship.cost )
+				ship.intercept.ship.cost = [ship.intercept.ship.cost];
+			else
+				ship.intercept.ship.cost = [];
+			
+			ship.intercept.ship.cost.push( {
+				source: "Faction Penalty",
+				priority: 1,
+				fn: function(upgrade, ship, fleet, cost) {
+					if( !$factions.match( upgrade, ship, ship, fleet ) ) {
+						var penalty = valueOf(upgrade,"factionPenalty",ship,fleet);
+						return (cost instanceof Function ? cost(upgrade, ship, fleet, 0) : cost ) + penalty;
+					}
+					return cost;
 				}
-				return cost;
-			};
+			});
 
 			cards.push(ship);
 
@@ -216,18 +222,22 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 					// Special talent slot, which allows a free talent if captain already has an empty talent slot
 					card.upgradeSlots.push( { 
 						type: ["talent"],
-						source: "Fleet Captain (Free talent if another talent slot is empty)",
+						source: "Fleet Captain",
+						rules: "Free talent if Captain has an empty talent slot",
 						showOnCard: true,
 						intercept: {
 							ship: {
-								cost: function(upgrade, ship, fleet, cost) {
-									var slots = $filter("upgradeSlots")(ship);
-									var emptyTalentSlot = false;
-									$.each(slots, function(i,slot) {
-										if( slot.type.indexOf("talent") >= 0 && !slot.occupant )
-											emptyTalentSlot = true;
-									});
-									return emptyTalentSlot ? 0 : cost;
+								cost: {
+									priority: -1,
+									fn: function(upgrade, ship, fleet, cost) {
+										var slots = $filter("upgradeSlots")(ship.captain);
+										var emptyTalentSlot = false;
+										$.each(slots, function(i,slot) {
+											if( slot.type.indexOf("talent") >= 0 && !slot.occupant )
+												emptyTalentSlot = true;
+										});
+										return emptyTalentSlot ? 0 : cost;
+									}
 								}
 							}
 						}

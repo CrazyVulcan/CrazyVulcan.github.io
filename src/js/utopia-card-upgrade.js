@@ -6,6 +6,7 @@ module.factory( "globalInterceptors", function() {
 		// Prevent all cards from ever having a negative cost
 		cost: {
 			priority: 1000, // Must be last to run
+			source: "Cost cannot be negative",
 			fn: function(card,ship,fleet,cost) {
 				cost = cost instanceof Function ? cost(card,ship,fleet) : cost;
 				return cost < 0 ? 0 : cost;
@@ -45,6 +46,27 @@ module.filter( "upgradeSlots", function() {
 	
 } );
 
+function wrapInterceptors( interceptors, source, destArr ) {
+
+	var source = source.type ? "["+source.type+"] " + source.name : source;
+
+	if( interceptors instanceof Function || !interceptors.length )
+		interceptors = [interceptors];
+	
+	$.each( interceptors, function(i,interceptor) {
+		if( interceptor instanceof Function )
+			destArr.push( { fn: interceptor, priority: 50, source: source } );
+		else if( interceptor.fn ) {
+			interceptor.priority = interceptor.priority || 50;
+			interceptor.source = interceptor.source || source;
+			destArr.push( interceptor );
+		} else {
+			console.log( "Invalid interceptor", interceptor );
+		}
+	} );
+	
+}
+
 module.filter( "shipInterceptors", [ "$filter", function($filter) {
 	
 	var upgradeSlots = $filter("upgradeSlots");
@@ -57,26 +79,26 @@ module.filter( "shipInterceptors", [ "$filter", function($filter) {
 		
 		$.each( slots, function(i, slot) {
 			if( slot.occupant && slot.occupant.intercept[type][field] )
-				interceptors.push( slot.occupant.intercept[type][field] );
+				wrapInterceptors( slot.occupant.intercept[type][field], slot.occupant, interceptors );
 			if( (upgradeSlot && slot == upgradeSlot) || (card == slot.occupant) ) {
 				if( slot.intercept && slot.intercept[type] && slot.intercept[type][field] ) {
-					interceptors.push( slot.intercept[type][field] );
+					wrapInterceptors( slot.intercept[type][field], slot.source, interceptors );
 				}
 			}
 		});
 
 		if( ship.resource && ship.resource.intercept[type][field] )
-			interceptors.push( ship.resource.intercept[type][field] );
+			wrapInterceptors( ship.resource.intercept[type][field], ship.resource, interceptors );
 		
 		if( ship.captain && ship.captain.intercept[type][field] )
-			interceptors.push( ship.captain.intercept[type][field] );
+			wrapInterceptors( ship.captain.intercept[type][field], ship.captain, interceptors );
 
 		if( ship.admiral && ship.admiral.intercept[type][field] )
-			interceptors.push( ship.admiral.intercept[type][field] );
+			wrapInterceptors( ship.admiral.intercept[type][field], ship.admiral, interceptors );
 		
 		if( ship.intercept && ship.intercept[type][field] )
-			interceptors.push( ship.intercept[type][field] );
-	
+			wrapInterceptors( ship.intercept[type][field], ship, interceptors );
+		
 		return interceptors;
 		
 	}
@@ -90,6 +112,9 @@ module.filter( "interceptors", [ "$filter","globalInterceptors", function($filte
 	return function( card, ship, fleet, field, upgradeSlot ) {
 
 		var interceptors = [];
+		
+		if( card.intercept && card.intercept.self && card.intercept.self[field] )
+			wrapInterceptors(card.intercept.self[field], card, interceptors);
 		
 		if( ship )
 			interceptors = interceptors.concat( shipInterceptors(card,ship,"ship",field,upgradeSlot) );
@@ -119,33 +144,42 @@ module.filter( "valueOf", [ "$filter", function($filter) {
 
 	var interceptorsFilter = $filter("interceptors");
 
-	return function( card, field, ship, fleet, upgradeSlot ) {
+	return function( card, field, ship, fleet, upgradeSlot, options ) {
 		
 		data = card[field];
 
+		data = data instanceof Function ? data(card, ship, fleet) : data;
+			
+		var modifiers = [ { source: "Printed Value", value: data } ];
+		
 		if( ship ) {
 			
 			var interceptors = interceptorsFilter( card, ship, fleet, field, upgradeSlot );
-			
-			interceptors = $.map( interceptors, function(value) {
-				if( value instanceof Function )
-					return { fn: value, priority: 50 };
-				else if( value.fn && value.priority )
-					return value;
-				return null;
-			} );
 			
 			interceptors.sort( function(a,b) {
 				return a.priority > b.priority ? 1 : -1;
 			});
 			
 			$.each( interceptors, function(i, interceptor) {
+				var dataBefore = data;
 				data = interceptor.fn( card, ship, fleet, data );
+				if( data != dataBefore ) {
+					data = data instanceof Function ? data(card, ship, fleet) : data;
+					dataBefore = dataBefore instanceof Function ? dataBefore(card, ship, fleet) : dataBefore;
+					if( data != dataBefore ) {
+						modifiers.push( { source: interceptor.source, value: (data - dataBefore) } );
+					}
+				}
 			});
+			
 		}
 	
 		if( data instanceof Function )
-			return data(card, ship, fleet);
+			data = data(card, ship, fleet);
+		
+		if( options && options.modifiers )
+			return modifiers;
+		
 		return data;
 
 	}

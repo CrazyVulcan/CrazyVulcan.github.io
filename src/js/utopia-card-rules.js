@@ -1782,8 +1782,14 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 		// Truce
 		"talent:truce_71513b": {
-			cost: function(upgrade,ship,fleet) {
-				return ship && ship.captain && ship.captain.skill > 5 ? 10 : 5;
+			intercept: {
+				self: {
+					cost: function(upgrade,ship,fleet,cost) {
+						if( ship && ship.captain && ship.captain.skill > 5 )
+							return resolve(upgrade,ship,fleet,cost) + 5;
+						return cost;
+					}
+				}
 			}
 		},
 		
@@ -3033,14 +3039,16 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				ship: {
 					// Can only equip Romulan crew
-					canEquip: function(card,ship,fleet) {
+					canEquip: function(card,ship,fleet,canEquip) {
 						if( card.type == "crew" && !$factions.hasFaction(card,"romulan", ship, fleet) )
 							return false;
-						return true;
+						return canEquip;
 					},
 					// Can only equip Romulan captain
-					canEquipCaptain: function(card,ship,fleet) {
-						return $factions.hasFaction(card,"romulan", ship, fleet);
+					canEquipCaptain: function(card,ship,fleet,canEquipCaptain) {
+						if( !$factions.hasFaction(card,"romulan", ship, fleet) )
+							return false;
+						return canEquipCaptain;
 					},
 					// All non-borg tech and weapon upgrades cost -1 SP
 					cost: function(card,ship,fleet,cost) {
@@ -3090,8 +3098,12 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 		// Regenerative Shielding
 		"tech:regenerative_shielding_71802": {
-			cost: function(card,ship,fleet) {
-				return ship && ship.name != "U.S.S. Prometheus" ? 8 : 4;
+			intercept: {
+				self: {
+					cost: function(card,ship,fleet,cost) {
+						return ship && ship.name != "U.S.S. Prometheus" ? resolve(card,ship,fleet,cost) + 4 : cost;
+					}
+				}
 			},
 			canEquip: onePerShip("Regenerative Shielding")
 		},
