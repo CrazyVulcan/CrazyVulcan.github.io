@@ -7,6 +7,7 @@ module.factory( "globalInterceptors", function() {
 		cost: {
 			priority: 1000, // Must be last to run
 			source: "Cost cannot be negative",
+			hidden: true,
 			fn: function(card,ship,fleet,cost) {
 				cost = cost instanceof Function ? cost(card,ship,fleet) : cost;
 				return cost < 0 ? 0 : cost;
@@ -163,7 +164,7 @@ module.filter( "valueOf", [ "$filter", function($filter) {
 			$.each( interceptors, function(i, interceptor) {
 				var dataBefore = data;
 				data = interceptor.fn( card, ship, fleet, data );
-				if( data != dataBefore ) {
+				if( data != dataBefore && !interceptor.hidden ) {
 					data = data instanceof Function ? data(card, ship, fleet) : data;
 					dataBefore = dataBefore instanceof Function ? dataBefore(card, ship, fleet) : dataBefore;
 					if( data != dataBefore ) {
