@@ -8,7 +8,7 @@
 
 	<div class="card-title-container text-left">
 		<span ng-if="upgrade.showType" class="card-captain pull-right">{{upgrade.type|uppercase|removeDashes}}</span>
-		<span ng-if="upgrade.attack" class="card-weapon-attack pull-right">{{upgrade|valueOf:'attack':ship:fleet}}</span>
+		<span ng-if="upgrade|valueOf:'attack':ship:fleet" class="card-weapon-attack pull-right" tooltip="upgrade|valueOf:'attack':ship:fleet:false:{modifiers:true}">{{upgrade|valueOf:'attack':ship:fleet}}</span>
 		<span class="card-title" 
 			ng-class="{ 'card-title-long': upgrade.name.length >= 24 || (upgrade.showType && upgrade.name.length + upgrade.type.length >= 24) || (upgrade.attack && upgrade.name.length >= 20),
 						'card-title-super-long': upgrade.name.length >= 31 || upgrade.showType && upgrade.name.length + upgrade.type.length >= 31,
@@ -25,7 +25,7 @@
 	<div class="card-upgrade-cost pull-right"><div ng-repeat="faction in upgrade|valueOf:'factions':ship:fleet" class="card-upgrade-faction card-faction-{{ (upgrade|valueOf:'factions':ship:fleet).length - $index}}"><div class="card-upgrade-faction-black"></div><div class="card-upgrade-faction-icon card-faction-{{faction}}"></div></div><div class="card-upgrade-cost-value" ng-class="{'card-upgrade-cost-free': '{{upgrade|valueOf:'free':ship:fleet}}' }" tooltip="upgrade|valueOf:'cost':ship:fleet:false:{modifiers:true}">{{upgrade|valueOf:'cost':ship:fleet}}</div></div>
 
 	<div ng-if="upgrade.type == 'captain' || upgrade.type == 'admiral' || (upgrade|valueOf:'skill':ship:fleet)" class="card-skill-container pull-left">
-		<div class="card-skill"><span class="card-skill-plus" ng-show="upgrade.isSkillModifier && upgrade.skill >= 0">+</span>{{upgrade|valueOf:'skill':ship:fleet}}</div>
+		<div class="card-skill" tooltip="upgrade|valueOf:'skill':ship:fleet:false:{modifiers:true}" tooltip-position="nw-alt"><span class="card-skill-plus" ng-show="upgrade.isSkillModifier && upgrade.skill >= 0">+</span>{{upgrade|valueOf:'skill':ship:fleet}}</div>
 	</div>
 
 	<div ng-if="!(upgrade|valueOf:'skill':ship:fleet) && upgrade.type != 'captain' && upgrade.type != 'admiral' " class="card-upgrade-type pull-left fs fs-{{upgrade.type}}"></div>

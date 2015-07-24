@@ -83,7 +83,7 @@ module.filter( "shipInterceptors", [ "$filter", function($filter) {
 				wrapInterceptors( slot.occupant.intercept[type][field], slot.occupant, interceptors );
 			if( (upgradeSlot && slot == upgradeSlot) || (card == slot.occupant) ) {
 				if( slot.intercept && slot.intercept[type] && slot.intercept[type][field] ) {
-					wrapInterceptors( slot.intercept[type][field], slot.source, interceptors );
+					wrapInterceptors( slot.intercept[type][field], slot.source || "Unknown", interceptors );
 				}
 			}
 		});

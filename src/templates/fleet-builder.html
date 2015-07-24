@@ -135,13 +135,13 @@
 			--><div class="card-container" ng-repeat="upgradeSlot in fleet.resource.upgradeSlots"
 				droppable can-drop="isUpgradeCompatible($item, upgradeSlot) && $item != upgradeSlot.occupant" drop="setUpgrade(fleet,fleet.resource,upgradeSlot,$item)" drag-store="dragStore">
 				<div class="card-outer card-drop-target font-staw" ng-click="setSearchTypes(upgradeSlot.type)">
-					<div class="card-drop-target-title"></div>
+					<div class="card-drop-target-title" style="z-index: 100">{{upgradeSlot.source}}<div ng-show="upgradeSlot.rules">{{upgradeSlot.rules}}</div></div>
 					<div class="card-drop-target-inner">
 						<div class="card-drop-target-type" ng-repeat="type in upgradeSlot.type">
 							<i class="fs fs-{{type}}"></i><br/>{{type|removeDashes}}
 						</div>
 					</div>
-					<div class="card-drop-target-subtitle">{{upgradeSlot.source}}</div>
+					<div class="card-drop-target-subtitle"></div>
 				</div>
 				<card card="upgradeSlot.occupant" ship="ship" fleet="fleet" drag-store="dragStore"></card>
 			</div>

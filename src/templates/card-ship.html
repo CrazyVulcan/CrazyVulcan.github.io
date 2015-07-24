@@ -13,10 +13,10 @@
 	</div>
 
 		<div class="card-ship-stats pull-left">
-			<div class="card-ship-stat card-ship-stat-attack text-right"><span class="card-skill-plus" ng-show="ship.isShipModifier">+</span>{{ship|valueOf:'attack':ship:fleet}}</div>
-			<div class="card-ship-stat card-ship-stat-agility text-right"><span class="card-skill-plus" ng-show="ship.isShipModifier">+</span>{{ship|valueOf:'agility':ship:fleet}}</div>
-			<div class="card-ship-stat card-ship-stat-hull text-right"><span class="card-skill-plus" ng-show="ship.isShipModifier">+</span>{{ship|valueOf:'hull':ship:fleet}}</div>
-			<div class="card-ship-stat card-ship-stat-shields text-right"><span class="card-skill-plus" ng-show="ship.isShipModifier">+</span>{{ship|valueOf:'shields':ship:fleet}}</div>
+			<div class="card-ship-stat card-ship-stat-attack text-right" tooltip="ship|valueOf:'attack':ship:fleet:false:{modifiers:true}" tooltip-position="e"><span class="card-skill-plus" ng-show="ship.isShipModifier">+</span>{{ship|valueOf:'attack':ship:fleet}}</div>
+			<div class="card-ship-stat card-ship-stat-agility text-right" tooltip="ship|valueOf:'agility':ship:fleet:false:{modifiers:true}" tooltip-position="e"><span class="card-skill-plus" ng-show="ship.isShipModifier">+</span>{{ship|valueOf:'agility':ship:fleet}}</div>
+			<div class="card-ship-stat card-ship-stat-hull text-right" tooltip="ship|valueOf:'hull':ship:fleet:false:{modifiers:true}" tooltip-position="e"><span class="card-skill-plus" ng-show="ship.isShipModifier">+</span>{{ship|valueOf:'hull':ship:fleet}}</div>
+			<div class="card-ship-stat card-ship-stat-shields text-right" tooltip="ship|valueOf:'shields':ship:fleet:false:{modifiers:true}" tooltip-position="e"><span class="card-skill-plus" ng-show="ship.isShipModifier">+</span>{{ship|valueOf:'shields':ship:fleet}}</div>
 		</div>
 
 		<div class="card-border-right pull-right"></div>

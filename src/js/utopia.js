@@ -370,7 +370,8 @@ module.directive( "tooltip", [ "$filter", function($filter) {
 	return {
 		
 		scope: {
-			tooltip: "&"
+			tooltip: "&",
+			tooltipPosition: "@"
 		},
 		
 		restrict: "A",
@@ -378,12 +379,10 @@ module.directive( "tooltip", [ "$filter", function($filter) {
 		link: function(scope,element,attrs) {
 			
 			$(element).data("powertipjq",$("<div></div>"));
-			$(element).powerTip({ placement: 'ne-alt' });
+			$(element).powerTip({ placement: scope.tooltipPosition || 'ne-alt' });
 			
 			var icons = $filter("icons");
-			
-			//scope.$watchCollection( "tooltip", function(value) {
-			
+
 			$(element).on( "powerTipRender", function() {
 				
 				var div = $("<table class='card-tooltip'></table>");
