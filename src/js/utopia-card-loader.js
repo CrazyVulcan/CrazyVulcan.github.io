@@ -58,6 +58,11 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 			// Apply specific card rules
 			if( cardRules[ship.type+":"+ship.id] )
 				$.extend( true, ship, cardRules[ship.type+":"+ship.id] );
+			
+			$.each( ship.upgradeSlots || [], function(i,slot) {
+				if( !slot.source )
+					slot.source = ship.name;
+			} );
 
 			// Add faction penalties to cost calculation
 			if( ship.intercept.ship.cost )
@@ -113,6 +118,12 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 			if( cardRules[captain.type+":"+captain.id] )
 				$.extend( true, captain, cardRules[captain.type+":"+captain.id] );
 
+			// Set the source of any special upgrade slots
+			$.each( captain.upgradeSlots || [], function(i,slot) {
+				if( !slot.source )
+					slot.source = captain.name;
+			} );
+			
 			cards.push( captain );
 
 		}
@@ -158,6 +169,12 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 			if( cardRules[admiral.type+":"+admiral.id] )
 				$.extend( true, admiral, cardRules[admiral.type+":"+admiral.id] );
 
+			// Set the source of any special upgrade slots
+			$.each( admiral.upgradeSlots || [], function(i,slot) {
+				if( !slot.source )
+					slot.source = admiral.name;
+			} );
+			
 			cards.push( admiral );
 
 		}
@@ -187,6 +204,12 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 			if( cardRules[upgrade.type+":"+upgrade.id] )
 				$.extend( true, upgrade, cardRules[upgrade.type+":"+upgrade.id] );
 
+			// Set the source of any special upgrade slots
+			$.each( upgrade.upgradeSlots || [], function(i,slot) {
+				if( !slot.source )
+					slot.source = upgrade.name;
+			} );
+			
 			cards.push( upgrade );
 
 		}
@@ -230,6 +253,8 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 								cost: {
 									priority: -1,
 									fn: function(upgrade, ship, fleet, cost) {
+										if( !ship.captain )
+											return cost;
 										var slots = $filter("upgradeSlots")(ship.captain);
 										var emptyTalentSlot = false;
 										$.each(slots, function(i,slot) {
