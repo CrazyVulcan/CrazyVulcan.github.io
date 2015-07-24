@@ -45,7 +45,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		};
 	};
 	
-	var upgradeTypes = ["crew","weapon","tech","talent","question"];
+	var upgradeTypes = ["crew","weapon","tech","talent","question","borg"];
 	
 	var isUpgrade = function(card) {
 		return $.inArray( card.type, upgradeTypes ) >= 0;
@@ -84,7 +84,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"ship:enterprise_nx_01_71526": {
 			upgradeSlots: [ {
 				type: ["tech"],
-				source: "Enterprise NX-01 (Free EHP Only)",
+				rules: "Free EHP Only",
 				canEquip: function(upgrade) {
 					return upgrade.name == "Enhanced Hull Plating";
 				},
@@ -99,10 +99,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"ship:scout_608_71525": {
 			intercept: {
 				ship: {
-					canEquip: function(upgrade,ship,fleet) {
-						if( upgrade.type == "borg" )
-							return upgrade.cost <= 5;
-						return true;
+					canEquip: function(upgrade,ship,fleet,canEquip) {
+						if( upgrade.type == "borg" && valueOf(upgrade,"cost",ship,fleet) > 5 )
+							return false;
+						return canEquip;
 					}
 				}
 			}
@@ -111,10 +111,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"ship:borg_starship_71525": {
 			intercept: {
 				ship: {
-					canEquip: function(upgrade,ship,fleet) {
-						if( upgrade.type == "borg" )
-							return upgrade.cost <= 5;
-						return true;
+					canEquip: function(upgrade,ship,fleet,canEquip) {
+						if( upgrade.type == "borg" && valueOf(upgrade,"cost",ship,fleet) > 5 )
+							return false;
+						return canEquip;
 					}
 				}
 			}
@@ -124,9 +124,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				ship: {
 					canEquip: function(upgrade,ship,fleet) {
-						if( upgrade.type == "borg" )
-							return upgrade.cost <= 5;
-						return true;
+						if( upgrade.type == "borg" && valueOf(upgrade,"cost",ship,fleet) > 5 )
+							return false;
+						return canEquip;
 					}
 				}
 			}
@@ -207,12 +207,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			upgradeSlots: [
 				{
 					type: ["crew","tech"],
-					source: "Sakharov (-2 SP)",
+					rules: "This Upgrade costs -2 SP",
 					intercept: {
 						ship: {
 							cost: function(upgrade, ship, fleet, cost) {
-								cost = (cost instanceof Function ? cost(upgrade, ship, fleet, cost) : cost) - 2;
-								return cost;
+								return resolve(upgrade, ship, fleet, cost) - 2;
 							}
 						}
 					}
@@ -257,8 +256,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				ship: {
 					// No faction penalty for upgrades
-					factionPenalty: function(upgrade, ship, fleet, cost) {
-						return upgrade.type != "captain" && upgrade.type != "admiral" ? 0 : cost;
+					factionPenalty: function(card, ship, fleet, factionPenalty) {
+						if( isUpgrade(card) )
+							return 0;
+						return factionPenalty;
 					}
 				}
 			}
@@ -270,7 +271,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				ship: {
 					// No faction penalty for Khan or Talents
 					factionPenalty: function(upgrade, ship, fleet, cost) {
-						return upgrade.type == "captain" || upgrade.type == "talent" ? 0 : cost;
+						return upgrade.type == "captain" || upgrade.type == "talent" ? 0 : factionPenalty;
 					}
 				}
 			}
@@ -279,32 +280,30 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		// James T. Kirk
 		"captain:2011": {
 			// Two talent slots. Cost is overridden to be 3.
-			upgradeSlots: [
+			upgradeSlots: cloneSlot( 2 ,
 				{
 					type: ["talent"],
-					source: "James T. Kirk (=3 SP)",
+					rules: "Fed Talents Cost Exactly 3 SP",
 					intercept: {
 						ship: {
-							cost: function(upgrade, ship, fleet, cost) {
-								return 3;
+							cost: {
+								priority: 100,
+								fn: function(upgrade, ship, fleet, cost) {
+									if( hasFaction(upgrade,"federation",ship,fleet) )
+										return 3;
+									return cost;
+								}
 							},
-							factionPenalty: function() { return 0; }
-						}
-					}
-				},
-				{
-					type: ["talent"],
-					source: "James T. Kirk (=3 SP)",
-					intercept: {
-						ship: {
-							cost: function(upgrade, ship, fleet, cost) {
-								return 3;
-							},
-							factionPenalty: function() { return 0; }
+							// TODO Check if faction penalty should be applied
+							factionPenalty: function(upgrade, ship, fleet, factionPenalty) {
+								if( hasFaction(upgrade,"federation",ship,fleet) )
+									return 0;
+								return factionPenalty;
+							}
 						}
 					}
 				}
-			]
+			)
 		},
 		
 		// Christopher Pike
@@ -313,9 +312,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				ship: {
 					cost: function(upgrade, ship, fleet, cost) {
-						if( upgrade.type == "crew") {
-							cost = (cost instanceof Function ? cost(upgrade, ship, fleet, cost) : cost) - 1;
-						}
+						if( upgrade.type == "crew" )
+							return resolve(upgrade, ship, fleet, cost) - 1;
 						return cost;
 					}
 				}
@@ -328,9 +326,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				ship: {
 					cost: function(upgrade, ship, fleet, cost) {
-						if( upgrade.type == "weapon") {
-							cost = (cost instanceof Function ? cost(upgrade, ship, fleet, cost) : cost) - 1;
-						}
+						if( upgrade.type == "weapon" )
+							return resolve(upgrade, ship, fleet, cost) - 1;
 						return cost;
 					}
 				}
@@ -360,7 +357,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						$.each( $filter("upgradeSlots")(ship), function(i, slot) {
 							if( slot.occupant && $factions.hasFaction(slot.occupant,"dominion", ship, fleet) ) {
 								// Note: This doesn't account for other cost modifiers. Can't use valueOf without huge recursion.
-								var occCost = slot.occupant.cost instanceof Function ? slot.occupant.cost(slot.occupant,ship,fleet,0) : slot.occupant.cost;
+								var occCost = resolve(slot.occupant,ship,fleet,slot.occupant.cost);
 								if( occCost > candCost ) {
 									candidate = slot.occupant;
 									candCost = occCost;
@@ -383,43 +380,28 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"captain:3106": {
 			upgradeSlots: [
 				{
-					type: ["tech"],
-					source: "Styles"
+					type: ["tech"]
 				}
 			]
 		},
 		
 		"captain:weyoun_71279": {
 			// Two crew slots, each with -1 SP if equipped with Dominion crew
-			upgradeSlots: [ 
-				{/* Existing Talent Slot */},
+			upgradeSlots: [{/* Existing Talent Slot */} ].concat( cloneSlot( 2 ,
 				{
 					type: ["crew"], 
-					source: "Weyoun (-1 SP Dominion)",
+					rules: "-1 SP if Dominion",
 					intercept: {
 						ship: {
 							cost: function(upgrade, ship, fleet, cost) {
 								if( $factions.hasFaction(upgrade,"dominion", ship, fleet) )
-									cost = (cost instanceof Function ? cost(upgrade, ship, fleet, 0) : cost) - 1;
-								return cost;
-							}
-						}
-					}
-				},
-				{
-					type: ["crew"], 
-					source: "Weyoun (-1 SP Dominion)",
-					intercept: {
-						ship: {
-							cost: function(upgrade, ship, fleet, cost) {
-								if( $factions.hasFaction(upgrade,"dominion", ship, fleet) )
-									cost = (cost instanceof Function ? cost(upgrade, ship, fleet, 0) : cost) - 1;
+									return resolve(upgrade, ship, fleet, cost) - 1;
 								return cost;
 							}
 						}
 					}
 				}
-			]
+			))
 		},
 		
 		// Tahna Los
@@ -430,12 +412,16 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				{/* Existing Talent Slot */},
 				{
 					type: ["tech"],
-					source: "Tahna Los (=3 SP)",
+					rules: "Costs exactly 3 SP",
 					intercept: {
 						ship: {
-							cost: function(upgrade, ship, fleet, cost) {
-								return 3;
+							cost: {
+								priority: 100,
+								fn: function(upgrade, ship, fleet, cost) {
+									return 3;
+								}
 							},
+							// TODO Does this invoke faction penalty?
 							factionPenalty: function() { return 0; }
 						}
 					}
@@ -448,8 +434,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			// Add one crew slot
 			upgradeSlots: [
 				{
-					type: ["crew"],
-					source: "Tavek"
+					type: ["crew"]
 				}
 			]
 		},
@@ -461,12 +446,12 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					// All crew cost -1 SP
 					cost: function(upgrade, ship, fleet, cost) {
 						if( upgrade.type == "crew" )
-							return (cost instanceof Function ? cost(upgrade, ship, fleet, 0) : cost) - 1;
+							return resolve(upgrade, ship, fleet, cost) - 1;
 						return cost;
 					},
 					// No faction penalty for borg upgrades
 					factionPenalty: function(upgrade, ship, fleet, factionPenalty) {
-						if( upgrade.type != "captain" && upgrade.type != "admiral" && $factions.hasFaction(upgrade,"borg", ship, fleet) )
+						if( isUpgrade(upgrade) && $factions.hasFaction(upgrade,"borg", ship, fleet) )
 							return 0;
 						return factionPenalty;
 					}
@@ -480,7 +465,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			upgradeSlots: [
 				// Extend existing talent slot
 				{
-					source: "Lore (No Faction Restriction or Penalty)",
+					rules: "No Faction Restriction or Penalty",
 					intercept: {
 						ship: {
 							// Remove faction restrictions
@@ -491,8 +476,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				},
 				// Add one crew slot
 				{
-					type: ["crew"],
-					source: "Lore"
+					type: ["crew"]
 				}
 			]
 		},
@@ -503,9 +487,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				ship: {
 					// All Vulcan/Federation tech is -2 SP
 					cost: function(upgrade, ship, fleet, cost) {
-						if( upgrade.type == "tech" && ( $factions.hasFaction(upgrade,"vulcan", ship, fleet) || $factions.hasFaction(upgrade,"federation", ship, fleet) ) ) {
-							cost = (cost instanceof Function ? cost(upgrade, ship, fleet, 0) : cost) - 2;
-						}
+						if( upgrade.type == "tech" && ( $factions.hasFaction(upgrade,"vulcan", ship, fleet) || $factions.hasFaction(upgrade,"federation", ship, fleet) ) )
+							return resolve(upgrade, ship, fleet, cost) - 2;
 						return cost;
 					},
 				}
@@ -527,8 +510,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				{},
 				// Add one crew slot
 				{
-					type: ["crew"],
-					source: "Jonathan Archer"
+					type: ["crew"]
 				}
 			]
 		},
@@ -540,8 +522,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				{},
 				// Add one crew slot
 				{
-					type: ["crew"],
-					source: "Sopek"
+					type: ["crew"]
 				}
 			]
 		},
@@ -575,8 +556,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				{},
 				// Add one crew slot
 				{
-					type: ["crew"],
-					source: "Jean-Luc Picard"
+					type: ["crew"]
 				}
 			]
 		},
@@ -586,8 +566,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			upgradeSlots: [
 				// Add one weapon slot
 				{
-					type: ["weapon"],
-					source: "Haron"
+					type: ["weapon"]
 				}
 			],
 			intercept: {
@@ -595,7 +574,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					// All Kazon weapons are -1 SP
 					cost: function(upgrade, ship, fleet, cost) {
 						if( upgrade.type == "weapon" && $factions.hasFaction(upgrade,"kazon", ship, fleet) ) {
-							cost = (cost instanceof Function ? cost(upgrade, ship, fleet, 0) : cost) - 1;
+							return resolve(upgrade, ship, fleet, cost) - 1;
 						}
 						return cost;
 					},
@@ -608,8 +587,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			upgradeSlots: [ 
 				{/* Existing Talent Slot */}, 
 				{ 
-					type: ["crew","tech","weapon","talent"], 
-					source: "Jean-Luc Picard" 
+					type: ["crew","tech","weapon","talent"]
 				}
 			]
 		},
@@ -619,8 +597,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			upgradeSlots: [ 
 				{/* Existing Talent Slot */}, 
 				{ 
-					type: ["weapon","crew"], 
-					source: "Chakotay" 
+					type: ["weapon","crew"]
 				}
 			]
 		},
@@ -629,17 +606,15 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"captain:calvin_hudson_71528": {
 			upgradeSlots: [ 
 				{ 
-					type: ["tech","weapon","crew"], 
-					source: "Calvin Hudson" 
+					type: ["tech","weapon","crew"]
 				}
 			],
 			// Reduce cost of all Upgrades by 1 SP if on Independent ship
 			intercept: {
 				ship: {
 					cost: function(upgrade,ship,fleet,cost) {
-						if( $factions.hasFaction(ship,"independent", ship, fleet) && isUpgrade(upgrade) ) {
-							cost = (cost instanceof Function ? cost(upgrade,ship,fleet,0) : cost) - 1;
-						}
+						if( $factions.hasFaction(ship,"independent", ship, fleet) && isUpgrade(upgrade) )
+							return resolve(upgrade,ship,fleet,cost) - 1;
 						return cost;
 					}
 				}
@@ -651,8 +626,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			upgradeSlots: [ 
 				{}, // Existing talent slot
 				{ 
-					type: ["tech"], 
-					source: "Miles O'Brien" 
+					type: ["tech"]
 				}
 			]
 		},
@@ -662,8 +636,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			upgradeSlots: [ 
 				{}, // Existing talent slot
 				{ 
-					type: ["borg"], 
-					source: "Borg Queen" 
+					type: ["borg"]
 				}
 			]
 		},
@@ -697,7 +670,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			upgradeSlots: [ 
 				{ 
 					type: ["captain"], 
-					source: "Gareb",
+					rules: "Captain to place under Gareb",
 					intercept: {
 						ship: {
 							// No cost for this card
@@ -739,6 +712,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			
 			// Set cost to chosen Captain's cost minus 3 SP
+			// TODO This should be a self intercept. Also should take into account faction penalty etc?
 			cost: function(captain,ship,fleet) {
 				var cost = 0;
 				if( captain.upgradeSlots[0].occupant ) {
@@ -767,8 +741,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			upgradeSlots: [ 
 				{/* Talent */},
 				{ 
-					type: ["tech"], 
-					source: "Valdore" 
+					type: ["tech"]
 				}
 			]
 		},
@@ -778,7 +751,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			upgradeSlots: [ 
 				{ 
 					type: ["talent"], 
-					source: "Slar (Salvage Only)",
+					rules: "Salvage Only",
 					canEquip: function(upgrade) {
 						return upgrade.name == "Salvage";
 					}
@@ -2230,11 +2203,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				ship: {
 					cost: function(upgrade,ship,fleet,cost) {
-						if( upgrade.type == "tech" ) {
-							cost = cost instanceof Function ? cost(upgrade,ship,fleet,0) : cost;
-							if( cost > 0 )
-								cost -= 1;
-						}
+						if( upgrade.type == "tech" )
+							return resolve(upgrade,ship,fleet,cost) - 1;
 						return cost;
 					}
 				}
