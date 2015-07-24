@@ -122,12 +122,10 @@ module.directive( "fleetExport", function() {
 				}
 				
 				// Show cost if appropriate
+				if( free )
+					cost = 0;
 				if( !hideCost )
 					text += " [" + cost + "]";
-				if( free ) {
-					text += " [Free]";
-					cost = 0;
-				}
 				text += "\n";
 				
 				if( card.resource ) {

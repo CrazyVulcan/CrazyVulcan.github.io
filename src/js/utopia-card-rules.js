@@ -1339,7 +1339,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 		// Quark
 		"crew:quark_71786": {
-			// TODO Fix card text and remove duplicate
+			text: "At the start of the game, place 1 non-Borg [tech] or [weapon] Upgrade with a cost of 5 or less face down beneath this card. At any time, you may discard Quark to flip the Upgrade that is beneath this card face up and deploy it to your ship, even if it exceeds your ship's restrictions.",
 			upgradeSlots: [ 
 				{ 
 					type: ["weapon","tech"], 

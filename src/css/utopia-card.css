@@ -605,6 +605,10 @@
 	padding-right: 0.5em;
 }
 
+.card-drop-target-title-hover {
+	z-index: 1;
+}
+
 .card-drop-target-inner {
 	position: relative;
 	top: 50%;
