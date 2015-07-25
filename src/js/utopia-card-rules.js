@@ -288,6 +288,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				{
 					type: ["talent"],
 					rules: "Fed Talents Cost Exactly 3 SP",
+					faceDown: true,
 					intercept: {
 						ship: {
 							cost: {
@@ -1344,6 +1345,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				{ 
 					type: ["weapon","tech"], 
 					rules: "Non-Borg, 5SP or less",
+					faceDown: true,
 					intercept: {
 						ship: {
 							canEquip: function(upgrade,ship,fleet) {
@@ -1763,6 +1765,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				{ 
 					type: ["talent"], 
 					rules: "Romulan Talent Only",
+					faceDown: true,
 					intercept: {
 						ship: {
 							cost: function() { return 0; },
@@ -1773,7 +1776,6 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 								return canEquip;
 							}
 						}
-						
 					}
 				}
 			),
@@ -3431,7 +3433,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			upgradeSlots: [
 				{
 					type: ["talent"],
-					source: "K'Temoc (Klingon Talents Only)",
+					rules: "Klingon Talents Only",
 					canEquip: function(card,ship,fleet) {
 						return hasFaction(card,"klingon",ship,fleet);
 					}
@@ -3474,8 +3476,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			upgradeSlots: cloneSlot( 2 ,
 				{
 					type: ["crew"],
-					source: "Cryogenic Stasis",
 					rules: "Non-Borg, Combined cost 5 or less",
+					faceDown: true,
 					canEquip: function(card,ship,fleet,upgradeSlot) {
 						// Non-Borg
 						if( hasFaction(card,"borg",ship,fleet) )

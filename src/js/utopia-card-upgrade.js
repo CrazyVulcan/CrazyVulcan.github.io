@@ -79,7 +79,7 @@ module.filter( "shipInterceptors", [ "$filter", function($filter) {
 		var slots = upgradeSlots(ship);
 		
 		$.each( slots, function(i, slot) {
-			if( slot.occupant && slot.occupant.intercept[type][field] )
+			if( slot.occupant && slot.occupant.intercept[type][field] && !slot.faceDown )
 				wrapInterceptors( slot.occupant.intercept[type][field], slot.occupant, interceptors );
 			if( (upgradeSlot && slot == upgradeSlot) || (card == slot.occupant) ) {
 				if( slot.intercept && slot.intercept[type] && slot.intercept[type][field] ) {
