@@ -127,7 +127,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"ship:scout_255_71646d": {
 			intercept: {
 				ship: {
-					canEquip: function(upgrade,ship,fleet) {
+					canEquip: function(upgrade,ship,fleet,canEquip) {
 						if( upgrade.type == "borg" && valueOf(upgrade,"cost",ship,fleet) > 5 )
 							return false;
 						return canEquip;
