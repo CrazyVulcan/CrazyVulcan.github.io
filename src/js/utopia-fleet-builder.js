@@ -519,32 +519,29 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 					
 					if( savedCard.resource ) {
 						var result = loadCard(fleet, cards, savedCard.resource, card);
-						if( !result )
-							return false;
-						var resource = $scope.setShipResource( fleet, card, result.card );
-						if( !resource )
-							return false;
-						result.promulgate(resource);
+						if( result ) {
+							var resource = $scope.setShipResource( fleet, card, result.card );
+							if( resource )
+								result.promulgate(resource);
+						}
 					}
 				
 					if( savedCard.captain ) {
 						var result = loadCard(fleet, cards, savedCard.captain, card);
-						if( !result )
-							return false;
-						var captain = $scope.setShipCaptain( fleet, card, result.card );
-						if( !captain )
-							return false;
-						result.promulgate(captain);
+						if( result ) {
+							var captain = $scope.setShipCaptain( fleet, card, result.card );
+							if( captain )
+								result.promulgate(captain);
+						}
 					}
 					
 					if( savedCard.admiral ) {
 						var result = loadCard(fleet, cards, savedCard.admiral, card);
-						if( !result )
-							return false;
-						var admiral = $scope.setShipAdmiral( fleet, card, result.card );
-						if( !admiral )
-							return false;
-						result.promulgate(admiral);
+						if( result ) {
+							var admiral = $scope.setShipAdmiral( fleet, card, result.card );
+							if( admiral )
+								result.promulgate(admiral);
+						}
 					}
 					
 					$.each( savedCard.upgrades || [], function(i, savedUpgrade) {
@@ -552,10 +549,10 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 						if( savedUpgrade && savedUpgrade.id ) {
 							var result = loadCard( fleet, cards, savedUpgrade, card );
 							if( !result )
-								return false;
+								return;
 							var upgrade = $scope.setUpgrade( fleet, card, card.upgrades[i], result.card );
 							if( !upgrade )
-								return false;
+								return;
 							result.promulgate(upgrade);
 						}
 						
@@ -566,10 +563,10 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 						if( savedUpgrade && savedUpgrade.id ) {
 							var result = loadCard( fleet, cards, savedUpgrade, ship || card );
 							if( !result )
-								return false;
+								return;
 							var upgrade = $scope.setUpgrade( fleet, ship || card, card.upgradeSlots[i], result.card );
 							if( !upgrade )
-								return false;
+								return;
 							result.promulgate(upgrade);
 						}
 						
