@@ -2029,7 +2029,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						ship: {
 							free: function() { return true; },
 							canEquip: function(upgrade, ship, fleet) {
-								return !$factions.hasFaction(upgrade,"borg", ship, fleet) && upgrade.cost <= 5;
+								return !$factions.hasFaction(upgrade,"borg", ship, fleet) && valueOf(upgrade,"cost",ship,fleet) <= 5;
 							}
 						}
 						
