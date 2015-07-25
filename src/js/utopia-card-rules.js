@@ -3465,8 +3465,14 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 		// Tactical Officer
 		"crew:tactical_officer_72009": {
-			cost: function(card,ship,fleet) {
-				return !ship || hasFaction(ship,"klingon",ship,fleet) ? 2 : 5;
+			intercept: {
+				self: {
+					cost: function(upgrade,ship,fleet,cost) {
+						if( ship && !hasFaction(ship,"klingon",ship,fleet) )
+							return resolve(upgrade,ship,fleet,cost) + 3;
+						return cost;
+					}
+				}
 			},
 			canEquip: onePerShip("Tactical Officer")
 		},
@@ -3499,6 +3505,28 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			),
 		},
 		
+		// VRAX
+		
+		// Coordinated Attack
+		"talent:coordinated_attack_72010": {
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship, "romulan", ship, fleet) && ship.captain && $factions.hasFaction(ship.captain, "romulan", ship, fleet);
+			}
+		},
+
+		// Bridge Officer
+		"crew:bridge_officer_72010": {
+			intercept: {
+				self: {
+					cost: function(upgrade,ship,fleet,cost) {
+						if( ship && !hasFaction(ship,"romulan",ship,fleet) )
+							return resolve(upgrade,ship,fleet,cost) + 2;
+						return cost;
+					}
+				}
+			},
+			canEquip: onePerShip("Bridge Officer")
+		},
 		
 		
 		
