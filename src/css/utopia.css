@@ -230,14 +230,15 @@ textarea {
 }
 
 .u-search-size {
-	text-align: center;
 	border-radius: 1em;
 	margin: 0.5em 0;
 }
 
 .u-search-size-text {
+	float: left;
 	background: #eee;
 	padding: 0.2em;
+	margin: 0 0.3em;
 }
 
 .u-search-smaller {
@@ -250,7 +251,6 @@ textarea {
 }
 
 .u-search-bigger {
-	float: right;
 	background: #ddd;
 	border-top-right-radius: 1em;
 	border-bottom-right-radius: 1em;
