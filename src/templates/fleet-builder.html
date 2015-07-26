@@ -27,7 +27,7 @@
 		<div class="fleet-ship-inner">
 
 			<div class="card-container">
-				<card card="ship" drag-store="dragStore"></card-ship>
+				<card card="ship" fleet="fleet" drag-store="dragStore"></card-ship>
 			</div><!--
 			Stupid whitespace breaks card alignment
 		 --><div class="card-container" ng-show="!ship.squadron && fleet.resource && (fleet.resource|valueOf:'showShipResourceSlot':ship:fleet)" droppable can-drop="$item.type == fleet.resource.slotType" drop="setShipResource(fleet,ship,$item)" drag-store="dragStore">
