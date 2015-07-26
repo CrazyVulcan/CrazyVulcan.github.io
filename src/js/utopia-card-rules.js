@@ -2021,6 +2021,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 		// Triphasic Emitter
 		"weapon:triphasic_emitter_71536": {
+			name: "Triphasic Emitters",
+			range: false,
 			upgradeSlots: [ 
 				{ 
 					type: ["weapon"], 
