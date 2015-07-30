@@ -3531,6 +3531,15 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		
 		
+		// THUNDERCHILD
+		
+		// Federation Task Force
+		"talent:federation_task_force_72008": {
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship, "federation", ship, fleet) && ship.captain && $factions.hasFaction(ship.captain, "federation", ship, fleet);
+			}
+		},
+		
 		
 	};
 	
