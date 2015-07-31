@@ -62,13 +62,25 @@
 			"text": "FLEET ACTION: All friendly ships within Range 1 of your ship gain +1 attack die this round\n(+2 attack dice against Borg ships).",
 			"unique": true,
 			"factions": ["federation"]
+		},
+		{
+			"type": "admiral",
+			"id": "shanthi_72008",
+			"set": ["72008"],
+			"name": "Shanthi",
+			"cost": 2,
+			"skill": 1,
+			"talents": 1,
+			"text": "FLEET ACTION: Target a ship at Range 1-2. When attacking that ship this round, you may re-roll all of your blank results once. In addition, if the target ship is Cloaked, immediately flip that ship's [cloak] Token over to its red side.",
+			"unique": true,
+			"factions": ["federation"]
 		}
 	],
 	
 	"captains": [
 		{
 			"type": "captain",
-			"id": "shanthi_72008",
+			"id": "shanthi_cap_72008",
 			"set": ["72008"],
 			"name": "Shanthi",
 			"cost": 2,
