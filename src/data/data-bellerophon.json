@@ -28,8 +28,25 @@
 			"unique": true,
 			"factions": ["federation"],
 			"squadron": false
+		},
+		{
+			"type": "ship",
+			"id": "federation_starship_72001p",
+			"set": ["72001p"],
+			"name": "Federation Starship",
+			"class": "Intrepid Class",
+			"actions": ["evade","target-lock","scan","battlestations"],
+			"upgrades": ["tech","weapon","weapon","crew"],
+			"attack": 4,
+			"agility": 2,
+			"hull": 4,
+			"shields": 4,
+			"cost": 28,
+			"text": "",
+			"unique": false,
+			"factions": ["federation"],
+			"squadron": false
 		}
-
 	],
 	
 	"admirals": [
