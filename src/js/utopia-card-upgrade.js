@@ -36,7 +36,7 @@ module.filter( "upgradeSlots", function() {
 			var slot = toCheck.shift();
 			if( slot ) {
 				slots.push( slot );
-				if( slot.occupant && slot.occupant.upgradeSlots )
+				if( slot.occupant && slot.occupant.upgradeSlots && !slot.faceDown )
 					toCheck = slot.occupant.upgradeSlots.concat( toCheck );
 			}
 		}
