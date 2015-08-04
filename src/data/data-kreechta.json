@@ -106,7 +106,7 @@
 			"set": ["71806"],
 			"name": "Missile Launchers",
 			"cost": 3,
-			"text": "ATTAC: Disable this card to perform this attack. Make 2 attacks against ship(s) in your forward firing arc. Roll separate dice for each of these attacks. Any [crit] results that would damage an opponent's Shields inflict critical damage to that ship's Hull instead.",
+			"text": "ATTACK: Disable this card to perform this attack. Make 2 attacks against ship(s) in your forward firing arc. Roll separate dice for each of these attacks. Any [crit] results that would damage an opponent's Shields inflict critical damage to that ship's Hull instead.",
 			"unique": false,
 			"factions": ["ferengi"],
 			"attack": 2,
