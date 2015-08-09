@@ -19,3 +19,11 @@ module.directive( "card", function() {
 	};
 	
 } );
+
+module.filter( "icons", function() {
+
+	return function( text ) {
+		return text.replace( /\[([^\]]*)\]/g, "<i class='fs fs-$1'></i>" ).replace( /\n/g, "<br/>" );
+	};
+
+});
