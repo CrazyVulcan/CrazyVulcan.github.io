@@ -44,5 +44,10 @@ module.controller( "UtopiaCtrl", [ "$scope", "$filter", "cardLoader", "$factions
 		if( defaults )
 			localStorage.defaults = angular.toJson( defaults );
 	}, true);
+
+	// TODO This is messy. Broadcasting event emitted from search.
+	$scope.$on( "removeFromFleetDropped", function(ev, card) {
+		$scope.$broadcast( "removeFromFleet", card );
+	} );
 	
 }]);

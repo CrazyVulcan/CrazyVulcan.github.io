@@ -74,7 +74,7 @@
 
 	<div class="u-loading" ng-show="loading">Loading cards...</div>
 
-	<div class="card-container" ng-show="dragStore.item && dragStore.source != 'search'" droppable can-drop="true" drop="$broadcast('removeFromFleet',$item)" drag-store="dragStore">
+	<div class="card-container" ng-show="dragStore.item && dragStore.source != 'search'" droppable can-drop="true" drop="$emit('removeFromFleetDropped',$item)" drag-store="dragStore">
 		<div class="card-outer card-drop-target font-staw">
 			<div class="card-drop-target-inner">
 				<div class="card-drop-target-type">
