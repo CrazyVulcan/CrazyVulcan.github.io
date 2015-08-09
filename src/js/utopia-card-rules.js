@@ -3536,10 +3536,119 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		// Federation Task Force
 		"talent:federation_task_force_72008": {
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return $factions.hasFaction(ship, "federation", ship, fleet) && ship.captain && $factions.hasFaction(ship.captain, "federation", ship, fleet);
+				return hasFaction(ship, "federation", ship, fleet) && ship.captain && hasFaction(ship.captain, "federation", ship, fleet);
 			}
 		},
 		
+		
+		// BALANCE OF TERROR
+		"talent:balance_of_terror_e_72002h": {
+			upgradeSlots: [
+				{
+					type: ["talent"],
+					rules: "",
+					faceDown: true,
+					canEquip: function(card,ship,fleet) {
+						return $factions.match(card,ship) && valueOf(card,"cost",ship,fleet) <= 5;
+					},
+					intercept: {
+						ship: {
+							free: function() { return true; },
+						}
+					}
+				}
+			],
+			canEquip: onePerShip("Balance of Terror"),
+			intercept: {
+				self: {
+					cost: {
+						priority: 1000,
+						fn: function() { return 3; }
+					}
+				}
+			}
+		},
+		
+		"crew:balance_of_terror_c_72002h": {
+			upgradeSlots: [
+				{
+					type: ["crew"],
+					rules: "",
+					faceDown: true,
+					canEquip: function(card,ship,fleet) {
+						return $factions.match(card,ship) && valueOf(card,"cost",ship,fleet) <= 5;
+					},
+					intercept: {
+						ship: {
+							free: function() { return true; },
+						}
+					}
+				}
+			],
+			canEquip: onePerShip("Balance of Terror"),
+			intercept: {
+				self: {
+					cost: {
+						priority: 1000,
+						fn: function() { return 3; }
+					}
+				}
+			}
+		},
+		
+		"tech:balance_of_terror_t_72002h": {
+			upgradeSlots: [
+				{
+					type: ["tech"],
+					rules: "",
+					faceDown: true,
+					canEquip: function(card,ship,fleet) {
+						return $factions.match(card,ship) && valueOf(card,"cost",ship,fleet) <= 5;
+					},
+					intercept: {
+						ship: {
+							free: function() { return true; },
+						}
+					}
+				}
+			],
+			canEquip: onePerShip("Balance of Terror"),
+			intercept: {
+				self: {
+					cost: {
+						priority: 1000,
+						fn: function() { return 3; }
+					}
+				}
+			}
+		},
+		
+		"weapon:balance_of_terror_w_72002h": {
+			upgradeSlots: [
+				{
+					type: ["weapon"],
+					rules: "",
+					faceDown: true,
+					canEquip: function(card,ship,fleet) {
+						return $factions.match(card,ship) && valueOf(card,"cost",ship,fleet) <= 5;
+					},
+					intercept: {
+						ship: {
+							free: function() { return true; },
+						}
+					}
+				}
+			],
+			canEquip: onePerShip("Balance of Terror"),
+			intercept: {
+				self: {
+					cost: {
+						priority: 1000,
+						fn: function() { return 3; }
+					}
+				}
+			}
+		},
 		
 	};
 	
