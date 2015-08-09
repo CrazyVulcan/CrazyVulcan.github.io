@@ -127,7 +127,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					// Reduce cost of Borg Ablative Hull Armor
 					cost: function(upgrade, ship, fleet, cost) {
 						if( upgrade.name == "Borg Ablative Hull Armor" )
-							return (cost instanceof Function ? cost(upgrade, ship, fleet, cost) : cost) - 3;
+							return resolve(upgrade, ship, fleet, cost) - 3;
 						return cost;
 					}
 				}
@@ -3220,7 +3220,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					// All non-borg tech and weapon upgrades cost -1 SP
 					cost: function(card,ship,fleet,cost) {
 						if( (card.type == "tech" || card.type == "weapon") && !$factions.hasFaction(card,"borg", ship, fleet) )
-							cost = (cost instanceof Function ? cost(card, ship, fleet, 0) : cost) - 1;
+							cost = resolve(card, ship, fleet, cost) - 1;
 						return cost;
 					},
 					// No faction penalty for romulan upgrades
