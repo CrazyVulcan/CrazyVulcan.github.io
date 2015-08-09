@@ -1,4 +1,4 @@
-var module = angular.module("utopia-card-rules", []);
+var module = angular.module("utopia-card-rules", ["utopia-valueof"]);
 
 module.filter( "shipCardNamed", [ "$filter", function($filter) {
 	

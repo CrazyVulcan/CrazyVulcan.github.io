@@ -1,4 +1,4 @@
-var module = angular.module("utopia-card", ["utopia-tooltip", "utopia-card-ship", "utopia-card-upgrade", "utopia-card-resource", "utopia-dragdrop"]);
+var module = angular.module("utopia-card", ["utopia-tooltip", "utopia-card-ship", "utopia-card-upgrade", "utopia-card-resource", "utopia-dragdrop", "utopia-valueof"]);
 
 module.directive( "card", function() {
 	
