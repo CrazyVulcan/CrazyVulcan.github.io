@@ -3699,6 +3699,62 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 		},
 		
+		
+		// BIOSHIP BETA
+		
+		// Biological Weapon
+		"weapon:biological_weapon_72012": {
+			canEquip: function(card,ship,fleet) {
+				return ship.class == "Species 8472 Bioship";
+			}
+		},
+		
+		// Energy Blast
+		"weapon:energy_blast_72012": {
+			canEquip: function(card,ship,fleet) {
+				return ship.class == "Species 8472 Bioship";
+			}
+		},
+		
+		// Biological Technology
+		"tech:biological_technology_72012": {
+			canEquip: function(card,ship,fleet) {
+				if( ship.class != "Species 8472 Bioship" )
+					return false;
+				return onePerShip("Biological Technology")(card,ship,fleet);
+			}
+		},
+		
+		// Biogenic Field
+		"tech:biogenic_field_72012": {
+			canEquip: function(card,ship,fleet) {
+				if( ship.class != "Species 8472 Bioship" )
+					return false;
+				return onePerShip("Biogenic Field")(card,ship,fleet);
+			}
+		},
+		
+		// Electrodynamic Fluid
+		"tech:electrodynamic_fluid_72012": {
+			canEquip: function(card,ship,fleet) {
+				return ship.class == "Species 8472 Bioship";
+			}
+		},
+		
+		// Fluidic Space
+		"tech:fluidic_space_72012": {
+			canEquip: onePerShip("Fluidic Space"),
+			intercept: {
+				self: {
+					cost: function(upgrade,ship,fleet,cost) {
+						if( ship && !hasFaction(ship,"species-8472",ship,fleet) )
+							return resolve(upgrade,ship,fleet,cost) + 5;
+						return cost;
+					}
+				}
+			},
+		},
+		
 	};
 	
 }]);
