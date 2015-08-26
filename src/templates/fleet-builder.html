@@ -65,7 +65,7 @@
 			</div><!--
 			
 		 --><div class="card-container" ng-mouseenter="hover = true" ng-mouseleave="hover = false"
-				ng-repeat="upgradeSlot in ship|upgradeSlots" ng-hide="ship.hideEmptySlots && !upgradeSlot.occupant" 
+				ng-repeat="upgradeSlot in ship|upgradeSlots" ng-hide="!upgradeSlot.occupant && (ship.hideEmptySlots || (upgradeSlot|valueOf:'hide':ship:fleet))" 
 				droppable can-drop="isUpgradeCompatible($item, upgradeSlot, ship, fleet)" drop="setUpgrade(fleet,ship,upgradeSlot,$item)" drag-store="dragStore">
 				<div class="card-outer card-drop-target font-staw" ng-click="setSearchTypes(upgradeSlot.type)">
 					<div class="card-drop-target-title" ng-class="{'card-drop-target-title-hover':hover || upgradeSlot.occupant == dragStore.item}" ng-show="upgradeSlot.source && upgradeSlot.source != 'ship'">{{upgradeSlot.source}}<div ng-show="upgradeSlot.rules">{{upgradeSlot.rules}}</div></div>
@@ -75,6 +75,7 @@
 						</div>
 					</div>
 				</div>
+				<div class="card-drop-target-subtitle">{{upgradeSlot|valueOf:'show':ship:fleet}}</div>
 				<card card="upgradeSlot.occupant" ship="ship" fleet="fleet" drag-store="dragStore"></card>
 			</div>
 			

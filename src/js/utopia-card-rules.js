@@ -117,6 +117,26 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		return slots;
 	};
 	
+	var createFirstMajeSlot = function() {
+		return {
+			type: ["talent"],
+			rules: "First Maje Only",
+			hide: function(slot,ship,fleet) {
+				return !hasFaction(ship.captain,"kazon",ship,fleet);
+			},
+			intercept: {
+				ship: {
+					canEquip: function(card,ship,fleet,canEquip) {
+						console.log(canEquip);
+						if( card.name != "First Maje" )
+							return false;
+						return canEquip;
+					}
+				}
+			}
+		}
+	}
+	
 	return {
 		
 		// SHIPS
@@ -3753,6 +3773,44 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					}
 				}
 			},
+		},
+		
+		// KAZON SHIPS (First Maje slot)
+		
+		"talent:first_maje_71793": {
+			canEquip: function(card,ship,fleet) {
+				return hasFaction(ship,"kazon",ship,fleet) && hasFaction(ship.captain,"kazon",ship,fleet);
+			},
+			upgradeSlots: [{ type: ["tech"] }],
+			intercept: {
+				ship: {
+					skill: function(card,ship,fleet,skill) {
+						if( card == ship.captain )
+							return resolve(card,ship,fleet,skill) + 2;
+						return skill;
+					}
+				}
+			}
+		},
+		
+		"ship:nistrim_raider_71282": {
+			upgradeSlots: [ createFirstMajeSlot() ]
+		},
+		
+		"ship:kazon_raider_71282": {
+			upgradeSlots: [ createFirstMajeSlot() ]
+		},
+		
+		"ship:kazon_starship_71646c": {
+			upgradeSlots: [ createFirstMajeSlot() ]
+		},
+		
+		"ship:relora_sankur_71646c": {
+			upgradeSlots: [ createFirstMajeSlot() ]
+		},
+		
+		"ship:ogla_razik_71793": {
+			upgradeSlots: [ createFirstMajeSlot() ]
 		},
 		
 	};
