@@ -3813,6 +3813,79 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			upgradeSlots: [ createFirstMajeSlot() ]
 		},
 		
+		// QUARK'S TREASURE
+		
+		"ship:quark_s_treasure_72013": {
+			intercept: {
+				ship: {
+					factionPenalty: function(card,ship,fleet,factionPenalty) {
+						if( card.type == "crew" || card.type == "tech")
+							return 0;
+						return factionPenalty;
+					}
+				}
+			}
+		},
+		
+		"captain:zek_cap_72013": {
+			canEquipCaptain: function(card,ship,fleet) {
+				return hasFaction(ship,"ferengi",ship,fleet);
+			},
+		},
+		
+		"captain:brunt_72013": {
+			upgradeSlots: [
+				{
+					type: ["talent"],
+					rules: "Grand Nagus Only",
+					canEquip: function(card) {
+						return card.name == "Grand Nagus";
+					},
+				}
+			]
+		},
+		
+		"admiral:zek_72013": {
+			canEquipAdmiral: function(card,ship,fleet) {
+				return hasFaction(ship,"ferengi",ship,fleet);
+			},
+		},
+		
+		"talent:smugglers_72013": {
+			canEquipFaction: function(card,ship,fleet) {
+				return hasFaction(ship, "ferengi", ship, fleet) && hasFaction(ship.captain, "ferengi", ship, fleet);
+			}
+		},
+		
+		"tech:cargo_hold_72013": {
+			upgradeSlots: cloneSlot( 2, 
+				{
+					type: ["crew","tech"],
+					rules: "Combined cost 4SP or less",
+					canEquip: function(card,ship,fleet,upgradeSlot) {
+						// Combined cost of 4 SP or less
+						var otherSlotCost = 0;
+						$.each( $filter("upgradeSlots")(ship), function(i, slot) {
+							if( upgradeSlot != slot && slot.occupant && slot.source == "Cargo Hold" )
+								otherSlotCost = valueOf(slot.occupant,"cost",ship,fleet)
+						});
+						return otherSlotCost + valueOf(card,"cost",ship,fleet) <= 4;
+					},
+				} 
+			),
+			
+			canEquip: function(card,ship,fleet) {
+				if( !hasFaction(ship, "ferengi", ship, fleet) )
+					return false;
+				return onePerShip("Cargo Hold")(card,ship,fleet);
+			},
+		
+		},
+		
+		"tech:inversion_wave_72013": {
+			canEquip: onePerShip("Inversion Wave")
+		},
+		
 	};
 	
 }]);
