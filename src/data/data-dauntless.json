@@ -29,6 +29,24 @@
 			"factions": ["independent"],
 			"intercept": { "ship":{}, "fleet":{} },
 			"squadron": false
+		},
+		{
+			"type": "ship",
+			"id": "independent_starship_71805",
+			"set": ["71805"],
+			"name": "Independent Starship",
+			"class": "Dauntless Class",
+			"actions": ["evade","target-lock","scan","battlestations"],
+			"upgrades": ["tech","tech","tech"],
+			"attack": 2,
+			"agility": 2,
+			"hull": 4,
+			"shields": 4,
+			"cost": 24,
+			"text": "",
+			"unique": false,
+			"factions": ["independent"],
+			"squadron": false
 		}
 	],
 	

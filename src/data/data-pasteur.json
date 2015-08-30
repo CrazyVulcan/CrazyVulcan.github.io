@@ -29,6 +29,24 @@
 			"factions": ["mirror-universe"],
 			"intercept": { "ship":{}, "fleet":{} },
 			"squadron": false
+		},
+		{
+			"type": "ship",
+			"id": "mirror_universe_starship_71807",
+			"set": ["71807"],
+			"name": "Mirror Universe Starship",
+			"class": "Olympic Class",
+			"actions": ["evade","scan","battlestations"],
+			"upgrades": ["tech","tech","crew"],
+			"attack": 1,
+			"agility": 1,
+			"hull": 5,
+			"shields": 3,
+			"cost": 20,
+			"text": "",
+			"unique": false,
+			"factions": ["mirror-universe"],
+			"squadron": false
 		}
 	],
 	
