@@ -3886,6 +3886,41 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquip: onePerShip("Inversion Wave")
 		},
 		
+		// PHOENIX
+		
+		// High Energy Sensor Sweep
+		"tech:high_energy_sensor_sweep_72011": {
+			canEquip: onePerShip("High Energy Sensor Sweep")
+		},
+		
+		// Arsenal
+		"weapon:arsenal_72011": {
+			upgradeSlots: cloneSlot( 2, { type: ["weapon"] } ),
+			canEquip: onePerShip("Arsenal")
+		},
+		
+		"question:aft_torpedo_launcher_72011": {
+			isSlotCompatible: function(slotTypes) {
+				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0;
+			},
+			intercept: {
+				self: {
+					cost: function(upgrade,ship,fleet,cost) {
+						if( ship && !hasFaction(ship,"federation",ship,fleet) )
+							return resolve(upgrade,ship,fleet,cost) + 5;
+						return cost;
+					}
+				}
+			},
+			canEquip: function(upgrade,ship,fleet) {
+				// TODO Deny equip if no rear arc.
+				return ship.hull >= 4;
+			},
+		},
+		
+		
+		
+		
 	};
 	
 }]);
