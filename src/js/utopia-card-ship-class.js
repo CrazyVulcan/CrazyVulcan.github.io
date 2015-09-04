@@ -13,10 +13,6 @@ module.directive( "cardShipClass", function() {
 		templateUrl: "card-ship-class.html",
 
 		controller: [ "$scope", function($scope) {
-
-			$scope.range = function(size) {
-				return new Array(size);
-			};
 			
 			$scope.abs = Math.abs;
 			
@@ -36,6 +32,10 @@ module.directive( "cardShipClass", function() {
 			
 			while( $scope.speeds.length < 7 )
 				$scope.speeds.unshift(9);
+			
+			$scope.getBaseTileName = function(ship) {
+				return ship.unique ? ship.name : ship.class;
+			}
 		
 		}]
 

@@ -5,7 +5,7 @@
 		<div class="arc arc-fill arc-fore-180" ng-show="shipClass.frontArc == 180"></div>
 		<div class="arc arc-rear-90" ng-show="shipClass.rearArc == 90"></div>
 		<div class="arc-hole"></div>
-		<div class="arc-name">{{ship.name}}</div>
+		<div class="arc-name">{{getBaseTileName(ship)}}</div>
 		<div class="arc-stats">
 			<div class="arc-stat card-ship-stat-attack text-center">{{ship|valueOf:'attack':ship:fleet}}</div>
 			<div class="arc-stat card-ship-stat-agility text-center">{{ship|valueOf:'agility':ship:fleet}}</div>
