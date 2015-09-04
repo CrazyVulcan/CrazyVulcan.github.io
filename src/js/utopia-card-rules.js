@@ -251,8 +251,22 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 		// Regent's Flagship
 		"ship:regent_s_flagship_71535": {
-			// data has wrong class name
-			class: "Negh'var Class"
+			class: "Negh'var Class",
+			classId: "negh_var_class_mirror"
+		},
+		"ship:mirror_universe_starship_71535": {
+			class: "Negh'var Class",
+			classId: "negh_var_class_mirror"
+		},
+		
+		// ISS Defiant
+		"ship:i_s_s_defiant_71529": {
+			class: "Defiant Class",
+			classId: "defiant_class_mirror"
+		},
+		"ship:mirror_universe_starship_71529": {
+			class: "Defiant Class",
+			classId: "defiant_class_mirror"
 		},
 		
 		// Only Gareb or Romulan Drone Pilot as Captain
