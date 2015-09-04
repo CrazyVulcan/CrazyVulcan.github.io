@@ -31,7 +31,7 @@
 			</div><!--
 			Stupid whitespace breaks card alignment
 		 --><div class="card-container">
-				<card card="ship.classData" fleet="fleet" drag-store="dragStore"></card>
+				<card card="ship.classData" ship="ship" fleet="fleet" drag-store="dragStore"></card>
 			</div><!--
 		 --><div class="card-container" ng-show="!ship.squadron && fleet.resource && (fleet.resource|valueOf:'showShipResourceSlot':ship:fleet)" droppable can-drop="$item.type == fleet.resource.slotType" drop="setShipResource(fleet,ship,$item)" drag-store="dragStore">
 				<div class="card-outer card-drop-target font-staw" ng-click="setSearchTypes([fleet.resource.slotType])">

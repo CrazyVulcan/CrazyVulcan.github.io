@@ -6,6 +6,7 @@ module.directive( "cardShipClass", function() {
 
 		scope: {
 			shipClass: "=",
+			ship: "=",
 			fleet: "="
 		},
 

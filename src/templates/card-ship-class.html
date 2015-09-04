@@ -1,5 +1,20 @@
 <div class="card-outer card-ship card-shipclass font-staw">
 
+	<div class="card-shipclass-arcs arc-faction-{{ship.factions[0]}}">
+		<div class="arc arc-fill arc-fore-90" ng-show="shipClass.frontArc == 90"></div>
+		<div class="arc arc-fill arc-fore-180" ng-show="shipClass.frontArc == 180"></div>
+		<div class="arc arc-rear-90" ng-show="shipClass.rearArc == 90"></div>
+		<div class="arc-hole"></div>
+		<div class="arc-name">{{ship.name}}</div>
+		<div class="arc-stats">
+			<div class="arc-stat card-ship-stat-attack text-center">{{ship|valueOf:'attack':ship:fleet}}</div>
+			<div class="arc-stat card-ship-stat-agility text-center">{{ship|valueOf:'agility':ship:fleet}}</div>
+			<div class="arc-stat card-ship-stat-hull text-center">{{ship|valueOf:'hull':ship:fleet}}</div>
+			<div class="arc-stat card-ship-stat-shields text-center">{{ship|valueOf:'shields':ship:fleet}}</div>
+		</div>
+		<div class="arc-actions"><i ng-repeat="action in ship.actions" class="fs fs-{{action}}"></i></div>
+	</div>
+
 	<div class="card-image"></div>
 
 	<div class="card-corner-top-left pull-left">
