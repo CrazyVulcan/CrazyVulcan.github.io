@@ -376,10 +376,11 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 			});
 			
 			// Assign classes to ships
-			// TODO This should really be done in the data converter
 			$.each( cards, function(i,card) {
 				if( card.type == "ship" ) {
-					if( !card.classId ) {
+					if( card.classId && shipClasses[card.classId] ) {
+						card.classData = shipClasses[card.classId];
+					} else {
 						$.each( shipClasses, function(id,shipClass) {
 							if( shipClass.name == card.class ) {
 								card.classId = id;
@@ -388,8 +389,8 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 							}
 						} );
 					}
-					if( !card.classId || !shipClasses[card.classId] )
-						console.log( "No class for ship", card.id, card.name, card.class );
+					if( !card.classId || !card.classData || !shipClasses[card.classId] )
+						console.log( "No class for ship", card.id, card.name, card.class, card.classId );
 				}
 			});
 			
