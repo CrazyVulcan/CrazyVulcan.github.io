@@ -12,18 +12,18 @@
 		<span class="card-title" ng-class="{'card-title-long': ship.name.length >= 20 }">{{ship.name | uppercase}}</span>
 	</div>
 
-		<div class="card-ship-stats pull-left">
-			<div class="card-ship-stat card-ship-stat-attack text-right" tooltip-show="fleet" tooltip="ship|valueOf:'attack':ship:fleet:false:{modifiers:true}" tooltip-position="e"><span class="card-skill-plus" ng-show="ship.isShipModifier">+</span>{{ship|valueOf:'attack':ship:fleet}}</div>
-			<div class="card-ship-stat card-ship-stat-agility text-right" tooltip-show="fleet" tooltip="ship|valueOf:'agility':ship:fleet:false:{modifiers:true}" tooltip-position="e"><span class="card-skill-plus" ng-show="ship.isShipModifier">+</span>{{ship|valueOf:'agility':ship:fleet}}</div>
-			<div class="card-ship-stat card-ship-stat-hull text-right" tooltip-show="fleet" tooltip="ship|valueOf:'hull':ship:fleet:false:{modifiers:true}" tooltip-position="e"><span class="card-skill-plus" ng-show="ship.isShipModifier">+</span>{{ship|valueOf:'hull':ship:fleet}}</div>
-			<div class="card-ship-stat card-ship-stat-shields text-right" tooltip-show="fleet" tooltip="ship|valueOf:'shields':ship:fleet:false:{modifiers:true}" tooltip-position="e"><span class="card-skill-plus" ng-show="ship.isShipModifier">+</span>{{ship|valueOf:'shields':ship:fleet}}</div>
-		</div>
+	<div class="card-ship-stats pull-left">
+		<div class="card-ship-stat card-ship-stat-attack text-right" tooltip-show="fleet" tooltip="ship|valueOf:'attack':ship:fleet:false:{modifiers:true}" tooltip-position="e"><span class="card-skill-plus" ng-show="ship.isShipModifier">+</span>{{ship|valueOf:'attack':ship:fleet}}</div>
+		<div class="card-ship-stat card-ship-stat-agility text-right" tooltip-show="fleet" tooltip="ship|valueOf:'agility':ship:fleet:false:{modifiers:true}" tooltip-position="e"><span class="card-skill-plus" ng-show="ship.isShipModifier">+</span>{{ship|valueOf:'agility':ship:fleet}}</div>
+		<div class="card-ship-stat card-ship-stat-hull text-right" tooltip-show="fleet" tooltip="ship|valueOf:'hull':ship:fleet:false:{modifiers:true}" tooltip-position="e"><span class="card-skill-plus" ng-show="ship.isShipModifier">+</span>{{ship|valueOf:'hull':ship:fleet}}</div>
+		<div class="card-ship-stat card-ship-stat-shields text-right" tooltip-show="fleet" tooltip="ship|valueOf:'shields':ship:fleet:false:{modifiers:true}" tooltip-position="e"><span class="card-skill-plus" ng-show="ship.isShipModifier">+</span>{{ship|valueOf:'shields':ship:fleet}}</div>
+	</div>
 
-		<div class="card-border-right pull-right"></div>
+	<div class="card-border-right pull-right"></div>
 
-		<div class="card-ship-silhouette pull-left"></div>
+	<div class="card-ship-silhouette pull-left"></div>
 
-		<div class="card-ship-class-container text-center">
+	<div class="card-ship-class-container text-center">
 		<span class="card-ship-class" ng-class="{'card-ship-class-long': ship.class.length >= 25 }">{{ship.class | uppercase}}</span>
 	</div>
 

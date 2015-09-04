@@ -1,0 +1,43 @@
+<div class="card-outer card-ship card-shipclass font-staw">
+
+	<div class="card-image"></div>
+
+	<div class="card-corner-top-left pull-left">
+		<div class="card-corner-inner pull-right"></div>
+	</div>
+	<div class="card-corner-top-right pull-right">
+		<div class="card-corner-inner card-corner-inner-faction"></div>
+	</div>
+	<div class="card-title-container text-center">
+		<span class="card-shipclass-title" ng-class="{'card-title-long': shipClass.name.length >= 20 }">{{shipClass.name | uppercase}}</span>
+	</div>
+
+	<div class="card-border-left pull-left"></div>
+
+	<div class="card-border-right pull-right"></div>
+
+	<div class="card-class-maneuvers">
+		<div class="card-maneuver-row" ng-repeat="speed in speeds track by $index">
+			<div class="card-maneuver-box" ng-class="{'speed-reverse': speed < 0}"><span ng-show="speed != 9">{{abs(speed)}}</span></div>
+			<div class="card-maneuver-box"><i class="fs fs-turn-left speed-{{shipClass.maneuvers[speed].turn}}" ng-show="shipClass.maneuvers[speed].turn"></i></div>
+			<div class="card-maneuver-box"><i class="fs fs-bank-left speed-{{shipClass.maneuvers[speed].bank}}" ng-show="shipClass.maneuvers[speed].bank"></i><i class="fs fs-spin-left speed-{{shipClass.maneuvers[speed].spin}}" ng-show="shipClass.maneuvers[speed].spin"></i></div>
+			<div class="card-maneuver-box"><i class="fs speed-{{shipClass.maneuvers[speed].straight}}" ng-class="{'fs-forward': speed > 0, 'fs-reverse': speed < 0}" ng-show="shipClass.maneuvers[speed].straight"></i></div>
+			<div class="card-maneuver-box"><i class="fs fs-bank-right speed-{{shipClass.maneuvers[speed].bank}}" ng-show="shipClass.maneuvers[speed].bank"></i><i class="fs fs-spin-right speed-{{shipClass.maneuvers[speed].spin}}" ng-show="shipClass.maneuvers[speed].spin"></i></div>
+			<div class="card-maneuver-box"><i class="fs fs-turn-right speed-{{shipClass.maneuvers[speed].turn}}" ng-show="shipClass.maneuvers[speed].turn"></i></div>
+			<div class="card-maneuver-box"><i class="fs fs-come-about speed-{{shipClass.maneuvers[speed].about}}" ng-show="shipClass.maneuvers[speed].about"></i></div>
+		</div>
+	</div>
+
+	<div class="card-corner-bottom-left pull-left">
+		<div class="card-corner-inner"></div>
+	</div>
+	
+	<div class="card-corner-bottom-right pull-right">
+		<div class="card-corner-inner"></div>
+	</div>
+	
+	<div class="card-border-bottom"></div>
+
+	<div style="clear: both"></div>
+
+</div>

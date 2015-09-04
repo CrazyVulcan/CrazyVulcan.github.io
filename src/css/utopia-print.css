@@ -75,7 +75,7 @@ body, .fleet-ship-inner, .card-corner-inner, .u-fleet, .fleet-ship-left, .fleet-
 .fleet-ship-container {
 	page-break-after: always;
 }
-.card-title, .card-text, .card-ship-upgrade-bar, .card-ship-cost, .card-ship-class, .card-faction-name {
+.card-title, .card-text, .card-ship-upgrade-bar, .card-ship-cost, .card-ship-class, .card-faction-name, .card-shipclass-title {
 	background-color: white;
 	color: black;
 }
@@ -97,4 +97,12 @@ body, .fleet-ship-inner, .card-corner-inner, .u-fleet, .fleet-ship-left, .fleet-
 .card-captain {
 	color: black;
 	text-shadow: none;
+}
+
+.card-class-maneuvers {
+	color: black;
+}
+
+.card-maneuver-box {
+	border-color: black;
 }

@@ -383,12 +383,13 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 						$.each( shipClasses, function(id,shipClass) {
 							if( shipClass.name == card.class ) {
 								card.classId = id;
+								card.classData = shipClass;
 								return false;
 							}
 						} );
 					}
 					if( !card.classId || !shipClasses[card.classId] )
-						console.log( "No class for ship", card.id, card.name, card.classId );
+						console.log( "No class for ship", card.id, card.name, card.class );
 				}
 			});
 			
