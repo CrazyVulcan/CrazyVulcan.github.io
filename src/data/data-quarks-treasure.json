@@ -49,6 +49,37 @@
 		}
 	],
 	
+	"shipClasses": [
+	
+		{
+			"type":"ship-class",
+			"id":"ferengi_shuttle",
+			"name":"Ferengi Shuttle",
+			"frontArc":"90",
+			"rearArc":"",
+			"maneuvers": {
+				"3": {
+					"straight":"white"
+				},
+				"2": {
+					"straight": "green",
+					"bank": "white",
+					"turn": "white",
+					"about": "white"
+				},
+				"1": {
+					"straight": "green",
+					"bank": "green",
+					"turn": "white",
+					"about": "white"
+				},
+				"min": 1,
+				"max": 3
+			}
+		}
+
+	],
+	
 	"captains": [
 		{
 			"type": "captain",

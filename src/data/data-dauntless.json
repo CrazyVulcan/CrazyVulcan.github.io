@@ -53,34 +53,34 @@
 	"shipClasses": [
 	
 		{
-			"type":"ship-class",
-			"id":"dauntless_class",
-			"name":"Dauntless Class",
-			"frontArc":"90",
-			"rearArc":"",
+			"type": "ship-class",
+			"id": "dauntless_class",
+			"name": "Dauntless Class",
+			"frontArc": "90",
+			"rearArc": "",
 			"maneuvers": {
-				"5":{
-					"straight":"white"
+				"5": {
+					"straight": "white"
 				},
-				"4":{
-					"straight":"white"
+				"4": {
+					"straight": "white"
 				},
-				"3":{
-					"straight":"white",
-					"bank":"white",
-					"turn":"red"
+				"3": {
+					"straight": "white",
+					"bank": "white",
+					"turn": "red"
 				},
-				"2":{
-					"straight":"green",
-					"bank":"white",
-					"turn":"white"
+				"2": {
+					"straight": "green",
+					"bank": "white",
+					"turn": "white"
 				},
-				"1":{
-					"straight":"green",
-					"bank":"green"
+				"1": {
+					"straight": "green",
+					"bank": "green"
 				},
-				"min":1,
-				"max":5
+				"min": 1,
+				"max": 5
 			}
 		}
 
