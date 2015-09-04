@@ -760,3 +760,13 @@
 	margin-left: 1.2em;
 	width: 7.2em;
 }
+
+.card-maneuver-box span {
+	font-size: 0.8em;
+	position: relative;
+	top: -0.1em;
+}
+
+.card-maneuver-box-highlight {
+	background: #333;
+}

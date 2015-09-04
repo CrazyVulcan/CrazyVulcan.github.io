@@ -106,3 +106,7 @@ body, .fleet-ship-inner, .card-corner-inner, .u-fleet, .fleet-ship-left, .fleet-
 .card-maneuver-box {
 	border-color: black;
 }
+
+.card-maneuver-box-highlight {
+	background: white;
+}

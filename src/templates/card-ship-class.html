@@ -19,12 +19,12 @@
 	<div class="card-class-maneuvers">
 		<div class="card-maneuver-row" ng-repeat="speed in speeds track by $index">
 			<div class="card-maneuver-box" ng-class="{'speed-reverse': speed < 0}"><span ng-show="speed != 9">{{abs(speed)}}</span></div>
-			<div class="card-maneuver-box"><i class="fs fs-turn-left speed-{{shipClass.maneuvers[speed].turn}}" ng-show="shipClass.maneuvers[speed].turn"></i></div>
-			<div class="card-maneuver-box"><i class="fs fs-bank-left speed-{{shipClass.maneuvers[speed].bank}}" ng-show="shipClass.maneuvers[speed].bank"></i><i class="fs fs-spin-left speed-{{shipClass.maneuvers[speed].spin}}" ng-show="shipClass.maneuvers[speed].spin"></i></div>
-			<div class="card-maneuver-box"><i class="fs speed-{{shipClass.maneuvers[speed].straight}}" ng-class="{'fs-forward': speed > 0, 'fs-reverse': speed < 0}" ng-show="shipClass.maneuvers[speed].straight"></i></div>
-			<div class="card-maneuver-box"><i class="fs fs-bank-right speed-{{shipClass.maneuvers[speed].bank}}" ng-show="shipClass.maneuvers[speed].bank"></i><i class="fs fs-spin-right speed-{{shipClass.maneuvers[speed].spin}}" ng-show="shipClass.maneuvers[speed].spin"></i></div>
-			<div class="card-maneuver-box"><i class="fs fs-turn-right speed-{{shipClass.maneuvers[speed].turn}}" ng-show="shipClass.maneuvers[speed].turn"></i></div>
-			<div class="card-maneuver-box"><i class="fs fs-come-about speed-{{shipClass.maneuvers[speed].about}}" ng-show="shipClass.maneuvers[speed].about"></i></div>
+			<div class="card-maneuver-box" ng-class="{'card-maneuver-box-highlight': shipClass.maneuvers[speed].turn}"><i class="fs fs-turn-left speed-{{shipClass.maneuvers[speed].turn}}" ng-show="shipClass.maneuvers[speed].turn"></i></div>
+			<div class="card-maneuver-box" ng-class="{'card-maneuver-box-highlight': shipClass.maneuvers[speed].bank}"><i class="fs fs-bank-left speed-{{shipClass.maneuvers[speed].bank}}" ng-show="shipClass.maneuvers[speed].bank"></i><i class="fs fs-spin-left speed-{{shipClass.maneuvers[speed].spin}}" ng-show="shipClass.maneuvers[speed].spin"></i></div>
+			<div class="card-maneuver-box" ng-class="{'card-maneuver-box-highlight': shipClass.maneuvers[speed].straight}"><i class="fs speed-{{shipClass.maneuvers[speed].straight}}" ng-class="{'fs-forward': speed > 0, 'fs-reverse': speed < 0}" ng-show="shipClass.maneuvers[speed].straight"></i></div>
+			<div class="card-maneuver-box" ng-class="{'card-maneuver-box-highlight': shipClass.maneuvers[speed].bank}"><i class="fs fs-bank-right speed-{{shipClass.maneuvers[speed].bank}}" ng-show="shipClass.maneuvers[speed].bank"></i><i class="fs fs-spin-right speed-{{shipClass.maneuvers[speed].spin}}" ng-show="shipClass.maneuvers[speed].spin"></i></div>
+			<div class="card-maneuver-box" ng-class="{'card-maneuver-box-highlight': shipClass.maneuvers[speed].turn}"><i class="fs fs-turn-right speed-{{shipClass.maneuvers[speed].turn}}" ng-show="shipClass.maneuvers[speed].turn"></i></div>
+			<div class="card-maneuver-box" ng-class="{'card-maneuver-box-highlight': shipClass.maneuvers[speed].about}"><i class="fs fs-come-about speed-{{shipClass.maneuvers[speed].about}}" ng-show="shipClass.maneuvers[speed].about"></i></div>
 		</div>
 	</div>
 
