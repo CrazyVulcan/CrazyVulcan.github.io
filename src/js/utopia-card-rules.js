@@ -3933,6 +3933,49 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 		},
 		
+		// INTREPID
+		
+		// Dual Phaser Banks
+		"weapon:dual_phaser_banks_72002p": {
+			canEquip: function(card,ship,fleet) {
+				if( !hasFaction(ship, "federation", ship, fleet) )
+					return false;
+				return onePerShip("Dual Phaser Banks")(card,ship,fleet);
+			},
+			intercept: {
+				self: {
+					cost: function(upgrade,ship,fleet,cost) {
+						if( ship && ship.class != "Constitution Class" )
+							return resolve(upgrade,ship,fleet,cost) + 3;
+						return cost;
+					}
+				}
+			},
+		},
+		
+		// Astrogator
+		"question:astrogator_72002p": {
+			isSlotCompatible: function(slotTypes) {
+				return $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0;
+			},
+			intercept: {
+				self: {
+					cost: function(upgrade,ship,fleet,cost) {
+						if( ship && !hasFaction(ship,"federation",ship,fleet) )
+							return resolve(upgrade,ship,fleet,cost) + 5;
+						return cost;
+					}
+				}
+			},
+			canEquip: function(card,ship,fleet) {
+				if( ship.class != "Constitution Class" )
+					return false;
+				return onePerShip("Astrogator")(card,ship,fleet);
+			},
+		},
+		
+		
+		
 		
 		
 		
