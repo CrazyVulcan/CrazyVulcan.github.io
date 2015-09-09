@@ -3935,6 +3935,13 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 		// INTREPID
 		
+		// Vulcan Engineer
+		"crew:vulcan_engineer_72002p": {
+			factionPenalty: function(card, ship, fleet) {
+				return ship && hasFaction(ship, "vulcan", ship, fleet) ? 0 : 1;
+			}
+		},
+		
 		// Dual Phaser Banks
 		"weapon:dual_phaser_banks_72002p": {
 			canEquip: function(card,ship,fleet) {
