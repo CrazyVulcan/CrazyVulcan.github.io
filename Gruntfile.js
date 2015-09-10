@@ -20,7 +20,7 @@ module.exports = function(grunt) {
 				tasks: ["build-css"],
 			},
 			index: {
-				files: "src/index.html",
+				files: "src/*.html",
 				tasks: ["build-index"],
 			},
 			data: {
@@ -83,7 +83,7 @@ module.exports = function(grunt) {
 			index: {
 				expand: true,
 				cwd: "src",
-				src: [ "index.html" ],
+				src: [ "*.html" ],
 				dest: "build/",
 			},
 			powertip: {
