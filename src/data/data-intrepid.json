@@ -80,7 +80,7 @@
 			"name": "Vulcan Engineer",
 			"cost": 3,
 			"text": "ACTION: If there are no enemy ships within Range 1-3 of your ship, repair 1 of your Shield Tokens.\n\nYou do not pay a faction penalty when assigning this card to a Vulcan ship.",
-			"unique": true,
+			"unique": false,
 			"factions": ["federation"]
 		},
 		{

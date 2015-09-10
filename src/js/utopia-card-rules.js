@@ -3982,8 +3982,27 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		
 		
+		// BELAK
 		
+		// Lovok
+		"captain:lovok_blind_belak": {
+			upgradeSlots: [ 
+				{ 
+					type: ["talent"], 
+					rules: "Tal Shiar Only",
+					canEquip: function(card) {
+						return card.name == "Tal Shiar";
+					}
+				}
+			]
+		},
 		
+		// Tal Shiar
+		"talent:tal_shiar_blind_belak": {
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return hasFaction(ship.captain,"romulan", ship, fleet);
+			}
+		},
 		
 		
 	};
