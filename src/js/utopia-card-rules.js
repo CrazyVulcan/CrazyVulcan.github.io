@@ -3951,9 +3951,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			intercept: {
 				self: {
-					cost: function(upgrade,ship,fleet,cost) {
+					cost: function(card,ship,fleet,cost) {
 						if( ship && ship.class != "Constitution Class" )
-							return resolve(upgrade,ship,fleet,cost) + 3;
+							return resolve(card,ship,fleet,cost) + 3;
 						return cost;
 					}
 				}
@@ -3967,9 +3967,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			intercept: {
 				self: {
-					cost: function(upgrade,ship,fleet,cost) {
+					cost: function(card,ship,fleet,cost) {
 						if( ship && !hasFaction(ship,"federation",ship,fleet) )
-							return resolve(upgrade,ship,fleet,cost) + 5;
+							return resolve(card,ship,fleet,cost) + 5;
 						return cost;
 					}
 				}
@@ -3999,10 +3999,52 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 		// Tal Shiar
 		"talent:tal_shiar_blind_belak": {
-			canEquipFaction: function(upgrade,ship,fleet) {
+			canEquipFaction: function(card,ship,fleet) {
 				return hasFaction(ship.captain,"romulan", ship, fleet);
 			}
 		},
+		
+		// BIOSHIP OMEGA
+		
+		"captain:bioship_omega_pilot_blind_bioship": {
+			canEquipCaptain: function(card,ship,fleet) {
+				return hasFaction(ship,"species-8472", ship, fleet);
+			}
+		},
+
+		"weapon:energy_weapon_blind_bioship": {
+			canEquip: function(card,ship,fleet) {
+				if( !hasFaction(ship,"species-8472", ship, fleet) )
+					return false;
+				return onePerShip("Energy Weapon")(card,ship,fleet);
+			}
+		},
+
+		"tech:neuro_peptides_blind_bioship": {
+			canEquip: function(card,ship,fleet) {
+				if( !hasFaction(ship,"species-8472", ship, fleet) )
+					return false;
+				return onePerShip("Neuro Peptides")(card,ship,fleet);
+			}
+		},
+		
+		"tech:organic_conduits_blind_bioship": {
+			canEquip: function(card,ship,fleet) {
+				return hasFaction(ship,"species-8472", ship, fleet);
+			}
+		},
+		
+		"tech:resisitant_hull_blind_bioship": {
+			canEquip: function(card,ship,fleet) {
+				if( !hasFaction(ship,"species-8472", ship, fleet) )
+					return false;
+				return onePerShip("Resistant Hull")(card,ship,fleet);
+			}
+		},
+		
+		
+		
+		
 		
 		
 	};
