@@ -4043,7 +4043,33 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		
 		
+		// ALDARA
 		
+		"weapon:aft_weapons_array_blind_aldara": {
+			canEquip: onePerShip("Aft Weapons Array"),
+			intercept: {
+				self: {
+					cost: function(card,ship,fleet,cost) {
+						if( ship && ship.class != "Cardassian Galor Class" )
+							return resolve(card,ship,fleet,cost) + 5;
+						return cost;
+					}
+				}
+			},
+		},
+
+		"tech:high_energy_subspace_field_blind_aldara": {
+			canEquip: onePerShip("High Energy Subspace Field"),
+			intercept: {
+				self: {
+					cost: function(card,ship,fleet,cost) {
+						if( ship && !hasFaction(ship,"dominion",ship,fleet) )
+							return resolve(card,ship,fleet,cost) + 5;
+						return cost;
+					}
+				}
+			},
+		},
 		
 		
 		
