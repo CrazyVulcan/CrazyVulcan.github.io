@@ -54,7 +54,7 @@
 			"set": ["blind_aldara"],
 			"name": "Concentrated Firepower",
 			"cost": 5,
-			"text": "ACTION: Discard this card to target 1 enemy ship at Range 3. Every friendly shihp (including this ship) that attacks the target ship this round with its Primary Weapon gains +1 attack die.",
+			"text": "ACTION: Discard this card to target 1 enemy ship at Range 3. Every friendly ship (including this ship) that attacks the target ship this round with its Primary Weapon gains +1 attack die.",
 			"unique": true,
 			"factions": ["dominion"]
 		},
