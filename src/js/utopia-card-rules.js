@@ -2113,8 +2113,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					intercept: {
 						ship: {
 							free: function() { return true; },
-							canEquip: function(upgrade, ship, fleet) {
-								return !$factions.hasFaction(upgrade,"borg", ship, fleet) && valueOf(upgrade,"cost",ship,fleet) <= 5;
+							canEquip: function(upgrade, ship, fleet, canEquip) {
+								if( hasFaction(upgrade,"borg", ship, fleet) || valueOf(upgrade,"cost",ship,fleet) > 5 )
+									return false;
+								return canEquip;
 							}
 						}
 						
