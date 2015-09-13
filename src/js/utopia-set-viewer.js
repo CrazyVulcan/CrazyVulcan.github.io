@@ -29,6 +29,7 @@ module.controller( "UtopiaSetCtrl", [ "$scope", "$filter", "cardLoader", "$facti
 		
 		$scope.setCards = [];
 		if( set ) {
+			location.hash = set.id;
 			$.each( $scope.cards, function(i, card) {
 				if( $.inArray( set.id, card.set ) >= 0 )
 					$scope.setCards.push( card );
