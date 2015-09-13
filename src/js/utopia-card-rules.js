@@ -4085,7 +4085,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				self: {
 					cost: function(card,ship,fleet,cost) {
 						if( ship && !hasFaction(ship,"federation",ship,fleet) )
-							return resolve(card,ship,fleet,cost) + 3;
+							return resolve(card,ship,fleet,cost) + 5;
 						return cost;
 					}
 				}
