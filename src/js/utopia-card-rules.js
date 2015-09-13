@@ -4073,6 +4073,24 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 		},
 		
+		// LAKOTA
+		
+		"weapon:upgraded_phasers_blind_lakota": {
+			canEquip: function(card,ship,fleet) {
+				if( valueOf(ship,"attack",ship,fleet) > 3 )
+					return false;
+				return onePerShip("Upgraded Phasers")(card,ship,fleet);
+			},
+			intercept: {
+				self: {
+					cost: function(card,ship,fleet,cost) {
+						if( ship && !hasFaction(ship,"federation",ship,fleet) )
+							return resolve(card,ship,fleet,cost) + 3;
+						return cost;
+					}
+				}
+			},
+		},
 		
 		
 	};
