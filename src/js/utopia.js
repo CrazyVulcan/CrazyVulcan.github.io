@@ -50,4 +50,11 @@ module.controller( "UtopiaCtrl", [ "$scope", "$filter", "cardLoader", "$factions
 		$scope.$broadcast( "removeFromFleet", card );
 	} );
 	
+	$scope.keypress = function(ev) {
+		if( ev.which == 122 ) {
+			$scope.zoom = !$scope.zoom;
+			$scope.$broadcast("zoom",$scope.zoom);
+		}
+	}
+	
 }]);

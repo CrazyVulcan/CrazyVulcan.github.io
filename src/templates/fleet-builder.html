@@ -26,14 +26,14 @@
 		
 		<div class="fleet-ship-inner">
 
-			<div class="card-container">
+			<div class="card-container" ng-class="{'zoom':zoom}">
 				<card card="ship" fleet="fleet" drag-store="dragStore"></card>
 			</div><!--
 			Stupid whitespace breaks card alignment
-		 --><div class="card-container">
+		 --><div class="card-container" ng-class="{'zoom':zoom}">
 				<card card="ship.classData" ship="ship" fleet="fleet" drag-store="dragStore"></card>
 			</div><!--
-		 --><div class="card-container" ng-show="!ship.squadron && fleet.resource && (fleet.resource|valueOf:'showShipResourceSlot':ship:fleet)" droppable can-drop="$item.type == fleet.resource.slotType" drop="setShipResource(fleet,ship,$item)" drag-store="dragStore">
+		 --><div class="card-container" ng-class="{'zoom':zoom}" ng-show="!ship.squadron && fleet.resource && (fleet.resource|valueOf:'showShipResourceSlot':ship:fleet)" droppable can-drop="$item.type == fleet.resource.slotType" drop="setShipResource(fleet,ship,$item)" drag-store="dragStore">
 				<div class="card-outer card-drop-target font-staw" ng-click="setSearchTypes([fleet.resource.slotType])">
 					<div class="card-drop-target-inner">
 						<div class="card-drop-target-type">
@@ -44,7 +44,7 @@
 				<card card="ship.resource" ship="ship" fleet="fleet" drag-store="dragStore"></card>
 			</div><!--
 			
-		 --><div class="card-container" ng-hide="ship.squadron" droppable can-drop="$item.type == 'captain' && $item != ship.captain" drop="setShipCaptain(fleet,ship,$item)" drag-store="dragStore">
+		 --><div class="card-container" ng-class="{'zoom':zoom}" ng-hide="ship.squadron" droppable can-drop="$item.type == 'captain' && $item != ship.captain" drop="setShipCaptain(fleet,ship,$item)" drag-store="dragStore">
 				<div class="card-outer card-drop-target font-staw" ng-click="setSearchTypes(['captain'])">
 					<div class="card-drop-target-inner">
 						<div class="card-drop-target-type">
@@ -55,7 +55,7 @@
 				<card card="ship.captain" ship="ship" fleet="fleet" drag-store="dragStore"></card>
 			</div><!--
 
-		 --><div class="card-container" ng-hide="!ship.admiral && ( ship.squadron || ship.hideEmptySlots || fleetHasAdmiral(fleet) )"
+		 --><div class="card-container" ng-class="{'zoom':zoom}" ng-hide="!ship.admiral && ( ship.squadron || ship.hideEmptySlots || fleetHasAdmiral(fleet) )"
 				droppable can-drop="$item.type == 'admiral' && $item != ship.admiral" drop="setShipAdmiral(fleet,ship,$item)" drag-store="dragStore">
 				<div class="card-outer card-drop-target font-staw" ng-click="setSearchTypes(['admiral'])">
 					<div class="card-drop-target-inner">
@@ -67,7 +67,7 @@
 				<card card="ship.admiral" ship="ship" fleet="fleet" drag-store="dragStore"></card>
 			</div><!--
 			
-		 --><div class="card-container" ng-mouseenter="hover = true" ng-mouseleave="hover = false"
+		 --><div class="card-container" ng-class="{'zoom':zoom}" ng-mouseenter="hover = true" ng-mouseleave="hover = false"
 				ng-repeat="upgradeSlot in ship|upgradeSlots" ng-hide="!upgradeSlot.occupant && (ship.hideEmptySlots || (upgradeSlot|valueOf:'hide':ship:fleet))" 
 				droppable can-drop="isUpgradeCompatible($item, upgradeSlot, ship, fleet)" drop="setUpgrade(fleet,ship,upgradeSlot,$item)" drag-store="dragStore">
 				<div class="card-outer card-drop-target font-staw" ng-click="setSearchTypes(upgradeSlot.type)">
@@ -107,7 +107,7 @@
 		
 		<div class="fleet-ship-inner">
 
-			<div class="card-container" ng-hide="searchOptions.columns < 1">
+			<div class="card-container" ng-class="{'zoom':zoom}" ng-hide="searchOptions.columns < 1">
 				<div class="card-outer card-drop-target font-staw" ng-click="setSearchTypes(['ship'])"
 					droppable can-drop="$item.type == 'ship'" drop="addFleetShip(fleet,$item)" drag-store="dragStore">
 					<div class="card-drop-target-title" ng-if="!isMobile">Click to search this card type</div>
@@ -123,7 +123,7 @@
 				</div>
 			</div><!--
 			
-			--><div class="card-container" droppable can-drop="$item.type == 'resource' && $item != fleet.resource" drop="setFleetResource(fleet,$item)" drag-store="dragStore">
+			--><div class="card-container" ng-class="{'zoom':zoom}" droppable can-drop="$item.type == 'resource' && $item != fleet.resource" drop="setFleetResource(fleet,$item)" drag-store="dragStore">
 				<div class="card-outer card-drop-target font-staw" ng-click="setSearchTypes(['resource'])">
 					<div class="card-drop-target-title"></div>
 					<div class="card-drop-target-inner">
@@ -136,7 +136,7 @@
 				<card card="fleet.resource" ship="ship" fleet="fleet" drag-store="dragStore"></card>
 			</div><!--
 			
-			--><div class="card-container" ng-repeat="upgradeSlot in fleet.resource.upgradeSlots"
+			--><div class="card-container" ng-class="{'zoom':zoom}" ng-repeat="upgradeSlot in fleet.resource.upgradeSlots"
 				droppable can-drop="isUpgradeCompatible($item, upgradeSlot) && $item != upgradeSlot.occupant" drop="setUpgrade(fleet,fleet.resource,upgradeSlot,$item)" drag-store="dragStore">
 				<div class="card-outer card-drop-target font-staw" ng-click="setSearchTypes(upgradeSlot.type)">
 					<div class="card-drop-target-title">{{upgradeSlot.source}}<div ng-show="upgradeSlot.rules">{{upgradeSlot.rules}}</div></div>

@@ -27,6 +27,10 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 				
 			} );
 			
+			$scope.$on( "zoom", function(ev, zoom) {
+				$scope.zoom = zoom;
+			});
+			
 			$scope.setSearchTypes = function(types) {
 				
 				$.each( $scope.searchOptions.types, function(typeName,typeOption) {

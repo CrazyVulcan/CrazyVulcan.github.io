@@ -8,6 +8,14 @@
 	height: 14em;
 }
 
+.card-container.zoom {
+	font-size: 20px;
+}
+
+.card-container.zoom:hover {
+	font-size: 20px;
+}
+
 .card-outer {
 	border-radius: 0.3em;
 	background: #000;
@@ -25,7 +33,6 @@
 }
 
 .card-outer[draggable]:hover {
-	font-size: 30px;
 	box-shadow: 0 0 0.4em #333;
 }
 
