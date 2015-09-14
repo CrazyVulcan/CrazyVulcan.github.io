@@ -71,7 +71,7 @@ module.factory( "$factions", [ "$filter", function($filter) {
 			});
 			return match;
 		},
-		list: [ "Federation", "Klingon", "Romulan", "Dominion", "Borg", "Species 8472", "Kazon", "Bajoran", "Ferengi", "Vulcan", "Independent", "Mirror Universe", "Q Continuum" ],
+		list: [ "Federation", "Klingon", "Romulan", "Dominion", "Borg", "Species 8472", "Kazon", "Xindi", "Bajoran", "Ferengi", "Vulcan", "Independent", "Mirror Universe", "Q Continuum" ],
 	}
 	factions.listCodified = $.map( factions.list, function(name) {
 		return name.toLowerCase().replace(/ /g,"-");
@@ -4094,10 +4094,33 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 		// Toh'Kaht
 		
-		// Arsenal
+		// Reactor Core
 		"tech:reactor_core_blind_tohkaht": {
 			canEquip: onePerShip("Reactor Core")
 		},
+		
+		// DIASPORA
+		
+		"weapon:pulse_firing_particle_cannon_72003p": {
+			intercept: {
+				self: {
+					cost: function(card,ship,fleet,cost) {
+						if( ship && !hasFaction(ship,"xindi",ship,fleet) )
+							return resolve(card,ship,fleet,cost) + 5;
+						return cost;
+					}
+				}
+			},
+		},
+		
+		"tech:phase_deflector_pulse_72003p": {
+			canEquip: function(card,ship,fleet) {
+				if( !hasFaction(ship,"xindi",ship,fleet) )
+					return false;
+				return onePerShip("Phase Deflector Pulse")(card,ship,fleet);
+			},
+		},
+		
 		
 		
 		

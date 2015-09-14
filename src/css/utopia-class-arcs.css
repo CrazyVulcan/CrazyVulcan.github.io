@@ -155,3 +155,10 @@
 .arc-faction-species-8472 .arc {
 	border-color: #bb963c;
 }
+
+.arc-faction-xindi .arc-fill {
+	background: #651212;
+}
+.arc-faction-xindi .arc {
+	border-color: #e25656;
+}

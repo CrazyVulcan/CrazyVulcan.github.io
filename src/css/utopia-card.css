@@ -280,6 +280,10 @@
 	background-image: url("../img/faction-kazon.png");
 }
 
+.card-faction-xindi {
+	background-image: url("../img/faction-xindi.png");
+}
+
 .card-faction-species-8472 {
 	background-image: url("../img/faction-species-8472.png");
 }
