@@ -82,7 +82,7 @@
 			"set": ["blind_tohkaht"],
 			"name": "Hon-Tihl",
 			"cost": 5,
-			"text": "When attacking with your Primary Weapon, during the Roll Attack Dice step, you may discard this card to gain +2 attack dice for that attack.\nIf you targeted an Attack Squadron with that attack, after resolving the attack, you may immediately make a second attack agains the same Attack Squadron using only 2 attack dice; the number of dice for the second attack cannot be increased in any way.\nYou cannot roll any defense dice during the round you use this ability.",
+			"text": "When attacking with your Primary Weapon, during the Roll Attack Dice step, you may discard this card to gain +2 attack dice for that attack.\nIf you targeted an Attack Squadron with that attack, after resolving the attack, you may immediately make a second attack against the same Attack Squadron using only 2 attack dice; the number of dice for the second attack cannot be increased in any way.\nYou cannot roll any defense dice during the round you use this ability.",
 			"unique": true,
 			"factions": ["mirror-universe"]
 		},
