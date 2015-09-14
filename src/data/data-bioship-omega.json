@@ -40,7 +40,7 @@
 			"cost": 1,
 			"skill": 2,
 			"talents": 0,
-			"text": "ACTION: Disable this card an 2 of your Active Shields to target a ship at Range 1. Inflict 1 critical damage to the target ship's hull.\n\nThis card may only be purchased for a Species 8472 ship.",
+			"text": "ACTION: Disable this card and 2 of your Active Shields to target a ship at Range 1. Inflict 1 critical damage to the target ship's hull.\n\nThis card may only be purchased for a Species 8472 ship.",
 			"unique": true,
 			"factions": ["species-8472"]
 		}
