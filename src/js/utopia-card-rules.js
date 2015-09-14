@@ -4092,6 +4092,14 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 		},
 		
+		// Toh'Kaht
+		
+		// Arsenal
+		"tech:reactor_core_blind_tohkaht": {
+			canEquip: onePerShip("Reactor Core")
+		},
+		
+		
 		
 	};
 	
