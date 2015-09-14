@@ -51,7 +51,7 @@ module.controller( "UtopiaCtrl", [ "$scope", "$filter", "cardLoader", "$factions
 	} );
 	
 	$scope.keypress = function(ev) {
-		if( ev.which == 26 ) {
+		if( ev.which == 26 || (ev.which == 122 && ev.ctrlKey) ) {
 			$scope.zoom = !$scope.zoom;
 			$scope.$broadcast("zoom",$scope.zoom);
 		}
