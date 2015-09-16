@@ -61,6 +61,10 @@ module.controller( "UtopiaSetCtrl", [ "$scope", "$filter", "cardLoader", "$facti
 			return -1;
 		if( b.type == "captain" )
 			return 1;
+		if( a.type == "admiral" )
+			return -1;
+		if( b.type == "admiral" )
+			return 1;
 		if( a.type == "talent" )
 			return -1;
 		if( b.type == "talent" )

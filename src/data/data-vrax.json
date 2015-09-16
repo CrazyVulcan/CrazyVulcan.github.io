@@ -48,6 +48,18 @@
 			"text": "ACTION: When attacking this round, during the Roll Attack Dice step, if you are within range 1 of a friendly ship, set 1 of your attack dice on the result of your choice. This die cannot be rolled or re-rolled.",
 			"unique": true,
 			"factions": ["romulan"]
+		},
+		{
+			"type": "captain",
+			"id": "velal_cap_72010",
+			"set": ["72010"],
+			"name": "Velal",
+			"cost": 3,
+			"skill": 5,
+			"talents": 1,
+			"text": "ACTION: Each time you defend this round, during the Roll Defense Dice step, you may choose to roll 2 less defense dice. If you do so, add 1 [evade] result to your roll.",
+			"unique": true,
+			"factions": ["romulan"]
 		}
 	],
 
