@@ -4121,6 +4121,25 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 		},
 		
+		// BURUK
+		
+		// Reactor Core
+		"tech:targeting_systems_blind_buruk": {
+			canEquip: onePerShip("Targeting Systems")
+		},
+		
+		// Kurak
+		"crew:kurak_blind_buruk": {
+			intercept: {
+				self: {
+					cost: function(card,ship,fleet,cost) {
+						if( ship && !hasFaction(ship,"klingon",ship,fleet) )
+							return resolve(card,ship,fleet,cost) + 5;
+						return cost;
+					}
+				}
+			},
+		},
 		
 		
 		
