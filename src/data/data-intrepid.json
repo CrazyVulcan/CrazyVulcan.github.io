@@ -28,6 +28,11 @@
 			"unique": true,
 			"factions": ["federation"],
 			"squadron": false
+		},
+		{
+			"type": "copy",
+			"of": "1010",
+			"set": ["72002p"]
 		}
 
 	],

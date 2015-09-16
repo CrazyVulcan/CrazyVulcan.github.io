@@ -29,6 +29,11 @@
 			"factions": ["ferengi"],
 			"intercept": { "ship":{}, "fleet":{} },
 			"squadron": false
+		},
+		{
+			"type": "copy",
+			"of": "1024",
+			"set": ["71806"]
 		}
 	],
 	

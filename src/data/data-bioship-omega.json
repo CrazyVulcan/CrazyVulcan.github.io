@@ -28,6 +28,11 @@
 			"unique": true,
 			"factions": ["species-8472"],
 			"squadron": false
+		},
+		{
+			"type": "copy",
+			"of": "species_8472_bioship_71281",
+			"set": ["blind_bioship"]
 		}
 	],
 	

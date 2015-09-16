@@ -28,6 +28,11 @@
 			"unique": true,
 			"factions": ["romulan"],
 			"squadron": false
+		},
+		{
+			"type": "copy",
+			"of": "1004",
+			"set": ["blind_belak"]
 		}
 
 	],

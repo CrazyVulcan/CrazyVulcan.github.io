@@ -28,6 +28,11 @@
 			"unique": true,
 			"factions": ["romulan"],
 			"squadron": false
+		},
+		{
+			"type": "copy",
+			"of": "1012",
+			"set": ["72010"]
 		}
 	],
 	

@@ -36,7 +36,7 @@
 					<div class="card-container">
 						<card card="card"></card>
 					</div>
-					<div class="card-container" ng-if="card.type == 'ship'">
+					<div class="card-container" ng-if="card.type == 'ship' && card.unique">
 						<card card="card.classData" ship="card"></card>
 					</div>
 				</ngRepeat>

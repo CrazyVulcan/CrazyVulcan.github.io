@@ -341,39 +341,80 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 			
 		}
 		
+		function loadCopies( copies ) {
+			
+			$.each( copies || [], function(i,copy) {
+				$.each( cards, function(i,card) {
+					if( card.id == copy.of ) {
+						card.set = card.set.concat(copy.set);
+						return false;
+					}
+				} );
+			} );
+			
+		}
+		
 		$http.get( "data/data.json" ).success( function(data) {
 			
+			var copies = [];
+			
 			$.each( data.sets || [], function(i,set) {
-				loadSet(set);
+				if( set.type == "copy" )
+					copies.push(set);
+				else
+					loadSet(set);
 			});
 			
 			$.each( data.ships || [], function(i,ship) {
-				loadShip(ship);
+				if( ship.type == "copy" )
+					copies.push(ship);
+				else
+					loadShip(ship);
 			});
 			
 			$.each( data.shipClasses || [], function(i,shipClass) {
-				loadShipClass(shipClass);
+				if( shipClass.type == "copy" )
+					copies.push(shipClass);
+				else
+					loadShipClass(shipClass);
 			});
 			
 			$.each( data.captains || [], function(i,captain) {
-				loadCaptain(captain);
+				if( captain.type == "copy" )
+					copies.push(captain);
+				else
+					loadCaptain(captain);
 			});
 			
 			$.each( data.admirals || [], function(i,admiral) {
-				loadAdmiral(admiral);
+				if( admiral.type == "copy" )
+					copies.push(admiral);
+				else
+					loadAdmiral(admiral);
 			});
 			
 			$.each( data.upgrades || [], function(i,upgrade) {
-				loadUpgrade(upgrade);
+				if( upgrade.type == "copy" )
+					copies.push(upgrade);
+				else
+					loadUpgrade(upgrade);
 			});
 			
 			$.each( data.resources || [], function(i,resource) {
-				loadResource(resource);
+				if( resource.type == "copy" )
+					copies.push(resource);
+				else
+					loadResource(resource);
 			});
 			
 			$.each( data.others || [], function(i,card) {
-				loadOther(card);
+				if( card.type == "copy" )
+					copies.push(card);
+				else
+					loadOther(card);
 			});
+			
+			loadCopies(copies);
 			
 			// Assign classes to ships
 			$.each( cards, function(i,card) {

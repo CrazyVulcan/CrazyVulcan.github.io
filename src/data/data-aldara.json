@@ -28,6 +28,11 @@
 			"unique": true,
 			"factions": ["dominion"],
 			"squadron": false
+		},
+		{
+			"type": "copy",
+			"of": "1020",
+			"set": ["blind_aldara"]
 		}
 
 	],

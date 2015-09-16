@@ -29,6 +29,11 @@
 			"factions": ["klingon"],
 			"intercept": { "ship":{}, "fleet":{} },
 			"squadron": false
+		},
+		{
+			"type": "copy",
+			"of": "1033",
+			"set": ["72009"]
 		}
 
 	],

@@ -17,7 +17,6 @@ module.controller( "UtopiaSetCtrl", [ "$scope", "$filter", "cardLoader", "$facti
 		
 		$.each( Object.keys( $scope.sets ), function(i, id) {
 			var set = $scope.sets[id];
-			console.log( set.id );
 			if( set.id == setId || set.name == setId )
 				$scope.viewer.set = set;
 			$scope.setList.push(set);
@@ -34,8 +33,51 @@ module.controller( "UtopiaSetCtrl", [ "$scope", "$filter", "cardLoader", "$facti
 				if( $.inArray( set.id, card.set ) >= 0 )
 					$scope.setCards.push( card );
 			});
+			$scope.setCards.sort(displaySort);
 		}
 		
 	} );
+	
+	function typeSort(a,b) {
+		if( a.cost > b.cost )
+			return -1;
+		if( b.cost > a.cost )
+			return 1;
+		return 0;
+	}
+	
+	function displaySort(a,b) {
+		if( a.type == "ship" && a.unique )
+			return -1;
+		if( b.type == "ship" && b.unique )
+			return 1;
+		if( a.type == b.type )
+			return typeSort(a,b);
+		if( a.type == "ship" )
+			return -1;
+		if( b.type == "ship" )
+			return 1;
+		if( a.type == "captain" )
+			return -1;
+		if( b.type == "captain" )
+			return 1;
+		if( a.type == "talent" )
+			return -1;
+		if( b.type == "talent" )
+			return 1;
+		if( a.type == "crew" )
+			return -1;
+		if( b.type == "crew" )
+			return 1;
+		if( a.type == "weapon" )
+			return -1;
+		if( b.type == "weapon" )
+			return 1;
+		if( a.type == "tech" )
+			return -1;
+		if( b.type == "tech" )
+			return 1;
+		return 0;
+	}
 	
 }] );

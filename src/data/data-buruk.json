@@ -28,6 +28,11 @@
 			"unique": true,
 			"factions": ["klingon"],
 			"squadron": false
+		},
+		{
+			"type": "copy",
+			"of": "1039",
+			"set": ["blind_buruk"]
 		}
 
 	],
