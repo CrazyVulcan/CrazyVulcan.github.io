@@ -1,13 +1,5 @@
 var module = angular.module("utopia", ["ngSanitize", "utopia-search", "utopia-card", "utopia-fleet-builder", "utopia-fleet-export", "utopia-card-loader", "utopia-card-rules"]);
 
-module.filter( "removeDashes", [ "$filter", function($filter) {
-
-	return function( str ) {
-		return str ? str.replace(/\-/g," ") : str;
-	}
-
-}]);
-
 module.factory( "isMobile", function() {
 	// From detectmobilebrowsers.com
 	var userAgent = navigator.userAgent||navigator.vendor||window.opera;

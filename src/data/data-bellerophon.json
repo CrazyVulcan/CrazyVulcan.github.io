@@ -96,7 +96,7 @@
 			"set": ["72001p"],
 			"name": "Luther Sloan",
 			"cost": 3,
-			"text": "You do not pay a faction penalty when assinging this card to a Federation ship.\n\nDuring the Planning Phase, after all ships have been assigned a Maneuver Dial, you may discard this card to look at up to 3 ships' Maneuver Dials. You may then change your chosen Maneuver.",
+			"text": "You do not pay a faction penalty when assigning this card to a Federation ship.\n\nDuring the Planning Phase, after all ships have been assigned a Maneuver Dial, you may discard this card to look at up to 3 ships' Maneuver Dials. You may then change your chosen Maneuver.",
 			"unique": true,
 			"factions": ["independent"]
 		},

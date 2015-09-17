@@ -8,15 +8,15 @@ module.exports = function(grunt) {
 				options: { reload: true },
 			},
 			js: {
-				files: "src/js/*.js",
+				files: ["src/js/*.js", "src/js/common/*.js"],
 				tasks: ["build-js"],
 			},
 			templates: {
-				files: "src/templates/*.html",
+				files: ["src/templates/*.html", "src/templates/common/*.html"],
 				tasks: ["build-js"],
 			},
 			css: {
-				files: "src/css/**.css",
+				files: ["src/css/**.css", "src/css/common/*.css"],
 				tasks: ["build-css"],
 			},
 			index: {
@@ -37,15 +37,23 @@ module.exports = function(grunt) {
 		ngtemplates: {
 			utopia: {
 				cwd: "src/templates",
-				src: "*.html",
+				src: ["*.html", "common/*.html"],
 				dest: "build/utopia-templates.js",
+				options: {
+					url: function(url) {
+						var i = url.lastIndexOf("/");
+						if( i >= 0 && i < url.length )
+							url = url.substring(i+1);
+						return url;
+					}
+				}
 			}
 		},
 		
 		uglify: {
 			js: {
 				files: {
-					"build/js/utopia.min.js": [ "src/js/*.js", "<%= ngtemplates.utopia.dest %>" ]
+					"build/js/utopia.min.js": [ "src/js/*.js", "src/js/common/*.js", "<%= ngtemplates.utopia.dest %>" ]
 				},
 				options: {
 					sourceMap: true,
@@ -56,7 +64,7 @@ module.exports = function(grunt) {
 		cssmin: {
 			css: {
 				files: {
-					"build/css/utopia.min.css": ["src/css/*.css", "!src/css/utopia-print.css"],
+					"build/css/utopia.min.css": ["src/css/*.css", "src/css/common/*.css", "!src/css/utopia-print.css"],
 				}
 			}
 		},

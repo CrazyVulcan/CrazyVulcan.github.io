@@ -1,5 +1,13 @@
 var module = angular.module("utopia-valueof", []);
 
+module.filter( "removeDashes", [ "$filter", function($filter) {
+
+	return function( str ) {
+		return str ? str.replace(/\-/g," ") : str;
+	}
+
+}]);
+
 module.factory( "globalInterceptors", function() {
 	return {
 		// Prevent all cards from ever having a negative cost
