@@ -4141,6 +4141,45 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 		},
 		
+		// INTERCEPTOR 8
+		
+		"talent:pursuit_blind_interceptor8": {
+			canEquip: function(card,ship,fleet) {
+				return valueOf(ship,"hull",ship,fleet) <= 3;
+			},
+		},
+
+		"crew:ro_laren_blind_interceptor8": {
+			canEquip: function(card,ship,fleet) {
+				return hasFaction(ship,"federation",ship,fleet) || hasFaction(ship,"bajoran",ship,fleet);
+			},
+		},
+		
+		"weapon:phaser_strike_blind_interceptor8": {
+			canEquip: function(card,ship,fleet) {
+				return valueOf(ship,"hull",ship,fleet) <= 3;
+			},
+			intercept: {
+				self: {
+					cost: function(card,ship,fleet,cost) {
+						if( ship && ship.class != "Bajoran Interceptor" )
+							return resolve(card,ship,fleet,cost) + 5;
+						return cost;
+					}
+				}
+			},
+		},
+		
+		"tech:navigational_sensors_blind_interceptor8": {
+			canEquip: function(card,ship,fleet) {
+				if( ship.class != "Bajoran Interceptor" )
+					return false;
+				return onePerShip("Navigational Sensors")(card,ship,fleet);
+			},
+		},
+		
+		
+		
 		
 		
 	};
