@@ -87,7 +87,7 @@
 	position: relative;
 	left: -0.5em;
 	top: -0.1em;
-	z-index: 1000;
+	z-index: 1;
 	padding: 0.5em;
 }
 
@@ -136,7 +136,7 @@
 	position: relative;
 	left: 0.1em;
 	top: -0.1em;
-	z-index: 1000;
+	z-index: 1;
 	text-align: center;
 }
 
@@ -217,7 +217,7 @@
 
 .card-text-inner {
 	font-size: 0.8em;
-	line-height: 1.2em;
+	line-height: 1.2em !important;
 }
 
 .card-text-inner i.fs {
@@ -225,7 +225,7 @@
 }
 
 .card-text-inner-long {
-	line-height: 1em;
+	line-height: 1em !important;
 }
 
 .card-text-inner-long i.fs {
@@ -727,13 +727,15 @@
 .card-maneuver-box i.fs {
 	position: relative;
 	top: -0.3em;
+	font-size: 0.5em;
 }
 
-.card-maneuver-box i.fs-forward,i.fs-reverse {
+.card-maneuver-box i.fs-forward,.card-maneuver-box i.fs-reverse {
 	font-size: 0.7em;
 }
 
-.card-maneuver-box i.fs-spin-left,i.fs-spin-right {
+.card-maneuver-box i.fs-spin-left,.card-maneuver-box i.fs-spin-right {
+	top: 0;
 	font-size: 0.7em;
 }
 

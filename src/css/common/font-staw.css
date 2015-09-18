@@ -1,5 +1,27 @@
 @font-face {
-  font-family: 'FontSTAW';
+  font-family: 'STAWSwiss';
+  src: url('../fonts/Swiss1.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'STAWAlternate';
+  src: url('../fonts/Alternate1.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-staw {
+	font-family: STAWSwiss;
+}
+
+.font-staw-alt {
+	font-family: STAWAlternate;
+}
+
+@font-face {
+  font-family: 'FontSTAWIcons';
   src: url('../fonts/AttackWingSymbols.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
@@ -7,7 +29,8 @@
 
 .fs {
   display: inline-block;
-  font: normal normal normal 14px/1 FontSTAW;
+  font-family: FontSTAWIcons !important;
+  font-style: normal;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
