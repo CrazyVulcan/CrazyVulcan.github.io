@@ -103,6 +103,10 @@
   content: "N";
 }
 
+.fs-straight:before {
+  content: "N";
+}
+
 .fs-reverse:before {
   content: "O";
 }
@@ -113,6 +117,58 @@
 
 .fs-full-about:before {
   content: "Q";
+}
+
+.fs-left-flank:before {
+  content: "N";
+}
+
+.fs-left-flank {
+	transform: rotate(-135deg);
+}
+
+.fs-right-flank:before {
+  content: "N";
+}
+
+.fs-right-flank {
+	transform: rotate(135deg);
+}
+
+.fs-45-rotate-left:before {
+	content: "P";
+}
+
+.fs-45-rotate-left {
+	transform: rotate(135deg);
+}
+
+.fs-45-rotate-right:before {
+	content: "P";
+}
+
+.fs-45-rotate-right {
+	transform: rotate(-135deg);
+}
+
+.fs-90-rotate-left:before {
+	content: "P";
+}
+
+.fs-90-rotate-left {
+	transform: rotate(90deg);
+}
+
+.fs-90-rotate-right:before {
+	content: "P";
+}
+
+.fs-90-rotate-right {
+	transform: rotate(-90deg);
+}
+
+.fs-stop:before {
+	content: "B";
 }
 
 .fs-regenerate:before {

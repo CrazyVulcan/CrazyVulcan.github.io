@@ -21,7 +21,7 @@ module.directive( "cardShipClass", function() {
 			var m = $scope.shipClass.maneuvers;
 			
 			for( var speed = m.max; speed >= m.min; speed-- ) {
-				if( speed != 0 )
+				if( speed != 0 || m["0"] )
 					$scope.speeds.push(speed);
 			}
 			
