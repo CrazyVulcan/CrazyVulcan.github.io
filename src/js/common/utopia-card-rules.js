@@ -4178,7 +4178,21 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 		},
 		
+		// NISTRIM-CULLUH
 		
+		// Ambition
+		"talent:ambition_blind_nistrim_culluh": {
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return hasFaction(ship,"kazon", ship, fleet) && hasFaction(ship.captain,"kazon", ship, fleet);
+			}
+		},
+		
+		// Stolen Technology
+		"tech:stolen_technology_blind_nistrim_culluh": {
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return hasFaction(ship,"kazon", ship, fleet);
+			}
+		},
 		
 		
 		
