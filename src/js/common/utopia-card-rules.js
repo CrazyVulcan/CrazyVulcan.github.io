@@ -4198,7 +4198,34 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 		},
 		
+		// SELEYA
 		
+		// V'Tosh Ka'Tur
+		"talent:v_tosh_ka_tur_blind_seleya": {
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return hasFaction(ship,"vulcan", ship, fleet) && hasFaction(ship.captain,"vulcan", ship, fleet);
+			}
+		},
+		
+		"crew:solin_blind_seleya": {
+			intercept: {
+				self: {
+					cost: function(card,ship,fleet,cost) {
+						if( ship && !hasFaction(ship,"vulcan", ship, fleet) )
+							return resolve(card,ship,fleet,cost) + 4;
+						return cost;
+					}
+				}
+			},
+		},
+		
+		"tech:power_distribution_net_blind_seleya": {
+			canEquip: function(card,ship,fleet) {
+				if( !hasFaction(ship,"vulcan",ship,fleet) )
+					return false;
+				return onePerShip("Power Distribution Net")(card,ship,fleet);
+			},
+		},
 		
 	};
 	
