@@ -4180,6 +4180,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 		// NISTRIM-CULLUH
 		
+		"ship:nistrim_culluh_blind_nistrim_culluh": {
+			upgradeSlots: [ createFirstMajeSlot() ]
+		},
+		
 		// Ambition
 		"talent:ambition_blind_nistrim_culluh": {
 			canEquipFaction: function(upgrade,ship,fleet) {

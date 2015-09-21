@@ -30,3 +30,8 @@
 .set-selected {
 	background: #ccc;
 }
+
+a {
+	color: #8888ff;
+	text-decoration: none;
+}
