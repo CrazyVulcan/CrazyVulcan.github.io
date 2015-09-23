@@ -9,7 +9,7 @@
 	<div class="card-title-container text-left">
 		<span ng-if="upgrade.showType" class="card-captain pull-right">{{upgrade.type|uppercase|removeDashes}}</span>
 		<span ng-if="upgrade|valueOf:'attack':ship:fleet" class="card-weapon-attack pull-right" tooltip-show="ship" tooltip="upgrade|valueOf:'attack':ship:fleet:false:{modifiers:true}">{{upgrade|valueOf:'attack':ship:fleet}}</span>
-		<span class="card-title" 
+		<span class="card-title"
 			ng-class="{ 'card-title-long': upgrade.name.length >= 24 || (upgrade.showType && upgrade.name.length + upgrade.type.length >= 24) || (upgrade.attack && upgrade.name.length >= 20),
 						'card-title-super-long': upgrade.name.length >= 31 || upgrade.showType && upgrade.name.length + upgrade.type.length >= 31,
 			}">{{upgrade.name | uppercase}}</span>
@@ -19,7 +19,7 @@
 
 	<div class="card-text">
 		<div ng-if="upgrade.range" class="card-weapon-range pull-right">{{upgrade.range}}</div>
-		<div class="card-text-inner font-staw-alt" ng-bind-html="upgrade.text | icons" ng-class="{'card-text-inner-long': upgrade.text.length > 300, 'card-text-inner-super-long': upgrade.text.length > 530 }"></div>
+		<div class="card-text-inner font-staw-alt" ng-bind-html="upgrade.text | icons" ng-class="{'card-text-inner-long': upgrade.text.length > 300, 'card-text-inner-super-long': upgrade.text.length > 530, 'text-left': upgrade.range }"></div>
 	</div>
 
 	<div class="card-upgrade-cost pull-right"><div ng-repeat="faction in upgrade|valueOf:'factions':ship:fleet" class="card-upgrade-faction card-faction-{{ (upgrade|valueOf:'factions':ship:fleet).length - $index}}"><div class="card-upgrade-faction-black"></div><div class="card-upgrade-faction-icon card-faction-{{faction}}"></div></div><div class="card-upgrade-cost-value" ng-class="{'card-upgrade-cost-free': '{{upgrade|valueOf:'free':ship:fleet}}' }" tooltip-show="ship" tooltip="upgrade|valueOf:'cost':ship:fleet:false:{modifiers:true}">{{upgrade|valueOf:'cost':ship:fleet}}</div></div>

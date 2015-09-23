@@ -4227,6 +4227,14 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 		},
 		
+		// NUNK
+		
+		"talent:kidnap_blind_nunks_marauder": {
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return hasFaction(ship,"ferengi", ship, fleet) && hasFaction(ship.captain,"ferengi", ship, fleet);
+			}
+		},
+		
 	};
 	
 }]);
