@@ -23,7 +23,7 @@
 			"agility": 1,
 			"hull": 4,
 			"shields": 3,
-			"cost": 28,
+			"cost": 22,
 			"text": "During the Activation Phase, you may perform a [scan] Action as a free Action. If you do so, place an Auxiliary Power Token beside your ship.",
 			"unique": true,
 			"factions": ["ferengi"],
