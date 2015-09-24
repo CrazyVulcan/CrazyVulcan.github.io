@@ -18,7 +18,7 @@
 	<div class="card-border-left pull-left"></div>
 
 	<div class="card-text">
-		<div ng-if="upgrade.range" class="card-weapon-range pull-right">{{upgrade.range}}</div>
+		<div ng-if="upgrade.range" class="card-weapon-range pull-right">{{upgrade|valueOf:'range':ship:fleet}}</div>
 		<div class="card-text-inner font-staw-alt" ng-bind-html="upgrade.text | icons" ng-class="{'card-text-inner-long': upgrade.text.length > 300, 'card-text-inner-super-long': upgrade.text.length > 530, 'text-left': upgrade.range }"></div>
 	</div>
 

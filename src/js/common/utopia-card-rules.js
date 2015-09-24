@@ -4235,6 +4235,93 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 		},
 		
+		// DELTA FLYER
+		
+		// Tuvok
+		"captain:tuvok_72014": {
+			upgradeSlots: [
+				{
+					type: ["tech"],
+					rules: "Costs -1 SP",
+					intercept: {
+						ship: {
+							cost: function(card,ship,fleet,cost) {
+								return resolve(card,ship,fleet,cost) - 1;
+							}
+						}
+					}
+				}
+			]
+		},
+		
+		// Unimatrix Shielding
+		"tech:unimatrix_shielding_72014": {
+			canEquip: onePerShip("Unimatrix Shielding"),
+			intercept: {
+				self: {
+					cost: function(card,ship,fleet,cost) {
+						if( ship && !hasFaction(ship,"federation", ship, fleet) )
+							return resolve(card,ship,fleet,cost) + 5;
+						return cost;
+					}
+				},
+				ship: {
+					shields: function(card,ship,fleet,shields) {
+						if( card == ship )
+							return resolve(card,ship,fleet,shields) + 2;
+						return shields;
+					}
+				}
+			},
+		},
+		
+		// Immersion Shielding
+		"tech:immersion_shielding_72014": {
+			canEquip: onePerShip("Immersion Shielding"),
+			intercept: {
+				self: {
+					cost: function(card,ship,fleet,cost) {
+						if( ship && !hasFaction(ship,"federation", ship, fleet) )
+							return resolve(card,ship,fleet,cost) + 3;
+						return cost;
+					}
+				},
+				ship: {
+					shields: function(card,ship,fleet,shields) {
+						if( card == ship )
+							return resolve(card,ship,fleet,shields) + 1;
+						return shields;
+					}
+				}
+			},
+		},
+		
+		// Parametallic Hull Plating
+		"tech:parametallic_hull_plating_72014": {
+			canEquip: onePerShip("Parametallic Hull Plating"),
+			intercept: {
+				self: {
+					cost: function(card,ship,fleet,cost) {
+						if( ship && !hasFaction(ship,"federation", ship, fleet) )
+							return resolve(card,ship,fleet,cost) + 3;
+						return cost;
+					}
+				}
+			},
+		},
+		
+		"weapon:photon_torpedoes_72014": {
+			intercept: {
+				self: {
+					range: function(card,ship,fleet,range) {
+						if( ship && ship.class.indexOf("Shuttlecraft") >= 0 )
+							return "1 - 2";
+						return range;
+					}
+				}
+			},
+		}
+		
 	};
 	
 }]);
