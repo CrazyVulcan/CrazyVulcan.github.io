@@ -4320,7 +4320,53 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					}
 				}
 			},
-		}
+		},
+		
+		// ROTARRAN
+		
+		"captain:martok_72015": {
+			intercept: {
+				ship: {
+					cost: function(card,ship,fleet,cost) {
+						if( isUpgrade(card) && hasFaction(card,"klingon",ship,fleet) )
+							return resolve(card,ship,fleet,cost) - 1;
+						return cost;
+					}
+				}
+			},
+		},
+		
+		"talent:the_day_is_ours_72015": {
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return hasFaction(ship,"klingon", ship, fleet) && hasFaction(ship.captain,"klingon", ship, fleet);
+			}
+		},
+		
+		"crew:jadzia_dax_72015": {
+			intercept: {
+				self: {
+					factionPenalty: function(card,ship,fleet,factionPenalty) {
+						if( hasFaction(ship,"klingon",ship,fleet) )
+							return 0;
+						return factionPenalty;
+					}
+				}
+			}
+		},
+		
+		"crew:worf_72015": {
+			intercept: {
+				ship: {
+					skill: function(card,ship,fleet,skill) {
+						if( card == ship.captain )
+							return resolve(card,ship,fleet,skill) + ( hasFaction(card,"klingon",ship,fleet) ? 3 : 1 );
+						return skill;
+					}
+				}
+			}
+		},
+		
+		
 		
 	};
 	
