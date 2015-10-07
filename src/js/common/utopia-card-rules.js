@@ -4366,6 +4366,73 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 		},
 		
+		// TALVATH
+		
+		"captain:telek_r_mor_72016": {
+			upgradeSlots: [
+				{
+					type: ["talent"],
+					rules: "Secret Research Only",
+					canEquip: function(card,ship,fleet) {
+						return card.name == "Secret Research";
+					}
+				}
+			]
+		},
+		
+		"talent:secret_research_72016": {
+			intercept: {
+				ship: {
+					cost: function(card,ship,fleet,cost) {
+						if( ship && ship.class != "Romulan Science Vessel" )
+							return resolve(card,ship,fleet,cost) + 5;
+						return cost;
+					}
+				}
+			},
+		},
+		
+		"tech:temporal_displacement_72016": {
+			canEquip: function(card,ship,fleet) {
+				return ship && ship.class == "Romulan Science Vessel";
+			}
+		},
+		
+		"tech:advanced_scanning_72016": {
+			intercept: {
+				ship: {
+					cost: function(card,ship,fleet,cost) {
+						if( ship && ship.class != "Romulan Science Vessel" )
+							return resolve(card,ship,fleet,cost) + 5;
+						return cost;
+					}
+				}
+			},
+		},
+		
+		"tech:signal_amplifier_72016": {
+			intercept: {
+				ship: {
+					cost: function(card,ship,fleet,cost) {
+						if( ship && ship.class != "Romulan Science Vessel" )
+							return resolve(card,ship,fleet,cost) + 5;
+						return cost;
+					}
+				}
+			},
+			canEquip: onePerShip("Signal Amplifier")
+		},
+		
+		"tech:warp_core_ejection_system_72016": {
+			canEquip: onePerShip("Warp Core Ejection System")
+		},
+		
+		"tech:test_cylinder_72016": {
+			canEquip: function(card,ship,fleet) {
+				return ship && ship.class == "Romulan Science Vessel";
+			}
+		},
+		
 		
 		
 	};
