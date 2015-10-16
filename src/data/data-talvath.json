@@ -28,6 +28,11 @@
 			"unique": true,
 			"factions": ["romulan"],
 			"squadron": false
+		},
+		{
+			"type": "copy",
+			"of": "1014",
+			"set": ["72016"]
 		}
 
 	],
@@ -68,7 +73,7 @@
 			"cost": 4,
 			"skill": 2,
 			"talents": 1,
-			"text": "FLEET ACTION: Target a ship within Range 1 and remove 1 Token ([evade], [scan], [battlestations], or [target-lock]) from beside that ship. If you remove a [target-lock] Token with this ability, also remove the corresponding [target-lock] Token.\n\n(Skill modifier value is a guess until retail release)",
+			"text": "FLEET ACTION: Target a ship within Range 1 and remove 1 Token ([evade], [scan], [battlestations], or [target-lock]) from beside that ship. If you remove a [target-lock] Token with this ability, also remove the corresponding [target-lock] Token.",
 			"unique": true,
 			"factions": ["romulan"]
 		}

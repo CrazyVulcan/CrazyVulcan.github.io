@@ -28,6 +28,11 @@
 			"unique": true,
 			"factions": ["klingon"],
 			"squadron": false
+		},
+		{
+			"type": "copy",
+			"of": "1029",
+			"set": ["72015"]
 		}
 
 	],

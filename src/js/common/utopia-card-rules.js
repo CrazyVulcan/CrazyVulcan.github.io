@@ -4433,6 +4433,20 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 		},
 		
+		// AZATI PRIME
+		
+		// Ibix Dynasty
+		"talent:ibix_dynasty_72004p": {
+			upgradeSlots: cloneSlot( 2, { type: ["weapon"] } )
+		},
+		
+		// Proto
+		"weapon:prototype_weapon_72004p": {
+			canEquipFaction: function(card,ship,fleet) {
+				return hasFaction(ship,"xindi",ship,fleet);
+			}
+		},
+
 		
 		
 	};
