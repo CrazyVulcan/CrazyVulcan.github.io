@@ -13,7 +13,9 @@ module.controller( "UtopiaCtrl", [ "$scope", "$filter", "cardLoader", "$factions
 	$scope.defaults = {};
 	try {
 		$scope.defaults = localStorage.defaults ? angular.fromJson( localStorage.defaults ) : false;
-	} catch(e) {}
+	} catch(e) {
+		$scope.defaults = {};
+	}
 	
 	$scope.drag = {};
 	$scope.cards = [];

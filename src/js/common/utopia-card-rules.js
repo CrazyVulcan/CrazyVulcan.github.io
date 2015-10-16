@@ -551,22 +551,33 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		// Lore
 		"captain:lore_71522": {
 			upgradeSlots: [
-				// Extend existing talent slot
-				{
-					rules: "No Faction Restriction or Penalty",
-					intercept: {
-						ship: {
-							// Remove faction restrictions
-							canEquipFaction: function() { return true; },
-							factionPenalty: function() { return 0; }
-						}
-					}
-				},
+				// Existing talent slot
+				{},
 				// Add one crew slot
 				{
 					type: ["crew"]
 				}
-			]
+			],
+			intercept: {
+				ship: {
+					canEquipFaction: {
+						priority: 100,
+						fn: function(card,ship,fleet,canEquipFaction) {
+							if( card.type == "talent" )
+								return true;
+							return canEquipFaction;
+						}
+					},
+					factionPenalty: {
+						priority: 100,
+						fn: function(card,ship,fleet,factionPenalty) {
+							if( card.type == "talent" )
+								return 0;
+							return factionPenalty;
+						}
+					}
+				}
+			}
 		},
 		
 		// Vanik
@@ -2182,14 +2193,6 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 		},
 		
-		// First Maje
-		// TODO Add a free slot for this on all Kazon ships? :(
-		"talent:first_maje_71793": {
-			canEquipFaction: function(upgrade,ship,fleet) {
-				return $factions.hasFaction(ship,"kazon", ship, fleet) && ship.captain && $factions.hasFaction(ship.captain,"kazon", ship, fleet);
-			}
-		},
-		
 		// Romulan Helmsman
 		"crew:romulan_helmsman_71794": {
 			// Only one per ship
@@ -3794,7 +3797,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		// KAZON SHIPS (First Maje slot)
 		
 		"talent:first_maje_71793": {
-			canEquip: function(card,ship,fleet) {
+			canEquipFaction: function(card,ship,fleet) {
 				return hasFaction(ship,"kazon",ship,fleet) && hasFaction(ship.captain,"kazon",ship,fleet);
 			},
 			upgradeSlots: [{ type: ["tech"] }],
