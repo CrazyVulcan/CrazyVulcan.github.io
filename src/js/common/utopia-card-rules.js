@@ -1093,7 +1093,62 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship.captain && $factions.hasFaction(ship.captain,"bajoran", ship, fleet);
 			}
 		},
+		// legendary hero
+		"talent:legendary_hero_denorious": {
+			canEquipFaction: function(upgrade,ship,fleet) {
+				//console.log(factions.hasFaction(ship,"bajoran", ship, fleet))
+				return (ship.captain && $factions.hasFaction(ship.captain,"bajoran", ship, fleet)) && $factions.hasFaction(ship,"bajoran", ship, fleet);
+			}
+		},	
 		
+		
+		// tachyon eddies denorious 
+		"tech:tachyon_eddies_denorious": {
+			
+			canEquip: function(upgrade,ship,fleet) {
+				//console.log(onePerShip("TACHYON EDDIES")(upgrade,ship,fleet), ship.class)
+				
+				return onePerShip("TACHYON EDDIES")(upgrade,ship,fleet);
+				
+			},
+			canEquipFaction: function(upgrade,ship,fleet) {
+				//console.log(onePerShip("TACHYON EDDIES")(upgrade,ship,fleet), ship.class)
+				//console.log(factions.hasFaction(ship,"bajoran", ship, fleet))
+				return ( ship && ship.class == "BAJORAN SOLAR SAILOR" );
+			}
+		},	
+
+		// MAINSAILS
+		"tech:mainsails_denorious": {
+			
+			canEquip: function(upgrade,ship,fleet) {
+				//console.log(onePerShip("TACHYON EDDIES")(upgrade,ship,fleet), ship.class)
+				
+				return onePerShip("MAINSAILS")(upgrade,ship,fleet);
+				
+			},
+			canEquipFaction: function(upgrade,ship,fleet) {
+				
+				return ( ship && ship.class == "BAJORAN SOLAR SAILOR" );
+			}
+		},	
+
+		// SOLAR SAIL POWERED
+		"tech:solar_sail_powered_denorious": {
+			
+			
+			canEquipFaction: function(upgrade,ship,fleet) {
+				
+				return ( ship && ship.class == "BAJORAN SOLAR SAILOR" );
+			}
+		},			
+		// D'Jarras
+		"talent:djarras_denorious": {
+			canEquipFaction: function(upgrade,ship,fleet) {
+				//console.log(factions.hasFaction(ship,"bajoran", ship, fleet))
+				return (ship.captain && $factions.hasFaction(ship.captain,"bajoran", ship, fleet)) && $factions.hasFaction(ship,"bajoran", ship, fleet);
+			}
+		},	
 		// Ablative Generator
 		"tech:ablative_generator_71280": {
 			// Equip only on Voyager
