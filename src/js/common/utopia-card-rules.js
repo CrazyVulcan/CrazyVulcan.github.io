@@ -1316,6 +1316,27 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 		},
 		
+		// geordi la forge
+		"crew:geordi_la_forge_71201": {
+
+			intercept: {
+				ship: {
+					cost: {
+						// Run this interceptor after all other penalties and discounts
+						priority: 100,
+						fn: function(upgrade,ship,fleet,cost) {
+							if( upgrade.type == "tech" ) {
+								cost = resolve(upgrade,ship,fleet,cost);
+								
+									cost -= 1;
+							}
+							return cost;
+						}
+					}
+				}
+			}
+		},
+		
 		// First Strike
 		"talent:first_strike_3rd_wing_attack_ship": {
 			canEquip: function(upgrade,ship,fleet) {
@@ -1458,7 +1479,38 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			]
 		},
-		
+		// wesley crusher
+		"crew:wesley_crusher_71201": {
+			//text: "place up to 3 federation tech Upgrades, each 4 SP or less, face down under this card",
+			upgradeSlots: cloneSlot( 2 , 
+				{ 
+					type: ["tech"], 
+					rules: "FEDERATION TECH UPGRADES, 4SP OR LESS",
+					faceDown: true,
+					intercept: {
+						ship: {
+							cost: function() { return 0; },
+							factionPenalty: function() { return 0; },
+							canEquip: function(card,ship,fleet,canEquip) {
+								console.log(!$factions.hasFaction( card, "federation", ship, fleet ), valueOf(card,"cost",ship,fleet) > 4 )
+								if( $factions.hasFaction( card, "federation", ship, fleet ) && (valueOf(card,"cost",ship,fleet) < 5) )
+									return canEquip;
+								return false;
+							}
+						}
+					}
+				}
+			),
+			//factionPenalty: 0
+		},	
+		// tim watters
+		"captain:tim_watters_valiant" : {
+					upgradeSlots : [{}, {
+							type : ["crew"]
+						}
+					],
+
+				},
 		// Vic Fontaine
 		"crew:vic_fontaine_crew_71786": {
 			factionPenalty: function(upgrade,ship,fleet) {
