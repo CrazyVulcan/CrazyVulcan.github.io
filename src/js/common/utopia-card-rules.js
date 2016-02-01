@@ -1117,7 +1117,16 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ( ship && ship.class == "BAJORAN SOLAR SAILOR" );
 			}
 		},	
-
+		// Kazon Gurad
+		"crew:kazon_gurad_Halik": {
+			
+			canEquip: function(upgrade,ship,fleet) {
+								
+				return onePerShip("Kazon Gurad")(upgrade,ship,fleet);
+				
+			}
+			
+		},	
 		// MAINSAILS
 		"tech:mainsails_denorious": {
 			
@@ -1250,7 +1259,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return $factions.hasFaction(ship,"species-8472", ship, fleet);
 			}
 		},
-		
+
+	
 		// Transphasic Torpedoes
 		"weapon:transphasic_torpedoes_71280": {
 			// Equip only on Voyager
@@ -1537,7 +1547,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		// wesley crusher
 		"crew:wesley_crusher_71201": {
 			//text: "place up to 3 federation tech Upgrades, each 4 SP or less, face down under this card",
-			upgradeSlots: cloneSlot( 2 , 
+			upgradeSlots: cloneSlot( 3 , 
 				{ 
 					type: ["tech"], 
 					rules: "FEDERATION TECH UPGRADES, 4SP OR LESS",
@@ -1549,6 +1559,31 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 							canEquip: function(card,ship,fleet,canEquip) {
 								console.log(!$factions.hasFaction( card, "federation", ship, fleet ), valueOf(card,"cost",ship,fleet) > 4 )
 								if( $factions.hasFaction( card, "federation", ship, fleet ) && (valueOf(card,"cost",ship,fleet) < 5) )
+									return canEquip;
+								return false;
+							}
+						}
+					}
+				}
+			),
+			//factionPenalty: 0
+		},	
+		
+		// AKOREM LAAN
+		"captain:akorem_laan_denorious": {
+			//text: "place up to 3 federation tech Upgrades, each 4 SP or less, face down under this card",
+			upgradeSlots: cloneSlot( 2 , 
+				{ 
+					type: ["talent"], 
+					rules: "Bajoran upgrades",
+					faceDown: true,
+					intercept: {
+						ship: {
+							
+							
+							canEquip: function(card,ship,fleet,canEquip) {
+								//console.log(!$factions.hasFaction( card, "federation", ship, fleet ), valueOf(card,"cost",ship,fleet) > 4 )
+								if( $factions.hasFaction( card, "bajoran", ship, fleet ) )
 									return canEquip;
 								return false;
 							}
@@ -2667,6 +2702,34 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 		},
 		
+		//unremarkable_species_Halik
+		"question:unremarkable_species_Halik": {
+			type: "question",
+			isSlotCompatible: function(slotTypes) {
+				//console.log($.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0);
+				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0;
+			},
+			canEquipFaction: function(upgrade,ship,fleet) {
+				console.log(ship)
+				return !$factions.hasFaction(ship, "borg", ship, fleet);
+			}			
+			canEquip: function(upgrade,ship,fleet) {
+				
+					
+				return onePerShip("Unremarkable Species")(upgrade,ship,fleet);
+
+			 },
+			 intercept: {
+				self: {
+					cost: function(upgrade,ship,fleet,cost) {
+						if( ship && !hasFaction(ship,"kazon",ship,fleet) )
+							return resolve(upgrade,ship,fleet,cost) + 5;
+						return cost;
+					}
+				}
+			},
+
+		},		
 		// Bajoran Militia
 		"crew:bajoran_militia_71803": {
 			canEquipFaction: function(upgrade,ship,fleet) {
