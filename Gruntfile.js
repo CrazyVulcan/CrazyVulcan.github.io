@@ -30,15 +30,15 @@ module.exports = function(grunt) {
 		},
 		
 		clean: {
-			build: ["build/*"],
-			templates: ["build/utopia-templates.js"],
+			build: ["staw-utopia/*"],
+			templates: ["staw-utopia/utopia-templates.js"],
 		},
 		
 		ngtemplates: {
 			utopia: {
 				cwd: "src/templates",
 				src: ["*.html", "common/*.html"],
-				dest: "build/utopia-templates.js",
+				dest: "staw-utopia/utopia-templates.js",
 				options: {
 					url: function(url) {
 						var i = url.lastIndexOf("/");
@@ -53,7 +53,7 @@ module.exports = function(grunt) {
 		uglify: {
 			js: {
 				files: {
-					"build/js/utopia.min.js": [ "src/js/*.js", "src/js/common/*.js", "<%= ngtemplates.utopia.dest %>" ]
+					"staw-utopia/js/utopia.min.js": [ "src/js/*.js", "src/js/common/*.js", "<%= ngtemplates.utopia.dest %>" ]
 				},
 				options: {
 					sourceMap: true,
@@ -64,7 +64,7 @@ module.exports = function(grunt) {
 		cssmin: {
 			css: {
 				files: {
-					"build/css/utopia.min.css": ["src/css/*.css", "src/css/common/*.css", "!src/css/utopia-print.css"],
+					"staw-utopia/css/utopia.min.css": ["src/css/*.css", "src/css/common/*.css", "!src/css/utopia-print.css"],
 				}
 			}
 		},
@@ -74,44 +74,44 @@ module.exports = function(grunt) {
 				expand: true,
 				cwd: "src",
 				src: [ "js/lib/*", "fonts/*", "img/*" ],
-				dest: "build/",
+				dest: "staw-utopia/",
 			},
 			css: {
 				expand: true,
 				cwd: "src",
 				src: [ "css/utopia-print.css" ],
-				dest: "build/",
+				dest: "staw-utopia/",
 			},
 			csslib: {
 				expand: true,
 				cwd: "src/css/lib",
 				src: [ "*.css" ],
-				dest: "build/css/",
+				dest: "staw-utopia/css/",
 			},
 			index: {
 				expand: true,
 				cwd: "src",
 				src: [ "*.html" ],
-				dest: "build/",
+				dest: "staw-utopia/",
 			},
 			powertip: {
 				expand: true,
 				cwd: "node_modules/jquery-powertip/dist",
 				src: [ "jquery.powertip.min.js" ],
-				dest: "build/js/lib/",
+				dest: "staw-utopia/js/lib/",
 			},
 			powertip_css: {
 				expand: true,
 				cwd: "node_modules/jquery-powertip/dist/css",
 				src: [ "jquery.powertip.min.css" ],
-				dest: "build/css/",
+				dest: "staw-utopia/css/",
 			}
 		},
 		
 		utopia_data: {
 			spacedock: {
 				files: {
-					"build/data/data.json": "src/data/*",
+					"staw-utopia/data/data.json": "src/data/*",
 				},
 			},
 		}
