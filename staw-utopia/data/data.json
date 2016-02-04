@@ -1,11 +1,24 @@
 {
-	"sets" : [	 {
+	"sets" : [
+		{
+			"type": "set",
+			"id": "71008",
+			"name": "Xindi Weapon Zero",
+			"releaseDate": "2016-03-01",
+			"parentSet": "Wave 22.5"
+		}, {	
+			"type": "set",
+			"id": "72221p",
+			"name": "I.R.W. T'Met",
+			"releaseDate": "2016-03-02",
+			"parentSet": "The Void OP"
+		}, {
             "type": "set",
             "id": "71203",
             "name": "Scorpion 4",
-            "releaseDate": "2015-11-01",
+            "releaseDate": "2015-10-30",
             "parentSet": "Wave 20"
-        },  {
+        }, {
             "type": "set",
             "id": "71212",
             "name": "Dreadnought",
@@ -15,7 +28,7 @@
             "type": "set",
             "id": "71192",
             "name": "Halik Raider",
-            "releaseDate": "2015-11-01",
+            "releaseDate": "2015-10-29",
             "parentSet": "Wave 20"
         }, {
             "type": "set",
@@ -23,32 +36,37 @@
             "name": "Denorious",
             "releaseDate": "2015-12-31",
             "parentSet": "Wave 21"
-        },		{
+        }, {
 			"type": "set",
 			"id": "71213",
 			"name": "Robinson",
 			"releaseDate": "2015-12-31",
 			"parentSet": "Wave 21"
-		},		{
+		}, {
 			"type": "set",
 			"id": "712201",
 			"name": "U.S.S. Valiant",
-			"releaseDate": "2016-02-01",
+			"releaseDate": "2016-02-03",
 			"parentSet": "Wave 22"
-		},		{
+		}, {
 			"type": "set",
 			"id": "71201",
 			"name": "U.S.S Hathaway",
-			"releaseDate": "2015-11-03",
+			"releaseDate": "2015-10-28",
 			"parentSet": "Wave 20"
-		},	{
+		}, {
 			"type": "set",
 			"id": "71222",
 			"name": "R.I.S. Pi",
-			"releaseDate": "2016-02-01",
+			"releaseDate": "2016-02-02",
 			"parentSet": "Wave 22"
-		},{
-	
+		}, {
+			"type": "set",
+			"id": "71223",
+			"name": "Kumari",
+			"releaseDate": "2016-02-04",
+			"parentSet": "Wave 22"
+		}, {
 			"type" : "set",
 			"id" : "GenCon2013Promo",
 			"name" : "Khan Singh GenCon 2013 Promo",
@@ -732,7 +750,15 @@
 			"name" : "Damage Control Team Resource",
 			"releaseDate" : "2015-05-15",
 			"parentSet" : "Q Continuum"
-		}, {
+		}, 
+		{
+			"type": "set",
+			"id": "72221r",
+			"name": "Tactics",
+			"releaseDate": "2016-03-03"
+			"parentSet": "The Void OP"
+		},
+		{
 			"type" : "set",
 			"id" : "72004r",
 			"name" : "Advanced Technology Resource",
@@ -939,7 +965,44 @@
 			"parentSet" : "Wave 17"
 		}
 	],
-	"ships" : [	 {
+	"ships" : [	 
+		{
+			"type": "ship",
+			"id": "weapon_0_72008",
+			"set": ["71008"],
+			"name": "Weapon Zero",
+			"class": "Xindi Weapon",
+			"actions": ["evade","target-lock","scan","battlestations"],
+			"upgrades": ["tech","weapon","weapon","weapon","crew"],
+			"attack": 6,
+			"agility": 0,
+			"hull": 8,
+			"shields": 0,
+			"cost": 30,
+			"text": "When defending, during the Roll Defence Dice step yuo may roll 1 defence die for each [hit] or [crit] result rolled by the attacking ship. If you do so, Place and Auxiliary Power Token beside your ship.",
+			"unique": true,
+			"factions": ["xindi"],
+			"squadron": false
+		},
+		{
+			"type": "ship",
+			"id": "xindi_starship_72008",
+			"set": ["71008"],
+			"name": "Xindi Starship",
+			"class": "Xindi Weapon",
+			"actions": ["evade","target-lock","scan"],
+			"upgrades": ["tech","weapon","weapon","crew"],
+			"attack": 6,
+			"agility": 0,
+			"hull": 8,
+			"shields": 0,
+			"cost": 28,
+			"text": "",
+			"unique": false,
+			"factions": ["xindi"],
+			"squadron": false
+		},
+	{
             "type": "ship",
             "id": "scorpion_4_71203",
             "set": ["71203"],
@@ -957,7 +1020,63 @@
             "unique": true,
             "factions": ["romulan"],
             "squadron": true
-        }, {
+        }, 
+		{
+			"type": "ship",
+			"id": "scorpion_4_71203",
+			"set": ["71193"],
+			"name": "ROMULAN ATTACK FIGHTERS",
+			"class": "Scorpion Class Attack Squadron",
+			"actions": ["evade","target-lock"],
+			"upgrades": ["squadron","squadron"],
+			"attack": 4,
+			"agility": 0,
+			"hull": 1,
+			"shields": 1,
+			"cost": 20,
+			"skill": 6,
+			"text": "Attack Squadron Tokens: 4",
+			"unique": true,
+			"factions": ["romulan"],
+			"squadron": true
+		},
+		{
+			"type": "ship",
+			"id": "i_r_w_tmet",
+			"set": ["72221p"],
+			"name": "I,R.W. T'MET",
+			"class": "D'DERIDEX CLASS",
+			"actions": ["evade","target-lock","cloak","sensor-echo"],
+			"upgrades": ["tech","tech","weapon","weapon","crew"],
+			"attack": 3,
+			"agility": 2,
+			"hull": 6,
+			"shields": 4,
+			"cost": 30,
+			"text": "ACTION: If your ship is not Cloaked, when attacking with your Primary Weapon at Range 1 this round, gain +1 attack die and roll -1 defence die.",
+			"unique": true,
+			"factions": ["romulan"],
+			"squadron": false
+		},
+		{
+			"type": "ship",
+			"id": "romulan_starship_tmet",
+			"set": ["72221p"],
+			"name": "ROMULAN STARSHIP",
+			"class": "D'DERIDEX CLASS",
+			"actions": ["evade","target-lock","cloak","sensor-echo"],
+			"upgrades": ["tech","weapon","weapon","crew"],
+			"attack": 3,
+			"agility": 2,
+			"hull": 6,
+			"shields": 3,
+			"cost": 28,
+			"text": "",
+			"unique": false,
+			"factions": ["romulan"],
+			"squadron": false
+		},
+		{
             "type": "ship",
             "id": "dreadnought_71212",
             "set": ["71212"],
@@ -1063,7 +1182,8 @@
             "unique": false,
             "factions": ["bajoran"],
             "squadron": false
-        } ,	  {
+        },	  
+		{
             "type": "ship",
             "id": "robinson_71213",
             "set": ["71213"],
@@ -1098,7 +1218,8 @@
             "unique": false,
             "factions": ["dominion"],
             "squadron": false
-        },{
+        },
+		{
 			"type": "ship",
 			"id": "u_s_s_valiant",
 			"set": ["712201"],
@@ -1133,7 +1254,44 @@
 			"unique": false,
 			"factions": ["federation"],
 			"squadron": false
-		},{
+		},
+		{
+			"type": "ship",
+			"id": "kumari_71223",
+			"set": ["71223"],
+			"name": "KUMARI",
+			"class": "Andorian Battle Cruiser",
+			"actions": ["evade","target-lock","scan","battlestations"],
+			"upgrades": ["tech","weapon","weapon","crew"],
+			"attack": 3,
+			"agility": 1,
+			"hull": 4,
+			"shields": 3,
+			"cost": 22,
+			"text": "You may preform an [evade] Action while there is an Auxiliary Power Token beside your ship.",
+			"unique": true,
+			"factions": ["independent"],
+			"squadron": false
+		},
+		{
+			"type": "ship",
+			"id": "andorian_starship_kumari",
+			"set": ["71223"],
+			"name": "ANDORIAN STARSHIP",
+			"class": "Andorian Battle Cruiser",
+			"actions": ["evade","target-lock","scan","battlestations"],
+			"upgrades": ["tech","weapon","crew"],
+			"attack": 3,
+			"agility": 1,
+			"hull": 4,
+			"shields": 2,
+			"cost": 20,
+			"text": "",
+			"unique": false,
+			"factions": ["independent"],
+			"squadron": false
+		},
+		{
 			"type": "ship",
 			"id": "u_s_s_hathaway_71201",
 			"set": ["71201"],
@@ -1168,7 +1326,7 @@
 			"unique": false,
 			"factions": ["federation"],
 			"squadron": false
-		},{
+		}, {
 			"type": "ship",
 			"id": "r_i_s_pi",
 			"set": ["71222"],
@@ -1190,7 +1348,7 @@
 
 			},
 			"squadron": false
-		},{
+		}, {
 			"type" : "ship",
 			"id" : "1001",
 			"set" : ["71120"],
@@ -5896,7 +6054,7 @@
 				"max" : 5
 
 			}
-		},{
+		}, {
 			"type" : "ship-class",
 			"id" : "5000",
 			"name" : "Galaxy Class",
@@ -6812,7 +6970,7 @@
 				"min" : 1,
 				"max" : 3
 			}
-		},{
+		}, {
 			"type" : "ship-class",
 			"id" : "borg_sphere",
 			"name" : "Borg Sphere",
@@ -8152,7 +8310,20 @@
 			}
 		}
 	],
-	"captains" : [ {
+	"captains" : [ 
+		{
+			"type": "captain",
+			"id": "dolim_weapon_zero",
+			"set": ["71008"],
+			"name": "DOLIM",
+			"cost": 5,
+			"skill": 8,
+			"talents": 1,
+			"text": "ACTION: if your ship is not Cloaked, disable all of your remaining Shields and target a ship at Range 1-2 that is not Cloaked and has no Active Shields. Discard 1 [crew] Upgrade on the target ship. You ship has a Captain Skill of 1 until the End Phase of this round.",
+			"unique": true,
+			"factions": ["xindi"]
+		},
+	{
             "type": "captain",
             "id": "surat_Halik",
             "set": ["71192"],
@@ -8163,7 +8334,20 @@
             "text": "Action: Place a [scan] Token beside your ship. If you do not have a [tech] Upgrade deployed to your ship, place the Auxiliary Power Token beside your ship as well",
             "unique": true,
             "factions": ["kazon"]
-        },	        {
+        },
+		{
+			"type": "captain",
+			"id": "tebok_tmet",
+			"set": ["72221p"],
+			"name": "TEBOK",
+			"cost": 2,
+			"skill": 3,
+			"talents": 0,
+			"text": "During the Gather Forces step, if there is at least one other Romulan Ship in your starting fleet, Tebok my field 1 Romulan [talent] at a cost of -1 SP.",
+			"unique": true,
+			"factions": ["romulan"]
+		},
+		{
             "type": "captain",
             "id": "akorem_laan_denorious",
             "set": ["71211"],
@@ -8174,7 +8358,7 @@
             "text": "Akorem Laan can field up to 2 Bajoran [talent] Upgrades",
             "unique": true,
             "factions": ["bajoran"]
-        },{
+        }, {
             "type": "captain",
             "id": "benjamin_sisko_71213",
             "set": ["71213"],
@@ -8188,6 +8372,18 @@
         },
 		{
 			"type": "captain",
+			"id": "thylek_shran_kumari",
+			"set": ["71223"],
+			"name": "THY'LEK SHRAN",
+			"cost": 4,
+			"skill": 6,
+			"talents": 1,
+			"text": "Whenever you preform an [evade] or [scan] Action, you may target a friendly ship within Range 1 of your ship. If you do so place a Token of the same type beside the target ship and an Auxiliary Power Token beside your ship.",
+			"unique": true,
+			"factions": ["independent"]
+		},
+		{
+			"type": "captain",
 			"id": "tim_watters_valiant",
 			"set": ["712201"],
 			"name": "Tim Watters",
@@ -8197,7 +8393,7 @@
 			"text": "Add 1 [crew] Upgrade slot to your Upgrade Bar.  ACTION: Remove all Disabled Upgrade Tokens from all of your [crew] Upgrade.",
 			"unique": true,
 			"factions": ["federation"]
-		},{
+		}, {
 			"type": "captain",
 			"id": "william_t_riker_71201",
 			"set": ["71201"],
@@ -8208,7 +8404,7 @@
 			"text": "When attacking a ship with a larger Hull value than your ship. you roll +1 attack die. When defending against a ship with a larger Hull value then your ship. you roll +1 defense die.",
 			"unique": true,
 			"factions": ["federation"]
-		},{
+		}, {
 			"type": "captain",
 			"id": "bochra_pi",
 			"set": ["71222"],
@@ -8219,7 +8415,7 @@
 			"text": "If Bochra is assigned as the captain of a Romulan Scout Vessel during the Combat Phase if there is a [scan] Token beside your ship, roll +1 attack and +1 defense die",
 			"unique": true,
 			"factions": ["romulan"]
-		},{
+		}, {
 			"type" : "captain",
 			"id" : "2001",
 			"set" : ["71120"],
@@ -10935,13 +11131,118 @@
 			"factions" : ["romulan"]
 		}
 	],
-	"upgrades" : [   {
+	"upgrades" : [  
+		{
+			"type": "talent",
+			"id": "arming_sequence_weapon_zero",
+			"set": ["71008"],
+			"name": "ARMING SEQUENCE",
+			"cost": 8,
+			"text": "ACTION: Place 1 Mission Token on this card. During the Activation Phase of each subsequent round place 1 additional Mission Token on this card. (max 3). While there are Mission Tokens on this card your ship cannot perform any Actions and my only execute maneuvers with a speed of 1. "/n/n"While attacking with a 'Destructive Blast' [weapon] Upgrade or your Primary Weapon during the Roll Attack Dice Step you may discard this card to gain a number of attack dice equal to the number of Mission Tokens on this card. This Upgrade may only be purchased for a Xindi Weapon.",
+			"unique": true,
+			"factions": ["xindi"]
+		},
+		{
+			"type": "crew",
+			"id": "degra_weapon_zero",
+			"set": ["71008"],
+			"name": "DEGRA",
+			"cost": 4,
+			"text": "All of your [weapon] Upgrades cost -1 SP. "/n/n"When attacking during the Declare Target step of if your ship does not already have another ship target locked. You may discard this card to acquire a target lock on a ship within Range 1-3 of your ship.",
+			"unique": true,
+			"factions": ["xindi"]
+		},
+		{
+			"type": "weapon",
+			"id": "destructive_blast_weapon_zero",
+			"set": ["71008"],
+			"name": "DESTRUCTIVE BLAST",
+			"cost": 6,
+			"attack": 5,
+			"range": "*",
+			"text": "ATTACK: Discard this card to perform this attack. This attack targets all ships in a straight line up to Range 3 from your ship. Perform one attack against each ship in the line. Each attack beyond the first is at a cumulative -1 attack die (ie -1 attack die against the 2nd ship, -2 attack die against the 3rd etc.) This Upgrade can only be purchased for a Xindi Weapon.",
+			"unique": true,
+			"factions": ["xindi"]
+		},
+		{
+			"type": "weapon",
+			"id": "rotating_emitters_weapon_zero",
+			"set": ["71008"],
+			"name": "ROTATING EMITTERS",
+			"cost": 4,
+			"attack": 4,
+			"range": "1",
+			"text": "ATTACK: Disable this card to perform this attack. /n/n You may fire this weapon in any direction. "/n/n"This Upgrade may only be purchased for a Xindi Weapon.",
+			"unique": false,
+			"factions": ["xindi"]
+		},
+		{
+			"type": "tech",
+			"id": "subspace_vortex_weapon_zero",
+			"set": ["71008"],
+			"name": "SUBSPACE VORTEX",
+			"cost": 6,
+			"text": "ACTION: Discard this card to remove your ship from the play area and discard all Tokens that are beside your ship except for Auxiliary Power Tokens. Immediately place your ship back anywhere in the play area but not within Range 1-3 of any enemy ship. You cannot attack during the round that you use this Action. "/n/n"This Upgrade can only be purchased for a Xindi ship.",
+			"unique": true,
+			"factions": ["xindi"]
+		},
+		{
+			"type": "tech",
+			"id": "self_destruct_weapon_zero",
+			"set": ["71008"],
+			"name": "SELF-DESTRUCT",
+			"cost": 5,
+			"text": "ACTION: Target all ships within range 1 of your ship and destroy your ship. Each target suffers 1 damage and must discard a Token ([evade], [scan], [battlestations], or [target-lock]) that is beside it. "/n/n"This Upgrade may only be purchased for a Xindi Weapon.",
+			"unique": true,
+			"factions": ["xindi"]
+		},	
+		{
+			"type": "talent",
+			"id": "intercept_tmet",
+			"set": ["72221p"],
+			"name": "INTERCEPT",
+			"cost": 5,
+			"text": "During the Activation Phase, if an opposing ship ends it move within your forward firing arc, before that ship performs its Action you may discard this card to immediately perform an attack with 3 attack dice against that ship. The Defending ship my roll defense dice against this attack, but the attack dice cannot be modified in any way.",
+			"unique": true,
+			"factions": ["romulan"]
+		},
+		{
+			"type": "crew",
+			"id": "thei_tmet",
+			"set": ["72221p"],
+			"name": "THEI",
+			"cost": 1,
+			"text": "During the Activation Phase, after you move, if you have the [cloak] Action on your Action Bar, you may discard this card to perform a [cloak] Action as a free Action.",
+			"unique": true,
+			"factions": ["romulan"]
+		},
+		{
+			"type": "weapon",
+			"id": "charging_Weapons_tmet",
+			"set": ["72221p"],
+			"name": "CHARGING WEAPONS",
+			"cost": 1,
+			"text": "When attacking with your Primary Weapon, you may disable this card to re-roll one of your blank results. "/n/n" No ship may be equipped with more than one 'Charging Weapons' Upgrade.",
+			"unique": false,
+			"factions": ["romulan"]
+		},
+		{
+			"type": "tech",
+			"id": "self_repair_technology_tmet",
+			"set": ["72221p"],
+			"name": "SELF REPAIR TECHNOLOGY",
+			"cost": 4,
+			"text": "After your ship performs a green maneuver, you may disable this card to repair 1 damage to your ship's Hull. "/n/n" This Upgrade may only be purchased for a Romulan ship and no ship may be equipped with more than 1 'Self Repair Technology' Upgrade.",
+			"unique": false,
+			"factions": ["romulan"]
+		},
+	{
             "type": "squadron",
             "id": "cloaked_fighters_71203",
             "set": ["71203"],
             "name": "Cloaked Fighters",
             "cost": 4,
-            "text": "Add the [cloak] Action to your Action Bar. /n/n While your squadrons Cloaked you cannot preform a maneuver with a speed greater than 1. /n/n This Upgrade may only be purchased for a Scorpion class attack squadron and no ship my have more then one 'Cloaked Fighters' Upgrade",
+            "text": "Add the [cloak] Action to your Action Bar. "/n/n" While your squadrons Cloaked you cannot preform a maneuver with a speed greater than 1. "/n/n" This Upgrade may only be purchased for a Scorpion class attack squadron and no ship my have more then one 'Cloaked Fighters' Upgrade",
             "unique": false,
             "factions": ["romulan"]
         },
@@ -10951,7 +11252,7 @@
             "set": ["71203"],
             "name": "Hidden Formation",
             "cost": 5,
-            "text": "Add the [echo] Action to your Action Bar. When preforming the [echo] Action you may only use a 1 Maneuver Template. /n/n If your squadron is Cloaked after preforming a [Echo] Action, you may discard this card to immediately preform an additional [echo] Action as a free Action. If you do so place an Auxiliary Power Token beside your ship.",
+            "text": "Add the [echo] Action to your Action Bar. When preforming the [echo] Action you may only use a 1 Maneuver Template."/n/n"If your squadron is Cloaked after preforming a [Echo] Action, you may discard this card to immediately preform an additional [echo] Action as a free Action. If you do so place an Auxiliary Power Token beside your ship.",
             "unique": true,
             "factions": ["romulan"]
         },      
@@ -10961,7 +11262,7 @@
             "set": ["71203"],
             "name": "Cover Fire",
             "cost": 4,
-            "text": "When defending during the Roll Defense Dice step, you may discard this card to toll equal to your current Primary Weapon value. /n/n No ship may be equipped with more than one 'Cover Fire' Upgrade.",
+            "text": "When defending during the Roll Defense Dice step, you may discard this card to toll equal to your current Primary Weapon value. "/n/n" No ship may be equipped with more than one 'Cover Fire' Upgrade.",
             "unique": false,
             "factions": ["romulan"]
         },      
@@ -10983,7 +11284,7 @@
             "cost": 4,
             "attack": 4,
             "range": "1 - 2",
-            "text": "Attack: (Target Lock) Spend your target lock and place 3 time tokens on this card to preform this attack. You may fire this weapon form your forward or rear firing arcs. /n/n No Ship may be equipped with more than one 'Torpedo Attack' Upgrade.",
+            "text": "Attack: (Target Lock) Spend your target lock and place 3 time tokens on this card to preform this attack. You may fire this weapon form your forward or rear firing arcs. "/n/n"No Ship may be equipped with more than one 'Torpedo Attack' Upgrade.",
             "unique": false,
             "factions": ["romulan"]
         },      
@@ -11013,10 +11314,10 @@
             "set": ["71203"],
             "name": "Support Ship",
             "cost": 4,
-            "text": "When your last Attack Squadron Token is destroyed, discard this card instead of removing that Token. /n/n No ship may be equipped with more than one 'Support Ship' Upgrade.",
+            "text": "When your last Attack Squadron Token is destroyed, discard this card instead of removing that Token. "/n/n"No ship may be equipped with more than one 'Support Ship' Upgrade.",
             "unique": false,
             "factions": ["romulan"]
-        },{
+        }, {
             "type": "question",
             "id": "maintenance_crew_71212",
             "set": ["71212"],
@@ -11034,7 +11335,7 @@
             "cost": 7,
             "attack": 7,
             "range": "3",
-            "text": "Attack:(Target Lock) Spend your target lock and discard this card to preform this attack. /n/n If this attack hits place an Auxiliary Power Token beside all ships within Range 1 of the defending ship. /n/n You may only fire this weapon form your forward firing arc.",
+            "text": "Attack:(Target Lock) Spend your target lock and discard this card to preform this attack. "/n/n"If this attack hits place an Auxiliary Power Token beside all ships within Range 1 of the defending ship. "/n/n"You may only fire this weapon form your forward firing arc.",
             "unique": true,
             "factions": ["dominion"]
         },
@@ -11058,7 +11359,7 @@
             "cost": 5,
             "attack": 5,
             "range": "1 - 3",
-            "text": "Attack:(Target Lock) Spend your target lock and discard this card to preform this attack. /n/n You may select any number of your attack dice and re-roll them. This Upgrade may only be purchased for a Cardassian ATR-4107 ship.",
+            "text": "Attack:(Target Lock) Spend your target lock and discard this card to preform this attack. "/n/n"You may select any number of your attack dice and re-roll them. This Upgrade may only be purchased for a Cardassian ATR-4107 ship.",
             "unique": false,
             "factions": ["dominion"]
         },
@@ -11227,7 +11528,7 @@
             "text": "After you move you may disable this card to treat any maneuver as a green maneuver. This upgrade may only be purchased for a Bajoran Lightship.",
             "unique": true,
             "factions": ["bajoran"]
-        },{
+        }, {
             "type": "talent",
             "id": "infiltration_71213",
             "set": ["71213"],
@@ -11348,7 +11649,72 @@
 			"text": "ATTACK: (Target Lock) Spend your target lock and place 3 time tokens on this card to preform this attack. You may convert 1 of your [battlestations] into a [crit] result. You may fire this weapon from your forward or rear fireing arcs.",
 			"unique": false,
 			"factions": ["federation"]
-		},{
+		},
+				{
+			"type": "talent",
+			"id": "diversion_kumari",
+			"set": ["71223"],
+			"name": "DIVERSION",
+			"cost": 5,
+			"text": "When an opposing ship delcares an attack against a friendly ship that is within Range 1 of your ship. If you are also in the attacking ships forward fireing arc you may discard this card to force the attacking ship to make its aggack against your ship instead. The attack is made at -2 attack dice.",
+			"unique": true,
+			"factions": ["independent"]
+		},
+		{
+			"type": "crew",
+			"id": "talas_kumari",
+			"set": ["71223"],
+			"name": "TALAS",
+			"cost": 3,
+			"text": "When a friendly  ship within Range 1 of your ship is declared the target of an attack. You may discard this card to target that ship. If you do so the target ship may spend your [evade] or [battlestations] Tokens as if it were beside their ship during this attack.",
+			"unique": true,
+			"factions": ["independent"]
+		},
+		{
+			"type": "weapon",
+			"id": "advanced_weaponry_kumari",
+			"set": ["71223"],
+			"name": "ADVANCED WEAPONRY",
+			"cost": 5,
+			"attack": 5,
+			"range": "1 - 3",
+			"text": "ATTACK: (Target Lock) Spend your target lock and place 3 Time Tokens on this card to perform this attack."/n/n"If your inflict a critical damage you may search the damage deck and chose either a 'Weapons Malfunction' or 'Munitions Failure' critical damage card, then reshuffle the deck. "/n/n" You may only fire this weapon from your forward firing arc.",
+			"unique": false,
+			"factions": ["independent"]
+		},
+		{
+			"type": "weapon",
+			"id": "particle_cannon_array_kumari",
+			"set": ["71223"],
+			"name": "PARTICLE CANNON ARRAY",
+			"cost": 3,
+			"attack": 4,
+			"range": "1 - 3",
+			"text": "ATTACK: Place 2 Time Tokens on this card to perform this attack. "/n/n"You my only fire this weapon from your forward firing arc.",
+			"unique": false,
+			"factions": ["independent"]
+		},
+		{
+			"type": "tech",
+			"id": "tractor_beam_kumari",
+			"set": ["71223"],
+			"name": "TRACTOR BEAM",
+			"cost": 4,
+			"text": "ACTION: Discard this card to target a friendly ship within Range 1. That ship performs an additional green maneuver with a speed of 1. The target ship rolls +1 defence die this round.",
+			"unique": false,
+			"factions": ["independent"]
+		},
+		{
+			"type": "tech",
+			"id": "long_range_sensors_kumari",
+			"set": ["71223"],
+			"name": "LONG RANGE SENSORS",
+			"cost": 3,
+			"text": "When defending it there is a [scan] Token beside your ship during the Roll Defence Dice step you may disable this card to roll +1 defence die for that attack. ",
+			"unique": false,
+			"factions": ["independent"]
+		},
+		{
 			"type": "talent",
 			"id": "improvise_71201",
 			"set": ["71201"],
@@ -11419,7 +11785,7 @@
 			"text": "ATTACK: (Target Lock)Spend your target lock and place 3 Time Tokens on this card to preform this attack. You may convert 1 of your [battlestations] into 1 [crit] result. You may fire this weapon form your forward or reaf fireing arcs.",
 			"unique": false,
 			"factions": ["federation"]
-		},{
+		}, {
 			"type": "talent",
 			"id": "covert_mission_pi",
 			"set": ["71222"],
@@ -11438,7 +11804,7 @@
 			"text": "ACTION: Discard this card to target a ship at Range 3. Your ship cannot attack the target ship and that ship cannot attack your ship this round.",
 			"unique": true,
 			"factions": ["romulan"]
-		},{
+		}, {
 			"type": "crew",
 			"id": "patahk_pi",
 			"set": ["71222"],
@@ -11447,7 +11813,7 @@
 			"text": "When attacking with your Primary Weapon during the Roll Attack Dice step, you may discard this card to gain +1 attack die for that attack.",
 			"unique": true,
 			"factions": ["romulan"]
-		},{
+		}, {
 			"type": "tech",
 			"id": "distress_signal_pi",
 			"set": ["71222"],
@@ -11456,7 +11822,7 @@
 			"text": "When defending if there is a friendly ship within Range 1-2 of your ship with a Hull value greater then your ship, during the Roll Defence Dice step you may discard this card to roll +2 defence dice. No ship my be equipped with more than 1 'Distress Signal' Upgrade.",
 			"unique": false,
 			"factions": ["romulan"]
-		},{
+		}, {
 			"type": "tech",
 			"id": "gravition_field_generator_pi",
 			"set": ["71222"],
@@ -11492,7 +11858,7 @@
 			"talents" : 0,
 			"attack" : 0,
 			"range" : ""
-		},{
+		}, {
 			"type": "tech",
 			"id": "self_destruct_sequence_pi",
 			"set": ["71222"],
@@ -19775,7 +20141,16 @@
 			"text" : "At the start of the battle, place 5 Auxiliary Power Tokens on top of this card.\r\n\r\n1) When a ship in your fleet is defending, during the Compare Results step, you may:\r\n              a) Remove one of the Auxiliary Power Tokens from this card and place it beside that ship to cancel 1 [hit] result, OR\r\n\r\n              b) Remove one of the Auxiliary Power Tokens from this card and place it beside that ship to convert 1 [crit] result into a [hit] result, OR\r\n\r\n              c) Remove 2 of the Auxiliary Power Tokens from this card and place 1 of them beside that ship to cancel 1 [crit] result.  The other token is removed from the game.\r\n\r\n              2) No additional Auxiliary Power Tokens may be added to this card for the duration of the battle.",
 			"cost" : 5,
 			"showShipResourceSlot" : false
-		}, {
+		}, 
+		{
+			"type": "resource",
+			"id": "tactics_72221r",
+			"set": ["72221r"],
+			"name": "TACTICS",
+			"cost": 5,
+			"text": "At the start of the battle, place 2 [evade] Tokens, 2 [scan] Tokens and 2 [battlestations] Tokens on top of this card."/n/n"Each round, during the Activation Phase, one ship in your fleet may choose on of the Tokens form on top of this card and place it beside its base. Treat this as if that ship performed a free Action of the appropriate type. /n/n If the ship performing this Action does not have the Action listed on its Action Bar, it may still perform the Action, but it is considered a Standard Action instead of a free Action. in Addition, place an Auxiliary Power Token beside that ship."
+		}
+		{
 			"type" : "resource",
 			"id" : "advanced_technology_72004r",
 			"set" : ["72004r"],
@@ -20630,8 +21005,8 @@
 			"intercept" : {
 				"ship" : {},
 				"fleet" : {}
-
 			}
+			
 		}, {
 			"type" : "faction",
 			"id" : "faction_q_continuum",
@@ -20646,8 +21021,8 @@
 			"intercept" : {
 				"ship" : {},
 				"fleet" : {}
-
 			}
+			
 		}
 	]
 }
