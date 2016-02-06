@@ -1232,7 +1232,7 @@
 			"hull": 3,
 			"shields": 4,
 			"cost": 24,
-			"text": "When attacking with Photon TOrpedoes during the Roll Attack Dice step, you may discard the Photon Torpedoes Upgrade to gain 1 additional attack die.",
+			"text": "When attacking with Photon Torpedoes during the Roll Attack Dice step, you may discard the Photon Torpedoes Upgrade to gain 1 additional attack die.",
 			"unique": true,
 			"factions": ["federation"],
 			"squadron": false
