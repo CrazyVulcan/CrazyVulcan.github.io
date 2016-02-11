@@ -3,7 +3,7 @@
             "type": "set",
             "id": "71203",
             "name": "Scorpion 4",
-            "releaseDate": "2015-11-01",
+            "releaseDate": "2015-11-02",
             "parentSet": "Wave 20"
         },  {
             "type": "set",
@@ -24,8 +24,7 @@
             "releaseDate": "2015-12-31",
             "parentSet": "Wave 21"
         },		{
-			"type": "set",
-			"id": "71213",
+			"type": "set",		"id": "71213",
 			"name": "Robinson",
 			"releaseDate": "2015-12-31",
 			"parentSet": "Wave 21"
@@ -33,7 +32,7 @@
 			"type": "set",
 			"id": "712201",
 			"name": "U.S.S. Valiant",
-			"releaseDate": "2016-02-01",
+			"releaseDate": "2016-02-02",
 			"parentSet": "Wave 22"
 		},		{
 			"type": "set",
@@ -742,13 +741,13 @@
 			"type" : "set",
 			"id" : "blind_aldara",
 			"name" : "Aldara",
-			"releaseDate" : "2015-11-03",
-			"parentSet" : "Blind Boosters"
+			"releaseDate" : "2015-11-08",
+		3	"parentSet" : "Blind Boosters"
 		}, {
 			"type" : "set",
 			"id" : "72004p",
 			"name" : "Azati Prime",
-			"releaseDate" : "2016-02-01",
+			"releaseDate" : "2016-02-05",
 			"parentSet" : "Temporal Cold War"
 		}, {
 			"type" : "set",
@@ -761,7 +760,7 @@
 			"type" : "set",
 			"id" : "blind_belak",
 			"name" : "I.R.W. Belak",
-			"releaseDate" : "2015-11-01",
+			"releaseDate" : "2015-11-04",
 			"parentSet" : "Blind Boosters"
 		}, {
 			"type" : "set",
@@ -779,7 +778,7 @@
 			"type" : "set",
 			"id" : "blind_bioship",
 			"name" : "Bioship Omega",
-			"releaseDate" : "2015-11-02",
+			"releaseDate" : "2015-11-07",
 			"parentSet" : "Blind Boosters"
 		}, {
 			"type" : "set",
