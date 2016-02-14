@@ -1036,7 +1036,7 @@
 		},	{
 			"type": "ship",
 			"id": "weapon_0_72008",
-			"set": ["71008"],
+			"set": ["71225"],
 			"name": "Weapon Zero",
 			"class": "Xindi Weapon",
 			"actions": ["evade","target-lock","scan","battlestations"],
@@ -1053,7 +1053,7 @@
 		},	{
 			"type": "ship",
 			"id": "xindi_starship_72008",
-			"set": ["71008"],
+			"set": ["71225"],
 			"name": "Xindi Starship",
 			"class": "Xindi Weapon",
 			"actions": ["evade","target-lock","scan"],
@@ -1088,7 +1088,7 @@
         },	{
 			"type": "ship",
 			"id": "scorpion_4_71203",
-			"set": ["71193"],
+			"set": ["71203"],
 			"name": "ROMULAN ATTACK FIGHTERS",
 			"class": "Scorpion Class Attack Squadron",
 			"actions": ["evade","target-lock"],
@@ -1108,7 +1108,7 @@
 			"id": "i_r_w_tmet",
 			"set": ["72221p"],
 			"name": "I,R.W. T'MET",
-			"class": "D'DERIDEX CLASS",
+			"class": "D'deridex Class",
 			"actions": ["evade","target-lock","cloak","sensor-echo"],
 			"upgrades": ["tech","tech","weapon","weapon","crew"],
 			"attack": 3,
@@ -1397,7 +1397,24 @@
 
 			},
 			"squadron": false
-		}, {
+		},	{
+			"type": "ship",
+			"id": "romulan_starship_71222",
+			"set": ["71222"],
+			"name": "Romulan Starship",
+			"class": "Romulan Scout Vessel",
+			"actions": ["evade","scan","cloak","sensor-echo"],
+			"upgrades": ["tech"],
+			"attack": 1,
+			"agility": 3,
+			"hull": 2,
+			"shields": 1,
+			"cost": 14,
+			"text": "",
+			"unique": false,
+			"factions": ["romulan"],
+			"squadron": false
+		},	{
 			"type" : "ship",
 			"id" : "1001",
 			"set" : ["71120"],
@@ -6072,7 +6089,35 @@
 			"set" : ["72010"]
 		}
 	],
-	"shipClasses" : [{
+	"shipClasses" : [
+			{
+			"type" : "ship-class",
+			"id" : "71223",
+			"name" : "Andorian Battle Cruiser",
+			"frontArc" : "180",
+			"rearArc" : "",
+			"maneuvers" : {
+				"1" : {
+					"straight" : "green",
+					"bank" : "green"
+				},
+				"2" : {
+					"straight" : "green",
+					"bank" : "white",
+					"turn" : "white"
+				},
+				"3" : {
+					"straight" : "white",
+					"bank" : "white",
+					"turn" : "red"
+				},
+				"4" : {
+					"straight" : "white"
+				},
+				"min" : 1,
+				"max" : 5
+			}
+		},	{
 			"type" : "ship-class",
 			"id" : "ardassian_ATR_4107",
 			"name" : "Cardassian ATR-4107",
@@ -8385,7 +8430,7 @@
 		},	{
 			"type": "captain",
 			"id": "dolim_weapon_zero",
-			"set": ["71008"],
+			"set": ["71225"],
 			"name": "DOLIM",
 			"cost": 5,
 			"skill": 8,
