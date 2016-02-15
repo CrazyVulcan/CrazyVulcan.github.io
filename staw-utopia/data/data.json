@@ -1035,7 +1035,7 @@
 			"squadron": false
 		},	{
 			"type": "ship",
-			"id": "weapon_0_72008",
+			"id": "weapon_0_71225",
 			"set": ["71225"],
 			"name": "Weapon Zero",
 			"class": "Xindi Weapon",
@@ -1052,7 +1052,7 @@
 			"squadron": false
 		},	{
 			"type": "ship",
-			"id": "xindi_starship_72008",
+			"id": "xindi_starship_71225",
 			"set": ["71225"],
 			"name": "Xindi Starship",
 			"class": "Xindi Weapon",
@@ -11284,7 +11284,7 @@
 			"set": ["72232"],
 			"name": "Klingon Helmsman",
 			"cost": 3,
-			"text": "ACTION: Discard this card to immediately preform an additional come about maneuver with a speed of 1 or 2. Treat this as a red maneuver. This card costs +5 SP for any non-Klingon ship and cannot be deployed to a ship the does not have a come about maneuver.",
+			"text": "ACTION: Discard this card to immediately preform an additional 1[about] or 2[about]Maneuver. Treat this as a red maneuver. This card costs +5 SP for any non-Klingon ship and cannot be deployed to a ship the does not have a [about] maneuver.",
 			"unique": false,
 			"factions": ["klingon"]
 		},	{
@@ -11353,7 +11353,7 @@
 			"cost": 5,
 			"attack": 5,
 			"range": "2 - 3",
-			"text": "ATTACK: (Target Lock) Spend your target lock and place 3 time tokens on this card to preform this attack. You may convert 1 of your [battlestations] results into 1 [crit] result. You may fire this weapon from your forward or rear firing arcs.",
+			"text": "ATTACK: (Target Lock) Spend your target lock and place 3 Time Tokens on this card to perform this attack.\nYou may convert 1 of your [battlestations] results into 1 [crit] result.\nYou may fire this weapon from your forward or rear firing arcs.",
 			"unique": false,
 			"factions": ["federation"]
 		},	{
@@ -11887,7 +11887,7 @@
 			"cost": 5,
 			"attack": 5,
 			"range": "2 - 3",
-			"text": "ATTACK: (Target Lock) Spend your target lock and place 3 time tokens on this card to preform this attack. You may convert 1 of your [battlestations] into a [crit] result. You may fire this weapon from your forward or rear fireing arcs.",
+			"text": "ATTACK: (Target Lock) Spend your target lock and place 3 Time Tokens on this card to perform this attack.\nYou may convert 1 of your [battlestations] results into 1 [crit] result.\nYou may fire this weapon from your forward or rear firing arcs.",
 			"unique": false,
 			"factions": ["federation"]
 		},
@@ -12023,7 +12023,7 @@
 			"cost": 5,
 			"attack": 5,
 			"range": "2 - 3",
-			"text": "ATTACK: (Target Lock)Spend your target lock and place 3 Time Tokens on this card to preform this attack. You may convert 1 of your [battlestations] into 1 [crit] result. You may fire this weapon form your forward or reaf fireing arcs.",
+			"text": "ATTACK: (Target Lock)Spend your target lock and place 3 Time Tokens on this card to preform this attack. \nYou may convert 1 of your [battlestations] into 1 [crit] result. \nYou may fire this weapon form your forward or rear firing arcs.",
 			"unique": false,
 			"factions": ["federation"]
 		}, {
@@ -20032,16 +20032,7 @@
 			"text" : "This Upgrade counts as a [crew], [tech] or [weapon] Upgrade (your choice).\n\nWhen you are instructed to place Time Tokens on one of your [weapon] Upgrades, you may disable this card to place only 1 Time Token instead of the required amount.",
 			"unique" : false,
 			"factions" : ["federation"]
-		}, {
-			"type" : "tech",
-			"id" : "rapid_reload_t_72008",
-			"set" : ["72008"],
-			"name" : "Rapid Reload",
-			"cost" : 2,
-			"text" : "This Upgrade counts as a [crew], [tech] or [weapon] Upgrade (your choice).\n\nWhen you are instructed to place Time Tokens on one of your [weapon] Upgrades, you may disable this card to place only 1 Time Token instead of the required amount.",
-			"unique" : false,
-			"factions" : ["federation"]
-		}, {
+		},	{
 			"type" : "weapon",
 			"id" : "rapid_reload_w_72008",
 			"set" : ["72008"],
@@ -20050,7 +20041,16 @@
 			"text" : "This Upgrade counts as a [crew], [tech] or [weapon] Upgrade (your choice).\n\nWhen you are instructed to place Time Tokens on one of your [weapon] Upgrades, you may disable this card to place only 1 Time Token instead of the required amount.",
 			"unique" : false,
 			"factions" : ["federation"]
-		}, {
+		},	{
+			"type" : "tech",
+			"id" : "rapid_reload_t_72008",
+			"set" : ["72008"],
+			"name" : "Rapid Reload",
+			"cost" : 2,
+			"text" : "This Upgrade counts as a [crew], [tech] or [weapon] Upgrade (your choice).\n\nWhen you are instructed to place Time Tokens on one of your [weapon] Upgrades, you may disable this card to place only 1 Time Token instead of the required amount.",
+			"unique" : false,
+			"factions" : ["federation"]
+		},	{
 			"type" : "talent",
 			"id" : "covert_mission_blind_tohkaht",
 			"set" : ["blind_tohkaht"],
