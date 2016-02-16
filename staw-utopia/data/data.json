@@ -1161,7 +1161,7 @@
             "name": "Dominion Starship",
             "class": "Cardassian ATR-4107",
             "actions": ["evade","target-lock","scan"],
-            "upgrades": ["tech","weapon","weapon"],
+            "upgrades": ["weapon","weapon","weapon"],
             "attack": 6,
             "agility": 0,
             "hull": 4,
