@@ -996,7 +996,7 @@
 			"agility": 2,
 			"hull": 3,
 			"shields": 0,
-			"cost": 00,
+			"cost": 0,
 			"text": "While there is a [scan] Token beside your ship, you cannot be targeted by any [talent] Upgrades and you roll +1 defense die against all attacks made with [weapon] Upgrades.",
 			"unique": true,
 			"factions": ["romulan"],
@@ -11351,7 +11351,7 @@
 			"cost": 4,
 			"attack": 3,
 			"range": "1 - 3",
-			"text": "ATTACK: Place 3 Time Tokens on this card to perform this attack from your forward firing arcs\r\n\r\nOR\r\n\r\nWhen defending during the Roll Attack Dice step you may discard this card to force your opponent to roll -2 attack dice.\r\n\r\nNo ship may be equipped with more than one 'Disruptor Banks' Upgrade."
+			"text": "ATTACK: Place 3 Time Tokens on this card to perform this attack from your forward firing arcs\r\n\r\nOR\r\n\r\nWhen defending during the Roll Attack Dice step you may discard this card to force your opponent to roll -2 attack dice.\r\n\r\nNo ship may be equipped with more than one 'Disruptor Banks' Upgrade.",
 			"unique": false,
 			"factions": ["romulan"]
 		},	{
