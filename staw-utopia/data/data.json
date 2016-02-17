@@ -2,6 +2,12 @@
 	"sets" : [
 		{
 			"type": "set",
+			"id": "72233",
+			"name": "I.R.W. Jazkal",
+			"releaseDate": "2016-03-12",
+			"parentSet": "Wave 23"
+		},	{
+			"type": "set",
 			"id": "72232",
 			"name": "I.K.S. Amar",
 			"releaseDate": "2016-03-11",
@@ -978,7 +984,28 @@
 		}
 	],
 	"ships" : [	 
-		{
+			{
+			"type": "ship",
+			"id": "i_r_w_jazkal",
+			"set": ["72233"],
+			"name": "I.R.W. Jazkal",
+			"class": "Romulan Bird-Of-Prey Class",
+			"actions": ["evade","target-lock","scan"],
+			"upgrades": ["tech","weapon","crew"],
+			"attack": 2,
+			"agility": 2,
+			"hull": 3,
+			"shields": 0,
+			"cost": 00,
+			"text": "While there is a [scan] Token beside your ship, you cannot be targeted by any [talent] Upgrades and you roll +1 defense die against all attacks made with [weapon] Upgrades.",
+			"unique": true,
+			"factions": ["romulan"],
+			"squadron": false
+		},	{
+			"type": "copy",
+			"of": "1035",
+			"set": ["71270"]
+		},	{
 			"type": "ship",
 			"id": "i_k_s_amar",
 			"set": ["72232"],
@@ -1161,7 +1188,7 @@
             "name": "Dominion Starship",
             "class": "Cardassian ATR-4107",
             "actions": ["evade","target-lock","scan"],
-            "upgrades": ["weapon","weapon","weapon"],
+            "upgrades": ["tech","weapon","weapon"],
             "attack": 6,
             "agility": 0,
             "hull": 4,
@@ -8434,8 +8461,19 @@
 			}
 		}
 	],
-	"captains" : [ 
+	"captains" : [
 		{
+			"type": "captain",
+			"id": "vrax_jazkal",
+			"set": ["72233"],
+			"name": "Vrax",
+			"cost": 2,
+			"skill": 3,
+			"talents": 1,
+			"text": "You may deploy the 'Reman Bodyguards' Upgrade  to your ship at a cost of -2 SP, even if it exceeds your ship's restrictions.",
+			"unique": true,
+			"factions": ["romulan"]
+		},	{
 			"type": "captain",
 			"id": "barak_amar",
 			"set": ["72232"],
@@ -11278,7 +11316,54 @@
 		}
 	],
 	"upgrades" : [  
-		{
+			{
+			"type": "talent",
+			"id": "destabilized_relations_jazkel",
+			"set": ["72233"],
+			"name": "Destabilized Relations",
+			"cost": 5,
+			"text": "When attacking a ship at Range 3. if there is another opposing ship within Range 1-2 of the target ship, the defending ship rolls -2 defense dice against your attack.",
+			"unique": true,
+			"factions": ["romulan"]
+		},	{
+			"type": "crew",
+			"id": "reman_bodyguards_jazkel",
+			"set": ["72233"],
+			"name": "Reman Bodyguards",
+			"cost": 5,
+			"text": "ACTION: Discard this card to target a ship at Range 1. When attacking that ship with your Primary weapon this round, gain +1 attack die and force the defending ship to roll -1 defense die.\r\n\r\nNo ship may be equipped with more than 1 'Reman Bodyguards' Upgrade.",
+			"unique": false,
+			"factions": ["romulan"]
+		},	{
+			"type": "crew",
+			"id": "nijil_jazkal",
+			"set": ["72233"],
+			"name": "Nijil",
+			"cost": 5,
+			"text": "Add 1 [tech] Upgrade to your Upgrade Bar. That Upgrade costs -1 SP (min 1) and must be a Romulan [tech] Upgrade.\r\n\r\nACTION: When defending this round during the Roll Defense Dice step, disable this card to and one of your [tech] to roll +1 defense die.",
+			"unique": true,
+			"factions": ["romulan"]
+		},	{
+			"type": "weapon",
+			"id": "distuptor_banks_jazkel",
+			"set": ["72233"],
+			"name": "Disruptor Banks",
+			"cost": 4,
+			"attack": 3,
+			"range": "1 - 3",
+			"text": "ATTACK: Place 3 Time Tokens on this card to perform this attack from your forward firing arcs\r\n\r\nOR\r\n\r\nWhen defending during the Roll Attack Dice step you may discard this card to force your opponent to roll -2 attack dice.\r\n\r\nNo ship may be equipped with more than one 'Disruptor Banks' Upgrade."
+			"unique": false,
+			"factions": ["romulan"]
+		},	{
+			"type": "tech",
+			"id": "prototype_cloaking_device_jazkel",
+			"set": ["72233"],
+			"name": "Prototype Cloaking Device",
+			"cost": 4,
+			"text": "ACTION: Disable this card to perform the [cloak] Action as a free Action, even if you have no Active Shields. Roll +1 attack die. On a [battlestations] result your hull sustains 1 Damage while your ship is cloaked you may perform the [echo] Action\r\n\r\nThis Upgrade costs +5 SP for any non-Romulan ship and no ship may have more than 1 'Prototype Cloaking Device' Upgrade.",
+			"unique": true,
+			"factions": ["rolls"]
+		},	{
 			"type": "crew",
 			"id": "klingon_helmsman_amar",
 			"set": ["72232"],
