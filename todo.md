@@ -9,4 +9,4 @@ Global todo:
 
 Cards that need functionality:
 - [x] test1
-- [] test2
+- [ ] test2
