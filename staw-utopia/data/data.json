@@ -1,6 +1,13 @@
 {
 	"sets" : [
 		{
+			"type": "set",
+			"id": "72224p",
+			"name": "Xindus",
+			"releaseDate": "2016-03-15",
+			"parentSet": "The Doomsday Machine"
+		},
+		{
 			"type" : "set",
 			"id" : "72233",
 			"name" : "I.R.W. Jazkal",
@@ -1151,6 +1158,42 @@
 		}
 	],
 	"ships" : [
+		{
+			"type": "ship",
+			"id": "xindus",
+			"set": ["72224p"],
+			"name": "Xindus",
+			"class": "Xindi Reptilian Warship",
+			"actions": ["evade","target-lock","scan","battlestations"],
+			"upgrades": ["tech","weapon","weapon","crew"],
+			"attack": 4,
+			"agility": 1,
+			"hull": 4,
+			"shields": 2,
+			"cost": 22,
+			"text": "When firing a Photon Torpedo Upgrade, place 1 less Time Token on that Upgrade.",
+			"unique": true,
+			"factions": ["xindi"],
+			"squadron": false
+		},	
+		{
+			"type": "ship",
+			"id": "xindi_reptilian_warship",
+			"set": ["72224p"],
+			"name": "Xindi Reptilian Warship",
+			"class": "Xindi Reptilian Warship",
+			"actions": ["evade","target-lock","scan","battlestations","cloak","sensor-echo"],
+			"upgrades": ["tech","weapon","crew"],
+			"attack": 4,
+			"agility": 1,
+			"hull": 4,
+			"shields": 1,
+			"cost": 20,
+			"text": "",
+			"unique": false,
+			"factions": ["xindi"],
+			"squadron": false
+		},
 		{
 			"type" : "ship",
 			"id" : "i_r_w_jazkal",
@@ -6728,6 +6771,35 @@
 		}
 	],
 	"shipClasses" : [
+			{
+			"type" : "ship-class",
+			"id" : "72224p",
+			"name" : "Xindi Reptilian Warship",
+			"frontArc" : "90",
+			"rearArc" : "",
+			"maneuvers" : {
+				"1" : {
+					"straight" : "green",
+					"bank" : "green"
+				},
+				"2" : {
+					"straight" : "green",
+					"bank" : "white",
+					"turn" : "white"
+				},
+				"3" : {
+					"straight" : "white",
+					"bank" : "white",
+					"turn" : "red",
+					"about" : "red"
+				},
+				"4" : {
+					"straight" : "white"
+				},
+				"min" : 1,
+				"max" : 4
+			}
+		},
 		{
 			"type" : "ship-class",
 			"id" : "71223",
@@ -9595,6 +9667,18 @@
 		}
 	],
 	"captains" : [
+		{
+			"type": "captain",
+			"id": "kolo_xindus",
+			"set": ["72224p"],
+			"name": "Kolo",
+			"cost": 3,
+			"skill": 5,
+			"talents": 1,
+			"text": "When a friendly ship within range 1 of your ship is defending, during the Declare Target step, your ship may become the target of the attack instead of the friendly ship. Treat the attack as though your ship were at the same Range as the friendly ship.",
+			"unique": true,
+			"factions": ["xindi"]
+		},
 		{
 			"type" : "captain",
 			"id" : "vrax_jazkal",
@@ -12709,6 +12793,48 @@
 		}
 	],
 	"upgrades" : [
+		{
+			"type": "talent",
+			"id": "dominant_species_xindus",
+			"set": ["72224p"],
+			"name": "Dominant Species",
+			"cost": 5,
+			"text": "When attacking, during the Modify Defense Dice step, you may discard this card to force the defending ship to re-roll up to 2 of its defense dice.",
+			"unique": true,
+			"factions": ["xindi"]
+		},
+		{
+			"type": "crew",
+			"id": "damron_xindus",
+			"set": ["72224p"],
+			"name": "Damron",
+			"cost": 4,
+			"text": "When attacking with your Primary Weapon, if your attack hits the target ship, you may spend your [target-lock] Token to discard 1 [crew] Upgrade on target ship.",
+			"unique": true,
+			"factions": ["xindi"]
+		},
+		{
+			"type": "weapon",
+			"id": "photon_torpedoes_xindus",
+			"set": ["72224p"],
+			"name": "Photon Torpedoes",
+			"cost": 3,
+			"attack": 4,
+			"range": "2 - 3",
+			"text": "ATTACK: (Target Lock) Spend your target lock and place 3 Time Tokens on this card to perform this attack\r\n\r\nIf fired from a Xindi Reptilian warship add +1 attack die.",
+			"unique": false,
+			"factions": ["xindi"]
+		},
+		{
+			"type": "tech",
+			"id": "sensor_encoders_xindus",
+			"set": ["72224p"],
+			"name": "Sensor Encoders",
+			"cost": 3,
+			"text": "If your ship is destroyed, all friendly ships within Range 1-3 of your ship roll +1 defense die the next time they defend.",
+			"unique": false,
+			"factions": ["xindi"]
+		},
 		{
 			"type" : "talent",
 			"id" : "destabilized_relations_jazkel",
@@ -22432,6 +22558,14 @@
 		}
 	],
 	"resources" : [
+		{
+		"type" : "resource",
+		"id" : "main_power_grid_resource",
+		"set" : ["71230r"],
+		"name" : "Main Power Grid",
+		"cost" : 0,
+		"text" : "This card explains the rules for the Main Power Grid Resource Card and serves as a reference to remind players of its effect. This resource costs 3SP plus 2SP for each Hull Value greater than 3. Once per round, one of your ships my use on the the following abilities\r\n\r\n1)When attacking with your Primary Weapon, during the Roll Attack Dice step, suffer 1 damage to your Hull and disable all your remaining Shields to roll _2 attack dice that round.\r\n\r\nOR\r\n\r\n2)When defending, during the Compare Results step cancel up to 2 of the attacking ship's dice and place an Auxiliary Power Token beside your ship. Your ship cannot attack during the round you use this ability."
+		},		
 		{
 			"type" : "resource",
 			"id" : "4001",
