@@ -65,6 +65,13 @@
 		},
 		{
 			"type" : "set",
+			"id" : "71230r",
+			"name" : "Main Power Grid",
+			"releaseDate" : "2016-01-31",
+			"parentSet" : "Temporal Cold War"
+		},
+		{
+			"type" : "set",
 			"id" : "72224p",
 			"name" : "Xindus",
 			"releaseDate" : "2016-01-31",
@@ -1064,13 +1071,6 @@
 			"name" : "Krayton",
 			"releaseDate" : "2013-09-13",
 			"parentSet" : "The Dominion War"
-		},
-		{
-			"type" : "set",
-			"id" : "71230r",
-			"name" : "Main Power Grid",
-			"releaseDate" : "2016-03-04",
-			"parentSet" : "The Doomsday Machine"
 		},
 		{
 			"type" : "set",
