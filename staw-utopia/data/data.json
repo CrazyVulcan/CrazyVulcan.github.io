@@ -74,21 +74,21 @@
 			"type" : "set",
 			"id" : "72224p",
 			"name" : "Xindus",
-			"releaseDate" : "2016-01-31",
+			"releaseDate" : "2016-01-30",
 			"parentSet" : "Temporal Cold War"
 		},
 		{
 			"type" : "set",
 			"id" : "72004r",
 			"name" : "Advanced Technology Resource",
-			"releaseDate" : "2016-01-31",
+			"releaseDate" : "2016-01-29",
 			"parentSet" : "Temporal Cold War"
 		},
 		{
 			"type" : "set",
 			"id" : "72004p",
 			"name" : "Azati Prime",
-			"releaseDate" : "2016-01-30",
+			"releaseDate" : "2016-01-28",
 			"parentSet" : "Temporal Cold War"
 		},
 		{
@@ -22559,13 +22559,13 @@
 	],
 	"resources" : [
 		{
-		"type" : "resource",
-		"id" : "main_power_grid_resource",
-		"set" : ["71230r"],
-		"name" : "Main Power Grid",
-		"text" : "This card explains the rules for the Main Power Grid Resource Card and serves as a reference to remind players of its effect. This resource costs 3SP plus 2SP for each Hull Value greater than 3. Once per round, one of your ships my use on the the following abilities\r\n\r\n1)When attacking with your Primary Weapon, during the Roll Attack Dice step, suffer 1 damage to your Hull and disable all your remaining Shields to roll _2 attack dice that round.\r\n\r\nOR\r\n\r\n2)When defending, during the Compare Results step cancel up to 2 of the attacking ship's dice and place an Auxiliary Power Token beside your ship. Your ship cannot attack during the round you use this ability.",
-		"cost" : 0,
-		"showShipResourceSlot" : false
+			"type" : "resource",
+			"id" : "main_power_grid_resource",
+			"set" : ["71230r"],
+			"name" : "Main Power Grid",
+			"text" : "This card explains the rules for the Main Power Grid Resource Card and serves as a reference to remind players of its effect. This resource costs 3SP plus 2SP for each Hull Value greater than 3.\r\n\r\nOnce per round, one of your ships my use on the the following abilities\r\n\r\n1) When attacking with your Primary Weapon, during the Roll Attack Dice step, suffer 1 damage to your Hull and disable all your remaining Shields to roll +2 attack dice that round.\r\n\r\nOR\r\n\r\n2) When defending, during the Compare Results step, cancel up to 2 of the attacking ship's attack dice and place an Auxiliary Power Token beside your ship. Your ship cannot attack during the round you use this ability.",
+			"cost" :  0 ,
+			"showShipResourceSlot" : false
 		},		
 		{
 			"type" : "resource",
