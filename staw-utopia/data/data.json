@@ -9680,6 +9680,11 @@
 			"factions": ["xindi"]
 		},
 		{
+			"type" : "copy",
+			"of" : "xindi_captain_72003p",
+			"set" : ["72224p"]
+		},
+		{
 			"type" : "captain",
 			"id" : "vrax_jazkal",
 			"set" : ["72233"],
