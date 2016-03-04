@@ -234,8 +234,20 @@ module.directive( "search", function() {
 				});
 			});
 			
+			// Uncheck all sets
+			$scope.uncheckAllSets = function() {
+				$.each( $scope.search.sets, function(i,set) {
+					set.search = false;
+				} );
+			};
+
+			// Check all sets
+			$scope.checkAllSets = function() {
+				$.each( $scope.search.sets, function(i,set) {
+					set.search = true;
+				} );
+			};
 		}]
-		
 	};
 	
 } );

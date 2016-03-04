@@ -2712,7 +2712,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquipFaction: function(upgrade,ship,fleet) {
 				console.log(ship)
 				return !$factions.hasFaction(ship, "borg", ship, fleet);
-			}			
+			},
 			canEquip: function(upgrade,ship,fleet) {
 				
 					

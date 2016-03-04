@@ -61,6 +61,8 @@
 			<div class="u-search-filter-comment">
 				<label class="u-label"><input type="checkbox" ng-model="search.ignoreSetsFilter"> Temporarily show all cards</label>
 			</div>
+			<button ng-click="uncheckAllSets()">Uncheck all sets</button>
+			<button ng-click="checkAllSets()">Check all sets</button>
 			<div ng-repeat="set in setList | orderBy:'-releaseDate'" class="u-search-set" ng-hide="search.ignoreSetsFilter">
 				<label class="u-label"><input type="checkbox" ng-model="search.sets[set.id].search"> {{set.parentSet}}: {{set.name}}</label>
 			</div>
