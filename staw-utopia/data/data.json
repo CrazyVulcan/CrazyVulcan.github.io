@@ -22665,8 +22665,8 @@
 	"resources" : [
 		{
 			"type" : "resource",
-			"id" : "72234p",
-			"set" : ["The Doomsday Machine"],
+			"id" : "the_doomsday_machine",
+			"set" : ["72234p"],
 			"name" : "Structural Damage Check",
 			"text" : "At the start of the game place 5 Auxiliary Power Tokens on this card.\n\nAt the end of each Activation Phase after every ship has moved you may chose to remove 1 Auxiliary Power Token from this card and place it beside one ship in your fleet. If you do this.\n\nRepair 1 damage to that ship's Hull OR\n\nFlip 1 Critical Damage Card that is assigned to that ship face down.\n\nRemove this card from the game when there are no Auxiliary Power Tokens left on this card",
 			"cost" : 5,
