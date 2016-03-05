@@ -1,15 +1,16 @@
+
 {
 	"sets" : [
 		{
-			"type": "set",
-			"id": "72234p",
-			"name": "U.S.S. Constellation",
-			"releaseDate": "2016-03-15",
-			"parentSet": "The Doomsday Machine"
+			"type" : "set",
+			"id" : "72234p",
+			"name" : "U.S.S. Constellation",
+			"releaseDate" : "2016-03-15",
+			"parentSet" : "The Doomsday Machine"
 		},
 		{
 			"type" : "set",
-			"id" : "712234r",
+			"id" : "71234r",
 			"name" : "Structural Damage Check",
 			"releaseDate" : "2016-03-16",
 			"parentSet" : "The Doomsday Machine"
@@ -1166,63 +1167,63 @@
 	],
 	"ships" : [
 		{
-			"type": "ship",
-			"id": "u_s_s_constellation",
-			"set": ["72234p"],
-			"name": "U.S.S. Constellation",
-			"class": "Constitution Class",
-			"actions": ["evade","target-lock","scan","battlestations"],
-			"upgrades": ["weapon","weapon","crew","crew"],
-			"attack": 3,
-			"agility": 1,
-			"hull": 4,
-			"shields": 3,
-			"cost": 22,
-			"text": "If all of your Shields have been destroyed when attacking with your Primary Weapon, you may gain +2 attack dice. If you do, place an Auxiliary Power Token beside your ship. You cannot roll any defence dice during a round in which you use this ability.",
-			"unique": true,
-			"factions": ["federation"],
-			"squadron": false
-		},	
+			"type" : "ship",
+			"id" : "u_s_s_constellation",
+			"set" : ["72234p"],
+			"name" : "U.S.S. Constellation",
+			"class" : "Constitution Class",
+			"actions" : ["evade", "target-lock", "scan", "battlestations"],
+			"upgrades" : ["weapon", "weapon", "crew", "crew"],
+			"attack" : 3,
+			"agility" : 1,
+			"hull" : 4,
+			"shields" : 3,
+			"cost" : 22,
+			"text" : "If all of your Shields have been destroyed when attacking with your Primary Weapon, you may gain +2 attack dice. If you do, place an Auxiliary Power Token beside your ship. You cannot roll any defence dice during a round in which you use this ability.",
+			"unique" : true,
+			"factions" : ["federation"],
+			"squadron" : false
+		},
 		{
 			"type" : "copy",
 			"of" : "1010",
 			"set" : ["72234p"]
 		},
 		{
-			"type": "ship",
-			"id": "xindus",
-			"set": ["72224p"],
-			"name": "Xindus",
-			"class": "Xindi Reptilian Warship",
-			"actions": ["evade","target-lock","scan","battlestations"],
-			"upgrades": ["tech","weapon","weapon","crew"],
-			"attack": 4,
-			"agility": 1,
-			"hull": 4,
-			"shields": 2,
-			"cost": 22,
-			"text": "When firing a Photon Torpedo Upgrade, place 1 less Time Token on that Upgrade.",
-			"unique": true,
-			"factions": ["xindi"],
-			"squadron": false
-		},	
+			"type" : "ship",
+			"id" : "xindus",
+			"set" : ["72224p"],
+			"name" : "Xindus",
+			"class" : "Xindi Reptilian Warship",
+			"actions" : ["evade", "target-lock", "scan", "battlestations"],
+			"upgrades" : ["tech", "weapon", "weapon", "crew"],
+			"attack" : 4,
+			"agility" : 1,
+			"hull" : 4,
+			"shields" : 2,
+			"cost" : 22,
+			"text" : "When firing a Photon Torpedo Upgrade, place 1 less Time Token on that Upgrade.",
+			"unique" : true,
+			"factions" : ["xindi"],
+			"squadron" : false
+		},
 		{
-			"type": "ship",
-			"id": "xindi_reptilian_warship",
-			"set": ["72224p"],
-			"name": "Xindi Reptilian Warship",
-			"class": "Xindi Reptilian Warship",
-			"actions": ["evade","target-lock","scan","battlestations","cloak","sensor-echo"],
-			"upgrades": ["tech","weapon","crew"],
-			"attack": 4,
-			"agility": 1,
-			"hull": 4,
-			"shields": 1,
-			"cost": 20,
-			"text": "",
-			"unique": false,
-			"factions": ["xindi"],
-			"squadron": false
+			"type" : "ship",
+			"id" : "xindi_reptilian_warship",
+			"set" : ["72224p"],
+			"name" : "Xindi Starship",
+			"class" : "Xindi Reptilian Warship",
+			"actions" : ["evade", "target-lock", "scan", "battlestations"],
+			"upgrades" : ["tech", "weapon", "crew"],
+			"attack" : 4,
+			"agility" : 1,
+			"hull" : 4,
+			"shields" : 1,
+			"cost" : 20,
+			"text" : "",
+			"unique" : false,
+			"factions" : ["xindi"],
+			"squadron" : false
 		},
 		{
 			"type" : "ship",
@@ -6801,29 +6802,34 @@
 		}
 	],
 	"shipClasses" : [
-			{
+		{
 			"type" : "ship-class",
 			"id" : "72224p",
 			"name" : "Xindi Reptilian Warship",
 			"frontArc" : "90",
 			"rearArc" : "",
-			"maneuvers" : {
-				"1" : {
+			"maneuvers" :
+			{
+				"1" :
+				{
 					"straight" : "green",
 					"bank" : "green"
 				},
-				"2" : {
+				"2" :
+				{
 					"straight" : "green",
 					"bank" : "white",
 					"turn" : "white"
 				},
-				"3" : {
+				"3" :
+				{
 					"straight" : "white",
 					"bank" : "white",
 					"turn" : "red",
 					"about" : "red"
 				},
-				"4" : {
+				"4" :
+				{
 					"straight" : "white"
 				},
 				"min" : 1,
@@ -6853,7 +6859,8 @@
 				{
 					"straight" : "white",
 					"bank" : "white",
-					"turn" : "red"
+					"turn" : "red",
+					"about" : "red"
 				},
 				"4" :
 				{
@@ -9698,28 +9705,33 @@
 	],
 	"captains" : [
 		{
-			"type": "captain",
-			"id": "matt_decker_constellation",
-			"set": ["72234p"],
-			"name": "Matt Decker",
-			"cost": 2,
-			"skill": 3,
-			"talents": 1,
-			"text": "If this card is assigned to a Federation Ship during the Roll Attack Dice step you may disable this card to gain +1 attack die for that attack. \n\n If your ship is destroyed you may immediately target a friendly ship within Range 1-2 of your ship. If you do so discard that captain Card from the target ship. This card becomes the new Captain Card for that ship.",
-			"unique": true,
-			"factions": ["federation"]
+			"type" : "captain",
+			"id" : "matt_decker_constellation",
+			"set" : ["72234p"],
+			"name" : "Matt Decker",
+			"cost" : 2,
+			"skill" : 3,
+			"talents" : 1,
+			"text" : "If this card is assigned to a Federation Ship during the Roll Attack Dice step you may disable this card to gain +1 attack die for that attack. \n\n If your ship is destroyed you may immediately target a friendly ship within Range 1-2 of your ship. If you do so discard that captain Card from the target ship. This card becomes the new Captain Card for that ship.",
+			"unique" : true,
+			"factions" : ["federation"]
 		},
 		{
-			"type": "captain",
-			"id": "kolo_xindus",
-			"set": ["72224p"],
-			"name": "Kolo",
-			"cost": 3,
-			"skill": 5,
-			"talents": 1,
-			"text": "When a friendly ship within range 1 of your ship is defending, during the Declare Target step, your ship may become the target of the attack instead of the friendly ship. Treat the attack as though your ship were at the same Range as the friendly ship.",
-			"unique": true,
-			"factions": ["xindi"]
+			"type" : "captain",
+			"id" : "kolo_xindus",
+			"set" : ["72224p"],
+			"name" : "Kolo",
+			"cost" : 3,
+			"skill" : 5,
+			"talents" : 1,
+			"text" : "When a friendly ship within range 1 of your ship is defending, during the Declare Target step, your ship may become the target of the attack instead of the friendly ship. Treat the attack as though your ship were at the same Range as the friendly ship.",
+			"unique" : true,
+			"factions" : ["xindi"]
+		},
+		{
+			"type" : "copy",
+			"of" : "xindi_captain_72003p",
+			"set" : ["72224p"]
 		},
 		{
 			"type" : "captain",
@@ -12836,116 +12848,116 @@
 	],
 	"upgrades" : [
 		{
-			"type": "talent",
-			"id": "standby_battle_stations_constellation",
-			"set": ["72234p"],
-			"name": "Standby Battle Stations",
-			"cost": 4,
-			"text": "During the Combat Phase you may discard this card to replace 1 Token that is beside your ship [evade] or [scan] with a [battlestations] Token \n\n This card may only be purchased for a ship that has the [battlestations] icon on its Action Bar",
-			"unique": true,
-			"factions": ["federation"]
+			"type" : "talent",
+			"id" : "standby_battle_stations_constellation",
+			"set" : ["72234p"],
+			"name" : "Standby Battle Stations",
+			"cost" : 4,
+			"text" : "During the Combat Phase you may discard this card to replace 1 Token that is beside your ship [evade] or [scan] with a [battlestations] Token \n\n This card may only be purchased for a ship that has the [battlestations] icon on its Action Bar",
+			"unique" : true,
+			"factions" : ["federation"]
 		},
 		{
-			"type": "crew",
-			"id": "damage_control_party_constellation",
-			"set": ["72234p"],
-			"name": "Damage Control Party",
-			"cost": 5,
-			"text": "ACTION: Discard this card to repair 1 damage to your ship's hull or Shields.\n\nOR\n\nACTION:Disable this card to flip one Critical Damage Card that is assigned to your ship face down.",
-			"unique": false,
-			"factions": ["federation"]
+			"type" : "crew",
+			"id" : "damage_control_party_constellation",
+			"set" : ["72234p"],
+			"name" : "Damage Control Party",
+			"cost" : 5,
+			"text" : "ACTION: Discard this card to repair 1 damage to your ship's hull or Shields.\n\nOR\n\nACTION:Disable this card to flip one Critical Damage Card that is assigned to your ship face down.",
+			"unique" : false,
+			"factions" : ["federation"]
 		},
 		{
-			"type": "weapon",
-			"id": "auxiliary_control_room_constellation_weapon",
-			"set": ["72234p"],
-			"name": "Auxiliary Control Room",
-			"cost": 5,
-			"text": "You may fill a [tech] or [weapon] Upgrade slot with this card. No ship may be equipped with more than 1 'Auxiliary Control Room' Upgrade\n\nYou may disable this card to perform an Action while there is an Auxiliary Power Token beside your ship.",
-			"unique": false,
-			"factions": ["federation"]
+			"type" : "weapon",
+			"id" : "auxiliary_control_room_constellation_weapon",
+			"set" : ["72234p"],
+			"name" : "Auxiliary Control Room",
+			"cost" : 5,
+			"text" : "You may fill a [tech] or [weapon] Upgrade slot with this card. No ship may be equipped with more than 1 'Auxiliary Control Room' Upgrade\n\nYou may disable this card to perform an Action while there is an Auxiliary Power Token beside your ship.",
+			"unique" : false,
+			"factions" : ["federation"]
 		},
 		{
-			"type": "tech",
-			"id": "auxiliary_control_room_constellation_tech",
-			"set": ["72234p"],
-			"name": "Auxiliary Control Room",
-			"cost": 5,
-			"text": "You may fill a [tech] or [weapon] Upgrade slot with this card. No ship may be equipped with more than 1 'Auxiliary Control Room' Upgrade\n\nYou may disable this card to perform an Action while there is an Auxiliary Power Token beside your ship.",
-			"unique": false,
-			"factions": ["federation"]
+			"type" : "tech",
+			"id" : "auxiliary_control_room_constellation_tech",
+			"set" : ["72234p"],
+			"name" : "Auxiliary Control Room",
+			"cost" : 5,
+			"text" : "You may fill a [tech] or [weapon] Upgrade slot with this card. No ship may be equipped with more than 1 'Auxiliary Control Room' Upgrade\n\nYou may disable this card to perform an Action while there is an Auxiliary Power Token beside your ship.",
+			"unique" : false,
+			"factions" : ["federation"]
 		},
 		{
-			"type": "crew",
-			"id": "automated_distress_beacon_constellation_crew",
-			"set": ["72234p"],
-			"name": "Automated Distress Beacon",
-			"cost": 3,
-			"text": "You may fill a [crew], [tech] or [weapon] Upgrade slot with this card. No ship may be equipped with more than one 'Automated Distress Beacon' Upgrade\n\nACTION: Discard this card to target a ship that is not within Range 1-3 of your ship. The target ship immediately performs an additional maneuver with a speed of 2 straight bank or turn.",
-			"unique": false,
-			"factions": ["federation"]
+			"type" : "crew",
+			"id" : "automated_distress_beacon_constellation_crew",
+			"set" : ["72234p"],
+			"name" : "Automated Distress Beacon",
+			"cost" : 3,
+			"text" : "You may fill a [crew], [tech] or [weapon] Upgrade slot with this card. No ship may be equipped with more than one 'Automated Distress Beacon' Upgrade\n\nACTION: Discard this card to target a ship that is not within Range 1-3 of your ship. The target ship immediately performs an additional maneuver with a speed of 2 straight bank or turn.",
+			"unique" : false,
+			"factions" : ["federation"]
 		},
 		{
-			"type": "weapon",
-			"id": "automated_distress_beacon_constellation_weapon",
-			"set": ["72234p"],
-			"name": "Automated Distress Beacon",
-			"cost": 3,
-			"text": "You may fill a [crew], [tech] or [weapon] Upgrade slot with this card. No ship may be equipped with more than one 'Automated Distress Beacon' Upgrade\n\nACTION: Discard this card to target a ship that is not within Range 1-3 of your ship. The target ship immediately performs an additional maneuver with a speed of 2 straight bank or turn.",
-			"unique": false,
-			"factions": ["federation"]
+			"type" : "weapon",
+			"id" : "automated_distress_beacon_constellation_weapon",
+			"set" : ["72234p"],
+			"name" : "Automated Distress Beacon",
+			"cost" : 3,
+			"text" : "You may fill a [crew], [tech] or [weapon] Upgrade slot with this card. No ship may be equipped with more than one 'Automated Distress Beacon' Upgrade\n\nACTION: Discard this card to target a ship that is not within Range 1-3 of your ship. The target ship immediately performs an additional maneuver with a speed of 2 straight bank or turn.",
+			"unique" : false,
+			"factions" : ["federation"]
 		},
 		{
-			"type": "tech",
-			"id": "automated_distress_beacon_constellation_tech",
-			"set": ["72234p"],
-			"name": "Automated Distress Beacon",
-			"cost": 3,
-			"text": "You may fill a [crew], [tech] or [weapon] Upgrade slot with this card. No ship may be equipped with more than one 'Automated Distress Beacon' Upgrade\n\nACTION: Discard this card to target a ship that is not within Range 1-3 of your ship. The target ship immediately performs an additional maneuver with a speed of 2 straight bank or turn.",
-			"unique": false,
-			"factions": ["federation"]
+			"type" : "tech",
+			"id" : "automated_distress_beacon_constellation_tech",
+			"set" : ["72234p"],
+			"name" : "Automated Distress Beacon",
+			"cost" : 3,
+			"text" : "You may fill a [crew], [tech] or [weapon] Upgrade slot with this card. No ship may be equipped with more than one 'Automated Distress Beacon' Upgrade\n\nACTION: Discard this card to target a ship that is not within Range 1-3 of your ship. The target ship immediately performs an additional maneuver with a speed of 2 straight bank or turn.",
+			"unique" : false,
+			"factions" : ["federation"]
 		},
 		{
-			"type": "talent",
-			"id": "dominant_species_xindus",
-			"set": ["72224p"],
-			"name": "Dominant Species",
-			"cost": 5,
-			"text": "When attacking, during the Modify Defense Dice step, you may discard this card to force the defending ship to re-roll up to 2 of its defense dice.",
-			"unique": true,
-			"factions": ["xindi"]
+			"type" : "talent",
+			"id" : "dominant_species_xindus",
+			"set" : ["72224p"],
+			"name" : "Dominant Species",
+			"cost" : 5,
+			"text" : "When attacking, during the Modify Defense Dice step, you may discard this card to force the defending ship to re-roll up to 2 of its defense dice.",
+			"unique" : true,
+			"factions" : ["xindi"]
 		},
 		{
-			"type": "crew",
-			"id": "damron_xindus",
-			"set": ["72224p"],
-			"name": "Damron",
-			"cost": 4,
-			"text": "When attacking with your Primary Weapon, if your attack hits the target ship, you may spend your [target-lock] Token to discard 1 [crew] Upgrade on target ship.",
-			"unique": true,
-			"factions": ["xindi"]
+			"type" : "crew",
+			"id" : "damron_xindus",
+			"set" : ["72224p"],
+			"name" : "Damron",
+			"cost" : 4,
+			"text" : "When attacking with your Primary Weapon, if your attack hits the target ship, you may spend your [target-lock] Token to discard 1 [crew] Upgrade on target ship.",
+			"unique" : true,
+			"factions" : ["xindi"]
 		},
 		{
-			"type": "weapon",
-			"id": "photon_torpedoes_xindus",
-			"set": ["72224p"],
-			"name": "Photon Torpedoes",
-			"cost": 3,
-			"attack": 4,
-			"range": "2 - 3",
-			"text": "ATTACK: (Target Lock) Spend your target lock and place 3 Time Tokens on this card to perform this attack\r\n\r\nIf fired from a Xindi Reptilian warship add +1 attack die.",
-			"unique": false,
-			"factions": ["xindi"]
+			"type" : "weapon",
+			"id" : "photon_torpedoes_xindus",
+			"set" : ["72224p"],
+			"name" : "Photon Torpedoes",
+			"cost" : 3,
+			"attack" : 4,
+			"range" : "2 - 3",
+			"text" : "ATTACK: (Target Lock) Spend your target lock and place 3 Time Tokens on this card to perform this attack\r\n\r\nIf fired from a Xindi Reptilian warship add +1 attack die.",
+			"unique" : false,
+			"factions" : ["xindi"]
 		},
 		{
-			"type": "tech",
-			"id": "sensor_encoders_xindus",
-			"set": ["72224p"],
-			"name": "Sensor Encoders",
-			"cost": 3,
-			"text": "If your ship is destroyed, all friendly ships within Range 1-3 of your ship roll +1 defense die the next time they defend.",
-			"unique": false,
-			"factions": ["xindi"]
+			"type" : "tech",
+			"id" : "sensor_encoders_xindus",
+			"set" : ["72224p"],
+			"name" : "Sensor Encoders",
+			"cost" : 3,
+			"text" : "If your ship is destroyed, all friendly ships within Range 1-3 of your ship roll +1 defense die the next time they defend.",
+			"unique" : false,
+			"factions" : ["xindi"]
 		},
 		{
 			"type" : "talent",
@@ -22680,14 +22692,14 @@
 			"showShipResourceSlot" : false
 		},
 		{
-		"type" : "resource",
-		"id" : "main_power_grid_resource",
-		"set" : ["71230r"],
-		"name" : "Main Power Grid",
-		"cost" : 0,
-		"text" : "This card explains the rules for the Main Power Grid Resource Card and serves as a reference to remind players of its effect. This resource costs 3SP plus 2SP for each Hull Value greater than 3. Once per round, one of your ships my use on the the following abilities\r\n\r\n1)When attacking with your Primary Weapon, during the Roll Attack Dice step, suffer 1 damage to your Hull and disable all your remaining Shields to roll _2 attack dice that round.\r\n\r\nOR\r\n\r\n2)When defending, during the Compare Results step cancel up to 2 of the attacking ship's dice and place an Auxiliary Power Token beside your ship. Your ship cannot attack during the round you use this ability.",
-		"showShipResourceSlot" : false
-		},		
+			"type" : "resource",
+			"id" : "main_power_grid_resource",
+			"set" : ["71230r"],
+			"name" : "Main Power Grid",
+			"cost" : 0,
+			"text" : "This card explains the rules for the Main Power Grid Resource Card and serves as a reference to remind players of its effect. This resource costs 3SP plus 2SP for each Hull Value greater than 3. Once per round, one of your ships my use on the the following abilities\r\n\r\n1)When attacking with your Primary Weapon, during the Roll Attack Dice step, suffer 1 damage to your Hull and disable all your remaining Shields to roll _2 attack dice that round.\r\n\r\nOR\r\n\r\n2)When defending, during the Compare Results step cancel up to 2 of the attacking ship's dice and place an Auxiliary Power Token beside your ship. Your ship cannot attack during the round you use this ability.",
+			"showShipResourceSlot" : false
+		},
 		{
 			"type" : "resource",
 			"id" : "4001",
