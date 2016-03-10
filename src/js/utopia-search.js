@@ -126,6 +126,8 @@ module.directive( "search", function() {
 				filterValue: "",
 			};
 			
+			$scope.defaults = localStorage.defaults ? angular.fromJson( localStorage.defaults ) : {};				
+			
 			// Load search defaults
 			if( $scope.defaults.search )
 				angular.copy( $scope.defaults.search, $scope.search );
@@ -174,6 +176,12 @@ module.directive( "search", function() {
 					localStorage.sets = angular.toJson( sets );
 			}, true);
 					
+			// Store changes to expansions filter
+			$scope.$watch( "defaults", function(defaults) {
+				if( defaults )
+					localStorage.defaults = angular.toJson( defaults );
+			}, true);
+					
 			// Construct faction list from hard-coded list
 			$.each( $factions.list, function(i, faction) {
 				$scope.search.factions[faction.toLowerCase().replace(/ /g,"-")] = {};
@@ -220,8 +228,10 @@ module.directive( "search", function() {
 				// Load stored owned expansions
 				try {
 					$scope.search.sets = localStorage.sets ? angular.fromJson( localStorage.sets ) : {};
+					$scope.defaults = localStorage.defaults ? angular.fromJson( localStorage.defaults ) : {};
 				} catch(e) {
 					$scope.search.sets = {};
+					$scope.defaults = {};
 				}
 				
 				// Add new sets to filter

@@ -1347,6 +1347,25 @@
 			"type" : "ship",
 			"id" : "scorpion_4_71203",
 			"set" : ["71203"],
+			"name" : "Scorpion 4",
+			"class" : "Scorpion Class Attack Squadron",
+			"actions" : ["evade", "target-lock"],
+			"upgrades" : ["squadron", "squadron", "squadron"],
+			"attack" : 4,
+			"agility" : 0,
+			"hull" : 1,
+			"shields" : 1,
+			"cost" : 24,
+			"skill" : 6,
+			"text" : "Attack Squadron Tokens:5. If you attack during a round in which you preformed a Come About Maneuver, during the Modify Attack Dice step, you may re-roll all of your blank results.",
+			"unique" : true,
+			"factions" : ["romulan"],
+			"squadron" : true
+		},
+		{
+			"type" : "ship",
+			"id" : "scorpion_4_71203",
+			"set" : ["71203"],
 			"name" : "ROMULAN ATTACK FIGHTERS",
 			"class" : "Scorpion Class Attack Squadron",
 			"actions" : ["evade", "target-lock"],
@@ -1385,7 +1404,7 @@
 			"id" : "romulan_starship_tmet",
 			"set" : ["72221p"],
 			"name" : "ROMULAN STARSHIP",
-			"class" : "D'deridex Class",
+			"class" : "D'DERIDEX CLASS",
 			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
 			"upgrades" : ["tech", "weapon", "weapon", "crew"],
 			"attack" : 3,
@@ -6886,6 +6905,7 @@
 				},
 				"min" : 1,
 				"max" : 5
+
 			}
 		},
 		{
@@ -8022,6 +8042,7 @@
 				{
 					"straight" : "green",
 					"bank" : "green"
+
 				},
 				"2" :
 				{
@@ -8037,6 +8058,7 @@
 					"turn" : "red",
 					"about" : "red"
 				},
+
 				"min" : 1,
 				"max" : 3
 			}
@@ -8678,6 +8700,7 @@
 				{
 					"straight" : "white",
 					"bank" : "white"
+
 				},
 				"min" : 1,
 				"max" : 3
@@ -23808,8 +23831,8 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
+
 		},
 		{
 			"type" : "faction",
@@ -23826,8 +23849,8 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
+
 		}
 	]
 }
