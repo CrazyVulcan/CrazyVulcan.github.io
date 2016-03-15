@@ -7517,7 +7517,7 @@
 				"2" :
 				{
 					"straight" : "green",
-					"bank" : "green",
+					"bank" : "white",
 					"turn" : "white"
 				},
 				"3" :
@@ -7561,40 +7561,6 @@
 				},
 				"min" : 0,
 				"max" : 2
-			}
-		},
-		{
-			"type" : "ship-class",
-			"id" : "5018",
-			"name" : "B'Rel Class",
-			"frontArc" : "90",
-			"rearArc" : "90",
-			"maneuvers" :
-			{
-				"1" :
-				{
-					"straight" : "green",
-					"bank" : "green"
-				},
-				"2" :
-				{
-					"straight" : "green",
-					"bank" : "white",
-					"turn" : "white"
-				},
-				"3" :
-				{
-					"straight" : "white",
-					"bank" : "white",
-					"turn" : "white",
-					"about" : "red"
-				},
-				"4" :
-				{
-					"straight" : "white"
-				},
-				"min" : 1,
-				"max" : 4
 			}
 		},
 		{
