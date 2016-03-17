@@ -1327,7 +1327,7 @@
 			"hull" : 8,
 			"shields" : 0,
 			"cost" : 30,
-			"text" : "When defending, during the Roll Defence Dice step yuo may roll 1 defence die for each [hit] or [crit] result rolled by the attacking ship. If you do so, Place and Auxiliary Power Token beside your ship.",
+			"text" : "When defending, during the Roll Defence Dice step you may roll 1 defence die for each [hit] or [crit] result rolled by the attacking ship. If you do so, Place an Auxiliary Power Token beside your ship.",
 			"unique" : true,
 			"factions" : ["xindi"],
 			"squadron" : false
