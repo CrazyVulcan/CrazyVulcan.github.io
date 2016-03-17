@@ -296,6 +296,10 @@
 	background-image: url("../img/faction-mirror.png");
 }
 
+.card-faction-q-continuum {
+	background-image: url("../img/faction-q-continuum.png");
+}
+
 .card-ship .card-factions-multiple {
 	left: -0.25em;
 	top: -0.45em;
