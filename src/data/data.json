@@ -4732,7 +4732,7 @@
 			"id" : "klingon_borg_starship_71512",
 			"set" : ["71512"],
 			"name" : "Klingon/Borg Starship",
-			"class" : "B'rel Class",
+			"class" : "B'Rel Class",
 			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
 			"upgrades" : ["borg", "weapon", "weapon", "crew"],
 			"attack" : 5,
@@ -4756,7 +4756,7 @@
 			"id" : "assimilated_vessel_80279_71512",
 			"set" : ["71512"],
 			"name" : "Assimilated Vessel 80279",
-			"class" : "B'rel Class",
+			"class" : "B'Rel Class",
 			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
 			"upgrades" : ["borg", "tech", "weapon", "weapon", "crew"],
 			"attack" : 5,
@@ -4780,7 +4780,7 @@
 			"id" : "korok_s_bird_of_prey_71512",
 			"set" : ["71512"],
 			"name" : "Korok's Bird-of-Prey",
-			"class" : "B'rel Class",
+			"class" : "B'Rel Class",
 			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
 			"upgrades" : ["tech", "weapon", "weapon", "crew"],
 			"attack" : 4,
@@ -5860,7 +5860,7 @@
 			"id" : "i_k_s_korinar_71999p",
 			"set" : ["71999p"],
 			"name" : "I.K.S. Korinar",
-			"class" : "B'rel Class",
+			"class" : "B'Rel Class",
 			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
 			"upgrades" : ["tech", "weapon", "weapon", "crew"],
 			"attack" : 4,
@@ -5884,7 +5884,7 @@
 			"id" : "klingon_starship_71999p",
 			"set" : ["71999p", "71804"],
 			"name" : "Klingon Starship",
-			"class" : "B'rel Class",
+			"class" : "B'Rel Class",
 			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
 			"upgrades" : ["tech", "weapon", "crew"],
 			"attack" : 4,
@@ -5932,7 +5932,7 @@
 			"id" : "i_k_s_ning_tao_71804",
 			"set" : ["71804"],
 			"name" : "I.K.S. Ning'tao",
-			"class" : "B'rel Class",
+			"class" : "B'Rel Class",
 			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
 			"upgrades" : ["tech", "weapon", "weapon", "crew"],
 			"attack" : 4,
@@ -7499,40 +7499,6 @@
 				{
 					"straight" : "red"
 				}
-			}
-		},
-		{
-			"type" : "ship-class",
-			"id" : "5016",
-			"name" : "B'rel Class",
-			"frontArc" : "90",
-			"rearArc" : "90",
-			"maneuvers" :
-			{
-				"1" :
-				{
-					"straight" : "green",
-					"bank" : "green"
-				},
-				"2" :
-				{
-					"straight" : "green",
-					"bank" : "green",
-					"turn" : "white"
-				},
-				"3" :
-				{
-					"straight" : "white",
-					"bank" : "white",
-					"turn" : "white",
-					"about" : "red"
-				},
-				"4" :
-				{
-					"straight" : "white"
-				},
-				"min" : 1,
-				"max" : 4
 			}
 		},
 		{
