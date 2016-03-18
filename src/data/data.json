@@ -9929,7 +9929,7 @@
 			"set" : ["GenCon2013Promo"],
 			"name" : "Khan Singh",
 			"unique" : true,
-			"text" : "(Gen-Con Promo) You do not pay a Faction penalty when assigning Khan or any Talent Upgrade to your ship. If any Captain in play has a higher Skill Number than Khan, Khan's Skill Number equals that Captains Skill Number.",
+			"text" : "(Gen-Con Promo) You do not pay a Faction penalty when assigning Khan or any [talent] Upgrade to your ship. If any Captain in play has a higher Skill Number than Khan, Khan's Skill Number equals that Captain's Skill Number.",
 			"factions" : ["independent"],
 			"cost" : 4,
 			"skill" : 6,
