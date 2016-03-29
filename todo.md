@@ -6,6 +6,12 @@ Global todo:
 - [ ] card picturs
 - [x] test
 
+Spellchecking:
+- [X] Waves 0-3
+- [ ] Waves 4-23
+- [X] OP Kits (The Dominion War, Khan GenCon, The Tholian Web, The Collective, Resistance is Futile)
+- [ ] OP Kits (A Matter of Honor, The Q-Continuum, Peak Performance, Year of Hell, Balance of Terror, Temporal Cold War, The Void, The Doomsday Machine)
+- [ ] 2015-16 Reinforcement Blind Ships
 
 Cards that need functionality:
 - [x] test1
