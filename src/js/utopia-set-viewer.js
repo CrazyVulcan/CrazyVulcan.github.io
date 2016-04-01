@@ -6,12 +6,13 @@ module.controller( "UtopiaSetCtrl", [ "$scope", "$filter", "cardLoader", "$facti
 	$scope.sets = {};
 	$scope.setList = [];
 	$scope.shipClasses = {};
+	$scope.token = {};
 
 	$scope.viewer = {};
 	$scope.activeSet = false;
 	$scope.setCards = [];
 	
-	cardLoader( $scope.cards, $scope.sets, $scope.shipClasses, function() {
+	cardLoader( $scope.cards, $scope.sets, $scope.shipClasses, $scope.token, function() {
 
 		var setId = location.hash ? location.hash.substring(1) : false;
 		

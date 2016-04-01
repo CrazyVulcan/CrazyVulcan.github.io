@@ -660,6 +660,27 @@
 	overflow: auto;
 }
 
+.card-token-header {
+	background: #a8b6bf;
+	border-radius: 0.4em;
+	text-align: center;
+}
+
+.card-token .card-title {
+	padding-top: 0.1em;
+}
+.card-token .card-title-long {
+	padding-top: 0.25em;
+}
+
+.card-token .card-text {
+	margin: 0;
+	margin-top: 0.2em;
+	height: 20.7em;
+	text-align: left;
+	overflow: auto;
+}
+
  .drag-over.card-resource[draggable] {
 	opacity: 0.2;
 }

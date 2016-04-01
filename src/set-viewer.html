@@ -41,6 +41,9 @@
 					<div class="card-container" ng-if="card.type == 'ship' && card.unique">
 						<card card="card.classData" ship="card"></card>
 					</div>
+					<div class="card-container" ng-if="card.hasTokenInfo">
+						<card card="card.tokenData"></card>
+					</div>
 				</ngRepeat>
 			
 			</div>

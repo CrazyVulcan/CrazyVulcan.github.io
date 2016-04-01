@@ -1,10 +1,10 @@
-var module = angular.module("utopia-card-loader", ["utopia-card-rules","utopia-card-ship","utopia-card-upgrade","utopia-card-resource","utopia-card-faction"]);
+var module = angular.module("utopia-card-loader", ["utopia-card-rules","utopia-card-ship","utopia-card-upgrade","utopia-card-resource","utopia-card-faction","utopia-card-token"]);
 
 module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", function($http, $filter, cardRules, $factions) {
 
 	var valueOf = $filter("valueOf");
 
-	return function(cards, sets, shipClasses, callback) {
+	return function(cards, sets, shipClasses, token, callback) {
 
 		function isDuplicate(card, cards) {
 			var dupe = false;
@@ -311,6 +311,15 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 				};
 			}
 			
+			if( card.type == "token") {
+				if( token[card.id] ) {
+					console.log("Duplicate token",card.id,card.name);
+					return;
+				}
+				
+				token[card.id] = card;
+			}
+			
 			// Apply specific card rules
 			if( cardRules[card.type+":"+card.id] )
 				$.extend( true, card, cardRules[card.type+":"+card.id] );
@@ -432,6 +441,9 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 					}
 					if( !card.classId || !card.classData || !shipClasses[card.classId] )
 						console.log( "No class for ship", card.id, card.name, card.class, card.classId );
+				}
+				if( card.hasTokenInfo && token[card.tokenId] ) {
+					card.tokenData = token[card.tokenId];
 				}
 			});
 			

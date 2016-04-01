@@ -22,11 +22,12 @@ module.controller( "UtopiaCtrl", [ "$scope", "$filter", "cardLoader", "$factions
 	$scope.sets = {};
 	$scope.setList = [];
 	$scope.shipClasses = {};
+	$scope.token = {};
 	$scope.activeFleet = { ships: [] };
 
 	$scope.loading = true;
 	
-	cardLoader( $scope.cards, $scope.sets, $scope.shipClasses, function() {
+	cardLoader( $scope.cards, $scope.sets, $scope.shipClasses, $scope.token, function() {
 
 		$scope.$broadcast("cardsLoaded");
 		$scope.loading = false;
