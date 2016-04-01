@@ -4127,7 +4127,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				self: {
 					cost: function(card,ship,fleet,cost) {
-						if( ship && ship.class != "Constitution Class" )
+						if( ship && ship.class != "Constitution Class" && ship.class != "Constitution Refit Class" )
 							return resolve(card,ship,fleet,cost) + 3;
 						return cost;
 					}
