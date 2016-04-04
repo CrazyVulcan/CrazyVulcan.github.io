@@ -1626,7 +1626,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 		// Elim Garak
 		"crew:elim_garak_71786": {
-			talents: 1,
+			//talents: 1,
 			upgradeSlots: [ 
 				{ 
 					type: ["talent"], 

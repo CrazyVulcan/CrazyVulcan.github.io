@@ -16665,7 +16665,7 @@
 			"set" : ["gavroche"],
 			"name" : "Sakonna",
 			"unique" : true,
-			"text" : "Add 1 additional [weapon] Updrade slot to your Upgrade Bar. \n\nAll of your [weapon] Upgrades with a cost of 5 or less cost -2 SP.",
+			"text" : "Add 1 additional [weapon] Upgrade slot to your Upgrade Bar. \n\nAll of your [weapon] Upgrades with a cost of 5 or less cost -2 SP.",
 			"factions" : ["independent"],
 			"cost" : 2,
 			"skill" : 0,
@@ -17411,7 +17411,7 @@
 			"factions" : ["dominion"],
 			"cost" : 4,
 			"skill" : 0,
-			"talents" : 0,
+			"talents" : 1,
 			"attack" : 0,
 			"range" : ""
 		},
