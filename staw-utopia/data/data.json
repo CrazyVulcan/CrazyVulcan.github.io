@@ -13104,9 +13104,9 @@
 			"set" : ["72233"],
 			"name" : "Prototype Cloaking Device",
 			"cost" : 4,
-			"text" : "<b>ACTION:</b> Disable this card to perform the [cloak] Action as a free Action, even if you have no Active Shields. Roll +1 attack die. On a [battlestations] result your hull sustains 1 Damage while your ship is cloaked you may perform the [echo] Action\r\n\r\nThis Upgrade costs +5 SP for any non-Romulan ship and no ship may have more than 1 'Prototype Cloaking Device' Upgrade.",
+			"text" : "<b>ACTION:</b> Disable this card to perform the [cloak] Action as a free Action, even if you have no Active Shields. Roll +1 attack die. On a [battlestations] result your hull sustains 1 Damage while your ship is cloaked you may perform the [scan] Action\r\n\r\nThis Upgrade costs +5 SP for any non-Romulan ship and no ship may have more than 1 'Prototype Cloaking Device' Upgrade.",
 			"unique" : true,
-			"factions" : ["rolls"]
+			"factions" : ["romulan"]
 		},
 		{
 			"type" : "crew",

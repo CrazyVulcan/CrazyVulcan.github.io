@@ -865,9 +865,35 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 		// UPGRADES
 		
+		// Standby Battle Stations - check for battlestations icon in action bar of assigned ship
+		"talent:standby_battle_stations_constellation": {
+			canEquip: function(upgrade,ship,fleet) {
+				return (ship && !!~ship.actions.indexOf("battlestations"));
+			}
+		},
 		
+		// Reman Bodyguards - one per ship only 
+		"crew:reman_bodyguards_jazkel": {
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("Reman Bodyguards")(upgrade,ship,fleet);
+			}
+		},	
 		
-		
+		// Prototype Cloaking Device - +5 SP for any non-Romulan ship, one per ship only
+		"tech:prototype_cloaking_device_jazkel": {
+			intercept: {
+				self: {
+					cost: function(upgrade,ship,fleet,cost) {
+						if( ship && ship.class.indexOf("Romulan") < 0)
+							return resolve(upgrade,ship,fleet,cost) + 5;
+						return cost;
+					},
+					canEquip: function(upgrade,ship,fleet) {
+						return onePerShip("Prototype Cloaking Device")(upgrade,ship,fleet);
+					}
+				}
+			}
+		},
 		
 		// Photon Torpedoes (Vor'cha Bonus)
 		"weapon:3010": {
