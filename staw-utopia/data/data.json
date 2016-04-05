@@ -13124,7 +13124,7 @@
 			"set" : ["72232"],
 			"name" : "Klingon Navigator",
 			"cost" : 2,
-			"text" : "During the Activation Phase before you move, you may discard this card to disregard your chosen maneuver on your Maneuver Dial with a speed of 3 or less. Treat this maneuver as a red maneuver. No ship may be equipped with more then on 'Klingon Navigator' Upgrade.",
+			"text" : "During the Activation Phase before you move, you may discard this card to disregard your chosen maneuver on your Maneuver Dial with a speed of 3 or less. Treat this maneuver as a red maneuver. No ship may be equipped with more than on 'Klingon Navigator' Upgrade.",
 			"unique" : false,
 			"factions" : ["klingon"]
 		},
@@ -13404,9 +13404,9 @@
 			"type" : "question",
 			"id" : "maintenance_crew_71212",
 			"set" : ["71212"],
-			"name" : "Maintence Crew",
+			"name" : "Maintenance Crew",
 			"cost" : 6,
-			"text" : "This Upgrades does not require and upgrade slot. Add 1 [crew] Upgrade slot to your Upgrade Bar   During the Planning Phase you may discard this card and 1 of your [crew] Upgrades to repair up to 2 Damage to your ship.  No ship may be equipped with more then one 'Maintenance Crew' Upgrade.",
+			"text" : "This Upgrades does not require and upgrade slot. Add 1 [crew] Upgrade slot to your Upgrade Bar   During the Planning Phase you may discard this card and 1 of your [crew] Upgrades to repair up to 2 Damage to your ship.  No ship may be equipped with more than one 'Maintenance Crew' Upgrade.",
 			"unique" : false,
 			"factions" : ["dominion"]
 		},
@@ -13504,7 +13504,7 @@
 			"set" : ["71192"],
 			"name" : "Kazon Gurad",
 			"cost" : 4,
-			"text" : "During the Activation Phase, you may discard this card to place an [evade] Token beside your ship, even if there is already one there. If you do so place an Auxiliary Power Token beside your ship. No ship may be equiped with more then one 'Kazon Gurad' Upgrade.",
+			"text" : "During the Activation Phase, you may discard this card to place an [evade] Token beside your ship, even if there is already one there. If you do so place an Auxiliary Power Token beside your ship. No ship may be equiped with more than one 'Kazon Gurad' Upgrade.",
 			"unique" : false,
 			"factions" : ["kazon"]
 		},
@@ -13548,7 +13548,7 @@
 			"set" : ["71192"],
 			"name" : "Unremarkable Species",
 			"cost" : 5,
-			"text" : "This Upgrade does not require an Upgrade slot and my not be deployed to a Borg ship. While this upgrade is equipped to your ship your Kazon Upgrades cannot be targed by the Borg Assimilation Tubules Upgrade. In addation when defending against a Borg ship, during the Roll Defense Dice step roll +2 defence dice. This Upgrade costs +5SP if purchased for a non Kazon ship and no ship may be equipped with more then 1 'Unremarkable Species' Upgrade.",
+			"text" : "This Upgrade does not require an Upgrade slot and my not be deployed to a Borg ship. While this upgrade is equipped to your ship your Kazon Upgrades cannot be targed by the Borg Assimilation Tubules Upgrade. In addation when defending against a Borg ship, during the Roll Defense Dice step roll +2 defence dice. This Upgrade costs +5SP if purchased for a non Kazon ship and no ship may be equipped with more than 1 'Unremarkable Species' Upgrade.",
 			"unique" : false,
 			"factions" : ["kazon"]
 		},

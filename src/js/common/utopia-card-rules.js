@@ -4162,7 +4162,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			},
 			canEquip: function(card,ship,fleet) {
-				if( ship.class != "Constitution Class" )
+				if( ship.class != "Constitution Class" && ship.class != "Constitution Refit Class" )
 					return false;
 				return onePerShip("Astrogator")(card,ship,fleet);
 			},
@@ -4730,10 +4730,22 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 
 		// Dreadnought
-		// Counter Measures - one per ship only
+		// Counter Measures - one per ship only, +5 SP on any ship except ATR-4107
 		"tech:counter_measures_71212": {
 			canEquip: function(upgrade,ship,fleet) {
 				return onePerShip("Counter Measures")(upgrade,ship,fleet);
+			},
+			cost: function(upgrade,ship,fleet,cost) {
+				if( ship && ship.class != "Cardassian ATR-4107" )
+					return resolve(upgrade,ship,fleet,cost) + 5;
+				return cost;
+			}
+		},
+		
+		// Maintenance Crew
+		"question:maintenance_crew_71212": {
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("Maintenance Crew")(upgrade,ship,fleet);
 			}
 		},
 		
@@ -4764,6 +4776,109 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"tech:self_destruct_sequence_pi": {
 			canEquip: function(upgrade,ship,fleet) {
 				return onePerShip("Self Destruct Sequence")(upgrade,ship,fleet);
+			}
+		},
+		
+		// I.S.S. Enterprise
+		// Agony Booth - one per ship only
+		"tech:agony_booth_71796": {
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("Agony Booth")(upgrade,ship,fleet);
+			}
+		},
+
+		// Temporal Cold War Cards
+		// Vosk - talents have no faction penalty
+		"captain:temporal_cold_war_vosk": {
+			factionPenalty: function(card,ship,fleet,factionPenalty) {
+				if( card.type == "talent" )
+					return 0;
+				return factionPenalty;
+			}
+		},
+		
+		// Temporal Conduit - +5 SP if fielded on a non-Mirror Universe ship
+		"tech:temporal_cold_war_temporal_conduit": {
+			cost: function(upgrade,ship,fleet,cost) {
+				if( ship && !$factions.hasFaction(ship,"mirror-universe", ship, fleet) )
+					return resolve(upgrade,ship,fleet,cost) + 5;
+				return cost;
+			}
+		},
+		
+		// Xindus
+		// Photon Torpedoes - +1 attack die if fielded on a Xindi Reptilian Warship
+		"weapon:photon_torpedoes_xindus": {
+			attack: function(upgrade,ship,fleet,attack) {
+				if( ship && ship.class == "Xindi Reptilian Warship" )
+					return resolve(upgrade,ship,fleet,attack) + 1;
+				return attack;
+			}
+		},
+
+		// Xindi Weapon Zero
+		// Arming Sequence - only on Xindi Weapon
+		"talent:arming_sequence_weapon_zero": {
+			canEquip: function(upgrade,ship,fleet) {
+				return ( ship && ship.class == "Xindi Weapon" );
+			}
+		},
+		
+		// Destructive Blast - only on Xindi Weapon
+		"weapon:destructive_blast_weapon_zero": {
+			canEquip: function(upgrade,ship,fleet) {
+				return ( ship && ship.class == "Xindi Weapon" );
+			}
+		},
+		
+		// Rotating Emitters - only on Xindi Weapon
+		"weapon:rotating_emitters_weapon_zero": {
+			canEquip: function(upgrade,ship,fleet) {
+				return ( ship && ship.class == "Xindi Weapon" );
+			}
+		},
+		
+		// Subspace Vortext - only on Xindi Weapon
+		"tech:subspace_vortex_weapon_zero": {
+			canEquip: function(upgrade,ship,fleet) {
+				return ( ship && ship.class == "Xindi Weapon" );
+			}
+		},
+		
+		// Self-Destruct - only on Xindi Weapon
+		"tech:self_destruct_weapon_zero": {
+			canEquip: function(upgrade,ship,fleet) {
+				return ( ship && ship.class == "Xindi Weapon" );
+			}
+		},
+		
+		// Degra
+		"crew:degra_weapon_zero": {
+			cost: function(upgrade,ship,fleet,cost) {
+				if( upgrade.type == "weapon" )
+					return resolve(upgrade,ship,fleet,cost) - 1;
+				return cost;
+			}
+		},
+		
+		// I.K.S. Amar
+		// Klingon Helmsman - +5 SP if fielded on a non-Klingon ship
+		"crew:klingon_helmsman_amar": {
+			// TODO Need to check ship maneuver card - not imported yet
+			canEquip: function(upgrade,ship,fleet) {
+				return true;
+			},
+			cost: function(upgrade,ship,fleet,cost) {
+				if( ship && !$factions.hasFaction(ship,"klingon", ship, fleet) )
+					return resolve(upgrade,ship,fleet,cost) + 5;
+				return cost;
+			}
+		},
+		
+		// Klingon Navigator - one per ship only
+		"crew:klingon_navigator_amar": {
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("Klingon Navigator")(upgrade,ship,fleet);
 			}
 		},
 	
