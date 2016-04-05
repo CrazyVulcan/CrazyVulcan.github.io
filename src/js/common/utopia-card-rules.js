@@ -865,20 +865,6 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 		// UPGRADES
 		
-		// Standby Battle Stations - check for battlestations icon in action bar of assigned ship
-		"talent:standby_battle_stations_constellation": {
-			canEquip: function(upgrade,ship,fleet) {
-				return (ship && !!~ship.actions.indexOf("battlestations"));
-			}
-		},
-		
-		// Reman Bodyguards - one per ship only 
-		"crew:reman_bodyguards_jazkel": {
-			canEquip: function(upgrade,ship,fleet) {
-				return onePerShip("Reman Bodyguards")(upgrade,ship,fleet);
-			}
-		},	
-		
 		// Prototype Cloaking Device - +5 SP for any non-Romulan ship, one per ship only
 		"tech:prototype_cloaking_device_jazkel": {
 			intercept: {
@@ -4646,8 +4632,140 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 		},
 
+		// U.S.S. Constellation
+		// Standby Battle Stations - check for battlestations icon in action bar of assigned ship
+		"talent:standby_battle_stations_constellation": {
+			canEquip: function(upgrade,ship,fleet) {
+				return (ship && !!~ship.actions.indexOf("battlestations"));
+			}
+		},
 		
+		// Auxiliary Control Room - one per ship only
+		"tech:auxiliary_control_room_constellation_tech": {
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("Auxiliary Control Room")(upgrade,ship,fleet);
+			}
+		},
+		"weapon:auxiliary_control_room_constellation_weapon": {
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("Auxiliary Control Room")(upgrade,ship,fleet);
+			}
+		},
 		
-	};
+		// Automated Distress Beacon - one per ship only
+		"crew:automated_distress_beacon_constellation_crew": {
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("Automated Distress Beacon")(upgrade,ship,fleet);
+			}
+		},
+		"tech:automated_distress_beacon_constellation_tech": {
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("Automated Distress Beacon")(upgrade,ship,fleet);
+			}
+		},
+		"weapon:automated_distress_beacon_constellation_weapon": {
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("Automated Distress Beacon")(upgrade,ship,fleet);
+			}
+		},
+
+		// I.R.W. Jazkal
+		// Reman Bodyguards - one per ship only 
+		"crew:reman_bodyguards_jazkel": {
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("Reman Bodyguards")(upgrade,ship,fleet);
+			}
+		},	
+		
+		// Disruptor Banks - one per ship only
+		"weapon:distuptor_banks_jazkel": {
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("Disruptor Banks")(upgrade,ship,fleet);
+			}
+		},
+		
+		// I.K.S. Amar
+		// Stand By Torpedoes - one per ship only
+		"weapon:stand_by_torpedoes_amar": {
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("Stand By Torpedoes")(upgrade,ship,fleet);
+			}
+		},
 	
+		// I.R.W. T'Met
+		// Charing Weapons - one per ship only
+		"weapon:charging_Weapons_tmet": {
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("CHARGING WEAPONS")(upgrade,ship,fleet);
+			}
+		},
+
+		// Self Repair Technology - one per ship only
+		"tech:self_repair_technology_tmet": {
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("SELF REPAIR TECHNOLOGY")(upgrade,ship,fleet);
+			}
+		},
+
+		// Scorpion 4
+		// Cover Fire - one per ship only
+		"squadron:cover_fire_71203": {
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("Cover Fire")(upgrade,ship,fleet);
+			}
+		},
+		
+		// Torpedo Attack - one per ship only
+		"squadron:torpedo_attack_71203": {
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("Torpedo Attack")(upgrade,ship,fleet);
+			}
+		},
+
+		// Support Ship - one per ship only
+		"squadron:support_ship_71203": {
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("Support Ship")(upgrade,ship,fleet);
+			}
+		},
+
+		// Dreadnought
+		// Counter Measures - one per ship only
+		"tech:counter_measures_71212": {
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("Counter Measures")(upgrade,ship,fleet);
+			}
+		},
+		
+		// U.S.S. Hathaway
+		// Navigational Station - one per ship only
+		"tech:navigational_station_71201": {
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("Navigational Station")(upgrade,ship,fleet);
+			}
+		},
+		
+		// R.I.S. Pi
+		// Distress Signal - one per ship only
+		"tech:distress_signal_pi": {
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("Distress Signal")(upgrade,ship,fleet);
+			}
+		},
+	
+		// Gravition Field Generator - one per ship only
+		"tech:gravition_field_generator_pi": {
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("Gravition Field Generator")(upgrade,ship,fleet);
+			}
+		},
+	
+		// Self Destruct Sequence - one per ship only
+		"tech:self_destruct_sequence_pi": {
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("Self Destruct Sequence")(upgrade,ship,fleet);
+			}
+		},
+	
+	};
 }]);
