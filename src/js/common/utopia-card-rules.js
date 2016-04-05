@@ -4670,11 +4670,24 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 
 		// I.R.W. Jazkal
-		// Reman Bodyguards - one per ship only 
+		// Reman Bodyguards - one per ship only, if on ship with Vrax as captain -2 SP
 		"crew:reman_bodyguards_jazkel": {
-			canEquip: function(upgrade,ship,fleet) {
-				return onePerShip("Reman Bodyguards")(upgrade,ship,fleet);
+				intercept: {
+				self: {
+					canEquip: function(upgrade,ship,fleet) {
+						if ( onePerShip("Reman Bodyguards")(upgrade,ship,fleet) )
+							return true;
+						if ( onePerShip("Reman Bodyguards")(upgrade,ship,fleet) && ship.captain && ( ship.captain.name == "Vrax" ) )
+							return true;
+						return false;
+					},
+					cost: function(upgrade,ship,fleet,cost) {
+						if( ship && ship.captain && ship.captain.name == "Vrax" )
+							return resolve(upgrade,ship,fleet,cost) - 2;
+						return cost;
+					}
 			}
+			},
 		},	
 		
 		// Disruptor Banks - one per ship only
@@ -4881,6 +4894,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return onePerShip("Klingon Navigator")(upgrade,ship,fleet);
 			}
 		},
+	
 	
 	};
 }]);

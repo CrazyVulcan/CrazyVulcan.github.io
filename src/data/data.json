@@ -9657,7 +9657,7 @@
 			"cost" : 2,
 			"skill" : 3,
 			"talents" : 1,
-			"text" : "You may deploy the 'Reman Bodyguards' Upgrade  to your ship at a cost of -2 SP, even if it exceeds your ship's restrictions.",
+			"text" : "You may deploy the 'Reman Bodyguards' Upgrade to your ship at a cost of -2 SP, even if it exceeds your ship's restrictions.",
 			"unique" : true,
 			"factions" : ["romulan"]
 		},
