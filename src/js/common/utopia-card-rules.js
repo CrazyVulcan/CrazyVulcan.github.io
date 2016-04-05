@@ -4895,6 +4895,39 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 		},
 	
-	
+
+		// The Classic Movies - U.S.S. Reliant
+		// Khan Singh
+		"captain:the_classic_movies_khan_singh": {
+			intercept: {
+				ship: {
+					// No faction penalty for upgrades
+					factionPenalty: function(card, ship, fleet, factionPenalty) {
+						if( isUpgrade(card) )
+							return 0;
+						return factionPenalty;
+					}
+				}
+			},
+			//text: "Up to 3 of the Upgrades you purchase for your ship cost exactly 4 SP each and are placed face down beside your Ship Card, the printed cost on those Upgrades cannot be greater than 6",
+			upgradeSlots: [{/* Existing Talent Slot */} ].concat(cloneSlot( 3 , 
+				{ 
+					type: upgradeTypes,
+					faceDown: true,
+					intercept: {
+						ship: {
+							cost: function() { return 4; },
+							factionPenalty: function() { return 0; },
+							canEquip: function(card,ship,fleet,canEquip) {
+								if( (valueOf(card,"cost",ship,fleet) <= 6) )
+									return canEquip;
+								return false;
+							}
+						}
+					}
+				}
+			)),
+		},
+		
 	};
 }]);
