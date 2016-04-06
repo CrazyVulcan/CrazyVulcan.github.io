@@ -1306,9 +1306,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 		// Warp Drive Refit
 		"tech:warp_drive_refit_71445": {
-			// TODO Need to check ship maneuver card - not imported yet
 			canEquip: function(upgrade,ship,fleet) {
-				return true;
+				if ( ship && ship.classData && ship.classData.maneuvers && ship.classData.maneuvers.max )
+					return ( ship.classData.maneuvers.max < 4 );
+				return false;
 			}
 		},
 		
@@ -4877,14 +4878,26 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		// I.K.S. Amar
 		// Klingon Helmsman - +5 SP if fielded on a non-Klingon ship
 		"crew:klingon_helmsman_amar": {
-			// TODO Need to check ship maneuver card - not imported yet
-			canEquip: function(upgrade,ship,fleet) {
-				return true;
-			},
-			cost: function(upgrade,ship,fleet,cost) {
-				if( ship && !$factions.hasFaction(ship,"klingon", ship, fleet) )
-					return resolve(upgrade,ship,fleet,cost) + 5;
-				return cost;
+			intercept: {
+				self: {
+					canEquip: function(upgrade,ship,fleet) {
+						if ( ship && ship.classData && ship.classData.maneuvers )
+							$.each( ship.classData.maneuvers, function(i,maneuver) {
+								// TODO fix this check!!
+								if( typeof maneuver.about !== 'undefined' ){
+									return true;
+								}
+							});
+						return true;
+					},
+				},
+				ship: {
+					cost: function(upgrade,ship,fleet,cost) {
+						if( ship && !$factions.hasFaction(ship,"klingon", ship, fleet) )
+							return resolve(upgrade,ship,fleet,cost) + 5;
+						return cost;
+					}
+				}
 			}
 		},
 		

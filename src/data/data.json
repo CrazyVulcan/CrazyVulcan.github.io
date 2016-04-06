@@ -12945,7 +12945,7 @@
 			"set" : ["72232"],
 			"name" : "Klingon Helmsman",
 			"cost" : 3,
-			"text" : "<b>ACTION:</b> Discard this card to immediately preform an additional 1[about] or 2[about]Maneuver. Treat this as a red maneuver. This card costs +5 SP for any non-Klingon ship and cannot be deployed to a ship the does not have a [about] maneuver.",
+			"text" : "<b>ACTION:</b> Discard this card to immediately preform an additional 1[come-about] or 2[come-about] Maneuver. Treat this as a red maneuver. This card costs +5 SP for any non-Klingon ship and cannot be deployed to a ship the does not have a [come-about] maneuver.",
 			"unique" : false,
 			"factions" : ["klingon"]
 		},
