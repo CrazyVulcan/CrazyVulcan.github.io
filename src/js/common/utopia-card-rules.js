@@ -4929,5 +4929,30 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			)),
 		},
 		
+		// I.R.W. Jazkal
+		// Nijil
+		"crew:nijil_jazkal": {
+			//text: "Add 1 [tech] Upgrade to your Upgrade Bar. That Upgrade costs -1 SP (min 1) and must be a Romulan [tech] Upgrade.",
+			upgradeSlots: cloneSlot( 1 , 
+				{ 
+					type: ["tech"],
+					intercept: {
+						ship: {
+							cost: function(upgrade,ship,fleet,cost) {
+								cost = resolve(upgrade,ship,fleet,cost) - 1;
+								if (cost < 1)
+									cost = 1;
+								return cost;
+							},
+							canEquip: function(card,ship,fleet,canEquip) {
+								if( !$factions.hasFaction( card, "romulan", ship, fleet ) )
+									return false;
+								return canEquip;
+							}
+						}
+					}
+				}
+			),
+		},
 	};
 }]);
