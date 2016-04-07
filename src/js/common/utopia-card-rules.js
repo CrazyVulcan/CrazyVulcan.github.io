@@ -4882,14 +4882,13 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				self: {
 					canEquip: function(upgrade,ship,fleet) {
 						if ( ship && ship.classData && ship.classData.maneuvers )
-							$.each( ship.classData.maneuvers, function(i,maneuver) {
-								// TODO fix this check!!
-								if( typeof maneuver.about !== 'undefined' ){
+							for (i = 1; i < ship.classData.maneuvers.max; i++ )
+							{
+								if ( ship.classData.maneuvers[i].about !== undefined )
 									return true;
-								}
-							});
-						return true;
-					},
+							}
+						return false;
+					}
 				},
 				ship: {
 					cost: function(upgrade,ship,fleet,cost) {
