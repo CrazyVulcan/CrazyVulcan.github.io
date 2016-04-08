@@ -4922,6 +4922,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			},
 			//text: "Up to 3 of the Upgrades you purchase for your ship cost exactly 4 SP each and are placed face down beside your Ship Card, the printed cost on those Upgrades cannot be greater than 6",
+			// TODO not very sophisticated
 			upgradeSlots: [{/* Existing Talent Slot */} ].concat(cloneSlot( 3 , 
 				{ 
 					type: upgradeTypes,
@@ -4966,5 +4967,51 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			),
 		},
+		
+		// Tebok
+		// TODO add a talent slot somehow or a way to add a talent card without the slot
+		"captain:tebok_tmet": {
+			// ... if there is at least one other Romulan Ship in your starting fleet, Tebok my field 1 Romulan [talent] at a cost of -1 SP.
+			// This is a messy implementation. It requires recalculation of the candidate for each upgrade on the ship.
+			intercept: {
+				ship: {
+					cost: function(upgrade,ship,fleet,cost) {
+						
+						var candidate = false;
+						var candCost = 0;
+						var romulanCount = 0;
+						
+						// Find if there are two romulan ships in the fleet
+						$.each( fleet.ships, function(i, ship) {
+							if ( $factions.hasFaction(ship,"romulan",ship,fleet) )
+								romulanCount += 1;
+						});
+						
+						if (romulanCount < 2)
+							return cost;
+						
+						// Find a talent on the ship
+						$.each( $filter("upgradeSlots")(ship), function(i, slot) {
+							if( slot.occupant && slot.occupant != upgrade && slot.occupant.type == "talent" && $factions.hasFaction(slot.occupant,"romulan",ship,fleet) ) {
+								var occCost = valueOf(slot.occupant,"cost",ship,fleet);
+								// Stop as soon as we have a Talent with cost > 0
+								if( occCost > 0 ) {
+									candidate = slot.occupant;
+									candCost = occCost;
+									return false;
+								}
+							}
+						});
+						
+						// Subtract 1 from Tebok's cost
+						return candCost > 0 ? cost - 1 : cost;
+						
+					}
+				}
+			}
+		},
+		
+		// Covert Mission
+		// TODO card rules missing
 	};
 }]);
