@@ -1,0 +1,19 @@
+
+{
+	"sets" : [
+		{
+			"type" : "set",
+			"id" : "72241",
+			"name" : "I.K.S. Drovana",
+			"releaseDate" : "2016-05-11",
+			"parentSet" : "Wave 24"
+		},
+		{
+			"type" : "set",
+			"id" : "72242",
+			"name" : "I.R.W. Algeron",
+			"releaseDate" : "2016-05-12",
+			"parentSet" : "Wave 24"
+		}
+	]
+}
