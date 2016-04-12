@@ -5013,5 +5013,39 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 		// Covert Mission
 		// TODO card rules missing
+		
+		// I.K.S. Drovana
+		// Kurn
+		"captain:kurn_72241": {
+			upgradeSlots: [ 
+				{ 
+					type: ["talent"], 
+					rules: "Klingon only",
+					canEquip: function(card,ship,fleet,canEquip) {
+						return $factions.hasFaction( card, "klingon", ship, fleet );
+					}
+				}
+			]
+		},
+		
+		// Emergency Power
+		"tech:emergency_power_72241": {
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("Emergency Power")(upgrade,ship,fleet);
+			}
+		},
+		
+		// Photon Torpedoes (Vor'cha Bonus)
+		"weapon:photon_torpedoes_72241": {
+			intercept: {
+				self: {
+					attack: function(upgrade,ship,fleet,attack) {
+						if( ship && ship.class == "Vor'cha Class" )
+							return resolve(upgrade,ship,fleet,attack) + 1;
+						return attack;
+					}
+				}
+			}
+		},
 	};
 }]);
