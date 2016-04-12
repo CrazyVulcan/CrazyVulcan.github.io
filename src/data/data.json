@@ -3,6 +3,13 @@
 	"sets" : [
 		{
 			"type" : "set",
+			"id" : "72240",
+			"name" : "U.S.S. Enterprise (repaint)",
+			"releaseDate" : "2016-05-10",
+			"parentSet" : "Wave 24"
+		},
+		{
+			"type" : "set",
 			"id" : "72234p",
 			"name" : "U.S.S. Constellation",
 			"releaseDate" : "2016-03-15",
@@ -1894,7 +1901,7 @@
 		{
 			"type" : "ship",
 			"id" : "1009",
-			"set" : ["71122"],
+			"set" : ["71122", "72240"],
 			"name" : "U.S.S. Enterprise",
 			"class" : "Constitution Class",
 			"actions" : ["evade", "target-lock", "scan", "battlestations"],
@@ -1918,7 +1925,7 @@
 		{
 			"type" : "ship",
 			"id" : "1010",
-			"set" : ["71122"],
+			"set" : ["71122", "72240"],
 			"name" : "Federation Starship",
 			"class" : "Constitution Class",
 			"actions" : ["evade", "target-lock", "scan", "battlestations"],
@@ -9820,7 +9827,7 @@
 		{
 			"type" : "captain",
 			"id" : "2003",
-			"set" : ["71120", "71121", "71122", "71268", "71272", "71276", "71280", "OP4Prize", "u_s_s_yaeger", "71523", "71509", "71526", "71510", "71531", "71997p", "71801", "71998p", "71802"],
+			"set" : ["71120", "71121", "71122", "72240", "71268", "71272", "71276", "71280", "OP4Prize", "u_s_s_yaeger", "71523", "71509", "71526", "71510", "71531", "71997p", "71801", "71998p", "71802"],
 			"name" : "Federation Captain",
 			"unique" : false,
 			"text" : "\r\n      ",
@@ -9916,7 +9923,7 @@
 		{
 			"type" : "captain",
 			"id" : "2011",
-			"set" : ["71122"],
+			"set" : ["71122", "72240"],
 			"name" : "James T. Kirk",
 			"unique" : true,
 			"text" : "Any Federation [talent] Upgrades you purchase for Kirk cost exactly 3 Squadron Points and are placed face down beside his card. Each Upgrade remains face down until you decide to use it, and then it is turned face up for the rest of the game. ",
@@ -9928,7 +9935,7 @@
 		{
 			"type" : "captain",
 			"id" : "2012",
-			"set" : ["71122"],
+			"set" : ["71122", "72240"],
 			"name" : "Christopher Pike",
 			"unique" : true,
 			"text" : "All of your [crew] Upgrades cost -1 Squadron Point. ",
@@ -14084,7 +14091,7 @@
 		{
 			"type" : "weapon",
 			"id" : "3024",
-			"set" : ["71121", "71122", "71122", "71272"],
+			"set" : ["71121", "71122", "72240", "71272"],
 			"name" : "Photon Torpedoes",
 			"unique" : false,
 			"text" : "<b>ATTACK: (Target Lock)</b> Spend your target lock and disable this card to perform this attack. \nYou may convert 1 of your [battlestations] results into a [crit] result. \nYou may fire this weapon from your forward or rear firing arcs. ",
@@ -14098,7 +14105,7 @@
 		{
 			"type" : "talent",
 			"id" : "3025",
-			"set" : ["71122"],
+			"set" : ["71122", "72240"],
 			"name" : "Cheat Death",
 			"unique" : false,
 			"text" : "If your ship was just destroyed, discard this card to remove Damage Cards 1 at a time from your Ship Card until the amount of damage is 1 point less than your Hull Value. Flip all remaining Damage Cards face down. ",
@@ -14112,7 +14119,7 @@
 		{
 			"type" : "talent",
 			"id" : "3026",
-			"set" : ["71122"],
+			"set" : ["71122", "72240"],
 			"name" : "Cochrane Deceleration Maneuver",
 			"unique" : false,
 			"text" : "<b>ACTION:</b> If you performed a 1 [forward] Maneuver this round, discard this Upgrade to Come About [come-about]. Place an Auxiliary Power Token beside your ship. ",
@@ -14126,7 +14133,7 @@
 		{
 			"type" : "talent",
 			"id" : "3027",
-			"set" : ["71122"],
+			"set" : ["71122", "72240"],
 			"name" : "Corbomite Maneuver",
 			"unique" : false,
 			"text" : "<b>ACTION:</b> Discard this Upgrade to prevent all enemy ships from attacking you this round. You cannot attack this round. ",
@@ -14140,7 +14147,7 @@
 		{
 			"type" : "crew",
 			"id" : "3028",
-			"set" : ["71122"],
+			"set" : ["71122", "72240"],
 			"name" : "Leonard McCoy",
 			"unique" : true,
 			"text" : "Discard McCoy to allow 1 of your [crew] Upgrades to perform its Action as a free Action this round. ",
@@ -14154,7 +14161,7 @@
 		{
 			"type" : "crew",
 			"id" : "3029",
-			"set" : ["71122"],
+			"set" : ["71122", "72240"],
 			"name" : "Hikaru Sulu",
 			"unique" : true,
 			"text" : "<b>ACTION:</b> Add 2 to your Agility for the rest of this round. Each time you defend this round, you may convert 1 [battlestations] result into 1 [evade] result. ",
@@ -14168,7 +14175,7 @@
 		{
 			"type" : "crew",
 			"id" : "3030",
-			"set" : ["71122"],
+			"set" : ["71122", "72240"],
 			"name" : "Mr. Spock",
 			"unique" : true,
 			"text" : "If your ship has a [scan] Token beside it when you attack, you may convert all your [battlestations] results into [hit] results. ",
@@ -14182,7 +14189,7 @@
 		{
 			"type" : "crew",
 			"id" : "3031",
-			"set" : ["71122"],
+			"set" : ["71122", "72240"],
 			"name" : "Nyota Uhura",
 			"unique" : true,
 			"text" : "Discard Uhura immediately before you move in order to change your Maneuver for this round. ",
@@ -14196,7 +14203,7 @@
 		{
 			"type" : "crew",
 			"id" : "3032",
-			"set" : ["71122"],
+			"set" : ["71122", "72240"],
 			"name" : "Montgomery Scott",
 			"unique" : true,
 			"text" : "<b>ACTION:</b> Disable 2 of your Shields in order to gain +2 attack dice this round. \n-OR- \nRepair 1 Shield Token and reduce your total attack dice by 2 this round. ",
