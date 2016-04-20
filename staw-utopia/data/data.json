@@ -13033,7 +13033,7 @@
 			"set": ["72242"],
 			"name": "Romulan Technical Officer",
 			"cost": 2,
-			"text": "ACTION: Disable this card to place a [scan] Token beside your ship. You cannot perform the [scan] Action as a free Action this round. /n/nThis Upgrade may only be purchased for a Romulan ship and no ship may be equipped with more than 1 'Romulan Technical Officer' Upgrade.",
+			"text": "ACTION: Disable this card to place a [scan] Token beside your ship. You cannot perform the [scan] Action as a free Action this round. \n\nThis Upgrade may only be purchased for a Romulan ship and no ship may be equipped with more than 1 'Romulan Technical Officer' Upgrade.",
 			"unique": false,
 			"factions": ["romulan"]
 		},
@@ -13055,7 +13055,7 @@
 			"set": ["72242"],
 			"name": "Impulse Drive",
 			"cost": 2,
-			"text": "You may disable this card to perform a white maneuver if there is an Auxiliary Power Token beside your ship. If you do so, you must still skip your perform action step. /n/nNo ship may be equipped with more than 1 'Impulse Drive' Upgrade.",
+			"text": "You may disable this card to perform a white maneuver if there is an Auxiliary Power Token beside your ship. If you do so, you must still skip your perform action step. \n\nNo ship may be equipped with more than 1 'Impulse Drive' Upgrade.",
 			"unique": false,
 			"factions": ["romulan"]
 		},
