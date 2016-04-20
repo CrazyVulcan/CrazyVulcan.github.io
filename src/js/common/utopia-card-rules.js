@@ -5047,5 +5047,27 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
+		
+		// I.R.W. Algeron
+		// Command Pod
+		"talent:command_pod_72242": {
+			canEquip: function(upgrade,ship,fleet) {
+				return ( ship && ship.class == "D7 Class" );
+			}
+		},
+		
+		// Romulan Technical Officer
+		"crew:romulan_technical_officer_72242": {
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("Romulan Technical Officer")(upgrade,ship,fleet);
+			}
+		},
+		
+		// Impulse Drive
+		"tech:impulse_drive_72242": {
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("Impulse Drive")(upgrade,ship,fleet);
+			}
+		},
 	};
 }]);

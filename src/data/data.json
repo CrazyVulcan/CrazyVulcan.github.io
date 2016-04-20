@@ -3,6 +3,41 @@
 	"sets" : [
 		{
 			"type" : "set",
+			"id" : "72224gp",
+			"name" : "Temporal Cold War Cards",
+			"releaseDate" : "2016-02-02",
+			"parentSet" : "Temporal Cold War"
+		},
+		{
+			"type" : "set",
+			"id" : "72235p",
+			"name" : "U.S.S. Reliant",
+			"releaseDate" : "2016-04-02",
+			"parentSet" : "The Classic Movies"
+		},
+		{
+			"type" : "set",
+			"id" : "72235r",
+			"name" : "General Orders",
+			"releaseDate" : "2016-04-01",
+			"parentSet" : "The Classic Movies"
+		},
+		{
+			"type" : "set",
+			"id" : "72241",
+			"name" : "I.K.S. Drovana",
+			"releaseDate" : "2016-05-11",
+			"parentSet" : "Wave 24"
+		},
+		{
+			"type" : "set",
+			"id" : "72242",
+			"name" : "I.R.W. Algeron",
+			"releaseDate" : "2016-05-12",
+			"parentSet" : "Wave 24"
+		},
+		{
+			"type" : "set",
 			"id" : "72240",
 			"name" : "U.S.S. Enterprise (repaint)",
 			"releaseDate" : "2016-05-10",
@@ -1180,6 +1215,95 @@
 		}
 	],
 	"ships" : [
+		{
+			"type": "ship",
+			"id": "i_r_w_algeron",
+			"set": ["72242"],
+			"name": "I.R.W. Algeron",
+			"class": "D7 Class",
+			"actions": ["evade","target-lock","cloak","sensor-echo"],
+			"upgrades": ["tech","weapon","crew"],
+			"attack": 3,
+			"agility": 1,
+			"hull": 3,
+			"shields": 2,
+			"cost": 18,
+			"text": "When attacking with your Primary Weapon, if your ship is not Cloaked, during the Declare Target step, you may perform a 1 [straight] Maneuver before chosing an enemy ship to attack.",
+			"unique": true,
+			"factions": ["romulan"],
+			"squadron": false
+		},	
+		{
+			"type": "ship",
+			"id": "d7_class",
+			"set": ["72242"],
+			"name": "Romulan Battlecruiser",
+			"class": "D7 Class",
+			"actions": ["evade","target-lock","cloak","sensor-echo"],
+			"upgrades": ["weapon","crew"],
+			"attack": 3,
+			"agility": 1,
+			"hull": 3,
+			"shields": 1,
+			"cost": 16,
+			"text": "",
+			"unique": false,
+			"factions": ["romulan"],
+			"squadron": false
+		},
+		{
+			"type" : "ship",
+			"id" : "the_classic_movies_u_s_s_reliant",
+			"set" : ["72235p"],
+			"name" : "U.S.S. Reliant",
+			"class" : "Miranda Class",
+			"actions" : ["evade", "target-lock", "scan", "battlestations"],
+			"upgrades" : ["weapon", "weapon", "crew", "crew"],
+			"attack" : 2,
+			"agility" : 2,
+			"hull" : 3,
+			"shields" : 3,
+			"cost" : 20,
+			"text" : "When attacking with your Primary Weapon, during the Modify Attack Dice step, you may disable any number of your Active Shields to re-roll a number of your attack dice equal to the number of Shields you disabled.",
+			"unique" : true,
+			"factions" : ["independent"],
+			"intercept" :
+			{
+				"ship" : {},
+				"fleet" : {}
+
+			},
+			"squadron" : false
+		},
+		{
+			"type" : "ship",
+			"id" : "drovana_72241",
+			"set" : ["72241"],
+			"name" : "I.K.S. Drovana",
+			"class" : "Vor'cha Class",
+			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
+			"upgrades" : ["tech", "weapon", "weapon", "crew"],
+			"attack" : 5,
+			"agility" : 1,
+			"hull" : 5,
+			"shields" : 3,
+			"cost" : 28,
+			"text" : "When defending, during the Compare Results step, you may discard 1 of your non-disabled Upgrades to cancel 1 [hit] or [crit] result.",
+			"unique" : true,
+			"factions" : ["klingon"],
+			"intercept" :
+			{
+				"ship" : {},
+				"fleet" : {}
+
+			},
+			"squadron" : false
+		},
+		{
+			"type" : "copy",
+			"of" : "1006",
+			"set" : ["72241"]
+		},
 		{
 			"type" : "ship",
 			"id" : "u_s_s_constellation",
@@ -9628,6 +9752,83 @@
 	],
 	"captains" : [
 		{
+			"type": "captain",
+			"id": "liviana_charvanek_72242",
+			"set": ["72242"],
+			"name": "Liviana Charvanek",
+			"cost": 3,
+			"skill": 5,
+			"talents": 1,
+			"text": "<b>ACTION:</b> If your ship has the [cloak] Action on its Action Bar, place a [cloak] Token beside your ship then immediately perform an additional Action from your Action Bar as a free Action.",
+			"unique": true,
+			"factions": ["romulan"]
+		},
+		{
+			"type": "captain",
+			"id": "tal_72242",
+			"set": ["72242"],
+			"name": "Tal",
+			"cost": 2,
+			"skill": 3,
+			"talents": 0,
+			"text": "If your ship is not Cloaked, you may perform a [battlestations] Action as your Standard Action, even if the [battlestations] Action is not on your ship's Action Bar. You cannot perform any free Actions during the round in which you use this ability.",
+			"unique": true,
+			"factions": ["romulan"]
+		},
+		{
+			"type" : "captain",
+			"id" : "temporal_cold_war_vosk",
+			"set" : ["72224gp"],
+			"name" : "Vosk",
+			"unique" : true,
+			"text" : "Vosk does not pay a faction penalty when fielding an [talent] Upgrade.\n\nOnce per game, when an opposing Upgrade causes one of your Upgrades to be discarded, you may place 3 Time Tokens on that card instead.",
+			"factions" : ["mirror-universe"],
+			"cost" : 4,
+			"skill" : 7,
+			"talents" : 1
+		},
+		{
+			"type" : "captain",
+			"id" : "the_classic_movies_khan_singh",
+			"set" : ["72235p"],
+			"name" : "Khan Singh",
+			"unique" : true,
+			"text" : "You may use any Upgrades without paying a Faction penalty. Up to 3 of the Upgrades you purchase for your ship cost exactly 4 SP each and are placed face down beside your Ship Card. Each Upgrade remains face down until you decide to use it, and then it is turned face up for the rest of the game. The printed cost on those Upgrades cannot be greater than 6.",
+			"factions" : ["independent"],
+			"cost" : 4,
+			"skill" : 7,
+			"talents" : 1
+		},
+		{
+			"type" : "captain",
+			"id" : "kurn_72241",
+			"set" : ["72241"],
+			"name" : "Kurn",
+			"unique" : true,
+			"text" : "During the Combat Phase, each time you defend, you may re-roll 1 of your [battlestations] results. If this card is assigned to a Klingon ship, you may re-roll up to 2 of your [battlestations] results.\n\nKurn may field 1 Klingon [talent] Upgrade.",
+			"factions" : ["klingon"],
+			"cost" : 3,
+			"skill" : 5,
+			"talents" : 0
+		},
+		{
+			"type" : "captain",
+			"id" : "gowron_72241",
+			"set" : ["72241"],
+			"name" : "Gowron",
+			"unique" : true,
+			"text" : "<b>ACTION:</b> If there is not already a [battlestations] Token beside your ship, place 1 [battlestations] Token beside your ship. In addition, if your ship is a Klingon ship with a Klingon Captain assigned to it, you may immediately perform an additional Action from your Action Bar as a free Action.",
+			"factions" : ["klingon"],
+			"cost" : 3,
+			"skill" : 5,
+			"talents" : 1
+		},
+		{
+			"type" : "copy",
+			"of" : "2005",
+			"set" : ["72241"]
+		},
+		{
 			"type" : "captain",
 			"id" : "matt_decker_constellation",
 			"set" : ["72234p"],
@@ -12457,6 +12658,30 @@
 	"admirals" : [
 		{
 			"type" : "admiral",
+			"id" : "liviana_charvanek_admiral_72242",
+			"set" : ["72242"],
+			"name" : "Liviana Charvanek",
+			"unique" : true,
+			"text" : "<b>FLEET ACTION:</b> If your ship has the [cloak] Action on its Action Bar place a [cloak] Token beside your ship then immediately perform an additional Action from your Action Bar as a free Action.",
+			"factions" : ["romulan"],
+			"cost" : 3,
+			"skill" : 1,
+			"talents" : 1
+		},
+		{
+			"type" : "admiral",
+			"id" : "gowron_admiral_72241",
+			"set" : ["72241"],
+			"name" : "Gowron",
+			"unique" : true,
+			"text" : "<b>FLEET ACTION:</b> If there is not already a [battlestations] Token beside your ship, place 1 [battlestations] Token beside your ship. In addition, if your ship is a Klingon ship with a Klingon Captain assigned to it, you may immediately perform an additional Action from your Action Bar as a free Action.",
+			"factions" : ["klingon"],
+			"cost" : 3,
+			"skill" : 0,
+			"talents" : 1
+		},
+		{
+			"type" : "admiral",
 			"id" : "james_t_kirk_71523",
 			"set" : ["71523"],
 			"name" : "James T. Kirk",
@@ -12782,6 +13007,225 @@
 		}
 	],
 	"upgrades" : [
+		{
+			"type": "talent",
+			"id": "command_pod_72242",
+			"set": ["72242"],
+			"name": "Command Pod",
+			"cost": 4,
+			"text": "When defending during the Compare Results step. you may discard this card to cancel any 1 die result.\n\nThis Upgrade may only be fielded by a Captain assigned to a D7-Class ship.",
+			"unique": true,
+			"factions": ["romulan"]
+		},
+		{
+			"type": "talent",
+			"id": "cloaked_attack_72242",
+			"set": ["72242"],
+			"name": "Cloaked Attack",
+			"cost": 5,
+			"text": "When attacking with your Primary Weapon during the Roll Attack Dice step, you may discard this card and spend your [cloak] Token to gain +2 attack dice.",
+			"unique": true,
+			"factions": ["romulan"]
+		},
+		{
+			"type": "crew",
+			"id": "romulan_technical_officer_72242",
+			"set": ["72242"],
+			"name": "Romulan Technical Officer",
+			"cost": 2,
+			"text": "<b>ACTION:</b> Disable this card to place a [scan] Token beside your ship. You cannot perform the [scan] Action as a free Action this round. \n\nThis Upgrade may only be purchased for a Romulan ship and no ship may be equipped with more than 1 \"Romulan Technical Officer\" Upgrade.",
+			"unique": false,
+			"factions": ["romulan"]
+		},
+		{
+			"type": "weapon",
+			"id": "plasma_torpedoes_722242",
+			"set": ["72242"],
+			"name": "Plasma Torpedoes",
+			"cost": 3,
+			"attack": 4,
+			"range": "1 - 2",
+			"text": "<b>ATTACK: (Target Lock)</b> Spend your target lock and disable this card to perform this attack. \n\nYou may re-roll all your blank results one time. \n\nYou may fire this weapon from your forward or rear firing arcs.",
+			"unique": false,
+			"factions": ["romulan"]
+		},
+		{
+			"type": "tech",
+			"id": "impulse_drive_72242",
+			"set": ["72242"],
+			"name": "Impulse Drive",
+			"cost": 2,
+			"text": "You may disable this card to perform a white maneuver if there is an Auxiliary Power Token beside your ship. If you do so, you must still skip your Perform Action step. \n\nNo ship may be equipped with more than 1 \"Impulse Drive\" Upgrade.",
+			"unique": false,
+			"factions": ["romulan"]
+		},
+		{
+			"type" : "talent",
+			"id" : "temporal_cold_war_the_benefactor",
+			"set" : ["72224gp"],
+			"name" : "The Benefactor",
+			"cost" : 5,
+			"text" : "At the start of the game, place 3 Mission Tokens on this card.\n\nWhen you are required to place Time Tokens on one of your Upgrades, you may discard any number of Mission Tokens from this card to place 1 less Time Token for each Mission Token discarded. When there are no more Mission Tokens on this card, discard it.",
+			"unique" : true,
+			"factions" : ["mirror-universe"]
+		},
+		{
+			"type" : "crew",
+			"id" : "temporal_cold_war_daniels",
+			"set" : ["72224gp"],
+			"name" : "Daniels",
+			"cost" : 5,
+			"text" : "Whenever an opposing ship is required to place Time Tokens on one of its Upgrades, you may discard this card to force that ship to place 1 additional Time Token on that Upgrade.\nOR\nDuring the Combat Phase, you may discard this card to chose any number of dice and re-roll them.",
+			"unique" : true,
+			"factions" : ["mirror-universe"]
+		},
+		{
+			"type" : "tech",
+			"id" : "temporal_cold_war_temporal_conduit",
+			"set" : ["72224gp"],
+			"name" : "Temporal Conduit",
+			"cost" : 5,
+			"text" : "<b>ACTION:</b> Discard this card to redeploy one of your previously discarded Upgrade cards with a cost of 4 SP or less to your ship. Place 3 Time Tokens on that Upgrade.\n\nThis Upgrade costs +5 SP for any non-Mirror Universe ship.",
+			"unique" : true,
+			"factions" : ["mirror-universe"]
+		},
+		{
+			"type" : "crew",
+			"id" : "temporal_cold_war_temporal_temporal_observatory_crew",
+			"set" : ["72224gp"],
+			"name" : "Temporal Observatory",
+			"cost" : 6,
+			"text" : "You may fill a [crew], [tech] or [weapon] Upgrade slot with his Upgrade.\n\n<b>ACTION:</b> Place 3 Time Tokens on this card. During the Planning Phase, after all ships have chosen their maneuvers, you may peek at a number of opposing maneuver dials equal to the number of Time Tokens on this card. You may then change your chosen maneuver. Discard this card after the last Time Token is removed.",
+			"unique" : true,
+			"factions" : ["mirror-universe"]
+		},
+		{
+			"type" : "tech",
+			"id" : "temporal_cold_war_temporal_temporal_observatory_tech",
+			"set" : ["72224gp"],
+			"name" : "Temporal Observatory",
+			"cost" : 6,
+			"text" : "You may fill a [crew], [tech] or [weapon] Upgrade slot with his Upgrade.\n\n<b>ACTION:</b> Place 3 Time Tokens on this card. During the Planning Phase, after all ships have chosen their maneuvers, you may peek at a number of opposing maneuver dials equal to the number of Time Tokens on this card. You may then change your chosen maneuver. Discard this card after the last Time Token is removed.",
+			"unique" : true,
+			"factions" : ["mirror-universe"]
+		},
+		{
+			"type" : "weapon",
+			"id" : "temporal_cold_war_temporal_temporal_observatory_weapon",
+			"set" : ["72224gp"],
+			"name" : "Temporal Observatory",
+			"cost" : 6,
+			"text" : "You may fill a [crew], [tech] or [weapon] Upgrade slot with his Upgrade.\n\n<b>ACTION:</b> Place 3 Time Tokens on this card. During the Planning Phase, after all ships have chosen their maneuvers, you may peek at a number of opposing maneuver dials equal to the number of Time Tokens on this card. You may then change your chosen maneuver. Discard this card after the last Time Token is removed.",
+			"unique" : true,
+			"factions" : ["mirror-universe"]
+		},
+		{
+			"type" : "talent",
+			"id" : "the_classic_movies_ceti_eel",
+			"set" : ["72235p"],
+			"name" : "Ceti Eel",
+			"cost" : 6,
+			"text" : "During the Combat Phase, you may discard this card to target a ship within Range 1-3 when it is that ship's turn to attack and force that ship to either; 1) attack any ship of your choice in its firing arc and within range, if possible, 2) not perform its attack and disable the Captain Card, or 3) perform its attack as normal and discard its Captain Card. The target ship must choose one of these options.",
+			"unique" : true,
+			"factions" : ["independent"]
+		},
+		{
+			"type" : "talent",
+			"id" : "the_classic_movies_fire",
+			"set" : ["72235p"],
+			"name" : "Fire!",
+			"cost" : 6,
+			"text" : "When attacking with your Primary Weapon, during the Roll Attack Dice step, you may discard this card to gain +2 attack dice. If you do so, during the Modify Attack Dice step, you may re-roll up to 2 of your attack dice and then place an Auxiliary Power Token beside your ship.",
+			"unique" : true,
+			"factions" : ["independent"]
+		},
+		{
+			"type" : "crew",
+			"id" : "the_classic_movies_joachim",
+			"set" : ["72235p"],
+			"name" : "Joachim",
+			"cost" : 5,
+			"text" : "<b>ACTION:</b> Discard this card to add +3 to your Captain Skill Number until the End Phase of this round. If you attack first in the Combat Phase as a result of this, during the Compare Results step, you may convert 1 of your [hit] results into a [crit] result.",
+			"unique" : true,
+			"factions" : ["independent"]
+		},
+		{
+			"type" : "weapon",
+			"id" : "the_classic_movies_all_power_to_phasers",
+			"set" : ["72235p"],
+			"name" : "All Power To Phasers",
+			"cost" : 5,
+			"text" : "When attacking with your Primary Weapon, during the Roll Attack Dice step, you may discard this card to gain +2 attack dice. If you do this you must disable all of your remaining Shields.",
+			"unique" : false,
+			"factions" : ["independent"]
+		},
+		{
+			"type" : "talent",
+			"id" : "detonation_codes_72241",
+			"set" : ["72241"],
+			"name" : "Detonation Codes",
+			"cost" : 4,
+			"text" : "<b>ACTION:</b> Discard this card to target a Minefield Token within Range 1-3. Roll the number of attack dice listed on the mine's Upgrade Card minus 1. All ships within Range 1 of that Minefield Token suffer damage as normal from any [hit] or [crit] results. The affected ships do not roll any defense dice. Remove the Minefield Token after it is detonated.",
+			"unique" : true,
+			"factions" : ["klingon"]
+		},
+		{
+			"type" : "copy",
+			"of" : "cloaked_mines_71999p",
+			"set" : ["72241"]
+		},
+		{
+			"type" : "tech",
+			"id" : "emergency_power_72241",
+			"set" : ["72241"],
+			"name" : "Emergency Power",
+			"unique" : false,
+			"text" : "During the Activation Phase, if there is an Auxiliary Power Token beside your ship, you may disable this card to either perform a Red Manveuer or perform an Action.\n\nNo ship may be equipped with more than 1 \"Emergency Power\" Upgrade.",
+			"factions" : ["klingon"],
+			"cost" : 4,
+			"skill" : 0,
+			"talents" : 0,
+			"attack" : 0,
+			"range" : ""
+		},
+		{
+			"type" : "tech",
+			"id" : "security_sensors_72241",
+			"set" : ["72241"],
+			"name" : "Security Sensors",
+			"unique" : false,
+			"text" : "If an enemy Upgrade or Captain targets your ship, immediately place an [evade] Token beside your ship, even if there is already one there.",
+			"factions" : ["klingon"],
+			"cost" : 5,
+			"skill" : 0,
+			"talents" : 0,
+			"attack" : 0,
+			"range" : ""
+		},
+		{
+			"type" : "crew",
+			"id" : "borak_72241",
+			"set" : ["72241"],
+			"name" : "Bo'Rak",
+			"cost" : 5,
+			"text" : "When attacking, during he Modify Defense Dice step, you may disable this card to force the defending ship to re-roll 1 of its defense dice of your choice.\n\nWhen defending, you may roll your full defense dice in spite of the presence of an opposing ship's [scan] Token.",
+			"unique" : true,
+			"factions" : ["klingon"]
+		},
+		{
+			"type" : "weapon",
+			"id" : "photon_torpedoes_72241",
+			"set" : ["72241"],
+			"name" : "Photon Torpedoes",
+			"unique" : false,
+			"text" : "<b>ATTACK: (Target Lock)</b> Spend your target lock and place 3 Time Tokens on this card to perform this attack. \n\nIf fired from a Vor'cha class ship add +1 attack die. ",
+			"factions" : ["klingon"],
+			"cost" : 5,
+			"skill" : 0,
+			"talents" : 0,
+			"attack" : 5,
+			"range" : "2 - 3"
+		},
 		{
 			"type" : "talent",
 			"id" : "standby_battle_stations_constellation",
@@ -15566,7 +16010,7 @@
 			"set" : ["71278"],
 			"name" : "Plasma Torpedoes",
 			"unique" : false,
-			"text" : "<b>ATTACK: (Target Lock)</b> Spend your target lock and disable this card to perform this attack. \n\nYou may re-roll all your blank results one time. \n\nYou may fire this weapon from your forward or rear firing arcs. ",
+			"text" : "<b>ATTACK: (Target Lock)</b> Spend your target lock and disable this card to perform this attack. \n\nYou may re-roll all your blank results one time. \n\nYou may fire this weapon from your forward or rear firing arcs.",
 			"factions" : ["romulan"],
 			"cost" : 3,
 			"skill" : 0,
@@ -22621,6 +23065,15 @@
 	"resources" : [
 		{
 			"type" : "resource",
+			"id" : "the_classic_movies_general_orders_resource",
+			"set" : ["72235r"],
+			"name" : "General Orders",
+			"text" : "At the start of the game, place 5 [battlestations] Tokens on this card.\n\nDuring the Activation Phase, if a ship in your fleet is within Range 1-3 and in the firing arc (forward or rear) of an opposing ship after the opposing ship ends its move, you may choose to immediately remove 1 [battlestations] Token from this card and place it beside your ship, even if there is already a [battlestations] Token beside that ship.\n\nRemvoe this card from the game when there are no [battlestations] Tokens left on this card.",
+			"cost" : 5,
+			"showShipResourceSlot" : false
+		},
+		{
+			"type" : "resource",
 			"id" : "structual_damage_check_resource",
 			"set" : ["72234r"],
 			"name" : "Structural Damage Check",
@@ -22849,6 +23302,12 @@
 		}
 	],
 	"others" : [
+		{
+			"type" : "token",
+			"id" : "muon_token",
+			"name" : "Muon Token",
+			"text" : "This card explains the rules for a Muon Token and serves as a reference to remind players of its effect.\n\nA ship with a Muon Token assigned to it follows these special rules:\n\n1. A Muon Token stays wih a ship until it is removed.\n\n2. During the Activation Phase, after the ship moves, the ship takes damage to its Hull equal to the number of its current Maneuver -1. The type of Maneuver does not matter, just the number.\n\n3. After the ship performs a Green or White Maneuver, it can spend an Action to remove the Muon Token."
+		},
 		{
 			"type" : "fleet-captain",
 			"id" : "federation_collectiveop2",
