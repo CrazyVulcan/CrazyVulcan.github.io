@@ -1216,6 +1216,42 @@
 	],
 	"ships" : [
 		{
+			"type": "ship",
+			"id": "i_r_w_algeron",
+			"set": ["72242"],
+			"name": "I.R.W. Algeron",
+			"class": "D7 Class",
+			"actions": ["evade","target-lock","cloak","echo"],
+			"upgrades": ["tech","weapon","crew"],
+			"attack": 3,
+			"agility": 1,
+			"hull": 3,
+			"shields": 2,
+			"cost": 18,
+			"text": "When attacking with your Primary Weapon, if your ship is not Cloaked, during the declare Target Step, you may perform a 1 [straight] maneuver before choosing an enemy ship to attack.",
+			"unique": true,
+			"factions": ["romulan"],
+			"squadron": false
+		},	
+		{
+			"type": "ship",
+			"id": "d7_class",
+			"set": ["72242"],
+			"name": "Romulan Battlecruiser",
+			"class": "D7 Class",
+			"actions": ["evade","target-lock","cloak","sensor-echo"],
+			"upgrades": ["weapon","crew"],
+			"attack": 3,
+			"agility": 1,
+			"hull": 3,
+			"shields": 1,
+			"cost": 16,
+			"text": "",
+			"unique": false,
+			"factions": ["romulan"],
+			"squadron": false
+		},
+		{
 			"type" : "ship",
 			"id" : "the_classic_movies_u_s_s_reliant",
 			"set" : ["72235p"],
@@ -9716,6 +9752,30 @@
 	],
 	"captains" : [
 		{
+			"type": "captain",
+			"id": "liviana_charvanek_72242",
+			"set": ["72242"],
+			"name": "Liviana Charvanek",
+			"cost": 3,
+			"skill": 5,
+			"talents": 1,
+			"text": "ACTION: If your ship has the [cloak] Action on its Action Bar place a [cloak] Token beside your ship then immediately perform an additional Action from your Action Bar as a free Action.",
+			"unique": true,
+			"factions": ["romulan"]
+		},
+		{
+			"type": "captain",
+			"id": "tal_72242",
+			"set": ["72242"],
+			"name": "Tal",
+			"cost": 2,
+			"skill": 3,
+			"talents": 0,
+			"text": "If your ship is not Cloaked, you may perform a [battlestations] Action as your Standard Action, even if the [battlestations] Action is not on your ship's Action Bar. You cannot perform any free Actions during the round in which you use this ability.",
+			"unique": true,
+			"factions": ["romulan"]
+		},
+		{
 			"type" : "captain",
 			"id" : "temporal_cold_war_vosk",
 			"set" : ["72224gp"],
@@ -12598,6 +12658,18 @@
 	"admirals" : [
 		{
 			"type" : "admiral",
+			"id" : "liviana_charvanek_admiral_72242",
+			"set" : ["72242"],
+			"name" : "Liviana Charvanek",
+			"unique" : true,
+			"text" : "<b>FLEET ACTION:<b> If your ship has the [cloak] Action on its Action Bar place a [cloak] Token beside your ship then immediately perform an additional Action from your Action Bar as a free Action.",
+			"factions" : ["romulan"],
+			"cost" : 3,
+			"skill" : 1,
+			"talents" : 1
+		},
+		{
+			"type" : "admiral",
 			"id" : "gowron_admiral_72241",
 			"set" : ["72241"],
 			"name" : "Gowron",
@@ -12935,6 +13007,58 @@
 		}
 	],
 	"upgrades" : [
+		{
+			"type": "talent",
+			"id": "command_pod_72242",
+			"set": ["72242"],
+			"name": "Command Pod",
+			"cost": 4,
+			"text": "When defending during the Compare Results step. you may discard this card to cancel any 1 die result.\n\nThis Upgrade may only be fielded by a Captain assigned to a D7-Class ship.",
+			"unique": true,
+			"factions": ["romulan"]
+		},
+		{
+			"type": "talent",
+			"id": "cloaked_attack_72242",
+			"set": ["72242"],
+			"name": "Cloaked Attack",
+			"cost": 5,
+			"text": "When attacking with your Primary Weapon during the Roll Attack Dice step, you may discard this card and spend your [cloak] Token to gain +2 attack dice.",
+			"unique": true,
+			"factions": ["romulan"]
+		},
+		{
+			"type": "crew",
+			"id": "romulan_technical_officer_72242",
+			"set": ["72242"],
+			"name": "Romulan Technical Officer",
+			"cost": 2,
+			"text": "ACTION: Disable this card to place a [scan] Token beside your ship. You cannot perform the [scan] Action as a free Action this round./n/nThis Upgrade may only be purchased for a Romulan ship and no ship may be equipped with more than 1 'Romulan Technical Officer' Upgrade.",
+			"unique": false,
+			"factions": ["romulan"]
+		},
+		{
+			"type": "weapon",
+			"id": "plasma_torpedoes_722242",
+			"set": ["72242"],
+			"name": "Plasma Torpedoes",
+			"cost": 3,
+			"attack": 4,
+			"range": "1 - 2",
+			"text": "<b>ATTACK: (Target Lock)</b> Spend your target lock and disable this card to perform this attack. \n\nYou may re-roll all your blank results one time. \n\nYou may fire this weapon from your forward or rear firing arcs.",
+			"unique": false,
+			"factions": ["romulan"]
+		},
+		{
+			"type": "tech",
+			"id": "impulse_drive_72242",
+			"set": ["72242"],
+			"name": "Impulse Drive",
+			"cost": 2,
+			"text": "You may disable this card to perform a white maneuver if there is an Auxiliary Power Token beside your ship. If you do so, you must still skip your perform action step./n/nNo ship may be equipped with more than 1 'Impulse Drive' Upgrade.",
+			"unique": false,
+			"factions": ["romulan"]
+		},
 		{
 			"type" : "talent",
 			"id" : "temporal_cold_war_the_benefactor",
@@ -15886,7 +16010,7 @@
 			"set" : ["71278"],
 			"name" : "Plasma Torpedoes",
 			"unique" : false,
-			"text" : "<b>ATTACK: (Target Lock)</b> Spend your target lock and disable this card to perform this attack. \n\nYou may re-roll all your blank results one time. \n\nYou may fire this weapon from your forward or rear firing arcs. ",
+			"text" : "<b>ATTACK: (Target Lock)</b> Spend your target lock and disable this card to perform this attack. \n\nYou may re-roll all your blank results one time. \n\nYou may fire this weapon from your forward or rear firing arcs.",
 			"factions" : ["romulan"],
 			"cost" : 3,
 			"skill" : 0,
