@@ -1221,7 +1221,7 @@
 			"set": ["72242"],
 			"name": "I.R.W. Algeron",
 			"class": "D7 Class",
-			"actions": ["evade","target-lock","cloak","echo"],
+			"actions": ["evade","target-lock","cloak","sensor-echo"],
 			"upgrades": ["tech","weapon","crew"],
 			"attack": 3,
 			"agility": 1,
