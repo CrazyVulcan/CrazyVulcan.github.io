@@ -1297,7 +1297,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		
 		// Vulcan High Command
-		"talent:vulcan_high_command_2_0_71446": {
+		"talent:vulcan_high_command_71446": {
 			canEquipFaction: function(upgrade,ship,fleet) {
 				return ship.captain &&  $factions.hasFaction(ship,"vulcan", ship, fleet) &&  $factions.hasFaction(ship.captain,"vulcan", ship, fleet);
 			},
