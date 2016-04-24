@@ -12235,7 +12235,7 @@
 		{
 			"type" : "captain",
 			"id" : "xindi_captain_72003p",
-			"set" : ["72003p"],
+			"set" : ["72003p", "71225"],
 			"name" : "Xindi",
 			"cost" : 0,
 			"skill" : 1,
