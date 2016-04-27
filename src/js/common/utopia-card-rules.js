@@ -5069,5 +5069,15 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return onePerShip("Impulse Drive")(upgrade,ship,fleet);
 			}
 		},
+		
+		// The Classic Movies - Kruge's Bird-of-Prey
+		// Kruge
+		"captain:the_classic_movies_kruge" : {
+					upgradeSlots : [{}, {
+							type : ["crew"]
+						}
+					],
+
+				},
 	};
 }]);
