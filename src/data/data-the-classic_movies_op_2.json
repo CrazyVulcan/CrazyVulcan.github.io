@@ -104,7 +104,7 @@
 			"id" : "the_classic_movies_emergency_power_resource",
 			"set" : ["72236r"],
 			"name" : "Emergency Power",
-			"text" : "At the start of the game, place 5 Mission Tokens on this card.\n\nDuring the Execute Maneuver step of he Activation Phase, after a ship in your fleet performs a green or white maneuver, that ship may immediately perfom an additional maneuver from its Maneuver Dial with speed of 1 or 2. Treat this additional maneuver as a red maneuver.\n\nYou may only use this ability once per round and each time you do this, remove 1 Mission Token from this card from the game.\n\nRemove this card from the game when there are no Mission Tokens left on this card.",
+			"text" : "At the start of the game, place 5 Mission Tokens on this card.\n\nDuring the Execute Maneuver step of the Activation Phase, after a ship in your fleet performs a green or white maneuver, that ship may immediately perform an additional maneuver from its Maneuver Dial with speed of 1 or 2. Treat this additional maneuver as a red maneuver.\n\nYou may only use this ability once per round and each time you do this, remove 1 Mission Token from this card from the game.\n\nRemove this card from the game when there are no Mission Tokens left on this card.",
 			"cost" : 5,
 			"showShipResourceSlot" : false
 		}
