@@ -4718,6 +4718,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"tech:self_repair_technology_tmet": {
 			canEquip: function(upgrade,ship,fleet) {
 				return onePerShip("SELF REPAIR TECHNOLOGY")(upgrade,ship,fleet);
+			},
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return $factions.hasFaction( ship, "romulan", ship, fleet );
 			}
 		},
 

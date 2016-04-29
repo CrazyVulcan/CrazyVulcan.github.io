@@ -1542,7 +1542,7 @@
 			"type" : "ship",
 			"id" : "i_r_w_tmet",
 			"set" : ["72221p"],
-			"name" : "I,R.W. T'MET",
+			"name" : "I.R.W. T'MET",
 			"class" : "D'deridex Class",
 			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
 			"upgrades" : ["tech", "tech", "weapon", "weapon", "crew"],
@@ -10126,7 +10126,7 @@
 		{
 			"type" : "captain",
 			"id" : "2007",
-			"set" : ["71120", "71123", "71124", "71270", "71278", "OP3Prize", "i_r_w_vorta_vor", "71533", "71274", "71794", "71511", "72242", "72010", "72016", "71222", "72233"],
+			"set" : ["71120", "71123", "71124", "71270", "71278", "OP3Prize", "i_r_w_vorta_vor", "71533", "71274", "71794", "71511", "72242", "72010", "72016", "71222", "72233", "72221p"],
 			"name" : "Romulan",
 			"unique" : false,
 			"text" : "\r\n      ",
@@ -13668,7 +13668,7 @@
 			"set" : ["72221p"],
 			"name" : "INTERCEPT",
 			"cost" : 5,
-			"text" : "During the Activation Phase, if an opposing ship ends it move within your forward firing arc, before that ship performs its Action you may discard this card to immediately perform an attack with 3 attack dice against that ship. The Defending ship my roll defense dice against this attack, but the attack dice cannot be modified in any way.",
+			"text" : "During the Activation Phase, if an opposing ship ends it move within your forward firing arc, before that ship performs its Action you may discard this card to immediately perform an attack with 3 attack dice against that ship. The defending ship my roll defense dice against this attack, but the attack dice cannot be modified in any way.",
 			"unique" : true,
 			"factions" : ["romulan"]
 		},
@@ -13688,7 +13688,7 @@
 			"set" : ["72221p"],
 			"name" : "CHARGING WEAPONS",
 			"cost" : 1,
-			"text" : "When attacking with your Primary Weapon, you may disable this card to re-roll one of your blank results.  No ship may be equipped with more than one 'Charging Weapons' Upgrade.",
+			"text" : "When attacking with your Primary Weapon, you may disable this card to re-roll one of your blank results.\n\nNo ship may be equipped with more than one \"Charging Weapons\" Upgrade.",
 			"unique" : false,
 			"factions" : ["romulan"]
 		},
@@ -13698,7 +13698,7 @@
 			"set" : ["72221p"],
 			"name" : "SELF REPAIR TECHNOLOGY",
 			"cost" : 4,
-			"text" : "After your ship performs a green maneuver, you may disable this card to repair 1 damage to your ship's Hull. This Upgrade may only be purchased for a Romulan ship and no ship may be equipped with more than 1 'Self Repair Technology' Upgrade.",
+			"text" : "After your ship performs a green maneuver, you may disable this card to repair 1 damage to your ship's Hull.\n\nThis Upgrade may only be purchased for a Romulan ship and no ship may be equipped with more than 1 \"Self Repair Technology\" Upgrade.",
 			"unique" : false,
 			"factions" : ["romulan"]
 		},
