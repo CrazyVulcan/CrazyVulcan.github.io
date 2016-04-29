@@ -2039,7 +2039,7 @@
 		{
 			"type" : "ship",
 			"id" : "1008",
-			"set" : ["71121"],
+			"set" : ["71121", "72235p"],
 			"name" : "Federation Starship",
 			"class" : "Miranda Class",
 			"actions" : ["evade", "target-lock", "scan", "battlestations"],
