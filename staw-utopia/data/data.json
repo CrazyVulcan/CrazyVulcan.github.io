@@ -1533,7 +1533,7 @@
 			"shields" : 1,
 			"cost" : 24,
 			"skill" : 6,
-			"text" : "Attack Squadron Tokens: 5\n\nIf you attack during a round in which you performed a ([about]) Come About Maneuver, during the Modify Attack Dice step, you may re-roll all of your blank results.",
+			"text" : "Attack Squadron Tokens: 5\n\nIf you attack during a round in which you performed a ([come-about]) Come About Maneuver, during the Modify Attack Dice step, you may re-roll all of your blank results.",
 			"unique" : true,
 			"factions" : ["romulan"],
 			"squadron" : true
