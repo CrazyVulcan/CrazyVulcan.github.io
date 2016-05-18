@@ -5082,5 +5082,14 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					],
 
 				},
+				
+		// Geordi LaForge
+		"crew:geordi_la_forge_71531": {
+			upgradeSlots: [
+				{
+					type: ["tech"]
+				}
+			]
+		},
 	};
 }]);
