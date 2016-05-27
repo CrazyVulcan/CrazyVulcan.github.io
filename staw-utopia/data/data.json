@@ -3,6 +3,13 @@
 	"sets" : [
 		{
 			"type" : "set",
+			"id" : "72255",
+			"name" : "Borg Cube with Sphere Port",
+			"releaseDate" : "2016-06-30",
+			"parentSet" : "Wave 25.5"
+		},
+		{
+			"type" : "set",
 			"id" : "72236p",
 			"name" : "Kruge's Bird-of-Prey",
 			"releaseDate" : "2016-05-14",
@@ -1229,6 +1236,52 @@
 		}
 	],
 	"ships" : [
+		{
+			"type" : "ship",
+			"id" : "sphere_936_72255",
+			"set" : ["72255"],
+			"name" : "Sphere 936",
+			"class" : "Borg Sphere",
+			"actions" : ["target-lock", "scan", "regenerate"],
+			"upgrades" : ["borg", "borg", "tech", "weapon", "crew"],
+			"attack" : 6,
+			"agility" : 0,
+			"hull" : 7,
+			"shields" : 7,
+			"cost" : 40,
+			"text" : "If this ship is a support ship, you may equip 1 Upgrade (of your choice) at -2 SP to this ship and you may use a 1 [straight], 2 [straight], or 3 [straight] Maneuver Template to place it in the play area when it becomes Active.",
+			"unique" : true,
+			"factions" : ["borg"],
+			"squadron" : false
+		},
+		{
+			"type" : "copy",
+			"of" : "71283",
+			"set" : ["72255"]
+		},
+		{
+			"type" : "copy",
+			"of" : "71792",
+			"set" : ["72255"]
+		},
+		{
+			"type" : "ship",
+			"id" : "cube_384_72255",
+			"set" : ["72255"],
+			"name" : "Cube 384",
+			"class" : "Borg Cube",
+			"actions" : ["target-lock", "scan", "regenerate"],
+			"upgrades" : ["borg", "borg", "tech", "weapon", "weapon", "crew"],
+			"attack" : 6,
+			"agility" : 0,
+			"hull" : 10,
+			"shields" : 10,
+			"cost" : 52,
+			"text" : "When you preform the Action listed on the 'Borg Support Vehicle Dock' Upgrade, your ship may still attack that round with its Primary Weapon with -3 attack dice.",
+			"unique" : true,
+			"factions" : ["borg"],
+			"squadron" : false
+		},
 		{
 			"type" : "ship",
 			"id" : "the_classic_movies_kruges_bird_of_prey",
@@ -9810,6 +9863,30 @@
 	"captains" : [
 		{
 			"type" : "captain",
+			"id" : "tactial_drone_72255",
+			"set" : ["72255"],
+			"name" : "Tactial Drone",
+			"cost" : 3,
+			"skill" : "*",
+			"talents" : 0,
+			"text" : "At the start of the game, place 4 Drone Tokens on this card.\n\nACTION: Spend 2 of your Drone Tokens to target a ship at Range 1-2. Discard 1 [evade], 1 [scan], or 1 [battlestations] Token from beside that ship. Place a [scan] Token beside your ship.",
+			"unique" : false,
+			"factions" : ["borg"]
+		},
+		{
+			"type" : "captain",
+			"id" : "borg_queen_72255",
+			"set" : ["72255"],
+			"name" : "Borg Queen",
+			"cost" : 4,
+			"skill" : "*",
+			"talents" : 1,
+			"text" : "At the start of the game place 6 Drone Tokens on this card.\n\nACTION: Target a ship at Range 1 and spend 2 of your Drone Tokens. Disable 1 [crew] Upgrade on the target ship (your choice) and steal it even if it exceeds your ship's restrictions.",
+			"unique" : true,
+			"factions" : ["borg"]
+		},
+		{
+			"type" : "captain",
 			"id" : "the_classic_movies_kruge",
 			"set" : ["72236p"],
 			"name" : "Kruge",
@@ -13100,6 +13177,36 @@
 		}
 	],
 	"upgrades" : [
+		{
+			"type" : "talent",
+			"id" : "i_am_the_borg_72255",
+			"set" : ["72255"],
+			"name" : "I Am The Borg",
+			"cost" : 3,
+			"text" : "ACTION: Discard this card to perform this Action. All friendly ships within Range 1-2 of your ship gain +1 attack die this round when attacking.\n\nThis Upgrade may only be assigned to the Borg Queen.",
+			"unique" : true,
+			"factions" : ["borg"]
+		},
+		{
+			"type" : "tech",
+			"id" : "temporal_vortex_72255",
+			"set" : ["72255"],
+			"name" : "Temporal Vortex",
+			"cost" : 5,
+			"text" : "When defending, during the Compare Results step you may discard this card and spend 3 of your Drone Tokens to force the attacking ship to redo its attack. All of the dice (attack and defense) are rolled again. All cards and tokens that were used in the original attack remain used and cannot be used in the second attack. This Upgrade may only be purchased for a Borg ship.",
+			"unique" : true,
+			"factions" : ["borg"]
+		},
+		{
+			"type" : "borg",
+			"id" : "borg_support_vehicle_dock_72255",
+			"set" : ["72255"],
+			"name" : "Borg Support Vehicle Dock",
+			"cost" : 0,
+			"text" : "This Upgrade may only be purchased for a Borg Cube. At the start of the game, place a Borg Support Vehicle token (BSVT) on one ship in your fleet.\n\nACTION: If all of your ship's shields have been destroyed you may discard this card and spend 1 Drone Token to make your support ship Active. Place an Auxiliary Power Token beside your ship. Your ship cannot attack this round.",
+			"unique" : true,
+			"factions" : ["borg"]
+		},
 		{
 			"type" : "talent",
 			"id" : "the_classic_movies_retaliatory_strike",
