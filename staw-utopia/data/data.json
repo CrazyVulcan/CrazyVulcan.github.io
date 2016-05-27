@@ -4627,7 +4627,7 @@
       "id": "borg_sphere_71283",
       "set": [
         "71283",
-        72255
+        "72255"
       ],
       "name": "Borg Starship",
       "class": "Borg Sphere",
@@ -12512,9 +12512,7 @@
     {
       "type": "captain",
       "id": "the_classic_movies_kruge",
-      "set": [
-        "72236p"
-      ],
+      "set": ["72236p"],
       "name": "Kruge",
       "cost": 4,
       "skill": 7,
