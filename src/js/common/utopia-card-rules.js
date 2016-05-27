@@ -5091,5 +5091,30 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			]
 		},
+		
+		// Borg Cube with Sphere Port
+		// I Am The Borg
+		"talent:i_am_the_borg_72255": {
+			rules: "Borg Queen only",
+			canEquip: function(upgrade,ship,fleet) {
+				return ship.captain && ship.captain.name == "Borg Queen";
+			}
+		},
+		
+		// Borg Support Vehicle Dock
+		"borg:borg_support_vehicle_dock_72255": {
+			rules: "Borg Cube only",
+			canEquip: function(upgrade,ship,fleet) {
+				return ( ship && ship.class == "Borg Cube" );
+			}
+		},
+		
+		// Temporal Vortex
+		"tech:temporal_vortex_72255": {
+			rules: "Borg ship only",
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return $factions.hasFaction( ship, "borg", ship, fleet );
+			}
+		},
 	};
 }]);
