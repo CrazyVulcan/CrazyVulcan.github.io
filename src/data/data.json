@@ -3361,7 +3361,8 @@
       "id": "1029",
       "set": [
         "OP2Prize",
-        "71512"
+        "71512",
+		"72236p"
       ],
       "name": "Klingon Starship",
       "class": "B'Rel Class",
@@ -12998,7 +12999,8 @@
         "71804",
         "72009",
         "72015",
-        "72232"
+        "72232",
+		"72236p"
       ],
       "name": "Klingon",
       "unique": false,
