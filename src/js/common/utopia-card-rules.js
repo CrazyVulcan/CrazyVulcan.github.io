@@ -4855,10 +4855,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 		},
 		
-		// Subspace Vortext - only on Xindi Weapon
+		// Subspace Vortext - only on Xindi ship
 		"tech:subspace_vortex_weapon_zero": {
 			canEquip: function(upgrade,ship,fleet) {
-				return ( ship && ship.class == "Xindi Weapon" );
+				return $factions.hasFaction(ship,"xindi", ship, fleet);
 			}
 		},
 		
@@ -4871,13 +4871,24 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 		// Degra
 		"crew:degra_weapon_zero": {
-			cost: function(upgrade,ship,fleet,cost) {
-				if( upgrade.type == "weapon" )
-					return resolve(upgrade,ship,fleet,cost) - 1;
-				return cost;
+			intercept: {
+				ship: {
+					cost: {
+						// Run this interceptor after all other penalties and discounts
+						priority: 100,
+						fn: function(upgrade,ship,fleet,cost) {
+							if( upgrade.type == "weapon" ) {
+								cost = resolve(upgrade,ship,fleet,cost);
+								
+									cost -= 1;
+							}
+							return cost;
+						}
+					}
+				}
 			}
 		},
-		
+
 		// I.K.S. Amar
 		// Klingon Helmsman - +5 SP if fielded on a non-Klingon ship
 		"crew:klingon_helmsman_amar": {
