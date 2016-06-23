@@ -1261,7 +1261,7 @@
       "hull": 10,
       "shields": 10,
       "cost": 52,
-      "text": "When you preform the Action listed on the \"Borg Support Vehicle Dock\" Upgrade, your ship may still attack that round with its Primary Weapon with -3 attack dice.",
+      "text": "When you perform the Action listed on the \"Borg Support Vehicle Dock\" Upgrade, your ship may still attack that round with its Primary Weapon with -3 attack dice.",
       "unique": true,
       "factions": [
         "borg"
@@ -2235,7 +2235,7 @@
       "hull": 4,
       "shields": 3,
       "cost": 22,
-      "text": "You may preform an [evade] Action while there is an Auxiliary Power Token beside your ship.",
+      "text": "You may perform an [evade] Action while there is an Auxiliary Power Token beside your ship.",
       "unique": true,
       "factions": [
         "independent"
@@ -2298,7 +2298,7 @@
       "hull": 4,
       "shields": 3,
       "cost": 22,
-      "text": "During the Actavation Phase, you may preform a second Action from your Action Bar as a free Action. If you do so place an Auxiliary Power Token beside your ship.",
+      "text": "During the Actavation Phase, you may perform a second Action from your Action Bar as a free Action. If you do so place an Auxiliary Power Token beside your ship.",
       "unique": true,
       "factions": [
         "federation"
@@ -2358,7 +2358,7 @@
       "hull": 2,
       "shields": 2,
       "cost": 16,
-      "text": "During the Activation Phase you may preform a [scan] Action as a free Action. If you do so place an Auxiliry Power Token beside your ship.",
+      "text": "During the Activation Phase you may perform a [scan] Action as a free Action. If you do so place an Auxiliry Power Token beside your ship.",
       "unique": true,
       "factions": [
         "romulan"
@@ -12755,7 +12755,7 @@
       "set": [
         "71225"
       ],
-      "name": "DOLIM",
+      "name": "Dolim",
       "cost": 5,
       "skill": 8,
       "talents": 1,
@@ -12839,7 +12839,7 @@
       "cost": 4,
       "skill": 6,
       "talents": 1,
-      "text": "Whenever you preform an [evade] or [scan] Action, you may target a friendly ship within Range 1 of your ship. If you do so place a Token of the same type beside the target ship and an Auxiliary Power Token beside your ship.",
+      "text": "Whenever you perform an [evade] or [scan] Action, you may target a friendly ship within Range 1 of your ship. If you do so place a Token of the same type beside the target ship and an Auxiliary Power Token beside your ship.",
       "unique": true,
       "factions": [
         "independent"
@@ -15810,11 +15810,11 @@
     },
     {
       "type": "captain",
-      "id": "kaiphet_amman_sor_72004p",
+      "id": "kiaphet_amman_sor_72004p",
       "set": [
         "72004p"
       ],
-      "name": "Kaiphet Amman'sor",
+      "name": "Kiaphet Amman'sor",
       "cost": 3,
       "skill": 5,
       "talents": 1,
@@ -17614,7 +17614,7 @@
       ],
       "name": "Klingon Helmsman",
       "cost": 3,
-      "text": "<b>ACTION:</b> Discard this card to immediately preform an additional 1[come-about] or 2[come-about] Maneuver. Treat this as a red maneuver. This card costs +5 SP for any non-Klingon ship and cannot be deployed to a ship the does not have a [come-about] maneuver.",
+      "text": "<b>ACTION:</b> Discard this card to immediately perform an additional 1[come-about] or 2[come-about] Maneuver. Treat this as a red maneuver. This card costs +5 SP for any non-Klingon ship and cannot be deployed to a ship the does not have a [come-about] maneuver.",
       "unique": false,
       "factions": [
         "klingon"
@@ -17658,7 +17658,7 @@
       "cost": 5,
       "attack": 5,
       "range": "2 - 3",
-      "text": "<b>ATTACK: (Target Lock)</b> Spend your target lock and place 3 Time Tokens on this card to preform this attack. You may convert 1 of your [battlestations] results into 1 [crit] result. You may fire this weapon form your forward or rear firing arcs.",
+      "text": "<b>ATTACK: (Target Lock)</b> Spend your target lock and place 3 Time Tokens on this card to perform this attack. You may convert 1 of your [battlestations] results into 1 [crit] result. You may fire this weapon form your forward or rear firing arcs.",
       "unique": false,
       "factions": [
         "klingon"
@@ -17686,7 +17686,7 @@
       ],
       "name": "Wesley Crusher",
       "cost": 5,
-      "text": "During the Activation Phase, after you move, if there is an Auxiliary Power Token beside your ship, you may disable this card to preform an Action from your Action Bar.  OR  During the Activation Phase after you move you may disable this card to preform an Action listed on one of your [tech] Upgrades as a free action.",
+      "text": "During the Activation Phase, after you move, if there is an Auxiliary Power Token beside your ship, you may disable this card to perform an Action from your Action Bar.  OR  During the Activation Phase after you move you may disable this card to perform an Action listed on one of your [tech] Upgrades as a free action.",
       "unique": true,
       "factions": [
         "federation"
@@ -17702,7 +17702,7 @@
       "cost": 4,
       "attack": 3,
       "range": "1 - 2",
-      "text": "<b>ATTACK: </b>Discard this card to preform this attack. The defending ship rolls -1 defense die against this attack. You may only fire this weapon from your forward firing arc. If fired against a Borg ship add +3 attack dice to this attack. The defending Borg ship cannot roll any defense dice against this attack.",
+      "text": "<b>ATTACK: </b>Discard this card to perform this attack. The defending ship rolls -1 defense die against this attack. You may only fire this weapon from your forward firing arc. If fired against a Borg ship add +3 attack dice to this attack. The defending Borg ship cannot roll any defense dice against this attack.",
       "unique": false,
       "factions": [
         "federation"
@@ -17733,7 +17733,7 @@
       ],
       "name": "Subspace Transmitter",
       "cost": 5,
-      "text": "<b>ACTION:</b> Disable this card to target a friendly ship within Range 1-3 of your ship. Place 1 [scan] Token beside your ship and the target ship. You cannot preform a [scan] Action as a Free Action this round.",
+      "text": "<b>ACTION:</b> Disable this card to target a friendly ship within Range 1-3 of your ship. Place 1 [scan] Token beside your ship and the target ship. You cannot perform a [scan] Action as a Free Action this round.",
       "unique": false,
       "factions": [
         "federation"
@@ -17747,7 +17747,7 @@
       ],
       "name": "Thruster Array",
       "cost": 3,
-      "text": "<b>ACTION:</b> Discard this card to immeditaly preform a speed 1 or 2 Reverse Maneuver. Treat this maneuver as a red maneuver.",
+      "text": "<b>ACTION:</b> Discard this card to immeditaly perform a speed 1 or 2 Reverse Maneuver. Treat this maneuver as a red maneuver.",
       "unique": false,
       "factions": [
         "federation"
@@ -17759,7 +17759,7 @@
       "set": [
         "71225"
       ],
-      "name": "ARMING SEQUENCE",
+      "name": "Arming Sequence",
       "cost": 8,
       "text": "<b>ACTION:</b> Place 1 Mission Token on this card. During the Activation Phase of each subsequent round place 1 additional Mission Token on this card. (max 3). While there are Mission Tokens on this card your ship cannot perform any Actions and my only execute maneuvers with a speed of 1. While attacking with a 'Destructive Blast' [weapon] Upgrade or your Primary Weapon during the Roll Attack Dice Step you may discard this card to gain a number of attack dice equal to the number of Mission Tokens on this card. This Upgrade may only be purchased for a Xindi Weapon.",
       "unique": true,
@@ -17773,7 +17773,7 @@
       "set": [
         "71225"
       ],
-      "name": "DEGRA",
+      "name": "Degra",
       "cost": 4,
       "text": "All of your [weapon] Upgrades cost -1 SP. When attacking during the Declare Target step of if your ship does not already have another ship target locked. You may discard this card to acquire a target lock on a ship within Range 1-3 of your ship.",
       "unique": true,
@@ -17787,7 +17787,7 @@
       "set": [
         "71225"
       ],
-      "name": "DESTRUCTIVE BLAST",
+      "name": "Destructive Blast",
       "cost": 6,
       "attack": 5,
       "range": "*",
@@ -17803,7 +17803,7 @@
       "set": [
         "71225"
       ],
-      "name": "ROTATING EMITTERS",
+      "name": "Rotating Emitters",
       "cost": 4,
       "attack": 4,
       "range": "1",
@@ -17819,7 +17819,7 @@
       "set": [
         "71225"
       ],
-      "name": "SUBSPACE VORTEX",
+      "name": "Subspace Vortex",
       "cost": 6,
       "text": "<b>ACTION:</b> Discard this card to remove your ship from the play area and discard all Tokens that are beside your ship except for Auxiliary Power Tokens. Immediately place your ship back anywhere in the play area but not within Range 1-3 of any enemy ship. You cannot attack during the round that you use this Action. This Upgrade can only be purchased for a Xindi ship.",
       "unique": true,
@@ -17833,7 +17833,7 @@
       "set": [
         "71225"
       ],
-      "name": "SELF-DESTRUCT",
+      "name": "Self-Destruct",
       "cost": 5,
       "text": "<b>ACTION:</b> Target all ships within range 1 of your ship and destroy your ship. Each target suffers 1 damage and must discard a Token ([evade], [scan], [battlestations], or [target-lock]) that is beside it. This Upgrade may only be purchased for a Xindi Weapon.",
       "unique": true,
@@ -17905,7 +17905,7 @@
       ],
       "name": "Cloaked Fighters",
       "cost": 4,
-      "text": "Add the [cloak] Action to your Action Bar.  While your squadrons Cloaked you cannot preform a maneuver with a speed greater than 1. This Upgrade may only be purchased for a Scorpion class attack squadron and no ship my have more then one 'Cloaked Fighters' Upgrade",
+      "text": "Add the [cloak] Action to your Action Bar.  While your squadrons Cloaked you cannot perform a maneuver with a speed greater than 1. This Upgrade may only be purchased for a Scorpion class attack squadron and no ship my have more then one 'Cloaked Fighters' Upgrade",
       "unique": false,
       "factions": [
         "romulan"
@@ -17919,7 +17919,7 @@
       ],
       "name": "Hidden Formation",
       "cost": 5,
-      "text": "Add the [sensor-echo] Action to your Action Bar. When preforming the [sensor-echo] Action you may only use a 1 Maneuver Template. If your squadron is Cloaked after preforming a [sensor-echo] Action, you may discard this card to immediately preform an additional [echo] Action as a free Action. If you do so place an Auxiliary Power Token beside your ship.",
+      "text": "Add the [sensor-echo] Action to your Action Bar. When performing the [sensor-echo] Action you may only use a 1 Maneuver Template. If your squadron is Cloaked after performing a [sensor-echo] Action, you may discard this card to immediately perform an additional [echo] Action as a free Action. If you do so place an Auxiliary Power Token beside your ship.",
       "unique": true,
       "factions": [
         "romulan"
@@ -17963,7 +17963,7 @@
       "cost": 4,
       "attack": 4,
       "range": "1 - 2",
-      "text": "<b>ATTACK: (Target Lock)</b> Spend your target lock and place 3 time tokens on this card to preform this attack. You may fire this weapon form your forward or rear firing arcs. No Ship may be equipped with more than one 'Torpedo Attack' Upgrade.",
+      "text": "<b>ATTACK: (Target Lock)</b> Spend your target lock and place 3 time tokens on this card to perform this attack. You may fire this weapon form your forward or rear firing arcs. No Ship may be equipped with more than one 'Torpedo Attack' Upgrade.",
       "unique": false,
       "factions": [
         "romulan"
@@ -18035,7 +18035,7 @@
       "cost": 7,
       "attack": 7,
       "range": "3",
-      "text": "<b>Attack: (Target Lock)</b> Spend your target lock and discard this card to preform this attack. If this attack hits place an Auxiliary Power Token beside all ships within Range 1 of the defending ship. You may only fire this weapon form your forward firing arc.",
+      "text": "<b>Attack: (Target Lock)</b> Spend your target lock and discard this card to perform this attack. If this attack hits place an Auxiliary Power Token beside all ships within Range 1 of the defending ship. You may only fire this weapon form your forward firing arc.",
       "unique": true,
       "factions": [
         "dominion"
@@ -18051,7 +18051,7 @@
       "cost": 6,
       "attack": 5,
       "range": "2 - 3",
-      "text": "<b>Attack: (Target Lock)</b> Spend your target lock and place 3 time tokens on this card to preform this attack.  If the target ship is hit add 1 [hit] result to your total damage. If this weapon is fired from a Cardassian ATR-4107 add 1 additional [hit] result to your total damage.  You may fire this weapon from you forward or rear firing arcs.",
+      "text": "<b>Attack: (Target Lock)</b> Spend your target lock and place 3 time tokens on this card to perform this attack.  If the target ship is hit add 1 [hit] result to your total damage. If this weapon is fired from a Cardassian ATR-4107 add 1 additional [hit] result to your total damage.  You may fire this weapon from you forward or rear firing arcs.",
       "unique": false,
       "factions": [
         "dominion"
@@ -18067,7 +18067,7 @@
       "cost": 5,
       "attack": 5,
       "range": "1 - 3",
-      "text": "<b>Attack: (Target Lock)</b> Spend your target lock and discard this card to preform this attack. You may select any number of your attack dice and re-roll them. This Upgrade may only be purchased for a Cardassian ATR-4107 ship.",
+      "text": "<b>Attack: (Target Lock)</b> Spend your target lock and discard this card to perform this attack. You may select any number of your attack dice and re-roll them. This Upgrade may only be purchased for a Cardassian ATR-4107 ship.",
       "unique": false,
       "factions": [
         "dominion"
@@ -18083,7 +18083,7 @@
       "cost": 5,
       "attack": 3,
       "range": "1",
-      "text": "<b>ATTACK: </b>Discard this card to preform this attack. You may fire this weapon at the every enemy ship within Range 1 of your ship. This Upgrade may only be purchased for a Cardassian ATR-4107 ship.",
+      "text": "<b>ATTACK: </b>Discard this card to perform this attack. You may fire this weapon at the every enemy ship within Range 1 of your ship. This Upgrade may only be purchased for a Cardassian ATR-4107 ship.",
       "unique": false,
       "factions": [
         "dominion"
@@ -18111,7 +18111,7 @@
       ],
       "name": "Counter Measures",
       "cost": 5,
-      "text": "When defending during the Roll Defense Dice step. you may discard this card to roll +2 defense dice. Immediately after that attack is completed you may then preform a 2 dice attack against the attack ship. This Upgrade costs +5 SP for any ship other than a Cardassian ATR-4107 and no ship may be equipped with more than one 'Counter Measures' Upgrade",
+      "text": "When defending during the Roll Defense Dice step. you may discard this card to roll +2 defense dice. Immediately after that attack is completed you may then perform a 2 dice attack against the attack ship. This Upgrade costs +5 SP for any ship other than a Cardassian ATR-4107 and no ship may be equipped with more than one 'Counter Measures' Upgrade",
       "unique": false,
       "factions": [
         "dominion"
@@ -18169,7 +18169,7 @@
       "cost": 3,
       "attack": 0,
       "range": "1 - 2",
-      "text": "<b>ATTACK: </b>Place 3 Time Tokens on this card to preform this attack. Place an Auxiliary Power Token beside the target ship if there if there is at lease one uncancled [hit] or [crit] result.",
+      "text": "<b>ATTACK: </b>Place 3 Time Tokens on this card to perform this attack. Place an Auxiliary Power Token beside the target ship if there if there is at lease one uncancled [hit] or [crit] result.",
       "unique": false,
       "factions": [
         "kazon"
@@ -18185,7 +18185,7 @@
       "cost": 3,
       "attack": 4,
       "range": "2 - 3",
-      "text": "<b>Attack: (Target Lock)</b> Spend your target lock and place 3 Time Tokens on this card to preform this attack. You may only fire this weapon at a ship that is not in your forward firing arc.",
+      "text": "<b>Attack: (Target Lock)</b> Spend your target lock and place 3 Time Tokens on this card to perform this attack. You may only fire this weapon at a ship that is not in your forward firing arc.",
       "unique": false,
       "factions": [
         "kazon"
@@ -18255,7 +18255,7 @@
       ],
       "name": "D'Jarras",
       "cost": 5,
-      "text": "<b>ACTION:</b> Discard this card to target a friendly ship within range 1-3. Preform the action listed on one of that ship's [crew] Upgrades. If the [Crew] Upgrade is Bajoran treat this action as a free action.  This Upgrade may only be purchased for a Bajoran Captain assigned to a Bajoran ship.",
+      "text": "<b>ACTION:</b> Discard this card to target a friendly ship within range 1-3. perform the action listed on one of that ship's [crew] Upgrades. If the [Crew] Upgrade is Bajoran treat this action as a free action.  This Upgrade may only be purchased for a Bajoran Captain assigned to a Bajoran ship.",
       "unique": true,
       "factions": [
         "bajoran"
@@ -18311,7 +18311,7 @@
       ],
       "name": "Infiltration",
       "cost": 5,
-      "text": "<b>ACTION:</b> Discard this card to preform this Action. If your ship is within Range 1-2 of at least 1 enemy ship, but is not within Range 1-2 of any friendly ships, your ship cannot be attacked or attack this round.",
+      "text": "<b>ACTION:</b> Discard this card to perform this Action. If your ship is within Range 1-2 of at least 1 enemy ship, but is not within Range 1-2 of any friendly ships, your ship cannot be attacked or attack this round.",
       "unique": true,
       "factions": [
         "federation"
@@ -18339,7 +18339,7 @@
       ],
       "name": "Jadzia Dax",
       "cost": 4,
-      "text": "You may disable this card after preforming a red maneuver to place an [evade] Token beside your ship.",
+      "text": "You may disable this card after performing a red maneuver to place an [evade] Token beside your ship.",
       "unique": true,
       "factions": [
         "federation"
@@ -18395,7 +18395,7 @@
       ],
       "name": "Red Squad",
       "cost": 5,
-      "text": "At the start of the game, place a number of Tokens [evade], [scan], or [battlestations] on this card equal to the number of Federation [crew] Upgrades assigned to your ship 4 max. During the Activation Phase before preforming your Action, you may remove 1 Token from on top of this card and place it beside your ship. This Upgrade may only be purchesed for a Federation Captain assigned to a Federation ship.",
+      "text": "At the start of the game, place a number of Tokens [evade], [scan], or [battlestations] on this card equal to the number of Federation [crew] Upgrades assigned to your ship 4 max. During the Activation Phase before performing your Action, you may remove 1 Token from on top of this card and place it beside your ship. This Upgrade may only be purchesed for a Federation Captain assigned to a Federation ship.",
       "unique": true,
       "factions": [
         "federation"
@@ -18409,7 +18409,7 @@
       ],
       "name": "Riley Aldrin Shepard",
       "cost": 5,
-      "text": "<b>ACTION:</b> Disable this card to preform an additional green maneuver with a speed of 1. Your ship cannot be Target Locked this round. If there is already a Target Lock on your ship, remove it.",
+      "text": "<b>ACTION:</b> Disable this card to perform an additional green maneuver with a speed of 1. Your ship cannot be Target Locked this round. If there is already a Target Lock on your ship, remove it.",
       "unique": true,
       "factions": [
         "federation"
@@ -18451,7 +18451,7 @@
       ],
       "name": "Nog",
       "cost": 5,
-      "text": "<b>ACTION:</b> Disable this card to repair 1 damage to your Hull or Shields. OR If you exacute a Red Maneuver you may disable this card after skipping your Preform Action Step to remove 1 Auxiliary Power Token form beside your ship.",
+      "text": "<b>ACTION:</b> Disable this card to repair 1 damage to your Hull or Shields. OR If you exacute a Red Maneuver you may disable this card after skipping your perform Action Step to remove 1 Auxiliary Power Token form beside your ship.",
       "unique": true,
       "factions": [
         "federation"
@@ -18625,7 +18625,7 @@
       ],
       "name": "Navigational Station",
       "cost": 4,
-      "text": "After you prreform a green manever you may disable this card to immeditaly preform an [evade] Action as a free Action. No ship may be equiped with more than one 'Navigational Station' Upgrade.",
+      "text": "After you prreform a green manever you may disable this card to immeditaly perform an [evade] Action as a free Action. No ship may be equiped with more than one 'Navigational Station' Upgrade.",
       "unique": false,
       "factions": [
         "federation"
@@ -18655,7 +18655,7 @@
       "cost": 5,
       "attack": 5,
       "range": "2 - 3",
-      "text": "<b>ATTACK: (Target Lock)</b>Spend your target lock and place 3 Time Tokens on this card to preform this attack. \nYou may convert 1 of your [battlestations] into 1 [crit] result. \nYou may fire this weapon form your forward or rear firing arcs.",
+      "text": "<b>ATTACK: (Target Lock)</b>Spend your target lock and place 3 Time Tokens on this card to perform this attack. \nYou may convert 1 of your [battlestations] into 1 [crit] result. \nYou may fire this weapon form your forward or rear firing arcs.",
       "unique": false,
       "factions": [
         "federation"
