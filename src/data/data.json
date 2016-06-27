@@ -1261,7 +1261,7 @@
       "hull": 10,
       "shields": 10,
       "cost": 52,
-      "text": "When you perform the Action listed on the \"Borg Support Vehicle Dock\" Upgrade, your ship may still attack that round with its Primary Weapon with -3 attack dice.",
+      "text": "Your shields cannot be affected by Upgrades from an opponent's fleet.",
       "unique": true,
       "factions": [
         "borg"
