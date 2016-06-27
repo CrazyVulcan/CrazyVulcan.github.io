@@ -16565,7 +16565,7 @@
 			"set" : ["71280"],
 			"name" : "The Doctor",
 			"unique" : true,
-			"text" : "The Doctor counts as either a [crew] Upgrade or a [tech] Upgrade (your choice). \\n<b>ACTION:</b> Remove all Disabled Upgrade tokens from your [crew] Upgrades.",
+			"text" : "The Doctor counts as either a [crew] Upgrade or a [tech] Upgrade (your choice). \n\n<b>ACTION:</b> Remove all Disabled Upgrade tokens from your [crew] Upgrades.",
 			"factions" : ["federation"],
 			"cost" : 3,
 			"skill" : 0,
