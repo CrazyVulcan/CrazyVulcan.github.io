@@ -23372,7 +23372,7 @@
 			"set" : ["72260r"],
 			"name" : "Improved Hull",
 			"text" : "At the start of the game, place 1 Mission Token on any or all of the ship cards in your Fleet\n\nFor the remainder of the game, the Hull Value of each ship with a Mission Token on its Ship Card is considered to be +1.\n\nThe cost of this resource is a number of SP equal to the total combined starting Hull values of all of your ships in your fleet divided by 2 rounding up. For example if your fleet has a total combined hull value of 15, the cost of this resource would be 8.",
-			"cost" : 0?,
+			"cost" : 0,
 			"showShipResourceSlot" : false
 		},
 		{
