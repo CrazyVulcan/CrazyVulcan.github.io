@@ -10,6 +10,13 @@
 		},
 		{
 			"type" : "set",
+			"id" : "72260r",
+			"name" : "Improved Hull",
+			"releaseDate" : "2016-07-30",
+			"parentSet" : "The Classic Movies"
+		},
+		{
+			"type" : "set",
 			"id" : "72255",
 			"name" : "Borg Cube with Sphere Port",
 			"releaseDate" : "2016-06-15",
