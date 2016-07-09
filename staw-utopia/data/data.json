@@ -2,6 +2,13 @@
 {
 	"sets" : [
 		{
+			"type": "set",
+			"id": "72260p",
+			"name": "H.M.S BOUNTY",
+			"releaseDate": "2016-07-30",
+			"parentSet": "The Classic Movies:H.M.S. Bounty"
+		},
+		{
 			"type" : "set",
 			"id" : "72255",
 			"name" : "Borg Cube with Sphere Port",
@@ -1236,6 +1243,24 @@
 		}
 	],
 	"ships" : [
+		{
+			"type": "ship",
+			"id": "h_m_s_bounty",
+			"set": ["72260p"],
+			"name": "H.M.S. Bounty",
+			"class": "B'rel Class",
+			"actions": ["evade","target-lock","cloak","sensor-echo"],
+			"upgrades": ["weapon","crew","crew","crew","crew"],
+			"attack": 4,
+			"agility": 1,
+			"hull": 3,
+			"shields": 3,
+			"cost": 22,
+			"text": "If there are only Federation cards assigned to this ship, add the [scan] and [battlestations] icons to the Action Bar. \n\nThis ship cannot be in the same fleet as Krug's Bird-of-Prey.",
+			"unique": true,
+			"factions": ["federation"],
+			"squadron": false
+		},
 		{
 			"type" : "ship",
 			"id" : "cube_384_72255",
@@ -9876,6 +9901,18 @@
 	],
 	"captains" : [
 		{
+			"type": "captain",
+			"id": "james_t_kirk_bounty",
+			"set": ["72260p"],
+			"name": "James T. Kirk",
+			"cost": 5,
+			"skill": 8,
+			"talents": 1,
+			"text": "All of your Federation [crew] Upgrades cost -1 SP.\n\n Whenever one of your [crew] is supposed to be disabled you may place 3 Time Tokens on that Upgrade instead.",
+			"unique": true,
+			"factions": ["federation"]
+		},
+		{
 			"type" : "captain",
 			"id" : "tactial_drone_72255",
 			"set" : ["72255"],
@@ -13191,6 +13228,46 @@
 		}
 	],
 	"upgrades" : [
+		{
+			"type": "crew",
+			"id": "hikaru_sulu_bounty",
+			"set": ["72260p"],
+			"name": "Hikaru Sulu",
+			"cost": 3,
+			"text": "if you execute a red maneuver, you may disable this card instead of placing an Auxiliary Power Token beside your ship.",
+			"unique": true,
+			"factions": ["federation"]
+		},
+		{
+			"type": "crew",
+			"id": "_bounty",
+			"set": ["72260p"],
+			"name": "Pavel Chekov",
+			"cost": 4,
+			"text": "At the end of the Activation Phase, you may disable this card and place an Auxiliary Power Token beside your ship to flip up to 2 of your disabled shield Tokens 'red' back to their Active sides 'blue'.",
+			"unique": true,
+			"factions": ["federation"]
+		},
+		{
+			"type": "crew",
+			"id": "monyhomrty_scott_bounty",
+			"set": ["72260p"],
+			"name": "Montgovery Scott",
+			"cost": 4,
+			"text": "Add 1 Upgrade slot to your Upgrade bar [tech] or [weapon].\n\nAt any time, you may disable this card to remove an Auxiliary Power Token from beside your ship.",
+			"unique": true,
+			"factions": ["federation"]
+		},
+		{
+			"type": "crew",
+			"id": "nyota_uhura_bounty",
+			"set": ["72260p"],
+			"name": "Nyota Uhura",
+			"cost": 5,
+			"text": "At the start of the Combat Phase, you may discard this card to target all opposing ships within Range 1 of your ship. Each target ship must either discard a Token [evade], [scan], or [battlestations] that is beside it or place an Auxiliary Power Token beside it.",
+			"unique": true,
+			"factions": ["federation"]
+		},
 		{
 			"type" : "talent",
 			"id" : "i_am_the_borg_72255",
@@ -23289,6 +23366,15 @@
 		}
 	],
 	"resources" : [
+		{
+			"type" : "resource",
+			"id" : "improved_hull_opvoyagehome_participtation",
+			"set" : ["72260r"],
+			"name" : "Improved Hull",
+			"text" : "At the start of the game, place 1 Mission Token on any or all of the ship cards in your Fleet\n\nFor the remainder of the game, the Hull Value of each ship with a Mission Token on its Ship Card is considered to be +1.\n\nThe cost of this resource is a number of SP equal to the total combined starting Hull values of all of your ships in your fleet divided by 2 rounding up. For example if your fleet has a total combined hull value of 15, the cost of this resource would be 8.",
+			"cost" : 0?,
+			"showShipResourceSlot" : false
+		},
 		{
 			"type" : "resource",
 			"id" : "the_classic_movies_emergency_power_resource",
