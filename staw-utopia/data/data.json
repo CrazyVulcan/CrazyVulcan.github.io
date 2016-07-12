@@ -2,6 +2,13 @@
 {
 	"sets" : [
 		{
+			"type" : "set",
+			"id" : "72251",
+			"name" : "I.K.S. Negh'Var (repaint)",
+			"releaseDate" : "2016-07-01",
+			"parentSet" : "Wave 25"
+		},
+		{
 			"type": "set",
 			"id": "72261p",
 			"name": "U.S.S. Cairo",
@@ -40,7 +47,7 @@
 			"type" : "set",
 			"id" : "72255",
 			"name" : "Borg Cube with Sphere Port",
-			"releaseDate" : "2016-06-15",
+			"releaseDate" : "2016-07-25",
 			"parentSet" : "Wave 24.5"
 		},
 		{
@@ -2406,7 +2413,7 @@
 		{
 			"type" : "ship",
 			"id" : "1017",
-			"set" : ["71126"],
+			"set" : ["71126","72251"],
 			"name" : "I.K.S. Negh'var",
 			"class" : "Negh'var Class",
 			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
@@ -2430,7 +2437,7 @@
 		{
 			"type" : "ship",
 			"id" : "1018",
-			"set" : ["71126"],
+			"set" : ["71126","72251"],
 			"name" : "Klingon Starship",
 			"class" : "Negh'var Class",
 			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
@@ -10493,7 +10500,7 @@
 		{
 			"type" : "captain",
 			"id" : "2018",
-			"set" : ["71126"],
+			"set" : ["71126","72251"],
 			"name" : "Martok",
 			"unique" : true,
 			"text" : "After you move, choose 1 friendly ship within Range 1-2 whose Captain has a lower Skill than Martok's. The chosen ship may immediately perform 1 free Action. ",
@@ -10505,7 +10512,7 @@
 		{
 			"type" : "captain",
 			"id" : "2019",
-			"set" : ["71126"],
+			"set" : ["71126","72251"],
 			"name" : "Gowron",
 			"unique" : true,
 			"text" : "<b>ACTION:</b>All other friendly Klingon ships within Range 1-2 of your ship gain +1 attack die this round. ",
@@ -14856,7 +14863,7 @@
 		{
 			"type" : "tech",
 			"id" : "3011",
-			"set" : ["71120", "71126"],
+			"set" : ["71120", "71126","72251"],
 			"name" : "Tractor Beam",
 			"unique" : false,
 			"text" : "<b>ACTION:</b> Target a ship at Range 1 and roll 2 attack dice. For every [hit] result, that ship rolls 1 less defense die against your next attack. ",
@@ -15346,7 +15353,7 @@
 		{
 			"type" : "crew",
 			"id" : "3048",
-			"set" : ["71126"],
+			"set" : ["71126","72251"],
 			"name" : "Klingon Boarding Party",
 			"unique" : false,
 			"text" : "<b>ACTION:</b> If your ship is not Cloaked, disable all your remaining Shields and target a ship at Range 1-2 that is not Cloaked and has no Active Shields. Discard this card to disable all Upgrades and remove all [battlestations] Tokens on the target ship. ",
@@ -15360,7 +15367,7 @@
 		{
 			"type" : "talent",
 			"id" : "3049",
-			"set" : ["71126"],
+			"set" : ["71126","72251"],
 			"name" : "In'cha",
 			"unique" : false,
 			"text" : "<b>ACTION:</b> Discard this card to perform one additional Maneuver of your choice this round. ",
@@ -15374,7 +15381,7 @@
 		{
 			"type" : "crew",
 			"id" : "3050",
-			"set" : ["71126"],
+			"set" : ["71126","72251"],
 			"name" : "Drex",
 			"unique" : true,
 			"text" : "<b>ACTION:</b> When attacking this round, you may convert 1 [battlestations] result into 1 [crit] result and all of your other [battlestations] results into [hit] results. ",
@@ -15388,7 +15395,7 @@
 		{
 			"type" : "weapon",
 			"id" : "3051",
-			"set" : ["71126"],
+			"set" : ["71126","72251"],
 			"name" : "Photon Torpedoes",
 			"unique" : false,
 			"text" : "<b>ATTACK: (Target Lock)</b> Spend your target lock and disable this card to perform this attack. \n\nIf fired from a Negh'Var class ship add +1 attack die.",
