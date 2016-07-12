@@ -3,6 +3,20 @@
 	"sets" : [
 		{
 			"type": "set",
+			"id": "72261p",
+			"name": "U.S.S. Cairo",
+			"releaseDate": "2016-08-30",
+			"parentSet": "Tin Man"
+		},
+		{
+			"type" : "set",
+			"id" : "72261r",
+			"name" : "Intercepted Messages",
+			"releaseDate" : "2016-08-29",
+			"parentSet" : "Tin Man"
+		},
+		{
+			"type": "set",
 			"id": "7226gp",
 			"name": "U.S.S. Enterprise-A",
 			"releaseDate": "2016-07-31",
@@ -1257,6 +1271,24 @@
 		}
 	],
 	"ships" : [
+		{
+			"type": "ship",
+			"id": "u_s_s_cairo",
+			"set": ["72261p"],
+			"name": "U.S.S. Cairo",
+			"class": "Excelsior Class",
+			"actions": ["evade","target-lock","scan","battlestations"],
+			"upgrades": ["tech","weapon","weapon","crew","crew"],
+			"attack": 3,
+			"agility": 1,
+			"hull": 5,
+			"shields": 4,
+			"cost": 26,
+			"text": "When defending, if there is an Auxiliary Power Token beside your ship, during the Roll Defense Dice step, roll +1 defense die.",
+			"unique": true,
+			"factions": ["federation"],
+			"squadron": false
+		},
 		{
 			"type": "ship",
 			"id": "u_s_s_enterprise_a",
@@ -3022,7 +3054,7 @@
 		{
 			"type" : "ship",
 			"id" : "1045",
-			"set" : ["71272"],
+			"set" : ["71272","72261p"],
 			"name" : "Federation Starship",
 			"class" : "Excelsior Class",
 			"actions" : ["evade", "target-lock", "scan", "battlestations"],
@@ -9934,13 +9966,25 @@
 	"captains" : [
 		{
 			"type": "captain",
+			"id": "edward_jellico_cairo",
+			"set": ["72261p"],
+			"name": "Edward Jellico",
+			"cost": 4,
+			"skill": 6,
+			"talents": 1,
+			"text": "At any time you may disable 1 of your [tech] or [weapon] Upgrades to place 1 [evade], [scan], or [battlestations] Token beside your ship. You may only use this ability once per round.",
+			"unique": true,
+			"factions": ["federation"]
+		},
+		{
+			"type": "captain",
 			"id": "james_t_kirk_enterprise_a",
 			"set": ["7226gp"],
 			"name": "James T. Kirk",
 			"cost": 6,
 			"skill": 9,
 			"talents": 1,
-			"text": "ACTION: Place a [battlestations] Token beside your ship. When attacking this round during the Modify Attack Dice Step you may spend this Token to re-roll up to 2 of your attack dice OR When defending this round, during the Modify Defence Dice step you may spend this Token to re-roll up to 2 of your defense dice. You may still preform the [battlestations] Action as a free Action this Round if passable.",
+			"text": "ACTION: Place a [battlestations] Token beside your ship. When attacking this round during the Modify Attack Dice Step you may spend this Token to re-roll up to 2 of your attack dice OR When defending this round, during the Modify Defence Dice step you may spend this Token to re-roll up to 2 of your defense dice. You may still preform the [battlestations] Action as a free Action this Round if pssable.",
 			"unique": true,
 			"factions": ["federation"]
 		},
@@ -13272,6 +13316,48 @@
 		}
 	],
 	"upgrades" : [
+		{
+			"type": "talent",
+			"id": "task_force_ciaro",
+			"set": ["72261p"],
+			"name": "Task Force",
+			"cost": 5,
+			"text": "ACTION: Choose a faction. All friendly ships within Range 1-2 of your ship gain +1 Attack die and roll +1 Defense die against ships of that faction for this round.",
+			"unique": true,
+			"factions": ["federation"]
+		},
+		{
+			"type": "weapon",
+			"id": "high_yield_photon_torpedoes_ciaro",
+			"set": ["72261p"],
+			"name": "High Yield Photon Torpedoes",
+			"cost": 6,
+			"attack" : 6,
+			"range" : "2 - 3",
+			"text": "ATTACK: (Target Lock) Spend your target lock and place 3 Time Tokens on this card to preform this attack.\n\nYou may convert 1 of your [battlestations] results into 1 [crit] result.",
+			"unique": false,
+			"factions": ["federation"]
+		},
+		{
+			"type": "tech",
+			"id": "deuterium_tank_ciaro",
+			"set": ["72261p"],
+			"name": "Deuterium Tank",
+			"cost": 3,
+			"text": "You may disable this card just before you move to treat a red maneuver as a white maneuver.",
+			"unique": false,
+			"factions": ["federation"]
+		},
+		{
+			"type": "question",
+			"id": "delta_shift_ciaro",
+			"set": ["72261p"],
+			"name": "Delta Shift",
+			"cost": 5,
+			"text": "This Upgrade may be assigned to any ship without requiring an Upgrade slot.\n\nWhen one of your [crew] Upgrades is supposed to be disabled or discarded, you may discard this card instead.\n\nNo ship may be equipped with more than one 'Delta Shift' Upgrade.",
+			"unique": false,
+			"factions": ["federation"]
+		},
 		{
 			"type": "crew",
 			"id": "hikaru_sulu_bounty",
@@ -23450,6 +23536,15 @@
 		}
 	],
 	"resources" : [
+		{
+			"type" : "resource",
+			"id" : "interepted_messages_resource",
+			"set" : ["72261r"],
+			"name" : "Improved Hull",
+			"text" : "At the start of the game place 5 Evade Tokens on this card. During the Activation Phase, if an opposing ship that is within Range 1-2 of one of your ships performs a Scan, Battle Stations, or Cloak Action from its Action Bar, you may choose to immediately remove 1 Evade Token from this card and place it beside your ship, even if there is already one there. You can only use this ability once per round.",
+			"cost" : 5,
+			"showShipResourceSlot" : false
+		},
 		{
 			"type" : "resource",
 			"id" : "the_classic_movies_improved_hull_resource",
