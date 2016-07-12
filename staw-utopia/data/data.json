@@ -13354,7 +13354,7 @@
 			"set": ["72261p"],
 			"name": "Delta Shift",
 			"cost": 5,
-			"text": "This Upgrade may be assigned to any ship without requiring an Upgrade slot.\n\nWhen one of your [crew] Upgrades is supposed to be disabled or discarded, you may discard this card instead.\n\nNo ship may be equipped with more than one 'Delta Shift' Upgrade.",
+			"text": "This Upgrade may be assigned to any ship without requiring an Upgrade slot.\n\nWhen one of your [crew] Upgrades is supposed to be disabled or discarded, you may discard this card instead. No ship may be equipped with more than one 'Delta Shift' Upgrade.",
 			"unique": false,
 			"factions": ["federation"]
 		},
@@ -23540,7 +23540,7 @@
 			"type" : "resource",
 			"id" : "interepted_messages_resource",
 			"set" : ["72261r"],
-			"name" : "Improved Hull",
+			"name" : "Intercepted Messages",
 			"text" : "At the start of the game place 5 Evade Tokens on this card. During the Activation Phase, if an opposing ship that is within Range 1-2 of one of your ships performs a Scan, Battle Stations, or Cloak Action from its Action Bar, you may choose to immediately remove 1 Evade Token from this card and place it beside your ship, even if there is already one there. You can only use this ability once per round.",
 			"cost" : 5,
 			"showShipResourceSlot" : false
