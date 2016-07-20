@@ -5127,5 +5127,19 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return $factions.hasFaction( ship, "borg", ship, fleet );
 			}
 		},
+
+		// Torpedo Bay
+		"weapon:torpedo_bay_enterprise_a": {
+			upgradeSlots: [ 
+				{ 
+					type: ["weapon"],
+					rules: "Photon Torpedoes Only",
+					canEquip: function(upgrade) {
+						return upgrade.name == "Photon Torpedoes";
+					},
+			}
+			]
+		},
+		
 	};
 }]);
