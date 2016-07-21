@@ -3,6 +3,13 @@
 	"sets" : [
 		{
 			"type" : "set",
+			"id" : "72252",
+			"name" : "Scimitar (repaint)",
+			"releaseDate" : "2016-08-02",
+			"parentSet" : "Wave 25"
+		},
+		{
+			"type" : "set",
 			"id" : "72251",
 			"name" : "I.K.S. Negh'Var (repaint)",
 			"releaseDate" : "2016-08-01",
@@ -5201,7 +5208,7 @@
 		{
 			"type" : "ship",
 			"id" : "scimitar_71533",
-			"set" : ["71533"],
+			"set" : ["71533","72252"],
 			"name" : "Scimitar",
 			"class" : "Reman Warbird",
 			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
@@ -5225,7 +5232,7 @@
 		{
 			"type" : "ship",
 			"id" : "reman_starship_71533",
-			"set" : ["71533"],
+			"set" : ["71533","72252"],
 			"name" : "Reman Starship",
 			"class" : "Reman Warbird",
 			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
@@ -10368,7 +10375,7 @@
 		{
 			"type" : "captain",
 			"id" : "2007",
-			"set" : ["71120", "71123", "71124", "71270", "71278", "OP3Prize", "i_r_w_vorta_vor", "71533", "71274", "71794", "71511", "72242", "72010", "72016", "71222", "72233", "72221p"],
+			"set" : ["71120", "71123", "71124", "71270", "71278", "OP3Prize", "i_r_w_vorta_vor", "72252","71533", "71274", "71794", "71511", "72242", "72010", "72016", "71222", "72233", "72221p"],
 			"name" : "Romulan",
 			"unique" : false,
 			"text" : "\r\n      ",
@@ -11724,7 +11731,7 @@
 		{
 			"type" : "captain",
 			"id" : "viceroy_71533",
-			"set" : ["71533"],
+			"set" : ["71533","72252"],
 			"name" : "Viceroy",
 			"unique" : true,
 			"text" : "At the start of the game, place 2 Mission Tokens on this card. During the Planning Phase, after all other ships have chosen their Maneuvers, you may discard 1 of the Mission Tokens from this card to target a ship at Range 1, look at that ship's Maneuver dial, and then select your Maneuver. The target ship cannot change its chosen Maneuver after you look at it.",
@@ -11736,7 +11743,7 @@
 		{
 			"type" : "captain",
 			"id" : "shinzon_71533",
-			"set" : ["71533"],
+			"set" : ["71533","72252"],
 			"name" : "Shinzon",
 			"unique" : true,
 			"text" : "During the Gather Forces step of Setup, instead of purchasing an [talent] Upgrade as normal for Shinzon, you may spend 4 SP to place up to 4 Romulan [talent] Upgrades face down beside this card. These cards remain face down until you decide to use one of them. When you do so, select the one you want to use and turn it face up for the rest of the game. Then discard the other 3.",
@@ -11820,7 +11827,7 @@
 		{
 			"type" : "captain",
 			"id" : "hiren_cap_71533",
-			"set" : ["71533"],
+			"set" : ["71533","72252"],
 			"name" : "Hiren",
 			"unique" : true,
 			"text" : "<b>ACTION:</b> Disable 1 of your [crew] Upgrades to gain +1 attack die this round.",
@@ -13083,7 +13090,7 @@
 		{
 			"type" : "admiral",
 			"id" : "hiren_71533",
-			"set" : ["71533"],
+			"set" : ["71533","72252"],
 			"name" : "Hiren",
 			"unique" : true,
 			"text" : "<b>FLEET ACTION:</b> Disable 1 of your [crew] Upgrades to gain +1 attack die this round.",
@@ -19749,7 +19756,7 @@
 		{
 			"type" : "crew",
 			"id" : "reman_boarding_party_71533",
-			"set" : ["71533"],
+			"set" : ["71533","72252"],
 			"name" : "Reman Boarding Party",
 			"unique" : false,
 			"text" : "<b>ACTION:</b> If your ship is not Cloaked, disable all of your remaining Shields and target a ship at Range 1-2 that is not Cloaked and has no Active Shields. Discard this card and disable all Upgrades on the target ship.",
@@ -19763,7 +19770,7 @@
 		{
 			"type" : "talent",
 			"id" : "target_weapons_systems_71533",
-			"set" : ["71533"],
+			"set" : ["71533","72252"],
 			"name" : "Target Weapons Systems",
 			"unique" : true,
 			"text" : "If you damage an opponent's Hull with a [crit], you may immediately discard this card to search the Damage Deck for a \"Munitions Failure\" or a \"Weapons Malfunction\" card instead of drawing a random Damage Card. Re-shuffle the Damage Deck when you are done.",
@@ -19777,7 +19784,7 @@
 		{
 			"type" : "talent",
 			"id" : "attack_pattern_shinzon_theta_71533",
-			"set" : ["71533"],
+			"set" : ["71533","72252"],
 			"name" : "Attack Pattern Shinzon Theta",
 			"unique" : true,
 			"text" : "During the Deal Damage step of the Combat Phase, if you hit your opponent's ship, you may discard this card to add 1 additional damage to that ship's Shields (if possible) for every uncancelled [crit] result.",
@@ -19791,7 +19798,7 @@
 		{
 			"type" : "talent",
 			"id" : "shinzon_romulan_talents_71533",
-			"set" : ["71533"],
+			"set" : ["71533","72252"],
 			"name" : "Shinzon Romulan Talents",
 			"unique" : true,
 			"text" : "Place up to 4 Romulan [talent] Upgrades face down beside Shinzon. These cards remain face down until you decide to use one of them. When you do so, select the one you want to use and turn it face up for the rest of the game. Then discard the other 3.",
@@ -19805,7 +19812,7 @@
 		{
 			"type" : "talent",
 			"id" : "full_stop_71533",
-			"set" : ["71533"],
+			"set" : ["71533","72252"],
 			"name" : "Full Stop",
 			"unique" : true,
 			"text" : "During the Activation Phase, after you reveal your chosen Maneuver, you may discard this card to ignore that Maneuver and not move. You may still take an Action during the Perform Actions step.",
@@ -19819,7 +19826,7 @@
 		{
 			"type" : "tech",
 			"id" : "secondary_shields_71533",
-			"set" : ["71533"],
+			"set" : ["71533","72252"],
 			"name" : "Secondary Shields",
 			"unique" : false,
 			"text" : "At the start of the game, place 3 Shield Tokens on this card. During each End Phase, if you have fewer total Shields (Active and/or Disabled) than your starting Shield Value, remove 1 Shield from this card and add it to your ship. If you ship is Cloaked, you may choose to add the extra Shield as a Disabled Shield. This Upgrade may only be purchased for a Reman Warbird.",
@@ -19833,7 +19840,7 @@
 		{
 			"type" : "tech",
 			"id" : "improved_cloaking_device_71533",
-			"set" : ["71533"],
+			"set" : ["71533","72252"],
 			"name" : "Improved Cloaking Device",
 			"unique" : false,
 			"text" : "If you have the [cloak] icon on your Action Bar, you may perform a [cloak] Action even if you have no Active Shields and/or if there is an Auxiliary Power Token beside your ship. This Upgrade costs +5 SP for any ship other than a Reman Warbird.",
@@ -19861,7 +19868,7 @@
 		{
 			"type" : "weapon",
 			"id" : "thalaron_weapon_71533",
-			"set" : ["71533"],
+			"set" : ["71533","72252"],
 			"name" : "Thalaron Weapon",
 			"unique" : true,
 			"text" : "<b>ATTACK: </b>Discard this card to perform this attack. Instead of inflicting normal damage, for each uncancelled [hit] or [crit] result, discard the Captain Card or 1 [crew] Upgrade (opponent's choice) on the target ship. If the Captain and all of the [crew] Upgrades on the target ship are destroyed, any additional uncancelled [hit] or [crit] results damage the ship as normal (max 5 damage). This Upgrade may only be purchased for a Reman Warbird.",
@@ -19875,7 +19882,7 @@
 		{
 			"type" : "weapon",
 			"id" : "photon_torpedoes_71533",
-			"set" : ["71533"],
+			"set" : ["71533","72252"],
 			"name" : "Photon Torpedoes",
 			"unique" : false,
 			"text" : "<b>ATTACK: (Target Lock)</b> Spend your target lock and disable this card to perform this attack. If fired from a Reman Warbird, gain +2 attack dice. You may fire this weapon from your forward or rear firing arcs.",
