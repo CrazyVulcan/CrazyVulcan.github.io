@@ -137,6 +137,20 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		}
 	}
 	
+	var getSlotType = function(upgrade,ship) {
+		var type = ["weapon"];
+		$.each( $filter("upgradeSlots")(ship), function(i, slot) {
+			if( slot.occupant && slot.occupant.name == upgrade.source ) {
+				console.log(slot.type, i);
+				type = slot.type;
+				return false;
+				}
+			}
+		);
+		
+		return type;
+	}
+	
 	return {
 		
 		// SHIPS
@@ -2727,10 +2741,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return !$factions.hasFaction(ship, "borg", ship, fleet);
 			},
 			canEquip: function(upgrade,ship,fleet) {
-				
-					
 				return onePerShip("Unremarkable Species")(upgrade,ship,fleet);
-
 			 },
 			 intercept: {
 				self: {
@@ -2741,7 +2752,13 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					}
 				}
 			},
-
+			upgradeSlots: [  
+				{ 
+					type: function(upgrade,ship) {
+						return getSlotType(upgrade,ship);
+					}
+				}
+			],
 		},		
 		// Bajoran Militia
 		"crew:bajoran_militia_71803": {
@@ -4761,6 +4778,19 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 		// Maintenance Crew
 		"question:maintenance_crew_71212": {
+			isSlotCompatible: function(slotTypes) {
+				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0;
+			},
+			upgradeSlots: [  
+				{ 
+					type: function(upgrade,ship) {
+						return getSlotType(upgrade,ship);
+					}
+				},
+				{
+					type: ["crew"]
+				}
+			],
 			canEquip: function(upgrade,ship,fleet) {
 				return onePerShip("Maintenance Crew")(upgrade,ship,fleet);
 			}
@@ -5137,8 +5167,40 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					canEquip: function(upgrade) {
 						return upgrade.name == "Photon Torpedoes";
 					},
-			}
+				}
 			]
+		},
+	
+		"question:delta_shift_cairo": {
+			isSlotCompatible: function(slotTypes) {
+				//console.log($.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0);
+				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0;
+			},
+			upgradeSlots: [  
+				{ 
+					type: function(upgrade,ship) {
+						return getSlotType(upgrade,ship);
+					}
+				}
+			],
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("Delta Shift")(upgrade,ship,fleet);
+			}
+		},
+
+		// James T. Kirk - H.M.S. Bounty
+		"captain:james_t_kirk_bounty": {
+			intercept: {
+				ship: {
+					// All federation crew cost -1 SP
+					cost: function(upgrade, ship, fleet, cost) {
+						if( upgrade.type == "crew" && $factions.hasFaction(upgrade,"federation", ship, fleet) )
+							return resolve(upgrade, ship, fleet, cost) - 1;
+						return cost;
+					},
+				}
+			}
+			
 		},
 		
 	};
