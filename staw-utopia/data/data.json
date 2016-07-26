@@ -13388,6 +13388,18 @@
 			"factions" : ["federation"]
 		},
 		{
+			"type" : "weapon",
+			"id" : "photon_torpedoes_venture",
+			"set" : ["72253"],
+			"name" : "Photon Torpedoes",
+			"cost" : 5,
+			"attack" : 5,
+			"range" : "2 - 3",
+			"text" : "<b>ATTACK: (Target Lock)</b> Spend your target lock and place 3 Time Tokens on this card to perform this attack. You may convert 1 of your [battlestations] results into 1 [crit] result. You may fire this weapon form your forward or rear firing arcs.",
+			"unique" : false,
+			"factions" : ["federation"]
+		},
+		{
 			"type" : "tech",
 			"id" : "maximum_warp_venture",
 			"set" : ["72253"],
@@ -14025,12 +14037,12 @@
 		{
 			"type" : "weapon",
 			"id" : "photon_torpedoes_amar",
-			"set" : ["72232","72253"],
+			"set" : ["72232"],
 			"name" : "Photon Torpedoes",
 			"cost" : 5,
 			"attack" : 5,
 			"range" : "2 - 3",
-			"text" : "<b>ATTACK: (Target Lock)</b> Spend your target lock and place 3 Time Tokens on this card to perform this attack.\n\nYou may convert 1 of your [battlestations] results into 1 [crit] result.\n\nYou may fire this weapon form your forward or rear firing arcs.",
+			"text" : "<b>ATTACK: (Target Lock)</b> Spend your target lock and place 3 Time Tokens on this card to perform this attack. You may convert 1 of your [battlestations] results into 1 [crit] result. You may fire this weapon form your forward or rear firing arcs.",
 			"unique" : false,
 			"factions" : ["klingon"]
 		},
