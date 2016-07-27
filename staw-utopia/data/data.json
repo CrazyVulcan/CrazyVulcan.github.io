@@ -2085,7 +2085,7 @@
 		{
 			"type" : "ship",
 			"id" : "1002",
-			"set" : ["71120","72253"],
+			"set" : ["71120", "72253"],
 			"name" : "Federation Starship",
 			"class" : "Galaxy Class",
 			"actions" : ["evade", "target-lock", "scan", "battlestations"],
@@ -10003,7 +10003,7 @@
 		}
 	],
 	"captains" : [
-			{
+		{
 			"type" : "captain",
 			"id" : "donald_varley_venture",
 			"set" : ["72253"],
@@ -13383,7 +13383,7 @@
 			"set" : ["72253"],
 			"name" : "Additional Phaser Arrays",
 			"cost" : 5,
-			"text" : "After you make an attack with your Primary Weapon, you may disable this card to make an additional attack with your Primary Weapon at -2 attack dice.\n\nNo ship may be equipped with more than 1 'Additional Phaser Arrays' Upgrade.",
+			"text" : "After you make an attack with your Primary Weapon, you may disable this card to make an additional attack with your Primary Weapon at -2 attack dice.\n\nNo ship may be equipped with more than 1 \"Additional Phaser Arrays\" Upgrade.",
 			"unique" : false,
 			"factions" : ["federation"]
 		},
@@ -13415,7 +13415,7 @@
 			"set" : ["72253"],
 			"name" : "High-Capacty Deflector Shield Grid",
 			"cost" : 5,
-			"text" : "If you have at least 1 Active Shield, during the Compare Results step you may discard this card to negate up to 2 damage.\n\nNo ship may be equipped with more than 1 'High-Capacity Deflector Shield Grid' Upgrade.",
+			"text" : "If you have at least 1 Active Shield, during the Compare Results step you may discard this card to negate up to 2 damage.\n\nNo ship may be equipped with more than 1 \"High-Capacity Deflector Shield Grid\" Upgrade.",
 			"unique" : false,
 			"factions" : ["federation"]
 		},

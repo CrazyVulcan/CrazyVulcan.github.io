@@ -5171,6 +5171,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			]
 		},
 	
+		// Delta Shift - U.S.S. Cairo
 		"question:delta_shift_cairo": {
 			isSlotCompatible: function(slotTypes) {
 				//console.log($.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0);
@@ -5202,6 +5203,32 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 			
 		},
+	
+		// Computer Core - U.S.S. Venture
+		"question:computer_core_venture": {
+			isSlotCompatible: function(slotTypes) {
+				//console.log($.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0);
+				return $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0;
+			},
+			upgradeSlots: [  
+				{ 
+					type: ["tech"]
+				}
+			]
+		},
+
+		// Addition Phase Arrays - U.S.S. Venture
+		"weapon:additional_phaser_arrays_venture": {
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("Additional Phaser Arrays")(upgrade,ship,fleet);
+			}
+		},
 		
+		// High-Capacty Deflector Shield Grid - U.S.S. Venture
+		"tech:high_cpaacity_deflector_shield_grid_venture": {
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("High-Capacty Deflector Shield Grid")(upgrade,ship,fleet);
+			}
+		}
 	};
 }]);

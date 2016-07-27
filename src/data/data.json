@@ -3,6 +3,13 @@
 	"sets" : [
 		{
 			"type" : "set",
+			"id" : "72253",
+			"name" : "U.S.S. Venture",
+			"releaseDate" : "2016-08-03",
+			"parentSet" : "Wave 25"
+		},
+		{
+			"type" : "set",
 			"id" : "72252",
 			"name" : "Scimitar (repaint)",
 			"releaseDate" : "2016-08-02",
@@ -1287,6 +1294,24 @@
 	"ships" : [
 		{
 			"type" : "ship",
+			"id" : "u_s_s_venture",
+			"set" : ["72253"],
+			"name" : "U.S.S. Venture",
+			"class" : "Galaxy Class",
+			"actions" : ["evade", "target-lock", "scan", "battlestations"],
+			"upgrades" : ["tech", "weapon", "weapon", "crew", "crew"],
+			"attack" : 4,
+			"agility" : 1,
+			"hull" : 5,
+			"shields" : 4,
+			"cost" : 26,
+			"text" : "If you attack a ship that is in the forward firing arc of another friendly ship, you gain +1 attack die.",
+			"unique" : true,
+			"factions" : ["federation"],
+			"squadron" : false
+		},
+		{
+			"type" : "ship",
 			"id" : "u_s_s_cairo",
 			"set" : ["72261p"],
 			"name" : "U.S.S. Cairo",
@@ -2060,7 +2085,7 @@
 		{
 			"type" : "ship",
 			"id" : "1002",
-			"set" : ["71120"],
+			"set" : ["71120", "72253"],
 			"name" : "Federation Starship",
 			"class" : "Galaxy Class",
 			"actions" : ["evade", "target-lock", "scan", "battlestations"],
@@ -9980,6 +10005,18 @@
 	"captains" : [
 		{
 			"type" : "captain",
+			"id" : "donald_varley_venture",
+			"set" : ["72253"],
+			"name" : "Donald Varley",
+			"cost" : 3,
+			"skill" : 4,
+			"talents" : 1,
+			"text" : "Your ship may preform a [scan] Action as a free Action each round.",
+			"unique" : true,
+			"factions" : ["federation"]
+		},
+		{
+			"type" : "captain",
 			"id" : "edward_jellico_cairo",
 			"set" : ["72261p"],
 			"name" : "Edward Jellico",
@@ -13330,6 +13367,68 @@
 		}
 	],
 	"upgrades" : [
+		{
+			"type" : "talent",
+			"id" : "galaxy_wing_squadron_venture",
+			"set" : ["72253"],
+			"name" : "Galaxy Wing Squadron",
+			"cost" : 5,
+			"text" : "<b>ACTION:</b> Discard this card to target all friendly Galaxy class ship within Range 1-2. Target ships gain +1 attack die this round.",
+			"unique" : true,
+			"factions" : ["federation"]
+		},
+		{
+			"type" : "weapon",
+			"id" : "additional_phaser_arrays_venture",
+			"set" : ["72253"],
+			"name" : "Additional Phaser Arrays",
+			"cost" : 5,
+			"text" : "After you make an attack with your Primary Weapon, you may disable this card to make an additional attack with your Primary Weapon at -2 attack dice.\n\nNo ship may be equipped with more than 1 \"Additional Phaser Arrays\" Upgrade.",
+			"unique" : false,
+			"factions" : ["federation"]
+		},
+		{
+			"type" : "weapon",
+			"id" : "photon_torpedoes_venture",
+			"set" : ["72253"],
+			"name" : "Photon Torpedoes",
+			"cost" : 5,
+			"attack" : 5,
+			"range" : "2 - 3",
+			"text" : "<b>ATTACK: (Target Lock)</b> Spend your target lock and place 3 Time Tokens on this card to perform this attack. You may convert 1 of your [battlestations] results into 1 [crit] result. You may fire this weapon form your forward or rear firing arcs.",
+			"unique" : false,
+			"factions" : ["federation"]
+		},
+		{
+			"type" : "tech",
+			"id" : "maximum_warp_venture",
+			"set" : ["72253"],
+			"name" : "Maximum Warp",
+			"cost" : 5,
+			"text" : "<b>ACTION:</b> If you perform a [straight] Maneuver this round you may disable this card to immediately perform an additional [straight] Maneuver with a speed of 2 or less. You cannot perform any free Actions this round.",
+			"unique" : false,
+			"factions" : ["federation"]
+		},
+		{
+			"type" : "tech",
+			"id" : "high_cpaacity_deflector_shield_grid_venture",
+			"set" : ["72253"],
+			"name" : "High-Capacty Deflector Shield Grid",
+			"cost" : 5,
+			"text" : "If you have at least 1 Active Shield, during the Compare Results step you may discard this card to negate up to 2 damage.\n\nNo ship may be equipped with more than 1 \"High-Capacity Deflector Shield Grid\" Upgrade.",
+			"unique" : false,
+			"factions" : ["federation"]
+		},
+		{
+			"type" : "question",
+			"id" : "computer_core_venture",
+			"set" : ["72253"],
+			"name" : "Computer Core",
+			"cost" : 5,
+			"text" : "You can fill a [crew] or [weapon] Upgrade slot with this Upgrade. Add 1 [tech] Upgrade to your Upgrade Bar.\n\n<b>ACTION:</b> You may re-roll any 1 die this round.",
+			"unique" : false,
+			"factions" : ["federation"]
+		},
 		{
 			"type" : "talent",
 			"id" : "task_force_cairo",
