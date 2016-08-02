@@ -12,7 +12,7 @@
 			"type" : "set",
 			"id" : "72262r",
 			"name" : "Condition Alert",
-			"releaseDate" : "2016-09-29",
+			"releaseDate" : "2016-08-29",
 			"parentSet" : "The Corbomite Maneuver"
 		},
 		{
@@ -1313,7 +1313,7 @@
 			"name" : "I.R.W. Rateg",
 			"class" : "Romulan Bird-of-Prey",
 			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
-			"upgrades" : ["tech", "weapon", "crew", "crew"],
+			"upgrades" : ["tech", "weapon", "weapon", "crew"],
 			"attack" : 2,
 			"agility" : 2,
 			"hull" : 3,
@@ -13445,7 +13445,7 @@
 			"cost" : 3,
 			"attack" : 3,
 			"range" : "1 - 3",
-			"text" : "Add 1 [weapon] Upgrade icon to your Upgrade Bar.\n\n<b>ATTACK:</b> Place 2 Time Tokens on this card to preform this attack. Treat this attack as if it were an attack made with a Primary Weapon.\n\nNo ship may be equipped with more then one 'Main Batteries' Upgrade.",
+			"text" : "Add 1 [weapon] Upgrade icon to your Upgrade Bar.\n\n<b>ATTACK:</b> Place 2 Time Tokens on this card to preform this attack. Treat this attack as if it were an attack made with a Primary Weapon. No ship may be equipped with more then one 'Main Batteries' Upgrade.",
 			"unique" : true,
 			"factions" : ["romulan"]
 		},
