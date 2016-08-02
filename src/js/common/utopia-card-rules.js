@@ -5229,6 +5229,25 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquip: function(upgrade,ship,fleet) {
 				return onePerShip("High-Capacty Deflector Shield Grid")(upgrade,ship,fleet);
 			}
+		},
+		
+		// Control Central - I.R.W. Rateg
+		"tech:control_central_rateg": {
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("Control Central")(upgrade,ship,fleet);
+			}
+		},
+		
+		// Main Batteries - I.R.W. Rateg
+		"weapon:main_batteries_rateg": {
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("Main Batteries")(upgrade,ship,fleet);
+			},
+			upgradeSlots: [  
+				{ 
+					type: ["weapon"]
+				}
+			]
 		}
 	};
 }]);
