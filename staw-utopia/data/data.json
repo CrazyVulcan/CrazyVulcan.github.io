@@ -14112,7 +14112,7 @@
 			"set" : ["72232"],
 			"name" : "Klingon Navigator",
 			"cost" : 2,
-			"text" : "During the Activation Phase before you move, you may discard this card to disregard your chosen maneuver on your Maneuver Dial with a speed of 3 or less. Treat this maneuver as a red maneuver. No ship may be equipped with more than on 'Klingon Navigator' Upgrade.",
+			"text" : "During the Activation Phase, before you move, you may discard this card to disregard your chosen maneuver and perform any maneuver on your Maneuver Dial with a speed of 3 or less. Treat this maneuver as a red maneuver. \n\nNo ship may be equipped with more than on 'Klingon Navigator' Upgrade.",
 			"unique" : false,
 			"factions" : ["klingon"]
 		},
