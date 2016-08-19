@@ -4,7 +4,7 @@
 		{
 			"type" : "set",
 			"id" : "72261",
-			"name" : "U.S.S. Voyager(Repaint)",
+			"name" : "U.S.S. Voyager (Repaint)",
 			"releaseDate" : "2016-09-02",
 			"parentSet" : "Wave 26"
 		},
@@ -32,14 +32,14 @@
 		{
 			"type" : "set",
 			"id" : "72252",
-			"name" : "Scimitar (repaint)",
+			"name" : "Scimitar (Repaint)",
 			"releaseDate" : "2016-08-02",
 			"parentSet" : "Wave 25"
 		},
 		{
 			"type" : "set",
 			"id" : "72251",
-			"name" : "I.K.S. Negh'Var (repaint)",
+			"name" : "I.K.S. Negh'Var (Repaint)",
 			"releaseDate" : "2016-08-01",
 			"parentSet" : "Wave 25"
 		},
@@ -137,7 +137,7 @@
 		{
 			"type" : "set",
 			"id" : "72240",
-			"name" : "U.S.S. Enterprise (repaint)",
+			"name" : "U.S.S. Enterprise (Repaint)",
 			"releaseDate" : "2016-05-10",
 			"parentSet" : "Wave 24"
 		},
