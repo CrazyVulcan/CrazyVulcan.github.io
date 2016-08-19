@@ -3,6 +3,13 @@
 	"sets" : [
 		{
 			"type" : "set",
+			"id" : "72261",
+			"name" : "U.S.S. Voyager(Repaint)",
+			"releaseDate" : "2016-09-02",
+			"parentSet" : "Wave 26"
+		},
+		{
+			"type" : "set",
 			"id" : "72262p",
 			"name" : "I.R.W. Rateg",
 			"releaseDate" : "2016-09-30",
@@ -3635,7 +3642,7 @@
 		{
 			"type" : "ship",
 			"id" : "u_s_s_voyager_71280",
-			"set" : ["71280"],
+			"set" : ["71280","72261"],
 			"name" : "U.S.S. Voyager",
 			"class" : "Intrepid Class",
 			"actions" : ["evade", "target-lock", "scan", "battlestations"],
@@ -3659,7 +3666,7 @@
 		{
 			"type" : "ship",
 			"id" : "federation_starship_71280",
-			"set" : ["71280"],
+			"set" : ["71280","72261"],
 			"name" : "Federation Starship",
 			"class" : "Intrepid Class",
 			"actions" : ["evade", "target-lock", "scan", "battlestations"],
@@ -10414,7 +10421,7 @@
 		{
 			"type" : "captain",
 			"id" : "2003",
-			"set" : ["71120", "71121", "71122", "72240", "71268", "71272", "71276", "71280", "OP4Prize", "u_s_s_yaeger", "71523", "71509", "71526", "71510", "71531", "71997p", "71801", "71998p", "71802", "72008", "72011", "72014", "71201", "71213", "71221", "72231"],
+			"set" : ["71120", "71121", "71122", "72240", "71268", "71272", "71276", "71280", "72261", "OP4Prize", "u_s_s_yaeger", "71523", "71509", "71526", "71510", "71531", "71997p", "71801", "71998p", "71802", "72008", "72011", "72014", "71201", "71213", "71221", "72231"],
 			"name" : "Federation",
 			"unique" : false,
 			"text" : "\r\n      ",
@@ -11050,7 +11057,7 @@
 		{
 			"type" : "captain",
 			"id" : "kathryn_janeway_71280",
-			"set" : ["71280"],
+			"set" : ["71280","72261"],
 			"name" : "Kathryn Janeway",
 			"unique" : true,
 			"text" : "When your ship performs an [evade], [scan], or [battlestations] Action, you may place an additional token of the appropriate type beside your ship. If you do so, place an Auxiliary Power Token beside your ship.",
@@ -11062,7 +11069,7 @@
 		{
 			"type" : "captain",
 			"id" : "chakotay_71280",
-			"set" : ["71280"],
+			"set" : ["71280","72261"],
 			"name" : "Chakotay",
 			"unique" : true,
 			"text" : "Instead of performing a normal Action, you may disable Chakotay to allow two different crew Upgrades to perform their Actions during the same Round.",
@@ -14991,7 +14998,7 @@
 		{
 			"type" : "weapon",
 			"id" : "3006",
-			"set" : ["71120", "71268", "71276", "71280"],
+			"set" : ["71120", "71268", "71276", "71280","72261"],
 			"name" : "Photon Torpedoes",
 			"unique" : false,
 			"text" : "<b>ATTACK: (Target Lock)</b> Spend your target lock and disable this card to perform this attack. \nYou may convert 1 of your [battlestations] results into a [crit] result. \nYou may fire this weapon from your forward or rear firing arcs. ",
@@ -16895,7 +16902,7 @@
 		{
 			"type" : "tech",
 			"id" : "ablative_generator_71280",
-			"set" : ["71280"],
+			"set" : ["71280","72261"],
 			"name" : "Ablative Generator",
 			"unique" : false,
 			"text" : "<b>ACTION:</b> Place or remove the Ablative Generator Token beside your ship. \n\nThis Upgrade may only be purchased for the <i>U.S.S. Voyager</i>.",
@@ -16909,7 +16916,7 @@
 		{
 			"type" : "crew",
 			"id" : "b_elanna_torres_71280",
-			"set" : ["71280"],
+			"set" : ["71280","72261"],
 			"name" : "B'elanna Torres",
 			"unique" : true,
 			"text" : "Add 1 additional [weapon] icon and 1 additional [tech] icon to your ship's Upgrade Bar.",
@@ -16937,7 +16944,7 @@
 		{
 			"type" : "tech",
 			"id" : "bio_neural_circuitry_71280",
-			"set" : ["71280"],
+			"set" : ["71280","72261"],
 			"name" : "Bio-Neural Circuitry",
 			"unique" : false,
 			"text" : "After your roll the dice for any reason, you may disable this Upgrade to re-roll the dice. You must re-roll all of the dice and keep the results of the second roll.",
@@ -17021,7 +17028,7 @@
 		{
 			"type" : "crew",
 			"id" : "harry_kim_71280",
-			"set" : ["71280"],
+			"set" : ["71280","72261"],
 			"name" : "Harry Kim",
 			"unique" : true,
 			"text" : "<b>ACTION:</b> Disable Harry to repair 1 Shield Token.",
@@ -17077,7 +17084,7 @@
 		{
 			"type" : "talent",
 			"id" : "sacrifice_71280",
-			"set" : ["71280"],
+			"set" : ["71280","72261"],
 			"name" : "Sacrifice",
 			"unique" : true,
 			"text" : "Before rolling the dice during an attack or defense, you may discard this Upgrade and disable your Captain in order to choose the results of two dice. These dice cannot be re-rolled for the remainder of this attack.",
@@ -17119,7 +17126,7 @@
 		{
 			"type" : "crew",
 			"id" : "seven_of_nine_71280",
-			"set" : ["71280"],
+			"set" : ["71280","72261"],
 			"name" : "Seven of Nine",
 			"unique" : true,
 			"text" : "<b>ACTION:</b> Disable Seven of Nine to place 1 Adaptation Token on any [tech] Upgrade on an enemy ship within Range 1-2. You cannot use this Action against a Species 8472 [tech] Upgrade.",
@@ -17133,7 +17140,7 @@
 		{
 			"type" : "crew",
 			"id" : "the_doctor_71280",
-			"set" : ["71280"],
+			"set" : ["71280","72261"],
 			"name" : "The Doctor",
 			"unique" : true,
 			"text" : "The Doctor counts as either a [crew] Upgrade or a [tech] Upgrade (your choice). \n\n<b>ACTION:</b> Remove all Disabled Upgrade tokens from your [crew] Upgrades.",
@@ -17147,7 +17154,7 @@
 		{
 			"type" : "tech",
 			"id" : "the_doctor_tech_71280",
-			"set" : ["71280"],
+			"set" : ["71280","72261"],
 			"name" : "The Doctor",
 			"unique" : true,
 			"text" : "The Doctor counts as either a [crew] Upgrade or a [tech] Upgrade (your choice). \n\n<b>ACTION:</b> Remove all Disabled Upgrade tokens from your [crew] Upgrades.",
@@ -17189,7 +17196,7 @@
 		{
 			"type" : "crew",
 			"id" : "tom_paris_71280",
-			"set" : ["71280"],
+			"set" : ["71280","72261"],
 			"name" : "Tom Paris",
 			"unique" : true,
 			"text" : "When defending, your ship rolls 1 extra defense die.",
@@ -17203,7 +17210,7 @@
 		{
 			"type" : "crew",
 			"id" : "tuvok_71280",
-			"set" : ["71280"],
+			"set" : ["71280","72261"],
 			"name" : "Tuvok",
 			"unique" : true,
 			"text" : "When firing a Secondary Weapon, you may disable Tuvok to roll 1 extra attack die.",
@@ -17287,7 +17294,7 @@
 		{
 			"type" : "weapon",
 			"id" : "transphasic_torpedoes_71280",
-			"set" : ["71280"],
+			"set" : ["71280","72261"],
 			"name" : "Transphasic Torpedoes",
 			"unique" : false,
 			"text" : "<b>ATTACK: (Target Lock)</b> Spend your target lock and discard this card to perform this attack. \nYou may fire this weapon from your forward or rear firing arcs. \nThis Upgrade may only be purchased for the U.S.S. Voyager.",
