@@ -3,6 +3,13 @@
 	"sets" : [
 		{
 			"type" : "set",
+			"id" : "72262",
+			"name" : "Koranak (Repaint)",
+			"releaseDate" : "2016-09-03",
+			"parentSet" : "Wave 26"
+		},
+		{
+			"type" : "set",
 			"id" : "72261",
 			"name" : "U.S.S. Voyager (Repaint)",
 			"releaseDate" : "2016-09-02",
@@ -3066,7 +3073,7 @@
 		{
 			"type" : "ship",
 			"id" : "1040",
-			"set" : ["71275"],
+			"set" : ["71275","72262"],
 			"name" : "Koranak",
 			"class" : "Cardassian Keldon Class",
 			"actions" : ["evade", "target-lock", "scan", "battlestations"],
@@ -3090,7 +3097,7 @@
 		{
 			"type" : "ship",
 			"id" : "1041",
-			"set" : ["71275"],
+			"set" : ["71275","72262"],
 			"name" : "Dominion Starship",
 			"class" : "Cardassian Keldon Class",
 			"actions" : ["evade", "target-lock", "scan", "battlestations"],
@@ -10649,7 +10656,7 @@
 		{
 			"type" : "captain",
 			"id" : "2022",
-			"set" : ["71127", "71275", "71798"],
+			"set" : ["71127", "71275", "71798","72262"],
 			"name" : "Cardassian",
 			"unique" : false,
 			"text" : "\r\n      ",
@@ -10865,7 +10872,7 @@
 		{
 			"type" : "captain",
 			"id" : "2039",
-			"set" : ["71275"],
+			"set" : ["71275","72262"],
 			"name" : "Gul Dukat",
 			"unique" : true,
 			"text" : "Your ship may perform an [evade] or a [battlestations] Action as a free Action each round.",
@@ -10877,7 +10884,7 @@
 		{
 			"type" : "captain",
 			"id" : "2040",
-			"set" : ["71275"],
+			"set" : ["71275","72262"],
 			"name" : "Gul Evek",
 			"unique" : true,
 			"text" : "Each time you defend, you may re-roll all of your blank results one time.",
@@ -16230,7 +16237,7 @@
 		{
 			"type" : "crew",
 			"id" : "3095",
-			"set" : ["71275"],
+			"set" : ["71275","72262"],
 			"name" : "Boheeka",
 			"unique" : true,
 			"text" : "If your ship has a [battlestations] Token beside it when you attack, you may convert 1 blank result into 1 [hit] result.",
@@ -16244,7 +16251,7 @@
 		{
 			"type" : "weapon",
 			"id" : "3096",
-			"set" : ["71275"],
+			"set" : ["71275","72262"],
 			"name" : "Enhanced Weaponry",
 			"unique" : false,
 			"text" : "<b>ATTACK: (Target Lock)</b> Spend your target lock and disable this card to perform this attack. \n\nIf fired from a Keldon Class ship, add +1 attack die.",
@@ -16258,7 +16265,7 @@
 		{
 			"type" : "weapon",
 			"id" : "3097",
-			"set" : ["71275"],
+			"set" : ["71275","72262"],
 			"name" : "Dorsal Weapons Array",
 			"unique" : false,
 			"text" : "<b>ATTACK: </b>Disable this card to perform this attack. \n\nYou may fire this weapon in any direction.",
@@ -16272,7 +16279,7 @@
 		{
 			"type" : "tech",
 			"id" : "3098",
-			"set" : ["71275"],
+			"set" : ["71275","72262"],
 			"name" : "Tetryon Emissions",
 			"unique" : false,
 			"text" : "<b>ACTION:</b> Disable this Upgrade to add +3 defense dice each time you defend this round.",
@@ -16286,7 +16293,7 @@
 		{
 			"type" : "tech",
 			"id" : "3099",
-			"set" : ["71275"],
+			"set" : ["71275","72262"],
 			"name" : "Cloaking Device",
 			"unique" : false,
 			"text" : "Instead of performing a normal Action, you may disable this card to perform the [cloak] Action. While you have a [cloak] Token beside your ship, you may perform the [sensor-echo] Action even if this card is disabled. This Upgrade costs +5 Squadron Points for any non-Keldon class ship.",
@@ -16300,7 +16307,7 @@
 		{
 			"type" : "talent",
 			"id" : "3100",
-			"set" : ["71275"],
+			"set" : ["71275","72262"],
 			"name" : "Captured Intelligence",
 			"unique" : true,
 			"text" : "Before rolling your defense dice, if you do not have an [evade] Token beside your ship, you may discard this card to place an [evade] Token beside your ship. In addition, each time you defend during the round use this ability, roll 1 extra defense die.",
