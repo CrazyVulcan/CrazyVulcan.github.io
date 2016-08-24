@@ -1340,7 +1340,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -1356,7 +1355,7 @@
 			"agility" : 1,
 			"hull" : 5,
 			"shields" : 4,
-			"cost" : 26,
+			"cost" : 28,
 			"text" : "If you attack a ship that is in the forward firing arc of another friendly ship, you gain +1 attack die.",
 			"unique" : true,
 			"factions" : ["federation"],
@@ -1472,7 +1471,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -1532,7 +1530,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -1556,7 +1553,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2088,7 +2084,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2130,7 +2125,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2154,7 +2148,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2178,7 +2171,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2202,7 +2194,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2226,7 +2217,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2250,7 +2240,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2274,7 +2263,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2298,7 +2286,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2322,7 +2309,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2346,7 +2332,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2370,7 +2355,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2394,7 +2378,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2418,7 +2401,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2442,7 +2424,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2466,7 +2447,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2490,7 +2470,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2514,7 +2493,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2538,7 +2516,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2562,7 +2539,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2586,7 +2562,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2610,7 +2585,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2634,7 +2608,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2658,7 +2631,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2682,7 +2654,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2706,7 +2677,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2730,7 +2700,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2754,7 +2723,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2778,7 +2746,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2802,7 +2769,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2826,7 +2792,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2850,7 +2815,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2874,7 +2838,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2898,7 +2861,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2922,7 +2884,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2946,7 +2907,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2970,7 +2930,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2994,7 +2953,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3018,7 +2976,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3042,7 +2999,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3066,7 +3022,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3090,7 +3045,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3114,7 +3068,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3138,7 +3091,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3162,7 +3114,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3186,7 +3137,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3210,7 +3160,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3234,7 +3183,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3258,7 +3206,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3282,7 +3229,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3306,7 +3252,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3330,7 +3275,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3354,7 +3298,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3378,7 +3321,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3402,7 +3344,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3426,7 +3367,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3450,7 +3390,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3474,7 +3413,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3498,7 +3436,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3522,7 +3459,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3546,7 +3482,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3570,7 +3505,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : true
 		},
@@ -3594,7 +3528,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : true
 		},
@@ -3618,7 +3551,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3642,7 +3574,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3666,7 +3597,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3690,7 +3620,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3714,7 +3643,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3738,7 +3666,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3762,7 +3689,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3786,7 +3712,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3810,7 +3735,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3834,7 +3758,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3858,7 +3781,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3882,7 +3804,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3906,7 +3827,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3930,7 +3850,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3954,7 +3873,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3978,7 +3896,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4002,7 +3919,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4026,7 +3942,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4050,7 +3965,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4074,7 +3988,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4099,7 +4012,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4124,7 +4036,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4148,7 +4059,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4172,7 +4082,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4196,7 +4105,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4220,7 +4128,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4244,7 +4151,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4268,7 +4174,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4292,7 +4197,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4316,7 +4220,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4340,7 +4243,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4364,7 +4266,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4388,7 +4289,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4412,7 +4312,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4436,7 +4335,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4460,7 +4358,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4484,7 +4381,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4508,7 +4404,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4532,7 +4427,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4556,7 +4450,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4580,7 +4473,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4604,7 +4496,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4628,7 +4519,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4652,7 +4542,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4676,7 +4565,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4700,7 +4588,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4724,7 +4611,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4748,7 +4634,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4772,7 +4657,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4796,7 +4680,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4820,7 +4703,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4844,7 +4726,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4868,7 +4749,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4892,7 +4772,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4916,7 +4795,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4941,7 +4819,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4966,7 +4843,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4990,7 +4866,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5014,7 +4889,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5038,7 +4912,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5062,7 +4935,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5086,7 +4958,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5110,7 +4981,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5134,7 +5004,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5158,7 +5027,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5182,7 +5050,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5206,7 +5073,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5230,7 +5096,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5254,7 +5119,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5278,7 +5142,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5302,7 +5165,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5326,7 +5188,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5350,7 +5211,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5374,7 +5234,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5398,7 +5257,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5422,7 +5280,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5446,7 +5303,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5470,7 +5326,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5494,7 +5349,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5518,7 +5372,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5542,7 +5395,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5566,7 +5418,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : true
 		},
@@ -5590,7 +5441,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : true
 		},
@@ -5614,7 +5464,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5638,7 +5487,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5662,7 +5510,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5686,7 +5533,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5710,7 +5556,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5734,7 +5579,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5758,7 +5602,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5782,7 +5625,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : true
 		},
@@ -5806,7 +5648,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : true
 		},
@@ -5830,7 +5671,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5854,7 +5694,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5878,7 +5717,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5902,7 +5740,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5926,7 +5763,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5950,7 +5786,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5974,7 +5809,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5998,7 +5832,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -6022,7 +5855,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -6046,7 +5878,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -6070,7 +5901,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -6094,7 +5924,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -6118,7 +5947,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -6142,7 +5970,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -6166,7 +5993,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -6190,7 +6016,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -6214,7 +6039,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -6238,7 +6062,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -6262,7 +6085,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -6286,7 +6108,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -6310,7 +6131,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -6334,7 +6154,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -6358,7 +6177,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -6382,7 +6200,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -6406,7 +6223,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -6617,7 +6433,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -6777,7 +6592,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -6888,7 +6702,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -7071,7 +6884,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -7095,7 +6907,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -7191,7 +7002,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -12605,7 +12415,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -12695,7 +12504,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -12713,7 +12521,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -12767,7 +12574,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -12785,7 +12591,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -12803,7 +12608,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -12846,7 +12650,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -12865,7 +12668,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -12967,7 +12769,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -13021,7 +12822,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -13039,7 +12839,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -13335,7 +13134,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -13366,7 +13164,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -14232,7 +14029,7 @@
 			"set" : ["71225"],
 			"name" : "Degra",
 			"cost" : 4,
-			"text" : "All of your [weapon] Upgrades cost -1 SP. When attacking during the Declare Target step of if your ship does not already have another ship target locked. You may discard this card to acquire a target lock on a ship within Range 1-3 of your ship.",
+			"text" : "All of your Xindi [weapon] Upgrades cost -1 SP. \n\nWhen attacking during the Declare Target step of if your ship does not already have another ship target locked. You may discard this card to acquire a target lock on a ship within Range 1-3 of your ship.",
 			"unique" : true,
 			"factions" : ["xindi"]
 		},
@@ -22324,7 +22121,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22340,7 +22136,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22356,7 +22151,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22372,7 +22166,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22388,7 +22181,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22404,7 +22196,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22420,7 +22211,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22436,7 +22226,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22660,7 +22449,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22676,7 +22464,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22694,7 +22481,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22712,7 +22498,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22728,7 +22513,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22744,7 +22528,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22760,7 +22543,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22776,7 +22558,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22909,7 +22690,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22925,7 +22705,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22941,7 +22720,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22957,7 +22735,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22973,7 +22750,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22989,7 +22765,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -23066,7 +22841,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -23083,7 +22857,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -23410,7 +23183,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -23426,7 +23198,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -23442,7 +23213,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -23458,7 +23228,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -23600,7 +23369,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -23616,7 +23384,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -23632,7 +23399,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -23650,7 +23416,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -23668,7 +23433,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -23684,7 +23448,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -24053,7 +23816,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"factionPenalty" : 0,
 			"unique" : true,
@@ -24079,7 +23841,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"factionPenalty" : 0,
 			"unique" : true,
@@ -24105,7 +23866,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"factionPenalty" : 0,
 			"unique" : true,
@@ -24131,7 +23891,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"factionPenalty" : 0,
 			"unique" : true,
@@ -24157,7 +23916,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"factionPenalty" : 0,
 			"unique" : true,
@@ -24183,7 +23941,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"factionPenalty" : 0,
 			"unique" : true,
@@ -24209,7 +23966,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"factionPenalty" : 0,
 			"unique" : true,
@@ -24235,7 +23991,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"factionPenalty" : 0,
 			"unique" : true,
@@ -24265,7 +24020,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"factionPenalty" : 0,
 			"unique" : true
@@ -24291,7 +24045,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"factionPenalty" : 0,
 			"unique" : true
@@ -24317,7 +24070,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"factionPenalty" : 0,
 			"unique" : true
@@ -24343,7 +24095,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"factionPenalty" : 0,
 			"unique" : true
@@ -24390,7 +24141,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"factionPenalty" : 0,
 			"unique" : true
@@ -24437,7 +24187,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"factionPenalty" : 0,
 			"unique" : true
@@ -24484,7 +24233,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"factionPenalty" : 0,
 			"unique" : true
@@ -24531,7 +24279,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"factionPenalty" : 0,
 			"unique" : true
@@ -24578,7 +24325,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"factionPenalty" : 0,
 			"unique" : true
@@ -24625,7 +24371,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"factionPenalty" : 0,
 			"unique" : true
@@ -24672,7 +24417,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"factionPenalty" : 0,
 			"unique" : true
@@ -24719,7 +24463,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"factionPenalty" : 0,
 			"unique" : true
@@ -24739,7 +24482,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -24757,7 +24499,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -24775,7 +24516,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -24793,7 +24533,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -24811,7 +24550,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -24829,7 +24567,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -24847,7 +24584,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -24865,7 +24601,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -24883,7 +24618,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -24901,7 +24635,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -24919,7 +24652,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -24937,7 +24669,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -24955,7 +24686,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -24973,7 +24703,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		}
 	]

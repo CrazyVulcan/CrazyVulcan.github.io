@@ -4903,18 +4903,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"crew:degra_weapon_zero": {
 			intercept: {
 				ship: {
-					cost: {
-						// Run this interceptor after all other penalties and discounts
-						priority: 100,
-						fn: function(upgrade,ship,fleet,cost) {
-							if( upgrade.type == "weapon" ) {
-								cost = resolve(upgrade,ship,fleet,cost);
-								
-									cost -= 1;
-							}
-							return cost;
-						}
-					}
+					cost: function(upgrade, ship, fleet, cost) {
+						if( upgrade.type == "weapon" && $factions.hasFaction(upgrade,"xindi", ship, fleet) )
+							return resolve(upgrade, ship, fleet, cost) - 1;
+						return cost;
+					},
 				}
 			}
 		},
