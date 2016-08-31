@@ -1336,9 +1336,9 @@
 	"ships" : [
 		{
 			"type" : "ship",
-			"id" : "i_k_s_kohlars_battle_cruiser",
+			"id" : "kohlars_battle_cruiser",
 			"set" : ["72270p"],
-			"name" : "I.K.S. Kohlars Battle Cruiser",
+			"name" : "Kohlars Battle Cruiser",
 			"class" : "D7 Class",
 			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
 			"upgrades" : ["tech", "crew", "crew", "crew"],
