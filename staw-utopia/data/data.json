@@ -13288,7 +13288,7 @@
 			"set" : ["72270p"],
 			"name" : "Morak",
 			"cost" : 5,
-			"text" : "<b>ACTION:</b> If your ship is not Cloaked, disable this card to repair 1 of your Shield Tokens\n\nOR\n\n<b>ACTION:</b> Discard this card to flip up to 3 of your disabled shields over to their Active sides. If you do this while you ship is Cloaked flip your [cloak] Token to its red side.",
+			"text" : "<b>ACTION:</b> If your ship is not Cloaked, disable this card to repair 1 of your Shield Tokens\nOR\n<b>ACTION:</b> Discard this card to flip up to 3 of your disabled shields over to their Active sides. If you do this while you ship is Cloaked flip your [cloak] Token to its red side.",
 			"unique" : true,
 			"factions" : ["klingon"]
 		},
