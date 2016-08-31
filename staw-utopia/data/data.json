@@ -1347,7 +1347,7 @@
 			"hull" : 3,
 			"shields" : 3,
 			"cost" : 20,
-			"text" : "When attacking with your Primary Weapon, if your ship is not Cloaked, during the Declare Target step, you may perform a 1 [straight] Maneuver before chosing an enemy ship to attack.",
+			"text" : "During the End Phase, if your [cloak] Token is on its red side, you may flip it back to its green side. If you do so place an Auxiliary Power Token beside your ship.",
 			"unique" : true,
 			"factions" : ["klingon"],
 			"squadron" : false
