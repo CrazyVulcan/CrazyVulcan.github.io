@@ -3,6 +3,20 @@
 	"sets" : [
 		{
 			"type" : "set",
+			"id" : "72270p",
+			"name" : "Kohlar’s Battle Cruiser",
+			"releaseDate" : "2016-10-30",
+			"parentSet" : "Trouble with Tribbles"
+		},
+		{
+			"type" : "set",
+			"id" : "72270r",
+			"name" : "Scan Cycle",
+			"releaseDate" : "2016-10-29",
+			"parentSet" : "Trouble with Tribbles"
+		},
+		{
+			"type" : "set",
 			"id" : "72262",
 			"name" : "Koranak (Repaint)",
 			"releaseDate" : "2016-09-03",
@@ -1322,6 +1336,24 @@
 	"ships" : [
 		{
 			"type" : "ship",
+			"id" : "i_k_s_kohlars_battle_cruiser",
+			"set" : ["72270p"],
+			"name" : "I.K.S. Kohlars Battle Cruiser",
+			"class" : "D7 Class",
+			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
+			"upgrades" : ["tech", "crew", "crew", "crew"],
+			"attack" : 3,
+			"agility" : 1,
+			"hull" : 3,
+			"shields" : 3,
+			"cost" : 20,
+			"text" : "When attacking with your Primary Weapon, if your ship is not Cloaked, during the Declare Target step, you may perform a 1 [straight] Maneuver before chosing an enemy ship to attack.",
+			"unique" : true,
+			"factions" : ["klingon"],
+			"squadron" : false
+		},
+		{
+			"type" : "ship",
 			"id" : "i_r_w_rateg",
 			"set" : ["72262p"],
 			"name" : "I.R.W. Rateg",
@@ -2453,7 +2485,7 @@
 		{
 			"type" : "ship",
 			"id" : "1016",
-			"set" : ["71125"],
+			"set" : ["71125","72270p"],
 			"name" : "Klingon Battlecruiser",
 			"class" : "D7 Class",
 			"actions" : ["evade", "target-lock", "battlestations"],
@@ -9867,6 +9899,18 @@
 	"captains" : [
 		{
 			"type" : "captain",
+			"id" : "kohlar_kohlars_battle_cruiser",
+			"set" : ["72270p"],
+			"name" : "Kohlar",
+			"cost" : 2,
+			"skill" : 3,
+			"talents" : 1,
+			"text" : "Your Captain Skill Increases by +2 for each damage card assigned to your ship (max +4). If the damage to your ship is repaired, your Skill Number decreases accordingly.\n\nYou may field the ‘KuvaMagh’ [talent] Upgrade at a cost of -2.",
+			"unique" : true,
+			"factions" : ["klingon"]
+		},
+		{
+			"type" : "captain",
 			"id" : "tal_rateg",
 			"set" : ["72262p"],
 			"name" : "Tal",
@@ -13228,6 +13272,46 @@
 		}
 	],
 	"upgrades" : [
+		{
+			"type" : "talent",
+			"id" : "kuvahmagh_kohlar_battle_cruiser",
+			"set" : ["72270p"],
+			"name" : "Kuvah'Magh",
+			"cost" : 5,
+			"text" : "When attacking with your Primary Weapon, during the Roll Attack Dice step, you may discard this card to gain +1 attack die for that attack for every Klingon [crew] Upgrade deployed to your ship (max+3) Then suffer 1 critical damage to your Hull.",
+			"unique" : true,
+			"factions" : ["klingon"]
+		},
+		{
+			"type" : "crew",
+			"id" : "morak_kohlar_battle_cruiser",
+			"set" : ["72270p"],
+			"name" : "Morak",
+			"cost" : 5,
+			"text" : "<b>ACTION:</b> If your ship is not Cloaked, disable this card to repair 1 of your Shield Tokens\n\nOR\n\n<b>ACTION:</b> Discard this card to flip up to 3 of your disabled shields over to their Active sides. If you do this while you ship is Cloaked flip your [cloak] Token to its red side.",
+			"unique" : true,
+			"factions" : ["klingon"]
+		},
+		{
+			"type" : "crew",
+			"id" : "tgreth_kohlar_battle_cruiser",
+			"set" : ["72270p"],
+			"name" : "T'Greth",
+			"cost" : 4,
+			"text" : "<b>ACTION:</b> Place a [battlestations] Token beside your ship. Then place and Auxiliary Power Token beside your ship. You cannot perform a [battlestations] Action this round.",
+			"unique" : true,
+			"factions" : ["klingon"]
+		},
+		{
+			"type" : "crew",
+			"id" : "chrega_kohlar_battle_cruiser",
+			"set" : ["72270p"],
+			"name" : "Ch’rega",
+			"cost" : 2,
+			"text" : "<b>ACTION:</b> If your ship is not Cloaked, disable all of your remaining Shields and target a ship at Range 1-2 that is not Cloaked and has no Active Shields. Disable this card and any 2 [crew] Upgrades of your choice on the target ship.h",
+			"unique" : true,
+			"factions" : ["klingon"]
+		},
 		{
 			"type" : "talent",
 			"id" : "military_sectets_rateg",
@@ -23518,6 +23602,15 @@
 		}
 	],
 	"resources" : [
+		{
+			"type" : "resource",
+			"id" : "scan_cycle",
+			"set" : ["72270r"],
+			"name" : "Scan Cycle",
+			"text" : "At the start of the game place 5 [scan] Tokens on this card.\n\nDuring Activation Phase when a ship in your fleet performs an Action from its Action Bar you may remove 1 [scan] Token from this card and place it beside the ship as a free Action\n\nNOTE: You may place the free [scan] Token beside the ship even if there already is a [scan] Token there\n\nYou may only use this ability once per round. Remove this card from the game when there are no [scan] Tokens left on this card.",
+			"cost" : 5,
+			"showShipResourceSlot" : false
+		},
 		{
 			"type" : "resource",
 			"id" : "condition_alert_resource",
