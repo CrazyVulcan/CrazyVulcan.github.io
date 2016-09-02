@@ -9925,7 +9925,7 @@
 		{
 			"type" : "captain",
 			"id" : "john_harriman_enterprise_b",
-			"set" : ["72270p"],
+			"set" : ["72263"],
 			"name" : "John Harriman",
 			"cost" : 1,
 			"skill" : 2,
@@ -13407,7 +13407,7 @@
 			"set" : ["72270p"],
 			"name" : "Ch’rega",
 			"cost" : 2,
-			"text" : "<b>ACTION:</b> If your ship is not Cloaked, disable all of your remaining Shields and target a ship at Range 1-2 that is not Cloaked and has no Active Shields. Disable this card and any 2 [crew] Upgrades of your choice on the target ship.h",
+			"text" : "<b>ACTION:</b> If your ship is not Cloaked, disable all of your remaining Shields and target a ship at Range 1-2 that is not Cloaked and has no Active Shields. Disable this card and any 2 [crew] Upgrades of your choice on the target ship.",
 			"unique" : true,
 			"factions" : ["klingon"]
 		},
