@@ -1614,11 +1614,6 @@
 			"squadron" : false
 		},
 		{
-			"type" : "copy",
-			"of" : "1006",
-			"set" : ["72241"]
-		},
-		{
 			"type" : "ship",
 			"id" : "u_s_s_constellation",
 			"set" : ["72234p"],
@@ -1635,11 +1630,6 @@
 			"unique" : true,
 			"factions" : ["federation"],
 			"squadron" : false
-		},
-		{
-			"type" : "copy",
-			"of" : "1010",
-			"set" : ["72234p"]
 		},
 		{
 			"type" : "ship",
@@ -1696,11 +1686,6 @@
 			"squadron" : false
 		},
 		{
-			"type" : "copy",
-			"of" : "1035",
-			"set" : ["72233"]
-		},
-		{
 			"type" : "ship",
 			"id" : "i_k_s_amar",
 			"set" : ["72232"],
@@ -1717,11 +1702,6 @@
 			"unique" : true,
 			"factions" : ["klingon"],
 			"squadron" : false
-		},
-		{
-			"type" : "copy",
-			"of" : "1033",
-			"set" : ["72232"]
 		},
 		{
 			"type" : "ship",
@@ -2234,7 +2214,7 @@
 		{
 			"type" : "ship",
 			"id" : "1004",
-			"set" : ["71120"],
+			"set" : ["71120", "blind_belak"],
 			"name" : "Romulan Starship",
 			"class" : "D'deridex Class",
 			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
@@ -2280,7 +2260,7 @@
 		{
 			"type" : "ship",
 			"id" : "1006",
-			"set" : ["71120"],
+			"set" : ["71120", "72241"],
 			"name" : "Klingon Starship",
 			"class" : "Vor'cha Class",
 			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
@@ -2372,7 +2352,7 @@
 		{
 			"type" : "ship",
 			"id" : "1010",
-			"set" : ["71122", "72240"],
+			"set" : ["71122", "72240", "72234p", "72002p"],
 			"name" : "Federation Starship",
 			"class" : "Constitution Class",
 			"actions" : ["evade", "target-lock", "scan", "battlestations"],
@@ -2418,7 +2398,7 @@
 		{
 			"type" : "ship",
 			"id" : "1012",
-			"set" : ["71123"],
+			"set" : ["71123", "72010"],
 			"name" : "Romulan Starship",
 			"class" : "Valdore Class",
 			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
@@ -2464,7 +2444,7 @@
 		{
 			"type" : "ship",
 			"id" : "1014",
-			"set" : ["71124"],
+			"set" : ["71124", "72016"],
 			"name" : "Romulan Science Vessel",
 			"class" : "Romulan Science Vessel",
 			"actions" : ["evade", "cloak", "sensor-echo"],
@@ -2510,7 +2490,7 @@
 		{
 			"type" : "ship",
 			"id" : "1016",
-			"set" : ["71125","72270p"],
+			"set" : ["71125", "72270p"],
 			"name" : "Klingon Battlecruiser",
 			"class" : "D7 Class",
 			"actions" : ["evade", "target-lock", "battlestations"],
@@ -2602,7 +2582,7 @@
 		{
 			"type" : "ship",
 			"id" : "1020",
-			"set" : ["71127", "71513b", "71798"],
+			"set" : ["71127", "71513b", "71798", "blind_aldara"],
 			"name" : "Dominion Starship",
 			"class" : "Cardassian Galor Class",
 			"actions" : ["evade", "target-lock", "scan"],
@@ -2694,7 +2674,7 @@
 		{
 			"type" : "ship",
 			"id" : "1024",
-			"set" : ["OP1Prize", "71646a"],
+			"set" : ["OP1Prize", "71646a", "71806", "blind_nunks_marauder"],
 			"name" : "Ferengi Marauder",
 			"class" : "D'Kora Class",
 			"actions" : ["evade", "target-lock", "scan"],
@@ -2786,7 +2766,7 @@
 		{
 			"type" : "ship",
 			"id" : "1029",
-			"set" : ["OP2Prize", "71512", "72236p"],
+			"set" : ["OP2Prize", "71512", "72236p", "72015"],
 			"name" : "Klingon Starship",
 			"class" : "B'Rel Class",
 			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
@@ -2924,7 +2904,7 @@
 		{
 			"type" : "ship",
 			"id" : "1033",
-			"set" : ["71269"],
+			"set" : ["71269", "72232", "72009"],
 			"name" : "Klingon Starship",
 			"class" : "K'T'Inga Class",
 			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
@@ -2970,7 +2950,7 @@
 		{
 			"type" : "ship",
 			"id" : "1035",
-			"set" : ["71270"],
+			"set" : ["71270", "72233"],
 			"name" : "Romulan Starship",
 			"class" : "Romulan Bird-of-Prey",
 			"actions" : ["evade", "target-lock"],
@@ -3062,7 +3042,7 @@
 		{
 			"type" : "ship",
 			"id" : "1039",
-			"set" : ["71273", "71996"],
+			"set" : ["71273", "71996", "blind_buruk"],
 			"name" : "Klingon Starship",
 			"class" : "K'Vort Class",
 			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
@@ -3154,7 +3134,7 @@
 		{
 			"type" : "ship",
 			"id" : "1045",
-			"set" : ["71272", "72261p","72263"],
+			"set" : ["71272", "72261p", "72263", "blind_lakota"],
 			"name" : "Federation Starship",
 			"class" : "Excelsior Class",
 			"actions" : ["evade", "target-lock", "scan", "battlestations"],
@@ -3752,7 +3732,7 @@
 		{
 			"type" : "ship",
 			"id" : "species_8472_bioship_71281",
-			"set" : ["71281"],
+			"set" : ["71281", "72012", "blind_bioship"],
 			"name" : "Species 8472 Starship",
 			"class" : "Species 8472 Bioship",
 			"actions" : ["evade", "target-lock", "scan", "regenerate"],
@@ -3913,7 +3893,7 @@
 		{
 			"type" : "ship",
 			"id" : "bajoran_interceptor_71445",
-			"set" : ["71445"],
+			"set" : ["71445", "blind_interceptor8"],
 			"name" : "Bajoran Interceptor",
 			"class" : "Bajoran Interceptor",
 			"actions" : ["evade", "target-lock", "battlestations"],
@@ -3936,7 +3916,7 @@
 		{
 			"type" : "ship",
 			"id" : "d_kyr_class_71446",
-			"set" : ["71446", "71646e"],
+			"set" : ["71446", "71646e", "blind_seleya"],
 			"name" : "Vulcan Starship",
 			"class" : "D'Kyr Class",
 			"actions" : ["evade", "target-lock", "scan", "battlestations"],
@@ -6302,11 +6282,6 @@
 			"squadron" : false
 		},
 		{
-			"type" : "copy",
-			"of" : "1020",
-			"set" : ["blind_aldara"]
-		},
-		{
 			"type" : "ship",
 			"id" : "azati_prime_72004p",
 			"set" : ["72004p"],
@@ -6359,11 +6334,6 @@
 			"unique" : true,
 			"factions" : ["romulan"],
 			"squadron" : false
-		},
-		{
-			"type" : "copy",
-			"of" : "1004",
-			"set" : ["blind_belak"]
 		},
 		{
 			"type" : "ship",
@@ -6420,11 +6390,6 @@
 			"squadron" : false
 		},
 		{
-			"type" : "copy",
-			"of" : "species_8472_bioship_71281",
-			"set" : ["72012"]
-		},
-		{
 			"type" : "ship",
 			"id" : "bioship_omega_blind_bioship",
 			"set" : ["blind_bioship"],
@@ -6443,11 +6408,6 @@
 			"squadron" : false
 		},
 		{
-			"type" : "copy",
-			"of" : "species_8472_bioship_71281",
-			"set" : ["blind_bioship"]
-		},
-		{
 			"type" : "ship",
 			"id" : "i_k_s_buruk_blind_buruk",
 			"set" : ["blind_buruk"],
@@ -6464,11 +6424,6 @@
 			"unique" : true,
 			"factions" : ["klingon"],
 			"squadron" : false
-		},
-		{
-			"type" : "copy",
-			"of" : "1039",
-			"set" : ["blind_buruk"]
 		},
 		{
 			"type" : "ship",
@@ -6602,11 +6557,6 @@
 			"squadron" : false
 		},
 		{
-			"type" : "copy",
-			"of" : "bajoran_interceptor_71445",
-			"set" : ["blind_interceptor8"]
-		},
-		{
 			"type" : "ship",
 			"id" : "u_s_s_intrepid_72002p",
 			"set" : ["72002p"],
@@ -6623,11 +6573,6 @@
 			"unique" : true,
 			"factions" : ["federation"],
 			"squadron" : false
-		},
-		{
-			"type" : "copy",
-			"of" : "1010",
-			"set" : ["72002p"]
 		},
 		{
 			"type" : "ship",
@@ -6653,11 +6598,6 @@
 			"squadron" : false
 		},
 		{
-			"type" : "copy",
-			"of" : "1024",
-			"set" : ["71806"]
-		},
-		{
 			"type" : "ship",
 			"id" : "u_s_s_lakota_blind_lakota",
 			"set" : ["blind_lakota"],
@@ -6674,11 +6614,6 @@
 			"unique" : true,
 			"factions" : ["federation"],
 			"squadron" : false
-		},
-		{
-			"type" : "copy",
-			"of" : "1045",
-			"set" : ["blind_lakota"]
 		},
 		{
 			"type" : "ship",
@@ -6733,11 +6668,6 @@
 			"unique" : true,
 			"factions" : ["ferengi"],
 			"squadron" : false
-		},
-		{
-			"type" : "copy",
-			"of" : "1024",
-			"set" : ["blind_nunks_marauder"]
 		},
 		{
 			"type" : "ship",
@@ -6871,11 +6801,6 @@
 			"squadron" : false
 		},
 		{
-			"type" : "copy",
-			"of" : "1029",
-			"set" : ["72015"]
-		},
-		{
 			"type" : "ship",
 			"id" : "seleya_blind_seleya",
 			"set" : ["blind_seleya"],
@@ -6894,11 +6819,6 @@
 			"squadron" : false
 		},
 		{
-			"type" : "copy",
-			"of" : "d_kyr_class_71446",
-			"set" : ["blind_seleya"]
-		},
-		{
 			"type" : "ship",
 			"id" : "r_i_s_talvath_72016",
 			"set" : ["72016"],
@@ -6915,11 +6835,6 @@
 			"unique" : true,
 			"factions" : ["romulan"],
 			"squadron" : false
-		},
-		{
-			"type" : "copy",
-			"of" : "1014",
-			"set" : ["72016"]
 		},
 		{
 			"type" : "ship",
@@ -7063,11 +6978,6 @@
 			"squadron" : false
 		},
 		{
-			"type" : "copy",
-			"of" : "1033",
-			"set" : ["72009"]
-		},
-		{
 			"type" : "ship",
 			"id" : "i_r_w_vrax_72010",
 			"set" : ["72010"],
@@ -7084,11 +6994,6 @@
 			"unique" : true,
 			"factions" : ["romulan"],
 			"squadron" : false
-		},
-		{
-			"type" : "copy",
-			"of" : "1012",
-			"set" : ["72010"]
 		}
 	],
 	"shipClasses" : [
@@ -10115,11 +10020,6 @@
 			"talents" : 1
 		},
 		{
-			"type" : "copy",
-			"of" : "2005",
-			"set" : ["72241"]
-		},
-		{
 			"type" : "captain",
 			"id" : "matt_decker_constellation",
 			"set" : ["72234p"],
@@ -10142,11 +10042,6 @@
 			"text" : "When a friendly ship within range 1 of your ship is defending, during the Declare Target step, your ship may become the target of the attack instead of the friendly ship. Treat the attack as though your ship were at the same Range as the friendly ship.",
 			"unique" : true,
 			"factions" : ["xindi"]
-		},
-		{
-			"type" : "copy",
-			"of" : "xindi_captain_72003p",
-			"set" : ["72224p"]
 		},
 		{
 			"type" : "captain",
@@ -10343,7 +10238,7 @@
 		{
 			"type" : "captain",
 			"id" : "2005",
-			"set" : ["71120", "71125", "71126", "OP2Prize", "71269", "71273", "71448", "i_k_s_b_moth", "71532", "71996", "71804", "72009", "72015", "72232", "72236p"],
+			"set" : ["71120", "71125", "71126", "OP2Prize", "71269", "71273", "71448", "i_k_s_b_moth", "71532", "71996", "71804", "72009", "72015", "72232", "72236p", "72241"],
 			"name" : "Klingon",
 			"unique" : false,
 			"text" : "\r\n      ",
@@ -12417,11 +12312,6 @@
 			"factions" : ["xindi"]
 		},
 		{
-			"type" : "copy",
-			"of" : "xindi_captain_72003p",
-			"set" : ["72004p"]
-		},
-		{
 			"type" : "captain",
 			"id" : "lovok_blind_belak",
 			"set" : ["blind_belak"],
@@ -12537,7 +12427,7 @@
 		{
 			"type" : "captain",
 			"id" : "xindi_captain_72003p",
-			"set" : ["72003p", "71225"],
+			"set" : ["72003p", "71225", "72224p", "72004p"],
 			"name" : "Xindi",
 			"cost" : 0,
 			"skill" : 1,
@@ -13870,11 +13760,6 @@
 			"factions" : ["klingon"]
 		},
 		{
-			"type" : "copy",
-			"of" : "cloaked_mines_71999p",
-			"set" : ["72241"]
-		},
-		{
 			"type" : "tech",
 			"id" : "emergency_power_72241",
 			"set" : ["72241"],
@@ -14974,7 +14859,7 @@
 			"set" : ["71120"],
 			"name" : "Data",
 			"unique" : true,
-			"text" : "<b>ACTION:</b> Place 2 [evade] Tokens beside your ship and reduce our total attack dice by 2 this round. You cannot perform an [evade] Action this round, even as a free Action. ",
+			"text" : "<b>ACTION:</b> Place 2 [evade] Tokens beside your ship and reduce your total attack dice by 2 this round. You cannot perform an [evade] Action this round, even as a free Action. ",
 			"factions" : ["federation"],
 			"cost" : 3,
 			"skill" : 0,
@@ -19227,7 +19112,7 @@
 		{
 			"type" : "weapon",
 			"id" : "photonic_charges_71646c",
-			"set" : ["71646c", "71793"],
+			"set" : ["71646c", "71793", "blind_nistrim_culluh"],
 			"name" : "Photonic Charges",
 			"unique" : false,
 			"text" : "<b>ATTACK: </b>Disable this card to perform this attack. \n\nPlace an Auxiliarly Power Token beside the target ship if there is at least 1 uncancelled [hit] or [crit] result. \n\nThis Upgrade costs +4 SP if purchased for a non-Predator class ship.",
@@ -21718,7 +21603,7 @@
 		{
 			"type" : "tech",
 			"id" : "cloaked_mines_71999p",
-			"set" : ["71999p"],
+			"set" : ["71999p", "72241"],
 			"name" : "Cloaked Mines",
 			"unique" : false,
 			"text" : "During the Planning Phase, you may discard this card to place a Minefield Token within Range 1 of your ship (in any direction), but not within Range 3 of an enemy ship. If an enemy ship passes within Range 1 of the token, roll 3 attack dice (-1 if the target ship immediately performs a [scan] Action). Any [hit] or [crit] damage the target ship as normal. The affected ship does not roll any defense dice.",
@@ -22804,11 +22689,6 @@
 			"factions" : ["kazon"]
 		},
 		{
-			"type" : "copy",
-			"of" : "photonic_charges_71646c",
-			"set" : ["blind_nistrim_culluh"]
-		},
-		{
 			"type" : "tech",
 			"id" : "stolen_technology_blind_nistrim_culluh",
 			"set" : ["blind_nistrim_culluh"],
@@ -23237,11 +23117,6 @@
 			"factions" : ["klingon"]
 		},
 		{
-			"type" : "copy",
-			"of" : "photon_torpedoes_72009",
-			"set" : ["72015"]
-		},
-		{
 			"type" : "talent",
 			"id" : "v_tosh_ka_tur_blind_seleya",
 			"set" : ["blind_seleya"],
@@ -23604,7 +23479,7 @@
 		{
 			"type" : "weapon",
 			"id" : "photon_torpedoes_72009",
-			"set" : ["72009"],
+			"set" : ["72009", "72015", "72232"],
 			"name" : "Photon Torpedoes",
 			"cost" : 5,
 			"attack" : 5,

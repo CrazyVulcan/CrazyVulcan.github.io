@@ -3,6 +3,27 @@
 	"sets" : [
 		{
 			"type" : "set",
+			"id" : "72270p",
+			"name" : "Kohlar’s Battle Cruiser",
+			"releaseDate" : "2016-10-30",
+			"parentSet" : "Trouble with Tribbles"
+		},
+		{
+			"type" : "set",
+			"id" : "72270r",
+			"name" : "Scan Cycle",
+			"releaseDate" : "2016-10-29",
+			"parentSet" : "Trouble with Tribbles"
+		},
+		{
+			"type" : "set",
+			"id" : "72263",
+			"name" : "U.S.S Enterprise-B",
+			"releaseDate" : "2016-09-04",
+			"parentSet" : "Wave 26"
+		},
+		{
+			"type" : "set",
 			"id" : "72262",
 			"name" : "Koranak (Repaint)",
 			"releaseDate" : "2016-09-03",
@@ -1322,6 +1343,42 @@
 	"ships" : [
 		{
 			"type" : "ship",
+			"id" : "u_s_s_enterprise_b",
+			"set" : ["72263"],
+			"name" : "U.S.S. Enterprise-B",
+			"class" : "Excelsior Class",
+			"actions" : ["evade", "target-lock", "scan", "battlestations"],
+			"upgrades" : ["tech", "weapon", "crew", "crew", "crew"],
+			"attack" : 3,
+			"agility" : 1,
+			"hull" : 5,
+			"shields" : 4,
+			"cost" : 26,
+			"text" : "During the Combat Phase, you may replace 1 [battlestations], [scan] or blue [target-lock] Token that is beside your ship with an [evade] Token.",
+			"unique" : true,
+			"factions" : ["federation"],
+			"squadron" : false
+		},
+		{
+			"type" : "ship",
+			"id" : "kohlars_battle_cruiser",
+			"set" : ["72270p"],
+			"name" : "Kohlars Battle Cruiser",
+			"class" : "D7 Class",
+			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
+			"upgrades" : ["tech", "crew", "crew", "crew"],
+			"attack" : 3,
+			"agility" : 1,
+			"hull" : 3,
+			"shields" : 3,
+			"cost" : 20,
+			"text" : "During the End Phase, if your [cloak] Token is on its red side, you may flip it back to its green side. If you do so place an Auxiliary Power Token beside your ship.",
+			"unique" : true,
+			"factions" : ["klingon"],
+			"squadron" : false
+		},
+		{
+			"type" : "ship",
 			"id" : "i_r_w_rateg",
 			"set" : ["72262p"],
 			"name" : "I.R.W. Rateg",
@@ -1340,7 +1397,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -1472,7 +1528,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -1532,7 +1587,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -1556,14 +1610,8 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
-		},
-		{
-			"type" : "copy",
-			"of" : "1006",
-			"set" : ["72241"]
 		},
 		{
 			"type" : "ship",
@@ -1582,11 +1630,6 @@
 			"unique" : true,
 			"factions" : ["federation"],
 			"squadron" : false
-		},
-		{
-			"type" : "copy",
-			"of" : "1010",
-			"set" : ["72234p"]
 		},
 		{
 			"type" : "ship",
@@ -1643,11 +1686,6 @@
 			"squadron" : false
 		},
 		{
-			"type" : "copy",
-			"of" : "1035",
-			"set" : ["72233"]
-		},
-		{
 			"type" : "ship",
 			"id" : "i_k_s_amar",
 			"set" : ["72232"],
@@ -1664,11 +1702,6 @@
 			"unique" : true,
 			"factions" : ["klingon"],
 			"squadron" : false
-		},
-		{
-			"type" : "copy",
-			"of" : "1033",
-			"set" : ["72232"]
 		},
 		{
 			"type" : "ship",
@@ -2088,7 +2121,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2130,7 +2162,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2154,7 +2185,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2178,14 +2208,13 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
 		{
 			"type" : "ship",
 			"id" : "1004",
-			"set" : ["71120"],
+			"set" : ["71120", "blind_belak"],
 			"name" : "Romulan Starship",
 			"class" : "D'deridex Class",
 			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
@@ -2202,7 +2231,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2226,14 +2254,13 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
 		{
 			"type" : "ship",
 			"id" : "1006",
-			"set" : ["71120"],
+			"set" : ["71120", "72241"],
 			"name" : "Klingon Starship",
 			"class" : "Vor'cha Class",
 			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
@@ -2250,7 +2277,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2274,7 +2300,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2298,7 +2323,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2322,14 +2346,13 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
 		{
 			"type" : "ship",
 			"id" : "1010",
-			"set" : ["71122", "72240"],
+			"set" : ["71122", "72240", "72234p", "72002p"],
 			"name" : "Federation Starship",
 			"class" : "Constitution Class",
 			"actions" : ["evade", "target-lock", "scan", "battlestations"],
@@ -2346,7 +2369,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2370,14 +2392,13 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
 		{
 			"type" : "ship",
 			"id" : "1012",
-			"set" : ["71123"],
+			"set" : ["71123", "72010"],
 			"name" : "Romulan Starship",
 			"class" : "Valdore Class",
 			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
@@ -2394,7 +2415,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2418,14 +2438,13 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
 		{
 			"type" : "ship",
 			"id" : "1014",
-			"set" : ["71124"],
+			"set" : ["71124", "72016"],
 			"name" : "Romulan Science Vessel",
 			"class" : "Romulan Science Vessel",
 			"actions" : ["evade", "cloak", "sensor-echo"],
@@ -2442,7 +2461,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2466,14 +2484,13 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
 		{
 			"type" : "ship",
 			"id" : "1016",
-			"set" : ["71125"],
+			"set" : ["71125", "72270p"],
 			"name" : "Klingon Battlecruiser",
 			"class" : "D7 Class",
 			"actions" : ["evade", "target-lock", "battlestations"],
@@ -2490,7 +2507,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2514,7 +2530,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2538,7 +2553,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2562,14 +2576,13 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
 		{
 			"type" : "ship",
 			"id" : "1020",
-			"set" : ["71127", "71513b", "71798"],
+			"set" : ["71127", "71513b", "71798", "blind_aldara"],
 			"name" : "Dominion Starship",
 			"class" : "Cardassian Galor Class",
 			"actions" : ["evade", "target-lock", "scan"],
@@ -2586,7 +2599,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2610,7 +2622,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2634,7 +2645,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2658,14 +2668,13 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
 		{
 			"type" : "ship",
 			"id" : "1024",
-			"set" : ["OP1Prize", "71646a"],
+			"set" : ["OP1Prize", "71646a", "71806", "blind_nunks_marauder"],
 			"name" : "Ferengi Marauder",
 			"class" : "D'Kora Class",
 			"actions" : ["evade", "target-lock", "scan"],
@@ -2682,7 +2691,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2706,7 +2714,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2730,7 +2737,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2754,14 +2760,13 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
 		{
 			"type" : "ship",
 			"id" : "1029",
-			"set" : ["OP2Prize", "71512", "72236p"],
+			"set" : ["OP2Prize", "71512", "72236p", "72015"],
 			"name" : "Klingon Starship",
 			"class" : "B'Rel Class",
 			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
@@ -2778,7 +2783,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2802,7 +2806,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2826,7 +2829,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2850,7 +2852,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2874,7 +2875,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2898,14 +2898,13 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
 		{
 			"type" : "ship",
 			"id" : "1033",
-			"set" : ["71269"],
+			"set" : ["71269", "72232", "72009"],
 			"name" : "Klingon Starship",
 			"class" : "K'T'Inga Class",
 			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
@@ -2922,7 +2921,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2946,14 +2944,13 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
 		{
 			"type" : "ship",
 			"id" : "1035",
-			"set" : ["71270"],
+			"set" : ["71270", "72233"],
 			"name" : "Romulan Starship",
 			"class" : "Romulan Bird-of-Prey",
 			"actions" : ["evade", "target-lock"],
@@ -2970,7 +2967,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -2994,7 +2990,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3018,7 +3013,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3042,14 +3036,13 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
 		{
 			"type" : "ship",
 			"id" : "1039",
-			"set" : ["71273", "71996"],
+			"set" : ["71273", "71996", "blind_buruk"],
 			"name" : "Klingon Starship",
 			"class" : "K'Vort Class",
 			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
@@ -3066,7 +3059,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3090,7 +3082,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3114,7 +3105,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3138,14 +3128,13 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
 		{
 			"type" : "ship",
 			"id" : "1045",
-			"set" : ["71272", "72261p"],
+			"set" : ["71272", "72261p", "72263", "blind_lakota"],
 			"name" : "Federation Starship",
 			"class" : "Excelsior Class",
 			"actions" : ["evade", "target-lock", "scan", "battlestations"],
@@ -3162,7 +3151,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3186,7 +3174,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3210,7 +3197,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3234,7 +3220,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3258,7 +3243,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3282,7 +3266,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3306,7 +3289,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3330,7 +3312,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3354,7 +3335,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3378,7 +3358,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3402,7 +3381,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3426,7 +3404,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3450,7 +3427,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3474,7 +3450,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3498,7 +3473,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3522,7 +3496,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3546,7 +3519,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3570,7 +3542,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : true
 		},
@@ -3594,7 +3565,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : true
 		},
@@ -3618,7 +3588,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3642,7 +3611,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3666,7 +3634,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3690,7 +3657,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3714,7 +3680,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3738,7 +3703,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3762,14 +3726,13 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
 		{
 			"type" : "ship",
 			"id" : "species_8472_bioship_71281",
-			"set" : ["71281"],
+			"set" : ["71281", "72012", "blind_bioship"],
 			"name" : "Species 8472 Starship",
 			"class" : "Species 8472 Bioship",
 			"actions" : ["evade", "target-lock", "scan", "regenerate"],
@@ -3786,7 +3749,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3810,7 +3772,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3834,7 +3795,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3858,7 +3818,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3882,7 +3841,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3906,7 +3864,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -3930,14 +3887,13 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
 		{
 			"type" : "ship",
 			"id" : "bajoran_interceptor_71445",
-			"set" : ["71445"],
+			"set" : ["71445", "blind_interceptor8"],
 			"name" : "Bajoran Interceptor",
 			"class" : "Bajoran Interceptor",
 			"actions" : ["evade", "target-lock", "battlestations"],
@@ -3954,14 +3910,13 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
 		{
 			"type" : "ship",
 			"id" : "d_kyr_class_71446",
-			"set" : ["71446", "71646e"],
+			"set" : ["71446", "71646e", "blind_seleya"],
 			"name" : "Vulcan Starship",
 			"class" : "D'Kyr Class",
 			"actions" : ["evade", "target-lock", "scan", "battlestations"],
@@ -3978,7 +3933,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4002,7 +3956,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4026,7 +3979,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4050,7 +4002,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4074,7 +4025,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4099,7 +4049,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4124,7 +4073,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4148,7 +4096,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4172,7 +4119,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4196,7 +4142,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4220,7 +4165,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4244,7 +4188,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4268,7 +4211,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4292,7 +4234,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4316,7 +4257,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4340,7 +4280,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4364,7 +4303,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4388,7 +4326,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4412,7 +4349,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4436,7 +4372,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4460,7 +4395,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4484,7 +4418,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4508,7 +4441,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4532,7 +4464,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4556,7 +4487,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4580,7 +4510,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4604,7 +4533,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4628,7 +4556,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4652,7 +4579,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4676,7 +4602,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4700,7 +4625,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4724,7 +4648,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4748,7 +4671,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4772,7 +4694,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4796,7 +4717,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4820,7 +4740,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4844,7 +4763,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4868,7 +4786,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4892,7 +4809,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4916,7 +4832,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4941,7 +4856,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4966,7 +4880,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -4990,7 +4903,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5014,7 +4926,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5038,7 +4949,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5062,7 +4972,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5086,7 +4995,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5110,7 +5018,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5134,7 +5041,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5158,7 +5064,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5182,7 +5087,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5206,7 +5110,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5230,7 +5133,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5254,7 +5156,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5278,7 +5179,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5302,7 +5202,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5326,7 +5225,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5350,7 +5248,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5374,7 +5271,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5398,7 +5294,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5422,7 +5317,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5446,7 +5340,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5470,7 +5363,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5494,7 +5386,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5518,7 +5409,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5542,7 +5432,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5566,7 +5455,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : true
 		},
@@ -5590,7 +5478,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : true
 		},
@@ -5614,7 +5501,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5638,7 +5524,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5662,7 +5547,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5686,7 +5570,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5710,7 +5593,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5734,7 +5616,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5758,7 +5639,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5782,7 +5662,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : true
 		},
@@ -5806,7 +5685,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : true
 		},
@@ -5830,7 +5708,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5854,7 +5731,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5878,7 +5754,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5902,7 +5777,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5926,7 +5800,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5950,7 +5823,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5974,7 +5846,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -5998,7 +5869,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -6022,7 +5892,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -6046,7 +5915,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -6070,7 +5938,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -6094,7 +5961,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -6118,7 +5984,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -6142,7 +6007,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -6166,7 +6030,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -6190,7 +6053,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -6214,7 +6076,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -6238,7 +6099,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -6262,7 +6122,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -6286,7 +6145,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -6310,7 +6168,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -6334,7 +6191,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -6358,7 +6214,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -6382,7 +6237,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -6406,7 +6260,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -6427,11 +6280,6 @@
 			"unique" : true,
 			"factions" : ["dominion"],
 			"squadron" : false
-		},
-		{
-			"type" : "copy",
-			"of" : "1020",
-			"set" : ["blind_aldara"]
 		},
 		{
 			"type" : "ship",
@@ -6488,11 +6336,6 @@
 			"squadron" : false
 		},
 		{
-			"type" : "copy",
-			"of" : "1004",
-			"set" : ["blind_belak"]
-		},
-		{
 			"type" : "ship",
 			"id" : "u_s_s_bellerophon_72001p",
 			"set" : ["72001p"],
@@ -6547,11 +6390,6 @@
 			"squadron" : false
 		},
 		{
-			"type" : "copy",
-			"of" : "species_8472_bioship_71281",
-			"set" : ["72012"]
-		},
-		{
 			"type" : "ship",
 			"id" : "bioship_omega_blind_bioship",
 			"set" : ["blind_bioship"],
@@ -6570,11 +6408,6 @@
 			"squadron" : false
 		},
 		{
-			"type" : "copy",
-			"of" : "species_8472_bioship_71281",
-			"set" : ["blind_bioship"]
-		},
-		{
 			"type" : "ship",
 			"id" : "i_k_s_buruk_blind_buruk",
 			"set" : ["blind_buruk"],
@@ -6591,11 +6424,6 @@
 			"unique" : true,
 			"factions" : ["klingon"],
 			"squadron" : false
-		},
-		{
-			"type" : "copy",
-			"of" : "1039",
-			"set" : ["blind_buruk"]
 		},
 		{
 			"type" : "ship",
@@ -6617,7 +6445,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -6730,11 +6557,6 @@
 			"squadron" : false
 		},
 		{
-			"type" : "copy",
-			"of" : "bajoran_interceptor_71445",
-			"set" : ["blind_interceptor8"]
-		},
-		{
 			"type" : "ship",
 			"id" : "u_s_s_intrepid_72002p",
 			"set" : ["72002p"],
@@ -6751,11 +6573,6 @@
 			"unique" : true,
 			"factions" : ["federation"],
 			"squadron" : false
-		},
-		{
-			"type" : "copy",
-			"of" : "1010",
-			"set" : ["72002p"]
 		},
 		{
 			"type" : "ship",
@@ -6777,14 +6594,8 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
-		},
-		{
-			"type" : "copy",
-			"of" : "1024",
-			"set" : ["71806"]
 		},
 		{
 			"type" : "ship",
@@ -6803,11 +6614,6 @@
 			"unique" : true,
 			"factions" : ["federation"],
 			"squadron" : false
-		},
-		{
-			"type" : "copy",
-			"of" : "1045",
-			"set" : ["blind_lakota"]
 		},
 		{
 			"type" : "ship",
@@ -6864,11 +6670,6 @@
 			"squadron" : false
 		},
 		{
-			"type" : "copy",
-			"of" : "1024",
-			"set" : ["blind_nunks_marauder"]
-		},
-		{
 			"type" : "ship",
 			"id" : "u_s_s_pasteur_71807",
 			"set" : ["71807"],
@@ -6888,7 +6689,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -7001,11 +6801,6 @@
 			"squadron" : false
 		},
 		{
-			"type" : "copy",
-			"of" : "1029",
-			"set" : ["72015"]
-		},
-		{
 			"type" : "ship",
 			"id" : "seleya_blind_seleya",
 			"set" : ["blind_seleya"],
@@ -7024,11 +6819,6 @@
 			"squadron" : false
 		},
 		{
-			"type" : "copy",
-			"of" : "d_kyr_class_71446",
-			"set" : ["blind_seleya"]
-		},
-		{
 			"type" : "ship",
 			"id" : "r_i_s_talvath_72016",
 			"set" : ["72016"],
@@ -7045,11 +6835,6 @@
 			"unique" : true,
 			"factions" : ["romulan"],
 			"squadron" : false
-		},
-		{
-			"type" : "copy",
-			"of" : "1014",
-			"set" : ["72016"]
 		},
 		{
 			"type" : "ship",
@@ -7071,7 +6856,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -7095,7 +6879,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
 		},
@@ -7191,14 +6974,8 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"squadron" : false
-		},
-		{
-			"type" : "copy",
-			"of" : "1033",
-			"set" : ["72009"]
 		},
 		{
 			"type" : "ship",
@@ -7217,11 +6994,6 @@
 			"unique" : true,
 			"factions" : ["romulan"],
 			"squadron" : false
-		},
-		{
-			"type" : "copy",
-			"of" : "1012",
-			"set" : ["72010"]
 		}
 	],
 	"shipClasses" : [
@@ -10057,6 +9829,30 @@
 	"captains" : [
 		{
 			"type" : "captain",
+			"id" : "john_harriman_enterprise_b",
+			"set" : ["72263"],
+			"name" : "John Harriman",
+			"cost" : 1,
+			"skill" : 2,
+			"talents" : 0,
+			"text" : "During the Activation Phase, you may perform an [evade] Action as a free Action, if you do so place an Auxiliary  Power token beside your ship.",
+			"unique" : true,
+			"factions" : ["federation"]
+		},
+		{
+			"type" : "captain",
+			"id" : "kohlar_kohlars_battle_cruiser",
+			"set" : ["72270p"],
+			"name" : "Kohlar",
+			"cost" : 2,
+			"skill" : 3,
+			"talents" : 1,
+			"text" : "Your Captain Skill Increases by +2 for each damage card assigned to your ship (max +4). If the damage to your ship is repaired, your Skill Number decreases accordingly.\n\nYou may field the ‘KuvaMagh’ [talent] Upgrade at a cost of -2.",
+			"unique" : true,
+			"factions" : ["klingon"]
+		},
+		{
+			"type" : "captain",
 			"id" : "tal_rateg",
 			"set" : ["72262p"],
 			"name" : "Tal",
@@ -10224,11 +10020,6 @@
 			"talents" : 1
 		},
 		{
-			"type" : "copy",
-			"of" : "2005",
-			"set" : ["72241"]
-		},
-		{
 			"type" : "captain",
 			"id" : "matt_decker_constellation",
 			"set" : ["72234p"],
@@ -10251,11 +10042,6 @@
 			"text" : "When a friendly ship within range 1 of your ship is defending, during the Declare Target step, your ship may become the target of the attack instead of the friendly ship. Treat the attack as though your ship were at the same Range as the friendly ship.",
 			"unique" : true,
 			"factions" : ["xindi"]
-		},
-		{
-			"type" : "copy",
-			"of" : "xindi_captain_72003p",
-			"set" : ["72224p"]
 		},
 		{
 			"type" : "captain",
@@ -10452,7 +10238,7 @@
 		{
 			"type" : "captain",
 			"id" : "2005",
-			"set" : ["71120", "71125", "71126", "OP2Prize", "71269", "71273", "71448", "i_k_s_b_moth", "71532", "71996", "71804", "72009", "72015", "72232", "72236p"],
+			"set" : ["71120", "71125", "71126", "OP2Prize", "71269", "71273", "71448", "i_k_s_b_moth", "71532", "71996", "71804", "72009", "72015", "72232", "72236p", "72241"],
 			"name" : "Klingon",
 			"unique" : false,
 			"text" : "\r\n      ",
@@ -12526,11 +12312,6 @@
 			"factions" : ["xindi"]
 		},
 		{
-			"type" : "copy",
-			"of" : "xindi_captain_72003p",
-			"set" : ["72004p"]
-		},
-		{
 			"type" : "captain",
 			"id" : "lovok_blind_belak",
 			"set" : ["blind_belak"],
@@ -12605,7 +12386,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -12647,7 +12427,7 @@
 		{
 			"type" : "captain",
 			"id" : "xindi_captain_72003p",
-			"set" : ["72003p", "71225"],
+			"set" : ["72003p", "71225", "72224p", "72004p"],
 			"name" : "Xindi",
 			"cost" : 0,
 			"skill" : 1,
@@ -12695,7 +12475,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -12713,7 +12492,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -12767,7 +12545,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -12785,7 +12562,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -12803,7 +12579,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -12846,7 +12621,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -12865,7 +12639,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -12967,7 +12740,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -13021,7 +12793,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -13039,7 +12810,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -13335,7 +13105,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -13366,7 +13135,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -13431,6 +13199,108 @@
 		}
 	],
 	"upgrades" : [
+		{
+			"type" : "crew",
+			"id" : "demora_sulu_enterprise_b",
+			"set" : ["72263"],
+			"name" : "Demora Sulu",
+			"cost" : 4,
+			"text" : "If your ship is hit after the Deal Damage phase, you may discard this card to immediately execute a maneuver from your Maneuver Dial with a speed of 3 or less.",
+			"unique" : true,
+			"factions" : ["federation"]
+		},
+		{
+			"type" : "tech",
+			"id" : "holo_communicator_enterprise_b",
+			"set" : ["72263"],
+			"name" : "Holo-Communicator",
+			"cost" : 5,
+			"text" : "During the Activation Phase you may disable this card to target a friendly ship within range 1-2. If you do so you may perform the Action listed on that ship's Captain Card.\n\nNo ship may be equipped with more than one ‘Holo-Communicator’ Upgrade.",
+			"unique" : false,
+			"factions" : ["federation"]
+		},
+		{
+			"type" : "tech",
+			"id" : "full_reverse_enterprise_b",
+			"set" : ["72263"],
+			"name" : "Full Reverse",
+			"cost" : 2,
+			"text" : "During the Activation Phase if you reveal a [reverse] Maneuver, you may disable this card to add 1 to the speed of that maneuver.\n\nNo ship may be equipped with more than one ‘Full Reverse’ Upgrade.",
+			"unique" : false,
+			"factions" : ["federation"]
+		},
+		{
+			"type" : "tech",
+			"id" : "deflector_control_enterprise_b",
+			"set" : ["72263"],
+			"name" : "Deflector Control",
+			"cost" : 5,
+			"text" : "<b>ACTION:</b> Repair 1 Shield Token\nOR\n Discard this card to flip up to 3 of your disabled Shield Tokens over to their Active Sides. You can not use this Action if your ship is Cloaked\n\nNo ship may be equipped with more than one ‘Deflector Control’ Upgrade.",
+			"unique" : false,
+			"factions" : ["federation"]
+		},
+		{
+			"type" : "tech",
+			"id" : "resonance_burst_enterprise_b",
+			"set" : ["72263"],
+			"name" : "Resonance Burst",
+			"cost" : 5,
+			"text" : "When attacking during the Declare target step, you may discard this card to target a ship in your forward firing arc and within Range 1 of your ship. The target ship must discard 1 Token [evade], [scan], or blue [target-lock] that is beside it of its choice. If there is a [cloak] Token beside the target ship, flip it over to its red side. No ship may be equipped with more than 1 ‘Resonance Burst’ Upgrade",
+			"unique" : false,
+			"factions" : ["federation"]
+		},
+		{
+			"type" : "weapon",
+			"id" : "improved_phasers_enterprise_b",
+			"set" : ["72263"],
+			"name" : "Improved Phasers",
+			"cost" : 3,
+			"attack" : 4,
+			"range" : "1 - 3",
+			"text" : "<b>ATTACK:</b> Place 2 Time Tokens on this card to perform this attack.\n\nTreat this as a attack with your Primary Weapon.",
+			"unique" : false,
+			"factions" : ["federation"]
+		},
+		{
+			"type" : "talent",
+			"id" : "kuvahmagh_kohlar_battle_cruiser",
+			"set" : ["72270p"],
+			"name" : "Kuvah'Magh",
+			"cost" : 5,
+			"text" : "When attacking with your Primary Weapon, during the Roll Attack Dice step, you may discard this card to gain +1 attack die for that attack for every Klingon [crew] Upgrade deployed to your ship (max+3) Then suffer 1 critical damage to your Hull.",
+			"unique" : true,
+			"factions" : ["klingon"]
+		},
+		{
+			"type" : "crew",
+			"id" : "morak_kohlar_battle_cruiser",
+			"set" : ["72270p"],
+			"name" : "Morak",
+			"cost" : 5,
+			"text" : "<b>ACTION:</b> If your ship is not Cloaked, disable this card to repair 1 of your Shield Tokens\nOR\n<b>ACTION:</b> Discard this card to flip up to 3 of your disabled shields over to their Active sides. If you do this while you ship is Cloaked flip your [cloak] Token to its red side.",
+			"unique" : true,
+			"factions" : ["klingon"]
+		},
+		{
+			"type" : "crew",
+			"id" : "tgreth_kohlar_battle_cruiser",
+			"set" : ["72270p"],
+			"name" : "T'Greth",
+			"cost" : 4,
+			"text" : "<b>ACTION:</b> Place a [battlestations] Token beside your ship. Then place and Auxiliary Power Token beside your ship. You cannot perform a [battlestations] Action this round.",
+			"unique" : true,
+			"factions" : ["klingon"]
+		},
+		{
+			"type" : "crew",
+			"id" : "chrega_kohlar_battle_cruiser",
+			"set" : ["72270p"],
+			"name" : "Ch’rega",
+			"cost" : 2,
+			"text" : "<b>ACTION:</b> If your ship is not Cloaked, disable all of your remaining Shields and target a ship at Range 1-2 that is not Cloaked and has no Active Shields. Disable this card and any 2 [crew] Upgrades of your choice on the target ship.",
+			"unique" : true,
+			"factions" : ["klingon"]
+		},
 		{
 			"type" : "talent",
 			"id" : "military_sectets_rateg",
@@ -13888,11 +13758,6 @@
 			"text" : "<b>ACTION:</b> Discard this card to target a Minefield Token within Range 1-3. Roll the number of attack dice listed on the mine's Upgrade Card minus 1. All ships within Range 1 of that Minefield Token suffer damage as normal from any [hit] or [crit] results. The affected ships do not roll any defense dice. Remove the Minefield Token after it is detonated.",
 			"unique" : true,
 			"factions" : ["klingon"]
-		},
-		{
-			"type" : "copy",
-			"of" : "cloaked_mines_71999p",
-			"set" : ["72241"]
 		},
 		{
 			"type" : "tech",
@@ -14994,7 +14859,7 @@
 			"set" : ["71120"],
 			"name" : "Data",
 			"unique" : true,
-			"text" : "<b>ACTION:</b> Place 2 [evade] Tokens beside your ship and reduce our total attack dice by 2 this round. You cannot perform an [evade] Action this round, even as a free Action. ",
+			"text" : "<b>ACTION:</b> Place 2 [evade] Tokens beside your ship and reduce your total attack dice by 2 this round. You cannot perform an [evade] Action this round, even as a free Action. ",
 			"factions" : ["federation"],
 			"cost" : 3,
 			"skill" : 0,
@@ -19247,7 +19112,7 @@
 		{
 			"type" : "weapon",
 			"id" : "photonic_charges_71646c",
-			"set" : ["71646c", "71793"],
+			"set" : ["71646c", "71793", "blind_nistrim_culluh"],
 			"name" : "Photonic Charges",
 			"unique" : false,
 			"text" : "<b>ATTACK: </b>Disable this card to perform this attack. \n\nPlace an Auxiliarly Power Token beside the target ship if there is at least 1 uncancelled [hit] or [crit] result. \n\nThis Upgrade costs +4 SP if purchased for a non-Predator class ship.",
@@ -21738,7 +21603,7 @@
 		{
 			"type" : "tech",
 			"id" : "cloaked_mines_71999p",
-			"set" : ["71999p"],
+			"set" : ["71999p", "72241"],
 			"name" : "Cloaked Mines",
 			"unique" : false,
 			"text" : "During the Planning Phase, you may discard this card to place a Minefield Token within Range 1 of your ship (in any direction), but not within Range 3 of an enemy ship. If an enemy ship passes within Range 1 of the token, roll 3 attack dice (-1 if the target ship immediately performs a [scan] Action). Any [hit] or [crit] damage the target ship as normal. The affected ship does not roll any defense dice.",
@@ -22324,7 +22189,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22340,7 +22204,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22356,7 +22219,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22372,7 +22234,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22388,7 +22249,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22404,7 +22264,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22420,7 +22279,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22436,7 +22294,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22660,7 +22517,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22676,7 +22532,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22694,7 +22549,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22712,7 +22566,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22728,7 +22581,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22744,7 +22596,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22760,7 +22611,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22776,7 +22626,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22838,11 +22687,6 @@
 			"text" : "When attacking or defending, you may discard this card to re-roll any number of your dice.",
 			"unique" : true,
 			"factions" : ["kazon"]
-		},
-		{
-			"type" : "copy",
-			"of" : "photonic_charges_71646c",
-			"set" : ["blind_nistrim_culluh"]
 		},
 		{
 			"type" : "tech",
@@ -22909,7 +22753,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22925,7 +22768,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22941,7 +22783,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22957,7 +22798,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22973,7 +22813,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -22989,7 +22828,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -23066,7 +22904,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -23083,7 +22920,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -23281,11 +23117,6 @@
 			"factions" : ["klingon"]
 		},
 		{
-			"type" : "copy",
-			"of" : "photon_torpedoes_72009",
-			"set" : ["72015"]
-		},
-		{
 			"type" : "talent",
 			"id" : "v_tosh_ka_tur_blind_seleya",
 			"set" : ["blind_seleya"],
@@ -23410,7 +23241,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -23426,7 +23256,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -23442,7 +23271,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -23458,7 +23286,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -23600,7 +23427,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -23616,7 +23442,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -23632,7 +23457,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -23650,13 +23474,12 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
 			"type" : "weapon",
 			"id" : "photon_torpedoes_72009",
-			"set" : ["72009"],
+			"set" : ["72009", "72015", "72232"],
 			"name" : "Photon Torpedoes",
 			"cost" : 5,
 			"attack" : 5,
@@ -23668,7 +23491,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -23684,7 +23506,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -23755,6 +23576,15 @@
 		}
 	],
 	"resources" : [
+		{
+			"type" : "resource",
+			"id" : "scan_cycle",
+			"set" : ["72270r"],
+			"name" : "Scan Cycle",
+			"text" : "At the start of the game place 5 [scan] Tokens on this card.\n\nDuring Activation Phase when a ship in your fleet performs an Action from its Action Bar you may remove 1 [scan] Token from this card and place it beside the ship as a free Action\n\nNOTE: You may place the free [scan] Token beside the ship even if there already is a [scan] Token there\n\nYou may only use this ability once per round. Remove this card from the game when there are no [scan] Tokens left on this card.",
+			"cost" : 5,
+			"showShipResourceSlot" : false
+		},
 		{
 			"type" : "resource",
 			"id" : "condition_alert_resource",
@@ -24053,7 +23883,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"factionPenalty" : 0,
 			"unique" : true,
@@ -24079,7 +23908,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"factionPenalty" : 0,
 			"unique" : true,
@@ -24105,7 +23933,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"factionPenalty" : 0,
 			"unique" : true,
@@ -24131,7 +23958,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"factionPenalty" : 0,
 			"unique" : true,
@@ -24157,7 +23983,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"factionPenalty" : 0,
 			"unique" : true,
@@ -24183,7 +24008,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"factionPenalty" : 0,
 			"unique" : true,
@@ -24209,7 +24033,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"factionPenalty" : 0,
 			"unique" : true,
@@ -24235,7 +24058,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"factionPenalty" : 0,
 			"unique" : true,
@@ -24265,7 +24087,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"factionPenalty" : 0,
 			"unique" : true
@@ -24291,7 +24112,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"factionPenalty" : 0,
 			"unique" : true
@@ -24317,7 +24137,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"factionPenalty" : 0,
 			"unique" : true
@@ -24343,7 +24162,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"factionPenalty" : 0,
 			"unique" : true
@@ -24390,7 +24208,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"factionPenalty" : 0,
 			"unique" : true
@@ -24437,7 +24254,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"factionPenalty" : 0,
 			"unique" : true
@@ -24484,7 +24300,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"factionPenalty" : 0,
 			"unique" : true
@@ -24531,7 +24346,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"factionPenalty" : 0,
 			"unique" : true
@@ -24578,7 +24392,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"factionPenalty" : 0,
 			"unique" : true
@@ -24625,7 +24438,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"factionPenalty" : 0,
 			"unique" : true
@@ -24672,7 +24484,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"factionPenalty" : 0,
 			"unique" : true
@@ -24719,7 +24530,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			},
 			"factionPenalty" : 0,
 			"unique" : true
@@ -24739,7 +24549,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -24757,7 +24566,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -24775,7 +24583,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -24793,7 +24600,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -24811,7 +24617,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -24829,7 +24634,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -24847,7 +24651,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -24865,7 +24668,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -24883,7 +24685,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -24901,7 +24702,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -24919,7 +24719,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -24937,7 +24736,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -24955,7 +24753,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		},
 		{
@@ -24973,7 +24770,6 @@
 			{
 				"ship" : {},
 				"fleet" : {}
-
 			}
 		}
 	]
