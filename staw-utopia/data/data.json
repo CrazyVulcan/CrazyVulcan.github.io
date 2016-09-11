@@ -17530,6 +17530,20 @@
 		{
 			"type" : "tech",
 			"id" : "impulse_overload_oparenaprize",
+			"set" : ["OPArenaPrize"],
+			"name" : "Impulse Overload",
+			"unique" : false,
+			"text" : "<b>ACTION:</b> Discard this card to target a ship at Range 1 of your ship and roll 3 attack dice. If you roll at least 1 [hit] or [crit] result, the target ship must discard 1 [tech] Upgrade (of its choice).",
+			"factions" : ["independent"],
+			"cost" : 2,
+			"skill" : 0,
+			"talents" : 0,
+			"attack" : 0,
+			"range" : ""
+		},
+		{
+			"type" : "tech",
+			"id" : "impulse_overload_gornarus",
 			"set" : ["71797"],
 			"name" : "Impulse Overload",
 			"unique" : false,
