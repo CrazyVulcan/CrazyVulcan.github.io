@@ -371,7 +371,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				ship: {
 					// No faction penalty for Khan or Talents
-					factionPenalty: function(upgrade, ship, fleet, cost) {
+					factionPenalty: function(upgrade, ship, fleet, factionPenalty) {
 						return upgrade.type == "captain" || upgrade.type == "talent" ? 0 : factionPenalty;
 					}
 				}
