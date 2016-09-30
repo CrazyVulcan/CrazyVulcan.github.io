@@ -3,7 +3,7 @@
 	"sets" : [
 		{
 			"type" : "set",
-			"id" : "72270p",
+			"id" : "72280p",
 			"name" : "I.K.S. Bortas",
 			"releaseDate" : "2016-10-30",
 			"parentSet" : "Klingon Civil War"
@@ -26,7 +26,7 @@
 			"type" : "set",
 			"id" : "72270r",
 			"name" : "Scan Cycle",
-			"releaseDate" : "2016-10-25",
+			"releaseDate" : "2016-10-2",
 			"parentSet" : "Trouble with Tribbles"
 		},
 		{
@@ -1358,7 +1358,7 @@
 		{
 			"type" : "ship",
 			"id" : "i_k_s_bortas",
-			"set" : ["72270p"],
+			"set" : ["72280p"],
 			"name" : "I.K.S. Bortas",
 			"class" : "Vor'cha Class",
 			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
@@ -1368,7 +1368,7 @@
 			"hull" : 5,
 			"shields" : 3,
 			"cost" : 28,
-			"text" : "When Defending, During the Modify Defense step, you may re-roll one of your defense dice. If you do so, place an Auxiliary Power Token beside your ship.",
+			"text" : "When Defending, During the Modify Defense dice step, you may re-roll one of your defense dice. If you do so, place an Auxiliary Power Token beside your ship.",
 			"unique" : true,
 			"factions" : ["klingon"],
 			"squadron" : false
@@ -9862,7 +9862,7 @@
 		{
 			"type" : "captain",
 			"id" : "gowron_bortas",
-			"set" : ["72270p"],
+			"set" : ["72280p"],
 			"name" : "Gowron",
 			"cost" : 3,
 			"skill" : 5,
@@ -13246,17 +13246,17 @@
 		{
 			"type" : "talent",
 			"id" : "cry_of_the_warrior_bortas",
-			"set" : ["72270p"],
+			"set" : ["72280p"],
 			"name" : "Cry of the Warrior",
 			"cost" : 5,
-			"text" : "When attacking, during the Roll Attack Dice step, you may discard this card to gain +1 attack die for each opposing ship that has your ship in its forward firing arc (max +3). The next time your ship rolls defense dice roll =1 defense die for each additional attack die you gained with this ability.",
+			"text" : "When attacking, during the Roll Attack Dice step, you may discard this card to gain +1 attack die for each opposing ship that has your ship in its forward firing arc (max +3). The next time your ship rolls defense dice roll -1 defense die for each additional attack die you gained with this ability.",
 			"unique" : true,
 			"factions" : ["klingon"]
 		},
 		{
 			"type" : "talent ",
 			"id" : "aim_and_fire_bortas",
-			"set" : ["72270p"],
+			"set" : ["72280p"],
 			"name" : "Aim and Fire!",
 			"cost" : 5,
 			"text" : "When attacking with your Primary Weapon, you may discard this card to target a ship at Range 1-2. The target ship cannot re-roll any of its defense dice against that attack.",
@@ -13266,7 +13266,7 @@
 		{
 			"type" : "crew",
 			"id" : "worf_bortas",
-			"set" : ["72270p"],
+			"set" : ["72280p"],
 			"name" : "Worf",
 			"cost" : 3,
 			"text" : "When attacking a ship with no Active Shields, you may disable this card to gain +1 attack die. Your ship cannot roll any defense dice during the round in which you use this ability.",
@@ -13276,7 +13276,7 @@
 		{
 			"type" : "tech",
 			"id" : "emergency_override_bortas",
-			"set" : ["72270p"],
+			"set" : ["72280p"],
 			"name" : "Emergency Override",
 			"cost" : 2,
 			"text" : "<b>ACTION:</b> If you executed a green maneuver this round, disable this card to repair 1 of your Shields.",
