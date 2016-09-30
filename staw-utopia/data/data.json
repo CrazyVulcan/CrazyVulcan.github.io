@@ -2292,7 +2292,7 @@
 		{
 			"type" : "ship",
 			"id" : "1006",
-			"set" : ["71120", "72241","72270p"],
+			"set" : ["71120", "72241","72280p"],
 			"name" : "Klingon Starship",
 			"class" : "Vor'cha Class",
 			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
