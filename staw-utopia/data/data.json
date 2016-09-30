@@ -3,6 +3,13 @@
 	"sets" : [
 		{
 			"type" : "set",
+			"id" : "72270p",
+			"name" : "I.K.S. Bortas",
+			"releaseDate" : "2016-10-30",
+			"parentSet" : "Klingon Civil War"
+		},
+		{
+			"type" : "set",
 			"id" : "72280r",
 			"name" : "Fleet Commander",
 			"releaseDate" : "2016-10-29",
@@ -1350,6 +1357,24 @@
 	"ships" : [
 		{
 			"type" : "ship",
+			"id" : "i_k_s_bortas",
+			"set" : ["72270p"],
+			"name" : "I.K.S. Bortas",
+			"class" : "Vor'cha Class",
+			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
+			"upgrades" : ["tech", "weapon", "crew", "crew"],
+			"attack" : 5,
+			"agility" : 1,
+			"hull" : 5,
+			"shields" : 3,
+			"cost" : 28,
+			"text" : "When Defending, During the Modify Defense step, you may re-roll one of your defense dice. If you do so, place an Auxiliary Power Token beside your ship.",
+			"unique" : true,
+			"factions" : ["klingon"],
+			"squadron" : false
+		},
+		{
+			"type" : "ship",
 			"id" : "u_s_s_enterprise_b",
 			"set" : ["72263"],
 			"name" : "U.S.S. Enterprise-B",
@@ -2267,7 +2292,7 @@
 		{
 			"type" : "ship",
 			"id" : "1006",
-			"set" : ["71120", "72241"],
+			"set" : ["71120", "72241","72270p"],
 			"name" : "Klingon Starship",
 			"class" : "Vor'cha Class",
 			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
@@ -9836,6 +9861,18 @@
 	"captains" : [
 		{
 			"type" : "captain",
+			"id" : "gowron_bortas",
+			"set" : ["72270p"],
+			"name" : "Gowron",
+			"cost" : 3,
+			"skill" : 5,
+			"talents" : 1,
+			"text" : "If this card is assigned to a Klingon ship and all your shields have been destroyed, you gain +1 attack die on all of your attacks. If any of your Shield Tokens are repaired, you lose this bonus attack die.",
+			"unique" : true,
+			"factions" : ["klingon"]
+		},
+		{
+			"type" : "captain",
 			"id" : "john_harriman_enterprise_b",
 			"set" : ["72263"],
 			"name" : "John Harriman",
@@ -13206,6 +13243,46 @@
 		}
 	],
 	"upgrades" : [
+		{
+			"type" : "talent",
+			"id" : "cry_of_the_warrior_bortas",
+			"set" : ["72270p"],
+			"name" : "Cry of the Warrior",
+			"cost" : 5,
+			"text" : "When attacking, during the Roll Attack Dice step, you may discard this card to gain +1 attack die for each opposing ship that has your ship in its forward firing arc (max +3). The next time your ship rolls defense dice roll =1 defense die for each additional attack die you gained with this ability.",
+			"unique" : true,
+			"factions" : ["klingon"]
+		},
+		{
+			"type" : "talent ",
+			"id" : "aim_and_fire_bortas",
+			"set" : ["72270p"],
+			"name" : "Aim and Fire!",
+			"cost" : 5,
+			"text" : "When attacking with your Primary Weapon, you may discard this card to target a ship at Range 1-2. The target ship cannot re-roll any of its defense dice against that attack.",
+			"unique" : true,
+			"factions" : ["klingon"]
+		},
+		{
+			"type" : "crew",
+			"id" : "worf_bortas",
+			"set" : ["72270p"],
+			"name" : "Worf",
+			"cost" : 3,
+			"text" : "When attacking a ship with no Active Shields, you may disable this card to gain +1 attack die. Your ship cannot roll any defense dice during the round in which you use this ability.",
+			"unique" : true,
+			"factions" : ["klingon"]
+		},
+		{
+			"type" : "tech",
+			"id" : "emergency_override_bortas",
+			"set" : ["72270p"],
+			"name" : "Emergency Override",
+			"cost" : 2,
+			"text" : "<b>ACTION:</b> If you executed a green maneuver this round, disable this card to repair 1 of your Shields.",
+			"unique" : true,
+			"factions" : ["klingon"]
+		},
 		{
 			"type" : "crew",
 			"id" : "demora_sulu_enterprise_b",
