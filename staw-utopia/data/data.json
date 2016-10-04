@@ -1368,7 +1368,7 @@
 			"hull" : 5,
 			"shields" : 3,
 			"cost" : 28,
-			"text" : "When Defending, During the Modify Defense dice step, you may re-roll one of your defense dice. If you do so, place an Auxiliary Power Token beside your ship.",
+			"text" : "When defending, during the Modify Defense dice step, you may re-roll one of your defense dice. If you do so, place an Auxiliary Power Token beside your ship.",
 			"unique" : true,
 			"factions" : ["klingon"],
 			"squadron" : false
@@ -2292,7 +2292,7 @@
 		{
 			"type" : "ship",
 			"id" : "1006",
-			"set" : ["71120", "72241","72280p"],
+			"set" : ["71120", "72241", "72280p"],
 			"name" : "Klingon Starship",
 			"class" : "Vor'cha Class",
 			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
@@ -9867,7 +9867,7 @@
 			"cost" : 3,
 			"skill" : 5,
 			"talents" : 1,
-			"text" : "If this card is assigned to a Klingon ship and all your shields have been destroyed, you gain +1 attack die on all of your attacks. If any of your Shield Tokens are repaired, you lose this bonus attack die.",
+			"text" : "If this card is assigned to a Klingon ship and all your Shields have been destroyed, you gain +1 attack die on all of your attacks. If any of your Shield Tokens are repaired, you lose this bonus attack die.",
 			"unique" : true,
 			"factions" : ["klingon"]
 		},
@@ -13280,7 +13280,7 @@
 			"name" : "Emergency Override",
 			"cost" : 2,
 			"text" : "<b>ACTION:</b> If you executed a green maneuver this round, disable this card to repair 1 of your Shields.",
-			"unique" : true,
+			"unique" : false,
 			"factions" : ["klingon"]
 		},
 		{
