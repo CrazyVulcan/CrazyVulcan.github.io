@@ -3,7 +3,7 @@
 	"sets" : [
 		{
 			"type" : "set",
-			"id" : "71531",
+			"id" : "72271",
 			"name" : "U.S.S. Enterprise-E(Repaint)",
 			"releaseDate" : "2016-10-25",
 			"parentSet" : "Wave 27"
@@ -5017,7 +5017,7 @@
 		{
 			"type" : "ship",
 			"id" : "u_s_s_enterprise_e_71531",
-			"set" : ["71531"],
+			"set" : ["71531","72271"],
 			"name" : "U.S.S. Enterprise-E",
 			"class" : "Sovereign Class",
 			"actions" : ["evade", "target-lock", "scan", "battlestations"],
@@ -5040,7 +5040,7 @@
 		{
 			"type" : "ship",
 			"id" : "federation_starship_71531",
-			"set" : ["71531"],
+			"set" : ["71531","72271"],
 			"name" : "Federation Starship",
 			"class" : "Sovereign Class",
 			"actions" : ["evade", "target-lock", "scan", "battlestations"],
@@ -10265,7 +10265,7 @@
 		{
 			"type" : "captain",
 			"id" : "2003",
-			"set" : ["71120", "71121", "71122", "72240", "71268", "71272", "71276", "71280", "72261", "OP4Prize", "u_s_s_yaeger", "71523", "71509", "71526", "71510", "71531", "71997p", "71801", "71998p", "71802", "72008", "72011", "72014", "71201", "71213", "71221", "72231"],
+			"set" : ["71120", "71121", "71122", "72240", "71268", "71272", "71276", "71280", "72261", "OP4Prize", "u_s_s_yaeger", "71523", "71509", "71526", "71510", "71531", "71997p", "71801", "71998p", "71802", "72008", "72011", "72014", "71201", "71213", "71221", "72231","72271"],
 			"name" : "Federation",
 			"unique" : false,
 			"text" : "\r\n      ",
@@ -11561,7 +11561,7 @@
 		{
 			"type" : "captain",
 			"id" : "jean_luc_picard_b_71531",
-			"set" : ["71531"],
+			"set" : ["71531","72271"],
 			"name" : "Jean-Luc Picard",
 			"unique" : true,
 			"text" : "Add 1 [crew], [tech], [weapon] or [talent] Upgrade to your Upgrade Bar (your choice). At the start of the game, after Setup, choose 1 Faction. Whenever you attack a ship of that Faction, you may roll 1 less attack die to add 1 [crit] result to your roll. Each time you defend against a ship of that Faction, roll +1 defense die.",
@@ -11633,7 +11633,7 @@
 		{
 			"type" : "captain",
 			"id" : "matthew_dougherty_cap_71531",
-			"set" : ["71531"],
+			"set" : ["71531","72271"],
 			"name" : "Matthew Dougherty",
 			"unique" : true,
 			"text" : "<b>ACTION:</b> Disable 1 of your Upgrades to perform this Action. Each time you defend this round, during the Roll Defense Dice step of the Combat Phase, roll +1 defense die.",
@@ -12988,7 +12988,7 @@
 		{
 			"type" : "admiral",
 			"id" : "matthew_dougherty_71531",
-			"set" : ["71531"],
+			"set" : ["71531","72271"],
 			"name" : "Matthew Dougherty",
 			"unique" : true,
 			"text" : "<b>FLEET ACTION:</b> Disable 1 of your Upgrades to perform this Action. Each time you defend this round, during the Roll Defense Dice step of the Combat Phase, roll +1 defense die.",
@@ -15843,7 +15843,7 @@
 		{
 			"type" : "weapon",
 			"id" : "3067",
-			"set" : ["71268", "71531"],
+			"set" : ["71268", "71531","72271"],
 			"name" : "Quantum Torpedoes",
 			"unique" : false,
 			"text" : "<b>ATTACK: (Target Lock)</b> Spend your [target-lock] and disable this card to perform this attack. \nIf the target ship is hit, add 1 [hit] result to your total damage. \nYou may fire this weapon from your forward or rear firing arcs.",
@@ -19315,7 +19315,7 @@
 		{
 			"type" : "tech",
 			"id" : "advanced_shields_71531",
-			"set" : ["71531"],
+			"set" : ["71531","72271"],
 			"name" : "Advanced Shields",
 			"unique" : false,
 			"text" : "<b>ACTION:</b> If you still have Active Shields, place 1 additional Shield Token beside your ship. If you take damage this round, remove this Shield Token first. If you do not take damage this round, discard the extra Shield Token during the End Phase. No ship may be equipped with more than 1 Advanced Shields Upgrade.",
@@ -19329,7 +19329,7 @@
 		{
 			"type" : "talent",
 			"id" : "fire_at_will__71531",
-			"set" : ["71531"],
+			"set" : ["71531","72271"],
 			"name" : "Fire At Will!",
 			"unique" : true,
 			"text" : "During the Combat Phase, instead of making a normal attack, you may discard this card to make 1 attack with your Primary Weapon and 1 attack with one of your Secondary Weapons. Each of these attacks is at -1 attack die and must be made against different enemy ships.",
@@ -19343,7 +19343,7 @@
 		{
 			"type" : "talent",
 			"id" : "make_it_so_71531",
-			"set" : ["71531"],
+			"set" : ["71531","72271"],
 			"name" : "Make It So",
 			"unique" : true,
 			"text" : "When performing an Action or Attack that requires you to disable one of your Upgrades, you may discard this card instead of disabling the Upgrade.",
@@ -19357,7 +19357,7 @@
 		{
 			"type" : "crew",
 			"id" : "data_71531",
-			"set" : ["71531"],
+			"set" : ["71531","72271"],
 			"name" : "Data",
 			"unique" : true,
 			"text" : "During the Modify Attack Dice step of the Combat Phase, you may discard this card to force an enemy ship to re-roll its entire attack roll.",
@@ -19371,7 +19371,7 @@
 		{
 			"type" : "crew",
 			"id" : "william_t_riker_71531",
-			"set" : ["71531"],
+			"set" : ["71531","72271"],
 			"name" : "William T. Riker",
 			"unique" : true,
 			"text" : "Add 1 [crew] Upgrade slot to your Upgrade Bar. After you move, you may disable this card to perform the Action on one of your [crew], [talent], or [tech] Upgrades or your Captain's Action as a free Action.",
@@ -19385,7 +19385,7 @@
 		{
 			"type" : "crew",
 			"id" : "geordi_la_forge_71531",
-			"set" : ["71531"],
+			"set" : ["71531","72271"],
 			"name" : "Geordi La Forge",
 			"unique" : true,
 			"text" : "Add 1 [tech] Upgrade slot to your Upgrade Bar.\n\n<b>ACTION:</b> Disable this card to target a ship at Range 1-3. Target ship rolls 2 less defense dice this round (min 0) against all of your ship's attacks. If the target ship is Cloaked, flip its [cloak] Token to its red side.",
@@ -19511,7 +19511,7 @@
 		{
 			"type" : "crew",
 			"id" : "beverly_crusher_71531",
-			"set" : ["71531"],
+			"set" : ["71531","72271"],
 			"name" : "Beverly Crusher",
 			"unique" : true,
 			"text" : "If one of your other [crew] Upgrades is supposed to be disabled for any reason, you may disable this card instead. OR If one of your other [crew] Upgrades is supposed to be discarded for any reason, you may discard this card instead.",
@@ -19525,7 +19525,7 @@
 		{
 			"type" : "crew",
 			"id" : "deanna_troi_71531",
-			"set" : ["71531"],
+			"set" : ["71531","72271"],
 			"name" : "Deanna Troi",
 			"unique" : true,
 			"text" : "<b>ACTION:</b> Discard this card to target a ship at Range 1-2. Disable the Captain or 1 [crew] Upgrade on the target ship. Place a [battlestations] Token beside your ship. If the target ship is Cloaked, flip its [cloak] Token over to its red side.",
@@ -19623,7 +19623,7 @@
 		{
 			"type" : "weapon",
 			"id" : "photon_torpedoes_71531",
-			"set" : ["71531"],
+			"set" : ["71531","72271"],
 			"name" : "Photon Torpedoes",
 			"unique" : false,
 			"text" : "<b>ATTACK: (Target Lock)</b> Spend y our target lock and disable this card to perform this attack. If fired from a Sovereign class ship, gain +1 attack die. You may fire this weapon from your forward or rear firing arcs.",
@@ -19637,7 +19637,7 @@
 		{
 			"type" : "weapon",
 			"id" : "dorsal_phaser_array_71531",
-			"set" : ["71531"],
+			"set" : ["71531","72271"],
 			"name" : "Dorsal Phaser Array",
 			"unique" : false,
 			"text" : "<b>ATTACK: </b>You may fire this weapon in any direction. The Attack Value is equal to the ship's Primary Weapon Value. This Upgrade may only be purchased for a Federation ship with a Hull Value of 4 or greater and the SP cost is equal to the ship's Primary Weapon Value +1.",
