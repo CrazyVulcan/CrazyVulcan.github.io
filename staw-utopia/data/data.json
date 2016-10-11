@@ -3,6 +3,13 @@
 	"sets" : [
 		{
 			"type" : "set",
+			"id" : "72272",
+			"name" : "I.K.S. Gr'oth(Repaint)",
+			"releaseDate" : "2016-10-26",
+			"parentSet" : "Wave 27"
+		},
+		{
+			"type" : "set",
 			"id" : "72271",
 			"name" : "U.S.S. Enterprise-E(Repaint)",
 			"releaseDate" : "2016-10-25",
@@ -2506,7 +2513,7 @@
 		{
 			"type" : "ship",
 			"id" : "1015",
-			"set" : ["71125"],
+			"set" : ["71125","72272"],
 			"name" : "I.K.S. Gr'oth",
 			"class" : "D7 Class",
 			"actions" : ["evade", "target-lock", "battlestations"],
@@ -2529,7 +2536,7 @@
 		{
 			"type" : "ship",
 			"id" : "1016",
-			"set" : ["71125", "72270p"],
+			"set" : ["71125", "72270p","72272"],
 			"name" : "Klingon Battlecruiser",
 			"class" : "D7 Class",
 			"actions" : ["evade", "target-lock", "battlestations"],
@@ -10289,7 +10296,7 @@
 		{
 			"type" : "captain",
 			"id" : "2005",
-			"set" : ["71120", "71125", "71126", "OP2Prize", "71269", "71273", "71448", "i_k_s_b_moth", "71532", "71996", "71804", "72009", "72015", "72232", "72236p", "72241"],
+			"set" : ["71120", "71125", "71126", "OP2Prize", "71269", "71273", "71448", "i_k_s_b_moth", "71532", "71996", "71804", "72009", "72015", "72232", "72236p", "72241","72272"],
 			"name" : "Klingon",
 			"unique" : false,
 			"text" : "\r\n      ",
@@ -10421,7 +10428,7 @@
 		{
 			"type" : "captain",
 			"id" : "2016",
-			"set" : ["71125"],
+			"set" : ["71125","72272"],
 			"name" : "Koloth",
 			"unique" : true,
 			"text" : "Each time an enemy ship attacks you, you may force that ship to re-roll 1 attack die of your choice. ",
@@ -10433,7 +10440,7 @@
 		{
 			"type" : "captain",
 			"id" : "2017",
-			"set" : ["71125"],
+			"set" : ["71125","72272"],
 			"name" : "Krell",
 			"unique" : true,
 			"text" : "When attacking, you may re-roll 1 of your [battlestations] results. ",
@@ -15437,7 +15444,7 @@
 		{
 			"type" : "talent",
 			"id" : "3042",
-			"set" : ["71125"],
+			"set" : ["71125","72272"],
 			"name" : "Sabotage",
 			"unique" : false,
 			"text" : "<b>ACTION:</b> Discard this Upgrade to target a ship at Range 1-2 that is not Cloaked and has no Active Shields. Discard 1 [weapon] or [tech] Upgrade on the target ship. ",
@@ -15451,7 +15458,7 @@
 		{
 			"type" : "crew",
 			"id" : "3043",
-			"set" : ["71125"],
+			"set" : ["71125","72272"],
 			"name" : "Korax",
 			"unique" : true,
 			"text" : "<b>ACTION:</b> If your ship is not cloaked, disable all your remaining Shields and target a ship at Range 1-2 that is not Cloaked and has no Active Shields. Discard Korax and any 2 [crew] Upgrades of your choice on the target ship. ",
@@ -15465,7 +15472,7 @@
 		{
 			"type" : "crew",
 			"id" : "3044",
-			"set" : ["71125"],
+			"set" : ["71125","72272"],
 			"name" : "Cyrano Jones",
 			"unique" : true,
 			"text" : "You begin the game with one Tribble Token beside your Ship Card ",
@@ -15479,7 +15486,7 @@
 		{
 			"type" : "weapon",
 			"id" : "3045",
-			"set" : ["71125", "71448"],
+			"set" : ["71125", "71448","72272"],
 			"name" : "Photon Torpedoes",
 			"unique" : false,
 			"text" : "<b>ATTACK: (Target Lock)</b> Spend your target lock and disable this card to perform this attack. \nYou may convert 1 [battlestations] result into 1 [crit] result. \nYou may fire this weapon from your forward or rear firing arcs. ",
@@ -15493,7 +15500,7 @@
 		{
 			"type" : "weapon",
 			"id" : "3046",
-			"set" : ["71125"],
+			"set" : ["71125","72272"],
 			"name" : "Magnetic Pulse",
 			"unique" : false,
 			"text" : "<b>ATTACK: </b> Disable this card and 1 Active Shield to perform this attack. \n\nEach [crit] that would damage on the opponent's Shields instead inflicts 1 [hit] on the opponent's Hull. ",
@@ -15507,7 +15514,7 @@
 		{
 			"type" : "tech",
 			"id" : "3047",
-			"set" : ["71125"],
+			"set" : ["71125","72272"],
 			"name" : "Projected Stasis Field",
 			"unique" : false,
 			"text" : "<b>ACTION:</b> If your ship is not cloaked, disable all of your remaining Shields and discard this Upgrade to target a ship at Range 1-2. That ship must disable all of its remaining Shields and cannot attack this round. Your ship rolls 2 less attack dice this round. ",
