@@ -13343,7 +13343,7 @@
 			"set" : ["72263"],
 			"name" : "Resonance Burst",
 			"cost" : 5,
-			"text" : "When attacking, during the Declare Target step, you may discard this card to target a ship in your forward firing arc and within Range 1 of your ship. The target ship must discard 1 Token ([evade], [battlestations], [scan], or [target-lock] that is beside it of its choice. If there is a [cloak] Token beside the target ship, flip it over to its red side. No ship may be equipped with more than 1 \"Resonance Burst\" Upgrade",
+			"text" : "When attacking, during the Declare Target step, you may discard this card to target a ship in your forward firing arc and within Range 1 of your ship. The target ship must discard 1 Token ([evade], [battlestations], [scan], or [target-lock] that is beside it of its choice. If there is a [cloak] Token beside the target ship, flip it over to its red side. \n\nNo ship may be equipped with more than one \"Resonance Burst\" Upgrade",
 			"unique" : false,
 			"factions" : ["federation"]
 		},
