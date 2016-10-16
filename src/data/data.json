@@ -4,14 +4,14 @@
 		{
 			"type" : "set",
 			"id" : "72272",
-			"name" : "I.K.S. Gr'oth(Repaint)",
+			"name" : "I.K.S. Gr'oth (Repaint)",
 			"releaseDate" : "2016-10-26",
 			"parentSet" : "Wave 27"
 		},
 		{
 			"type" : "set",
 			"id" : "72271",
-			"name" : "U.S.S. Enterprise-E(Repaint)",
+			"name" : "U.S.S. Enterprise-E (Repaint)",
 			"releaseDate" : "2016-10-25",
 			"parentSet" : "Wave 27"
 		},
@@ -10272,7 +10272,7 @@
 		{
 			"type" : "captain",
 			"id" : "2003",
-			"set" : ["71120", "71121", "71122", "72240", "71268", "71272", "71276", "71280", "72261", "OP4Prize", "u_s_s_yaeger", "71523", "71509", "71526", "71510", "71531", "71997p", "71801", "71998p", "71802", "72008", "72011", "72014", "71201", "71213", "71221", "72231", "72271"],
+			"set" : ["71120", "71121", "71122", "72240", "71268", "71272", "71276", "71280", "72261", "OP4Prize", "u_s_s_yaeger", "71523", "71509", "71526", "71510", "71531", "71997p", "71801", "71998p", "71802", "72008", "72011", "72014", "71201", "71213", "71221", "72231", "72271", "72253", "72263"],
 			"name" : "Federation",
 			"unique" : false,
 			"text" : "\r\n      ",
@@ -13303,7 +13303,7 @@
 			"set" : ["72263"],
 			"name" : "Demora Sulu",
 			"cost" : 4,
-			"text" : "If your ship is hit after the Deal Damage phase, you may discard this card to immediately execute a maneuver from your Maneuver Dial with a speed of 3 or less.",
+			"text" : "If your ship is hit, after the Deal Damage phase, you may discard this card to immediately execute a maneuver from your Maneuver Dial with a speed of 3 or less.",
 			"unique" : true,
 			"factions" : ["federation"]
 		},
@@ -13313,7 +13313,7 @@
 			"set" : ["72263"],
 			"name" : "Holo-Communicator",
 			"cost" : 5,
-			"text" : "During the Activation Phase you may disable this card to target a friendly ship within range 1-2. If you do so you may perform the Action listed on that ship's Captain Card.\n\nNo ship may be equipped with more than one ‘Holo-Communicator’ Upgrade.",
+			"text" : "During the Activation Phase, you may disable this card to target a friendly ship within range 1-2. If you do so you may perform the Action listed on that ship's Captain Card.\n\nNo ship may be equipped with more than one \"Holo-Communicator\" Upgrade.",
 			"unique" : false,
 			"factions" : ["federation"]
 		},
@@ -13323,7 +13323,7 @@
 			"set" : ["72263"],
 			"name" : "Full Reverse",
 			"cost" : 2,
-			"text" : "During the Activation Phase if you reveal a [reverse] Maneuver, you may disable this card to add 1 to the speed of that maneuver.\n\nNo ship may be equipped with more than one ‘Full Reverse’ Upgrade.",
+			"text" : "During the Activation Phase, if you reveal a [reverse] Maneuver, you may disable this card to add 1 to the speed of that maneuver.\n\nNo ship may be equipped with more than one \"Full Reverse\" Upgrade.",
 			"unique" : false,
 			"factions" : ["federation"]
 		},
@@ -13333,7 +13333,7 @@
 			"set" : ["72263"],
 			"name" : "Deflector Control",
 			"cost" : 5,
-			"text" : "<b>ACTION:</b> Repair 1 Shield Token\nOR\n Discard this card to flip up to 3 of your disabled Shield Tokens over to their Active Sides. You can not use this Action if your ship is Cloaked\n\nNo ship may be equipped with more than one ‘Deflector Control’ Upgrade.",
+			"text" : "<b>ACTION:</b> Repair 1 Shield Token.\nOR\n Discard this card to flip up to 3 of your disabled Shield Tokens over to their Active Sides. You can not use this Action if your ship is Cloaked.\n\nNo ship may be equipped with more than one \"Deflector Control\" Upgrade.",
 			"unique" : false,
 			"factions" : ["federation"]
 		},
@@ -13343,7 +13343,7 @@
 			"set" : ["72263"],
 			"name" : "Resonance Burst",
 			"cost" : 5,
-			"text" : "When attacking during the Declare target step, you may discard this card to target a ship in your forward firing arc and within Range 1 of your ship. The target ship must discard 1 Token [evade], [scan], or blue [target-lock] that is beside it of its choice. If there is a [cloak] Token beside the target ship, flip it over to its red side. No ship may be equipped with more than 1 ‘Resonance Burst’ Upgrade",
+			"text" : "When attacking, during the Declare Target step, you may discard this card to target a ship in your forward firing arc and within Range 1 of your ship. The target ship must discard 1 Token ([evade], [battlestations], [scan], or [target-lock] that is beside it of its choice. If there is a [cloak] Token beside the target ship, flip it over to its red side. No ship may be equipped with more than 1 \"Resonance Burst\" Upgrade",
 			"unique" : false,
 			"factions" : ["federation"]
 		},
@@ -13469,7 +13469,7 @@
 			"cost" : 5,
 			"attack" : 5,
 			"range" : "2 - 3",
-			"text" : "<b>ATTACK: (Target Lock)</b> Spend your target lock and place 3 Time Tokens on this card to perform this attack. You may convert 1 of your [battlestations] results into 1 [crit] result. You may fire this weapon form your forward or rear firing arcs.",
+			"text" : "<b>ATTACK: (Target Lock)</b> Spend your target lock and place 3 Time Tokens on this card to perform this attack. \nYou may convert 1 of your [battlestations] results into 1 [crit] result. \nYou may fire this weapon form your forward or rear firing arcs.",
 			"unique" : false,
 			"factions" : ["federation"]
 		},

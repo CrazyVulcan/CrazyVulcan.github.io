@@ -5241,6 +5241,31 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					type: ["weapon"]
 				}
 			]
+		},
+		
+		// Deflector Control - U.S.S. Enterprise-B
+		"tech:deflector_control_enterprise_b": {
+			rules: "Only one per ship",
+			canEquip: onePerShip("Deflector Control")
+		},
+		
+		// Holo-Communicator - U.S.S. Enterprise-B
+		"tech:holo_communicator_enterprise_b": {
+			rules: "Only one per ship",
+			canEquip: onePerShip("Holo-Communicator")
+		},
+		
+		// Resonance Burst - U.S.S. Enterprise-B
+		"tech:resonance_burst_enterprise_b": {
+			rules: "Only one per ship",
+			canEquip: onePerShip("Resonance Burst")
+		},
+		
+		// Full Reverse - U.S.S. Enterprise-B
+		"tech:full_reverse_enterprise_b": {
+			rules: "Only one per ship",
+			canEquip: onePerShip("Full Reverse")
 		}
+		
 	};
 }]);
