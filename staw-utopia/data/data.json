@@ -13304,7 +13304,7 @@
 		{
 			"type" : "talent",
 			"id" : "thalen_orassin",
-			"set" : ["72273],
+			"set" : ["72273"],
 			"name" : "Thalen",
 			"cost" : 5,
 			"text" : "Add 1 [weapon] Upgrade slot to your Upgrade bar. If the additional [weapon] Upgrade is a Xindi [weapon] Upgrade, its cost is -2 SP\n\nWhen firing a secondary weapon, you may disable this card to gain +1 attack die 'max 6'.",
