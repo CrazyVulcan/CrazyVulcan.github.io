@@ -9913,7 +9913,7 @@
 			"cost" : 7,
 			"skill" : 4,
 			"talents" : 1,
-			"text" : "If this card is assigned to a Klingon ship and all your shields have been destroyed, you gain +1 attack die on all of your attacks. If any of your Shield Tokens are repaired, you lose this bonus attack die.",
+			"text" : "<b>ACTION:</b> Each time your ship attacks this round, during the Modify defense Dice step, you may convert one of your opponent's [evade] results into a blank result. Inflict one damage to your ship's Shields or Hull.",
 			"unique" : true,
 			"factions" : ["xindi"]
 		},
@@ -13317,7 +13317,7 @@
 			"set" : ["72273"],
 			"name" : "Xindi Council",
 			"cost" : 4,
-			"text" : "Place 1 Mission Token on this card for each damage your ship suffers to its Hull or Shields, max 4.\n\nWhen attacking or defending, you may discard this card to re-roll a number of Mission Tokens on this card.\n\nThis card may only be fielded by a Xindi Captain assigned to a Xindi Ship.",
+			"text" : "Place 1 Mission Token on this card for each damage your ship suffers to its Hull or Shields, max 4.\nWhen attacking or defending, you may discard this card to re-roll a number of Mission Tokens on this card.\nThis card may only be fielded by a Xindi Captain assigned to a Xindi Ship.",
 			"unique" : true,
 			"factions" : ["xindi"]
 		},
@@ -13339,7 +13339,7 @@
 			"cost" : 4,
 			"attack" : 3,
 			"range" : "1 - 3",
-			"text" : "<b>ATTACK:</b> Disable this card to perform this attack. You may only fire this weapon from your forward firing arc.\n\nIf this attack hits, you may immediately make a second attack with this weapon against the same target and -1 attack die for the second attack.\n\nThis Upgrade costs +5 if purchased for a non-Xindi ship.",
+			"text" : "<b>ATTACK:</b> Disable this card to perform this attack. You may only fire this weapon from your forward firing arc.\nIf this attack hits, you may immediately make a second attack with this weapon against the same target and -1 attack die for the second attack.\nThis Upgrade costs +5 if purchased for a non-Xindi ship.",
 			"unique" : true,
 			"factions" : ["xindi"]
 		},
