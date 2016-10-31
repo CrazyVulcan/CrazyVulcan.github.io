@@ -1513,7 +1513,7 @@
 			"hull" : 3,
 			"shields" : 3,
 			"cost" : 22,
-			"text" : "If there are only Federation cards assigned to this ship, add the [scan] and [battlestations] icons to the Action Bar. \n\nThis ship cannot be in the same fleet as Krug's Bird-of-Prey.",
+			"text" : "If there are only Federation cards assigned to this ship, add the [scan] and [battlestations] icons to the Action Bar. \n\nThis ship cannot be in the same fleet as Kruge's Bird-of-Prey.",
 			"unique" : true,
 			"factions" : ["federation"],
 			"squadron" : false
@@ -13607,9 +13607,9 @@
 		},
 		{
 			"type" : "crew",
-			"id" : "monyhomrty_scott_bounty",
+			"id" : "montgomery_scott_bounty",
 			"set" : ["72260p"],
-			"name" : "Montgovery Scott",
+			"name" : "Montgomery Scott",
 			"cost" : 4,
 			"text" : "Add 1 Upgrade slot to your Upgrade bar [tech] or [weapon].\n\nAt any time, you may disable this card to remove an Auxiliary Power Token from beside your ship.",
 			"unique" : true,
