@@ -3,6 +3,13 @@
 	"sets" : [
 		{
 			"type" : "set",
+			"id" : "72273",
+			"name" : "Orassin",
+			"releaseDate" : "2016-10-27",
+			"parentSet" : "Wave 27"
+		},
+		{
+			"type" : "set",
 			"id" : "72272",
 			"name" : "I.K.S. Gr'oth (Repaint)",
 			"releaseDate" : "2016-10-26",
@@ -123,7 +130,7 @@
 		{
 			"type" : "set",
 			"id" : "72260p",
-			"name" : "H.M.S Bounty",
+			"name" : "H.M.S. Bounty",
 			"releaseDate" : "2016-07-30",
 			"parentSet" : "The Classic Movies"
 		},
@@ -1366,9 +1373,34 @@
 			"name" : "Starter Set",
 			"releaseDate" : "2013-08-01",
 			"parentSet" : "Core"
+		},
+		{
+			"type" : "set",
+			"id" : "AdditionalRules",
+			"name" : "Additional Rules",
+			"releaseDate" : "2013-07-01",
+			"parentSet" : "Core"
 		}
 	],
 	"ships" : [
+		{
+			"type" : "ship",
+			"id" : "72273_orassin",
+			"set" : ["72273"],
+			"name" : "Orassin",
+			"class" : "Xindi Insectoid Starship",
+			"actions" : ["evade", "target-lock", "battlestations"],
+			"upgrades" : ["tech", "tech", "weapon"],
+			"attack" : 3,
+			"agility" : 2,
+			"hull" : 3,
+			"shields" : 2,
+			"cost" : 20,
+			"text" : "When attacking, during the Modify Attack Dice step, you may spend your [battlestations] Token to convert one of your [hit] results into a [crit] result.",
+			"unique" : true,
+			"factions" : ["xindi"],
+			"squadron" : false
+		},
 		{
 			"type" : "ship",
 			"id" : "i_k_s_bortas",
@@ -6569,7 +6601,7 @@
 		{
 			"type" : "ship",
 			"id" : "xindi_starship_72003p",
-			"set" : ["72003p"],
+			"set" : ["72003p", "72273"],
 			"name" : "Xindi Starship",
 			"class" : "Xindi Insectoid Starship",
 			"actions" : ["evade", "target-lock", "battlestations"],
@@ -9875,6 +9907,18 @@
 	"captains" : [
 		{
 			"type" : "captain",
+			"id" : "insectoid_councilor_orassin",
+			"set" : ["72273"],
+			"name" : "Insectoid Councilor",
+			"cost" : 4,
+			"skill" : 7,
+			"talents" : 1,
+			"text" : "<b>ACTION:</b> Each time your ship attacks this round, during the Modify defense Dice step, you may convert one of your opponent's [evade] results into a blank result. Inflict one damage to your ship's Shields or Hull.",
+			"unique" : true,
+			"factions" : ["xindi"]
+		},
+		{
+			"type" : "captain",
 			"id" : "gowron_bortas",
 			"set" : ["72280p"],
 			"name" : "Gowron",
@@ -10272,7 +10316,7 @@
 		{
 			"type" : "captain",
 			"id" : "2003",
-			"set" : ["71120", "71121", "71122", "72240", "71268", "71272", "71276", "71280", "72261", "OP4Prize", "u_s_s_yaeger", "71523", "71509", "71526", "71510", "71531", "71997p", "71801", "71998p", "71802", "72008", "72011", "72014", "71201", "71213", "71221", "72231", "72271", "72253", "72263"],
+			"set" : ["71120", "71121", "71122", "72240", "71268", "71272", "71276", "71280", "72261", "OP4Prize", "u_s_s_yaeger", "71523", "71509", "71526", "71510", "71531", "71997p", "71801", "71998p", "71802", "72008", "72011", "72014", "71201", "71213", "71221", "72231", "72271"],
 			"name" : "Federation",
 			"unique" : false,
 			"text" : "\r\n      ",
@@ -13259,6 +13303,70 @@
 	"upgrades" : [
 		{
 			"type" : "talent",
+			"id" : "thalen_orassin",
+			"set" : ["72273"],
+			"name" : "Thalen",
+			"cost" : 5,
+			"text" : "Add 1 [weapon] Upgrade slot to your Upgrade bar. If the additional [weapon] Upgrade is a Xindi [weapon] Upgrade, its cost is -2 SP\n\nWhen firing a secondary weapon, you may disable this card to gain +1 attack die 'max 6'.",
+			"unique" : true,
+			"factions" : ["xindi"]
+		},
+		{
+			"type" : "talent",
+			"id" : "xindi_council_orassin",
+			"set" : ["72273"],
+			"name" : "Xindi Council",
+			"cost" : 4,
+			"text" : "Place 1 Mission Token on this card for each damage your ship suffers to its Hull or Shields, max 4.\nWhen attacking or defending, you may discard this card to re-roll a number of Mission Tokens on this card.\nThis card may only be fielded by a Xindi Captain assigned to a Xindi Ship.",
+			"unique" : true,
+			"factions" : ["xindi"]
+		},
+		{
+			"type" : "crew",
+			"id" : "insectoid_raiding_party_orassin",
+			"set" : ["72273"],
+			"name" : "Insecetoid Raiding Party",
+			"cost" : 3,
+			"text" : "<b>ACTION:</b> If your ship is not Cloaked, disable all of your remaining Shields and target a ship at range 1-2 that is not Cloaked and has no Active Shields. Discard this card to discard any Upgrade with a cost of 5 SP or less on the target ship. This Upgrade costs +5 SP if purchased for any ship other than a Xindi ship and no ship may be equipped with more than one 'Insectoid Raiding Party' Upgrade.",
+			"unique" : true,
+			"factions" : ["xindi"]
+		},
+		{
+			"type" : "weapon",
+			"id" : "pulse-firing_particle_cannon_orassin",
+			"set" : ["72273"],
+			"name" : "Pulse-Firing Particle Cannon",
+			"cost" : 4,
+			"attack" : 3,
+			"range" : "1 - 3",
+			"text" : "<b>ATTACK:</b> Disable this card to perform this attack. You may only fire this weapon from your forward firing arc.\nIf this attack hits, you may immediately make a second attack with this weapon against the same target and -1 attack die for the second attack.\nThis Upgrade costs +5 if purchased for a non-Xindi ship.",
+			"unique" : true,
+			"factions" : ["xindi"]
+		},
+		{
+			"type" : "weapon",
+			"id" : "xindi_torpedoes_orassin",
+			"set" : ["72273"],
+			"name" : "Xindi Torpedoes",
+			"cost" : 2,
+			"attack" : 4,
+			"range" : "2 - 3",
+			"text" : "<b>ATTACK:</b> Target Lock: Spend your target lock and place 3 Time Tokens on this card to perform this attack.\n\nYou may only fire this weapon from your forward firing arc.",
+			"unique" : true,
+			"factions" : ["xindi"]
+		},
+		{
+			"type" : "tech",
+			"id" : "hatchery_orassin",
+			"set" : ["72273"],
+			"name" : "Hatchery",
+			"cost" : 2,
+			"text" : "Add 1 [crew] Upgrade slot to your Upgrade Bar. At the start of the game, during the Gather Forces step, place a Xindi [crew] Upgrade face down beneath this card. When one of your other [crew] Upgrades is discarded discard this card and flip the card beneath this card face up. That card is now deployed to your ship and may be used normally. This Upgrade may only be purchased for a Xindi ship and no ship may have more than one 'Hatchery' Upgrade.",
+			"unique" : true,
+			"factions" : ["xindi"]
+		},
+		{
+			"type" : "talent",
 			"id" : "cry_of_the_warrior_bortas",
 			"set" : ["72280p"],
 			"name" : "Cry of the Warrior",
@@ -13303,7 +13411,7 @@
 			"set" : ["72263"],
 			"name" : "Demora Sulu",
 			"cost" : 4,
-			"text" : "If your ship is hit, after the Deal Damage phase, you may discard this card to immediately execute a maneuver from your Maneuver Dial with a speed of 3 or less.",
+			"text" : "If your ship is hit after the Deal Damage phase, you may discard this card to immediately execute a maneuver from your Maneuver Dial with a speed of 3 or less.",
 			"unique" : true,
 			"factions" : ["federation"]
 		},
@@ -13313,7 +13421,7 @@
 			"set" : ["72263"],
 			"name" : "Holo-Communicator",
 			"cost" : 5,
-			"text" : "During the Activation Phase, you may disable this card to target a friendly ship within range 1-2. If you do so you may perform the Action listed on that ship's Captain Card.\n\nNo ship may be equipped with more than one \"Holo-Communicator\" Upgrade.",
+			"text" : "During the Activation Phase you may disable this card to target a friendly ship within range 1-2. If you do so you may perform the Action listed on that ship's Captain Card.\n\nNo ship may be equipped with more than one ‘Holo-Communicator’ Upgrade.",
 			"unique" : false,
 			"factions" : ["federation"]
 		},
@@ -13323,7 +13431,7 @@
 			"set" : ["72263"],
 			"name" : "Full Reverse",
 			"cost" : 2,
-			"text" : "During the Activation Phase, if you reveal a [reverse] Maneuver, you may disable this card to add 1 to the speed of that maneuver.\n\nNo ship may be equipped with more than one \"Full Reverse\" Upgrade.",
+			"text" : "During the Activation Phase if you reveal a [reverse] Maneuver, you may disable this card to add 1 to the speed of that maneuver.\n\nNo ship may be equipped with more than one ‘Full Reverse’ Upgrade.",
 			"unique" : false,
 			"factions" : ["federation"]
 		},
@@ -13333,7 +13441,7 @@
 			"set" : ["72263"],
 			"name" : "Deflector Control",
 			"cost" : 5,
-			"text" : "<b>ACTION:</b> Repair 1 Shield Token.\nOR\n Discard this card to flip up to 3 of your disabled Shield Tokens over to their Active Sides. You can not use this Action if your ship is Cloaked.\n\nNo ship may be equipped with more than one \"Deflector Control\" Upgrade.",
+			"text" : "<b>ACTION:</b> Repair 1 Shield Token\nOR\n Discard this card to flip up to 3 of your disabled Shield Tokens over to their Active Sides. You can not use this Action if your ship is Cloaked\n\nNo ship may be equipped with more than one ‘Deflector Control’ Upgrade.",
 			"unique" : false,
 			"factions" : ["federation"]
 		},
@@ -13343,7 +13451,7 @@
 			"set" : ["72263"],
 			"name" : "Resonance Burst",
 			"cost" : 5,
-			"text" : "When attacking, during the Declare Target step, you may discard this card to target a ship in your forward firing arc and within Range 1 of your ship. The target ship must discard 1 Token ([evade], [battlestations], [scan], or [target-lock] that is beside it of its choice. If there is a [cloak] Token beside the target ship, flip it over to its red side. \n\nNo ship may be equipped with more than one \"Resonance Burst\" Upgrade",
+			"text" : "When attacking during the Declare target step, you may discard this card to target a ship in your forward firing arc and within Range 1 of your ship. The target ship must discard 1 Token [evade], [scan], or blue [target-lock] that is beside it of its choice. If there is a [cloak] Token beside the target ship, flip it over to its red side. No ship may be equipped with more than 1 ‘Resonance Burst’ Upgrade",
 			"unique" : false,
 			"factions" : ["federation"]
 		},
@@ -13469,7 +13577,7 @@
 			"cost" : 5,
 			"attack" : 5,
 			"range" : "2 - 3",
-			"text" : "<b>ATTACK: (Target Lock)</b> Spend your target lock and place 3 Time Tokens on this card to perform this attack. \nYou may convert 1 of your [battlestations] results into 1 [crit] result. \nYou may fire this weapon form your forward or rear firing arcs.",
+			"text" : "<b>ATTACK: (Target Lock)</b> Spend your target lock and place 3 Time Tokens on this card to perform this attack. You may convert 1 of your [battlestations] results into 1 [crit] result. You may fire this weapon form your forward or rear firing arcs.",
 			"unique" : false,
 			"factions" : ["federation"]
 		},
@@ -23695,7 +23803,7 @@
 			"name" : "Fleet Commander",
 			"text" : "One ship in your fleet may have a 2nd Captain assigned to it. That ship may use both of its Captain's Abilitys as normal throughout the game.\n\nThe overall Captain Skill Number of the ship is equal to the highest Captain Skill of its Two Captains plus 1. \n\nIn addition, the ship to which the 2nd Captain is assigned gains +1 to either its Shield or Hull value (max 6 Hull). This decision must be made at the start of the game during the Gather Forces step and cannot be changed for the remainder of the game.",
 			"cost" : 5,
-			"showShipResourceSlot" : false
+			"showShipResourceSlot" : true
 		},
 		{
 			"type" : "resource",
@@ -23983,9 +24091,31 @@
 	"others" : [
 		{
 			"type" : "token",
-			"id" : "muon_token",
+			"id" : "rule_admiral",
+			"set" : ["AdditionalRules"],
+			"name" : "Admiral Cards",
+			"text" : ""
+		},
+		{
+			"type" : "token",
+			"id" : "rule_muon_token",
+			"set" : ["AdditionalRules"],
 			"name" : "Muon Token",
 			"text" : "This card explains the rules for a Muon Token and serves as a reference to remind players of its effect.\n\nA ship with a Muon Token assigned to it follows these special rules:\n\n1. A Muon Token stays wih a ship until it is removed.\n\n2. During the Activation Phase, after the ship moves, the ship takes damage to its Hull equal to the number of its current Maneuver -1. The type of Maneuver does not matter, just the number.\n\n3. After the ship performs a Green or White Maneuver, it can spend an Action to remove the Muon Token."
+		},
+		{
+			"type" : "token",
+			"id" : "rule_regenerate",
+			"set" : ["AdditionalRules"],
+			"name" : "Regenerate",
+			"text" : "Ships with the [regenerate] icon in their Action Bar may perform the Regenerate Action. A ship that performs the [regenerate] Action immediately repairs 1 damage of its choice to its Hull (critical or normal). A ship cannot attack during the round that it performs the [regenerate] Action."
+		},
+		{
+			"type" : "token",
+			"id" : "rule_drone_tokens",
+			"set" : ["AdditionalRules"],
+			"name" : "Drone Tokens",
+			"text" : "Each Drone Token has a Drone number list on the face, as well as a Captain Skill Number listed on the back. The Drone Tokens are placed in a stack on top of the Captain Card in descending order (from highest to lowest) of their Drone numbers. \n\nNOTE: The Drone number listed on the token at the top of the stack is always considered the ship’s current Captain Skill. At the start of the game, place the Drone Token that has the starting Captain Skill beside the ship (this will be the reverse side of the Drone Token that reads “START” on the face).\n\nWhen a Drone Token is used, remove one Token from the top of the stack and flip it over. Then remove the Drone Token that is beside the ship from play and replace it with the token that you just removed from the stack. NOTE: The Captain Skill that is listed on the Token beside the ship should always be equal to the number of Drone Tokens left on the Captain Card.\n\n You may use Drone Tokens for other Upgrade effects, but not for the text on a disabled Captain if your Captain is disabled."
 		},
 		{
 			"type" : "fleet-captain",
