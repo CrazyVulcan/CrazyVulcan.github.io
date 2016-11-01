@@ -9973,7 +9973,7 @@
 			"cost" : 3,
 			"skill" : 4,
 			"talents" : 1,
-			"text" : "Your ship may preform a [scan] Action as a free Action each round.",
+			"text" : "Your ship may perform a [scan] Action as a free Action each round.",
 			"unique" : true,
 			"factions" : ["federation"]
 		},
@@ -9997,7 +9997,7 @@
 			"cost" : 6,
 			"skill" : 9,
 			"talents" : 1,
-			"text" : "<b>ACTION:</b> Place a [battlestations] Token beside your ship. When attacking this round during the Modify Attack Dice Step you may spend this Token to re-roll up to 2 of your attack dice OR When defending this round, during the Modify Defence Dice step you may spend this Token to re-roll up to 2 of your defense dice. You may still preform the [battlestations] Action as a free Action this Round if pssable.",
+			"text" : "<b>ACTION:</b> Place a [battlestations] Token beside your ship. When attacking this round during the Modify Attack Dice Step you may spend this Token to re-roll up to 2 of your attack dice OR When defending this round, during the Modify Defence Dice step you may spend this Token to re-roll up to 2 of your defense dice. You may still perform the [battlestations] Action as a free Action this Round if pssable.",
 			"unique" : true,
 			"factions" : ["federation"]
 		},
@@ -13376,7 +13376,7 @@
 			"factions" : ["klingon"]
 		},
 		{
-			"type" : "talent ",
+			"type" : "talent",
 			"id" : "aim_and_fire_bortas",
 			"set" : ["72280p"],
 			"name" : "Aim and Fire!",
@@ -13523,7 +13523,7 @@
 			"set" : ["72262p"],
 			"name" : "Control Central",
 			"cost" : 4,
-			"text" : "After preforming your Action, you may disable this card to perform one of the Actions on your Action Bar as a free Action.\n\nNo ship may be equipped with more then one \"Control Central\" Upgrade.",
+			"text" : "After performing your Action, you may disable this card to perform one of the Actions on your Action Bar as a free Action.\n\nNo ship may be equipped with more then one \"Control Central\" Upgrade.",
 			"unique" : true,
 			"factions" : ["romulan"]
 		},
@@ -13535,7 +13535,7 @@
 			"cost" : 3,
 			"attack" : 3,
 			"range" : "1 - 3",
-			"text" : "Add 1 [weapon] Upgrade icon to your Upgrade Bar.\n\n<b>ATTACK:</b> Place 2 Time Tokens on this card to preform this attack. Treat this attack as if it were an attack made with a Primary Weapon. No ship may be equipped with more then one \"Main Batteries\" Upgrade.",
+			"text" : "Add 1 [weapon] Upgrade icon to your Upgrade Bar.\n\n<b>ATTACK:</b> Place 2 Time Tokens on this card to perform this attack. Treat this attack as if it were an attack made with a Primary Weapon. No ship may be equipped with more then one \"Main Batteries\" Upgrade.",
 			"unique" : true,
 			"factions" : ["romulan"]
 		},
@@ -13629,7 +13629,7 @@
 			"cost" : 6,
 			"attack" : 6,
 			"range" : "2 - 3",
-			"text" : "<b>ATTACK: (Target Lock)</b> Spend your target lock and place 3 Time Tokens on this card to preform this attack.\n\nYou may convert 1 of your [battlestations] results into 1 [crit] result.",
+			"text" : "<b>ATTACK: (Target Lock)</b> Spend your target lock and place 3 Time Tokens on this card to perform this attack.\n\nYou may convert 1 of your [battlestations] results into 1 [crit] result.",
 			"unique" : false,
 			"factions" : ["federation"]
 		},
@@ -13669,7 +13669,7 @@
 			"set" : ["72260gp"],
 			"name" : "Leonard McCoy",
 			"cost" : 4,
-			"text" : "During the Activation Phase after you move, you may discard this card to preform the Action listed on your ship's Captain Card as a free Action.",
+			"text" : "During the Activation Phase after you move, you may discard this card to perform the Action listed on your ship's Captain Card as a free Action.",
 			"unique" : true,
 			"factions" : ["federation"]
 		},
@@ -13679,7 +13679,7 @@
 			"set" : ["72260gp"],
 			"name" : "Valeris",
 			"cost" : 3,
-			"text" : "After your ship executes a green maneuver you may preform an [evade] Action as a free Action.",
+			"text" : "After your ship executes a green maneuver you may perform an [evade] Action as a free Action.",
 			"unique" : true,
 			"factions" : ["federation"]
 		},
