@@ -3,23 +3,30 @@
 	"sets" : [
 		{
 			"type" : "set",
+			"id" : "72281p",
+			"name" : "I.K.S. Hegh'Ta",
+			"releaseDate" : "2016-11-04",
+			"parentSet" : "Klingon Civil War"
+		},
+		{
+			"type" : "set",
 			"id" : "72273",
 			"name" : "Orassin",
-			"releaseDate" : "2016-10-27",
+			"releaseDate" : "2016-10-20",
 			"parentSet" : "Wave 27"
 		},
 		{
 			"type" : "set",
 			"id" : "72272",
 			"name" : "I.K.S. Gr'oth (Repaint)",
-			"releaseDate" : "2016-10-26",
+			"releaseDate" : "2016-10-19",
 			"parentSet" : "Wave 27"
 		},
 		{
 			"type" : "set",
 			"id" : "72271",
 			"name" : "U.S.S. Enterprise-E (Repaint)",
-			"releaseDate" : "2016-10-25",
+			"releaseDate" : "2016-10-18",
 			"parentSet" : "Wave 27"
 		},
 		{
@@ -1383,6 +1390,24 @@
 		}
 	],
 	"ships" : [
+		{
+			"type" : "ship",
+			"id" : "72281p_heghta",
+			"set" : ["72281p"],
+			"name" : "I.K.S. Hegh'Ta",
+			"class" : "K'Vort Class",
+			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
+			"upgrades" : ["tech", "weapon", "crew", "crew"],
+			"attack" : 4,
+			"agility" : 1,
+			"hull" : 5,
+			"shields" : 3,
+			"cost" : 26,
+			"text" : "If your ship is within Range 1 of a friendly ship, each time it defends, it rolls +1 defense die. This ability may only be used for 1 friendly ship per round.",
+			"unique" : true,
+			"factions" : ["klingon"],
+			"squadron" : false
+		},
 		{
 			"type" : "ship",
 			"id" : "72273_orassin",
@@ -3120,7 +3145,7 @@
 		{
 			"type" : "ship",
 			"id" : "1039",
-			"set" : ["71273", "71996", "blind_buruk"],
+			"set" : ["71273", "71996", "blind_buruk","72281p"],
 			"name" : "Klingon Starship",
 			"class" : "K'Vort Class",
 			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
@@ -9907,6 +9932,18 @@
 	"captains" : [
 		{
 			"type" : "captain",
+			"id" : "kurn_72281p",
+			"set" : ["72281p"],
+			"name" : "Kurn",
+			"cost" : 4,
+			"skill" : 6,
+			"talents" : 1,
+			"text" : "<b>ACTION:</b> If your ship is within Range 1 of an Obstacle roll 2 attack dice. Every ship within Range 1 of the Obstacle suffers damage as normal for each [hit] or [crit] result. Ships do not roll defense dice against this.",
+			"unique" : true,
+			"factions" : ["klingon"]
+		},
+		{
+			"type" : "captain",
 			"id" : "insectoid_councilor_orassin",
 			"set" : ["72273"],
 			"name" : "Insectoid Councilor",
@@ -10340,7 +10377,7 @@
 		{
 			"type" : "captain",
 			"id" : "2005",
-			"set" : ["71120", "71125", "71126", "OP2Prize", "71269", "71273", "71448", "i_k_s_b_moth", "71532", "71996", "71804", "72009", "72015", "72232", "72236p", "72241","72272"],
+			"set" : ["71120", "71125", "71126", "OP2Prize", "71269", "71273", "71448", "i_k_s_b_moth", "71532", "71996", "71804", "72009", "72015", "72232", "72236p", "72241","72272","72281p"],
 			"name" : "Klingon",
 			"unique" : false,
 			"text" : "\r\n      ",
@@ -13301,6 +13338,76 @@
 		}
 	],
 	"upgrades" : [
+		{
+			"type" : "talent",
+			"id" : "on_my_command_72281p",
+			"set" : ["72281p"],
+			"name" : "On My Command",
+			"cost" : 5,
+			"text" : "During the Combat Phase, when it is your turn to attack, you may discard this card to delay your attack until after all other ships have completed their attacks, if you do so, roll +2 attack dice for your first attack during the round you use this ability.",
+			"unique" : true,
+			"factions" : ["klingon"]
+		},	
+		{
+			"type" : "crew",
+			"id" : "toral_72281p",
+			"set" : ["72281p"],
+			"name" : "Toral",
+			"cost" : 4,
+			"text" : "During the Modify Defense Dice step, you may discard this card to re-roll up to 2 of your defense dice.\n\nIf this card is deployed to a Klingon Ship, you may disable it instead of discarding it.",
+			"unique" : true,
+			"factions" : ["klingon"]
+		},	
+		{
+			"type" : "tech",
+			"id" : "auxiliary_power_to_shields_72281p",
+			"set" : ["72281p"],
+			"name" : "Auxiliarly Power To Shields",
+			"cost" : 4,
+			"text" : "When defending, during the Deal Damage step, you may discard this card to immediately repair up to 2 of your Shields that were destroyed with that attack. Place 1 Auxiliary Power Token beside your ship for each Shield Token you repaired with this ability./nNo ship may be equipped with more than one 'Auxiliary Power to Shields' Upgrade.",
+			"unique" : true,
+			"factions" : ["klingon"]
+		},	
+		{
+			"type" : "crew",
+			"id" : "change_course_72281p_crew",
+			"set" : ["72281p"],
+			"name" : "Course Change",
+			"cost" : 4,
+			"text" : "This card may fill a [crew], [talent], [tech], or [weapon] Upgrade slot. During the Activation Phase, when you reveal your maneuver, you may discard this card to change your maneuver to any maneuver on your Maneuver Dial.\n\nNo ship may be equipped with more than one 'Course Change' Upgrade.",
+			"unique" : true,
+			"factions" : ["klingon"]
+		},	
+		{
+			"type" : "talent",
+			"id" : "change_course_72281p_talent",
+			"set" : ["72281p"],
+			"name" : "Course Change",
+			"cost" : 4,
+			"text" : "This card may fill a [crew], [talent], [tech], or [weapon] Upgrade slot. During the Activation Phase, when you reveal your maneuver, you may discard this card to change your maneuver to any maneuver on your Maneuver Dial.\n\nNo ship may be equipped with more than one 'Course Change' Upgrade.",
+			"unique" : true,
+			"factions" : ["klingon"]
+		},	
+		{
+			"type" : "tech",
+			"id" : "change_course_72281p_tech",
+			"set" : ["72281p"],
+			"name" : "Course Change",
+			"cost" : 4,
+			"text" : "This card may fill a [crew], [talent], [tech], or [weapon] Upgrade slot. During the Activation Phase, when you reveal your maneuver, you may discard this card to change your maneuver to any maneuver on your Maneuver Dial.\n\nNo ship may be equipped with more than one 'Course Change' Upgrade.",
+			"unique" : true,
+			"factions" : ["klingon"]
+		},	
+		{
+			"type" : "weapon",
+			"id" : "change_course_72281p_weapon",
+			"set" : ["72281p"],
+			"name" : "Course Change",
+			"cost" : 4,
+			"text" : "This card may fill a [crew], [talent], [tech], or [weapon] Upgrade slot. During the Activation Phase, when you reveal your maneuver, you may discard this card to change your maneuver to any maneuver on your Maneuver Dial.\n\nNo ship may be equipped with more than one 'Course Change' Upgrade.",
+			"unique" : true,
+			"factions" : ["klingon"]
+		},
 		{
 			"type" : "talent",
 			"id" : "thalen_orassin",
@@ -23796,6 +23903,15 @@
 		}
 	],
 	"resources" : [
+		{	
+			"type" : "resource",
+			"id" : "auxiliary_power",
+			"set" : ["72281r"],
+			"name" : "Auxiliary Power",
+			"text" : "At the start od the battle, place 5 Auxiliary Power Tokens on top of this card\n\nOnce per round, one ship in your fleet may use one of the following abilities.\n\n1. Roll 1 extra attack or defense die, OR\n\n2. Place 1 Evade Token beside your ship, even if there was one already there, OR\n\n3. Repair 1 Shield Token.\n\nIf you use any of their abilities, remove one Auxiliary Power Token from this card beside the ship that used this ability. Discard this card when there no more Auxiliary Power Tokens.",
+			"cost" : 5,
+			"showShipResourceSlot" : true
+		},
 		{
 			"type" : "resource",
 			"id" : "fleet_commander",
