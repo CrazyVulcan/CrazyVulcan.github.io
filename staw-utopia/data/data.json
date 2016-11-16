@@ -21883,7 +21883,7 @@
 		}, {
 			"type" : "fleet-commander",
 			"id" : "fleet_commander_other",
-			"set" : ["72270r"],
+			"set" : ["72280r"],
 			"name" : "Fleet Commander",
 			"text" : "Add 2nd Captain to a ship",
 			"cost" : 5,
