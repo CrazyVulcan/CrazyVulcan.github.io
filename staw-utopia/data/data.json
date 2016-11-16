@@ -21885,10 +21885,14 @@
 			"id" : "fleet_commander_other",
 			"set" : ["72270r"],
 			"name" : "Fleet Commander",
-			"text" : "Text Goes Here",
+			"text" : "Add 2nd Captain to a ship",
 			"cost" : 5,
 			"skill" : 1,
-			"upgradeSlots" : [],
+			"upgradeSlots" : [{
+					"type" : ["captain"],
+					"source" : "Crew to be assigned as Tactical Officer"
+				}
+			],
 			"isSkillModifier" : true,
 			"showType" : true,
 			"canEquip" : true,
