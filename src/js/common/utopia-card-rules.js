@@ -2849,9 +2849,31 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 		},
 		
-		
+
 		// RESOURCES
-		
+
+		"resource:fleet_commander"{
+			slotType: "captain",
+			cost: 5,
+			hideCost: False
+			showShipResourceSlot: function(card,ship,fleet) {
+				if (ship.resource && ship.resource.type == "fleet-commander")
+					return true;
+				
+				var show = true;
+				$.each( fleet.captain, function (i, captain){
+					if (captain.resourece )
+						show = false;
+			} );
+			return show;
+			},
+			onRemove: function(resource,ship,fleet) {
+				$.each( fleet.captain, function(i,captain) {
+					if( ship.resource )
+						delete ship.resource;
+			} );
+			},
+		},
 		"resource:fleet_captain_collectiveop2": {
 			slotType: "fleet-captain",
 			cost: 0,
