@@ -11911,35 +11911,8 @@
 			"unique" : true,
 			"factions" : ["klingon"]
 		},	{
-			"type" : "crew",
+			"type" : ["talent", "tech", "weapon","crew"],
 			"id" : "change_course_72281p_crew",
-			"set" : ["72281p"],
-			"name" : "Course Change",
-			"cost" : 4,
-			"text" : "This card may fill a [crew], [talent], [tech], or [weapon] Upgrade slot. During the Activation Phase, when you reveal your maneuver, you may discard this card to change your maneuver to any maneuver on your Maneuver Dial.\n\nNo ship may be equipped with more than one 'Course Change' Upgrade.",
-			"unique" : true,
-			"factions" : ["klingon"]
-		},	{
-			"type" : "talent",
-			"id" : "change_course_72281p_talent",
-			"set" : ["72281p"],
-			"name" : "Course Change",
-			"cost" : 4,
-			"text" : "This card may fill a [crew], [talent], [tech], or [weapon] Upgrade slot. During the Activation Phase, when you reveal your maneuver, you may discard this card to change your maneuver to any maneuver on your Maneuver Dial.\n\nNo ship may be equipped with more than one 'Course Change' Upgrade.",
-			"unique" : true,
-			"factions" : ["klingon"]
-		},	{
-			"type" : "tech",
-			"id" : "change_course_72281p_tech",
-			"set" : ["72281p"],
-			"name" : "Course Change",
-			"cost" : 4,
-			"text" : "This card may fill a [crew], [talent], [tech], or [weapon] Upgrade slot. During the Activation Phase, when you reveal your maneuver, you may discard this card to change your maneuver to any maneuver on your Maneuver Dial.\n\nNo ship may be equipped with more than one 'Course Change' Upgrade.",
-			"unique" : true,
-			"factions" : ["klingon"]
-		},	{
-			"type" : "weapon",
-			"id" : "change_course_72281p_weapon",
 			"set" : ["72281p"],
 			"name" : "Course Change",
 			"cost" : 4,
