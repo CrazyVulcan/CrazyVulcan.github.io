@@ -2855,7 +2855,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"resource:fleet_commander"{
 			slotType: "captain",
 			cost: 5,
-			hideCost: False
+			hideCost: false,
 			showShipResourceSlot: function(card,ship,fleet) {
 				if (ship.resource && ship.resource.type == "fleet-commander")
 					return true;
@@ -2874,6 +2874,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			} );
 			},
 		},
+		
 		"resource:fleet_captain_collectiveop2": {
 			slotType: "fleet-captain",
 			cost: 0,
