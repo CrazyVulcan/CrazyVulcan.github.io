@@ -11911,8 +11911,35 @@
 			"unique" : true,
 			"factions" : ["klingon"]
 		},	{
-			"type" : ["talent", "tech", "weapon","crew"],
+			"type" : "crew",
 			"id" : "change_course_72281p_crew",
+			"set" : ["72281p"],
+			"name" : "Course Change",
+			"cost" : 4,
+			"text" : "This card may fill a [crew], [talent], [tech], or [weapon] Upgrade slot. During the Activation Phase, when you reveal your maneuver, you may discard this card to change your maneuver to any maneuver on your Maneuver Dial.\n\nNo ship may be equipped with more than one 'Course Change' Upgrade.",
+			"unique" : true,
+			"factions" : ["klingon"]
+		},	{
+			"type" : "talent",
+			"id" : "change_course_72281p_talent",
+			"set" : ["72281p"],
+			"name" : "Course Change",
+			"cost" : 4,
+			"text" : "This card may fill a [crew], [talent], [tech], or [weapon] Upgrade slot. During the Activation Phase, when you reveal your maneuver, you may discard this card to change your maneuver to any maneuver on your Maneuver Dial.\n\nNo ship may be equipped with more than one 'Course Change' Upgrade.",
+			"unique" : true,
+			"factions" : ["klingon"]
+		},	{
+			"type" : "tech",
+			"id" : "change_course_72281p_tech",
+			"set" : ["72281p"],
+			"name" : "Course Change",
+			"cost" : 4,
+			"text" : "This card may fill a [crew], [talent], [tech], or [weapon] Upgrade slot. During the Activation Phase, when you reveal your maneuver, you may discard this card to change your maneuver to any maneuver on your Maneuver Dial.\n\nNo ship may be equipped with more than one 'Course Change' Upgrade.",
+			"unique" : true,
+			"factions" : ["klingon"]
+		},	{
+			"type" : "weapon",
+			"id" : "change_course_72281p_weapon",
 			"set" : ["72281p"],
 			"name" : "Course Change",
 			"cost" : 4,
@@ -21568,7 +21595,7 @@
 			"name" : "Auxiliary Power",
 			"text" : "At the start od the battle, place 5 Auxiliary Power Tokens on top of this card\n\nOnce per round, one ship in your fleet may use one of the following abilities.\n\n1. Roll 1 extra attack or defense die, OR\n\n2. Place 1 Evade Token beside your ship, even if there was one already there, OR\n\n3. Repair 1 Shield Token.\n\nIf you use any of their abilities, remove one Auxiliary Power Token from this card beside the ship that used this ability. Discard this card when there no more Auxiliary Power Tokens.",
 			"cost" : 5,
-			"showShipResourceSlot" : true
+			"showShipResourceSlot" : false
 		},{
 			"type" : "resource",
 			"id" : "fleet_commander",
@@ -21576,7 +21603,7 @@
 			"name" : "Fleet Commander",
 			"text" : "One ship in your fleet may have a 2nd Captain assigned to it. That ship may use both of its Captain's Abilitys as normal throughout the game.\n\nThe overall Captain Skill Number of the ship is equal to the highest Captain Skill of its Two Captains plus 1. \n\nIn addition, the ship to which the 2nd Captain is assigned gains +1 to either its Shield or Hull value (max 6 Hull). This decision must be made at the start of the game during the Gather Forces step and cannot be changed for the remainder of the game.",
 			"cost" : 5,
-			"showShipResourceSlot" : true
+			"showShipResourceSlot" : false
 		}, {
 			"type" : "resource",
 			"id" : "scan_cycle",
@@ -21854,6 +21881,25 @@
 			"name" : "Drone Tokens",
 			"text" : "Each Drone Token has a Drone number list on the face, as well as a Captain Skill Number listed on the back. The Drone Tokens are placed in a stack on top of the Captain Card in descending order (from highest to lowest) of their Drone numbers. \n\nNOTE: The Drone number listed on the token at the top of the stack is always considered the ship’s current Captain Skill. At the start of the game, place the Drone Token that has the starting Captain Skill beside the ship (this will be the reverse side of the Drone Token that reads “START” on the face).\n\nWhen a Drone Token is used, remove one Token from the top of the stack and flip it over. Then remove the Drone Token that is beside the ship from play and replace it with the token that you just removed from the stack. NOTE: The Captain Skill that is listed on the Token beside the ship should always be equal to the number of Drone Tokens left on the Captain Card.\n\n You may use Drone Tokens for other Upgrade effects, but not for the text on a disabled Captain if your Captain is disabled."
 		}, {
+			"type" : "fleet-commander",
+			"id" : "fleet_commander_other",
+			"set" : ["72270r"],
+			"name" : "Fleet Commander",
+			"text" : "Text Goes Here",
+			"cost" : 5,
+			"skill" : 1,
+			"upgradeSlots" : [],
+			"isSkillModifier" : true,
+			"showType" : true,
+			"canEquip" : true,
+			"intercept" : {
+				"ship" : {},
+				"fleet" : {}
+			},
+			"factionPenalty" : 0,
+			"unique" : true,
+			"captinAdd" : 1
+		},	{
 			"type" : "fleet-captain",
 			"id" : "federation_collectiveop2",
 			"set" : ["CollectiveOP2"],
