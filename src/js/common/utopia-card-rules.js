@@ -2855,24 +2855,15 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"resource:fleet_commander"{
 			slotType: "captain",
 			cost: 5,
+			skill: 1,
 			hideCost: false,
-			showShipResourceSlot: function(card,ship,fleet) {
-				if (ship.resource && ship.resource.type == "captain")
-					return true;
-				
-				var show = true;
-				$.each( fleet.captain, function (i, captain){
-					if (captain.resourece )
-						show = false;
-			} );
-			return show;
-			},
-			onRemove: function(resource,ship,fleet) {
-				$.each( fleet.captain, function(i,captain) {
-					if( ship.resource )
-						delete ship.resource;
-			} );
-			},
+			upgradeSlots: [
+				// Add one weapon slot
+				{
+					type: ["captain"]
+					source: "Second Captain"
+				}
+			],
 		},
 		
 		"resource:fleet_captain_collectiveop2": {
