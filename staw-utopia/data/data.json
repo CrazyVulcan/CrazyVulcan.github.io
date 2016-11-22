@@ -21856,7 +21856,27 @@
 			"text" : "At the start of the battle, place 5 Mission Tokens on top of this card.\n\nOnce per round, one of your ships may:\n\n1) When attacking, spend 1 Mission Token from this card to force the defending ship to re-roll up to 2 dice of your choice. OR\n\n2) When attacking, spend 1 Mission Token from this card to force the defending ship to roll 1 less defense die. OR\n\n3) When defending, spend 1 Mission Token from this card to force the attacking ship to re-roll up to 2 dice of your choice. OR\n\n4) When defending, spend 1 Mission Token from this card to force the attacking ship to roll 1 less attack die.\n\nWhen there are no more Mission Tokens left on this card, remove it from the game."
 		}
 	],
-	"others" : [{
+	"others" : [
+		{
+			"type" : "captain",
+			"id" : "fleet_commander",
+			"set" : ["72280r"],
+			"name" : "2nd Captain",
+			"text" : "Add 2 Captains to one ship.",
+			"cost" : 0,
+			"skill" : 1,
+			"upgradeSlots" : [],
+			"isSkillModifier" : true,
+			"showType" : true,
+			"canEquip" : true,
+			"intercept" : {
+				"ship" : {},
+				"fleet" : {}
+			},
+			"factionPenalty" : 1,
+			"unique" : true,
+		},	
+		{
 			"type" : "token",
 			"id" : "rule_admiral",
 			"set" : ["AdditionalRules"],
