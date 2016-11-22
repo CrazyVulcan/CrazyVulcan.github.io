@@ -2853,8 +2853,6 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		// RESOURCES
 		
 		"fleet-commander:fleet_commander_upgrade":{
-			slotType: "captain",
-			cost: 0,
 			//Add 2 new captain slots
 			upgradeSlots: [
 				{
