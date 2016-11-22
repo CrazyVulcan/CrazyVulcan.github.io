@@ -2853,13 +2853,15 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		// RESOURCES
 
 		"resource:fleet_commander"{
+			slotType: "captain",
+			skill: "1",
 			upgradeSlots: [
-				{/* Talent */},
 				{
-					type: ["crew"]
+					type: ["captain"]
 				}
 			]
 		},
+		
 		"resource:fleet_captain_collectiveop2": {
 			slotType: "fleet-captain",
 			cost: 0,
@@ -5277,4 +5279,3 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 	};
 }]);
-			
