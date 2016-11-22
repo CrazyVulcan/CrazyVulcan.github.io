@@ -2853,12 +2853,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		// RESOURCES
 
 		"resource:fleet_commander"{
-			upgradeSlots: [
-				{
-					type: ["talent"],
-					type: ["talent"]
-				}
-			]
+			slotType:"captain"
 		},
 		
 		"resource:fleet_captain_collectiveop2": {
