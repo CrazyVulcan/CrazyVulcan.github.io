@@ -21874,8 +21874,9 @@
 				"fleet" : {}
 			},
 			"factionPenalty" : 1,
-			"unique" : true,
-		},	
+			"unique" : true
+		},
+		
 		{
 			"type" : "token",
 			"id" : "rule_admiral",
