@@ -2861,7 +2861,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				},
 			],
 			//No faction penalties
-			factionPenalty: function() { return 0; }
+			intercept: {
+				ship: {
+				cost: function() { return 3; }
+				}
+			}
 		},
 		
 		"resource:fleet_captain_collectiveop2": {
