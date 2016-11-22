@@ -2856,16 +2856,21 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			//Add 2 new captain slots
 			upgradeSlots: [
 				{
-					type: ["captain"],
+					type: ["captain"];
 					type: ["captain"]
-				},
-			],
+				}
+			];
 			//No faction penalties
 			intercept: {
-				ship: {
 				cost: function() { return 3; }
+				ship: {
+					skill: function(card,ship,fleet,skill) {
+						if( card == ship.captain )
+							return resolve(card,ship,fleet,skill) + ( hasFaction(card,"klingon",ship,fleet) ? 3 : 1 );
+						return skill;
+					}
 				}
-			}
+		}
 		},
 		
 		"resource:fleet_captain_collectiveop2": {
