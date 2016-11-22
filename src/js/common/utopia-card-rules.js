@@ -2854,7 +2854,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 		
 		"resource:fleet_commander": {
-			slotType: "fleet-commander",
+			slotType: "captain",
 			cost: 0,
 			hideCost: true,
 			showShipResourceSlot: function(card,ship,fleet) {
@@ -2874,6 +2874,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						delete ship.resource;
 				} );
 			}
+		},
+		
+		"fleet-commander:fleet_commander_upgrade":{
+			slotType: "captain"
+			cost: 0
 		},
 		
 		"resource:fleet_captain_collectiveop2": {
