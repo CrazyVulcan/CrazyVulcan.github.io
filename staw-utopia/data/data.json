@@ -21886,7 +21886,9 @@
 			"id" : "fleet_commander_upgrade",
 			"set" :["72280r"],
 			"name": "Fleet Commander",
-			"text" : "Add 2nd Captain"
+			"text" : "Add Two Captain Slots, Add +1 to highest Captain Skill",
+			"cost" : 0,
+			"skill" : 1
 		},	{
 			"type" : "fleet-captain",
 			"id" : "federation_collectiveop2",
