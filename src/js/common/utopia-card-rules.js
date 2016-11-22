@@ -2853,25 +2853,12 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		// RESOURCES
 
 		"resource:fleet_commander"{
-			slotType: "captain",
-			hideCost: true,
-			showShipResourceSlot: function(card,ship,fleet) {
-				if( ship.resource && ship.resource.type == "captain" )
-					return true;
-				
-				var show = true;
-				$.each( fleet.ships, function(i,ship) {
-					if( ship.resource )
-						show = false;
-				} );
-				return show;
-			},
-			onRemove: function(resource,ship,fleet) {
-				$.each( fleet.ships, function(i,ship) {
-					if( ship.resource )
-						delete ship.resource;
-				} );
-			}
+			upgradeSlots: [
+				{/* Talent */},
+				{
+					type: ["crew"]
+				}
+			]
 		},
 		"resource:fleet_captain_collectiveop2": {
 			slotType: "fleet-captain",
@@ -5290,3 +5277,4 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 	};
 }]);
+			
