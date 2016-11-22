@@ -11568,7 +11568,8 @@
 			"name": "Fleet Commander",
 			"text" : "Add Two Captain Slots, Add +1 to highest Captain Skill",
 			"cost" : 0,
-			"skill" : 1
+			"skill" : 1,
+			"factions" : ["independent"]
 		}
 	],
 	"admirals" : [{
