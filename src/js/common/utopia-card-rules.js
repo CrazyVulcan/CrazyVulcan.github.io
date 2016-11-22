@@ -2855,13 +2855,16 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"fleet-commander:fleet_commander_upgrade":{
 			slotType: "captain",
 			cost: 0,
+			//Add 2 new captain slots
 			upgradeSlots: [
 				{
 					type: ["captain"],
 					type: ["captain"]
 				},
-			factionPenalty: function() { return 0; }
 			],
+			//No faction penalties
+			factionPenalty: function() { return 0; }
+		},
 		
 		"resource:fleet_captain_collectiveop2": {
 			slotType: "fleet-captain",
