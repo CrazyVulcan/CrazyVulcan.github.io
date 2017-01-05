@@ -1,6 +1,30 @@
 {
 	"sets" : [
-		{
+			{
+			"type" : "set",
+			"id" : "72281",
+			"name" : "Calindra",
+			"releaseDate" : "2017-12-20",
+			"parentSet" : "Wave 28"
+		},	{
+			"type" : "set",
+			"id" : "72282gp",
+			"name" : "Sela's Warbird",
+			"releaseDate" : "2017-12-12",
+			"parentSet" : "Klingon Civil War Grand Prize"
+		},	{
+			"type" : "set",
+			"id" : "72282p",
+			"name" : "I.K.S. Toral",
+			"releaseDate" : "2017-12-11",
+			"parentSet" : "Klingon Civil War"
+		},	{
+			"type" : "set",
+			"id" : "72282r",
+			"name" : "All Stop Resource",
+			"releaseDate" : "2017-12-10",
+			"parentSet" : "Klingon Civil War"
+		},	{
 			"type" : "set",
 			"id" : "72281p",
 			"name" : "I.K.S. Hegh'Ta",
@@ -9,7 +33,7 @@
 		},	{
 			"type" : "set",
 			"id" : "72281r",
-			"name" : "Auxiliarly Power",
+			"name" : "Auxiliarly Power Resource",
 			"releaseDate" : "2016-11-03",
 			"parentSet" : "Klingon Civil War"
 		},	{
@@ -21,7 +45,7 @@
 		}, {
 			"type" : "set",
 			"id" : "72280r",
-			"name" : "Fleet Commander",
+			"name" : "Fleet Commander Resource",
 			"releaseDate" : "2016-11-01",
 			"parentSet" : "Klingon Civil War"
 		},	{
@@ -51,7 +75,7 @@
 		}, {
 			"type" : "set",
 			"id" : "72270r",
-			"name" : "Scan Cycle",
+			"name" : "Scan Cycle Resource",
 			"releaseDate" : "2016-10-01",
 			"parentSet" : "Trouble with Tribbles"
 		}, {
@@ -81,7 +105,7 @@
 		}, {
 			"type" : "set",
 			"id" : "72262r",
-			"name" : "Condition Alert",
+			"name" : "Condition Alert Resource",
 			"releaseDate" : "2016-09-29",
 			"parentSet" : "The Corbomite Maneuver"
 		}, {
@@ -111,7 +135,7 @@
 		}, {
 			"type" : "set",
 			"id" : "72261r",
-			"name" : "Intercepted Messages",
+			"name" : "Intercepted Messages Resource",
 			"releaseDate" : "2016-08-29",
 			"parentSet" : "Tin Man"
 		}, {
@@ -129,7 +153,7 @@
 		}, {
 			"type" : "set",
 			"id" : "72260r",
-			"name" : "Improved Hull",
+			"name" : "Improved Hull Resource",
 			"releaseDate" : "2016-07-30",
 			"parentSet" : "The Classic Movies"
 		}, {
@@ -147,7 +171,7 @@
 		}, {
 			"type" : "set",
 			"id" : "72236r",
-			"name" : "Emergency Power",
+			"name" : "Emergency Power Resource",
 			"releaseDate" : "2016-05-24",
 			"parentSet" : "The Classic Movies"
 		}, {
@@ -165,7 +189,7 @@
 		}, {
 			"type" : "set",
 			"id" : "72235r",
-			"name" : "General Orders",
+			"name" : "General Orders Resource",
 			"releaseDate" : "2016-04-01",
 			"parentSet" : "The Classic Movies"
 		}, {
@@ -195,7 +219,7 @@
 		}, {
 			"type" : "set",
 			"id" : "72234r",
-			"name" : "Structural Damage Check",
+			"name" : "Structural Damage Check Resource",
 			"releaseDate" : "2016-03-16",
 			"parentSet" : "The Doomsday Machine"
 		}, {
@@ -255,7 +279,7 @@
 		}, {
 			"type" : "set",
 			"id" : "72224r",
-			"name" : "Main Power Grid",
+			"name" : "Main Power Grid Resource",
 			"releaseDate" : "2016-02-01",
 			"parentSet" : "Temporal Cold War"
 		}, {
@@ -1199,6 +1223,82 @@
 	],
 	"ships" : [
 		{
+			"type" : "ship",
+			"id" : "calindra_72004p",
+			"set" : ["72281"],
+			"name" : "Calindra",
+			"class" : "Xindi Aquatic Cruiser",
+			"actions" : ["evade", "target-lock", "scan", "battlestations"],
+			"upgrades" : ["tech", "tech", "tech", "weapon", "crew"],
+			"attack" : 4,
+			"agility" : 1,
+			"hull" : 6,
+			"shields" : 3,
+			"cost" : 28,
+			"text" : "When defending, during the Modify Defense Dice step, you may discard a blue [target-lock] Token from beside your ship to re-roll all of your defense dice.",
+			"unique" : true,
+			"factions" : ["xindi"],
+			"squadron" : false
+		},	{
+			"type" : "ship",
+			"id" : "selas_warbrid_72282gp",
+			"set" : ["72282gp"],
+			"name" : "Sela's Warbird",
+			"class" : "D'deridex Class",
+			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
+			"upgrades" : ["tech", "tech", "weapon", "crew", "crew"],
+			"attack" : 3,
+			"agility" : 2,
+			"hull" : 6,
+			"shields" : 4,
+			"cost" : 30,
+			"text" : "During the Activation Phase, if your ship is Cloaked and performs the [sensor-echo] Action, you may flip your [cloak] Token over to its red side and immediately perform an additional [sensor-echo] Action as a free Action.",
+			"unique" : true,
+			"factions" : ["romulan"],
+			"squadron" : false
+		},	{
+			"type" : "ship",
+			"id" : "klingon_civil_war_iks_toral",
+			"set" : ["72282p"],
+			"name" : "I.K.S. Toral",
+			"class" : "B'Rel Class",
+			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
+			"upgrades" : ["tech", "weapon", "crew", "crew"],
+			"attack" : 4,
+			"agility" : 1,
+			"hull" : 3,
+			"shields" : 3,
+			"cost" : 22,
+			"text" : "When defending, during the Roll Defence Dice step, if your ship is not Cloaked, you may roll +2 defence dice. If you do so place an Auxiliarly Power Token beside your ship.",
+			"unique" : true,
+			"factions" : ["klingon"],
+			"intercept" : {
+				"ship" : {},
+				"fleet" : {}
+			},
+			"squadron" : false
+		},	{
+			"type" : "ship",
+			"id" : "brel_generic_crew",
+			"set" : ["72282p"],
+			"name" : "Klingon Starship",
+			"class" : "B'Rel Class",
+			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
+			"upgrades" : ["weapon", "crew", "crew"],
+			"attack" : 4,
+			"agility" : 1,
+			"hull" : 3,
+			"shields" : 2,
+			"cost" : 20,
+			"text" : "",
+			"unique" : false,
+			"factions" : ["klingon"],
+			"intercept" : {
+				"ship" : {},
+				"fleet" : {}
+			},
+			"squadron" : false
+		},	{
 			"type" : "ship",
 			"id" : "72281p_heghta",
 			"set" : ["72281p"],
@@ -2614,7 +2714,7 @@
 		}, {
 			"type" : "ship",
 			"id" : "1043",
-			"set" : ["OP3Prize", "71511"],
+			"set" : ["OP3Prize", "71511", "72282gp"],
 			"name" : "Romulan Starship",
 			"class" : "D'deridex Class",
 			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
@@ -5785,7 +5885,7 @@
 		}, {
 			"type" : "ship",
 			"id" : "azati_prime_72004p",
-			"set" : ["72004p"],
+			"set" : ["72004p", "72281"],
 			"name" : "Azati Prime",
 			"class" : "Xindi Aquatic Cruiser",
 			"actions" : ["evade", "target-lock", "scan", "battlestations"],
@@ -8765,7 +8865,74 @@
 			}
 		}
 	],
-	"captains" : [{
+	"captains" : [
+		{		
+			"type" : "captain",
+			"id" : "sela_72282gp",
+			"set" : ["72282gp"],
+			"name" : "Sela",
+			"cost" : 4,
+			"skill" : 7,
+			"talents" : 1,
+			"text" : "<b>ACTION:</b> When defending this round, the attacking ship cannot benefit from or spend a [scan] Token that is beside it nor can they spend a [battlestations] Token that is beside it against your ship.",
+			"unique" : true,
+			"factions" : ["romulan"]
+		},	{		
+			"type" : "captain",
+			"id" : "kiaphet_amman'sor_72281",
+			"set" : ["72281"],
+			"name" : "Kiaphet Amman'Sor",
+			"cost" : 3,
+			"skill" : 4,
+			"talents" : 1,
+			"text" : "<b>ACTION:</b> When defending this round roll +1 defense die. In addition if this card is assigned to a Xindi ship when attacking this round gain +1 attack die.",
+			"unique" : true,
+			"factions" : ["xindi"]
+		},	{		
+			"type" : "captain",
+			"id" : "aquatic_councilor_72281",
+			"set" : ["72281"],
+			"name" : "Aquatic Councilor",
+			"cost" : 1,
+			"skill" : 2,
+			"talents" : 0,
+			"text" : "When defending, during the Modify Defense Dice step, you may convert 1 of your [battlestations] results into a [evade] result.",
+			"unique" : true,
+			"factions" : ["xindi"]
+		},	{		
+			"type" : "captain",
+			"id" : "movar_72282gp",
+			"set" : ["72282gp"],
+			"name" : "Movar",
+			"cost" : 3,
+			"skill" : 5,
+			"talents" : 0,
+			"text" : "During the Gather Forces step, you may switch one of your [crew], [tech], or [weapon] Upgrade slots on your ship for a [crew], [tech], [weapon], or [talent] Upgrade slot.",
+			"unique" : true,
+			"factions" : ["romulan"]
+		},	{		
+			"type" : "captain",
+			"id" : "betor_72282p",
+			"set" : ["72282p"],
+			"name" : "B'Etor",
+			"cost" : 3,
+			"skill" : 4,
+			"talents" : 1,
+			"text" : "A friendly ship within Range 1-2 of your ship may use the Action or Ability of your [talent] Upgrade as if it were assigned to that ship.\n\nIf Lursa is the Captain of your ship, you may fill one of your [crew] Upgrade slots with this card and gain +4 to your Captain Skill.",
+			"unique" : true,
+			"factions" : ["klingon"]
+		},	{		
+			"type" : "captain",
+			"id" : "lursa_72282p",
+			"set" : ["72282p"],
+			"name" : "Lursa",
+			"cost" : 3,
+			"skill" : 4,
+			"talents" : 1,
+			"text" : "You may preform a [cloak] or a [sensor-echo] Action as a free action, if your ship has the appropriate Action on its Action Bar\n\nIf B'Etor is the Captain of your ship, you may fill one of your [crew] Upgrade slots with this card and gain +4 to your Captain Skill.",
+			"unique" : true,
+			"factions" : ["klingon"]
+		},	{
 			"type" : "captain",
 			"id" : "kurn_72281p",
 			"set" : ["72281p"],
@@ -11893,6 +12060,96 @@
 	],
 	"upgrades" : [
 		{
+			"type" : "talent",
+			"id" : "klingon_romulan_alliance_72282gp",
+			"set" : ["72282gp"],
+			"name" : "Klingon-Romulan Alliance",
+			"cost" : 4,
+			"text" : "If your ship is within Range 1-2 of a friendly Klingon or Romulan ship, you may discard this card to re-roll any number of your defense dice.\n\nThis card may only be fielded by a Klingon or Romulan Captain assigned to a Klingon or Romulan Ship.",
+			"unique" : true,
+			"factions" : ["romulan"]
+		},	{
+			"type" : "talent",
+			"id" : "reverse_course_72282gp",
+			"set" : ["72282gp"],
+			"name" : "Reverse Course",
+			"cost" : 5,
+			"text" : "During the Activation Phase, you may disregard your chosen maneuver and execute a Full Astern [reverse] Maneuver with a speed of 1 or 2.",
+			"unique" : true,
+			"factions" : ["romulan"]
+		},	{
+			"type" : "crew",
+			"id" : "tokath_72282gp",
+			"set" : ["72282gp"],
+			"name" : "Tokath",
+			"cost" : 2,
+			"text" : "<b>ACTION:</b> Discard this card to remove 2 Disabled Upgrade Tokens from your other Upgrades.",
+			"unique" : true,
+			"factions" : ["romulan"]
+		},	{
+			"type" : "tech",
+			"id" : "tachyon_pulse_72282gp",
+			"set" : ["72282gp"],
+			"name" : "Tachyon Pulse",
+			"cost" : 4,
+			"text" : "When defending, during the Roll Defense Dice step you may disable this card to roll +1 defense die, +2 Defense dice if the attacking ship has a [scan] Token beside it\n\nNo ship may be equipped with more than one 'Tachyon Pulse' Upgrade.",
+			"unique" : false,
+			"factions" : ["romulan"]
+		},	{
+			"type" : "talent",
+			"id" : "interrogation_72282p",
+			"set" : ["72282p"],
+			"name" : "Interrogation",
+			"cost" : 5,
+			"text" : "When attacking, during the Roll Attack Dice step, you may discard this card to gain a number of attack dice equal to 1 plus the number of Upgrades on the defending ship, Max +3.\n\nThis Upgrade may only be fielded by a Klingon Captain assigned to a Klingon Ship.",
+			"unique" : true,
+			"factions" : ["klingon"]
+		},	{
+			"type" : "talent",
+			"id" : "enemy_of_the_empire_72282p",
+			"set" : ["72282p"],
+			"name" : "Enemy Of The Empire",
+			"cost" : 5,
+			"text" : "When attacking, during the Roll Attack Dice step, you may discard this card to gain +1 attack die. If the defending ship is a Klingon ship or with a Klingon Captain or Upgrade assigned to it, disable his card instead of discarding it.",
+			"unique" : true,
+			"factions" : ["klingon"]
+		},	{
+			"type" : "crew",
+			"id" : "kulge_72282p",
+			"set" : ["72282p"],
+			"name" : "Kulge",
+			"cost" : 5,
+			"text" : "<b>ACTION:</b> Discard this card to disable your Captain Card and place a [battlestations] Token beside your ship.\n\nWhile your Captain Card is disabled your Captain Skill is '0' and your ship may perform the [battlestations] Action as if it were on your Action Bar.",
+			"unique" : true,
+			"factions" : ["klingon"]
+		},	{
+			"type" : "tech",
+			"id" : "aft_shields_72282p",
+			"set" : ["72282p"],
+			"name" : "Aft Shields",
+			"cost" : 4,
+			"text" : "If you are not Cloaked and defending against an attack from a ship that is not in your forward firing arc, during the Compare Results step, you may discard this card to cancel up to 2 of attacking ship's [hit] or [crit] results. If you do so, place an Auxiliarly Power Token beside your ship.\n\nNo ship may be equipped with more than one 'Aft Shields' Upgrade.",
+			"unique" : false,
+			"factions" : ["klingon"]
+		},	{
+			"type" : "crew",
+			"id" : "lursa_crew_72282p",
+			"set" : ["72282p"],
+			"name" : "Lursa",
+			"cost" : 3,
+			"text" : "You may preform a [cloak] or a [sensor-echo] Action as a free action, if your ship has the appropriate Action on its Action Bar\n\nIf B'Etor is the Captain of your ship, you may fill one of your [crew] Upgrade slots with this card and gain +4 to your Captain Skill.",
+			"unique" : true,
+			"factions" : ["klingon"]
+		},	{
+			"type" : "crew",
+			"id" : "betor_crew_72282p",
+			"set" : ["72282p"],
+			"name" : "B'Etor",
+			"cost" : 3,
+			"text" : "A friendly ship within Range 1-2 of your ship may use the Action or Ability of your [talent] Upgrade as if it were assigned to that ship.\n\nIf Lursa is the Captain of your ship, you may fill one of your [crew] Upgrade slots with this card and gain +4 to your Captain Skill.",
+			"unique" : true,
+			"factions" : ["klingon"]
+		},	{
 			"type" : "talent",
 			"id" : "on_my_command_72281p",
 			"set" : ["72281p"],
@@ -21597,87 +21854,61 @@
 		}
 	],
 	"resources" : [
-		{	
-			"type" : "resource",
-			"id" : "auxiliary_power",
-			"set" : ["72281r"],
-			"name" : "Auxiliary Power",
-			"text" : "At the start od the battle, place 5 Auxiliary Power Tokens on top of this card\n\nOnce per round, one ship in your fleet may use one of the following abilities.\n\n1. Roll 1 extra attack or defense die, OR\n\n2. Place 1 Evade Token beside your ship, even if there was one already there, OR\n\n3. Repair 1 Shield Token.\n\nIf you use any of their abilities, remove one Auxiliary Power Token from this card beside the ship that used this ability. Discard this card when there no more Auxiliary Power Tokens.",
+		{
+			"type" : "weapon",
+			"id" : "xindi_torpedoes_72281",
+			"set" : ["72281"],
+			"name" : "Xindi Torpedoes",
+			"cost" : 3,
+			"text" : "<b>ATTACK:</b> Target Lock, Spend your target lock and place 3 Time Tokens on this card to perform this attack.\n\nIf fired from a Xindi Aquatic Cruiser add +1 attack dice.",
+			"unique" : false,
+			"factions" : ["xindi"]
+		},	{
+			"type" : "tech",
+			"id" : "biometric_hologram_72281",
+			"set" : ["72281"],
+			"name" : "Biometric Hologram",
 			"cost" : 5,
-			"showShipResourceSlot" : false
-		},{
-			"type" : "resource",
-			"id" : "fleet_commander",
-			"set" : ["72280r"],
-			"name" : "Fleet Commander",
-			"text" : "One ship in your fleet may have a 2nd Captain assigned to it. That ship may use both of its Captain's Abilitys as normal throughout the game.\n\nThe overall Captain Skill Number of the ship is equal to the highest Captain Skill of its Two Captains plus 1. \n\nIn addition, the ship to which the 2nd Captain is assigned gains +1 to either its Shield or Hull value (max 6 Hull). This decision must be made at the start of the game during the Gather Forces step and cannot be changed for the remainder of the game.",
+			"text" : "When attacking, during the Roll Attack Dice step, you may discard this card to gain +2 attack dice. If the attack hits, disable all [crew] Upgrades on the defending ship\n\nThis Upgrade may only be purchased for a Xindi ship and no ship may be equipped with more then one 'Biometric Hologram' Upgrade.",
+			"unique" : false,
+			"factions" : ["xindi"]
+		},	{
+			"type" : "tech",
+			"id" : "subspace_vortex_72281",
+			"set" : ["72281"],
+			"name" : "Subspace Vortex",
 			"cost" : 5,
-			"showShipResourceSlot" : false
-		}, {
-			"type" : "resource",
-			"id" : "scan_cycle",
-			"set" : ["72270r"],
-			"name" : "Scan Cycle",
-			"text" : "At the start of the game place 5 [scan] Tokens on this card.\n\nDuring Activation Phase when a ship in your fleet performs an Action from its Action Bar you may remove 1 [scan] Token from this card and place it beside the ship as a free Action\n\nNOTE: You may place the free [scan] Token beside the ship even if there already is a [scan] Token there\n\nYou may only use this ability once per round. Remove this card from the game when there are no [scan] Tokens left on this card.",
+			"text" : "<b>ACTION:</b> Discard this card to execute an additional 4[straight], 5[straight] or 6[straight] Maneuver. Place an Auxiliarly Power Token beside your ship.\n\nThis Upgrade costs +5 for any non-Xindi ship.",
+			"unique" : false,
+			"factions" : ["xindi"]
+		},	{
+			"type" : "tech",
+			"id" : "trellium_d_72281",
+			"set" : ["72281"],
+			"name" : "Trellium-D",
+			"cost" : 4,
+			"text" : "Place 2 Mission Tokens on this card, During the Compare Results step, you may discard up to 2 of these Tokens to cancel one [hit] or [crit] result for each Token discarded\n\nThis Upgrade costs +4 SP for any non-Xindi ship and no ship may be equipped with more than one 'Trellium-D' Upgrade.",
+			"unique" : false,
+			"factions" : ["xindi"]
+		},	{
+			"type" : "crew",
+			"id" : "raijin_72281",
+			"set" : ["72281"],
+			"name" : "Raijin",
+			"cost" : 4,
+			"text" : "<b>ACTION:</b> Discard this card to target a ship at Range 1-3. Chose 1 Upgrade on the target ship and place 2 Time Tokens on that Upgrade.",
+			"unique" : true,
+			"factions" : ["xindi"]
+		},	{
+			"type" : "talent",
+			"id" : "retaliation_72281",
+			"set" : ["72281"],
+			"name" : "Retaliation",
 			"cost" : 5,
-			"showShipResourceSlot" : false
-		}, {
-			"type" : "resource",
-			"id" : "condition_alert_resource",
-			"set" : ["72262r"],
-			"name" : "Condition Alert",
-			"text" : "At the start of the game, place 6 Mission Tokens on this card.\n\nDuring End Phase, if a ship in your fleet has exactly 1 unused Token beside it [evade] or [battlestations] you may remove 1 Mission Token from this card to leave that Token beside the ship instead of removing it.\n\nYou may only use this ability once per round. Remove this card from the game when there are no Mission Tokens Left of this card.",
-			"cost" : 5,
-			"showShipResourceSlot" : false
-		}, {
-			"type" : "resource",
-			"id" : "interepted_messages_resource",
-			"set" : ["72261r"],
-			"name" : "Intercepted Messages",
-			"text" : "At the start of the game place 5 Evade Tokens on this card. During the Activation Phase, if an opposing ship that is within Range 1-2 of one of your ships performs a Scan, Battle Stations, or Cloak Action from its Action Bar, you may choose to immediately remove 1 Evade Token from this card and place it beside your ship, even if there is already one there. You can only use this ability once per round.",
-			"cost" : 5,
-			"showShipResourceSlot" : false
-		}, {
-			"type" : "resource",
-			"id" : "the_classic_movies_improved_hull_resource",
-			"set" : ["72260r"],
-			"name" : "Improved Hull",
-			"text" : "At the start of the game, place 1 Mission Token on any or all of the ship cards in your Fleet\n\nFor the remainder of the game, the Hull Value of each ship with a Mission Token on its Ship Card is considered to be +1.\n\nThe cost of this resource is a number of SP equal to the total combined starting Hull values of all of your ships in your fleet divided by 2 rounding up. For example if your fleet has a total combined hull value of 15, the cost of this resource would be 8.",
-			"cost" : 0,
-			"showShipResourceSlot" : false
-		}, {
-			"type" : "resource",
-			"id" : "the_classic_movies_emergency_power_resource",
-			"set" : ["72236r"],
-			"name" : "Emergency Power",
-			"text" : "At the start of the game, place 5 Mission Tokens on this card.\n\nDuring the Execute Maneuver step of the Activation Phase, after a ship in your fleet performs a green or white maneuver, that ship may immediately perform an additional maneuver from its Maneuver Dial with speed of 1 or 2. Treat this additional maneuver as a red maneuver.\n\nYou may only use this ability once per round and each time you do this, remove 1 Mission Token from this card from the game.\n\nRemove this card from the game when there are no Mission Tokens left on this card.",
-			"cost" : 5,
-			"showShipResourceSlot" : false
-		}, {
-			"type" : "resource",
-			"id" : "the_classic_movies_general_orders_resource",
-			"set" : ["72235r"],
-			"name" : "General Orders",
-			"text" : "At the start of the game, place 5 [battlestations] Tokens on this card.\n\nDuring the Activation Phase, if a ship in your fleet is within Range 1-3 and in the firing arc (forward or rear) of an opposing ship after the opposing ship ends its move, you may choose to immediately remove 1 [battlestations] Token from this card and place it beside your ship, even if there is already a [battlestations] Token beside that ship.\n\nRemvoe this card from the game when there are no [battlestations] Tokens left on this card.",
-			"cost" : 5,
-			"showShipResourceSlot" : false
-		}, {
-			"type" : "resource",
-			"id" : "structual_damage_check_resource",
-			"set" : ["72234r"],
-			"name" : "Structural Damage Check",
-			"text" : "At the start of the game place 5 Auxiliary Power Tokens on this card.\n\nAt the end of each Activation Phase after every ship has moved you may chose to remove 1 Auxiliary Power Token from this card and place it beside one ship in your fleet. If you do this.\n\nRepair 1 damage to that ship's Hull OR\n\nFlip 1 Critical Damage Card that is assigned to that ship face down.\n\nRemove this card from the game when there are no Auxiliary Power Tokens left on this card",
-			"cost" : 5,
-			"showShipResourceSlot" : false
-		}, {
-			"type" : "resource",
-			"id" : "main_power_grid_resource",
-			"set" : ["72224r"],
-			"name" : "Main Power Grid",
-			"cost" : 0,
-			"text" : "This card explains the rules for the Main Power Grid Resource Card and serves as a reference to remind players of its effect. This resource costs 3SP plus 2SP for each Hull Value greater than 3. Once per round, one of your ships my use on the the following abilities\r\n\r\n1)When attacking with your Primary Weapon, during the Roll Attack Dice step, suffer 1 damage to your Hull and disable all your remaining Shields to roll _2 attack dice that round.\r\n\r\nOR\r\n\r\n2)When defending, during the Compare Results step cancel up to 2 of the attacking ship's dice and place an Auxiliary Power Token beside your ship. Your ship cannot attack during the round you use this ability.",
-			"showShipResourceSlot" : false
-		}, {
+			"text" : "When another ship in your fleet is destroyed, discard this card to immediately make an attack with your Primary Weapon at -1 attack die. This attack is in addition to your normal attack for the round. If there is no ship to target with this additional attack, place a Mission Token on this card instead of discarding it. If you do this on your next attack discard this card to gain +3 attack dice for that attack. This Upgrade may only be purchased for a Xindi Captain assigned to a Xindi ship.",
+			"unique" : true,
+			"factions" : ["xindi"]
+		},	{
 			"type" : "resource",
 			"id" : "4001",
 			"set" : ["OP1Participation2"],
@@ -21685,7 +21916,7 @@
 			"text" : "1) Once during every round, a player may choose to exchange 1 of their attack dice with the Elite Attack Die. Players may not roll this die more than once per round, regardless of how many ships they have in their fleet.\r\n\r\n2) The pips on the Elite Attack Die are [hit][hit], [crit], [crit], [hit], [hit], [hit], [battlestations], [battlestations].\r\n\r\n3) The [hit][hit] result may be canceled by 1 [evade] result.\r\n\r\n4) The [hit][hit] result inflicts 2 damage if it is not canceled.\r\n\r\n5) When canceling the attack dice with [evade] results, the order that the dice are canceled is: [hit] first, then [hit][hit], then [crit].",
 			"cost" : 5,
 			"showShipResourceSlot" : false
-		}, {
+		},	{
 			"type" : "resource",
 			"id" : "4002",
 			"set" : ["OP2Participation2"],
@@ -21797,15 +22028,7 @@
 			"text" : "1) Prior to building your fleet, choose two different Factions.\r\n\r\n2) You do not pay a faction penalty when assigning a Captain, Admiral or [crew] Upgrade of either of the chosen factions to a ship in your fleet of the other chosen faction.\r\n\r\n3) In addition, when assigning a Captain or Admiral card of one of the chosen factions to a ship in your fleet of the other chosen faction, the cost of that card is reduced by 1 SP (min 0). NOTE: This applies to all of your Captain and Admiral cards.",
 			"cost" : 0,
 			"showShipResourceSlot" : false
-		}, {
-			"type" : "resource",
-			"id" : "master_strategist_tokens_71997r",
-			"set" : ["71997r"],
-			"name" : "Master Strategist Tokens (MST)",
-			"text" : "At the start of the game, place the 6 MSTs beside your ship cards.  During the Activation Phase, instead of performing a  normal Action, any of the ships in your fleet may perform the following Action:\r\n    <b>ACTION:</b> Place 1 MST beside your ship.\r\n\r\nWhile a Master Strategist Token is beside your ship:\r\n\r\n1) Treat it as if it were an [evade], a [scan], a [battlestations] or a [target-lock] Token.  You may use this Token as you would any of these Tokens (see pg. 10 of the Rules of Play).  Remove it from the game if it is spent.\r\n\r\n2) During the End Phase, place any unused MSTs back beside your ship cards to use again on a later round.\r\n\r\n3) When using an MST as a [target-lock] Token, you may only spend it to re-roll your attack dice (see pg 14).  This does not count as having acquired a target lock with regards to Secondary Weapons (see pg 20).\r\n\r\n4) Only one Upgrade Card on each ship can trigger its ability from this Token during the same round (see pg 22).\r\n\r\n5) On a round a ship uses this Action, that ship may still use an [evade], [scan], [battlestations] or [target-lock] Action as a free Action, if possible.",
-			"cost" : 10,
-			"showShipResourceSlot" : false
-		}, {
+		},  {
 			"type" : "resource",
 			"id" : "evasive_action_template_71998r",
 			"set" : ["71998r"],
@@ -21813,7 +22036,15 @@
 			"text" : "At the start of the game, place the Evasive Action Maneuver Template beside your ship cards.  For the duration of the battle, you may perform the Evasive Action Maneuver once per round with any one of your ships.\r\n\r\nThe Evasive Action Maneuver follows the normal movement rules with the following exceptions:\r\n\r\n1) During the Activation Phase, if you reveal a Red Maneuver or a Come About Maneuver on one of your ship's Maneuver Dials, you may disregard that ship's chosen maneuver and instead use the Evasive Action Maneuver.\r\n              \r\n2) Then choose to move that ship to the right or the left, place the Evasive Action Maneuver Template accordingly and finish performing the maneuver as normal.\r\n              \r\n3) The Evasive Action Maneuver is considered a Red Maneuver (place an Auxiliary Power Token beside the ship).  If the ship does not have the Come About Maneuver on its Maneuver dial, place a 2nd Auxiliary Power Token beside the ship.",
 			"cost" : 5,
 			"showShipResourceSlot" : false
-		}, {
+		},	{
+			"type" : "resource",
+			"id" : "master_strategist_tokens_71997r",
+			"set" : ["71997r"],
+			"name" : "Master Strategist Tokens (MST)",
+			"text" : "At the start of the game, place the 6 MSTs beside your ship cards.  During the Activation Phase, instead of performing a  normal Action, any of the ships in your fleet may perform the following Action:\r\n    <b>ACTION:</b> Place 1 MST beside your ship.\r\n\r\nWhile a Master Strategist Token is beside your ship:\r\n\r\n1) Treat it as if it were an [evade], a [scan], a [battlestations] or a [target-lock] Token.  You may use this Token as you would any of these Tokens (see pg. 10 of the Rules of Play).  Remove it from the game if it is spent.\r\n\r\n2) During the End Phase, place any unused MSTs back beside your ship cards to use again on a later round.\r\n\r\n3) When using an MST as a [target-lock] Token, you may only spend it to re-roll your attack dice (see pg 14).  This does not count as having acquired a target lock with regards to Secondary Weapons (see pg 20).\r\n\r\n4) Only one Upgrade Card on each ship can trigger its ability from this Token during the same round (see pg 22).\r\n\r\n5) On a round a ship uses this Action, that ship may still use an [evade], [scan], [battlestations] or [target-lock] Action as a free Action, if possible.",
+			"cost" : 10,
+			"showShipResourceSlot" : false
+		},	{
 			"type" : "resource",
 			"id" : "damage_control_team_71999r",
 			"set" : ["71999r"],
@@ -21821,27 +22052,27 @@
 			"text" : "At the start of the battle, place 5 Auxiliary Power Tokens on top of this card.\r\n\r\n1) When a ship in your fleet is defending, during the Compare Results step, you may:\r\n              a) Remove one of the Auxiliary Power Tokens from this card and place it beside that ship to cancel 1 [hit] result, OR\r\n\r\n              b) Remove one of the Auxiliary Power Tokens from this card and place it beside that ship to convert 1 [crit] result into a [hit] result, OR\r\n\r\n              c) Remove 2 of the Auxiliary Power Tokens from this card and place 1 of them beside that ship to cancel 1 [crit] result.  The other token is removed from the game.\r\n\r\n              2) No additional Auxiliary Power Tokens may be added to this card for the duration of the battle.",
 			"cost" : 5,
 			"showShipResourceSlot" : false
-		}, {
+		},	{
 			"type" : "resource",
-			"id" : "tactics_72221r",
-			"set" : ["72221r"],
-			"name" : "TACTICS",
+			"id" : "ready_room_72000r",
+			"set" : ["72000r"],
+			"name" : "Ready Room",
 			"cost" : 5,
-			"text" : "At the start of the battle, place 2 [evade] Tokens, 2 [scan] Tokens and 2 [battlestations] Tokens on top of this card. Each round, during the Activation Phase, one ship in your fleet may choose on of the Tokens form on top of this card and place it beside its base. Treat this as if that ship performed a free Action of the appropriate type. /n/n If the ship performing this Action does not have the Action listed on its Action Bar, it may still perform the Action, but it is considered a Standard Action instead of a free Action. in Addition, place an Auxiliary Power Token beside that ship."
-		}, {
-			"type" : "resource",
-			"id" : "advanced_technology_72004r",
-			"set" : ["72004r"],
-			"name" : "Advanced Technology",
-			"cost" : 5,
-			"text" : "During the Activation Phase, any ship in your fleet may:\n\n1) Disable one of its [tech] Upgrades to use an Action from its Action Bar as a free Action.\n\nOR\n\n2) Discard one of its already disabled [tech] Upgrades to use an Action from its Action Bar as a free Action.\n\nA ship cannot perform any other free Actions on the round that it uses either of these abilities."
-		}, {
+			"text" : "At the start of the battle, place 4 Mission Tokens on this card.\n\nOnce per round, one of your ships may spend 1 of these Mission Tokens (i.e., remove it from the game to achieve the following effects.\n\n1) During the Activation Phase, when you reveal your maneuver, before you move, you may add up to +2 to your speed.\n\n2) At the start of the Combat Phase, increase your Captain Skill Number by +2 until the End Phase.\n\n3) At any time, you may replace 1 [evade], [scan], or [battlestations] Token that is beside your ship with 1 [evade], [scan], or [battlestations] Token. OR\n\n4) Prevent your Captain Card from being disabled or discard by an enemy ship's Captain or Upgrade Card.\n\nA player cannot use these abilities for a ship that has no Captain Card or whose Captain Card is disabled."
+		},  {
 			"type" : "resource",
 			"id" : "emergency_force_field_72001r",
 			"set" : ["72001r"],
 			"name" : "Emergency Force Field",
 			"cost" : 0,
 			"text" : "Each time a ship in your fleet defends, during the Compare Results step, you may:\n\n1) Disable 1 of that ship's Active Shields to cancel 1 of the attacking ship's [hit] results.\n\nOR\n\n2) Disable 2 of that ship's Active Shields to cancel 1 of the attacking ship's [crit] results.\n\nIf a ship uses either ability, place an Auxiliary Power Token beside that ship.\n\nThe cost of this resource is a number of SP equal to the total combined starting Shield Values of all ships in your fleet divided by 2 (round up). For example, if your fleet has a total combined Shield Value of 15, the cost of this resource would be 8."
+		},	{
+			"type" : "resource",
+			"id" : "sabotage_72002r",
+			"set" : ["72002r"],
+			"name" : "Sabotage",
+			"cost" : 5,
+			"text" : "At the start of the battle, place 5 Mission Tokens on top of this card.\n\nOnce per round, one of your ships may:\n\n1) When attacking, spend 1 Mission Token from this card to force the defending ship to re-roll up to 2 dice of your choice. OR\n\n2) When attacking, spend 1 Mission Token from this card to force the defending ship to roll 1 less defense die. OR\n\n3) When defending, spend 1 Mission Token from this card to force the attacking ship to re-roll up to 2 dice of your choice. OR\n\n4) When defending, spend 1 Mission Token from this card to force the attacking ship to roll 1 less attack die.\n\nWhen there are no more Mission Tokens left on this card, remove it from the game."
 		}, {
 			"type" : "resource",
 			"id" : "protocol_72003r",
@@ -21849,20 +22080,108 @@
 			"name" : "Protocol",
 			"cost" : 5,
 			"text" : "Once per round, one of your ships may use one of the following abilities:\n\n1) When performing an [evade], a [scan], or a [battlestations] Action from your Action Bar, place 2 of the appropriate type Tokens beside your ship instead of 1.\n\nOR\n\n2) When performing a [cloak] Action from your Action Bar, place your [cloak] Token beside your ship instead of on your ship's base. That ship cannot be target locked that round.\n\nOR\n\n3) When performing a [sensor-echo] Action from your Action Bar, you may use a 1[forward], 2[forward], or 3[forward] Maneuver Template."
+		},	{
+			"type" : "resource",
+			"id" : "advanced_technology_72004r",
+			"set" : ["72004r"],
+			"name" : "Advanced Technology",
+			"cost" : 5,
+			"text" : "During the Activation Phase, any ship in your fleet may:\n\n1) Disable one of its [tech] Upgrades to use an Action from its Action Bar as a free Action.\n\nOR\n\n2) Discard one of its already disabled [tech] Upgrades to use an Action from its Action Bar as a free Action.\n\nA ship cannot perform any other free Actions on the round that it uses either of these abilities."
+		},	{
+			"type" : "resource",
+			"id" : "main_power_grid_resource",
+			"set" : ["72224r"],
+			"name" : "Main Power Grid",
+			"cost" : 0,
+			"text" : "This card explains the rules for the Main Power Grid Resource Card and serves as a reference to remind players of its effect. This resource costs 3SP plus 2SP for each Hull Value greater than 3. Once per round, one of your ships my use on the the following abilities\r\n\r\n1)When attacking with your Primary Weapon, during the Roll Attack Dice step, suffer 1 damage to your Hull and disable all your remaining Shields to roll _2 attack dice that round.\r\n\r\nOR\r\n\r\n2)When defending, during the Compare Results step cancel up to 2 of the attacking ship's dice and place an Auxiliary Power Token beside your ship. Your ship cannot attack during the round you use this ability.",
+			"showShipResourceSlot" : false
+		}, 	{
+			"type" : "resource",
+			"id" : "tactics_72221r",
+			"set" : ["72221r"],
+			"name" : "TACTICS",
+			"cost" : 5,
+			"text" : "At the start of the battle, place 2 [evade] Tokens, 2 [scan] Tokens and 2 [battlestations] Tokens on top of this card. Each round, during the Activation Phase, one ship in your fleet may choose on of the Tokens form on top of this card and place it beside its base. Treat this as if that ship performed a free Action of the appropriate type. /n/n If the ship performing this Action does not have the Action listed on its Action Bar, it may still perform the Action, but it is considered a Standard Action instead of a free Action. in Addition, place an Auxiliary Power Token beside that ship."
+		},	{
+			"type" : "resource",
+			"id" : "structual_damage_check_resource",
+			"set" : ["72234r"],
+			"name" : "Structural Damage Check",
+			"text" : "At the start of the game place 5 Auxiliary Power Tokens on this card.\n\nAt the end of each Activation Phase after every ship has moved you may chose to remove 1 Auxiliary Power Token from this card and place it beside one ship in your fleet. If you do this.\n\nRepair 1 damage to that ship's Hull OR\n\nFlip 1 Critical Damage Card that is assigned to that ship face down.\n\nRemove this card from the game when there are no Auxiliary Power Tokens left on this card",
+			"cost" : 5,
+			"showShipResourceSlot" : false
+		},  {
+			"type" : "resource",
+			"id" : "the_classic_movies_general_orders_resource",
+			"set" : ["72235r"],
+			"name" : "General Orders",
+			"text" : "At the start of the game, place 5 [battlestations] Tokens on this card.\n\nDuring the Activation Phase, if a ship in your fleet is within Range 1-3 and in the firing arc (forward or rear) of an opposing ship after the opposing ship ends its move, you may choose to immediately remove 1 [battlestations] Token from this card and place it beside your ship, even if there is already a [battlestations] Token beside that ship.\n\nRemvoe this card from the game when there are no [battlestations] Tokens left on this card.",
+			"cost" : 5,
+			"showShipResourceSlot" : false
+		},	{
+			"type" : "resource",
+			"id" : "the_classic_movies_emergency_power_resource",
+			"set" : ["72236r"],
+			"name" : "Emergency Power",
+			"text" : "At the start of the game, place 5 Mission Tokens on this card.\n\nDuring the Execute Maneuver step of the Activation Phase, after a ship in your fleet performs a green or white maneuver, that ship may immediately perform an additional maneuver from its Maneuver Dial with speed of 1 or 2. Treat this additional maneuver as a red maneuver.\n\nYou may only use this ability once per round and each time you do this, remove 1 Mission Token from this card from the game.\n\nRemove this card from the game when there are no Mission Tokens left on this card.",
+			"cost" : 5,
+			"showShipResourceSlot" : false
+		},	{
+			"type" : "resource",
+			"id" : "the_classic_movies_improved_hull_resource",
+			"set" : ["72260r"],
+			"name" : "Improved Hull",
+			"text" : "At the start of the game, place 1 Mission Token on any or all of the ship cards in your Fleet\n\nFor the remainder of the game, the Hull Value of each ship with a Mission Token on its Ship Card is considered to be +1.\n\nThe cost of this resource is a number of SP equal to the total combined starting Hull values of all of your ships in your fleet divided by 2 rounding up. For example if your fleet has a total combined hull value of 15, the cost of this resource would be 8.",
+			"cost" : 0,
+			"showShipResourceSlot" : false
+		},	{
+			"type" : "resource",
+			"id" : "interepted_messages_resource",
+			"set" : ["72261r"],
+			"name" : "Intercepted Messages",
+			"text" : "At the start of the game place 5 Evade Tokens on this card. During the Activation Phase, if an opposing ship that is within Range 1-2 of one of your ships performs a Scan, Battle Stations, or Cloak Action from its Action Bar, you may choose to immediately remove 1 Evade Token from this card and place it beside your ship, even if there is already one there. You can only use this ability once per round.",
+			"cost" : 5,
+			"showShipResourceSlot" : false
+		},	{
+			"type" : "resource",
+			"id" : "condition_alert_resource",
+			"set" : ["72262r"],
+			"name" : "Condition Alert",
+			"text" : "At the start of the game, place 6 Mission Tokens on this card.\n\nDuring End Phase, if a ship in your fleet has exactly 1 unused Token beside it [evade] or [battlestations] you may remove 1 Mission Token from this card to leave that Token beside the ship instead of removing it.\n\nYou may only use this ability once per round. Remove this card from the game when there are no Mission Tokens Left of this card.",
+			"cost" : 5,
+			"showShipResourceSlot" : false
 		}, {
 			"type" : "resource",
-			"id" : "ready_room_72000r",
-			"set" : ["72000r"],
-			"name" : "Ready Room",
+			"id" : "scan_cycle",
+			"set" : ["72270r"],
+			"name" : "Scan Cycle",
+			"text" : "At the start of the game place 5 [scan] Tokens on this card.\n\nDuring Activation Phase when a ship in your fleet performs an Action from its Action Bar you may remove 1 [scan] Token from this card and place it beside the ship as a free Action\n\nNOTE: You may place the free [scan] Token beside the ship even if there already is a [scan] Token there\n\nYou may only use this ability once per round. Remove this card from the game when there are no [scan] Tokens left on this card.",
 			"cost" : 5,
-			"text" : "At the start of the battle, place 4 Mission Tokens on this card.\n\nOnce per round, one of your ships may spend 1 of these Mission Tokens (i.e., remove it from the game to achieve the following effects.\n\n1) During the Activation Phase, when you reveal your maneuver, before you move, you may add up to +2 to your speed.\n\n2) At the start of the Combat Phase, increase your Captain Skill Number by +2 until the End Phase.\n\n3) At any time, you may replace 1 [evade], [scan], or [battlestations] Token that is beside your ship with 1 [evade], [scan], or [battlestations] Token. OR\n\n4) Prevent your Captain Card from being disabled or discard by an enemy ship's Captain or Upgrade Card.\n\nA player cannot use these abilities for a ship that has no Captain Card or whose Captain Card is disabled."
-		}, {
+			"showShipResourceSlot" : false
+		},	{
 			"type" : "resource",
-			"id" : "sabotage_72002r",
-			"set" : ["72002r"],
-			"name" : "Sabotage",
+			"id" : "fleet_commander",
+			"set" : ["72280r"],
+			"name" : "Fleet Commander",
+			"text" : "One ship in your fleet may have a 2nd Captain assigned to it. That ship may use both of its Captain's Abilitys as normal throughout the game.\n\nThe overall Captain Skill Number of the ship is equal to the highest Captain Skill of its Two Captains plus 1. \n\nIn addition, the ship to which the 2nd Captain is assigned gains +1 to either its Shield or Hull value (max 6 Hull). This decision must be made at the start of the game during the Gather Forces step and cannot be changed for the remainder of the game.",
 			"cost" : 5,
-			"text" : "At the start of the battle, place 5 Mission Tokens on top of this card.\n\nOnce per round, one of your ships may:\n\n1) When attacking, spend 1 Mission Token from this card to force the defending ship to re-roll up to 2 dice of your choice. OR\n\n2) When attacking, spend 1 Mission Token from this card to force the defending ship to roll 1 less defense die. OR\n\n3) When defending, spend 1 Mission Token from this card to force the attacking ship to re-roll up to 2 dice of your choice. OR\n\n4) When defending, spend 1 Mission Token from this card to force the attacking ship to roll 1 less attack die.\n\nWhen there are no more Mission Tokens left on this card, remove it from the game."
+			"showShipResourceSlot" : false
+		}, {	
+			"type" : "resource",
+			"id" : "auxiliary_power",
+			"set" : ["72281r"],
+			"name" : "Auxiliary Power",
+			"text" : "At the start od the battle, place 5 Auxiliary Power Tokens on top of this card\n\nOnce per round, one ship in your fleet may use one of the following abilities.\n\n1. Roll 1 extra attack or defense die, OR\n\n2. Place 1 Evade Token beside your ship, even if there was one already there, OR\n\n3. Repair 1 Shield Token.\n\nIf you use any of their abilities, remove one Auxiliary Power Token from this card beside the ship that used this ability. Discard this card when there no more Auxiliary Power Tokens.",
+			"cost" : 5,
+			"showShipResourceSlot" : false
+		},	{	
+			"type" : "resource",
+			"id" : "all_stop",
+			"set" : ["72282r"],
+			"name" : "All Stop",
+			"text" : "At the start of the game, place 5 Mission Tokens on top of this card.\n\nEach round, during the Activation Phase, one ship in your fleet may disregard its chosen maneuver and not move. A ship that uses this ability must skip its Perform Action step.\n\nDiscard this card when there are no more Mission Tokens on this card",
+			"cost" : 5,
+			"showShipResourceSlot" : false
 		}
 	],
 	"others" : [
