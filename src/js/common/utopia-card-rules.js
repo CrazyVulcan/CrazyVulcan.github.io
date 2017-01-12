@@ -5269,29 +5269,38 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		//iks Toral, rules for the Duras Sisters
 		"crew:betor_crew_72282p": {
 			canEquip: function(upgrade,captain,fleet) {
-				ship: {
-					skill: function(card,ship,fleet,skill) {
-						if( card == ship.captain )
-							return resolve(card,ship,fleet,skill) + ( hasFaction(card,"klingon",ship,fleet) ? 4 : 1 );
-						return skill;
-					}
-				},				
+						
 				if( captain.class == "Lursa" )
 					return false;
 				}
-
-			},			
-		"crew:lursa_crew_72282p": {
-			canEquip: function(upgrade,captain,fleet) {
+			intercept: {
 				ship: {
 					skill: function(card,ship,fleet,skill) {
 						if( card == ship.captain )
-							return resolve(card,ship,fleet,skill) + ( hasFaction(card,"klingon",ship,fleet) ? 4 : 1 );
+							return resolve(card,ship,fleet,skill) + ( hasFaction(card,"klingon",ship,fleet) ? 3 : 1 );
 						return skill;
 					}
-				},				
+				}
+			}
+
+		},
+		
+		"crew:lursa_crew_72282p": {
+			canEquip: function(upgrade,captain,fleet) {
+						
 				if( captain.class == "B'Etor" )
 					return false;
 				}
-			}					
+			intercept: {
+				ship: {
+					skill: function(card,ship,fleet,skill) {
+						if( card == ship.captain )
+							return resolve(card,ship,fleet,skill) + ( hasFaction(card,"klingon",ship,fleet) ? 3 : 1 );
+						return skill;
+					}
+				}
+			}
+
+		}
+			
 }]);
