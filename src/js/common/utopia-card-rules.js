@@ -2849,29 +2849,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 		},
 		
-
-		// RESOURCES
 		
-		"fleet-commander:fleet_commander_upgrade":{
-			//Add 2 new captain slots
-			upgradeSlots: [
-				{
-					type: ["captain"];
-					type: ["captain"]
-				}
-			];
-			//No faction penalties
-			intercept: {
-				cost: function() { return 3; }
-				ship: {
-					skill: function(card,ship,fleet,skill) {
-						if( card == ship.captain )
-							return resolve(card,ship,fleet,skill) + ( hasFaction(card,"klingon",ship,fleet) ? 3 : 1 );
-						return skill;
-					}
-				}
-		}
-		},
+		// RESOURCES
 		
 		"resource:fleet_captain_collectiveop2": {
 			slotType: "fleet-captain",
@@ -5286,7 +5265,29 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"tech:full_reverse_enterprise_b": {
 			rules: "Only one per ship",
 			canEquip: onePerShip("Full Reverse")
+		},
+		//iks Toral, rules for the Duras Sisters
+		"crew:betor_crew_72282p": {
+			intercept: {
+				ship: {
+					skill: function(card,ship,fleet,skill) {
+						if( card == ship.captain )
+							return resolve(card,ship,fleet,skill) + ( hasCaptain(card,"Lursa",ship,fleet) ? 4 );
+						return skill;
+					}
+				}
+			}
+		},
+		"crew:lursa_crew_72282p": {
+			intercept: {
+				ship: {
+					skill: function(card,ship,fleet,skill) {
+						if( card == ship.captain )
+							return resolve(card,ship,fleet,skill) + ( hasCaptain(card,"B'Etor",ship,fleet) ? 4 );
+						return skill;
+					}
+				}
+			}
 		}
-		
 	};
 }]);
