@@ -5270,37 +5270,28 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"crew:betor_crew_72282p": {
 			canEquip: function(upgrade,captain,fleet) {
 						
-				if( captain.class == "Lursa" )
+				if( captain.class == "B'Etor" )
 					return false;
+				},
+			ship: {
+				skill: function (card, ship, fleet, skill)	{
+					if( card == ship.captain )
+						return resolve (card,ship,fleet,skill) + (hasFaction(card,"Lursa",ship,fleet) ? 3:1);
 				}
-			intercept: {
-				ship: {
-					skill: function(card,ship,fleet,skill) {
-						if( card == ship.captain )
-							return resolve(card,ship,fleet,skill) + ( hasFaction(card,"klingon",ship,fleet) ? 3 : 1 );
-						return skill;
-					}
-				}
-			}
-
+			}	
 		},
-		
 		"crew:lursa_crew_72282p": {
 			canEquip: function(upgrade,captain,fleet) {
 						
 				if( captain.class == "B'Etor" )
 					return false;
+				},
+			ship: {
+				skill: function (card, ship, fleet, skill)	{
+					if( card == ship.captain )
+						return resolve (card,ship,fleet,skill) + (hasFaction(card,"B'Etor",ship,fleet) ? 3:1);
 				}
-			intercept: {
-				ship: {
-					skill: function(card,ship,fleet,skill) {
-						if( card == ship.captain )
-							return resolve(card,ship,fleet,skill) + ( hasFaction(card,"klingon",ship,fleet) ? 3 : 1 );
-						return skill;
-					}
-				}
-			}
-
+			}	
 		}
-			
+		
 }]);
