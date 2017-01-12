@@ -5276,7 +5276,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						return skill;
 					}
 				},				
-				if( captain.class != "Lursa" )
+				if( captain.class == "Lursa" )
 					return false;
 				}
 
@@ -5290,7 +5290,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						return skill;
 					}
 				},				
-				if( captain.class != "B'Etor" )
+				if( captain.class == "B'Etor" )
 					return false;
 				}
 			}					
