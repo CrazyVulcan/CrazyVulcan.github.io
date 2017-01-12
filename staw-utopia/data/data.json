@@ -12049,6 +12049,7 @@
 			"set" : ["72282p"],
 			"name" : "Lursa",
 			"cost" : 3,
+			"talents" : 1,
 			"text" : "You may preform a [cloak] or a [sensor-echo] Action as a free action, if your ship has the appropriate Action on its Action Bar\n\nIf B'Etor is the Captain of your ship, you may fill one of your [crew] Upgrade slots with this card and gain +4 to your Captain Skill.",
 			"unique" : true,
 			"factions" : ["klingon"]
@@ -12058,6 +12059,7 @@
 			"set" : ["72282p"],
 			"name" : "B'Etor",
 			"cost" : 3,
+			"talents" : 1,
 			"text" : "A friendly ship within Range 1-2 of your ship may use the Action or Ability of your [talent] Upgrade as if it were assigned to that ship.\n\nIf Lursa is the Captain of your ship, you may fill one of your [crew] Upgrade slots with this card and gain +4 to your Captain Skill.",
 			"unique" : true,
 			"factions" : ["klingon"]
