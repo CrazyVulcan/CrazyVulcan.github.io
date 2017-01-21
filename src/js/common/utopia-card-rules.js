@@ -2852,12 +2852,12 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 		// RESOURCES
 		
-		"resource:fleet_captain_collectiveop2": {
-			slotType: "fleet-captain",
+		"resource:fleet_commander_72280r": {
+			slotType: "captain",
 			cost: 0,
 			hideCost: true,
 			showShipResourceSlot: function(card,ship,fleet) {
-				if( ship.resource && ship.resource.type == "fleet-captain" )
+				if( ship.resource && ship.resource.type == "captain" )
 					return true;
 				
 				var show = true;
@@ -3342,7 +3342,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquip: function(upgrade,ship,fleet) {
 				return $factions.hasFaction(ship, "klingon", ship, fleet);
 			}
-		},
+     		}, 
 		
 		// Dominion
 		"flagship:6005": {
