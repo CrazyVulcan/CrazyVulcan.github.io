@@ -2852,7 +2852,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 		// RESOURCES
 		
-		"resource:fleet_commander_72280r": {
+		"resource:fleet_commander": {
 			slotType: "captain",
 			cost: 0,
 			hideCost: true,
