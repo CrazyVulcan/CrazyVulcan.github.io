@@ -2852,28 +2852,25 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 		// RESOURCES
 		
-		"resource:fleet_commander": {
-			slotType: "captain",
-			cost: 0,
+		"resource:fleet_commander": {			
 			hideCost: true,
-			showShipResourceSlot: function(card,ship,fleet) {
-				if( ship.resource && ship.resource.type == "captain" )
-					return true;
-				
-				var show = true;
-				$.each( fleet.ships, function(i,ship) {
-					if( ship.resource )
-						show = false;
-				} );
-				return show;
-			},
-			onRemove: function(resource,ship,fleet) {
-				$.each( fleet.ships, function(i,ship) {
-					if( ship.resource )
-						delete ship.resource;
-				} );
+			upgradeSlots:	{
+					type: ["captain"],
+					source: "2nd Captain",
+				},
+			intercept: {
+				fleet: {
+					// Add the "captain" type to all crew slots
+					type: function(card,ship,fleet,type) {
+						if( $.inArray("crew",type) >= 0 )
+							return type.concat(["captain"]);
+						return type;
+					}
+				}
 			}
+			
 		},
+
 		
 		"fleet-captain:federation_collectiveop2": {
 			// Only equip if captain matches faction
