@@ -167,7 +167,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
+
 		"ship:enterprise_nx_01_71526": {
 			upgradeSlots: [ {
 				type: ["tech"],
@@ -293,7 +293,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
+
 		"ship:romulan_starship_71536": {
 			intercept: {
 				ship: {
@@ -2022,7 +2022,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			]
 		},
 		
-		// Shinzon Romulan Talents
+		// Shinzon Romulan Talents 
 		"talent:shinzon_romulan_talents_71533": {
 			upgradeSlots: cloneSlot( 4 , 
 				{ 
@@ -2852,25 +2852,28 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 		// RESOURCES
 		
-		"resource:fleet_commander": {			
+		"resource:fleet_captain_collectiveop2": {
+			slotType: "fleet-captain",
+			cost: 0,
 			hideCost: true,
-			upgradeSlots:	{
-					type: ["captain"],
-					source: "2nd Captain",
-				},
-			intercept: {
-				fleet: {
-					// Add the "captain" type to all crew slots
-					type: function(card,ship,fleet,type) {
-						if( $.inArray("crew",type) >= 0 )
-							return type.concat(["captain"]);
-						return type;
-					}
-				}
+			showShipResourceSlot: function(card,ship,fleet) {
+				if( ship.resource && ship.resource.type == "fleet-captain" )
+					return true;
+				
+				var show = true;
+				$.each( fleet.ships, function(i,ship) {
+					if( ship.resource )
+						show = false;
+				} );
+				return show;
+			},
+			onRemove: function(resource,ship,fleet) {
+				$.each( fleet.ships, function(i,ship) {
+					if( ship.resource )
+						delete ship.resource;
+				} );
 			}
-			
 		},
-
 		
 		"fleet-captain:federation_collectiveop2": {
 			// Only equip if captain matches faction
@@ -3339,7 +3342,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquip: function(upgrade,ship,fleet) {
 				return $factions.hasFaction(ship, "klingon", ship, fleet);
 			}
-     		}, 
+		},
 		
 		// Dominion
 		"flagship:6005": {
@@ -5194,6 +5197,15 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			
 		},
 	
+		// Montgomery Scott - H.M.S. Bounty
+		"crew:montgomery_scott_bounty": {
+			upgradeSlots: [ 
+				{ 
+					type: ["tech", "weapon"]
+				}
+			]
+		},
+		
 		// Computer Core - U.S.S. Venture
 		"question:computer_core_venture": {
 			isSlotCompatible: function(slotTypes) {
@@ -5263,32 +5275,96 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			rules: "Only one per ship",
 			canEquip: onePerShip("Full Reverse")
 		},
-		//iks Toral, rules for the Duras Sisters
-		"crew:betor_crew_72282p": {
-			canEquip: function(upgrade,captain,fleet) {
-						
-				if( captain.class == "B'Etor" )
-					return false;
-				},
-			ship: {
-				skill: function (card, ship, fleet, skill)	{
-					if( card == ship.captain )
-						return resolve (card,ship,fleet,skill) + (hasFaction(card,"Lursa",ship,fleet) ? 3:1);
-				}
-			}	
-		},
-		"crew:lursa_crew_72282p": {
-			canEquip: function(upgrade,captain,fleet) {
-						
-				if( captain.class == "B'Etor" )
-					return false;
-				},
-			ship: {
-				skill: function (card, ship, fleet, skill)	{
-					if( card == ship.captain )
-						return resolve (card,ship,fleet,skill) + (hasFaction(card,"B'Etor",ship,fleet) ? 3:1);
-				}
-			}	
-		}
 		
+		// Duras Sisters	
+		"crew:lursa_crew_72282p": {
+			canEquip: function (upgrade,ship,fleet) {
+				if(captain.name == "B'Etor")
+			},
+			intercept: {
+				ship: {
+					skill: function(card,ship,fleet,skill) {
+						if( card == ship.captain )
+							return resolve(card,ship,fleet,skill) + 4 );
+						return skill;
+					}
+				}
+			}
+		},
+		"crew:betor_crew_72282p": {
+			canEquip: function (upgrade,ship,fleet) {
+				if(captain.name == "Lursa")
+			},
+			intercept: {
+				ship: {
+					skill: function(card,ship,fleet,skill) {
+						if( card == ship.captain )
+							return resolve(card,ship,fleet,skill) + 4 );
+						return skill;
+					}
+				}
+			}
+		},
+		// Jean-Luc Picard - Enterprise-D
+		"captain:jean_luc_picard_enterprise_72284p": {
+			intercept: {
+				self: {
+					cost: function(upgrade,ship,fleet,cost) {
+						modifier = 0;
+						
+						if ( ship )
+							modifier += 2;
+						
+						if ( modifier > 5)
+							modifier = 5;
+						
+						return cost - modifier;
+					}
+				}
+			}
+		},
+		
+		// Natasha Yar - U.S.S. Enterprise-D
+		"crew:natasha_yar_72284p": {
+			upgradeSlots: [ 
+				{ 
+					type: ["weapon"]
+				},
+				{ 
+					type: ["weapon"]
+				}
+			]
+		},
+		
+		// Aft Phaser Emitters - U.S.S. Enterprise-D
+		"weapon:aft_phaser_emitters_72284p": {
+			attack: 0,
+			// Equip only on a Federation ship with hull 4 or more
+			canEquip: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship,"federation", ship, fleet) && ship.hull >= 4;
+			},
+			intercept: {
+				self: {
+					// Attack is same as ship primary - 1
+					attack: function(upgrade,ship,fleet,attack) {
+						if( ship )
+							return valueOf(ship,"attack",ship,fleet) - 1;
+						return attack;
+					},
+					// Cost is primary weapon
+					cost: function(upgrade,ship,fleet,cost) {
+						if( ship )
+							return resolve(upgrade,ship,fleet,cost) + valueOf(ship,"attack",ship,fleet);
+						return cost;
+					}
+				}
+			}
+		},
+		
+		// Transporter - U.S.S. Enterprise-D
+		"tech:transporter_72284p": {
+			rules: "Only one per ship",
+			canEquip: onePerShip("Transporter")
+		}
+	};
 }]);
