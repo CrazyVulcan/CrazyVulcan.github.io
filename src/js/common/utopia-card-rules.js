@@ -1928,7 +1928,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
+
 		// Dorsal Phaser Array
 		"weapon:dorsal_phaser_array_71531": {
 			attack: 0,
@@ -5277,33 +5277,15 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		
 		// Duras Sisters	
-		"crew:lursa_crew_72282p": {
-			intercept:{
-				ship:{
-					canEquip: function(upgread,ship,fleet)
-						return captain.name == "B'Etor"
-				},{
-					skill: function(card,ship,fleet,skill) {
-						if( card == ship.captain )
-							return resolve(card,ship,fleet,skill) + 4;
-						return skill;
-					}
-				}
-			}
+		"crew:lursa_crew_72282p": {		
+			canEquip: function(upgrade,ship,fleet){
+				return ship.captain && ship.captain.name == "B'etor";
+			}		
 		},
 		"crew:betor_crew_72282p": {
-			intercept:{
-				ship:{
-					canEquip: function(upgread,ship,fleet)
-						return captain.name == "B'Etor"
-				},{
-					skill: function(card,ship,fleet,skill) {
-						if( card == ship.captain )
-							return resolve(card,ship,fleet,skill) + 4;
-						return skill;
-					}
-				}
-			}
+			canEquip: function(upgrade,ship,fleet){
+				return ship.captain && ship.captain.name == "Lursa";
+			}		
 		},
 		// Jean-Luc Picard - Enterprise-D
 		"captain:jean_luc_picard_enterprise_72284p": {
