@@ -5278,28 +5278,28 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 		// Duras Sisters	
 		"crew:lursa_crew_72282p": {
-			canEquip: function (upgrade,ship,fleet) {
-				if(captain.name == "B'Etor")
-			},
-			intercept: {
-				ship: {
+			intercept:{
+				ship:{
+					canEquip: function(upgread,ship,fleet)
+						return captain.name == "B'Etor"
+				},{
 					skill: function(card,ship,fleet,skill) {
 						if( card == ship.captain )
-							return resolve(card,ship,fleet,skill) + 4 );
+							return resolve(card,ship,fleet,skill) + 4;
 						return skill;
 					}
 				}
 			}
 		},
 		"crew:betor_crew_72282p": {
-			canEquip: function (upgrade,ship,fleet) {
-				if(captain.name == "Lursa")
-			},
-			intercept: {
-				ship: {
+			intercept:{
+				ship:{
+					canEquip: function(upgread,ship,fleet)
+						return captain.name == "B'Etor"
+				},{
 					skill: function(card,ship,fleet,skill) {
 						if( card == ship.captain )
-							return resolve(card,ship,fleet,skill) + 4 );
+							return resolve(card,ship,fleet,skill) + 4;
 						return skill;
 					}
 				}
