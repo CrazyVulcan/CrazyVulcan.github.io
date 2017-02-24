@@ -1,21 +1,45 @@
 {
 	"sets" : [{
 			"type" : "set",
+			"id" : "71272",
+			"name" : "U.S.S. Excelsior(Repaint)",
+			"releaseDate" : "2017-02-02",
+			"parentSet" : "Wave 29"
+		}, {
+			"type" : "set",
+			"id" : "71281",
+			"name" : "Bioship Alpha(Repaint)",
+			"releaseDate" : "2017-02-01",
+			"parentSet" : "Wave 29"
+		}, {
+			"type" : "set",
 			"id" : "72284p",
 			"name" : "U.S.S. Enterprise-D",
-			"releaseDate" : "2017-1-26",
+			"releaseDate" : "2017-01-26",
 			"parentSet" : "Yesterday's Enterprise"
 		}, {
 			"type" : "set",
 			"id" : "72284r",
 			"name" : "Senior Staff",
-			"releaseDate" : "2017-1-25",
+			"releaseDate" : "2017-01-25",
 			"parentSet" : "Yesterday's Enterprise Resource"
 		}, {
 			"type" : "set",
 			"id" : "72281",
 			"name" : "Calindra",
 			"releaseDate" : "2016-12-20",
+			"parentSet" : "Wave 28"
+		}, {
+			"type" : "set",
+			"id" : "71283",
+			"name" : "Borg Sphere 4270(Repaint)",
+			"releaseDate" : "2016-12-19",
+			"parentSet" : "Wave 28"
+		}, {
+			"type" : "set",
+			"id" : "71268",
+			"name" : "U.S.S. Defiant(Repaint)",
+			"releaseDate" : "2016-12-18",
 			"parentSet" : "Wave 28"
 		}, {
 			"type" : "set",
