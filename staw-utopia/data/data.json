@@ -31,13 +31,13 @@
 			"parentSet" : "Wave 28"
 		}, {
 			"type" : "set",
-			"id" : "71283",
+			"id" : "72283",
 			"name" : "Borg Sphere 4270(Repaint)",
 			"releaseDate" : "2016-12-19",
 			"parentSet" : "Wave 28"
 		}, {
 			"type" : "set",
-			"id" : "71268",
+			"id" : "72282",
 			"name" : "U.S.S. Defiant(Repaint)",
 			"releaseDate" : "2016-12-18",
 			"parentSet" : "Wave 28"
@@ -2790,7 +2790,7 @@
 		}, {
 			"type" : "ship",
 			"id" : "1030",
-			"set" : ["71268"],
+			"set" : ["71268","72282"],
 			"name" : "U.S.S. Defiant",
 			"class" : "Defiant Class",
 			"actions" : ["evade", "target-lock", "scan", "battlestations"],
@@ -2811,7 +2811,7 @@
 		}, {
 			"type" : "ship",
 			"id" : "1031",
-			"set" : ["71268"],
+			"set" : ["71268","72282"],
 			"name" : "Federation Starship",
 			"class" : "Defiant Class",
 			"actions" : ["evade", "target-lock", "scan", "battlestations"],
@@ -3042,7 +3042,7 @@
 		}, {
 			"type" : "ship",
 			"id" : "1044",
-			"set" : ["71272"],
+			"set" : ["71272","72292"],
 			"name" : "U.S.S. Excelsior",
 			"class" : "Excelsior Class",
 			"actions" : ["evade", "target-lock", "scan", "battlestations"],
@@ -3063,7 +3063,7 @@
 		}, {
 			"type" : "ship",
 			"id" : "1045",
-			"set" : ["71272", "72261p", "72263", "blind_lakota"],
+			"set" : ["71272","72292", "72261p", "72263", "blind_lakota"],
 			"name" : "Federation Starship",
 			"class" : "Excelsior Class",
 			"actions" : ["evade", "target-lock", "scan", "battlestations"],
@@ -3462,7 +3462,7 @@
 		}, {
 			"type" : "ship",
 			"id" : "borg_sphere_4270_71283",
-			"set" : ["71283"],
+			"set" : ["71283","72281"],
 			"name" : "Borg Sphere 4270",
 			"class" : "Borg Sphere",
 			"actions" : ["target-lock", "scan", "regenerate"],
@@ -3483,7 +3483,7 @@
 		}, {
 			"type" : "ship",
 			"id" : "borg_sphere_71283",
-			"set" : ["71283", "72255"],
+			"set" : ["71283","72281", "72255"],
 			"name" : "Borg Starship",
 			"class" : "Borg Sphere",
 			"actions" : ["target-lock", "scan", "regenerate"],
@@ -3588,7 +3588,7 @@
 		}, {
 			"type" : "ship",
 			"id" : "bioship_alpha_71281",
-			"set" : ["71281"],
+			"set" : ["71281","72291"],
 			"name" : "Bioship Alpha",
 			"class" : "Species 8472 Bioship",
 			"actions" : ["evade", "target-lock", "scan", "regenerate"],
@@ -3609,7 +3609,7 @@
 		}, {
 			"type" : "ship",
 			"id" : "species_8472_bioship_71281",
-			"set" : ["71281", "72012", "blind_bioship"],
+			"set" : ["71281","72291", "72012", "blind_bioship"],
 			"name" : "Species 8472 Starship",
 			"class" : "Species 8472 Bioship",
 			"actions" : ["evade", "target-lock", "scan", "regenerate"],
@@ -8932,7 +8932,7 @@
 		}, {
 			"type" : "captain",
 			"id" : "species_8472_captain_71281",
-			"set" : ["71281", "72012"],
+			"set" : ["71281","72291", "72012"],
 			"name" : "Species 8472",
 			"unique" : false,
 			"text" : "",
@@ -9042,7 +9042,7 @@
 		}, {
 			"type" : "captain",
 			"id" : "drone_71283",
-			"set" : ["71283", "71444", "71525", "71646d", "71511", "71513a", "71792", "71530", "72255"],
+			"set" : ["71283","72281", "71444", "71525", "71646d", "71511", "71513a", "71792", "71530", "72255"],
 			"name" : "Drone",
 			"unique" : false,
 			"text" : "At the start of the game, place 1 Drone Token on this card.",
@@ -9108,7 +9108,7 @@
 		}, {
 			"type" : "captain",
 			"id" : "2003",
-			"set" : ["71120", "71121", "71122", "72240", "71268", "71272", "71276", "71280", "72261", "OP4Prize", "u_s_s_yaeger", "71523", "71509", "71526", "71510", "71531", "71997p", "71801", "71998p", "71802", "72008", "72011", "72014", "71201", "71213", "71221", "72231", "72271", "72284p"],
+			"set" : ["71120", "71121", "71122", "72240", "71268","72282", "71272","72292", "71276", "71280", "72261", "OP4Prize", "u_s_s_yaeger", "71523", "71509", "71526", "71510", "71531", "71997p", "71801", "71998p", "71802", "72008", "72011", "72014", "71201", "71213", "71221", "72231", "72271", "72284p"],
 			"name" : "Federation",
 			"unique" : false,
 			"text" : "\r\n      ",
@@ -9443,7 +9443,7 @@
 		}, {
 			"type" : "captain",
 			"id" : "2030",
-			"set" : ["71268"],
+			"set" : ["71268","72282"],
 			"name" : "Kira Nerys",
 			"unique" : true,
 			"text" : "If a [crew] Upgrade on an enemy ship would cause your ship to discard or disable any of your Upgrades, roll 2 defense dice. If you roll at least 1 [evade] result, ignore the effects of the enemy Upgrade. You do not pay a Faction penalty when assigning Kira Nerys to a Federation ship.",
@@ -9476,7 +9476,7 @@
 		}, {
 			"type" : "captain",
 			"id" : "3106",
-			"set" : ["71272"],
+			"set" : ["71272","72292"],
 			"name" : "Styles",
 			"unique" : true,
 			"text" : "Add 1 additional [tech] icon to your ship's Upgrade bar.",
@@ -9873,7 +9873,7 @@
 		}, {
 			"type" : "captain",
 			"id" : "tactical_drone_71283",
-			"set" : ["71283"],
+			"set" : ["71283","72281"],
 			"name" : "Tactical Drone",
 			"unique" : false,
 			"text" : "At the start of the game, place 4 Drone Tokens on this card. \n\nWhen attacking, you may spend 1 Drone Token to choose any number of your attack dice and re-roll them once.",
@@ -10747,7 +10747,7 @@
 		}, {
 			"type" : "captain",
 			"id" : "2029",
-			"set" : ["71268"],
+			"set" : ["71268","72282"],
 			"name" : "Benjamin Sisko",
 			"unique" : true,
 			"text" : "Once per round, you may re-roll any one of your attack or defense dice.",
@@ -10780,7 +10780,7 @@
 		}, {
 			"type" : "captain",
 			"id" : "2046",
-			"set" : ["71272"],
+			"set" : ["71272","72292"],
 			"name" : "Hikaru Sulu",
 			"unique" : true,
 			"text" : "<b>ACTION:</b> Disable one of your [crew] Upgrades to remove an opponent's [target-lock] Token from your ship. Remove the corresponding token from the opponent's ship as well.",
@@ -11279,7 +11279,7 @@
 		}, {
 			"type" : "captain",
 			"id" : "bioship_alpha_pilot_71281",
-			"set" : ["71281"],
+			"set" : ["71281","72291"],
 			"name" : "Bioship Alpha Pilot",
 			"unique" : true,
 			"text" : "Each round during the Planning Phase, after all other players have chosen their Maneuvers, target a ship within Range 1 of your ship, look at that ship's chosen Maneuver, and then choose your Maneuver. the target ship's player cannot change the chosen Maneuver after you have looked at it. You may not perform any Actions the round you use this ability.",
@@ -13907,7 +13907,7 @@
 		}, {
 			"type" : "weapon",
 			"id" : "3006",
-			"set" : ["71120", "71268", "71276", "71280", "72261"],
+			"set" : ["71120", "71268","72282", "71276", "71280", "72261"],
 			"name" : "Photon Torpedoes",
 			"unique" : false,
 			"text" : "<b>ATTACK: (Target Lock)</b> Spend your target lock and disable this card to perform this attack. \nYou may convert 1 of your [battlestations] results into a [crit] result. \nYou may fire this weapon from your forward or rear firing arcs. ",
@@ -14139,7 +14139,7 @@
 		}, {
 			"type" : "weapon",
 			"id" : "3024",
-			"set" : ["71121", "71122", "72240", "71272"],
+			"set" : ["71121", "71122", "72240", "71272","72292"],
 			"name" : "Photon Torpedoes",
 			"unique" : false,
 			"text" : "<b>ATTACK: (Target Lock)</b> Spend your target lock and disable this card to perform this attack. \nYou may convert 1 of your [battlestations] results into a [crit] result. \nYou may fire this weapon from your forward or rear firing arcs. ",
@@ -14726,7 +14726,7 @@
 		}, {
 			"type" : "weapon",
 			"id" : "3067",
-			"set" : ["71268", "71531", "72271"],
+			"set" : ["71268","72282", "71531", "72271"],
 			"name" : "Quantum Torpedoes",
 			"unique" : false,
 			"text" : "<b>ATTACK: (Target Lock)</b> Spend your [target-lock] and disable this card to perform this attack. \nIf the target ship is hit, add 1 [hit] result to your total damage. \nYou may fire this weapon from your forward or rear firing arcs.",
@@ -14739,7 +14739,7 @@
 		}, {
 			"type" : "tech",
 			"id" : "3068",
-			"set" : ["71268"],
+			"set" : ["71268","72282"],
 			"name" : "Cloaking Device",
 			"unique" : false,
 			"text" : "Instead of performing a normal Action, you may disable this card to perform the [cloak] Action. While you have a [cloak] token beside your ship, you may perform the [sensor-echo] Action even if this card is disabled. \n\nThis Upgrade costs +5 Squadron Points for any ship other than the U.S.S. Defiant.",
@@ -14752,7 +14752,7 @@
 		}, {
 			"type" : "crew",
 			"id" : "3069",
-			"set" : ["71268"],
+			"set" : ["71268","72282"],
 			"name" : "Worf",
 			"unique" : true,
 			"text" : "<b>ACTION:</b> Target a ship at Range 1. That ship rolls 2 less attack dice this round.",
@@ -14765,7 +14765,7 @@
 		}, {
 			"type" : "talent",
 			"id" : "3088",
-			"set" : ["71268"],
+			"set" : ["71268","72282"],
 			"name" : "Attack Pattern Delta",
 			"unique" : true,
 			"text" : "Disable this card to re-roll your entire defense roll. You must re-roll all of the dice and keep the results of the second roll.",
@@ -14778,7 +14778,7 @@
 		}, {
 			"type" : "talent",
 			"id" : "3071",
-			"set" : ["71268"],
+			"set" : ["71268","72282"],
 			"name" : "Attack Pattern Omega",
 			"unique" : true,
 			"text" : "If you damage an opponent's Hull with a [crit], you may immediately discard this card to search the Damage Deck for a \"Warp Core Breach\" card instead of drawing a random Damage Card. Re-shuffle the Damage Deck when you are done.",
@@ -14791,7 +14791,7 @@
 		}, {
 			"type" : "crew",
 			"id" : "3089",
-			"set" : ["71268"],
+			"set" : ["71268","72282"],
 			"name" : "Jadzia Dax",
 			"unique" : true,
 			"text" : "<b>ACTION:</b> Disable this card to perform an additional \"2\" maneuver this round (forward or bank). \n\nYou cannot attack this round.",
@@ -14804,7 +14804,7 @@
 		}, {
 			"type" : "crew",
 			"id" : "3090",
-			"set" : ["71268"],
+			"set" : ["71268","72282"],
 			"name" : "Miles O'Brien",
 			"unique" : true,
 			"text" : "<b>ACTION:</b> Disable this card to repair 2 Shield Tokens. \n\nYou cannot attack this round.",
@@ -15129,7 +15129,7 @@
 		}, {
 			"type" : "talent",
 			"id" : "3107",
-			"set" : ["71272"],
+			"set" : ["71272","72292"],
 			"name" : "Feint",
 			"unique" : false,
 			"text" : "<b>ACTION:</b> Discard this Upgrade to target a ship at range 2-3. If you attack that ship this round, it rolls 2 less defense dice.",
@@ -15142,7 +15142,7 @@
 		}, {
 			"type" : "crew",
 			"id" : "3108",
-			"set" : ["71272"],
+			"set" : ["71272","72292"],
 			"name" : "Dmitri Valtane",
 			"unique" : true,
 			"text" : "If your ship has a [scan] Token beside it when you attack, you may re-roll up to 2 of your attack dice.",
@@ -15155,7 +15155,7 @@
 		}, {
 			"type" : "crew",
 			"id" : "3109",
-			"set" : ["71272"],
+			"set" : ["71272","72292"],
 			"name" : "Janice Rand",
 			"unique" : true,
 			"text" : "After your ship moves, discard Rand to allow your Captain to perform the Action on one of his [talent] Upgrades as a free Action this round.",
@@ -15168,7 +15168,7 @@
 		}, {
 			"type" : "crew",
 			"id" : "3110",
-			"set" : ["71272"],
+			"set" : ["71272","72292"],
 			"name" : "Lojur",
 			"unique" : true,
 			"text" : "When your ship fires a [weapon] Upgrade that requires you to disable it, you may disable Lojur instead of that [weapon] Upgrade.",
@@ -15181,7 +15181,7 @@
 		}, {
 			"type" : "tech",
 			"id" : "3112",
-			"set" : ["71272"],
+			"set" : ["71272","72292"],
 			"name" : "Positron Beam",
 			"unique" : false,
 			"text" : "During the Planning Phase, you may discard this Upgrade to target a ship at Range 1 of your ship. That ship immediately receives an Auxiliary  Power Token.",
@@ -15194,7 +15194,7 @@
 		}, {
 			"type" : "tech",
 			"id" : "3113",
-			"set" : ["71272"],
+			"set" : ["71272","72292"],
 			"name" : "Transwarp Drive",
 			"unique" : false,
 			"text" : "During the activation phase, if your Maneuver Dial reveals a [forward] 4 or [forward] 5 Maneuver, you may instead use a [forward] 6 Maneuver.",
@@ -15701,7 +15701,7 @@
 		}, {
 			"type" : "tech",
 			"id" : "bio_electric_interference_71281",
-			"set" : ["71281"],
+			"set" : ["71281","72291"],
 			"name" : "Bio-Electric Interference",
 			"unique" : false,
 			"text" : "<b>ACTION:</b> Discard this card to target all other ships within range 1-3 of your ship. Target ships must discard all Tokens that are placed beside their ships except for Auxiliary Power Tokens. A ship that discards a [cloak] Token may immediately raise its Shields. In addition, your ship cannot be target locked this round. This Upgrade may only be purchased for a Species 8472 ship.",
@@ -15727,7 +15727,7 @@
 		}, {
 			"type" : "borg",
 			"id" : "borg_ablative_hull_armor_71283",
-			"set" : ["71283", "71444"],
+			"set" : ["71283","72281", "71444"],
 			"name" : "Borg Ablative Hull Armor",
 			"unique" : false,
 			"text" : "When defending, convert all of your opponents' [crit] results into [hit] results and place all the damage cards that your ship receives beneath this card. Once there are 4 damage cards beneath this card, discard this Upgrade and all damage cards beneath it. All excess damage affects the ship as normal.",
@@ -15740,7 +15740,7 @@
 		}, {
 			"type" : "borg",
 			"id" : "borg_assimilation_tubules_71283",
-			"set" : ["71283", "71530"],
+			"set" : ["71283","72281", "71530"],
 			"name" : "Borg Assimilation Tubules",
 			"unique" : false,
 			"text" : "<b>ACTION:</b> Disable this card and discard 1 Drone Token to target a ship at Range 1-2. Steal 1 [crew], [tech], or [weapon] Upgrade from the target ship, even if it exceeds your ship's restrictions. Place a Disabled Upgrade Token on the assimilated Upgrade. You cannot steal a Species 8472 Upgrade with this Action.",
@@ -15753,7 +15753,7 @@
 		}, {
 			"type" : "borg",
 			"id" : "borg_tractor_beam_71283",
-			"set" : ["71283", "71444", "71513a"],
+			"set" : ["71283","72281", "71444", "71513a"],
 			"name" : "Borg Tractor Beam",
 			"unique" : false,
 			"text" : "<b>ACTION:</b> Target a ship at Range 1. Place one white Borg Tractor Beam Token beside that ship and the corresponding green Borg Tractor Beam Token (the one that matches the white token's letter) beside your ship.",
@@ -15766,7 +15766,7 @@
 		}, {
 			"type" : "tech",
 			"id" : "extraordinary_immune_response_71281",
-			"set" : ["71281"],
+			"set" : ["71281","72291"],
 			"name" : "Extraordinary Immune Response",
 			"unique" : false,
 			"text" : "When you defend, you may discard this card to roll 1 extra defense die for every damage card that is by your Ship Card. \n\nThis Upgrade may only be purchased for a Species 8472 ship.",
@@ -15779,7 +15779,7 @@
 		}, {
 			"type" : "tech",
 			"id" : "feedback_pulse_71283",
-			"set" : ["71283"],
+			"set" : ["71283","72281"],
 			"name" : "Feedback Pulse",
 			"unique" : true,
 			"text" : "When defending, before any dice are rolled, you may discard this card to declare that half of the damage from this attack will be cancelled and the other half will be assigned to the attacker (round down); you receive no damage. The attacking ship cannot receive critical damage from this effect. Place an Auxiliary Power Token beside your ship.",
@@ -15831,7 +15831,7 @@
 		}, {
 			"type" : "tech",
 			"id" : "quantum_singularity_71281",
-			"set" : ["71281"],
+			"set" : ["71281","72291"],
 			"name" : "Quantum Singularity",
 			"unique" : false,
 			"text" : "<b>ACTION:</b> Discard this card to remove your ship from the play area and discard all Tokens that are beside your ship except for Auxiliary Power Tokens. During the End Phase, place your ship back in the play area. You cannot place your ship within Range 1-3 of any other ship. This Upgrade may only be purchased for a Species 8472 ship.",
@@ -15870,7 +15870,7 @@
 		}, {
 			"type" : "crew",
 			"id" : "seven_of_nine_71283",
-			"set" : ["71283"],
+			"set" : ["71283","72281"],
 			"name" : "Seven of Nine",
 			"unique" : true,
 			"text" : "<b>ACTION:</b> Disable this card to add up to 2 Drone Tokens your Captain Card. You may not exceed your starting number of Drone Tokens.",
@@ -15922,7 +15922,7 @@
 		}, {
 			"type" : "talent",
 			"id" : "the_weak_will_perish_71281",
-			"set" : ["71281"],
+			"set" : ["71281","72291"],
 			"name" : "The Weak Will Perish",
 			"unique" : true,
 			"text" : "When attacking with your Primary Weapon, after rolling your attack dice, you may discard this card and disable your Captain Card to choose any number of your attack dice and re-roll them up to 2 times. This Upgrade cost +5 Squadron Points for any ship other than a Species 8472 ship.",
@@ -15974,7 +15974,7 @@
 		}, {
 			"type" : "weapon",
 			"id" : "biological_attack_71281",
-			"set" : ["71281"],
+			"set" : ["71281","72291"],
 			"name" : "Biological Attack",
 			"unique" : false,
 			"text" : "At the end of the Activation Phase, if your ship base is touching an enemy ship base, you may discard this Upgrade and disable your Captain Card to inflict 1 critical damage to the enemy ship's Hull (even if it has Active Shields). Then disable 1 [crew] Upgrade of your choice on the enemy ship. This Upgrade may only be purchased for a Species 8472 ship.",
@@ -15987,7 +15987,7 @@
 		}, {
 			"type" : "weapon",
 			"id" : "cutting_beam_71283",
-			"set" : ["71283", "71444", "71513a"],
+			"set" : ["71283","72281", "71444", "71513a"],
 			"name" : "Cutting Beam",
 			"unique" : false,
 			"text" : "<b>ATTACK:</b> You must have the target ship held in a Borg Tractor Beam (i.e. the target ship must have the white Borg Tractor Beam Token beside its ship and your must have the corresponding green Borg Tractor Beam Token beside your ship) and disable this card to perform this attack. This Upgrade may only be purchased for a Borg Ship.",
@@ -16000,7 +16000,7 @@
 		}, {
 			"type" : "weapon",
 			"id" : "energy_blast_71281",
-			"set" : ["71281"],
+			"set" : ["71281","72291"],
 			"name" : "Energy Blast",
 			"unique" : false,
 			"text" : "<b>ATTACK: (Target Lock)</b> Spend your target lock and disable this card to perform this attack. \n\nIf fired from a Species 8472 Bioship, add +2 attack dice.",
@@ -16013,7 +16013,7 @@
 		}, {
 			"type" : "weapon",
 			"id" : "energy_focusing_ship_71281",
-			"set" : ["71281"],
+			"set" : ["71281","72291"],
 			"name" : "Energy Focusing Ship",
 			"unique" : true,
 			"text" : "<b>ATTACK:</b> Discard this card to perform this attack. Target all friendly ships within Range 1 of your ship that have not yet attacked this round. Target ships cannot make a normal attack this round. Instead, add +2 attack dice to your attack roll for this attack for each targeted ship. Place an Auxiliary Power Token beside your ship and each of the target ships. This Upgrade may only be purchased for a Species 8472 ship.",
