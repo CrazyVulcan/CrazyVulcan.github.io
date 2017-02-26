@@ -1,13 +1,13 @@
 {
 	"sets" : [{
 			"type" : "set",
-			"id" : "71272",
+			"id" : "72292",
 			"name" : "U.S.S. Excelsior(Repaint)",
 			"releaseDate" : "2017-02-02",
 			"parentSet" : "Wave 29"
 		}, {
 			"type" : "set",
-			"id" : "71281",
+			"id" : "72291",
 			"name" : "Bioship Alpha(Repaint)",
 			"releaseDate" : "2017-02-01",
 			"parentSet" : "Wave 29"
@@ -17,7 +17,7 @@
 			"name" : "U.S.S. Enterprise-D",
 			"releaseDate" : "2017-01-26",
 			"parentSet" : "Yesterday's Enterprise"
-		}, {
+		},{
 			"type" : "set",
 			"id" : "72284r",
 			"name" : "Senior Staff",
@@ -3462,7 +3462,7 @@
 		}, {
 			"type" : "ship",
 			"id" : "borg_sphere_4270_71283",
-			"set" : ["71283","72281"],
+			"set" : ["71283","72283"],
 			"name" : "Borg Sphere 4270",
 			"class" : "Borg Sphere",
 			"actions" : ["target-lock", "scan", "regenerate"],
@@ -3483,7 +3483,7 @@
 		}, {
 			"type" : "ship",
 			"id" : "borg_sphere_71283",
-			"set" : ["71283","72281", "72255"],
+			"set" : ["71283","72283", "72255"],
 			"name" : "Borg Starship",
 			"class" : "Borg Sphere",
 			"actions" : ["target-lock", "scan", "regenerate"],
@@ -9042,7 +9042,7 @@
 		}, {
 			"type" : "captain",
 			"id" : "drone_71283",
-			"set" : ["71283","72281", "71444", "71525", "71646d", "71511", "71513a", "71792", "71530", "72255"],
+			"set" : ["71283","72283", "71444", "71525", "71646d", "71511", "71513a", "71792", "71530", "72255"],
 			"name" : "Drone",
 			"unique" : false,
 			"text" : "At the start of the game, place 1 Drone Token on this card.",
@@ -9873,7 +9873,7 @@
 		}, {
 			"type" : "captain",
 			"id" : "tactical_drone_71283",
-			"set" : ["71283","72281"],
+			"set" : ["71283","72283"],
 			"name" : "Tactical Drone",
 			"unique" : false,
 			"text" : "At the start of the game, place 4 Drone Tokens on this card. \n\nWhen attacking, you may spend 1 Drone Token to choose any number of your attack dice and re-roll them once.",
@@ -15727,7 +15727,7 @@
 		}, {
 			"type" : "borg",
 			"id" : "borg_ablative_hull_armor_71283",
-			"set" : ["71283","72281", "71444"],
+			"set" : ["71283","72283", "71444"],
 			"name" : "Borg Ablative Hull Armor",
 			"unique" : false,
 			"text" : "When defending, convert all of your opponents' [crit] results into [hit] results and place all the damage cards that your ship receives beneath this card. Once there are 4 damage cards beneath this card, discard this Upgrade and all damage cards beneath it. All excess damage affects the ship as normal.",
@@ -15740,7 +15740,7 @@
 		}, {
 			"type" : "borg",
 			"id" : "borg_assimilation_tubules_71283",
-			"set" : ["71283","72281", "71530"],
+			"set" : ["71283","72283", "71530"],
 			"name" : "Borg Assimilation Tubules",
 			"unique" : false,
 			"text" : "<b>ACTION:</b> Disable this card and discard 1 Drone Token to target a ship at Range 1-2. Steal 1 [crew], [tech], or [weapon] Upgrade from the target ship, even if it exceeds your ship's restrictions. Place a Disabled Upgrade Token on the assimilated Upgrade. You cannot steal a Species 8472 Upgrade with this Action.",
@@ -15753,7 +15753,7 @@
 		}, {
 			"type" : "borg",
 			"id" : "borg_tractor_beam_71283",
-			"set" : ["71283","72281", "71444", "71513a"],
+			"set" : ["71283","72283", "71444", "71513a"],
 			"name" : "Borg Tractor Beam",
 			"unique" : false,
 			"text" : "<b>ACTION:</b> Target a ship at Range 1. Place one white Borg Tractor Beam Token beside that ship and the corresponding green Borg Tractor Beam Token (the one that matches the white token's letter) beside your ship.",
@@ -15779,7 +15779,7 @@
 		}, {
 			"type" : "tech",
 			"id" : "feedback_pulse_71283",
-			"set" : ["71283","72281"],
+			"set" : ["71283","72283"],
 			"name" : "Feedback Pulse",
 			"unique" : true,
 			"text" : "When defending, before any dice are rolled, you may discard this card to declare that half of the damage from this attack will be cancelled and the other half will be assigned to the attacker (round down); you receive no damage. The attacking ship cannot receive critical damage from this effect. Place an Auxiliary Power Token beside your ship.",
@@ -15870,7 +15870,7 @@
 		}, {
 			"type" : "crew",
 			"id" : "seven_of_nine_71283",
-			"set" : ["71283","72281"],
+			"set" : ["71283","72283"],
 			"name" : "Seven of Nine",
 			"unique" : true,
 			"text" : "<b>ACTION:</b> Disable this card to add up to 2 Drone Tokens your Captain Card. You may not exceed your starting number of Drone Tokens.",
@@ -15987,7 +15987,7 @@
 		}, {
 			"type" : "weapon",
 			"id" : "cutting_beam_71283",
-			"set" : ["71283","72281", "71444", "71513a"],
+			"set" : ["71283","72283", "71444", "71513a"],
 			"name" : "Cutting Beam",
 			"unique" : false,
 			"text" : "<b>ATTACK:</b> You must have the target ship held in a Borg Tractor Beam (i.e. the target ship must have the white Borg Tractor Beam Token beside its ship and your must have the corresponding green Borg Tractor Beam Token beside your ship) and disable this card to perform this attack. This Upgrade may only be purchased for a Borg Ship.",
