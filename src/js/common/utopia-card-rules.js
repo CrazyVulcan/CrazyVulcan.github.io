@@ -5292,19 +5292,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 			}
 		},
-		"crew:betor_crew_72282p": {		
-			intercept:{
-			self:{
-				canEquip: function(upgrade,ship,fleet){
-					if (ship.captain && ( ship.captain.name == "Lursa") )
-						return true;
-					return false;
-				},
-				skill: function(upgrade,fleet,skill){
-					return resolve(upgrade,ship,fleet,skill) + 4;
-				return skill;
-				}
-			}
+		"crew:betor_crew_72282p": {
+			//Only if "Lursa" is the Captain
+			canEquip: function(card,ship,fleet) {
+				return captain && captain.name == "Lursa";
 			}
 		},
 		// Jean-Luc Picard - Enterprise-D
