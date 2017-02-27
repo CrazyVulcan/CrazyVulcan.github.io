@@ -4705,9 +4705,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						return cost;
 					}
 			}
-			},
+			}
 		},	
-		
+
 		// Disruptor Banks - one per ship only
 		"weapon:distuptor_banks_jazkel": {
 			canEquip: function(upgrade,ship,fleet) {
@@ -5278,14 +5278,34 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 		// Duras Sisters	
 		"crew:lursa_crew_72282p": {		
-			canEquip: function(upgrade,ship,fleet){
-				return ship.captain && ship.captain.name == "B'etor";
-			}		
+			intercept:{
+			self:{
+				canEquip: function(upgrade,ship,fleet){
+					if (ship.captain && ( ship.captain.name == "B'Etor") )
+						return true;
+					return false;
+				},
+				skill: function(upgrade,fleet,skill){
+					return resolve(upgrade,ship,fleet,skill) + 4;
+				return skill;
+				}
+			}
+			}
 		},
-		"crew:betor_crew_72282p": {
-			canEquip: function(upgrade,ship,fleet){
-				return ship.captain && ship.captain.name == "Lursa";
-			}		
+		"crew:betor_crew_72282p": {		
+			intercept:{
+			self:{
+				canEquip: function(upgrade,ship,fleet){
+					if (ship.captain && ( ship.captain.name == "Lursa") )
+						return true;
+					return false;
+				},
+				skill: function(upgrade,fleet,skill){
+					return resolve(upgrade,ship,fleet,skill) + 4;
+				return skill;
+				}
+			}
+			}
 		},
 		// Jean-Luc Picard - Enterprise-D
 		"captain:jean_luc_picard_enterprise_72284p": {
