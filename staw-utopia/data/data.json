@@ -22216,7 +22216,7 @@
 			"set" : ["72284r"],
 			"name" : "Senior Staff",
 			"text" : "Each ship in your fleet may field 1 additional [talent] Upgrade for every [crew] Upgrade assigned to it.\n\nEach [talent] Upgrade is placed next to the [crew] Upgrade that fielded it. \n\nIf the [crew] Upgrade is ever discarded, you must also discard the [talent] Upgrade that was fielded by that [crew] Upgrade. The cost of this resource is 1 sp for each additional [talent] Upgrade you assign to your fleet.",
-			"cost" : "?",
+			"cost" : 0,
 			"showShipResourceSlot" : false
 		}
 	],
