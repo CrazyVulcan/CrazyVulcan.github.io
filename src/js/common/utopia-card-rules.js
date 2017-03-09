@@ -117,6 +117,12 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		return slots;
 	};
 	
+
+	
+	
+	
+	
+	
 	var createFirstMajeSlot = function() {
 		return {
 			type: ["talent"],
@@ -5278,24 +5284,26 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 		// Duras Sisters	
 		"crew:lursa_crew_72282p": {		
-			intercept:{
-			self:{
-				canEquip: function(upgrade,ship,fleet){
-					if (ship.captain && ( ship.captain.name == "B'Etor") )
-						return true;
-					return false;
-				},
-				skill: function(upgrade,fleet,skill){
-					return resolve(upgrade,ship,fleet,skill) + 4;
-				return skill;
+			intercept: {
+				ship: {
+					skill: function(upgrade,ship,fleet,skill) {
+						if( upgrade == ship.captain )
+							return resolve(upgrade,ship,fleet,skill) + 4;
+						return skill;
+					}
 				}
-			}
 			}
 		},
 		"crew:betor_crew_72282p": {
 			//Only if "Lursa" is the Captain
-			canEquip: function(card,ship,fleet) {
-				return captain && captain.name == "Lursa";
+			intercept: {
+				ship: {
+					skill: function(upgrade,ship,fleet,skill) {
+						if( upgrade == ship.captain )
+							return resolve(upgrade,ship,fleet,skill) + 4;
+						return skill;
+					}
+				}
 			}
 		},
 		// Jean-Luc Picard - Enterprise-D
