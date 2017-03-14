@@ -1,6 +1,24 @@
 {
 	"sets" : [{
 			"type" : "set",
+			"id" : "72290p",
+			"name" : "U.S.S. Defiant NCC-1764",
+			"releaseDate" : "2017-02-29",
+			"parentSet" : "In a Mirror Darkly"
+		}, {
+			"type" : "set",
+			"id" : "72290r",
+			"name" : "Mutiny",
+			"releaseDate" : "2017-02-28",
+			"parentSet" : "In a Mirror Darkly Resoruce"
+		}, {
+			"type" : "set",
+			"id" : "72293",
+			"name" : "Muratas",
+			"releaseDate" : "2017-02-03",
+			"parentSet" : "Wave 29"
+		}, {
+			"type" : "set",
 			"id" : "72292",
 			"name" : "U.S.S. Excelsior(Repaint)",
 			"releaseDate" : "2017-02-02",
@@ -1252,6 +1270,40 @@
 	],
 	"ships" : [{
 			"type" : "ship",
+			"id" : "uss_defiant_72290p",
+			"set" : ["72290p"],
+			"name" : "U.S.S. Defiant NCC-1764",
+			"class" : "Constitution Class",
+			"actions" : ["evade", "target-lock", "scan", "battlestations"],
+			"upgrades" : ["weapon", "weapon", "crew", "crew"],
+			"attack" : 3,
+			"agility" : 1,
+			"hull" : 4,
+			"shields" : 3,
+			"cost" : 22,
+			"text" : "When attacking, if your ship is not in the target ship's forward firing arc, during the Modify Attack Dice step, you may re-roll all of your blank results.",
+			"unique" : true,
+			"factions" : ["federation","mirror-universe"],
+			"squadron" : false
+		}, {
+			"type" : "ship",
+			"id" : "muratas_72293",
+			"set" : ["72293"],
+			"name" : "Muratas",
+			"class" : "Xindi Reptilian Warship",
+			"actions" : ["evade", "target-lock", "scan", "battlestations"],
+			"upgrades" : ["tech", "weapon", "weapon", "crew"],
+			"attack" : 4,
+			"agility" : 1,
+			"hull" : 4,
+			"shields" : 2,
+			"cost" : 22,
+			"text" : "When attacking, during the Modify Attack Dice step, you may disable one of your Active Shields to re-roll up to 2 of your attack dice.",
+			"unique" : true,
+			"factions" : ["xindi"],
+			"squadron" : false
+		}, {
+			"type" : "ship",
 			"id" : "uss_enterprise_d_72284p",
 			"set" : ["72284p"],
 			"name" : "U.S.S. Enterprise-D",
@@ -1689,7 +1741,7 @@
 		}, {
 			"type" : "ship",
 			"id" : "xindi_reptilian_warship",
-			"set" : ["72224p"],
+			"set" : ["72224p","72293"],
 			"name" : "Xindi Starship",
 			"class" : "Xindi Reptilian Warship",
 			"actions" : ["evade", "target-lock", "scan", "battlestations"],
@@ -2343,7 +2395,7 @@
 		}, {
 			"type" : "ship",
 			"id" : "1010",
-			"set" : ["71122", "72240", "72234p", "72002p"],
+			"set" : ["72290p","71122", "72240", "72234p", "72002p"],
 			"name" : "Federation Starship",
 			"class" : "Constitution Class",
 			"actions" : ["evade", "target-lock", "scan", "battlestations"],
@@ -8916,15 +8968,6 @@
 	],
 	"captains" : [{
 			"type" : "captain",
-			"id" : "fleet_commander_upgrade",
-			"set" : ["72280r"],
-			"name" : "Fleet Commander",
-			"text" : "Add Two Captain Slots, Add +1 to highest Captain Skill",
-			"cost" : 0,
-			"skill" : 1,
-			"factions" : ["independent"]
-		}, {
-			"type" : "captain",
 			"id" : "species_8472_captain_71281",
 			"set" : ["71281","72291", "72012"],
 			"name" : "Species 8472",
@@ -8937,7 +8980,7 @@
 		}, {
 			"type" : "captain",
 			"id" : "xindi_captain_72003p",
-			"set" : ["72003p", "71225", "72224p", "72004p"],
+			"set" : ["72003p", "71225", "72224p", "72004p","72293"],
 			"name" : "Xindi",
 			"cost" : 0,
 			"skill" : 1,
@@ -9732,6 +9775,17 @@
 				"ship" : {},
 				"fleet" : {}
 			}
+		}, {
+			"type" : "captain",
+			"id" : "degra_muratas",
+			"set" : ["72293"],
+			"name" : "Degra",
+			"cost" : 3,
+			"skill" : 4,
+			"talents" : 0,
+			"text" : "When attacking with a Secondary [weapon] Upgrade, gain +1 attack die. +2 attack dice if the attack is made with a Xindi [weapon] Upgrade.",
+			"unique" : true,
+			"factions" : ["xindi"]
 		}, {
 			"type" : "captain",
 			"id" : "kiaphet_amman'sor_72281",
@@ -11081,6 +11135,21 @@
 			"factions" : ["ferengi"]
 		}, {
 			"type" : "captain",
+			"id" : "jonathan_archer_72290p",
+			"set" : ["72290p"],
+			"name" : "Jonathan Archer",
+			"cost" : 4,
+			"skill" : 6,
+			"talents" : 1,
+			"text" : "When attacking, during the Compare Results step, you may place an Auxiliary Power Token beside your ship to convert 1 of your [crit] results into  2 [hit] results.",
+			"unique" : true,
+			"factions" : ["mirror-universe"],
+			"intercept" : {
+				"ship" : {},
+				"fleet" : {}
+			}
+		}, {
+			"type" : "captain",
 			"id" : "worf_71807",
 			"set" : ["71807"],
 			"name" : "Worf",
@@ -11616,6 +11685,17 @@
 			"factions" : ["species-8472"]
 		}, {
 			"type" : "captain",
+			"id" : "dolim_muratas",
+			"set" : ["72293"],
+			"name" : "Dolim",
+			"text" : "During the Gather Forces step, you may treat any of the [crew] or [tech] Upgrade slots on your Upgrade Bar as [weapon] Upgrade slots\n\nAll of your [weapon] Upgrades cost -1SP, -5 Max",
+			"cost" : 5,
+			"skill" : 8,
+			"talents" : 1,
+			"unique" : true,
+			"factions" : ["xindi"]
+		}, {
+			"type" : "captain",
 			"id" : "q_female__72000b",
 			"set" : ["72000b"],
 			"name" : "Q (Female)",
@@ -12051,6 +12131,102 @@
 		}
 	],
 	"upgrades" : [{
+			"type" : "weapon",
+			"id" : "aft_Photon_torpedoes_72290p",
+			"set" : ["72290p"],
+			"name" : "Aft Photon Torpedoes",
+			"cost" : 4,
+			"range": "2 - 3",
+			"attack" : 4,
+			"text" : "<b>ATTACK: Target Lock</b> Spend your target lock and place 3 Time Tokens on this card to perform this attack\n\nYou may convert 1 of your [battlestations] results into a [crit] result.\n\nYou may only target a ship that is not in your forward firing arc with this attack.",
+			"unique" : false,
+			"factions" : ["federation"]
+		}, {
+			"type" : "crew",
+			"id" : "assault_team_72290p",
+			"set" : ["72290p"],
+			"name" : "Assault Team",
+			"cost" : 5,
+			"text" : "<b>ACTION:</b> If your ship is not Cloaked, disable all of your remaining Shields and target a ship at Range 1-2 that is not Cloaked and has no Active Shields. Discard this card to place 2 Time Tokens on all Upgrades on the target ship that do not already have Time Tokens on them.",
+			"unique" : true,
+			"factions" : ["mirror-universe"]
+		}, {
+			"type" : "crew",
+			"id" : "charles_tucker_iii_72290p",
+			"set" : ["72290p"],
+			"name" : "Charles Tucker III",
+			"cost" : 4,
+			"text" : "<b>ACTION:</b> Disable this card to remove up to 2 Disabled Upgrade Tokens or up to 4 Time Tokens from any of your [tech] or [weapon] Upgrades.",
+			"unique" : true,
+			"factions" : ["mirror-universe"]
+		}, {
+			"type" : "crew",
+			"id" : "tpol_72290p",
+			"set" : ["72290p"],
+			"name" : "T'Pol",
+			"cost" : 4,
+			"text" : "<b>ACTION:</b> Discard this card to target a ship within Range 1-3. Disable 1 [crew] Upgrade and/or 1 [tech] or [weapon] Upgrade on the target ship.",
+			"unique" : true,
+			"factions" : ["mirror-universe"]
+		}, {
+			"type" : "talent",
+			"id" : "patience_is_for_the_dead_muratas",
+			"set" : ["72293"],
+			"name" : "Patience is for the Dead",
+			"cost" : 5,
+			"text" : "At the start of the Combat Phase, before any ships, you may discard this card to attack before all other ships. You cannot roll any defense dice during the round you use this ability.",
+			"unique" : true,
+			"factions" : ["xindi"]
+		}, {
+			"type" : "weapon",
+			"id" : "xindi_torpedoes_muratas",
+			"set" : ["72293"],
+			"name" : "Xindi Torpedoes",
+			"attack" : 4,
+			"cost" : 3,
+			"range": "2 - 3",
+			"text" : "<b>ATTACK:</b> Target Lock, Spend your target lock and place 3 Time Tokens on this card to perform this attack.\n\nIf fired from a Xindi Reptilian Warship add +1 attack dice.",
+			"unique" : false,
+			"factions" : ["xindi"]
+		}, {
+			"type" : "weapon",
+			"id" : "particle_beam_weapon_muratas",
+			"set" : ["72293"],
+			"name" : "Particle Beam Weapon",
+			"cost" : 0,
+			"attack" : "*",
+			"range": "1 - 3",
+			"text" : "<b>ATTACK:</b> The Attack Value of this weapon is equal to the ship's Primary Weapon Value +1\n\nThis Upgrade may only be purchased for a Xindi ship and the SP cost is equal to the ship's Primary Weapon Value.",
+			"unique" : false,
+			"factions" : ["xindi"]
+		}, {
+			"type" : "crew",
+			"id" : "reptilian_analysis_team_muratas",
+			"set" : ["72293"],
+			"name" : "Reptilian Analysis Team",
+			"cost" : 5,
+			"text" : "Add 1 [tech] Upgrade to your Upgrade Bar\n\nWhen you are supposed to disable a [tech] Upgrade, you may disable this card instead and place 3 Time Tokens on the [tech] Upgrade. 2 Time Tokens if it is a Xindi [tech] Upgrade.\n\nThis Upgrade may only be purchased for a Xindi ship and no ship may be equipped with more than one 'Reptillian Analysis Team' Upgrade.",
+			"unique" : false,
+			"factions" : ["xindi"]
+		}, {
+			"type" : "tech",
+			"id" : "thermal_chamber_muratas",
+			"set" : ["72293"],
+			"name" : "Thermal Chamber",
+			"cost" : 3,
+			"text" : "<b>ACTION:</b> Remove all Disabled Upgrade Tokens from all of your Xindi [crew] Upgrades and add +4 to your Captain Skill number for this round.\n\nThis Upgrade may only be purchased for a Xindi-Reptilian warship.",
+			"unique" : false,
+			"factions" : ["xindi"]
+		}, {
+			"type" : "tech",
+			"id" : "sensor_encoders_muratas",
+			"set" : ["72293"],
+			"name" : "Sensor Encoders",
+			"cost" : 3,
+			"text" : "When defending, you may disable this card to re-roll 1 of your defense dice.\n\nIf a friendly ship is destroyed, you may discard this card. If you do so, your ship gains +1 Agility for the rest of the game. \n\nThis Upgrade may only be purchased for a Xindi-Reptilian warship and no ship may be equipped with more than one 'Sensor Encoders' Upgrade.",
+			"unique" : false,
+			"factions" : ["xindi"]
+		}, {
 			"type" : "talent",
 			"id" : "dispersal_pattern_sierra_72284p",
 			"set" : ["72284p"],
@@ -12093,7 +12269,9 @@
 			"id" : "xindi_torpedoes_72281",
 			"set" : ["72281"],
 			"name" : "Xindi Torpedoes",
+			"attack" : 4,
 			"cost" : 3,
+			"range": "2 - 3",
 			"text" : "<b>ATTACK:</b> Target Lock, Spend your target lock and place 3 Time Tokens on this card to perform this attack.\n\nIf fired from a Xindi Aquatic Cruiser add +1 attack dice.",
 			"unique" : false,
 			"factions" : ["xindi"]
@@ -22217,6 +22395,17 @@
 			"name" : "Senior Staff",
 			"text" : "Each ship in your fleet may field 1 additional [talent] Upgrade for every [crew] Upgrade assigned to it.\n\nEach [talent] Upgrade is placed next to the [crew] Upgrade that fielded it. \n\nIf the [crew] Upgrade is ever discarded, you must also discard the [talent] Upgrade that was fielded by that [crew] Upgrade. The cost of this resource is 1 sp for each additional [talent] Upgrade you assign to your fleet.",
 			"cost" : 0,
+<<<<<<< HEAD
+=======
+			"showShipResourceSlot" : false
+		}, {
+			"type" : "resource",
+			"id" : "mutiny_resource",
+			"set" : ["72290r"],
+			"name" : "Mutiny",
+			"text" : "At the start of the game place 3 Mission Tokens on this card.\n\nOnce per round, during an opposing ship's Perform Action step, if that ship chooses to perform an Action from its Action Bar, you may remove 1 Mission Token from this card to prevent that ship from performing that Action.\n\nNOTE: This ability occurs after the Action is announced, but before the Action is performed and the opposing ship cannot perform any additional Actions during this round in which you use this ability\n\nRemove this card from the game when there are no Mission Tokens left on this card.",
+			"cost" : 10,
+>>>>>>> origin/master
 			"showShipResourceSlot" : false
 		}
 	],
