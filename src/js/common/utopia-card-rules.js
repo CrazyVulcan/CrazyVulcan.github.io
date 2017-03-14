@@ -5286,21 +5286,20 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"crew:lursa_crew_72282p": {		
 			intercept: {
 				ship: {
-					skill: function(upgrade,ship,fleet,skill) {
-						if( upgrade == ship.captain )
-							return resolve(upgrade,ship,fleet,skill) + 4;
+					skill: function(card,ship,fleet,skill) {
+						if( card == ship.captain )
+							return resolve(card,ship,fleet,skill) + ( hasFaction(card,"klingon",ship,fleet) ? 4 : 1 );
 						return skill;
 					}
 				}
 			}
 		},
 		"crew:betor_crew_72282p": {
-			//Only if "Lursa" is the Captain
 			intercept: {
 				ship: {
-					skill: function(upgrade,ship,fleet,skill) {
-						if( upgrade == ship.captain )
-							return resolve(upgrade,ship,fleet,skill) + 4;
+					skill: function(card,ship,fleet,skill) {
+						if( card == ship.captain )
+							return resolve(card,ship,fleet,skill) + ( hasFaction(card,"klingon",ship,fleet) ? 4 : 1 );
 						return skill;
 					}
 				}
@@ -5369,3 +5368,4 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		}
 	};
 }]);
+
