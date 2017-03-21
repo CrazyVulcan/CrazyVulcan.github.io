@@ -5284,46 +5284,33 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 		// Duras Sisters	
 		"crew:lursa_crew_72282p": {		
-<<<<<<< HEAD
-			intercept:{
-			self:{
-				canEquip: function(upgrade,ship,fleet){
-					if (ship.captain && ( ship.captain.name == "B'Etor") )
-						return true;
-					return false;
-				},
-				skill: function(upgrade,fleet,skill){
-					return resolve(upgrade,ship,fleet,skill) + 4;
-				return skill;
-				}
-			}
-			}
-		},
-		"crew:betor_crew_72282p": {
-			//Only if "Lursa" is the Captain
-			canEquip: function(card,ship,fleet) {
-				return captain && captain.name == "Lursa";
-=======
 			intercept: {
-				ship: {
-					skill: function(card,ship,fleet,skill) {
-						if( card == ship.captain )
-							return resolve(card,ship,fleet,skill) + ( hasFaction(card,"klingon",ship,fleet) ? 3 : 1 );
+				self: {
+					skill: function(upgrade,ship,fleet,skill) {
+						if( upgrade == ship.captain )
+							return resolve(upgrade,ship,fleet,skill) + 4;
 						return skill;
 					}
+				}
+			},
+			canEquip:{function(upgrade,ship,fleet) {
+				return ( captain && captain.name == "B'Etor" );
 				}
 			}
 		},
 		"crew:betor_crew_72282p": {
 			intercept: {
-				ship: {
-					skill: function(card,ship,fleet,skill) {
-						if( card == ship.captain )
-							return resolve(card,ship,fleet,skill) + ( hasFaction(card,"klingon",ship,fleet) ? 3 : 1 );
+				self: {
+					skill: function(upgrade,ship,fleet,skill) {
+						if( upgrade == ship.captain )
+							return resolve(upgrade,ship,fleet,skill) + 4;
 						return skill;
 					}
 				}
->>>>>>> origin/master
+			},
+			canEquip:{function(upgrade,ship,fleet) {
+				return ( captain && captain.name == "Lursa" );
+				}
 			}
 		},
 		// Jean-Luc Picard - Enterprise-D
