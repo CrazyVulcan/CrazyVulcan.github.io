@@ -13679,6 +13679,7 @@
 			"set" : ["72300p"],
 			"name" : "Quick Thinking",
 			"cost" : 5,
+			"range" : "1-2",
 			"text" : "<b>ACTION:</b> Discard this card to immediately perform a [sensor-echo] Action, even if your ship is not cloaked.",
 			"unique" : true,
 			"factions" : ["federation"]
