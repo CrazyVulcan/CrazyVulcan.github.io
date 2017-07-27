@@ -12195,7 +12195,7 @@
             "set": ["72301rp"],
             "name": "Data",
             "cost": 5,
-            "text": "<b>ACTION:</b> Discard this card and target an opposing ship.\n\nRoll one attack die and consult the below chart.\n[crit]:Discard a card of your choice on the target ship.\n[battlestations]: Discard the Captain of the target ship.\n[hit]Discard a [crew] on teh target ship,\n[  ]: Nothing happens.",
+            "text": "<b>ACTION:</b> Discard this card and target an opposing ship.\n\nRoll one attack die and consult the below chart.\n[crit]:Discard a card of your choice on the target ship.\n[battlestations]: Discard the Captain of the target ship.\n[hit]Discard a [crew] on teh target ship,\n|  |: Nothing happens.",
             "unique": true,
             "factions": ["federation"]
         }, {
