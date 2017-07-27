@@ -12195,6 +12195,7 @@
             "set": ["72301rp"],
             "name": "Data",
             "cost": 5,
+			"range": "1-2",
             "text": "<b>ACTION:</b> Discard this card and target an opposing ship.\n\nRoll one attack die and consult the below chart.\n[crit]:Discard a card of your choice on the target ship.\n[battlestations]: Discard the Captain of the target ship.\n[hit]Discard a [crew] on teh target ship,\n|  |: Nothing happens.",
             "unique": true,
             "factions": ["federation"]
@@ -12800,7 +12801,8 @@
 			"set": ["72262p","72301rp"],
 			"name": "Nanclus",
 			"cost": 5,
-			"text": "<b>ACTION:</b> Discard this card to target an opposing ship at Range 1-3. The target ship gains +1 attack die this round, but cannot roll defense dice this round",
+			"range": "1-3",
+			"text": "<b>ACTION:</b> Discard this card to target an opposing ship. The target ship gains +1 attack die this round, but cannot roll defense dice this round",
 			"unique": true,
 			"factions": ["romulan"]
 		}, {
