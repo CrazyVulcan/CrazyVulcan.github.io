@@ -2,7 +2,7 @@
 	"sets": [{
 			"type": "set",
 			"id": "72301rp",
-			"name": "OP Mission",
+			"name": "OP Mission Prize",
 			"releaseDate": "2017-08-02",
 			"parentSet": "Chronological Chaos"
 		}, {
@@ -12191,11 +12191,11 @@
 	],
 	"upgrades": [{
             "type": "crew",
-            "id": "data_72301rp",
+            "id": "data_72301p",
             "set": ["72301rp"],
             "name": "Data",
             "cost": 5,
-            "text": "<b>ACTION:</b> Discard this card and target an opposing ship.\n\nRoll one attack die and consult the below chart.\n[crit]:Discard a card of your choice on the target ship.\n[battlestations]: Discard the Captain of the target ship.\n[hit]Discard a [crew] on teh target ship,\n""[""  ""]"": Nothing happens."
+            "text": "<b>ACTION:</b> Discard this card and target an opposing ship.\n\nRoll one attack die and consult the below chart.\n[crit]:Discard a card of your choice on the target ship.\n[battlestations]: Discard the Captain of the target ship.\n[hit]Discard a [crew] on teh target ship,\n[  ]: Nothing happens.",
             "unique": true,
             "factions": ["federation"]
         }, {
@@ -22518,7 +22518,7 @@
 			"text": "At the start of the game, place 5 Mission Tokens on this card. Once per round, during the Combat Phase, you may remove one Mission Token from this card to use one of the folowing abilities for one of your ships.\n\n1. Add +3 to your Captain Skill Number.\n\n2. Re-roll one of your attack or defense dice.\n\n3. Place an [evade] or a [battlestations] Token beside your ship.\n\nRemove this card from the game when there are no Mission Tokens left on this card.",
 			"cost": 5,
 			"showShipResourceSlot": false
-		} {
+		}, {
 			"type": "resource",
 			"id": "captains_chair_resource",
 			"set": ["72301r"],
@@ -22526,7 +22526,7 @@
 			"text": "This card can only be assigned to a ship that has a Captain with a printed Captain skill of 5 or higher.\n\n<b>ACTIVATION PHASE:</b> Once per game round, after this ship executes a Non-Red Maneuver:\n\nRemove a Disabled Token from 1 of the cards equipped to this ship.",
 			"cost": 3,
 			"showShipResourceSlot": false
-		}, 
+		} 
 	],
 	"others": [{
 			"type": "token",
