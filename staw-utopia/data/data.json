@@ -3,14 +3,20 @@
 			"type": "set",
 			"id": "72301rp",
 			"name": "OP Mission Prize",
-			"releaseDate": "2017-08-02",
+			"releaseDate": "2017-08-30",
 			"parentSet": "Chronological Chaos"
 		}, {
 			"type": "set",
 			"id": "72301r",
 			"name": "Captain's Chair Resource",
-			"releaseDate": "2017-08-01",
+			"releaseDate": "2017-08-19",
 			"parentSet": "Chronological Chaos"
+		}, {
+			"type": "set",
+			"id": "72001wp",
+			"name": "U.S.S. Grissom",
+			"releaseDate": "2017-08-01",
+			"parentSet": "Card Pack 1"
 		}, {
 			"type": "set",
 			"id": "72300p",
@@ -1299,6 +1305,48 @@
 		}
 	],
 	"ships": [{
+			"type": "ship",
+			"id": "uss_grissom_72001wp",
+			"set": ["72001wp"],
+			"name": "U.S.S. Grissom",
+			"class": "Oberth Class",
+			"actions": ["evade", "target-lock", "scan"],
+			"upgrades": ["tech", "tech", "crew", "crew"],
+			"attack": 2,
+			"agility": 3,
+			"hull": 3,
+			"shields": 2,
+			"cost": 14,
+			"text": "<b>WHEN THIS SHIP WOULD BE DESTROYED</b> \n\nThe attacking ship must discard one [crew] Upgrade. If it can't, place an [aux] Token beside it. ",
+			"unique": true,
+			"factions": ["federation"],
+			"intercept": {
+				"ship": {},
+				"fleet": {}
+			},
+			"squadron": false
+		}, {
+			"type": "ship",
+			"id": "ufederation_starship_72001wp",
+			"set": ["72001wp"],
+			"name": "Federation Starship",
+			"class": "Oberth Class",
+			"actions": ["evade", "target-lock", "scan"],
+			"upgrades": ["tech", "crew", "crew"],
+			"attack": 2,
+			"agility": 3,
+			"hull": 3,
+			"shields": 2,
+			"cost": 12,
+			"text": "",
+			"unique": false,
+			"factions": ["federation"],
+			"intercept": {
+				"ship": {},
+				"fleet": {}
+			},
+			"squadron": false
+		}, {
 			"type": "ship",
 			"id": "delta_flyer_2_72300p",
 			"set": ["72300p"],
@@ -9438,6 +9486,17 @@
 			"factions": ["ferengi"]
 		}, {
 			"type": "captain",
+			"id": "jt_esteban_72001p",
+			"set": ["72001wp"],
+			"name": "J.T. Esteban",
+			"cost": 2,
+			"skill": 3,
+			"talents": 0,
+			"text": "The Captain's Discretion [talent] Upgrade may be equipped to this Captain. \n____________________\n<b>When this ship would be destroyed</b>\nMove up to 2 [crew] Upgrades equipped to this ship to another friendly ship even if it exceeds that ships restrictions. ",
+			"unique": true,
+			"factions": ["federation"]
+		}, {
+			"type": "captain",
 			"id": "tal_72242",
 			"set": ["72242"],
 			"name": "Tal",
@@ -12190,6 +12249,81 @@
 		}
 	],
 	"upgrades": [{
+            "type": "talent",
+            "id": "captains_discretion_72001wp",
+            "set": ["72001wp"],
+            "name": "Captain's Discretion",
+            "cost": 4,
+            "text": "<b>FREE ACTION:</b> Discard this card.\n\nPerform the Action of a [crew] Upgrade equipped to this ship.",
+            "unique": false,
+            "factions": ["federation"]
+        }, {
+            "type": "crew",
+            "id": "david_marcus_72001wp",
+            "set": ["72001wp"],
+            "name": "David Marcus",
+            "cost": 3,
+            "text": "<b>IF A [crew] Upgrade equipped to this ship would be discarded</b>\n\nDiscard this card instead\n____________________n<b>When Defending:</b> Discard this card. Add 1 [evade]",
+            "unique": true,
+            "factions": ["federation"]
+        }, {
+            "type": "crew",
+            "id": "saavik_72001wp",
+            "set": ["72001wp"],
+            "name": "Saavik",
+            "cost": 1,
+			"range": "1-2",
+            "text": "<b>WHEN DEFENDING:</b> If this ship is within Range of a Planet token.\n\nThis ship may convert one |   | into 1 [evade].",
+            "unique": true,
+            "factions": ["federation"]
+        }, {
+            "type": "crew",
+            "id": "federation_helmsman_72001wp",
+            "set": ["72001wp"],
+            "name": "Federation Helmsman",
+            "cost": 3,
+            "text": "<b>ACTION:</b> Place an [aux] Token beside this ship.\n\nPerfrom a White 1 [straight], 1 [bank], or 1 [turn] Maneuver. ",
+            "unique": false,
+            "factions": ["federation"]
+        }, {
+            "type": "tech",
+            "id": "comm_station_72001wp",
+            "set": ["72001wp"],
+            "name": "Comm Station",
+            "cost": 4,
+			"range": "1-2",
+            "text": "Add 1 [crew] to this ship's Upgrade Bar.\n____________________\n<b>ACTIVATION PHASE:</b> Disable this card and target a friendly ship.\n\nThis game round, replace the Captain Skill on this ship's Captain with the Captain Skill of the target ship's Captain.",
+            "unique": ["OnePerShip"],
+            "factions": ["federation"]
+        }, {
+            "type": "tech",
+            "id": "close-range_scan_72001wp",
+            "set": ["72001wp"],
+            "name": "Close-Range Scan",
+            "cost": 3,
+            "text": "<b>ACTIVATION PHASE:</b> If this ship performed a [scan] Action, disable 1 Shield.\n\nPlace a [scan] Token beside this ship.",
+            "unique": ["OnePerShip"],
+            "factions": ["federation"]
+        }, {
+            "type": "tech",
+            "id": "genesis_effect_72001wp",
+            "set": ["72001wp"],
+            "name": "Genesis Effect",
+            "cost": 2,
+			"range": "1-2",
+            "text": "<b>SETUP:</b> Place 1 [crew] Upgrade with a cost of 5 SP or less face down beneath this card.\n____________________\n<b>END PHASE:</b>If this ship is within Range of a planet Token disable all of its Shields.\n\nFlip the [crew] Upgrade beneath this card face up, place 2 [time] Tokens on it and equip it to this ship, even if it exceeds its restrictions. ",
+            "unique": true,
+            "factions": ["federation"]
+        }, {
+            "type": "crew",
+            "id": "william_t_riker_72001wp",
+            "set": ["72001wp"],
+            "name": "William T. Riker",
+            "cost": 4,
+            "text": "Modify the Captain SKill of the Captain equipped to this ship by +3.\n____________________\n<b>IF THE CAPTAIN EQUIPPED TO THIS SHIP IS DISABLED OR DISCARDED.</b>\nThis ships Captain Skill is 5.\n____________________\n<b>IF THIS SHIP RECEIVES A FACE UP 'COMMUNICATIONS FAILURE' OR 'INJURED CAPTAIN' DAMAGE CARD,</b>\nFlip that damage card face down.",
+            "unique": true,
+            "factions": ["federation"]
+        }, {
             "type": "crew",
             "id": "data_72301p",
             "set": ["72301rp"],
@@ -12802,7 +12936,7 @@
 			"name": "Nanclus",
 			"cost": 5,
 			"range": "1-3",
-			"text": "<b>ACTION:</b> Discard this card to target an opposing ship. The target ship gains +1 attack die this round, but cannot roll defense dice this round",
+			"text": "<b>ACTION:</b> Discard this card to target an opposing ship.\n\n The target ship gains +1 attack die this round, but cannot roll defense dice this round",
 			"unique": true,
 			"factions": ["romulan"]
 		}, {
