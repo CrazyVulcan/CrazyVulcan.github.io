@@ -12263,7 +12263,7 @@
             "set": ["72001wp"],
             "name": "David Marcus",
             "cost": 3,
-            "text": "<b>IF A [crew] Upgrade equipped to this ship would be discarded</b>\n\nDiscard this card instead\n____________________n<b>When Defending:</b> Discard this card. Add 1 [evade]",
+            "text": "<b>IF A [crew] Upgrade equipped to this ship would be discarded</b>\nDiscard this card instead\n\n<b>When Defending:</b> Discard this card. Add 1 [evade]",
             "unique": true,
             "factions": ["federation"]
         }, {
@@ -12292,7 +12292,7 @@
             "name": "Comm Station",
             "cost": 4,
 			"range": "1-2",
-            "text": "Add 1 [crew] to this ship's Upgrade Bar.\n____________________\n<b>ACTIVATION PHASE:</b> Disable this card and target a friendly ship.\n\nThis game round, replace the Captain Skill on this ship's Captain with the Captain Skill of the target ship's Captain.",
+            "text": "Add 1 [crew] to this ship's Upgrade Bar.\n\n<b>ACTIVATION PHASE:</b> Disable this card and target a friendly ship.\n\nThis game round, replace the Captain Skill on this ship's Captain with the Captain Skill of the target ship's Captain.",
             "unique": ["OnePerShip"],
             "factions": ["federation"]
         }, {
@@ -12311,7 +12311,7 @@
             "name": "Genesis Effect",
             "cost": 2,
 			"range": "1-2",
-            "text": "<b>SETUP:</b> Place 1 [crew] Upgrade with a cost of 5 SP or less face down beneath this card.\n____________________\n<b>END PHASE:</b>If this ship is within Range of a planet Token disable all of its Shields.\n\nFlip the [crew] Upgrade beneath this card face up, place 2 [time] Tokens on it and equip it to this ship, even if it exceeds its restrictions. ",
+            "text": "<b>SETUP:</b> Place 1 [crew] Upgrade with a cost of 5 SP or less face down beneath this card.\n\n<b>END PHASE:</b>If this ship is within Range of a planet Token disable all of its Shields.\n\nFlip the [crew] Upgrade beneath this card face up, place 2 [time] Tokens on it and equip it to this ship, even if it exceeds its restrictions. ",
             "unique": true,
             "factions": ["federation"]
         }, {
@@ -12320,7 +12320,7 @@
             "set": ["72001wp"],
             "name": "William T. Riker",
             "cost": 4,
-            "text": "Modify the Captain SKill of the Captain equipped to this ship by +3.\n____________________\n<b>IF THE CAPTAIN EQUIPPED TO THIS SHIP IS DISABLED OR DISCARDED.</b>\nThis ships Captain Skill is 5.\n____________________\n<b>IF THIS SHIP RECEIVES A FACE UP 'COMMUNICATIONS FAILURE' OR 'INJURED CAPTAIN' DAMAGE CARD,</b>\nFlip that damage card face down.",
+            "text": "Modify the Captain SKill of the Captain equipped to this ship by +3.\n\n<b>IF THE CAPTAIN EQUIPPED TO THIS SHIP IS DISABLED OR DISCARDED.</b>\nThis ships Captain Skill is 5.\n\n<b>IF THIS SHIP RECEIVES A FACE UP 'COMMUNICATIONS FAILURE' OR 'INJURED CAPTAIN' DAMAGE CARD,</b>\nFlip that damage card face down.",
             "unique": true,
             "factions": ["federation"]
         }, {
