@@ -9492,7 +9492,7 @@
 			"cost": 2,
 			"skill": 3,
 			"talents": 0,
-			"text": "The Captain's Discretion [talent] Upgrade may be equipped to this Captain. \n____________________\n<b>When this ship would be destroyed</b>\nMove up to 2 [crew] Upgrades equipped to this ship to another friendly ship even if it exceeds that ships restrictions. ",
+			"text": "The Captain's Discretion [talent] Upgrade may be equipped to this Captain. \n\n<b>When this ship would be destroyed</b>\nMove up to 2 [crew] Upgrades equipped to this ship to another friendly ship even if it exceeds that ships restrictions. ",
 			"unique": true,
 			"factions": ["federation"]
 		}, {
@@ -12272,7 +12272,7 @@
             "set": ["72001wp"],
             "name": "Saavik",
             "cost": 1,
-			"range": "1-2",
+			"range": "1 - 2",
             "text": "<b>WHEN DEFENDING:</b> If this ship is within Range of a Planet token.\n\nThis ship may convert one |   | into 1 [evade].",
             "unique": true,
             "factions": ["federation"]
@@ -12282,7 +12282,7 @@
             "set": ["72001wp"],
             "name": "Federation Helmsman",
             "cost": 3,
-            "text": "<b>ACTION:</b> Place an [aux] Token beside this ship.\n\nPerfrom a White 1 [straight], 1 [bank], or 1 [turn] Maneuver. ",
+            "text": "<b>ACTION:</b> Place an [aux] Token beside this ship.\n\nPerfrom a White 1 straight, bank, or turn Maneuver. ",
             "unique": false,
             "factions": ["federation"]
         }, {
@@ -12291,7 +12291,7 @@
             "set": ["72001wp"],
             "name": "Comm Station",
             "cost": 4,
-			"range": "1-2",
+			"range": "1 - 2",
             "text": "Add 1 [crew] to this ship's Upgrade Bar.\n\n<b>ACTIVATION PHASE:</b> Disable this card and target a friendly ship.\n\nThis game round, replace the Captain Skill on this ship's Captain with the Captain Skill of the target ship's Captain.",
             "unique": ["OnePerShip"],
             "factions": ["federation"]
@@ -12310,7 +12310,7 @@
             "set": ["72001wp"],
             "name": "Genesis Effect",
             "cost": 2,
-			"range": "1-2",
+			"range": "1 - 2",
             "text": "<b>SETUP:</b> Place 1 [crew] Upgrade with a cost of 5 SP or less face down beneath this card.\n\n<b>END PHASE:</b>If this ship is within Range of a planet Token disable all of its Shields.\n\nFlip the [crew] Upgrade beneath this card face up, place 2 [time] Tokens on it and equip it to this ship, even if it exceeds its restrictions. ",
             "unique": true,
             "factions": ["federation"]
