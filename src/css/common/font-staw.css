@@ -217,9 +217,14 @@
 }
 
 .fs-borg:before {
-  content: "b";
+  content: "1";
 }
-
+.fs-aux:before {
+  content: "2";
+}
+.fs-time:before {
+  content: "3";
+}
 
 .fs-ship:before {
   content: "E";
