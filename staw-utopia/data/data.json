@@ -1325,7 +1325,7 @@
 	"ships": [{
 			"type": "ship",
 			"id": "prototype_01_71536",
-			"set": ["71536"],
+			"set": ["72014wp"],
 			"name": "Prototype 01",
 			"class": "Romulan Drone Ship",
 			"actions": ["evade", "target-lock", "scan"],
@@ -1346,7 +1346,7 @@
 		}, {
 			"type": "ship",
 			"id": "romulan_starship_71536",
-			"set": ["71536"],
+			"set": ["72014wp"],
 			"name": "Romulan Starship",
 			"class": "Romulan Drone Ship",
 			"actions": ["evade", "target-lock", "scan"],
@@ -9639,8 +9639,8 @@
 			"cost": 2,
 			"skill": 3,
 			"talents": 0,
-			"range": "1 - 2",
-			"text": "This card cannot be affected by anything that affects a Captain, and this card counts as a Romulan Drone Pilot.\n\n<b>ACTION:</b> Target an opposing ship in this ships Primary Firing Arc.\n\nThe target ship rolls -2 attack dice against this ship.\n(Romulan Drone Ship Only)",
+			"range": "1 - 2"
+			"text": "This card cannot be affected by anything that affects a Captain, and this card counts as a Romulan Drone Pilot.\n<b>ACTION:</b> Target an opposing ship in this ships Primary Firing Arc.\nThe target ship rolls -2 attack dice against this ship.\n(Romulan Drone Ship Only)",
 			"unique": true,
 			"factions": ["independent","federation"]
 		}, {
@@ -12465,8 +12465,8 @@
             "set": ["72014wp"],
             "name": "Evasive Protocol",
             "cost": 3,
-            "text": "<b>COMBAT PHASE:</b> If this ship is in the primary of Secondary Firing Arc of an opposing ship place 3 [time] Tokens on this card.\n\nPerform a [echo] Action as a Free Action if this ship does also remove an opposing [target-lock] Token from this ship.\n(Romulan Drone Ship)",
-            "unique": ["OnePerShip"],
+            "text": "<b>COMBAT PHASE:</b> If this ship is in the primary of Secondary Firing Arc of an opposing ship place 3 [time] Tokens on this card.\n\nPerform a [sensor-echo] Action as a Free Action if this ship does also remove an opposing [target-lock] Token from this ship.\n(Romulan Drone Ship)",
+            "unique": f["OnePerShip"],
             "factions": ["romulan"]
         }, {
             "type": "tech",
@@ -12475,7 +12475,7 @@
             "name": "Disguise Protocol",
             "cost": 4,
             "text": "<b>WHEN DEFENDING:</b> Place 3 [time] Tokens on this card.\n\nThe attacking ship rolls -2 attack dice.\n(Romulan Drone Ship)",
-            "unique": ["OnePerShip"],
+            "unique": f["OnePerShip"],
             "factions": ["romulan"]
         }, {
             "type": "weapon",
