@@ -1335,7 +1335,7 @@
 			"hull": 3,
 			"shields": 3,
 			"cost": 19,
-			"text": "<b>PLANNING PHASE:</b> Place an [aux] Token beside this ship.\n\nRemove 1 [time] Token from each [tech] Upgrade equipped to this ship.\n\nThis ship may only be assigned Gareb or a Romulan Drone Pilot as its Captain.",
+			"text": "<b>PLANNING PHASE:</b> Place an [aux] Token beside this ship.\nRemove 1 [time] Token from each [tech] Upgrade equipped to this ship.\nThis ship may only be assigned Gareb or a Romulan Drone Pilot as its Captain.",
 			"unique": true,
 			"factions": ["romulan"],
 			"intercept": {
@@ -12445,7 +12445,7 @@
             "set": ["72014wp"],
             "name": "Repair Protocol",
             "cost": 4,
-            "text": "<b>END PHASE:</b> Place 3 [time] Tokens on this card.\n\nRepair 1 damage to this ship's Shields or Hull.\n(Romulan Drone Ship Only)",
+            "text": "<b>END PHASE:</b> Place 3 [time] Tokens on this card.\n\nRepair 1 damage to this ship's Shields or Hull.\n(Romulan Drone Ship)",
             "unique": ["OnePerShip"],
             "factions": ["romulan"]
         }, {
