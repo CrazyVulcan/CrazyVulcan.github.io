@@ -9304,7 +9304,7 @@
 			"cost": 2,
 			"skill": 2,
 			"talents": 1,
-			"text": "<b>WHEN ATTACKING:</b> If the defending ship is an [independent] ship or has an [independent] Captain equipped to it:\n\nThis ship rolls +1 attack die.",
+			"text": "<b>WHEN ATTACKING:</b> If the defending ship is an Independent ship or has an Independent Captain equipped to it:\n\nThis ship rolls +1 attack die.",
 			"unique": true,
 			"factions": ["klingon"]
 		}, {
@@ -12325,7 +12325,7 @@
             "set": ["72012wp"],
             "name": "DNA ENCODED MESSAGE",
             "cost": 5,
-            "text": "<b>SETUP:</b>\nPlace 3 [klingon] [talent] Upgrade face down beneath this card.\n\n<b>ACTIVATION PHASE:</b> Discard this card.\nFlip 1 of the [klingon][talent] Upgrades beneath this card face up and equip it to the Captain equiped to this ship. Remove the other 2 face down [klingon][talent] Upgrades from the game.",
+            "text": "<b>SETUP:</b>\nPlace 3 Klingon [talent] Upgrade face down beneath this card.\n\n<b>ACTIVATION PHASE:</b> Discard this card.\nFlip 1 of the Klingon[talent] Upgrades beneath this card face up and equip it to the Captain equiped to this ship. Remove the other 2 face down Klingon[talent] Upgrades from the game.",
             "unique": true,
             "factions": ["klingon"]
         }, {
@@ -12384,7 +12384,7 @@
             "name": "Photon Detination",
             "cost": 3,
 			"range": "1 - 2",
-            "text": "This card counts as either a [tech] Upgrade or a [weapon] Upgrade.\n\n<b>ACTION:</b> Disable this card, place 3 [time] Tokens on a Photo TOrpedoes Upgrade equipped to the ship, and target a minefield Token\n\nRemove the minefield Token from play. ",
+            "text": "This card counts as either a [tech] Upgrade or a [weapon] Upgrade.\n\n<b>ACTION:</b> Disable this card, place 3 [time] Tokens on a Photo Torpedoes Upgrade equipped to the ship, and target a minefield Token\n\nRemove the minefield Token from play. ",
             "unique": false,
             "factions": ["klingon"]
         }, {
@@ -12394,7 +12394,7 @@
             "name": "Photon Detination",
             "cost": 3,
 			"range": "1 - 2",
-            "text": "This card counts as either a [tech] Upgrade or a [weapon] Upgrade.\n\n<b>ACTION:</b> Disable this card, place 3 [time] Tokens on a Photo TOrpedoes Upgrade equipped to the ship, and target a minefield Token\n\nRemove the minefield Token from play. ",
+            "text": "This card counts as either a [tech] Upgrade or a [weapon] Upgrade.\n\n<b>ACTION:</b> Disable this card, place 3 [time] Tokens on a Photo Torpedoes Upgrade equipped to the ship, and target a minefield Token\n\nRemove the minefield Token from play. ",
             "unique": false,
             "factions": ["klingon"]
         }, {
