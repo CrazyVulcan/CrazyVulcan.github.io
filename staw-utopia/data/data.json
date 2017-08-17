@@ -14,7 +14,7 @@
 		}, {
 			"type": "set",
 			"id": "72014wp",
-			"name": "",
+			"name": "Prototype 02",
 			"releaseDate": "2017-08-04",
 			"parentSet": "Card Pack 1"
 		}, {
@@ -1323,6 +1323,48 @@
 		}
 	],
 	"ships": [{
+			"type": "ship",
+			"id": "prototype_01_71536",
+			"set": ["71536"],
+			"name": "Prototype 01",
+			"class": "Romulan Drone Ship",
+			"actions": ["evade", "target-lock", "scan"],
+			"upgrades": ["tech", "tech", "tech", "weapon"],
+			"attack": 3,
+			"agility": 3,
+			"hull": 3,
+			"shields": 3,
+			"cost": 19,
+			"text": "<b>PLANNING PHASE:</b> Place an [aux] Token beside this ship.\n\nRemove 1 [time] Token from each [tech] Upgrade equipped to this ship.\n\nThis ship may only be assigned Gareb or a Romulan Drone Pilot as its Captain.",
+			"unique": true,
+			"factions": ["romulan"],
+			"intercept": {
+				"ship": {},
+				"fleet": {}
+			},
+			"squadron": false
+		}, {
+			"type": "ship",
+			"id": "romulan_starship_71536",
+			"set": ["71536"],
+			"name": "Romulan Starship",
+			"class": "Romulan Drone Ship",
+			"actions": ["evade", "target-lock", "scan"],
+			"upgrades": ["tech", "tech", "weapon"],
+			"attack": 3,
+			"agility": 3,
+			"hull": 3,
+			"shields": 2,
+			"cost": 16,
+			"text": "This ship may only be assigned Gareb or a Romulan Drone Pilot as its Captain.",
+			"unique": false,
+			"factions": ["romulan"],
+			"intercept": {
+				"ship": {},
+				"fleet": {}
+			},
+			"squadron": false
+		}, {
 			"type": "ship",
 			"id": "dreadnought_72013wp",
 			"set": ["72013wp"],
@@ -9301,7 +9343,7 @@
 		}, {
 			"type": "captain",
 			"id": "romulan_drone_pilot_71536",
-			"set": ["71536"],
+			"set": ["71536","72014wp"],
 			"name": "Romulan Drone Pilot",
 			"unique": false,
 			"text": "This card cannot be affected by anything that affects Captain Cards and may only be assigned to a Romulan Drone Ship",
@@ -9589,6 +9631,18 @@
 			"text": "<b>ACTION:</b> Target a ship at Range 1. Disable 1 of your Upgrades and 1 Upgrade (your choice) on the target ship.\n\nThis card may only be purchased for a Ferengi ship.",
 			"unique": true,
 			"factions": ["ferengi"]
+		}, {
+			"type": "captain",
+			"id": "jhamel_72001p",
+			"set": ["72014wp"],
+			"name": "Jhamel",
+			"cost": 2,
+			"skill": 3,
+			"talents": 0,
+			"range": "1 - 2"
+			"text": "This card cannot be affected by anything that affects a Captain, and this card counts as a Romulan Drone Pilot.\n\n<b>ACTION:</b> Target an opposing ship in this ships Primary Firing Arc.\n\nThe target ship rolls -2 attack dice against this ship.\n(Romulan Drone Ship Only)",
+			"unique": true,
+			"factions": ["independent","federation"]
 		}, {
 			"type": "captain",
 			"id": "jt_esteban_72001p",
@@ -12366,6 +12420,64 @@
 		}
 	],
 	"upgrades": [{
+            "type": "weapon",
+            "id": "triphasic_emitters_72014wp",
+            "set": ["72014wp"],
+            "name": "Triphasic Emitters",
+            "cost": 2,
+			"attack": "?",
+			"range": "?",
+            "text": "<b>SETUP:</b> Choose a Non Borg [weapon] Upgrade with a cost of 5 sp or less and place it face down beneath this card.\n<b>ATTACK:</b> Discard this card.\n\nFlip the card that is beneath this card face up and perform the attack listed on that card (if possible). After the attack resolves, discard that card.",
+            "unique": false,
+            "factions": ["romulan"]
+        }, {
+            "type": "tech",
+            "id": "propulsion_matrix_72014wp",
+            "set": ["72014wp"],
+            "name": "Propulsion Matrix",
+            "cost": 3,
+            "text": "<b>ACTIVATION PHASE:</b> If this ship reveals a 3 straight Maneuver:\n\nThis ship may perform a 4 straight or a 5 straight maneuver instead. If it does place and [aux] Token beside this ship.",
+            "unique": false,
+            "factions": ["romulan"]
+        }, {
+            "type": "tech",
+            "id": "repair_protocol_72014wp",
+            "set": ["72014wp"],
+            "name": "Repair Protocol",
+            "cost": 4,
+            "text": "<b>END PHASE:</b> Place 3 [time] Tokens on this card.\n\nRepair 1 damage to this ship's Shields or Hull.\n(Romulan Drone Ship Only)",
+            "unique": ["OnePerShip"],
+            "factions": ["romulan"]
+        }, {
+            "type": "weapon",
+            "id": "tellarite_disruptor_banks_72014wp",
+            "set": ["72014wp"],
+            "name": "Tellarite Disruptor Banks",
+            "cost": 3,
+			"attack": 4,
+			"range": "1 - 3",
+            "text": "<b>ATTACK:</b> Place 3 [time] Tokens on this card.\n\nIf there is at least 1 uncancelled [hit], modify the defender's Agility Value by -1 until the end of the game round.",
+            "unique": ["OnePerShip"],
+            "factions": ["independent"]
+        }, {
+            "type": "tech",
+            "id": "evasive_protocol_72014wp",
+            "set": ["72014wp"],
+            "name": "Evasive Protocol",
+            "cost": 3,
+            "text": "<b>COMBAT PHASE:</b> If this ship is in the primary of Secondary Firing Arc of an opposing ship place 3 [time] Tokens on this card.\n\nPerform a [echo] Action as a Free Action if this ship does also remove an opposing [target-lock] Token from this ship.\n(Romulan Drone Ship)",
+            "unique": f["OnePerShip"],
+            "factions": ["romulan"]
+        }, {
+            "type": "tech",
+            "id": "disguise_protocol_72014wp",
+            "set": ["72014wp"],
+            "name": "Disguise Protocol",
+            "cost": 4,
+            "text": "<b>WHEN DEFENDING:</b> Place 3 [time] Tokens on this card.\n\nThe attacking ship rolls -2 attack dice.\n(Romulan Drone Ship)",
+            "unique": f["OnePerShip"],
+            "factions": ["romulan"]
+        }, {
             "type": "weapon",
             "id": "thoron_shock_emitter_72013wp",
             "set": ["72013wp"],
