@@ -1381,7 +1381,7 @@
 			"type": "ship",
 			"id": "i_k_s_ves_balth_71448",
 			"set": ["72012wp"],
-			"name": "I.K.S. Ves Batlh",
+			"name": "Klingon Starship",
 			"class": "Raptor Class",
 			"actions": ["evade", "target-lock", "scan"],
 			"upgrades": ["tech", "weapon"],
@@ -1391,7 +1391,7 @@
 			"shields": 1,
 			"cost": 11,
 			"text": "",
-			"unique": true,
+			"unique": false,
 			"factions": ["klingon"],
 			"intercept": {
 				"ship": {},
