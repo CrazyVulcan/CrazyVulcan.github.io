@@ -13,7 +13,13 @@
 			"parentSet": "Chronological Chaos"
 		}, {
 			"type": "set",
-			"id": "72001wp",
+			"id": "72012wp",
+			"name": "I.K.S. Ves Batlh",
+			"releaseDate": "2017-08-02",
+			"parentSet": "Card Pack 1"
+		}, {
+			"type": "set",
+			"id": "72011wp",
 			"name": "U.S.S. Grissom",
 			"releaseDate": "2017-08-01",
 			"parentSet": "Card Pack 1"
@@ -1306,6 +1312,48 @@
 	],
 	"ships": [{
 			"type": "ship",
+			"id": "i_k_s_ves_balth_71448",
+			"set": ["72012wp"],
+			"name": "I.K.S. Ves Batlh",
+			"class": "Raptor Class",
+			"actions": ["evade", "target-lock", "scan"],
+			"upgrades": ["tech", "weapon", "crew"],
+			"attack": 3,
+			"agility": 1,
+			"hull": 3,
+			"shields": 2,
+			"cost": 13,
+			"text": "<b>WHEN THIS SHIP SUFFERS DAMAGE FROM AN OBSTACLE OR MINEFIELD: </b>\n\nReduce the damage by one.",
+			"unique": true,
+			"factions": ["klingon"],
+			"intercept": {
+				"ship": {},
+				"fleet": {}
+			},
+			"squadron": false
+		}, {
+			"type": "ship",
+			"id": "i_k_s_ves_balth_71448",
+			"set": ["72012wp"],
+			"name": "I.K.S. Ves Batlh",
+			"class": "Raptor Class",
+			"actions": ["evade", "target-lock", "scan"],
+			"upgrades": ["tech", "weapon"],
+			"attack": 3,
+			"agility": 1,
+			"hull": 3,
+			"shields": 1,
+			"cost": 11,
+			"text": "",
+			"unique": true,
+			"factions": ["klingon"],
+			"intercept": {
+				"ship": {},
+				"fleet": {}
+			},
+			"squadron": false
+		}, {
+			"type": "ship",
 			"id": "uss_grissom_72001wp",
 			"set": ["72001wp"],
 			"name": "U.S.S. Grissom",
@@ -1332,7 +1380,7 @@
 			"name": "Federation Starship",
 			"class": "Oberth Class",
 			"actions": ["evade", "target-lock", "scan"],
-			"upgrades": ["tech", "crew", "crew"],
+			"upgrades": ["tech", "tech", "crew"],
 			"attack": 2,
 			"agility": 3,
 			"hull": 3,
@@ -9250,6 +9298,17 @@
 			"talents": 0
 		}, {
 			"type": "captain",
+			"id": "klaang_72012wp",
+			"set": ["72012wp"],
+			"name": "Klaang",
+			"cost": 2,
+			"skill": 2,
+			"talents": 1,
+			"text": "<b>WHEN ATTACKING:</b> If the defending ship is an [independint] ship or has an [independint] Captain equipped to it:\n\nThis ship rolls +1 attack die.",
+			"unique": true,
+			"factions": ["klingon"]
+		}, {
+			"type": "captain",
 			"id": "aquatic_councilor_72281",
 			"set": ["72281"],
 			"name": "Aquatic Councilor",
@@ -10790,6 +10849,18 @@
 			"factions": ["klingon"]
 		}, {
 			"type": "captain",
+			"id": "duras_son_of_toral_72012wp",
+			"set": ["72012wp"],
+			"name": "Duras, Son of Toral",
+			"cost": 4,
+			"skill": 6,
+			"talents": 1,
+			"range": "1 - 2",
+			"text": "<b>ACTIVATION PHASE:</b> After an enemy ship in Range moves.\n\nYou may change this ship's Maneuver.",
+			"unique": true,
+			"factions": ["klingon"]
+		}, {
+			"type": "captain",
 			"id": "edward_jellico_cairo",
 			"set": ["72261p"],
 			"name": "Edward Jellico",
@@ -12249,6 +12320,84 @@
 		}
 	],
 	"upgrades": [{
+            "type": "talent",
+            "id": "dna_encoded_message_72002wp",
+            "set": ["72002wp"],
+            "name": "DNA ENCODED MESSAGE",
+            "cost": 5,
+            "text": "<b>SETUP:</b>\nPlace 3 [klingon] [talent] Upgrade face down beneath this card.\n\n<b>ACTIVATION PHASE:</b> Discard this card.\nFlip 1 of the [klingon][talent] Upgrades beneath this card face up and equip it to the Captain equiped to this ship. Remove the other 2 face down [klingon][talent] Upgrades from the game.",
+            "unique": true,
+            "factions": ["klingon"]
+        }, {
+            "type": "crew",
+            "id": "goroth_72002wp",
+            "set": ["72002wp"],
+            "name": "Goroth",
+            "cost": 2,
+			"range": "1 - 2",
+            "text": "Add 1 [crew] to this ships Upgrade Bar.\n\n<b>ACTION:</b> Discard this card and discard 1 [crew] Upgrade, and target an opposing ship.\n\nDisable the Captain equiped to the target ship. ",
+            "unique": true,
+            "factions": ["klingon"]
+        }, {
+            "type": "crew",
+            "id": "kolos_72002wp",
+            "set": ["72002wp"],
+            "name": "Kolos",
+            "cost": 3,
+            "text": "<b>IF THE CAPTAIN EQUIPPED TO THIS SHIP WOULD BE DISABLED OR DISCARDED:</b>\n\nDiscard this card instead. ",
+            "unique": true,
+            "factions": ["klingon"]
+        }, {
+            "type": "weapon",
+            "id": "photon_torpedoes_72002wp",
+            "set": ["72002wp"],
+            "name": "Photon Torpedoes",
+            "cost": 2,
+			"attack": 4,
+			"range": "2 - 3",
+            "text": "<b>ATTACK:</b> If this ship has a [target-lock] Token on the defending ship, place 2 [time] Tokens on this card.\n\nThis ship my convert 1 [battlestations] into a [crit].",
+            "unique": false,
+            "factions": ["klingon"]
+        }, {
+            "type": "tech",
+            "id": "dispersive_armor_72002wp",
+            "set": ["72002wp"],
+            "name": "Dispersive Armor",
+            "cost": 4,
+			"hull": "3+",
+            "text": "<b>WHEN DEFENDING:</b> Disable this card.\n\nThis game round, replace the attacking ship's Primary Weapon Value with 4. For the remainder of the game round, the attacking ships Primary Weapon Value can not be replaced or modified.",
+            "unique": ["OnePerShip"],
+            "factions": ["klingon"]
+        }, {
+            "type": "tech",
+            "id": "reactor_pit_72002wp",
+            "set": ["72002wp"],
+            "name": "Reactor Pit",
+            "cost": 3,
+            "text": "<b>PLANNING PHASE:</b> Disable this card.\n\nRemove an [aux] Token from beside this ship. ",
+            "unique": false,
+            "factions": ["klingon"]
+        }, {
+            "type": "tech",
+            "id": "photon_detination_72002wp",
+            "set": ["72002wp"],
+            "name": "Photon Detination",
+            "cost": 3,
+			"range": "1 - 2",
+            "text": "This card counts as either a [tech] Upgrade or a [weapon] Upgrade.\n\n<b>ACTION:</b> Disable this card, place 3 [time] Tokens on a Photo TOrpedoes Upgrade equipped to the ship, and target a minefield Token\n\nRemove the minefield Token from play. ",
+            "unique": false,
+            "factions": ["klingon"]
+        }, {
+            "type": "weapon",
+            "id": "photon_detination_72002wp",
+            "set": ["72002wp"],
+            "name": "Photon Detination",
+            "cost": 3,
+			"range": "1 - 2",
+            "text": "This card counts as either a [tech] Upgrade or a [weapon] Upgrade.\n\n<b>ACTION:</b> Disable this card, place 3 [time] Tokens on a Photo TOrpedoes Upgrade equipped to the ship, and target a minefield Token\n\nRemove the minefield Token from play. ",
+            "unique": false,
+            "factions": ["klingon"]
+        }, {
             "type": "talent",
             "id": "captains_discretion_72001wp",
             "set": ["72001wp"],
