@@ -1352,7 +1352,7 @@
 			"hull": 4,
 			"shields": 4,
 			"cost": 24,
-			"text": "",
+			"text": "You cannot equip a Captain or Admiral to this ship.",
 			"unique": false,
 			"factions": ["dominion"],
 			"squadron": false
@@ -12426,7 +12426,7 @@
             "set": ["72013wp"],
             "name": "B'Elanna's Codes",
             "cost": 3,
-            "text": "<b>IF ONE OR MORE [time] TOKENS WOULD BE PLACED ON A [weapon] UPGRADE EQUIPPED TO THIS SHIP:</b>\n\nPlace those [time] Tokens on this card instead.\n\n<b>WHEN A [weapon] UPGRADE EQUIPPED TO THIS SHIP WOULD BE DISCARDED:\n\nDiscard this Card instead.</b>",
+            "text": "<b>IF ONE OR MORE [time] TOKENS WOULD BE PLACED ON A [weapon] UPGRADE EQUIPPED TO THIS SHIP:</b>\nPlace those [time] Tokens on this card instead.\n\n<b>WHEN A [weapon] UPGRADE EQUIPPED TO THIS SHIP WOULD BE DISCARDED:\nDiscard this Card instead.</b>",
             "unique": true,
             "factions": ["independent"]
         }, {
@@ -12435,7 +12435,7 @@
             "set": ["72013wp"],
             "name": "Final Stage Targeting",
             "cost": 3,
-            "text": "This ship can only target ships that it has a [target-lock] Token on.\n\n<b>WHEN ATTACKING:</b>\n\nDefending ships must skip the Modify Defense Dice step.",
+            "text": "This ship can only target ships that it has a [target-lock] Token on.\n\n<b>WHEN ATTACKING:</b>\nDefending ships must skip the Modify Defense Dice step.",
             "unique": false,
             "factions": ["dominion"]
         }, {
