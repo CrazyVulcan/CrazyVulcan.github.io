@@ -4845,7 +4845,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		
 		// Temporal Conduit - +5 SP if fielded on a non-Mirror Universe ship
-		"tech:temporal_cold_war_temporal_conduit": {
+		"tech:temporal_conduit_72224gp": {
 			intercept: {
 				ship: {
 					cost: function(upgrade,ship,fleet,cost) {
