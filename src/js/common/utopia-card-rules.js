@@ -117,12 +117,6 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		return slots;
 	};
 	
-
-	
-	
-	
-	
-	
 	var createFirstMajeSlot = function() {
 		return {
 			type: ["talent"],
@@ -173,7 +167,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-
+		
 		"ship:enterprise_nx_01_71526": {
 			upgradeSlots: [ {
 				type: ["tech"],
@@ -299,7 +293,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-
+		
 		"ship:romulan_starship_71536": {
 			intercept: {
 				ship: {
@@ -1934,7 +1928,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-
+		
 		// Dorsal Phaser Array
 		"weapon:dorsal_phaser_array_71531": {
 			attack: 0,
@@ -2028,7 +2022,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			]
 		},
 		
-		// Shinzon Romulan Talents 
+		// Shinzon Romulan Talents
 		"talent:shinzon_romulan_talents_71533": {
 			upgradeSlots: cloneSlot( 4 , 
 				{ 
@@ -4711,9 +4705,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						return cost;
 					}
 			}
-			}
+			},
 		},	
-
+		
 		// Disruptor Banks - one per ship only
 		"weapon:distuptor_banks_jazkel": {
 			canEquip: function(upgrade,ship,fleet) {
@@ -4852,10 +4846,14 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 		// Temporal Conduit - +5 SP if fielded on a non-Mirror Universe ship
 		"tech:temporal_cold_war_temporal_conduit": {
-			cost: function(upgrade,ship,fleet,cost) {
-				if( ship && !$factions.hasFaction(ship,"mirror-universe", ship, fleet) )
-					return resolve(upgrade,ship,fleet,cost) + 5;
-				return cost;
+			intercept: {
+				ship: {
+					cost: function(upgrade,ship,fleet,cost) {
+						if( ship && !$factions.hasFaction(ship,"mirror-universe", ship, fleet) )
+							return resolve(upgrade,ship,fleet,cost) + 5;
+						return cost;
+					}
+				}
 			}
 		},
 		
@@ -5281,38 +5279,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			rules: "Only one per ship",
 			canEquip: onePerShip("Full Reverse")
 		},
-		
-		// Duras Sisters	
-		"crew:lursa_crew_72282p": {		
-			intercept: {
-				self: {
-					skill: function(upgrade,ship,fleet,skill) {
-						if( upgrade == ship.captain )
-							return resolve(upgrade,ship,fleet,skill) + 4;
-						return skill;
-					}
-				}
-			},
-			canEquip:{function(upgrade,ship,fleet) {
-				return ( captain && captain.name == "B'Etor" );
-				}
-			}
-		},
-		"crew:betor_crew_72282p": {
-			intercept: {
-				self: {
-					skill: function(upgrade,ship,fleet,skill) {
-						if( upgrade == ship.captain )
-							return resolve(upgrade,ship,fleet,skill) + 4;
-						return skill;
-					}
-				}
-			},
-			canEquip:{function(upgrade,ship,fleet) {
-				return ( captain && captain.name == "Lursa" );
-				}
-			}
-		},
+
 		// Jean-Luc Picard - Enterprise-D
 		"captain:jean_luc_picard_enterprise_72284p": {
 			intercept: {
@@ -5373,7 +5340,108 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"tech:transporter_72284p": {
 			rules: "Only one per ship",
 			canEquip: onePerShip("Transporter")
+		},
+		
+		// Particle Beam Weapon - Muratas
+		"weapon:particle_beam_weapon_muratas": {
+			attack: 0,
+			// Equip only on a Xindi
+			canEquip: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship,"xindi", ship, fleet);
+			},
+			intercept: {
+				self: {
+					// Attack is same as ship primary + 1
+					attack: function(upgrade,ship,fleet,attack) {
+						if( ship )
+							return valueOf(ship,"attack",ship,fleet) + 1;
+						return attack;
+					},
+					// Cost is primary weapon
+					cost: function(upgrade,ship,fleet,cost) {
+						if( ship )
+							return resolve(upgrade,ship,fleet,cost) + valueOf(ship,"attack",ship,fleet);
+						return cost;
+					}
+				}
+			}
+		},
+		
+		// Auxiliary Power to Shields - I.K.S. Hegh'ta
+		"tech:auxiliary_power_to_shields_72281p": {
+			rules: "Only one per ship",
+			canEquip: onePerShip("Auxiliary Power to Shields")
+		},
+		
+		// Course Change - I.K.S. Hegh'ta
+		"crew:change_course_72281p_crew": {
+			rules: "Only one per ship",
+			canEquip: onePerShip("Course Change")
+		},
+		
+		"talent:change_course_72281p_talent": {
+			rules: "Only one per ship",
+			canEquip: onePerShip("Course Change")
+		},
+		
+		"tech:change_course_72281p_tech": {
+			rules: "Only one per ship",
+			canEquip: onePerShip("Course Change")
+		},
+		
+		"weapon:change_course_72281p_weapon": {
+			rules: "Only one per ship",
+			canEquip: onePerShip("Course Change")
+		},
+		
+		// Hatchery - Orassin
+		"tech:hatchery_orassin": {
+			// Equip only on a Xindi ship
+			canEquip: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship,"xindi", ship, fleet) && onePerShip("Hatchery");
+			},/*
+			upgradeSlots: cloneSlot( 1 , 
+				{ 
+					type: ["crew"],
+					source: "Face-down Xindi",
+					intercept: {
+						ship: {
+							cost: function(upgrade,ship,fleet,cost) {
+								cost = 0;
+								return cost;
+							},
+							canEquip: function(card,ship,fleet,canEquip) {
+								if( !$factions.hasFaction( card, "xindi", ship, fleet ) )
+									return false;
+								return canEquip;
+							}
+						}
+					}
+				}
+			),*/
+			upgradeSlots: [  
+				{ 
+					type: ["crew"],
+					source: "Face-down Xindi (free)",
+					intercept: {
+						ship: {
+							cost: function(upgrade,ship,fleet,cost) {
+								cost = 0;
+								return cost;
+							},
+							canEquip: function(card,ship,fleet,canEquip) {
+								if( !$factions.hasFaction( card, "xindi", ship, fleet ) )
+									return false;
+								return canEquip;
+							}
+						}
+					}
+				},
+				{ 
+					type: ["crew"]
+				}
+			]
+
 		}
 	};
 }]);
-
