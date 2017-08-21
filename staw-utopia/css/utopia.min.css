@@ -45,6 +45,7 @@
 .fs-borg:before{content:"1"}
 .fs-aux:before{content:"2"}
 .fs-time:before{content:"3"}
+.fs-OnePerShip:before{content:"4"}
 .fs-ship:before{content:"E";margin-right:-.1em}
 .fs-squadron:before{content:"B"}
 .fs-admiral:before,
