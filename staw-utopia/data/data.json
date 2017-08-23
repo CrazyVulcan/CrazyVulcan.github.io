@@ -3760,11 +3760,32 @@
 		}, {
 			"type": "ship",
 			"id": "borg_sphere_71283",
-			"set": ["71283", "72255", "72283"],
+			"set": ["71283", "72283"],
 			"name": "Borg Starship",
 			"class": "Borg Sphere",
 			"actions": ["target-lock", "scan", "regenerate"],
 			"upgrades": ["borg", "borg", "weapon", "crew"],
+			"attack": 6,
+			"agility": 0,
+			"hull": 7,
+			"shields": 6,
+			"cost": 38,
+			"text": "",
+			"unique": false,
+			"factions": ["borg"],
+			"intercept": {
+				"ship": {},
+				"fleet": {}
+			},
+			"squadron": false
+		}, {
+			"type": "ship",
+			"id": "borg_sphere_72255",
+			"set": ["72255"],
+			"name": "Borg Starship",
+			"class": "Borg Sphere",
+			"actions": ["target-lock", "scan", "regenerate"],
+			"upgrades": ["borg", "tech", "weapon", "crew"],
 			"attack": 6,
 			"agility": 0,
 			"hull": 7,
@@ -9199,6 +9220,16 @@
 	],
 	"captains": [{
 			"type": "captain",
+			"id": "fleet_commander_captain_72280r",
+			"set": ["72280r"],
+			"name": "Fleet Commander",
+			"unique": true,
+			"text": "",
+			"cost": 5,
+			"skill": 0,
+			"talents": 0
+		}, {
+			"type": "captain",
 			"id": "species_8472_captain_71281",
 			"set": ["71281", "72291", "72012"],
 			"name": "Species 8472",
@@ -12420,6 +12451,16 @@
 		}
 	],
 	"upgrades": [{
+            "type": "crew",
+            "id": "bounty_hunter_72012wp",
+            "set": ["72012wp"],
+            "name": "Tellarite Bounty Hunter",
+            "cost": 1,
+			"range": "1 - 2",
+            "text": "<b>WHEN THIS CARD WOULD BE DISCARDED:</b> Discard an Evade token beside an opposing ship",
+            "unique": false,
+            "factions": ["independent"]
+        }, {
             "type": "weapon",
             "id": "triphasic_emitters_72014wp",
             "set": ["72014wp"],
@@ -12446,7 +12487,7 @@
             "name": "Repair Protocol",
             "cost": 4,
             "text": "<b>END PHASE:</b> Place 3 [time] Tokens on this card.\n\nRepair 1 damage to this ship's Shields or Hull.\n(Romulan Drone Ship)",
-            "unique": ["OnePerShip"],
+            "unique": "OnePerShip",
             "factions": ["romulan"]
         }, {
             "type": "weapon",
@@ -13039,6 +13080,7 @@
 			"set": ["72282p"],
 			"name": "Lursa",
 			"cost": 3,
+			"talents": 1,
 			"text": "You may preform a [cloak] or a [sensor-echo] Action as a free action, if your ship has the appropriate Action on its Action Bar\n\nIf B'Etor is the Captain of your ship, you may fill one of your [crew] Upgrade slots with this card and gain +4 to your Captain Skill.",
 			"unique": true,
 			"factions": ["klingon"]
@@ -13048,6 +13090,7 @@
 			"set": ["72282p"],
 			"name": "B'Etor",
 			"cost": 3,
+			"talents": 1,
 			"text": "A friendly ship within Range 1-2 of your ship may use the Action or Ability of your [talent] Upgrade as if it were assigned to that ship.\n\nIf Lursa is the Captain of your ship, you may fill one of your [crew] Upgrade slots with this card and gain +4 to your Captain Skill.",
 			"unique": true,
 			"factions": ["klingon"]
