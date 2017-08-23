@@ -4850,7 +4850,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				ship: {
 					cost: function(upgrade,ship,fleet,cost) {
 						if( ship && !$factions.hasFaction(ship,"mirror-universe", ship, fleet) )
-							return resolve(upgrade,ship,fleet,cost) + 5;
+							return resolve(upgrade,ship,fleet,cost) + 4;
 						return cost;
 					}
 				}
@@ -5393,7 +5393,39 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			rules: "Only one per ship",
 			canEquip: onePerShip("Course Change")
 		},
+		//Lursa and B'Etor crew
+		"crew:lursa_crew_72282p": {
+			intercept: {
+				ship: {
+					skill: function(upgrade,ship,fleet,skill) {
+						if( upgrade == ship.captain )
+							return resolve(upgrade,ship,fleet,skill) + 3;
+						return skill;
+					}
+				}
+			}
+		},
 		
+		"crew:betor_crew_72282p": {
+			upgradeSlots: [ 
+				{ 
+					type: ["talent"]
+				}
+			],
+			canEquip: function(captain,ship,fleet) {
+				return captain.name == "Lursa";
+			}
+
+			intercept: {
+				ship: {
+					skill: function(card,ship,fleet,skill) {
+						if( card == ship.captain )
+							return resolve(card,ship,fleet,skill) + 1;
+						return skill;
+					}
+				}
+			}
+		},
 		// Hatchery - Orassin
 		"tech:hatchery_orassin": {
 			// Equip only on a Xindi ship
