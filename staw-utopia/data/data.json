@@ -12476,7 +12476,7 @@
             "set": ["72014wp"],
             "name": "Repair Protocol",
             "cost": 4,
-            "text": "<b>END PHASE:</b> Place 3 [time] Tokens on this card.\n\nRepair 1 damage to this ship's Shields or Hull.\n(Romulan Drone Ship)",
+            "text": "<b>END PHASE:</b> Place 3 [time] [OnePerShip] Tokens on this card.\n\nRepair 1 damage to this ship's Shields or Hull.\n(Romulan Drone Ship)",
             "unique": "OnePerShip",
             "factions": ["romulan"]
         }, {
