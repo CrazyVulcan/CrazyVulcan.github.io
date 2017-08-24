@@ -12497,7 +12497,7 @@
             "name": "Evasive Protocol",
             "cost": 3,
             "text": "<b>COMBAT PHASE:</b> If this ship is in the primary of Secondary Firing Arc of an opposing ship place 3 [time] Tokens on this card.\n\nPerform a [sensor-echo] Action as a Free Action if this ship does also remove an opposing [target-lock] Token from this ship.\n(Romulan Drone Ship)",
-            "unique": ["OnePerShip",
+            "unique": "OnePerShip",
             "factions": ["romulan"]
         }, {
             "type": "tech",
