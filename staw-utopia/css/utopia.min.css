@@ -852,10 +852,10 @@ textarea {
 	font-size: 1.3em;
 	border: .05em solid #a8b6bf;
 	border-radius: 1em;
-	background: #a9a9a9;
+	background: #000;
 	color: #fff8dc;
 	position: relative;
-	left: .1em;
+	left: .05em;
 	top: -.1em;
 	z-index: 1;
 	text-align: center
