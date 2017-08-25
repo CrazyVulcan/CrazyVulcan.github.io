@@ -12477,7 +12477,8 @@
             "name": "Repair Protocol",
             "cost": 4,
             "text": "<b>END PHASE:</b> Place 3 [time] Tokens on this card.\n\nRepair 1 damage to this ship's Shields or Hull.\n(Romulan Drone Ship)",
-            "unique": ["OnePerShip"],
+            "unique": false,
+			"limit": true,
             "factions": ["romulan"]
         }, {
             "type": "weapon",
