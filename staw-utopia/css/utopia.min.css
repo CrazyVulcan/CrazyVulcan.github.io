@@ -855,8 +855,8 @@ textarea {
 .card-OnePerShip-icon{
 	font-size: 1.15em;
 	border: .05em solid #a8b6bf;
-	border-radius: 1em;
-	background: #a9a9a9;
+	border-radius: 1.2em;
+	background: #000;
 	color: #fff8dc;
 	position: relative;
 	left: .1em;
