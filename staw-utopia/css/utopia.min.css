@@ -849,14 +849,14 @@ textarea {
 }
 
 .card-OnePerShip-icon{
-	font-size: 1.3em;
+	font-size: 1em;
 	border: .05em solid #a8b6bf;
 	border-radius: 1em;
 	background: #000;
 	color: #fff8dc;
 	position: relative;
-	left: 0em;
-	top: 0em;
+	left: .1em;
+	top: -.1em;
 	z-index: 1;
 	text-align: center
 }
