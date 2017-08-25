@@ -848,7 +848,7 @@ textarea {
 	text-align: center
 }
 
-.card-OnePerShip {
+.card-OnePerShip .card-unique-icon{
 	font-size: 1.3em;
 	border: .05em solid #a8b6bf;
 	border-radius: 1em;
