@@ -856,7 +856,7 @@ textarea {
 	color: #fff8dc;
 	position: relative;
 	left: 1em;
-	top: -0.5em;
+	top: 0em;
 	z-index: 1;
 	text-align: center
 }
