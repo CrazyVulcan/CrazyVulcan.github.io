@@ -771,6 +771,10 @@ textarea {
 	top: -.3em
 }
 
+.card-OnePerShip .card-corner-top-left .card-corner-inner {
+	top: -.3em
+}
+
 .card-corner-top-right .card-corner-inner {
 	border-top-right-radius: .2em;
 	top: 1em
@@ -1107,6 +1111,11 @@ textarea {
 }
 
 .card-upgrade.card-unique .card-title-container {
+	padding-left: .4em;
+	margin-left: 1.2em
+}
+
+.card-upgrade.card-OnePerShip .card-title-container {
 	padding-left: .4em;
 	margin-left: 1.2em
 }
