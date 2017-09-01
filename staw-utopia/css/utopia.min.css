@@ -893,8 +893,8 @@ textarea {
 	background: #000;
 	color: #8B0000;
 	position: relative;
-	left: 0em;
-	top: .25em;
+	left: 1em;
+	top: .15em;
 	z-index: 1;
 	text-align: center
 }
