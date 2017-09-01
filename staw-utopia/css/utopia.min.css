@@ -881,7 +881,7 @@ textarea {
 	color: #8B0000;
 	position: relative;
 	left: .1em;
-	top: -.14em;
+	top: -.17em;
 	z-index: 1;
 	text-align: center
 }
@@ -894,7 +894,7 @@ textarea {
 	color: #8B0000;
 	position: relative;
 	left: .1em;
-	top: -.18em;
+	top: -.22em;
 	z-index: 1;
 	text-align: center
 }
@@ -1153,6 +1153,16 @@ textarea {
 }
 
 .card-upgrade.card-OnePerShip .card-title-container {
+	padding-left: .4em;
+	margin-left: 1.2em
+}
+
+.card-upgrade.card-FrontArc .card-title-container {
+	padding-left: .4em;
+	margin-left: 1.2em
+}
+
+.card-upgrade.card-RearArc .card-title-container {
 	padding-left: .4em;
 	margin-left: 1.2em
 }
