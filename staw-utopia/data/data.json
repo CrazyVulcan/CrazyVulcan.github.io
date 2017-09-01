@@ -1329,7 +1329,7 @@
 			"name": "Prototype 02",
 			"class": "Romulan Drone Ship",
 			"actions": ["evade", "target-lock", "scan"],
-			"upgrades": ["tech", "tech", "tech", "weapon", "question"],
+			"upgrades": ["tech", "tech", "tech", "weapon",],
 			"attack": 3,
 			"agility": 3,
 			"hull": 3,
@@ -12560,8 +12560,26 @@
             "unique": false,
             "factions": ["dominion"]
         }, {
-            "type": "question",
-            "id": "captured_72013wp",
+            "type": "tech",
+            "id": "tech_captured_72013wp",
+            "set": ["72013wp"],
+            "name": "Captured",
+            "cost": 1,
+            "text": "This Upgrade does not require an Upgrade Slot\n\nThis ship gains the Independent Faction.\n\n<b>WHEN DEFENDING:</b> If the attacking shares a Faction with this ship other then Independent.\n\nThe attacking ship rolls +1 attack dice",
+            "unique": false,
+            "factions": ["independent"]
+        }, {
+            "type": "weapon",
+            "id": "weapon_captured_72013wp",
+            "set": ["72013wp"],
+            "name": "Captured",
+            "cost": 1,
+            "text": "This Upgrade does not require an Upgrade Slot\n\nThis ship gains the Independent Faction.\n\n<b>WHEN DEFENDING:</b> If the attacking shares a Faction with this ship other then Independent.\n\nThe attacking ship rolls +1 attack dice",
+            "unique": false,
+            "factions": ["independent"]
+        }, {
+            "type": "crew",
+            "id": "crew_captured_72013wp",
             "set": ["72013wp"],
             "name": "Captured",
             "cost": 1,
