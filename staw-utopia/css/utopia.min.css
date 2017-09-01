@@ -690,6 +690,14 @@ textarea {
 	content: "4"
 }
 
+.fs-FrontArc:before {
+	content: "5"
+}
+
+.fs-RearArc:before {
+	content: "6"
+}
+
 .fs-ship:before {
 	content: "E";
 	margin-right: -.1em
@@ -865,6 +873,31 @@ textarea {
 	text-align: center
 }
 
+.card-FrontArc-icon{
+	font-size: 1.15em;
+	border: .05em solid #a8b6bf;
+	border-radius: 1.2em;
+	background: #000;
+	color: #8B0000;
+	position: relative;
+	left: .1em;
+	top: -.14em;
+	z-index: 1;
+	text-align: center
+}
+
+.card-RearArc-icon{
+	font-size: 1.15em;
+	border: .05em solid #a8b6bf;
+	border-radius: 1.2em;
+	background: #000;
+	color: #8B0000;
+	position: relative;
+	left: .1em;
+	top: -.18em;
+	z-index: 1;
+	text-align: center
+}
 .card-mirror .card-unique-icon {
 	color: #000;
 	background: #e1a825;
@@ -970,6 +1003,10 @@ textarea {
 	width: .8em;
 	height: 6.3em;
 	margin-top: .2em
+}
+
+.card-front-arc {
+	background-image: url(../img/upgrade-forward-arc.png)
 }
 
 .card-faction-federation {
