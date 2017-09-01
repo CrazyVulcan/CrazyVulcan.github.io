@@ -12643,7 +12643,7 @@
 			"range": "2 - 3",
 			"arc": ["front","rear"],
             "text": "<b>ATTACK:</b> If this ship has a [target-lock] Token on the defending ship, place 2 [time] Tokens on this card.\n\nThis ship my convert 1 [battlestations] into a [crit].",
-            "unique": false,
+            "unique": true,
             "factions": ["klingon"]
         }, {
             "type": "tech",
