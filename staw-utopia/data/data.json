@@ -1329,7 +1329,7 @@
 			"name": "Prototype 02",
 			"class": "Romulan Drone Ship",
 			"actions": ["evade", "target-lock", "scan"],
-			"upgrades": ["tech", "tech", "tech", "weapon",],
+			"upgrades": ["tech", "tech", "tech", "weapon"],
 			"attack": 3,
 			"agility": 3,
 			"hull": 3,
