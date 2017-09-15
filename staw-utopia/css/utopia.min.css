@@ -690,13 +690,6 @@ textarea {
 	content: "4"
 }
 
-.fs-FrontArc:before {
-	content: "5"
-}
-
-.fs-RearArc:before {
-	content: "6"
-}
 
 .fs-ship:before {
 	content: "E";
@@ -874,16 +867,10 @@ textarea {
 }
 
 .card-FrontArc-icon{
-	font-size: 1.15em;
-	border: .05em solid #a8b6bf;
-	border-radius: 1.2em;
-	background: #000;
-	color: #8B0000;
+	background-image: url(../img/ship-stat-attack.png);
 	position: relative;
 	left: 0em;
-	top: 1em;
-	z-index: 1;
-	text-align: center
+	top: 0.95em;
 }
 
 .card-RearArc-icon{
