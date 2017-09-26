@@ -76,7 +76,7 @@
 	],
 	"shipClasses": [{
 			"type": "ship-class",
-			"id": "bsg",
+			"id": "000",
 			"name": "Colonial Battlestar",
 			"frontArc": "180",
 			"rearArc": "",
