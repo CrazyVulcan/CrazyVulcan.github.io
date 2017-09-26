@@ -2521,7 +2521,7 @@
             "text": "Add 1 [weapon] slot to your ships upgrade bar. \n\n<b>WHEN ATTACKING:</b>\nDisable this card card to re-roll up to 2 of your attack dice.",
             "unique": true,
             "factions": [""]
-        }, }
+        }, {
 			"type": "crew",
             "id": "starbuck_bsg",
             "set": ["bsg"],
