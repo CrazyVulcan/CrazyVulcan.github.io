@@ -28,7 +28,7 @@
 			"cost": 24,
 			"text": "<b>WHEN DEFENDING:</b>\nConvert 1 [crit] into a [hit]\n\n OR \n\nConvert 1 [hit] into a | |",
 			"unique": true,
-			"factions": [""],
+			"factions": ["independent"],
 			"intercept": {
 				"ship": {},
 				"fleet": {}
