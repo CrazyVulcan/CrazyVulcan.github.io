@@ -12655,7 +12655,8 @@
             "cost": 3,
 			"range": "1 - 2",
             "text": "<b>DURING THE ACTIVATION PHASE:\n</b>If an enemy ship ends its maneuver in range \n\n <b>DISABLE THIS CARD:\n</b>Place an [evade] Token next to your ship.",
-            "limit": true,
+            "unique": false,
+			"limit": true,
             "factions": [""]
         },{
             "type": "tech",
@@ -12664,7 +12665,8 @@
             "name": "FTL Drive",
             "cost": 5,
             "text": "<b>DISABLE THIS CARD:\nACTION:</b> Remove this ship from the play area and discard all tokens next to it.\n\n <b>AT THE END OF THE ACTIVATION PHASE:</b>\n Place this ship back in the play area but not within Range 1-2 of an enemy ship. Place and [aux] Token next to your ship.",
-            "limit": true,
+            "unique": false,
+			"limit": true,
             "factions": [""]
         },{
             "type": "weapon",
