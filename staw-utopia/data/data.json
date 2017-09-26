@@ -1,6 +1,12 @@
 {
 	"sets": [{
 			"type": "set",
+			"id": "bsg",
+			"name": "Battlestar Galatica",
+			"releaseDate": "2017-10-01",
+			"parentSet": "Custom"
+		},{
+			"type": "set",
 			"id": "2017core",
 			"name": "Core",
 			"releaseDate": "2017-10-01",
@@ -1329,6 +1335,65 @@
 		}
 	],
 	"ships": [{
+			"type": "ship",
+			"id": "galactica_bsg",
+			"set": ["bsg"],
+			"name": "Galactica",
+			"class": "Colonial Battlestar",
+			"actions": ["evade", "target-lock", "battlestations"],
+			"upgrades": ["tech", "tech", "crew", "crew"],
+			"attack": 4,
+			"agility": 1,
+			"hull": 5,
+			"shields": 2,
+			"cost": 24,
+			"text": "<b>WHEN DEFENDING:</b>\nConvert 1 [crit] into a [hit]\n\n OR \n\nConvert 1 [hit] into a | |",
+			"unique": true,
+			"factions": ["independent"],
+			"intercept": {
+				"ship": {},
+				"fleet": {}
+			},
+			"squadron": false
+		}, {
+			"type": "ship",
+			"id": "galactica_bsg",
+			"set": ["bsg"],
+			"name": "Pegasus",
+			"class": "Colonial Battlestar",
+			"actions": ["evade", "target-lock", "battlestations"],
+			"upgrades": ["tech", "tech", "crew", "crew"],
+			"attack": 4,
+			"agility": 1,
+			"hull": 5,
+			"shields": 2,
+			"cost": 24,
+			"text": "<b>WHEN THIS SHIP IS DESTROYED:\n</b>Immediately Perform a maneuver with a speed of 1, straight, bank or turn. \n\n <b>IF THIS SHIP OVERLAPS ANOTHER SHIP'S BASE:\n</b> Roll 4 attack dice against that ship. The defending ship does not roll defense dice. ",
+			"unique": true,
+			"factions": ["independent"],
+			"intercept": {
+				"ship": {},
+				"fleet": {}
+			},
+			"squadron": false
+		}, {
+			"type": "ship",
+			"id": "colonial_starship_bsg",
+			"set": ["bsg"],
+			"name": "Colonial Starship",
+			"class": "Colonial Battlestar",
+			"actions": ["evade", "target-lock", "battlestations"],
+			"upgrades": ["tech", "crew", "crew"],
+			"attack": 4,
+			"agility": 1,
+			"hull": 5,
+			"shields": 1,
+			"cost": 22,
+			"text": "independent",
+			"unique": false,
+			"factions": ["romulan"],
+			"squadron": false
+		}, {
 			"type": "ship",
 			"id": "enterprise_d_2017core",
 			"set": ["2017core"],
@@ -6957,6 +7022,35 @@
 	],
 	"shipClasses": [{
 			"type": "ship-class",
+			"id": "bsg",
+			"name": "Colonial Battlestar",
+			"frontArc": "180",
+			"rearArc": "",
+			"maneuvers": {
+				"1": {
+					"straight": "green",
+					"bank": "green"
+				},
+				"2": {
+					"straight": "green",
+					"bank": "white",
+					"turn": "red"
+				},
+				"3": {
+					"straight": "white",
+					"bank": "white",
+				},
+				"4": {
+					"straight": "white"
+				},
+				"min": -1,
+				"max": 4,
+				"-1": {
+					"straight": "red"
+				}
+			}
+		}, {
+			"type": "ship-class",
 			"id": "72224p",
 			"name": "Xindi Reptilian Warship",
 			"frontArc": "90",
@@ -9267,6 +9361,50 @@
 		}
 	],
 	"captains": [{
+			"type": "captain",
+			"id": "captain_bsg",
+			"set": ["bsg"],
+			"name": "Colonial Captain",
+			"unique": false,
+			"text": "",
+			"factions": [""],
+			"cost": 0,
+			"skill": 1,
+			"talents": 1
+		}, {
+			"type": "captain",
+			"id": "cap_classic_william_adama_bsg",
+			"set": ["bsg"],
+			"name": "William Adama",
+			"unique": true,
+			"text": "<b>ACTION:</b>\nPerform a second maneuver, straight or bank, with a speed of 1 then place an [aux] token beside your ship.",
+			"factions": [""],
+			"cost": 4,
+			"skill": 7,
+			"talents": 1
+		}, {
+			"type": "captain",
+			"id": "william_adama_bsg",
+			"set": ["bsg"],
+			"name": "William Adama",
+			"unique": true,
+			"text": "<b>DURING THE ACTIVATION PHASE:</b>\n Whenever you are instructed to place a Disabled Token on one of your [tech] or [crew] upgrades, place 2 [time] Tokens on this card instead. ",
+			"factions": [""],
+			"cost": 3,
+			"skill": 5,
+			"talents": 1
+		},	{
+			"type": "captain",
+			"id": "saul_tigh_bsg",
+			"set": ["bsg"],
+			"name": "Saul Tigh",
+			"unique": true,
+			"text": "<b>DURING THE ACTIVATION PHASE:\n</b>After executing a green maneuver, perform a free [sensor-echo] action using the 1 straight maneuver template.",
+			"factions": [""],
+			"cost": 1,
+			"skill": 2,
+			"talents": 0
+		}, {
 			"type": "captain",
 			"id": "species_8472_captain_71281",
 			"set": ["71281", "72291", "72012"],
@@ -12149,6 +12287,17 @@
 	],
 	"admirals": [{
 			"type": "admiral",
+			"id": "classic_william_adama_bsg",
+			"set": ["bsg"],
+			"name": "William Adama",
+			"cost": 4,
+			"skill": 1,
+			"talents": 0,
+			"text": "<b>FLEET ACTION:\nPerform a second maneuver, straight or bank, with a speed of 1 then place an [aux] token beside your ship.",
+			"unique": true,
+			"factions": [""]
+		}, {
+			"type": "admiral",
 			"id": "admiral_sela_72282gp",
 			"set": ["72282gp"],
 			"name": "Sela",
@@ -12489,6 +12638,72 @@
 		}
 	],
 	"upgrades": [{
+            "type": "talent",
+            "id": "so_say_we_all_bsg",
+            "set": ["bsg"],
+            "name": "So Say We All",
+            "cost": 5,
+			"range": "1 - 2",
+            "text": "<b>ACTION:</b> Discard this card, all friendly ships roll +1 Attack Die for all their attacks this round.",
+            "unique": true,
+            "factions": [""]
+        },{
+            "type": "tech",
+            "id": "dadulas_screen_bsg",
+            "set": ["bsg"],
+            "name": "Dadulas Screen",
+            "cost": 3,
+			"range": "1 - 2",
+            "text": "<b>DURING THE ACTIVATION PHASE:\n</b>If an enemy ship ends its maneuver in range \n\n <b>DISABLE THIS CARD:\n</b>Place an [evade] Token next to your ship.",
+            "limit": true,
+            "factions": [""]
+        },{
+            "type": "tech",
+            "id": "ftl_drive_bsg",
+            "set": ["bsg"],
+            "name": "FTL Drive",
+            "cost": 5,
+            "text": "<b>DISABLE THIS CARD:\nACTION:</b> Remove this ship from the play area and discard all tokens next to it.\n\n <b>AT THE END OF THE ACTIVATION PHASE:</b>\n Place this ship back in the play area but not within Range 1-2 of an enemy ship. Place and [aux] Token next to your ship.",
+            "limit": true,
+            "factions": [""]
+        },{
+            "type": "weapon",
+            "id": "flack_wall_bsg",
+            "set": ["bsg"],
+            "name": "Flack Wall",
+            "cost": 4,
+			"range": "1",
+            "text": "<b>ATTACK:</b> Roll 2 attack dice against all ships in range.",
+            "unique": false,
+            "factions": [""]
+        },{
+            "type": "crew",
+            "id": "gaius_baltar_bsg",
+            "set": ["bsg"],
+            "name": "Gaius Baltar",
+            "cost": 2,
+            "text": "Add 1 [weapon] slot to your ships upgrade bar. \n\n<b>WHEN ATTACKING:</b>\nDisable this card card to re-roll up to 2 of your attack dice.",
+            "unique": true,
+            "factions": [""]
+        }, {
+			"type": "crew",
+            "id": "starbuck_bsg",
+            "set": ["bsg"],
+            "name": "Starbuck",
+            "cost": 4,
+            "text": "Discard this card to rotate your ship 90 Degrees, either left or right. Place an [aux] Token next to your ship. ",
+            "unique": true,
+            "factions": [""]
+        },{
+            "type": "crew",
+            "id": "apollo_bsg",
+            "set": ["bsg"],
+            "name": "Apollo",
+            "cost": 5,
+            "text": "<b>DURING THE MODIFY ATTACK DICE STEP: </b>\n Place 3 [time] Tokens on this card to convert one of your [battlestations] to a [crit]",
+            "unique": true,
+            "factions": [""]
+        }, {
             "type": "crew",
             "id": "bounty_hunter_72012wp",
             "set": ["72012wp"],
