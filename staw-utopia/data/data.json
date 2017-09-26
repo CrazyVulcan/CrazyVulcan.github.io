@@ -1,13 +1,13 @@
 {
 	"sets": [{
 			"type": "set",
-			"id": "orvile",
+			"id": "001",
 			"name": "Orvile",
 			"releaseDate": "2017-10-02",
 			"parentSet": "Custom"
 		},	{
 			"type": "set",
-			"id": "bsg",
+			"id": "000",
 			"name": "Battlestar Galatica",
 			"releaseDate": "2017-10-01",
 			"parentSet": "Custom"
@@ -16,7 +16,7 @@
 	"ships": [{
 			"type": "ship",
 			"id": "galactica_bsg",
-			"set": ["bsg"],
+			"set": ["000"],
 			"name": "Galactica",
 			"class": "Colonial Battlestar",
 			"actions": ["evade", "target-lock", "battlestations"],
@@ -37,7 +37,7 @@
 		}, {
 			"type": "ship",
 			"id": "galactica_bsg",
-			"set": ["bsg"],
+			"set": ["000"],
 			"name": "Pegasus",
 			"class": "Colonial Battlestar",
 			"actions": ["evade", "target-lock", "battlestations"],
@@ -49,7 +49,7 @@
 			"cost": 24,
 			"text": "<b>WHEN THIS SHIP IS DESTROYED:\n</b>Immediately Perform a maneuver with a speed of 1, straight, bank or turn. \n\n <b>IF THIS SHIP OVERLAPS ANOTHER SHIP'S BASE:\n</b> Roll 4 attack dice against that ship. The defending ship does not roll defense dice. ",
 			"unique": true,
-			"factions": [""],
+			"factions": ["independent"],
 			"intercept": {
 				"ship": {},
 				"fleet": {}
@@ -58,7 +58,7 @@
 		}, {
 			"type": "ship",
 			"id": "colonial_starship_bsg",
-			"set": ["bsg"],
+			"set": ["000"],
 			"name": "Colonial Starship",
 			"class": "Colonial Battlestar",
 			"actions": ["evade", "target-lock", "battlestations"],
@@ -68,7 +68,7 @@
 			"hull": 5,
 			"shields": 1,
 			"cost": 22,
-			"text": "",
+			"text": "independent",
 			"unique": false,
 			"factions": ["romulan"],
 			"squadron": false
@@ -2474,16 +2474,6 @@
 		}
 	],
 	"upgrades": [{
-            "type": "crew",
-            "id": "",
-            "set": [""],
-            "name": "",
-            "cost": 0,
-			"range": "1 - 2",
-            "text": "",
-            "unique": false,
-            "factions": [""]
-        },{
             "type": "talent",
             "id": "so_say_we_all_bsg",
             "set": ["bsg"],
