@@ -1,6 +1,12 @@
 {
 	"sets": [{
 			"type": "set",
+			"id": "bsg",
+			"name": "Battlestar Galatica",
+			"releaseDate": "2017-10-01",
+			"parentSet": "Custom"
+		},{
+			"type": "set",
 			"id": "2017core",
 			"name": "Core",
 			"releaseDate": "2017-10-01",
@@ -9267,6 +9273,50 @@
 		}
 	],
 	"captains": [{
+			"type": "captain",
+			"id": "captain_bsg",
+			"set": ["bsg"],
+			"name": "Colonial Captain",
+			"unique": false,
+			"text": "",
+			"factions": [""],
+			"cost": 0,
+			"skill": 1,
+			"talents": 1
+		}, {
+			"type": "captain",
+			"id": "cap_classic_william_adama_bsg",
+			"set": ["bsg"],
+			"name": "William Adama",
+			"unique": true,
+			"text": "<b>ACTION:</b>\nPerform a second maneuver, straight or bank, with a speed of 1 then place an [aux] token beside your ship.",
+			"factions": [""],
+			"cost": 4,
+			"skill": 7,
+			"talents": 1
+		}, {
+			"type": "captain",
+			"id": "william_adama_bsg",
+			"set": ["bsg"],
+			"name": "William Adama",
+			"unique": true,
+			"text": "<b>DURING THE ACTIVATION PHASE:</b>\n Whenever you are instructed to place a Disabled Token on one of your [tech] or [crew] upgrades, place 2 [time] Tokens on this card instead. ",
+			"factions": [""],
+			"cost": 3,
+			"skill": 5,
+			"talents": 1
+		},	{
+			"type": "captain",
+			"id": "saul_tigh_bsg",
+			"set": ["bsg"],
+			"name": "Saul Tigh",
+			"unique": true,
+			"text": "<b>DURING THE ACTIVATION PHASE:\n</b>After executing a green maneuver, perform a free [sensor-echo] action using the 1 straight maneuver template.",
+			"factions": [""],
+			"cost": 1,
+			"skill": 2,
+			"talents": 0
+		}, {
 			"type": "captain",
 			"id": "species_8472_captain_71281",
 			"set": ["71281", "72291", "72012"],
