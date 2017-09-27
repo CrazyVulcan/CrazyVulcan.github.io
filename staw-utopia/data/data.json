@@ -41,7 +41,7 @@
 			"name": "Pegasus",
 			"class": "Colonial Battlestar",
 			"actions": ["evade", "target-lock", "battlestations"],
-			"upgrades": ["tech", "tech", "crew", "crew"],
+			"upgrades": ["tech", "weapon", "crew", "crew"],
 			"attack": 4,
 			"agility": 1,
 			"hull": 5,
@@ -92,7 +92,7 @@
 				},
 				"3": {
 					"straight": "white",
-					"bank": "white",
+					"bank": "white"
 				},
 				"4": {
 					"straight": "white"
