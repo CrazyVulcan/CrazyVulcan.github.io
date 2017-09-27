@@ -26,7 +26,7 @@
 			"hull": 5,
 			"shields": 2,
 			"cost": 24,
-			"text": "<b>WHEN DEFENDING:</b>\nConvert 1 [crit] into a [hit]\n\n OR \n\nConvert 1 [hit] into a | |",
+			"text": "<b>WHEN DEFENDING:</b>\nConvert 1 [crit] into a [hit]\n OR \nConvert 1 [hit] into a | |",
 			"unique": true,
 			"factions": [""],
 			"intercept": {
@@ -159,7 +159,7 @@
 			"cost": 4,
 			"skill": 1,
 			"talents": 0,
-			"text": "<b>FLEET ACTION:\nPerform a second maneuver, straight or bank, with a speed of 1 then place an [aux] token beside your ship.",
+			"text": "<b>FLEET ACTION: </b>Perform a second maneuver, straight or bank, with a speed of 1 then place an [aux] token beside your ship.",
 			"unique": true,
 			"factions": [""]
 		}
