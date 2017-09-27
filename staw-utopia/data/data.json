@@ -1,6 +1,12 @@
 {
 	"sets": [{
 			"type": "set",
+			"id": "orvile",
+			"name": "Orvile",
+			"releaseDate": "2017-10-02",
+			"parentSet": "Custom"
+		},	{
+			"type": "set",
 			"id": "bsg",
 			"name": "Battlestar Galatica",
 			"releaseDate": "2017-10-01",
@@ -22,11 +28,49 @@
 			"cost": 24,
 			"text": "<b>WHEN DEFENDING:</b>\nConvert 1 [crit] into a [hit]\n\n OR \n\nConvert 1 [hit] into a | |",
 			"unique": true,
-			"factions": ["independent"],
+			"factions": [""],
 			"intercept": {
 				"ship": {},
 				"fleet": {}
 			},
+			"squadron": false
+		}, {
+			"type": "ship",
+			"id": "pegasus_bsg",
+			"set": ["bsg"],
+			"name": "Pegasus",
+			"class": "Colonial Battlestar",
+			"actions": ["evade", "target-lock", "battlestations"],
+			"upgrades": ["tech", "tech", "crew", "crew"],
+			"attack": 4,
+			"agility": 1,
+			"hull": 5,
+			"shields": 2,
+			"cost": 24,
+			"text": "<b>WHEN THIS SHIP IS DESTROYED:\n</b>Immediately Perform a maneuver with a speed of 1, straight, bank or turn. \n\n <b>IF THIS SHIP OVERLAPS ANOTHER SHIP'S BASE:\n</b> Roll 4 attack dice against that ship. The defending ship does not roll defense dice. ",
+			"unique": true,
+			"factions": [""],
+			"intercept": {
+				"ship": {},
+				"fleet": {}
+			},
+			"squadron": false
+		}, {
+			"type": "ship",
+			"id": "colonial_starship_bsg",
+			"set": ["bsg"],
+			"name": "Colonial Starship",
+			"class": "Colonial Battlestar",
+			"actions": ["evade", "target-lock", "battlestations"],
+			"upgrades": ["tech", "crew", "crew"],
+			"attack": 4,
+			"agility": 1,
+			"hull": 5,
+			"shields": 1,
+			"cost": 22,
+			"text": "",
+			"unique": false,
+			"factions": [""],
 			"squadron": false
 		}
 	],
@@ -34,7 +78,7 @@
 			"type": "ship-class",
 			"id": "bsg",
 			"name": "Colonial Battlestar",
-			"frontArc": "90",
+			"frontArc": "180",
 			"rearArc": "",
 			"maneuvers": {
 				"1": {
@@ -48,7 +92,7 @@
 				},
 				"3": {
 					"straight": "white",
-					"bank": "white"
+					"bank": "white",
 				},
 				"4": {
 					"straight": "white"
@@ -71,7 +115,7 @@
 			"factions": [""],
 			"cost": 0,
 			"skill": 1,
-			"talents": 0
+			"talents": 1
 		}, {
 			"type": "captain",
 			"id": "cap_classic_william_adama_bsg",
@@ -121,6 +165,16 @@
 		}
 	],
 	"upgrades": [{
+            "type": "crew",
+            "id": "",
+            "set": [""],
+            "name": "",
+            "cost": 0,
+			"range": "1 - 2",
+            "text": "",
+            "unique": false,
+            "factions": [""]
+        },{
             "type": "talent",
             "id": "so_say_we_all_bsg",
             "set": ["bsg"],
@@ -138,8 +192,7 @@
             "cost": 3,
 			"range": "1 - 2",
             "text": "<b>DURING THE ACTIVATION PHASE:\n</b>If an enemy ship ends its maneuver in range \n\n <b>DISABLE THIS CARD:\n</b>Place an [evade] Token next to your ship.",
-            "unique": false,
-			"limit": true,
+            "limit": true,
             "factions": [""]
         },{
             "type": "tech",
@@ -148,8 +201,7 @@
             "name": "FTL Drive",
             "cost": 5,
             "text": "<b>DISABLE THIS CARD:\nACTION:</b> Remove this ship from the play area and discard all tokens next to it.\n\n <b>AT THE END OF THE ACTIVATION PHASE:</b>\n Place this ship back in the play area but not within Range 1-2 of an enemy ship. Place and [aux] Token next to your ship.",
-            "unique": false,
-			"limit": true,
+            "limit": true,
             "factions": [""]
         },{
             "type": "weapon",
@@ -190,7 +242,15 @@
             "factions": [""]
         }
 	],
-	"resources": [
+	"resources": [{
+			"type": "resource",
+			"id": "captains_chair_resource",
+			"set": ["72301r"],
+			"name": "Captain's Chair",
+			"text": "This card can only be assigned to a ship that has a Captain with a printed Captain skill of 5 or higher.\n\n<b>ACTIVATION PHASE:</b> Once per game round, after this ship executes a Non-Red Maneuver:\n\nRemove a Disabled Token from 1 of the cards equipped to this ship.",
+			"cost": 3,
+			"showShipResourceSlot": false
+		} 
 	],
 	"others": [
 	]
