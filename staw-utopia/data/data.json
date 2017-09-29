@@ -1,10 +1,22 @@
 {
 	"sets": [{
 			"type": "set",
-			"id": "2017core",
-			"name": "Core",
-			"releaseDate": "2017-10-01",
+			"id": "22303p",
+			"name": "OP Mission Prize",
+			"releaseDate": "2017-10-30",
 			"parentSet": "2017 Starter Set"
+		}, {
+			"type": "set",
+			"id": "72302r",
+			"name": "Front-Line Retrofit Resource",
+			"releaseDate": "2017-10-02",
+			"parentSet": "Resource Rumble"
+		}, {
+			"type": "set",
+			"id": "72302p",
+			"name": "OP Mission Prize",
+			"releaseDate": "2017-10-01",
+			"parentSet": "Resource Rumble"
 		}, {
 			"type": "set",
 			"id": "72301rp",
@@ -12489,6 +12501,16 @@
 		}
 	],
 	"upgrades": [{
+            "type": "tech",
+            "id": "sabotaged_systems_22303p",
+            "set": ["22303p"],
+            "name": "Sabotaged Systems",
+            "cost": 3,
+			"range": "1 - 3",
+            "text": "<b>PLANNING PHASE:</b> Discard this card and target an opposing ship.\n\nReduce the Primary Weapon Value and Agility of the target ship until the end of the game.",
+            "unique": true,
+            "factions": ["independent"]
+        }, {
             "type": "crew",
             "id": "bounty_hunter_72012wp",
             "set": ["72012wp"],
@@ -12821,7 +12843,7 @@
         }, {
             "type": "crew",
             "id": "william_t_riker_72001wp",
-            "set": ["72011wp"],
+            "set": ["72011wp", "71801"],
             "name": "William T. Riker",
             "cost": 4,
             "text": "Modify the Captain SKill of the Captain equipped to this ship by +3.\n\n<b>IF THE CAPTAIN EQUIPPED TO THIS SHIP IS DISABLED OR DISCARDED.</b>\nThis ships Captain Skill is 5.\n\n<b>IF THIS SHIP RECEIVES A FACE UP 'COMMUNICATIONS FAILURE' OR 'INJURED CAPTAIN' DAMAGE CARD,</b>\nFlip that damage card face down.",
@@ -17518,11 +17540,10 @@
 		}, {
 			"type": "crew",
 			"id": "elizabeth_shelby_u_s_s_yaeger",
-			"set": ["u_s_s_yaeger"],
+			"set": ["u_s_s_yaeger", "22303p"],
 			"name": "Elizabeth Shelby",
 			"unique": true,
-			"text": "During the Modify Defense Dice step of the Combat Phase, you may re-roll one of your blank results. \n\nIf you are defending against an attack from a Borg ship, you roll +1 defense die during the Roll Defense Dice step and you may re-roll all of your blank results during the Modify Defense Dice step.",
-			"factions": ["federation"],
+			"text": "<b>WHEN DEFENDING:\n\n</b> This ship may re-roll one of its |  | results.\n\n If the attacking ship is a Borg ship, this ship rolls +1 defense die and may re-roll all of its |  | results",			"factions": ["federation"],
 			"cost": 2,
 			"skill": 0,
 			"talents": 0,
@@ -20973,19 +20994,6 @@
 			"attack": 0,
 			"range": ""
 		}, {
-			"type": "crew",
-			"id": "william_t_riker_71801",
-			"set": ["71801"],
-			"name": "William T. Riker",
-			"unique": true,
-			"text": "Your Captain's Skill Number is +3. If your Captain is disabled or if you have no Captain, your ship's Skill Number is a 5. If you receive a \"Communications Failure\" or \"Injured Captain\" critical damage card, immediately flip if face down.",
-			"factions": ["federation"],
-			"cost": 4,
-			"skill": 0,
-			"talents": 0,
-			"attack": 0,
-			"range": ""
-		}, {
 			"type": "talent",
 			"id": "provisional_government_71803",
 			"set": ["71803"],
@@ -23168,7 +23176,15 @@
 			"text": "This card can only be assigned to a ship that has a Captain with a printed Captain skill of 5 or higher.\n\n<b>ACTIVATION PHASE:</b> Once per game round, after this ship executes a Non-Red Maneuver:\n\nRemove a Disabled Token from 1 of the cards equipped to this ship.",
 			"cost": 3,
 			"showShipResourceSlot": false
-		} 
+		}, {
+			"type": "resource",
+			"id": "front_line_retrofit_resource",
+			"set": ["72302r"],
+			"name": "Front Line Retrofit",
+			"text": "This card can only be assigned to a ship that has a printed Hull Value of 3 or less.\n\nThis ship gains the following:\n\n Increase this ships Shield Value by +1.\n\nAdd 1 additional [weapon] to this ships Upgrade Bar.\n\n Increase the Captain Skill of the Captain equiped to this ship by +1",
+			"cost": 5,
+			"showShipResourceSlot": false
+		}
 	],
 	"others": [{
 			"type": "token",
