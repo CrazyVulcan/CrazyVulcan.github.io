@@ -2,7 +2,7 @@
 	"sets": [{
 			"type": "set",
 			"id": "22303p",
-			"name": "OP Mission Prize",
+			"name": "Core",
 			"releaseDate": "2017-10-30",
 			"parentSet": "2017 Starter Set"
 		}, {
@@ -12503,7 +12503,7 @@
 	"upgrades": [{
             "type": "tech",
             "id": "sabotaged_systems_22303p",
-            "set": ["22303p"],
+            "set": ["72302p"],
             "name": "Sabotaged Systems",
             "cost": 3,
 			"range": "1 - 3",
@@ -17540,7 +17540,7 @@
 		}, {
 			"type": "crew",
 			"id": "elizabeth_shelby_u_s_s_yaeger",
-			"set": ["u_s_s_yaeger", "22303p"],
+			"set": ["u_s_s_yaeger", "72302p"],
 			"name": "Elizabeth Shelby",
 			"unique": true,
 			"text": "<b>WHEN DEFENDING:\n\n</b> This ship may re-roll one of its |  | results.\n\n If the attacking ship is a Borg ship, this ship rolls +1 defense die and may re-roll all of its |  | results",			"factions": ["federation"],
