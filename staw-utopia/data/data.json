@@ -1384,7 +1384,7 @@
 			"squadron": false
 		}, {
 			"type": "ship",
-			"id": "prototype_02_71536",
+			"id": "prototype_02_72014wp",
 			"set": ["72014wp"],
 			"name": "Prototype 02",
 			"class": "Romulan Drone Ship",
@@ -1405,7 +1405,7 @@
 			"squadron": false
 		}, {
 			"type": "ship",
-			"id": "romulan_starship_71536",
+			"id": "romulan_starship_72014wp",
 			"set": ["72014wp"],
 			"name": "Romulan Starship",
 			"class": "Romulan Drone Ship",
@@ -12507,7 +12507,7 @@
             "name": "Sabotaged Systems",
             "cost": 3,
 			"range": "1 - 3",
-            "text": "<b>PLANNING PHASE:</b> Discard this card and target an opposing ship.\n\nReduce the Primary Weapon Value and Agility of the target ship until the end of the game.",
+            "text": "<b>PLANNING PHASE:</b> Discard this card and target an opposing ship.\n\nSwap the Primary Weapon Value and Agility of the target ship until the end of the game.",
             "unique": true,
             "factions": ["independent"]
         }, {
@@ -23183,7 +23183,7 @@
 			"name": "Front Line Retrofit",
 			"text": "This card can only be assigned to a ship that has a printed Hull Value of 3 or less.\n\nThis ship gains the following:\n\n Increase this ships Shield Value by +1.\n\nAdd 1 additional [weapon] to this ships Upgrade Bar.\n\n Increase the Captain Skill of the Captain equiped to this ship by +1",
 			"cost": 5,
-			"showShipResourceSlot": false
+			"showShipResourceSlot": true
 		}
 	],
 	"others": [{
