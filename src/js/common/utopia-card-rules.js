@@ -2852,7 +2852,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 		// RESOURCES
 		
-		"resource:fleet_commander"{
+		"resource:fleet_commander": {
 			slotType: "captain",
 			cost: 0,
 			hideCost: true,
@@ -5446,8 +5446,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			],
 			canEquip: function(captain,ship,fleet) {
 				return captain.name == "Lursa";
-			}
-
+			},
 			intercept: {
 				ship: {
 					skill: function(card,ship,fleet,skill) {
