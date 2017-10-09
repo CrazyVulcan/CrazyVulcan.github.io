@@ -1,16 +1,16 @@
 {
   "name": "staw-utopia",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ComaToes/staw-utopia.git"
+    "url": "git+https://github.com/CrazyVulcan/staw-utopia.git"
   },
   "author": "",
   "license": "LGPLv3",
   "bugs": {
-    "url": "https://github.com/ComaToes/staw-utopia/issues"
+    "url": "https://github.com/CrazyVulcan/staw-utopia/issues"
   },
-  "homepage": "https://github.com/ComaToes/staw-utopia#readme",
+  "homepage": "https://github.com/CrazyVulcan/staw-utopia#readme",
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-angular-templates": "^0.5.7",

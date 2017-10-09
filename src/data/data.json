@@ -1,12 +1,6 @@
 {
 	"sets": [{
 			"type": "set",
-			"id": "debug",
-			"name": "bug",
-			"releaseDate": "2017-11-1",
-			"parentSet": "De"
-		}, {
-			"type": "set",
 			"id": "22303p",
 			"name": "Core",
 			"releaseDate": "2017-10-30",
