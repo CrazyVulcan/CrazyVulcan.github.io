@@ -154,13 +154,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 	return {
 		
 	// Starter Set :71120	
-		"ship:1001":{
-			upgradeSlots: [
-				{
-					type: ["resource"]
-				}
-			]
-		},
+		
 		"captain:2003":{
 			factionPenalty: function(upgrade,ship,fleet) {
 				return ship && $factions.hasFaction(ship,"vulcan", ship, fleet) ? 0 : 1 && $factions.hasFaction(ship,"bajoran", ship, fleet) ? 0 : 1;
