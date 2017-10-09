@@ -1,24 +1,6 @@
 {
 	"sets": [{
 			"type": "set",
-			"id": "22303p",
-			"name": "Core",
-			"releaseDate": "2017-10-30",
-			"parentSet": "2017 Starter Set"
-		}, {
-			"type": "set",
-			"id": "72302r",
-			"name": "Front-Line Retrofit Resource",
-			"releaseDate": "2017-10-01",
-			"parentSet": "Resource Rumble"
-		}, {
-			"type": "set",
-			"id": "72302p",
-			"name": "OP Mission Prize",
-			"releaseDate": "2017-10-02",
-			"parentSet": "Resource Rumble"
-		}, {
-			"type": "set",
 			"id": "72301rp",
 			"name": "OP Mission Prize",
 			"releaseDate": "2017-08-30",
@@ -1342,49 +1324,7 @@
 	],
 	"ships": [{
 			"type": "ship",
-			"id": "enterprise_d_2017core",
-			"set": ["2017core"],
-			"name": "U.S.S. Enterprise-D",
-			"class": "Galaxy Class",
-			"actions": ["evade", "target-lock", "scan", "battlestations"],
-			"upgrades": ["tech", "weapon", "crew", "crew", "crew"],
-			"attack": 4,
-			"agility": 1,
-			"hull": 5,
-			"shields": 4,
-			"cost": 26,
-			"text": "<b>WHEN DEFENDING:</b>\n\nThe attacking ship rolls -1 attack die",
-			"unique": true,
-			"factions": ["federation"],
-			"intercept": {
-				"ship": {},
-				"fleet": {}
-			},
-			"squadron": false
-		}, {
-			"type": "ship",
-			"id": "attack_cruiser_2017core",
-			"set": ["2017core"],
-			"name": "K'mpaks Attack Cruiser",
-			"class": "Vor'cha Class",
-			"actions": ["evade", "target-lock", "cloak", "sensor-echo"],
-			"upgrades": ["tech", "weapon", "crew", "crew"],
-			"attack": 5,
-			"agility": 1,
-			"hull": 5,
-			"shields": 3,
-			"cost": 23,
-			"text": "<b>ACTION:</b>Target all Cloaked friendly ships within range 1-2.\n\nPlace an [battlestations] Token next to all target ships",
-			"unique": true,
-			"factions": ["klingon"],
-			"intercept": {
-				"ship": {},
-				"fleet": {}
-			},
-			"squadron": false
-		}, {
-			"type": "ship",
-			"id": "prototype_02_72014wp",
+			"id": "prototype_02_71536",
 			"set": ["72014wp"],
 			"name": "Prototype 02",
 			"class": "Romulan Drone Ship",
@@ -1405,7 +1345,7 @@
 			"squadron": false
 		}, {
 			"type": "ship",
-			"id": "romulan_starship_72014wp",
+			"id": "romulan_starship_71536",
 			"set": ["72014wp"],
 			"name": "Romulan Starship",
 			"class": "Romulan Drone Ship",
@@ -12501,16 +12441,6 @@
 		}
 	],
 	"upgrades": [{
-            "type": "tech",
-            "id": "sabotaged_systems_22303p",
-            "set": ["72302p"],
-            "name": "Sabotaged Systems",
-            "cost": 3,
-			"range": "1 - 3",
-            "text": "<b>PLANNING PHASE:</b> Discard this card and target an opposing ship.\n\nSwap the Primary Weapon Value and Agility of the target ship until the end of the game round.",
-            "unique": true,
-            "factions": ["independent"]
-        }, {
             "type": "crew",
             "id": "bounty_hunter_72012wp",
             "set": ["72012wp"],
@@ -12843,7 +12773,7 @@
         }, {
             "type": "crew",
             "id": "william_t_riker_72001wp",
-            "set": ["72011wp", "71801"],
+            "set": ["72011wp"],
             "name": "William T. Riker",
             "cost": 4,
             "text": "Modify the Captain SKill of the Captain equipped to this ship by +3.\n\n<b>IF THE CAPTAIN EQUIPPED TO THIS SHIP IS DISABLED OR DISCARDED.</b>\nThis ships Captain Skill is 5.\n\n<b>IF THIS SHIP RECEIVES A FACE UP 'COMMUNICATIONS FAILURE' OR 'INJURED CAPTAIN' DAMAGE CARD,</b>\nFlip that damage card face down.",
@@ -13608,7 +13538,7 @@
 			"factions": ["federation"]
 		}, {
 			"type": "crew",
-			"id": "checkov_bounty",
+			"id": "_bounty",
 			"set": ["72260p"],
 			"name": "Pavel Chekov",
 			"cost": 4,
@@ -17540,10 +17470,11 @@
 		}, {
 			"type": "crew",
 			"id": "elizabeth_shelby_u_s_s_yaeger",
-			"set": ["u_s_s_yaeger", "72302p"],
+			"set": ["u_s_s_yaeger"],
 			"name": "Elizabeth Shelby",
 			"unique": true,
-			"text": "<b>WHEN DEFENDING:\n\n</b> This ship may re-roll one of its |  | results.\n\n If the attacking ship is a Borg ship, this ship rolls +1 defense die and may re-roll all of its |  | results",			"factions": ["federation"],
+			"text": "During the Modify Defense Dice step of the Combat Phase, you may re-roll one of your blank results. \n\nIf you are defending against an attack from a Borg ship, you roll +1 defense die during the Roll Defense Dice step and you may re-roll all of your blank results during the Modify Defense Dice step.",
+			"factions": ["federation"],
 			"cost": 2,
 			"skill": 0,
 			"talents": 0,
@@ -20994,6 +20925,19 @@
 			"attack": 0,
 			"range": ""
 		}, {
+			"type": "crew",
+			"id": "william_t_riker_71801",
+			"set": ["71801"],
+			"name": "William T. Riker",
+			"unique": true,
+			"text": "Your Captain's Skill Number is +3. If your Captain is disabled or if you have no Captain, your ship's Skill Number is a 5. If you receive a \"Communications Failure\" or \"Injured Captain\" critical damage card, immediately flip if face down.",
+			"factions": ["federation"],
+			"cost": 4,
+			"skill": 0,
+			"talents": 0,
+			"attack": 0,
+			"range": ""
+		}, {
 			"type": "talent",
 			"id": "provisional_government_71803",
 			"set": ["71803"],
@@ -22872,14 +22816,6 @@
 	],
 	"resources": [{
 			"type": "resource",
-			"id": "debug_card_a",
-			"set": ["debug"],
-			"name": "Debug",
-			"text": "",
-			"cost": 5,
-			"showShipResourceSlot": false
-		}, {
-			"type": "resource",
 			"id": "4001",
 			"set": ["OP1Participation2"],
 			"name": "Elite Attack Die",
@@ -23184,15 +23120,7 @@
 			"text": "This card can only be assigned to a ship that has a Captain with a printed Captain skill of 5 or higher.\n\n<b>ACTIVATION PHASE:</b> Once per game round, after this ship executes a Non-Red Maneuver:\n\nRemove a Disabled Token from 1 of the cards equipped to this ship.",
 			"cost": 3,
 			"showShipResourceSlot": false
-		}, {
-			"type": "resource",
-			"id": "front_line_retrofit_resource",
-			"set": ["72302r"],
-			"name": "Front Line Retrofit",
-			"text": "This card can only be assigned to a ship that has a printed Hull Value of 3 or less.\n\nThis ship gains the following:\n\n Increase this ships Shield Value by +1.\n\nAdd 1 additional [weapon] to this ships Upgrade Bar.\n\n Increase the Captain Skill of the Captain equiped to this ship by +1",
-			"cost": 5,
-			"showShipResourceSlot": false
-		}
+		} 
 	],
 	"others": [{
 			"type": "token",

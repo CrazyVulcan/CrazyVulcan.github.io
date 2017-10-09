@@ -1,73 +1,137 @@
-/*
- * grunt-utopia-data
- * https://github.com/ComaToes/staw-utopia
- *
- * Copyright (c) 2015 ComaToes
- * Licensed under the LGPLv3 license.
- */
-
-'use strict';
-
 module.exports = function(grunt) {
 
-  // Project configuration.
-  grunt.initConfig({
-    jshint: {
-      all: [
-        'Gruntfile.js',
-        'tasks/*.js',
-        '<%= nodeunit.tests %>'
-      ],
-      options: {
-        jshintrc: '.jshintrc'
-      }
-    },
+	grunt.initConfig({
+	
+		watch: {
+			grunt: {
+				files: "Gruntfile.js",
+				options: { reload: true },
+			},
+			js: {
+				files: ["src/js/*.js", "src/js/common/*.js"],
+				tasks: ["build-js"],
+			},
+			templates: {
+				files: ["src/templates/*.html", "src/templates/common/*.html"],
+				tasks: ["build-js"],
+			},
+			css: {
+				files: ["src/css/**.css", "src/css/common/*.css"],
+				tasks: ["build-css"],
+			},
+			index: {
+				files: "src/*.html",
+				tasks: ["build-index"],
+			},
+			data: {
+				files: "src/data/*",
+				tasks: ["build-data"],
+			}
+		},
+		
+		clean: {
+			build: ["staw-utopia/*"],
+			templates: ["staw-utopia/utopia-templates.js"],
+		},
+		
+		ngtemplates: {
+			utopia: {
+				cwd: "src/templates",
+				src: ["*.html", "common/*.html"],
+				dest: "staw-utopia/utopia-templates.js",
+				options: {
+					url: function(url) {
+						var i = url.lastIndexOf("/");
+						if( i >= 0 && i < url.length )
+							url = url.substring(i+1);
+						return url;
+					}
+				}
+			}
+		},
+		
+		uglify: {
+			js: {
+				files: {
+					"staw-utopia/js/utopia.min.js": [ "src/js/*.js", "src/js/common/*.js", "<%= ngtemplates.utopia.dest %>" ]
+				},
+				options: {
+					sourceMap: true,
+				}
+			}
+		},
+		
+		cssmin: {
+			css: {
+				files: {
+					"staw-utopia/css/utopia.min.css": ["src/css/*.css", "src/css/common/*.css", "!src/css/utopia-print.css"],
+				}
+			}
+		},
+		
+		copy: {
+			misc: {
+				expand: true,
+				cwd: "src",
+				src: [ "js/lib/*", "fonts/*", "img/*" ],
+				dest: "staw-utopia/",
+			},
+			css: {
+				expand: true,
+				cwd: "src",
+				src: [ "css/utopia-print.css" ],
+				dest: "staw-utopia/",
+			},
+			csslib: {
+				expand: true,
+				cwd: "src/css/lib",
+				src: [ "*.css" ],
+				dest: "staw-utopia/css/",
+			},
+			index: {
+				expand: true,
+				cwd: "src",
+				src: [ "*.html" ],
+				dest: "staw-utopia/",
+			},
+			powertip: {
+				expand: true,
+				cwd: "node_modules/jquery-powertip/dist",
+				src: [ "jquery.powertip.min.js" ],
+				dest: "staw-utopia/js/lib/",
+			},
+			powertip_css: {
+				expand: true,
+				cwd: "node_modules/jquery-powertip/dist/css",
+				src: [ "jquery.powertip.min.css" ],
+				dest: "staw-utopia/css/",
+			}
+		},
+		
+		utopia_data: {
+			spacedock: {
+				files: {
+					"staw-utopia/data/data.json": "src/data/*",
+				},
+			},
+		}
+	
+	});
 
-    // Before generating any new files, remove any previously-created files.
-    clean: {
-      tests: ['tmp']
-    },
-
-    // Configuration to be run (and then tested).
-    utopia_data: {
-      default_options: {
-        options: {
-        },
-        files: {
-          'tmp/default_options': ['test/fixtures/testing', 'test/fixtures/123']
-        }
-      },
-      custom_options: {
-        options: {
-          separator: ': ',
-          punctuation: ' !!!'
-        },
-        files: {
-          'tmp/custom_options': ['test/fixtures/testing', 'test/fixtures/123']
-        }
-      }
-    },
-
-    // Unit tests.
-    nodeunit: {
-      tests: ['test/*_test.js']
-    }
-
-  });
-
-  // Actually load this plugin's task(s).
-  grunt.loadTasks('tasks');
-
-  // These plugins provide necessary tasks.
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-nodeunit');
-
-  // Whenever the "test" task is run, first clean the "tmp" dir, then run this
-  // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['clean', 'utopia_data', 'nodeunit']);
-
-  // By default, lint and run all tests.
-  grunt.registerTask('default', ['jshint', 'test']);
-
+	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-angular-templates');
+	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-utopia-data');
+	
+	grunt.registerTask('build-js', ["ngtemplates","uglify"]);
+	grunt.registerTask('build-css', ["cssmin","copy:css"]);
+	grunt.registerTask('build-index', ["copy:index"]);
+	grunt.registerTask('build-data', ["utopia_data"]);
+	
+	//grunt.registerTask('default', ["clean","build-js","build-css","build-index","build-data","copy","clean:templates"]);
+	grunt.registerTask('default', ["build-js","build-css","build-index","build-data","copy","clean:templates"]);
 };

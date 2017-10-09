@@ -1,83 +1,25 @@
 {
-  "_args": [
-    [
-      {
-        "raw": "node_modules\\grunt-utopia-data",
-        "scope": null,
-        "escapedName": null,
-        "name": null,
-        "rawSpec": "node_modules\\grunt-utopia-data",
-        "spec": "C:\\Users\\Joerg\\Documents\\KFNEXUS.github.io\\node_modules\\grunt-utopia-data",
-        "type": "directory"
-      },
-      "C:\\Users\\Joerg\\Documents\\KFNEXUS.github.io"
-    ]
-  ],
-  "_from": "node_modules\\grunt-utopia-data",
-  "_id": "grunt-utopia-data@0.1.0",
-  "_inCache": true,
-  "_location": "/grunt-utopia-data",
-  "_phantomChildren": {},
-  "_requested": {
-    "raw": "node_modules\\grunt-utopia-data",
-    "scope": null,
-    "escapedName": null,
-    "name": null,
-    "rawSpec": "node_modules\\grunt-utopia-data",
-    "spec": "C:\\Users\\Joerg\\Documents\\KFNEXUS.github.io\\node_modules\\grunt-utopia-data",
-    "type": "directory"
-  },
-  "_requiredBy": [
-    "#USER"
-  ],
-  "_resolved": "file:node_modules\\grunt-utopia-data",
-  "_shasum": "9502c42be7dd5a3ecee9eaeb165889fb1fe44500",
-  "_shrinkwrap": null,
-  "_spec": "node_modules\\grunt-utopia-data",
-  "_where": "C:\\Users\\Joerg\\Documents\\KFNEXUS.github.io",
-  "author": {
-    "name": "ComaToes"
-  },
-  "bugs": {
-    "url": "https://github.com/ComaToes/staw-utopia/issues"
-  },
-  "dependencies": {
-    "jquery": "^2.1.4",
-    "xml2js": "^0.4.9"
-  },
-  "description": "The best Grunt plugin ever.",
-  "devDependencies": {
-    "grunt": "~0.4.5",
-    "grunt-contrib-clean": "^0.5.0",
-    "grunt-contrib-jshint": "^0.9.2",
-    "grunt-contrib-nodeunit": "^0.3.3"
-  },
-  "engines": {
-    "node": ">= 0.8.0"
-  },
-  "homepage": "https://github.com/ComaToes/staw-utopia",
-  "keywords": [
-    "gruntplugin"
-  ],
-  "licenses": [
-    {
-      "type": "LGPLv3",
-      "url": "https://github.com/ComaToes/staw-utopia/blob/master/LICENSE-LGPLv3"
-    }
-  ],
-  "name": "grunt-utopia-data",
-  "optionalDependencies": {},
-  "peerDependencies": {
-    "grunt": "~0.4.5"
-  },
-  "readme": "# grunt-utopia-data\n\n> The best Grunt plugin ever.\n\n## Getting Started\nThis plugin requires Grunt `~0.4.5`\n\nIf you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:\n\n```shell\nnpm install grunt-utopia-data --save-dev\n```\n\nOnce the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:\n\n```js\ngrunt.loadNpmTasks('grunt-utopia-data');\n```\n\n## The \"utopia_data\" task\n\n### Overview\nIn your project's Gruntfile, add a section named `utopia_data` to the data object passed into `grunt.initConfig()`.\n\n```js\ngrunt.initConfig({\n  utopia_data: {\n    options: {\n      // Task-specific options go here.\n    },\n    your_target: {\n      // Target-specific file lists and/or options go here.\n    },\n  },\n});\n```\n\n### Options\n\n#### options.separator\nType: `String`\nDefault value: `',  '`\n\nA string value that is used to do something with whatever.\n\n#### options.punctuation\nType: `String`\nDefault value: `'.'`\n\nA string value that is used to do something else with whatever else.\n\n### Usage Examples\n\n#### Default Options\nIn this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`\n\n```js\ngrunt.initConfig({\n  utopia_data: {\n    options: {},\n    files: {\n      'dest/default_options': ['src/testing', 'src/123'],\n    },\n  },\n});\n```\n\n#### Custom Options\nIn this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`\n\n```js\ngrunt.initConfig({\n  utopia_data: {\n    options: {\n      separator: ': ',\n      punctuation: ' !!!',\n    },\n    files: {\n      'dest/default_options': ['src/testing', 'src/123'],\n    },\n  },\n});\n```\n\n## Contributing\nIn lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).\n\n## Release History\n_(Nothing yet)_\n",
-  "readmeFilename": "README.md",
+  "name": "staw-utopia",
+  "version": "1.0.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ComaToes/staw-utopia.git"
   },
-  "scripts": {
-    "test": "grunt test"
+  "author": "",
+  "license": "LGPLv3",
+  "bugs": {
+    "url": "https://github.com/ComaToes/staw-utopia/issues"
   },
-  "version": "0.1.0"
+  "homepage": "https://github.com/ComaToes/staw-utopia#readme",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-angular-templates": "^0.5.7",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-copy": "^0.8.0",
+    "grunt-contrib-cssmin": "^0.12.3",
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "jquery-powertip": "^1.2.0"
+  }
 }
