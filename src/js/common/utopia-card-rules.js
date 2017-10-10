@@ -6598,69 +6598,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		
 		
-	//Orassin : 72273
-		"captain:insectoid_councilor_orassin":{},
-		"talent:thalen_orassin":{
-			factionPenalty: function (a, c, d) {
-				return c && b.hasFaction(c, "ferengi", c, d) ? 0 : 1 && b.hasFaction(c, "kazon", c, d) ? 0 : 1 && b.hasFaction(c, "independent", c, d) ? 0 : 1
-			},
-			upgradeSlots: [{}].concat(j(2, {
-				type: ["weapon"],
-				rules: "-1 SP if Xindi",
-				intercept: {
-					ship: {
-						cost: function (a, c, d, e) {
-							return b.hasFaction(a, "xindi", c, d) ? g(a, c, d, e) - 1 : e
-						}
-					}
-				}
-			}))
-		},
-		"talent:xindi_council_orassin":{},
-		"crew:insectoid_raiding_party_orassin":{
-			canEquip: onePerShip("Insectoid Raiding Party"),
-			ship: {
-				cost: function(upgrade,ship,fleet,cost) {
-					if( ship && !$factions.hasFaction(ship,"xindi", ship, fleet) )
-						return resolve(upgrade,ship,fleet,cost) + 5;
-					return cost;
-					}
-				}
-		},
-		"weapon:pulse-firing_particle_cannon_orassin":{
-			ship: {
-				cost: function(upgrade,ship,fleet,cost) {
-					if( ship && !$factions.hasFaction(ship,"xindi", ship, fleet) )
-						return resolve(upgrade,ship,fleet,cost) + 5;
-					return cost;
-					}
-				}
-		},
-		"weapon:xindi_torpedoes_orassin":{},
-		"tech:hatchery_orassin":{
-			upgradeSlots: [  
-				{ 
-					type: ["crew"],
-					source: "Face-down Xindi (free)",
-					intercept: {
-						ship: {
-							cost: function(upgrade,ship,fleet,cost) {
-								cost = 0;
-								return cost;
-							},
-							canEquip: function(card,ship,fleet,canEquip) {
-								if( !$factions.hasFaction( card, "xindi", ship, fleet ) )
-									return false;
-								return canEquip;
-							}
-						}
-					}
-				},
-				{ 
-					type: ["crew"]
-				}
-			]
-		},
+	
 	
 
 		// RESOURCES
