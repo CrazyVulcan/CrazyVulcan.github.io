@@ -140,45 +140,6 @@
 	text-align: center;
 }
 
-.card-OnePerShip-icon{
-	font-size: 1.15em;
-	border: .05em solid #a8b6bf;
-	border-radius: 1.2em;
-	background: #000;
-	color: #fff8dc;
-	position: relative;
-	left: .1em;
-	top: -.1em;
-	z-index: 1;
-	text-align: center
-}
-
-.card-FrontArc-icon{
-	font-size: 1.15em;
-	border: .05em solid #a8b6bf;
-	border-radius: 1.2em;
-	background: #000;
-	color: #8B0000;
-	position: relative;
-	left: 0em;
-	top: 1em;
-	z-index: 1;
-	text-align: center
-}
-
-.card-RearArc-icon{
-	font-size: 1.15em;
-	border: .05em solid #a8b6bf;
-	border-radius: 1.2em;
-	background: #000;
-	color: #8B0000;
-	position: relative;
-	left: 0em;
-	top: .95em;
-	z-index: 1;
-	text-align: center
-}
-
 .card-mirror .card-unique-icon {
 	color: black;
 	background: #e1a825;
