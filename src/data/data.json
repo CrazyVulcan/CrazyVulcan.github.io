@@ -12812,7 +12812,7 @@
             "set": ["72011wp"],
             "name": "Federation Helmsman",
             "cost": 3,
-            "text": "<b>ACTION:</b> Place an [aux] Token beside this ship.\n\nPerfrom a White 1 straight or bank Maneuver.",
+            "text": "<b>ACTION:</b> Place an [aux] Token beside this ship.\n\nPerfrom a White 1 straight, bank, or turn Maneuver. ",
             "unique": false,
             "factions": ["federation"]
         }, {
