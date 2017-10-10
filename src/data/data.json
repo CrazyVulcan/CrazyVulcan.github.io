@@ -1,13 +1,7 @@
 {
 	"sets": [{
 			"type": "set",
-			"id": "debug",
-			"name": "bug",
-			"releaseDate": "2017-11-1",
-			"parentSet": "De"
-		}, {
-			"type": "set",
-			"id": "22303p",
+			"id": "2017core",
 			"name": "Core",
 			"releaseDate": "2017-10-30",
 			"parentSet": "2017 Starter Set"
@@ -22877,14 +22871,6 @@
 		}
 	],
 	"resources": [{
-			"type": "resource",
-			"id": "debug_card_a",
-			"set": ["debug"],
-			"name": "Debug",
-			"text": "",
-			"cost": 5,
-			"showShipResourceSlot": false
-		}, {
 			"type": "resource",
 			"id": "4001",
 			"set": ["OP1Participation2"],
