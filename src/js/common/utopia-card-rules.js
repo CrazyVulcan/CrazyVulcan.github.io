@@ -6922,7 +6922,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					}
 				}
 			}
-		},	
+		}	
 	};
 }]);
 var module = angular.module("utopia-card-rules", ["utopia-valueof"]);
