@@ -5814,6 +5814,20 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			]
 
+		},
+		"resource:captains_chair_resource":{
+			intercept: {
+				ship: {
+					cost: {
+						priority: 100,
+						fn: function(upgrade, ship, fleet, cost) {
+								return 3;
+							return cost;
+						}
+					}
+							
+				}
+			}
 		}
 	};
 }]);
