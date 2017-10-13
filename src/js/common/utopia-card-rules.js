@@ -7239,45 +7239,18 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
-		"tech:tech_captured_72013wp": {
-			upgradeSlots: [
-				{
-					type: ["tech"]
-				}
-			],
-			intercept: {
-				ship: {
-					// No faction penalty for upgrades
-					factionPenalty: function(card, ship, fleet, factionPenalty) {
-						if( hasFaction(upgrade,"independent",ship,fleet) )
-							return 0;
-						return factionPenalty;
+		//Captured
+		"question:captured_72013wp": {
+			isSlotCompatible: function(slotTypes) {
+				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0;
+			},
+			upgradeSlots: [  
+				{ 
+					type: function(upgrade,ship) {
+						return getSlotType(upgrade,ship);
 					}
-				}
-			}
-		},
-		
-		"weapon:weapon_captured_72013wp": {
-			upgradeSlots: [
-				{
-					type: ["weapon"]
-				}
-			],
-			canEquipFaction: function(upgrade,ship,fleet) {
-				return $factions.hasFaction(ship, "independent", ship, fleet) && $factions.hasFaction(ship.captain, "independent", ship, fleet);
-			}
-		},
-		
-		"crew:crew_captured_72013wp": {
-			upgradeSlots: [
-				{
-					type: ["crew"]
-				}
-			],
-			canEquipFaction: function(upgrade,ship,fleet) {
-				return $factions.hasFaction(ship, "independent", ship, fleet) && $factions.hasFaction(ship.captain, "independent", ship, fleet);
-			}
+				},
+			]
 		},
 		// Hatchery - Orassin
 		"tech:hatchery_orassin": {
