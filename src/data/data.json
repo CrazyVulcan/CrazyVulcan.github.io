@@ -12630,26 +12630,8 @@
             "unique": false,
             "factions": ["dominion"]
         }, {
-            "type": "tech",
-            "id": "tech_captured_72013wp",
-            "set": ["72013wp"],
-            "name": "Captured",
-            "cost": 1,
-            "text": "This Upgrade does not require an Upgrade Slot\n\nThis ship gains the Independent Faction.\n\n<b>WHEN DEFENDING:</b> If the attacking shares a Faction with this ship other then Independent.\n\nThe attacking ship rolls +1 attack dice",
-            "unique": false,
-            "factions": ["independent"]
-        }, {
-            "type": "weapon",
-            "id": "weapon_captured_72013wp",
-            "set": ["72013wp"],
-            "name": "Captured",
-            "cost": 1,
-            "text": "This Upgrade does not require an Upgrade Slot\n\nThis ship gains the Independent Faction.\n\n<b>WHEN DEFENDING:</b> If the attacking shares a Faction with this ship other then Independent.\n\nThe attacking ship rolls +1 attack dice",
-            "unique": false,
-            "factions": ["independent"]
-        }, {
-            "type": "crew",
-            "id": "crew_captured_72013wp",
+            "type": "question",
+            "id": "captured_72013wp",
             "set": ["72013wp"],
             "name": "Captured",
             "cost": 1,
@@ -12806,7 +12788,7 @@
             "set": ["72011wp"],
             "name": "Federation Helmsman",
             "cost": 3,
-            "text": "<b>ACTION:</b> Place an [aux] Token beside this ship.\n\nPerfrom a White 1 straight or bank Maneuver. ",
+            "text": "<b>ACTION:</b> Place an [aux] Token beside this ship.\n\nPerfrom a White 1 straight or bank Maneuver.",
             "unique": false,
             "factions": ["federation"]
         }, {
