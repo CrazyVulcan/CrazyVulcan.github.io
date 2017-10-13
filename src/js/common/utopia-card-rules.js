@@ -6574,21 +6574,6 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 		},
 
-		
-		
-		// DIASPORA
-		
-		
-		
-		
-
-		// AZATI PRIME
-		
-		
-		
-		// Proto
-		
-
 		// U.S.S. Constellation
 		// Standby Battle Stations - check for battlestations icon in action bar of assigned ship
 		"talent:standby_battle_stations_constellation": {
@@ -7239,8 +7224,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		//Captured
 		
+		//Captured
 		"question:captured_72013wp": {
 			isSlotCompatible: function(slotTypes) {
 				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0;
@@ -7251,8 +7236,19 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						return getSlotType(upgrade,ship);
 					}
 				}
-			]
+			],
+			intercept: {
+				ship: {
+					// Add independent faction to captain
+					factions: function(card,ship,fleet,factions) {
+						if( card == ship && factions.indexOf("independent") < 0 )
+							return factions.concat(["independent"]);
+						return factions;
+					}
+				}
+			}
 		},
+		
 		// Hatchery - Orassin
 		"tech:hatchery_orassin": {
 			// Equip only on a Xindi ship
