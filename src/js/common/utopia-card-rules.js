@@ -7240,6 +7240,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 		},
 		//Captured
+		
 		"question:captured_72013wp": {
 			isSlotCompatible: function(slotTypes) {
 				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0;
@@ -7249,7 +7250,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					type: function(upgrade,ship) {
 						return getSlotType(upgrade,ship);
 					}
-				},
+				}
 			]
 		},
 		// Hatchery - Orassin
