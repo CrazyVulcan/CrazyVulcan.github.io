@@ -2565,7 +2565,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				ship: {
 					cost: function(upgrade,ship,fleet,cost) {
-						if( $factions.hasFaction(ship,"independent", ship, fleet) || $factions.hasFaction(ship,"ferengi", ship, fleet) || $factions.hasFaction(ship,"kazon", ship, fleet) || $factions.hasFaction(ship,"xindi", ship, fleet) && isUpgrade(upgrade) )
+						if( $factions.hasFaction(ship,"independent", ship, fleet) && $factions.hasFaction(ship,"ferengi", ship, fleet) && $factions.hasFaction(ship,"kazon", ship, fleet) && $factions.hasFaction(ship,"xindi", ship, fleet) && isUpgrade(upgrade) )
 							return resolve(upgrade,ship,fleet,cost) - 1;
 						return cost;
 					}
@@ -6386,15 +6386,30 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 	//U.S.S. Cairo :72261p
 		//Edward Jellico
-		"captain:edward_jellico_cairo":{},
+		"captain:edward_jellico_cairo":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}},
 		//Task Force
-		"talent:task_force_cairo":{},
+		"talent:task_force_cairo":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}},
 		//High Yield Photon Torpedoes
-		"weapon:high_yield_photon_torpedoes_cairo":{},
+		"weapon:high_yield_photon_torpedoes_cairo":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}},
 		//Deuterium Tank
-		"tech:deuterium_tank_cairo":{},
+		"tech:deuterium_tank_cairo":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}},
 		//Delta Shift
 		"question:delta_shift_cairo": {
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			},
 			isSlotCompatible: function(slotTypes) {
 				//console.log($.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0);
 				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0;
@@ -6594,9 +6609,110 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			]},
 		
 		
-	//
+	//I.K.S. Bortas :72280p
+	
+	//I.K.S. Hegh'ta :72281p
+		// Auxiliary Power to Shields - I.K.S. Hegh'ta
+		"tech:auxiliary_power_to_shields_72281p": {
+			rules: "Only one per ship",
+			canEquip: onePerShip("Auxiliary Power to Shields")
+		},
+		// Course Change - I.K.S. Hegh'ta
+		"question:change_course_72281p": {
+			isSlotCompatible: function(slotTypes) {
+				//console.log($.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0);
+				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0 || $.inArray( "talent", slotTypes ) >= 0;
+			},
+			rules: "Only one per ship",
+			canEquip: onePerShip("Course Change")
+		},
+		
+	//I.K.S. Toral :72282p
+		//Lursa and B'Etor crew
+		"crew:lursa_crew_72282p": {
+			upgradeSlots: [
+				{
+					type: ["talent"]
+				}
+			],
+			canEquip: function(upgrade,ship,fleet) {
+				return ship.captain && ship.captain.name == "B'Etor";
+			},
+			intercept: {
+				ship: {
+					skill: function(upgrade,ship,fleet,skill) {
+						if( upgrade == ship.captain )
+							return resolve(upgrade,ship,fleet,skill) + 4;
+						return skill;
+					}
+				}
+			}
+		},
+		"crew:betor_crew_72282p": {
+			upgradeSlots: [ 
+				{ 
+					type: ["talent"]
+				}
+			],
+			canEquip: function(captain,ship,fleet) {
+				return captain.name == "Lursa";
+			},
+			intercept: {
+				ship: {
+					skill: function(card,ship,fleet,skill) {
+						if( card == ship.captain )
+							return resolve(card,ship,fleet,skill) + 4;
+						return skill;
+					}
+				}
+			}
+		},
+		//Aft Shields
+		"tech:aft_shields_72282p":{
+			rules: "Only one per ship",
+			canEquip: onePerShip("Aft Shields")
+		},
+		
+	//Sela's Warbird :72282gp
+		//Movar
+		"captain:movar_72282gp":{},
 		//
-		":":{},
+		"Klingon-Romulan Alliance:klingon_romulan_alliance_72282gp":{
+		canEquipFaction: function(upgrade,ship,fleet) {
+			return hasFaction(ship,"romulan", ship, fleet) && hasFaction(ship.captain,"romulan", ship, fleet);
+		}},
+		//Tachyon Pulse
+		"tech:tachyon_pulse_72282gp":{
+			rules: "Only one per ship",
+			canEquip: onePerShip("Tachyon Pulse")},
+		
+		
+	//Calindra :72281
+		//Aquatic Councilor
+		"captain:aquatic_councilor_72281":{},
+		//Kiaphet Amman'Sor
+		"captain:kiaphet_amman'sor_72281":{},
+		"admiral:kiaphet_amman'sor_admiral_72281":{},
+		//Xindi Torpedoes
+		"weapon:xindi_torpedoes_72281":{intercept: {
+				self: {
+					attack: function(upgrade,ship,fleet,attack) {
+						if( ship && ship.class == "Xindi Aquatic Cruiser" )
+							return resolve(upgrade,ship,fleet,attack) + 1;
+						return attack;
+					}
+				}
+			}},
+		//Biometric Hologram
+		"tech:biometric_hologram_72281":{},
+		//Subspace Vortex
+		"tech:subspace_vortex_72281":{},
+		//Trellium-D
+		"tech:trellium_d_72281":{},
+		//Raijin
+		"crew:raijin_72281":{},
+		//Retaliation
+		"talent:retaliation_72281":{},
 		//
 		":":{},
 		//
@@ -7510,74 +7626,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
-		// Auxiliary Power to Shields - I.K.S. Hegh'ta
-		"tech:auxiliary_power_to_shields_72281p": {
-			rules: "Only one per ship",
-			canEquip: onePerShip("Auxiliary Power to Shields")
-		},
-		
-		// Course Change - I.K.S. Hegh'ta
-		"crew:change_course_72281p_crew": {
-			rules: "Only one per ship",
-			canEquip: onePerShip("Course Change")
-		},
-		
-		"talent:change_course_72281p_talent": {
-			rules: "Only one per ship",
-			canEquip: onePerShip("Course Change")
-		},
-		
-		"tech:change_course_72281p_tech": {
-			rules: "Only one per ship",
-			canEquip: onePerShip("Course Change")
-		},
-		
-		"weapon:change_course_72281p_weapon": {
-			rules: "Only one per ship",
-			canEquip: onePerShip("Course Change")
-		},
-		//Lursa and B'Etor crew
-		"crew:lursa_crew_72282p": {
-			upgradeSlots: [
-				{
-					type: ["talent"]
-				}
-			],
-			canEquip: function(upgrade,ship,fleet) {
-				return ship.captain && ship.captain.name == "B'Etor";
-			},
-			intercept: {
-				ship: {
-					skill: function(upgrade,ship,fleet,skill) {
-						if( upgrade == ship.captain )
-							return resolve(upgrade,ship,fleet,skill) + 4;
-						return skill;
-					}
-				}
-			}
-		},
-		
-		"crew:betor_crew_72282p": {
-			upgradeSlots: [ 
-				{ 
-					type: ["talent"]
-				}
-			],
-			canEquip: function(captain,ship,fleet) {
-				return captain.name == "Lursa";
-			},
-			intercept: {
-				ship: {
-					skill: function(card,ship,fleet,skill) {
-						if( card == ship.captain )
-							return resolve(card,ship,fleet,skill) + 4;
-						return skill;
-					}
-				}
-			}
-		},
-		
+	
 		//Captured
 		"question:captured_72013wp": {
 			isSlotCompatible: function(slotTypes) {
