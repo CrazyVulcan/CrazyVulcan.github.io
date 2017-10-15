@@ -2,9 +2,9 @@
 	"sets": [{
 			"type": "set",
 			"id": "2017core",
-			"name": "Core",
+			"name": "2017 Starter Set",
 			"releaseDate": "2017-10-30",
-			"parentSet": "2017 Starter Set"
+			"parentSet": "Core"
 		}, {
 			"type": "set",
 			"id": "72302r",
@@ -13891,8 +13891,8 @@
 			"unique": false,
 			"factions": ["federation"]
 		}, {
-			"type": "weapon",
-			"id": "auxiliary_control_room_constellation_weapon",
+			"type": "question",
+			"id": "auxiliary_control_room_constellation",
 			"set": ["72234p"],
 			"name": "Auxiliary Control Room",
 			"cost": 5,
@@ -13900,42 +13900,15 @@
 			"unique": false,
 			"factions": ["federation"]
 		}, {
-			"type": "tech",
-			"id": "auxiliary_control_room_constellation_tech",
-			"set": ["72234p"],
-			"name": "Auxiliary Control Room",
-			"cost": 5,
-			"text": "You may fill a [tech] or [weapon] Upgrade slot with this card. No ship may be equipped with more than 1 'Auxiliary Control Room' Upgrade\n\nYou may disable this card to perform an Action while there is an Auxiliary Power Token beside your ship.",
-			"unique": false,
-			"factions": ["federation"]
-		}, {
-			"type": "crew",
-			"id": "automated_distress_beacon_constellation_crew",
+			"type": "question",
+			"id": "automated_distress_beacon_constellation",
 			"set": ["72234p"],
 			"name": "Automated Distress Beacon",
 			"cost": 3,
 			"text": "You may fill a [crew], [tech] or [weapon] Upgrade slot with this card. No ship may be equipped with more than one 'Automated Distress Beacon' Upgrade\n\nACTION: Discard this card to target a ship that is not within Range 1-3 of your ship. The target ship immediately performs an additional maneuver with a speed of 2 straight bank or turn.",
 			"unique": false,
 			"factions": ["federation"]
-		}, {
-			"type": "weapon",
-			"id": "automated_distress_beacon_constellation_weapon",
-			"set": ["72234p"],
-			"name": "Automated Distress Beacon",
-			"cost": 3,
-			"text": "You may fill a [crew], [tech] or [weapon] Upgrade slot with this card. No ship may be equipped with more than one 'Automated Distress Beacon' Upgrade\n\nACTION: Discard this card to target a ship that is not within Range 1-3 of your ship. The target ship immediately performs an additional maneuver with a speed of 2 straight bank or turn.",
-			"unique": false,
-			"factions": ["federation"]
-		}, {
-			"type": "tech",
-			"id": "automated_distress_beacon_constellation_tech",
-			"set": ["72234p"],
-			"name": "Automated Distress Beacon",
-			"cost": 3,
-			"text": "You may fill a [crew], [tech] or [weapon] Upgrade slot with this card. No ship may be equipped with more than one 'Automated Distress Beacon' Upgrade\n\nACTION: Discard this card to target a ship that is not within Range 1-3 of your ship. The target ship immediately performs an additional maneuver with a speed of 2 straight bank or turn.",
-			"unique": false,
-			"factions": ["federation"]
-		}, {
+		},  {
 			"type": "talent",
 			"id": "dominant_species_xindus",
 			"set": ["72224p"],
