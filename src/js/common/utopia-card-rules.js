@@ -2568,6 +2568,21 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						if( $factions.hasFaction(ship,"independent", ship, fleet) && isUpgrade(upgrade) )
 							return resolve(upgrade,ship,fleet,cost) - 1;
 						return cost;
+					},
+					cost: function(upgrade,ship,fleet,cost) {
+						if( $factions.hasFaction(ship,"ferengi", ship, fleet) && isUpgrade(upgrade) )
+							return resolve(upgrade,ship,fleet,cost) - 1;
+						return cost;
+					},
+					cost: function(upgrade,ship,fleet,cost) {
+						if( $factions.hasFaction(ship,"kazon", ship, fleet) && isUpgrade(upgrade) )
+							return resolve(upgrade,ship,fleet,cost) - 1;
+						return cost;
+					},
+					cost: function(upgrade,ship,fleet,cost) {
+						if( $factions.hasFaction(ship,"xindi", ship, fleet) && isUpgrade(upgrade) )
+							return resolve(upgrade,ship,fleet,cost) - 1;
+						return cost;
 					}
 				}
 			}
