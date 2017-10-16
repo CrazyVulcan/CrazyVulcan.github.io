@@ -2564,26 +2564,12 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			// Reduce cost of all Upgrades by 1 SP if on Independent ship
 			intercept: {
 				ship: {
-					cost: function(upgrade,ship,fleet,cost) {
-						if( $factions.hasFaction(ship,"independent", ship, fleet) && isUpgrade(upgrade) )
-							return resolve(upgrade,ship,fleet,cost) - 1;
+					// Reduce cost of all Upgrades by 1 SP if on Independent ship
+					cost: function(upgrade, ship, fleet, cost) {
+						if( isUpgrade(upgrade) && ( $factions.hasFaction(upgrade,"independent", ship, fleet) || $factions.hasFaction(upgrade,"ferengi", ship, fleet) || $factions.hasFaction(upgrade,"kazon", ship, fleet) || $factions.hasFaction(upgrade,"xindi", ship, fleet) ) )
+							return resolve(upgrade, ship, fleet, cost) - 1;
 						return cost;
 					},
-					cost: function(upgrade,ship,fleet,cost) {
-						if( $factions.hasFaction(ship,"ferengi", ship, fleet) && isUpgrade(upgrade) )
-							return resolve(upgrade,ship,fleet,cost) - 1;
-						return cost;
-					},
-					cost: function(upgrade,ship,fleet,cost) {
-						if( $factions.hasFaction(ship,"kazon", ship, fleet) && isUpgrade(upgrade) )
-							return resolve(upgrade,ship,fleet,cost) - 1;
-						return cost;
-					},
-					cost: function(upgrade,ship,fleet,cost) {
-						if( $factions.hasFaction(ship,"xindi", ship, fleet) && isUpgrade(upgrade) )
-							return resolve(upgrade,ship,fleet,cost) - 1;
-						return cost;
-					}
 				}
 			}
 		},
