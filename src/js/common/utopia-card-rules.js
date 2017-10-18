@@ -2603,10 +2603,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			// Reduce cost of all Upgrades by 1 SP if on Independent ship
 			intercept: {
 				ship: {
-					// Reduce cost of all Upgrades by 1 SP if on Independent ship
-					cost: function(upgrade, ship, fleet, cost) {
-						if( isUpgrade(upgrade) && ( ship && $factions.hasFaction(upgrade,"independent", ship, fleet) || $factions.hasFaction(upgrade,"ferengi", ship, fleet) || $factions.hasFaction(upgrade,"kazon", ship, fleet) || $factions.hasFaction(upgrade,"xindi", ship, fleet) ) )
-							return resolve(upgrade, ship, fleet, cost) - 1;
+					cost: function(upgrade,ship,fleet,cost) {
+						if( $factions.hasFaction(ship,"independent", ship, fleet) && isUpgrade(upgrade) )
+							return resolve(upgrade,ship,fleet,cost) - 1;
 						return cost;
 					}
 				}
