@@ -50,6 +50,10 @@
   content: "A";
 }
 
+.fs-limit:before {
+  content: "4";
+}
+
 .fs-battlestations:before {
   content: "B";
 }
