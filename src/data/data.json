@@ -12735,20 +12735,10 @@
             "unique": false,
             "factions": ["klingon"]
         }, {
-            "type": "tech",
+            "type": "question",
             "id": "photon_detination_72012wp",
             "set": ["72012wp"],
             "name": "Photon Detonation",
-            "cost": 3,
-			"range": "1 - 2",
-            "text": "This card counts as either a [tech] Upgrade or a [weapon] Upgrade.\n\n<b>ACTION:</b> Disable this card, place 3 [time] Tokens on a Photo Torpedoes Upgrade equipped to the ship, and target a minefield Token\n\nRemove the minefield Token from play. ",
-            "unique": false,
-            "factions": ["klingon"]
-        }, {
-            "type": "weapon",
-            "id": "photon_detination_72012wp",
-            "set": ["72012wp"],
-            "name": "Photon Detination",
             "cost": 3,
 			"range": "1 - 2",
             "text": "This card counts as either a [tech] Upgrade or a [weapon] Upgrade.\n\n<b>ACTION:</b> Disable this card, place 3 [time] Tokens on a Photo Torpedoes Upgrade equipped to the ship, and target a minefield Token\n\nRemove the minefield Token from play. ",
