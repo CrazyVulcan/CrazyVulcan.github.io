@@ -149,10 +149,10 @@
 	border: 0.05em solid #a8b6bf;
 	border-radius: 1em;
 	background: black;
-	color: gray;
+	color: white;
 	position: relative;
 	left: 0.1em;
-	top: -0.1em;
+	top: 0.3em;
 	z-index: 1;
 	text-align: center;
 }
