@@ -3174,7 +3174,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				ship: {
 					canEquipCaptain: function(captain,ship,fleet) {
-						return captain.name == "Gareb" || captain.name == "Romulan Drone Pilot";
+						return captain.name == "Gareb" ||  captain.name == "Jhamel" || captain.name == "Romulan Drone Pilot";
 					}
 				}
 			}
@@ -3183,7 +3183,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				ship: {
 					canEquipCaptain: function(captain,ship,fleet) {
-						return captain.name == "Gareb" || captain.name == "Romulan Drone Pilot";
+						return captain.name == "Gareb" ||  captain.name == "Jhamel" || captain.name == "Romulan Drone Pilot";
 					}
 				}
 			}
@@ -7209,6 +7209,24 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 		
 	//Prototype 02 :72014wp
+		"ship:prototype_02_72014wp": {
+			intercept: {
+				ship: {
+					canEquipCaptain: function(captain,ship,fleet) {
+						return captain.name == "Gareb" ||  captain.name == "Jhamel" || captain.name == "Romulan Drone Pilot";
+					}
+				}
+			}
+		},
+		"ship:romulan_starship_72014wp": {
+			intercept: {
+				ship: {
+					canEquipCaptain: function(captain,ship,fleet) {
+						return captain.name == "Gareb" || captain.name == "Jhamel" || captain.name == "Romulan Drone Pilot";
+					}
+				}
+			}
+		},
 		//Jhamel
 		"captain:jhamel_72001p":{
 			// Equip only on a Romulan Drone Ship
