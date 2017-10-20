@@ -12637,6 +12637,7 @@
             "cost": 1,
             "text": "This Upgrade does not require an Upgrade Slot\n\nThis ship gains the Independent Faction.\n\n<b>WHEN DEFENDING:</b> If the attacking shares a Faction with this ship other then Independent.\n\nThe attacking ship rolls +1 attack dice",
             "unique": false,
+			"limit":true,
             "factions": ["independent"]
         }, {
             "type": "tech",
