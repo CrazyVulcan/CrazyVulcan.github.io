@@ -7184,6 +7184,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			isSlotCompatible: function(slotTypes) {
 				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0;
 			},
+			canEquip: onePerShip("Captured"),
 			upgradeSlots: [  
 				{ 
 					type: function(upgrade,ship) {
