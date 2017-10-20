@@ -64,7 +64,7 @@
 }
 
 .card-limit .card-corner-top-left .card-corner-inner {
-	top: -0.3em;
+	top: 0em;
 }
 
 .card-corner-top-right .card-corner-inner {
@@ -151,8 +151,8 @@
 	background: black;
 	color: white;
 	position: relative;
-	left: 0.1em;
-	top: 0.3em;
+	left: 0.3em;
+	top: -0.1em;
 	z-index: 1;
 	text-align: center;
 }
