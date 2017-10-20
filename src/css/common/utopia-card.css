@@ -63,6 +63,10 @@
 	top: -0.3em;
 }
 
+.card-limit .card-corner-top-left .card-corner-inner {
+	top: -0.3em;
+}
+
 .card-corner-top-right .card-corner-inner {
 	border-top-right-radius: 0.2em;
 	top: 1em;
@@ -407,6 +411,11 @@
 }
 
 .card-upgrade.card-unique .card-title-container {
+	padding-left: 0.4em;
+	margin-left: 1.2em;
+}
+
+.card-upgrade.card-limit .card-title-container {
 	padding-left: 0.4em;
 	margin-left: 1.2em;
 }
