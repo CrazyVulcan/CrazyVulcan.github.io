@@ -7207,6 +7207,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"weapon:plasma_pulse_72013wp":{
 			canEquip: onePerShip("Plasma Pulse")
 		},
+		//B'Elanna Torres
+		"crew:belanna_torres_72013wp":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			}},
 		
 		
 	//Prototype 02 :72014wp
