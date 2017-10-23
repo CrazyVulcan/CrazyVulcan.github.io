@@ -7159,7 +7159,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			)
 		},
 		//Goroth
-		"crew:":{
+		"crew:goroth_72012wp":{
 			upgradeSlots: [ 
 				{ 
 					type: ["crew"]

@@ -1352,7 +1352,7 @@
 			"agility": 1,
 			"hull": 5,
 			"shields": 4,
-			"cost": 26,
+			"cost": 24,
 			"text": "<b>WHEN DEFENDING:</b>\n\nThe attacking ship rolls -1 attack die",
 			"unique": true,
 			"factions": ["federation"],
@@ -1513,7 +1513,7 @@
 			"hull": 3,
 			"shields": 2,
 			"cost": 14,
-			"text": "<b>WHEN THIS SHIP WOULD BE DESTROYED</b> \n\nThe attacking ship must discard one [crew] Upgrade. If it can't, place an [aux] Token beside it. ",
+			"text": "<b>WHEN THIS SHIP WOULD BE DESTROYED</b> \n\nThe attacking ship must discard one [crew] Upgrade. If it can't, place an [aux] Token beside it.",
 			"unique": true,
 			"factions": ["federation"],
 			"intercept": {
@@ -9721,7 +9721,7 @@
 			"skill": 3,
 			"talents": 0,
 			"range": "1 - 2",
-			"text": "This card cannot be affected by anything that affects a Captain, and this card counts as a Romulan Drone Pilot.\n<b>ACTION:</b> Target an opposing ship in this ships Primary Firing Arc.\nThe target ship rolls -2 attack dice against this ship.\n(Romulan Drone Ship Only)",
+			"text": "This card cannot be affected by anything that affects a Captain, and this card counts as a Romulan Drone Pilot.\n<b>ACTION:</b> Target an opposing ship in this ship's Primary Firing Arc.\nThe target ship rolls -2 attack dice against this ship.\n(<i>Romulan Drone Ship Only</i>)",
 			"unique": true,
 			"factions": ["independent","romulan"]
 		}, {
@@ -12537,7 +12537,7 @@
             "set": ["72014wp"],
             "name": "Propulsion Matrix",
             "cost": 3,
-            "text": "<b>ACTIVATION PHASE:</b> If this ship reveals a 3 straight Maneuver:\n\nThis ship may perform a 4 straight or a 5 straight maneuver instead. If it does place and [aux] Token beside this ship.",
+            "text": "<b>ACTIVATION PHASE:</b> If this ship reveals a 3 straight Maneuver:\n\nThis ship may perform a 4 straight or a 5 straight maneuver instead. If it does, place an [aux] Token beside this ship.",
             "unique": false,
             "factions": ["romulan"]
         }, {
@@ -12546,7 +12546,7 @@
             "set": ["72014wp"],
             "name": "Repair Protocol",
             "cost": 4,
-            "text": "<b>END PHASE:</b> Place 3 [time] Tokens on this card.\n\nRepair 1 damage to this ship's Shields or Hull.\n(Romulan Drone Ship)",
+            "text": "<b>END PHASE:</b> Place 3 [time] Tokens on this card.\n\nRepair 1 damage to this ship's Shields or Hull.\n<i>(Romulan Drone Ship Only)</i>",
             "unique": false,
 			"limit": true,
             "factions": ["romulan"]
@@ -12568,7 +12568,7 @@
             "set": ["72014wp"],
             "name": "Evasive Protocol",
             "cost": 3,
-            "text": "<b>COMBAT PHASE:</b> If this ship is in the primary of Secondary Firing Arc of an opposing ship place 3 [time] Tokens on this card.\n\nPerform a [sensor-echo] Action as a Free Action if this ship does also remove an opposing [target-lock] Token from this ship.\n(Romulan Drone Ship)",
+            "text": "<b>COMBAT PHASE:</b> If this ship is in the primary or Secondary Firing Arc of an opposing ship, place 3 [time] Tokens on this card.\n\nPerform a [sensor-echo] Action as a Free Action. If this ship does, also remove an opposing [target-lock] Token from this ship.\n<i>(Romulan Drone Ship Only)</i>",
             "unique": false,
 			"limit": true,
             "factions": ["romulan"]
@@ -12578,7 +12578,7 @@
             "set": ["72014wp"],
             "name": "Disguise Protocol",
             "cost": 4,
-            "text": "<b>WHEN DEFENDING:</b> Place 3 [time] Tokens on this card.\n\nThe attacking ship rolls -2 attack dice.\n(Romulan Drone Ship)",
+            "text": "<b>WHEN DEFENDING:</b> Place 3 [time] Tokens on this card.\n\nThe attacking ship rolls -2 attack dice.\n<i>(Romulan Drone Ship Only)</i>",
             "unique": false,
 			"limit": true,
             "factions": ["romulan"]
@@ -12635,7 +12635,7 @@
             "set": ["72013wp"],
             "name": "Captured",
             "cost": 1,
-            "text": "This Upgrade does not require an Upgrade Slot\n\nThis ship gains the Independent Faction.\n\n<b>WHEN DEFENDING:</b> If the attacking shares a Faction with this ship other then Independent.\n\nThe attacking ship rolls +1 attack dice",
+            "text": "This Upgrade does not require an Upgrade Slot\n\nThis ship gains the Independent Faction.\n\n<b>WHEN DEFENDING:</b> If the attacking ship shares a Faction with this ship other then Independent.\n\nThe attacking ship rolls +1 attack dice",
             "unique": false,
 			"limit":true,
             "factions": ["independent"]
@@ -12645,7 +12645,7 @@
             "set": ["72013wp"],
             "name": "B'Elanna's Codes",
             "cost": 3,
-            "text": "<b>IF ONE OR MORE [time] TOKENS WOULD BE PLACED ON A [weapon] UPGRADE EQUIPPED TO THIS SHIP:</b>\nPlace those [time] Tokens on this card instead.\n\n<b>WHEN A [weapon] UPGRADE EQUIPPED TO THIS SHIP WOULD BE DISCARDED:\nDiscard this Card instead.</b>",
+            "text": "<b>IF ONE OR MORE [time] TOKENS WOULD BE PLACED ON A [weapon] UPGRADE EQUIPPED TO THIS SHIP:</b>\nPlace those [time] Tokens on this card instead.\n\n<b>WHEN A [weapon] UPGRADE EQUIPPED TO THIS SHIP WOULD BE DISCARDED:</b>\nDiscard this Card instead.</b>",
             "unique": true,
             "factions": ["independent"]
         }, {
@@ -12681,7 +12681,7 @@
             "set": ["72012wp"],
             "name": "DNA Encoded Message",
             "cost": 5,
-            "text": "<b>SETUP:</b> Place 3 Klingon [talent] Upgrade face down beneath this card.\n\n<b>ACTIVATION PHASE:</b> Discard this card.\nFlip 1 of the Klingon [talent] Upgrades beneath this card face up and equip it to the Captain equiped to this ship. Remove the other 2 face down Klingon [talent] Upgrades from the game.",
+            "text": "<b>SETUP:</b> Place 3 Klingon [talent] Upgrades face down beneath this card.\n\n<b>ACTIVATION PHASE:</b> Discard this card.\nFlip 1 of the Klingon [talent] Upgrades beneath this card face up and equip it to the Captain equiped to this ship. Remove the other 2 face down Klingon [talent] Upgrades from the game.",
             "unique": true,
             "factions": ["klingon"]
         }, {
@@ -12722,7 +12722,7 @@
             "name": "Dispersive Armor",
             "cost": 4,
 			"hull": "3+",
-            "text": "<b>WHEN DEFENDING:</b> Disable this card.\n\nThis game round, replace the attacking ship's Primary Weapon Value with 4. For the remainder of the game round, the attacking ships Primary Weapon Value can not be replaced or modified.",
+            "text": "<b>WHEN DEFENDING:</b> Disable this card.\n\nThis game round, replace the attacking ship's Primary Weapon Value with 4. For the remainder of the game round, the attacking ship's Primary Weapon Value can not be replaced or modified.",
             "unique": false,
 			"limit": true,
             "factions": ["klingon"]
@@ -12742,7 +12742,7 @@
             "name": "Photon Detonation",
             "cost": 3,
 			"range": "1 - 2",
-            "text": "This card counts as either a [tech] Upgrade or a [weapon] Upgrade.\n\n<b>ACTION:</b> Disable this card, place 3 [time] Tokens on a Photo Torpedoes Upgrade equipped to the ship, and target a minefield Token\n\nRemove the minefield Token from play. ",
+            "text": "This card counts as either a [tech] Upgrade or a [weapon] Upgrade.\n\n<b>ACTION:</b> Disable this card, place 3 [time] Tokens on a Photon Torpedoes Upgrade equipped to the ship, and target a minefield Token\n\nRemove the minefield Token from play. ",
             "unique": false,
             "factions": ["klingon"]
         }, {
@@ -12819,7 +12819,7 @@
             "set": ["72011wp", "71801"],
             "name": "William T. Riker",
             "cost": 4,
-            "text": "Modify the Captain SKill of the Captain equipped to this ship by +3.\n\n<b>IF THE CAPTAIN EQUIPPED TO THIS SHIP IS DISABLED OR DISCARDED.</b>\nThis ships Captain Skill is 5.\n\n<b>IF THIS SHIP RECEIVES A FACE UP 'COMMUNICATIONS FAILURE' OR 'INJURED CAPTAIN' DAMAGE CARD,</b>\nFlip that damage card face down.",
+            "text": "Modify the Captain Skill of the Captain equipped to this ship by +3.\n\n<b>IF THE CAPTAIN EQUIPPED TO THIS SHIP IS DISABLED OR DISCARDED.</b>\nThis ship's Captain Skill is 5.\n\n<b>IF THIS SHIP RECEIVES A FACE UP 'COMMUNICATIONS FAILURE' OR 'INJURED CAPTAIN' DAMAGE CARD,</b>\nFlip that damage card face down.",
             "unique": true,
             "factions": ["federation"]
         }, {
@@ -12829,7 +12829,7 @@
             "name": "Data",
             "cost": 5,
 			"range": "1-2",
-            "text": "<b>ACTION:</b> Discard this card and target an opposing ship.\n\nRoll one attack die and consult the below chart.\n[crit]:Discard a card of your choice on the target ship.\n[battlestations]: Discard the Captain of the target ship.\n[hit]Discard a [crew] on teh target ship,\n|  |: Nothing happens.",
+            "text": "<b>ACTION:</b> Discard this card and target an opposing ship.\n\nRoll one attack die and consult the below chart:\n[crit]:Discard a card of your choice on the target ship.\n[battlestations]: Discard the Captain of the target ship.\n[hit]:Discard a [crew] on the target ship,\n|  |: Nothing happens.",
             "unique": true,
             "factions": ["federation"]
         }, {
