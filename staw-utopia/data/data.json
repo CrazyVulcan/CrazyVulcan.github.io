@@ -1353,7 +1353,7 @@
 			"hull": 3,
 			"shields": 1,
 			"cost": 14,
-			"text": "<b>ACTION:</b> Perform an addational Green Manouver, Treat this 2nd Manouver as a red Manouver. \n\n <b>IF THIS SHIP IS WITHIN RANGE 1 OF A PLANET:</b>\nTreat this Manouver as a White Manouver.",
+			"text": "<b>ACTION:</b>Perform an addational Green Manouver, Treat this as a red Manouver.\n <b>IF THIS SHIP IS WITHIN RANGE 1 OF A PLANET:</b>\nTreat this Manouver as a White Manouver.",
 			"unique": true,
 			"factions": ["federation"],
 			"intercept": {
@@ -1368,7 +1368,7 @@
 			"name": "Federation Starship",
 			"class": "Franklin Class",
 			"actions": ["evade", "target-lock", "battlestations"],
-			"upgrades": ["weapon", "crew", "crew"],
+			"upgrades": ["weapon", "crew"],
 			"attack": 2,
 			"agility": 2,
 			"hull": 3,
@@ -9363,7 +9363,7 @@
 			"set": ["2017core"],
 			"name": "Balthazar Edison",
 			"unique": true,
-			"text": "This ship may equip the MACO Team Upgrade at a cost of -3sp",
+			"text": "\n\nThis ship may equip the 'MACO Team' Upgrade at a cost of -3sp",
 			"factions": ["federation"],
 			"cost": 2,
 			"skill": 3,
@@ -12601,7 +12601,7 @@
             "set": ["2017core"],
             "name": "Power Reserve",
             "cost": 3,
-            "text": "DURING THE ACTIVATION PHASE: ACTION:  Your ship rolls +1 attack dice for all of its attacks this turn.",
+            "text": "\n<b>WHEN ATTACKING:</b>\nPlace 3 [time] Tokens on this card to add +1 attack dice during this attack.",
             "unique": false,
             "factions": ["federation"]
         }, {
@@ -12613,7 +12613,7 @@
             "text": "<b>ACTION:</b> Disable this card to place a [cloak] Token next to your ship. While your ship is cloaked it may perform a [sensor-echo] Action.\n\nThis upgrade costs +4sp for any ship with a Hull Value larger than 3.",
             "unique": false,
 			"limit": true,
-            "factions": ["federation"]
+            "factions": ["independent"]
         }, {
             "type": "crew",
             "id": "cloak_22303p",
