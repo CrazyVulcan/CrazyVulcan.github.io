@@ -161,6 +161,10 @@
 	background-image: url("../img/upgrade-forward-arc.png");
 }
 
+.card-rear-arc-icon {
+	background-image: url("../img/upgrade-rear-arc.png");
+}
+
 .card-mirror .card-unique-icon {
 	color: black;
 	background: #e1a825;
