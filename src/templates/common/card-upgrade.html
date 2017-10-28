@@ -15,7 +15,7 @@
 			}">{{upgrade.name | uppercase}}</span>
 	</div>
 
-	<div class="card-border-left pull-left"></div>
+	<div class="card-border-left pull-left"><i ng-if="upgrade.arc" class="card-front-arc-icon fs-arc pull-left"></i> </div>
 
 	<div class="card-text">
 		<div ng-if="upgrade.range" class="card-weapon-range pull-right">{{upgrade|valueOf:'range':ship:fleet}}</div>

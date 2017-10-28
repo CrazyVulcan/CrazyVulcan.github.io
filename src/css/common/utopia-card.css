@@ -157,6 +157,10 @@
 	text-align: center;
 }
 
+.card-front-arc {
+	background-image: url("../img/upgrade-forward-arc");
+}
+
 .card-mirror .card-unique-icon {
 	color: black;
 	background: #e1a825;
