@@ -4947,19 +4947,21 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			canEquip: onePerShip("Immersion Shielding"),
 			intercept: {
-				ship: {
-					shields: function(card,ship,fleet,shields) {
-						if( card == ship )
-							return resolve(card,ship,fleet,shields) + 1;
-						return shields;
-					},
+				self: {
 					cost: function(card,ship,fleet,cost) {
 						if( ship && hasFaction(upgrade,"federation",ship,fleet) || hasFaction(upgrade,"bajoran",ship,fleet) || hasFaction(upgrade,"vulcan",ship,fleet) )
 							return resolve(card,ship,fleet,cost) + 3;
 						return cost;
 					}
+				},
+				ship: {
+					shields: function(card,ship,fleet,shields) {
+						if( card == ship )
+							return resolve(card,ship,fleet,shields) + 1;
+						return shields;
+					}
 				}
-			}
+			},
 		},
 		// Unimatrix Shielding
 		"tech:unimatrix_shielding_72014": {
@@ -4968,19 +4970,21 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			canEquip: onePerShip("Unimatrix Shielding"),
 			intercept: {
+				self: {
+					cost: function(card,ship,fleet,cost) {
+						if( ship && !hasFaction(ship,"federation", ship, fleet) )
+							return resolve(card,ship,fleet,cost) + 5;
+						return cost;
+					}
+				},
 				ship: {
 					shields: function(card,ship,fleet,shields) {
 						if( card == ship )
 							return resolve(card,ship,fleet,shields) + 2;
 						return shields;
-					},
-					cost: function(card,ship,fleet,cost) {
-						if( ship && hasFaction(upgrade,"federation",ship,fleet) || hasFaction(upgrade,"bajoran",ship,fleet) || hasFaction(upgrade,"vulcan",ship,fleet) )
-							return resolve(card,ship,fleet,cost) + 5;
-						return cost;
 					}
 				}
-			}
+			},
 		},
 		//Photonic Missiles
 		"weapon:photonic_missiles_72014":{
