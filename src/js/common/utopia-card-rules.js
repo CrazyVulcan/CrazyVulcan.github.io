@@ -3709,7 +3709,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship.hull <= 3;
 			},
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return $factions.hasFaction( ship, "federation", ship, fleet );
+				return $factions.hasFaction( ship, "federation", ship, fleet ) || $factions.hasFaction( ship, "bajoran", ship, fleet ) || $factions.hasFaction( ship, "vulcan", ship, fleet );
 			}
 		},
 				// Phasing Cloaking Device
