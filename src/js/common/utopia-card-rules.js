@@ -367,7 +367,13 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 							cost: {
 								priority: 100,
 								fn: function(upgrade, ship, fleet, cost) {
-									if( hasFaction(upgrade,"federation",ship,fleet) && hasFaction(upgrade,"bajoran",ship,fleet) && hasFaction(upgrade,"vulcan",ship,fleet))
+									if( hasFaction(upgrade,"federation",ship,fleet))
+										return 3;
+									return cost;
+									if( hasFaction(upgrade,"bajoran",ship,fleet))
+										return 3;
+									return cost;
+									if( hasFaction(upgrade,"vulcan",ship,fleet))
 										return 3;
 									return cost;
 								}
