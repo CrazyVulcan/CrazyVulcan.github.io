@@ -4949,7 +4949,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				self: {
 					cost: function(card,ship,fleet,cost) {
-						if( ship && !hasFaction(ship,"federation", ship, fleet) )
+						if( ship && hasFaction(upgrade,"federation",ship,fleet) || hasFaction(upgrade,"bajoran",ship,fleet) || hasFaction(upgrade,"vulcan",ship,fleet) )
 							return resolve(card,ship,fleet,cost) + 3;
 						return cost;
 					}
