@@ -997,7 +997,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		// I Am Kohn-Ma
 		"talent:i_am_kohn_ma_op6prize": {
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return ship.captain && $factions.hasFaction(ship.captain,"bajoran", ship, fleet);
+				return ship.captain || $factions.hasFaction(ship.captain,"bajoran", ship, fleet) || $factions.hasFaction(ship.captain,"federation", ship, fleet);
 			}
 		},
 		//Li Nalas
