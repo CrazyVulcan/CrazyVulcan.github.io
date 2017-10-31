@@ -997,7 +997,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		// I Am Kohn-Ma
 		"talent:i_am_kohn_ma_op6prize": {
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return ship.captain || $factions.hasFaction(ship.captain,"bajoran", ship, fleet) || $factions.hasFaction(ship.captain,"federation", ship, fleet);
+				return ship.captain && $factions.hasFaction(ship.captain,"bajoran", ship, fleet);
 			}
 		},
 		//Li Nalas
@@ -2323,7 +2323,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				ship: {
 					// All Kazon weapons are -1 SP
 					cost: function(upgrade, ship, fleet, cost) {
-						if( upgrade.type == "weapon" && $factions.hasFaction(upgrade,"kazon", ship, fleet) ) {
+						if( upgrade.type == "weapon" && $factions.hasFaction(upgrade,"kazon", ship, fleet) || $factions.hasFaction(upgrade,"independent", ship, fleet)) {
 							return resolve(upgrade, ship, fleet, cost) - 1;
 						}
 						return cost;
