@@ -4954,12 +4954,12 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						return shields;
 					},
 					cost: function(card,ship,fleet,cost) {
-						if( ship && hasFaction(upgrade,"federation",ship,fleet) || hasFaction(upgrade,"bajoran",ship,fleet) || hasFaction(upgrade,"vulcan",ship,fleet) )
+						if( ship && $factions.hasFaction(upgrade,"federation",ship,fleet) || $factions.hasFaction(upgrade,"bajoran",ship,fleet) || $factions.hasFaction(upgrade,"vulcan",ship,fleet) )
 							return resolve(card,ship,fleet,cost) + 3;
 						return cost;
 					}
 				}
-			},
+			}
 		},
 		// Unimatrix Shielding
 		"tech:unimatrix_shielding_72014": {
@@ -4982,7 +4982,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						return shields;
 					}
 				}
-			},
+			}
 		},
 		//Photonic Missiles
 		"weapon:photonic_missiles_72014":{
@@ -5002,7 +5002,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						return range;
 					}
 				}
-			},
+			}
 		},
 		
 		
