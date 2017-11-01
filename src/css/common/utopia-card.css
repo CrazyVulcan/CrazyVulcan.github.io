@@ -440,6 +440,10 @@
 	clear: left;
 }
 
+.card-upgrade.card-unique-icon .card-border-left {
+	padding-left: 0.5em;
+}
+
 .card-upgrade .card-text {
 	margin-left: 1.7em;
 	margin-right: 0.5em;
