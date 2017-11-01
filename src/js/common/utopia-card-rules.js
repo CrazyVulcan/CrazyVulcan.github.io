@@ -1798,7 +1798,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"tech:mutli_adaptive_shields_71509": {
 			name: "Multi-Adaptive Shields",
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return $factions.hasFaction(ship,"federation", ship, fleet);
+				return $factions.hasFaction(ship,"federation", ship, fleet) && $factions.hasFaction(ship,"bajoran", ship, fleet) && $factions.hasFaction(ship,"vulcan", ship, fleet);
 			}
 		},
 		// Reinforced Structural Integrity
@@ -4950,7 +4950,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				self: {
 					cost: function(card,ship,fleet,cost) {
 						if( ship && ( !hasFaction(ship,"federation", ship, fleet) && !hasFaction(ship,"bajoran", ship, fleet) && !hasFaction(ship,"vulcan", ship, fleet)) )
-							return resolve(card,ship,fleet,cost) + 3;
+							return resolve(card,ship,fleet,cost) + 2;
 						return cost;
 					}
 				},
@@ -4972,8 +4972,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				self: {
 					cost: function(card,ship,fleet,cost) {
-						if( ship && !hasFaction(ship,"federation", ship, fleet) )
-							return resolve(card,ship,fleet,cost) + 5;
+						if( ship && (!hasFaction(ship,"federation", ship, fleet) && !hasFaction(ship,"bajoran", ship, fleet) && !hasFaction(ship,"vulcan", ship, fleet) ) )
+							return resolve(card,ship,fleet,cost) + 4;
 						return cost;
 					}
 				},
@@ -5036,7 +5036,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 							factionPenalty: function() { return 0; },
 							canEquip: function(card,ship,fleet,canEquip) {
 								console.log(!$factions.hasFaction( card, "federation", ship, fleet ), valueOf(card,"cost",ship,fleet) > 4 )
-								if( $factions.hasFaction( card, "federation", ship, fleet ) && (valueOf(card,"cost",ship,fleet) < 5) )
+								if( ($factions.hasFaction( card, "federation", ship, fleet ) && $factions.hasFaction( card, "bajoran", ship, fleet ) && $factions.hasFaction( card, "vulcan", ship, fleet ) ) && (valueOf(card,"cost",ship,fleet) < 5) )
 									return canEquip;
 								return false;
 							}
