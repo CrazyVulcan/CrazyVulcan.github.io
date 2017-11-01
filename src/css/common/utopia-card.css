@@ -159,10 +159,14 @@
 
 .card-front-arc-icon {
 	background-image: url("../img/upgrade-forward-arc.png");
+	left: 0em;
+	top: 0rm;
 }
 
 .card-rear-arc-icon {
 	background-image: url("../img/upgrade-rear-arc.png");
+	left: 0em;
+	top: 0rm;
 }
 
 .card-mirror .card-unique-icon {
