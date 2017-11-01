@@ -4947,19 +4947,21 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			canEquip: onePerShip("Immersion Shielding"),
 			intercept: {
+				self: {
+					cost: function(card,ship,fleet,cost) {
+						if( ship && ( !hasFaction(ship,"federation", ship, fleet) || !hasFaction(ship,"bajoran", ship, fleet) || !hasFaction(ship,"vulcan", ship, fleet)) )
+							return resolve(card,ship,fleet,cost) + 3;
+						return cost;
+					}
+				},
 				ship: {
 					shields: function(card,ship,fleet,shields) {
 						if( card == ship )
 							return resolve(card,ship,fleet,shields) + 1;
 						return shields;
-					},
-					cost: function(card,ship,fleet,cost) {
-						if( ship && $factions.hasFaction(upgrade,"federation",ship,fleet) || $factions.hasFaction(upgrade,"bajoran",ship,fleet) || $factions.hasFaction(upgrade,"vulcan",ship,fleet) )
-							return resolve(card,ship,fleet,cost) + 3;
-						return cost;
 					}
 				}
-			}
+			},
 		},
 		// Unimatrix Shielding
 		"tech:unimatrix_shielding_72014": {
@@ -4982,7 +4984,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						return shields;
 					}
 				}
-			}
+			},
 		},
 		//Photonic Missiles
 		"weapon:photonic_missiles_72014":{
