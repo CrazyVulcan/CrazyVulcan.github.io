@@ -5035,7 +5035,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 							cost: function() { return 0; },
 							factionPenalty: function() { return 0; },
 							canEquip: function(card,ship,fleet,canEquip) {
-								if( (ship && (!hasFaction(ship,"federation", ship, fleet) && !hasFaction(ship,"bajoran", ship, fleet) && !hasFaction(ship,"vulcan", ship, fleet)) ) && (valueOf(card,"cost",ship,fleet) <= 4) )
+								if((!hasFaction(ship,"federation", ship, fleet) && !hasFaction(ship,"bajoran", ship, fleet) && !hasFaction(ship,"vulcan", ship, fleet)) && (valueOf(card,"cost",ship,fleet) <= 4) )
 									return canEquip;
 								return false;
 							}
