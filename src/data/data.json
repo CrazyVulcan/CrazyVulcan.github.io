@@ -1,9 +1,21 @@
 {
 	"sets": [{
 			"type": "set",
+			"id": "75002",
+			"name": "Dominion 2017",
+			"releaseDate": "2017-12-3",
+			"parentSet": "Faction Packs"
+		}, {
+			"type": "set",
+			"id": "75001",
+			"name": "Romulan 2017",
+			"releaseDate": "2017-12-2",
+			"parentSet": "Faction Packs"
+		}, {
+			"type": "set",
 			"id": "2017core",
 			"name": "2017 Starter Set",
-			"releaseDate": "2017-10-30",
+			"releaseDate": "2017-12-1",
 			"parentSet": "Core"
 		}, {
 			"type": "set",
@@ -1341,6 +1353,27 @@
 		}
 	],
 	"ships": [{
+			"type": "ship",
+			"id": "irw_suran",
+			"set": ["75001"],
+			"name": "I.R.W. Suran",
+			"class": "Valdore Class",
+			"actions": ["evade", "target-lock", "cloak", "sensor-echo"],
+			"upgrades": ["tech", "weapon", "crew", "crew"],
+			"attack": 4,
+			"agility": 2,
+			"hull": 6,
+			"shields": 3,
+			"cost": 28,
+			"text": "<b>COMBAT PHASE:</b> After this ship attacks:\n\nThis ship may perfrom a 2 Bank Maneuver, Left or Right.",
+			"unique": true,
+			"factions": ["romulan"],
+			"intercept": {
+				"ship": {},
+				"fleet": {}
+			},
+			"squadron": false
+		}, {
 			"type": "ship",
 			"id": "enterprise_d_2017core",
 			"set": ["2017core"],
@@ -11019,6 +11052,18 @@
 			"factions": ["romulan"]
 		}, {
 			"type": "captain",
+			"id": "deyos_75001",
+			"set": ["75002"],
+			"name": "Deyos",
+			"unique": true,
+			"text": "<b>ACTION:</b> Target a friendly ship.\n\nEquip a [crew] Upgrade that was discarded from the target ship to the target ship. The target ship cannot attack this game round.",
+			"factions": ["dominion"],
+			"range": "1 - 2",
+			"cost": 4,
+			"skill": 6,
+			"talents": 0
+		}, {
+			"type": "captain",
 			"id": "kurn_72281p",
 			"set": ["72281p"],
 			"name": "Kurn",
@@ -12501,6 +12546,16 @@
 		}
 	],
 	"upgrades": [{
+            "type": "tech",
+            "id": "talaktalan_75002",
+            "set": ["75002"],
+            "name": "Talak'Talan",
+            "cost": 2,
+			"range": "1 - 2",
+            "text": "<b>ACTION:</b> Discard this card and target all friendly ships.\n\nPlace a [battlestations] Token beside this ship and all target ships. \n(<i>Dominion Only</i>)",
+            "unique": true,
+            "factions": ["dominion"]
+        }, {
             "type": "tech",
             "id": "sabotaged_systems_22303p",
             "set": ["72302p"],
