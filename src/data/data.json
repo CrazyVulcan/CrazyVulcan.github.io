@@ -11074,7 +11074,7 @@
 		}, {
 			"type": "captain",
 			"id": "alidar_jarok_75001",
-			"set": ["75002"],
+			"set": ["75001"],
 			"name": "Alidar Jarok",
 			"unique": true,
 			"text": "<b>ACTIVATION PHASE:</b> After an opposing ship moves but before its Perform Action Step, target that ship and place 2 [time] Tokens on this card.\nChoose an Action on the target ships Action Bar other then [regenerate]. This target ship must perfrom the chosen Action during its Perform Action Step.",
