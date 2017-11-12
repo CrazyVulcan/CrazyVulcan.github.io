@@ -1,8 +1,8 @@
-<div class="card-outer card-upgrade font-staw" ng-class="{ 'card-unique': upgrade.unique, 'card-mirror': upgrade.mirror, 'dragging': upgrade == dragStore.item }" draggable drag-item="upgrade" drag-store="dragStore" drag-source="dragSource">
+<div class="card-outer card-upgrade font-staw" ng-class="{ 'card-unique': upgrade.unique, 'card-OnePerShip': upgrade.limit, 'card-FrontArc': upgrade.limit, 'card-RearArc': upgrade.limit, 'card-Hull': upgrade.limit, 'card-mirror': upgrade.mirror, 'dragging': upgrade == dragStore.item }" draggable drag-item="upgrade" drag-store="dragStore" drag-source="dragSource">
 
 	<div class="card-image"></div>
 
-	<div class="card-corner-top-left pull-left"><i ng-if="upgrade.unique" class="card-unique-icon fs fs-unique pull-left"></i><i ng-if="upgrade.limit" class="card-limit-icon fs fs-limit pull-left"></i>
+	<div class="card-corner-top-left pull-left"><i ng-if="upgrade.unique" class="card-unique-icon fs fs-unique pull-left"></i><i ng-if="upgrade.limit" class="card-OnePerShip-icon fs fs-OnePerShip pull-left"></i>
 		<div class="card-corner-inner pull-right"></div>
 	</div>
 
@@ -16,9 +16,9 @@
 	</div>
 
 	<div class="card-border-left pull-left">
-		<i ng-if="upgrade.front" class="card-front-arc-icon fs fs-front-arc pull-left"></i>
-		<i ng-if="upgrade.rear" class="card-rear-arc-icon fs fs-rear-arc pull-left"></i>
-		<i ng-if="upgrade.hull" class="card-hull-icon fs fs-hull pull-left"></i>
+		<i ng-if="upgrade.limit" class="card-FrontArc-icon fs fs-FrontArc pull-left"></i>\r\n
+		<i ng-if="upgrade.limit" class="card-RearArc-icon fs fs-RearArc pull-left"></i>\r\n
+		<i ng-if="upgrade.hull" class="card-Hull-icon fs fs-Hull pull-left"></i>
 	</div>
 	
 	<div class="card-text">
