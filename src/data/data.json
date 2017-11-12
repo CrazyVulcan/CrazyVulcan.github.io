@@ -12599,7 +12599,7 @@
             "unique": true,
             "factions": ["dominion"]
         }, {
-            "type": "talent",
+            "type": "crew",
             "id": "tal_shiar_subcommander_75001",
             "set": ["75001"],
             "name": "Tal Shiar Sub-Commander",

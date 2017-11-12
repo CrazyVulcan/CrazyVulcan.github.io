@@ -230,6 +230,18 @@
   content: "3";
 }
 
+.fs-front-arc:before {
+  content: "5";
+}
+
+.fs-rear-arc:before {
+  content: "6";
+}
+
+.fs-hull:before {
+  content: "7";
+}
+
 .fs-ship:before {
   content: "E";
   margin-right: -0.1em;

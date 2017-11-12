@@ -158,15 +158,42 @@
 }
 
 .card-front-arc-icon {
-	background-image: url("../img/upgrade-forward-arc.png");
+	font-size: 1.2em;
+	border: 0.05em solid #a8b6bf;
+	border-radius: 1em;
+	background: black;
+	color: red;
+	position: relative;
 	left: 0em;
-	top: 0rm;
+	top: -0.1em;
+	z-index: 1;
+	text-align: center;
 }
 
 .card-rear-arc-icon {
-	background-image: url("../img/upgrade-rear-arc.png");
+	font-size: 1.2em;
+	border: 0.05em solid #a8b6bf;
+	border-radius: 1em;
+	background: black;
+	color: red;
+	position: relative;
 	left: 0em;
-	top: 0rm;
+	top: -0.1em;
+	z-index: 1;
+	text-align: center;
+}
+
+.card-hull-icon {
+	font-size: 1.2em;
+	border: 0.05em solid #a8b6bf;
+	border-radius: 1em;
+	background: black;
+	color: yellow;
+	position: relative;
+	left: 0em;
+	top: -0.1em;
+	z-index: 1;
+	text-align: center;
 }
 
 .card-mirror .card-unique-icon {
