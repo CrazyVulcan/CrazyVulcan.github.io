@@ -1354,6 +1354,27 @@
 	],
 	"ships": [{
 			"type": "ship",
+			"id": "3rd_division_cruiser_71524",
+			"set": ["75002"],
+			"name": "3rd Division Battle Cruiser",
+			"class": "Jem'Hadar Battle Cruiser",
+			"actions": ["evade", "target-lock", "scan", "battlestations"],
+			"upgrades": ["tech", "tech", "weapon", "crew", "crew"],
+			"attack": 5,
+			"agility": 1,
+			"hull": 6,
+			"shields": 5,
+			"cost": 33,
+			"text": "Jem'Hadar Attack Ships within Range 1 roll +1 defense dice",
+			"unique": true,
+			"factions": ["dominion"],
+			"intercept": {
+				"ship": {},
+				"fleet": {}
+			},
+			"squadron": false
+		}, {
+			"type": "ship",
 			"id": "irw_suran",
 			"set": ["75001"],
 			"name": "I.R.W. Suran",
@@ -1365,7 +1386,7 @@
 			"hull": 6,
 			"shields": 3,
 			"cost": 28,
-			"text": "<b>COMBAT PHASE:</b> After this ship attacks:\n\nThis ship may perfrom a 2 Bank Maneuver, Left or Right.",
+			"text": "<b>COMBAT PHASE:</b> After this ship attacks:\n\nThis ship may perfrom a Green 2 Bank Maneuver.",
 			"unique": true,
 			"factions": ["romulan"],
 			"intercept": {
@@ -11052,6 +11073,18 @@
 			"factions": ["romulan"]
 		}, {
 			"type": "captain",
+			"id": "alidar_jarok_75001",
+			"set": ["75002"],
+			"name": "Alidar Jarok",
+			"unique": true,
+			"text": "<b>ACTIVATION PHASE:</b> After an opposing ship moves but before its Perform Action Step, target that ship and place 2 [time] Tokens on this card.\nChoose an Action on the target ships Action Bar other then [regenerate]. This target ship must perfrom the chosen Action during its Perform Action Step.",
+			"factions": ["romulan"],
+			"range": "1 - 2",
+			"cost": 5,
+			"skill": 6,
+			"talents": 1
+		}, {
+			"type": "captain",
 			"id": "deyos_75001",
 			"set": ["75002"],
 			"name": "Deyos",
@@ -12546,7 +12579,7 @@
 		}
 	],
 	"upgrades": [{
-            "type": "tech",
+            "type": "crew",
             "id": "talaktalan_75002",
             "set": ["75002"],
             "name": "Talak'Talan",
@@ -12555,6 +12588,25 @@
             "text": "<b>ACTION:</b> Discard this card and target all friendly ships.\n\nPlace a [battlestations] Token beside this ship and all target ships. \n(<i>Dominion Only</i>)",
             "unique": true,
             "factions": ["dominion"]
+        }, {
+            "type": "talent",
+            "id": "all_power_to_weapons_75002",
+            "set": ["75002"],
+            "name": "All Power To Weapons",
+            "cost": 5,
+			"range": "1 - 2",
+            "text": "<b>COMBAT PHASE:</b> Place 3 [time] Tokens on this card and disable this ships Shields.\n\n<b>Continuous Effect:</b> This ships Shields remain disabled. This ship can only perform Green Maneuvers. This ship rolls +3 attack dice.\n(<i>Dominion Ship 5+ Hull</i>)",
+            "unique": true,
+            "factions": ["dominion"]
+        }, {
+            "type": "talent",
+            "id": "tal_shiar_subcommander_75001",
+            "set": ["75001"],
+            "name": "Tal Shiar Sub-Commander",
+            "cost": 2,
+            "text": "<b>WHEN ATTACKING:</b> If this ship has an [evade] Token beside it:\n\nThis ship may convert 1 of the defending ships [evade] into a |  |.",
+            "unique": false,
+            "factions": ["romulan"]
         }, {
             "type": "tech",
             "id": "sabotaged_systems_22303p",
