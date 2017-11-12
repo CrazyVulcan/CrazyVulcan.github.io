@@ -15,8 +15,10 @@
 			}">{{upgrade.name | uppercase}}</span>
 	</div>
 
-	<div class="card-border-left pull-left"><i ng-if="upgrade.limit" class="card-front-arc-icon fs fs-front-arc pull-left"></i>
-
+	<div class="card-border-left pull-left">
+		<i ng-if="upgrade.limit" class="card-front-arc-icon fs fs-front-arc pull-left"></i>
+		<i ng-if="upgrade.limit" class="card-rear-arc-icon fs fs-rear-arc pull-left"></i>
+		<i ng-if="upgrade.limit" class="card-hull-icon fs fs-hull pull-left"></i>
 	</div>
 	
 	<div class="card-text">
