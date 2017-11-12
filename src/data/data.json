@@ -12819,7 +12819,8 @@
             "cost": 2,
 			"attack": 4,
 			"range": "2 - 3",
-			"aaa": ["front","rear"],
+			"aaa": ["aaa","bbb"],
+			"bbb":"",
             "text": "<b>ATTACK:</b> If this ship has a [target-lock] Token on the defending ship, place 2 [time] Tokens on this card.\n\nThis ship my convert 1 [battlestations] into a [crit].",
             "unique": false,
             "factions": ["klingon"]
@@ -12829,7 +12830,7 @@
             "set": ["72012wp"],
             "name": "Dispersive Armor",
             "cost": 4,
-			"aaa": "hull",
+			"ccc": "hull",
             "text": "<b>WHEN DEFENDING:</b> Disable this card.\n\nThis game round, replace the attacking ship's Primary Weapon Value with 4. For the remainder of the game round, the attacking ship's Primary Weapon Value can not be replaced or modified.",
             "unique": false,
 			"limit": true,
