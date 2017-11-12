@@ -12819,7 +12819,7 @@
             "cost": 2,
 			"attack": 4,
 			"range": "2 - 3",
-			"limit": ["FrontArc","RearArc"],
+			"arc": ["FrontArc","RearArc"],
             "text": "<b>ATTACK:</b> If this ship has a [target-lock] Token on the defending ship, place 2 [time] Tokens on this card.\n\nThis ship my convert 1 [battlestations] into a [crit].",
             "unique": false,
             "factions": ["klingon"]
