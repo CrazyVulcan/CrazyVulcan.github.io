@@ -12587,6 +12587,7 @@
 			"range": "1 - 2",
             "text": "<b>ACTION:</b> Discard this card and target all friendly ships.\n\nPlace a [battlestations] Token beside this ship and all target ships. \n(<i>Dominion Only</i>)",
             "unique": true,
+			"factionDominion": true,
             "factions": ["dominion"]
         }, {
             "type": "talent",
