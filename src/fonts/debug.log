@@ -13,3 +13,12 @@
 [1112/162749:INFO:dhcp_proxy_script_adapter_fetcher_win.cc(264)] Error fetching PAC URL from DHCP: 2
 [1112/162759:INFO:dhcp_proxy_script_adapter_fetcher_win.cc(264)] Error fetching PAC URL from DHCP: 2
 [1112/162759:INFO:dhcp_proxy_script_adapter_fetcher_win.cc(264)] Error fetching PAC URL from DHCP: 2
+[1113/093408:WARNING:dns_config_service_win.cc(653)] Failed to read DnsConfig.
+[1113/093411:WARNING:dns_config_service_win.cc(653)] Failed to read DnsConfig.
+[1113/093411:WARNING:dns_config_service_win.cc(653)] Failed to read DnsConfig.
+[1113/093413:WARNING:dns_config_service_win.cc(653)] Failed to read DnsConfig.
+[1113/093413:WARNING:dns_config_service_win.cc(653)] Failed to read DnsConfig.
+[1113/093416:WARNING:dns_config_service_win.cc(653)] Failed to read DnsConfig.
+[1113/093416:WARNING:dns_config_service_win.cc(653)] Failed to read DnsConfig.
+[1113/093418:WARNING:dns_config_service_win.cc(653)] Failed to read DnsConfig.
+[1113/093418:WARNING:dns_config_service_win.cc(653)] Failed to read DnsConfig.
