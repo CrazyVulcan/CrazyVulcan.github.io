@@ -11974,7 +11974,7 @@
 			"cost": 5,
 			"skill": 8,
 			"talents": 1,
-			"text": "Add 1 [tech] to this ships Upgrade Bar.\n\n<b>WHEN ATTACKING:</b>\nThis may re-roll 1 attack die for each tech] Upgrade equipped to it.",
+			"text": "Add 1 [tech] to this ships Upgrade Bar.\n\n<b>WHEN ATTACKING:</b>\nThis may re-roll 1 attack die for each [tech] Upgrade equipped to it.",
 			"unique": true,
 			"factions": ["romulan"]
 		}, {
