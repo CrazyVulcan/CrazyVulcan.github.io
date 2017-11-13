@@ -11968,6 +11968,17 @@
 			"factions": ["klingon"]
 		}, {
 			"type": "captain",
+			"id": "tomalak_75001",
+			"set": ["75001"],
+			"name": "Tomalak",
+			"cost": 5,
+			"skill": 8,
+			"talents": 1,
+			"text": "Add 1 [tech] to this ships Upgrade Bar.\n\n<b>WHEN ATTACKING:</b>\nThis may re-roll 1 attack die for each tech] Upgrade equipped to it.",
+			"unique": true,
+			"factions": ["romulan"]
+		}, {
+			"type": "captain",
 			"id": "dolim_weapon_zero",
 			"set": ["71225"],
 			"name": "Dolim",
