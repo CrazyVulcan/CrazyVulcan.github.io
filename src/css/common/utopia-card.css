@@ -237,6 +237,7 @@
 
 .card-factionDominion-icon {
 	font-size: 1.4em;
+	border: 0.08em solid #a8b6bf;
 	border-radius: 1em;
 	background: black;
 	color: green;
