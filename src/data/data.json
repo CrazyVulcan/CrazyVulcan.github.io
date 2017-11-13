@@ -12595,9 +12595,10 @@
             "name": "All Power To Weapons",
             "cost": 5,
 			"range": "1 - 2",
-			"limit": "hull",
             "text": "<b>COMBAT PHASE:</b> Place 3 [time] Tokens on this card and disable this ships Shields.\n\n<b>Continuous Effect:</b> This ships Shields remain disabled. This ship can only perform Green Maneuvers. This ship rolls +3 attack dice.\n(<i>Dominion Ship 5+ Hull</i>)",
             "unique": true,
+			"factionDominion": true,
+			"Hull": true,
             "factions": ["dominion"]
         }, {
             "type": "crew",
@@ -12655,8 +12656,7 @@
             "name": "Repair Protocol",
             "cost": 4,
             "text": "<b>END PHASE:</b> Place 3 [time] Tokens on this card.\n\nRepair 1 damage to this ship's Shields or Hull.\n<i>(Romulan Drone Ship Only)</i>",
-            "unique": false,
-			"limit": true,
+            "OnePerShip": true,
             "factions": ["romulan"]
         }, {
             "type": "weapon",
@@ -12667,8 +12667,7 @@
 			"attack": 4,
 			"range": "1 - 3",
             "text": "<b>ATTACK:</b> Place 3 [time] Tokens on this card.\n\nIf there is at least 1 uncancelled [hit], modify the defender's Agility Value by -1 until the end of the game round.",
-            "unique": false,
-			"limit": true,			
+            "OnePerShip": true,			
             "factions": ["independent"]
         }, {
             "type": "tech",
@@ -12677,8 +12676,7 @@
             "name": "Evasive Protocol",
             "cost": 3,
             "text": "<b>COMBAT PHASE:</b> If this ship is in the primary or Secondary Firing Arc of an opposing ship, place 3 [time] Tokens on this card.\n\nPerform a [sensor-echo] Action as a Free Action. If this ship does, also remove an opposing [target-lock] Token from this ship.\n<i>(Romulan Drone Ship Only)</i>",
-            "unique": false,
-			"limit": true,
+            "OnePerShip": true,
             "factions": ["romulan"]
         }, {
             "type": "tech",
@@ -12687,8 +12685,7 @@
             "name": "Disguise Protocol",
             "cost": 4,
             "text": "<b>WHEN DEFENDING:</b> Place 3 [time] Tokens on this card.\n\nThe attacking ship rolls -2 attack dice.\n<i>(Romulan Drone Ship Only)</i>",
-            "unique": false,
-			"limit": true,
+            "OnePerShip": true,
             "factions": ["romulan"]
         }, {
             "type": "weapon",
@@ -12698,7 +12695,7 @@
             "cost": 2,
 			"attack": 6,
 			"range": "1 -3",
-            "text": "<b>ATTACK:</b> Discard this card.\n\nThis ship may re-roll any number of attack dice.\n\n\nCardassian ATR-4107 Only.",
+            "text": "<b>ATTACK:</b> Discard this card.\n\nThis ship may re-roll any number of attack dice.\n\n(<i>Cardassian ATR-4107</i>)",
             "unique": false,
             "factions": ["dominion"]
         }, {
@@ -12709,7 +12706,7 @@
             "cost": 3,
 			"attack": 4,
 			"range": "1",
-            "text": "<b>ATTACK:</b> Place 2 [time] Tokens on this card and target all opposing ships. \n\n\n\nCardassian ATR-4107 ",
+            "text": "<b>ATTACK:</b> Place 2 [time] Tokens on this card and target all opposing ships. \n\n\n(<i>Cardassian ATR-4107</i>)",
             "unique": true,
             "factions": ["dominion"]
         }, {
@@ -12722,8 +12719,9 @@
 			"attack": 4,
 			"arc": ["front","rear"],
             "text": "<b>Attack:</b> Discard this card.\n\nThe defending ship cannot spend [battlestations] or [evade] Tokens\n\n<b>WHEN DEFENDING:</b> Discard this card\n\nThe attacking ship suffers 1 [crit].",
-            "unique": false,
-			"limit": true,
+            "OnePerShip": true,
+			"FrontArc": true,
+			"RearArc": true,
             "factions": ["dominion"]
         }, {
             "type": "weapon",
@@ -12735,7 +12733,8 @@
 			"attack": 5,
 			"arc": ["front","rear"],
             "text": "<b>Attack:</b>Spend this ship's [target-lock] Token and place 2 [time] Tokens on this card. \n\nIf this attack hits, add 1 [hit] or add 2 [hit] if this weapon is equipped to a Cardassian ATR-4107.",
-            "unique": false,
+            "FrontArc": true,
+			"RearArc": true,
             "factions": ["dominion"]
         }, {
             "type": "question",
@@ -12744,8 +12743,7 @@
             "name": "Captured",
             "cost": 1,
             "text": "This Upgrade does not require an Upgrade Slot\n\nThis ship gains the Independent Faction.\n\n<b>WHEN DEFENDING:</b> If the attacking ship shares a Faction with this ship other then Independent.\n\nThe attacking ship rolls +1 attack dice",
-            "unique": false,
-			"limit":true,
+            "OnePerShip": true,
             "factions": ["independent"]
         }, {
             "type": "tech",
@@ -12771,8 +12769,9 @@
             "set": ["72013wp"],
             "name": "Shield Adaptation",
             "cost": 5,
-            "text": "Discard this card if this ship has no active Shields.\n\n<b>WHEN DEFENDING:</b> The attacking ship rolls -2 attack dice when firing a Primary Weapon and -1 when firing a [weapon] Upgrade.\n<i>Ship with 4+ Hull Only</i>",
+            "text": "Discard this card if this ship has no active Shields.\n\n<b>WHEN DEFENDING:</b> The attacking ship rolls -2 attack dice when firing a Primary Weapon and -1 when firing a [weapon] Upgrade.\n<i>4+ Hull</i>",
             "unique": true,
+			"Hull": true,
             "factions": ["dominion"]
         }, {
             "type": "crew",
@@ -12819,8 +12818,8 @@
             "cost": 2,
 			"attack": 4,
 			"range": "2 - 3",
-			"RearArc": true,
-			"factionFederation": true,
+			"FrontArc": true,
+			"RearArc": true,	
             "text": "<b>ATTACK:</b> If this ship has a [target-lock] Token on the defending ship, place 2 [time] Tokens on this card.\n\nThis ship my convert 1 [battlestations] into a [crit].",
             "unique": false,
             "factions": ["klingon"]
@@ -12830,10 +12829,10 @@
             "set": ["72012wp"],
             "name": "Dispersive Armor",
             "cost": 4,
-			"Hull": true,
-			"OnePerShip": true,
-            "text": "<b>WHEN DEFENDING:</b> Disable this card.\n\nThis game round, replace the attacking ship's Primary Weapon Value with 4. For the remainder of the game round, the attacking ship's Primary Weapon Value can not be replaced or modified.",
+            "text": "<b>WHEN DEFENDING:</b> Disable this card.\n\nThis game round, replace the attacking ship's Primary Weapon Value with 4. For the remainder of the game round, the attacking ship's Primary Weapon Value can not be replaced or modified.\n(<i>3+ Hull</i>)",
             "unique": false,
+			"OnePerShip": true,
+			"Hull": true,
             "factions": ["klingon"]
         }, {
             "type": "tech",
@@ -12899,8 +12898,7 @@
             "cost": 4,
 			"range": "1 - 2",
             "text": "Add 1 [crew] to this ship's Upgrade Bar.\n\n<b>ACTIVATION PHASE:</b> Disable this card and target a friendly ship.\n\nThis game round, replace the Captain Skill on this ship's Captain with the Captain Skill of the target ship's Captain.",
-            "unique": false,
-			"limit": true,
+            "OnePerShip": true,
             "factions": ["federation"]
         }, {
             "type": "tech",
@@ -12909,8 +12907,7 @@
             "name": "Close-Range Scan",
             "cost": 3,
             "text": "<b>ACTIVATION PHASE:</b> If this ship performed a [scan] Action, disable 1 Shield.\n\nPlace a [scan] Token beside this ship.",
-            "unique": false,
-			"limit": true,
+            "OnePerShip": true,
             "factions": ["federation"]
         }, {
             "type": "tech",
