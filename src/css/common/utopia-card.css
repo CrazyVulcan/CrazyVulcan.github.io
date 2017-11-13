@@ -145,7 +145,7 @@
 }
 
 .card-OnePerShip-icon {
-	font-size: 1.2em;
+	font-size: 1.3em;
 	border: 0.05em solid #a8b6bf;
 	border-radius: 1em;
 	background: black;
@@ -158,8 +158,8 @@
 }
 
 .card-FrontArc-icon {
-	font-size: 1.2em;
-	border: 0.05em solid #a8b6bf;
+	font-size: 1.4em;
+	border: 0.06em solid #a8b6bf;
 	border-radius: 1em;
 	background: black;
 	color: red;
@@ -171,8 +171,8 @@
 }
 
 .card-RearArc-icon {
-	font-size: 1.2em;
-	border: 0.05em solid #a8b6bf;
+	font-size: 1.4em;
+	border: 0.06em solid #a8b6bf;
 	border-radius: 1em;
 	background: black;
 	color: red;
@@ -184,8 +184,8 @@
 }
 
 .card-Hull-icon {
-	font-size: 1.2em;
-	border: 0.05em solid #a8b6bf;
+	font-size: 1.4em;
+	border: 0.06em solid #a8b6bf;
 	border-radius: 1em;
 	background: black;
 	color: yellow;
@@ -197,8 +197,8 @@
 }
 
 .card-factionFederation-icon {
-	font-size: 1.2em;
-	border: 0.05em solid #a8b6bf;
+	font-size: 1.4em;
+	border: 0.06em solid #a8b6bf;
 	border-radius: 1em;
 	background: black;
 	color: blue;
@@ -210,8 +210,8 @@
 }
 
 .card-factionKlingon-icon {
-	font-size: 1.2em;
-	border: 0.05em solid #a8b6bf;
+	font-size: 1.4em;
+	border: 0.06em solid #a8b6bf;
 	border-radius: 1em;
 	background: black;
 	color: red;
@@ -223,8 +223,8 @@
 }
 
 .card-factionRomulan-icon {
-	font-size: 1.2em;
-	border: 0.05em solid #a8b6bf;
+	font-size: 1.4em;
+	border: 0.06em solid #a8b6bf;
 	border-radius: 1em;
 	background: black;
 	color: green;
@@ -237,7 +237,7 @@
 
 .card-factionDominion-icon {
 	font-size: 1.4em;
-	border: 0.08em solid #a8b6bf;
+	border: 0.06em solid #a8b6bf;
 	border-radius: 1em;
 	background: black;
 	color: green;
@@ -249,8 +249,8 @@
 }
 
 .card-factionIndependent-icon {
-	font-size: 1.2em;
-	border: 0.05em solid #a8b6bf;
+	font-size: 1.4em;
+	border: 0.06em solid #a8b6bf;
 	border-radius: 1em;
 	background: black;
 	color: yellow;
@@ -262,8 +262,8 @@
 }
 
 .card-factionBorg-icon {
-	font-size: 1.2em;
-	border: 0.05em solid #a8b6bf;
+	font-size: 1.4em;
+	border: 0.06em solid #a8b6bf;
 	border-radius: 1em;
 	background: black;
 	color: red;
@@ -275,8 +275,8 @@
 }
 
 .card-faction8472-icon {
-	font-size: 1.2em;
-	border: 0.05em solid #a8b6bf;
+	font-size: 1.4em;
+	border: 0.06em solid #a8b6bf;
 	border-radius: 1em;
 	background: black;
 	color: lime;
@@ -288,8 +288,8 @@
 }
 
 .card-factionMirror-icon {
-	font-size: 1.2em;
-	border: 0.05em solid #a8b6bf;
+	font-size: 1.4em;
+	border: 0.06em solid #a8b6bf;
 	border-radius: 1em;
 	background: black;
 	color: gold;
