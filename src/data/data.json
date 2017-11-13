@@ -5589,7 +5589,7 @@
 			"hull": 1,
 			"shields": 0,
 			"cost": 24,
-			"text": "ATTACK SQUADRON TOKENS: 5\r\nDuring the Roll Attack Dice step, you may disable one of your [SQUADRON] Upgrade to gain +1 additional attack die for that attack.",
+			"text": "ATTACK SQUADRON TOKENS: 5\r\nDuring the Roll Attack Dice step, you may disable one of your [squadron] Upgrade to gain +1 additional attack die for that attack.",
 			"unique": true,
 			"factions": ["dominion"],
 			"intercept": {
