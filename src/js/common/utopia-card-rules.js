@@ -1798,7 +1798,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"tech:mutli_adaptive_shields_71509": {
 			name: "Multi-Adaptive Shields",
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return $factions.hasFaction(ship,"federation", ship, fleet) && $factions.hasFaction(ship,"bajoran", ship, fleet) && $factions.hasFaction(ship,"vulcan", ship, fleet);
+				return $factions.hasFaction(ship,"federation", ship, fleet) || $factions.hasFaction(ship,"bajoran", ship, fleet) || $factions.hasFaction(ship,"vulcan", ship, fleet);
 			}
 		},
 		// Reinforced Structural Integrity
