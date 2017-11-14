@@ -12743,8 +12743,6 @@
 			"arc": ["front","rear"],
             "text": "<b>Attack:</b> Discard this card.\n\nThe defending ship cannot spend [battlestations] or [evade] Tokens\n\n<b>WHEN DEFENDING:</b> Discard this card\n\nThe attacking ship suffers 1 [crit].",
             "OnePerShip": true,
-			"FrontArc": true,
-			"RearArc": true,
             "factions": ["dominion"]
         }, {
             "type": "weapon",
@@ -12754,7 +12752,6 @@
             "cost": 3,
 			"range": "2 - 3",
 			"attack": 5,
-			"arc": ["front","rear"],
             "text": "<b>Attack:</b>Spend this ship's [target-lock] Token and place 2 [time] Tokens on this card. \n\nIf this attack hits, add 1 [hit] or add 2 [hit] if this weapon is equipped to a Cardassian ATR-4107.",
             "FrontArc": true,
 			"RearArc": true,
