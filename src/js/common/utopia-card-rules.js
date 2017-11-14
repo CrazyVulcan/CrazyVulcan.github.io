@@ -7284,6 +7284,34 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquip: onePerShip("Disguise Protocol")
 		},
 		
+		
+	//2017 Core Set
+	//2017 Romulan Faction Ser
+		//Tomalak
+		"captain:tomalak_75001":{
+			upgradeSlots: [ 
+				{ 
+					type: ["tech"]
+				}
+			]
+		},
+	//2017 Dominion Faction Ser
+		//All Power to Weapons
+		"talent:":{
+			canEquip: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship,"dominion", ship, fleet) && ship.hull >= 5;
+			}
+		},
+		//Talak'Talan
+		"crew:":{
+			canEquip: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship,"dominion", ship, fleet);
+			}
+		},
+		
+		
+		
+		
 
 //Faction Penalty For Subfactions 		
 		//Federation
