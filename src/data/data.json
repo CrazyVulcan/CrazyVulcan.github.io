@@ -12657,7 +12657,7 @@
 			"name": "Disruptor Cannon",
 			"cost": 3,
 			"range": "1 - 2",
-			"Attack": 6,
+			"attack": 6,
 			"text": "<b>ATTACK:</b> Spend this ships [target-lock] Token, discard this card, and target an opposing ship.\n\nPerfrom this attack twice against the target ship.\n       (<i>Jem'Hadar Battleship</i>)",
 			"unique": true,
 			"RearArc": true,
