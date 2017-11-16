@@ -1375,6 +1375,23 @@
 			"squadron": false
 		}, {
 			"type": "ship",
+			"id": "2nd_wing_patrol_ship_75002",
+			"set": ["75002"],
+			"name": "2nd Wing Patrol Ship",
+			"class": "Jem'Hadar Attack Ship",
+			"actions": ["evade", "target-lock", "scan", "battlestations"],
+			"upgrades": ["tech", "weapon", "crew", "crew"],
+			"attack": 3,
+			"agility": 2,
+			"hull": 3,
+			"shields": 3,
+			"cost": 16,
+			"text": "\nThis ship rolls +2 defense dice if there is another Jem'Hadar Attack Ship within Range 1.",
+			"unique": true,
+			"factions": ["dominion"],
+			"squadron": false
+		}, {
+			"type": "ship",
 			"id": "irw_suran",
 			"set": ["75001"],
 			"name": "I.R.W. Suran",
@@ -1387,6 +1404,27 @@
 			"shields": 3,
 			"cost": 28,
 			"text": "\n<b>COMBAT PHASE:</b> After this ship attacks:\n\nThis ship may perfrom a Green 2 Bank Maneuver.",
+			"unique": true,
+			"factions": ["romulan"],
+			"intercept": {
+				"ship": {},
+				"fleet": {}
+			},
+			"squadron": false
+		}, {
+			"type": "ship",
+			"id": "jaroks_scout_vessel",
+			"set": ["75001"],
+			"name": "Jarok's Scout Vessel",
+			"class": "Romulan Scout Vessel",
+			"actions": ["evade", "scan", "cloak", "sensor-echo"],
+			"upgrades": ["tech", "weapon", "crew"],
+			"attack": 1,
+			"agility": 3,
+			"hull": 2,
+			"shields": 2,
+			"cost": 12,
+			"text": "<b>ACTIVATION PHASE:</b> Place 2 [time] Tokens on this card and target a friendly Romulan ship within Range 1.\n\nTHe target ship may perform an Action as a Free Action.",
 			"unique": true,
 			"factions": ["romulan"],
 			"intercept": {
@@ -12634,6 +12672,15 @@
             "text": "<b>ACTION:</b> Discard this card and target all friendly ships.\n\nPlace a [battlestations] Token beside this ship and all target ships. \n(<i>Dominion Only</i>)",
             "unique": true,
 			"factionDominion": true,
+            "factions": ["dominion"]
+        }, { 
+            "type": "crew",
+            "id": "lamatukan_75002",
+            "set": ["75002"],
+            "name": "Lamat'Ukan",
+            "cost": 2,
+            "text": "<b>WHEN ATTACKING:</b> If this ship spent its [target-lock] Token to re-roll its attack dice:\n\nThis ship may convert 1 | | into 1 [hit]",
+            "unique": true,
             "factions": ["dominion"]
         }, {
             "type": "crew",
