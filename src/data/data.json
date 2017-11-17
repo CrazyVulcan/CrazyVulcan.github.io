@@ -12679,7 +12679,7 @@
             "set": ["75002"],
             "name": "Lamat'Ukan",
             "cost": 2,
-            "text": "<b>WHEN ATTACKING:</b> If this ship spent its [target-lock] Token to re-roll its attack dice:\n\nThis ship may convert 1 | | into 1 [hit]",
+            "text": "<b>WHEN ATTACKING:</b> If this ship spent its [target-lock] Token to re-roll its attack dice:\n\nThis ship may convert 1 [blank] into 1 [hit]",
             "unique": true,
             "factions": ["dominion"]
         }, {

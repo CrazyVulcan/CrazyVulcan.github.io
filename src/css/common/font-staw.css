@@ -43,7 +43,7 @@
 }
 
 .fs-blank:before {
-  content: "";
+  content: "0";
 }
 
 .fs-unique:before {
