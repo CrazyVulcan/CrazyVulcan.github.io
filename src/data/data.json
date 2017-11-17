@@ -12868,7 +12868,7 @@
             "set": ["72012wp"],
             "name": "DNA Encoded Message",
             "cost": 5,
-            "text": "<b>SETUP:</b> Place 3 [factionKlingon] [talent] Upgrades face down beneath this card.\n\n<b>ACTIVATION PHASE:</b> Discard this card.\nFlip 1 of the [factionKlingon] [talent] Upgrades beneath this card face up and equip it to the Captain equiped to this ship. Remove the other 2 face down [factionKlingon] [talent] Upgrades from the game.",
+            "text": "<b>SETUP:</b> Place 3 Klingon [talent] Upgrades face down beneath this card.\n\n<b>ACTIVATION PHASE:</b> Discard this card.\nFlip 1 of the Klingon [talent] Upgrades beneath this card face up and equip it to the Captain equiped to this ship. Remove the other 2 face down Klingon [talent] Upgrades from the game.",
             "unique": true,
             "factions": ["klingon"]
         }, {
