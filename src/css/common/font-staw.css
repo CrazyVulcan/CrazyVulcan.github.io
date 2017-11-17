@@ -42,8 +42,8 @@
  content: "?";
 }
 
-.fs-blank:before {
-  content: "0";
+.fs-empty:before {
+  content: "";
 }
 
 .fs-unique:before {
@@ -244,7 +244,9 @@
   content: "(";
 }
 
-
+.fs-blank:before {
+  content: "0";
+}
 .fs-borg:before {
   content: "1";
 }
