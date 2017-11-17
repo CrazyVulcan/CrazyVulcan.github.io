@@ -203,9 +203,11 @@
 }
 
 .card-factionFederation-icon {
-	font-size: 1.4em;
+	font-size: 1.2em;
 	border: 0.06em solid #a8b6bf;
 	border-radius: 1em;
+	width: 1em;
+	background-size: 1em;
 	background: black;
 	color: blue;
 	position: relative;
@@ -216,9 +218,11 @@
 }
 
 .card-factionKlingon-icon {
-	font-size: 1.4em;
+	font-size: 1.2em;
 	border: 0.06em solid #a8b6bf;
 	border-radius: 1em;
+	width: 1em;
+	background-size: 1em;
 	background: black;
 	color: red;
 	position: relative;
@@ -229,9 +233,11 @@
 }
 
 .card-factionRomulan-icon {
-	font-size: 1.4em;
+	font-size: 1.2em;
 	border: 0.06em solid #a8b6bf;
 	border-radius: 1em;
+	width: 1em;
+	background-size: 1em;
 	background: black;
 	color: green;
 	position: relative;
@@ -242,21 +248,26 @@
 }
 
 .card-factionDominion-icon {
-	font-size: 1.4em;
-	border: solid #a8b6bf;
+	font-size: 1.2em;
+	border: 0.06em solid #a8b6bf;
 	border-radius: 1em;
+	width: 1em;
+	background-size: 1em;
 	background: black;
 	color: green;
 	position: relative;
 	left: 0em;
+	top: -0.1em;
 	z-index: 1;
 	text-align: center;
 }
 
 .card-factionIndependent-icon {
-	font-size: 1.4em;
+	font-size: 1.2em;
 	border: 0.06em solid #a8b6bf;
 	border-radius: 1em;
+	width: 1em;
+	background-size: 1em;
 	background: black;
 	color: yellow;
 	position: relative;
@@ -267,9 +278,11 @@
 }
 
 .card-factionBorg-icon {
-	font-size: 1.4em;
+	font-size: 1.2em;
 	border: 0.06em solid #a8b6bf;
 	border-radius: 1em;
+	width: 1em;
+	background-size: 1em;
 	background: black;
 	color: red;
 	position: relative;
@@ -280,9 +293,11 @@
 }
 
 .card-faction8472-icon {
-	font-size: 1.4em;
+	font-size: 1.2em;
 	border: 0.06em solid #a8b6bf;
 	border-radius: 1em;
+	width: 1em;
+	background-size: 1em;
 	background: black;
 	color: lime;
 	position: relative;
