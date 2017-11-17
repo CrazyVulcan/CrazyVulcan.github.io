@@ -158,10 +158,9 @@
 }
 
 .card-FrontArc-icon {
-	font-size: 1.4em;
+	font-size: 1.2em;
 	border: 0.06em solid #a8b6bf;
-	border-radius: 1em;
-	width: 1em;
+	border-radius: 0.05em;
 	background-size: 1em;
 	background: black;
 	color: red;

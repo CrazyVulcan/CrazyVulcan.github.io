@@ -12688,7 +12688,7 @@
             "set": ["75001"],
             "name": "Tal Shiar Sub-Commander",
             "cost": 2,
-            "text": "<b>WHEN ATTACKING:</b> If this ship has an [evade] Token beside it:\n\nThis ship may convert 1 of the defending ships [evade] into a |  |.",
+            "text": "<b>WHEN ATTACKING:</b> If this ship has an [evade] Token beside it:\n\nThis ship may convert 1 of the defending ships [evade] into a [blank].",
             "unique": false,
             "factions": ["romulan"]
         }, {
@@ -12859,7 +12859,7 @@
             "set": ["72013wp"],
             "name": "B'Elanna Torres",
             "cost": 1,
-            "text": "<b>WHEN ATTACKING:</b>\n\nThis ship may reroll 1 | |. If the defending ship is a Dominion Ship, this ship may also convert 1 |  | into 1 [hit].",
+            "text": "<b>WHEN ATTACKING:</b>\n\nThis ship may reroll 1 [blank]. If the defending ship is a Dominion Ship, this ship may also convert 1 [blank] into 1 [hit].",
             "unique": true,
             "factions": ["independent"]
         }, {
@@ -12868,7 +12868,7 @@
             "set": ["72012wp"],
             "name": "DNA Encoded Message",
             "cost": 5,
-            "text": "<b>SETUP:</b> Place 3 Klingon [talent] Upgrades face down beneath this card.\n\n<b>ACTIVATION PHASE:</b> Discard this card.\nFlip 1 of the Klingon [talent] Upgrades beneath this card face up and equip it to the Captain equiped to this ship. Remove the other 2 face down Klingon [talent] Upgrades from the game.",
+            "text": "<b>SETUP:</b> Place 3 [factionKlingon] [talent] Upgrades face down beneath this card.\n\n<b>ACTIVATION PHASE:</b> Discard this card.\nFlip 1 of the [factionKlingon] [talent] Upgrades beneath this card face up and equip it to the Captain equiped to this ship. Remove the other 2 face down [factionKlingon] [talent] Upgrades from the game.",
             "unique": true,
             "factions": ["klingon"]
         }, {
@@ -12958,7 +12958,7 @@
             "name": "Saavik",
             "cost": 1,
 			"range": "1 - 2",
-            "text": "<b>WHEN DEFENDING:</b> If this ship is within Range of a Planet token.\n\nThis ship may convert one |   | into 1 [evade].",
+            "text": "<b>WHEN DEFENDING:</b> If this ship is within Range of a Planet token.\n\nThis ship may convert one [blank] into 1 [evade].",
             "unique": true,
             "factions": ["federation"]
         }, {
@@ -13015,7 +13015,7 @@
             "name": "Data",
             "cost": 5,
 			"range": "1-2",
-            "text": "<b>ACTION:</b> Discard this card and target an opposing ship.\n\nRoll one attack die and consult the below chart:\n[crit]:Discard a card of your choice on the target ship.\n[battlestations]: Discard the Captain of the target ship.\n[hit]:Discard a [crew] on the target ship,\n|  |: Nothing happens.",
+            "text": "<b>ACTION:</b> Discard this card and target an opposing ship.\n\nRoll one attack die and consult the below chart:\n[crit]:Discard a card of your choice on the target ship.\n[battlestations]: Discard the Captain of the target ship.\n[hit]:Discard a [crew] on the target ship,\n[blank]: Nothing happens.",
             "unique": true,
             "factions": ["federation"]
         }, {
@@ -17648,12 +17648,9 @@
 			"set": ["u_s_s_yaeger", "72302p"],
 			"name": "Elizabeth Shelby",
 			"unique": true,
-			"text": "<b>WHEN DEFENDING:\n\n</b> This ship may re-roll one of its |  | results.\n\n If the attacking ship is a Borg ship, this ship rolls +1 defense die and may re-roll all of its |  | results",			"factions": ["federation"],
-			"cost": 2,
-			"skill": 0,
-			"talents": 0,
-			"attack": 0,
-			"range": ""
+			"text": "<b>WHEN DEFENDING:\n\n</b> This ship may re-roll one of its [blank] results.\n\n If the attacking ship is a Borg ship, this ship rolls +1 defense die and may re-roll all of its [blank] results",
+			"factions": ["federation"],
+			"cost": 2
 		}, {
 			"type": "crew",
 			"id": "reginald_barclay_u_s_s_yaeger",
