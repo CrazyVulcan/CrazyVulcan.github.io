@@ -12648,7 +12648,7 @@
             "text": "<b>COMBAT PHASE:</b> Place 3 [time] Tokens on this card and disable this ships Shields.\n\n<b>Continuous Effect:</b> This ships Shields remain disabled. This ship can only perform Green Maneuvers. This ship rolls +3 attack dice.\n(<i>Dominion Ship 5+ Hull</i>)",
             "unique": true,
 			"factionDominion": true,
-			"Hull": true,
+			"hullConstraint": true,
             "factions": ["dominion"]
         }, {
 			"type": "weapon",
@@ -12690,6 +12690,15 @@
             "cost": 2,
             "text": "<b>WHEN ATTACKING:</b> If this ship has an [evade] Token beside it:\n\nThis ship may convert 1 of the defending ships [evade] into a [blank].",
             "unique": false,
+            "factions": ["romulan"]
+        }, {
+            "type": "crew",
+            "id": "romulan_medical_team_75001",
+            "set": ["75001"],
+            "name": "Romulan Medical Team",
+            "cost": 3,
+            "text": "<b>ACTION:</b> Discard this card and target a friendly ship.\n\nRemove 1 Disabled Token from all [crew] Upgrades equipped to the target ship.",
+			"range": "1 - 2",
             "factions": ["romulan"]
         }, {
             "type": "tech",
@@ -12851,7 +12860,7 @@
             "cost": 5,
             "text": "Discard this card if this ship has no active Shields.\n\n<b>WHEN DEFENDING:</b> The attacking ship rolls -2 attack dice when firing a Primary Weapon and -1 when firing a [weapon] Upgrade.\n<i>4+ Hull</i>",
             "unique": true,
-			"Hull": true,
+			"hullConstraint": true,
             "factions": ["dominion"]
         }, {
             "type": "crew",
@@ -12912,7 +12921,7 @@
             "text": "<b>WHEN DEFENDING:</b> Disable this card.\n\nThis game round, replace the attacking ship's Primary Weapon Value with 4. For the remainder of the game round, the attacking ship's Primary Weapon Value can not be replaced or modified.\n(<i>3+ Hull</i>)",
             "unique": false,
 			"OnePerShip": true,
-			"Hull": true,
+			"hullConstraint": true,
             "factions": ["klingon"]
         }, {
             "type": "tech",
