@@ -158,18 +158,8 @@
 }
 
 .card-FrontArc-icon {
-	font-size: 1.2em;
-	border: 0.06em solid #a8b6bf;
-	border-radius: 1em;
-	width: 1em;
-	background-size: 1em;
-	background: black;
-	color: red;
-	position: relative;
-	left: 0em;
-	top: -0.1em;
-	z-index: 1;
-	text-align: center;
+	border-color: #a8b6bf;
+	background-image: url("../img/upgrade-forward-arc.png");
 }
 
 .card-RearArc-icon {
