@@ -159,8 +159,8 @@
 
 .card-FrontArc-icon {
 	background: black;
-	width:0.05em;
-	height:0.05em;
+	width:0.5px;
+	height:0.50px;
 	position: relative;
 	left: 0em;
 	top: -0.1em;
