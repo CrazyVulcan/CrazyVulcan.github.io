@@ -159,12 +159,8 @@
 
 .card-FrontArc-icon {
 	background: url("../img/upgrade-forward-arc.png");
-	font-size: 1.15em;
-	position: relative;
-	left: 0em;
-	top: -0.1em;
-	z-index: 1;
-	text-align: center;
+	width:1em;
+	height:1em;
 }
 
 .card-RearArc-icon {
