@@ -158,9 +158,14 @@
 }
 
 .card-FrontArc-icon {
-	background: url("../img/upgrade-forward-arc.png");
+	background: black;
 	width:0.6em;
 	height:0.6em;
+	position: relative;
+	left: 0em;
+	top: -0.1em;
+	z-index: 1;
+	text-align: center;
 }
 
 .card-RearArc-icon {
