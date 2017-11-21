@@ -1422,7 +1422,7 @@
 			"attack": 3,
 			"agility": 2,
 			"hull": 3,
-			"shields": 3,
+			"shields": 2,
 			"cost": 14,
 			"text": "",
 			"unique": false,
@@ -1460,7 +1460,7 @@
 			"attack": 4,
 			"agility": 2,
 			"hull": 6,
-			"shields": 3,
+			"shields": 2,
 			"cost": 24,
 			"text": "",
 			"unique": false,
@@ -1502,10 +1502,31 @@
 			"attack": 1,
 			"agility": 3,
 			"hull": 2,
-			"shields": 2,
+			"shields": 1,
 			"cost": 10,
 			"text": "",
 			"unique": false,
+			"factions": ["romulan"],
+			"intercept": {
+				"ship": {},
+				"fleet": {}
+			},
+			"squadron": false
+		}, {
+			"type": "ship",
+			"id": "miroks_science_vessel_75001",
+			"set": ["75001"],
+			"name": "Mirok's Science Vessel",
+			"class": "Romulan Science Vessel",
+			"actions": ["evade", "scan", "cloak", "sensor-echo"],
+			"upgrades": ["tech", "crew", "crew"],
+			"attack": 1,
+			"agility": 2,
+			"hull": 2,
+			"shields": 2,
+			"cost": 10,
+			"text": "<b>ACTION:</b> Target a friendly ship within Range 1-2.\n\nRepair 1 Shield or 1 Hull on the target ship.",
+			"unique": true,
 			"factions": ["romulan"],
 			"intercept": {
 				"ship": {},
@@ -12846,6 +12867,15 @@
             "text": "<b>WHEN ATTACKING:</b> If this ship spent its [target-lock] Token to re-roll its attack dice:\n\nThis ship may convert 1 [blank] into 1 [hit]",
             "unique": true,
             "factions": ["dominion"]
+        }, {
+            "type": "talent",
+            "id": "strike_from_the_shadows_75001",
+            "set": ["75001"],
+            "name": "Strike From The Shadows",
+            "cost": 3,
+            "text": "<b>WHEN ATTACKING:</b> If this ship is Cloaked, discard this card.\n\nFlip this ships [cloak] Token to its green side.",
+            "unique": false,
+            "factions": ["romulan"]
         }, {
             "type": "crew",
             "id": "tal_shiar_subcommander_75001",
