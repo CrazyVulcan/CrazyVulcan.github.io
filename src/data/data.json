@@ -11307,6 +11307,18 @@
 			"factions": ["romulan"]
 		}, {
 			"type": "captain",
+			"id": "yelgrun_75002",
+			"set": ["75002"],
+			"name": "Yelgrun",
+			"unique": true,
+			"text": "<b>ACTION:</b> Target an opposing ship whose Captain has a higher Captain Skill than the Captain of this ship.\n\nThis game round, the Captain Skill of the Captain on the target ship is decreased by 1 and that Captain cannot use its ability.",
+			"factions": ["dominion"],
+			"range": "1 - 2",
+			"cost": 4,
+			"skill": 6,
+			"talents": 1
+		}, {
+			"type": "captain",
 			"id": "alidar_jarok_75001",
 			"set": ["75001"],
 			"name": "Alidar Jarok",
@@ -12836,6 +12848,16 @@
 			"hullConstraint": true,
             "factions": ["dominion"]
         }, {
+            "type": "talent",
+            "id": "spread_despair_and_demoralization_75002",
+            "set": ["75002"],
+            "name": "Spread Despair and Demoralization",
+            "cost": 5,
+			"range": "1 - 2",
+            "text": "<b>ACTION:</b> Discard this card and target all opposing ships.\n\nAll target ships roll -1 attack die and -1 defense die this game round.",
+            "unique": true,
+            "factions": ["dominion"]
+        }, {
 			"type": "weapon",
 			"id": "disruptor_cannon",
 			"set": ["75002"],
@@ -12847,7 +12869,26 @@
 			"unique": true,
 			"RearArc": true,
 			"factions": ["dominion"]
+		}, {
+			"type": "weapon",
+			"id": "minesweeper_75002",
+			"set": ["75002"],
+			"name": "Minesweeper",
+			"cost": 2,
+			"range": "1",
+			"text": "<b>ACTIVATION PHASE:</b> When this ship would trigger a Minefield Token by moving, discard this card and target that Minefield Token.\n\nRoll 1 attack die and consult the chart below:\n[crit] or [hit]: Remove the target Minefield Token, Its effect does not trigger.\n[battlestations] or [blank]: The effect of the Minefield Token triggers normally.",
+			"OnePerShip": true,
+			"factions": ["dominion"]
 		}, { 
+            "type": "crew",
+            "id": "duranadar_75002",
+            "set": ["75002"],
+            "name": "Duran'Adar",
+            "cost": 3,
+            "text": "Add 1 [tech] to this ships Upgrade Bar.\n_______________________\n<b>ACTIVATION PHASE:</b> After this ship reveals a Red Maneuver, place 3 [time] Tokens on this card.\n\nThis ship does not recive [aux] Tokens this game round.",
+            "unique": true,
+            "factions": ["dominion"]
+        }, { 
             "type": "crew",
             "id": "talaktalan_75002",
             "set": ["75002"],
@@ -12868,6 +12909,15 @@
             "unique": true,
             "factions": ["dominion"]
         }, {
+            "type": "tech",
+            "id": "_75001",
+            "set": ["75001"],
+            "name": "",
+            "cost": 3,
+            "text": "<b>ACTIVATION PHASE:</b> Discard this card and target a Captain or [crew] Upgrade equipped to an opposing ship.\n\nThe target Captain or [crew] Upgrade cannot perfrom Actions this game round.",
+            "unique": true,
+            "factions": ["romulan"]
+        }, {
             "type": "talent",
             "id": "strike_from_the_shadows_75001",
             "set": ["75001"],
@@ -12878,21 +12928,30 @@
             "factions": ["romulan"]
         }, {
             "type": "crew",
-            "id": "tal_shiar_subcommander_75001",
-            "set": ["75001"],
-            "name": "Tal Shiar Sub-Commander",
-            "cost": 2,
-            "text": "<b>WHEN ATTACKING:</b> If this ship has an [evade] Token beside it:\n\nThis ship may convert 1 of the defending ships [evade] into a [blank].",
-            "unique": false,
-            "factions": ["romulan"]
-        }, {
-            "type": "crew",
             "id": "romulan_medical_team_75001",
             "set": ["75001"],
             "name": "Romulan Medical Team",
             "cost": 3,
             "text": "<b>ACTION:</b> Discard this card and target a friendly ship.\n\nRemove 1 Disabled Token from all [crew] Upgrades equipped to the target ship.",
 			"range": "1 - 2",
+            "factions": ["romulan"]
+        },  {
+            "type": "crew",
+            "id": "romulan_spy_75001",
+            "set": ["75001"],
+            "name": "Romulan Spy",
+            "cost": 2,
+            "text": "<b>START OF THE GAME:</b> Target all friendly Romulan ship.\n\nPlace a [cloak] Token on the base of all the target ships.",
+			"range": "1",
+            "factions": ["romulan"]
+        }, {
+            "type": "crew",
+            "id": "tal_shiar_subcommander_75001",
+            "set": ["75001"],
+            "name": "Tal Shiar Sub-Commander",
+            "cost": 2,
+            "text": "<b>WHEN ATTACKING:</b> If this ship has an [evade] Token beside it:\n\nThis ship may convert 1 of the defending ships [evade] into a [blank].",
+            "unique": false,
             "factions": ["romulan"]
         }, {
             "type": "tech",
