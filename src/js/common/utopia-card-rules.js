@@ -7286,6 +7286,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 		
 	//2017 Core Set
+		"captain:picard_2017core":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}},
 	//2017 Romulan Faction Ser
 		//Tomalak
 		"captain:tomalak_75001":{
@@ -7297,16 +7301,24 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 	//2017 Dominion Faction Ser
 		//All Power to Weapons
-		"talent:":{
+		"talent:all_power_to_weapons_75002":{
 			canEquip: function(upgrade,ship,fleet) {
 				return $factions.hasFaction(ship,"dominion", ship, fleet) && ship.hull >= 5;
 			}
 		},
 		//Talak'Talan
-		"crew:":{
+		"crew:talaktalan_75002":{
 			canEquip: function(upgrade,ship,fleet) {
 				return $factions.hasFaction(ship,"dominion", ship, fleet);
 			}
+		},
+		//Duran'Adar
+		"crew:duranadar_75002":{
+			upgradeSlots: [ 
+				{ 
+					type: ["tech"]
+				}
+			]
 		},
 		
 		

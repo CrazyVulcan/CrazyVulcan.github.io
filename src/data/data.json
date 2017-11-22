@@ -12214,6 +12214,18 @@
 			"factions": ["klingon"]
 		}, {
 			"type": "captain",
+			"id": "picard_2017core",
+			"set": ["2017core"],
+			"name": "Jean-Luc Picard",
+			"cost": 6,
+			"skill": 8,
+			"talents": 2,
+			"text": "<b>ACTION:</b> Place 2 [time] Tokens on this card and target all friendly ships.\n\nPlace a [battlestations] Token beside this ship and all target ships.",
+			"unique": true,
+			"range": "1 - 2",
+			"factions": ["federation"]
+		}, {
+			"type": "captain",
 			"id": "tomalak_75001",
 			"set": ["75001"],
 			"name": "Tomalak",
@@ -12910,9 +12922,9 @@
             "factions": ["dominion"]
         }, {
             "type": "tech",
-            "id": "_75001",
+            "id": "quantum_stasis_module_75001",
             "set": ["75001"],
-            "name": "",
+            "name": "Quantum Stasis Module",
             "cost": 3,
             "text": "<b>ACTIVATION PHASE:</b> Discard this card and target a Captain or [crew] Upgrade equipped to an opposing ship.\n\nThe target Captain or [crew] Upgrade cannot perfrom Actions this game round.",
             "unique": true,
