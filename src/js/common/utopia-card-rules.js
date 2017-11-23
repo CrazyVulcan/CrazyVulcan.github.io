@@ -7295,8 +7295,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"captain:tomalak_75001":{
 			upgradeSlots: [ 
 				{ 
-					type: ["talent"],
-					type: ["tech"]
+					type: ["talent","tech"]
 				}
 			]
 		},
