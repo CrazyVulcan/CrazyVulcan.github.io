@@ -7293,9 +7293,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 	//2017 Romulan Faction Ser
 		//Tomalak
 		"captain:tomalak_75001":{
-			upgradeSlots: [ 
-				{ 
-					type: ["talent","tech"]
+			upgradeSlots: [
+				{/* Talent */},
+				{
+					type: ["tech"]
 				}
 			]
 		},
