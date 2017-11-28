@@ -1,17 +1,31 @@
 {
   "name": "staw-utopia",
   "version": "1.0.0",
+  "description": "A Fleet Builder for Star Trek Attack Wing",
+  "author": "ComaToes",
+  "contributors": [
+    "KFNEXUS",
+    "jsterner73",
+    "CrazyVulcan",
+    "wiegeabo"
+  ],
+  "license": "LGPLv3",
+  "homepage": "https://github.com/KFNEXUS/KFNEXUS.github.io#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ComaToes/staw-utopia.git"
+    "url": "git+https://github.com/KFNEXUS/KFNEXUS.github.io.git"
   },
-  "author": "",
-  "license": "LGPLv3",
   "bugs": {
-    "url": "https://github.com/ComaToes/staw-utopia/issues"
+    "url": "https://github.com/KFNEXUS/KFNEXUS.github.io/issues"
   },
-  "homepage": "https://github.com/ComaToes/staw-utopia#readme",
+  "scripts": {
+    "start": "grunt",
+    "data": "npm run lint-data && npm run generate-data",
+    "generate-data": "node ./src/data/index.js",
+    "lint-data": "eslint --fix 'src/data/**/*.js'"
+  },
   "devDependencies": {
+    "eslint-config-fnd": "^1.2.0",
     "grunt": "^0.4.5",
     "grunt-angular-templates": "^0.5.7",
     "grunt-contrib-clean": "^0.6.0",
