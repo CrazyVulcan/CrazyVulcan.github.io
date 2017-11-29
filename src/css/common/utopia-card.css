@@ -294,12 +294,12 @@
 
 .card-captainDominion-icon {
 	font-size: 1.2em;
-	border: 0.06em solid #a8b6bf;
+	border: 0.06em solid #3486cf;
 	border-radius: 1em;
 	width: 1em;
 	background-size: 1em;
 	background: black;
-	color: red;
+	color: green;
 	position: relative;
 	left: 0em;
 	top: -0.1em;
@@ -308,10 +308,13 @@
 }
 
 .card-shipDominion-icon {
+	font-size: 1.2em;
 	border: 0.06em solid #a8b6bf;
+	border-radius: 1em;
+	width: 1em;
 	background-size: 1em;
-	background: url("../img/card-factionDominion-icon.png") no-repeat;
-	color: red;
+	background: black;
+	color: green;
 	position: relative;
 	left: 0em;
 	top: -0.1em;
@@ -321,12 +324,12 @@
 
 .card-captainIndependent-icon {
 	font-size: 1.2em;
-	border: 0.06em solid #a8b6bf;
+	border: 0.06em solid #3486cf;
 	border-radius: 1em;
 	width: 1em;
 	background-size: 1em;
 	background: black;
-	color: red;
+	color: yellow;
 	position: relative;
 	left: 0em;
 	top: -0.1em;
@@ -341,7 +344,7 @@
 	width: 1em;
 	background-size: 1em;
 	background: black;
-	color: red;
+	color: yellow;
 	position: relative;
 	left: 0em;
 	top: -0.1em;
