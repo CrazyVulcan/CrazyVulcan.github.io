@@ -198,6 +198,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 
 	//Core Starter Set :71120
+		//Enterprise-D 360
+		"ship:1001":{
+			slotType: "resource"
+		},
 		//Will Riker 5
 		"captain:2002":{
 			factionPenalty: function(upgrade, ship, fleet) {
@@ -7377,10 +7381,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 	// RESOURCES
 		
 		"resource:fleet_commander": {
-			slotType: "shipResource",
+			slotType: "captain",
 			hideCost: false,
 			showShipResourceSlot: function(card,ship,fleet) {
-				if( ship.resource && ship.resource.type == "shipResource" )
+				if( ship.resource && ship.resource.type == "captain" )
 					return true;
 				var show = true;
 				$.each( fleet.ships, function(i,ship) {
@@ -7395,9 +7399,6 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						delete ship.resource;
 				} );
 			},
-		},
-		
-		"shipResource:ship_fleet_commander":{
 		},
 		
 		"resource:fleet_captain_collectiveop2": {

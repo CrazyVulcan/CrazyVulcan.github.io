@@ -23,15 +23,6 @@ module.exports = [{
 	name: "Drone Tokens",
 	text: "Each Drone Token has a Drone number list on the face, as well as a Captain Skill Number listed on the back. The Drone Tokens are placed in a stack on top of the Captain Card in descending order (from highest to lowest) of their Drone numbers. \n\nNOTE: The Drone number listed on the token at the top of the stack is always considered the ship’s current Captain Skill. At the start of the game, place the Drone Token that has the starting Captain Skill beside the ship (this will be the reverse side of the Drone Token that reads “START” on the face).\n\nWhen a Drone Token is used, remove one Token from the top of the stack and flip it over. Then remove the Drone Token that is beside the ship from play and replace it with the token that you just removed from the stack. NOTE: The Captain Skill that is listed on the Token beside the ship should always be equal to the number of Drone Tokens left on the Captain Card.\n\n You may use Drone Tokens for other Upgrade effects, but not for the text on a disabled Captain if your Captain is disabled."
 }, {
-	type: "shipResource",
-	id:"ship_fleet_commander",
-	set:["72280r"],
-	name: "Fleet Commander",
-	cost: 5,
-	skill: 1,
-	isSkillModifier: true,
-	faction: ["independent"]
-}, {
 	type: "fleet-captain",
 	id: "federation_collectiveop2",
 	set: ["CollectiveOP2"],
