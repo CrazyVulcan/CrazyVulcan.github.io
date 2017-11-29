@@ -7378,21 +7378,12 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 		"resource:fleet_commander": {
 			slotType: "ship-resource",
-			hideCost: true,
-			onRemove: function(resource,ship,fleet) {
-				$.each( fleet.ships, function(i,ship) {
-					if( ship.resource )
-						delete ship.resource;
-				} );
-			},
-		},
-		
-		"ship-resource:ship_fleet_commander": {
-			slotType: "captain",
+			cost: 0,
 			hideCost: true,
 			showShipResourceSlot: function(card,ship,fleet) {
-				if( ship.resource && ship.resource.type == "captain" )
+				if( ship.resource && ship.resource.type == "ship-resource" )
 					return true;
+				
 				var show = true;
 				$.each( fleet.ships, function(i,ship) {
 					if( ship.resource )
@@ -7405,7 +7396,30 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					if( ship.resource )
 						delete ship.resource;
 				} );
+			}
+		},
+		
+		"ship-resource:ship_fleet_commander": {
+			slotType: "captain",
+			cost: 0,
+			hideCost: true,
+			showShipResourceSlot: function(card,ship,fleet) {
+				if( ship.resource && ship.resource.type == "captain" )
+					return true;
+				
+				var show = true;
+				$.each( fleet.ships, function(i,ship) {
+					if( ship.resource )
+						show = false;
+				} );
+				return show;
 			},
+			onRemove: function(resource,ship,fleet) {
+				$.each( fleet.ships, function(i,ship) {
+					if( ship.resource )
+						delete ship.resource;
+				} );
+			}
 		},
 		
 		"resource:fleet_captain_collectiveop2": {
