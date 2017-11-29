@@ -308,7 +308,7 @@
 }
 
 .card-shipDominion-icon {
-	background: url("../img/card-factionDominion-icon.png") no-repeat;
+	background: url("../img/card-factionDominion-icon.png");
 	width: 1em;
 	position: relative;
 	left: 0em;
