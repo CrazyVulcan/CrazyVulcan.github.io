@@ -204,12 +204,12 @@
 
 .card-captainFederation-icon {
 	font-size: 1.2em;
-	border: 0.06em solid #3486cf;
+	border: 0.06em solid #a8b6bf;
 	border-radius: 1em;
 	width: 1em;
 	background-size: 1em;
 	background: black;
-	color: blue;
+	color: red;
 	position: relative;
 	left: 0em;
 	top: -0.1em;
@@ -224,7 +224,7 @@
 	width: 1em;
 	background-size: 1em;
 	background: black;
-	color: blue;
+	color: red;
 	position: relative;
 	left: 0em;
 	top: -0.1em;
@@ -233,14 +233,16 @@
 }
 
 .card-captainKlingon-icon {
-	font-size: 2em;
-	border: 0.06em solid #3486cf;
-	background-size: 0.1em;
+	font-size: 1.2em;
+	border: 0.06em solid #a8b6bf;
+	border-radius: 1em;
+	width: 1em;
+	background-size: 1em;
 	background: black;
 	color: red;
 	position: relative;
 	left: 0em;
-	padding:0.0;
+	top: -0.1em;
 	z-index: 1;
 	text-align: center;
 }
@@ -262,12 +264,12 @@
 
 .card-captainRomulan-icon {
 	font-size: 1.2em;
-	border: 0.06em solid #3486cf;
+	border: 0.06em solid #a8b6bf;
 	border-radius: 1em;
 	width: 1em;
 	background-size: 1em;
 	background: black;
-	color: green;
+	color: red;
 	position: relative;
 	left: 0em;
 	top: -0.1em;
@@ -277,12 +279,12 @@
 
 .card-shipRomulan-icon {
 	font-size: 1.2em;
-	border: 0.06em solid #3486cf;
+	border: 0.06em solid #a8b6bf;
 	border-radius: 1em;
 	width: 1em;
 	background-size: 1em;
 	background: black;
-	color: green;
+	color: red;
 	position: relative;
 	left: 0em;
 	top: -0.1em;
@@ -292,12 +294,12 @@
 
 .card-captainDominion-icon {
 	font-size: 1.2em;
-	border: 0.06em solid #3486cf;
+	border: 0.06em solid #a8b6bf;
 	border-radius: 1em;
 	width: 1em;
 	background-size: 1em;
 	background: black;
-	color: green;
+	color: red;
 	position: relative;
 	left: 0em;
 	top: -0.1em;
@@ -312,7 +314,7 @@
 	width: 1em;
 	background-size: 1em;
 	background: black;
-	color: green;
+	color: red;
 	position: relative;
 	left: 0em;
 	top: -0.1em;
@@ -322,12 +324,12 @@
 
 .card-captainIndependent-icon {
 	font-size: 1.2em;
-	border: 0.06em solid #3486cf;
+	border: 0.06em solid #a8b6bf;
 	border-radius: 1em;
 	width: 1em;
 	background-size: 1em;
 	background: black;
-	color: yellow;
+	color: red;
 	position: relative;
 	left: 0em;
 	top: -0.1em;
@@ -342,7 +344,7 @@
 	width: 1em;
 	background-size: 1em;
 	background: black;
-	color: yellow;
+	color: red;
 	position: relative;
 	left: 0em;
 	top: -0.1em;
