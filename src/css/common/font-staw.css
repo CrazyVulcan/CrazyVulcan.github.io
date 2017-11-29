@@ -219,28 +219,53 @@
 }
 
 
-.fs-factionFederation:before {
+.fs-captainFederation:before {
   content: "!";
 }
-.fs-factionKlingon:before {
+.fs-captainKlingon:before {
   content: ")";
 }
-.fs-factionRomulan:before {
+.fs-captainRomulan:before {
   content: "#";
 }
-.fs-factionDominion:before {
+.fs-captainDominion:before {
   content: "$";
 }
-.fs-factionIndependent:before {
+.fs-captainIndependent:before {
   content: "%";
 }
-.fs-factionBorg:before {
+.fs-captainBorg:before {
   content: "&";
 }
-.fs-faction8472:before {
+.fs-captain8472:before {
   content: "'";
 }
-.fs-factionMirror:before {
+.fs-captainMirror:before {
+  content: "(";
+}
+
+.fs-shipFederation:before {
+  content: "!";
+}
+.fs-shipKlingon:before {
+  content: ")";
+}
+.fs-shipRomulan:before {
+  content: "#";
+}
+.fs-shipDominion:before {
+  content: "$";
+}
+.fs-shipIndependent:before {
+  content: "%";
+}
+.fs-shipBorg:before {
+  content: "&";
+}
+.fs-ship8472:before {
+  content: "'";
+}
+.fs-shipMirror:before {
   content: "(";
 }
 

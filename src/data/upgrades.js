@@ -7,7 +7,7 @@ module.exports = [{
 	range: "1 - 2",
 	text: "<b>COMBAT PHASE:</b> Place 3 [time] Tokens on this card and disable this ships Shields.\n\n<b>Continuous Effect:</b> This ships Shields remain disabled. This ship can only perform Green Maneuvers. This ship rolls +3 attack dice.\n(<i>Dominion Ship 5+ Hull</i>)",
 	unique: true,
-	factionDominion: true,
+	shipDominion: true,
 	hullConstraint: true,
 	factions: ["dominion"]
 }, {
@@ -60,7 +60,7 @@ module.exports = [{
 	range: "1 - 2",
 	text: "<b>ACTION:</b> Discard this card and target all friendly ships.\n\nPlace a [battlestations] Token beside this ship and all target ships. \n(<i>Dominion Only</i>)",
 	unique: true,
-	factionDominion: true,
+	shipDominion: true,
 	factions: ["dominion"]
 }, {
 	type: "crew",
@@ -125,7 +125,7 @@ module.exports = [{
 	text: "<b>ACTION:</b> Discard this card, target a Captain equipped to an opposing ship, and target the Captain equipped to this ship.\n\nThe controllers of the target Captains both roll 5 attack dice. Whoever rolls the most [battlestations], re-rolling ties, adds +2 to thier target Captains Captain Skill for the rest of the game. The other player must discard their target Captain.",
 	unique: true,
 	captainKlingon: true,
-	range: true,
+	range: "1 - 3",
 	factions: ["klingon"]
 }, {
 	type: "tech",
