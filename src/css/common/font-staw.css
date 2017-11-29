@@ -283,15 +283,15 @@
 }
 
 .fs-FrontArc:before {
-  content: ".";
+  content: "5";
 }
 
 .fs-RearArc:before {
-  content: ".";
+  content: "6";
 }
 
 .fs-hullConstraint:before {
-  content: ".";
+  content: "7";
 }
 
 .fs-ship:before {
