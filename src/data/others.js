@@ -26,7 +26,7 @@ module.exports = [{
 	type: "ship_resource",
 	id: "72280r",
 	name: "Fleet Commander",
-	class: "Flagship",
+	class: "Fleet Commander",
 	text: "When defending, all other friendly Federation ships within Range 1-2 of your Flagship may choose any number of their defense dice and re-roll them once.",
 	cost: 5,
 	actions: ["battlestations"],
