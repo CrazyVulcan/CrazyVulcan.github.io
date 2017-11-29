@@ -159,102 +159,102 @@
 
 .card-FrontArc-icon {
 	background: url("../img/upgrade-forward-arc.png")no-repeat;
-	background-size: 1.2em;
+	background-size: 1em;
 	color: red;
 	width: 1.2em;
 	position: relative;
 	left: 0em;
-	top: -0.5em;
+	top: -0.1em;
 	z-index: 1;
 	text-align: center;
 }
 
 .card-RearArc-icon {
 	background: url("../img/upgrade-rear-arc.png")no-repeat;
-	background-size: 1.2em;
+	background-size: 1em;
 	color: red;
 	width: 1.2em;
 	position: relative;
 	left: 0em;
-	top: -0.5em;
+	top: -0.1em;
 	z-index: 1;
 	text-align: center;
 }
 
 .card-hullConstraint-icon {
 	background: url("../img/upgrade-hull-limit.png")no-repeat;
-	background-size: 1.2em;
+	background-size: 1em;
 	color: yellow;
 	width: 1.2em;
 	position: relative;
 	left: 0em;
-	top: -0.5em;
+	top: -0.1em;
 	z-index: 1;
 	text-align: center;
 }
 
 .card-captainFederation-icon {
 	background: url("../img/card-captainFederation-icon.png")no-repeat;
-	background-size: 1.2em;
+	background-size: 1em;
 	width: 1.2em;
 	position: relative;
 	left: 0em;
-	top: -0.5em;
+	top: -0.1em;
 	z-index: 1;
 	text-align: center;
 }
 
 .card-shipFederation-icon {
 	background: url("../img/card-shipFederation-icon.png")no-repeat;
-	background-size: 1.2em;
+	background-size: 1em;
 	width: 1.2em;
 	position: relative;
 	left: 0em;
-	top: -0.5em;
+	top: -0.1em;
 	z-index: 1;
 	text-align: center;
 }
 
 .card-captainKlingon-icon {
 	background: url("../img/card-captainKlingon-icon.png")no-repeat;
-	background-size: 1.2em;
+	background-size: 1em;
 	width: 1.2em;
 	position: relative;
 	left: 0em;
-	top: -0.5em;
+	top: -0.1em;
 	z-index: 1;
 	text-align: center;
 }
 
 .card-shipKlingon-icon {
 	background: url("../img/card-shipKlingon-icon.png")no-repeat;
-	background-size: 1.2em;
+	background-size: 1em;
 	width: 1.2em;
 	position: relative;
 	left: 0em;
-	top: -0.5em;
+	top: -0.1em;
 	z-index: 1;
 	text-align: center;
 }
 
 .card-captainRomulan-icon {
 	background: url("../img/card-captainRomulan-icon.png")no-repeat;
-	background-size: 1.2em;
+	background-size: 1em;
 	width: 1.2em;
 	position: relative;
 	left: 0em;
-	top: -0.5em;
+	top: -0.1em;
 	z-index: 1;
 	text-align: center;
 }
 
 .card-shipRomulan-icon {
 	background: url("../img/card-shipRomulan-icon.png") no-repeat;
-	background-size: 1.2em;
+	background-size: 1em;
 	width: 1.2em;
 	position: relative;
 	left: 0em;
-	top: -0.5em;
+	top: -0.1em;
 	z-index: 1;
 	text-align: center;
 }
@@ -265,18 +265,18 @@
 	width: 1.2em;
 	position: relative;
 	left: 0em;
-	top: -0.5em;
+	top: -0.1em;
 	z-index: 1;
 	text-align: center;
 }
 
 .card-shipDominion-icon {
 	background: url("../img/card-shipDominion-icon.png") no-repeat;
-	background-size: 1.2em;
+	background-size: 1em;
 	width: 1.2em;
 	position: relative;
 	left: 0em;
-	top: -0.5em;
+	top: -0.1em;
 	z-index: 1;
 	text-align: center;
 }
