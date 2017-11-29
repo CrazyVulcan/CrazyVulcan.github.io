@@ -282,13 +282,6 @@
   content: "3";
 }
 
-.fs-FrontArc:before {
-  content: "5";
-}
-
-.fs-RearArc:before {
-  content: "6";
-}
 
 .fs-hullConstraint:before {
   content: "7";
