@@ -117,6 +117,17 @@ module.exports = [{
 	unique: false,
 	factions: ["romulan"]
 }, {
+	type: "talent",
+	id: "blood_oath_2017core",
+	set: ["2017core"],
+	name: "Blood Oath",
+	cost: 3,
+	text: "<b>ACTION:</b> Discard this card, target a Captain equipped to an opposing ship, and target the Captain equipped to this ship.\n\nThe controllers of the target Captains both roll 5 attack dice. Whoever rolls the most [battlestations], re-rolling ties, adds +2 to thier target Captains Captain Skill for the rest of the game. The other player must discard their target Captain.",
+	unique: true,
+	captainKlingon: true,
+	range: true,
+	factions: ["klingon"]
+}, {
 	type: "tech",
 	id: "sabotaged_systems_22303p",
 	set: ["72302p"],
