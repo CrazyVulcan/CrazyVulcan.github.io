@@ -204,7 +204,7 @@
 
 .card-captainFederation-icon {
 	font-size: 1.2em;
-	border: 0.06em solid #a8b6bf;
+	border: 0.06em solid #3486cf;
 	border-radius: 1em;
 	width: 1em;
 	background-size: 1em;
@@ -233,9 +233,10 @@
 }
 
 .card-captainKlingon-icon {
-	font-size: 2em;
-	border: 0.08em solid #3486cf;
+	font-size: 1.2em;
+	border: 0.06em solid #3486cf;
 	width: 1em;
+	background-size: 0.5em;
 	background: black;
 	color: red;
 	position: relative;
@@ -248,6 +249,8 @@
 .card-shipKlingon-icon {
 	font-size: 1.2em;
 	border: 0.06em solid #a8b6bf;
+	border-radius: 1em;
+	width: 1em;
 	background-size: 1em;
 	background: black;
 	color: red;
@@ -260,7 +263,7 @@
 
 .card-captainRomulan-icon {
 	font-size: 1.2em;
-	border: 0.06em solid #a8b6bf;
+	border: 0.06em solid #3486cf;
 	border-radius: 1em;
 	width: 1em;
 	background-size: 1em;
@@ -275,7 +278,7 @@
 
 .card-shipRomulan-icon {
 	font-size: 1.2em;
-	border: 0.06em solid #a8b6bf;
+	border: 0.06em solid #3486cf;
 	border-radius: 1em;
 	width: 1em;
 	background-size: 1em;
@@ -290,7 +293,7 @@
 
 .card-captainDominion-icon {
 	font-size: 1.2em;
-	border: 0.06em solid #a8b6bf;
+	border: 0.06em solid #3486cf;
 	border-radius: 1em;
 	width: 1em;
 	background-size: 1em;
@@ -320,7 +323,7 @@
 
 .card-captainIndependent-icon {
 	font-size: 1.2em;
-	border: 0.06em solid #a8b6bf;
+	border: 0.06em solid #3486cf;
 	border-radius: 1em;
 	width: 1em;
 	background-size: 1em;
