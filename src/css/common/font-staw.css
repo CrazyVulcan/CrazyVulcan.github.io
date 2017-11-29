@@ -282,9 +282,16 @@
   content: "3";
 }
 
+.fs-FrontArc:before {
+  content: "";
+}
+
+.fs-RearArc:before {
+  content: "";
+}
 
 .fs-hullConstraint:before {
-  content: "7";
+  content: "";
 }
 
 .fs-ship:before {
