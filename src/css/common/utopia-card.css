@@ -309,6 +309,12 @@
 
 .card-shipDominion-icon {
 	background: url("../img/card-factionDominion-icon.png") no-repeat;
+	width: 1em;
+	position: relative;
+	left: 0em;
+	top: -0.1em;
+	z-index: 1;
+	text-align: center;
 }
 
 .card-captainIndependent-icon {
