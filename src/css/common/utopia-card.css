@@ -182,9 +182,10 @@
 }
 
 .card-hullConstraint-icon {
+	font-size: 1em;
 	background: url("../img/upgrade-hull-limit.png")no-repeat;
 	background-size: 1em;
-	color: yellow;
+	color: black;
 	width: 1.2em;
 	position: relative;
 	left: 0em;
