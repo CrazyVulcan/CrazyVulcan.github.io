@@ -160,7 +160,7 @@
 .card-FrontArc-icon {
 	background: url("../img/upgrade-forward-arc.png")no-repeat;
 	background-size: 1em;
-	color: #00ffffff;
+	color: #FF0000;
 	width: 1em;
 	position: relative;
 	left: 0em;
@@ -172,7 +172,7 @@
 .card-RearArc-icon {
 	background: url("../img/upgrade-rear-arc.png")no-repeat;
 	background-size: 1em;
-	color: #00ffffff;
+	color: #FF0000;
 	width: 1em;
 	position: relative;
 	left: 0em;
@@ -184,7 +184,7 @@
 .card-hullConstraint-icon {
 	background: url("../img/upgrade-hull-limit.png")no-repeat;
 	background-size: 1em;
-	color: #00ffffff;
+	color: #FF0000;
 	width: 1em;
 	position: relative;
 	left: 0em;
