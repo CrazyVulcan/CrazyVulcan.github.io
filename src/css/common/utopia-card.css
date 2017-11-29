@@ -240,6 +240,7 @@
 	color: red;
 	position: relative;
 	left: 0em;
+	padding:0.0;
 	z-index: 1;
 	text-align: center;
 }
