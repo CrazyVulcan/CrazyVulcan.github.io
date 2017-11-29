@@ -330,3 +330,11 @@
 .fs-flagship:before {
   content: "A";
 }
+
+.fs-token:before{
+	content: "A"
+},
+
+.fs-ship-resource:before{
+	content: "A"
+},
