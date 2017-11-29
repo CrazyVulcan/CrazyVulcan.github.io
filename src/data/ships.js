@@ -212,7 +212,7 @@ module.exports = [{
 	agility: 1,
 	hull: 5,
 	shields: 4,
-	cost: 21,
+	cost: 22,
 	text: "",
 	unique: false,
 	factions: ["federation"],

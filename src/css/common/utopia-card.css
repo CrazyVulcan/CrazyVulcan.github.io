@@ -159,8 +159,8 @@
 
 .card-FrontArc-icon {
 	background: url("../img/upgrade-forward-arc.png")no-repeat;
-	background-size: 1em;
-	color: #00ffffff;
+	background-size: 1.2em;
+	color: red;
 	width: 1em;
 	position: relative;
 	left: 0em;
@@ -171,8 +171,8 @@
 
 .card-RearArc-icon {
 	background: url("../img/upgrade-rear-arc.png")no-repeat;
-	background-size: 1em;
-	color: #00ffffff;
+	background-size: 1.2em;
+	color: red;
 	width: 1em;
 	position: relative;
 	left: 0em;
@@ -183,8 +183,8 @@
 
 .card-hullConstraint-icon {
 	background: url("../img/upgrade-hull-limit.png")no-repeat;
-	background-size: 1em;
-	color: #00ffffff;
+	background-size: 1.2em;
+	color: yellow;
 	width: 1em;
 	position: relative;
 	left: 0em;
@@ -195,7 +195,7 @@
 
 .card-captainFederation-icon {
 	background: url("../img/card-captainFederation-icon.png")no-repeat;
-	background-size: 1em;
+	background-size: 1.2em;
 	width: 1em;
 	position: relative;
 	left: 0em;
@@ -206,7 +206,7 @@
 
 .card-shipFederation-icon {
 	background: url("../img/card-shipFederation-icon.png")no-repeat;
-	background-size: 1em;
+	background-size: 1.2em;
 	width: 1em;
 	position: relative;
 	left: 0em;
@@ -217,7 +217,7 @@
 
 .card-captainKlingon-icon {
 	background: url("../img/card-captainKlingon-icon.png")no-repeat;
-	background-size: 1em;
+	background-size: 1.2em;
 	width: 1em;
 	position: relative;
 	left: 0em;
@@ -228,7 +228,7 @@
 
 .card-shipKlingon-icon {
 	background: url("../img/card-shipKlingon-icon.png")no-repeat;
-	background-size: 1em;
+	background-size: 1.2em;
 	width: 1em;
 	position: relative;
 	left: 0em;
@@ -239,7 +239,7 @@
 
 .card-captainRomulan-icon {
 	background: url("../img/card-captainRomulan-icon.png")no-repeat;
-	background-size: 1em;
+	background-size: 1.2em;
 	width: 1em;
 	position: relative;
 	left: 0em;
@@ -250,7 +250,7 @@
 
 .card-shipRomulan-icon {
 	background: url("../img/card-shipRomulan-icon.png") no-repeat;
-	background-size: 1em;
+	background-size: 1.2em;
 	width: 1em;
 	position: relative;
 	left: 0em;
@@ -261,7 +261,7 @@
 
 .card-captainDominion-icon {
 	background: url("../img/card-captainDominion-icon.png") no-repeat;
-	background-size: 1em;
+	background-size: 1.2em;
 	width: 1em;
 	position: relative;
 	left: 0em;
@@ -272,7 +272,7 @@
 
 .card-shipDominion-icon {
 	background: url("../img/card-shipDominion-icon.png") no-repeat;
-	background-size: 1em;
+	background-size: 1.2em;
 	width: 1em;
 	position: relative;
 	left: 0em;
