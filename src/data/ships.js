@@ -191,7 +191,7 @@ module.exports = [{
 	agility: 1,
 	hull: 5,
 	shields: 4,
-	cost: 23,
+	cost: 26,
 	text: "\n<b>WHEN DEFENDING:</b>\nThe attacking ship rolls -1 attack die",
 	unique: true,
 	factions: ["federation"],
