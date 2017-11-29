@@ -27,8 +27,10 @@ module.exports = [{
 	id:"ship_fleet_commander",
 	set:["72280r"],
 	name: "Fleet Commander",
+	cost: 5,
 	skill: 1,
-	isSkillModifier: true
+	isSkillModifier: true,
+	faction: ["independent"]
 }, {
 	type: "fleet-captain",
 	id: "federation_collectiveop2",
