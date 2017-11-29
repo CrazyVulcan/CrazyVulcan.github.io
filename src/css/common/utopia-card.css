@@ -203,13 +203,9 @@
 }
 
 .card-captainFederation-icon {
-	font-size: 1.2em;
-	border: 0.06em solid #a8b6bf;
-	border-radius: 1em;
-	width: 1em;
-	background-size: 1em;
-	background: black;
-	color: red;
+	background: url("../img/card-captainFederation-icon.png");
+	background-size: 1.5em;
+	width: 1.5em;
 	position: relative;
 	left: 0em;
 	top: -0.1em;
@@ -218,13 +214,9 @@
 }
 
 .card-shipFederation-icon {
-	font-size: 1.2em;
-	border: 0.06em solid #a8b6bf;
-	border-radius: 1em;
-	width: 1em;
-	background-size: 1em;
-	background: black;
-	color: red;
+	background: url("../img/card-shipFederation-icon.png");
+	background-size: 1.5em;
+	width: 1.5em;
 	position: relative;
 	left: 0em;
 	top: -0.1em;
@@ -233,13 +225,9 @@
 }
 
 .card-captainKlingon-icon {
-	font-size: 1.2em;
-	border: 0.06em solid #a8b6bf;
-	border-radius: 1em;
-	width: 1em;
-	background-size: 1em;
-	background: black;
-	color: red;
+	background: url("../img/card-captainKlingon-icon.png");
+	background-size: 1.5em;
+	width: 1.5em;
 	position: relative;
 	left: 0em;
 	top: -0.1em;
@@ -248,13 +236,9 @@
 }
 
 .card-shipKlingon-icon {
-	font-size: 1.2em;
-	border: 0.06em solid #a8b6bf;
-	border-radius: 1em;
-	width: 1em;
-	background-size: 1em;
-	background: black;
-	color: red;
+	background: url("../img/card-shipKlingon-icon.png");
+	background-size: 1.5em;
+	width: 1.5em;
 	position: relative;
 	left: 0em;
 	top: -0.1em;
@@ -263,13 +247,9 @@
 }
 
 .card-captainRomulan-icon {
-	font-size: 1.2em;
-	border: 0.06em solid #a8b6bf;
-	border-radius: 1em;
-	width: 1em;
-	background-size: 1em;
-	background: black;
-	color: red;
+	background: url("../img/card-captainRomulan-icon.png");
+	background-size: 1.5em;
+	width: 1.5em;
 	position: relative;
 	left: 0em;
 	top: -0.1em;
@@ -278,13 +258,9 @@
 }
 
 .card-shipRomulan-icon {
-	font-size: 1.2em;
-	border: 0.06em solid #a8b6bf;
-	border-radius: 1em;
-	width: 1em;
-	background-size: 1em;
-	background: black;
-	color: red;
+	background: url("../img/card-shipRomulan-icon.png");
+	background-size: 1.5em;
+	width: 1.5em;
 	position: relative;
 	left: 0em;
 	top: -0.1em;
@@ -293,13 +269,9 @@
 }
 
 .card-captainDominion-icon {
-	font-size: 1.2em;
-	border: 0.06em solid #3486cf;
-	border-radius: 1em;
-	width: 1em;
-	background-size: 1em;
-	background: black;
-	color: green;
+	background: url("../img/card-captainDominion-icon.png");
+	background-size: 1.5em;
+	width: 1.5em;
 	position: relative;
 	left: 0em;
 	top: -0.1em;
@@ -308,9 +280,9 @@
 }
 
 .card-shipDominion-icon {
-	background: url("../img/card-factionDominion-icon.png");
-	background-size: 1em;
-	width: 1em;
+	background: url("../img/card-shipDominion-icon.png");
+	background-size: 1.5em;
+	width: 1.5em;
 	position: relative;
 	left: 0em;
 	top: -0.1em;
