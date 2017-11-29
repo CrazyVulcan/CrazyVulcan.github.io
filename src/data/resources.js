@@ -255,7 +255,7 @@ module.exports = [{
 	name: "Fleet Commander",
 	text: "One ship in your fleet may have a 2nd Captain assigned to it. That ship may use both of its Captain's Abilitys as normal throughout the game.\n\nThe overall Captain Skill Number of the ship is equal to the highest Captain Skill of its Two Captains plus 1. \n\nIn addition, the ship to which the 2nd Captain is assigned gains +1 to either its Shield or Hull value (max 6 Hull). This decision must be made at the start of the game during the Gather Forces step and cannot be changed for the remainder of the game.",
 	cost: 5,
-	showShipResourceSlot: true
+	showShipResourceSlot: false
 }, {
 	type: "resource",
 	id: "auxiliary_power",
