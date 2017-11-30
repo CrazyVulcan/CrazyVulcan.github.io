@@ -7335,7 +7335,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						if( upgrade.faction == "ferengi" )
 							return resolve(upgrade, ship, fleet, cost) - 1;
 						else( upgrade.faction != "ferengi" )
-							return resolve(upgrade, ship, fleet, cost) - 2;
+							return resolve(upgrade, ship, fleet, cost) - 1;
 						return cost;
 					}
 				}
