@@ -7332,11 +7332,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				ship: {
 					cost: function(upgrade, ship, fleet, cost) {
-						if( upgrade.faction == "ferengi" )
-							return resolve(upgrade, ship, fleet, cost) - 2;
-						else( upgrade.faction != "ferengi" )
-							return resolve(upgrade, ship, fleet, cost) - 1;
-						return cost;
+						if( upgrade.faction == "ferengi" ){ return resolve(upgrade, ship, fleet, cost) - 1;} else {	return resolve(upgrade, ship, fleet, cost) - 2;
+					return cost; }
 					}
 				}
 			}
