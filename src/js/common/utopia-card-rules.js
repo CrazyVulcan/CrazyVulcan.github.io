@@ -7331,9 +7331,15 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"captain:lurin_73001":{
 			intercept: {
 				ship: {
+					//No faction penalty for either Lurin and all Ferengi Upgrades. 
+					factionPenalty: function(upgrade, ship, fleet, factionPenalty) {
+						return upgrade.type == "captain" || upgrade.faction == "ferengi" ? 0 : factionPenalty;
+					},
+					//All Ferengi upgards cost -1. But Lurin is counting twice for some reasion.
 					cost: function(upgrade, ship, fleet, cost) {
-						if( upgrade.faction == "ferengi" ){ return resolve(upgrade, ship, fleet, cost) - 1;} else {	return resolve(upgrade, ship, fleet, cost) - 1;
-					return cost; }
+						if( $factions.hasFaction(upgrade,"ferengi", ship, fleet) )
+							return resolve(upgrade, ship, fleet, cost) - 1;
+						return cost;
 					}
 				}
 			}
