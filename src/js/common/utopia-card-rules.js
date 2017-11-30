@@ -7331,9 +7331,15 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"captain:lurin_73001":{
 			intercept: {
 				ship: {
-					// No faction penalty for Khan or Talents
+					// No faction Lurin or Ferengi upgrades
 					factionPenalty: function(upgrade, ship, fleet, factionPenalty) {
 						return upgrade.type == "captain" || upgrade.faction == "ferengi" ? 0 : factionPenalty;
+					},
+					// Ferengi upgrades are -1
+					cost: function(card,ship,fleet,cost) {
+						if( isUpgrade(card) && hasFaction(card,"ferengi",ship,fleet) )
+							cost = resolve(card,ship,fleet,cost) - 1;
+						return cost;
 					}
 				}
 			}
