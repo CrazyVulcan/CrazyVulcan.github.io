@@ -7337,7 +7337,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				},
 				// All Ferengi Upgrades cost -1 SP
 				cost: function(upgrade, ship, fleet, cost) {
-					if( $factions.hasFaction(upgrade,"ferengi", ship, fleet) )
+					if( upgrade.type != "captain" && $factions.hasFaction(upgrade,"ferengi", ship, fleet) )
 						return resolve(upgrade, ship, fleet, cost) - 1;
 					return cost;
 				}
