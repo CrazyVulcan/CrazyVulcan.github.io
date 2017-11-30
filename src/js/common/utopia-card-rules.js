@@ -7332,9 +7332,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		intercept: {
 			ship: {
 				factionPenalty: function(upgrade, ship, fleet, factionPenalty) {
-					return upgrade.type == "captain" || upgrade.faction == "ferengi" ? 0 : factionPenalty;
+					return upgrade.faction == "ferengi" ? 0 : factionPenalty;
 				},
-				// All Ferengi crew cost -1 SP
+				// All Ferengi Upgrades cost -1 SP
 				cost: function(upgrade, ship, fleet, cost) {
 					if( $factions.hasFaction(upgrade,"ferengi", ship, fleet) )
 						return resolve(upgrade, ship, fleet, cost) - 1;
