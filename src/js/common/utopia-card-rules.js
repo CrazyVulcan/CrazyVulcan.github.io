@@ -7329,13 +7329,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 	//D'Kora Card Pack
 		//Lurin
 		"captain:lurin_73001":{
-		intercept: {
-			ship: {
-				factionPenalty: function(upgrade, ship, fleet, factionPenalty) {
-					return upgrade.faction == "ferengi" ? 0 : factionPenalty;
-				}
+			factionPenalty: function(upgrade, ship, fleet, factionPenalty) {
+				return upgrade.type == "captain" ? 0 : factionPenalty;
 			}
-		}},
+		},
 		
 		
 
