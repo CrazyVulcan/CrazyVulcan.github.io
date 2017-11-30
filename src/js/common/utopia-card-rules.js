@@ -7333,7 +7333,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				ship: {
 					//No faction penalty for either Lurin and all Ferengi Upgrades. 
 					factionPenalty: function(upgrade, ship, fleet, factionPenalty) {
-						return upgrade.type != "captain" && upgrade.faction == "ferengi" ? 0 : factionPenalty;
+						return upgrade.type == "captain" || upgrade.faction == "ferengi" ? 0 : factionPenalty;
 					},
 					//All Ferengi upgards cost -1. But Lurin is counting twice for some reasion.
 					cost: function(upgrade, ship, fleet, cost) {
