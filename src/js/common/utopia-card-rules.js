@@ -7332,8 +7332,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				ship: {
 					// No faction Lurin or Ferengi upgrades
-					factionPenalty: function(upgrade, ship, fleet, factionPenalty) {
-						return (upgrade.type == "captain" || upgrade.faction == "ferengi" ? 0 : factionPenalty);
+					factionPenalty: function(card,ship,fleet,factionPenalty) {
+						if( isUpgrade(card) && $factions.hasFaction(card,"ferengi", ship, fleet) )
+							return 0;
+						return factionPenalty;
 					},
 					// Ferengi upgrades are -1
 					cost: function(card,ship,fleet,cost) {
