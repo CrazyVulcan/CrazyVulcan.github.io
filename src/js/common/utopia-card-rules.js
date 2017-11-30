@@ -7333,7 +7333,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				ship: {
 					// No faction Lurin or Ferengi upgrades
 					factionPenalty: function(card,ship,fleet,factionPenalty) {
-						if(  $factions.hasFaction(card,"ferengi", ship, fleet) )
+						if( $factions.hasFaction(card,"ferengi", ship, fleet) )
 							return 0;
 						return factionPenalty;
 					},

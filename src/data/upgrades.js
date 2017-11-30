@@ -5,7 +5,7 @@ module.exports = [{
 	name: "All Power To Weapons",
 	cost: 5,
 	range: "1 - 2",
-	text: "<b>COMBAT PHASE:</b> Place 3 [time] Tokens on this card and disable this ships Shields.\n\n<b>Continuous Effect:</b> This ships Shields remain disabled. This ship can only perform Green Maneuvers. This ship rolls +3 attack dice.\n(<i>Dominion Ship 5+ Hull</i>)",
+	text: "<b>COMBAT PHASE:</b> Place 3 [time] Tokens on this card and disable this ships Shields.\n\n<b>Continuous Effect:</b> This ships Shields remain disabled. This ship can only perform Green Maneuvers. This ship rolls +3 attack dice.",
 	unique: true,
 	shipDominion: true,
 	hullConstraint: "5+",
@@ -58,7 +58,7 @@ module.exports = [{
 	name: "Talak'Talan",
 	cost: 2,
 	range: "1 - 2",
-	text: "<b>ACTION:</b> Discard this card and target all friendly ships.\n\nPlace a [battlestations] Token beside this ship and all target ships. \n(<i>Dominion Only</i>)",
+	text: "<b>ACTION:</b> Discard this card and target all friendly ships.\n\nPlace a [battlestations] Token beside this ship and all target ships.",
 	unique: true,
 	shipDominion: true,
 	factions: ["dominion"]
@@ -285,9 +285,9 @@ module.exports = [{
 	set: ["72013wp"],
 	name: "Shield Adaptation",
 	cost: 5,
-	text: "Discard this card if this ship has no active Shields.\n\n<b>WHEN DEFENDING:</b> The attacking ship rolls -2 attack dice when firing a Primary Weapon and -1 when firing a [weapon] Upgrade.\n<i>4+ Hull</i>",
+	text: "Discard this card if this ship has no active Shields.\n\n<b>WHEN DEFENDING:</b> The attacking ship rolls -2 attack dice when firing a Primary Weapon and -1 when firing a [weapon] Upgrade.",
 	unique: true,
-	hullConstraint: true,
+	hullConstraint: "4+",
 	factions: ["dominion"]
 }, {
 	type: "crew",
@@ -345,10 +345,10 @@ module.exports = [{
 	set: ["72012wp"],
 	name: "Dispersive Armor",
 	cost: 4,
-	text: "<b>WHEN DEFENDING:</b> Disable this card.\n\nThis game round, replace the attacking ship's Primary Weapon Value with 4. For the remainder of the game round, the attacking ship's Primary Weapon Value can not be replaced or modified.\n(<i>3+ Hull</i>)",
+	text: "<b>WHEN DEFENDING:</b> Disable this card.\n\nThis game round, replace the attacking ship's Primary Weapon Value with 4. For the remainder of the game round, the attacking ship's Primary Weapon Value can not be replaced or modified.",
 	unique: false,
 	OnePerShip: true,
-	hullConstraint: true,
+	hullConstraint: "3+",
 	factions: ["klingon"]
 }, {
 	type: "tech",

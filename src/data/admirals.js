@@ -1,5 +1,16 @@
 module.exports = [{
 	type: "admiral",
+	id: "admiral_kmpec_2017core",
+	set: ["2017core"],
+	name: "K'Mpec",
+	cost: 4,
+	skill: 1,
+	talents: 1,
+	text: "<b>FLEET ACTION:</b> Spend one Shield Token from this ship.\n\nPlace 3 [evade] Tokens beside this ship.",
+	unique: true,
+	factions: ["klingon"]
+}, {
+	type: "admiral",
 	id: "admiral_sela_72282gp",
 	set: ["72282gp"],
 	name: "Sela",
