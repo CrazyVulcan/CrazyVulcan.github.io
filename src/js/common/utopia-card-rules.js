@@ -7333,13 +7333,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			ship: {
 				factionPenalty: function(upgrade, ship, fleet, factionPenalty) {
 					return upgrade.faction == "ferengi" ? 0 : factionPenalty;
-				},
-				// All Ferengi Upgrades cost -1 SP
-				cost: function(upgrade, ship, fleet, cost) {
-					if( $factions.hasFaction(upgrade,"ferengi", ship, fleet) )
-						return resolve(upgrade, ship, fleet, cost) - 1;
-					return cost;
-					}
+				}
 			}
 		}},
 		
