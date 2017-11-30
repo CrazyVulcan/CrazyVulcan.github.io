@@ -7331,15 +7331,12 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"captain:lurin_73001":{
 			intercept: {
 				ship: {
-					// All ferengi upgrade cost -1 SP
 					cost: function(upgrade, ship, fleet, cost) {
-						if( $factions.hasFaction(upgrade,"ferengi", ship, fleet) )
+						if( upgrade.faction == "ferengi" )
 							return resolve(upgrade, ship, fleet, cost) - 1;
+						else( upgrade.faction != "ferengi" )
+							return resolve(upgrade, ship, fleet, cost) - 2;
 						return cost;
-					},
-					//Lurin costs the same on all ships
-					factionPenalty: function(upgrade, ship, fleet, factionPenalty) {
-						return upgrade.type == "captain" ? 0 : factionPenalty;
 					}
 				}
 			}
