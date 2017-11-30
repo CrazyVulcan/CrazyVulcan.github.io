@@ -7333,11 +7333,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			ship: {
 				// No faction penalty for Lurin
 				factionPenalty: function(upgrade, ship, fleet, factionPenalty) {
-					return upgrade.type == "captain" ? 0 : factionPenalty;
+					return upgrade.type != "captain" && upgrade.faction == "ferengi" ? 0 : factionPenalty;
 				},
 				// All Ferengi Upgrades cost -1 SP
 				cost: function(upgrade, ship, fleet, cost) {
-					if( upgrade.type != "captain" && $factions.hasFaction(upgrade,"ferengi", ship, fleet) )
+					if( $factions.hasFaction(upgrade,"ferengi", ship, fleet) )
 						return resolve(upgrade, ship, fleet, cost) - 1;
 					return cost;
 				}
