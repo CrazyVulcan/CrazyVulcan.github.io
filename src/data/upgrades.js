@@ -118,6 +118,15 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "talent",
+	id: "make_it_so_2017core",
+	set: ["2017core"],
+	name: "Make It So",
+	cost: 3,
+	text: "<b>ACTION:</b> Discard this card.\n\nThis ship may perform two Actions on Admiral Cards, Captain Cards, and/or [crew] Upgrades equipped to it as a Free Actions.",
+	unique: true,
+	factions: ["federation"]
+}, {
+	type: "talent",
 	id: "blood_oath_2017core",
 	set: ["2017core"],
 	name: "Blood Oath",
