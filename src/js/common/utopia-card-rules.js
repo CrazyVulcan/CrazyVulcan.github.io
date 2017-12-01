@@ -8124,7 +8124,31 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		
 	//Senior Staff
-		"resource:senior_staff":{},
+		"resource:senior_staff":{
+			intercept: {
+				self: {
+					cost: function(upgrade,ship,fleet,cost) {
+						return resolve(upgrade,ship,fleet,cost) + 1;
+					return cost;
+					}
+				},
+				fleet: {
+					// Add the "officer" type to all crew slots
+					type: function(card,ship,fleet,type) {
+						if( $.inArray("talent",type) >= 0 )
+							return type.concat(["talent"]);
+						return type;
+					}
+				}
+			},
+			upgradeSlots: [
+				{/* Crew slot added by loader */},
+				{
+					type: ["crew"],
+					source: "Crew Talent",
+				}
+			]
+		},
 		
 		"resource:captains_chair_resource":{
 			intercept: {
