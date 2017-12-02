@@ -843,6 +843,17 @@ module.exports = [{
 	}
 }, {
 	type: "captain",
+	id: "data_2017core",
+	set: ["2017core"],
+	name: "Data",
+	cost: 3,
+	skill: 4,
+	talents: 0,
+	text: "<b>ACTION:</b> Target a Cloaked opposing ship.\n\nRemove the target ship's [cloak] Token and enable its Shields.",
+	unique: true,
+	factions: ["federation"]
+}, {
+	type: "captain",
 	id: "kilana_75002",
 	set: ["75002"],
 	name: "Kilana",
@@ -1759,6 +1770,18 @@ module.exports = [{
 	text: "<b>ACTION:</b> Each time you defend this round, during the Roll Defense Dice step, you may choose to roll 2 less defense dice. If you do so, add 1 [evade] result to your roll.",
 	unique: true,
 	factions: ["romulan"]
+}, {
+	type: "captain",
+	id: "william_riker_2017core",
+	set: ["2017core"],
+	name: "William T. Riker",
+	unique: true,
+	text: "<b>ACTION:</b> Target this ship or a friendly ship.\n\n[crew] Upgrades equipped to the target ship cannot be affected by opposing effects this game round.",
+	factions: ["federation"],
+	range: "1 - 2",
+	cost: 4,
+	skill: 6,
+	talents: 1
 }, {
 	type: "captain",
 	id: "yelgrun_75002",
