@@ -1,4 +1,9 @@
 module.exports = [{
+	type: "ship-resource",
+	id: "fleet_commander_shit",
+	name: "Fleet Commander",
+	text: "Null"
+},{
 	type: "token",
 	id: "rule_admiral",
 	set: ["AdditionalRules"],
