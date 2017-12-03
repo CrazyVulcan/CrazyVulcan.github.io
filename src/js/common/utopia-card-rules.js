@@ -7399,13 +7399,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 
 	// RESOURCES
-		
-		"resource:fleet_commander": {
-			slotType: "ship-resource",
-			hideCost: true
-		},
-		
-		
+
 		"resource:fleet_captain_collectiveop2": {
 			slotType: "fleet-captain",
 			cost: 0,
