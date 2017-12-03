@@ -1,7 +1,7 @@
 module.exports = [{
 	type: "ship-resource",
 	id: "fleet_commander_shit",
-	set:["null"].
+	set:["null"],
 	name: "Fleet Commander",
 	text: "Null"
 },{
