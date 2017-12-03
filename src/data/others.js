@@ -2,7 +2,8 @@ module.exports = [{
 	type: "ship-resource",
 	id: "fleet_commander_shit",
 	name: "Fleet Commander",
-	text: "Null"
+	text: "Null",
+	cost: 5
 },{
 	type: "token",
 	id: "rule_admiral",
