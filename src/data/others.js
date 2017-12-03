@@ -1,11 +1,4 @@
 module.exports = [{
-	type: "xxx",
-	id: "fleet_commander_shit",
-	name: "Fleet Commander",
-	text: "Null",
-	cost: 5,
-	factions: ["independent"]
-},{
 	type: "token",
 	id: "rule_admiral",
 	set: ["AdditionalRules"],
