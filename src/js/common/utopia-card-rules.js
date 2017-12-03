@@ -7401,7 +7401,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 	// RESOURCES
 		
 		"resource:fleet_commander": {
-			slotType: "ship-resource",
+			slotType: "xxx",
 			hideCost: false,
 			showShipResourceSlot: function(card,ship,fleet) {
 				if( ship.resource && ship.resource.type == "captain" )
