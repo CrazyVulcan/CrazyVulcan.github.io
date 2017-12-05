@@ -1,4 +1,13 @@
 module.exports = [{
+	type: "crew",
+	id: "mezoti_73002",
+	set: ["73002"],
+	name: "Mezoti",
+	cost: 2,
+	text: "<b>WHENEVER THE EFFECT OF A [crew] UPGRADE WOULD TARGET THIS SHIP:</b> Discard this card and target that [crew] Upgrade.\n\nDisable the target [crew] Upgrade and cancel its effect.",
+	unique: true,
+	factions: ["borg"]
+}, {
 	type: "talent",
 	id: "all_power_to_weapons_75002",
 	set: ["75002"],
