@@ -7399,15 +7399,37 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 
 	// RESOURCES
+		//Captains Chair Resource
+		"resource:72301r": {
+			slotType: "ship-resource",
+			cost: 0,
+			hideCost: true,
+			showShipResourceSlot: function(card,ship,fleet) {
+				if( ship.resource && ship.resource.type == "ship-resource" )
+					return true;
+				
+				var show = true;
+				$.each( fleet.ships, function(i,ship) {
+					if( ship.resource )
+						show = false;
+				} );
+				return show;
+			},
+			onRemove: function(resource,ship,fleet) {
+				$.each( fleet.ships, function(i,ship) {
+					if( ship.resource )
+						delete ship.resource;
+				} );
+			}
+		},
 		// Fleet Commander Upgrade
 		"ship-resource:fleet_commander_72280r": {
-			skill: 1
 		},
 		//Fleet Commander Resource
 		"resource:fleet_commander": {
 			slotType: "ship-resource",
 			cost: 0,
-			hideCost: false,
+			hideCost: true,
 			showShipResourceSlot: function(card,ship,fleet) {
 				if( ship.resource && ship.resource.type == "ship-resource" )
 					return true;
