@@ -7400,7 +7400,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 	// RESOURCES
 		"resource:fleet_commander": {
-			slotType: "Fleet Commander",
+			slotType: "ship-resource",
 			cost: 5,
 			hideCost: true,
 			showShipResourceSlot: function(card,ship,fleet) {
