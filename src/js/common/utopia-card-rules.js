@@ -7399,6 +7399,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 
 	// RESOURCES
+<<<<<<< HEAD
 		//Front Line Retrofit
 		"ship-resource:front_line_retrofit_card":{
 		intercept: {
@@ -7481,12 +7482,17 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					}
 				}
 			}
+=======
+		// Fleet Commander Upgrade
+		"ship-resource:fleet_commander_72280r": {
+			skill: 1
+>>>>>>> parent of 0714a6a... d
 		},
 		//Fleet Commander Resource
 		"resource:fleet_commander": {
 			slotType: "ship-resource",
 			cost: 0,
-			hideCost: true,
+			hideCost: false,
 			showShipResourceSlot: function(card,ship,fleet) {
 				if( ship.resource && ship.resource.type == "ship-resource" )
 					return true;
