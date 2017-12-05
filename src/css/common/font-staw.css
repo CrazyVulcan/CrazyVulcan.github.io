@@ -315,18 +315,10 @@
   content: "A";
 }
 
-.fs-fleet-captain:before {
-  content: "A";
-}
-
 .fs-faction:before {
   content: "A";
 }
 
-.fs-officer:before {
-  content: "A";
-}
-
-.fs-flagship:before {
+.fs-ship-resource:before {
   content: "A";
 }

@@ -33,16 +33,10 @@ module.exports = [{
 	cost: 5,
 	upgrades: [{
 		type: ["captain"],
-		source: "Captain"
-	}, {
-		type: ["captain"],
 		source: "Fleet Commander"
 	}
 	],
 	upgradeSlots: [{
-		type: ["captain"],
-		source: "Captain"
-	}, {
 		type: ["captain"],
 		source: "Fleet Commander"
 	}
@@ -58,7 +52,7 @@ module.exports = [{
 	factionPenalty: 0,
 	unique: true
 }, {
-	type: "fleet-captain",
+	type: "ship-resource",
 	id: "federation_collectiveop2",
 	set: ["CollectiveOP2"],
 	name: "Federation",
@@ -81,7 +75,7 @@ module.exports = [{
 	weaponAdd: 1,
 	crewAdd: 0
 }, {
-	type: "fleet-captain",
+	type: "ship-resource",
 	id: "dominion_collectiveop2",
 	set: ["CollectiveOP2"],
 	name: "Dominion",
@@ -104,7 +98,7 @@ module.exports = [{
 	weaponAdd: 0,
 	crewAdd: 1
 }, {
-	type: "fleet-captain",
+	type: "ship-resource",
 	id: "romulan_collectiveop2",
 	set: ["CollectiveOP2"],
 	name: "Romulan",
@@ -127,7 +121,7 @@ module.exports = [{
 	weaponAdd: 1,
 	crewAdd: 1
 }, {
-	type: "fleet-captain",
+	type: "ship-resource",
 	id: "klingon_collectiveop2",
 	set: ["CollectiveOP2"],
 	name: "Klingon",
@@ -150,7 +144,7 @@ module.exports = [{
 	weaponAdd: 0,
 	crewAdd: 0
 }, {
-	type: "fleet-captain",
+	type: "ship-resource",
 	id: "independent_klingon_collectiveop2",
 	set: ["CollectiveOP2"],
 	name: "Independent (Klingon)",
@@ -173,7 +167,7 @@ module.exports = [{
 	weaponAdd: 0,
 	crewAdd: 2
 }, {
-	type: "fleet-captain",
+	type: "ship-resource",
 	id: "independent_federation_collectiveop2",
 	set: ["CollectiveOP2"],
 	name: "Independent (Federation)",
@@ -196,7 +190,7 @@ module.exports = [{
 	weaponAdd: 0,
 	crewAdd: 0
 }, {
-	type: "fleet-captain",
+	type: "ship-resource",
 	id: "independent_romulan_collectiveop2",
 	set: ["CollectiveOP2"],
 	name: "Independent (Romulan)",
@@ -219,7 +213,7 @@ module.exports = [{
 	weaponAdd: 2,
 	crewAdd: 0
 }, {
-	type: "fleet-captain",
+	type: "ship-resource",
 	id: "independent_dominion_collectiveop2",
 	set: ["CollectiveOP2"],
 	name: "Independent (Dominion)",
@@ -242,7 +236,7 @@ module.exports = [{
 	weaponAdd: 0,
 	crewAdd: 0
 }, {
-	type: "officer",
+	type: "ship-resource",
 	id: "first_officer_collectiveop3",
 	set: ["CollectiveOP3"],
 	name: "First Officer",
@@ -264,7 +258,7 @@ module.exports = [{
 	factionPenalty: 0,
 	unique: true
 }, {
-	type: "officer",
+	type: "ship-resource",
 	id: "tactical_officer_collectiveop3",
 	set: ["CollectiveOP3"],
 	name: "Tactical Officer",
@@ -286,7 +280,7 @@ module.exports = [{
 	factionPenalty: 0,
 	unique: true
 }, {
-	type: "officer",
+	type: "ship-resource",
 	id: "operations_officer_collectiveop3",
 	set: ["CollectiveOP3"],
 	name: "Operations Officer",
@@ -308,7 +302,7 @@ module.exports = [{
 	factionPenalty: 0,
 	unique: true
 }, {
-	type: "officer",
+	type: "ship-resource",
 	id: "science_officer_collectiveop3",
 	set: ["CollectiveOP3"],
 	name: "Science Officer",
@@ -330,7 +324,7 @@ module.exports = [{
 	factionPenalty: 0,
 	unique: true
 }, {
-	type: "flagship",
+	type: "ship-resource",
 	id: "6001",
 	set: ["OP4Participation"],
 	name: "Romulan",
@@ -370,7 +364,7 @@ module.exports = [{
 	factionPenalty: 0,
 	unique: true
 }, {
-	type: "flagship",
+	type: "ship-resource",
 	id: "6002",
 	set: ["OP4Participation"],
 	name: "Independent (Romulan)",
@@ -410,7 +404,7 @@ module.exports = [{
 	factionPenalty: 0,
 	unique: true
 }, {
-	type: "flagship",
+	type: "ship-resource",
 	id: "6003",
 	set: ["OP4Participation"],
 	name: "Klingon",
@@ -450,7 +444,7 @@ module.exports = [{
 	factionPenalty: 0,
 	unique: true
 }, {
-	type: "flagship",
+	type: "ship-resource",
 	id: "6004",
 	set: ["OP4Participation"],
 	name: "Independent (Klingon)",
@@ -490,7 +484,7 @@ module.exports = [{
 	factionPenalty: 0,
 	unique: true
 }, {
-	type: "flagship",
+	type: "ship-resource",
 	id: "6005",
 	set: ["OP4Participation"],
 	name: "Dominion",
@@ -530,7 +524,7 @@ module.exports = [{
 	factionPenalty: 0,
 	unique: true
 }, {
-	type: "flagship",
+	type: "ship-resource",
 	id: "6006",
 	set: ["OP4Participation"],
 	name: "Independent (Dominion)",
@@ -570,7 +564,7 @@ module.exports = [{
 	factionPenalty: 0,
 	unique: true
 }, {
-	type: "flagship",
+	type: "ship-resource",
 	id: "6007",
 	set: ["OP4Participation"],
 	name: "Federation",
@@ -610,7 +604,7 @@ module.exports = [{
 	factionPenalty: 0,
 	unique: true
 }, {
-	type: "flagship",
+	type: "ship-resource",
 	id: "6008",
 	set: ["OP4Participation"],
 	name: "Independent (Federation)",

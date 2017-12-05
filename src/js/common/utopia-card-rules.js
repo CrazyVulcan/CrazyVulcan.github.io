@@ -7399,7 +7399,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 
 	// RESOURCES
-		// Independent (Rom)
+		// Fleet Commander Upgrade
 		"ship-resource:fleet_commander_72280r": {
 			intercept: {
 				ship: {
@@ -7412,6 +7412,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
+		//Fleet Commander Resource
 		"resource:fleet_commander": {
 			slotType: "ship-resource",
 			cost: 0,
