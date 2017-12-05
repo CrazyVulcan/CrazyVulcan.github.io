@@ -1,4 +1,4 @@
-module.exports = [{
+module.exports = [module.exports = [{
 	type: "token",
 	id: "rule_admiral",
 	set: ["AdditionalRules"],
@@ -207,7 +207,7 @@ module.exports = [{
 	weaponAdd: 0,
 	crewAdd: 0
 }, {
-	type: "Officer",
+	type: "officer",
 	id: "first_officer_collectiveop3",
 	set: ["CollectiveOP3"],
 	name: "First Officer",
@@ -229,7 +229,7 @@ module.exports = [{
 	factionPenalty: 0,
 	unique: true
 }, {
-	type: "Officer",
+	type: "officer",
 	id: "tactical_officer_collectiveop3",
 	set: ["CollectiveOP3"],
 	name: "Tactical Officer",
@@ -251,7 +251,7 @@ module.exports = [{
 	factionPenalty: 0,
 	unique: true
 }, {
-	type: "Officer",
+	type: "officer",
 	id: "operations_officer_collectiveop3",
 	set: ["CollectiveOP3"],
 	name: "Operations Officer",
@@ -273,7 +273,7 @@ module.exports = [{
 	factionPenalty: 0,
 	unique: true
 }, {
-	type: "Officer",
+	type: "officer",
 	id: "science_officer_collectiveop3",
 	set: ["CollectiveOP3"],
 	name: "Science Officer",
@@ -295,7 +295,7 @@ module.exports = [{
 	factionPenalty: 0,
 	unique: true
 }, {
-	type: "Flagship",
+	type: "flagship",
 	id: "6001",
 	set: ["OP4Participation"],
 	name: "Romulan",
@@ -335,7 +335,7 @@ module.exports = [{
 	factionPenalty: 0,
 	unique: true
 }, {
-	type: "Flagship",
+	type: "flagship",
 	id: "6002",
 	set: ["OP4Participation"],
 	name: "Independent (Romulan)",
@@ -375,7 +375,7 @@ module.exports = [{
 	factionPenalty: 0,
 	unique: true
 }, {
-	type: "Flagship",
+	type: "flagship",
 	id: "6003",
 	set: ["OP4Participation"],
 	name: "Klingon",
@@ -415,7 +415,7 @@ module.exports = [{
 	factionPenalty: 0,
 	unique: true
 }, {
-	type: "Flagship",
+	type: "flagship",
 	id: "6004",
 	set: ["OP4Participation"],
 	name: "Independent (Klingon)",
@@ -455,7 +455,7 @@ module.exports = [{
 	factionPenalty: 0,
 	unique: true
 }, {
-	type: "Flagship",
+	type: "flagship",
 	id: "6005",
 	set: ["OP4Participation"],
 	name: "Dominion",
@@ -495,7 +495,7 @@ module.exports = [{
 	factionPenalty: 0,
 	unique: true
 }, {
-	type: "Flagship",
+	type: "flagship",
 	id: "6006",
 	set: ["OP4Participation"],
 	name: "Independent (Dominion)",
@@ -535,7 +535,7 @@ module.exports = [{
 	factionPenalty: 0,
 	unique: true
 }, {
-	type: "Flagship",
+	type: "flagship",
 	id: "6007",
 	set: ["OP4Participation"],
 	name: "Federation",
@@ -575,7 +575,7 @@ module.exports = [{
 	factionPenalty: 0,
 	unique: true
 }, {
-	type: "Flagship",
+	type: "flagship",
 	id: "6008",
 	set: ["OP4Participation"],
 	name: "Independent (Federation)",
