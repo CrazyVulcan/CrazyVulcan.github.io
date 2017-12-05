@@ -7399,13 +7399,27 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 
 	// RESOURCES
-		
+		// Independent (Rom)
+		"ship-resource:fleet_commander_72280r": {
+			intercept: {
+				ship: {
+					// Add independent faction to captain
+					factions: function(card,ship,fleet,factions) {
+						if( card == ship && factions.indexOf("independent") < 0 )
+							return factions.concat(["independent"]);
+						return factions;
+					}
+				}
+			}
+		},
 		"resource:fleet_commander": {
-			slotType: "captain",
-			hideCost: false,
+			slotType: "ship-resource",
+			cost: 0,
+			hideCost: true,
 			showShipResourceSlot: function(card,ship,fleet) {
-				if( ship.resource && ship.resource.type == "captain" )
+				if( ship.resource && ship.resource.type == "ship-resource" )
 					return true;
+				
 				var show = true;
 				$.each( fleet.ships, function(i,ship) {
 					if( ship.resource )
@@ -7418,9 +7432,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					if( ship.resource )
 						delete ship.resource;
 				} );
-			},
+			}
 		},
-		
+
 		"resource:fleet_captain_collectiveop2": {
 			slotType: "fleet-captain",
 			cost: 0,
