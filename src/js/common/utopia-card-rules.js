@@ -7400,7 +7400,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 	// RESOURCES
 		//Front Line Retrofit
-		"ship-resource:front_line_retrofit_resource":{
+		"ship-resource:front_line_retrofit_card":{
 		intercept: {
 				ship: {
 					shields: function(card,ship,fleet,shields) {
@@ -7416,7 +7416,36 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
+		
+		"resource:front_line_retrofit_resource":{
+			slotType: "ship-resource",
+			cost: 0,
+			hideCost: true,
+			showShipResourceSlot: function(card,ship,fleet) {
+				if( ship.resource && ship.resource.type == "ship-resource" )
+					return true;
+				
+				var show = true;
+				$.each( fleet.ships, function(i,ship) {
+					if( ship.resource )
+						show = false;
+				} );
+				return show;
+			},
+			onRemove: function(resource,ship,fleet) {
+				$.each( fleet.ships, function(i,ship) {
+					if( ship.resource )
+						delete ship.resource;
+				} );
+			}
+		},
 		//Captains Chair Resource
+		"ship-resource:":{
+			canEquip: function(upgrade,ship,fleet) {
+				if( ship && ship.captain && ship.captain.skill > 4 )
+				return;
+			}
+		},
 		"resource:72301r": {
 			slotType: "ship-resource",
 			cost: 0,
@@ -7439,6 +7468,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				} );
 			}
 		},
+		
+		
 		// Fleet Commander Upgrade
 		"ship-resource:fleet_commander_72280r": {
 			intercept: {
