@@ -7401,16 +7401,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 	// RESOURCES
 		// Fleet Commander Upgrade
 		"ship-resource:fleet_commander_72280r": {
-			intercept: {
-				ship: {
-					// Add independent faction to captain
-					factions: function(card,ship,fleet,factions) {
-						if( card == ship && factions.indexOf("independent") < 0 )
-							return factions.concat(["independent"]);
-						return factions;
-					}
-				}
-			}
+			skill: 1
 		},
 		//Fleet Commander Resource
 		"resource:fleet_commander": {

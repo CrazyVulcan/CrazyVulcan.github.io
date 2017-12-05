@@ -29,7 +29,7 @@ module.exports = [{
 	name: "Fleet Commander",
 	class: "ship-resource",
 	factions: ["independent"],
-	text: "",
+	text: "This adds a 2nd Cpatain Slot\n\nCaptains have +1 to their Captain Skill and +1 to the Hull or Shield values of this ship, player choice.",
 	cost: 5,
 	upgrades: [{
 		type: ["captain"],
