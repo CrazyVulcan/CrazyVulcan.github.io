@@ -824,4 +824,32 @@ module.exports = [{
 		ship: {},
 		fleet: {}
 	}
+}, {
+	type: "ship-resource",
+	id: "fleet_commander_ship",
+	set: ["72280r"],
+	name: "Fleet Commander",
+	factions: ["independent"],
+	text: "",
+	cost: 5,
+	upgrades: [{
+		type: ["captain"],
+		source: "Fleet Commander"
+	}
+	],
+	upgradeSlots: [{
+		type: ["captain"],
+		source: "Fleet Commander"
+	}
+	],
+	showType: true,
+	canEquip: true,
+	canEquipFaction: true,
+	isShipModifier: true,
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	factionPenalty: 0,
+	unique: true
 }];
