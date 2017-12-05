@@ -59,23 +59,6 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "6th_wing_patrol_ship_75002",
-	set: ["75002"],
-	name: "6th Wing Patrol Ship",
-	class: "Jem'Hadar Attack Ship",
-	actions: ["evade", "target-lock", "scan", "battlestations"],
-	upgrades: ["tech", "weapon", "crew", "crew"],
-	attack: 3,
-	agility: 2,
-	hull: 3,
-	shields: 3,
-	cost: 16,
-	text: "\nThis ship rolls +1 attack dice if there is another Jem'Hadar Attack Ship within Range 1.",
-	unique: true,
-	factions: ["dominion"],
-	squadron: false
-}, {
-	type: "ship",
 	id: "jemhadar_attack_ship_75002",
 	set: ["75002"],
 	name: "Dominion Starship",

@@ -1,13 +1,4 @@
 module.exports = [{
-	type: "crew",
-	id: "mezoti_73002",
-	set: ["73002"],
-	name: "Mezoti",
-	cost: 2,
-	text: "<b>WHENEVER THE EFFECT OF A [crew] UPGRADE WOULD TARGET THIS SHIP:</b> Discard this card and target that [crew] Upgrade.\n\nDisable the target [crew] Upgrade and cancel its effect.",
-	unique: true,
-	factions: ["borg"]
-}, {
 	type: "talent",
 	id: "all_power_to_weapons_75002",
 	set: ["75002"],
@@ -40,18 +31,6 @@ module.exports = [{
 	text: "<b>ATTACK:</b> Spend this ships [target-lock] Token, discard this card, and target an opposing ship.\n\nPerfrom this attack twice against the target ship.\n       (<i>Jem'Hadar Battleship</i>)",
 	unique: true,
 	RearArc: true,
-	factions: ["dominion"]
-}, {
-	type: "weapon",
-	id: "phased_polaron_beam_75002",
-	set: ["75002"],
-	name: "Phased Polaron Beam",
-	cost: 3,
-	range: "1 - 2",
-	attack: 3,
-	text: "<b>ATTACK:</b> Disable this card and target an opposing ship.\n\nThis attack ignores the target ships Shields. This ship may convert 1 [battlestations] into 1 [hit].\n\n(<i>Jem'Hadar Attack Ship</i>)",
-	OnePerShip: true,
-	FrontArc: true,
 	factions: ["dominion"]
 }, {
 	type: "weapon",

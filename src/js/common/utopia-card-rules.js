@@ -7399,104 +7399,13 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 
 	// RESOURCES
-<<<<<<< HEAD
-		//Front Line Retrofit
-		"ship-resource:front_line_retrofit_card":{
-		intercept: {
-				ship: {
-					shields: function(card,ship,fleet,shields) {
-						if( card == ship )
-							return resolve(card,ship,fleet,shields) + 1;
-						return shields;
-					},
-					skill: function(upgrade,ship,fleet,skill) {
-						if( upgrade == ship.captain )
-							return resolve(upgrade,ship,fleet,skill) + 1;
-						return skill;
-					}
-				}
-			}
-		},
 		
-		"resource:front_line_retrofit_resource":{
-			slotType: "ship-resource",
-			cost: 0,
-			hideCost: true,
-			showShipResourceSlot: function(card,ship,fleet) {
-				if( ship.resource && ship.resource.type == "ship-resource" )
-					return true;
-				
-				var show = true;
-				$.each( fleet.ships, function(i,ship) {
-					if( ship.resource )
-						show = false;
-				} );
-				return show;
-			},
-			onRemove: function(resource,ship,fleet) {
-				$.each( fleet.ships, function(i,ship) {
-					if( ship.resource )
-						delete ship.resource;
-				} );
-			}
-		},
-		//Captains Chair Resource
-		"ship-resource:":{
-			canEquip: function(upgrade,ship,fleet) {
-				if( ship && ship.captain && ship.captain.skill > 4 )
-				return;
-			}
-		},
-		"resource:72301r": {
-			slotType: "ship-resource",
-			cost: 0,
-			hideCost: true,
-			showShipResourceSlot: function(card,ship,fleet) {
-				if( ship.resource && ship.resource.type == "ship-resource" )
-					return true;
-				
-				var show = true;
-				$.each( fleet.ships, function(i,ship) {
-					if( ship.resource )
-						show = false;
-				} );
-				return show;
-			},
-			onRemove: function(resource,ship,fleet) {
-				$.each( fleet.ships, function(i,ship) {
-					if( ship.resource )
-						delete ship.resource;
-				} );
-			}
-		},
-		
-		
-		// Fleet Commander Upgrade
-		"ship-resource:fleet_commander_72280r": {
-			intercept: {
-				ship: {
-					skill: function(upgrade,ship,fleet,skill) {
-						if( upgrade == ship.captain )
-							return resolve(upgrade,ship,fleet,skill) + 1;
-						return skill;
-					}
-				}
-			}
-=======
-		// Fleet Commander Upgrade
-		"ship-resource:fleet_commander_72280r": {
-			skill: 1
->>>>>>> parent of 0714a6a... d
-		},
-		//Fleet Commander Resource
 		"resource:fleet_commander": {
-			slotType: "ship-resource",
-			cost: 0,
+			slotType: "captain",
 			hideCost: false,
 			showShipResourceSlot: function(card,ship,fleet) {
-				if( ship.resource && ship.resource.type == "ship-resource" )
+				if( ship.resource && ship.resource.type == "captain" )
 					return true;
-				
 				var show = true;
 				$.each( fleet.ships, function(i,ship) {
 					if( ship.resource )
@@ -7509,9 +7418,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					if( ship.resource )
 						delete ship.resource;
 				} );
-			}
+			},
 		},
-
+		
 		"resource:fleet_captain_collectiveop2": {
 			slotType: "fleet-captain",
 			cost: 0,

@@ -10,8 +10,8 @@
 6 silly lifecycle staw-utopia@1.0.0~predata: no script for predata, continuing
 7 info lifecycle staw-utopia@1.0.0~data: staw-utopia@1.0.0
 8 verbose lifecycle staw-utopia@1.0.0~data: unsafe-perm in lifecycle true
-9 verbose lifecycle staw-utopia@1.0.0~data: PATH: C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;C:\Users\butte\Documents\GitHub\CrazyVulcan.github.io\node_modules\.bin;C:\Users\butte\AppData\Roaming\npm;C:\Program Files\nodejs\;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\nodejs\;C:\Users\butte\AppData\Local\Microsoft\WindowsApps;C:\Users\butte\AppData\Roaming\npm;
-10 verbose lifecycle staw-utopia@1.0.0~data: CWD: C:\Users\butte\Documents\GitHub\CrazyVulcan.github.io
+9 verbose lifecycle staw-utopia@1.0.0~data: PATH: C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;C:\Users\butte\Documents\GitHub\KFNEXUS.github.io\node_modules\.bin;C:\Users\butte\AppData\Roaming\npm;C:\Program Files\nodejs\;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\nodejs\;C:\Users\butte\AppData\Local\Microsoft\WindowsApps;C:\Users\butte\AppData\Roaming\npm;
+10 verbose lifecycle staw-utopia@1.0.0~data: CWD: C:\Users\butte\Documents\GitHub\KFNEXUS.github.io
 11 silly lifecycle staw-utopia@1.0.0~data: Args: [ '/d /s /c', 'npm run lint-data && npm run generate-data' ]
 12 silly lifecycle staw-utopia@1.0.0~data: Returned: code: 1  signal: null
 13 info lifecycle staw-utopia@1.0.0~data: Failed to exec data script
@@ -26,7 +26,7 @@
 14 verbose stack     at maybeClose (internal/child_process.js:920:16)
 14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:230:5)
 15 verbose pkgid staw-utopia@1.0.0
-16 verbose cwd C:\Users\butte\Documents\GitHub\CrazyVulcan.github.io
+16 verbose cwd C:\Users\butte\Documents\GitHub\KFNEXUS.github.io
 17 error Windows_NT 10.0.16299
 18 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "run" "data"
 19 error node v6.11.3
