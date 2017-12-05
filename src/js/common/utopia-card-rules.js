@@ -7399,6 +7399,23 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 
 	// RESOURCES
+		//Front Line Retrofit
+		"ship-resource:front_line_retrofit_resource":{
+		intercept: {
+				ship: {
+					shields: function(card,ship,fleet,shields) {
+						if( card == ship )
+							return resolve(card,ship,fleet,shields) + 1;
+						return shields;
+					},
+					skill: function(upgrade,ship,fleet,skill) {
+						if( upgrade == ship.captain )
+							return resolve(upgrade,ship,fleet,skill) + 1;
+						return skill;
+					}
+				}
+			}
+		},
 		//Captains Chair Resource
 		"resource:72301r": {
 			slotType: "ship-resource",
@@ -7424,6 +7441,15 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		// Fleet Commander Upgrade
 		"ship-resource:fleet_commander_72280r": {
+			intercept: {
+				ship: {
+					skill: function(upgrade,ship,fleet,skill) {
+						if( upgrade == ship.captain )
+							return resolve(upgrade,ship,fleet,skill) + 1;
+						return skill;
+					}
+				}
+			}
 		},
 		//Fleet Commander Resource
 		"resource:fleet_commander": {

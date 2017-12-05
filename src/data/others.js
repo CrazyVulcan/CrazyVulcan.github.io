@@ -881,16 +881,15 @@ module.exports = [{
 	factions: ["independent"],
 	text: "",
 	cost: 5,
-	skil: 1,
 	hullConstraint: "5+",
 	upgrades: [{
 		type: ["weapon"],
-		source: "Fleet Commander"
+		source: "Retrofit"
 	}
 	],
 	upgradeSlots: [{
 		type: ["weapon"],
-		source: "Fleet Commander"
+		source: "Retrofit"
 	}
 	],
 	showType: true,
