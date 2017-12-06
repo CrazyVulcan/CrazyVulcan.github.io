@@ -7444,6 +7444,28 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship.captain.skill >= 5;
 			}
 		},
+		"resource:captains_chair_resource":{
+			slotType: "ship-resource",
+			cost: 0,
+			hideCost: true,
+			showShipResourceSlot: function(card,ship,fleet) {
+				if( ship.resource && ship.resource.type == "ship-resource" )
+					return true;
+				
+				var show = true;
+				$.each( fleet.ships, function(i,ship) {
+					if( ship.resource )
+						show = false;
+				} );
+				return show;
+			},
+			onRemove: function(resource,ship,fleet) {
+				$.each( fleet.ships, function(i,ship) {
+					if( ship.resource )
+						delete ship.resource;
+				} );
+			}
+		},
 		
 		
 		"resource:fleet_commander": {

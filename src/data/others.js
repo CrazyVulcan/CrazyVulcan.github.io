@@ -830,7 +830,7 @@ module.exports = [{
 	set: ["72280r"],
 	name: "Fleet Commander",
 	factions: ["independent"],
-	text: "",
+	text: "Captain Skill is increased +1.\n\nAdd +1 to either Shield or Hull value.",
 	cost: 5,
 	upgrades: [{
 		type: ["captain"],
@@ -876,7 +876,7 @@ module.exports = [{
 	set: ["72302r"],
 	name: "Front Line Retrofit",
 	factions: ["independent"],
-	text: "",
+	text: "Hull 4+ and adds +1 to Shield and Captain Skill values",
 	cost: 5,
 	upgrades: [{
 		type: ["weapon"],
