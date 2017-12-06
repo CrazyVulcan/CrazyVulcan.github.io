@@ -8212,42 +8212,6 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 		},
 		
-		"resource:captains_chair_resource":{
-			intercept: {
-				ship: {
-					cost: {
-						priority: 100,
-						fn: function(upgrade, ship, fleet, cost) {
-								return 3;
-							return cost;
-						}
-					}
-							
-				}
-			}
-		},
-		
-	//Front-Line Retrofit Resource
-		"resource:front_line_retrofit_resource":{
-			slotType: "weapon",
-			hideCost: false,
-			showShipResourceSlot: function(card,ship,fleet) {
-				if( ship.resource && ship.resource.type == "weapon" )
-					return true;
-				var show = true;
-				$.each( fleet.ships, function(i,ship) {
-					if( ship.resource )
-						show = false;
-				} );
-				return show;
-			},
-			onRemove: function(resource,ship,fleet) {
-				$.each( fleet.ships, function(i,ship) {
-					if( ship.resource )
-						delete ship.resource;
-				} );
-			},
-		}
 		
 	};
 }]);
