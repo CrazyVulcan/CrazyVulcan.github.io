@@ -34,6 +34,18 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "weapon",
+	id: "",
+	set: ["75002"],
+	name: "",
+	cost: 3,
+	range: "1 - 2",
+	attack: 3,
+	text: "<b>ATTACK:</b> Disable this card and target an opposing ship.\n\nThis attack ignores the target ships Shields. This ship may convert 1 [battlestations] into 1 [hit].\n(<i>Jem'Hadar Attack Ship</i>)",
+	OnePerShip: true,
+	FrontArc: true,
+	factions: ["dominion"]
+}, {
+	type: "weapon",
 	id: "minesweeper_75002",
 	set: ["75002"],
 	name: "Minesweeper",
