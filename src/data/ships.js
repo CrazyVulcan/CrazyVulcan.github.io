@@ -312,10 +312,51 @@ module.exports = [{
 	attack: 5,
 	agility: 1,
 	hull: 5,
-	shields: 3,
-	cost: 23,
+	shields: 2,
+	cost: 22,
 	text: "",
 	unique: false,
+	factions: ["klingon"],
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	squadron: false
+}, {
+	type: "ship",
+	id: "iks_vorn_2017core",
+	set: ["2017core"],
+	name: "I.K.S. Vorn",
+	class: "K'Vort Class",
+	actions: ["evade", "target-lock", "cloak", "sensor-echo"],
+	upgrades: ["tech", "weapon", "crew", "crew"],
+	attack: 4,
+	agility: 1,
+	hull: 5,
+	shields: 3,
+	cost: 24,
+	text: "<b>WHEN ATTACKING:</b> If this ship is Cloaked.\n\nIf the defending ship is at Range 1, this ship rolls +2 attack dice. If the defending ship is at Range 2 this ship rolls +1 attack die.",
+	unique: true,
+	factions: ["klingon"],
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	squadron: false
+}, {
+	type: "ship",
+	id: "kvort_2017core",
+	set: ["2017core"],
+	name: "Klingon Starship",
+	class: "K'Vort Class",
+	actions: ["evade", "target-lock", "cloak", "sensor-echo"],
+	upgrades: ["tech", "weapon", "crew"],
+	attack: 4,
+	agility: 1,
+	hull: 5,
+	shields: 2,
+	cost: 20,
+	text: "",
 	factions: ["klingon"],
 	intercept: {
 		ship: {},

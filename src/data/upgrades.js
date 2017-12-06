@@ -147,6 +147,24 @@ module.exports = [{
 	unique: true,
 	factions: ["federation"]
 }, {
+	type: "tech",
+	id: "reinforced_bulkheads_2017core",
+	set: ["2017core"],
+	name: "Reinforced Bulkheads",
+	cost: 3,
+	text: "<b>WHEN DEFENDING:</b> When this ship receives a face up Damage Card:\n\nTurn that Damage Card face down unless it is a 'Warp Core Breach'.",
+	factions: ["klingon"]
+}, {
+	type: "crew",
+	id: "worf_2017core",
+	set: ["2017core"],
+	name: "Worf",
+	cost: 5,
+	text: "<b>WHEN ATTACKING:</b> If this ship is Cloaked:\n\nConvert all [blank] to [hit]",
+	unique: true,
+	shipKlingon: true,
+	factions: ["klingon"]
+}, {
 	type: "talent",
 	id: "blood_oath_2017core",
 	set: ["2017core"],
