@@ -1,5 +1,26 @@
 module.exports = [{
 	type: "ship",
+	id: "goss_marauder_73001",
+	set: ["73001"],
+	name: "Goss' Marauder",
+	class: "D'Kora Class",
+	actions: ["evade", "target-lock", "scan"],
+	upgrades: ["tech", "weapon", "crew", "crew"],
+	attack: 3,
+	agility: 1,
+	hull: 4,
+	shields: 3,
+	cost: 20,
+	text: "<b>ACTIVATION PHASE:</b> After this ship executes a Green Maneuver, place 2 [time] Tokens on this card.\n\nRemove a Disable Token from 1 Upgrade equipped to this ship or equip a Ferengi Upgrade that was discarded from this ship to this ship.",
+	unique: true,
+	factions: ["ferengi"],
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	squadron: false
+}, {
+	type: "ship",
 	id: "3rd_division_cruiser_71524",
 	set: ["75002"],
 	name: "3rd Division Battle Cruiser",
