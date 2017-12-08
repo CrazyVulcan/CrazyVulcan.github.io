@@ -111,6 +111,23 @@ module.exports = [{
 	unique: false,
 	factions: ["romulan"]
 }, {
+	type: "weapon",
+	id: "forward_disruptor_banks_75001",
+	set: ["75001"],
+	name: "Forward Disruptor Banks",
+	cost: 3,
+	text: "<b>IF THIS SHIP PERFORMED A 2 [bank-left], [bank-right] OR 3 [bank-left], [bank-right] MANEUVER THIS GAME ROUND::</b>\n\nThis ship rolls +1 Attack die this game round.",
+	factions: ["romulan"]
+}, {
+	type: "weapon",
+	id: "additional_weapons_array_75001",
+	set: ["75001"],
+	name: "Additional Weapons Array",
+	cost: 3,
+	OnePerShip: true,
+	text: "<b>WHEN ATTACKING:</b>\n\nThis ship rolls +1 attack die.\n\n(<i>D'Deridex Class</i>)",
+	factions: ["romulan"]
+}, {
 	type: "crew",
 	id: "romulan_medical_team_75001",
 	set: ["75001"],
@@ -136,6 +153,15 @@ module.exports = [{
 	cost: 2,
 	text: "<b>WHEN ATTACKING:</b> If this ship has an [evade] Token beside it:\n\nThis ship may convert 1 of the defending ships [evade] into a [blank].",
 	unique: false,
+	factions: ["romulan"]
+}, {
+	type: "crew",
+	id: "parem_75001",
+	set: ["75001"],
+	name: "Parem",
+	cost: 1,
+	text: "<b>PLANNING PHASE:</b> Discard this card and target a friendly ship.\n\n[tech] Upgrades equipped to the target ship cannot be affected by opposing effects this game round.",
+	unique: true,
 	factions: ["romulan"]
 }, {
 	type: "talent",
@@ -2852,16 +2878,12 @@ module.exports = [{
 }, {
 	type: "tech",
 	id: "3040",
-	set: ["71124"],
+	set: ["71124", "75001"],
 	name: "Interphase Generator",
-	unique: false,
-	text: "When defending while you are Cloaked, you may discard this card after all the dice have been rolled to reduce the damage from a single attack to exactly 1 [hit]. ",
+	OnePerShip: true,
+	text: "<b>WHEN DEFENDING:</b> After all dice have been rolled if this ship is Cloaked, discard this card.\n\nCancel the attack. This ship suffers 1 [hit].",
 	factions: ["romulan"],
 	cost: 3,
-	skill: 0,
-	talents: 0,
-	attack: 0,
-	range: ""
 }, {
 	type: "tech",
 	id: "3041",

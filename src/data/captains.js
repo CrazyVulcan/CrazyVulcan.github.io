@@ -434,6 +434,17 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "captain",
+	id: "mirok_72001p",
+	set: ["75001"],
+	name: "Mirok",
+	cost: 2,
+	skill: 3,
+	talents: 0,
+	text: "<b>ACTION:</b>\n\nPlace a [scan] Token beside this ship. If this ship is a Romulan ship, it may perfrom an Action on its Action Bar as a Free Action.",
+	unique: true,
+	factions: ["romulan"]
+}, {
+	type: "captain",
 	id: "jhamel_72001p",
 	set: ["72014wp"],
 	name: "Jhamel",
