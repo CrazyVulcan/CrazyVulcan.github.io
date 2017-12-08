@@ -7310,6 +7310,15 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			]
 		},
+		//Interphase Generator
+		"tech:3040":{
+			canEquip: onePerShip("Interphase Generator")
+		},
+		//Additonal Weapons Array
+		"weapon:additional_weapons_array_75001":{
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("Additional Weapons Array") && ship.class == "D'deridex Class";
+			}},
 	//2017 Dominion Faction Ser
 		//All Power to Weapons
 		"talent:all_power_to_weapons_75002":{
