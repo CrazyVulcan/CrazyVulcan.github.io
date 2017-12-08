@@ -7317,7 +7317,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		//Additonal Weapons Array
 		"weapon:additional_weapons_array_75001":{
 			canEquip: function(upgrade,ship,fleet) {
-				return onePerShip("Additional Weapons Array") && ship.class == "D'deridex Class";
+				return (onePerShip("Additional Weapons Array") && ship.class == "D'deridex Class");
 			}},
 	//2017 Dominion Faction Ser
 		//All Power to Weapons
