@@ -183,12 +183,13 @@
 
 .card-hullConstraint-icon {
 	background: url("../img/upgrade-hull-limit.png")no-repeat;
+	font-size: 0.7em;
 	background-size: 1em;
 	color: red;
 	width: 1.2em;
 	position: relative;
 	left: 0em;
-	margin-top:0.5em;
+	padding-top:0.5em;
 	top: -0.1em;
 	z-index: 1;
 	text-align: center;
@@ -255,12 +256,12 @@
 
 .card-shipRomulan-icon {
 	background: url("../img/card-shipRomulan-icon.png") no-repeat;
-	font-size: 1em;
+	font-size: 0.7em;
 	background-size: 1em;
 	color: red;
 	width: 1.2em;
 	position: relative;
-	margin-top:0.5em;
+	padding-top:0.5em;
 	top: -0.1em;
 	z-index: 1;
 	text-align: center;
