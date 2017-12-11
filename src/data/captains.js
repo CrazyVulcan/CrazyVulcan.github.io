@@ -434,6 +434,17 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "captain",
+	id: "romulan_captain_75001",
+	set: ["75001"],
+	name: "Romulan Captain",
+	cost: 2,
+	skill: 3,
+	talents: 0,
+	text: "<b>WHEN DEFENDING:</b> If this ship is Cloaked, flip its [cloak] Token to its red side.\n\nThe attacking ship rolls -2 attack dice.",
+	unique: false,
+	factions: ["romulan"]
+}, {
+	type: "captain",
 	id: "mirok_72001p",
 	set: ["75001"],
 	name: "Mirok",

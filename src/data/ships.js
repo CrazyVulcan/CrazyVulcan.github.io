@@ -114,7 +114,49 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "irw_suran",
+	id: "pwb_tomal_75001",
+	set: ["75001"],
+	name: "P.W.B. Tomal",
+	class: "D'deridex Class",
+	actions: ["evade", "target-lock", "cloak", "sensor-echo"],
+	upgrades: ["tech", "tech", "weapon", "weapon", "crew"],
+	attack: 3,
+	agility: 2,
+	hull: 6,
+	shields: 4,
+	cost: 29,
+	text: "<b>WHEN ATTACKING:</b> If this ship is Cloaked, place an [aux] Token beside it.\n\nDisable up to 2 Shields on the defending ship.",
+	unique: true,
+	factions: ["romulan"],
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	squadron: false
+}, {
+	type: "ship",
+	id: "dderidex_generic_75001",
+	set: ["75001"],
+	name: "Romulan Starship",
+	class: "D'deridex Class",
+	actions: ["evade", "target-lock", "cloak", "sensor-echo"],
+	upgrades: ["tech", "tech", "weapon", "crew"],
+	attack: 3,
+	agility: 2,
+	hull: 6,
+	shields: 3,
+	cost: 25,
+	text: "",
+	unique: false,
+	factions: ["romulan"],
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	squadron: false
+}, {
+	type: "ship",
+	id: "irw_75001",
 	set: ["75001"],
 	name: "I.R.W. Suran",
 	class: "Valdore Class",
@@ -156,7 +198,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "jaroks_scout_vessel",
+	id: "jaroks_scout_vessel_75001",
 	set: ["75001"],
 	name: "Jarok's Scout Vessel",
 	class: "Romulan Scout Vessel",
@@ -177,17 +219,17 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "romulan_scout_vessel",
+	id: "romulan_scout_vessel_75001",
 	set: ["75001"],
 	name: "Romulan Starship",
 	class: "Romulan Scout Vessel",
 	actions: ["evade", "scan", "cloak", "sensor-echo"],
-	upgrades: ["tech", "crew"],
+	upgrades: ["crew"],
 	attack: 1,
 	agility: 3,
 	hull: 2,
 	shields: 1,
-	cost: 10,
+	cost: 9,
 	text: "",
 	unique: false,
 	factions: ["romulan"],
@@ -211,6 +253,27 @@ module.exports = [{
 	cost: 10,
 	text: "<b>ACTION:</b> Target a friendly ship within Range 1-2.\n\nRepair 1 Shield or 1 Hull on the target ship.",
 	unique: true,
+	factions: ["romulan"],
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	squadron: false
+}, {
+	type: "ship",
+	id: "science_vessel_75001",
+	set: ["75001"],
+	name: "Romulan Starship",
+	class: "Romulan Science Vessel",
+	actions: ["evade", "scan", "cloak", "sensor-echo"],
+	upgrades: ["crew"],
+	attack: 1,
+	agility: 2,
+	hull: 2,
+	shields: 2,
+	cost: 6,
+	text: "",
+	unique: false,
 	factions: ["romulan"],
 	intercept: {
 		ship: {},

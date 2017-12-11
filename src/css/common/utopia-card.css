@@ -208,9 +208,11 @@
 .card-shipFederation-icon {
 	background: url("../img/card-shipFederation-icon.png")no-repeat;
 	background-size: 1em;
+	color: red;
 	width: 1.2em;
 	position: relative;
 	left: 0em;
+	margin-top:0.5em;
 	top: -0.1em;
 	z-index: 1;
 	text-align: center;
@@ -230,9 +232,11 @@
 .card-shipKlingon-icon {
 	background: url("../img/card-shipKlingon-icon.png")no-repeat;
 	background-size: 1em;
+	color: red;
 	width: 1.2em;
 	position: relative;
 	left: 0em;
+	margin-top:0.5em;
 	top: -0.1em;
 	z-index: 1;
 	text-align: center;
@@ -252,9 +256,11 @@
 .card-shipRomulan-icon {
 	background: url("../img/card-shipRomulan-icon.png") no-repeat;
 	background-size: 1em;
+	color: red;
 	width: 1.2em;
 	position: relative;
 	left: 0em;
+	margin-top:0.5em;
 	top: -0.1em;
 	z-index: 1;
 	text-align: center;
@@ -274,9 +280,11 @@
 .card-shipDominion-icon {
 	background: url("../img/card-shipDominion-icon.png") no-repeat;
 	background-size: 1em;
+	color: red;
 	width: 1.2em;
 	position: relative;
 	left: 0em;
+	margin-top:0.5em;
 	top: -0.1em;
 	z-index: 1;
 	text-align: center;
