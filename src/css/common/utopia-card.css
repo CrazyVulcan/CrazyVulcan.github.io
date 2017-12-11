@@ -255,6 +255,7 @@
 
 .card-shipRomulan-icon {
 	background: url("../img/card-shipRomulan-icon.png") no-repeat;
+	font-size: 1em;
 	background-size: 1em;
 	color: red;
 	width: 1.2em;
