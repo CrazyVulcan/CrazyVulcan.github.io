@@ -65,6 +65,14 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "crew",
+	id: "jemhadar_first_75002",
+	set: ["75002"],
+	name: "Jem'Hadar First",
+	cost: 3,
+	text: "<b>COMBAT PHASE:</b> Place 3 [time] Tokens on this card.\n\nConvert 1 [battlestations] into 1 [blank], 1 [evade], or 1 [hit].",
+	factions: ["dominion"]
+}, {
+	type: "crew",
 	id: "duranadar_75002",
 	set: ["75002"],
 	name: "Duran'Adar",
@@ -100,6 +108,16 @@ module.exports = [{
 	cost: 3,
 	text: "<b>ACTIVATION PHASE:</b> Discard this card and target a Captain or [crew] Upgrade equipped to an opposing ship.\n\nThe target Captain or [crew] Upgrade cannot perfrom Actions this game round.",
 	unique: true,
+	factions: ["romulan"]
+}, {
+	type: "tech",
+	id: "reinforced_shields_75001",
+	set: ["75001"],
+	name: "Reinforced Shields",
+	cost: 1,
+	text: "<b>WHEN THIS SHIP SUFFERS 3 OR MORE DAMAGE FROM A SINGLE ATTACK:</b>\n\nRepair 1 Shield.",
+	OnePerShip: true,
+	hullConstraint: "5+",
 	factions: ["romulan"]
 }, {
 	type: "talent",

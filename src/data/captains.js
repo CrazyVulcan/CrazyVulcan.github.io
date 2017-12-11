@@ -860,6 +860,7 @@ module.exports = [{
 	cost: 3,
 	skill: 4,
 	talents: 0,
+	range: "1 - 2",
 	text: "<b>ACTION:</b> Target a Cloaked opposing ship.\n\nRemove the target ship's [cloak] Token and enable its Shields.",
 	unique: true,
 	factions: ["federation"]
