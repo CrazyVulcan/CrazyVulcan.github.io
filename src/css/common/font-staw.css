@@ -220,53 +220,53 @@
 
 
 .fs-captainFederation:before {
-  content: "!";
+  content: ".";
 }
 .fs-captainKlingon:before {
-  content: ")";
+  content: ".";
 }
 .fs-captainRomulan:before {
-  content: "#";
+  content: ".";
 }
 .fs-captainDominion:before {
-  content: "$";
+  content: ".";
 }
 .fs-captainIndependent:before {
-  content: "%";
+  content: ".";
 }
 .fs-captainBorg:before {
-  content: "&";
+  content: ".";
 }
 .fs-captain8472:before {
-  content: "'";
+  content: ".";
 }
 .fs-captainMirror:before {
-  content: "(";
+  content: ".";
 }
 
 .fs-shipFederation:before {
-  content: "!";
+  content: ".";
 }
 .fs-shipKlingon:before {
-  content: ")";
+  content: ".";
 }
 .fs-shipRomulan:before {
-  content: "#";
+  content: ".";
 }
 .fs-shipDominion:before {
-  content: "$";
+  content: ".";
 }
 .fs-shipIndependent:before {
-  content: "%";
+  content: ".";
 }
 .fs-shipBorg:before {
-  content: "&";
+  content: ".";
 }
 .fs-ship8472:before {
-  content: "'";
+  content: ".";
 }
 .fs-shipMirror:before {
-  content: "(";
+  content: ".";
 }
 
 .fs-blank:before {
@@ -283,15 +283,15 @@
 }
 
 .fs-FrontArc:before {
-  content: "";
+  content: "5";
 }
 
 .fs-RearArc:before {
-  content: "";
+  content: "6";
 }
 
 .fs-hullConstraint:before {
-  content: "";
+  content: ".";
 }
 
 .fs-ship:before {
