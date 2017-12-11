@@ -7314,6 +7314,12 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"tech:3040":{
 			canEquip: onePerShip("Interphase Generator")
 		},
+		//Reinforced Shields
+		"tech:reinforced_shields_75001":{
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("Reinforced Shields") && ship.hull >= 5;
+			}
+		},
 		//Additonal Weapons Array
 		"weapon:additional_weapons_array_75001":{
 			canEquip: function(upgrade,ship,fleet) {
