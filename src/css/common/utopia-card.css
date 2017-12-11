@@ -186,7 +186,7 @@
 	font-size: 0.7em;
 	background-size: 2em;
 	color: red;
-	padding: 0.5em;
+	padding: 0.2em;
 	position: relative;
 	left: 0em;
 	margin-top:0.5em;
@@ -208,14 +208,15 @@
 
 .card-shipFederation-icon {
 	background: url("../img/card-shipFederation-icon.png")no-repeat;
-	background-size: 1em;
+	font-size: 0.7em;
+	background-size: 2em;
 	color: red;
-	width: 1.2em;
+	padding: 0.2em;
 	position: relative;
 	left: 0em;
 	margin-top:0.5em;
 	top: -0.1em;
-	z-index: 1;
+	z-index: 2;
 	text-align: center;
 }
 
@@ -232,14 +233,15 @@
 
 .card-shipKlingon-icon {
 	background: url("../img/card-shipKlingon-icon.png")no-repeat;
-	background-size: 1em;
+	font-size: 0.7em;
+	background-size: 2em;
 	color: red;
-	width: 1.2em;
+	padding: 0.2em;
 	position: relative;
 	left: 0em;
 	margin-top:0.5em;
 	top: -0.1em;
-	z-index: 1;
+	z-index: 2;
 	text-align: center;
 }
 
@@ -257,10 +259,11 @@
 .card-shipRomulan-icon {
 	background: url("../img/card-shipRomulan-icon.png") no-repeat;
 	font-size: 0.7em;
-	background-size: 1em;
+	background-size: 2em;
 	color: red;
-	width: 2em;
+	padding: 0.2em;
 	position: relative;
+	left: 0em;
 	margin-top:0.5em;
 	top: -0.1em;
 	z-index: 2;
@@ -269,25 +272,29 @@
 
 .card-captainDominion-icon {
 	background: url("../img/card-captainDominion-icon.png") no-repeat;
-	background-size: 1.2em;
-	width: 1.2em;
+	font-size: 0.7em;
+	background-size: 2em;
+	color: red;
+	padding: 0.2em;
 	position: relative;
 	left: 0em;
+	margin-top:0.5em;
 	top: -0.1em;
-	z-index: 1;
+	z-index: 2;
 	text-align: center;
 }
 
 .card-shipDominion-icon {
 	background: url("../img/card-shipDominion-icon.png") no-repeat;
-	background-size: 1em;
+	font-size: 0.7em;
+	background-size: 2em;
 	color: red;
-	width: 1.2em;
+	padding: 0.2em;
 	position: relative;
 	left: 0em;
 	margin-top:0.5em;
 	top: -0.1em;
-	z-index: 1;
+	z-index: 2;
 	text-align: center;
 }
 
@@ -308,14 +315,15 @@
 
 .card-shipIndependent-icon {
 	font-size: 1.2em;
-	background-size: 1em;
+	font-size: 0.7em;
+	background-size: 2em;
 	color: red;
-	width: 1.2em;
+	padding: 0.2em;
 	position: relative;
 	left: 0em;
 	margin-top:0.5em;
 	top: -0.1em;
-	z-index: 1;
+	z-index: 2;
 	text-align: center;
 }
 
