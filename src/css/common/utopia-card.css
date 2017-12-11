@@ -64,7 +64,7 @@
 }
 
 .card-OnePerShip .card-corner-top-left .card-corner-inner {
-	top: -0.3em;
+	top: -0.0em;
 }
 
 .card-corner-top-right .card-corner-inner {
@@ -657,7 +657,8 @@
 }
 
 .card-upgrade.card-OnePerShip .card-title-container {
-
+	padding-left: 0.4em;
+	margin-left: 1.2em;
 }
 
 .card-border-left {
