@@ -89,7 +89,7 @@ module.exports = [{
 	range: "1 - 2",
 	text: "<b>ACTION:</b> Discard this card and target all friendly ships.\n\nPlace a [battlestations] Token beside this ship and all target ships.",
 	unique: true,
-	shipDominion: true,
+	shipDominion: "",
 	factions: ["dominion"]
 }, {
 	type: "crew",
@@ -247,7 +247,7 @@ module.exports = [{
 	cost: 5,
 	text: "<b>WHEN ATTACKING:</b> If this ship is Cloaked:\n\nConvert all [blank] to [hit]",
 	unique: true,
-	shipKlingon: true,
+	shipKlingon: "",
 	factions: ["klingon"]
 }, {
 	type: "talent",
