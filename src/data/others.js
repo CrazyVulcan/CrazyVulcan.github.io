@@ -830,7 +830,7 @@ module.exports = [{
 	set: ["72280r"],
 	name: "Fleet Commander",
 	factions: ["independent"],
-	text: "Captain Skill is increased +1.\n\nAdd +1 to either Shield or Hull value.",
+	text: "Captain's Skill is increased +1.\n\nAdd +1 to either Shield or Hull value.",
 	cost: 5,
 	upgrades: [{
 		type: ["captain"],
@@ -858,7 +858,7 @@ module.exports = [{
 	set: ["72301r"],
 	name: "Captains Chair",
 	factions: ["independent"],
-	text: "Ship with Captain skill +5",
+	text: "Ship with Captain skill 5+\n\nAfter performing an Green or White Maneuver, remove a Disable Token from a Upgrade equipped to this ship.",
 	cost: 3,
 	showType: true,
 	canEquip: true,
@@ -876,7 +876,7 @@ module.exports = [{
 	set: ["72302r"],
 	name: "Front Line Retrofit",
 	factions: ["independent"],
-	text: "Hull 4+ and adds +1 to Shield and Captain Skill values",
+	text: "Ship must have a hull of Hull 3 or less\n\nAdds 1 Weapon slot and +1 to Shield and Captain Skill values",
 	cost: 5,
 	upgrades: [{
 		type: ["weapon"],
