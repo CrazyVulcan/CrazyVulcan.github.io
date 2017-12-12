@@ -68,8 +68,8 @@ module.exports = [{
 	range: "2 - 3",
 	attack: 8,
 	text: "<b>ATTACK:</b> Spend this ships [target-lock] Token, discard this card, and target an opposing ship that is not Cloaked and has no active Shields.\n\nThis ship may convert all [battlestations] into [hit]",
-	FrontArc: "",
-	RearArc: "",
+	FrontArc: true,
+	RearArc: true,
 	factions: ["dominion"]
 }, {
 	type: "weapon",
@@ -103,7 +103,7 @@ module.exports = [{
 	attack: 3,
 	text: "<b>Attack:</b> Discard this card and target an opposing ship.\n\nFor each uncancelled [hit] or [crit], discard 1 [tech] Upgrade equipped to the target ship.\n\n(<i>Jem'Hadar Attack Ship</i>)",
 	unique: true,
-	FrontArc: "",
+	FrontArc: true,
 	factions: ["dominion"]
 }, {
 	type: "crew",
