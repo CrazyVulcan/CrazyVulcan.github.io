@@ -16,7 +16,7 @@ module.exports = [{
 	range: "1 - 2",
 	text: "<b>COMBAT PHASE:</b> Place 3 [time] Tokens on this card and disable this ships Shields.\n\n<b>Continuous Effect:</b> This ships Shields remain disabled. This ship can only perform Green Maneuvers. This ship rolls +3 attack dice.",
 	unique: true,
-	shipDominion: "",
+	shipDominion: true,
 	hullConstraint: "5+",
 	factions: ["dominion"]
 }, {
@@ -39,7 +39,7 @@ module.exports = [{
 	attack: 6,
 	text: "<b>ATTACK:</b> Spend this ships [target-lock] Token, discard this card, and target an opposing ship.\n\nPerfrom this attack twice against the target ship.\n       (<i>Jem'Hadar Battleship</i>)",
 	unique: true,
-	RearArc: "",
+	RearArc: true,
 	factions: ["dominion"]
 }, {
 	type: "weapon",
@@ -51,7 +51,7 @@ module.exports = [{
 	attack: 3,
 	text: "<b>ATTACK:</b> Disable this card and target an opposing ship.\n\nThis attack ignores the target ships Shields. This ship may convert 1 [battlestations] into 1 [hit].\n(<i>Jem'Hadar Attack Ship</i>)",
 	OnePerShip: true,
-	FrontArc: "",
+	FrontArc: true,
 	factions: ["dominion"]
 }, {
 	type: "weapon",
@@ -147,7 +147,7 @@ module.exports = [{
 	cost: 2,
 	text: "<b>PLANNING PHASE:</b> After all ships have chosen their Maneuvers, discard this card and target an opposing ship. Look at the target ship's Maneuver Dial and place a [battlestations] Token beside this ship. This ship cannot perfrom a [battlestations] Action this game round.",
 	unique: true,
-	captainRomulan: "",
+	captainRomulan: true,
 	range: "1 - 3",
 	factions: ["romulan"]
 },  {
@@ -257,7 +257,7 @@ module.exports = [{
 	cost: 3,
 	text: "<b>ACTION:</b> Discard this card, target a Captain equipped to an opposing ship, and target the Captain equipped to this ship.\n\nThe controllers of the target Captains both roll 5 attack dice. Whoever rolls the most [battlestations], re-rolling ties, adds +2 to thier target Captains Captain Skill for the rest of the game. The other player must discard their target Captain.",
 	unique: true,
-	captainKlingon: "",
+	captainKlingon: true,
 	range: "1 - 3",
 	factions: ["klingon"]
 }, {
@@ -370,8 +370,8 @@ module.exports = [{
 	attack: 4,
 	text: "<b>Attack:</b> Discard this card.\n\nThe defending ship cannot spend [battlestations] or [evade] Tokens\n\n<b>WHEN DEFENDING:</b> Discard this card\n\nThe attacking ship suffers 1 [crit].",
 	OnePerShip: true,
-	FrontArc: "",
-	RearArc: "",
+	FrontArc: true,
+	RearArc: true,
 	factions: ["dominion"]
 }, {
 	type: "weapon",
@@ -382,8 +382,8 @@ module.exports = [{
 	range: "2 - 3",
 	attack: 5,
 	text: "<b>Attack:</b>Spend this ship's [target-lock] Token and place 2 [time] Tokens on this card. \n\nIf this attack hits, add 1 [hit] or add 2 [hit] if this weapon is equipped to a Cardassian ATR-4107.",
-	FrontArc: "",
-	RearArc: "",
+	FrontArc: true,
+	RearArc: true,
 	factions: ["dominion"]
 }, {
 	type: "question",
@@ -467,8 +467,8 @@ module.exports = [{
 	cost: 2,
 	attack: 4,
 	range: "2 - 3",
-	FrontArc: "",
-	RearArc: "",
+	FrontArc: true,
+	RearArc: true,
 	text: "<b>ATTACK:</b> If this ship has a [target-lock] Token on the defending ship, place 2 [time] Tokens on this card.\n\nThis ship my convert 1 [battlestations] into a [crit].",
 	unique: false,
 	factions: ["klingon"]
