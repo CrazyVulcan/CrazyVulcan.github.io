@@ -45,7 +45,7 @@ module.exports = [{
 	name: "Secondary Matter System",
 	cost: 3,
 	text: "All 2 [bank-left] 2 [bank-right], and 3 [straight] Maneuvers this ship performs are Green Maneuvers.",
-	shipDominion: "",
+	shipDominion: true,
 	factions: ["dominion"]
 }, {
 	type: "weapon",
@@ -168,7 +168,7 @@ module.exports = [{
 	text: "When this card has 2 or more [aux] Tokens on it, discard it.\n________________________\n<b>WHEN AN [aux] TOKEN WOULD BE PLACED BESIDE THIS SHIP:</b>\n\nPlace that [aux] Token on this card instead.",
 	OnePerShip: true,
 	hullConstraint: "4+",
-	shipRomulan: "+2",
+	costRomulan: "+2",
 	factions: ["romulan"]
 }, {
 	type: "tech",
