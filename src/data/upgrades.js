@@ -45,7 +45,7 @@ module.exports = [{
 	name: "Secondary Matter System",
 	cost: 3,
 	text: "All 2 [bank-left] 2 [bank-right], and 3 [straight] Maneuvers this ship performs are Green Maneuvers.",
-	shipDominion: true,
+	shipDominion: "",
 	factions: ["dominion"]
 }, {
 	type: "weapon",
