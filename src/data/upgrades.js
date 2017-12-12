@@ -16,7 +16,7 @@ module.exports = [{
 	range: "1 - 2",
 	text: "<b>COMBAT PHASE:</b> Place 3 [time] Tokens on this card and disable this ships Shields.\n\n<b>Continuous Effect:</b> This ships Shields remain disabled. This ship can only perform Green Maneuvers. This ship rolls +3 attack dice.",
 	unique: true,
-	shipDominion: "",
+	shipDominion: true,
 	hullConstraint: "5+",
 	factions: ["dominion"]
 }, {
@@ -139,7 +139,7 @@ module.exports = [{
 	range: "1 - 2",
 	text: "<b>ACTION:</b> Discard this card and target all friendly ships.\n\nPlace a [battlestations] Token beside this ship and all target ships.",
 	unique: true,
-	shipDominion: "",
+	shipDominion: true,
 	factions: ["dominion"]
 }, {
 	type: "crew",
@@ -297,7 +297,7 @@ module.exports = [{
 	cost: 5,
 	text: "<b>WHEN ATTACKING:</b> If this ship is Cloaked:\n\nConvert all [blank] to [hit]",
 	unique: true,
-	shipKlingon: "",
+	shipKlingon: true,
 	factions: ["klingon"]
 }, {
 	type: "talent",
