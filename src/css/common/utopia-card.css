@@ -258,9 +258,9 @@
 .card-captainRomulan-icon {
 	background: url("../img/card-captainRomulan-icon.png")no-repeat;
 	font-size: 1em;
-	background-size: 2em;
+	background-size: 2.5em;
 	color: red;
-	padding: 1.2em;
+	padding: 0.5em;
 	position: relative;
 	left: 0em;
 	margin-top:0.5em;
