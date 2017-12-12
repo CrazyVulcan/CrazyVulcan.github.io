@@ -2940,6 +2940,17 @@ module.exports = [{
 	}
 }, {
 	type: "captain",
+	id: "female_changeling_75001",
+	set: ["75001"],
+	name: "Female Changeling",
+	cost: 6,
+	skill: 9,
+	talents: 1,
+	text: "<b>ACTION:</b> Decrease the Captain Skill of this Captain by 1 this game round.\n\nPerfrom an Action on this ships Action Bar and an Action on a Dominion [crew] equipped to this ship as Free Actions.",
+	unique: true,
+	factions: ["dominion"]
+},  {
+	type: "captain",
 	id: "james_t_kirk_enterprise_a",
 	set: ["72260gp"],
 	name: "James T. Kirk",

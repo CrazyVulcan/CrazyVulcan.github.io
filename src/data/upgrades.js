@@ -16,7 +16,7 @@ module.exports = [{
 	range: "1 - 2",
 	text: "<b>COMBAT PHASE:</b> Place 3 [time] Tokens on this card and disable this ships Shields.\n\n<b>Continuous Effect:</b> This ships Shields remain disabled. This ship can only perform Green Maneuvers. This ship rolls +3 attack dice.",
 	unique: true,
-	shipDominion: true,
+	shipDominion: "",
 	hullConstraint: "5+",
 	factions: ["dominion"]
 }, {
@@ -30,6 +30,24 @@ module.exports = [{
 	unique: true,
 	factions: ["dominion"]
 }, {
+	type: "tech",
+	id: "sucide_attack_75002",
+	set: ["75002"],
+	name: "Suicide Attack",
+	cost: 5,
+	text: "<b>ACTIVATION PHASE:</b> If this ship overlaps an opposing ship, target that ship and destroy this ship.\n\nDeal 2 [crit] to that target ships Hull.\n\n(<i>Jem'Hadar Attack Ship</i>)",
+	OnePerShip: true,
+	factions: ["dominion"]
+}, {
+	type: "tech",
+	id: "secondary_matter_system_75002",
+	set: ["75002"],
+	name: "Secondary Matter System",
+	cost: 3,
+	text: "All 2 [bank-left] 2 [bank-right], and 3 [straight] Maneuvers this ship performs are Green Maneuvers.",
+	shipDominion: "",
+	factions: ["dominion"]
+}, {
 	type: "weapon",
 	id: "disruptor_cannon",
 	set: ["75002"],
@@ -40,6 +58,18 @@ module.exports = [{
 	text: "<b>ATTACK:</b> Spend this ships [target-lock] Token, discard this card, and target an opposing ship.\n\nPerfrom this attack twice against the target ship.\n       (<i>Jem'Hadar Battleship</i>)",
 	unique: true,
 	RearArc: true,
+	factions: ["dominion"]
+}, {
+	type: "weapon",
+	id: "photon_torpedoes_75001",
+	set: ["75001"],
+	name: "Photon Torpedoes",
+	cost: 5,
+	range: "2 - 3",
+	attack: 8,
+	text: "<b>ATTACK:</b> Spend this ships [target-lock] Token, discard this card, and target an opposing ship that is not Cloaked and has no active Shields.\n\nThis ship may convert all [battlestations] into [hit]",
+	FrontArc: "",
+	RearArc: "",
 	factions: ["dominion"]
 }, {
 	type: "weapon",
@@ -64,12 +94,32 @@ module.exports = [{
 	OnePerShip: true,
 	factions: ["dominion"]
 }, {
+	type: "weapon",
+	id: "energy_dissipator_75002",
+	set: ["75002"],
+	name: "Engery Dissipator",
+	cost: 2,
+	range: "1 - 2",
+	attack: 3,
+	text: "<b>Attack:</b> Discard this card and target an opposing ship.\n\nFor each uncancelled [hit] or [crit], discard 1 [tech] Upgrade equipped to the target ship.\n\n(<i>Jem'Hadar Attack Ship</i>)",
+	unique: true,
+	FrontArc: "",
+	factions: ["dominion"]
+}, {
 	type: "crew",
 	id: "jemhadar_first_75002",
 	set: ["75002"],
 	name: "Jem'Hadar First",
 	cost: 3,
 	text: "<b>COMBAT PHASE:</b> Place 3 [time] Tokens on this card.\n\nConvert 1 [battlestations] into 1 [blank], 1 [evade], or 1 [hit].",
+	factions: ["dominion"]
+}, {
+	type: "crew",
+	id: "jemhadar_elder_75002",
+	set: ["75002"],
+	name: "Jem'Hadar Elder",
+	cost: 3,
+	text: "<b>END PHASE:</b> Place 3 [time] Tokens on this card.\n\n[battlestations] Token do not get removed from this ship this game round.",
 	factions: ["dominion"]
 }, {
 	type: "crew",

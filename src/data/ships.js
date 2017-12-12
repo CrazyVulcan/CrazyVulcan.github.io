@@ -21,6 +21,48 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
+	id: "2nd_division_battleship_71279",
+	set: ["75001"],
+	name: "2nd Division Battleship",
+	class: "Jem'Hadar Battleship",
+	actions: ["target-lock", "scan", "battlestations"],
+	upgrades: ["tech", "weapon", "weapon", "weapon", "crew", "crew"],
+	attack: 6,
+	agility: 0,
+	hull: 7,
+	shields: 5,
+	cost: 35,
+	text: "<b>END PHASE:</b> If this ship performed a Green Maneuver this game round.\n\nRepair 1 Hull or Shield.",
+	unique: true,
+	factions: ["dominion"],
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	squadron: false
+}, {
+	type: "ship",
+	id: "generic_battleship_71279",
+	set: ["75001"],
+	name: "Dominion Starship",
+	class: "Jem'Hadar Battleship",
+	actions: ["target-lock", "scan", "battlestations"],
+	upgrades: ["tech", "weapon", "weapon", "crew", "crew"],
+	attack: 6,
+	agility: 0,
+	hull: 7,
+	shields: 4,
+	cost: 29,
+	text: "",
+	unique: false,
+	factions: ["dominion"],
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	squadron: false
+}, {
+	type: "ship",
 	id: "3rd_division_cruiser_71524",
 	set: ["75002"],
 	name: "3rd Division Battle Cruiser",
@@ -107,7 +149,7 @@ module.exports = [{
 	agility: 2,
 	hull: 3,
 	shields: 2,
-	cost: 14,
+	cost: 13,
 	text: "",
 	unique: false,
 	factions: ["dominion"],
