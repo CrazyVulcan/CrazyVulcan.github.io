@@ -223,6 +223,19 @@
 	text-align: center;
 }
 
+.card-costFederation-icon {
+	background: url("../img/card-shipFederation-icon.png")no-repeat;
+	font-size: 0.5em;
+	background-size: 2em;
+	color: red;
+	padding: 0.5em;
+	position: relative;
+	left: 0em;
+	margin-top:0.5em;
+	top: -0.1em;
+	z-index: 2;
+	text-align: center;
+}
 .card-captainKlingon-icon {
 	background: url("../img/card-captainKlingon-icon.png")no-repeat;
 	font-size: 0.5em;
@@ -239,6 +252,19 @@
 
 .card-shipKlingon-icon {
 	background: url("../img/card-shipKlingon-icon.png")no-repeat;
+	font-size: 1em;
+	background-size: 2em;
+	color: red;
+	position: relative;
+	left: 0em;
+	margin-top:0.5em;
+	top: -0.1em;
+	z-index: 2;
+	text-align: center;
+}
+
+.card-costKlingon-icon {
+	background: url("../img/card-shipKlingon-icon.png")no-repeat;
 	font-size: 0.5em;
 	background-size: 2em;
 	color: red;
@@ -250,7 +276,6 @@
 	z-index: 2;
 	text-align: center;
 }
-
 .card-captainRomulan-icon {
 	background: url("../img/card-captainRomulan-icon.png")no-repeat;
 	font-size: 0.5em;
@@ -279,6 +304,20 @@
 	text-align: center;
 }
 
+.card-costRomulan-icon {
+	background: url("../img/card-shipRomulan-icon.png") no-repeat;
+	font-size: 0.5em;
+	background-size: 2em;
+	color: red;
+	padding: 0.5em;
+	position: relative;
+	left: 0em;
+	margin-top:0.5em;
+	top: -0.1em;
+	z-index: 2;
+	text-align: center;
+}
+
 .card-captainDominion-icon {
 	background: url("../img/card-captainDominion-icon.png") no-repeat;
 	font-size: 0.5em;
@@ -294,6 +333,20 @@
 }
 
 .card-shipDominion-icon {
+	background: url("../img/card-shipDominion-icon.png") no-repeat;
+	font-size: 0.5em;
+	background-size: 2em;
+	color: red;
+	padding: 0.5em;
+	position: relative;
+	left: 0em;
+	margin-top:0.5em;
+	top: -0.1em;
+	z-index: 2;
+	text-align: center;
+}
+
+.card-costDominion-icon {
 	background: url("../img/card-shipDominion-icon.png") no-repeat;
 	font-size: 0.5em;
 	background-size: 2em;
