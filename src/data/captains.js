@@ -2940,8 +2940,8 @@ module.exports = [{
 	}
 }, {
 	type: "captain",
-	id: "female_changeling_75001",
-	set: ["75001"],
+	id: "female_changeling_75002",
+	set: ["75002"],
 	name: "Female Changeling",
 	cost: 6,
 	skill: 9,

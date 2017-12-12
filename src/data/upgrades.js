@@ -49,7 +49,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "weapon",
-	id: "disruptor_cannon",
+	id: "disruptor_cannon_75002",
 	set: ["75002"],
 	name: "Disruptor Cannon",
 	cost: 3,
@@ -61,8 +61,8 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_75001",
-	set: ["75001"],
+	id: "photon_torpedoes_75002",
+	set: ["75002"],
 	name: "Photon Torpedoes",
 	cost: 5,
 	range: "2 - 3",

@@ -21,8 +21,8 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "2nd_division_battleship_71279",
-	set: ["75001"],
+	id: "2nd_division_battleship_75002",
+	set: ["75002"],
 	name: "2nd Division Battleship",
 	class: "Jem'Hadar Battleship",
 	actions: ["target-lock", "scan", "battlestations"],
@@ -42,8 +42,8 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "generic_battleship_71279",
-	set: ["75001"],
+	id: "generic_battleship_75002",
+	set: ["75002"],
 	name: "Dominion Starship",
 	class: "Jem'Hadar Battleship",
 	actions: ["target-lock", "scan", "battlestations"],
