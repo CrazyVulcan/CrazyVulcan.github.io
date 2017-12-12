@@ -168,6 +168,15 @@
 	</glyph>
 </collection>
 
+<collection unicode="U+2e">
+	<selected id="0"/>
+	<glyph id="0" left="-28" right="28">
+		<layer name= "Layer" visible="true">
+			<path data="S -0.1334332834,-0.6259370315 L -1.0674662669,0.0412293853 L -0.1334332834,0.7083958021 L -0.1334332834,-0.6259370315" />
+		</layer>
+	</glyph>
+</collection>
+
 <collection name=".notdef">
 	<selected id="0"/>
 	<glyph id="0" left="-20" right="33">
