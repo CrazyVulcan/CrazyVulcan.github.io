@@ -7310,6 +7310,12 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			]
 		},
+		//Tal Shiar
+		"talent:tal_shiar_75001":{
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship,"romulan", ship, fleet) && ship.captain && $factions.hasFaction(ship.captain,"romulan", ship, fleet);
+			}			
+		},
 		//Interphase Generator
 		"tech:3040":{
 			canEquip: onePerShip("Interphase Generator")
@@ -7318,6 +7324,21 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"tech:reinforced_shields_75001":{
 			canEquip: function(upgrade,ship,fleet) {
 				return onePerShip("Reinforced Shields") && ship.hull >= 5;
+			}
+		},
+		//Auxiliary Power Core
+		"tech:auxiliary_power_core_75001":{
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("Auxiliary Power Core") && ship.hull >= 4;
+			},
+			intercept: {
+				self: {
+					cost: function(upgrade,ship,fleet,cost) {
+						if( ship && !$factions.hasFaction(ship,"romulan", ship, fleet) )
+							return resolve(upgrade,ship,fleet,cost) + 2;
+						return cost;
+					}
+				}
 			}
 		},
 		//Additonal Weapons Array
