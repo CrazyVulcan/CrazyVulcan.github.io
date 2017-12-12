@@ -1,5 +1,16 @@
 module.exports = [{
 	type: "admiral",
+	id: "femal_changeling_admral_75002",
+	set: ["75002"],
+	name: "Female Changeling",
+	cost: 6,
+	skill: 2,
+	talents: 1,
+	text: "<b>FLEET ACTION:</b> Decrease the Captain Skill of this Captain by 1 this game round.\n\nPerfrom an Action on this ships Action Bar and an Action on a Dominion [crew] equipped to this ship as Free Actions.",
+	unique: true,
+	factions: ["dominion"]
+}, {
+	type: "admiral",
 	id: "admiral_kmpec_2017core",
 	set: ["2017core"],
 	name: "K'Mpec",
