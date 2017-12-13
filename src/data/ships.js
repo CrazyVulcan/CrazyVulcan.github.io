@@ -266,7 +266,7 @@ module.exports = [{
 	name: "Romulan Starship",
 	class: "Romulan Scout Vessel",
 	actions: ["evade", "scan", "cloak", "sensor-echo"],
-	upgrades: ["crew"],
+	upgrades: ["weapon"],
 	attack: 1,
 	agility: 3,
 	hull: 2,
