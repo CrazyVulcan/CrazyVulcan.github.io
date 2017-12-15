@@ -3040,7 +3040,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "3040",
+	id: "IPG_75001",
 	set: ["71124", "75001"],
 	name: "Interphase Generator",
 	OnePerShip: true,
@@ -3052,7 +3052,7 @@ module.exports = [{
 	id: "3040",
 	set: ["71124"],
 	name: "Interphase Generator",
-	text: "When defending while you are Cloaked, you may discard this card after all the dice have been rolled to reduce the damage from a single attack to exactly 1 [hit]\n\n(<i>Possible errata to One per Ship</i>)",
+	text: "When defending while you are Cloaked, you may discard this card after all the dice have been rolled to reduce the damage from a single attack to exactly 1 [hit]\n\n<i>Possible errata to One per Ship</i>",
 	factions: ["romulan"],
 	cost: 3,
 }, {

@@ -7383,7 +7383,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}			
 		},
 		//Interphase Generator
-		"tech:3040":{
+		"tech:IPG_75001":{
 			canEquip: onePerShip("Interphase Generator")
 		},
 		//Reinforced Shields
