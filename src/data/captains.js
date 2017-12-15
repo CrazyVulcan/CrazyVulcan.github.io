@@ -1795,6 +1795,17 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "captain",
+	id: "duras_2017core",
+	set: ["2017core"],
+	name: "Duras",
+	unique: true,
+	text: "Romulan [talent] and Klingon [talent] Upgrades equipped to this Captain cost 3 SP.\n----------------------------\n[talent] Upgrades equipped to this Captain start the game face down. Flip a face down [talent] Upgrade equipped to this Captain face up the first time it is used.",
+	factions: ["klingon"],
+	cost: 5,
+	skill: 6,
+	talents: 1
+}, {
+	type: "captain",
 	id: "william_riker_2017core",
 	set: ["2017core"],
 	name: "William T. Riker",

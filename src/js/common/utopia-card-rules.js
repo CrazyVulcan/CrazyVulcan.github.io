@@ -7295,6 +7295,41 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}},
+		"captain:william_riker_2017core":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}},
+		"captain:duras_2017core":{
+			intercept: {
+			ship: {
+				cost: {
+					priority: 100,
+					fn: function(upgrade, ship, fleet, cost) {
+						if( hasFaction(upgrade,"klingon",ship,fleet) || hasFaction(upgrade,"romulan",ship,fleet) )
+							return 3;
+						return cost;
+					}
+				},
+				// TODO Check if faction penalty should be applied
+				factionPenalty: function(upgrade, ship, fleet, factionPenalty) {
+					if( hasFaction(upgrade,"klingon",ship,fleet) || hasFaction(upgrade,"romulan",ship,fleet) )
+						return 0;
+					return factionPenalty;
+				}
+			}
+		}},
+		"captain:data_2017core":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}},
+		"talent:make_it_so_2017core":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}},
+		"talent:blood_oath_2017core":{
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship,"klingon", ship, fleet) && ship.captain && $factions.hasFaction(ship.captain,"klingon", ship, fleet);
+			}},
 		"crew:worf_2017core":{
 			canEquip: function(upgrade,ship,fleet) {
 				return $factions.hasFaction(ship,"klingon", ship, fleet);
@@ -7367,7 +7402,30 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			]
 		},
-		
+		"weapon:disruptor_cannon_75002":{
+			canEquip: function(upgrade,ship,fleet) {
+				return ship.class == "Jem'Hadar Battleship";
+			}
+		},
+		"weapon:phased_polaron_beam_75002":{
+			canEquip: function(upgrade,ship,fleet) {
+				return (onePerShip("Phased Polaron Beams") && ship.class == "Jem'Hadar Attack Ship");
+		}},
+		"weapon:energy_dissipator_75002":{
+			canEquip: function(upgrade,ship,fleet) {
+				return ship.class == "Jem'Hadar Attack Ship";
+		}},
+		"weapon:minesweeper_75002":{
+			canEquip: onePerShip("Minesweeper")
+		},
+		"tech:sucide_attack_75002":{canEquip: function(upgrade,ship,fleet) {
+				return (onePerShip("Suicide Attack") && ship.class == "Jem'Hadar Attack Ship");
+		}},
+		"tech:secondary_matter_system_75002":{
+			canEquip: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship,"dominion", ship, fleet);
+			}
+		},
 	//D'Kora Card Pack
 		//Lurin
 		"captain:lurin_73001":{

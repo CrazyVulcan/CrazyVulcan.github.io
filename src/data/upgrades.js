@@ -300,6 +300,23 @@ module.exports = [{
 	shipKlingon: true,
 	factions: ["klingon"]
 }, {
+	type: "crew",
+	id: "kurn_2017core",
+	set: ["2017core"],
+	name: "Kurn",
+	cost: 4,
+	text: "<b>ACTION:</b> Discard this card.\n\nEquip a [weapon] Upgrade with a cost of 5 SP or less that was discarded from this ship to this ship.",
+	unique: true,
+	factions: ["klingon"]
+}, {
+	type: "crew",
+	id: "klingon_helmsman_2017core",
+	set: ["2017core"],
+	name: "Klingon Helmsman",
+	cost: 3,
+	text: "<b>ACTIVATION PHASE:</b> Place 2 [time] Tokens on this card.\n\nPerform a [scan] Action as a Free Action.",
+	factions: ["klingon"]
+}, {
 	type: "talent",
 	id: "blood_oath_2017core",
 	set: ["2017core"],
