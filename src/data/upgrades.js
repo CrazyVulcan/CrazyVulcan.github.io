@@ -3049,6 +3049,14 @@ module.exports = [{
 	cost: 3,
 }, {
 	type: "tech",
+	id: "3040",
+	set: ["71124"],
+	name: "Interphase Generator",
+	text: "When defending while you are Cloaked, you may discard this card after all the dice have been rolled to reduce the damage from a single attack to exactly 1 [hit]\n\n(<i>Possible errata to One per Ship</i>)",
+	factions: ["romulan"],
+	cost: 3,
+}, {
+	type: "tech",
 	id: "3041",
 	set: ["71124"],
 	name: "Muon Feedback Wave",
