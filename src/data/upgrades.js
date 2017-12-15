@@ -127,7 +127,7 @@ module.exports = [{
 	set: ["75002"],
 	name: "Duran'Adar",
 	cost: 3,
-	text: "Add 1 [tech] to this ships Upgrade Bar.\n_______________________\n<b>ACTIVATION PHASE:</b> After this ship reveals a Red Maneuver, place 3 [time] Tokens on this card.\n\nThis ship does not recive [aux] Tokens this game round.",
+	text: "Add 1 [tech] to this ships Upgrade Bar.\n-----------------------------\n<b>ACTIVATION PHASE:</b> After this ship reveals a Red Maneuver, place 3 [time] Tokens on this card.\n\nThis ship does not recive [aux] Tokens this game round.",
 	unique: true,
 	factions: ["dominion"]
 }, {
@@ -165,7 +165,7 @@ module.exports = [{
 	set: ["75001"],
 	name: "Auxiliary Power Core",
 	cost: 3,
-	text: "When this card has 2 or more [aux] Tokens on it, discard it.\n________________________\n<b>WHEN AN [aux] TOKEN WOULD BE PLACED BESIDE THIS SHIP:</b>\n\nPlace that [aux] Token on this card instead.",
+	text: "When this card has 2 or more [aux] Tokens on it, discard it.\n-----------------------------\n<b>WHEN AN [aux] TOKEN WOULD BE PLACED BESIDE THIS SHIP:</b>\n\nPlace that [aux] Token on this card instead.",
 	OnePerShip: true,
 	hullConstraint: "4+",
 	costRomulan: "+2",
@@ -290,6 +290,15 @@ module.exports = [{
 	text: "<b>WHEN DEFENDING:</b> When this ship receives a face up Damage Card:\n\nTurn that Damage Card face down unless it is a 'Warp Core Breach'.",
 	factions: ["klingon"]
 }, {
+	type: "weapon",
+	id: "tactical_station_2017core",
+	set: ["2017core"],
+	name: "Tactical Station",
+	cost: 4,
+	text: "Add 1 [weapon] to this ships Upgrade Bar.\n-----------------------------\n<b>WHEN ATTACKING:</b> Disable this card.\n\nThis ship rolls +1 attack die this game round./n-----------------------------\n<b>WHEN ATTACKING:</b> Discard this card.\n\nThis ship rolls +2 attack dice this game round.",
+	OnePerShip: true,
+	factions: ["federation"]
+}, {
 	type: "crew",
 	id: "worf_2017core",
 	set: ["2017core"],
@@ -316,6 +325,31 @@ module.exports = [{
 	cost: 3,
 	text: "<b>ACTIVATION PHASE:</b> Place 2 [time] Tokens on this card.\n\nPerform a [scan] Action as a Free Action.",
 	factions: ["klingon"]
+}, {
+	type: "crew",
+	id: "deanna_troi_2017core",
+	set: ["2017core"],
+	name: "Deanna Troi",
+	cost: 2,
+	range: "1 - 3",
+	text: "<b>PLANNING PHASE:</b> After all ships have chosen their Maneuver, discard this card and target two opposing ships.\n\nLook at the Maneuver dials of the target ships. Then, this ship may change its chosen Maneuver. The  target ships' Maneuvers may not be changed for the rest of the game round.",
+	factions: ["federation"]
+}, {
+	type: "crew",
+	id: "beverly_crusher_2017core",
+	set: ["2017core"],
+	name: "Deanna Troi",
+	cost: 3,
+	text: "<b>ACTIVATION PHASE:</b> Disable this card.\n\nRemove a Disabled Token from a [crew] Upgrade equipped to this ship.\n-----------------------------\n<b>ACTION:</b> Discard this card.\n\nEquip a [crew] Upgrade with a cost of 4 SP or less that was discarded from this ship to this ship.",
+	factions: ["federation"]
+},  {
+	type: "crew",
+	id: "christopher_hobson_2017core",
+	set: ["2017core"],
+	name: "Christopher Hobson",
+	cost: 2,
+	text: "<b>WHEN ATTACKING:</b> If the defending ship is Cloaked:\n\nThe defending ship rolls -2 defense dice.",
+	factions: ["federation"]
 }, {
 	type: "talent",
 	id: "blood_oath_2017core",
@@ -8009,10 +8043,7 @@ module.exports = [{
 	text: "When attacking with your Primary Weapon at Range 3, you gain +1 attack die and your opponent rolls 1 less defense die. This Upgrade may only be purchased for a Klingon Ship. No ship may be equipped with more than 1 \"Phaser Array Retrofit\" Upgrade.",
 	factions: ["klingon"],
 	cost: 5,
-	skill: 0,
-	talents: 0,
-	attack: 0,
-	range: "0"
+	range: "3"
 }, {
 	type: "crew",
 	id: "turanj_71808",

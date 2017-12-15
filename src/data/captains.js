@@ -2408,7 +2408,7 @@ module.exports = [{
 	cost: 5,
 	skill: 7,
 	talents: 1,
-	text: "You do not pay a Faction Penality when you equip this card or Ferengi Upgrades to this ship.\n_________________________\nFerengi Upgrades equipped to this ship cost -1SP.\n_________________________\n<b>SETUP:</b>\nPlace 2 Gold-Pressed Latinum Tokens (GPLT) on this card.",
+	text: "You do not pay a Faction Penality when you equip this card or Ferengi Upgrades to this ship.\n-----------------------------\nFerengi Upgrades equipped to this ship cost -1SP.\n-----------------------------\n<b>SETUP:</b>\nPlace 2 Gold-Pressed Latinum Tokens (GPLT) on this card.",
 	unique: true,
 	factions: ["ferengi"]
 }, {

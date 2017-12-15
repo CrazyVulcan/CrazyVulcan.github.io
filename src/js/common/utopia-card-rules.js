@@ -7338,11 +7338,34 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquipFaction: function(upgrade,ship,fleet) {
 				return $factions.hasFaction(ship,"klingon", ship, fleet) && ship.captain && $factions.hasFaction(ship.captain,"klingon", ship, fleet);
 			}},
+		"weapon:tactical_station_2017core":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			},
+			canEquip: onePerShip("Tactical Station"),
+			upgradeSlots: [ 
+				{ 
+					type: ["weapon"]
+				}
+			]
+		},
+		"crew:deanna_troi_2017core":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}},
+		"crew:beverly_crusher_2017core":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}},
+		"crew:christopher_hobson_2017core":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}},
 		"crew:worf_2017core":{
 			canEquip: function(upgrade,ship,fleet) {
 				return $factions.hasFaction(ship,"klingon", ship, fleet);
-			}			
-		},
+			}},
+		
 	//2017 Romulan Faction Ser
 		//Tomalak
 		"captain:tomalak_75001":{
@@ -7378,18 +7401,18 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				self: {
 					cost: function(upgrade,ship,fleet,cost) {
 						if( ship && !$factions.hasFaction(ship,"romulan", ship, fleet) )
-							return resolve(upgrade,ship,fleet,cost) + 1;
+							return resolve(upgrade,ship,fleet,cost) + 2;
 						return cost;
 					}
 				}
 			}
 		},
-		//Additonal Weapons Array
+		//Additional Weapons Array
 		"weapon:additional_weapons_array_75001":{
 			canEquip: function(upgrade,ship,fleet) {
 				return (onePerShip("Additional Weapons Array") && ship.class == "D'deridex Class");
 			}},
-	//2017 Dominion Faction Ser
+	//2017 Dominion Faction Set
 		//All Power to Weapons
 		"talent:all_power_to_weapons_75002":{
 			canEquip: function(upgrade,ship,fleet) {
