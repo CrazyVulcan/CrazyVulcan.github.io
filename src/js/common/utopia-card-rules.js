@@ -7303,7 +7303,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			upgradeSlots: cloneSlot( 1 ,
 				{
 					type: ["talent"],
-					rules: "Klingon & Romulan Talents Cost Exactly 3 SP",
+					rules: "Klingon And Romulan Talents Cost Exactly 3 SP",
 					faceDown: true,
 					intercept: {
 						ship: {
@@ -7378,7 +7378,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				self: {
 					cost: function(upgrade,ship,fleet,cost) {
 						if( ship && !$factions.hasFaction(ship,"romulan", ship, fleet) )
-							return resolve(upgrade,ship,fleet,cost) + 2;
+							return resolve(upgrade,ship,fleet,cost) + 1;
 						return cost;
 					}
 				}
