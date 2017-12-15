@@ -339,10 +339,10 @@ module.exports = [{
 	type: "crew",
 	id: "beverly_crusher_2017core",
 	set: ["2017core"],
-	name: "Deanna Troi",
+	name: "Beverly Crusher",
 	cost: 3,
 	unique: true,
-	text: "<b>ACTIVATION PHASE:</b> Disable this card.\n\nRemove a Disabled Token from a [crew] Upgrade equipped to this ship.\n-----------------------------\n<b>ACTION:</b> Discard this card.\n\nEquip a [crew] Upgrade with a cost of 4 SP or less that was discarded from this ship to this ship.",
+	text: "<b>ACTIVATION PHASE:</b> Disable this card.\nRemove a Disabled Token from a [crew] Upgrade equipped to this ship.\n-----------------------------\n<b>ACTION:</b> Discard this card.\nEquip a [crew] Upgrade with a cost of 4 SP or less that was discarded from this ship to this ship.",
 	factions: ["federation"]
 },  {
 	type: "crew",
