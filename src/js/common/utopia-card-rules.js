@@ -7310,14 +7310,14 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 							cost: {
 								priority: 100,
 								fn: function(upgrade, ship, fleet, cost) {
-									if( hasFaction(upgrade,"federation",ship,fleet) || hasFaction(upgrade,"bajoran",ship,fleet) || hasFaction(upgrade,"vulcan",ship,fleet) )
+									if( hasFaction(upgrade,"klingon",ship,fleet) || hasFaction(upgrade,"romulan",ship,fleet) )
 										return 3;
 									return cost;
 								}
 							},
 							// TODO Check if faction penalty should be applied
 							factionPenalty: function(upgrade, ship, fleet, factionPenalty) {
-								if( hasFaction(upgrade,"federation",ship,fleet) || hasFaction(upgrade,"bajoran",ship,fleet) || hasFaction(upgrade,"vulcan",ship,fleet) )
+								if( hasFaction(upgrade,"klingon",ship,fleet) || hasFaction(upgrade,"romulan",ship,fleet) )
 									return 0;
 								return factionPenalty;
 							}
