@@ -295,7 +295,7 @@ module.exports = [{
 	set: ["2017core"],
 	name: "Tactical Station",
 	cost: 4,
-	text: "Add 1 [weapon] to this ships Upgrade Bar.\n-----------------------------\n<b>WHEN ATTACKING:</b> Disable this card.\n\nThis ship rolls +1 attack die this game round./n-----------------------------\n<b>WHEN ATTACKING:</b> Discard this card.\n\nThis ship rolls +2 attack dice this game round.",
+	text: "Add 1 [weapon] to this ships Upgrade Bar.\n-----------------------------\n<b>WHEN ATTACKING:</b> Disable this card.\nThis ship rolls +1 attack die this game round./n-----------------------------\n<b>WHEN ATTACKING:</b> Discard this card.\nThis ship rolls +2 attack dice this game round.",
 	OnePerShip: true,
 	factions: ["federation"]
 }, {
@@ -331,6 +331,7 @@ module.exports = [{
 	set: ["2017core"],
 	name: "Deanna Troi",
 	cost: 2,
+	unique: true,
 	range: "1 - 3",
 	text: "<b>PLANNING PHASE:</b> After all ships have chosen their Maneuver, discard this card and target two opposing ships.\n\nLook at the Maneuver dials of the target ships. Then, this ship may change its chosen Maneuver. The  target ships' Maneuvers may not be changed for the rest of the game round.",
 	factions: ["federation"]
@@ -340,6 +341,7 @@ module.exports = [{
 	set: ["2017core"],
 	name: "Deanna Troi",
 	cost: 3,
+	unique: true,
 	text: "<b>ACTIVATION PHASE:</b> Disable this card.\n\nRemove a Disabled Token from a [crew] Upgrade equipped to this ship.\n-----------------------------\n<b>ACTION:</b> Discard this card.\n\nEquip a [crew] Upgrade with a cost of 4 SP or less that was discarded from this ship to this ship.",
 	factions: ["federation"]
 },  {
@@ -348,6 +350,7 @@ module.exports = [{
 	set: ["2017core"],
 	name: "Christopher Hobson",
 	cost: 2,
+	unique: true,
 	text: "<b>WHEN ATTACKING:</b> If the defending ship is Cloaked:\n\nThe defending ship rolls -2 defense dice.",
 	factions: ["federation"]
 }, {
