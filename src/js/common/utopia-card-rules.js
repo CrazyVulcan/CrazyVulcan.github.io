@@ -7300,24 +7300,32 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}},
 		"captain:duras_2017core":{
-			intercept: {
-			ship: {
-				cost: {
-					priority: 100,
-					fn: function(upgrade, ship, fleet, cost) {
-						if( hasFaction(upgrade,"klingon",ship,fleet) || hasFaction(upgrade,"romulan",ship,fleet) )
-							return 3;
-						return cost;
+			upgradeSlots: cloneSlot( 1 ,
+				{
+					type: ["talent"],
+					rules: "Klingon & Romulan Talents Cost Exactly 3 SP",
+					faceDown: true,
+					intercept: {
+						ship: {
+							cost: {
+								priority: 100,
+								fn: function(upgrade, ship, fleet, cost) {
+									if( hasFaction(upgrade,"federation",ship,fleet) || hasFaction(upgrade,"bajoran",ship,fleet) || hasFaction(upgrade,"vulcan",ship,fleet) )
+										return 3;
+									return cost;
+								}
+							},
+							// TODO Check if faction penalty should be applied
+							factionPenalty: function(upgrade, ship, fleet, factionPenalty) {
+								if( hasFaction(upgrade,"federation",ship,fleet) || hasFaction(upgrade,"bajoran",ship,fleet) || hasFaction(upgrade,"vulcan",ship,fleet) )
+									return 0;
+								return factionPenalty;
+							}
+						}
 					}
-				},
-				// TODO Check if faction penalty should be applied
-				factionPenalty: function(upgrade, ship, fleet, factionPenalty) {
-					if( hasFaction(upgrade,"klingon",ship,fleet) || hasFaction(upgrade,"romulan",ship,fleet) )
-						return 0;
-					return factionPenalty;
 				}
-			}
-		}},
+			)
+		},
 		"captain:data_2017core":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
