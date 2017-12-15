@@ -1466,6 +1466,18 @@ module.exports = [{
 	cost: 3,
 	skill: 5,
 	talents: 0
+},  {
+	type: "captain",
+	id: "daimon_goss_73001",
+	set: ["73001"],
+	name: "Daimon Goss",
+	unique: true,
+	text: "<b>SETUP:</b>\nPlace 3 Gold-Pressed Latinum Tokens on this card.\n----------------------------------------\n<b>PLANNING PHASE:</b> Target an Obstacle, spend 3 GPLT and place 2 [time] Tokens on this card.\n\n<b>Continuous Effect:</b> While this ship is within Range of the target Obstacle, this ship rolls +3 defense dice.",
+	factions: ["ferengi"],
+	cost: 3,
+	skill: 5,
+	talents: 1,
+	range: "1 - 2"
 }, {
 	type: "captain",
 	id: "2026",
