@@ -39,6 +39,7 @@
 	width: 2.5em;
 	height: 2.5em;
 	border: 0.1em dashed #aaa;
+	transform: rotate(45deg);
 }
 
 .arc-hole {
