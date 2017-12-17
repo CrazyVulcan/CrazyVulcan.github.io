@@ -35,7 +35,7 @@
 .arc-second-45 {
 	position: absolute;
 	top: -3.7em;
-	left: -0.275em;
+	left: 0.275em;
 	width: 2.5em;
 	height: 5em;
 	border: 0.1em dashed #aaa;
