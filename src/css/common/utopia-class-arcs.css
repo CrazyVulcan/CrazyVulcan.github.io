@@ -34,12 +34,12 @@
 
 .arc-second-45 {
 	position: absolute;
-	top: -3.7em;
-	left: 0.275em;
-	width: 2.5em;
-	height: 5em;
-	border: 0.1em dashed #aaa;
-	transform: rotate(45deg);
+	border-left: 0.1em dashed #aaa;
+	border-right: 0.1em dashed #aaa;
+	border-top: 0.1em dashed #aaa;
+	width: 0;
+	height: 0;
+	border-radius: 50%;
 }
 
 .arc-hole {
