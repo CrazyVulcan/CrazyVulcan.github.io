@@ -33,6 +33,8 @@
 }
 
 .arc-second-45 {
+	top: -3.8em;
+	left: -0.275em;
 	position: absolute;
 	border-left: 0.1em dashed #aaa;
 	border-right: 0.1em dashed #aaa;
