@@ -7435,7 +7435,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		"weapon:disruptor_cannon_75002":{
 			canEquip: function(upgrade,ship,fleet) {
-				return ship.class == "Jem'Hadar Battleship";
+				return ship.class == "Jem'Hadar Battleship ";
 			}
 		},
 		"weapon:phased_polaron_beam_75002":{
