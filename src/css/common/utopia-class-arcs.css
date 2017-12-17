@@ -33,7 +33,7 @@
 }
 
 .arc-second-45 {
-	-webkit-box-sizing: content-box;
+-webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
   width: 5em;
@@ -45,8 +45,8 @@
   font: normal 100%/normal "Times New Roman", Times, serif;
   color: rgba(0,0,0,1);
   text-overflow: clip;
-  -webkit-transform: rotateZ(65deg)  translateX(-62px) translateY(-34px) skewX(45deg);
-  transform: rotateZ(65deg)  translateX(-62px) translateY(-34px) skewX(45deg);
+  -webkit-transform: rotateZ(65deg)  translateX(-52px) translateY(-30px) skewX(45deg);
+  transform: rotateZ(65deg)  translateX(-52px) translateY(-30px) skewX(45deg);
 }
 
 .arc-hole {
