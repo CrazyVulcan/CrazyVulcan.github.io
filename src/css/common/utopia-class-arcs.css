@@ -33,6 +33,7 @@
 }
 
 .arc-second-45 {
+	position: absolute;
 -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
