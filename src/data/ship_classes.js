@@ -866,6 +866,37 @@ module.exports = [{
 	}
 }, {
 	type: "ship-class",
+	id: "new_jem_hadar_battleship",
+	name: "NEW-Jem'Hadar Battleship",
+	frontArc: "90",
+	secondArc: "45",
+	rearArc: "",
+	maneuvers: {
+		1: {
+			straight: "green",
+			bank: "white"
+		},
+		2: {
+			straight: "green",
+			bank: "white"
+		},
+		3: {
+			straight: "green",
+			bank: "white",
+			turn: "red"
+		},
+		4: {
+			straight: "white",
+			bank: "white"
+		},
+		5: {
+			straight: "white"
+		},
+		min: 1,
+		max: 5
+	}
+}, {
+	type: "ship-class",
 	id: "bajoran_scout_ship",
 	name: "Bajoran Scout Ship",
 	frontArc: "90",

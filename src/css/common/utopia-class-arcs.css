@@ -32,6 +32,15 @@
 	border-bottom: 0.1em solid #aaa;
 }
 
+.arc-second-45 {
+	position: absolute;
+	top: 3.7em;
+	left: -0.275em;
+	width: 2.5em;
+	height: 2.5em;
+	border: 0.1em dashed #aaa;
+}
+
 .arc-hole {
 	position: absolute;
 	left: 1.5em;
