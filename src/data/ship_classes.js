@@ -867,7 +867,7 @@ module.exports = [{
 }, {
 	type: "ship-class",
 	id: "new_jem_hadar_battleship",
-	name: "Jem'Hadar Battleship",
+	name: "Jem'Hadar Battleship ",
 	frontArc: "90",
 	secondArc: "45",
 	rearArc: "",
