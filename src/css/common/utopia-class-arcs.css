@@ -34,19 +34,19 @@
 
 .arc-second-45 {
 	-webkit-box-sizing: content-box;
-	-moz-box-sizing: content-box;
-	box-sizing: content-box;
-	width: 5em;
-	height: 5em;
-	position: absolute;
-	top: -3.8em;
-	left: -0.275em;
-	border: 0.1em dashed rgb(170,170,170);
-	font: normal 100%/normal "Times New Roman", Times, serif;
-	color: rgba(0,0,0,1);
-	text-overflow: clip;
-	-webkit-transform: rotateZ(65deg)  translateX(-26px) translateY(-19px) skewX(45deg);
-	transform: rotateZ(65deg)  translateX(-26px) translateY(-19px) skewX(45deg);
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 5em;
+  height: 5em;
+  position: absolute;
+  top: -3.8em;
+  left: -0.275em;
+  border: 0.1em dashed rgb(170,170,170);
+  font: normal 100%/normal "Times New Roman", Times, serif;
+  color: rgba(0,0,0,1);
+  text-overflow: clip;
+  -webkit-transform: rotateZ(65deg)  translateX(-62px) translateY(-34px) skewX(45deg);
+  transform: rotateZ(65deg)  translateX(-62px) translateY(-34px) skewX(45deg);
 }
 
 .arc-hole {
