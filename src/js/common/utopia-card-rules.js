@@ -7388,19 +7388,19 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			attack: 0,
 			intercept: {
 				self: {
-					// Attack is same as ship primary
+					// Attack is same as ship primary weapon
 					attack: function(upgrade,ship,fleet,attack) {
 						if( ship )
 							return valueOf(ship,"attack",ship,fleet);
 						return attack;
-					}
-				},
-				// Cost is primary weapon
+					},
+					// Cost is primary weapon
 					cost: function(upgrade,ship,fleet,cost) {
 						if( ship )
 							return resolve(upgrade,ship,fleet,cost) + valueOf(ship,"attack",ship,fleet);
 						return cost;
 					}
+				}
 			}
 		},
 		"crew:deanna_troi_2017core":{
