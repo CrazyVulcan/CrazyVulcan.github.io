@@ -7291,14 +7291,17 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 		
 	//2017 Core Set
+		//Picard
 		"captain:picard_2017core":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}},
+		//Will Riker
 		"captain:william_riker_2017core":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}},
+		//Duras
 		"captain:duras_2017core":{
 			upgradeSlots: cloneSlot( 1 ,
 				{
@@ -7326,18 +7329,32 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			)
 		},
+		//Data
 		"captain:data_2017core":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}},
+		//Make It So
 		"talent:make_it_so_2017core":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}},
+		//Riker Maneuver
+		"talent:riker_maneuver_2017core":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}},
+		//Blood Oath
 		"talent:blood_oath_2017core":{
 			canEquipFaction: function(upgrade,ship,fleet) {
 				return $factions.hasFaction(ship,"klingon", ship, fleet) && ship.captain && $factions.hasFaction(ship.captain,"klingon", ship, fleet);
 			}},
+		//Exocomp
+		"tech:exocomp_2017core":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}},
+		//Tactical Station | One Per Ship
 		"weapon:tactical_station_2017core":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
@@ -7348,6 +7365,37 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					type: ["weapon"]
 				}
 			]
+		},
+		//Photon Torpedo 2017Core
+		"weapon:photon_torpedoes_2017core":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			},
+			attack: 0,
+			intercept: {
+				self: {
+					// Attack is same as ship primary + 1
+					attack: function(upgrade,ship,fleet,attack) {
+						if( ship )
+							return valueOf(ship,"attack",ship,fleet) + 1;
+						return attack;
+					}
+				}
+			}
+		},
+		//Torpedo Fusillade
+		"weapon:torpedoe_fusillade_2017core":{
+			attack: 0,
+			intercept: {
+				self: {
+					// Attack is same as ship primary
+					attack: function(upgrade,ship,fleet,attack) {
+						if( ship )
+							return valueOf(ship,"attack",ship,fleet);
+						return attack;
+					}
+				}
+			}
 		},
 		"crew:deanna_troi_2017core":{
 			factionPenalty: function(upgrade, ship, fleet) {
@@ -7364,6 +7412,14 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"crew:worf_2017core":{
 			canEquip: function(upgrade,ship,fleet) {
 				return $factions.hasFaction(ship,"klingon", ship, fleet);
+			}},
+		"crew:geordi_la_forge_2017core":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}},
+		"crew:miles_obrien_2017core":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}},
 		
 	//2017 Romulan Faction Ser

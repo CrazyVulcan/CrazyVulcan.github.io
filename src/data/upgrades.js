@@ -274,6 +274,15 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "talent",
+	id: "riker_maneuver_2017core",
+	set: ["2017core"],
+	name: "Riker Maneuver",
+	cost: 4,
+	text: "<b>WHEN DEFENDING:</b> If the attacking ship is not in this ships Primary Firing Arc, discard this card.\n\nRemove all [target-lock] and [battlestations] Tokens beside the attacking ship. Place an [aux] beside this ship and the attacking ship.",
+	unique: true,
+	factions: ["federation"]
+}, {
+	type: "talent",
 	id: "make_it_so_2017core",
 	set: ["2017core"],
 	name: "Make It So",
@@ -290,6 +299,14 @@ module.exports = [{
 	text: "<b>WHEN DEFENDING:</b> When this ship receives a face up Damage Card:\n\nTurn that Damage Card face down unless it is a 'Warp Core Breach'.",
 	factions: ["klingon"]
 }, {
+	type: "tech",
+	id: "exocomp_2017core",
+	set: ["2017core"],
+	name: "Exocomp",
+	cost: 4,
+	text: "<b>PLANNING PAHSE:</b> Place 2 [time] Tokens on this card.\n\nRepair 1 damage to this ships Hull.",
+	factions: ["federation"]
+}, {
 	type: "weapon",
 	id: "tactical_station_2017core",
 	set: ["2017core"],
@@ -298,6 +315,38 @@ module.exports = [{
 	text: "Add 1 [weapon] to this ships Upgrade Bar.\n-----------------------------\n<b>WHEN ATTACKING:</b> Disable this card.\nThis ship rolls +1 attack die this game round.\n-----------------------------\n<b>WHEN ATTACKING:</b> Discard this card.\nThis ship rolls +2 attack dice this game round.",
 	OnePerShip: true,
 	factions: ["federation"]
+}, {
+	type: "weapon",
+	id: "photon_torpedoes_2017core",
+	set: ["2017core"],
+	name: "Photon Torpedoes",
+	cost: 2,
+	text: "The Attack Value of this [weapon] is this ships Primary Weapon Value +1.\n---------------------------------\n<b>ATTACK:</b> Spend this ships [target-lock] Token, disable this card and target an opposing ship.\n\nThis ship may convert all [blank] into [battlestations].",
+	FrontArc: true,
+	RearArc: true,
+	factions: ["federation"]
+}, {
+	type: "weapon",
+	id: "disruptor_cannon_2017core",
+	set: ["2017core"],
+	name: "Disruptor Cannon",
+	cost: 2,
+	text: "<b>ATTACK:</b> Disable this card and target an opposing ship.\n\nIf this defending ship has an [aux] Token beside it the ship rolls +1 attack die.",
+	RearArc: true,
+	range: "1 - 2",
+	attack: 5,
+	factions: ["klingon"]
+}, {
+	type: "weapon",
+	id: "torpedoe_fusillade_2017core",
+	set: ["2017core"],
+	name: "Torpedoe Fusillade",
+	cost: 0,
+	text: "The cost and Attack Value of this [weapon] are equal to this ship's Primary Weapon Value.\n-----------------------------------\n<b>ATTACK:</b> Remove this card from the game and target all opposing ships.\n\nMake a separate attack roll against each target ship.",
+	unique: true,
+	FrontArc: true,
+	range: "2 - 3",
+	factions: ["klingon"]
 }, {
 	type: "crew",
 	id: "worf_2017core",
@@ -325,6 +374,41 @@ module.exports = [{
 	cost: 3,
 	text: "<b>ACTIVATION PHASE:</b> Place 2 [time] Tokens on this card.\n\nPerform a [scan] Action as a Free Action.",
 	factions: ["klingon"]
+}, {
+	type: "crew",
+	id: "toral_2017core",
+	set: ["2017core"],
+	name: "Toral",
+	cost: 2,
+	unique: true,
+	text: "<b>WHEN DEFENDING:</b>\n\nThis ship may convert 1 [battlestations] into 1 [evade].",
+	factions: ["klingon"]
+}, {
+	type: "crew",
+	id: "klingon_bekk_2017core",
+	set: ["2017core"],
+	name: "Klingon Bekk",
+	cost: 1,
+	text: "<b>WHEN ATTACKING:</b> Discard this card.\n\nConvert 1 [hit] into 1 [crit].",
+	factions: ["klingon"]
+}, {
+	type: "crew",
+	id: "geordi_la_forge_2017core",
+	set: ["2017core"],
+	name: "Geordi La Forge",
+	cost: 3,
+	unique: true,
+	text: "<b>ACTIVATION PHASE:</b> After this ship reveals its Maneuver, place 2 [time] Tokens on this card.\n\nThis ship may increase or decrease this speed of the revealed Maneuver by 2. The color of th Maneuver (Red, White, Green) is the same as the revealed Maneuver. This ship cannot perform an Action the game round this effect is activated.",
+	factions: ["federation"]
+}, {
+	type: "crew",
+	id: "miles_obrien_2017core",
+	set: ["2017core"],
+	name: "Miles O'Brien",
+	cost: 2,
+	unique: true,
+	text: "<b>PLANNING PHASE:</b> Disable this card.\n\nRemove a Disable Token from a [tech] or [weapon] Upgrade equipped to this ship.", 
+	factions: ["federation"]
 }, {
 	type: "crew",
 	id: "deanna_troi_2017core",
@@ -363,6 +447,15 @@ module.exports = [{
 	unique: true,
 	captainKlingon: true,
 	range: "1 - 3",
+	factions: ["klingon"]
+}, {
+	type: "talent",
+	id: "good_day_to_die_2017core",
+	set: ["2017core"],
+	name: "Today Is A Good Day To Die",
+	cost: 5,
+	text: "<b>ACTION:</b> Discard this card.\n\nAll ships may convert all [hit] into [crit] this game round.",
+	unique: true,
 	factions: ["klingon"]
 }, {
 	type: "tech",

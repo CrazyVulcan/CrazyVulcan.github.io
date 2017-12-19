@@ -865,6 +865,28 @@ module.exports = [{
 	}
 }, {
 	type: "captain",
+	id: "lursa_2017core",
+	set: ["2017core"],
+	name: "Lursa",
+	cost: 3,
+	skill: 4,
+	talents: 0,
+	text: "At the beginning of the game round, you may flip this card.\n----------------------------------------\n<b>WHEN ATTACKING:</b> If this ship is Cloaked.\n\nThis ship rolls +1 attack die.",
+	unique: true,
+	factions: ["klingon"]
+}, {
+	type: "captain",
+	id: "betor_2017core",
+	set: ["2017core"],
+	name: "B'Etor",
+	cost: 3,
+	skill: 4,
+	talents: 0,
+	text: "At the beginning of the game round, you may flip this card.\n----------------------------------------\n<b>WHEN DEFENDING:</b> If this ship is Cloaked.\n\nThis ship rolls +2 defense die.",
+	unique: true,
+	factions: ["klingon"]
+}, {
+	type: "captain",
 	id: "data_2017core",
 	set: ["2017core"],
 	name: "Data",
