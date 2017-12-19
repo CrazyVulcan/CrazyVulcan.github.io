@@ -7394,7 +7394,13 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 							return valueOf(ship,"attack",ship,fleet);
 						return attack;
 					}
-				}
+				},
+				// Cost is primary weapon
+					cost: function(upgrade,ship,fleet,cost) {
+						if( ship )
+							return resolve(upgrade,ship,fleet,cost) + valueOf(ship,"attack",ship,fleet);
+						return cost;
+					}
 			}
 		},
 		"crew:deanna_troi_2017core":{
