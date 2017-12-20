@@ -340,7 +340,7 @@ module.exports = [{
 	type: "weapon",
 	id: "torpedoe_fusillade_2017core",
 	set: ["2017core"],
-	name: "Torpedoe Fusillade",
+	name: "Torpedo Fusillade",
 	cost: 0,
 	text: "The cost and Attack Value of this [weapon] are equal to this ship's Primary Weapon Value.\n-----------------------------------\n<b>ATTACK:</b> Remove this card from the game and target all opposing ships.\n\nMake a separate attack roll against each target ship.",
 	unique: true,

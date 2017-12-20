@@ -1,6 +1,26 @@
 module.exports = [{
 	type: "ship",
 	id: "goss_marauder_73001",
+	set: ["73002"],
+	name: "Borg Starship",
+	class: "Borg Octahedron",
+	actions: ["target-lock", "scan", "regenerate"],
+	upgrades: ["tech", "weapon", "crew", "crew"],
+	attack: 6,
+	agility: 0,
+	hull: 8,
+	shields: 6,
+	cost: 38,
+	text: "",
+	factions: ["borg"],
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	squadron: false
+}, {
+	type: "ship",
+	id: "goss_marauder_73001",
 	set: ["73001"],
 	name: "Goss' Marauder",
 	class: "D'Kora Class",
