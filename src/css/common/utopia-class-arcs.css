@@ -36,10 +36,10 @@
 	position: absolute;
 	top: 3.7em;
 	left: -0.275em;
-	width: 5em;
+	width: 10em;
 	height: 5em;
 	border: 0.1em dashed #aaa;
-	transform: rotate(45deg) skewX(-35deg) skewY(-9deg);
+	transform: rotate(45deg) ;
 }
 
 .arc-hole {
