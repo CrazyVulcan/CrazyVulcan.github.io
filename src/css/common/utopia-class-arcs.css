@@ -66,7 +66,7 @@ text-shadow: none;
 -o-transition: none;
 transition: none;
 -webkit-transform: rotateZ(45deg)  translateX(-105px) translateY(-100px) skewX(25deg) skewY(25deg);
-transform: rotateZ(45deg)  translateX(-105px) translateY(-100px) skewX(25deg) skewY(25deg);
+transform: rotateZ(225deg)  translateX(-105px) translateY(-100px) skewX(25deg) skewY(25deg);
 -webkit-transform-origin: 50% 50% 0;
 transform-origin: 50% 50% 0;
 }
