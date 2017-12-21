@@ -33,6 +33,7 @@
 }
 
 .arc-second-45 {
+position: absolute;
 display: block;
 -webkit-box-sizing: content-box;
 -moz-box-sizing: content-box;
@@ -44,7 +45,7 @@ height: 5em;
 position: absolute;
 cursor: default;
 opacity: 1;
-top: 3.7em;
+top: -3.7em;
 left: -0.275em;
 margin: 0;
 padding: 0;
