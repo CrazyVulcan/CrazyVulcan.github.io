@@ -67,8 +67,8 @@ text-shadow: none;
 transition: none;
 -webkit-transform: rotateZ(65deg)  translateX(-40px) translateY(-45px) skewX(45deg);
 transform: rotateZ(65deg)  translateX(-40px) translateY(-45px) skewX(45deg);
--webkit-transform-origin: 25% 25% 0;
-transform-origin: 25% 25% 0;
+-webkit-transform-origin: 50% 50% 0;
+transform-origin: 50% 50% 0;
 }
 
 .arc-hole {
