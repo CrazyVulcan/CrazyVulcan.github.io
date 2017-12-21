@@ -632,6 +632,34 @@ module.exports = [{
 	}
 }, {
 	type: "ship-class",
+	id: "new_kvort_class",
+	name: "K'Vort Class ",
+	frontArc: "90",
+	secondArc: "45",
+	maneuvers: {
+		1: {
+			straight: "green",
+			bank: "green"
+		},
+		2: {
+			straight: "green",
+			bank: "white",
+			turn: "white"
+		},
+		3: {
+			straight: "white",
+			bank: "white",
+			turn: "red",
+			about: "red"
+		},
+		4: {
+			straight: "white"
+		},
+		min: 1,
+		max: 4
+	}
+}, {
+	type: "ship-class",
 	id: "5020",
 	name: "K'Vort Class",
 	frontArc: "90",

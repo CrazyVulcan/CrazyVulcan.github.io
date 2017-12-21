@@ -473,7 +473,7 @@ module.exports = [{
 	id: "iks_vorn_2017core",
 	set: ["2017core"],
 	name: "I.K.S. Vorn",
-	class: "K'Vort Class",
+	class: "K'Vort Class ",
 	actions: ["evade", "target-lock", "cloak", "sensor-echo"],
 	upgrades: ["tech", "weapon", "crew", "crew"],
 	attack: 4,
@@ -491,7 +491,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "kvort_2017core",
+	id: "kvort_2017core ",
 	set: ["2017core"],
 	name: "Klingon Starship",
 	class: "K'Vort Class",
