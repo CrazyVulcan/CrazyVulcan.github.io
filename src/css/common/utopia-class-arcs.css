@@ -39,7 +39,7 @@
 	width: 5em;
 	height: 5em;
 	border: 0.1em dashed #aaa;
-	transform: rotate(45deg);
+	transform: rotate(45deg) skewX(-35deg) skewY(-9deg);
 }
 
 .arc-hole {
