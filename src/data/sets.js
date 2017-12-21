@@ -1,14 +1,20 @@
 module.exports = [{
 	type: "set",
+	id: "75003",
+	name: "Independent",
+	releaseDate: "2018-02-10",
+	parentSet: "Faction Packs"
+}, {
+	type: "set",
 	id: "73002",
 	name: "Borg Octahedron",
-	releaseDate: "2018-03-10",
+	releaseDate: "2018-01-11",
 	parentSet: "Card Pack 2"
 }, {
 	type: "set",
 	id: "73001",
 	name: "D'kora",
-	releaseDate: "2018-02-10",
+	releaseDate: "2018-01-10",
 	parentSet: "Card Pack 2"
 }, {
 	type: "set",
