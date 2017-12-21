@@ -1,32 +1,11 @@
 module.exports = [{
 	type: "ship",
-	id: "lurins_bop_75003",
-	set: ["75003"],
-	name: "Lurin's Bird-of-Prey",
-	class: "B'Rel Class",
-	actions: ["evade", "target-lock", "cloak", "sensor-echo"],
-	upgrades: ["tech", "weapon", "crew", "crew"],
-	attack: 4,
-	agility: 1,
-	hull: 3,
-	shields: 3,
-	cost: 18,
-	text: "<b>COMBAT PHASE:</b> If there is an opposing ship in the Primary Firing Arc of this ship and the Primary Firing Arc of another friendly Ferengi ship with a Ferengi Captain equipped to it, target that friendly ship.\nThis ship attacks first this game round and the target ship attacks second this game round.",
-	factions: ["ferengi", "klingon"],
-	unique: true,
-	intercept: {
-		ship: {},
-		fleet: {}
-	},
-	squadron: false
-}, {
-	type: "ship",
-	id: "generic_borg_octahedron_73002",
+	id: "goss_marauder_73001",
 	set: ["73002"],
 	name: "Borg Starship",
 	class: "Borg Octahedron",
 	actions: ["target-lock", "scan", "regenerate"],
-	upgrades: ["borg", "borg", "tech", "weapon", "crew"],
+	upgrades: ["tech", "weapon", "crew", "crew"],
 	attack: 6,
 	agility: 0,
 	hull: 8,
@@ -494,7 +473,7 @@ module.exports = [{
 	id: "iks_vorn_2017core",
 	set: ["2017core"],
 	name: "I.K.S. Vorn",
-	class: "K'Vort Class ",
+	class: "K'Vort Class",
 	actions: ["evade", "target-lock", "cloak", "sensor-echo"],
 	upgrades: ["tech", "weapon", "crew", "crew"],
 	attack: 4,
@@ -512,7 +491,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "kvort_2017core ",
+	id: "kvort_2017core",
 	set: ["2017core"],
 	name: "Klingon Starship",
 	class: "K'Vort Class",
