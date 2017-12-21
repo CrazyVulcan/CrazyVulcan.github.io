@@ -51,8 +51,8 @@ overflow: visible;
 border: 0.1em dashed rgb(170,170,170);
 -webkit-transform: rotateZ(67.5deg)   skewX(45deg);
 transform: rotateZ(67.5deg)   skewX(45deg);
--webkit-transform-origin: 125% -15% 0;
-transform-origin: 125% -15% 0;
+-webkit-transform-origin: 95% 0 0;
+transform-origin: 95% 0 0;
 }
 
 .arc-hole {
