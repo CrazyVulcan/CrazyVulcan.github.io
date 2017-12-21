@@ -65,8 +65,8 @@ text-shadow: none;
 -moz-transition: none;
 -o-transition: none;
 transition: none;
--webkit-transform: rotateZ(45deg)  translateX(-25px) translateY(-20px) skewX(25deg) skewY(25deg);
-transform: rotateZ(45deg)  translateX(-25px) translateY(-20px) skewX(25deg) skewY(25deg);
+-webkit-transform: rotateZ(225deg)  translateX(-20px) translateY(-20px) skewX(25deg) skewY(25deg);
+transform: rotateZ(225deg)  translateX(-20px) translateY(-20px) skewX(25deg) skewY(25deg);
 -webkit-transform-origin: 50% 50% 0;
 transform-origin: 50% 50% 0;
 }
