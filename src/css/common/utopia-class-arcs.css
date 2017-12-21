@@ -33,7 +33,6 @@
 }
 
 .arc-second-45 {
-	.rhomb {
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
@@ -49,7 +48,6 @@
   transform: rotateZ(-60deg) scaleY(0.8) translateX(4.8em) translateY(-9.5em) skewX(-35deg) skewY(-9deg);
   -webkit-transform-origin: 0 100% 0deg;
   transform-origin: 0 100% 0deg;
-}
 }
 
 .arc-hole {
