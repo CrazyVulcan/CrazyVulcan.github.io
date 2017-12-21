@@ -43,6 +43,7 @@ z-index: auto;
 width: 5em;
 height: 5em;
 position: absolute;
+cursor: default;
 opacity: 1;
 top: -3.8em;
 left: -0.275em;
@@ -50,8 +51,8 @@ overflow: visible;
 border: 0.1em dashed rgb(170,170,170);
 -webkit-transform: rotateZ(67.5deg)   skewX(45deg);
 transform: rotateZ(67.5deg)   skewX(45deg);
--webkit-transform-origin: 40% 80% 0;
-transform-origin: 40% 80% 0;
+-webkit-transform-origin: 80% 35% 0;
+transform-origin: 80% 35% 0;
 }
 
 .arc-hole {
