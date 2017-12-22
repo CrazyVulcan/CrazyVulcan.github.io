@@ -7553,6 +7553,12 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}},
 			
 	//Borg Octahedron
+		//Neural Transponder
+		"talent:neural_transponder_73002":{
+			canEquip: onePerShip("Neural Transponder"),
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return ship.captain && $factions.hasFaction(ship.captain,"borg", ship, fleet);
+			}},
 		//Neonatal Borg
 		"crew:neonatal_borg_73002":{
 			upgradeSlots: [ 

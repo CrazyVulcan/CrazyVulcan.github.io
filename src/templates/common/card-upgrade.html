@@ -16,20 +16,23 @@
 	</div>
 
 	<div class="card-border-left pull-left">
-		<i ng-if="upgrade.captainFederation" class="card-captainFederation-icon fs fs-captainFederation"></i>
-		<i ng-if="upgrade.captainKlingon"  class="card-captainKlingon-icon fs fs-captainKlingon"></i>	
-		<i ng-if="upgrade.captainRomulan" class="card-captainRomulan-icon fs fs-captainRomulan"></i>	
-		<i ng-if="upgrade.captainDominion" class="card-captainDominion fs fs-captainDominion"></i>
-		
 		<i ng-if="upgrade.shipFederation" class="card-shipFederation-icon fs fs-card-shipFederation"></i>
 		<i ng-if="upgrade.shipKlingon" class="card-shipKlingon-icon fs fs-shipKlingon"></i>	
 		<i ng-if="upgrade.shipRomulan" class="card-shipRomulan-icon fs fs-shipRomulan"></i>	
 		<i ng-if="upgrade.shipDominion" class="card-shipDominion-icon fs fs-shipDominion"></i>
+		<i ng-if="upgrade.shipBorg" class="card-shipBorg-icon fs fs-shipBorg"></i>
+		
+		<i ng-if="upgrade.captainFederation" class="card-captainFederation-icon fs fs-captainFederation"></i>
+		<i ng-if="upgrade.captainKlingon"  class="card-captainKlingon-icon fs fs-captainKlingon"></i>	
+		<i ng-if="upgrade.captainRomulan" class="card-captainRomulan-icon fs fs-captainRomulan"></i>	
+		<i ng-if="upgrade.captainDominion" class="card-captainDominion-icon fs fs-captainDominion"></i>
+		<i ng-if="upgrade.captainBorg" class="card-captainBorg-icon fs fs-captainBorg"></i>
 		
 		<i ng-if="upgrade.costFederation" class="card-costFederation-icon">{{upgrade|valueOf:'costFederation':ship:fleet}}</i>
 		<i ng-if="upgrade.costKlingon" class="card-costKlingon-icon">{{upgrade|valueOf:'costKlingon':ship:fleet}}</i>	
 		<i ng-if="upgrade.costRomulan" class="card-costRomulan-icon">{{upgrade|valueOf:'costRomulan':ship:fleet}}</i>	
 		<i ng-if="upgrade.costDominion" class="card-costDominion-icon">{{upgrade|valueOf:'costDominion':ship:fleet}}</i>
+		<i ng-if="upgrade.costBorg" class="card-costBorg-icon">{{upgrade|valueOf:'costDominion':ship:fleet}}</i>
 		
 		<i ng-if="upgrade.FrontArc" class="card-FrontArc-icon fs fs-FrontArc"></i>		
 		<i ng-if="upgrade.RearArc" class="card-RearArc-icon fs fs-RearArc"></i>

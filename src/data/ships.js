@@ -23,6 +23,27 @@ module.exports = [{
 	type: "ship",
 	id: "generic_octahedron_73001",
 	set: ["73002"],
+	name: "Queen Vessel Prime",
+	class: "Borg Octahedron",
+	actions: ["target-lock", "scan", "regenerate"],
+	upgrades: ["borg", "borg", "tech", "weapon", "crew", "crew"],
+	attack: 6,
+	agility: 0,
+	hull: 8,
+	shields: 7,
+	cost: 42,
+	text: "\n<b>END PHASE:</b>\n\nAdd 1 Drone Token to the Captain equipped to this ship.",
+	factions: ["borg"],
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	unique:true,
+	squadron: false
+}, {
+	type: "ship",
+	id: "generic_octahedron_73001",
+	set: ["73002"],
 	name: "Borg Starship",
 	class: "Borg Octahedron",
 	actions: ["target-lock", "scan", "regenerate"],
