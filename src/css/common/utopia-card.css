@@ -366,28 +366,24 @@
 }
 
 .card-captainBorg-icon {
-	font-size: 0.5em;
-	background-size: 2em;
-	color: red;
-	padding: 0.5em;
+	background: url("../img/card-captainBorg-icon.png") no-repeat;
+	background-size: 1em;
+	width: 1.2em;
 	position: relative;
 	left: 0em;
-	margin-top:0.5em;
 	top: -0.1em;
-	z-index: 2;
+	z-index: 1;
 	text-align: center;
 }
 
 .card-shipBorg-icon {
-	font-size: 0.5em;
-	background-size: 2em;
-	color: red;
-	padding: 0.5em;
+	background: url("../img/card-shipBorg-icon.png") no-repeat;
+	background-size: 1em;
+	width: 1.2em;
 	position: relative;
 	left: 0em;
-	margin-top:0.5em;
 	top: -0.1em;
-	z-index: 2;
+	z-index: 1;
 	text-align: center;
 }
 
