@@ -8434,10 +8434,23 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 	//Senior Staff
 		"resource:senior_staff":{
-
+			intercept: {
+				fleet: {
+					// Add the "talent" type to all crew slots
+					type: function(card,ship,fleet,type) {
+						if( $.inArray("crew",type) >= 0 )
+							return type.concat(["talent"]);
+						return type;
+					},
+					cost: function(upgrade, ship, fleet, cost) {
+							return resolve(upgrade, ship, fleet, cost) + 1;
+						return cost;
+					}
+				}
+			}
 		},
-		
-		
+
 	};
 }]);
+
 
