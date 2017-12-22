@@ -8434,17 +8434,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 	//Senior Staff
 		"resource:senior_staff":{
-			intercept: {
-				fleet: {
-					upgradeSlots: cloneSlot( 2 , { 
-						type: ["talent","talent"] 
-					} ),
-					cost: function(upgrade, ship, fleet, cost) {
-							return resolve(upgrade, ship, fleet, cost) + 1;
-						return cost;
-					}
-				}
-			}
+			
 		},
 
 	};
