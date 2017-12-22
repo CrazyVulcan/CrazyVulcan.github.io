@@ -7347,7 +7347,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		//Blood Oath
 		"talent:blood_oath_2017core":{
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return $factions.hasFaction(ship,"klingon", ship, fleet) && ship.captain && $factions.hasFaction(ship.captain,"klingon", ship, fleet);
+				return ship.captain && $factions.hasFaction(ship.captain,"klingon", ship, fleet);
 			}},
 		//Exocomp
 		"tech:exocomp_2017core":{
@@ -7441,7 +7441,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		//Tal Shiar
 		"talent:tal_shiar_75001":{
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return $factions.hasFaction(ship,"romulan", ship, fleet) && ship.captain && $factions.hasFaction(ship.captain,"romulan", ship, fleet);
+				return ship.captain && $factions.hasFaction(ship.captain,"romulan", ship, fleet);
 			}			
 		},
 		//Interphase Generator

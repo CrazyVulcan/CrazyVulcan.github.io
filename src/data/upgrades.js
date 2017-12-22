@@ -32,9 +32,9 @@ module.exports = [{
 	type: "crew",
 	id: "doctor_reyga_73001",
 	set: ["73001"],
-	name: "<b>ACTION:</b> Discard this card.\n\nRemove a Disabled Token from a [tech] Upgrade equipped to this ship and repair 1 damage to this ships Shields.",
+	name: "Doctor Reyga",
 	cost: 3,
-	text: "Doctor Reyga",
+	text: "<b>ACTION:</b> Discard this card.\n\nRemove a Disabled Token from a [tech] Upgrade equipped to this ship and repair 1 damage to this ships Shields.",
 	unique: true,
 	factions: ["ferengi"]
 }, {
