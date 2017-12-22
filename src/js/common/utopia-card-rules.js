@@ -7474,6 +7474,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquip: function(upgrade,ship,fleet) {
 				return (onePerShip("Additional Weapons Array") && ship.class == "D'deridex Class");
 			}},
+			
+			
 	//2017 Dominion Faction Set
 		//All Power to Weapons
 		"talent:all_power_to_weapons_75002":{
@@ -7519,6 +7521,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return $factions.hasFaction(ship,"dominion", ship, fleet);
 			}
 		},
+		
 	//D'Kora Card Pack
 		//Lurin
 		"captain:lurin_73001":{
@@ -7543,8 +7546,31 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}},
-		
-		
+		//Doctor Reyga
+		"crew:doctor_reyga_73001":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			}},
+			
+	//Borg Octahedron
+		//Neonatal Borg
+		"crew:neonatal_borg_73002":{
+			upgradeSlots: [ 
+				{ 
+					type: ["crew"]
+				}
+			],
+			intercept: {
+				fleet: {
+					// Add the "Borg" type to all Tech and Borg slots
+					type: function(card,ship,fleet,type) {
+						if( $.inArray("tech",type) >= 0 | $.inArray("borg",type) >= 0 )
+							return type.concat(["crew"]);
+						return type;
+					}
+				}
+			}
+		},
 
 //Faction Penalty For Subfactions 		
 		//Federation

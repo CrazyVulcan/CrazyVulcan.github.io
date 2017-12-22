@@ -1,5 +1,14 @@
 module.exports = [{
 	type: "crew",
+	id: "neonatal_borg_73002",
+	set: ["73002"],
+	name: "Neonatal Borg",
+	cost: 2,
+	text: "Add 1 [crew] to this ships Upgrade Bar.\n-----------------------------------\nIf this card is equipped to a Borg ship, you may have Borg [crew] Upgrades fill this ships [tech] or [borg] Upgrade Slots.",
+	OnePerShip: true,
+	factions: ["borg"]
+}, {
+	type: "crew",
 	id: "mezoti_73002",
 	set: ["73002"],
 	name: "Mezoti",
@@ -7,6 +16,15 @@ module.exports = [{
 	text: "<b>WHENEVER THE EFFECT OF A [crew] UPGRADE WOULD TARGET THIS SHIP:</b> Discard this card and target that [crew] Upgrade.\n\nDisable the target [crew] Upgrade and cancel its effect.",
 	unique: true,
 	factions: ["borg"]
+}, {
+	type: "crew",
+	id: "doctor_reyga_73001",
+	set: ["73001"],
+	name: "<b>ACTION:</b> Discard this card.\n\nRemove a Disabled Token from a [tech] Upgrade equipped to this ship and repair 1 damage to this ships Shields.",
+	cost: 3,
+	text: "Doctor Reyga",
+	unique: true,
+	factions: ["ferengi"]
 }, {
 	type: "talent",
 	id: "all_power_to_weapons_75002",
