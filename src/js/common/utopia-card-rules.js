@@ -7557,8 +7557,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"crew:neonatal_borg_73002":{
 			upgradeSlots: [ 
 				{ 
-					type: ["crew"],
-					rules: "Borg Crew"
+					type: ["crew"]
 				}
 			],
 			canEquip: onePerShip("Neonatal Borg"),
