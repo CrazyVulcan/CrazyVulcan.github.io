@@ -2436,13 +2436,13 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "captain",
-	id: "lurin_73001",
-	set: ["73001"],
+	id: "lurin_75003",
+	set: ["75003"],
 	name: "Lurin",
 	cost: 5,
 	skill: 7,
 	talents: 1,
-	text: "You do not pay a Faction Penality when you equip this card or Ferengi Upgrades to this ship.\n-----------------------------\nFerengi Upgrades equipped to this ship cost -1SP.\n-----------------------------\n<b>SETUP:</b>\nPlace 2 Gold-Pressed Latinum Tokens (GPLT) on this card.",
+	text: "You do not pay a Faction Penalty when you equip this card or Ferengi Upgrades to this ship.\n-----------------------------\nFerengi Upgrades equipped to this ship cost -1SP.\n-----------------------------\n<b>SETUP:</b>\nPlace 2 Gold-Pressed Latinum Tokens (GPLT) on this card.",
 	unique: true,
 	factions: ["ferengi"]
 }, {
@@ -2704,7 +2704,7 @@ module.exports = [{
 	set: ["71534"],
 	name: "Vidiian Commander",
 	unique: true,
-	text: "You may add +1 attack die when you initiate an attack with the Grappler or Hypothermic Charge [weapon] Upgrades or when performing the Action listed on the Vidiian Boarding Party [crew] Upgrade.",
+	text: "You may add +1 attack die when you initiate an attack with the Grappler or Hypothetic Charge [weapon] Upgrades or when performing the Action listed on the Vidiian Boarding Party [crew] Upgrade.",
 	factions: ["independent"],
 	cost: 4,
 	skill: 7,
