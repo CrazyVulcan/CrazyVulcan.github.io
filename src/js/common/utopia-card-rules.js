@@ -1599,7 +1599,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		// Volley of Torpedoes
 		"weapon:volley_of_torpedoes_71524": {
 			canEquip: function(upgrade,ship,fleet) {
-				return ship.class == "Jem'Hadar Battleship" || ship.class == "Jem'Hadar Battle Cruiser";
+				return ship.class == "Jem'Hadar Battleship" || ship.class == "Jem'Hadar Battleship " || ship.class == "Jem'Hadar Battle Cruiser";
 			}
 		},
 	
