@@ -6,6 +6,18 @@ module.exports = [{
 	parentSet: "Faction Packs"
 }, {
 	type: "set",
+	id: "72311r",
+	name: "Long-Range Probe Resource",
+	releaseDate: "2018-01-25",
+	parentSet: "Trap Travesty"
+}, {
+	type: "set",
+	id: "72311p",
+	name: "OP Mission Prize",
+	releaseDate: "2018-01-24",
+	parentSet: "Trap Travesty"
+}, {
+	type: "set",
 	id: "73002",
 	name: "Borg Octahedron",
 	releaseDate: "2018-01-11",

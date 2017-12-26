@@ -312,4 +312,12 @@ module.exports = [{
 	text: "This card can only be assigned to a ship that has a printed Hull Value of 3 or less.\n\nThis ship gains the following:\n\n Increase this ships Shield Value by +1.\n\nAdd 1 additional [weapon] to this ships Upgrade Bar.\n\n Increase the Captain Skill of the Captain equiped to this ship by +1",
 	cost: 5,
 	showShipResourceSlot: false
+}, {
+	type: "resource",
+	id: "long_range_probe_resource",
+	set: ["72311r"],
+	name: "Long-Range Probe",
+	text: "At the start of the game, place 3 Mission Tokens on this card.\n\n<b>PLANNING PHASE:</b> Once per game round place 1 Mission Token from this card onto the play area withing Range 1-3 of one of your ships.\n\n<b>PLANNING PHASE:</b> Target an opposing ship within Range 1-2 of one of your Long-Range Probes and remove that Long-Range Probe from the play area. This game round, the target ship must plan its Maneuver first, face-up, and it cannot be changed after it is set.\n\nDiscard this card when there are no more Mission Tokens on it and there are no more of your Long-Range Probes on the play area.",
+	cost: 6,
+	showShipResourceSlot: false
 }];

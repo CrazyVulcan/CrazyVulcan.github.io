@@ -29,6 +29,16 @@ module.exports = [{
 	unique: true,
 	factions: ["borg"]
 }, {
+	type: "talent",
+	id: "rules_of_acquisition_73001",
+	set: ["73001"],
+	name: "The Rules Of Acquisition",
+	cost: 5,
+	text: "<b>SETUP:</b>\n\n Place 6 Gold-Pressed Latinum Tokens {GPLT) on the Captain equipped to this ship.",
+	OnePerShip: true,
+	captainFerengi: true,
+	factions: ["ferengi"]
+}, {
 	type: "crew",
 	id: "doctor_reyga_73001",
 	set: ["73001"],
@@ -37,6 +47,17 @@ module.exports = [{
 	text: "<b>ACTION:</b> Discard this card.\n\nRemove a Disabled Token from a [tech] Upgrade equipped to this ship and repair 1 damage to this ships Shields.",
 	unique: true,
 	factions: ["ferengi"]
+}, {
+	type: "weapon",
+	id: "photonic_cannon_72311p",
+	set: ["72311p"],
+	name: "Photonic Cannon",
+	cost: 10,
+	attack: 10,
+	range: "3",
+	text: "<b>ATTACK:</b> Spend this ships [target-lock] Token and remove this card from play.\n\nThis ship suffers 2 [hit] to its Hull.\n\nThis [weapon] can only be fired out of this ships Primary Firing Arc.",
+	unique: true,
+	factions: ["federation"]
 }, {
 	type: "talent",
 	id: "all_power_to_weapons_75002",
@@ -3534,10 +3555,10 @@ module.exports = [{
 }, {
 	type: "crew",
 	id: "3102",
-	set: ["OP3Prize"],
+	set: ["OP3Prize", "72311p"],
 	name: "Romulan Pilot",
 	unique: false,
-	text: "After you move, you may discard this card to place a [scan] Token beside your ship as a free Action. If you do so, you may immediately make an additional Green Maneuver.",
+	text: "<b>FREE ACTION:</b> Discard this card.\n\nPlace a [scan] Token beside this ship and this ship may make a Green Maneuver.",
 	factions: ["romulan"],
 	cost: 2,
 	skill: 0,
