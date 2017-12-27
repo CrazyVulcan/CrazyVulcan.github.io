@@ -291,8 +291,10 @@
 .fs-FrontArc:before {
   content: ".";
 }
-
 .fs-RearArc:before {
+  content: ".";
+}
+.fs-360Arc:before {
   content: ".";
 }
 

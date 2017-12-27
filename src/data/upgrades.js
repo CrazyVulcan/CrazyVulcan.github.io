@@ -10,6 +10,43 @@ module.exports = [{
 	captainBorg: true,
 	range: "1 - 2",
 	factions: ["borg"]
+},  {
+	type: "weapon",
+	id: "tractor_beam_73002",
+	set: ["73002"],
+	name: "Tractor Beam",
+	cost: 5,
+	text: "The Attack Value of this [weapon] is equal to this ships Primary Weapon Value.\n-----------------------------------\n<b>ATTACK:</b> Discard this card and target an opposing ship.\n\nFor each [crit] that would damage the defending ships Hull, you may instead steal 1 [tech] or [crew] Upgrade from the defending ship ignoring this ships restrictions.",
+	range: "1 - 2",
+	arc360: true,
+	attack: 0,
+	factions: ["borg"]
+}, {
+	type: "borg",
+	id: "threat_analysis_73002",
+	set: ["73002"],
+	name: "Threat Analysis",
+	cost: 1,
+	text: "<b>ACTION:</b> Place 2 [time] Tokens on this card.\n\nPlace a [battlestations] Token beside this ship.",
+	factions: ["borg"]
+}, {
+	type: "crew",
+	id: "one_73002",
+	set: ["73002"],
+	name: "One",
+	cost: 4,
+	text: "<b>ACTION:</b> Discard this card.\n\nFor each damage this ship suffers this game round, disable 1 of its Active Shields instead of destroying it. If this ship has no Active Shields, damage is applied normally.",
+	unique: true,
+	factions: ["borg"]
+}, {
+	type: "crew",
+	id: "second_73002",
+	set: ["73002"],
+	name: "'Second'",
+	cost: 4,
+	text: "<b>ACTIVATION PHASE:</b> Once per game, discard the Captain equipped to this ship.\n\nPerform an Action as a Free Action. Then, place 4 Drone Tokens on this card. This card becomes this ships Captain.",
+	unique: true,
+	factions: ["borg"]
 }, {
 	type: "crew",
 	id: "neonatal_borg_73002",
@@ -40,6 +77,16 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "crew",
+	id: "arridor_73001",
+	set: ["73001"],
+	name: "Arridor",
+	cost: 3,
+	text: "<b>ACTION:</b> Disable this card and disable the Captain equipped t this ship, and target a [crew] Upgrade equipped to another ship.\n\nPlace a number of [time] Tokens equal the the Captain Skill of the Captain equipped to this ship -2 on the target [crew] Upgrade.",
+	unique: true,
+	range: "1",
+	factions: ["ferengi"]
+}, {
+	type: "crew",
 	id: "doctor_reyga_73001",
 	set: ["73001"],
 	name: "Doctor Reyga",
@@ -48,6 +95,39 @@ module.exports = [{
 	unique: true,
 	factions: ["ferengi"]
 }, {
+	type: "crew",
+	id: "kol_73001",
+	set: ["73001"],
+	name: "Kol",
+	cost: 2,
+	text: "<b>END PHASE:</b> If there are no opposing ships within range, discard this card.\n\nPlace 1 Gold-Pressed Latinum Token (GPLT) on the Captain equipped to this ship.",
+	unique: true,
+	range: "1 - 2",
+	captainFerengi: true,
+	factions: ["ferengi"]
+}, {
+	type: "weapon",
+	id: "missile_launchers_72311p",
+	set: ["73001"],
+	name: "Missile Launchers",
+	cost: 3,
+	attack: 2,
+	range: "1 - 2",
+	FrontArc: true,
+	text: "<b>ATTACK:</b> Disable this card and target an opposing ship.\n\nMake this attack twice. The second attack may target a different ship. Any [crit] deal damage to the defending ships hull",
+	unique: false,
+	factions: ["ferengi"]
+}, {
+	type: "tech",
+	id: "metaphasic_shields_72311p",
+	set: ["73001"],
+	name: "Metaphasic Shields",
+	cost: 4,
+	OnePerShip: true,
+	text: "Increase this ships Shield Value by 1.\n-----------------------------------\nDiscard this card when this ship has no Active Shields.\n-----------------------------------\n<b>WHEN THIS SHIP OVERLAPS AN OBSTACLE:</b>\nThis ship does not lose its Action but it may only perform a Non-Free Action listed on its Action Bar.",
+	unique: false,
+	factions: ["ferengi"]
+},  {
 	type: "weapon",
 	id: "photonic_cannon_72311p",
 	set: ["72311p"],
