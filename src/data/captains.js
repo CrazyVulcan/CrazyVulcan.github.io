@@ -2437,7 +2437,7 @@ module.exports = [{
 }, {
 	type: "captain",
 	id: "lurin_75003",
-	set: ["75003"],
+	set: ["73001"],
 	name: "Lurin",
 	cost: 5,
 	skill: 7,
