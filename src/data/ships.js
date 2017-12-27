@@ -22,7 +22,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "generic_marauder_75003",
-	set: ["75003"],
+	set: ["75003", "73001"],
 	name: "Ferengi Starship",
 	class: "D'Kora Class",
 	actions: ["evade", "target-lock", "scan"],
