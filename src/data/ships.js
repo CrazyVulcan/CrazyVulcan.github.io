@@ -1,8 +1,50 @@
 module.exports = [{
 	type: "ship",
+	id: "praks_marauder_75003",
+	set: ["75003"],
+	name: "Prak's Marauder",
+	class: "D'Kora Class",
+	actions: ["evade", "target-lock", "scan"],
+	upgrades: ["tech", "tech", "weapon", "crew"],
+	attack: 3,
+	agility: 1,
+	hull: 4,
+	shields: 3,
+	cost: 21,
+	text: "<b>ACTION:</b> Target a [tech] or [weapon] Upgrade equipped to an opposing ship within Range 1-2.\n\nEach player rolls 5 attack dice. If you roll more [battlestations] than the controller of the target Upgrade, steal the target Upgrade even if it exceeds this ships restrictions.",
+	unique: true,
+	factions: ["ferengi"],
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	squadron: false
+}, {
+	type: "ship",
+	id: "generic_marauder_75003",
+	set: ["75003"],
+	name: "Ferengi Starship",
+	class: "D'Kora Class",
+	actions: ["evade", "target-lock", "scan"],
+	upgrades: ["tech", "weapon", "crew"],
+	attack: 3,
+	agility: 1,
+	hull: 4,
+	shields: 2,
+	cost: 17,
+	text: "",
+	unique: false,
+	factions: ["ferengi"],
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	squadron: false
+}, {
+	type: "ship",
 	id: "lurins_bop_75003",
 	set: ["75003"],
-	name: "Lurins Bird-of-Prey",
+	name: "Lurin's Bird-of-Prey",
 	class: "B'Rel Class",
 	actions: ["evade", "target-lock", "cloak", "sensor-echo"],
 	upgrades: ["tech", "weapon", "crew", "crew"],
@@ -21,7 +63,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "generic_octahedron_73001",
+	id: "queen_vessel_prime_73001",
 	set: ["73002"],
 	name: "Queen Vessel Prime",
 	class: "Borg Octahedron",
@@ -42,7 +84,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "generic_octahedron_73001",
+	id: "generic_octahedron_73002",
 	set: ["73002"],
 	name: "Borg Starship",
 	class: "Borg Octahedron",
