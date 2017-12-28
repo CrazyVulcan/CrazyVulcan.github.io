@@ -1829,6 +1829,16 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "captain",
+	id: "first_73002",
+	set: ["73002"],
+	name: "'First'",
+	unique: true,
+	text: "<b>Setup:</b>\n\nPlace 6 Drone Tokens on this card.\n----------------------------------------\n<b>ACTIVATION PHASE:</b> Spend 1 Drone Token\n\nRemove 2 [time] Tokens or 1 Disabled Token from an UPGRADE equipped to this ship.",
+	factions: ["borg"],
+	cost: 4,
+	skill: "*"
+}, {
+	type: "captain",
 	id: "tactical_drone_73002",
 	set: ["73002"],
 	name: "Tactical Drone",
