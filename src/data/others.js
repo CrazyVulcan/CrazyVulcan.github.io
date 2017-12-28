@@ -3,7 +3,7 @@ module.exports = [{
 	id: "rule_GPLT",
 	set: ["AdditionalRules", "73001"],
 	name: "Gold-Pressed Latinum Token",
-	text: "Once per game round per ship, a Captain may spend their Gold-Pressed Latinum Token(s) (GPLT) to activate one of the following abilities:\n-----------------------------------\n<b>PLANING PHASE:</b>\nRemove an [aux] Token beside this ship.\n-----------------------------------\n<b>ACTIVATION PHASE:</b>Once per game, spend any of GPLT.\n\nEquip a [crew], [tech], or [weapon] Upgrade with a cost equal to the amount of GPLT spent that was discarded from this ship.\n-----------------------------------\n<b>COMBAT PHASE:</b> Spend 1 GPLT.\nPlace a [battlestations], [evade] or [scan] Token beside this ship."
+	text: "Once per game round per ship, a Captain may spend their Gold-Pressed Latinum Token(s) (GPLT) to activate one of the following abilities:\n-----------------------------------\n<b>PLANING PHASE:</b> Spend 1 GPLT\nRemove an [aux] Token beside this ship.\n-----------------------------------\n<b>ACTIVATION PHASE:</b>Once per game, spend any of GPLT.\n\nEquip a [crew], [tech], or [weapon] Upgrade with a cost equal to the amount of GPLT spent that was discarded from this ship.\n-----------------------------------\n<b>COMBAT PHASE:</b> Spend 1 GPLT.\nPlace a [battlestations], [evade] or [scan] Token beside this ship."
 }, {
 	type: "token",
 	id: "rule_admiral",

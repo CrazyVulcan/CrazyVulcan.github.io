@@ -7554,12 +7554,41 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquipFaction: function(upgrade,ship,fleet) {
 				return ship.captain && $factions.hasFaction(ship.captain,"ferengi", ship, fleet);
 			}},
+		//Arridor
+		"crew:arridor_73001":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			}},
 		//Doctor Reyga
 		"crew:doctor_reyga_73001":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}},
-			
+		//Kol
+		"crew:kol_73001":{canEquipFaction: function(upgrade,ship,fleet) {
+				return ship.captain && $factions.hasFaction(ship.captain,"ferengi", ship, fleet);
+			}},
+		//Missile Launchers
+		"weapon:missile_launchers_72311p":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			}},
+		//Metaphasic Shields
+		"tech:metaphasic_shields_72311p":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			},
+			canEquip: onePerShip("Metaphasic Shields"),
+			intercept: {
+				ship: {
+					shields: function(card,ship,fleet,shields) {
+						if( card == ship )
+							return resolve(card,ship,fleet,shields) + 1;
+						return shields;
+					}
+				}
+			}
+		},
 	//Borg Octahedron
 		//Neural Transponder
 		"talent:neural_transponder_73002":{
@@ -7585,6 +7614,20 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						if( $.inArray("tech",type) >= 0 || $.inArray("borg",type) >= 0 )
 							return type.concat(["crew"]);
 						return type;
+					}
+				}
+			}
+		},
+		//Tractor Beam
+		"weapon:tractor_beam_73002":{
+			attack: 0,
+			intercept: {
+				self: {
+					// Attack is same as ship primary weapon
+					attack: function(upgrade,ship,fleet,attack) {
+						if( ship )
+							return valueOf(ship,"attack",ship,fleet);
+						return attack;
 					}
 				}
 			}
