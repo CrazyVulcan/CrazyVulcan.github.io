@@ -607,21 +607,25 @@ angular.module('utopia').run(['$templateCache', function($templateCache) {
     "\t\t<i ng-if=\"upgrade.shipRomulan\" class=\"card-shipRomulan-icon fs fs-shipRomulan\"></i>\t\n" +
     "\t\t<i ng-if=\"upgrade.shipDominion\" class=\"card-shipDominion-icon fs fs-shipDominion\"></i>\n" +
     "\t\t<i ng-if=\"upgrade.shipBorg\" class=\"card-shipBorg-icon fs fs-shipBorg\"></i>\n" +
+    "\t\t<i ng-if=\"upgrade.shipFerengi\" class=\"card-shipFerengi-icon fs fs-shipFerengi\"></i>\n" +
     "\t\t\n" +
     "\t\t<i ng-if=\"upgrade.captainFederation\" class=\"card-captainFederation-icon fs fs-captainFederation\"></i>\n" +
     "\t\t<i ng-if=\"upgrade.captainKlingon\"  class=\"card-captainKlingon-icon fs fs-captainKlingon\"></i>\t\n" +
     "\t\t<i ng-if=\"upgrade.captainRomulan\" class=\"card-captainRomulan-icon fs fs-captainRomulan\"></i>\t\n" +
     "\t\t<i ng-if=\"upgrade.captainDominion\" class=\"card-captainDominion-icon fs fs-captainDominion\"></i>\n" +
     "\t\t<i ng-if=\"upgrade.captainBorg\" class=\"card-captainBorg-icon fs fs-captainBorg\"></i>\n" +
+    "\t\t<i ng-if=\"upgrade.captainFerengi\" class=\"card-captainFerengi-icon fs fs-captainFerengi\"></i>\n" +
     "\t\t\n" +
     "\t\t<i ng-if=\"upgrade.costFederation\" class=\"card-costFederation-icon\">{{upgrade|valueOf:'costFederation':ship:fleet}}</i>\n" +
     "\t\t<i ng-if=\"upgrade.costKlingon\" class=\"card-costKlingon-icon\">{{upgrade|valueOf:'costKlingon':ship:fleet}}</i>\t\n" +
     "\t\t<i ng-if=\"upgrade.costRomulan\" class=\"card-costRomulan-icon\">{{upgrade|valueOf:'costRomulan':ship:fleet}}</i>\t\n" +
     "\t\t<i ng-if=\"upgrade.costDominion\" class=\"card-costDominion-icon\">{{upgrade|valueOf:'costDominion':ship:fleet}}</i>\n" +
-    "\t\t<i ng-if=\"upgrade.costBorg\" class=\"card-costBorg-icon\">{{upgrade|valueOf:'costDominion':ship:fleet}}</i>\n" +
+    "\t\t<i ng-if=\"upgrade.costBorg\" class=\"card-costBorg-icon\">{{upgrade|valueOf:'costBorg':ship:fleet}}</i>\n" +
+    "\t\t<i ng-if=\"upgrade.costFerengi\" class=\"card-costFerengi-icon\">{{upgrade|valueOf:'costFerengi':ship:fleet}}</i>\n" +
     "\t\t\n" +
     "\t\t<i ng-if=\"upgrade.FrontArc\" class=\"card-FrontArc-icon fs fs-FrontArc\"></i>\t\t\n" +
     "\t\t<i ng-if=\"upgrade.RearArc\" class=\"card-RearArc-icon fs fs-RearArc\"></i>\n" +
+    "\t\t<i ng-if=\"upgrade.arc360\" class=\"card-360Arc-icon fs fs-360Arc\"></i>\n" +
     "\t\t<i ng-if=\"upgrade.hullConstraint\" class=\"card-hullConstraint-icon\">{{upgrade|valueOf:'hullConstraint':ship:fleet}}</i>\n" +
     "\t</div>\n" +
     "\t\n" +
