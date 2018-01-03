@@ -4,7 +4,7 @@ module.exports = [{
 	set: ["73002"],
 	name: "Assimilated Ship",
 	cost: 5,
-	text: "This Upgrade counts as either a [tech] or [crew] Upgrade and adds the Borg Faction to this ships Upgrade Bar. Add the [regenerate] Action to this ships Action Bar loses the [battlestations] Action\n\nThis ship may only equip Borg Captain, Admiral, and Borg [crew] Upgrades.\n\nIncrease this ships Primary Weapon Value and Shield Value by +1.",
+	text: "This Upgrade counts as either a [tech] or [crew] Upgrade and adds the Borg Faction to this ships Upgrade Bar. Add the [regenerate] Action to this ships Action Bar.\n\nThis ship may only equip Borg Captain, Admiral, and [crew] Upgrades.\n\nIncrease this ships Primary Weapon Value and Shield Value by +1.",
 	OnePerShip: true,
 	factions: ["borg"]
 },  {
