@@ -1,11 +1,14 @@
 module.exports = [{
-	type: "tech",
-	id: "assimilated_ship",
+	type: "talent",
+	id: "neural_transponder_73002",
 	set: ["73002"],
-	name: "Assimilated Ship",
-	cost: 5,
-	text: "This Upgrade adds the Borg Faction to this ship\n-----------------------------------\nAdd the [regenerate] Action to this ships Action Bar.\n-----------------------------------\nThis ship may only equip Borg Captain, Admiral, and [crew] Upgrades.\n\nIncrease this ships Primary Weapon Value and Shield Value by +1.",
+	name: "Neural Transponder",
+	cost: 2,
+	text: "<b>WHENEVER A [battlestations], [evade], [scan] OR [aux] TOKEN IS PLACED BESIDE THIS SHIP:</b> You must discard this card.\n\nEach other friendly ship within range that has a Neural Transponder Upgrade equipped to it must also place a token of the same type beside it if it does not already have one.",
 	OnePerShip: true,
+	shipBorg: true,
+	captainBorg: true,
+	range: "1 - 2",
 	factions: ["borg"]
 },  {
 	type: "tech",
