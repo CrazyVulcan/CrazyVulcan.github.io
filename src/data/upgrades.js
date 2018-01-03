@@ -1,5 +1,5 @@
 module.exports = [{
-	type: "question",
+	type: "tech",
 	id: "assimilated_ship",
 	set: ["73002"],
 	name: "Assimilated Ship",
