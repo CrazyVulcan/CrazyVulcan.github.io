@@ -1854,7 +1854,7 @@ module.exports = [{
 	set: ["75003"],
 	name: "Prak",
 	unique: true,
-	text: "<b>SETUP:</b>\nPlace 2 Gold-Pressed Latinum Tokens on this card.\n----------------------------------------\n<b>ACTIVATION PHASE:</b> Spend 1 GPLT and target an opposing ship.\n\nThe controller of the target ship chooses 1 of the following\n*Repair 1 damage to this ships Hull or Shields.\n*The target ship cannot perform Actions this game round.",
+	text: "<b>SETUP:</b>Place 2 Gold-Pressed Latinum Tokens on this card.\n----------------------------------------\n<b>ACTIVATION PHASE:</b> Spend 1 GPLT and target an opposing ship. The controller of the target ship chooses 1 of the following\n*Repair 1 damage to this ships Hull or Shields.\n*The target ship cannot perform Actions this game round.",
 	range: "1 - 2",
 	factions: ["ferengi"],
 	cost: 4,
