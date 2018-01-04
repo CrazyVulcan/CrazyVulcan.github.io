@@ -1,18 +1,4 @@
-module.exports = [
-{
-	type: "tech",
-	id: "assimilated_ship_73002",
-	set: ["73002"],
-	name: "Assimilated Ship",
-	cost: 5,
-	text: "This upgrade adds the Borg Faction to this ship.\n-----------------------------------\nAdd 1 [borg] Upgrade slot and increase this ships Primary Weapon and Shield Values by +1. This ship also gains the [regenerate] Action.\n-----------------------------------\nThis ship may not equip Non-Borg Captains, Admirals, or Crew",
-	OnePerShip: true,
-	factions: ["borg"]
-},  
-
-
-
-{
+module.exports = [{
 	type: "talent",
 	id: "neural_transponder_73002",
 	set: ["73002"],
