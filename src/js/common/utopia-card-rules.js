@@ -6716,19 +6716,19 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 		},
 		"crew:betor_crew_72282p": {
-			upgradeSlots: [ 
-				{ 
+			upgradeSlots: [
+				{
 					type: ["talent"]
 				}
 			],
-			canEquip: function(captain,ship,fleet) {
-				return captain.name == "Lursa";
+			canEquip: function(upgrade,ship,fleet) {
+				return ship.captain && ship.captain.name == "Lursa";
 			},
 			intercept: {
 				ship: {
-					skill: function(card,ship,fleet,skill) {
-						if( card == ship.captain )
-							return resolve(card,ship,fleet,skill) + 4;
+					skill: function(upgrade,ship,fleet,skill) {
+						if( upgrade == ship.captain )
+							return resolve(upgrade,ship,fleet,skill) + 4;
 						return skill;
 					}
 				}
