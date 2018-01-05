@@ -32,7 +32,7 @@ module.exports = [{
 	hull: 4,
 	shields: 3,
 	cost: 20,
-	text: "<b>WHEN THIS SHIP PERFROMES A 3 turn-left, 3 bank-left, 3 straight, 3 bank-right, OR 3 turn-right MANEUVER:</b>\n\nThis ship may perform a White Maneuver. If it does, it rolls -1 attack die this game round.",
+	text: "<b>WHEN THIS SHIP PERFROMES A 3 turn-left, 3 bank-left, 3 straight, 3 bank-right, OR 3 turn-right MANEUVER:</b>\nThis ship may perform a White Maneuver. If it does, it rolls -1 attack die this game round.",
 	unique: true,
 	factions: ["ferengi"],
 	intercept: {
