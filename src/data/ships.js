@@ -21,6 +21,27 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
+	id: "soloks_marauder_75003",
+	set: ["75003"],
+	name: "Solok's Marauder",
+	class: "D'Kora Class",
+	actions: ["evade", "target-lock", "scan"],
+	upgrades: ["tech", "weapon", "crew", "crew"],
+	attack: 3,
+	agility: 1,
+	hull: 4,
+	shields: 3,
+	cost: 20,
+	text: "<b>WHEN THIS SHIP PERFROMES A 3 turn-left, 3 bank-left, 3 straight, 3 bank-right, OR 3 turn-right MANEUVER:</b>\n\nThis ship may perform a White Maneuver. If it does, it rolls -1 attack die this game round.",
+	unique: true,
+	factions: ["ferengi"],
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	squadron: false
+}, {
+	type: "ship",
 	id: "generic_marauder_75003",
 	set: ["75003", "73001"],
 	name: "Ferengi Starship",
