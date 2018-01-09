@@ -7649,23 +7649,43 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			},
 			upgradeSlots: [ 
-			{
-				type: ["talent"],
-				source: "Daimon Solok",
-			},{ 
-				type: ["crew"],
-				rules: "3sp Or Less",
-				canEquip: function(upgrade,ship,fleet) {
-				return upgrade.cost <= 3;
+				{ 
+					type: ["crew"], 
+					rules: "3SP or less",
+					faceDown: true,
+					intercept: {
+						ship: {
+							canEquip: function(upgrade,ship,fleet) {
+								// TODO Prevent use of upgrades without a defined cost (e.g. Dorsal Phaser Array)
+								var cost = valueOf(upgrade,"cost",ship,fleet);
+								return cost <= 3;
+							},
+							free: function() {
+								return true;
+							}
+						}
+					}
+				},{ 
+					type: ["crew"], 
+					rules: "3SP or less",
+					faceDown: true,
+					intercept: {
+						ship: {
+							canEquip: function(upgrade,ship,fleet) {
+								// TODO Prevent use of upgrades without a defined cost (e.g. Dorsal Phaser Array)
+								var cost = valueOf(upgrade,"cost",ship,fleet);
+								return cost <= 3;
+							},
+							free: function() {
+								return true;
+							}
+						}
+					}
 				}
-			},{ 
-				type: ["crew"],
-				rules: "3sp Or Less",
-				canEquip: function(upgrade,ship,fleet) {
-				return upgrade.cost <= 3;
-				}
-			}]
+			]
 		},
+		
+
 
 //Faction Penalty For Subfactions 		
 		//Federation
