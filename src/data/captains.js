@@ -865,6 +865,17 @@ module.exports = [{
 	}
 }, {
 	type: "captain",
+	id: "daimon_solok_75003",
+	set: ["75003"],
+	name: "Daimon Solok",
+	cost: 2,
+	skill: 4,
+	talents: 1,
+	text: "<b>SETUP:</b>\nPlace 2 GPLT on this card and place 2 [crew] Upgrades each with a cost of 3 SP or less face down beneath this card.\n----------------------------------------\n<b>ACTIVATION PHASE:</b> Spend 1 GPLT.\nFlip a [crew] Upgrade beneath this card face up and equip it to this ship even if it exceeds this ships restrictions. Remove the other face down [crew] Upgrade beneath this card from the game.",
+	unique: true,
+	factions: ["ferengi"]
+}, {
+	type: "captain",
 	id: "lursa_2017core",
 	set: ["2017core"],
 	name: "Lursa",
