@@ -7637,6 +7637,32 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
+		
+	//Independent Faction Pack: 75003
+		"captain:prak_75003":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			}
+		},
+		"captain:daimon_solok_75003":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			},
+			upgradeSlots: [ 
+				{ 
+				type: ["crew"],
+				rules: "3sp Or Less",
+				canEquip: function(upgrade,ship,fleet) {
+				return upgrade.cost <= 3;
+				}
+			},{ 
+				type: ["crew"],
+				rules: "3sp Or Less",
+				canEquip: function(upgrade,ship,fleet) {
+				return upgrade.cost <= 3;
+				}
+			}]
+		},
 
 //Faction Penalty For Subfactions 		
 		//Federation
