@@ -7649,8 +7649,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			},
 			upgradeSlots: [ 
-			{},
-			{ 
+				{
+					type: ["talent"]
+				}, { 
 					type: ["crew"], 
 					rules: "3SP or less",
 					faceDown: true,
@@ -7666,7 +7667,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 							}
 						}
 					}
-				},{ 
+				}, { 
 					type: ["crew"], 
 					rules: "3SP or less",
 					faceDown: true,
