@@ -1,7 +1,7 @@
 module.exports = [{
 	type: "set",
 	id: "75003",
-	name: "Independent",
+	name: "Ferengi",
 	releaseDate: "2018-02-10",
 	parentSet: "Faction Packs"
 }, {
