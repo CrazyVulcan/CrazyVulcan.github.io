@@ -915,7 +915,6 @@ module.exports = [{
 		},
 		4: {
 			straight: "white",
-			bank: "white"
 		},
 		5: {
 			straight: "white"
