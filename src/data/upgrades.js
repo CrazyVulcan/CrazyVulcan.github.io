@@ -1,4 +1,22 @@
 module.exports = [{
+	type: "weapon",
+	id: "verteron_pulse_trap_75003",
+	set: ["75003"],
+	name: "Verteron Pulse Trap",
+	cost: 2,
+	text: "<b>SETUP:</b>\nPlace a Minefield Token anywhere that is not within Range 1 - 2 of any edge of the play area.\n-----------------------------------\n<b>WHEN A SHIP MOVES WITHIN RANGE 1 OF THE MINEFIELD TOKEN:</b> Target that ship.\nPlace an [aux] Token beside the target ship.",
+	unique: true,
+	factions: ["independent"]
+},  {
+	type: "crew",
+	id: "grilka_75003",
+	set: ["75003"],
+	name: "Grilka",
+	cost: 1,
+	text: "You do not pay a Faction Penalty when equipping this card to a Ferengi Ship.\n-----------------------------------\nOpposing effects that cost one or more GPLT cost +1 GPLT.",
+	unique: true,
+	factions: ["klingon"]
+},  {
 	type: "talent",
 	id: "neural_transponder_73002",
 	set: ["73002"],

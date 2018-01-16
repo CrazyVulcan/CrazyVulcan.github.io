@@ -835,7 +835,7 @@ module.exports = [{
 	id: "fleet_commander_ship",
 	set: ["72280r"],
 	name: "Fleet Commander",
-	factions: ["federation", "klingon", "romulan", "independent"],
+	factions: ["federation", "klingon", "romulan", "dominion", "independent"],
 	text: "Captain's Skill is increased +1.\n\nAdd +1 to either Shield or Hull value.",
 	cost: 5,
 	upgrades: [{
@@ -863,7 +863,7 @@ module.exports = [{
 	id: "captains_chair_ship",
 	set: ["72301r"],
 	name: "Captains Chair",
-	factions: ["federation", "klingon", "romulan", "independent"],
+	factions: ["federation", "klingon", "romulan", "dominion", "independent"],
 	text: "Ship with Captain skill 5+\n\nAfter performing an Green or White Maneuver, remove a Disable Token from a Upgrade equipped to this ship.",
 	cost: 3,
 	showType: true,
@@ -881,7 +881,7 @@ module.exports = [{
 	id: "front_line_retrofit_ship",
 	set: ["72302r"],
 	name: "Front Line Retrofit",
-	factions: ["federation", "klingon", "romulan", "independent"],
+	factions: ["federation", "klingon", "romulan", "dominion", "independent"],
 	text: "Ship must have a hull of Hull 3 or less\n\nAdds 1 Weapon slot and +1 to Shield and Captain Skill values",
 	cost: 5,
 	upgrades: [{
