@@ -1,5 +1,16 @@
 module.exports = [{
 	type: "weapon",
+	id: "photon_torpedoes_75003",
+	set: ["75003"],
+	name: "Photon Torpedoes",
+	cost: 2,
+	text: "The Attack Value of this [weapon] is this ship's Primary Weapon Value\n-----------------------------------\n<b>ATTACK:</b> Place 2 [time] Tokens on this card and target an opposing ship.\n\nPlace an [aux] Token beside the target ship.",
+	range: "1 - 3",
+	FrontArc: true,
+	RearArc: true,
+	factions: ["ferengi"]
+},  {
+	type: "weapon",
 	id: "verteron_pulse_trap_75003",
 	set: ["75003"],
 	name: "Verteron Pulse Trap",
