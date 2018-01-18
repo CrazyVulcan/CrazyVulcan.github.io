@@ -2814,6 +2814,18 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "captain",
+	id: "birta_75003",
+	set: ["75003"],
+	name: "Birta",
+	cost: 5,
+	skill: 8,
+	talents: 1,
+	text: "<b>SETUP::</b>\nPlace 3 Gold-Pressed Latinum Tokens (GPLT) on this card.\n-----------------------------\n<b>PLANNING PHASE:</b> Spend 1 GPLT and target a Captain equipped to another ship.\n\nIncrease or decrease the target Captains Captain Skill by 2 this game round.",
+	unique: true,
+	range: "1 - 3",
+	factions: ["federation"]
+}, {
+	type: "captain",
 	id: "picard_2017core",
 	set: ["2017core"],
 	name: "Jean-Luc Picard",
