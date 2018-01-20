@@ -33,7 +33,6 @@ module.exports = [{
 	shields: 2,
 	cost: 13,
 	text: "",
-	unique: true,
 	factions: ["ferengi", "klingon"],
 	intercept: {
 		ship: {},
