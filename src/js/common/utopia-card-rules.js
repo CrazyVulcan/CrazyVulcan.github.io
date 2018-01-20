@@ -8587,7 +8587,20 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 	//Senior Staff
 		"resource:senior_staff":{
-			slotType: "talent"
+			upgradeSlots: [{/* Existing Talent Slot */} ].concat(cloneSlot( 3 , 
+				{ 
+					type: ["talent"],
+					intercept: {
+						ship: {
+							cost: function(upgrade, ship, fleet, cost) {
+						if( upgrade.type == "talent" )
+							return resolve(upgrade, ship, fleet, cost) + 1;
+						return cost;
+							}
+						}
+					}
+				}
+			)),
 		}
 		
 	};
