@@ -8587,35 +8587,14 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 	//Senior Staff
 		"resource:senior_staff":{
-			intercept: {
-				fleet: {
-					// No faction penalty for upgrades
-					factionPenalty: function(card, ship, fleet, factionPenalty) {
-						if( isUpgrade(card) )
-							return 0;
-						return factionPenalty;
-					},
+			slotType: "talent",
+			cost: 0,
+			hideCost: true,
+			showShipResourceSlot: function(card,ship,fleet) {
+				if( ship.resource && ship.resource.type == "talent" )
+					return true;
 				
-			//text: "Up to 3 of the Upgrades you purchase for your ship cost exactly 4 SP each and are placed face down beside your Ship Card, the printed cost on those Upgrades cannot be greater than 6",
-			// TODO not very sophisticated
-			upgradeSlots: [{/* Existing Talent Slot */} ].concat(cloneSlot( 3 , 
-				{ 
-					type: upgradeTypes,
-					faceDown: true,
-					intercept: {
-						ship: {
-							cost: function() { return 4; },
-							factionPenalty: function() { return 0; },
-							canEquip: function(card,ship,fleet,canEquip) {
-								if( (valueOf(card,"cost",ship,fleet) <= 6) )
-									return canEquip;
-								return false;
-							}
-						}
-					}
-				}
-			)),
-		}}
+			},
 		},			
 		
 	};
