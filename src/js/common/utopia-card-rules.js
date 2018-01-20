@@ -8587,15 +8587,20 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 	//Senior Staff
 		"resource:senior_staff":{
-			slotType: "talent",
-			cost: 0,
 			hideCost: true,
-			showShipResourceSlot: function(card,ship,fleet) {
-				if( ship.resource && ship.resource.type == "talent" )
-					return true;
-				
-			},
-		},			
+
+			intercept: {
+				fleet: {
+					// Add the two Elite Talent slots
+					upgradeSlots: [
+					{/* Talent */},
+						{
+							type: ["talent"]
+						}
+					]
+				}
+			}
+		}
 		
 	};
 }]);
