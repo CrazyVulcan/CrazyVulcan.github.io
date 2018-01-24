@@ -7727,7 +7727,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					type: ["talent"], 
 					rules: "The Rules of Acquisition Only",
 					canEquip: function(upgrade) {
-						return upgrade.name == "The Rules of Acquisition";
+						return upgrade.name == "The Rules Of Acquisition";
 					}
 				}
 			]
@@ -7748,7 +7748,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					type: ["talent"], 
 					rules: "The Rules of Acquisition Only",
 					canEquip: function(upgrade) {
-						return upgrade.name == "The Rules of Acquisition";
+						return upgrade.name == "The Rules Of Acquisition";
 					}
 				}
 			]
