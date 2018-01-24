@@ -6300,15 +6300,25 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			isSlotCompatible: function(slotTypes) {
 				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0 || $.inArray( "borg", slotTypes ) >= 0;
 			},
-			upgradeSlots: [  
+			
+			canEquip: function(upgrade,ship,fleet) {
+				return ship.hull <= 7;
+			},
+			intercept: {
+				self: {
+					upgradeSlots: [  
 				{ 
 					type: function(upgrade,ship) {
 						return getSlotType(upgrade,ship);
 					}
 				}
 			],
-			canEquip: function(upgrade,ship,fleet) {
-				return ship.hull <= 7;
+					cost: function(upgrade,ship,fleet,cost) {
+						if( ship && ship.class = "Borg Sphere" )
+							return resolve(card,ship,fleet,cost) - 15;
+						return cost;
+					}
+				}
 			}
 						
 			
