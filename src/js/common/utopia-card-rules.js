@@ -6296,19 +6296,21 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		// Borg Support Vehicle Token
 		"question:borg_support_vehicle_token_72255":{
 			type: "question",
+			canEquip: onePerShip("Borg Support Vehicle Token"),
 			isSlotCompatible: function(slotTypes) {
 				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0 || $.inArray( "borg", slotTypes ) >= 0;
 			},
-			canEquip: function(upgrade,ship,fleet) {
-				return ship.hull <= 7;
-			},
-			intercept: {
-				ship: {
-					cost: function(card,ship,fleet,cost) {
-						return resolve(card,ship,fleet,cost) - 10;
+			upgradeSlots: [  
+				{ 
+					type: function(upgrade,ship) {
+						return getSlotType(upgrade,ship);
 					}
 				}
+			],
+			canEquip: function(upgrade,ship,fleet) {
+				return ship.hull <= 7;
 			}
+			
 			
 		},
 		// Temporal Vortex

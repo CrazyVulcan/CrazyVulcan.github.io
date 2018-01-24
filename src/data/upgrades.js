@@ -1711,15 +1711,6 @@ module.exports = [{
 	unique: true,
 	factions: ["federation"]
 }, {
-	type: "question",
-	id: "borg_support_vehicle_token_72255",
-	set: ["72255"],
-	name: "Borg Support Vehicle Token",
-	cost: -10,
-	text: "Ship with a Hull Value of 7 or less.\n\nThis ship costs -10sp. If this ship is a Borg Sphere this ship costs -15sp",
-	unique: true,
-	factions: ["borg"]
-}, {
 	type: "talent",
 	id: "i_am_the_borg_72255",
 	set: ["72255"],
@@ -1744,6 +1735,15 @@ module.exports = [{
 	name: "Borg Support Vehicle Dock",
 	cost: 0,
 	text: "This Upgrade may only be purchased for a Borg Cube. At the start of the game, place a Borg Support Vehicle token (BSVT) on one ship in your fleet.\n\n<b>ACTION:</b> If all of your ship's shields have been destroyed, you may discard this card and spend 1 Drone Token to make your support ship Active. Place an Auxiliary Power Token beside your ship. Your ship cannot attack this round.",
+	unique: true,
+	factions: ["borg"]
+}, {
+	type: "question",
+	id: "borg_support_vehicle_token_72255",
+	set: ["72255"],
+	name: "Borg Support Vehicle Token",
+	cost: -10,
+	text: "Ship with a Hull Value of 7 or less.\n\nThis ship costs -10sp. If this ship is a Borg Sphere this ship costs -15sp",
 	unique: true,
 	factions: ["borg"]
 }, {
