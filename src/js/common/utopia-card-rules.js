@@ -6306,16 +6306,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			intercept: {
 				self: {
-					upgradeSlots: [  
-				{ 
-					type: function(upgrade,ship) {
-						return getSlotType(upgrade,ship);
-					}
-				}
-			],
 					cost: function(upgrade,ship,fleet,cost) {
-						if( ship && ship.class = "Borg Sphere" )
-							return resolve(card,ship,fleet,cost) - 15;
+						if( ship && ship.class.indexOf("Borg Sphere") < 0 )
+							return resolve(upgrade,ship,fleet,cost) + 5;
 						return cost;
 					}
 				}
