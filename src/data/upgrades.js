@@ -4,7 +4,7 @@ module.exports = [{
 	set: ["75003"],
 	name: "Kemocite",
 	cost: 2,
-	text: "<b>ACTIVATION PHASE:</b> When you reveal this ships Maneuver.\n\nYou may increase the speed of the Maneuver by 2. The color of the Maneuver remains the same as the revealed Maneuver.\n-----------------------------------\n<b>WHEN ATTACKING:</b> Discard this card.\nAdd 1 [hit].",
+	text: "<b>ACTIVATION PHASE:</b> When you reveal this ships Maneuver.\nYou may increase the speed of the Maneuver by 2. The color of the Maneuver remains the same as the revealed Maneuver.\n-----------------------------------\n<b>WHEN ATTACKING:</b> Discard this card.\nAdd 1 [hit].",
 	OnePerShip: true,
 	factions: ["ferengi"]
 },  {
@@ -138,7 +138,7 @@ module.exports = [{
 	set: ["73001", "75003"],
 	name: "The Rules Of Acquisition",
 	cost: 5,
-	text: "<b>SETUP:</b>\n\n Place 6 Gold-Pressed Latinum Tokens {GPLT) on the Captain equipped to this ship.",
+	text: "<b>SETUP:</b>\n\n Place 6 Gold-Pressed Latinum Tokens (GPLT) on the Captain equipped to this ship.",
 	OnePerShip: true,
 	captainFerengi: true,
 	factions: ["ferengi"]

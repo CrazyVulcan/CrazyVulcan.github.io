@@ -7723,10 +7723,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					canEquip: function(upgrade) {
 						return upgrade.name == "Grand Nagus";
 					}
-				}
-			],
-			upgradeSlots: [ 
-				{ 
+				},{ 
 					type: ["talent"], 
 					rules: "The Rules of Acquisition Only",
 					canEquip: function(upgrade) {
@@ -7747,10 +7744,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					canEquip: function(upgrade) {
 						return upgrade.name == "Grand Nagus";
 					}
-				}
-			],
-			upgradeSlots: [ 
-				{ 
+				},{ 
 					type: ["talent"], 
 					rules: "The Rules of Acquisition Only",
 					canEquip: function(upgrade) {
