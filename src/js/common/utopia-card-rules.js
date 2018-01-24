@@ -6301,16 +6301,16 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0 || $.inArray( "borg", slotTypes ) >= 0;
 			},
 			intercept: {
-				self: {
+			self: {
 			canEquip: function(upgrade,ship,fleet) {
 				return ship.hull <= 7;
 			},
 			cost: function(upgrade,ship,fleet,cost) {
-						if( ship && ship.class.indexOf("Borg Sphere") < 0 )
-							return resolve(upgrade,ship,fleet,cost) + 5;
-						return cost;
-					}
-				}
+				if( ship && ship.class == "Borg Sphere" )
+					return resolve(upgrade,ship,fleet,cost) - 15;
+				return cost;
+			}
+			}
 			}
 						
 			
