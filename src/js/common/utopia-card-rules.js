@@ -6941,6 +6941,12 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						if( $.inArray("tech",type) >= 0 || $.inArray("crew",type) >= 0 )
 							return type.concat(["weapon"]);
 						return type;
+					},
+					// All Weapon type Upgrades cost -1 SP
+					cost: function(upgrade, ship, fleet, cost) {
+						if( upgrade.type == "weapon" )
+							return resolve(upgrade, ship, fleet, cost) - 1;
+						return cost;
 					}
 				}
 			}
