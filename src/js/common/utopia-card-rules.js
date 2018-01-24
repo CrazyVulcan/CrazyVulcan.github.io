@@ -6934,15 +6934,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1;
 			},
-			// All weapon cost -1 SP
-			cost: function(upgrade, ship, fleet, cost) {
-				if( upgrade.type == "weapon" )
-					return resolve(upgrade, ship, fleet, cost) - 1;
-				return cost;
-			},
 			intercept: {
 				fleet: {
-					// Add the "officer" type to all crew slots
+					// Add the "weapon" type to all crew slots
 					type: function(card,ship,fleet,type) {
 						if( $.inArray("crew",type) >= 0 && $.inArray("tech",type) >= 0 )
 							return type.concat(["weapon"]);
