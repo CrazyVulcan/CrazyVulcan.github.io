@@ -1,4 +1,13 @@
 module.exports = [{
+	type: "tech",
+	id: "kemocite_75003",
+	set: ["75003"],
+	name: "Kemocite",
+	cost: 2,
+	text: "<b>ACTIVATION PHASE:</b> When you reveal this ships Maneuver.\n\nYou may increase the speed of the Maneuver by 2. The color of the Maneuver remains the same as the revealed Maneuver.\n-----------------------------------\n<b>WHEN ATTACKING:</b> Discard this card.\nAdd 1 [hit].",
+	OnePerShip: true,
+	factions: ["ferengi"]
+},  {
 	type: "weapon",
 	id: "photon_torpedoes_75003",
 	set: ["75003"],
@@ -18,6 +27,16 @@ module.exports = [{
 	text: "<b>SETUP:</b>\nPlace a Minefield Token anywhere that is not within Range 1 - 2 of any edge of the play area.\n-----------------------------------\n<b>WHEN A SHIP MOVES WITHIN RANGE 1 OF THE MINEFIELD TOKEN:</b> Target that ship.\nPlace an [aux] Token beside the target ship.",
 	unique: true,
 	factions: ["independent"]
+},  {
+	type: "crew",
+	id: "gegis_75003",
+	set: ["75003"],
+	name: "Gegis",
+	cost: 3,
+	text: "<b>ACTION:</b> Place 2 [time] Tokens on this card and target a [tech] or <b>?</b> Upgrade equipped to another ship.\n\nPlace 3 [time] Tokens on the target Upgrade.",
+	unique: true,
+	range: "1 - 2",
+	factions: ["ferengi"]
 },  {
 	type: "crew",
 	id: "par_lenor_75003",
@@ -116,7 +135,7 @@ module.exports = [{
 }, {
 	type: "talent",
 	id: "rules_of_acquisition_73001",
-	set: ["73001"],
+	set: ["73001", "75003"],
 	name: "The Rules Of Acquisition",
 	cost: 5,
 	text: "<b>SETUP:</b>\n\n Place 6 Gold-Pressed Latinum Tokens {GPLT) on the Captain equipped to this ship.",

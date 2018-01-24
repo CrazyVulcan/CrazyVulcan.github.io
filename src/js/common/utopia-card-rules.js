@@ -7656,7 +7656,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}},
 			
-	//Independent Faction Pack: 75003
+	//Ferengi Faction Pack: 75003
 		//Birta
 		"captain:birta_75003":{
 			factionPenalty: function(upgrade, ship, fleet) {
@@ -7711,6 +7711,59 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			]
 		},
+		//Gint - Captain
+		"captain:gint_captain_75003":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			},
+			upgradeSlots: [ 
+				{ 
+					type: ["talent"], 
+					rules: "Grand Nagus Only",
+					canEquip: function(upgrade) {
+						return upgrade.name == "Grand Nagus";
+					}
+				}
+			],
+			upgradeSlots: [ 
+				{ 
+					type: ["talent"], 
+					rules: "The Rules of Acquisition Only",
+					canEquip: function(upgrade) {
+						return upgrade.name == "The Rules of Acquisition";
+					}
+				}
+			]
+		},
+		//Gint - Admiral
+		"admiral:gint_admiral_75003":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			},
+			upgradeSlots: [ 
+				{ 
+					type: ["talent"], 
+					rules: "Grand Nagus Only",
+					canEquip: function(upgrade) {
+						return upgrade.name == "Grand Nagus";
+					}
+				}
+			],
+			upgradeSlots: [ 
+				{ 
+					type: ["talent"], 
+					rules: "The Rules of Acquisition Only",
+					canEquip: function(upgrade) {
+						return upgrade.name == "The Rules of Acquisition";
+					}
+				}
+			]
+		},
+		//Kemocite
+		"tech:kemocite_75003":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			}},
 		//Verteron Pulse
 		"weapon:verteron_pulse_trap_75003":{
 			factionPenalty: function(upgrade, ship, fleet) {
@@ -7733,6 +7786,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
+		//Gegis
+		"crew:gegis_75003":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			}},
 		//Grilka
 		"crew:grilka_75003":{
 			factionPenalty: function(upgrade, ship, fleet) {

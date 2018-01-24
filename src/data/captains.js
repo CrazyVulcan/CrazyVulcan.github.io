@@ -187,6 +187,17 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
+	id: "gint_captain_75003",
+	set: ["75003"],
+	name: "Gint",
+	cost: 3,
+	skill: 2,
+	talents: 0,
+	text: "You may only equip the 'Grand Nagus' and 'Rules of Acquisition' [talent] Upgrades to this Captain.\n----------------------------------------\n<b>SETUP:</b> Place 2 GPLT on this card.\n----------------------------------------\n<b>WHEN YOU WOULD SPEND ONE OR MORE GPLT:</b>/nYou may roll a number of defence dice equal to the number of GPLT that would be spent. For each [evade], spend 1 fewer GPLT.",
+	unique: true,
+	factions: ["ferengi"]
+}, {
+	type: "captain",
 	id: "klaang_72012wp",
 	set: ["72012wp"],
 	name: "Klaang",
