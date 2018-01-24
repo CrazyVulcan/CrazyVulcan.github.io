@@ -6300,20 +6300,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			isSlotCompatible: function(slotTypes) {
 				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0 || $.inArray( "borg", slotTypes ) >= 0;
 			},
-			intercept: {
-			self: {
 			canEquip: function(upgrade,ship,fleet) {
 				return ship.hull <= 7;
-			},
-			cost: function(upgrade,ship,fleet,cost) {
-				if( ship && ship.class == "Borg Sphere" )
-					return resolve(upgrade,ship,fleet,cost) - 15;
-				return cost;
 			}
-			}
-			}
-						
-			
 		},
 		// Temporal Vortex
 		"tech:temporal_vortex_72255": {
@@ -6945,20 +6934,22 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1;
 			},
-			// All crew cost -1 SP
+			// All weapon cost -1 SP
 			cost: function(upgrade, ship, fleet, cost) {
 				if( upgrade.type == "weapon" )
 					return resolve(upgrade, ship, fleet, cost) - 1;
 				return cost;
 			},
-			upgradeSlots: [ 
-				{ 
-					type: ["weapon"]
-				},
-				{ 
-					type: ["weapon"]
+			intercept: {
+				fleet: {
+					// Add the "officer" type to all crew slots
+					type: function(card,ship,fleet,type) {
+						if( $.inArray("crew",type) >= 0 && $.inArray("tech",type) >= 0 )
+							return type.concat(["weapon"]);
+						return type;
+					}
 				}
-			]
+			}
 		},
 		//Patience is for the Dead
 		"talent:patience_is_for_the_dead_muratas":{
