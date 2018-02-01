@@ -1,5 +1,47 @@
 module.exports = [{
 	type: "ship",
+	id: "gress'sril_73031",
+	set: ["73031"],
+	name: "Gress'sril",
+	class: "Gorn Raider",
+	actions: ["evade", "target-lock", "scan", "battlestations"],
+	upgrades: ["tech", "tech", "crew"],
+	attack: 3,
+	agility: 1,
+	hull: 3,
+	shields: 4,
+	cost: 18,
+	text: "<b>MODIFY ATTACK DICE STEP:</b> Disable 1 Shield on this ship.\n\nCancel 1 [hit] or [crit].",
+	unique: true,
+	factions: ["independent"],
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	squadron: false
+}, {
+	type: "ship",
+	id: "gorn_starship_73031",
+	set: ["73031"],
+	name: "Gorn Starship",
+	class: "Gorn Raider",
+	actions: ["evade", "target-lock", "scan", "battlestations"],
+	upgrades: ["tech", "crew"],
+	attack: 3,
+	agility: 1,
+	hull: 3,
+	shields: 3,
+	cost: 14,
+	text: "",
+	unique: false,
+	factions: ["independent"],
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	squadron: false
+}, {
+	type: "ship",
 	id: "lurins_bop_75003",
 	set: ["75003"],
 	name: "Lurin's Bird-of-Prey",

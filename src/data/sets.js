@@ -1,5 +1,11 @@
 module.exports = [{
 	type: "set",
+	id: "73031",
+	name: "Gorn Raider",
+	releaseDate: "2018-03-01",
+	parentSet: "Card Pack 3"
+}, {
+	type: "set",
 	id: "75003",
 	name: "Ferengi",
 	releaseDate: "2018-02-10",
