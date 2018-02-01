@@ -6859,8 +6859,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						if ( ship )
 							modifier += 2;
 						
-						if ( modifier > 5)
-							modifier = 5;
+						if ( isUpgrade > 1)
+							modifier += 3;
 						
 						return cost - modifier;
 					}
