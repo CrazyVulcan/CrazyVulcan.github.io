@@ -1,4 +1,15 @@
 module.exports = [{
+	type: "talent",
+	id: "grand_nagus_75003",
+	set: ["75003"],
+	name: "Grand Nagus",
+	cost: 2,
+	text: "<b>ACTION:</b> Discard this card and target all friendly Ferengi ships.\n\nAll target ships may perform a Green Maneuver.",
+	unique: true,
+	captainFerengi: true,
+	range: "1 - 3",
+	factions: ["ferengi"]
+},  {
 	type: "tech",
 	id: "kemocite_75003",
 	set: ["75003"],
@@ -6,6 +17,26 @@ module.exports = [{
 	cost: 2,
 	text: "<b>ACTIVATION PHASE:</b> When you reveal this ships Maneuver.\nYou may increase the speed of the Maneuver by 2. The color of the Maneuver remains the same as the revealed Maneuver.\n-----------------------------------\n<b>WHEN ATTACKING:</b> Discard this card.\nAdd 1 [hit].",
 	OnePerShip: true,
+	factions: ["ferengi"]
+},  {
+	type: "tech",
+	id: "t9_energy_converter_75003",
+	set: ["75003"],
+	name: "T-9 Energy Converter",
+	cost: 2,
+	text: "<b>END PHASE:</b> Disable this card and remove an [aux] Token beside this ship.\n\nRepair 1 Shield on this ship.",
+	unique: true,
+	factions: ["independent"]
+},  {
+	type: "weapon",
+	id: "weapon_ports_75003",
+	set: ["75003"],
+	name: "Weapon Ports",
+	cost: 2,
+	text: "<b>IF THIS CARD IS DISABLED:</b>\nThis ship rolls -1 defense dice\n-----------------------------------\n<b>ATTACK:</b> Disable this card and target an opposing ship.\n\nThis attack deals no damage. If this attack hits an Attack Squadron discard 1 Attack Squadron Token for each uncanceled [hit] or [crit].",
+	range: "1 - 3",
+	FrontArc: true,
+	attack: 3,
 	factions: ["ferengi"]
 },  {
 	type: "weapon",
@@ -48,6 +79,35 @@ module.exports = [{
 	factions: ["ferengi"]
 },  {
 	type: "crew",
+	id: "letek_75003",
+	set: ["75003"],
+	name: "Letek",
+	cost: 2,
+	text: "<b>ACTION:</b> Discard this card an place 1 [aux] Token beside this ship.\n\nThis ship rolls +2 attack dice this game round.",
+	unique: true,
+	factions: ["ferengi"]
+},  {
+	type: "crew",
+	id: "gral_75003",
+	set: ["75003"],
+	name: "Gral",
+	cost: 1,
+	text: "<b>END PHASE:</b> Discard this card or another [crew] Upgrade equipped to this ship.\n\nPlace 2 GPLT on the Captain equipped to this ship.",
+	unique: true,
+	captainFerengi: true,
+	factions: ["ferengi"]
+},  {
+	type: "crew",
+	id: "nava_75003",
+	set: ["75003"],
+	name: "Nava",
+	cost: 1,
+	text: "<b>WHEN A FERENGI [crew] UPGRADE WOULD BE DISCARDED FROM THIS SHIP:</b>\n\nPlace 1 GPLT on the Captain equipped to this ship.",
+	unique: true,
+	captainFerengi: true,
+	factions: ["ferengi"]
+},  {
+	type: "crew",
 	id: "grilka_75003",
 	set: ["75003"],
 	name: "Grilka",
@@ -56,6 +116,16 @@ module.exports = [{
 	unique: true,
 	factions: ["klingon"]
 },  {
+	type: "question",
+	id: "bio_mimetic_gel_75003",
+	set: ["75003"],
+	name: "Bio-Mimetic Gel",
+	cost: 3,
+	text: "This card counts as a [tech] or [weapon] Upgrade.\n-----------------------------------\n<b>ACTIVATION PHASE:</b> Place 2 [time] Tokens on this card and target a [crew], [weapon], or [tech] Upgrade equipped to an another ship. Place 1 Bio-Mimetic Gel Token on the target Upgrade",
+	unique: true,
+	range: "1 - 2",
+	factions: ["independent"]
+}, 	{
 	type: "talent",
 	id: "neural_transponder_73002",
 	set: ["73002"],

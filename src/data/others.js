@@ -1,5 +1,11 @@
 module.exports = [{
 	type: "token",
+	id: "rule_BMGT",
+	set: ["75003"],
+	name: "Bio-Mimetic Gel Rules",
+	text: "While an Upgrade has a Bio-Mimetic Gel Token (BMGT) on it, it gains the following text based on its upgrade type:\n\n[crew]: The ship that placed the BMGT on this [crew] Upgrade may spend the BMGT to use the ability of this [crew] Upgrade.\n\n[weapon]: When this [weapon] Upgrade deals damage to an opposing ship’s Hull, the ship that placed the BMGT on this [weapon] Upgrade may spend the BMGT to discard 1 [crew] Upgrade of their choice equipped to the defending ship.\n\n[tech]: When the ability of this [tech] Upgrade is used, the ship that placed the BMGT on this [tech] Upgrade may spend the BMGT to place 2 [time] Tokens on each [crew] Upgrade equipped to this ship.\n-----------------------------------\nWhen a BMGT is spent, roll 1 attack die. If a [battlestations] result is rolled, discard both the “Bio-mimetic Gel” Upgrade Card and the target Upgrade the BMGT was on."
+}, {
+	type: "token",
 	id: "rule_GPLT",
 	set: ["AdditionalRules", "73001", "75003"],
 	name: "Gold-Pressed Latinum Token",
