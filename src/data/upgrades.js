@@ -33,7 +33,7 @@ module.exports = [{
 	set: ["75003"],
 	name: "Weapon Ports",
 	cost: 2,
-	text: "<b>IF THIS CARD IS DISABLED:</b>\nThis ship rolls -1 defense dice\n-----------------------------------\n<b>ATTACK:</b> Disable this card and target an opposing ship.\n\nThis attack deals no damage. If this attack hits an Attack Squadron discard 1 Attack Squadron Token for each uncanceled [hit] or [crit].",
+	text: "<b>IF THIS CARD IS DISABLED:</b>\nThis ship rolls -1 defense dice\n-----------------------------------\n<b>ATTACK:</b> Disable this card and target an opposing ship.\nThis attack deals no damage. If this attack hits an Attack Squadron discard 1 Attack Squadron Token for each uncanceled [hit] or [crit].",
 	range: "1 - 3",
 	FrontArc: true,
 	attack: 3,
