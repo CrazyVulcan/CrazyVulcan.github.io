@@ -1,5 +1,22 @@
 module.exports = [{
 	type: "ship",
+	id: "4th_wing_patrol_ship_75002",
+	set: ["73032"],
+	name: "4th Wing Patrol Ship",
+	class: "Jem'Hadar Attack Ship",
+	actions: ["evade", "target-lock", "scan", "battlestations"],
+	upgrades: ["tech", "tech", "weapon", "crew"],
+	attack: 3,
+	agility: 2,
+	hull: 3,
+	shields: 3,
+	cost: 16,
+	text: "<b>AFTER THIS SHIP PERFORMS A [target-lock] ACTION:</b> Target a friendly Jem'Hadar Attack Ship within Range 1.\n\nThe target ship may perform a [target-lock] Action as a Free Action.",
+	unique: true,
+	factions: ["dominion"],
+	squadron: false
+},{
+	type: "ship",
 	id: "gress'sril_73031",
 	set: ["73031"],
 	name: "Gress'sril",
@@ -361,7 +378,7 @@ module.exports = [{
 },{
 	type: "ship",
 	id: "jemhadar_attack_ship_75002",
-	set: ["75002"],
+	set: ["75002", "73032"],
 	name: "Dominion Starship",
 	class: "Jem'Hadar Attack Ship",
 	actions: ["evade", "target-lock", "scan", "battlestations"],
