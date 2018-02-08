@@ -5360,8 +5360,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		//Ro Laren
 		"crew:ro_laren_blind_interceptor8": {
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "federation", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			},
 			canEquip: function(card,ship,fleet) {
-				return hasFaction(ship,"federation",ship,fleet) || hasFaction(ship,"bajoran",ship,fleet);
+				return hasFaction(ship,"federation",ship,fleet) || hasFaction(ship,"bajoran",ship,fleet) || hasFaction(ship,"vulcan",ship,fleet);
 			},
 		},
 		//Phaser Strike
