@@ -11,7 +11,7 @@ module.exports = [{
 	hull: 3,
 	shields: 3,
 	cost: 16,
-	text: "<b>AFTER THIS SHIP PERFORMS A [target-lock] ACTION:</b> Target a friendly Jem'Hadar Attack Ship within Range 1.\n\nThe target ship may perform a [target-lock] Action as a Free Action.",
+	text: "<b>AFTER THIS SHIP PERFORMS A  [target-lock] ACTION:</b> Target a friendly Jem'Hadar Attack Ship within Range 1.\n\nThe target ship may perform a  [target-lock] Action as a Free Action.",
 	unique: true,
 	factions: ["dominion"],
 	squadron: false
