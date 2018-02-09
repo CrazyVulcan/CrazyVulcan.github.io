@@ -7835,7 +7835,20 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			isSlotCompatible: function(slotTypes) {
 				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0;
 			}},
-
+	//Gorn Raider Card Package
+		//Gorn Hegemony
+		"talent:gorn_hegemony_73031":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			},
+			canEquipFaction: function(upgrade,ship,fleet) {
+				// TODO Tholians are Independent so can't easily tell their race
+				return ship.captain && ( ship.captain.name == "S'Sesslak" || ship.captain.name.indexOf("Gorn") >= 0 );
+			},
+			canEquip: function(upgrade,ship,fleet) {
+				return ship.class == "Gorn Raider";
+			}
+		},
 
 //Faction Penalty For Subfactions 		
 		//Federation

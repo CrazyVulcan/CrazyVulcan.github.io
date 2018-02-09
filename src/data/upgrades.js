@@ -1,5 +1,14 @@
 module.exports = [{
 	type: "talent",
+	id: "gorn_hegemony_73031",
+	set: ["73031"],
+	name: "Gorn Hegemony",
+	cost: 4,
+	text: "This card may only be equipped to S'Sesslak or a Gorn Captain.\n-----------------------------------\n<b>ACTION:</b> Discard this card and treat the Captain Skill of the Captain equipped to this ship as 0 this game round.\nThis ship may make 2 attacks instead of 1 this game round.\n(<i>Gorn Raider Only</i>)",
+	shipLimit:true,
+	factions: ["independent"]
+},  {
+	type: "talent",
 	id: "grand_nagus_75003",
 	set: ["75003"],
 	name: "Grand Nagus",
