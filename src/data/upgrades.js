@@ -314,6 +314,7 @@ module.exports = [{
 	cost: 5,
 	text: "<b>ACTIVATION PHASE:</b> If this ship overlaps an opposing ship, target that ship and destroy this ship.\n\nDeal 2 [crit] to that target ships Hull.\n\n(<i>Jem'Hadar Attack Ship</i>)",
 	OnePerShip: true,
+	shipLimit:true,
 	factions: ["dominion"]
 }, {
 	type: "tech",
@@ -334,6 +335,7 @@ module.exports = [{
 	attack: 6,
 	text: "<b>ATTACK:</b> Spend this ships [target-lock] Token, discard this card, and target an opposing ship.\n\nPerfrom this attack twice against the target ship.\n       (<i>Jem'Hadar Battleship</i>)",
 	unique: true,
+	shipLimit:true,
 	RearArc: true,
 	factions: ["dominion"]
 }, {
@@ -359,6 +361,7 @@ module.exports = [{
 	text: "<b>ATTACK:</b> Disable this card and target an opposing ship.\n\nThis attack ignores the target ships Shields. This ship may convert 1 [battlestations] into 1 [hit].\n(<i>Jem'Hadar Attack Ship</i>)",
 	OnePerShip: true,
 	FrontArc: true,
+	shipLimit:true,
 	factions: ["dominion"]
 }, {
 	type: "weapon",
@@ -381,6 +384,7 @@ module.exports = [{
 	text: "<b>Attack:</b> Discard this card and target an opposing ship.\n\nFor each uncancelled [hit] or [crit], discard 1 [tech] Upgrade equipped to the target ship.\n\n(<i>Jem'Hadar Attack Ship</i>)",
 	unique: true,
 	FrontArc: true,
+	shipLimit:true,
 	factions: ["dominion"]
 }, {
 	type: "crew",
@@ -502,6 +506,7 @@ module.exports = [{
 	name: "Additional Weapons Array",
 	cost: 3,
 	OnePerShip: true,
+	shipLimit:true,
 	text: "<b>WHEN ATTACKING:</b>\n\nThis ship rolls +1 attack die.\n\n(<i>D'Deridex Class</i>)",
 	factions: ["romulan"]
 }, {
@@ -782,6 +787,7 @@ module.exports = [{
 	cost: 4,
 	text: "<b>END PHASE:</b> Place 3 [time] Tokens on this card.\n\nRepair 1 damage to this ship's Shields or Hull.\n<i>(Romulan Drone Ship Only)</i>",
 	OnePerShip: true,
+	shipLimit:true,
 	factions: ["romulan"]
 }, {
 	type: "weapon",
@@ -802,6 +808,7 @@ module.exports = [{
 	cost: 3,
 	text: "<b>COMBAT PHASE:</b> If this ship is in the primary or Secondary Firing Arc of an opposing ship, place 3 [time] Tokens on this card.\n\nPerform a [sensor-echo] Action as a Free Action. If this ship does, also remove an opposing [target-lock] Token from this ship.\n<i>(Romulan Drone Ship Only)</i>",
 	OnePerShip: true,
+	shipLimit:true,
 	factions: ["romulan"]
 }, {
 	type: "tech",
@@ -811,6 +818,7 @@ module.exports = [{
 	cost: 4,
 	text: "<b>WHEN DEFENDING:</b> Place 3 [time] Tokens on this card.\n\nThe attacking ship rolls -2 attack dice.\n<i>(Romulan Drone Ship Only)</i>",
 	OnePerShip: true,
+	shipLimit:true,
 	factions: ["romulan"]
 }, {
 	type: "weapon",
@@ -822,6 +830,7 @@ module.exports = [{
 	range: "1 -3",
 	text: "<b>ATTACK:</b> Discard this card.\n\nThis ship may re-roll any number of attack dice.\n\n(<i>Cardassian ATR-4107</i>)",
 	unique: false,
+	shipLimit:true,
 	factions: ["dominion"]
 }, {
 	type: "weapon",
@@ -833,6 +842,7 @@ module.exports = [{
 	range: "1",
 	text: "<b>ATTACK:</b> Place 2 [time] Tokens on this card and target all opposing ships. \n\n\n(<i>Cardassian ATR-4107</i>)",
 	unique: true,
+	shipLimit:true,
 	factions: ["dominion"]
 }, {
 	type: "weapon",

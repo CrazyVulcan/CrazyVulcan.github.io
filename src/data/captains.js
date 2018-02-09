@@ -476,6 +476,7 @@ module.exports = [{
 	range: "1 - 2",
 	text: "This card cannot be affected by anything that affects a Captain, and this card counts as a Romulan Drone Pilot.\n<b>ACTION:</b> Target an opposing ship in this ship's Primary Firing Arc.\nThe target ship rolls -2 attack dice against this ship.\n(<i>Romulan Drone Ship Only</i>)",
 	unique: true,
+	shipLimit:true,
 	factions: ["independent", "romulan"]
 }, {
 	type: "captain",
