@@ -210,7 +210,7 @@
 .card-shipLimit-icon {
 	background: url("../img/upgrade-ship-limit.png")no-repeat;
 	background-size: 1em;
-	color: red;
+	color: gray;
 	width: 1.2em;
 	position: relative;
 	left: 0em;
