@@ -26,7 +26,7 @@
 				<div class="text-center">Build your fleet with <a href="./index.html">Utopia</a></div>
 			
 				<ul class="set-list">
-					<li ng-repeat="mission in setList | orderBy:'-releaseDate'" ng-click="viewer.set = set" ng-class="{'set-selected': viewer.set == set}">{{set.parentSet}}: {{set.name}}</li>
+					<li ng-repeat="set in setList | orderBy:'-releaseDate'" ng-click="viewer.set = set" ng-class="{'set-selected': viewer.set == set}">{{set.parentSet}}: {{set.name}}</li>
 				</ul>
 			</div>
 			
