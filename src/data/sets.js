@@ -1386,16 +1386,6 @@ module.exports = [{
 	releaseDate: "2013-08-01",
 	parentSet: "Core"
 }, {
-	type: "mission",
-	sourceID: "001",
-	name: "dummy Name",
-	orderDate: "2000-01-01"
-}, {
-	type: "mission",
-	sourceID: "002",
-	name: "dummyer Name",
-	orderDate: "2000-01-02"
-}, {
 	type: "set",
 	id: "AdditionalRules",
 	name: "Additional Rules",
