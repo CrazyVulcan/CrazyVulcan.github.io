@@ -1,11 +1,11 @@
 module.exports = [{
-	type: "mission",
+	type: "set",
 	id: "73032",
 	name: "Jem'Hadar Attack Ship",
 	releaseDate: "2018-03-02",
 	parentSet: "Card Pack 3"
 }, {
-	type: "mission",
+	type: "set",
 	id: "73031",
 	name: "Gorn Raider",
 	releaseDate: "2018-03-01",
@@ -1385,6 +1385,11 @@ module.exports = [{
 	name: "Starter Set",
 	releaseDate: "2013-08-01",
 	parentSet: "Core"
+}, {
+	type: "mission",
+	sourceID: "001",
+	name: "dummy Name",
+	orderDate: "2000-01-01"
 }, {
 	type: "set",
 	id: "AdditionalRules",
