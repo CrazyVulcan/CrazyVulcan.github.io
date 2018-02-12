@@ -27,7 +27,7 @@
 				<div class="text-center">Browse all sets with the <a href="./set-viewer.html">Utopia Set Viewer</a></div><br />
 			
 				<ul class="set-list">
-					<li ng-repeat="set in setList | orderBy:'-releaseDate'" ng-click="viewer.set = set" ng-class="{'set-selected': viewer.set == set}">{{set.parentSet}}: {{set.name}}</li>
+					<li ng-repeat="missionSet in missionSetList | orderBy:'-orderDate'" ng-click="viewer.missionSet = missionSet" ng-class="{'missionSet-selected': viewer.missionSet == missionSet}">-{{missionSet.name}}</li>
 				</ul>
 			</div>
 			
