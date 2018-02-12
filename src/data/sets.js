@@ -1,11 +1,11 @@
 module.exports = [{
-	type: "set",
+	type: "mission",
 	id: "73032",
 	name: "Jem'Hadar Attack Ship",
 	releaseDate: "2018-03-02",
 	parentSet: "Card Pack 3"
 }, {
-	type: "set",
+	type: "mission",
 	id: "73031",
 	name: "Gorn Raider",
 	releaseDate: "2018-03-01",
