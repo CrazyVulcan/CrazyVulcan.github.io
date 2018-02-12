@@ -21,32 +21,20 @@
 
 			<div class="u-search-results u-search-cols-1">
 			
-				<div class="u-title"><i class="fs fs-unique"></i>Utopia Set Viewer</div>
+				<div class="u-title"><i class="fs fs-unique"></i>Utopia Missions</div>
 				
 				<div class="text-center">Build your fleet with <a href="./index.html">Utopia</a></div>
 				<div class="text-center">Browse all sets with the <a href="./set-viewer.html">Utopia Set Viewer</a></div><br />
 			
 				<ul class="set-list">
-					<li ng-repeat="set in setList | orderBy:'-releaseDate'" ng-click="viewer.set = set" ng-class="{'set-selected': viewer.set == set}">{{set.parentSet}}: {{set.name}}</li>
+					<li ng-repeat="set in setList | orderBy:'-releaseDate'" ng-click="viewer.set = set" ng-class="{'set-selected': viewer.set == set}">{{missions.sourceID}}: {{missions.name}}</li>
 				</ul>
 			</div>
 			
 			<div class="u-fleet set-cards">
 			
-				<div class="set-header" ng-show="viewer.set">{{viewer.set.parentSet}}: {{viewer.set.name}}</div>
-				
-				<ngRepeat ng-repeat="card in setCards">
-					<div class="card-container">
-						<card card="card"></card>
-					</div>
-					<div class="card-container" ng-if="card.type == 'ship' && card.unique">
-						<card card="card.classData" ship="card"></card>
-					</div>
-					<div class="card-container" ng-if="card.hasTokenInfo">
-						<card card="card.tokenData"></card>
-					</div>
-				</ngRepeat>
-			
+				<div class="set-header" ng-show="viewer.set">{{viewer.missions.parentSet}}: {{viewer.missions.name}}</div>
+							
 			</div>
 		
 		</div>
