@@ -1,14 +1,14 @@
-.mision-header {
+.missionSet-header {
 	font-size: 2em;
 	padding: 0.5em;
 	text-align: center;
 }
 
-.u-fleet.mision-profile {
+.u-fleet.missionSet-cards {
 	padding-top: 0;
 }
 
-.mision-list {
+.missionSet-list {
 	list-style: none;
 	margin-left: 1em;
 	margin-top: 1em;
@@ -16,18 +16,18 @@
 	width: 300px;
 }
 
-.mision-list li {
+.missionSet-list li {
 	font-size: 1.5em;
 	padding: 0.2em;
 	color: #8888ff;
 	cursor: pointer;
 }
 
-.mision-list li:hover {
+.missionSet-list li:hover {
 	background: #ddd;
 }
 
-.mision-selected {
+.missionSet-selected {
 	background: #ccc;
 }
 
