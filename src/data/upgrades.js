@@ -13,7 +13,7 @@ module.exports = [{
 	set: ["73031"],
 	name: "Meridor - Gorn Ale",
 	cost: 2,
-	text: "This Upgrade may be equipped to a ship without requiring an Upgrade slot.\n-----------------------------------\n<b>ACTIVATION PHASE:</b> Place 3 [time] Tokens on this card.\nDecrease the Captain Skill of the Captain equipped to this ship by up to 2 this game round and increase this ship's Primary Weapon Value by the same amount this game round.",
+	text: "This Upgrade may be equipped to a ship without requiring an Upgrade slot.\n-----------------------------------\n<b>ACTIVATION PHASE:</b> Place 3 [time] Tokens on this card.\n\nDecrease the Captain Skill of the Captain equipped to this ship by up to 2 this game round and increase this ship's Primary Weapon Value by the same amount this game round.",
 	OnePerShip: true,
 	shipIndependent: true,
 	factions: ["independent"]
