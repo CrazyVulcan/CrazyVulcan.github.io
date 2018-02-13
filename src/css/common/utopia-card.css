@@ -378,15 +378,12 @@
 
 .card-shipIndependent-icon {
 	background: url("../img/restrictions/card-shipIndependent-icon.png") no-repeat;
-	font-size: 0.5em;
-	background-size: 2em;
-	color: yellow;
-	padding: 0.5em;
+	background-size: 1em;
+	width: 1.2em;
 	position: relative;
 	left: 0em;
-	margin-top:0.5em;
 	top: -0.1em;
-	z-index: 2;
+	z-index: 1;
 	text-align: center;
 }
 
