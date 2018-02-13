@@ -158,7 +158,7 @@
 }
 
 .card-FrontArc-icon {
-	background: url("../img/upgrade-forward-arc.png")no-repeat;
+	background: url("../img/restrictions/upgrade-forward-arc.png")no-repeat;
 	background-size: 1em;
 	color: red;
 	width: 1.2em;
@@ -170,7 +170,7 @@
 }
 
 .card-RearArc-icon {
-	background: url("../img/upgrade-rear-arc.png")no-repeat;
+	background: url("../img/restrictions/upgrade-rear-arc.png")no-repeat;
 	background-size: 1em;
 	color: red;
 	width: 1.2em;
@@ -182,7 +182,7 @@
 }
 
 .card-360Arc-icon {
-	background: url("../img/upgrade-360-arc.png")no-repeat;
+	background: url("../img/restrictions/upgrade-360-arc.png")no-repeat;
 	background-size: 1em;
 	color: red;
 	width: 1.2em;
@@ -194,7 +194,7 @@
 }
 
 .card-hullConstraint-icon {
-	background: url("../img/upgrade-hull-limit.png")no-repeat;
+	background: url("../img/restrictions/upgrade-hull-limit.png")no-repeat;
 	font-size: 0.5em;
 	background-size: 2em;
 	color: red;
@@ -208,7 +208,7 @@
 }
 
 .card-shipLimit-icon {
-	background: url("../img/upgrade-ship-limit.png")no-repeat;
+	background: url("../img/restrictions/upgrade-ship-limit.png")no-repeat;
 	background-size: 1em;
 	color: gray;
 	width: 1.2em;
@@ -219,7 +219,7 @@
 	text-align: center;
 }
 .card-captainFederation-icon {
-	background: url("../img/card-captainFederation-icon.png")no-repeat;
+	background: url("../img/restrictions/card-captainFederation-icon.png")no-repeat;
 	background-size: 1em;
 	width: 1.2em;
 	position: relative;
@@ -230,7 +230,7 @@
 }
 
 .card-shipFederation-icon {
-	background: url("../img/card-shipFederation-icon.png")no-repeat;
+	background: url("../img/restrictions/card-shipFederation-icon.png")no-repeat;
 	background-size: 1em;
 	width: 1.2em;
 	position: relative;
@@ -241,7 +241,7 @@
 }
 
 .card-costFederation-icon {
-	background: url("../img/card-shipFederation-icon.png")no-repeat;
+	background: url("../img/restrictions/card-shipFederation-icon.png")no-repeat;
 	font-size: 0.5em;
 	background-size: 2em;
 	color: red;
@@ -254,7 +254,7 @@
 	text-align: center;
 }
 .card-captainKlingon-icon {
-	background: url("../img/card-captainKlingon-icon.png")no-repeat;
+	background: url("../img/restrictions/card-captainKlingon-icon.png")no-repeat;
 	background-size: 1em;
 	color: red;
 	width: 1.2em;
@@ -266,7 +266,7 @@
 }
 
 .card-shipKlingon-icon {
-	background: url("../img/card-shipKlingon-icon.png")no-repeat;
+	background: url("../img/restrictions/card-shipKlingon-icon.png")no-repeat;
 	background-size: 1em;
 	color: red;
 	width: 1.2em;
@@ -278,7 +278,7 @@
 }
 
 .card-costKlingon-icon {
-	background: url("../img/card-shipKlingon-icon.png")no-repeat;
+	background: url("../img/restrictions/card-shipKlingon-icon.png")no-repeat;
 	font-size: 0.5em;
 	background-size: 2em;
 	color: red;
@@ -291,7 +291,7 @@
 	text-align: center;
 }
 .card-captainRomulan-icon {
-	background: url("../img/card-captainRomulan-icon.png")no-repeat;
+	background: url("../img/restrictions/card-captainRomulan-icon.png")no-repeat;
 	background-size: 1em;
 	width: 1.2em;
 	position: relative;
@@ -302,7 +302,7 @@
 }
 
 .card-shipRomulan-icon {
-	background: url("../img/card-shipRomulan-icon.png") no-repeat;
+	background: url("../img/restrictions/card-shipRomulan-icon.png") no-repeat;
 	background-size: 1em;
 	width: 1.2em;
 	position: relative;
@@ -313,7 +313,7 @@
 }
 
 .card-costRomulan-icon {
-	background: url("../img/card-shipRomulan-icon.png") no-repeat;
+	background: url("../img/restrictions/card-shipRomulan-icon.png") no-repeat;
 	font-size: 0.5em;
 	background-size: 2em;
 	color: red;
@@ -327,7 +327,7 @@
 }
 
 .card-captainDominion-icon {
-	background: url("../img/card-captainDominion-icon.png") no-repeat;
+	background: url("../img/restrictions/card-captainDominion-icon.png") no-repeat;
 	background-size: 1em;
 	width: 1.2em;
 	position: relative;
@@ -338,7 +338,7 @@
 }
 
 .card-shipDominion-icon {
-	background: url("../img/card-shipDominion-icon.png") no-repeat;
+	background: url("../img/restrictions/card-shipDominion-icon.png") no-repeat;
 	background-size: 1em;
 	width: 1.2em;
 	position: relative;
@@ -349,7 +349,7 @@
 }
 
 .card-costDominion-icon {
-	background: url("../img/card-shipDominion-icon.png") no-repeat;
+	background: url("../img/restrictions/card-shipDominion-icon.png") no-repeat;
 	font-size: 0.5em;
 	background-size: 2em;
 	color: red;
@@ -363,9 +363,10 @@
 }
 
 .card-captainIndependent-icon {
+	background: url("../img/restrictions/card-captainIndependent-icon.png") no-repeat;
 	font-size: 0.5em;
 	background-size: 2em;
-	color: red;
+	color: yellow;
 	padding: 0.5em;
 	position: relative;
 	left: 0em;
@@ -376,6 +377,21 @@
 }
 
 .card-shipIndependent-icon {
+	background: url("../img/restrictions/card-shipIndependent-icon.png") no-repeat;
+	font-size: 0.5em;
+	background-size: 2em;
+	color: yellow;
+	padding: 0.5em;
+	position: relative;
+	left: 0em;
+	margin-top:0.5em;
+	top: -0.1em;
+	z-index: 2;
+	text-align: center;
+}
+
+.card-costIndependent-icon {
+	background: url("../img/restrictions/card-shipIndependent-icon.png") no-repeat;
 	font-size: 0.5em;
 	background-size: 2em;
 	color: red;
