@@ -405,7 +405,7 @@
 }
 
 .card-captainBorg-icon {
-	background: url("../img/card-captainBorg-icon.png") no-repeat;
+	background: url("../img/restrictions/card-captainBorg-icon.png") no-repeat;
 	background-size: 1em;
 	width: 1.2em;
 	position: relative;
@@ -416,7 +416,7 @@
 }
 
 .card-shipBorg-icon {
-	background: url("../img/card-shipBorg-icon.png") no-repeat;
+	background: url("../img/restrictions/card-shipBorg-icon.png") no-repeat;
 	background-size: 1em;
 	width: 1.2em;
 	position: relative;
@@ -479,7 +479,7 @@
 }
 
 .card-captainFerengi-icon {
-	background: url("../img/card-captainFerengi-icon.png")no-repeat;
+	background: url("../img/restrictions/card-captainFerengi-icon.png")no-repeat;
 	background-size: 1em;
 	width: 1.2em;
 	position: relative;
@@ -490,7 +490,7 @@
 }
 
 .card-shipFerengi-icon {
-	background: url("../img/card-shipFerengi-icon.png")no-repeat;
+	background: url("../img/restrictions/card-shipFerengi-icon.png")no-repeat;
 	background-size: 1em;
 	width: 1.2em;
 	position: relative;
@@ -501,7 +501,7 @@
 }
 
 .card-costFerengi-icon {
-	background: url("../img/card-shipFerengi-icon.png")no-repeat;
+	background: url("../img/restrictions/card-shipFerengi-icon.png")no-repeat;
 	font-size: 0.5em;
 	background-size: 2em;
 	color: red;
