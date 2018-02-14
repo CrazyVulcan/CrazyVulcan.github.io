@@ -1,6 +1,6 @@
 var module = angular.module("utopia-missions", ["utopia"]);
 
-module.controller( "UtopiaSetCtrl", [ "$scope", "$filter", "cardLoader", "$factions", function($scope, $filter, cardLoader, $factions) {
+module.controller( "UtopiaSetCtrl", [ "$scope", "cardLoader",  function($scope, cardLoader) {
 
 	$scope.missionSets = {};
 	$scope.missionList = [];
@@ -36,50 +36,6 @@ module.controller( "UtopiaSetCtrl", [ "$scope", "$filter", "cardLoader", "$facti
 		
 	} );
 	
-	function typeSort(a,b) {
-		if( a.cost > b.cost )
-			return -1;
-		if( b.cost > a.cost )
-			return 1;
-		return 0;
-	}
-	
-	function displaySort(a,b) {
-		if( a.type == "ship" && a.unique )
-			return -1;
-		if( b.type == "ship" && b.unique )
-			return 1;
-		if( a.type == b.type )
-			return typeSort(a,b);
-		if( a.type == "ship" )
-			return -1;
-		if( b.type == "ship" )
-			return 1;
-		if( a.type == "captain" )
-			return -1;
-		if( b.type == "captain" )
-			return 1;
-		if( a.type == "admiral" )
-			return -1;
-		if( b.type == "admiral" )
-			return 1;
-		if( a.type == "talent" )
-			return -1;
-		if( b.type == "talent" )
-			return 1;
-		if( a.type == "crew" )
-			return -1;
-		if( b.type == "crew" )
-			return 1;
-		if( a.type == "weapon" )
-			return -1;
-		if( b.type == "weapon" )
-			return 1;
-		if( a.type == "tech" )
-			return -1;
-		if( b.type == "tech" )
-			return 1;
-		return 0;
-	}
+
 	
 }] );
