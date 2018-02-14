@@ -22,13 +22,13 @@ module.controller( "UtopiaSetCtrl", [ "$scope", "$filter", "cardLoader", "$facti
 		
 	});
 	
-	$scope.$watch( "viewer.set", function(set) {
+	$scope.$watch( "viewer.missionSet", function(missionSet) {
 		
-		$scope.setCards = [];
-		if( set ) {
-			location.hash = set.id;
+		$scope.missionSetCards = [];
+		if( missionSet ) {
+			location.hash = missionSet.sourceID;
 			$.each( $scope.cards, function(i, card) {
-				if( $.inArray( set.id, card.set ) >= 0 )
+				if( $.inArray( missionSet.sourceID, card.missionSet ) >= 0 )
 					$scope.setCards.push( card );
 			});
 			$scope.setCards.sort(displaySort);
