@@ -1,5 +1,15 @@
 module.exports = [{
 	type: "talent",
+	id: "victory_is_life_73031",
+	set: ["73032"],
+	name: "Victory Is Life",
+	cost: 6,
+	text: "<b>COMBAT PHASE:</b> Discard this card, target this ship, and target all friendly Dominion ships.\n\nPlace a [battlestations] Token beside all target ships. All target ships roll +1 attack die this game round.",
+	unique: true,
+	range:"1",
+	factions: ["independent"]
+},  {
+	type: "talent",
 	id: "gorn_hegemony_73031",
 	set: ["73031"],
 	name: "Gorn Hegemony",

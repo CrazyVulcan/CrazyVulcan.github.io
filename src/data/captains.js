@@ -2492,6 +2492,18 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "captain",
+	id: "gul_damar_73032",
+	set: ["73032"],
+	name: "Gul Damar",
+	cost: 5,
+	skill: 7,
+	talents: 1,
+	text: "<b>AFTER THIS SHIP PERFORMS A MANEUVER:</b> Place 2 [time] Tokens on this card and target up to two friendly Jem'Hadar Attack Ships.\n\nPlace an [evade] Token beside this ship. The target ships may perform an Action on their Action Bar as a Free Action.",
+	unique: true,
+	range: "1 - 2",
+	factions: ["dominion"]
+}, {
+	type: "captain",
 	id: "lurin_75003",
 	set: ["73001"],
 	name: "Lurin",
