@@ -7,7 +7,7 @@ module.exports = [{
 	text: "<b>COMBAT PHASE:</b> Discard this card, target this ship, and target all friendly Dominion ships.\n\nPlace a [battlestations] Token beside all target ships. All target ships roll +1 attack die this game round.",
 	unique: true,
 	range:"1",
-	factions: ["independent"]
+	factions: ["dominion"]
 },  {
 	type: "talent",
 	id: "gorn_hegemony_73031",
