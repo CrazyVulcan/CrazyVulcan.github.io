@@ -2492,6 +2492,17 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "captain",
+	id: "lahr_73031",
+	set: ["73031"],
+	name: "Lahr",
+	cost: 5,
+	skill: 7,
+	talents: 1,
+	text: "This card counts as a Gorn Captain.\n----------------------------------------\n<b>AT THE END OF THE DEAL DAMAGE STEP:</b> Spend this ship's [target-lock] Token.\n\nChoose 1 face down damage card on the defending ship. Flip it face up and resolve its effect.",
+	unique: true,
+	factions: ["independent"]
+}, {
+	type: "captain",
 	id: "gul_damar_73032",
 	set: ["73032"],
 	name: "Gul Damar",

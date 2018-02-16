@@ -7843,7 +7843,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			canEquipFaction: function(upgrade,ship,fleet) {
 				// TODO Tholians are Independent so can't easily tell their race
-				return ship.captain && ( ship.captain.name == "S'Sesslak" || ship.captain.name.indexOf("Gorn") >= 0 );
+				return ship.captain && ( ship.captain.name == "S'Sesslak" || ship.captain.name == "Lahr" ||ship.captain.name.indexOf("Gorn") >= 0 );
 			},
 			canEquip: function(upgrade,ship,fleet) {
 				return ship.class == "Gorn Raider";
