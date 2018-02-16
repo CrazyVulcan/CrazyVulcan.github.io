@@ -6,6 +6,7 @@ module.controller( "UtopiaSetCtrl", [ "$scope", "cardLoader",  function($scope, 
 	$scope.missionList = [];
 
 	$scope.viewer = {};
+	$scope.watch = {};
 	$scope.activeSet = false;
 	$scope.setCards = [];
 	
