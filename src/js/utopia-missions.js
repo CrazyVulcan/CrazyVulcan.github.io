@@ -16,9 +16,9 @@ module.controller( "UtopiaSetCtrl", [ "$scope", "cardLoader",  function($scope, 
 		$.each( Object.keys( $scope.missionSets ), function(i, sourceID) {
 			var missionSet = $scope.missionSets[sourceID];
 			if( missionSet.sourceID == sourceID || missionSet.name == sourceID )
-				$scope.viewer.missionSet = missionSet;
+			{$scope.viewer.missionSet = missionSet;
 			$scope.missionList.push(missionSet);
-		});
+		};
 		
 	});
 	
@@ -36,6 +36,6 @@ module.controller( "UtopiaSetCtrl", [ "$scope", "cardLoader",  function($scope, 
 		
 	} );
 	
+} )
 
-	
-}] );
+}]);
