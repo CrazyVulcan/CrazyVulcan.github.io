@@ -1,11 +1,11 @@
 module.exports = [{
 	type: "missionSet",
 	sourceID: "001",
-	name: "dummy Name",
+	name: "A New Source Of Dilithium",
 	orderDate: "2000-01-01"
 }, {
 	type: "missionSet",
 	sourceID: "002",
-	name: "dummyer Name",
+	name: "The Chase",
 	orderDate: "2000-01-02"
 }];
