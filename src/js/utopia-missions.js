@@ -16,13 +16,13 @@ module.controller( "UtopiaSetCtrl", [ "$scope", "cardLoader",  function($scope, 
 		$.each( Object.keys( $scope.missionSets ), function(i, sourceID) {
 			var missionSet = $scope.missionSets[sourceID];
 			if( missionSet.sourceID == sourceID || missionSet.name == sourceID )
-			{$scope.viewer.missionSet = missionSet;
+			{$scope.viewer.missionSets = missionSet;
 			$scope.missionList.push(missionSet);
 		};
 		
 	});
 	
-	$scope.$watch( "viewer.missionSet", function(missionSet) {
+	$scope.$watch( "viewer.missionSets", function(missionSet) {
 		
 		$scope.missionSetCards = [];
 		if( missionSet ) {
