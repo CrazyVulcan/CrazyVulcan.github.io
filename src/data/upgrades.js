@@ -626,6 +626,7 @@ module.exports = [{
 	text: "The Attack Value of this [weapon] is this ships Primary Weapon Value +1.\n---------------------------------\n<b>ATTACK:</b> Spend this ships [target-lock] Token, disable this card and target an opposing ship.\n\nThis ship may convert all [blank] into [battlestations].",
 	FrontArc: true,
 	RearArc: true,
+	range: "2 - 3",
 	factions: ["federation"]
 }, {
 	type: "weapon",
