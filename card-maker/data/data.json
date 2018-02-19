@@ -1,143 +1,130 @@
 {
-"sets": [
-	{
-	"type": "set",
-	"id": "setnum",
-	"name": "Your Set Name",
-	"releaseDate": "YYYY-MM-DD",
-	"parentSet": "Wave 0"
-	}
-],
-"ships": [
-	{
-	"type": "ship",
-	"id": "ship_name_setnum",
-	"set": ["setnum"],
-	"name": "Ship Name",
-	"class": "Ship Class",
-	"actions": ["evade", "target-lock", "scan", "battlestations"],
-	"upgrades": ["tech","weapon","crew"],
-	"attack": 0,
-	"agility": 0,
-	"hull": 0,
-	"shields": 0,
-	"cost": 0,
-	"text": "Ship Ability",
-	"unique": true,
-	"factions": ["faction"],
-	}
-],
-"shipClasses": [
-	{
-	"type": "ship-class",
-	"id": "ship_class_setnum",
-	"name": "Ship Class",
-	"frontArc": "180",
-	"rearArc": "90",
-	"secondArc": "45",
-	"maneuvers": {
-		"1": {
-			"straight": "green",
-			"bank": "green"
-		},
-		"2": {
-			"straight": "green",
-			"bank": "white",
-			"turn": "white"
-		},
-		"3": {
-			"straight": "white",
-			"bank": "white",
-			"turn": "red",
-			"about": "red"
-		},
-		"4": {
-			"straight": "white"
-		},
-		"min": -1,
-		"max": 4
-		"-1": {
-			"straight": "red"
+	"sets": [{
+		"type": "set",
+		"id": "setnum",
+		"name": "Your Set Name",
+		"releaseDate": "YYYY-MM-DD",
+		"parentSet": "Wave 0"
+	}],
+	"ships": [{
+		"type": "ship",
+		"id": "ship_name_setnum",
+		"set": ["setnum"],
+		"name": "Ship Name",
+		"class": "Ship Class",
+		"actions": ["evade", "target-lock", "scan", "battlestations"],
+		"upgrades": ["tech", "weapon", "crew"],
+		"attack": 0,
+		"agility": 0,
+		"hull": 0,
+		"shields": 0,
+		"cost": 0,
+		"text": "Ship Ability",
+		"unique": true,
+		"factions": ["faction"]
+	}],
+	"shipClasses": [{
+		"type": "ship-class",
+		"id": "ship_class_setnum",
+		"name": "Ship Class",
+		"frontArc": "180",
+		"rearArc": "90",
+		"secondArc": "45",
+		"maneuvers": {
+			"1": {
+				"straight": "green",
+				"bank": "green"
+			},
+			"2": {
+				"straight": "green",
+				"bank": "white",
+				"turn": "white"
+			},
+			"3": {
+				"straight": "white",
+				"bank": "white",
+				"turn": "red",
+				"about": "red"
+			},
+			"4": {
+				"straight": "white"
+			},
+			"min": -1,
+			"max": 4,
+			"-1": {
+				"straight": "red"
+			}
 		}
-	}}
-],
-"captains": [
-	{
-	"type": "captain",
-	"id": "captain_name_setnum",
-	"set": ["setnum"],
-	"name": "Captain Name",
-	"unique": true,
-	"text": "<b>ACTION:</b> Ability Text",
-	"factions": ["faction"],
-	"cost": 0,
-	"skill": 1,
-	"talents": 0
-	}
-],
-"admirals": [
-	{
-	"type": "admiral",
-	"id": "captain_name_admiral_setnum",
-	"set": ["setnum"],
-	"name": "Captain Name",
-	"cost": 0,
-	"skill": 0,
-	"talents": 0,
-	"text": "",
-	"unique": true,
-	"factions": ["faction"]
-	}
-],
-"upgrades": [
-	{
-	"type": "talent",
-	"id": "name_setnum",
-	"set": ["setnum"],
-	"name": "Name",
-	"cost": 0,
-	"text": "Card Text",
-	"unique": true,
-	"factions": ["faction"]
-	},	{
-	"type": "crew",
-	"id": "name_setnum",
-	"set": ["setnum"],
-	"name": "Name",
-	"cost": 0,
-	"text": "Crew Text",
-	"unique": true,
-	"factions": ["faction"]
-	},	{
-	"type": "weapon",
-	"id": "name_setnum",
-	"set": ["setnum"],
-	"name": "Weapon Name",
-	"cost": 0,
-	"text": "Card Text",
-	"unique": true,
-	"attack": 1,
-	"range": "1 - 3",
-	"factions": ["faction"]
-	},	{
-	"type": "tech",
-	"id": "name_setnum",
-	"set": ["setnum"],
-	"name": "Tech_Name",
-	"cost": 0,
-	"text": "Card Text",
-	"unique": false,
-	"factions": ["faction"]
-	}
-],
-	"resources": [
-		{
+	}],
+	"captains": [{
+		"type": "captain",
+		"id": "captain_name_setnum",
+		"set": ["setnum"],
+		"name": "Captain Name",
+		"unique": true,
+		"text": "<b>ACTION:</b> Ability Text",
+		"factions": ["faction"],
+		"cost": 0,
+		"skill": 1,
+		"talents": 0
+	}],
+	"admirals": [{
+		"type": "admiral",
+		"id": "captain_name_admiral_setnum",
+		"set": ["setnum"],
+		"name": "Captain Name",
+		"cost": 0,
+		"skill": 0,
+		"talents": 0,
+		"text": "",
+		"unique": true,
+		"factions": ["faction"]
+	}],
+	"upgrades": [{
+		"type": "talent",
+		"id": "name_setnum",
+		"set": ["setnum"],
+		"name": "Name",
+		"cost": 0,
+		"text": "Card Text",
+		"unique": true,
+		"factions": ["faction"]
+	}, {
+		"type": "crew",
+		"id": "name_setnum",
+		"set": ["setnum"],
+		"name": "Name",
+		"cost": 0,
+		"text": "Crew Text",
+		"unique": true,
+		"factions": ["faction"]
+	}, {
+		"type": "weapon",
+		"id": "name_setnum",
+		"set": ["setnum"],
+		"name": "Weapon Name",
+		"cost": 0,
+		"text": "Card Text",
+		"unique": true,
+		"attack": 1,
+		"range": "1 - 3",
+		"factions": ["faction"]
+	}, {
+		"type": "tech",
+		"id": "name_setnum",
+		"set": ["setnum"],
+		"name": "Tech_Name",
+		"cost": 0,
+		"text": "Card Text",
+		"unique": false,
+		"factions": ["faction"]
+	}],
+	"resources": [{
 		"type": "resource",
 		"id": "resource_name_setnum",
 		"set": ["setnum"],
 		"name": "Resource Name",
 		"text": "",
-		"cost": 0,
-		}
-	]
+		"cost": 0
+	}]
 }
