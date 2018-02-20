@@ -9,6 +9,16 @@ module.exports = [{
 	range:"1",
 	factions: ["dominion"]
 },  {
+	type: "crew",
+	id: "changeling_infiltrator_73032",
+	set: ["73032"],
+	name: "Changeling Infiltrator",
+	cost: 4,
+	text: "<b>ACTIVATION PHASE:</b> Target a [crew] Upgrade Equipped to an opposing ship.\n\nThis card becomes a copy of the target [crew] Upgrade this game round.",
+	unique: true,
+	range:"1 - 2",
+	factions: ["dominion"]
+},{
 	type: "talent",
 	id: "gorn_hegemony_73031",
 	set: ["73031"],
