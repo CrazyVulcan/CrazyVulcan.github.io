@@ -6735,19 +6735,6 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "tactical_station_71510",
-	set: ["71510"],
-	name: "Tactical Station",
-	unique: true,
-	text: "Add 1 [weapon] Upgrade slot to your Upgrade Bar. \n\nWhen attacking, you may disable this card to gain +1 attack die until the End Phase. \nOR \nWhen attacking, you may discard this card to gain +2 attack dice until the End Phase.",
-	factions: ["federation"],
-	cost: 4,
-	skill: 0,
-	talents: 0,
-	attack: 0,
-	range: ""
-}, {
-	type: "weapon",
 	id: "fire_all_weapons_71510b",
 	set: ["71510b"],
 	name: "Fire All Weapons",
