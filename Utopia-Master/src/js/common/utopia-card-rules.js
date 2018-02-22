@@ -8044,6 +8044,13 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 		//Fleet Commander (ship)
 		"ship-resource:fleet_commander_ship_shield": {
+			upgradeSlots: [ 
+				{ 
+					type: ["captain"]
+				}, 	{ 
+					type: ["captain"]
+				}
+			],
 			intercept: {
 				ship: {
 					skill: function(upgrade,ship,fleet,skill) {
@@ -8060,6 +8067,13 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 		},
 		"ship-resource:fleet_commander_ship_hull": {
+			upgradeSlots: [ 
+				{ 
+					type: ["captain"]
+				}, 	{ 
+					type: ["captain"]
+				}
+			],
 			intercept: {
 				ship: {
 					skill: function(upgrade,ship,fleet,skill) {
