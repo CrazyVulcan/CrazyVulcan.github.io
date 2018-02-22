@@ -838,22 +838,12 @@ module.exports = [{
 	}
 }, {
 	type: "ship-resource",
-	id: "fleet_commander_ship",
+	id: "fleet_commander_ship_hull",
 	set: ["72280r"],
 	name: "Fleet Commander",
 	factions: ["federation", "klingon", "romulan", "dominion", "independent"],
-	text: "Captain's Skill is increased +1.\n\nAdd +1 to either Shield or Hull value.",
+	text: "Captain's Skill is increased +1.\n\nAdd +1 to this Ships Hull value.",
 	cost: 5,
-	upgrades: [{
-		type: ["captain"],
-		source: "Fleet Commander"
-	}
-	],
-	upgradeSlots: [{
-		type: ["captain"],
-		source: "Fleet Commander"
-	}
-	],
 	showType: true,
 	canEquip: true,
 	canEquipFaction: true,
@@ -864,7 +854,25 @@ module.exports = [{
 	},
 	factionPenalty: 0,
 	unique: true
-} , {
+	} , {
+	type: "ship-resource",
+	id: "fleet_commander_ship_shield",
+	set: ["72280r"],
+	name: "Fleet Commander",
+	factions: ["federation", "klingon", "romulan", "dominion", "independent"],
+	text: "Captain's Skill is increased +1.\n\nAdd +1 to this Ships Shield value.",
+	cost: 5,
+	showType: true,
+	canEquip: true,
+	canEquipFaction: true,
+	isShipModifier: true,
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	factionPenalty: 0,
+	unique: true
+	}, {
 	type: "ship-resource",
 	id: "captains_chair_ship",
 	set: ["72301r"],

@@ -7228,7 +7228,12 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}},
-		
+		//Shield Adaption
+		"tech:shield_adaptation_72013wp":{
+			canEquip: function(upgrade,ship,fleet) {
+				return ship.hull <= 4;
+			},
+		},
 		
 	//Prototype 02 :72014wp
 		"ship:prototype_02_72014wp": {
@@ -7836,6 +7841,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0;
 			}},
 	//Gorn Raider Card Package
+		//Lahr
+		"captain:lahr_73031":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			}},
 		//Gorn Hegemony
 		"talent:gorn_hegemony_73031":{
 			factionPenalty: function(upgrade, ship, fleet) {
@@ -8035,18 +8045,38 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		
 		//Fleet Commander (ship)
-		"ship-resource:fleet_commander_ship": {
+		"ship-resource:fleet_commander_ship_shield": {
 			intercept: {
 				ship: {
 					skill: function(upgrade,ship,fleet,skill) {
 						if( upgrade == ship.captain )
 							return resolve(upgrade,ship,fleet,skill) + 1;
 						return skill;
+					},
+					shields: function(card,ship,fleet,shields) {
+						if( card == ship )
+							return resolve(card,ship,fleet,shields) + 1;
+						return shields;
 					}
 				}
 			}
 		},
-		
+		"ship-resource:fleet_commander_ship_hull": {
+			intercept: {
+				ship: {
+					skill: function(upgrade,ship,fleet,skill) {
+						if( upgrade == ship.captain )
+							return resolve(upgrade,ship,fleet,skill) + 1;
+						return skill;
+					},
+					hull: function(card,ship,fleet,hull) {
+						if( card == ship )
+							return resolve(card,ship,fleet,hull) + 1;
+						return hull;
+					}
+				}
+			}
+		},
 		"resource:fleet_captain_collectiveop2": {
 			slotType: "fleet-captain",
 			cost: 0,
