@@ -38,6 +38,16 @@ module.exports = [{
 	shipIndependent: true,
 	factions: ["independent"]
 },  {
+	type: "tech",
+	id: "enhanced_durabilty_73031",
+	set: ["73031"],
+	name: "Enhanced Durability",
+	cost: 4,
+	text: "Add 1 [tech] to this ships Upgrade Bar.\n-----------------------------------\nIncrease this ships Shield and Agility Values by 1.",
+	OnePerShip: true,
+	shipLimit: true,
+	factions: ["independent"]
+},  {
 	type: "talent",
 	id: "grand_nagus_75003",
 	set: ["75003"],

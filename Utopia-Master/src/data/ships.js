@@ -648,7 +648,7 @@ module.exports = [{
 	type: "ship",
 	id: "attack_cruiser_2017core",
 	set: ["2017core"],
-	name: "K'mpaks Attack Cruiser",
+	name: "K'mpec's Attack Cruiser",
 	class: "Vor'cha Class",
 	actions: ["evade", "target-lock", "cloak", "sensor-echo"],
 	upgrades: ["tech", "weapon", "crew", "crew"],
