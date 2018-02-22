@@ -7230,9 +7230,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}},
 		//Shield Adaption
 		"tech:shield_adaptation_72013wp":{
-			canEquip: function(upgrade,ship,fleet) {
-				return ship.hull >= 4;
-			}
+			//Hull is equal or greater then 4, needs to work with fleet commander
 		},
 		
 	//Prototype 02 :72014wp
