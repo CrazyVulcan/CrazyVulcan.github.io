@@ -7871,14 +7871,13 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		//Enhanced Durability
 		"tech:enhanced_durabilty_73031":{
 			canEquip: function(upgrade,ship,fleet) {
-				return ship.class == "Gorn Raider";
+				return ship.class == "Gorn Raider" && onePerShip("Enhanced Durability");
 			},
 			upgradeSlots: [ 
 				{ 
 					type: ["tech"]
 				}
 			],
-			canEquip: onePerShip("Enhanced Durability"),
 			intercept: {
 				ship: {
 					shields: function(card,ship,fleet,shields) {

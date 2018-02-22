@@ -43,7 +43,7 @@ module.exports = [{
 	set: ["73031"],
 	name: "Enhanced Durability",
 	cost: 4,
-	text: "Add 1 [tech] to this ships Upgrade Bar.\n-----------------------------------\nIncrease this ships Shield and Agility Values by 1.",
+	text: "Add 1 [tech] to this ships Upgrade Bar.\n-----------------------------------\nIncrease this ships Shield and Agility Values by 1.\n\n<i>(Gorn Raider)</i>",
 	OnePerShip: true,
 	shipLimit: true,
 	factions: ["independent"]
