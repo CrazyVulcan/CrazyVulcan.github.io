@@ -9,6 +9,16 @@ module.exports = [{
 	range:"1",
 	factions: ["dominion"]
 },  {
+	type: "tech",
+	id: "antiproton_blast_73032",
+	set: ["73032"],
+	name: "Antiproton Blast",
+	cost: 2,
+	text: "<b>ACTIVATION PHASE:</b> Discard this card, target this ship and target all friendly ship.\n\nThe target ships can target opposing ships with a [cloak] Token beside them with a [target-lock] Action this game round.",
+	unique: false,
+	range:"1",
+	factions: ["dominion"]
+},{
 	type: "crew",
 	id: "changeling_infiltrator_73032",
 	set: ["73032"],
@@ -38,6 +48,25 @@ module.exports = [{
 	shipIndependent: true,
 	factions: ["independent"]
 },  {
+	type: "crew",
+	id: "slar_73031",
+	set: ["73031"],
+	name: "Slar",
+	cost: 5,
+	text: "<b>ACTION:</b> Remove this card from play and target an opposing ship.\n\nDisable 1 [crew] Upgrade equipped to the target ship and deal 1 [crit] to the target ships Hull.",
+	unique: true,
+	range: "1",
+	factions: ["independent"]
+},  {
+	type: "crew",
+	id: "gorn_trooper_73031",
+	set: ["73031"],
+	name: "Gorn Trooper",
+	cost: 2,
+	text: "For each Gorn Trooper Equipped to this ship, Increase teh Captain Skill of the Captain equipped to this ship by 1.\n-----------------------------------\n<b>WHEN ATTACKING: Disable this card.\n\nRe-Roll 1 attack die.",
+	unique: false,
+	factions: ["independent"]
+},   {
 	type: "tech",
 	id: "enhanced_durabilty_73031",
 	set: ["73031"],

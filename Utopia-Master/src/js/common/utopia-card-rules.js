@@ -7857,6 +7857,25 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship.class == "Gorn Raider";
 			}
 		},
+		//Slar
+		"crew:shanthi_cap_72008":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			}},
+		//Gorn Trooper
+		"crew:gorn_trooper_73031":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			},
+			intercept: {
+				ship: {
+					skill: function(upgrade,ship,fleet,skill) {
+					if( upgrade == ship.captain )
+						return resolve(upgrade,ship,fleet,skill) + 1;
+					return skill;
+					}
+				}
+			}},
 		"question:meridor_gorn_ale_73031":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;

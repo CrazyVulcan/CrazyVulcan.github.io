@@ -1392,6 +1392,17 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "captain",
+	id: "vorta_commander_73032",
+	set: ["73032"],
+	name: "Vorta Commander",
+	cost: 3,
+	skill: 5,
+	talents: 0,
+	text: "<b>AFTER THIS SHIP PERFORMS A GREEN MANEUVER:</b>\n\nThis ship may perform a [target-lock] Action as a Free Action",
+	unique: false,
+	factions: ["dominion"]
+}, {
+	type: "captain",
 	id: "captain_kmpec_2017core",
 	set: ["2017core"],
 	name: "K'Mpec",
