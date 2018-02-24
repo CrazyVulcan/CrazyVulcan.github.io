@@ -525,7 +525,7 @@ module.exports = [{
 	name: "Mirok's Science Vessel",
 	class: "Romulan Science Vessel",
 	actions: ["evade", "scan", "cloak", "sensor-echo"],
-	upgrades: ["tech", "crew", "crew"],
+	upgrades: ["tech", "crew"],
 	attack: 1,
 	agility: 2,
 	hull: 2,
