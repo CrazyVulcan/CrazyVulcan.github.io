@@ -8014,7 +8014,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				ship: {
 					canEquip: function(upgrade,ship,fleet,canEquip) {
-						if( ship && ship.captain && ship.captain.skill >= 5 )
+						if( ship.captain.skill >= 5 )
 							return false;
 						return canEquip;
 					}
