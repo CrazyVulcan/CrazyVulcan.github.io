@@ -8011,17 +8011,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 		//Captains Chair
 		"ship-resource:captains_chair_ship":{
-			intercept: {
-				ship: {
-					canEquip: function(upgrade,ship,fleet,canEquip) {
-						if( ship.captain.skill >= 5 )
-							return false;
-						return canEquip;
-					}
-				}
-			}
-			
-		},
+			canEquip: function(upgrade,ship,fleet,canEquip) {
+				if( ship.captain.skill >= 5 )
+					return false;
+				return canEquip;
+		} },
 		"resource:captains_chair_resource":{
 			slotType: "ship-resource",
 			cost: 0,
