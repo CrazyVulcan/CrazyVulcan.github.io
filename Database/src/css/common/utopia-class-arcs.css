@@ -1,0 +1,186 @@
+.card-shipclass-arcs {
+	position: absolute;
+	width: 4.5em;
+	height: 5em;
+	border: 1px solid #333;
+	transform: rotate(-15deg);
+	left: 6em;
+	z-index: 1000;
+	overflow: hidden;
+	background: #111;
+	box-shadow: 0 0 0.4em #333;
+}
+
+.arc-fore-90 {
+	position: absolute;
+	top: -3.8em;
+	left: -0.275em;
+	width: 5em;
+	height: 5em;
+	border: 0.1em solid #aaa;
+	background: #777;
+	transform: rotate(45deg);
+}
+
+.arc-fore-180 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 2.5em;
+	background: #777;
+	border-bottom: 0.1em solid #aaa;
+}
+
+.arc-second-45 {
+	display: block;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+	float: none;
+	z-index: auto;
+	width: 5em;
+	height: 5em;
+	position: absolute;
+	cursor: default;
+	opacity: 1;
+	top: -3.8em;
+	left: -0.275em;
+	overflow: visible;
+	border: 0.1em dashed rgb(170,170,170);
+	-webkit-transform: rotateZ(67.5deg)   skewX(45deg);
+	transform: rotateZ(67.5deg)   skewX(45deg);
+	-webkit-transform-origin: 99% 9% 0;
+	transform-origin: 99% 9% 0;
+}
+
+.arc-hole {
+	position: absolute;
+	left: 1.5em;
+	top: 1.75em;
+	width: 1.5em;
+	height: 1.5em;
+	background: black;
+	border-radius: 1em;
+	border: 1px solid #333;
+}
+
+.arc-rear-90 {
+	position: absolute;
+	top: 3.7em;
+	left: -0.275em;
+	width: 5em;
+	height: 5em;
+	border: 0.1em dashed #aaa;
+	transform: rotate(45deg);
+}
+
+.arc-name {
+	position: absolute;
+	left: 0;
+	top: 8.8em;
+	font-size: 0.5em;
+	width: 100%;
+	text-align: center;
+	color: white;
+	text-transform: uppercase;
+}
+
+.arc-stats {
+	position: absolute;
+	top: 0.25em;
+	left: 0;
+	height: 100%;
+}
+
+.arc-stat {
+	border-width: .1em;
+	border-style: solid;
+	border-radius: .1em .6em .6em .1em;
+	border-left: none;
+	width: 1em;
+	font-size: 0.7em;
+	margin-top: 0.3em;
+}
+
+.arc-actions {
+	position: absolute;
+	top: 0.25em;
+	left: 3.75em;
+	height: 100%;
+	color: green;
+}
+
+.arc-actions .fs {
+	font-size: 0.5em;
+}
+
+.arc-faction-mirror-universe .arc {
+	border-color: #bb963c;
+}
+.arc-faction-mirror-universe .arc-fill {
+	background: #65410c;
+}
+
+.arc-faction-dominion .arc {
+	border-color: #c777ff;
+}
+.arc-faction-dominion .arc-fill {
+	background: #523571;
+}
+
+.arc-faction-federation .arc-fill {
+	background: #353598;
+}
+.arc-faction-federation .arc {
+	border-color: #7777ff;
+}
+
+.arc-faction-klingon .arc-fill {
+	background: #651212;
+}
+.arc-faction-klingon .arc {
+	border-color: #ed1b24;
+}
+
+.arc-faction-romulan .arc-fill {
+	background: #1c4e1c;
+}
+.arc-faction-romulan .arc {
+	border-color: #358e4f;
+}
+
+.arc-faction-ferengi .arc-fill {
+	background: #7b8e46;
+}
+.arc-faction-ferengi .arc {
+	border-color: #e2ea72;
+}
+
+.arc-faction-bajoran .arc-fill {
+	background: #65410c;
+}
+.arc-faction-bajoran .arc {
+	border-color: #bb963c;
+}
+
+.arc-faction-independent .arc-fill {
+	background: #65410c;
+}
+.arc-faction-independent .arc {
+	border-color: #bb963c;
+}
+
+.arc-faction-species-8472 .arc-fill {
+	background: #65410c;
+}
+.arc-faction-species-8472 .arc {
+	border-color: #bb963c;
+}
+
+.arc-faction-xindi .arc-fill {
+	background: #651212;
+}
+.arc-faction-xindi .arc {
+	border-color: #e25656;
+}
