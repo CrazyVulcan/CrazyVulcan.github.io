@@ -423,45 +423,6 @@
 	text-align: center;
 }
 
-.card-captain8472-icon {
-	font-size: 0.5em;
-	background-size: 2em;
-	color: red;
-	padding: 0.5em;
-	position: relative;
-	left: 0em;
-	margin-top:0.5em;
-	top: -0.1em;
-	z-index: 2;
-	text-align: center;
-}
-
-.card-captain8472-icon {
-	font-size: 0.5em;
-	background-size: 2em;
-	color: red;
-	padding: 0.5em;
-	position: relative;
-	left: 0em;
-	margin-top:0.5em;
-	top: -0.1em;
-	z-index: 2;
-	text-align: center;
-}
-
-.card-captainMirror-icon {
-	font-size: 0.5em;
-	background-size: 2em;
-	color: red;
-	padding: 0.5em;
-	position: relative;
-	left: 0em;
-	margin-top:0.5em;
-	top: -0.1em;
-	z-index: 2;
-	text-align: center;
-}
-
 .card-captainMirror-icon {
 	font-size: 0.5em;
 	background-size: 2em;
@@ -499,6 +460,222 @@
 
 .card-costFerengi-icon {
 	background: url("../img/restrictions/card-shipFerengi-icon.png")no-repeat;
+	font-size: 0.5em;
+	background-size: 2em;
+	color: red;
+	padding: 0.5em;
+	position: relative;
+	left: 0em;
+	margin-top:0.5em;
+	top: -0.1em;
+	z-index: 2;
+	text-align: center;
+}
+
+.card-captain8472-icon {
+	background: url("../img/restrictions/card-captain8472-icon.png")no-repeat;
+	background-size: 1em;
+	width: 1.2em;
+	position: relative;
+	left: 0em;
+	top: -0.1em;
+	z-index: 1;
+	text-align: center;
+}
+
+.card-ship8472-icon {
+	background: url("../img/restrictions/card-faction8472-icon.png")no-repeat;
+	background-size: 1em;
+	width: 1.2em;
+	position: relative;
+	left: 0em;
+	top: -0.1em;
+	z-index: 1;
+	text-align: center;
+}
+
+.card-cost8472-icon {
+	background: url("../img/restrictions/card-faction8472-icon.png")no-repeat;
+	font-size: 0.5em;
+	background-size: 2em;
+	color: red;
+	padding: 0.5em;
+	position: relative;
+	left: 0em;
+	margin-top:0.5em;
+	top: -0.1em;
+	z-index: 2;
+	text-align: center;
+}
+
+.card-captainBajoren-icon {
+	background: url("../img/restrictions/card-captainBajoren-icon.png")no-repeat;
+	background-size: 1em;
+	width: 1.2em;
+	position: relative;
+	left: 0em;
+	top: -0.1em;
+	z-index: 1;
+	text-align: center;
+}
+
+.card-shipBajoren-icon {
+	background: url("../img/restrictions/card-factionBajoren-icon.png")no-repeat;
+	background-size: 1em;
+	width: 1.2em;
+	position: relative;
+	left: 0em;
+	top: -0.1em;
+	z-index: 1;
+	text-align: center;
+}
+
+.card-costBajoren-icon {
+	background: url("../img/restrictions/card-factionBajoren-icon.png")no-repeat;
+	font-size: 0.5em;
+	background-size: 2em;
+	color: red;
+	padding: 0.5em;
+	position: relative;
+	left: 0em;
+	margin-top:0.5em;
+	top: -0.1em;
+	z-index: 2;
+	text-align: center;
+}
+
+.card-captainKazon-icon {
+	background: url("../img/restrictions/card-captainKazon-icon.png")no-repeat;
+	background-size: 1em;
+	width: 1.2em;
+	position: relative;
+	left: 0em;
+	top: -0.1em;
+	z-index: 1;
+	text-align: center;
+}
+
+.card-shipKazon-icon {
+	background: url("../img/restrictions/card-factionKazon-icon.png")no-repeat;
+	background-size: 1em;
+	width: 1.2em;
+	position: relative;
+	left: 0em;
+	top: -0.1em;
+	z-index: 1;
+	text-align: center;
+}
+
+.card-costKazon-icon {
+	background: url("../img/restrictions/card-factionKazon-icon.png")no-repeat;
+	font-size: 0.5em;
+	background-size: 2em;
+	color: red;
+	padding: 0.5em;
+	position: relative;
+	left: 0em;
+	margin-top:0.5em;
+	top: -0.1em;
+	z-index: 2;
+	text-align: center;
+}
+
+.card-captainMU-icon {
+	background: url("../img/restrictions/card-captainMU-icon.png")no-repeat;
+	background-size: 1em;
+	width: 1.2em;
+	position: relative;
+	left: 0em;
+	top: -0.1em;
+	z-index: 1;
+	text-align: center;
+}
+
+.card-shipMU-icon {
+	background: url("../img/restrictions/card-factionMU-icon.png")no-repeat;
+	background-size: 1em;
+	width: 1.2em;
+	position: relative;
+	left: 0em;
+	top: -0.1em;
+	z-index: 1;
+	text-align: center;
+}
+
+.card-costMU-icon {
+	background: url("../img/restrictions/card-factionMU-icon.png")no-repeat;
+	font-size: 0.5em;
+	background-size: 2em;
+	color: red;
+	padding: 0.5em;
+	position: relative;
+	left: 0em;
+	margin-top:0.5em;
+	top: -0.1em;
+	z-index: 2;
+	text-align: center;
+}
+
+.card-captainVulcan-icon {
+	background: url("../img/restrictions/card-captainVulcan-icon.png")no-repeat;
+	background-size: 1em;
+	width: 1.2em;
+	position: relative;
+	left: 0em;
+	top: -0.1em;
+	z-index: 1;
+	text-align: center;
+}
+
+.card-shipVulcan-icon {
+	background: url("../img/restrictions/card-factionVulcan-icon.png")no-repeat;
+	background-size: 1em;
+	width: 1.2em;
+	position: relative;
+	left: 0em;
+	top: -0.1em;
+	z-index: 1;
+	text-align: center;
+}
+
+.card-costVulcan-icon {
+	background: url("../img/restrictions/card-factionVulcan-icon.png")no-repeat;
+	font-size: 0.5em;
+	background-size: 2em;
+	color: red;
+	padding: 0.5em;
+	position: relative;
+	left: 0em;
+	margin-top:0.5em;
+	top: -0.1em;
+	z-index: 2;
+	text-align: center;
+}
+
+.card-captainXindy-icon {
+	background: url("../img/restrictions/card-captainMU-icon.png")no-repeat;
+	background-size: 1em;
+	width: 1.2em;
+	position: relative;
+	left: 0em;
+	top: -0.1em;
+	z-index: 1;
+	text-align: center;
+}
+
+.card-shipXindy-icon {
+	background: url("../img/restrictions/card-factionMU-icon.png")no-repeat;
+	background-size: 1em;
+	width: 1.2em;
+	position: relative;
+	left: 0em;
+	top: -0.1em;
+	z-index: 1;
+	text-align: center;
+}
+
+.card-costXindy-icon {
+	background: url("../img/restrictions/card-factionMU-icon.png")no-repeat;
 	font-size: 0.5em;
 	background-size: 2em;
 	color: red;
