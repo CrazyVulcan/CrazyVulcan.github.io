@@ -8010,11 +8010,18 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		
 		//Captains Chair
-//		"ship-resource:captains_chair_ship":{
-//			canEquip: function(upgrade,ship,fleet) {
-//				return ship.captain.skill >= 5;
-//			}
-//		},
+		"ship-resource:captains_chair_ship":{
+			intercept: {
+				ship: {
+					canEquip: function(upgrade,ship,fleet,canEquip) {
+						if( ship && ship.captain && ship.captain.skill >= 5 )
+							return false;
+						return canEquip;
+					}
+				}
+			}
+			
+		},
 		"resource:captains_chair_resource":{
 			slotType: "ship-resource",
 			cost: 0,
@@ -8687,15 +8694,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 		//Improved Hull
 		"resource:the_classic_movies_improved_hull_resource":{
-			cost: function(card,ship,fleet) {
-				if( !fleet )
-					return 0;
-				var hull = 0;
-				$.each( fleet.ships || [], function(i,ship) {
-					shields += valueOf(ship,"hull",ship,fleet);
-				} );
-				return Math.ceil( hull/2 );
-			}
+
 		},
 
 		
