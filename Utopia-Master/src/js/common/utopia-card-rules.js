@@ -7678,14 +7678,14 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					type: ["talent"]
 				}, {
 					type: ["crew"], 
-					rules: "*Cost of 3sp or less",
+					rules: "Cost of 3sp or less",
 					intercept: {
 						ship: {
 							cost: function() { return 0; },
 							canEquip: function(card,ship,fleet,canEquip) {
-								if( (valueOf(card,"cost",ship,fleet) <= 4) && $factions.hasFaction( ship, "federation", ship, fleet ) && $factions.hasFaction( ship, "klingon", ship, fleet ) && $factions.hasFaction( ship, "romulan", ship, fleet ) && $factions.hasFaction( ship, "dominion", ship, fleet ) && $factions.hasFaction( ship, "borg", ship, fleet ) && $factions.hasFaction( ship, "bajoran", ship, fleet ) && $factions.hasFaction( ship, "vulcan", ship, fleet ) && $factions.hasFaction( ship, "mirror-universe", ship, fleet ) )
+								if( (valueOf(card,"cost",ship,fleet) <= 4) && $factions.hasFaction( ship, "federation", ship, fleet ) || $factions.hasFaction( ship, "klingon", ship, fleet ) || $factions.hasFaction( ship, "romulan", ship, fleet ) || $factions.hasFaction( ship, "dominion", ship, fleet ) || $factions.hasFaction( ship, "borg", ship, fleet ) || $factions.hasFaction( ship, "bajoran", ship, fleet ) || $factions.hasFaction( ship, "vulcan", ship, fleet ) || $factions.hasFaction( ship, "mirror-universe", ship, fleet ) )
 									return canEquip;
-								else ( (valueOf(card,"cost",ship,fleet) <= 3) && $factions.hasFaction( ship, "independent", ship, fleet ) && $factions.hasFaction( ship, "ferengi", ship, fleet ) && $factions.hasFaction( ship, "kazon", ship, fleet ) && $factions.hasFaction( ship, "xindi", ship, fleet ) )
+								if ( (valueOf(card,"cost",ship,fleet) <= 3) )
 									return canEquip;
 								return false;
 							}
