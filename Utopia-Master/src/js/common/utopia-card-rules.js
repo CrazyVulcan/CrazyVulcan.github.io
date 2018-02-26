@@ -7678,9 +7678,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					type: ["talent"]
 				}, {
 					type: ["crew"], 
-					rules: "No Faction Penalty",
+					rules: "Printed Cost of 3sp or less",
 					intercept: {
 						ship: {
+							cost: function() { return 0; },
 							factionPenalty: function() { return 0; }
 						}
 					}
