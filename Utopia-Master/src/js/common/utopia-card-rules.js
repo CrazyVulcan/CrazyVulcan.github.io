@@ -7689,7 +7689,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 									return canEquip;
 								return false;
 							}
-						}	
+						}
 					}
 					}, { 
 					type: ["crew"], 
