@@ -7682,7 +7682,12 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					intercept: {
 						ship: {
 							cost: function() { return 0; },
-							factionPenalty: function() { return 0; }
+							factionPenalty: function() { return 0; },
+							canEquip: function(card,ship,fleet,canEquip) {
+								if( (valueOf(card,"cost",ship,fleet) <= 3) )
+									return canEquip;
+								return false;
+							}
 						}
 					}
 				}					
