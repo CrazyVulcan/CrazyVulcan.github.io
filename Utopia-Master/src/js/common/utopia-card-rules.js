@@ -7678,26 +7678,19 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					type: ["talent"]
 				}, { 
 					type: ["crew"], 
-					rules: "3SP or less",
+					rules: "Printed 3SP or less",
 					faceDown: true,
 					intercept: {
 						ship: {
-							canEquip: function(upgrade,ship,fleet) {
-								// TODO Prevent use of upgrades without a defined cost (e.g. Dorsal Phaser Array)
-								var cost = valueOf(upgrade,"cost",ship,fleet);
-								return cost <= 3;
+							cost: function() { return 0; },
+							factionPenalty: function() { return 0; },
+							canEquip: function(card,ship,fleet,canEquip) {
 								if( (valueOf(card,"cost",ship,fleet) <= 3) )
 									return canEquip;
 								return false;
-							},
-							free: function() {
-								return true;
-							},
-							cost: function() { return 3; },
-							factionPenalty: function() { return 0; }
-														
 							}
-						}
+						}	
+					}
 					}, { 
 					type: ["crew"], 
 					rules: "3SP or less",
