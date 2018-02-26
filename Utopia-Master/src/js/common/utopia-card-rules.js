@@ -7684,7 +7684,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 							cost: function() { return 0; },
 							factionPenalty: function() { return 0; },
 							canEquip: function(card,ship,fleet,canEquip) {
-								if( (valueOf(card,"cost",ship,fleet) <= 3) )
+								if( (valueOf(card,"cost",ship,fleet) <= 3) && $factions.hasFaction( ship, "federation", ship, fleet ) )
 									return canEquip;
 								return false;
 							}
