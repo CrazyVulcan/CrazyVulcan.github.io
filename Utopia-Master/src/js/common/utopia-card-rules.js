@@ -7686,13 +7686,19 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 								// TODO Prevent use of upgrades without a defined cost (e.g. Dorsal Phaser Array)
 								var cost = valueOf(upgrade,"cost",ship,fleet);
 								return cost <= 3;
+								if( (valueOf(card,"cost",ship,fleet) <= 3) )
+									return canEquip;
+								return false;
 							},
 							free: function() {
 								return true;
+							},
+							cost: function() { return 3; },
+							factionPenalty: function() { return 0; }
+														
 							}
 						}
-					}
-				}, { 
+					}, { 
 					type: ["crew"], 
 					rules: "3SP or less",
 					faceDown: true,
