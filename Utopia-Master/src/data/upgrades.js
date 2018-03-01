@@ -461,7 +461,7 @@ module.exports = [{
 	set: ["75002"],
 	name: "Jem'Hadar First",
 	cost: 3,
-	text: "<b>COMBAT PHASE:</b> Place 3 [time] Tokens on this card.\n\nConvert 1 [battlestations] into 1 [blank], 1 [evade], or 1 [hit].",
+	text: "(<i>errata</i>\n\n<b>MODIFY ATTACK DICE STEP OR MODIFY DEFENSE DICE STEP:</b> Place 3 [time] Tokens on this card.\n\nConvert 1 [battlestations] into 1 [blank], 1 [evade], or 1 [hit].",
 	factions: ["dominion"]
 }, {
 	type: "crew",
@@ -660,7 +660,7 @@ module.exports = [{
 }, {
 	type: "weapon",
 	id: "tactical_station_2017core",
-	set: ["2017core"],
+	set: ["2017core", "71510"],
 	name: "Tactical Station",
 	cost: 4,
 	text: "Add 1 [weapon] to this ships Upgrade Bar.\n-----------------------------\n<b>WHEN ATTACKING:</b> Disable this card.\nThis ship rolls +1 attack die this game round.\n-----------------------------\n<b>WHEN ATTACKING:</b> Discard this card.\nThis ship rolls +2 attack dice this game round.",
@@ -3504,14 +3504,6 @@ module.exports = [{
 	name: "Interphase Generator",
 	OnePerShip: true,
 	text: "<b>WHEN DEFENDING:</b> After all dice have been rolled if this ship is Cloaked, discard this card.\n\nCancel the attack. This ship suffers 1 [hit].",
-	factions: ["romulan"],
-	cost: 3,
-}, {
-	type: "tech",
-	id: "3040",
-	set: ["71124"],
-	name: "Interphase Generator",
-	text: "When defending while you are Cloaked, you may discard this card after all the dice have been rolled to reduce the damage from a single attack to exactly 1 [hit]\n\n<i>Possible errata to One per Ship</i>",
 	factions: ["romulan"],
 	cost: 3,
 }, {

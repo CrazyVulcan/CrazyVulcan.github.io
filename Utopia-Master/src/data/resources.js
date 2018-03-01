@@ -293,7 +293,7 @@ module.exports = [{
 	id: "co_pilot_resource",
 	set: ["72300r"],
 	name: "Co Pilot",
-	text: "At the start of the game, place 5 Mission Tokens on this card. Once per round, during the Combat Phase, you may remove one Mission Token from this card to use one of the folowing abilities for one of your ships.\n\n1. Add +3 to your Captain Skill Number.\n\n2. Re-roll one of your attack or defense dice.\n\n3. Place an [evade] or a [battlestations] Token beside your ship.\n\nRemove this card from the game when there are no Mission Tokens left on this card.",
+	text: "(<i>errata</i>)\n\nAt the start of the game, place 5 Mission Tokens on this card.\n\nOnce per game round, you may remove one Mission Token (at the appropriate time) from this card to use one of the following abilities for one of your ships.\n\n1) <b>Beginning of the Activation Phase</b>, Add 3 to the Captain Skill of the Captain equipped to this ship this game round.\n\n2) <b>During the Modify Attack Dice Step or Modify Defense Dice Step</b>, re-roll one of your attack or defense dice.\n\n3) <b>Beginning of the Activation Phase</b>, Place an [evade] or a [battlestations] Token beside this ship.",
 	cost: 5,
 	showShipResourceSlot: false
 }, {
