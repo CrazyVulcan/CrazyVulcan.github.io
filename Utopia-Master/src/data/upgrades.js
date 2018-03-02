@@ -119,7 +119,7 @@ module.exports = [{
 	set: ["73031"],
 	name: "Hidden Explosives",
 	cost: 3,
-	text: "SETUP: Target an opposing ship.\nPlace a Hidden Explosives Token on the target ship and place 4 [time] Tokens on this card.\n-----------------------------------\nWHEN THERE ARE NO MORE [time] TOKENS ON THIS CARD:you must discard this card.\n\nRoll 3 attack dice that cannot be re-rolled or modified. All [hit] and [crit] deal damage to the ships Hull. Discard the Hidden Explosives Token after the attack is made.",
+	text: "SETUP: Target an opposing ship. Place a Hidden Explosives Token on the target ship and place 4 [time] Tokens on this card.\n-----------------------------------\nWHEN THERE ARE NO MORE [time] TOKENS ON THIS CARD: you must discard this card. Roll 3 attack dice that cannot be re-rolled or modified. All [hit] and [crit] deal damage to the ships Hull. Discard the Hidden Explosives Token after the attack is made.",
 	unique: true,
 	factions: ["independent"]
 },  {
