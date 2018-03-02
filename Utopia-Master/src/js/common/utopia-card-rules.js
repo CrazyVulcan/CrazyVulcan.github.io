@@ -7941,7 +7941,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		
 		//4th wing patrol ship
-		"Weapon:tac_command_reticle_73032":{
+		"weapon:tac_command_reticle_73032":{
 			canEquip: onePerShip("Tactical Command Reticle"),
 			canEquipFaction: function(upgrade,ship,fleet) {
 				return $factions.hasFaction( ship, "dominion", ship, fleet )
