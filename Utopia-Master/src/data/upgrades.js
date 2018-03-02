@@ -138,7 +138,7 @@ module.exports = [{
 	set: ["73031"],
 	name: "Gorn Sensors",
 	cost: 3,
-	text: "<b>WHEN THIS SHIP ATTACKS WITH ITS PRIMARY WEAPON AT RANGE 1:</b> \n\nRange combat bonuses are doubled\n-----------------------------------\n<b>WHEN THIS SHIP ATTACKS WITH A [weapon] UPGRADE AT RANGE 1:</B>\n\nApply Range combat bonuses.\n<i>(Gorn Raider)</i>",
+	text: "<b>WHEN THIS SHIP ATTACKS WITH ITS PRIMARY WEAPON AT RANGE 1:</b>\nRange combat bonuses are doubled\n-----------------------------------\n<b>WHEN THIS SHIP ATTACKS WITH A [weapon] UPGRADE AT RANGE 1:</B>\nApply Range combat bonuses.\n<i>(Gorn Raider)</i>",
 	OnePerShip: true,
 	shipLimit: true,
 	factions: ["independent"]
