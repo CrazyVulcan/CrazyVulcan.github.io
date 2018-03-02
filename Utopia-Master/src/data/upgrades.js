@@ -8,7 +8,17 @@ module.exports = [{
 	unique: true,
 	range:"1",
 	factions: ["dominion"]
-},  {
+},{
+	type: "tech",
+	id: "cloning_facility_73032",
+	set: ["73032"],
+	name: "Cloning Facility",
+	cost: 2,
+	text: "<b>ACTIVATION PHASE:</b> Target a Dominion [crew] Upgrade equipped to this ship or a friendly ship.\n\nThis card becomes a copy of the target Dominion [crew] Upgrade this game round.",
+	OnePerShip: true,
+	range:"1",
+	factions: ["dominion"]
+},{
 	type: "tech",
 	id: "antiproton_blast_73032",
 	set: ["73032"],
@@ -27,6 +37,34 @@ module.exports = [{
 	text: "<b>ACTIVATION PHASE:</b> Target a [crew] Upgrade Equipped to an opposing ship.\n\nThis card becomes a copy of the target [crew] Upgrade this game round.",
 	unique: true,
 	range:"1 - 2",
+	factions: ["dominion"]
+},{
+	type: "crew",
+	id: "elim_garak_73032",
+	set: ["73032"],
+	name: "Elim Garak",
+	cost: 1,
+	text: "<b>WHEN ATTACKING:</b> If the defending ship shares a faction with this ship or this card:\n\n1[hit] or 1[crit] cannot be canceled.",
+	unique: true,
+	factions: ["dominion"]
+},{
+	type: "crew",
+	id: "seskal_73032",
+	set: ["73032"],
+	name: "Seskal",
+	cost: 4,
+	text: "<b>COMBAT PHASE:</b> If all this ships Shields have been destroyed, disable this card.\n\nThis ship rolls +2 attack dice this game round.",
+	unique: true,
+	factions: ["dominion"]
+},{
+	type: "weapon",
+	id: "tac_command_reticle_73032",
+	set: ["73032"],
+	name: "Tactical Command Reticle",
+	cost: 2,
+	text: "Add 1 [weapon] to this ships Upgrade Bar\n-----------------------------------\n<b>COMBAT PHASE:</b> Place 2 [time] Tokens on this card.\n\nThis ship rolls +1 attack die this game round.",
+	OnePerShip: true,
+	shipDominion: true,
 	factions: ["dominion"]
 },{
 	type: "talent",
@@ -59,6 +97,15 @@ module.exports = [{
 	factions: ["independent"]
 },  {
 	type: "crew",
+	id: "gorn_pilot_73031",
+	set: ["73031"],
+	name: "Gorn Pilot",
+	cost: 3,
+	text: "<b>ACTION:</b> If this ship performed a [straight] Maneuver this game round disable this card.\n\nPerform a 1 [straight] Maneuver",
+	unique: true,
+	factions: ["independent"]
+},   {
+	type: "crew",
 	id: "gorn_trooper_73031",
 	set: ["73031"],
 	name: "Gorn Trooper",
@@ -67,6 +114,15 @@ module.exports = [{
 	unique: false,
 	factions: ["independent"]
 },   {
+	type: "tech",
+	id: "hidden_explosives_73031",
+	set: ["73031"],
+	name: "Hidden Explosives",
+	cost: 3,
+	text: "SETUP: Target an opposing ship.\nPlace a Hidden Explosives Token on the target ship and place 4 [time] Tokens on this card.\n-----------------------------------\nWHEN THERE ARE NO MORE [time] TOKENS ON THIS CARD:you must discard this card.\n\nRoll 3 attack dice that cannot be re-rolled or modified. All [hit] and [crit] deal damage to the ships Hull. Discard the Hidden Explosives Token after the attack is made.",
+	unique: true,
+	factions: ["independent"]
+},  {
 	type: "tech",
 	id: "enhanced_durabilty_73031",
 	set: ["73031"],
@@ -77,6 +133,28 @@ module.exports = [{
 	shipLimit: true,
 	factions: ["independent"]
 },  {
+	type: "tech",
+	id: "gorn_sensors_73031",
+	set: ["73031"],
+	name: "Gorn Sensors",
+	cost: 3,
+	text: "<b>WHEN THIS SHIP ATTACKS WITH ITS PRIMARY WEAPON AT RANGE 1:</b> \n\nRange combat bonuses are doubled\n-----------------------------------\n<b>WHEN THIS SHIP ATTACKS WITH A [weapon] UPGRADE AT RANGE 1:</B>\n\nApply Range combat bonuses.\n<i>(Gorn Raider)</i>",
+	OnePerShip: true,
+	shipLimit: true,
+	factions: ["independent"]
+},  {
+	type: "weapon",
+	id: "disruptor_bombardment_73031",
+	set: ["73031"],
+	name: "Disruptor Bombardment",
+	cost: 2,
+	text: "<b>ATTACK:</b> Place 3 [time] Tokens on this card, place a Mission Token within Range 1-2 and target all opposing ships within Range 1 of the Mission Token\n\nMake a separate attack roll against each target ship. This attack cannot be obstructed by obstacles or Planets. Discard the Mission Token after the attack is made.\n<i>(Gorn Raider)</i>",
+	OnePerShip: true,
+	shipLimit: true,
+	FrontArc: true,
+	attack: 4,
+	factions: ["independent"]
+},   {
 	type: "talent",
 	id: "grand_nagus_75003",
 	set: ["75003"],
@@ -422,7 +500,7 @@ module.exports = [{
 }, {
 	type: "weapon",
 	id: "phased_polaron_beam_75002",
-	set: ["75002"],
+	set: ["75002", "73032"],
 	name: "Phased Polaron Beams",
 	cost: 3,
 	range: "1 - 2",

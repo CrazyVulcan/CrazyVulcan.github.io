@@ -7837,6 +7837,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}},
+		"captain:gorn_captain_73031":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			}},
 		//Gorn Hegemony
 		"talent:gorn_hegemony_73031":{
 			factionPenalty: function(upgrade, ship, fleet) {
@@ -7870,6 +7874,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
+		//Gorn Pilot
+		"crew:gorn_pilot_73031":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			}},
 		"question:meridor_gorn_ale_73031":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
@@ -7889,6 +7898,22 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			],
 		},
+		//Hidden Explosives
+		"weapon:hidden_explosives_73031":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			}},
+		//Disruptor Bombardment
+		"weapon:disruptor_bombardment_73031":{
+			canEquip: function(upgrade,ship,fleet) {
+				return ship.class == "Gorn Raider" && onePerShip("Disruptor Bombardment");
+			}
+		},
+		//Gorn Sensors
+		"tech:gorn_sensors_73031":{
+			canEquip: function(upgrade,ship,fleet) {
+				return ship.class == "Gorn Raider" && onePerShip("Gorn Sensors");
+			}},
 		//Enhanced Durability
 		"tech:enhanced_durabilty_73031":{
 			canEquip: function(upgrade,ship,fleet) {
@@ -7913,6 +7938,19 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					}
 				}
 			}
+		},
+		
+		//4th wing patrol ship
+		"Weapon:tac_command_reticle_73032":{
+			canEquip: onePerShip("Tactical Command Reticle"),
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return $factions.hasFaction( ship, "dominion", ship, fleet )
+			},
+			upgradeSlots: [ 
+				{ 
+					type: ["weapon"]
+				}
+			]
 		},
 //Faction Penalty For Subfactions 		
 		//Federation

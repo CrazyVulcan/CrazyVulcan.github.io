@@ -877,6 +877,17 @@ module.exports = [{
 	}
 }, {
 	type: "captain",
+	id: "gorn_captain_73031",
+	set: ["73031"],
+	name: "Daimon Solok",
+	cost: 3,
+	skill: 4,
+	talents: 1,
+	text: "<b>ACTION:</b> Disable this card and target an opposing ship.\n\nDisable the Captain equipped to the target ship.",
+	unique: false,
+	factions: ["independent"]
+}, {
+	type: "captain",
 	id: "daimon_solok_75003",
 	set: ["75003"],
 	name: "Daimon Solok",
