@@ -6306,7 +6306,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship.hull <= 7;
 			},
 			intercept: {
-				self: {
+				ship: {
 					cost: function(upgrade,ship,fleet,cost) {
 						modifier = 0;
 						
