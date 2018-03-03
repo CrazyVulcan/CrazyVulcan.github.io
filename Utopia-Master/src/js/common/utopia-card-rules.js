@@ -6297,7 +6297,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 		},
 		// Borg Support Vehicle Token
-		"question:borg_support_vehicle_token_72255":{
+		"borg:borg_support_vehicle_token_72255":{
 			type: "question",
 			canEquip: onePerShip("Borg Support Vehicle Token"),
 			isSlotCompatible: function(slotTypes) {
