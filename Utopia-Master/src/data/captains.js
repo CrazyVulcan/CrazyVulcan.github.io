@@ -879,7 +879,7 @@ module.exports = [{
 	type: "captain",
 	id: "gorn_captain_73031",
 	set: ["73031"],
-	name: "Daimon Solok",
+	name: "Gorn Captain",
 	cost: 3,
 	skill: 4,
 	talents: 1,

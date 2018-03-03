@@ -114,7 +114,7 @@ module.exports = [{
 	unique: false,
 	factions: ["independent"]
 },   {
-	type: "tech",
+	type: "weapon",
 	id: "hidden_explosives_73031",
 	set: ["73031"],
 	name: "Hidden Explosives",
@@ -2082,7 +2082,7 @@ module.exports = [{
 	set: ["72242"],
 	name: "Impulse Drive",
 	cost: 2,
-	text: "You may disable this card to perform a white maneuver if there is an Auxiliary Power Token beside your ship. If you do so, you must still skip your Perform Action step. \n\nNo ship may be equipped with more than 1 \"Impulse Drive\" Upgrade.",
+	text: "You may disable this card when you perform a white maneuver if there is an auxiliary power token beside your ship skip your perform action step. You may then remove an auxiliary power token from beside your ship. No ship may be equipped with more than one \"Impulse Drive\" upgrade",
 	unique: false,
 	factions: ["romulan"]
 }, {
