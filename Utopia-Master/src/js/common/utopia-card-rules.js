@@ -6298,7 +6298,6 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		// Borg Support Vehicle Token
 		"borg:borg_support_vehicle_token_72255":{
-			type: "question",
 			canEquip: onePerShip("Borg Support Vehicle Token"),
 			isSlotCompatible: function(slotTypes) {
 				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0 || $.inArray( "borg", slotTypes ) >= 0;
@@ -6308,14 +6307,15 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			intercept: {
 				self: {
-					cost: function(upgrade,ship,fleet,cost) { modifier = 0;
-						if( ship && ship.class == "Borg Sphere" )
+					cost: function(upgrade,ship,fleet,cost) {
+						modifier = 0;
+						
+						if ( ship )
 							modifier += 15;
-						return cost - modifier;
-					}, 
-					cost: function(upgrade,ship,fleet,cost) { modifier = 0;
-						if( ship && ship.class != "Borg Sphere" )
-							modifier += 10;
+						
+						if ( modifier > 15)
+							modifier = 15;
+						
 						return cost - modifier;
 					}
 				}
