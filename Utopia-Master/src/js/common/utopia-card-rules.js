@@ -6305,6 +6305,20 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			canEquip: function(upgrade,ship,fleet) {
 				return ship.hull <= 7;
+			},
+			intercept: {
+				self: {
+					cost: function(upgrade,ship,fleet,cost) { modifier = 0;
+						if( ship && ship.class == "Borg Sphere" )
+							modifier += 15;
+						return cost - modifier;
+					}, 
+					cost: function(upgrade,ship,fleet,cost) { modifier = 0;
+						if( ship && ship.class != "Borg Sphere" )
+							modifier += 10;
+						return cost - modifier;
+					}
+				}
 			}
 		},
 		// Temporal Vortex
@@ -6864,6 +6878,26 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
+		
+		"captain:jean_luc_picard_enterprise_72284p": {
+			intercept: {
+				self: {
+					cost: function(upgrade,ship,fleet,cost) {
+						modifier = 0;
+						
+						if ( ship )
+							modifier += 2;
+						
+						if ( modifier > 5)
+							modifier = 5;
+						
+						return cost - modifier;
+					}
+				}
+			}
+		},
+
+
 		//Dispersal Pattern Sierra
 		"talent:dispersal_pattern_sierra_72284p":{
 			factionPenalty: function(upgrade, ship, fleet) {
