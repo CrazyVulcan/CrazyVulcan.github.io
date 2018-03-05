@@ -6307,8 +6307,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			intercept: {
 				ship: {
-					cost: function(upgrade,ship,fleet,cost) {
-							return resolve(upgrade,ship,fleet,cost) + 10;
+					cost: function(ship,fleet,cost) {
+							return resolve(ship,fleet,cost) + 5;
 						return cost;
 					}
 				}
