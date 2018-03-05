@@ -1994,7 +1994,7 @@ module.exports = [{
 	unique: true,
 	factions: ["borg"]
 }, {
-	type: "borg",
+	type: "question",
 	id: "borg_support_vehicle_token_72255",
 	set: ["72255"],
 	name: "Borg Support Vehicle Token",
