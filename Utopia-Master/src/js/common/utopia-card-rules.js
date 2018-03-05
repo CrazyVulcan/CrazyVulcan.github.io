@@ -6305,14 +6305,13 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquip: function(upgrade,ship,fleet) {
 				return ship.hull <= 7;
 			},
-			intercept: {
 				ship: {
-					cost: function(ship,fleet,cost) {
-							return resolve(ship,fleet,cost) + 5;
+					cost: function(card,ship,fleet,cost) {
+							return resolve(card,ship,fleet,cost) + 1;
 						return cost;
 					}
 				}
-			}
+			
 		},
 		// Temporal Vortex
 		"tech:temporal_vortex_72255": {
