@@ -6307,16 +6307,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			intercept: {
 				ship: {
-					cost: function(upgrade,ship,fleet,cost) {
-						modifier = 0;
-						
-						if ( ship )
-							modifier += 15;
-						
-						if ( modifier > 15)
-							modifier = 15;
-						
-						return cost - modifier;
+					cost: function(card,ship,fleet,cost) {
+						if( card == ship )
+							return resolve(card,ship,fleet,cost) - 10;
+						return cost;
 					}
 				}
 			}

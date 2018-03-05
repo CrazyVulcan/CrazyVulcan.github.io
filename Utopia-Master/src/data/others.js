@@ -12,6 +12,12 @@ module.exports = [{
 	text: "Once per game round per ship, a Captain may spend their Gold-Pressed Latinum Token(s) (GPLT) to activate one of the following abilities:\n-----------------------------------\n<b>PLANING PHASE:</b> Spend 1 GPLT\nRemove an [aux] Token beside this ship.\n-----------------------------------\n<b>ACTIVATION PHASE:</b>Once per game, spend any of GPLT.\n\nEquip a [crew], [tech], or [weapon] Upgrade with a cost equal to the amount of GPLT spent that was discarded from this ship.\n-----------------------------------\n<b>COMBAT PHASE:</b> Spend 1 GPLT.\nPlace a [battlestations], [evade] or [scan] Token beside this ship."
 }, {
 	type: "token",
+	id: "rule_EWT",
+	set: ["AdditionalRules", "71795", "OPWebPrize"],
+	name: "Energy Web Token",
+	text: "ENERGY WEB\n\nEWT's are treated as Obstacles but do not inflict normal Obstacle damage.\n\nA ship whose base or Maneuver Template overlaps an EWT, or a ship that has an EWT placed on top of it, must roll 1 attack die for every 2 EWTs that you have in the play area, rounded up (max 10 dice) Any [hit] or [crit] Damages the target ship as Normal. The affected ship does not roll any defense dice.\n\nNOTE: Tholian ships are immune to the effects of EWTs and may move and/or fire though them without penalty."
+}, {
+	type: "token",
 	id: "rule_admiral",
 	set: ["AdditionalRules"],
 	name: "Admiral Cards",
@@ -29,6 +35,18 @@ module.exports = [{
 	name: "Regenerate",
 	text: "Ships with the [regenerate] icon in their Action Bar may perform the Regenerate Action. A ship that performs the [regenerate] Action immediately repairs 1 damage of its choice to its Hull (critical or normal). A ship cannot attack during the round that it performs the [regenerate] Action."
 }, {
+	type: "token",
+	id: "tribble_tokens",
+	set: ["AdditionalRules"],
+	name: "Tribble Tokens",
+	text: "A Ship Card with at least 1 Tribble Token assigned to it follows special rules:\n\n1) During the End Phase, add 1 Tribble Token to your Ship Card (reguardless of the number of Tribble Tokens it already has).\n2) If your Ship has 1-3 Tribble Tokens, add +1 attack die whenever you attack and +1 defense whenever you defend. Ignore this rule if your Ship includes any Klingon Captains or Crew.\n3) If your ship has 4-5 Tribble Tokens, there is no effect.\n4) If your ship has 6 or more Tribble Tokens, roll 1 less attack die whenever you attack and 1 less defense dice whenever you defend. This penalty is doubled if your ship includes any Klingon Captains or Klingon Crew.\n5) You gain the following Action:\nAction: If your ship is not Cloaked, disable all of your remaining Shields and target a ship at range 1-2 that is not cloaked and has no Active Shields. Place any number of your Tribble Tokens beside the target ship's Ship Card. You cannot transfer any Tribble Token that you recieved this round."
+},  {
+	type: "token",
+	id: "engery_dampening_tokens",
+	set: ["AdditionalRules"],
+	name: "Energy Dampening Tokens",
+	text: "1) As soon as the ship receives the EDT, disable all of its remaining Shields and remove its (cloak) Token, if any.\n2) While the ship has the EDT, it cannot attack or raise its Shields.\n3) During the Planning Phase the owner does not assign a maneuver dial to this ship.\n4) During the Activation Phase the owner moves the ship as if it were assigned a White 1 (straight) Maneuver. After executing this Maneuver, remove all EDTs from this ship It may now perform Actions and attack as normal."
+},  {
 	type: "token",
 	id: "rule_drone_tokens",
 	set: ["AdditionalRules"],
