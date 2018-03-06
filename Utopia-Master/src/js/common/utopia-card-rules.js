@@ -6305,13 +6305,21 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquip: function(upgrade,ship,fleet) {
 				return ship.hull <= 7;
 			},
-				ship: {
-					cost: function(card,ship,fleet,cost) {
-							return resolve(card,ship,fleet,cost) + 1;
-						return cost;
+			intercept:{
+				ship:{
+					cost: function(upgrade,ship,fleet,cost) {
+					modifier = 0;
+						
+					if (ship && ship.class != "Borg Sphere" )
+					modifier += 10;
+						
+					else if ( ship && ship.class == "Borg Sphere")
+					modifier = 15;
+						
+					return ship.cost - modifier;
 					}
 				}
-			
+			}
 		},
 		// Temporal Vortex
 		"tech:temporal_vortex_72255": {
