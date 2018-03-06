@@ -6308,13 +6308,13 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 			  ship: {
 				cost: function(card, ship, fleet, cost) {
-				  modifier = 0;
+				  var modifier = 0;
 
 				  if (card == ship && ship.class == "Borg Sphere") modifier = 15;
 				  else if (card == ship) modifier = 10;
 
-				  cost = resolve(card, ship, fleet, cost) - modifier;
-				  return cost;
+				  var ship_cost = resolve(card, ship, fleet, cost) - modifier;
+				  return ship_cost;
 				}
 			  }
 			}
