@@ -6313,7 +6313,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					if (ship && ship.class != "Borg Sphere" )
 					modifier += 10;
 						
-					if ( ship && ship.class == "Borg Sphere")
+					else ( ship )
 					modifier = 15;
 						
 					return ship.cost - modifier;
