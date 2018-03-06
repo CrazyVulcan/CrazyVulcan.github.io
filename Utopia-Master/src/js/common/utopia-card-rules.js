@@ -150,7 +150,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 		return type;
 	}
-	
+		
 	return {
 	
 	//Generic Captains
@@ -6313,7 +6313,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				  if (card == ship && ship.class == "Borg Sphere") modifier = 15;
 				  else if (card == ship) modifier = 10;
 
-				  ship_cost = resolve(card, ship, fleet, cost) - modifier;
+				  cost = resolve(card, ship, fleet, cost) - modifier;
 				  return cost;
 				}
 			  }
