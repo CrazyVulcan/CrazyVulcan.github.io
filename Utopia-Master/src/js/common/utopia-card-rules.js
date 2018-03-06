@@ -6307,7 +6307,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			intercept:{
 				ship:{
-					cost: function(upgrade,ship,fleet,cost) {
+					cost: function(ship,fleet,cost) {
 					modifier = 0;
 						
 					if (ship && ship.class != "Borg Sphere" )
