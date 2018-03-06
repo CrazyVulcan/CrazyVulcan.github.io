@@ -6305,17 +6305,16 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquip: function(upgrade,ship,fleet) {
 				return ship.hull <= 7;
 			},
-			intercept:{
-				ship:{
-					cost: function(card,ship,fleet,cost) {
-					modifier = 0;
-						
-					if (ship && ship.class == "Borg Sphere" )
-					modifier = 15;
-						
-					else modifier = 10;
-						
-					return ship.cost - modifier;
+			intercept: {
+				ship: {
+					cost: function(card, ship, fleet, cost) {
+					  modifier = 0;
+
+					if (card == ship && ship.class == "Borg Sphere") modifier = 15;
+					else if (card == ship) modifier = 10;
+
+					cost = resolve(card, ship, fleet, cost) - modifier;
+				return cost;
 					}
 				}
 			}
