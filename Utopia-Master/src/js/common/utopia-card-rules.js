@@ -6309,13 +6309,13 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				ship:{
 					cost: function(card,ship,fleet,cost) {
 					modifier = 0;
-						
+					
 					if ( card == ship || ship.class == "Borg Sphere" )
 					modifier = 15;
-						
+					
 					else modifier = 10;
 						return resolve(card,ship,fleet,cost) - modifier ;
-					return ship.cost;
+					return cost;
 					}
 				}
 			}
