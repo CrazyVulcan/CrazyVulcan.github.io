@@ -6314,7 +6314,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					modifier = 15;
 						
 					else modifier = 10;
-						return resolve(card,ship,fleet,shields) ( ship.cost - modifier );
+						return resolve(card,ship,fleet,cost) ( ship.cost - modifier );
 					return cost;
 					}
 				}
