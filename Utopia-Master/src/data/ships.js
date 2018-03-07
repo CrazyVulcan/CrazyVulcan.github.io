@@ -140,28 +140,7 @@ module.exports = [{
 		fleet: {}
 	},
 	squadron: false
-}, {
-	type: "ship",
-	id: "generic_marauder_75003",
-	set: ["75003", "73001"],
-	name: "Ferengi Starship",
-	class: "D'Kora Class",
-	actions: ["evade", "target-lock", "scan"],
-	upgrades: ["tech", "weapon", "crew"],
-	attack: 3,
-	agility: 1,
-	hull: 4,
-	shields: 2,
-	cost: 16,
-	text: "",
-	unique: false,
-	factions: ["ferengi"],
-	intercept: {
-		ship: {},
-		fleet: {}
-	},
-	squadron: false
-}, {
+},  {
 	type: "ship",
 	id: "goss_shuttle_75003",
 	set: ["75003"],
@@ -181,7 +160,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "ferengi_starship_75003",
-	set: ["75003"],
+	set: ["75003","72013"],
 	name: "Ferengi Starship",
 	class: "Ferengi Shuttle",
 	actions: ["evade", "scan"],
@@ -378,7 +357,7 @@ module.exports = [{
 },{
 	type: "ship",
 	id: "jemhadar_attack_ship_75002",
-	set: ["75002", "73032"],
+	set: ["75002", "73032", "71271", "3rd_wing_attack_ship"],
 	name: "Dominion Starship",
 	class: "Jem'Hadar Attack Ship",
 	actions: ["evade", "target-lock", "scan", "battlestations"],
@@ -458,7 +437,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "valdore_class_75001",
-	set: ["75001"],
+	set: ["75001", "71123", "72010"],
 	name: "Romulan Starship",
 	class: "Valdore Class",
 	actions: ["evade", "target-lock", "cloak", "sensor-echo"],
@@ -500,7 +479,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "romulan_scout_vessel_75001",
-	set: ["75001"],
+	set: ["75001", "71274"],
 	name: "Romulan Starship",
 	class: "Romulan Scout Vessel",
 	actions: ["evade", "scan", "cloak", "sensor-echo"],
@@ -626,7 +605,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "nebula_class_2017core",
-	set: ["2017core"],
+	set: ["2017core", "OP4Prize", "72011"],
 	name: "Federation Starship",
 	class: "Nebula Class",
 	actions: ["evade", "target-lock", "scan", "battlestations"],
@@ -668,7 +647,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "vorcha_class_2017core",
-	set: ["2017core"],
+	set: ["2017core","71120", "72241", "72280p"],
 	name: "Klingon Starship",
 	class: "Vor'cha Class",
 	actions: ["evade", "target-lock", "cloak", "sensor-echo"],
@@ -751,7 +730,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "romulan_starship_72014wp",
-	set: ["72014wp"],
+	set: ["72014wp", "71536"],
 	name: "Romulan Starship",
 	class: "Romulan Drone Ship",
 	actions: ["evade", "target-lock", "scan"],
@@ -789,7 +768,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "dominion_starship_dreadnought_72013wp",
-	set: ["72013wp"],
+	set: ["72013wp","71212"],
 	name: "Dominion Starship",
 	class: "Cardassian ATR-4107",
 	actions: ["evade", "target-lock", "scan"],
@@ -827,7 +806,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "ship_71448",
-	set: ["72012wp"],
+	set: ["72012wp","71448"],
 	name: "Klingon Starship",
 	class: "Raptor Class",
 	actions: ["evade", "target-lock", "scan"],
@@ -869,7 +848,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "ufederation_starship_72001wp",
-	set: ["72011wp"],
+	set: ["72011wp", "71801"],
 	name: "Federation Starship",
 	class: "Oberth Class",
 	actions: ["evade", "target-lock", "scan"],
@@ -1549,7 +1528,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "romulan_starship_tmet",
-	set: ["72221p"],
+	set: ["72221p", "OP3Prize", "71511", "72282gp"],
 	name: "ROMULAN STARSHIP",
 	class: "D'deridex Class",
 	actions: ["evade", "target-lock", "cloak", "sensor-echo"],
@@ -1558,7 +1537,7 @@ module.exports = [{
 	agility: 2,
 	hull: 6,
 	shields: 3,
-	cost: 28,
+	cost: 25,
 	text: "",
 	unique: false,
 	factions: ["romulan"],
@@ -1578,23 +1557,6 @@ module.exports = [{
 	cost: 30,
 	text: "You cannot assign a Captain or an Admiral to this ship. When defending during the Compare Results step you may discard up to 2 of your Upgrades to cancel an equal number of attacking ships dice.",
 	unique: true,
-	factions: ["dominion"],
-	squadron: false
-}, {
-	type: "ship",
-	id: "dominion_starship_dreadnought_71212",
-	set: ["71212"],
-	name: "Dominion Starship",
-	class: "Cardassian ATR-4107",
-	actions: ["evade", "target-lock", "scan"],
-	upgrades: ["weapon", "weapon", "weapon"],
-	attack: 6,
-	agility: 0,
-	hull: 4,
-	shields: 4,
-	cost: 28,
-	text: "",
-	unique: false,
 	factions: ["dominion"],
 	squadron: false
 }, {
@@ -1681,23 +1643,6 @@ module.exports = [{
 	text: "When defending if you are hit and you don't already have a 'Warp Core Breach' critical damage card assigned to your ship you may chose to ignore up to 3 damage being inflicted to your ship and suffer a 'Warp Core Breach' critical damage instead.",
 	unique: true,
 	factions: ["federation"],
-	squadron: false
-}, {
-	type: "ship",
-	id: "federaion_starship_71213",
-	set: ["71213"],
-	name: "Federation Starship",
-	class: "Jem'Hadar Attack Ship",
-	actions: ["evade", "target-lock", "scan", "battlestations"],
-	upgrades: ["tech", "weapon", "crew"],
-	attack: 3,
-	agility: 2,
-	hull: 3,
-	shields: 2,
-	cost: 20,
-	text: "",
-	unique: false,
-	factions: ["dominion"],
 	squadron: false
 }, {
 	type: "ship",
@@ -1834,7 +1779,7 @@ module.exports = [{
 	agility: 3,
 	hull: 2,
 	shields: 1,
-	cost: 14,
+	cost: 9,
 	text: "",
 	unique: false,
 	factions: ["romulan"],
@@ -1872,7 +1817,7 @@ module.exports = [{
 	agility: 1,
 	hull: 5,
 	shields: 3,
-	cost: 26,
+	cost: 22,
 	text: "\r\n      ",
 	unique: false,
 	factions: ["federation"],
@@ -1914,7 +1859,7 @@ module.exports = [{
 	agility: 2,
 	hull: 6,
 	shields: 3,
-	cost: 28,
+	cost: 25,
 	text: "\r\n      ",
 	unique: false,
 	factions: ["romulan"],
@@ -1938,27 +1883,6 @@ module.exports = [{
 	cost: 28,
 	text: "Any ship attacking you at Range 1 rolls 1 less attack die.",
 	unique: true,
-	factions: ["klingon"],
-	intercept: {
-		ship: {},
-		fleet: {}
-	},
-	squadron: false
-}, {
-	type: "ship",
-	id: "1006",
-	set: ["71120", "72241", "72280p"],
-	name: "Klingon Starship",
-	class: "Vor'cha Class",
-	actions: ["evade", "target-lock", "cloak", "sensor-echo"],
-	upgrades: ["tech", "weapon", "crew"],
-	attack: 5,
-	agility: 1,
-	hull: 5,
-	shields: 2,
-	cost: 26,
-	text: "\r\n      ",
-	unique: false,
 	factions: ["klingon"],
 	intercept: {
 		ship: {},
@@ -2072,27 +1996,6 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1012",
-	set: ["71123", "72010"],
-	name: "Romulan Starship",
-	class: "Valdore Class",
-	actions: ["evade", "target-lock", "cloak", "sensor-echo"],
-	upgrades: ["weapon", "crew", "crew"],
-	attack: 4,
-	agility: 2,
-	hull: 6,
-	shields: 2,
-	cost: 28,
-	text: "\r\n      ",
-	unique: false,
-	factions: ["romulan"],
-	intercept: {
-		ship: {},
-		fleet: {}
-	},
-	squadron: false
-}, {
-	type: "ship",
 	id: "1013",
 	set: ["71124"],
 	name: "R.I.S. Apnex",
@@ -2124,7 +2027,7 @@ module.exports = [{
 	agility: 2,
 	hull: 2,
 	shields: 1,
-	cost: 12,
+	cost: 6,
 	text: "\r\n      ",
 	unique: false,
 	factions: ["romulan"],
@@ -2325,7 +2228,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "1024",
-	set: ["OP1Prize", "71646a", "71806", "blind_nunks_marauder"],
+	set: ["OP1Prize", "71646a", "71806", "blind_nunks_marauder", "75003", "73001"],
 	name: "Ferengi Marauder",
 	class: "D'Kora Class",
 	actions: ["evade", "target-lock", "scan"],
@@ -2334,7 +2237,7 @@ module.exports = [{
 	agility: 1,
 	hull: 4,
 	shields: 2,
-	cost: 20,
+	cost: 16,
 	text: "",
 	unique: false,
 	factions: ["ferengi"],
@@ -2442,27 +2345,6 @@ module.exports = [{
 	cost: 30,
 	text: "Each time you attack, you may re-roll 1 of your attack dice for every damage card assigned to your ship.",
 	unique: true,
-	factions: ["romulan"],
-	intercept: {
-		ship: {},
-		fleet: {}
-	},
-	squadron: false
-}, {
-	type: "ship",
-	id: "1043",
-	set: ["OP3Prize", "71511", "72282gp"],
-	name: "Romulan Starship",
-	class: "D'deridex Class",
-	actions: ["evade", "target-lock", "cloak", "sensor-echo"],
-	upgrades: ["tech", "weapon", "weapon", "crew"],
-	attack: 3,
-	agility: 2,
-	hull: 6,
-	shields: 3,
-	cost: 28,
-	text: "\r\n      ",
-	unique: false,
 	factions: ["romulan"],
 	intercept: {
 		ship: {},
@@ -2618,27 +2500,6 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1037",
-	set: ["71271", "3rd_wing_attack_ship"],
-	name: "Dominion Starship",
-	class: "Jem'Hadar Attack Ship",
-	actions: ["evade", "target-lock", "scan", "battlestations"],
-	upgrades: ["tech", "weapon", "crew"],
-	attack: 3,
-	agility: 2,
-	hull: 3,
-	shields: 2,
-	cost: 20,
-	text: "",
-	unique: false,
-	factions: ["dominion"],
-	intercept: {
-		ship: {},
-		fleet: {}
-	},
-	squadron: false
-}, {
-	type: "ship",
 	id: "1038",
 	set: ["71273"],
 	name: "I.K.S. Koraga",
@@ -2670,7 +2531,7 @@ module.exports = [{
 	agility: 1,
 	hull: 5,
 	shields: 2,
-	cost: 24,
+	cost: 20,
 	text: "",
 	unique: false,
 	factions: ["klingon"],
@@ -2786,27 +2647,6 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1047",
-	set: ["71274"],
-	name: "Romulan Starship",
-	class: "Romulan Scout Vessel",
-	actions: ["evade", "scan", "cloak", "sensor-echo"],
-	upgrades: ["tech"],
-	attack: 1,
-	agility: 3,
-	hull: 2,
-	shields: 1,
-	cost: 14,
-	text: "",
-	unique: false,
-	factions: ["romulan"],
-	intercept: {
-		ship: {},
-		fleet: {}
-	},
-	squadron: false
-}, {
-	type: "ship",
 	id: "1048",
 	set: ["OP4Prize"],
 	name: "U.S.S. Sutherland",
@@ -2820,27 +2660,6 @@ module.exports = [{
 	cost: 26,
 	text: "When you initiate an attack at range 3, you may choose any number of your attack dice and re-roll them once.",
 	unique: true,
-	factions: ["federation"],
-	intercept: {
-		ship: {},
-		fleet: {}
-	},
-	squadron: false
-}, {
-	type: "ship",
-	id: "1049",
-	set: ["OP4Prize"],
-	name: "Federation Starship",
-	class: "Nebula Class",
-	actions: ["evade", "target-lock", "scan", "battlestations"],
-	upgrades: ["tech", "weapon", "crew", "crew"],
-	attack: 4,
-	agility: 1,
-	hull: 4,
-	shields: 3,
-	cost: 24,
-	text: "",
-	unique: false,
 	factions: ["federation"],
 	intercept: {
 		ship: {},
@@ -2954,27 +2773,6 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "klingon_starship_71448",
-	set: ["71448"],
-	name: "Klingon Starship",
-	class: "Raptor Class",
-	actions: ["evade", "target-lock", "scan"],
-	upgrades: ["tech", "weapon"],
-	attack: 3,
-	agility: 1,
-	hull: 3,
-	shields: 1,
-	cost: 16,
-	text: "",
-	unique: false,
-	factions: ["klingon"],
-	intercept: {
-		ship: {},
-		fleet: {}
-	},
-	squadron: false
-}, {
-	type: "ship",
 	id: "i_r_w_gal_gath_thong_71278",
 	set: ["71278"],
 	name: "I.R.W. Gal Gath'thong",
@@ -3048,7 +2846,7 @@ module.exports = [{
 	agility: 0,
 	hull: 7,
 	shields: 4,
-	cost: 34,
+	cost: 29,
 	text: "",
 	unique: false,
 	factions: ["dominion"],
@@ -3531,7 +3329,7 @@ module.exports = [{
 	agility: 1,
 	hull: 3,
 	shields: 3,
-	cost: 20,
+	cost: 14,
 	text: "",
 	unique: false,
 	factions: ["independent"],
@@ -3848,7 +3646,7 @@ module.exports = [{
 	agility: 1,
 	hull: 6,
 	shields: 4,
-	cost: 32,
+	cost: 29,
 	text: "",
 	unique: false,
 	factions: ["dominion"],
@@ -4375,7 +4173,7 @@ module.exports = [{
 	agility: 2,
 	hull: 6,
 	shields: 4,
-	cost: 32,
+	cost: 29,
 	text: "",
 	unique: false,
 	factions: ["romulan", "borg"],
@@ -4501,7 +4299,7 @@ module.exports = [{
 	agility: 0,
 	hull: 8,
 	shields: 6,
-	cost: 40,
+	cost: 38,
 	text: "",
 	unique: false,
 	factions: ["borg"],
@@ -4744,28 +4542,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "borg_starship_71792",
-	set: ["71792"],
-	name: "Borg Starship",
-	class: "Borg Cube",
-	actions: ["target-lock", "scan", "regenerate"],
-	upgrades: ["borg", "borg", "tech", "weapon", "crew"],
-	attack: 6,
-	agility: 0,
-	hull: 10,
-	shields: 9,
-	cost: 80,
-	text: "",
-	unique: false,
-	factions: ["borg"],
-	intercept: {
-		ship: {},
-		fleet: {}
-	},
-	squadron: false
-}, {
-	type: "ship",
-	id: "borg_starship_72255",
-	set: ["72255"],
+	set: ["71792", "72255"],
 	name: "Borg Starship",
 	class: "Borg Cube",
 	actions: ["target-lock", "scan", "regenerate"],
@@ -4783,7 +4560,7 @@ module.exports = [{
 		fleet: {}
 	},
 	squadron: false
-}, {
+},  {
 	type: "ship",
 	id: "fina_prime_71534",
 	set: ["71534"],
@@ -5119,28 +4896,7 @@ module.exports = [{
 		fleet: {}
 	},
 	squadron: false
-}, {
-	type: "ship",
-	id: "romulan_starship_71536",
-	set: ["71536"],
-	name: "Romulan Starship",
-	class: "Romulan Drone Ship",
-	actions: ["evade", "target-lock", "scan"],
-	upgrades: ["tech", "tech", "weapon"],
-	attack: 3,
-	agility: 3,
-	hull: 3,
-	shields: 2,
-	cost: 22,
-	text: "This ship may only be assigned Gareb or a Romulan Drone Pilot as its Captain.",
-	unique: false,
-	factions: ["romulan"],
-	intercept: {
-		ship: {},
-		fleet: {}
-	},
-	squadron: false
-}, {
+},  {
 	type: "ship",
 	id: "i_k_s_pagh_71996",
 	set: ["71996"],
@@ -5215,7 +4971,7 @@ module.exports = [{
 	agility: 2,
 	hull: 6,
 	shields: 3,
-	cost: 28,
+	cost: 25,
 	text: "",
 	unique: false,
 	factions: ["romulan"],
@@ -5476,28 +5232,7 @@ module.exports = [{
 		fleet: {}
 	},
 	squadron: false
-}, {
-	type: "ship",
-	id: "federation_starship_71801",
-	set: ["71801"],
-	name: "Federation Starship",
-	class: "Oberth Class",
-	actions: ["evade", "target-lock", "scan"],
-	upgrades: ["tech", "tech", "crew"],
-	attack: 2,
-	agility: 3,
-	hull: 3,
-	shields: 1,
-	cost: 18,
-	text: "",
-	unique: false,
-	factions: ["federation"],
-	intercept: {
-		ship: {},
-		fleet: {}
-	},
-	squadron: false
-}, {
+},	{
 	type: "ship",
 	id: "ratosha_71803",
 	set: ["71803"],
@@ -6060,24 +5795,7 @@ module.exports = [{
 	unique: true,
 	factions: ["federation"],
 	squadron: false
-}, {
-	type: "ship",
-	id: "federation_starship_72011",
-	set: ["72011"],
-	name: "Federation Starship",
-	class: "Nebula Class",
-	actions: ["evade", "target-lock", "scan", "battlestations"],
-	upgrades: ["tech", "weapon", "crew", "crew"],
-	attack: 4,
-	agility: 1,
-	hull: 4,
-	shields: 3,
-	cost: 24,
-	text: "",
-	unique: false,
-	factions: ["federation"],
-	squadron: false
-}, {
+},  {
 	type: "ship",
 	id: "quark_s_treasure_72013",
 	set: ["72013"],
@@ -6092,23 +5810,6 @@ module.exports = [{
 	cost: 16,
 	text: "You do not pay a faction penalty when assigning any [crew] or [tech] Upgrades to this ship.\nYou do not place an Auxiliary Power Token beside your ship when using the Docking or Launching Actions.",
 	unique: true,
-	factions: ["ferengi"],
-	squadron: false
-}, {
-	type: "ship",
-	id: "ferengi_starship_72013",
-	set: ["72013"],
-	name: "Ferengi Starship",
-	class: "Ferengi Shuttle",
-	actions: ["evade", "scan"],
-	upgrades: ["tech", "crew"],
-	attack: 2,
-	agility: 2,
-	hull: 2,
-	shields: 1,
-	cost: 14,
-	text: "",
-	unique: false,
 	factions: ["ferengi"],
 	squadron: false
 }, {
@@ -6195,7 +5896,7 @@ module.exports = [{
 	agility: 2,
 	hull: 6,
 	shields: 3,
-	cost: 28,
+	cost: 25,
 	text: "",
 	unique: false,
 	factions: ["mirror-universe"],
@@ -6267,7 +5968,7 @@ module.exports = [{
 	agility: 1,
 	hull: 5,
 	shields: 2,
-	cost: 26,
+	cost: 22,
 	text: "",
 	unique: false,
 	factions: ["mirror-universe"],
