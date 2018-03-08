@@ -7709,43 +7709,32 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			upgradeSlots: [ 
 				{
-					type: ["talent"]
+				type: ["talent"]
 				}, {
-					type: ["crew"], 
-					rules: "Cost of 3sp or less",
+				type: ["crew"],
+				rules: "3SP or less",
+				faceDown: true,
 					intercept: {
 						ship: {
-							cost: function() { return 0; },
-							canEquip: function(card,ship,fleet,canEquip) {
-								if( (valueOf(card,"cost",ship,fleet) <= 3) )
-							return canEquip;
-				},
-				factionPenalty: {
-						priority: 100,
-						fn: function(card,ship,fleet,factionPenalty) {
-							if( card.type == "crew" )
-								return 0;
-							return factionPenalty;
+							factionPenalty: {
+							priority: 100,
+							fn: function(card,ship,fleet,factionPenalty) {
+								if( card.type == "talent" )
+									return 0;
+								return factionPenalty;
+							}
+						},
+							canEquip: function(upgrade,ship,fleet) {
+								// TODO Prevent use of upgrades without a defined cost (e.g. Dorsal Phaser Array)
+								var cost = valueOf(upgrade,"cost",ship,fleet);
+								return cost <= 3;
+							},
+							free: function() {
+								return true;
+							}
 						}
-					}}}},
-				{
-					type: ["crew"], 
-					rules: "Cost of 3sp or less",
-					intercept: {
-						ship: {
-							cost: function() { return 0; },
-							canEquip: function(card,ship,fleet,canEquip) {
-								if( (valueOf(card,"cost",ship,fleet) <= 3) )
-							return canEquip;
-				},
-				factionPenalty: {
-						priority: 100,
-						fn: function(card,ship,fleet,factionPenalty) {
-							if( card.type == "crew" )
-								return 0;
-							return factionPenalty;
-						}
-					}}}}
+					}
+				}
 			]
 		},
 		//Gint - Captain
