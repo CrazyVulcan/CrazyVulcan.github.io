@@ -7321,6 +7321,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		//Tellarite Disruptor Banks
 		"weapon:tellarite_disruptor_banks_72014wp":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			},
 			canEquip: onePerShip("Tellarite Disruptor Banks")
 		},
 		//Evasive Protocol
@@ -7719,7 +7722,15 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 								else if ( (valueOf(card,"cost",ship,fleet) <= 2) && $factions.hasFaction( ship, "independent", ship, fleet ) || $factions.hasFaction( ship, "ferengi", ship, fleet ) || $factions.hasFaction( ship, "kazon", ship, fleet ) || $factions.hasFaction( ship, "xindi", ship, fleet ))
 									return canEquip;
 								return false;
-				}}}},
+				},
+				factionPenalty: {
+						priority: 100,
+						fn: function(card,ship,fleet,factionPenalty) {
+							if( card.type == "talent" )
+								return 0;
+							return factionPenalty;
+						}
+					}}}},
 				{
 					type: ["crew"], 
 					rules: "Cost of 3sp or less",
@@ -7732,7 +7743,15 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 								else if ( (valueOf(card,"cost",ship,fleet) <= 3) && $factions.hasFaction( ship, "independent", ship, fleet ) || $factions.hasFaction( ship, "ferengi", ship, fleet ) || $factions.hasFaction( ship, "kazon", ship, fleet ) || $factions.hasFaction( ship, "xindi", ship, fleet ))
 									return canEquip;
 								return false;
-				}}}}
+				},
+				factionPenalty: {
+						priority: 100,
+						fn: function(card,ship,fleet,factionPenalty) {
+							if( card.type == "talent" )
+								return 0;
+							return factionPenalty;
+						}
+					}}}}
 			]
 		},
 		//Gint - Captain
