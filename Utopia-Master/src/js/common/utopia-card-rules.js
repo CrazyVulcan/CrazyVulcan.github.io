@@ -1,17 +1,17 @@
 var module = angular.module("utopia-card-rules", ["utopia-valueof"]);
 
 module.filter( "shipCardNamed", [ "$filter", function($filter) {
-	
+
 	var upgradeSlotsFilter = $filter("upgradeSlots");
-	
+
 	return function( ship, name ) {
 
 		if( ship.name == name )
 			return ship;
-		
+
 		if( ship.captain && ship.captain.name == name )
 			return ship.captain;
-		
+
 		var match = false;
 		$.each( upgradeSlotsFilter(ship), function(i, slot) {
 			if( slot.occupant && slot.occupant.name == name ) {
@@ -19,7 +19,7 @@ module.filter( "shipCardNamed", [ "$filter", function($filter) {
 				return false;
 			}
 		});
-		
+
 		return match;
 
 	}
@@ -31,7 +31,7 @@ module.filter( "fleetCardNamed", [ "$filter", function($filter) {
 	var shipCardNamed = $filter("shipCardNamed");
 
 	return function( fleet, name ) {
-		
+
 		if( !fleet ) {
 			return false;
 		}
@@ -42,7 +42,7 @@ module.filter( "fleetCardNamed", [ "$filter", function($filter) {
 			if( match )
 				return false;
 		});
-		
+
 		return match;
 
 	}
@@ -85,7 +85,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 	var onePerShip = function(name) {
 		return function(upgrade,ship,fleet) {
-			
+
 			var alreadyEquipped = false;
 			var slots = $filter("upgradeSlots")(ship);
 			$.each( slots, function(i,slot) {
@@ -94,29 +94,29 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			});
 			return !alreadyEquipped;
-			
+
 		};
 	};
-	
+
 	var upgradeTypes = ["crew","weapon","tech","talent","question","borg"];
-	
+
 	var isUpgrade = function(card) {
 		return $.inArray( card.type, upgradeTypes ) >= 0;
 	};
-	
+
 	var resolve = function(card,ship,fleet,value) {
 		return value instanceof Function ? value(card,ship,fleet) : value;
 	};
-	
+
 	var hasFaction = $factions.hasFaction;
-	
+
 	var cloneSlot = function(count, slot) {
 		var slots = [slot];
 		for( var i = 1; i < count; i++ )
 			slots.push( angular.copy(slot) );
 		return slots;
 	};
-	
+
 	var createFirstMajeSlot = function() {
 		return {
 			type: ["talent"],
@@ -136,7 +136,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 		}
 	}
-	
+
 	var getSlotType = function(upgrade,ship) {
 		var type = ["weapon"];
 		$.each( $filter("upgradeSlots")(ship), function(i, slot) {
@@ -147,12 +147,12 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		);
-		
+
 		return type;
 	}
-		
+
 	return {
-	
+
 	//Generic Captains
 		//Federation
 		"captain:2003":{
@@ -268,7 +268,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
+
 	//Gor Portas : 71128
 		// Thot Gor
 		"captain:2023": {
@@ -295,10 +295,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
-		
+
+
 	//Kraxon :71127
-	
+
 	//IKS Negh'var :71126
 		// Photon Torpedoes (Negh'var Bonus)
 		"weapon:3051": {
@@ -312,9 +312,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-	
+
 	//IKS Gr'oth :71125
-	
+
 	//RIS Apnex :71124
 		// Varel
 		"crew:3039": {
@@ -334,10 +334,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship.class == "Romulan Science Vessel";
 			}
 		},
-		
-		
+
+
 	//IRW Valdore :71123
-	
+
 	//USS Enterprise :71122
 		// Christopher Pike
 		"captain:2012": {
@@ -387,7 +387,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			)
 		},
-		
+
 		//Cheat Death
 		"talent:3025":{
 			factionPenalty: function(upgrade, ship, fleet) {
@@ -437,8 +437,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}
 		},
-		
-		
+
+
 	//USS Reliant :71121
 		//Clark Terell 2010
 		"captain:2010":{
@@ -447,7 +447,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 		},
 		// Khan Singh
-		"captain:2008": {			
+		"captain:2008": {
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			},
@@ -462,44 +462,44 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		//I Stab at Thee 
+		//I Stab at Thee
 		"talent:3018":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}
 		},
-		//Superior Intellect 
+		//Superior Intellect
 		"talent:3019":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}
 		},
-		//Kyle 
+		//Kyle
 		"crew:3020":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}
 		},
-		//Pavel Chekov 
+		//Pavel Chekov
 		"crew:3021":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}
 		},
-		//Follower of Khan 
+		//Follower of Khan
 		"crew:3022":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}
 		},
-		//Joachim 
+		//Joachim
 		"crew:3023":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}
 		},
-		
-	
+
+
 	//GenCon 2013 Promo
 		//Khan Singh
 		"captain:2009":{
@@ -515,8 +515,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
-	
+
+
 	//Krayton
 	"captain:2026":{
 			factionPenalty: function(upgrade, ship, fleet) {
@@ -543,8 +543,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}
 		},
-		
-		
+
+
 	//5th Wing Patrol Ship :71271
 		// Luaran
 		"captain:2035": {
@@ -553,10 +553,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				ship: {
 					cost: function(upgrade,ship,fleet,cost) {
-						
+
 						var candidate = false;
 						var candCost = 0;
-						
+
 						// Find the upgrade with the highest cost
 						$.each( $filter("upgradeSlots")(ship), function(i, slot) {
 							if( slot.occupant && $factions.hasFaction(slot.occupant,"dominion", ship, fleet) ) {
@@ -572,9 +572,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						// Modify cost only if this is the candidate upgrade
 						if( upgrade == candidate )
 							cost = candCost - 2;
-						
+
 						return cost;
-						
+
 					}
 				}
 			}
@@ -615,12 +615,12 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship && ship.class.indexOf("Jem'Hadar") >= 0;
 			}
 		},
-	
-	
+
+
 	//I.R.W. Praetus :71270
-		
+
 	//I.K.S. Kronos One :71269
-	
+
 	//U.S.S. Defiant :71268
 		//Kira Nerys
 		"captain:2030":{
@@ -683,20 +683,20 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}
 		},
-		
-		
+
+
 	//Red Shirt Crew
 		"crew:3091":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}
 		},
-		
-		
+
+
 	//IKS Ch'tang :OP2Prize
-	
+
 	//P.W.B. Aj'Rmr :OP3Prize
-	
+
 	//Koranak :71275
 		// Enhanced Weaponry
 		"weapon:3096": {
@@ -722,12 +722,12 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
-		
+
+
 	//R.I.S. Vo :71274
-	
+
 	//I.K.S. Koraga :71273
-	
+
 	//U.S.S. Excelsior :71272
 		// Styles
 		"captain:3106": {
@@ -782,8 +782,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}
 		},
-		
-		
+
+
 	//U.S.S. Sutherland :OP4Prize
 		//Data
 		"captain:2043":{
@@ -815,8 +815,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}
 		},
-		
-	
+
+
 	//I.K.S. Somraw :71448
 		// Klingon Honor
 		"talent:klingon_honor_71448": {
@@ -836,14 +836,14 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship.class == "Raptor Class";
 			}
 		},
-	
-	
+
+
 	//4th Division Battleship :71279
 		"captain:weyoun_71279": {
 			// Two crew slots, each with -1 SP if equipped with Dominion crew
 			upgradeSlots: [{/* Existing Talent Slot */} ].concat( cloneSlot( 2 ,
 				{
-					type: ["crew"], 
+					type: ["crew"],
 					rules: "-1 SP if Dominion",
 					intercept: {
 						ship: {
@@ -899,10 +899,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
-		
+
+
 	//I.R.W. Gal Gath'thong :71278
-	
+
 	//U.S.S. Equinox :71276
 		//Maxwell Burke
 		"captain:maxwell_burke_71276":{
@@ -945,22 +945,22 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}
 		},
-		
-		
+
+
 	//Rav Laerst :OP5Prize
 		// Cold Storage Unit
 		"tech:cold_storage_unit_op5prize": {
-			upgradeSlots: [ 
-				{ 
+			upgradeSlots: [
+				{
 					type: ["weapon"]
 				},
-				{ 
+				{
 					type: ["weapon"]
 				}
 			]
 		},
-		
-		
+
+
 	//Akorem :OP6Prize
 		//Kira Nerys
 		"captain:kira_nerys_op6prize":{
@@ -1015,8 +1015,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "federation", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}},
-		
-		
+
+
 	//Borg Sphere 4270 :71283
 		// Cutting Beam
 		"tech:cutting_beam_71283": {
@@ -1024,8 +1024,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return $factions.hasFaction(ship,"borg", ship, fleet);
 			}
 		},
-		
-		
+
+
 	//Nistrim Raider :71282
 		"ship:nistrim_raider_71282": {
 			upgradeSlots: [ createFirstMajeSlot() ]
@@ -1080,8 +1080,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}},
-		
-		
+
+
 	//Bioship Alpha :71281
 		// Bio-Electric Interference
 		"tech:bio_electric_interference_71281": {
@@ -1137,8 +1137,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return $factions.hasFaction(ship,"species-8472", ship, fleet);
 			}
 		},
-		
-		
+
+
 	//U.S.S. Voyager :71280
 		//Chakotay
 		"captain:chakotay_71280":{
@@ -1201,15 +1201,15 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship.name == "U.S.S. Voyager";
 			}
 		},
-		
-		
+
+
 	//Red Alert Talent
 		"talent:red_alert_opwebparticipation":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}},
-			
-			
+
+
 	//Tholia One :OPWebPrize
 		//Loskene
 		"captain:Loskene":{
@@ -1234,15 +1234,15 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}},
-		
-	
+
+
 	//Full Alert Talent
 		"talent:full_alert_oparenaprize":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}},
-	
-	
+
+
 	//S'Gorn :OPArenaPrize
 		//Gorn Commander
 		"captain:gorn_commander_oparenaprize":{
@@ -1269,8 +1269,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}},
-		
-		
+
+
 	//D'Kyr :71446
 		// Tavek
 		"captain:tavek_71446": {
@@ -1326,8 +1326,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "federation", ship, fleet ) ? 0 : 1;
 			}},
-			
-			
+
+
 	//Interceptor 5 :71445
 		//Lenaris Holem"
 		"captain:lenaris_holem_71445":{
@@ -1398,8 +1398,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
-		
+
+
 	//Tactical Cube :71444
 		"ship:tactical_cube_138_71444": {
 			intercept: {
@@ -1437,8 +1437,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return $factions.hasFaction(ship,"borg", ship, fleet);
 			}
 		},
-		
-		
+
+
 	//3rd Wing Attack Ship :3rd_wing_attack_ship
 		// First Strike
 		"talent:first_strike_3rd_wing_attack_ship": {
@@ -1451,8 +1451,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			// Only one per ship
 			canEquip: onePerShip("Ion Thrusters")
 		},
-		
-		
+
+
 	//Gavroche :gavroche
 		//Michael Eddington
 		"captain:michael_eddington_gavroche":{
@@ -1469,8 +1469,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			},
-			upgradeSlots: [ 
-				{ 
+			upgradeSlots: [
+				{
 					type: ["weapon"]
 				}
 			],
@@ -1501,12 +1501,12 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}},
-		
-		
+
+
 	//I.K.S. B'Moth :i_k_s_b_moth
-	
+
 	//I.R.W. Vorta Vor :i_r_w_vorta_vor
-	
+
 	//U.S.S. Yeager :u_s_s_yaeger
 		//Benjamin Maxwell
 		"captain:benjamin_maxwell_u_s_s_yaeger":{
@@ -1533,8 +1533,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}},
-			
-			
+
+
 	//Ti'Mur :71508
 		// Vanik
 		"captain:vanik_71508": {
@@ -1587,8 +1587,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "federation", ship, fleet ) ? 0 : 1;
 			}},
-	
-	
+
+
 	//2nd Division Cruiser :71524
 		// Unnecessary Bloodshed
 		"talent:unnecessary_bloodshed_71524": {
@@ -1602,7 +1602,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship.class == "Jem'Hadar Battleship" || ship.class == "Jem'Hadar Battleship " || ship.class == "Jem'Hadar Battle Cruiser";
 			}
 		},
-	
+
 
 	//U.S.S. Enterprise (Refit) :71523
 		//Will Decker
@@ -1670,8 +1670,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}},
-	
-	
+
+
 	//Soong :71522
 		// Hugh
 		"captain:hugh_71522": {
@@ -1790,8 +1790,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
-		
+
+
 	//U.S.S. Raven :71509
 		// Magnus Hansen
 		"captain:magnus_hansen_71509": {
@@ -1834,8 +1834,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}},
-	
-	
+
+
 	//DS9 GenCon Promo
 		//Benjamin Sisko
 		"captain:benjamin_sisko_71786":{
@@ -1845,9 +1845,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		// T'Rul
 		"crew:t_rul_71786": {
-			upgradeSlots: [ 
-				{ 
-					type: ["tech"], 
+			upgradeSlots: [
+				{
+					type: ["tech"],
 				}
 			]
 		},
@@ -1857,9 +1857,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			},
 			text: "At the start of the game, place 1 non-Borg [tech] or [weapon] Upgrade with a cost of 5 or less face down beneath this card. At any time, you may discard Quark to flip the Upgrade that is beneath this card face up and deploy it to your ship, even if it exceeds your ship's restrictions.",
-			upgradeSlots: [ 
-				{ 
-					type: ["weapon","tech"], 
+			upgradeSlots: [
+				{
+					type: ["weapon","tech"],
 					rules: "Non-Borg, 5SP or less",
 					faceDown: true,
 					intercept: {
@@ -1906,9 +1906,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		// Elim Garak
 		"crew:elim_garak_71786": {
 			//talents: 1,
-			upgradeSlots: [ 
-				{ 
-					type: ["talent"], 
+			upgradeSlots: [
+				{
+					type: ["talent"],
 					rules: "No Faction Penalty",
 					intercept: {
 						ship: {
@@ -1919,8 +1919,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			],
 			factionPenalty: 0
 		},
-		
-		
+
+
 	//Assimilation Target Prime
 		"ship:u_s_s_enterprise_d_71510b": {
 			// Restore class on card text
@@ -1958,8 +1958,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
-		
+
+
 	//U.S.S. Stargazer :71510
 		// Jean-Luc Picard 6
 		"captain:jean_luc_picard_71510": {
@@ -1995,14 +1995,14 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			},
-			upgradeSlots: [ 
-				{ 
+			upgradeSlots: [
+				{
 					type: ["weapon"]
 				}
 			]
 		},
-		
-		
+
+
 	//Ni'Var :71527
 		//Kuvak
 		"captain:kuvak_71527":{
@@ -2038,7 +2038,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return $factions.hasFaction( ship, "vulcan", ship, fleet );
 			}},
 		// Combat Vessel Variant
-		"tech:combat_vessel_variant_71527": {			
+		"tech:combat_vessel_variant_71527": {
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "federation", ship, fleet ) ? 0 : 1;
 			},
@@ -2048,13 +2048,13 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			],
 			canEquip: function(upgrade,ship,fleet) {
-				
+
 				if( ship.class != "Suurok Class" )
 					return false;
-					
+
 				// Only one per ship
 				return onePerShip("Combat Vessel Variant")(upgrade,ship,fleet);
-				
+
 			},
 			intercept: {
 				ship: {
@@ -2085,8 +2085,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "federation", ship, fleet ) ? 0 : 1;
 			}},
-		
-		
+
+
 	//Enterprise NX-01 :71526
 		"ship:enterprise_nx_01_71526": {
 			upgradeSlots: [ {
@@ -2146,9 +2146,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			},
-			upgradeSlots: [ 
-				{ 
-					type: ["tech"], 
+			upgradeSlots: [
+				{
+					type: ["tech"],
 				}
 			]
 		},
@@ -2182,8 +2182,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}},
-		
-		
+
+
 	//Scout Cube 608 :71525
 		"ship:scout_608_71525": {
 			intercept: {
@@ -2261,8 +2261,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return $factions.hasFaction(ship,"borg");
 			}
 		},
-		
-		
+
+
 	//Bok's Marauder : 71646a
 		//Bok
 		"captain:bok_71646a":{
@@ -2291,8 +2291,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}},
-	
-	
+
+
 	//Prakesh :71646b
 		// Cloaking Device (Mirror)
 		"tech:cloaking_device_71646b": {
@@ -2306,13 +2306,13 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
-		
+
+
 	//Relora-Sankur :71646c
 		"ship:kazon_starship_71646c": {
 			upgradeSlots: [ createFirstMajeSlot() ]
 		},
-		
+
 		"ship:relora_sankur_71646c": {
 			upgradeSlots: [ createFirstMajeSlot() ]
 		},
@@ -2372,8 +2372,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}},
-		
-		
+
+
 	//Scout 255 :71646d
 		"ship:scout_255_71646d": {
 			intercept: {
@@ -2399,8 +2399,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
-		
+
+
 	//Tal'Kir :71646e
 		//Solok
 		"captain:solok_71646e":{
@@ -2428,8 +2428,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "federation", ship, fleet ) ? 0 : 1;
 			}},
-		
-		
+
+
 	//Avatar of Tomed :71511
 		// Hive Mind
 		"borg:hive_mind_71511": {
@@ -2441,14 +2441,14 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquipFaction: function(upgrade,ship,fleet) {
 				return ship.captain && !$factions.hasFaction(ship.captain,"borg", ship, fleet) && !$factions.hasFaction(ship,"borg", ship, fleet);
 			},
-			upgradeSlots: [ 
-				{ 
+			upgradeSlots: [
+				{
 					type: ["borg"]
 				}
 			]
 		},
-		
-		
+
+
 	//U.S.S. Enterprise-E :71531
 		//Matthew Dougherty
 		"captain:matthew_dougherty_cap_71531":{
@@ -2464,9 +2464,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			},
-			upgradeSlots: [ 
-				{/* Existing Talent Slot */}, 
-				{ 
+			upgradeSlots: [
+				{/* Existing Talent Slot */},
+				{
 					type: ["crew","tech","weapon","talent"]
 				}
 			]
@@ -2499,8 +2499,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			},
-			upgradeSlots: [ 
-				{ 
+			upgradeSlots: [
+				{
 					type: ["crew"]
 				}
 			]
@@ -2568,8 +2568,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
-		
+
+
 	//Queen Vessel Prime :71530
 		// Transwarp Signal
 		"borg:transwarp_signal_71530": {
@@ -2596,16 +2596,16 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
-		
+
+
 	//Val Jean :71528
 		// Calvin Hudson
 		"captain:calvin_hudson_71528": {
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			},
-			upgradeSlots: [ 
-				{ 
+			upgradeSlots: [
+				{
 					type: ["tech","weapon","crew"]
 				}
 			],
@@ -2625,9 +2625,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			},
-			upgradeSlots: [ 
-				{/* Existing Talent Slot */}, 
-				{ 
+			upgradeSlots: [
+				{/* Existing Talent Slot */},
+				{
 					type: ["weapon","crew"]
 				}
 			]
@@ -2676,8 +2676,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}},
-			
-			
+
+
 	//Assimilated Vessel 80279 :71512
 		"ship:korok_s_bird_of_prey_71512": {
 			// Can't join fleet with AV80279 in it
@@ -2711,14 +2711,14 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship.captain && $factions.hasFaction(ship.captain,"klingon", ship, fleet);
 			}
 		},
-		
-		
+
+
 	//Scimitar :71533
 		// Shinzon Romulan Talents
 		"talent:shinzon_romulan_talents_71533": {
-			upgradeSlots: cloneSlot( 4 , 
-				{ 
-					type: ["talent"], 
+			upgradeSlots: cloneSlot( 4 ,
+				{
+					type: ["talent"],
 					rules: "Romulan Talent Only",
 					faceDown: true,
 					intercept: {
@@ -2775,8 +2775,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
-		
+
+
 	//Chang's Bird of Prey : 71532
 		// Prototype Cloaking Device
 		"tech:prototype_cloaking_device_71532": {
@@ -2790,8 +2790,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship.captain && $factions.hasFaction(ship.captain,"klingon", ship, fleet);
 			}
 		},
-		
-		
+
+
 	//I.S.S. Defiant :71529
 		"ship:i_s_s_defiant_71529": {
 			class: "Defiant Class",
@@ -2803,29 +2803,29 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		// Miles O'Brien MU
 		"captain:miles_o_brien_71529": {
-			upgradeSlots: [ 
+			upgradeSlots: [
 				{}, // Existing talent slot
-				{ 
+				{
 					type: ["tech"]
 				}
 			]
 		},
 		// Jennifer Sisko
 		"crew:jennifer_sisko_71529": {
-			upgradeSlots: [ 
-				{ 
+			upgradeSlots: [
+				{
 					type: ["tech"]
 				}
 			]
 		},
-		
-		
+
+
 	//Tactical Cube 001 :71513a
 		// Borg Queen
 		"captain:borg_queen_71513a": {
-			upgradeSlots: [ 
+			upgradeSlots: [
 				{}, // Existing talent slot
-				{ 
+				{
 					type: ["borg"]
 				}
 			]
@@ -2847,8 +2847,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			// Only one per ship
 			canEquip: onePerShip("Interplexing Beacon")
 		},
-		
-		
+
+
 	//Assimilated Vessel 64758 :71513b
 		"ship:trager_71513b": {
 			// Can't join fleet with AV64758 in it
@@ -2883,8 +2883,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
-		
+
+
 	//Cube 112 :71792
 		// Locutus
 		"captain:locutus_71792": {
@@ -2908,8 +2908,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
-		
+
+
 	// 1st Wave Attack Fighters :71754
 		// Cover Fire
 		"squadron:cover_fire_71754": {
@@ -2936,8 +2936,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			// Only one per ship
 			canEquip: onePerShip("Galor Class Phaser Banks")
 		},
-		
-		
+
+
 	//Regent's Flagship :71535
 		"ship:regent_s_flagship_71535": {
 			class: "Negh'var Class",
@@ -2983,8 +2983,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
-		
+
+
 	//Fina Prime :71534
 		//Vidiian Commander
 		"captain:vidiian_commander_71534":{
@@ -3027,8 +3027,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}},
-			
-			
+
+
 	//I.K.S. Pagh :71996
 		// William T. Riker (Pagh)
 		"crew:william_t_riker_71996": {
@@ -3053,8 +3053,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			// Only one per ship
 			canEquip: onePerShip("Phaser Array Retrofit")
 		},
-		
-		
+
+
 	//Alpha Hunter :71808
 		//Alpha Hirogen
 		"captain:alpha_hirogen_71808":{
@@ -3128,14 +3128,14 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			},
-			upgradeSlots: [ 
-				{ 
+			upgradeSlots: [
+				{
 					type: ["weapon"]
 				}
 			]
 		},
-		
-		
+
+
 	//Fighter Squadron 6 :71753
 		// Defensive Maneuvers
 		"squadron:defensive_maneuvers_71753": {
@@ -3167,8 +3167,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			// Only one per ship
 			canEquip: onePerShip("Coordinated Attack")
 		},
-		
-		
+
+
 	//Prototype 01 :71536
 		// Only Gareb or Romulan Drone Pilot as Captain
 		"ship:prototype_01_71536": {
@@ -3192,9 +3192,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		// Gareb
 		"captain:gareb_71536": {
 			// Add a slot for another Captain
-			upgradeSlots: [ 
-				{ 
-					type: ["captain"], 
+			upgradeSlots: [
+				{
+					type: ["captain"],
 					rules: "Captain to place under Gareb",
 					intercept: {
 						ship: {
@@ -3235,7 +3235,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					return captain.upgradeSlots[0].occupant.skill;
 				return 0;
 			},
-			
+
 			// Set cost to chosen Captain's cost minus 3 SP
 			// TODO This should be a self intercept. Also should take into account faction penalty etc?
 			cost: function(captain,ship,fleet) {
@@ -3245,7 +3245,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 				return cost;
 			},
-			
+
 			// Equip only on a Romulan Drone Ship
 			canEquipCaptain: function(upgrade,ship,fleet) {
 				return ship.class == "Romulan Drone Ship";
@@ -3261,9 +3261,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		// Valdore
 		"captain:valdore_71536": {
-			upgradeSlots: [ 
+			upgradeSlots: [
 				{/* Talent */},
-				{ 
+				{
 					type: ["tech"]
 				}
 			]
@@ -3296,9 +3296,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"weapon:triphasic_emitter_71536": {
 			name: "Triphasic Emitters",
 			range: false,
-			upgradeSlots: [ 
-				{ 
-					type: ["weapon"], 
+			upgradeSlots: [
+				{
+					type: ["weapon"],
 					rules: "Non-Borg, 5SP or less",
 					intercept: {
 						ship: {
@@ -3309,18 +3309,18 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 								return canEquip;
 							}
 						}
-						
+
 					}
 				}
 			]
 		},
-		
-		
+
+
 	//Tholia One (Retail) :71795
 		// Tholian Assembly
 		"talent:tholian_assembly_71795": {
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return ship.class.indexOf("Tholian") >= 0 && 
+				return ship.class.indexOf("Tholian") >= 0 &&
 						ship.captain && ( ship.captain.name == "Loskene" || ship.captain.name.indexOf("Tholian") >= 0 );
 			}
 		},
@@ -3336,8 +3336,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
-		
+
+
 	//I.R.W. Haakona :71794
 		// Mendak
 		"captain:mendak_cap_71794": {
@@ -3392,8 +3392,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
-		
+
+
 	//Ogla-Razik :71793
 		"ship:ogla_razik_71793": {
 			upgradeSlots: [ createFirstMajeSlot() ]
@@ -3441,8 +3441,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}},
-		
-		
+
+
 	//U.S.S. Hood :71998p
 		//Robert DeSoto
 		"captain:robert_desoto_71998p":{
@@ -3495,8 +3495,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return false;
 			}
 		},
-		
-		
+
+
 	//Reklar :71798
 		// Coded Messages
 		"talent:coded_messages_71798": {
@@ -3513,17 +3513,17 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return $factions.hasFaction( ship, "dominion", ship, fleet );
 			}
 		},
-		
-		
+
+
 	//Gornarus :71797
 		// Slar
 		"captain:slar_71797": {
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			},
-			upgradeSlots: [ 
-				{ 
-					type: ["talent"], 
+			upgradeSlots: [
+				{
+					type: ["talent"],
 					rules: "Salvage Only",
 					canEquip: function(upgrade) {
 						return upgrade.name == "Salvage";
@@ -3576,8 +3576,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
-	
+
+
 	//I.S.S. Enterprise :71796
 		// Marlena Moreau
 		"crew:marlena_moreau_71796": {
@@ -3617,8 +3617,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship.name == "I.S.S. Enterprise";
 			}
 		},
-		
-		
+
+
 	//Sakharov :71997p
 		"ship:sakharov_71997p": {
 			upgradeSlots: [
@@ -3668,8 +3668,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return $factions.hasFaction( ship, "federation", ship, fleet );
 			}
 		},
-		
-	
+
+
 	//U.S.S. Pegasus :71801
 		"ship:u_s_s_pegasus_71801": {
 			intercept: {
@@ -3750,7 +3750,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}},
-		//Dawn Velazquez 
+		//Dawn Velazquez
 		"crew:dawn_velazquez_71801":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
@@ -3766,8 +3766,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			]
 		},
-		
-	
+
+
 	//I.S.S. Avenger :71800
 		"captain:soval_71800": {
 			intercept: {
@@ -3793,8 +3793,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return $factions.hasFaction( ship, "mirror-universe", ship, fleet ) && ship.hull <= 4;
 			}
 		},
-		
-		
+
+
 	//Kyana Prime :71799
 		//Obrist
 		"captain:obrist_71799":{
@@ -3808,7 +3808,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			upgradeSlots: [
 				{}, // Existing talent slot
-				{ 
+				{
 					type: ["tech"]
 				}
 			]
@@ -3859,8 +3859,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship.class == "Krenim Weapon Ship";
 			}
 		},
-	
-	
+
+
 	//IKS Korinar :71999p
 		// TODO It's not clear whether Mauk-to'Vor should get a faction penalty or cost=3 avoids this
 		"captain:kurn_71999p": {
@@ -3897,8 +3897,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"weapon:ambush_attack_71999p": {
 			canEquip: onePerShip("Ambush Attack")
 		},
-		
-		
+
+
 	//IKS Ning'tao :71804
 		"captain:kor_71804": {
 			upgradeSlots: [
@@ -3941,8 +3941,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-	
-	
+
+
 	//Ratosha :71803
 		// Jaro Essa
 		"captain:jaro_essa_cap_71803": {
@@ -4015,8 +4015,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "federation", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}},
-		
-	
+
+
 	//USS Prometheus :71802
 		//The Doctor
 		"captain:the_doctor_71802":{
@@ -4041,18 +4041,18 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"crew:romulan_hijackers_71802": {
 			// Cannot equip if non-Romulan captain or crew
 			canEquip: function(card,ship,fleet){
-				
+
 				if( ship.captain && !$factions.hasFaction(ship.captain,"romulan", ship, fleet) )
 					return false;
-				
+
 				var canEquip = true;
 				$.each( $filter("upgradeSlots")(ship), function(i,slot) {
 					if( slot.occupant && slot.occupant.type == "crew" && !$factions.hasFaction(slot.occupant,"romulan", ship, fleet) )
 						canEquip = false;
 				});
-				
+
 				return canEquip;
-				
+
 			},
 			intercept: {
 				ship: {
@@ -4125,15 +4125,15 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship.class == "Prometheus Class";
 			},
 		},
-		
-		
+
+
 	//U.S.S. Pasteur :71807
 		// Inverse Tachyon Pulse
 		"tech:inverse_tachyon_pulse_71807": {
 			canEquip: onePerShip("Inverse Tachyon Pulse")
 		},
-		
-		
+
+
 	//Kreechta :71806
 		//Tarr
 		"captain:tarr_71806":{
@@ -4191,8 +4191,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			canEquip: onePerShip("Ferengi Probe")
 		},
-		
-		
+
+
 	//U.S.S. Dauntless :71805
 		//Arturis
 		"captain:arturis_71805": {
@@ -4278,12 +4278,12 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}},
-		
-		
+
+
 	//Q Continuum Cards :72000b
-	
+
 	//I.R.W. Terix :72000p
-		// Additional Phaser Array 
+		// Additional Phaser Array
 		"weapon:additional_phaser_array_72000p": {
 			canEquip: function(upgrade,ship,fleet) {
 				if( ship.class == "D'deridex Class" )
@@ -4303,8 +4303,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
-		
+
+
 	//I.R.W. Vrax :72010
 		// Coordinated Attack
 		"talent:coordinated_attack_72010": {
@@ -4325,8 +4325,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			canEquip: onePerShip("Bridge Officer")
 		},
-		
-		
+
+
 	//I.K.S. T'Ong :72009
 		// K'Temoc
 		"captain:k_temoc_72009": {
@@ -4402,8 +4402,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			),
 		},
-		
-		
+
+
 	//U.S.S. Thunderchild :72008
 		//Shanthi
 		"captain:shanthi_cap_72008":{
@@ -4461,8 +4461,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}},
-		
-		
+
+
 	//U.S.S. Bellerophon :72001p
 		//William Ross
 		"captain:william_ross_cap_72001p":{
@@ -4506,8 +4506,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return onePerShip("Variable Geometry Pylons")(card,ship,fleet);
 			}
 		},
-		
-		
+
+
 	//Quark's Treasure :72013
 		"ship:quark_s_treasure_72013": {
 			intercept: {
@@ -4581,7 +4581,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			},
-			upgradeSlots: cloneSlot( 2, 
+			upgradeSlots: cloneSlot( 2,
 				{
 					type: ["crew","tech"],
 					rules: "Combined cost 4SP or less",
@@ -4594,7 +4594,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						});
 						return otherSlotCost + valueOf(card,"cost",ship,fleet) <= 4;
 					},
-				} 
+				}
 			),
 			canEquip: function(card,ship,fleet) {
 				if( !hasFaction(ship, "ferengi", ship, fleet) )
@@ -4609,8 +4609,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			canEquip: onePerShip("Inversion Wave")
 		},
-		
-		
+
+
 	//Bioship Beta :72012
 		// Biological Weapon
 		"weapon:biological_weapon_72012": {
@@ -4659,8 +4659,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			},
 		},
-		
-		
+
+
 	//U.S.S. Phoenix :72011
 		//Haden
 		"captain:haden_cap_72011":{
@@ -4730,7 +4730,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 		},
 
-		
+
 	//U.S.S. Intrepid :72002p
 		//Matt Decker
 		"captain:matt_decker_cap_72002p":{
@@ -4788,8 +4788,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return onePerShip("Astrogator")(card,ship,fleet);
 			},
 		},
-		
-		
+
+
 	//R.I.S. Talvath :72016
 		"captain:telek_r_mor_72016": {
 			upgradeSlots: [
@@ -4849,8 +4849,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship && ship.class == "Romulan Science Vessel";
 			}
 		},
-		
-		
+
+
 	//I.K.S. Rotarran :72015
 		"captain:martok_72015": {
 			intercept: {
@@ -4890,8 +4890,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
-		
+
+
 	//Delta Flyer :72014
 		//Tom Paris
 		"captain:tom_paris_72014":{
@@ -5014,8 +5014,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
-		
+
+
 	//U.S.S. Hathaway :71201
 		//William T. Riker
 		"captain:william_t_riker_71201":{
@@ -5033,9 +5033,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			},
 			//text: "place up to 3 federation tech Upgrades, each 4 SP or less, face down under this card",
-			upgradeSlots: cloneSlot( 3 , 
-				{ 
-					type: ["tech"], 
+			upgradeSlots: cloneSlot( 3 ,
+				{
+					type: ["tech"],
 					rules: "FEDERATION TECH UPGRADES, 4SP OR LESS",
 					faceDown: true,
 					intercept: {
@@ -5053,7 +5053,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			),
 			//factionPenalty: 0
-		},	
+		},
 		//Worf
 		"crew:worf_71201":{
 			factionPenalty: function(upgrade, ship, fleet) {
@@ -5072,7 +5072,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						fn: function(upgrade,ship,fleet,cost) {
 							if( upgrade.type == "tech" ) {
 								cost = resolve(upgrade,ship,fleet,cost);
-								
+
 									cost -= 1;
 							}
 							return cost;
@@ -5100,8 +5100,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}},
-		
-		
+
+
 	//Halik Raider :71192
 		//Surat
 		"captain:surat_Halik":{
@@ -5120,7 +5120,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			canEquip: function(upgrade,ship,fleet) {
 				return onePerShip("Kazon Gurad")(upgrade,ship,fleet);
-			}},	
+			}},
 		//Photonic Charges
 		"weapon:photonic_charges_Halik":{
 			factionPenalty: function(upgrade, ship, fleet) {
@@ -5162,16 +5162,16 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					}
 				}
 			},
-			upgradeSlots: [  
-				{ 
+			upgradeSlots: [
+				{
 					type: function(upgrade,ship) {
 						return getSlotType(upgrade,ship);
 					}
 				}
 			],
-		},	
-		
-		
+		},
+
+
 	//Scorpion 4 :71203
 		// Cover Fire - one per ship only
 		"squadron:cover_fire_71203": {
@@ -5191,14 +5191,14 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return onePerShip("Support Ship")(upgrade,ship,fleet);
 			}
 		},
-		
-		
+
+
 	//I.R.W. Belak :blind_belak
 		// Lovok
 		"captain:lovok_blind_belak": {
-			upgradeSlots: [ 
-				{ 
-					type: ["talent"], 
+			upgradeSlots: [
+				{
+					type: ["talent"],
 					rules: "Tal Shiar Only",
 					canEquip: function(card) {
 						return card.name == "Tal Shiar";
@@ -5212,8 +5212,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return hasFaction(ship.captain,"romulan", ship, fleet);
 			}
 		},
-		
-		
+
+
 	// BIOSHIP OMEGA :blind_bioship
 		"captain:bioship_omega_pilot_blind_bioship": {
 			canEquipCaptain: function(card,ship,fleet) {
@@ -5246,8 +5246,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return onePerShip("Resistant Hull")(card,ship,fleet);
 			}
 		},
-		
-		
+
+
 		//ALDARA :blind_aldara
 		"weapon:aft_weapons_array_blind_aldara": {
 			canEquip: onePerShip("Aft Weapons Array"),
@@ -5273,8 +5273,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			},
 		},
-		
-		
+
+
 	//U.S.S. Lakota :blind_lakota
 		//Erika Benteen
 		"captain:erika_benteen_blind_lakota":{
@@ -5316,14 +5316,14 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			},
 		},
-		
-		
+
+
 	//I.K.S. Toh'Kaht :blind_tohkaht
 		// Reactor Core
 		"tech:reactor_core_blind_tohkaht": {
 			canEquip: onePerShip("Reactor Core")
 		},
-		
+
 	//I.K.S. Buruk :blind_buruk
 		// Reactor Core
 		"tech:targeting_systems_blind_buruk": {
@@ -5341,8 +5341,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			},
 		},
-		
-		
+
+
 	//Interceptor 8 :blind_interceptor8
 		//Shakaar Edon
 		"captain:shakaar_edon_blind_interceptor8":{
@@ -5393,8 +5393,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return onePerShip("Navigational Sensors")(card,ship,fleet);
 			},
 		},
-		
-		
+
+
 	//Nistrim-Culluh :blind_nistrim_culluh
 		"ship:nistrim_culluh_blind_nistrim_culluh": {
 			upgradeSlots: [ createFirstMajeSlot() ]
@@ -5426,8 +5426,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return hasFaction(ship,"kazon", ship, fleet);
 			}
 		},
-		
-		
+
+
 	//Seleya :blind_seleya
 		//Tavin
 		"captain:tavin_blind_seleya":{
@@ -5468,8 +5468,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return onePerShip("Power Distribution Net")(card,ship,fleet);
 			},
 		},
-		
-		
+
+
 	//Nunk's Marauder :blind_nunks_marauder
 		//Nunk
 		"captain:nunk_blind_nunks_marauder":{
@@ -5497,8 +5497,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}},
-		
-		
+
+
 	//Robinson :71213
 		//Benjamin Sisko
 		"captain:benjamin_sisko_71213":{
@@ -5535,8 +5535,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}},
-		
-		
+
+
 	//Dreadnought(old) :71212
 		// Counter Measures - one per ship only, +5 SP on any ship except ATR-4107
 		"tech:counter_measures_71212": {
@@ -5551,8 +5551,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		// Maintenance Crew
 		"question:maintenance_crew_71212": {
-			upgradeSlots: [  
-				{ 
+			upgradeSlots: [
+				{
 					type: function(upgrade,ship) {
 						return getSlotType(upgrade,ship);
 					}
@@ -5565,8 +5565,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return onePerShip("Maintenance Crew")(upgrade,ship,fleet);
 			}
 		},
-		
-		
+
+
 	//Denorious :71211
 		//AKOREM LAAN
 		"captain:akorem_laan_denorious":{
@@ -5574,15 +5574,15 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship && $factions.hasFaction( ship, "federation", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			},
 			//text: "place up to 3 federation tech Upgrades, each 4 SP or less, face down under this card",
-			upgradeSlots: cloneSlot( 2 , 
-				{ 
-					type: ["talent"], 
+			upgradeSlots: cloneSlot( 2 ,
+				{
+					type: ["talent"],
 					rules: "Bajoran upgrades",
 					faceDown: true,
 					intercept: {
 						ship: {
-							
-							
+
+
 							canEquip: function(card,ship,fleet,canEquip) {
 								//console.log(!$factions.hasFaction( card, "federation", ship, fleet ), valueOf(card,"cost",ship,fleet) > 4 )
 								if( $factions.hasFaction( card, "bajoran", ship, fleet ) )
@@ -5606,7 +5606,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				//console.log(factions.hasFaction(ship,"bajoran", ship, fleet))
 				return (ship.captain && $factions.hasFaction(ship.captain,"bajoran", ship, fleet)) && $factions.hasFaction(ship,"bajoran", ship, fleet);
 			}
-		},	
+		},
 		//D'Jarras
 		"talent:djarras_denorious": {
 			canEquipFaction: function(upgrade,ship,fleet) {
@@ -5633,19 +5633,19 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return onePerShip("MAINSAILS")(upgrade,ship,fleet);
 			},
 			canEquipFaction: function(upgrade,ship,fleet) {
-				
+
 				return ( ship && ship.class == "BAJORAN SOLAR SAILOR" );
 			}
 		},
 		//SOLAR SAIL POWERED
 		"tech:solar_sail_powered_denorious": {
 			canEquipFaction: function(upgrade,ship,fleet) {
-				
+
 				return ( ship && ship.class == "BAJORAN SOLAR SAILOR" );
 			}
-		},	
-		
-		
+		},
+
+
 	//Diaspora :72003p
 		//Insectoid Commander
 		"captain:insectoid_commander_72003p":{
@@ -5685,7 +5685,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return onePerShip("Phase Deflector Pulse")(card,ship,fleet);
 			},
 		},
-		
+
 	//Azati Prime :72004p
 		//Kiaphet Amman'sor
 		"captain:kiaphet_amman_sor_72004p":{
@@ -5715,8 +5715,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1;
 			}},
-		
-		
+
+
 	//Xindus :72224p
 		//Kolo
 		"captain:kolo_xindus":{
@@ -5749,8 +5749,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1;
 			}},
-		
-		
+
+
 	// Temporal Cold War Cards
 		// Vosk - talents have no faction penalty
 		"captain:temporal_cold_war_vosk": {
@@ -5772,8 +5772,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
-	
+
+
 	//R.I.S. Pi :71222
 		// Distress Signal - one per ship only
 		"tech:distress_signal_pi": {
@@ -5793,8 +5793,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return onePerShip("Self Destruct Sequence")(upgrade,ship,fleet);
 			}
 		},
-		
-		
+
+
 	//U.S.S. Valiant :71221
 		//Tim Watters
 		"captain:tim_watters_valiant" : {
@@ -5835,8 +5835,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}},
-			
-			
+
+
 	//Kumari :71223
 		//THY'LEK SHRAN
 		"captain:thylek_shran_kumari:":{
@@ -5873,8 +5873,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}},
-		
-		
+
+
 	//Weapon Zero :71225
 		//Dolim
 		"captain:dolim_weapon_zero":{
@@ -5926,8 +5926,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ( ship && ship.class == "Xindi Weapon" );
 			}
 		},
-		
-				
+
+
 	//I.R.W. T'Met :72221p
 		// TODO add a talent slot somehow or a way to add a talent card without the slot
 		"captain:tebok_tmet": {
@@ -5936,20 +5936,20 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				ship: {
 					cost: function(upgrade,ship,fleet,cost) {
-						
+
 						var candidate = false;
 						var candCost = 0;
 						var romulanCount = 0;
-						
+
 						// Find if there are two romulan ships in the fleet
 						$.each( fleet.ships, function(i, ship) {
 							if ( $factions.hasFaction(ship,"romulan",ship,fleet) )
 								romulanCount += 1;
 						});
-						
+
 						if (romulanCount < 2)
 							return cost;
-						
+
 						// Find a talent on the ship
 						$.each( $filter("upgradeSlots")(ship), function(i, slot) {
 							if( slot.occupant && slot.occupant != upgrade && slot.occupant.type == "talent" && $factions.hasFaction(slot.occupant,"romulan",ship,fleet) ) {
@@ -5962,10 +5962,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 								}
 							}
 						});
-						
+
 						// Subtract 1 from Tebok's cost
 						return candCost > 0 ? cost - 1 : cost;
-						
+
 					}
 				}
 			}
@@ -5985,8 +5985,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return $factions.hasFaction( ship, "romulan", ship, fleet );
 			}
 		},
-		
-		
+
+
 	//I.K.S. Amar :72232
 		// Stand By Torpedoes - one per ship only
 		"weapon:stand_by_torpedoes_amar": {
@@ -6023,8 +6023,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return onePerShip("Klingon Navigator")(upgrade,ship,fleet);
 			}
 		},
-		
-		
+
+
 	// I.R.W. Jazkal :72233
 	// Prototype Cloaking Device - +5 SP for any non-Romulan ship, one per ship only
 		"tech:prototype_cloaking_device_jazkel": {
@@ -6044,8 +6044,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		// Nijil
 		"crew:nijil_jazkal": {
 			//text: "Add 1 [tech] Upgrade to your Upgrade Bar. That Upgrade costs -1 SP (min 1) and must be a Romulan [tech] Upgrade.",
-			upgradeSlots: cloneSlot( 1 , 
-				{ 
+			upgradeSlots: cloneSlot( 1 ,
+				{
 					type: ["tech"],
 					intercept: {
 						ship: {
@@ -6083,15 +6083,15 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					}
 			}
 			},
-		},	
+		},
 		// Disruptor Banks - one per ship only
 		"weapon:distuptor_banks_jazkel": {
 			canEquip: function(upgrade,ship,fleet) {
 				return onePerShip("Disruptor Banks")(upgrade,ship,fleet);
 			}
 		},
-		
-	
+
+
 	//U.S.S. Montgolfier :72231
 		//Orfil Quinteros
 		"captain:orfil_quinteros_montgolfier":{
@@ -6123,8 +6123,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}},
-		
-		
+
+
 	//U.S.S. Constellation :72234p
 		//Matt Decker
 		"captain:matt_decker_constellation":{
@@ -6167,8 +6167,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquip: function(upgrade,ship,fleet) {
 				return onePerShip("Automated Distress Beacon")(upgrade,ship,fleet);
 			}},
-			
-			
+
+
 	//U.S.S. Reliant :72235p
 		//Khan Singh
 		"captain:the_classic_movies_khan_singh":{
@@ -6187,8 +6187,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			//text: "Up to 3 of the Upgrades you purchase for your ship cost exactly 4 SP each and are placed face down beside your Ship Card, the printed cost on those Upgrades cannot be greater than 6",
 			// TODO not very sophisticated
-			upgradeSlots: [{/* Existing Talent Slot */} ].concat(cloneSlot( 3 , 
-				{ 
+			upgradeSlots: [{/* Existing Talent Slot */} ].concat(cloneSlot( 3 ,
+				{
 					type: upgradeTypes,
 					faceDown: true,
 					intercept: {
@@ -6225,14 +6225,14 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}},
-		
-		
+
+
 	//.K.S. Drovana :72241
 		// Kurn
 		"captain:kurn_72241": {
-			upgradeSlots: [ 
-				{ 
-					type: ["talent"], 
+			upgradeSlots: [
+				{
+					type: ["talent"],
 					rules: "Klingon only",
 					canEquip: function(card,ship,fleet,canEquip) {
 						return $factions.hasFaction( card, "klingon", ship, fleet );
@@ -6258,8 +6258,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
-			
+
+
 	//.R.W. Algeron :72242
 		// Command Pod
 		"talent:command_pod_72242": {
@@ -6279,8 +6279,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return onePerShip("Impulse Drive")(upgrade,ship,fleet);
 			}
 		},
-		
-		
+
+
 	// Borg Cube with Sphere Port 72255
 		// I Am The Borg
 		"talent:i_am_the_borg_72255": {
@@ -6306,16 +6306,16 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship.hull <= 7;
 			},
 			intercept: {
-			  ship: {
-				cost: function(card, ship, fleet, cost) {
-				  var modifier = 0;
-
-				  if (card == ship && ship.class == "Borg Sphere") modifier = 15;
-				  else if (ship) modifier = 10;
-
-				  return cost - modifier;
+				ship: {
+					cost: function(card, ship, fleet, cost) {
+						var modifier = 0;
+						if (card.type == "ship" && ship.class == "Borg Sphere")
+							modifier = 15;
+						else if (card.type == "ship")
+							modifier = 10;
+						return cost - modifier;
+					}
 				}
-			  }
 			}
 		},
 		// Temporal Vortex
@@ -6325,8 +6325,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return $factions.hasFaction( ship, "borg", ship, fleet );
 			}
 		},
-		
-		
+
+
 	//Kruge's Bird-of-Prey :72236p
 		// Kruge
 		"captain:the_classic_movies_kruge" : {
@@ -6336,7 +6336,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					],
 
 				},
-	
+
 	//H.M.S. Bounty :72260p
 		//James T. Kirk
 		"captain:james_t_kirk_bounty": {
@@ -6369,8 +6369,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			},
-			upgradeSlots: [ 
-				{ 
+			upgradeSlots: [
+				{
 					type: ["tech", "weapon"]
 				}
 			]
@@ -6380,8 +6380,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}},
-	
-		
+
+
 	//U.S.S. Enterprise-A :72260gp
 		//James T. Kirk
 		"captain:james_t_kirk_enterprise_a":{
@@ -6403,8 +6403,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			},
-			upgradeSlots: [ 
-				{ 
+			upgradeSlots: [
+				{
 					type: ["weapon"],
 					rules: "Photon Torpedoes Only",
 					canEquip: function(upgrade) {
@@ -6418,8 +6418,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}},
-		
-		
+
+
 	//U.S.S. Venture :72253
 		//Donald Varley
 		"captain:donald_varley_venture":{
@@ -6468,14 +6468,14 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				//console.log($.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0);
 				return $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0;
 			},
-			upgradeSlots: [  
-				{ 
+			upgradeSlots: [
+				{
 					type: ["tech"]
 				}
 			]
 		},
-		
-		
+
+
 	//U.S.S. Cairo :72261p
 		//Edward Jellico
 		"captain:edward_jellico_cairo":{
@@ -6506,8 +6506,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				//console.log($.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0);
 				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0;
 			},
-			upgradeSlots: [  
-				{ 
+			upgradeSlots: [
+				{
 					type: function(upgrade,ship) {
 						return getSlotType(upgrade,ship);
 					}
@@ -6517,8 +6517,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return onePerShip("Delta Shift")(upgrade,ship,fleet);
 			}
 		},
-		
-	
+
+
 	//U.S.S Enterprise-B :72263
 		//John Harriman
 		"captain:john_harriman_enterprise_b":{
@@ -6567,7 +6567,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}},
-		
+
 
 	//I.R.W. Rateg :72262p
 		// Control Central
@@ -6576,19 +6576,19 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return onePerShip("Control Central")(upgrade,ship,fleet);
 			}
 		},
-		// Main Batteries 
+		// Main Batteries
 		"weapon:main_batteries_rateg": {
 			canEquip: function(upgrade,ship,fleet) {
 				return onePerShip("Main Batteries")(upgrade,ship,fleet);
 			},
-			upgradeSlots: [  
-				{ 
+			upgradeSlots: [
+				{
 					type: ["weapon"]
 				}
 			]
 		},
-		
-		
+
+
 	//Kohlar’s Battle Cruiser :72270p
 		//Kohlar
 		"captain:kohlar_kohlars_battle_cruiser":{
@@ -6601,7 +6601,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
+
 	//Orassin :72273
 		//Insectoid Councilor
 		"captain:insectoid_councilor_orassin":{
@@ -6616,7 +6616,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			// -2 SP if equipped with Xindi weapon
 			upgradeSlots: [{/* Existing Talent Slot */} ].concat( cloneSlot( 1 ,
 				{
-					type: ["weapon"], 
+					type: ["weapon"],
 					rules: "-2 SP if Xindi",
 					intercept: {
 						ship: {
@@ -6677,8 +6677,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquip: function(upgrade,ship,fleet) {
 				return $factions.hasFaction(ship,"xindi", ship, fleet) && onePerShip("Hatchery");
 			},
-			upgradeSlots: [  
-				{ 
+			upgradeSlots: [
+				{
 					type: ["crew"],
 					source: "Face-down Xindi (free)",
 					intercept: {
@@ -6695,14 +6695,14 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						}
 					}
 				},
-				{ 
+				{
 					type: ["crew"]
 				}
 			]},
-		
-		
+
+
 	//I.K.S. Bortas :72280p
-	
+
 	//I.K.S. Hegh'ta :72281p
 		// Auxiliary Power to Shields - I.K.S. Hegh'ta
 		"tech:auxiliary_power_to_shields_72281p": {
@@ -6718,7 +6718,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			rules: "Only one per ship",
 			canEquip: onePerShip("Course Change")
 		},
-		
+
 	//I.K.S. Toral :72282p
 		//Lursa and B'Etor crew
 		"crew:lursa_crew_72282p": {
@@ -6764,7 +6764,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			rules: "Only one per ship",
 			canEquip: onePerShip("Aft Shields")
 		},
-		
+
 	//Sela's Warbird :72282gp
 		//Movar
 		"captain:movar_72282gp":{},
@@ -6777,8 +6777,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"tech:tachyon_pulse_72282gp":{
 			rules: "Only one per ship",
 			canEquip: onePerShip("Tachyon Pulse")},
-		
-		
+
+
 	//Calindra :72281
 		//Aquatic Councilor
 		"captain:aquatic_councilor_72281":{
@@ -6857,8 +6857,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquipFaction: function(upgrade,ship,fleet) {
 				return ship.captain &&  $factions.hasFaction(ship,"xindi", ship, fleet) &&  $factions.hasFaction(ship.captain,"xindi", ship, fleet);
 		}},
-		
-		
+
+
 	//Yesterdays U.S.S. Enterprise-D
 		// Jean-Luc Picard - Enterprise-D
 		"captain:jean_luc_picard_enterprise_72284p": {
@@ -6875,19 +6875,16 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
+
 		"captain:jean_luc_picard_enterprise_72284p": {
 			intercept: {
-				self: {
-					cost: function(upgrade,ship,fleet,cost) {
-						modifier = 0;
-						
-						if ( ship )
+				ship: {
+					cost: function(card,ship,fleet,cost) {
+						var modifier = 0;
+						if ( card.type == "ship" )
 							modifier += 2;
-						
 						if ( modifier > 5)
 							modifier = 5;
-						
 						return cost - modifier;
 					}
 				}
@@ -6940,17 +6937,17 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			},
-			upgradeSlots: [ 
-				{ 
+			upgradeSlots: [
+				{
 					type: ["weapon"]
 				},
-				{ 
+				{
 					type: ["weapon"]
 				}
 			]
 		},
-		
-	
+
+
 	//Muratas :72293
 		//Degra
 		"captain:degra_muratas":{
@@ -7026,8 +7023,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1;
 			},
-			upgradeSlots: [ 
-				{ 
+			upgradeSlots: [
+				{
 					type: ["weapon"]
 				}
 			],
@@ -7051,16 +7048,16 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship.class == "Xindi Reptilian Warship";
 			}
 		},
-		
-		
+
+
 	//U.S.S. Defiant NCC-1764 :72290p
 		//Aft Photon Torpedoes
 		"weapon:aft_Photon_torpedoes_72290p":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}},
-			
-			
+
+
 	//Delta Flyer II :72300p
 		//Tom Paris
 		"captain:tom_paris_72300p":{
@@ -7089,8 +7086,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}},
-		
-		
+
+
 	//U.S.S. Grissom :72011wp
 		//J.T. Esteban
 		"captain:jt_esteban_72001p":{
@@ -7122,8 +7119,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			},
-			upgradeSlots: [ 
-				{ 
+			upgradeSlots: [
+				{
 					type: ["crew"]
 				}
 			],
@@ -7143,9 +7140,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			name: "Genesis Effect",
 			range: false,
-			upgradeSlots: [ 
-				{ 
-					type: ["crew"], 
+			upgradeSlots: [
+				{
+					type: ["crew"],
 					rules: "Crew, 5SP or less",
 					intercept: {
 						ship: {
@@ -7156,7 +7153,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 								return canEquip;
 							}
 						}
-						
+
 					}
 				}
 			]
@@ -7176,14 +7173,14 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
-		
+
+
 	//I.K.S. Ves Batlh :72012wp
 		//DNA Encoded Message
 		"talent:dna_encoding_72012wp":{
-			upgradeSlots: cloneSlot( 3 , 
-				{ 
-					type: ["talent"], 
+			upgradeSlots: cloneSlot( 3 ,
+				{
+					type: ["talent"],
 					rules: "Klingon Talent Only",
 					faceDown: true,
 					intercept: {
@@ -7202,8 +7199,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		//Goroth
 		"crew:goroth_72012wp":{
-			upgradeSlots: [ 
-				{ 
+			upgradeSlots: [
+				{
 					type: ["crew"]
 				}
 			]
@@ -7223,8 +7220,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}},
-		
-		
+
+
 	//Dreadnought :72013wp
 		//Captured
 		"question:captured_72013wp": {
@@ -7232,8 +7229,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0;
 			},
 			canEquip: onePerShip("Captured"),
-			upgradeSlots: [  
-				{ 
+			upgradeSlots: [
+				{
 					type: function(upgrade,ship) {
 						return getSlotType(upgrade,ship);
 					}
@@ -7263,7 +7260,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"tech:shield_adaptation_72013wp":{
 			//Hull is equal or greater then 4, needs to work with fleet commander
 		},
-		
+
 	//Prototype 02 :72014wp
 		"ship:prototype_02_72014wp": {
 			intercept: {
@@ -7294,9 +7291,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"weapon:triphasic_emitters_72014wp": {
 			name: "Triphasic Emitters",
 			range: false,
-			upgradeSlots: [ 
-				{ 
-					type: ["weapon"], 
+			upgradeSlots: [
+				{
+					type: ["weapon"],
 					rules: "Non-Borg, 5SP or less",
 					intercept: {
 						ship: {
@@ -7307,7 +7304,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 								return canEquip;
 							}
 						}
-						
+
 					}
 				}
 			]
@@ -7337,8 +7334,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			canEquip: onePerShip("Disguise Protocol")
 		},
-		
-		
+
+
 	//2017 Core Set
 		//Picard
 		"captain:picard_2017core":{
@@ -7409,8 +7406,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			},
 			canEquip: onePerShip("Tactical Station"),
-			upgradeSlots: [ 
-				{ 
+			upgradeSlots: [
+				{
 					type: ["weapon"]
 				}
 			]
@@ -7476,7 +7473,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}},
-		
+
 	//2017 Romulan Faction Ser
 		//Tomalak
 		"captain:tomalak_75001":{
@@ -7491,7 +7488,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"talent:tal_shiar_75001":{
 			canEquipFaction: function(upgrade,ship,fleet) {
 				return ship.captain && $factions.hasFaction(ship.captain,"romulan", ship, fleet);
-			}			
+			}
 		},
 		//Interphase Generator
 		"tech:IPG_75001":{
@@ -7523,8 +7520,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquip: function(upgrade,ship,fleet) {
 				return (onePerShip("Additional Weapons Array") && ship.class == "D'deridex Class");
 			}},
-			
-			
+
+
 	//2017 Dominion Faction Set
 		//All Power to Weapons
 		"talent:all_power_to_weapons_75002":{
@@ -7540,8 +7537,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		//Duran'Adar
 		"crew:duranadar_75002":{
-			upgradeSlots: [ 
-				{ 
+			upgradeSlots: [
+				{
 					type: ["tech"]
 				}
 			]
@@ -7570,7 +7567,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return $factions.hasFaction(ship,"dominion", ship, fleet);
 			}
 		},
-		
+
 	//D'Kora Card Pack
 		//Lurin
 		"captain:lurin_75003":{
@@ -7591,7 +7588,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		"captain:daimon_goss_73001":{			
+		"captain:daimon_goss_73001":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}},
@@ -7647,8 +7644,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}},
 		//Neonatal Borg
 		"crew:neonatal_borg_73002":{
-			upgradeSlots: [ 
-				{ 
+			upgradeSlots: [
+				{
 					type: ["crew"]
 				}
 			],
@@ -7686,7 +7683,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}},
-			
+
 	//Ferengi Faction Pack: 75003
 		//Birta
 		"captain:birta_75003":{
@@ -7704,11 +7701,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			},
-			upgradeSlots: [ 
+			upgradeSlots: [
 				{
 					type: ["talent"]
 				}, {
-					type: ["crew"], 
+					type: ["crew"],
 					rules: "Cost of 3sp or less",
 					intercept: {
 						ship: {
@@ -7721,7 +7718,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 								return false;
 				}}}},
 				{
-					type: ["crew"], 
+					type: ["crew"],
 					rules: "Cost of 3sp or less",
 					intercept: {
 						ship: {
@@ -7740,15 +7737,15 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			},
-			upgradeSlots: [ 
-				{ 
-					type: ["talent"], 
+			upgradeSlots: [
+				{
+					type: ["talent"],
 					rules: "Grand Nagus Only",
 					canEquip: function(upgrade) {
 						return upgrade.name == "Grand Nagus";
 					}
-				},{ 
-					type: ["talent"], 
+				},{
+					type: ["talent"],
 					rules: "The Rules of Acquisition Only",
 					canEquip: function(upgrade) {
 						return upgrade.name == "The Rules Of Acquisition";
@@ -7761,15 +7758,15 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			},
-			upgradeSlots: [ 
-				{ 
-					type: ["talent"], 
+			upgradeSlots: [
+				{
+					type: ["talent"],
 					rules: "Grand Nagus Only",
 					canEquip: function(upgrade) {
 						return upgrade.name == "Grand Nagus";
 					}
-				},{ 
-					type: ["talent"], 
+				},{
+					type: ["talent"],
 					rules: "The Rules of Acquisition Only",
 					canEquip: function(upgrade) {
 						return upgrade.name == "The Rules Of Acquisition";
@@ -7790,7 +7787,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}},
-		//T9 Energy Converter	
+		//T9 Energy Converter
 		"tech:t9_energy_converter_75003":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
@@ -7921,8 +7918,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			isSlotCompatible: function(slotTypes) {
 				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0;
 			},
-			upgradeSlots: [  
-				{ 
+			upgradeSlots: [
+				{
 					type: function(upgrade,ship) {
 						return getSlotType(upgrade,ship);
 					}
@@ -7950,8 +7947,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquip: function(upgrade,ship,fleet) {
 				return ship.class == "Gorn Raider" && onePerShip("Enhanced Durability");
 			},
-			upgradeSlots: [ 
-				{ 
+			upgradeSlots: [
+				{
 					type: ["tech"]
 				}
 			],
@@ -7970,20 +7967,20 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
+
 		//4th wing patrol ship
 		"weapon:tac_command_reticle_73032":{
 			canEquip: onePerShip("Tactical Command Reticle"),
 			canEquipFaction: function(upgrade,ship,fleet) {
 				return $factions.hasFaction( ship, "dominion", ship, fleet )
 			},
-			upgradeSlots: [ 
-				{ 
+			upgradeSlots: [
+				{
 					type: ["weapon"]
 				}
 			]
 		},
-//Faction Penalty For Subfactions 		
+//Faction Penalty For Subfactions
 		//Federation
 		":":{
 			factionPenalty: function(upgrade, ship, fleet) {
@@ -8027,9 +8024,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 		},
 
-		
-	
-		
+
+
+
 
 	// RESOURCES
 		"resource:front_line_retrofit_resource": {
@@ -8039,7 +8036,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			showShipResourceSlot: function(card,ship,fleet) {
 				if( ship.resource && ship.resource.type == "ship-resource" )
 					return true;
-				
+
 				var show = true;
 				$.each( fleet.ships, function(i,ship) {
 					if( ship.resource )
@@ -8070,7 +8067,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			},
 		},
-		
+
 		//Captains Chair
 		//"ship-resource:captains_chair_ship":{
 		//	intercept: {
@@ -8090,7 +8087,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			showShipResourceSlot: function(card,ship,fleet) {
 				if( ship.resource && ship.resource.type == "ship-resource" )
 					return true;
-				
+
 				var show = true;
 				$.each( fleet.ships, function(i,ship) {
 					if( ship.resource )
@@ -8105,8 +8102,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				} );
 			}
 		},
-		
-		
+
+
 		"resource:fleet_commander": {
 			slotType: "ship-resource",
 			cost: 0,
@@ -8114,7 +8111,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			showShipResourceSlot: function(card,ship,fleet) {
 				if( ship.resource && ship.resource.type == "ship-resource" )
 					return true;
-				
+
 				var show = true;
 				$.each( fleet.ships, function(i,ship) {
 					if( ship.resource )
@@ -8129,11 +8126,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				} );
 			}
 		},
-		
+
 		//Fleet Commander (ship)
 		"ship-resource:fleet_commander_ship_shield": {
-			upgradeSlots: [ 
-				{ 
+			upgradeSlots: [
+				{
 					type: ["captain"],
 					rules: "Fleet Commander"
 				}
@@ -8154,8 +8151,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 		},
 		"ship-resource:fleet_commander_ship_hull": {
-			upgradeSlots: [ 
-				{ 
+			upgradeSlots: [
+				{
 					type: ["captain"],
 					rules: "Fleet Commander"
 				}
@@ -8182,7 +8179,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			showShipResourceSlot: function(card,ship,fleet) {
 				if( ship.resource && ship.resource.type == "fleet-captain" )
 					return true;
-				
+
 				var show = true;
 				$.each( fleet.ships, function(i,ship) {
 					if( ship.resource )
@@ -8197,7 +8194,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				} );
 			}
 		},
-		
+
 		"fleet-captain:federation_collectiveop2": {
 			// Only equip if captain matches faction
 			canEquip: function(upgrade,ship,fleet) {
@@ -8212,7 +8209,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
+
 		"fleet-captain:dominion_collectiveop2": {
 			// Only equip if ship and captain matches faction
 			canEquip: function(upgrade,ship,fleet) {
@@ -8227,7 +8224,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
+
 		"fleet-captain:romulan_collectiveop2": {
 			// Only equip if ship and captain matches faction
 			canEquip: function(upgrade,ship,fleet) {
@@ -8242,7 +8239,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
+
 		"fleet-captain:klingon_collectiveop2": {
 			// Only equip if ship and captain matches faction
 			canEquip: function(upgrade,ship,fleet) {
@@ -8257,7 +8254,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
+
 		"fleet-captain:independent_klingon_collectiveop2": {
 			// Only equip if captain unique
 			canEquip: function(upgrade,ship,fleet) {
@@ -8283,11 +8280,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						if( upgrade.type == "crew" )
 							return resolve(upgrade, ship, fleet, cost) - 1;
 						return cost;
-					},					
+					},
 				}
 			}
 		},
-		
+
 		"fleet-captain:independent_federation_collectiveop2": {
 			// Only equip if captain unique
 			canEquip: function(upgrade,ship,fleet) {
@@ -8308,11 +8305,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					},
 				},
 				fleet: {
-					
+
 				}
 			}
 		},
-		
+
 		"fleet-captain:independent_romulan_collectiveop2": {
 			// Only equip if captain unique
 			canEquip: function(upgrade,ship,fleet) {
@@ -8338,11 +8335,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						if( upgrade.type == "weapon" )
 							return resolve(upgrade, ship, fleet, cost) - 1;
 						return cost;
-					},					
+					},
 				}
 			}
 		},
-		
+
 		"fleet-captain:independent_dominion_collectiveop2": {
 			// Only equip if captain unique
 			canEquip: function(upgrade,ship,fleet) {
@@ -8368,13 +8365,13 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						if( upgrade.type == "tech" )
 							return resolve(upgrade, ship, fleet, cost) - 1;
 						return cost;
-					},					
+					},
 				}
 			}
 		},
-		
+
 		"resource:officer_exchange_program_71996a": {
-			
+
 			upgradeSlots: [
 				{
 					type: ["faction"],
@@ -8385,59 +8382,59 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					source: "Select Factions for Officer Exchange Program",
 				}
 			],
-			
+
 			intercept: {
 				fleet: {
 					// Zero faction penalty for captains, admirals and crew
 					factionPenalty: function(card,ship,fleet,factionPenalty) {
-						
+
 						var factionA = fleet.resource.upgradeSlots[0].occupant;
 						var factionB = fleet.resource.upgradeSlots[1].occupant;
-						
+
 						// Fail if user hasn't assigned two faction cards yet
 						if( !factionA || !factionB )
 							return factionPenalty;
-						
+
 						// Only apply to captains, admirals and crew
 						if( card.type != "captain" && card.type != "admiral" && card.type != "crew" )
 							return factionPenalty;
-						
+
 						// Check that the card and ship are of the chosen factions
 						if( $factions.match( card, factionA ) && $factions.match( ship, factionB ) || $factions.match( card, factionB ) && $factions.match( ship, factionA ) )
 							return 0;
-						
+
 						return factionPenalty;
-						
+
 					},
-					
+
 					// Cost -1 SP for captains and admirals
 					cost: function(card, ship, fleet, cost) {
-						
+
 						var factionA = fleet.resource.upgradeSlots[0].occupant;
 						var factionB = fleet.resource.upgradeSlots[1].occupant;
-						
+
 						// Fail if user hasn't assigned two faction cards yet
 						if( !factionA || !factionB )
 							return cost;
-						
+
 						// Only apply to captains and admirals
 						if( card.type != "captain" && card.type != "admiral" )
 							return cost;
-						
+
 						// Check that the card and ship are of the chosen factions
 						if( $factions.match( card, factionA ) && $factions.match( ship, factionB ) || $factions.match( card, factionB ) && $factions.match( ship, factionA ) )
 							return resolve(card, ship, fleet, cost) - 1;
-						
+
 						return cost;
-						
+
 					},
 				}
 			}
-			
+
 		},
-		
+
 		"resource:officer_cards_collectiveop3": {
-			
+
 			hideCost: true,
 
 			intercept: {
@@ -8450,9 +8447,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					}
 				}
 			}
-			
+
 		},
-		
+
 		"officer:first_officer_collectiveop3": {
 			skill: 4,
 			talents: 1,
@@ -8464,7 +8461,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			]
 		},
-		
+
 		"officer:tactical_officer_collectiveop3": {
 			upgradeSlots: [
 				{/* Crew slot added by loader */},
@@ -8474,7 +8471,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			]
 		},
-		
+
 		"officer:operations_officer_collectiveop3": {
 			upgradeSlots: [
 				{/* Crew slot added by loader */},
@@ -8484,7 +8481,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			]
 		},
-		
+
 		"officer:science_officer_collectiveop3": {
 			upgradeSlots: [
 				{/* Crew slot added by loader */},
@@ -8494,7 +8491,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			]
 		},
-		
+
 		// Sideboard
 		"resource:4003": {
 			class: "Sideboard",
@@ -8505,16 +8502,16 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					source: "Sideboard",
 					rules: "Combined cost 20 SP or less",
 					canEquip: function(card,ship,fleet,upgradeSlot) {
-						
+
 						var total = 0;
 						$.each( fleet.resource.upgradeSlots, function(i,slot) {
 							if( slot.occupant && slot != upgradeSlot )
 								total += valueOf(slot.occupant,"cost",ship,fleet);
 						} );
-						
+
 						var cost = valueOf(card,"cost",ship,fleet);
 						return total + cost <= 20;
-						
+
 					},
 					intercept: {
 						ship: {
@@ -8536,16 +8533,16 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					source: "Sideboard",
 					rules: "Combined cost 20 SP or less",
 					canEquip: function(card,ship,fleet,upgradeSlot) {
-						
+
 						var total = 0;
 						$.each( fleet.resource.upgradeSlots, function(i,slot) {
 							if( slot.occupant && slot != upgradeSlot )
 								total += valueOf(slot.occupant,"cost",ship,fleet);
 						} );
-						
+
 						var cost = valueOf(card,"cost",ship,fleet);
 						return total + cost <= 20;
-						
+
 					},
 					intercept: {
 						ship: {
@@ -8567,16 +8564,16 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					source: "Sideboard",
 					rules: "Combined cost 20 SP or less",
 					canEquip: function(card,ship,fleet,upgradeSlot) {
-						
+
 						var total = 0;
 						$.each( fleet.resource.upgradeSlots, function(i,slot) {
 							if( slot.occupant && slot != upgradeSlot )
 								total += valueOf(slot.occupant,"cost",ship,fleet);
 						} );
-						
+
 						var cost = valueOf(card,"cost",ship,fleet);
 						return total + cost <= 20;
-						
+
 					},
 					intercept: {
 						ship: {
@@ -8604,10 +8601,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 							if( slot.occupant && slot != upgradeSlot )
 								total += valueOf(slot.occupant,"cost",ship,fleet);
 						} );
-						
+
 						var cost = valueOf(card,"cost",ship,fleet);
 						return total + cost <= 20;
-						
+
 					},
 					intercept: {
 						ship: {
@@ -8626,7 +8623,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				},
 			]
 		},
-		
+
 		// Flagship
 		"resource:4004": {
 			slotType: "flagship",
@@ -8635,7 +8632,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			showShipResourceSlot: function(card,ship,fleet) {
 				if( ship.resource && ship.resource.type == "flagship" )
 					return true;
-				
+
 				var show = true;
 				$.each( fleet.ships, function(i,ship) {
 					if( ship.resource )
@@ -8650,7 +8647,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				} );
 			}
 		},
-		
+
 		// Romulan
 		"flagship:6001": {
 			// Only equip if ship matches faction
@@ -8658,7 +8655,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return $factions.hasFaction(ship, "romulan", ship, fleet);
 			}
 		},
-		
+
 		// Klingon
 		"flagship:6003": {
 			// Only equip if ship matches faction
@@ -8666,7 +8663,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return $factions.hasFaction(ship, "klingon", ship, fleet);
 			}
 		},
-		
+
 		// Dominion
 		"flagship:6005": {
 			// Only equip if ship matches faction
@@ -8674,7 +8671,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return $factions.hasFaction(ship, "dominion", ship, fleet);
 			}
 		},
-		
+
 		// Federation
 		"flagship:6007": {
 			// Only equip if ship matches faction
@@ -8682,7 +8679,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return $factions.hasFaction(ship, "federation", ship, fleet);
 			}
 		},
-		
+
 		// Independent (Rom)
 		"flagship:6002": {
 			intercept: {
@@ -8696,7 +8693,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
+
 		// Independent (Klingon)
 		"flagship:6004": {
 			intercept: {
@@ -8710,7 +8707,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
+
 		// Independent (Dominion)
 		"flagship:6006": {
 			intercept: {
@@ -8724,7 +8721,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
+
 		// Independent (Federation)
 		"flagship:6008": {
 			intercept: {
@@ -8738,7 +8735,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
+
 		// EMERGENCY FORCE FIELD RESOURCE
 		"resource:emergency_force_field_72001r": {
 			cost: function(card,ship,fleet) {
@@ -8751,16 +8748,16 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return Math.ceil( shields/2 );
 			}
 		},
-		
-		
+
+
 		//Improved Hull
 		"resource:the_classic_movies_improved_hull_resource":{
 
 		},
 
-		
-		
-		
+
+
+
 		// BALANCE OF TERROR
 		"talent:balance_of_terror_e_72002h": {
 			upgradeSlots: [
@@ -8788,7 +8785,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
+
 		"crew:balance_of_terror_c_72002h": {
 			upgradeSlots: [
 				{
@@ -8815,7 +8812,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
+
 		"tech:balance_of_terror_t_72002h": {
 			upgradeSlots: [
 				{
@@ -8842,7 +8839,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
+
 		"weapon:balance_of_terror_w_72002h": {
 			upgradeSlots: [
 				{
@@ -8869,7 +8866,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
+
 	//Senior Staff
 		"resource:senior_staff":{
 			hideCost: true,
@@ -8886,8 +8883,6 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		}
-		
+
 	};
 }]);
-
-
