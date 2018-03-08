@@ -7719,7 +7719,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 							factionPenalty: {
 							priority: 100,
 							fn: function(card,ship,fleet,factionPenalty) {
-								if( card.type == "talent" )
+								if( card.type == "crew" )
 									return 0;
 								return factionPenalty;
 							}
