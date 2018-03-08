@@ -1,5 +1,17 @@
 module.exports = [{
 	type: "set",
+	id: "72321r",
+	name: "Sickbay Resource",
+	releaseDate: "2018-04-02",
+	parentSet: "Turret Turmoil"
+}, {
+	type: "set",
+	id: "72321",
+	name: "OP Mission Prize",
+	releaseDate: "2018-04-03",
+	parentSet: "Turret Turmoil"
+}, {
+	type: "set",
 	id: "73032",
 	name: "Jem'Hadar Attack Ship",
 	releaseDate: "2018-03-02",

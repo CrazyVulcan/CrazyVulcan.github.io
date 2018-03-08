@@ -1,5 +1,15 @@
 module.exports = [{
 	type: "talent",
+	id: "kal_if_fee_72321",
+	set: ["72321"],
+	name: "Kal-If-Fee",
+	cost: 1,
+	text: "<b>ACTION:</b> Disable this card and target an opposing ship\n\nSelect a [crew] on this ship. The controller of the target ship selects a [crew] on that ship. Each player rolls five attack dice. Whichever player rolls fewer [crit] and/or [hit] results must discard the [crew] they selected.",
+	unique: true,
+	range:"1 - 3",
+	factions: ["vulcan"]
+},{
+	type: "talent",
 	id: "victory_is_life_73031",
 	set: ["73032"],
 	name: "Victory Is Life",
@@ -5773,7 +5783,7 @@ module.exports = [{
 }, {
 	type: "crew",
 	id: "sakonna_gavroche",
-	set: ["gavroche"],
+	set: ["gavroche", "72321"],
 	name: "Sakonna",
 	unique: true,
 	text: "Add 1 additional [weapon] Upgrade slot to your Upgrade Bar. \n\nAll of your [weapon] Upgrades with a cost of 5 or less cost -2 SP.",
