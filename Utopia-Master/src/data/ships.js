@@ -198,7 +198,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "generic_octahedron_73002",
-	set: ["73002"],
+	set: ["73002", "71530"],
 	name: "Borg Starship",
 	class: "Borg Octahedron",
 	actions: ["target-lock", "scan", "regenerate"],
@@ -4282,27 +4282,6 @@ module.exports = [{
 	text: "",
 	unique: false,
 	factions: ["federation"],
-	intercept: {
-		ship: {},
-		fleet: {}
-	},
-	squadron: false
-}, {
-	type: "ship",
-	id: "borg_starship_71530",
-	set: ["71530"],
-	name: "Borg Starship",
-	class: "Borg Octahedron",
-	actions: ["target-lock", "scan", "regenerate"],
-	upgrades: ["borg", "borg", "tech", "weapon", "crew"],
-	attack: 6,
-	agility: 0,
-	hull: 8,
-	shields: 6,
-	cost: 38,
-	text: "",
-	unique: false,
-	factions: ["borg"],
 	intercept: {
 		ship: {},
 		fleet: {}
