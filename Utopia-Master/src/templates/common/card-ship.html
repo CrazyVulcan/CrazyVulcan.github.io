@@ -37,7 +37,7 @@
 		<div class="card-corner-inner"></div>
 	</div>
 
-	<div class="card-ship-cost pull-right">{{ship|valueOf:'cost':ship:fleet}}</div>
+	<div class="card-ship-cost pull-right">{{ship.cost}}</div>
 
 	<div class="card-ship-upgrade-bar">
 		<i ng-repeat="upgrade in ship.upgrades track by $index" class="fs fs-{{upgrade.type[0]}}" ng-class="{'card-ship-upgrade-occupied': upgrade.occupant}"></i>
