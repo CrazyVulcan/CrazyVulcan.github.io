@@ -6911,7 +6911,6 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 							// If there are more than three, sort them by cost and grab the
 							// three most valuable
 							if (candidates.length > 3) {
-								console.log(candidates);
 								candidates.sort(function(a, b) {
 									return b.occupant.cost - a.occupant.cost;
 								});
