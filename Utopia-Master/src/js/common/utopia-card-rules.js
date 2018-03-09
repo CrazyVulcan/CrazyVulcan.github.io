@@ -3462,6 +3462,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		//Systems Upgrade
 		"tech:systems_upgrade_71998p": {
 			type: "question",
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			},
 			isSlotCompatible: function(slotTypes) {
 				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0;
 			},
