@@ -5760,12 +5760,16 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return factionPenalty;
 			}
 		},
+
 		// Temporal Conduit - +5 SP if fielded on a non-Mirror Universe ship
 		"tech:temporal_conduit_72224gp": {
 			intercept: {
-				ship: {
+				self: {
 					cost: function(upgrade,ship,fleet,cost) {
 						if( ship && !$factions.hasFaction(ship,"mirror-universe", ship, fleet) )
+							// Note, only add 4 since the existing faction penalty will also
+							// be in play.
+							// TODO Fix this logic to not apply the normal penalty, only 5 here
 							return resolve(upgrade,ship,fleet,cost) + 4;
 						return cost;
 					}
@@ -6888,6 +6892,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					 * In this implementation, the extra points are taken off the 3 most
 					 * expensive cards in the current ship configuration that are assigned
 					 * to the ship itself.
+					 * TODO Upgrade values only sort on base card value, fix this at some point
 					 */
 					cost: function(card,ship,fleet,cost) {
 						var modifier = 0;
@@ -6903,27 +6908,30 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 							// Grab all of the upgrades assigned to the ship
 							var occupied_slots = $filter("upgradeSlots")(ship);
 							$.each(occupied_slots, function(i, slot) {
-								if (slot.source == "ship" &&
-								    typeof slot.occupant != "undefined")
+								if (slot.occupant)
 									candidates.push(slot);
 							});
 
-							// If there are more than three, sort them by cost and grab the
-							// three most valuable
-							if (candidates.length > 3) {
-								candidates.sort(function(a, b) {
-									return b.occupant.cost - a.occupant.cost;
-								});
+							// If there are no candidates, save some time and skip out
+							if (candidates.length) {
 
-								candidates = candidates.slice(0, 3);
-							}
+								// If there are more than three, sort them by cost and grab the
+								// three most valuable
+								if (candidates.length > 3) {
+									candidates.sort(function(a, b) {
+										return b.occupant.cost - a.occupant.cost;
+									});
 
-							// Now that we know the candidate cards for discount, apply the
-							// discount if the current card is one of the candidates
-							for (var i = 0; i < candidates.length; i++) {
-								if (card.id == candidates[i].occupant.id){
-									modifier = 1;
-									break;
+									candidates = candidates.slice(0, 3);
+								}
+
+								// Now that we know the candidate cards for discount, apply the
+								// discount if the current card is one of the candidates
+								for (var i = 0; i < candidates.length; i++) {
+									if (card.id == candidates[i].occupant.id){
+										modifier = 1;
+										break;
+									}
 								}
 							}
 						}
