@@ -6907,7 +6907,6 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 								    typeof slot.occupant != "undefined")
 									candidates.push(slot);
 							});
-							console.log(candidates)
 
 							// If there are more than three, sort them by cost and grab the
 							// three most valuable

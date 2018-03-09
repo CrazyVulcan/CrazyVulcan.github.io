@@ -1,5 +1,5 @@
 [Utopia: A Fleet Builder for Star Trek Attack Wing](https://kfnexus.github.io/staw-utopia/index.html)
-=====================================================================================================
+================================================================================
 
 
 Getting Started
