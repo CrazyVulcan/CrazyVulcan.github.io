@@ -6882,9 +6882,29 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					cost: function(card,ship,fleet,cost) {
 						var modifier = 0;
 						if ( card.type == "ship" )
-							modifier += 2;
-						if ( modifier > 5)
-							modifier = 5;
+							modifier = 2;
+						else {
+							var candidates = [];
+							var occupied_slots = $filter("upgradeSlots")(ship);
+							$.each(occupied_slots, function(i, slot) {
+								if (slot.source == "ship")
+									candidates.push(slot);
+							});
+							if (candidates.length > 3) {
+								candidates.sort(function(a, b) {
+									return b.occupant.cost - a.occupant.cost;
+								});
+								candidates = candidates.slice(0, 3);
+							}
+							//console.log(candidates[0]);
+							//console.log(card)
+							for (i = 0; i < candidates.length; i++) {
+								if (card.id == candidates[i].occupant.id){
+									modifier = 1;
+									break;
+								}
+							}
+						}
 						return cost - modifier;
 					}
 				}
