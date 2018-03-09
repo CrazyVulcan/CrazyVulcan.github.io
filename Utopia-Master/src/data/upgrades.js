@@ -6,9 +6,9 @@ module.exports = [{
 	cost: 1,
 	text: "<b>ACTION:</b> Disable this card and target an opposing ship\n\nSelect a [crew] on this ship. The controller of the target ship selects a [crew] on that ship. Each player rolls five attack dice. Whichever player rolls fewer [crit] and/or [hit] results must discard the [crew] they selected.",
 	unique: true,
-	range:"1 - 3",
+	range: "1 - 3",
 	factions: ["vulcan"]
-},{
+}, {
 	type: "talent",
 	id: "victory_is_life_73031",
 	set: ["73032"],
@@ -16,9 +16,9 @@ module.exports = [{
 	cost: 6,
 	text: "<b>COMBAT PHASE:</b> Discard this card, target this ship, and target all friendly Dominion ships.\n\nPlace a [battlestations] Token beside all target ships. All target ships roll +1 attack die this game round.",
 	unique: true,
-	range:"1",
+	range: "1",
 	factions: ["dominion"]
-},{
+}, {
 	type: "tech",
 	id: "cloning_facility_73032",
 	set: ["73032"],
@@ -26,9 +26,9 @@ module.exports = [{
 	cost: 2,
 	text: "<b>ACTIVATION PHASE:</b> Target a Dominion [crew] Upgrade equipped to this ship or a friendly ship.\n\nThis card becomes a copy of the target Dominion [crew] Upgrade this game round.",
 	OnePerShip: true,
-	range:"1",
+	range: "1",
 	factions: ["dominion"]
-},{
+}, {
 	type: "tech",
 	id: "antiproton_blast_73032",
 	set: ["73032"],
@@ -36,9 +36,9 @@ module.exports = [{
 	cost: 2,
 	text: "<b>ACTIVATION PHASE:</b> Discard this card, target this ship and target all friendly ship.\n\nThe target ships can target opposing ships with a [cloak] Token beside them with a [target-lock] Action this game round.",
 	unique: false,
-	range:"1",
+	range: "1",
 	factions: ["dominion"]
-},{
+}, {
 	type: "crew",
 	id: "changeling_infiltrator_73032",
 	set: ["73032"],
@@ -46,9 +46,9 @@ module.exports = [{
 	cost: 4,
 	text: "<b>ACTIVATION PHASE:</b> Target a [crew] Upgrade Equipped to an opposing ship.\n\nThis card becomes a copy of the target [crew] Upgrade this game round.",
 	unique: true,
-	range:"1 - 2",
+	range: "1 - 2",
 	factions: ["dominion"]
-},{
+}, {
 	type: "crew",
 	id: "elim_garak_73032",
 	set: ["73032"],
@@ -57,7 +57,7 @@ module.exports = [{
 	text: "<b>WHEN ATTACKING:</b> If the defending ship shares a faction with this ship or this card:\n\n1[hit] or 1[crit] cannot be canceled.",
 	unique: true,
 	factions: ["dominion"]
-},{
+}, {
 	type: "crew",
 	id: "seskal_73032",
 	set: ["73032"],
@@ -66,7 +66,7 @@ module.exports = [{
 	text: "<b>COMBAT PHASE:</b> If all this ships Shields have been destroyed, disable this card.\n\nThis ship rolls +2 attack dice this game round.",
 	unique: true,
 	factions: ["dominion"]
-},{
+}, {
 	type: "weapon",
 	id: "tac_command_reticle_73032",
 	set: ["73032"],
@@ -76,16 +76,16 @@ module.exports = [{
 	OnePerShip: true,
 	shipDominion: true,
 	factions: ["dominion"]
-},{
+}, {
 	type: "talent",
 	id: "gorn_hegemony_73031",
 	set: ["73031"],
 	name: "Gorn Hegemony",
 	cost: 4,
 	text: "This card may only be equipped to S'Sesslak or a Gorn Captain.\n-----------------------------------\n<b>ACTION:</b> Discard this card and treat the Captain Skill of the Captain equipped to this ship as 0 this game round.\nThis ship may make 2 attacks instead of 1 this game round.\n(<i>Gorn Raider Only</i>)",
-	shipLimit:true,
+	shipLimit: true,
 	factions: ["independent"]
-},  {
+}, {
 	type: "question",
 	id: "meridor_gorn_ale_73031",
 	set: ["73031"],
@@ -95,7 +95,7 @@ module.exports = [{
 	OnePerShip: true,
 	shipIndependent: true,
 	factions: ["independent"]
-},  {
+}, {
 	type: "crew",
 	id: "slar_73031",
 	set: ["73031"],
@@ -105,7 +105,7 @@ module.exports = [{
 	unique: true,
 	range: "1",
 	factions: ["independent"]
-},  {
+}, {
 	type: "crew",
 	id: "gorn_pilot_73031",
 	set: ["73031"],
@@ -114,7 +114,7 @@ module.exports = [{
 	text: "<b>ACTION:</b> If this ship performed a [straight] Maneuver this game round disable this card.\n\nPerform a 1 [straight] Maneuver",
 	unique: true,
 	factions: ["independent"]
-},   {
+}, {
 	type: "crew",
 	id: "gorn_trooper_73031",
 	set: ["73031"],
@@ -123,7 +123,7 @@ module.exports = [{
 	text: "For each Gorn Trooper Equipped to this ship, Increase teh Captain Skill of the Captain equipped to this ship by 1.\n-----------------------------------\n<b>WHEN ATTACKING:</b> Disable this card.\n\nRe-Roll 1 attack die.",
 	unique: false,
 	factions: ["independent"]
-},   {
+}, {
 	type: "weapon",
 	id: "hidden_explosives_73031",
 	set: ["73031"],
@@ -132,7 +132,7 @@ module.exports = [{
 	text: "SETUP: Target an opposing ship. Place a Hidden Explosives Token on the target ship and place 4 [time] Tokens on this card.\n-----------------------------------\nWHEN THERE ARE NO MORE [time] TOKENS ON THIS CARD: you must discard this card. Roll 3 attack dice that cannot be re-rolled or modified. All [hit] and [crit] deal damage to the ships Hull. Discard the Hidden Explosives Token after the attack is made.",
 	unique: true,
 	factions: ["independent"]
-},  {
+}, {
 	type: "tech",
 	id: "enhanced_durabilty_73031",
 	set: ["73031"],
@@ -142,7 +142,7 @@ module.exports = [{
 	OnePerShip: true,
 	shipLimit: true,
 	factions: ["independent"]
-},  {
+}, {
 	type: "tech",
 	id: "gorn_sensors_73031",
 	set: ["73031"],
@@ -152,7 +152,7 @@ module.exports = [{
 	OnePerShip: true,
 	shipLimit: true,
 	factions: ["independent"]
-},  {
+}, {
 	type: "weapon",
 	id: "disruptor_bombardment_73031",
 	set: ["73031"],
@@ -164,7 +164,7 @@ module.exports = [{
 	FrontArc: true,
 	attack: 4,
 	factions: ["independent"]
-},   {
+}, {
 	type: "talent",
 	id: "grand_nagus_75003",
 	set: ["75003"],
@@ -175,7 +175,7 @@ module.exports = [{
 	captainFerengi: true,
 	range: "1 - 3",
 	factions: ["ferengi"]
-},  {
+}, {
 	type: "tech",
 	id: "kemocite_75003",
 	set: ["75003"],
@@ -184,7 +184,7 @@ module.exports = [{
 	text: "<b>ACTIVATION PHASE:</b> When you reveal this ships Maneuver.\nYou may increase the speed of the Maneuver by 2. The color of the Maneuver remains the same as the revealed Maneuver.\n-----------------------------------\n<b>WHEN ATTACKING:</b> Discard this card.\nAdd 1 [hit].",
 	OnePerShip: true,
 	factions: ["ferengi"]
-},  {
+}, {
 	type: "tech",
 	id: "t9_energy_converter_75003",
 	set: ["75003"],
@@ -193,7 +193,7 @@ module.exports = [{
 	text: "<b>END PHASE:</b> Disable this card and remove an [aux] Token beside this ship.\n\nRepair 1 Shield on this ship.",
 	unique: true,
 	factions: ["independent"]
-},  {
+}, {
 	type: "weapon",
 	id: "weapon_ports_75003",
 	set: ["75003"],
@@ -204,7 +204,7 @@ module.exports = [{
 	FrontArc: true,
 	attack: 3,
 	factions: ["ferengi"]
-},  {
+}, {
 	type: "weapon",
 	id: "photon_torpedoes_75003",
 	set: ["75003"],
@@ -215,7 +215,7 @@ module.exports = [{
 	FrontArc: true,
 	RearArc: true,
 	factions: ["ferengi"]
-},  {
+}, {
 	type: "weapon",
 	id: "verteron_pulse_trap_75003",
 	set: ["75003"],
@@ -224,7 +224,7 @@ module.exports = [{
 	text: "<b>SETUP:</b>\nPlace a Minefield Token anywhere that is not within Range 1 - 2 of any edge of the play area.\n-----------------------------------\n<b>WHEN A SHIP MOVES WITHIN RANGE 1 OF THE MINEFIELD TOKEN:</b> Target that ship.\nPlace an [aux] Token beside the target ship.",
 	unique: true,
 	factions: ["independent"]
-},  {
+}, {
 	type: "crew",
 	id: "gegis_75003",
 	set: ["75003"],
@@ -234,7 +234,7 @@ module.exports = [{
 	unique: true,
 	range: "1 - 2",
 	factions: ["ferengi"]
-},  {
+}, {
 	type: "crew",
 	id: "par_lenor_75003",
 	set: ["75003"],
@@ -243,7 +243,7 @@ module.exports = [{
 	text: "<b>WHEN THIS SHIP WOULD BE DESTROYED BY AN ATTACK:</b> Equip this card to the attacking ship, even if it exceeds that ships restrictions with a number of GPLT on this card equal the the number of GPLT on the captain on this ship.\n-----------------------------------\n<b>ACTIVATION PHASE:</b> The opposing player may spend 1 GPLT on this card. Place 1 Disabled Token on an Upgrade equipped to this ship.",
 	unique: true,
 	factions: ["ferengi"]
-},  {
+}, {
 	type: "crew",
 	id: "letek_75003",
 	set: ["75003"],
@@ -252,7 +252,7 @@ module.exports = [{
 	text: "<b>ACTION:</b> Discard this card an place 1 [aux] Token beside this ship.\n\nThis ship rolls +2 attack dice this game round.",
 	unique: true,
 	factions: ["ferengi"]
-},  {
+}, {
 	type: "crew",
 	id: "gral_75003",
 	set: ["75003"],
@@ -262,7 +262,7 @@ module.exports = [{
 	unique: true,
 	captainFerengi: true,
 	factions: ["ferengi"]
-},  {
+}, {
 	type: "crew",
 	id: "nava_75003",
 	set: ["75003"],
@@ -272,7 +272,7 @@ module.exports = [{
 	unique: true,
 	captainFerengi: true,
 	factions: ["ferengi"]
-},  {
+}, {
 	type: "crew",
 	id: "grilka_75003",
 	set: ["75003"],
@@ -281,7 +281,7 @@ module.exports = [{
 	text: "You do not pay a Faction Penalty when equipping this card to a Ferengi Ship.\n-----------------------------------\nOpposing effects that cost one or more GPLT cost +1 GPLT.",
 	unique: true,
 	factions: ["klingon"]
-},  {
+}, {
 	type: "question",
 	id: "bio_mimetic_gel_75003",
 	set: ["75003"],
@@ -303,7 +303,7 @@ module.exports = [{
 	captainBorg: true,
 	range: "1 - 2",
 	factions: ["borg"]
-},  {
+}, {
 	type: "tech",
 	id: "technological_analysis_73002",
 	set: ["73002"],
@@ -430,7 +430,7 @@ module.exports = [{
 	text: "Increase this ships Shield Value by 1.\n-----------------------------------\nDiscard this card when this ship has no Active Shields.\n-----------------------------------\n<b>WHEN THIS SHIP OVERLAPS AN OBSTACLE:</b>\nThis ship does not lose its Action but it may only perform a Non-Free Action listed on its Action Bar.",
 	unique: false,
 	factions: ["ferengi"]
-},  {
+}, {
 	type: "weapon",
 	id: "photonic_cannon_72311p",
 	set: ["72311p"],
@@ -471,7 +471,7 @@ module.exports = [{
 	cost: 5,
 	text: "<b>ACTIVATION PHASE:</b> If this ship overlaps an opposing ship, target that ship and destroy this ship.\n\nDeal 2 [crit] to that target ships Hull.\n\n(<i>Jem'Hadar Attack Ship</i>)",
 	OnePerShip: true,
-	shipLimit:true,
+	shipLimit: true,
 	factions: ["dominion"]
 }, {
 	type: "tech",
@@ -492,7 +492,7 @@ module.exports = [{
 	attack: 6,
 	text: "<b>ATTACK:</b> Spend this ships [target-lock] Token, discard this card, and target an opposing ship.\n\nPerfrom this attack twice against the target ship.\n       (<i>Jem'Hadar Battleship</i>)",
 	unique: true,
-	shipLimit:true,
+	shipLimit: true,
 	RearArc: true,
 	factions: ["dominion"]
 }, {
@@ -518,7 +518,7 @@ module.exports = [{
 	text: "<b>ATTACK:</b> Disable this card and target an opposing ship.\n\nThis attack ignores the target ships Shields. This ship may convert 1 [battlestations] into 1 [hit].\n(<i>Jem'Hadar Attack Ship</i>)",
 	OnePerShip: true,
 	FrontArc: true,
-	shipLimit:true,
+	shipLimit: true,
 	factions: ["dominion"]
 }, {
 	type: "weapon",
@@ -541,7 +541,7 @@ module.exports = [{
 	text: "<b>Attack:</b> Discard this card and target an opposing ship.\n\nFor each uncancelled [hit] or [crit], discard 1 [tech] Upgrade equipped to the target ship.\n\n(<i>Jem'Hadar Attack Ship</i>)",
 	unique: true,
 	FrontArc: true,
-	shipLimit:true,
+	shipLimit: true,
 	factions: ["dominion"]
 }, {
 	type: "crew",
@@ -638,7 +638,7 @@ module.exports = [{
 	captainRomulan: true,
 	range: "1 - 3",
 	factions: ["romulan"]
-},  {
+}, {
 	type: "weapon",
 	id: "disruptor_beams_75001",
 	set: ["75001"],
@@ -663,7 +663,7 @@ module.exports = [{
 	name: "Additional Weapons Array",
 	cost: 3,
 	OnePerShip: true,
-	shipLimit:true,
+	shipLimit: true,
 	text: "<b>WHEN ATTACKING:</b>\n\nThis ship rolls +1 attack die.\n\n(<i>D'Deridex Class</i>)",
 	factions: ["romulan"]
 }, {
@@ -847,7 +847,7 @@ module.exports = [{
 	name: "Miles O'Brien",
 	cost: 2,
 	unique: true,
-	text: "<b>PLANNING PHASE:</b> Disable this card.\n\nRemove a Disable Token from a [tech] or [weapon] Upgrade equipped to this ship.", 
+	text: "<b>PLANNING PHASE:</b> Disable this card.\n\nRemove a Disable Token from a [tech] or [weapon] Upgrade equipped to this ship.",
 	factions: ["federation"]
 }, {
 	type: "crew",
@@ -868,7 +868,7 @@ module.exports = [{
 	unique: true,
 	text: "<b>ACTIVATION PHASE:</b> Disable this card.\nRemove a Disabled Token from a [crew] Upgrade equipped to this ship.\n-----------------------------\n<b>ACTION:</b> Discard this card.\nEquip a [crew] Upgrade with a cost of 4 SP or less that was discarded from this ship to this ship.",
 	factions: ["federation"]
-},  {
+}, {
 	type: "crew",
 	id: "christopher_hobson_2017core",
 	set: ["2017core"],
@@ -945,7 +945,7 @@ module.exports = [{
 	cost: 4,
 	text: "<b>END PHASE:</b> Place 3 [time] Tokens on this card.\n\nRepair 1 damage to this ship's Shields or Hull.\n<i>(Romulan Drone Ship Only)</i>",
 	OnePerShip: true,
-	shipLimit:true,
+	shipLimit: true,
 	factions: ["romulan"]
 }, {
 	type: "weapon",
@@ -966,7 +966,7 @@ module.exports = [{
 	cost: 3,
 	text: "<b>COMBAT PHASE:</b> If this ship is in the primary or Secondary Firing Arc of an opposing ship, place 3 [time] Tokens on this card.\n\nPerform a [sensor-echo] Action as a Free Action. If this ship does, also remove an opposing [target-lock] Token from this ship.\n<i>(Romulan Drone Ship Only)</i>",
 	OnePerShip: true,
-	shipLimit:true,
+	shipLimit: true,
 	factions: ["romulan"]
 }, {
 	type: "tech",
@@ -976,7 +976,7 @@ module.exports = [{
 	cost: 4,
 	text: "<b>WHEN DEFENDING:</b> Place 3 [time] Tokens on this card.\n\nThe attacking ship rolls -2 attack dice.\n<i>(Romulan Drone Ship Only)</i>",
 	OnePerShip: true,
-	shipLimit:true,
+	shipLimit: true,
 	factions: ["romulan"]
 }, {
 	type: "weapon",
@@ -988,7 +988,7 @@ module.exports = [{
 	range: "1 -3",
 	text: "<b>ATTACK:</b> Discard this card.\n\nThis ship may re-roll any number of attack dice.\n\n(<i>Cardassian ATR-4107</i>)",
 	unique: false,
-	shipLimit:true,
+	shipLimit: true,
 	factions: ["dominion"]
 }, {
 	type: "weapon",
@@ -1000,7 +1000,7 @@ module.exports = [{
 	range: "1",
 	text: "<b>ATTACK:</b> Place 2 [time] Tokens on this card and target all opposing ships. \n\n\n(<i>Cardassian ATR-4107</i>)",
 	unique: true,
-	shipLimit:true,
+	shipLimit: true,
 	factions: ["dominion"]
 }, {
 	type: "weapon",
@@ -3593,7 +3593,7 @@ module.exports = [{
 	OnePerShip: true,
 	text: "<b>WHEN DEFENDING:</b> After all dice have been rolled if this ship is Cloaked, discard this card.\n\nCancel the attack. This ship suffers 1 [hit].",
 	factions: ["romulan"],
-	cost: 3,
+	cost: 3
 }, {
 	type: "tech",
 	id: "3041",
