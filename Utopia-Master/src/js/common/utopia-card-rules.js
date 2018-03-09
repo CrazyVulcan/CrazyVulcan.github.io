@@ -3481,7 +3481,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			canEquip: onePerShip("Systems Upgrade"),
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return $factions.hasFaction(ship,"federation", ship, fleet);
+				return ($factions.hasFaction(ship,"federation", ship, fleet) || $factions.hasFaction(ship,"bajoran", ship, fleet) || $factions.hasFaction(ship,"vulcan", ship, fleet) );
 			}
 		},
 		//Type 8 Phaser Array
@@ -7259,7 +7259,14 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		//Shield Adaption
 		"tech:shield_adaptation_72013wp":{
 			//Hull is equal or greater then 4, needs to work with fleet commander
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("Reinforced Shields") && ship.hull >= 4;
+			}
 		},
+		"tech:belannas_codes_72013wp":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			}},
 
 	//Prototype 02 :72014wp
 		"ship:prototype_02_72014wp": {
