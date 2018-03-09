@@ -936,4 +936,22 @@ module.exports = [{
 	},
 	factionPenalty: 0,
 	unique: true
+},{
+	type: "ship-resource",
+	id: "sickbay_ship",
+	set: ["72321r"],
+	name: "Sickbay",
+	factions: ["federation", "klingon", "romulan", "dominion", "independent"],
+	text: "Ship must have a hull of Hull 4 or more",
+	cost: 6,
+	showType: true,
+	canEquip: true,
+	canEquipFaction: true,
+	isShipModifier: true,
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	factionPenalty: 0,
+	unique: true
 }];

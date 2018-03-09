@@ -7980,6 +7980,15 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			]
 		},
+		
+	//Turret Turmoil
+		//Kal-If-Fee
+		"talent:kal_if_fee_72321":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "federation", ship, fleet ) ? 0 : 1;
+			}},
+			
+			
 //Faction Penalty For Subfactions
 		//Federation
 		":":{
@@ -8029,6 +8038,29 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 
 	// RESOURCES
+		"resource:sickbay_resource": {
+			slotType: "ship-resource",
+			cost: 0,
+			hideCost: true,
+			showShipResourceSlot: function(card,ship,fleet) {
+				if( ship.resource && ship.resource.type == "ship-resource" )
+					return true;
+				
+				var show = true;
+				$.each( fleet.ships, function(i,ship) {
+					if( ship.resource )
+						show = false;
+				} );
+				return show;
+			},
+			onRemove: function(resource,ship,fleet) {
+				$.each( fleet.ships, function(i,ship) {
+					if( ship.resource )
+						delete ship.resource;
+				} );
+			}
+		},
+		
 		"resource:front_line_retrofit_resource": {
 			slotType: "ship-resource",
 			cost: 0,
