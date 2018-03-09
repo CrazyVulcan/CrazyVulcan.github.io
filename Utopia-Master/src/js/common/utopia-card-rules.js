@@ -6879,33 +6879,57 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"captain:jean_luc_picard_enterprise_72284p": {
 			intercept: {
 				ship: {
+					/**
+					 * Cost function for Diet Picard
+					 *
+					 * This Picard takes 2 SP off of the cost of the ship he is assigned
+					 * to and 1 SP off up to three upgrades for a total of 5 SP max.
+					 *
+					 * In this implementation, the extra points are taken off the 3 most
+					 * expensive cards in the current ship configuration that are assigned
+					 * to the ship itself.
+					 */
 					cost: function(card,ship,fleet,cost) {
 						var modifier = 0;
+
+						// If we have intercepted the ship card, factor in the discount
 						if ( card.type == "ship" )
 							modifier = 2;
+
+						// Otherwise
 						else {
 							var candidates = [];
+
+							// Grab all of the upgrades assigned to the ship
 							var occupied_slots = $filter("upgradeSlots")(ship);
 							$.each(occupied_slots, function(i, slot) {
-								if (slot.source == "ship")
+								if (slot.source == "ship" &&
+								    typeof slot.occupant != "undefined")
 									candidates.push(slot);
 							});
+							console.log(candidates)
+
+							// If there are more than three, sort them by cost and grab the
+							// three most valuable
 							if (candidates.length > 3) {
+								console.log(candidates);
 								candidates.sort(function(a, b) {
 									return b.occupant.cost - a.occupant.cost;
 								});
+
 								candidates = candidates.slice(0, 3);
 							}
-							//console.log(candidates[0]);
-							//console.log(card)
-							for (i = 0; i < candidates.length; i++) {
+
+							// Now that we know the candidate cards for discount, apply the
+							// discount if the current card is one of the candidates
+							for (var i = 0; i < candidates.length; i++) {
 								if (card.id == candidates[i].occupant.id){
 									modifier = 1;
 									break;
 								}
 							}
 						}
-						return cost - modifier;
+						return resolve(card, ship, fleet, cost) - modifier;
 					}
 				}
 			}
