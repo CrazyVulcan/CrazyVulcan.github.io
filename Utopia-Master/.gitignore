@@ -35,9 +35,9 @@ Icon
 .Spotlight-V100
 .Trashes
 
-
+# ====================
 # Utopia
-
+# ====================
 js/analytics.js
 node_modules/*
 package-lock.json
