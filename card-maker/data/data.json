@@ -202,7 +202,7 @@
 		"set": ["001"],
 		"name": "Spore Drive",
 		"cost": 5,
-		"text": "<b>WHEN THIS SHIP REVEALS ITS MANEUVER:</b> Disable this card and disregard this ships chosen maneuver.\n\nThis ship performs a [sensor-echo], even if this ship does not have a [cloak] Token next to it. The Player may choose to use the 1[straight] 2[straight] or 3[straight] 4[straight] or 5[straight]\n\nIf a this ship uses the 4[straight] tymplate place an [aux] Token next to this ship. If the ship uses the 5[straight] place 2 [aux] Tokens next to this ship.",
+		"text": "<b>WHEN THIS SHIP REVEALS ITS MANEUVER:</b> Disable this card and disregard this ships chosen maneuver. This ship performs a [sensor-echo], even if this ship does not have a [cloak] Token next to it.\n\n The Player may choose to use the 1[straight] or 2[straight] Maneuver Template\nOR\nUse a 4[straight] Then place an [aux] Token next to your ship",
 		"OnePerShip": true,
 		"shipFederation": true,
 		"factions": ["federation"]
