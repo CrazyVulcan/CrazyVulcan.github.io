@@ -3462,9 +3462,6 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		//Systems Upgrade
 		"tech:systems_upgrade_71998p": {
 			type: "question",
-			factionPenalty: function(upgrade, ship, fleet) {
-				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
-			},
 			isSlotCompatible: function(slotTypes) {
 				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0;
 			},
@@ -3484,7 +3481,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			canEquip: onePerShip("Systems Upgrade"),
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return ($factions.hasFaction(ship,"federation", ship, fleet) || $factions.hasFaction(ship,"bajoran", ship, fleet) || $factions.hasFaction(ship,"vulcan", ship, fleet) );
+				return ($factions.hasFaction(ship,"federation", ship, fleet) || $factions.hasFaction(ship,"bajoran", ship, fleet) || $factions.hasFaction(ship,"vulcan", ship, fleet));
 			}
 		},
 		//Type 8 Phaser Array
@@ -5763,12 +5760,16 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return factionPenalty;
 			}
 		},
+
 		// Temporal Conduit - +5 SP if fielded on a non-Mirror Universe ship
 		"tech:temporal_conduit_72224gp": {
 			intercept: {
-				ship: {
+				self: {
 					cost: function(upgrade,ship,fleet,cost) {
 						if( ship && !$factions.hasFaction(ship,"mirror-universe", ship, fleet) )
+							// Note, only add 4 since the existing faction penalty will also
+							// be in play.
+							// TODO Fix this logic to not apply the normal penalty, only 5 here
 							return resolve(upgrade,ship,fleet,cost) + 4;
 						return cost;
 					}
@@ -6861,7 +6862,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship.captain &&  $factions.hasFaction(ship,"xindi", ship, fleet) &&  $factions.hasFaction(ship.captain,"xindi", ship, fleet);
 		}},
 
-
+	/**
 	//Yesterdays U.S.S. Enterprise-D
 		// Jean-Luc Picard - Enterprise-D
 		"captain:jean_luc_picard_enterprise_72284p": {
@@ -6878,17 +6879,63 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-
+	*/
 		"captain:jean_luc_picard_enterprise_72284p": {
 			intercept: {
 				ship: {
+					/**
+					 * Cost function for Diet Picard
+					 *
+					 * This Picard takes 2 SP off of the cost of the ship he is assigned
+					 * to and 1 SP off up to three upgrades for a total of 5 SP max.
+					 *
+					 * In this implementation, the extra points are taken off the 3 most
+					 * expensive cards in the current ship configuration that are assigned
+					 * to the ship itself.
+					 * TODO Upgrade values only sort on base card value, fix this at some point
+					 */
 					cost: function(card,ship,fleet,cost) {
 						var modifier = 0;
+
+						// If we have intercepted the ship card, factor in the discount
 						if ( card.type == "ship" )
-							modifier += 2;
-						if ( modifier > 5)
-							modifier = 5;
-						return cost - modifier;
+							modifier = 2;
+
+						// Otherwise
+						else {
+							var candidates = [];
+
+							// Grab all of the upgrades assigned to the ship
+							var occupied_slots = $filter("upgradeSlots")(ship);
+							$.each(occupied_slots, function(i, slot) {
+								if (slot.occupant)
+									candidates.push(slot);
+							});
+
+							// If there are no candidates, save some time and skip out
+							if (candidates.length) {
+
+								// If there are more than three, sort them by cost and grab the
+								// three most valuable
+								if (candidates.length > 3) {
+									candidates.sort(function(a, b) {
+										return b.occupant.cost - a.occupant.cost;
+									});
+
+									candidates = candidates.slice(0, 3);
+								}
+
+								// Now that we know the candidate cards for discount, apply the
+								// discount if the current card is one of the candidates
+								for (var i = 0; i < candidates.length; i++) {
+									if (card.id == candidates[i].occupant.id){
+										modifier = 1;
+										break;
+									}
+								}
+							}
+						}
+						return resolve(card, ship, fleet, cost) - modifier;
 					}
 				}
 			}
@@ -7262,10 +7309,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		//Shield Adaption
 		"tech:shield_adaptation_72013wp":{
 			//Hull is equal or greater then 4, needs to work with fleet commander
-			canEquip: function(upgrade,ship,fleet) {
-				return onePerShip("Reinforced Shields") && ship.hull >= 4;
-			}
 		},
+		//B'Elanna's codes
 		"tech:belannas_codes_72013wp":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
@@ -7990,15 +8035,6 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			]
 		},
-		
-	//Turret Turmoil
-		//Kal-If-Fee
-		"talent:kal_if_fee_72321":{
-			factionPenalty: function(upgrade, ship, fleet) {
-				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "federation", ship, fleet ) ? 0 : 1;
-			}},
-			
-			
 //Faction Penalty For Subfactions
 		//Federation
 		":":{
@@ -8048,29 +8084,6 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 
 	// RESOURCES
-		"resource:sickbay_resource": {
-			slotType: "ship-resource",
-			cost: 0,
-			hideCost: true,
-			showShipResourceSlot: function(card,ship,fleet) {
-				if( ship.resource && ship.resource.type == "ship-resource" )
-					return true;
-				
-				var show = true;
-				$.each( fleet.ships, function(i,ship) {
-					if( ship.resource )
-						show = false;
-				} );
-				return show;
-			},
-			onRemove: function(resource,ship,fleet) {
-				$.each( fleet.ships, function(i,ship) {
-					if( ship.resource )
-						delete ship.resource;
-				} );
-			}
-		},
-		
 		"resource:front_line_retrofit_resource": {
 			slotType: "ship-resource",
 			cost: 0,
