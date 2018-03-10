@@ -41,7 +41,7 @@
 		"hull": 4,
 		"shields": 3,
 		"cost": 20,
-		"text": "This ship may equip the 'Spore Drive' Upgrade without requiring a [tech] slot.\n-----------------------------------------\nWhen activating the text of any [tech] Upgrade that requires it to be disabled, place 2 [time] Tokens on this ship instead.",
+		"text": "This ship may equip the 'Spore Drive' Upgrade without requiring a [tech] slot.\n----------------------------------\nWhen activating the text of any [tech] Upgrade that requires it to be disabled, place 2 [time] Tokens on this ship instead.",
 		"unique": true,
 		"factions": ["federation"]
 	},{
@@ -204,7 +204,7 @@
 		"cost": 5,
 		"text": "<b>WHEN THIS SHIP REVEALS ITS MANEUVER:</b> Disable this card and disregard this ships chosen maneuver. This ship performs a [sensor-echo], even if this ship does not have a [cloak] Token next to it.\n\n The Player may choose to use the 1[straight] or 2[straight] Maneuver Template\nOR\nUse a 4[straight] Then place an [aux] Token next to your ship",
 		"OnePerShip": true,
-		"shipFederation": true,
+		"shipFederation": "",
 		"factions": ["federation"]
 	}],
 	"resources": [{
