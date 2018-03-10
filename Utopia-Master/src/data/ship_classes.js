@@ -914,7 +914,7 @@ module.exports = [{
 			turn: "red"
 		},
 		4: {
-			straight: "white"
+			straight: "white",
 		},
 		5: {
 			straight: "white"
