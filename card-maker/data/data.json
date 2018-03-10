@@ -5,6 +5,12 @@
 		"name": "Your Set Name",
 		"releaseDate": "YYYY-MM-DD",
 		"parentSet": "Wave 0"
+	},{
+		"type": "set",
+		"id": "001",
+		"name": "Discovery",
+		"releaseDate": "YYYY-MM-DD",
+		"parentSet": "Wave 0"
 	}],
 	"ships": [{
 		"type": "ship",
@@ -22,8 +28,69 @@
 		"text": "Ship Ability",
 		"unique": true,
 		"factions": ["faction"]
+	},{
+		"type": "ship",
+		"id": "_001",
+		"set": ["001"],
+		"name": "USS Discovery",
+		"class": "Crossfield Class",
+		"actions": ["evade", "target-lock", "scan", "battlestations"],
+		"upgrades": ["tech", "tech", "weapon", "crew", "crew"],
+		"attack": 3,
+		"agility": 1,
+		"hull": 4,
+		"shields": 3,
+		"cost": 20,
+		"text": "This ship may equip the 'Spore Drive' Upgrade without requiring a [tech] slot.\n-----------------------------------------\nWhen activating the text of any [tech] Upgrade that requires it to be disabled, place 2 [time] Tokens on this ship instead.",
+		"unique": true,
+		"factions": ["federation"]
+	},{
+		"type": "ship",
+		"id": "crossfield_class_ship",
+		"set": ["001"],
+		"name": "Federation Starship",
+		"class": "Crossfield Class",
+		"actions": ["evade", "target-lock", "scan", "battlestations"],
+		"upgrades": ["tech", "tech", "weapon", "crew", "crew"],
+		"attack": 3,
+		"agility": 1,
+		"hull": 4,
+		"shields": 2,
+		"cost": 16,
+		"text": "",
+		"unique": false,
+		"factions": ["federation"]
 	}],
 	"shipClasses": [{
+		"type": "ship-class",
+		"id": "crossfield_class_001",
+		"name": "Crossfield Class",
+		"frontArc": "180",
+		"maneuvers": {
+			"1": {
+				"straight": "green",
+				"bank": "green"
+			},
+			"2": {
+				"straight": "green",
+				"bank": "white",
+				"turn": "white"
+			},
+			"3": {
+				"straight": "white",
+				"bank": "white",
+				"turn": "red"
+			},
+			"4": {
+				"straight": "white"
+			},
+			"min": -2,
+			"max": 4,
+			"-2": {
+				"straight": "red"
+			}
+		}
+	},{
 		"type": "ship-class",
 		"id": "ship_class_setnum",
 		"name": "Ship Class",
@@ -67,6 +134,17 @@
 		"cost": 0,
 		"skill": 1,
 		"talents": 0
+	},{
+		"type": "captain",
+		"id": "gabriel_lorca_001",
+		"set": ["001"],
+		"name": "Gabriel Lorca",
+		"unique": true,
+		"text": "Add 1 [crew] Upgrade Slot you your Upgrade Bar.\n-----------------------------------------\n<b>WHEN ATTACKING</b> Discard one [crew] Upgrade in order to take one attack die and set it on a side of your choosing. This die can not be rolled or rerolled",
+		"factions": ["mirror-universe", "federation"],
+		"cost": 3,
+		"skill": 5,
+		"talents": 1
 	}],
 	"admirals": [{
 		"type": "admiral",
@@ -118,6 +196,16 @@
 		"text": "Card Text",
 		"unique": false,
 		"factions": ["faction"]
+	}, {
+		"type": "tech",
+		"id": "spore_001",
+		"set": ["001"],
+		"name": "Spore Drive",
+		"cost": 5,
+		"text": "<b>WHEN THIS SHIP REVEALS ITS MANEUVER:</b> Disable this card and disregard this ships chosen maneuver.\n\nThis ship performs a [sensor-echo], even if this ship does not have a [cloak] Token next to it. The Player may choose to use the 1[straight] 2[straight] or 3[straight] 4[straight] or 5[straight]\n\nIf a this ship uses the 4[straight] tymplate place an [aux] Token next to this ship. If the ship uses the 5[straight] place 2 [aux] Tokens next to this ship.",
+		"OnePerShip": true,
+		"shipFederation": true,
+		"factions": ["federation"]
 	}],
 	"resources": [{
 		"type": "resource",
