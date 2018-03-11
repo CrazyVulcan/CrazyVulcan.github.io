@@ -29,3 +29,11 @@
 	font-weight: normal;
 	margin-top: 5px;
 }
+
+<>?<>
+
+.tts-export-container {
+	clear: both;
+	font-size: 1.5em;
+	text-align: center;
+}
