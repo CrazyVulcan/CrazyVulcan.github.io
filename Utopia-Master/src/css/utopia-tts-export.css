@@ -1,4 +1,4 @@
-.fleet-close-export {
+.tts-close-export {
 	font-size: 2em;
 	position: relative;
 	right: -0.2em;
@@ -7,25 +7,25 @@
 	float: right;
 }
 
-.fleet-close-export .fleet-search-bigger {
+.tts-close-export .tts-search-bigger {
 	border-top-left-radius: 1em;
 	border-bottom-left-radius: 1em;
 }
 
-.export-container {
+.tts-export-container {
 	clear: both;
 	font-size: 1.5em;
 	text-align: center;
 }
 
-.export-text {
+.tts-export-text {
 	margin: 0.5em;
 	font-size: 0.8em;
 	width: 280px;
 	height: 20em;
 }
 
-.export-option {
+.tts-export-option {
 	font-weight: normal;
 	margin-top: 5px;
 }
