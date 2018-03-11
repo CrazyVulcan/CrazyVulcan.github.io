@@ -1,5 +1,5 @@
 var module = angular.module("utopia-tts-export", []);
-console.log()
+console.log("I Am Here")
 module.directive( "tabeltopSimExport", function() {
 
 	return {
