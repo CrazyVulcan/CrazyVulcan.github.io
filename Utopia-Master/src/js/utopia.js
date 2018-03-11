@@ -1,4 +1,4 @@
-var module = angular.module("utopia", ["ngSanitize", "utopia-search", "utopia-card", "utopia-fleet-builder", "utopia-fleet-export", "utopia-card-loader", "utopia-card-rules"]);
+var module = angular.module("utopia", ["ngSanitize", "utopia-search", "utopia-card", "utopia-fleet-builder", "utopia-fleet-export", "utopia-tts-export", "utopia-card-loader", "utopia-card-rules"]);
 
 module.factory( "isMobile", function() {
 	// From detectmobilebrowsers.com
