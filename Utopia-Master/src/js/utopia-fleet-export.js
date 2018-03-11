@@ -231,12 +231,7 @@ module.directive( "tabeltopSimExport", function() {
 			
 			
 			function cardToText(card, ship, fleet, indent, hideCost) {
-				
-				var text = "";
-				indent = indent || 0;
-				for( var i = 0; i < indent; i ++ )
-					text += "- ";
-				
+								
 				var cost = valueOf(card,"cost",ship,fleet);
 				var free = valueOf(card,"free",ship,fleet);
 				var countSlotCost = true;
@@ -266,10 +261,7 @@ module.directive( "tabeltopSimExport", function() {
 				}
 				
 				// Show cost if appropriate
-				if( free )
-					cost = 0;
 				if( !hideCost )
-					text += " [" + cost + "]";
 				text += "\n";
 				
 				if( card.resource ) {
