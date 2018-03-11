@@ -1,5 +1,5 @@
 var module = angular.module("utopia-tts-export", []);
-console.log("I Am Here")
+
 module.directive( "tabeltopSimExport", function() {
 
 	return {
@@ -10,7 +10,7 @@ module.directive( "tabeltopSimExport", function() {
 			searchOptions: "="
 		},
 
-		templateUrl: "fleet-export.html",
+		templateUrl: "tts-export.html",
 		
 		link: function(scope,element) {
 			
