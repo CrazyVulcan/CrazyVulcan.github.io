@@ -32,6 +32,11 @@
 
 <>?<>
 
+.tts-fleet-close-export .tts-fleet-search-bigger {
+	border-top-left-radius: 1em;
+	border-bottom-left-radius: 1em;
+}
+
 .tts-export-container {
 	clear: both;
 	font-size: 1.5em;
