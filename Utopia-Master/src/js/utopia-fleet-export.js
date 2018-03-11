@@ -173,7 +173,7 @@ module.directive( "fleetExport", function() {
 
 }),
 
-module.directive( "TabeltopSimExport", function() {
+module.directive( "tabeltopSimExport", function() {
 
 	return {
 
