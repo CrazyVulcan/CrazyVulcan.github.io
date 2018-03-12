@@ -10,7 +10,7 @@ module.directive( "tabeltopSimExport", function() {
 			searchOptions: "="
 		},
 
-		templateUrl: "tts-export.html",
+		templateUrl: "fleet-export.html",
 		
 		link: function(scope,element) {
 			
