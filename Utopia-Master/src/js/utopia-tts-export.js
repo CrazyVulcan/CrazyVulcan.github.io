@@ -1,7 +1,7 @@
 var module = angular.module("utopia-tts-export", []);
 
 module.directive( "tabeltopSimExport", function() {
-
+console.log("Reporting for duty!")
 	return {
 
 		scope: {
