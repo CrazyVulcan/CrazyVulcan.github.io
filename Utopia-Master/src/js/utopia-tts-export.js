@@ -35,7 +35,7 @@ module.directive( "tabeltopSimExport", function() {
 
 		controller: [ "$scope", "$filter", function($scope, $filter) {
 			
-			$scope.fleetText = "";
+			$scope.ttsText = "";
 			$scope.showSetNames = false;
 			
 			var valueOf = $filter("valueOf");
@@ -50,27 +50,27 @@ module.directive( "tabeltopSimExport", function() {
 			
 			function fleetToText(fleet) {
 				
-				var fleetText = "";
+				var ttsText = "";
 				
 				var totalCost = 0;
 				
 				$.each( fleet.ships, function(i,ship) {
 					
 					var res = cardToText(ship,ship,fleet);
-					fleetText += res.text + "Ship Total: " + res.cost + " SP\n\n";
+					ttsText += res.text + "Ship Total: " + res.cost + " SP\n\n";
 					totalCost += res.cost;
 					
 				});
 				
 				if( fleet.resource ) {
 					var res = cardToText(fleet.resource,{},fleet);
-					fleetText += "Resource: " + res.text + "\n";
+					ttsText += "Resource: " + res.text + "\n";
 					totalCost += res.cost;
 				}
 				
-				fleetText += "Load into Tabletop Simulator\nhttp://kfnexus.github.io/staw-utopia/";
+				ttsText += "Load into Tabletop Simulator\nhttp://kfnexus.github.io/staw-utopia/";
 				
-				$scope.fleetText = fleetText;
+				$scope.ttsText = ttsText;
 				
 			}
 			
