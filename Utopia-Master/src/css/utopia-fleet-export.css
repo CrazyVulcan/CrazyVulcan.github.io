@@ -29,38 +29,3 @@
 	font-weight: normal;
 	margin-top: 5px;
 }
---------------
---TTS EXPORT--
---------------
-
-.tts-close-export {
-	font-size: 2em;
-	position: relative;
-	right: -0.2em;
-	margin-bottom: 0.4em;
-	margin-top: 0.4em;
-	float: right;
-}
-
-.tts-close-export .tts-search-bigger {
-	border-top-left-radius: 1em;
-	border-bottom-left-radius: 1em;
-}
-
-.tts-export-container {
-	clear: both;
-	font-size: 1.5em;
-	text-align: center;
-}
-
-.tts-export-text {
-	margin: 0.5em;
-	font-size: 0.8em;
-	width: 280px;
-	height: 20em;
-}
-
-.tts-export-option {
-	font-weight: normal;
-	margin-top: 5px;
-}
