@@ -25,9 +25,3 @@ The repository's directory structure should be largely self-explanatory:
   If you want to inspect the generated `staw-utopia/data/data.json` file, you
   might use a JSON prettifier (e.g. [JSTool](http://www.sunjw.us/jstoolnpp/) for
   [Notepad++](https://notepad-plus-plus.org)).
-
-
-Bug Reporting / Feature Requests
---------------------------------
-
-Report bugs and request features at the [KFNEXUS git hub site](https://github.com/KFNEXUS/KFNEXUS.github.io/issues)
