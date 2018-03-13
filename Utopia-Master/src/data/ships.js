@@ -1597,7 +1597,7 @@ module.exports = [{
 	type: "ship",
 	id: "denorios_71211",
 	set: ["71211"],
-	name: "DENORIOS",
+	name: "DENORIOUS",
 	class: "BAJORAN SOLAR SAILOR",
 	actions: ["evade", "scan"],
 	upgrades: ["tech", "tech"],
