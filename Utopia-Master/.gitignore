@@ -39,5 +39,5 @@ Icon
 # Utopia
 
 js/analytics.js
-node_modules/*
-
+node_modules.js/*
+package-lock.json/*
