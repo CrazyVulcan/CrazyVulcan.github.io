@@ -1484,12 +1484,18 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 								cost = resolve(upgrade,ship,fleet,cost);
 								if( cost <= 5 )
 									cost -= 2;
-							//If it is a particular "Question" Upgrade
-							if ( upgrade.type == "question" && upgrade.name == "Photon Detonation")
-								return resolve(upgrade, ship, fleet, cost) - 2;
-							return cost;
 							}	
 						}
+					}
+				},
+				self: {
+					cost: {
+						fn: function(upgrade,ship,fleet,cost) {
+						//If it is a particular "Question" Upgrade
+						if ( upgrade.type == "question" && upgrade.name == "Photon Detonation")
+							return resolve(upgrade, ship, fleet, cost) - 2;
+						return cost;
+						}	
 					}
 				}
 			}
