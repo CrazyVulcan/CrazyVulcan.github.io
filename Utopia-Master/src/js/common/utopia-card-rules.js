@@ -1484,8 +1484,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 								cost = resolve(upgrade,ship,fleet,cost);
 								if( cost <= 5 )
 									cost -= 2;
-							}
+							//If it is a particular "Question" Upgrade
+							else ( upgrade.type == "question" && upgrade.name == "Photon Detonation")
+								return resolve(upgrade, ship, fleet, cost) - 2;
 							return cost;
+							}	
 						}
 					}
 				}
@@ -7263,14 +7266,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"question:photon_detination_72012wp":{
 			isSlotCompatible: function(slotTypes) {
 				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0;
-			},
-			intercept: {
-				self: {
-					cost: function(upgrade, ship, fleet, cost) {
-						if( upgrade.name == "Sakonna" )
-							return resolve(upgrade, ship, fleet, cost) - 2;
-						return cost;
-					}}}
+			}
 		},
 		//Tellarite Bounty Hunter
 		"crew:bounty_hunter_72012wp":{
