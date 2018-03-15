@@ -282,7 +282,17 @@ module.exports = [{
 	unique: true,
 	factions: ["klingon"]
 }, {
-	type: "question",
+	type: "tech",
+	id: "bio_mimetic_gel_75003",
+	set: ["75003"],
+	name: "Bio-Mimetic Gel",
+	cost: 3,
+	text: "This card counts as a [tech] or [weapon] Upgrade.\n-----------------------------------\n<b>ACTIVATION PHASE:</b> Place 2 [time] Tokens on this card and target a [crew], [weapon], or [tech] Upgrade equipped to an another ship. Place 1 Bio-Mimetic Gel Token on the target Upgrade",
+	unique: true,
+	range: "1 - 2",
+	factions: ["independent"]
+}, 	{
+	type: "weapon",
 	id: "bio_mimetic_gel_75003",
 	set: ["75003"],
 	name: "Bio-Mimetic Gel",
@@ -1135,8 +1145,18 @@ module.exports = [{
 	unique: false,
 	factions: ["klingon"]
 }, {
-	type: ["question", "tech", "weapon"],
-	id: "photon_detination_72012wp",
+	type: "tech",
+	id: "photon_detination_tech_72012wp",
+	set: ["72012wp"],
+	name: "Photon Detonation",
+	cost: 3,
+	range: "1 - 2",
+	text: "This card counts as either a [tech] Upgrade or a [weapon] Upgrade.\n\n<b>ACTION:</b> Disable this card, place 3 [time] Tokens on a Photon Torpedoes Upgrade equipped to the ship, and target a minefield Token\n\nRemove the minefield Token from play. ",
+	unique: false,
+	factions: ["klingon"]
+}, {
+	type: "weapon",
+	id: "photon_detination_weapon_72012wp",
 	set: ["72012wp"],
 	name: "Photon Detonation",
 	cost: 3,
