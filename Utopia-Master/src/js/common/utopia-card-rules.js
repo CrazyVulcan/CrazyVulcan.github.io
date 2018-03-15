@@ -7267,7 +7267,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				ship: {
 					cost: function(upgrade, ship, fleet, cost) {
-						if( slot.type == "weapon" && upgrade.name == "Sakonna" )
+						if( isUpgrade(weapon) && upgrade.name == "Sakonna" )
 							return resolve(upgrade, ship, fleet, cost) - 2;
 						return cost;
 					},
