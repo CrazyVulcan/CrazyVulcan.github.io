@@ -35,5 +35,8 @@
     "grunt-contrib-uglify": "^0.9.1",
     "grunt-contrib-watch": "^0.6.1",
     "jquery-powertip": "^1.2.0"
+  },
+  "dependencies": {
+    "npm": "^5.7.1"
   }
 }
