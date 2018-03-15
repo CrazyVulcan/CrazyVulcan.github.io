@@ -1485,7 +1485,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 								if( cost <= 5 )
 									cost -= 2;
 							//If it is a particular "Question" Upgrade
-							else ( upgrade.type == "question" && upgrade.name == "Photon Detonation")
+							if ( upgrade.type == "question" && upgrade.name == "Photon Detonation")
 								return resolve(upgrade, ship, fleet, cost) - 2;
 							return cost;
 							}	
