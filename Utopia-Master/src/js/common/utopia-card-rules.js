@@ -1484,11 +1484,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 								cost = resolve(upgrade,ship,fleet,cost);
 								if( cost <= 5 )
 									cost -= 2;
-							}	
+							}
+							return cost;
 						}
 					}
 				}
-				
 			}
 		},
 		//Hijack
