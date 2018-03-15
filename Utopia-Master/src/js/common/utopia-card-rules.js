@@ -7264,15 +7264,13 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			isSlotCompatible: function(slotTypes) {
 				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0;
 			},
-			intercept: {
-				ship: {
-					cost: function(upgrade, ship, fleet, cost) {
-						if( upgrade.name == "Sakonna" )
-							return resolve(upgrade, ship, fleet, cost) - 2;
-						return cost;
-					},
-				}
-			}
+//			intercept: {
+//				ship: {
+//					cost: function(upgrade, ship, fleet, cost) {
+//						if( upgrade.name == "Sakonna" )
+//							return resolve(upgrade, ship, fleet, cost) - 2;
+//						return cost;
+//					}}}
 		},
 		//Tellarite Bounty Hunter
 		"crew:bounty_hunter_72012wp":{
