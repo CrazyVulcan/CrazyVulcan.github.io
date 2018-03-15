@@ -1135,7 +1135,7 @@ module.exports = [{
 	unique: false,
 	factions: ["klingon"]
 }, {
-	type: "question",
+	type: ["question", "tech", "weapon"],
 	id: "photon_detination_72012wp",
 	set: ["72012wp"],
 	name: "Photon Detonation",
