@@ -1480,7 +1480,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						// Run this interceptor after all other penalties and discounts
 						priority: 100,
 						fn: function(upgrade,ship,fleet,cost) {
-							if( upgrade.type == "weapon" && upgrade.name != "Torpedo Fusillade" && upgrade.name != "Dorsal Phaser Array" && upgrade.name != "Aft Phaser Emitters" && upgrade.name != "Particle Beam Weapon") {
+							if( upgrade.type == "weapon" && upgrade.name != "Torpedo Fusillade" && upgrade.name != "Dorsal Phaser Array" && upgrade.name != "Aft Phaser Emitters" && upgrade.name != "Particle Beam Weapon" ) {
 								cost = resolve(upgrade,ship,fleet,cost);
 								if( cost <= 5 )
 									cost -= 2;
@@ -7266,12 +7266,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			intercept: {
 				ship: {
-					// Reduce cost of Borg Ablative Hull Armor
 					cost: function(upgrade, ship, fleet, cost) {
 						if( slot.type == "weapon" && upgrade.name == "Sakonna" )
 							return resolve(upgrade, ship, fleet, cost) - 2;
 						return cost;
-					}
+					},
 				}
 			}
 		},
