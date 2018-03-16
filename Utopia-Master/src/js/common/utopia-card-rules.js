@@ -151,6 +151,43 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		return type;
 	}
 
+	/**
+	 * A function to check if assigned upgrade type matches or slot matches as appropriate
+	 *
+	 * @param {string} type Upgrade/Slot type to check against
+	 * @param {Object} upgrade The upgrade who's assigned slot we want to check
+	 * @param {Object} ship The current assigned ship
+	 * @returns {boolean}
+	 */
+	var checkUpgrade = function(type, upgrade, ship){
+		/** Default return value is false */
+		var returnValue = false;
+
+		if (upgrade.type == type)
+			returnValue = true;
+
+		/** Only check for question type upgrades with countsAsUpgrade set to true */
+		else if (upgrade.type == "question" && upgrade.countsAsUpgrade) {
+			/** List of slots on current ship */
+			var slots = $filter("upgradeSlots")(ship);
+
+			/** Loop over all of the slots on the ship */
+			for ( var i = 0; i < slots.length; i++){
+
+				/** See if the slot is occupied by the upgrade and is the right type */
+				if (slots[i].occupant &&
+					  slots[i].occupant.id == upgrade.id &&
+					  $.inArray(type, slots[i].type) > -1){
+
+						/** If so, set to return true and break out of the loop */
+						returnValue = true;
+						break;
+				}
+			}
+		}
+		return returnValue;
+	}
+
 	return {
 
 	//Generic Captains
@@ -276,9 +313,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				ship: {
 					cost: function(upgrade, ship, fleet, cost) {
-						if( upgrade.type == "weapon" )
-							return resolve(upgrade, ship, fleet, cost) - 1;
-						return cost;
+						var calculatedCost = cost;
+						if( checkUpgrade("weapon", upgrade, ship) )
+							calculatedCost = resolve(upgrade, ship, fleet, cost) - 1;
+						return calculatedCost;
 					}
 				}
 			}
@@ -348,7 +386,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				ship: {
 					cost: function(upgrade, ship, fleet, cost) {
-						if( upgrade.type == "crew" )
+						if( checkUpgrade("crew", upgrade, ship) )
 							return resolve(upgrade, ship, fleet, cost) - 1;
 						return cost;
 					}
@@ -1480,7 +1518,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						// Run this interceptor after all other penalties and discounts
 						priority: 100,
 						fn: function(upgrade,ship,fleet,cost) {
-							if( upgrade.type == "weapon" && upgrade.name != "Torpedo Fusillade" && upgrade.name != "Dorsal Phaser Array" && upgrade.name != "Aft Phaser Emitters" && upgrade.name != "Particle Beam Weapon" ) {
+							if( checkUpgrade("weapon", upgrade, ship)
+							     && upgrade.name != "Torpedo Fusillade" && upgrade.name != "Dorsal Phaser Array" && upgrade.name != "Aft Phaser Emitters" && upgrade.name != "Particle Beam Weapon" ) {
 								cost = resolve(upgrade,ship,fleet,cost);
 								if( cost <= 5 )
 									cost -= 2;
@@ -1545,8 +1584,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				ship: {
 					// All Vulcan/Federation tech is -2 SP
 					cost: function(upgrade, ship, fleet, cost) {
-						if( upgrade.type == "tech" && ( $factions.hasFaction(upgrade,"vulcan", ship, fleet) || $factions.hasFaction(upgrade,"federation", ship, fleet) ) )
-							return resolve(upgrade, ship, fleet, cost) - 2;
+						var calculatedCost = cost;
+
+						if( checkUpgrade("tech", upgrade, ship)
+								&& ( $factions.hasFaction(upgrade,"vulcan", ship, fleet) || $factions.hasFaction(upgrade,"federation", ship, fleet) ) )
+							calculatedCost = resolve(upgrade, ship, fleet, cost) - 2;
 						return cost;
 					},
 				}
@@ -1682,7 +1724,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				ship: {
 					// All crew cost -1 SP
 					cost: function(upgrade, ship, fleet, cost) {
-						if( upgrade.type == "crew" )
+						if( checkUpgrade("crew", upgrade, ship) )
 							return resolve(upgrade, ship, fleet, cost) - 1;
 						return cost;
 					},
@@ -2189,7 +2231,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				ship: {
 					canEquip: function(upgrade,ship,fleet,canEquip) {
-						if( upgrade.type == "borg" && valueOf(upgrade,"cost",ship,fleet) > 5 )
+						if( checkUpgrade("borg", upgrade, ship) && valueOf(upgrade,"cost",ship,fleet) > 5 )
 							return false;
 						return canEquip;
 					}
@@ -2200,7 +2242,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				ship: {
 					canEquip: function(upgrade,ship,fleet,canEquip) {
-						if( upgrade.type == "borg" && valueOf(upgrade,"cost",ship,fleet) > 5 )
+						if ( checkUpgrade("borg", upgrade, ship) && valueOf(upgrade,"cost",ship,fleet) > 5 )
 							return false;
 						return canEquip;
 					}
@@ -2331,7 +2373,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				ship: {
 					// All Kazon weapons are -1 SP
 					cost: function(upgrade, ship, fleet, cost) {
-						if( upgrade.type == "weapon" && $factions.hasFaction(upgrade,"kazon", ship, fleet) || $factions.hasFaction(upgrade,"independent", ship, fleet)) {
+						if( checkUpgrade("weapon", upgrade, ship) && $factions.hasFaction(upgrade,"kazon", ship, fleet) || $factions.hasFaction(upgrade,"independent", ship, fleet)) {
 							return resolve(upgrade, ship, fleet, cost) - 1;
 						}
 						return cost;
@@ -2379,7 +2421,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				ship: {
 					canEquip: function(upgrade,ship,fleet,canEquip) {
-						if( upgrade.type == "borg" && valueOf(upgrade,"cost",ship,fleet) > 5 )
+						if( checkUpgrade("borg", upgrade, ship) && valueOf(upgrade,"cost",ship,fleet) > 5 )
 							return false;
 						return canEquip;
 					}
@@ -3675,7 +3717,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				ship: {
 					cost: function(upgrade,ship,fleet,cost) {
-						if( upgrade.type == "tech" )
+						if( checkUpgrade("tech", upgrade, ship) )
 							return resolve(upgrade,ship,fleet,cost) - 1;
 						return cost;
 					}
@@ -4281,6 +4323,16 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 
 	//Q Continuum Cards :72000b
+		// Q2
+		"question:q2_c_72000b":{
+			type: "question",
+			isSlotCompatible: function(slotTypes) {
+				return $.inArray( "tech", slotTypes ) >= 0 ||
+				       $.inArray( "weapon", slotTypes ) >= 0 ||
+							 $.inArray( "crew", slotTypes ) >= 0 ||
+							 $.inArray( "talent", slotTypes ) >= 0;
+			}
+		},
 
 	//I.R.W. Terix :72000p
 		// Additional Phaser Array
@@ -5070,10 +5122,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						// Run this interceptor after all other penalties and discounts
 						priority: 100,
 						fn: function(upgrade,ship,fleet,cost) {
-							if( upgrade.type == "tech" ) {
+							if( checkUpgrade("tech", upgrade, ship) ) {
 								cost = resolve(upgrade,ship,fleet,cost);
-
-									cost -= 1;
+								cost -= 1;
 							}
 							return cost;
 						}
@@ -5899,7 +5950,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				ship: {
 					cost: function(upgrade, ship, fleet, cost) {
-						if( upgrade.type == "weapon" && $factions.hasFaction(upgrade,"xindi", ship, fleet) )
+						if( checkUpgrade("weapon", upgrade, ship) && $factions.hasFaction(upgrade,"xindi", ship, fleet) )
 							return resolve(upgrade, ship, fleet, cost) - 1;
 						return cost;
 					},
@@ -6351,7 +6402,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				ship: {
 					// All federation (Vulcan & Bajoren) crew cost -1 SP
 					cost: function(upgrade, ship, fleet, cost) {
-					if( upgrade.type == "crew" && $factions.hasFaction(upgrade,"federation", ship, fleet) || $factions.hasFaction(upgrade,"bajoran", ship, fleet) || $factions.hasFaction(upgrade,"vulcan", ship, fleet) )
+					if( checkUpgrade("crew", upgrade, ship) && $factions.hasFaction(upgrade,"federation", ship, fleet) || $factions.hasFaction(upgrade,"bajoran", ship, fleet) || $factions.hasFaction(upgrade,"vulcan", ship, fleet) )
 							return resolve(upgrade, ship, fleet, cost) - 1;
 						return cost;
 					},
@@ -7019,7 +7070,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					},
 					// All Weapon type Upgrades cost -1 SP
 					cost: function(upgrade, ship, fleet, cost) {
-						if( upgrade.type == "weapon" )
+						if ( checkUpgrade("weapon", upgrade, ship) )
 							return resolve(upgrade, ship, fleet, cost) - 1;
 						return cost;
 					}
@@ -7260,7 +7311,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquip: onePerShip("Dispersive Armor")
 		},
 		//Photon Detonation
-		"question:photon_detination_72012wp":{
+		"question:photon_detonation_tech_72012wp":{
 			isSlotCompatible: function(slotTypes) {
 				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0;
 			}
@@ -8332,7 +8383,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				fleet: {
 					// All crew cost -1 SP
 					cost: function(upgrade, ship, fleet, cost) {
-						if( upgrade.type == "crew" )
+						if( checkUpgrade("crew", upgrade, ship) )
 							return resolve(upgrade, ship, fleet, cost) - 1;
 						return cost;
 					},
@@ -8387,7 +8438,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				fleet: {
 					// All weapons cost -1 SP
 					cost: function(upgrade, ship, fleet, cost) {
-						if( upgrade.type == "weapon" )
+						if( checkUpgrade("weapon", upgrade, ship) )
 							return resolve(upgrade, ship, fleet, cost) - 1;
 						return cost;
 					},
@@ -8417,7 +8468,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				fleet: {
 					// All tech cost -1 SP
 					cost: function(upgrade, ship, fleet, cost) {
-						if( upgrade.type == "tech" )
+						if( checkUpgrade("tech", upgrade, ship) )
 							return resolve(upgrade, ship, fleet, cost) - 1;
 						return cost;
 					},

@@ -282,7 +282,7 @@ module.exports = [{
 	unique: true,
 	factions: ["klingon"]
 }, {
-	type: "tech",
+	type: "question",
 	id: "bio_mimetic_gel_75003",
 	set: ["75003"],
 	name: "Bio-Mimetic Gel",
@@ -290,17 +290,8 @@ module.exports = [{
 	text: "This card counts as a [tech] or [weapon] Upgrade.\n-----------------------------------\n<b>ACTIVATION PHASE:</b> Place 2 [time] Tokens on this card and target a [crew], [weapon], or [tech] Upgrade equipped to an another ship. Place 1 Bio-Mimetic Gel Token on the target Upgrade",
 	unique: true,
 	range: "1 - 2",
-	factions: ["independent"]
-}, 	{
-	type: "weapon",
-	id: "bio_mimetic_gel_75003",
-	set: ["75003"],
-	name: "Bio-Mimetic Gel",
-	cost: 3,
-	text: "This card counts as a [tech] or [weapon] Upgrade.\n-----------------------------------\n<b>ACTIVATION PHASE:</b> Place 2 [time] Tokens on this card and target a [crew], [weapon], or [tech] Upgrade equipped to an another ship. Place 1 Bio-Mimetic Gel Token on the target Upgrade",
-	unique: true,
-	range: "1 - 2",
-	factions: ["independent"]
+	factions: ["independent"],
+	countsAsUpgrade: true
 }, 	{
 	type: "talent",
 	id: "neural_transponder_73002",
@@ -1145,25 +1136,16 @@ module.exports = [{
 	unique: false,
 	factions: ["klingon"]
 }, {
-	type: "tech",
-	id: "photon_detination_tech_72012wp",
+	type: "question",
+	id: "photon_detonation_tech_72012wp",
 	set: ["72012wp"],
 	name: "Photon Detonation",
 	cost: 3,
 	range: "1 - 2",
 	text: "This card counts as either a [tech] Upgrade or a [weapon] Upgrade.\n\n<b>ACTION:</b> Disable this card, place 3 [time] Tokens on a Photon Torpedoes Upgrade equipped to the ship, and target a minefield Token\n\nRemove the minefield Token from play. ",
 	unique: false,
-	factions: ["klingon"]
-}, {
-	type: "weapon",
-	id: "photon_detination_weapon_72012wp",
-	set: ["72012wp"],
-	name: "Photon Detonation",
-	cost: 3,
-	range: "1 - 2",
-	text: "This card counts as either a [tech] Upgrade or a [weapon] Upgrade.\n\n<b>ACTION:</b> Disable this card, place 3 [time] Tokens on a Photon Torpedoes Upgrade equipped to the ship, and target a minefield Token\n\nRemove the minefield Token from play. ",
-	unique: false,
-	factions: ["klingon"]
+	factions: ["klingon"],
+	countsAsUpgrade: true
 }, {
 	type: "talent",
 	id: "captains_discretion_72001wp",
@@ -10607,7 +10589,7 @@ module.exports = [{
 		fleet: {}
 	}
 }, {
-	type: "crew",
+	type: "question",
 	id: "q2_c_72000b",
 	set: ["72000b"],
 	name: "Q2",
@@ -10615,37 +10597,8 @@ module.exports = [{
 	text: "This Upgrade counts as either a [crew], an [talent], a [tech], or a [weapon] Upgrade (your choice).\n\nWhenever a friendly ship within Range 1 of your ship receives damage, you may discard this card to transfer all of that damage to your ship.",
 	unique: true,
 	factions: ["q-continuum"],
-	factionPenalty: 0
-}, {
-	type: "talent",
-	id: "q2_ta_72000b",
-	set: ["72000b"],
-	name: "Q2",
-	cost: 5,
-	text: "This Upgrade counts as either a [crew], an [talent], a [tech], or a [weapon] Upgrade (your choice).\n\nWhenever a friendly ship within Range 1 of your ship receives damage, you may discard this card to transfer all of that damage to your ship.",
-	unique: true,
-	factions: ["q-continuum"],
-	factionPenalty: 0
-}, {
-	type: "tech",
-	id: "q2_t_72000b",
-	set: ["72000b"],
-	name: "Q2",
-	cost: 5,
-	text: "This Upgrade counts as either a [crew], an [talent], a [tech], or a [weapon] Upgrade (your choice).\n\nWhenever a friendly ship within Range 1 of your ship receives damage, you may discard this card to transfer all of that damage to your ship.",
-	unique: true,
-	factions: ["q-continuum"],
-	factionPenalty: 0
-}, {
-	type: "weapon",
-	id: "q2_w_72000b",
-	set: ["72000b"],
-	name: "Q2",
-	cost: 5,
-	text: "This Upgrade counts as either a [crew], an [talent], a [tech], or a [weapon] Upgrade (your choice).\n\nWhenever a friendly ship within Range 1 of your ship receives damage, you may discard this card to transfer all of that damage to your ship.",
-	unique: true,
-	factions: ["q-continuum"],
-	factionPenalty: 0
+	factionPenalty: 0,
+	countsAsUpgrade: true
 }, {
 	type: "talent",
 	id: "grand_nagus_72013",
