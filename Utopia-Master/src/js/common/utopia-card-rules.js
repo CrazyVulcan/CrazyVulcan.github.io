@@ -6652,9 +6652,14 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			intercept: {
 				ship: {
-					cost: function() { return 3; }
+					//Kuvah'Magh costs -2
+					cost: function(upgrade, ship, fleet, cost) {
+					if( upgrade.name == "Kuvah'Magh" )
+							return resolve(upgrade, ship, fleet, cost) - 2;
+						return cost;
+					},
 				}
-			}
+			}	
 		},
 
 	//Orassin :72273

@@ -1,7 +1,7 @@
 var module = angular.module("utopia-fleet-export", []);
 
 module.directive( "fleetExport", function() {
-
+	console.log("I am working again")
 	return {
 
 		scope: {
