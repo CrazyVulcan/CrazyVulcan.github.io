@@ -270,6 +270,28 @@ module.directive( "search", function() {
 				document.body.removeChild(element);
 			};
 
+			$scope.importSets = function(inputFile) {
+				var importFile = inputFile.files[0];
+				var reader = new FileReader();
+				var rawSetData = "";
+
+				// Closure to capture the file information.
+				reader.onload = function(event) {
+					rawSetData = event.target.result;
+					$scope.processImport(rawSetData);
+				};
+				console.info("Opening " + importFile.name + " saved set file...")
+				reader.readAsText(importFile);
+			};
+
+			$scope.processImport = function(importedData) {
+				var importedSets = JSON.parse(importedData);
+				//console.log(importedSets);
+				localStorage.sets = angular.toJson( importedSets );
+				$scope.search.sets = importedSets;
+				window.location.reload(true);
+			};
+
 			// Check all sets
 			$scope.checkAllSets = function() {
 				$.each( $scope.search.sets, function(i,set) {
