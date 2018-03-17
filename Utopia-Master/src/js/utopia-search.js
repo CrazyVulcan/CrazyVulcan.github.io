@@ -257,38 +257,66 @@ module.directive( "search", function() {
 			$scope.exportSets = function() {
 				var filename = 'utopia_owned_sets.json';
 				var ownedSets = JSON.stringify($scope.search.sets, null, 2);
-				//console.log(ownedSets);
+				var encodedSets = encodeURIComponent(ownedSets);
+				var encodingInfo = "data:application/json;charset=utf-8,"
 				var element = document.createElement('a');
-				element.setAttribute('href', 'data:application/json;charset=utf-8,' + encodeURIComponent(ownedSets));
-				element.setAttribute('download', filename);
+				console.log("Exporting owned sets to the file " + filename);
 
+				// Generate a file download link and provide the encoded data
+				// as the file source
+				element.setAttribute('href', encodingInfo + encodedSets);
+				element.setAttribute('download', filename);
 				element.style.display = 'none';
 				document.body.appendChild(element);
 
+				// Autoclick the link and then remove the link
 				element.click();
-
 				document.body.removeChild(element);
 			};
 
+			/**
+			 * Import an owned sets list from a json file
+			 * @param  {Object} inputFile The file data from the HTML File input type
+			 */
 			$scope.importSets = function(inputFile) {
+				// Multiselect should not have been on so grab the first file in the
+				// array
 				var importFile = inputFile.files[0];
+
+				// Create a FileReader object and create a holding place for the data
+				// in the file
 				var reader = new FileReader();
 				var rawSetData = "";
 
-				// Closure to capture the file information.
+				// Override the FileReader onload function to read the file in and,
+				// upon completion, set the data to the processImport function for
+				// processing into the browser storage
 				reader.onload = function(event) {
 					rawSetData = event.target.result;
 					$scope.processImport(rawSetData);
 				};
+
 				console.info("Opening " + importFile.name + " saved set file...")
+
+				// Read the file using the FileReader object with the overridden onload
 				reader.readAsText(importFile);
 			};
 
+			/**
+			 * Convert the read-in data to a JSON object and write to the browser
+			 * storage
+			 *
+			 * @param  {String} importedData Raw text imported from a file
+			 */
 			$scope.processImport = function(importedData) {
+				// Parse the text to a JSON data object
 				var importedSets = JSON.parse(importedData);
-				//console.log(importedSets);
+				console.log(importedSets)
+				debugger;
+				// Write the imported data to the file store
 				localStorage.sets = angular.toJson( importedSets );
-				$scope.search.sets = importedSets;
+
+				// Refresh the application to accept the imported data
 				window.location.reload(true);
 			};
 
