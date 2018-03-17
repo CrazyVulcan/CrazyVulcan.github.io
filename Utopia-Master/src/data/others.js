@@ -40,13 +40,13 @@ module.exports = [{
 	set: ["AdditionalRules"],
 	name: "Tribble Tokens",
 	text: "A Ship Card with at least 1 Tribble Token assigned to it follows special rules:\n\n1) During the End Phase, add 1 Tribble Token to your Ship Card (reguardless of the number of Tribble Tokens it already has).\n2) If your Ship has 1-3 Tribble Tokens, add +1 attack die whenever you attack and +1 defense whenever you defend. Ignore this rule if your Ship includes any Klingon Captains or Crew.\n3) If your ship has 4-5 Tribble Tokens, there is no effect.\n4) If your ship has 6 or more Tribble Tokens, roll 1 less attack die whenever you attack and 1 less defense dice whenever you defend. This penalty is doubled if your ship includes any Klingon Captains or Klingon Crew.\n5) You gain the following Action:\nAction: If your ship is not Cloaked, disable all of your remaining Shields and target a ship at range 1-2 that is not cloaked and has no Active Shields. Place any number of your Tribble Tokens beside the target ship's Ship Card. You cannot transfer any Tribble Token that you recieved this round."
-},  {
+}, {
 	type: "token",
 	id: "engery_dampening_tokens",
 	set: ["AdditionalRules"],
 	name: "Energy Dampening Tokens",
 	text: "1) As soon as the ship receives the EDT, disable all of its remaining Shields and remove its (cloak) Token, if any.\n2) While the ship has the EDT, it cannot attack or raise its Shields.\n3) During the Planning Phase the owner does not assign a maneuver dial to this ship.\n4) During the Activation Phase the owner moves the ship as if it were assigned a White 1 (straight) Maneuver. After executing this Maneuver, remove all EDTs from this ship It may now perform Actions and attack as normal."
-},  {
+}, {
 	type: "token",
 	id: "rule_drone_tokens",
 	set: ["AdditionalRules"],
@@ -872,7 +872,7 @@ module.exports = [{
 	},
 	factionPenalty: 0,
 	unique: true
-	} , {
+}, {
 	type: "ship-resource",
 	id: "fleet_commander_ship_shield",
 	set: ["72280r"],
@@ -890,7 +890,7 @@ module.exports = [{
 	},
 	factionPenalty: 0,
 	unique: true
-	}, {
+}, {
 	type: "ship-resource",
 	id: "captains_chair_ship",
 	set: ["72301r"],
@@ -936,7 +936,7 @@ module.exports = [{
 	},
 	factionPenalty: 0,
 	unique: true
-},{
+}, {
 	type: "ship-resource",
 	id: "sickbay_ship",
 	set: ["72321r"],

@@ -15,7 +15,7 @@ module.exports = [{
 	unique: true,
 	factions: ["dominion"],
 	squadron: false
-},{
+}, {
 	type: "ship",
 	id: "gress'sril_73031",
 	set: ["73031"],
@@ -140,7 +140,7 @@ module.exports = [{
 		fleet: {}
 	},
 	squadron: false
-},  {
+}, {
 	type: "ship",
 	id: "goss_shuttle_75003",
 	set: ["75003"],
@@ -160,7 +160,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "ferengi_starship_75003",
-	set: ["75003","72013"],
+	set: ["75003", "72013"],
 	name: "Ferengi Starship",
 	class: "Ferengi Shuttle",
 	actions: ["evade", "scan"],
@@ -193,7 +193,7 @@ module.exports = [{
 		ship: {},
 		fleet: {}
 	},
-	unique:true,
+	unique: true,
 	squadron: false
 }, {
 	type: "ship",
@@ -354,7 +354,7 @@ module.exports = [{
 	unique: true,
 	factions: ["dominion"],
 	squadron: false
-},{
+}, {
 	type: "ship",
 	id: "jemhadar_attack_ship_75002",
 	set: ["75002", "73032", "71271", "3rd_wing_attack_ship"],
@@ -647,7 +647,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "vorcha_class_2017core",
-	set: ["2017core","71120", "72241", "72280p"],
+	set: ["2017core", "71120", "72241", "72280p"],
 	name: "Klingon Starship",
 	class: "Vor'cha Class",
 	actions: ["evade", "target-lock", "cloak", "sensor-echo"],
@@ -768,7 +768,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "dominion_starship_dreadnought_72013wp",
-	set: ["72013wp","71212"],
+	set: ["72013wp", "71212"],
 	name: "Dominion Starship",
 	class: "Cardassian ATR-4107",
 	actions: ["evade", "target-lock", "scan"],
@@ -806,7 +806,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "ship_71448",
-	set: ["72012wp","71448"],
+	set: ["72012wp", "71448"],
 	name: "Klingon Starship",
 	class: "Raptor Class",
 	actions: ["evade", "target-lock", "scan"],
@@ -4539,7 +4539,7 @@ module.exports = [{
 		fleet: {}
 	},
 	squadron: false
-},  {
+}, {
 	type: "ship",
 	id: "fina_prime_71534",
 	set: ["71534"],
@@ -4875,7 +4875,7 @@ module.exports = [{
 		fleet: {}
 	},
 	squadron: false
-},  {
+}, {
 	type: "ship",
 	id: "i_k_s_pagh_71996",
 	set: ["71996"],
@@ -5774,7 +5774,7 @@ module.exports = [{
 	unique: true,
 	factions: ["federation"],
 	squadron: false
-},  {
+}, {
 	type: "ship",
 	id: "quark_s_treasure_72013",
 	set: ["72013"],
