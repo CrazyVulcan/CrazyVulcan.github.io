@@ -293,7 +293,7 @@ module.directive( "search", function() {
 				// processing into the browser storage
 				reader.onload = function(event) {
 					rawSetData = event.target.result;
-					$scope.processImport(rawSetData);
+					$scope.processSetsImport(rawSetData);
 				};
 
 				console.info("Opening " + importFile.name + " saved set file...")
@@ -308,16 +308,26 @@ module.directive( "search", function() {
 			 *
 			 * @param  {String} importedData Raw text imported from a file
 			 */
-			$scope.processImport = function(importedData) {
+			$scope.processSetsImport = function(importedData) {
 				// Parse the text to a JSON data object
 				var importedSets = JSON.parse(importedData);
-				console.log(importedSets)
-				debugger;
-				// Write the imported data to the file store
-				localStorage.sets = angular.toJson( importedSets );
+				var errorCount = 0;
+				$.each(importedSets, function(i, set){
+					if ("search" in set == false) errorCount++;
+				});
 
-				// Refresh the application to accept the imported data
-				window.location.reload(true);
+				// If we found objects in the import file that didn't have the expected
+				// keys, declare an error and return without loading the file into
+				// the application.
+				if (errorCount > 0){
+					console.error("Owned set file import failed with " + errorCount + " errors found in file.")
+				} else {
+					// Write the imported data to the file store
+					localStorage.sets = angular.toJson( importedSets );
+
+					// Refresh the application to accept the imported data
+					window.location.reload(true);
+				}
 			};
 
 			// Check all sets
