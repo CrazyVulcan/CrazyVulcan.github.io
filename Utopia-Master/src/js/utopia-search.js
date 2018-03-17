@@ -5,7 +5,7 @@ module.filter( "cardFilter", [ "$factions", "$filter", function($factions, $filt
 	return function( cards, options ) {
 
 		var valueOf = $filter("valueOf");
-	
+
 		return $.map( cards, function(card) {
 
 			// Uniqueness options
@@ -14,7 +14,7 @@ module.filter( "cardFilter", [ "$factions", "$filter", function($factions, $filt
 
 			if( options.generic && card.unique && !options.unique)
 				return null;
-			
+
 			// Filter by selected expansions
 			if( card.set && !options.ignoreSetsFilter && options.sets ) {
 				var setSelected = false;
@@ -25,7 +25,7 @@ module.filter( "cardFilter", [ "$factions", "$filter", function($factions, $filt
 				if( !setSelected )
 					return null;
 			}
-			
+
 			// Custom filter
 			if( options.filterField && options.filterOperator && options.filterValue ) {
 				var value = valueOf(card,options.filterField);
@@ -62,7 +62,7 @@ module.filter( "cardFilter", [ "$factions", "$filter", function($factions, $filt
 			// Resources skip faction
 			if( card.type == "resource" )
 				return card;
-			
+
 			// Faction selection
 			var noneSelected = true;
 			var hasAFaction = false;
@@ -74,7 +74,7 @@ module.filter( "cardFilter", [ "$factions", "$filter", function($factions, $filt
 			});
 			if( !(noneSelected || hasAFaction) )
 				return null;
-			
+
 			return card;
 		});
 
@@ -83,21 +83,21 @@ module.filter( "cardFilter", [ "$factions", "$filter", function($factions, $filt
 }]);
 
 module.filter( "sortBy", [ "$filter", function($filter) {
-	
+
 	return function( cards, sortBy, ascending ) {
 		ascending = ascending === true || ascending == "true";
-		return $filter("orderBy")( cards, function(card) { 
-			var value = $filter("valueOf")(card,sortBy); 
+		return $filter("orderBy")( cards, function(card) {
+			var value = $filter("valueOf")(card,sortBy);
 			return value || 0;
 		}, !ascending );
 	};
-	
+
 }]);
 
 module.directive( "search", function() {
-	
+
 	return  {
-		
+
 		scope: {
 			cards: "=",
 			sets: "=",
@@ -106,9 +106,9 @@ module.directive( "search", function() {
 			search: "=searchOptions",
 			defaults: "=",
 		},
-		
+
 		templateUrl: "search.html",
-		
+
 		controller: [ "$scope", "$factions", function($scope, $factions) {
 
 			// Set initial search parameters
@@ -125,15 +125,15 @@ module.directive( "search", function() {
 				filterOperator: "<=",
 				filterValue: "",
 			};
-			
-			$scope.defaults = localStorage.defaults ? angular.fromJson( localStorage.defaults ) : {};				
-			
+
+			$scope.defaults = localStorage.defaults ? angular.fromJson( localStorage.defaults ) : {};
+
 			// Load search defaults
 			if( $scope.defaults.search )
 				angular.copy( $scope.defaults.search, $scope.search );
 			else
 				$scope.defaults.search = angular.copy($scope.search);
-			
+
 			// Clears search parameters
 			$scope.resetSearch = function() {
 				$scope.search.query = "";
@@ -151,42 +151,42 @@ module.directive( "search", function() {
 				$scope.search.filterOperator = "<=";
 				$scope.search.filterValue = "";
 			};
-			
+
 			// Controls search results expand/collapse
 			$scope.modifySearchColumns = function(amount) {
-				
+
 				$scope.search.columns += amount;
-				
+
 				if( $scope.search.columns < 0 )
 					$scope.search.columns = 0;
-				
+
 				if( $scope.search.columns > 5 )
 					$scope.search.columns = 5;
-				
+
 			};
-			
+
 			// Reset result display count when search changes
 			$scope.$watch( "search", function() {
 				$scope.resultLimit = 10;
 			}, true);
-			
+
 			// Store changes to expansions filter
 			$scope.$watch( "search.sets", function(sets) {
 				if( sets )
 					localStorage.sets = angular.toJson( sets );
 			}, true);
-					
+
 			// Store changes to expansions filter
 			$scope.$watch( "defaults", function(defaults) {
 				if( defaults )
 					localStorage.defaults = angular.toJson( defaults );
 			}, true);
-					
+
 			// Construct faction list from hard-coded list
 			$.each( $factions.list, function(i, faction) {
 				$scope.search.factions[faction.toLowerCase().replace(/ /g,"-")] = {};
 			});
-			
+
 			$scope.sortables = [
 				{
 					value: "name",
@@ -217,14 +217,14 @@ module.directive( "search", function() {
 					name: "Skill Value"
 				}
 			];
-			
+
 			$scope.$on( "cardsLoaded", function() {
 				// Construct list of card types from those available
 				$.each( $scope.cards, function(i, card) {
 					if( !$scope.search.types[card.type] )
 						$scope.search.types[card.type] = {};
 				});
-				
+
 				// Load stored owned expansions
 				try {
 					$scope.search.sets = localStorage.sets ? angular.fromJson( localStorage.sets ) : {};
@@ -233,7 +233,7 @@ module.directive( "search", function() {
 					$scope.search.sets = {};
 					$scope.defaults = {};
 				}
-				
+
 				// Add new sets to filter
 				$.each( $scope.sets, function(i, set) {
 					if( !$scope.search.sets[set.id] ) {
@@ -243,12 +243,31 @@ module.directive( "search", function() {
 					$scope.setList.push( set );
 				});
 			});
-			
+
 			// Uncheck all sets
 			$scope.uncheckAllSets = function() {
 				$.each( $scope.search.sets, function(i,set) {
 					set.search = false;
 				} );
+			};
+
+			/**
+			 * Export owned sets for import into another browser session
+			 */
+			$scope.exportSets = function() {
+				var filename = 'utopia_owned_sets.json';
+				var ownedSets = JSON.stringify($scope.search.sets, null, 2);
+				//console.log(ownedSets);
+				var element = document.createElement('a');
+				element.setAttribute('href', 'data:application/json;charset=utf-8,' + encodeURIComponent(ownedSets));
+				element.setAttribute('download', filename);
+
+				element.style.display = 'none';
+				document.body.appendChild(element);
+
+				element.click();
+
+				document.body.removeChild(element);
 			};
 
 			// Check all sets
@@ -259,26 +278,26 @@ module.directive( "search", function() {
 			};
 		}]
 	};
-	
+
 } );
 
 module.directive( "searchFilterGroup", function() {
-	
+
 	return  {
-		
+
 		scope: {
 			title: "@",
 		},
-		
+
 		templateUrl: "search-filter-group.html",
-		
+
 		transclude: true,
-		
+
 		link: function(scope,element,attrs) {
 			if( attrs.open != undefined )
 				scope.showContent = true;
 		},
-		
+
 	};
-	
+
 } );
