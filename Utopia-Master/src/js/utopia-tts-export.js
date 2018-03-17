@@ -68,7 +68,7 @@ console.log("Reporting for duty.")
 					totalCost += res.cost;
 				}
 				
-				ttsText += "Load into Tabletop Simulator\nhttp://kfnexus.github.io/staw-utopia/";
+				ttsText += "Load into Tabletop Simulator\nhttp://steamcommunity.com/sharedfiles/filedetails/?id=645363597";
 				
 				$scope.ttsText = ttsText;
 				
