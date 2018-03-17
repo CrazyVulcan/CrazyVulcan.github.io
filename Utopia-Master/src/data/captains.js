@@ -476,7 +476,7 @@ module.exports = [{
 	range: "1 - 2",
 	text: "This card cannot be affected by anything that affects a Captain, and this card counts as a Romulan Drone Pilot.\n<b>ACTION:</b> Target an opposing ship in this ship's Primary Firing Arc.\nThe target ship rolls -2 attack dice against this ship.\n(<i>Romulan Drone Ship Only</i>)",
 	unique: true,
-	shipLimit:true,
+	shipLimit: true,
 	factions: ["independent", "romulan"]
 }, {
 	type: "captain",
@@ -1533,7 +1533,7 @@ module.exports = [{
 	cost: 3,
 	skill: 5,
 	talents: 0
-},  {
+}, {
 	type: "captain",
 	id: "daimon_goss_73001",
 	set: ["73001"],
@@ -3107,7 +3107,7 @@ module.exports = [{
 	text: "<b>ACTION:</b> Decrease the Captain Skill of this Captain by 1 this game round.\n\nPerfrom an Action on this ships Action Bar and an Action on a Dominion [crew] equipped to this ship as Free Actions.",
 	unique: true,
 	factions: ["dominion"]
-},  {
+}, {
 	type: "captain",
 	id: "james_t_kirk_enterprise_a",
 	set: ["72260gp"],
