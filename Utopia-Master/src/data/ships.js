@@ -3919,7 +3919,7 @@ module.exports = [{
 	agility: 1,
 	hull: 5,
 	shields: 2,
-	cost: 22,
+	cost: 26,
 	text: "",
 	unique: false,
 	factions: ["mirror-universe"],
