@@ -124,8 +124,8 @@ module.directive( "fleetExport", function() {
 					// Show set names for non-ships
 					text += card.set ? " (" + getSetNames(card.set) + ")" : "";
 				} else if( $scope.ttsExportStyle ){
-					// Show set names for non-ships
-					"-" += card.name;
+					// Show just the name text
+					"ZooM";
 				}
 				
 				// Show cost if appropriate
