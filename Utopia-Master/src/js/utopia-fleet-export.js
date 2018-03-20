@@ -211,7 +211,7 @@ module.directive( "fleetExport", function() {
 		//New Block for use with Tabletop Simulator Export
 			function cardToTextTTS(card, ship, fleet) {
 				//console.log("You found me");
-								
+
 				var text = "";
 
 				if( card.type == "ship" && !card.unique) {
@@ -241,6 +241,16 @@ module.directive( "fleetExport", function() {
 						text += res.text;
 					}
 				});
+
+				$.each( card.upgradeSlots || [], function(i,slot) {
+					if( slot.occupant ) {
+						var res = cardToTextTTS(slot.occupant, ship, fleet);
+						text += res.text;
+						// if( countSlotCost )
+						// 	cost += res.cost;
+					}
+				});
+
 				return { cost: 0, text: text };
 			};
 
