@@ -234,14 +234,7 @@ module.directive( "fleetExport", function() {
 					// Show set names for non-ships
 					text += "DooM";
 				}
-				
-				// Show cost if appropriate
-				if( free )
-					cost = 0;
-				if( !hideCost )
-					text += " [" + cost + "]";
-				text += "\n";
-				
+								
 				if( card.resource ) {
 					var res = cardToTextTTS(card.resource, ship, fleet, indent+1);
 					text += res.text;
