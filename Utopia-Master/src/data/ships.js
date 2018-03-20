@@ -302,7 +302,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "jemhadar_cruiser_71524",
-	set: ["75002"],
+	set: ["75002", "71524"],
 	name: "Dominion Starship",
 	class: "Jem'Hadar Battle Cruiser",
 	actions: ["evade", "target-lock", "scan", "battlestations"],
@@ -680,26 +680,6 @@ module.exports = [{
 	cost: 24,
 	text: "<b>WHEN ATTACKING:</b> If this ship is Cloaked.\n\nIf the defending ship is at Range 1, this ship rolls +2 attack dice. If the defending ship is at Range 2 this ship rolls +1 attack die.",
 	unique: true,
-	factions: ["klingon"],
-	intercept: {
-		ship: {},
-		fleet: {}
-	},
-	squadron: false
-}, {
-	type: "ship",
-	id: "kvort_2017core",
-	set: ["2017core"],
-	name: "Klingon Starship",
-	class: "K'Vort Class ",
-	actions: ["evade", "target-lock", "cloak", "sensor-echo"],
-	upgrades: ["tech", "weapon", "crew"],
-	attack: 4,
-	agility: 1,
-	hull: 5,
-	shields: 2,
-	cost: 20,
-	text: "",
 	factions: ["klingon"],
 	intercept: {
 		ship: {},
@@ -2522,7 +2502,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "1039",
-	set: ["71273", "71996", "blind_buruk", "72281p"],
+	set: ["2017core", "71273", "71996", "blind_buruk", "72281p"],
 	name: "Klingon Starship",
 	class: "K'Vort Class",
 	actions: ["evade", "target-lock", "cloak", "sensor-echo"],
@@ -2828,27 +2808,6 @@ module.exports = [{
 	cost: 36,
 	text: "Each round, one other friendly Jem'Hadar ship within Range 1-2 of your ship may perform an Action on their Action Bar as a free Action.",
 	unique: true,
-	factions: ["dominion"],
-	intercept: {
-		ship: {},
-		fleet: {}
-	},
-	squadron: false
-}, {
-	type: "ship",
-	id: "dominion_starship_71279",
-	set: ["71279"],
-	name: "Dominion Starship",
-	class: "Jem'Hadar Battleship",
-	actions: ["target-lock", "scan", "battlestations"],
-	upgrades: ["tech", "weapon", "weapon", "crew", "crew"],
-	attack: 6,
-	agility: 0,
-	hull: 7,
-	shields: 4,
-	cost: 29,
-	text: "",
-	unique: false,
 	factions: ["dominion"],
 	intercept: {
 		ship: {},
@@ -3628,27 +3587,6 @@ module.exports = [{
 	cost: 34,
 	text: "Each time you defend, if you are within Range 1-2 of at least one friendly Jem'Hadar Attack Ship, roll 1 extra defense die.",
 	unique: true,
-	factions: ["dominion"],
-	intercept: {
-		ship: {},
-		fleet: {}
-	},
-	squadron: false
-}, {
-	type: "ship",
-	id: "dominion_starship_71524",
-	set: ["71524"],
-	name: "Dominion Starship",
-	class: "Jem'Hadar Battle Cruiser",
-	actions: ["evade", "target-lock", "scan", "battlestations"],
-	upgrades: ["tech", "weapon", "weapon", "crew"],
-	attack: 5,
-	agility: 1,
-	hull: 6,
-	shields: 4,
-	cost: 29,
-	text: "",
-	unique: false,
 	factions: ["dominion"],
 	intercept: {
 		ship: {},
@@ -4467,7 +4405,7 @@ module.exports = [{
 	agility: 1,
 	hull: 3,
 	shields: 2,
-	cost: 20,
+	cost: 13,
 	text: "",
 	unique: false,
 	factions: ["klingon"],
