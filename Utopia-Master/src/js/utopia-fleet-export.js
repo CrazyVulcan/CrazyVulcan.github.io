@@ -1,7 +1,7 @@
 var module = angular.module("utopia-fleet-export", []);
 
 module.directive( "fleetExport", function() {
-	console.log("I am working again")
+	
 	return {
 
 		scope: {
@@ -125,7 +125,7 @@ module.directive( "fleetExport", function() {
 					// Show set names for non-ships
 					text += card.set ? " (" + getSetNames(card.set) + ")" : "";
 				} else if( $scope.ttsExportStyle ) {
-					text += card.set ? " 0(" + getSetNames(card.set) + ")0" : "";
+					console.log("Found Me");
 				}
 
 				
