@@ -123,9 +123,6 @@ module.directive( "fleetExport", function() {
 				} else if( $scope.showSetNames ){
 					// Show set names for non-ships
 					text += card.set ? " (" + getSetNames(card.set) + ")" : "";
-				} else if( $scope.ttsExportStyle ){
-					// Show just the name text
-					text && !hideCost;
 				}
 				
 				// Show cost if appropriate
@@ -145,6 +142,10 @@ module.directive( "fleetExport", function() {
 					var res = cardToText(card.captain, ship, fleet, indent+1);
 					text += res.text;
 					cost += res.cost;
+				} else if( $scope.ttsExportStyle ){
+					// Show just the name text
+					var res = cardToText(card.captain, ship, fleet, indent+1);
+					text += res.text;
 				}
 				
 				if( card.admiral ) {
