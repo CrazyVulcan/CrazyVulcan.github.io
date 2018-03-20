@@ -7897,7 +7897,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"tech:kemocite_75003":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
-			}},
+			},
+			canEquip: onePerShip("Kemocite")
+		},
 		//T9 Energy Converter
 		"tech:t9_energy_converter_75003":{
 			factionPenalty: function(upgrade, ship, fleet) {
