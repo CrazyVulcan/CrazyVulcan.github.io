@@ -205,7 +205,7 @@ module.directive( "fleetExport", function() {
 		//################################################
 		//New Block for use with Tabletop Simulator Export
 			function cardToTextTTS(card, ship, fleet, indent, hideCost) {
-				
+				console.log("You found me")
 				var text = "";
 				
 				if( card.type == "resource" )
