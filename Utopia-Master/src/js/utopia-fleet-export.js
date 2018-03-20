@@ -57,7 +57,7 @@ module.directive( "fleetExport", function() {
 			
 			function fleetToText(fleet) {
 				
-				var fleetText = "";
+				var fleetText = "Save your URL for easy reloading.\n";
 				
 				var totalCost = 0;
 				
