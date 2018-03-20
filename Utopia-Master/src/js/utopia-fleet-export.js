@@ -143,12 +143,9 @@ module.directive( "fleetExport", function() {
 					var res = cardToText(card.captain, ship, fleet, indent+1);
 					text += res.text;
 					cost += res.cost;
-				} 
-				
-				if( card.captain && $scope.ttsExportStyle ){
+				} else if ( $scope.ttsExportStyle ){
 					// Show just the name text
-					var res = cardToText(card.captain, ship, fleet, indent+1);
-					text += res.text;
+					text;
 				}
 				
 				if( card.admiral ) {
