@@ -107,21 +107,10 @@ module.directive( "fleetExport", function() {
 				
 				text += card.name;
 				
-				if( card.type == "captain" ) {
-					text += " " + card.skill + " (Captain)";
-				//Remove the Extra Captain text for TTS
-				} else if($scope.ttsExportStyle) {
-					//Return just the text
-					text;
-				}
-				
-				if( card.type == "admiral" ) {
+				if( card.type == "captain" ) 
+					text += " " + card.skill + " (Captain)";			
+				if( card.type == "admiral" ) 
 					text += " (Admiral)";
-				//Remove the Extra Captain text for TTS
-				} else if($scope.ttsExportStyle) {
-					//Return just the text
-					text;
-				}
 				if( card.type == "fleet-captain" )
 					text += " Fleet Captain";
 				if( card.type == "flagship" )
@@ -135,7 +124,10 @@ module.directive( "fleetExport", function() {
 				} else if( $scope.showSetNames ){
 					// Show set names for non-ships
 					text += card.set ? " (" + getSetNames(card.set) + ")" : "";
+				} else if( $scope.ttsExportStyle ) {
+					text;
 				}
+
 				
 				// Show cost if appropriate
 				if( free )
