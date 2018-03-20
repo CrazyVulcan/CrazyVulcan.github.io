@@ -209,7 +209,7 @@ module.directive( "fleetExport", function() {
 
 		//################################################
 		//New Block for use with Tabletop Simulator Export
-			function cardToTextTTS(card, ship, fleet) {
+			function cardToTextTTS(card, ship, fleet, indent) {
 				//console.log("You found me");
 				
 				var text = "";
