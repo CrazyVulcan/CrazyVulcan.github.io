@@ -105,9 +105,14 @@ module.directive( "fleetExport", function() {
 					countSlotCost = false;
 				
 				text += card.name;
-				
-				if( card.type == "captain" )
+				//Lets cut out the dead weight
+				if( card.type == "captain" ){
 					text += " " + card.skill + " (Captain)";
+				}else if( $scope.ttsExportStyle ){
+					// Show set names for non-ships
+					text += "BooM";
+				}
+				
 				if( card.type == "admiral" )
 					text += " (Admiral)";
 				if( card.type == "fleet-captain" )
@@ -125,7 +130,7 @@ module.directive( "fleetExport", function() {
 					text += card.set ? " (" + getSetNames(card.set) + ")" : "";
 				} else if( $scope.ttsExportStyle ){
 					// Show set names for non-ships
-					text += card.set ? " ( Hello )" : "";
+					text += "";
 				}
 				
 				// Show cost if appropriate
