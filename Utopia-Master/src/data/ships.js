@@ -688,26 +688,6 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "kvort_2017core",
-	set: ["2017core"],
-	name: "Klingon Starship",
-	class: "K'Vort Class ",
-	actions: ["evade", "target-lock", "cloak", "sensor-echo"],
-	upgrades: ["tech", "weapon", "crew"],
-	attack: 4,
-	agility: 1,
-	hull: 5,
-	shields: 2,
-	cost: 20,
-	text: "",
-	factions: ["klingon"],
-	intercept: {
-		ship: {},
-		fleet: {}
-	},
-	squadron: false
-}, {
-	type: "ship",
 	id: "prototype_02_72014wp",
 	set: ["72014wp"],
 	name: "Prototype 02",
@@ -2522,7 +2502,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "1039",
-	set: ["71273", "71996", "blind_buruk", "72281p"],
+	set: ["2017core", "71273", "71996", "blind_buruk", "72281p"],
 	name: "Klingon Starship",
 	class: "K'Vort Class",
 	actions: ["evade", "target-lock", "cloak", "sensor-echo"],
