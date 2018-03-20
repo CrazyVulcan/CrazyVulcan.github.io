@@ -106,20 +106,10 @@ module.directive( "fleetExport", function() {
 				
 				text += card.name;
 				//Lets cut out the dead weight
-				if( card.type == "captain" ){
+				if( card.type == "captain" )
 					text += " " + card.skill + " (Captain)";
-				}else if( $scope.ttsExportStyle ){
-					// Remove all but names for Captains
-					text += "BooM";
-				}
-				
-				if( card.type == "admiral" ){
+				if( card.type == "admiral" )
 					text += " (Admiral)";
-				}else if( $scope.ttsExportStyle ){
-					// Remove all but names for Admirals
-					text += "BooM";
-				}
-				
 				if( card.type == "fleet-captain" )
 					text += " Fleet Captain";
 				if( card.type == "flagship" )
@@ -135,7 +125,7 @@ module.directive( "fleetExport", function() {
 					text += card.set ? " (" + getSetNames(card.set) + ")" : "";
 				} else if( $scope.ttsExportStyle ){
 					// Show set names for non-ships
-					text += "GloM";
+					card.name;
 				}
 				
 				// Show cost if appropriate
