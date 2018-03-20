@@ -66,7 +66,7 @@ module.directive( "fleetExport", function() {
 				
 				var totalCost = 0;
 				
-				fleetText += "Save your URL for easy Reloading";
+				fleetText += "Save your URL for easy Reloading\n\n";
 				
 				$.each( fleet.ships, function(i,ship) {
 					
@@ -95,7 +95,7 @@ module.directive( "fleetExport", function() {
 				
 				var ttsText = "";
 				
-				fleetText += "Save your URL for easy Reloading";
+				fleetText += "Save your URL for easy Reloading\n\n";
 				
 				$.each( fleet.ships, function(i,ship) {
 					
