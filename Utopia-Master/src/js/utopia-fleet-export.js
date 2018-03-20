@@ -37,6 +37,7 @@ module.directive( "fleetExport", function() {
 			
 			$scope.fleetText = "";
 			$scope.showSetNames = false;
+			$scope.ttsExportStyle = false;
 			
 			var valueOf = $filter("valueOf");
 			
