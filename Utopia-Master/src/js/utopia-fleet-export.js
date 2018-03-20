@@ -1,7 +1,7 @@
 var module = angular.module("utopia-fleet-export", []);
 
 module.directive( "fleetExport", function() {
-	console.log("This is the Old File")
+	console.log("I am working again")
 	return {
 
 		scope: {
@@ -37,6 +37,7 @@ module.directive( "fleetExport", function() {
 			
 			$scope.fleetText = "";
 			$scope.showSetNames = false;
+			$scope.ttsExportStyle = false;
 			
 			var valueOf = $filter("valueOf");
 			
@@ -45,6 +46,10 @@ module.directive( "fleetExport", function() {
 			}, true );
 			
 			$scope.$watch( "showSetNames", function() {
+				fleetToText($scope.fleet);
+			});
+			
+			$scope.$watch( "ttsExportStyle", function() {
 				fleetToText($scope.fleet);
 			});
 			
@@ -102,10 +107,21 @@ module.directive( "fleetExport", function() {
 				
 				text += card.name;
 				
-				if( card.type == "captain" )
+				if( card.type == "captain" ) {
 					text += " " + card.skill + " (Captain)";
-				if( card.type == "admiral" )
+				//Remove the Extra Captain text for TTS
+				} else if($scope.ttsExportStyle) {
+					//Return just the text
+					text;
+				}
+				
+				if( card.type == "admiral" ) {
 					text += " (Admiral)";
+				//Remove the Extra Captain text for TTS
+				} else if($scope.ttsExportStyle) {
+					//Return just the text
+					text;
+				}
 				if( card.type == "fleet-captain" )
 					text += " Fleet Captain";
 				if( card.type == "flagship" )
