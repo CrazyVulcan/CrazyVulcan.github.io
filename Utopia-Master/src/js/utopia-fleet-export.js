@@ -238,27 +238,22 @@ module.directive( "fleetExport", function() {
 				if( card.resource ) {
 					var res = cardToTextTTS(card.resource, ship, fleet, indent+1);
 					text += res.text;
-					cost += res.cost;
 				}
 				
 				if( card.captain ) {
 					var res = cardToTextTTS(card.captain, ship, fleet, indent+1);
 					text += res.text;
-					cost += res.cost;
 				}
 				
 				if( card.admiral ) {
 					var res = cardToTextTTS(card.admiral, ship, fleet, indent+1);
 					text += res.text;
-					cost += res.cost;
 				}
 				
 				$.each( card.upgrades || [], function(i,slot) {
 					if( slot.occupant ) {
 						var res = cardToTextTTS(slot.occupant, ship, fleet, indent+1);
 						text += res.text;
-						if( countSlotCost )
-							cost += res.cost;
 					}
 				});
 				
