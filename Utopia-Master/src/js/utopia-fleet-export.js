@@ -211,7 +211,12 @@ module.directive( "fleetExport", function() {
 		//New Block for use with Tabletop Simulator Export
 			function cardToTextTTS(card, ship, fleet) {
 				//console.log("You found me");
-
+				
+				var text = "";
+				indent = indent || 0;
+				for( var i = 0; i < indent; i ++ )
+					text += "- ";
+				
 				var text = "";
 
 				if( card.type == "ship" && !card.unique) {
