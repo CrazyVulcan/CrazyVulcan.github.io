@@ -125,7 +125,7 @@ module.directive( "fleetExport", function() {
 					text += card.set ? " (" + getSetNames(card.set) + ")" : "";
 				} else if( $scope.ttsExportStyle ){
 					// Show just the name text
-					"ZooM";
+					text && !hideCost;
 				}
 				
 				// Show cost if appropriate
