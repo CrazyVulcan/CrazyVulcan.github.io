@@ -107,8 +107,11 @@ module.directive( "fleetExport", function() {
 				
 				text += card.name;
 				//Lets cut out the dead weight
-				if( card.type == "captain" )
+				if( card.type == "captain" ){
 					text += " " + card.skill + " (Captain)";
+				}else if ( $scope.ttsExportStyle ){
+					text
+				}
 				if( card.type == "admiral" )
 					text += " (Admiral)";
 				if( card.type == "fleet-captain" )
@@ -126,7 +129,7 @@ module.directive( "fleetExport", function() {
 					text += card.set ? " (" + getSetNames(card.set) + ")" : "";
 				}else if ( $scope.ttsExportStyle ){
 					// Show just the name text
-					text += "DooM";
+					card.name;
 				}
 				
 				// Show cost if appropriate
