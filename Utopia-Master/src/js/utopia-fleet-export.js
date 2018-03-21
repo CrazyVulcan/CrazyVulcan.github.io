@@ -61,7 +61,8 @@ module.directive( "fleetExport", function() {
 			});
 
 			function fleetToText(fleet) {
-				if ($scope.ttsExportStyle) ttsToText(fleet);
+				// if ($scope.ttsExportStyle) ttsToText(fleet);
+				if ($scope.ttsExportStyle) fleetSheet(fleet);
 				else {
 					var fleetText = "";
 
@@ -252,6 +253,85 @@ module.directive( "fleetExport", function() {
 				});
 
 				return { cost: 0, text: text };
+			};
+
+			function fleetSheet(fleet) {
+				var fleetData = {cost:fleet.totalCost, ships:[]};
+
+				$.each( fleet.ships, function(i,ship) {
+					var cards = [];
+					cardToFleetData(ship, ship, fleet, cards);
+					cards = $.grep(cards,function(n){ return n == 0 || n });
+					fleetData.ships.push({cards:cards.slice(), cost:ship.totalCost});
+				});
+				console.log("Fleet Cost: " + fleetData.cost);
+				$.each(fleetData.ships, function(i, ship){
+					console.log("Ship Cost: " + ship.cost);
+					console.table(ship.cards);
+				});
+				$scope.fleetText = "";
+			};
+
+			function cardToFleetData(card, ship, fleet, card_stack) {
+				// var cards = []
+				var data = {};
+				data.name = card.name;
+
+				if (card.type == "ship"){
+					data.type = "Ship";
+					if (!card.unique) data.name = "Generic " + card.class;
+					data.faction = factionConvert(card.factions);
+					data.cost = ship.totalCost;
+				} else {
+					data.type = card.type;
+					data.faction = factionConvert(card.factions);
+					data.cost = card.cost;
+				}
+				card_stack.push(data);
+
+				if( card.resource )
+					card_stack.push(cardToFleetData(card.resource, ship, fleet, card_stack));
+
+				if( card.captain )
+					card_stack.push(cardToFleetData(card.captain, ship, fleet, card_stack));
+
+				if( card.admiral )
+					card_stack.push(cardToFleetData(card.admiral, ship, fleet, card_stack));
+
+				$.each( card.upgrades || [], function(i,slot) {
+					if( slot.occupant )
+						card_stack.push(cardToFleetData(slot.occupant, ship, fleet, card_stack));
+				});
+
+				$.each( card.upgradeSlots || [], function(i,slot) {
+					if( slot.occupant )
+						card_stack.push(cardToFleetData(slot.occupant, ship, fleet, card_stack));
+				});
+			};
+
+			function factionConvert(factionList){
+			  var factions = {
+			    "federation":"FED",
+			    "klingon":"KLI",
+			    "romulan":"ROM",
+			    "dominion":"DOM",
+			    "borg":"BOR",
+			    "species-8472":"SPE",
+			    "kazon":"KAZ",
+			    "xindi":"XIN",
+			    "bajoran":"BAJ",
+			    "ferengi":"FER",
+			    "vulcan":"VUL",
+			    "independent":"IND",
+			    "mirror-universe":"MIR",
+			    "q-continuum":"Q"
+			  }
+			  var updatedFactionList = [];
+			  $.each( factionList, function(i, faction){
+			    if(faction in factions) updatedFactionList.push(factions[faction]);
+			    else console.error("Unknown Faction: " + faction);
+			  });
+			  return updatedFactionList.join('/');
 			};
 
 		}]
