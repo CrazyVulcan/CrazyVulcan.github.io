@@ -10024,7 +10024,7 @@ module.exports = [{
 	set: ["71805"],
 	name: "Lure",
 	cost: 5,
-	text: "<i>Errata</i>\nDuring the Planning Phase, after all ships have chosen their maneuvers, you may discard this card to target an enemy ship that is not within Range 1-3 of your ship. If you do this, change that ship's chosen Maneuver to a green maneuver on it's dial. The target ship cannot look at or change their dial after you reset it. If the new maneuver would cause the ship to exit the play area or overlap another ship, the target ship may disregard the maneuver and not move that turn.",
+	text: "(<i>Errata</i>) During the Planning Phase, after all ships have chosen their maneuvers, you may discard this card to target an enemy ship that is not within Range 1-3 of your ship. If you do this, change that ship's chosen Maneuver to a green maneuver on it's dial. The target ship cannot look at or change their dial after you reset it. If the new maneuver would cause the ship to exit the play area or overlap another ship, the target ship may disregard the maneuver and not move that turn.",
 	unique: true,
 	factions: ["independent"],
 	intercept: {
