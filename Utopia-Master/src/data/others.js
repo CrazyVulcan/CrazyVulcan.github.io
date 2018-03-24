@@ -942,7 +942,7 @@ module.exports = [{
 	set: ["72321r"],
 	name: "Sickbay",
 	factions: ["federation", "klingon", "romulan", "dominion", "independent"],
-	text: "Ship must have a hull of Hull 4 or more",
+	text: "Ship must have a hull of Hull 4 or more\n\nWhenever this ships Captain, Admiral, or [crew] would be disabled, you may place 2 [time] Tokens on that card instead.\n-OR-\nWhenever this ships Captain, Admiral, or [crew] would be discarded, you may discard this card instead.",
 	cost: 6,
 	showType: true,
 	canEquip: true,

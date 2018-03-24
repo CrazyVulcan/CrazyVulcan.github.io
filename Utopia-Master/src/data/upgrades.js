@@ -1474,7 +1474,7 @@ module.exports = [{
 	set: ["72282gp"],
 	name: "Reverse Course",
 	cost: 5,
-	text: "During the Activation Phase, you may disregard your chosen maneuver and execute a Full Astern [reverse] Maneuver with a speed of 1 or 2.",
+	text: "<i>(Emend)</i>\nDuring the Activation Phase, you may discard this card to disregard your chosen maneuver and execute a Full Astern [reverse] Maneuver with a speed of 1 or 2.",
 	unique: true,
 	factions: ["romulan"]
 }, {

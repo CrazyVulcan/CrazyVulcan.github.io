@@ -8142,6 +8142,38 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 
 	// RESOURCES
+	
+	//Sickbay
+		"resource:sickbay_resource": {
+			slotType: "ship-resource",
+			cost: 0,
+			hideCost: true,
+			showShipResourceSlot: function(card,ship,fleet) {
+				if( ship.resource && ship.resource.type == "ship-resource" )
+					return true;
+
+				var show = true;
+				$.each( fleet.ships, function(i,ship) {
+					if( ship.resource )
+						show = false;
+				} );
+				return show;
+			},
+			onRemove: function(resource,ship,fleet) {
+				$.each( fleet.ships, function(i,ship) {
+					if( ship.resource )
+						delete ship.resource;
+				} );
+			}
+		},
+		"ship-resource:sickbay_ship":{
+			canEquip: function(card,ship,fleet) {
+				return valueOf(ship,"hull",ship,fleet) >= 4;
+			}
+		},
+		
+		
+	 //Front Line Retrofit
 		"resource:front_line_retrofit_resource": {
 			slotType: "ship-resource",
 			cost: 0,

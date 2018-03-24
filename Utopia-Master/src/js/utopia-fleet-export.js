@@ -96,8 +96,6 @@ module.directive( "fleetExport", function() {
 
 				var ttsText = "";
 
-				ttsText += "Save your URL for easy Reloading\n\n";
-
 				$.each( fleet.ships, function(i,ship) {
 
 					var res = cardToTextTTS(ship,ship,fleet);
