@@ -256,57 +256,78 @@ module.directive( "fleetExport", function() {
 			};
 
 			function fleetSheet(fleet) {
-				var fleetData = {cost:fleet.totalCost, ships:[]};
+				var fleetData = {cost:fleet.totalCost, ships:[], resource:{}};
 
 				$.each( fleet.ships, function(i,ship) {
 					var cards = [];
 					cardToFleetData(ship, ship, fleet, cards);
 					cards = $.grep(cards,function(n){ return n == 0 || n });
+					cards.sort(function(a,b){ return a.priority - b.priority; });
 					fleetData.ships.push({cards:cards.slice(), cost:ship.totalCost});
 				});
+
+				if( fleet.resource ) {
+					fleetData.resource.name = fleet.resource.name;
+					fleetData.resource.cost = valueOf(fleet.resource,"cost",{},fleet);
+				}
+
+				fleetData.ships.sort(function(a,b){ return b.cost - a.cost; });
 				console.log("Fleet Cost: " + fleetData.cost);
 				$.each(fleetData.ships, function(i, ship){
 					console.log("Ship Cost: " + ship.cost);
 					console.table(ship.cards);
 				});
+				console.table(fleetData.resource);
 				$scope.fleetText = "";
+				generateFleetSheet(fleetData);
 			};
 
 			function cardToFleetData(card, ship, fleet, card_stack) {
 				// var cards = []
-				var data = {};
-				data.name = card.name;
+				var data = {name:card.name,
+										type:typeConvert(card.type),
+										faction:factionConvert(card.factions),
+										cost:valueOf(card,"cost",ship,fleet),
+										priority:0
+									 };
 
-				if (card.type == "ship"){
-					data.type = "Ship";
-					if (!card.unique) data.name = "Generic " + card.class;
-					data.faction = factionConvert(card.factions);
-					data.cost = ship.totalCost;
-				} else {
-					data.type = card.type;
-					data.faction = factionConvert(card.factions);
-					data.cost = card.cost;
+				if (card.type == "ship" && !card.unique)
+					data.name = "Generic " + card.class;
+
+				switch(data.type){
+					case "Ship":
+						data.priority = 0; break;
+					case "Captain":
+						data.priority = 1; break;
+					case "Admiral":
+						data.priority = 2; break;
+					default:
+						data.priority = 3;
 				}
+
 				card_stack.push(data);
 
-				if( card.resource )
+				if( card.resource ){
 					card_stack.push(cardToFleetData(card.resource, ship, fleet, card_stack));
-
-				if( card.captain )
+				}
+				if( card.captain ){
 					card_stack.push(cardToFleetData(card.captain, ship, fleet, card_stack));
-
-				if( card.admiral )
+				}
+				if( card.admiral ){
 					card_stack.push(cardToFleetData(card.admiral, ship, fleet, card_stack));
-
-				$.each( card.upgrades || [], function(i,slot) {
-					if( slot.occupant )
-						card_stack.push(cardToFleetData(slot.occupant, ship, fleet, card_stack));
-				});
-
-				$.each( card.upgradeSlots || [], function(i,slot) {
-					if( slot.occupant )
-						card_stack.push(cardToFleetData(slot.occupant, ship, fleet, card_stack));
-				});
+				}
+				if(card.upgrades && card.upgrades.length > 0){
+					$.each( card.upgrades, function(i,slot) {
+						if( slot.occupant )
+							card_stack.push(cardToFleetData(slot.occupant, ship, fleet, card_stack));
+					});
+				}
+				if(card.upgradeSlots && card.upgradeSlots.length > 0){
+					$.each( card.upgradeSlots || [], function(i,slot) {
+						if( slot.occupant )
+							card_stack.push(cardToFleetData(slot.occupant, ship, fleet, card_stack));
+					});
+				}
 			};
 
 			function factionConvert(factionList){
@@ -332,6 +353,48 @@ module.directive( "fleetExport", function() {
 			    else console.error("Unknown Faction: " + faction);
 			  });
 			  return updatedFactionList.join('/');
+			};
+
+			function typeConvert(cardType){
+			  var typeTable = {
+			    "ship":"Ship",
+			    "captain":"Captain",
+			    "admiral":"Admiral",
+			    "crew":"C",
+			    "talent":"E",
+					"tech":"T",
+			    "weapon":"W",
+			    "borg":"B",
+			    "squadron":"S"
+			  };
+				return typeTable[cardType];
+			};
+
+			function generateFleetSheet(fleetData){
+				var doc = new jsPDF({
+						unit: 'in',
+						format: [8.5, 11]
+				})
+				// var line_number = 1;
+				var multiline = [];
+				$.each(fleetData.ships, function(i, ship){
+					$.each(ship.cards, function(j, card){
+						var output = card.type + "\t" + card.name + "\t" + card.faction + "\t" + card.cost;
+						// doc.text(output, line_number++, 1);
+						multiline.push(output);
+					});
+					multiline.push("Ship Total: " + ship.cost+ " SP");
+					multiline.push("");
+					multiline.push("");
+					// line_number += 2;
+				});
+				// line_number +=2;
+				multiline.push("");
+				multiline.push("");
+				multiline.push("Fleet Total: " + fleetData.cost + " SP")
+				// doc.text("Fleet Total: " + fleetData.cost + " SP", 1, line_number);
+				doc.text(multiline, 1, 1);
+				doc.save('fleet_sheet.pdf');
 			};
 
 		}]
