@@ -272,12 +272,12 @@ module.directive( "fleetExport", function() {
 				}
 
 				fleetData.ships.sort(function(a,b){ return b.cost - a.cost; });
-				console.log("Fleet Cost: " + fleetData.cost);
-				$.each(fleetData.ships, function(i, ship){
-					console.log("Ship Cost: " + ship.cost);
-					console.table(ship.cards);
-				});
-				console.table(fleetData.resource);
+				// console.log("Fleet Cost: " + fleetData.cost);
+				// $.each(fleetData.ships, function(i, ship){
+				// 	console.log("Ship Cost: " + ship.cost);
+				// 	console.table(ship.cards);
+				// });
+				// console.table(fleetData.resource);
 				$scope.fleetText = "";
 				generateFleetSheet(fleetData);
 			};
@@ -371,30 +371,36 @@ module.directive( "fleetExport", function() {
 			};
 
 			function generateFleetSheet(fleetData){
-				var doc = new jsPDF({
-						unit: 'in',
-						format: [8.5, 11]
-				})
-				// var line_number = 1;
-				var multiline = [];
+				console.log(fleetData);
+				var csv_text = "";
+				csv_text = fleetData.cost + ',' + fleetData.ships.length + '\n';
+				csv_text += '"' + fleetData.resource.name + '",' + fleetData.resource.cost + '\n';
 				$.each(fleetData.ships, function(i, ship){
+					csv_text += 'Ship' + i+1 + ',' + ship.cards.length + ',' + ship.cost + '\n';
 					$.each(ship.cards, function(j, card){
-						var output = card.type + "\t" + card.name + "\t" + card.faction + "\t" + card.cost;
-						// doc.text(output, line_number++, 1);
-						multiline.push(output);
+						csv_text += card.type + ',' + '"' + card.name + '",' + card.faction + ',' + card.cost + '\n';
 					});
-					multiline.push("Ship Total: " + ship.cost+ " SP");
-					multiline.push("");
-					multiline.push("");
-					// line_number += 2;
 				});
-				// line_number +=2;
-				multiline.push("");
-				multiline.push("");
-				multiline.push("Fleet Total: " + fleetData.cost + " SP")
-				// doc.text("Fleet Total: " + fleetData.cost + " SP", 1, line_number);
-				doc.text(multiline, 1, 1);
-				doc.save('fleet_sheet.pdf');
+				//console.log(csv_text);
+				downloadText(csv_text, 'fleet_sheet.csv', 'text/csv');
+			};
+
+			function downloadText(text, filename, mimeType) {
+				var encodedText = encodeURIComponent(text);
+				var encodingInfo = "data:" + mimeType + ";charset=utf-8,"
+				var element = document.createElement('a');
+				console.log("Generating CSV file: " + filename);
+
+				// Generate a file download link and provide the encoded data
+				// as the file source
+				element.setAttribute('href', encodingInfo + encodedText);
+				element.setAttribute('download', filename);
+				element.style.display = 'none';
+				document.body.appendChild(element);
+
+				// Autoclick the link and then remove the link
+				element.click();
+				document.body.removeChild(element);
 			};
 
 		}]
