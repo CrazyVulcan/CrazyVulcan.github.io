@@ -52,17 +52,18 @@ module.directive( "fleetExport", function() {
 
 			//allow script to use ttsExportStyle
 
-			$scope.$watch( "fleet", function(fleet) {
-				fleetToText(fleet);
-			}, true );
+			// $scope.$watch( "fleet", function(fleet) {
+			// 	fleetToText(fleet);
+			// }, true );
 
-			$scope.$watch( "ttsExportStyle", function() {
+			$scope.$watch( "exportType", function() {
 				fleetToText($scope.fleet);
 			});
 
 			function fleetToText(fleet) {
 				// if ($scope.ttsExportStyle) ttsToText(fleet);
-				if ($scope.ttsExportStyle) fleetSheet(fleet);
+				if ($scope.exportType == "fleetSheet") fleetSheet(fleet);
+				else if ($scope.exportType == "tts") ttsToText(fleet);
 				else {
 					var fleetText = "";
 
@@ -263,6 +264,10 @@ module.directive( "fleetExport", function() {
 					cardToFleetData(ship, ship, fleet, cards);
 					cards = $.grep(cards,function(n){ return n == 0 || n });
 					cards.sort(function(a,b){ return a.priority - b.priority; });
+					$.each( cards, function(j, card){
+						delete card['priority'];
+						card.index = j;
+					});
 					fleetData.ships.push({cards:cards.slice(), cost:ship.totalCost});
 				});
 
@@ -272,18 +277,12 @@ module.directive( "fleetExport", function() {
 				}
 
 				fleetData.ships.sort(function(a,b){ return b.cost - a.cost; });
-				// console.log("Fleet Cost: " + fleetData.cost);
-				// $.each(fleetData.ships, function(i, ship){
-				// 	console.log("Ship Cost: " + ship.cost);
-				// 	console.table(ship.cards);
-				// });
-				// console.table(fleetData.resource);
-				$scope.fleetText = "";
-				generateFleetSheet(fleetData);
+
+				$scope.fleetText = JSON.stringify(fleetData, null, 2);
+
 			};
 
 			function cardToFleetData(card, ship, fleet, card_stack) {
-				// var cards = []
 				var data = {name:card.name,
 										type:typeConvert(card.type),
 										faction:factionConvert(card.factions),
@@ -368,39 +367,6 @@ module.directive( "fleetExport", function() {
 			    "squadron":"S"
 			  };
 				return typeTable[cardType];
-			};
-
-			function generateFleetSheet(fleetData){
-				console.log(fleetData);
-				var csv_text = "";
-				csv_text = fleetData.cost + ',' + fleetData.ships.length + '\n';
-				csv_text += '"' + fleetData.resource.name + '",' + fleetData.resource.cost + '\n';
-				$.each(fleetData.ships, function(i, ship){
-					csv_text += 'Ship' + i+1 + ',' + ship.cards.length + ',' + ship.cost + '\n';
-					$.each(ship.cards, function(j, card){
-						csv_text += card.type + ',' + '"' + card.name + '",' + card.faction + ',' + card.cost + '\n';
-					});
-				});
-				//console.log(csv_text);
-				downloadText(csv_text, 'fleet_sheet.csv', 'text/csv');
-			};
-
-			function downloadText(text, filename, mimeType) {
-				var encodedText = encodeURIComponent(text);
-				var encodingInfo = "data:" + mimeType + ";charset=utf-8,"
-				var element = document.createElement('a');
-				console.log("Generating CSV file: " + filename);
-
-				// Generate a file download link and provide the encoded data
-				// as the file source
-				element.setAttribute('href', encodingInfo + encodedText);
-				element.setAttribute('download', filename);
-				element.style.display = 'none';
-				document.body.appendChild(element);
-
-				// Autoclick the link and then remove the link
-				element.click();
-				document.body.removeChild(element);
 			};
 
 		}]
