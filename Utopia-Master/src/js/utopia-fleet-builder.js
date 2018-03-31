@@ -408,7 +408,7 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 						if( !valueOf(slot.occupant,"free",ship,fleet) )
 							cost += valueOf(slot.occupant,"cost",ship,fleet);
 				});
-
+				ship.totalCost = cost;
 				return cost;
 			};
 
@@ -419,7 +419,7 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 				$.each( fleet.ships, function(i, ship) {
 					cost += $scope.getTotalCost(ship,fleet);
 				});
-
+				fleet.totalCost = cost;
 				return cost;
 
 			};
