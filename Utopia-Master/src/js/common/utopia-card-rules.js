@@ -9011,13 +9011,22 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-
+	
 	//Senior Staff
 		"resource:senior_staff":{
+			
 			slotType: "talent",
-			slotType: "talent",
-			cost: 1,
+			cost: 0,
+			hideCost: true,
+			showShipResourceSlot: function(card,ship,fleet) {
+				if( ship.resource && ship.resource.type == "talent" )
+					return true;
+			},
+			cost: function(upgrade,ship,fleet,cost) {
+					return resolve(upgrade,ship,fleet,cost) + 1;
+				return cost;
+			}
+			
 		}
-
 	};
 }]);
