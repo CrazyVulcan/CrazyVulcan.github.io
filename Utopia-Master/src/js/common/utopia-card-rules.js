@@ -9014,25 +9014,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 	
 	//Senior Staff
 		"resource:senior_staff":{
-			upgradeSlot: [
-			{
-				type: ["talent"],
-				source: "Senior Staff",
-			},
-			{
-				type: ["talent"],
-				source: "Senior Staff",
-			},
-			{
-				type: ["talent"],
-				source: "Senior Staff",
-			},
-			{
-				type: ["talent"],
-				source: "Senior Staff",
-			}
-			]
-			
+						
 		}
+		
 	};
 }]);
