@@ -8636,7 +8636,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			]
 		},
-
+			
 		// Sideboard
 		"resource:4003": {
 			class: "Sideboard",
@@ -9014,10 +9014,17 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 	
 	//Senior Staff
 		"resource:senior_staff":{
-			
-			slotType: "talent",
-			cost: 0,
-			hideCost: true,
+			class: "Senior Staff",
+			upgradeSlot: [
+			{
+				type: ["talent"],
+				source: "Senior Staff",
+				cost: function(upgrade, ship, fleet, cost) {
+						return resolve(upgrade, ship, fleet, cost) + 1;
+					return cost;
+				}
+			}
+			]
 			
 		}
 	};
