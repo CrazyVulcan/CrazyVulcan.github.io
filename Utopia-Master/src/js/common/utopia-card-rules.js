@@ -9021,10 +9021,13 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			showShipResourceSlot: function(card,ship,fleet) {
 				if( ship.resource && ship.resource.type == "talent" )
 					return true;
-			},
-			cost: function(upgrade,ship,fleet,cost) {
-					return resolve(upgrade,ship,fleet,cost) + 1;
-				return cost;
+
+				var show = true;
+				$.each( fleet.ships, function(i,ship) {
+					if( ship.resource )
+						show = false;
+				} );
+				return show;
 			}
 			
 		}
