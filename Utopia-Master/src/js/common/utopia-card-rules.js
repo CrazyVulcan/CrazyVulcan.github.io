@@ -9018,17 +9018,6 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			slotType: "talent",
 			cost: 0,
 			hideCost: true,
-			showShipResourceSlot: function(card,ship,fleet) {
-				if( ship.resource && ship.resource.type == "talent" )
-					return true;
-
-				var show = true;
-				$.each( fleet.ships, function(i,ship) {
-					if( ship.resource )
-						show = false;
-				} );
-				return show;
-			}
 			
 		}
 	};
