@@ -215,6 +215,10 @@ module.directive( "search", function() {
 				{
 					value: "skill",
 					name: "Skill Value"
+				},
+				{
+					value: "maneuvers",
+					name: "Maneuver"
 				}
 			];
 
