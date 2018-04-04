@@ -37,6 +37,7 @@ module.filter( "cardFilter", [ "$factions", "$filter", function($factions, $filt
 					case "=": if( value != options.filterValue ) return null; break;
 					case ">=": if( value < options.filterValue ) return null; break;
 					case ">": if( value <= options.filterValue ) return null; break;
+					case "green": if( value = options.filterValue ) return null; break;
 				}
 			}
 
