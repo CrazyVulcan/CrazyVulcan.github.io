@@ -37,7 +37,6 @@ module.filter( "cardFilter", [ "$factions", "$filter", function($factions, $filt
 					case "=": if( value != options.filterValue ) return null; break;
 					case ">=": if( value < options.filterValue ) return null; break;
 					case ">": if( value <= options.filterValue ) return null; break;
-					case "green": if( value = options.filterValue ) return null; break;
 				}
 			}
 
@@ -216,10 +215,6 @@ module.directive( "search", function() {
 				{
 					value: "skill",
 					name: "Skill Value"
-				},
-				{
-					value: "maneuvers",
-					name: "Maneuver"
 				}
 			];
 
