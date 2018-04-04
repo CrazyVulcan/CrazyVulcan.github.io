@@ -23,7 +23,7 @@ module.exports = [{
 	id: "cloning_facility_73032",
 	set: ["73032"],
 	name: "Cloning Facility",
-	cost: 4,
+	cost: 2,
 	text: "<b>ACTIVATION PHASE:</b> Target a Dominion [crew] Upgrade equipped to this ship or a friendly ship.\n\nThis card becomes a copy of the target Dominion [crew] Upgrade this game round.",
 	OnePerShip: true,
 	range: "1",
