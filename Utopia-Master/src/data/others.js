@@ -1,7 +1,4 @@
 module.exports = [{
-	type: "bob"
-	
-},{
 	type: "token",
 	id: "rule_BMGT",
 	set: ["75003"],
