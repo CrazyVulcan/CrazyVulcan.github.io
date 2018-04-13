@@ -7821,10 +7821,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					intercept: {
 						ship: {
 							cost: function() { return 0; },
-							factionPenalty: function(card, ship, fleet, factionPenalty) {
-								if( isUpgrade(card) )
-									return 0;
-							return factionPenalty;},
+
 							canEquip: function(card,ship,fleet,canEquip) {
 								if( isUpgrade(card) && (valueOf(card,"cost",ship,fleet) <= 3) )
 									return canEquip;
