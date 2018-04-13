@@ -7821,9 +7821,16 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					intercept: {
 						ship: {
 							cost: function() { return 0; },
+<<<<<<< HEAD
 							factionPenalty: function(upgrade, ship, fleet, factionPenalty) {
 								return upgrade.type == "crew" ? 0 : factionPenalty;
 							},
+=======
+							factionPenalty: function(card, ship, fleet, factionPenalty) {
+								if( isUpgrade(card) )
+									return 0;
+							return factionPenalty;},
+>>>>>>> parent of 48de097f... AB
 							canEquip: function(card,ship,fleet,canEquip) {
 								if( (valueOf(card,"cost",ship,fleet) <= 3) )
 									return canEquip;
