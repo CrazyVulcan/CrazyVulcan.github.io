@@ -7844,6 +7844,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 								if(  isUpgrade(card) && (valueOf(card,"cost",ship,fleet) <= 3) )
 									return canEquip;
 								else if( (valueOf(card,"cost",ship,fleet) <= 3) && $faction.hasFaction(ship,"federation",ship,fleet) )
+									return canEquip;
 								return false;
 				}}}}
 			]
