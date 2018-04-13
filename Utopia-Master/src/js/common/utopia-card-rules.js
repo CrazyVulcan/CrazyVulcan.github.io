@@ -1584,7 +1584,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				ship: {
 					// All Vulcan/Federation tech is -2 SP
 					cost: function(upgrade, ship, fleet, cost) {
-					if( upgrade.type == "tech" && $factions.hasFaction(upgrade,"federation", ship, fleet) || $factions.hasFaction(upgrade,"bajoran", ship, fleet) || $factions.hasFaction(upgrade,"vulcan", ship, fleet) )
+					if( upgrade.type == "tech" && $factions.hasFaction(upgrade,"federation", ship, fleet) && $factions.hasFaction(upgrade,"bajoran", ship, fleet) && $factions.hasFaction(upgrade,"vulcan", ship, fleet) )
 							return resolve(upgrade, ship, fleet, cost) - 2;
 						return cost;
 					},
