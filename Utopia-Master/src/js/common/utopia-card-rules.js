@@ -1587,7 +1587,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					if( checkUpgrade("tech", upgrade, ship) && $factions.hasFaction(upgrade,"federation", ship, fleet) || $factions.hasFaction(upgrade,"bajoran", ship, fleet) || $factions.hasFaction(upgrade,"vulcan", ship, fleet) )
 							return resolve(upgrade, ship, fleet, cost) - 2;
 						return cost;
-					},
+					}
 				}
 			}
 		},
