@@ -1584,13 +1584,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				ship: {
 					// All Vulcan/Federation tech is -2 SP
 					cost: function(upgrade, ship, fleet, cost) {
-						var calculatedCost = cost;
-
-						if( checkUpgrade("tech", upgrade, ship)
-								&& ( $factions.hasFaction(upgrade,"vulcan", ship, fleet) || $factions.hasFaction(upgrade,"federation", ship, fleet) ) )
-							calculatedCost = resolve(upgrade, ship, fleet, cost) - 2;
+					if( checkUpgrade("tech", upgrade, ship) && $factions.hasFaction(upgrade,"federation", ship, fleet) || $factions.hasFaction(upgrade,"bajoran", ship, fleet) || $factions.hasFaction(upgrade,"vulcan", ship, fleet) )
+							return resolve(upgrade, ship, fleet, cost) - 2;
 						return cost;
-					},
+					}
 				}
 			}
 		},
