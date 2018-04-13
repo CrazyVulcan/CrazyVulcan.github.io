@@ -1,32 +1,4 @@
 module.exports = [{
-	type: "ship-class",
-	id: "72224p",
-	name: "Xindi Reptilian Warship",
-	frontArc: "90",
-	rearArc: "",
-	maneuvers: {
-		1: {
-			straight: "green",
-			bank: "green"
-		},
-		2: {
-			straight: "green",
-			bank: "white",
-			turn: "white"
-		},
-		3: {
-			straight: "white",
-			bank: "white",
-			turn: "red",
-			about: "red"
-		},
-		4: {
-			straight: "white"
-		},
-		min: 1,
-		max: 4
-	}
-}, {
 	type: "token",
 	id: "rule_BMGT",
 	set: ["75003"],
