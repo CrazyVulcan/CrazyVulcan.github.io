@@ -7821,29 +7821,15 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					intercept: {
 						ship: {
 							cost: function() { return 0; },
+							
 							factionPenalty: function(card, ship, fleet, factionPenalty) {
-								if( isUpgrade(card) )
+								if( isUpgrade(crew) )
 									return 0;
-							return factionPenalty;},
+							return factionPenalty;
+							}, 
+							
 							canEquip: function(card,ship,fleet,canEquip) {
 								if( isUpgrade(card) && (valueOf(card,"cost",ship,fleet) <= 3) )
-									return canEquip;
-								return false;
-				}}}},
-				{
-					type: ["crew"],
-					rules: "Cost of 3sp or less",
-					intercept: {
-						ship: {
-							cost: function() { return 0; },
-							factionPenalty: function(card, ship, fleet, factionPenalty) {
-								if( isUpgrade(card) )
-									return 0;
-							return factionPenalty;},
-							canEquip: function(card,ship,fleet,canEquip) {
-								if(  isUpgrade(card) && (valueOf(card,"cost",ship,fleet) <= 3) )
-									return canEquip;
-								else if( (valueOf(card,"cost",ship,fleet) <= 3) && $faction.hasFaction(ship,"federation",ship,fleet) )
 									return canEquip;
 								return false;
 				}}}}
