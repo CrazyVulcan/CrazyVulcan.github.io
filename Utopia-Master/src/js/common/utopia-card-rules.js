@@ -6238,7 +6238,13 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					//text: "Up to 3 of the Upgrades you purchase for your ship cost exactly 4 SP each and are placed face down beside your Ship Card, the printed cost on those Upgrades cannot be greater than 6",
 					// Discounting up to 3 Upgrades that cost 5 or 6 sp
 					cost: function(upgrade,ship,fleet,cost) {
-						if( upgrade.cost == 5 || upgrade.cost == 6)
+						var matching = 0;
+												
+						if( upgrade.cost == 5 || upgrade.cost == 6 && matching <= 3)
+						//Each time there is a match add +1 to "matching"
+						$.each(ship.upgradeSlots, function(i,slot) {
+							matching += 1;
+						} );
 							return 4;
 						return cost;
 					}
