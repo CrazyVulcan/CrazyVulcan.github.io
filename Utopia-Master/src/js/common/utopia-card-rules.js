@@ -6242,7 +6242,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						if( upgrade.cost == 5 || upgrade.cost == 6 && matching <= 3)
 						//Each time there is a match add +1 to "matching"
 
-							matching += 1;
+							matching + 1;
 
 							return 4;
 						return cost;
