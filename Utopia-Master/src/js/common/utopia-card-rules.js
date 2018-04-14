@@ -6234,28 +6234,17 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						if( isUpgrade(card) )
 							return 0;
 						return factionPenalty;
-					}
-				}
-			},
+					},
 			//text: "Up to 3 of the Upgrades you purchase for your ship cost exactly 4 SP each and are placed face down beside your Ship Card, the printed cost on those Upgrades cannot be greater than 6",
-			// TODO not very sophisticated
-			upgradeSlots: [{/* Existing Talent Slot */} ].concat(cloneSlot( 3 ,
-				{
-					type: upgradeTypes,
-					faceDown: true,
-					intercept: {
-						ship: {
-							cost: function() { return 4; },
-							factionPenalty: function() { return 0; },
-							canEquip: function(card,ship,fleet,canEquip) {
-								if( (valueOf(card,"cost",ship,fleet) <= 6) )
-									return canEquip;
-								return false;
-							}
+					cost: function(card,ship,fleet,cost) {
+						// Discounting up to 3 Upgrades that cost 5 or 6 sp
+						if ( (valueOf(card,"cost",ship,fleet) == 5) || (valueOf(card,"cost",ship,fleet) == 6) ) {
+							return 4;
+						return cost;
 						}
 					}
 				}
-			)),
+			}
 		},
 		//Ceti Eel
 		"talent:the_classic_movies_ceti_eel":{
