@@ -6239,7 +6239,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					// Discounting up to 3 Upgrades that cost 5 or 6 sp
 					cost: function(upgrade,ship,fleet,cost) {
 						if( upgrade.cost == 5 || upgrade.cost == 6)
-							return resolve(upgrade,ship,fleet,cost) == 4;
+							return 4;
 						return cost;
 					}
 				}
