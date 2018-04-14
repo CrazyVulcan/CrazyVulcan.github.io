@@ -6235,10 +6235,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 							return 0;
 						return factionPenalty;
 					},
-			//text: "Up to 3 of the Upgrades you purchase for your ship cost exactly 4 SP each and are placed face down beside your Ship Card, the printed cost on those Upgrades cannot be greater than 6",
-					cost: function(card,ship,fleet,cost) {
+					//text: "Up to 3 of the Upgrades you purchase for your ship cost exactly 4 SP each and are placed face down beside your Ship Card, the printed cost on those Upgrades cannot be greater than 6",
+					cost: function(upgrade,ship,fleet,cost) {
 						// Discounting up to 3 Upgrades that cost 5 or 6 sp
-						if ( (valueOf(card,"cost",ship,fleet) == 5) || (valueOf(card,"cost",ship,fleet) == 6) ) {
+						if ( (valueOf(upgrade,"cost",ship,fleet) == 5) || (valueOf(upgrade,"cost",ship,fleet) == 6) ) {
 							return 4;
 						return cost;
 						}
