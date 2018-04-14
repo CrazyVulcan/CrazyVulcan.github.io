@@ -6239,11 +6239,12 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					// Discounting up to 3 Upgrades that cost 5 or 6 sp
 					cost: function(upgrade,ship,fleet,cost) {
 						var matching = 0;					
-						if( upgrade.cost == 5 || upgrade.cost == 6 && matching <= 3 && isUpgrade){
+						if( upgrade.cost == 5 || upgrade.cost == 6 && matching <= 3 && isUpgrade(card) ) {
 						//Each time there is a match add +1 to "matching"
 						matching = matching + 1; }
 							return 4;
 						return cost;
+						console.log(matching)
 					}
 				}
 			}
