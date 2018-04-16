@@ -40,6 +40,21 @@ module.filter( "cardFilter", [ "$factions", "$filter", function($factions, $filt
 				}
 			}
 
+			if (card.type == "ship"){// && card.id == "u_s_s_enterprise_e_71531"){
+				var available_speeds = card.classData.maneuvers;
+				var maneuver_types = [];
+				$.each(available_speeds, function(i, speed){
+					maneuver_types = maneuver_types.concat(Object.keys(speed))
+				});
+				maneuver_types = maneuver_types.filter(
+					function(value, index, self){
+						return self.indexOf(value) === index;
+					}
+				);
+
+				if (!$.inArray($scope.search.maneuverType, maneuver_types)) return null;
+			}
+
 			// Text search
 			if( options.query ) {
 				if( card.name.toLowerCase().indexOf( options.query.toLowerCase() ) < 0 &&
@@ -62,6 +77,8 @@ module.filter( "cardFilter", [ "$factions", "$filter", function($factions, $filt
 			// Resources skip faction
 			if( card.type == "resource" )
 				return card;
+
+			// if( card.type == "ship" && card.id == "u_s_s_enterprise_e_71531") console.log(card);
 
 			// Faction selection
 			var noneSelected = true;
@@ -121,6 +138,7 @@ module.directive( "search", function() {
 				columns: 1,
 				sortBy: "cost",
 				ascending: "false",
+				manuverType: "",
 				filterField: "",
 				filterOperator: "<=",
 				filterValue: "",
@@ -147,6 +165,7 @@ module.directive( "search", function() {
 				} );
 				$scope.search.sortBy = $scope.defaults.search.sortBy || "name";
 				$scope.search.ascending = $scope.defaults.search.ascending || "true";
+				$scope.search.manuverType = "";
 				$scope.search.filterField = "";
 				$scope.search.filterOperator = "<=";
 				$scope.search.filterValue = "";
@@ -217,6 +236,45 @@ module.directive( "search", function() {
 					name: "Skill Value"
 				}
 			];
+
+			$scope.maneuvers = [
+				{
+					value: "straight",
+					name: "Straight"
+				},
+				{
+					value: "bank",
+					name: "Bank"
+				},
+				{
+					value: "turn",
+					name: "Turn"
+				},
+				{
+					value: "about",
+					name: "Come About"
+				},
+				{
+					value: "spin",
+					name: "Spin"
+				},
+				{
+					value: "stop",
+					name: "Stop"
+				},
+				{
+					value: "flank",
+					name: "Flank"
+				},
+				{
+					value: "45-degree-rotate",
+					name: "Rotate 45 Degrees"
+				},
+				{
+					value: "90-degree-rotate",
+					name: "Rotate 90 Degrees"
+				}
+			]
 
 			$scope.$on( "cardsLoaded", function() {
 				// Construct list of card types from those available

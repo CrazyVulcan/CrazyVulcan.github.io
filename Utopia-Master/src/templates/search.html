@@ -26,6 +26,11 @@
 			</span>
 		</search-filter-group>
 
+		<!-- Trying to add a manuver filter for ships -->
+		<search-filter-group title="Manuver" open>
+				<select ng-model="search.maneuverType"><option value="">- No Manuver -</option><option ng-repeat="maneuver in maneuvers" value="{{maneuver.value}}">{{maneuver.name}}</option></select>
+		</search-filter-group>
+
 		<search-filter-group title="Uniqueness" open>
 			<span>
 				<label class="u-label"><input type="checkbox" ng-model="search.unique"> <i class="fs fs-unique"></i> Unique</label>
