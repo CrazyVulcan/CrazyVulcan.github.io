@@ -141,7 +141,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		var type = ["weapon"];
 		$.each( $filter("upgradeSlots")(ship), function(i, slot) {
 			if( slot.occupant && slot.occupant.name == upgrade.source ) {
-				console.log(slot.type, i);
+				//console.log(slot.type, i);
 				type = slot.type;
 				return false;
 				}
@@ -1584,11 +1584,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				ship: {
 					// All Vulcan/Federation tech is -2 SP
 					cost: function(upgrade, ship, fleet, cost) {
-						var calculatedCost = cost;
-
-						if( checkUpgrade("tech", upgrade, ship)
-								&& ( $factions.hasFaction(upgrade,"vulcan", ship, fleet) || $factions.hasFaction(upgrade,"federation", ship, fleet) ) )
-							calculatedCost = resolve(upgrade, ship, fleet, cost) - 2;
+					if( $factions.hasFaction(upgrade,"federation", ship, fleet) || $factions.hasFaction(upgrade,"bajoran", ship, fleet) || $factions.hasFaction(upgrade,"vulcan", ship, fleet) && upgrade.type == "tech" )
+							return resolve(upgrade, ship, fleet, cost) - 2;
 						return cost;
 					},
 				}
@@ -3503,6 +3500,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}},
 		//Systems Upgrade
 		"tech:systems_upgrade_71998p": {
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			},
 			type: "question",
 			isSlotCompatible: function(slotTypes) {
 				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0;
@@ -6237,28 +6237,53 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						if( isUpgrade(card) )
 							return 0;
 						return factionPenalty;
+					},
+					//text: "Up to 3 of the Upgrades you purchase for your ship cost exactly 4 SP each and are placed face down beside your Ship Card, the printed cost on those Upgrades cannot be greater than 6",
+					// Discounting up to 3 Upgrades that cost 5 or 6 sp
+					cost: function(card,ship,fleet,cost) {
+					  var replacement_cost = false;
+
+					  // Skip ship cards, save a little processing time
+					  if (card.type != "ship") {
+
+					    //Otherwise, grab all of the upgrade assigned to the ship
+					    var candidates = [];
+					    var occupied_slots = $filter("upgradeSlots")(ship);
+					    $.each(occupied_slots, function(i, slot) {
+					      if (slot.occupant && (slot.occupant.cost == 5 || slot.occupant.cost == 6))
+					        candidates.push(slot);
+					    });
+
+					    // Only process if we have candidate cards
+					    if (candidates.length){
+
+								// Only worry about sorting if we have more than three candidates
+					      if (candidates.length > 3){
+					        candidates.sort(function(a,b){
+					          return b.occupant.cost - a.occupant.cost;
+					        });
+									candidates = candidates.slice(0, 3);
+					      }
+
+								// Now that we know the candidate cards for discount, apply the
+								// discount if the current card is one of the candidates
+								for (var i = 0; i < candidates.length; i++){
+									if (card.id == candidates[i].occupant.id){
+										replacement_cost = true;
+										break;
+									}
+								}
+					    }
+					  }
+
+						var return_value = 0;
+						if (replacement_cost) return_value = 4;
+					  else return_value = resolve(card, ship, fleet, cost);
+
+						return return_value;
 					}
 				}
-			},
-			//text: "Up to 3 of the Upgrades you purchase for your ship cost exactly 4 SP each and are placed face down beside your Ship Card, the printed cost on those Upgrades cannot be greater than 6",
-			// TODO not very sophisticated
-			upgradeSlots: [{/* Existing Talent Slot */} ].concat(cloneSlot( 3 ,
-				{
-					type: upgradeTypes,
-					faceDown: true,
-					intercept: {
-						ship: {
-							cost: function() { return 4; },
-							factionPenalty: function() { return 0; },
-							canEquip: function(card,ship,fleet,canEquip) {
-								if( (valueOf(card,"cost",ship,fleet) <= 6) )
-									return canEquip;
-								return false;
-							}
-						}
-					}
-				}
-			)),
+			}
 		},
 		//Ceti Eel
 		"talent:the_classic_movies_ceti_eel":{
@@ -6659,7 +6684,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						return cost;
 					},
 				}
-			}	
+			}
 		},
 
 	//Orassin :72273
@@ -7824,7 +7849,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 							canEquip: function(card,ship,fleet,canEquip) {
 								if( (valueOf(card,"cost",ship,fleet) <= 4) && $factions.hasFaction( ship, "federation", ship, fleet ) || $factions.hasFaction( ship, "klingon", ship, fleet ) || $factions.hasFaction( ship, "romulan", ship, fleet ) || $factions.hasFaction( ship, "dominion", ship, fleet ) || $factions.hasFaction( ship, "borg", ship, fleet ) || $factions.hasFaction( ship, "bajoran", ship, fleet ) || $factions.hasFaction( ship, "vulcan", ship, fleet ) || $factions.hasFaction( ship, "mirror-universe", ship, fleet ) )
 									return canEquip;
-								else if ( (valueOf(card,"cost",ship,fleet) <= 2) && $factions.hasFaction( ship, "independent", ship, fleet ) || $factions.hasFaction( ship, "ferengi", ship, fleet ) || $factions.hasFaction( ship, "kazon", ship, fleet ) || $factions.hasFaction( ship, "xindi", ship, fleet ))
+								else if ( (valueOf(card,"cost",ship,fleet) <= 3) || $factions.hasFaction( ship, "independent", ship, fleet ) || $factions.hasFaction( ship, "ferengi", ship, fleet ) || $factions.hasFaction( ship, "kazon", ship, fleet ) || $factions.hasFaction( ship, "xindi", ship, fleet ))
 									return canEquip;
 								return false;
 				}}}},
@@ -7837,7 +7862,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 							canEquip: function(card,ship,fleet,canEquip) {
 								if( (valueOf(card,"cost",ship,fleet) <= 4) && $factions.hasFaction( ship, "federation", ship, fleet ) || $factions.hasFaction( ship, "klingon", ship, fleet ) || $factions.hasFaction( ship, "romulan", ship, fleet ) || $factions.hasFaction( ship, "dominion", ship, fleet ) || $factions.hasFaction( ship, "borg", ship, fleet ) || $factions.hasFaction( ship, "bajoran", ship, fleet ) || $factions.hasFaction( ship, "vulcan", ship, fleet ) || $factions.hasFaction( ship, "mirror-universe", ship, fleet ) )
 									return canEquip;
-								else if ( (valueOf(card,"cost",ship,fleet) <= 3) && $factions.hasFaction( ship, "independent", ship, fleet ) || $factions.hasFaction( ship, "ferengi", ship, fleet ) || $factions.hasFaction( ship, "kazon", ship, fleet ) || $factions.hasFaction( ship, "xindi", ship, fleet ))
+								else if ( (valueOf(card,"cost",ship,fleet) <= 3) || $factions.hasFaction( ship, "independent", ship, fleet ) || $factions.hasFaction( ship, "ferengi", ship, fleet ) || $factions.hasFaction( ship, "kazon", ship, fleet ) || $factions.hasFaction( ship, "xindi", ship, fleet ))
 									return canEquip;
 								return false;
 				}}}}
@@ -8025,9 +8050,6 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			},
 			canEquip: onePerShip("Meridor - Gorn Ale"),
-			canEquipFaction: function(upgrade,ship,fleet) {
-				return ship && $factions.hasFaction( ship, "independent", ship, fleet ) || $factions.hasFaction( ship, "ferengi", ship, fleet ) || $factions.hasFaction( ship, "kazon", ship, fleet ) || $factions.hasFaction( ship, "xindi", ship, fleet );
-			},
 			isSlotCompatible: function(slotTypes) {
 				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0;
 			},
@@ -8142,7 +8164,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 
 	// RESOURCES
-	
+
 	//Sickbay
 		"resource:sickbay_resource": {
 			slotType: "ship-resource",
@@ -8171,8 +8193,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return valueOf(ship,"hull",ship,fleet) >= 4;
 			}
 		},
-		
-		
+
+
 	 //Front Line Retrofit
 		"resource:front_line_retrofit_resource": {
 			slotType: "ship-resource",
@@ -9014,19 +9036,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 	//Senior Staff
 		"resource:senior_staff":{
-			hideCost: true,
 
-			intercept: {
-				fleet: {
-					// Add the two Elite Talent slots
-					upgradeSlots: [
-					{/* Talent */},
-						{
-							type: ["talent"]
-						}
-					]
-				}
-			}
 		}
 
 	};

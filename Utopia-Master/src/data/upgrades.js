@@ -23,7 +23,7 @@ module.exports = [{
 	id: "cloning_facility_73032",
 	set: ["73032"],
 	name: "Cloning Facility",
-	cost: 2,
+	cost: 4,
 	text: "<b>ACTIVATION PHASE:</b> Target a Dominion [crew] Upgrade equipped to this ship or a friendly ship.\n\nThis card becomes a copy of the target Dominion [crew] Upgrade this game round.",
 	OnePerShip: true,
 	range: "1",
@@ -120,7 +120,7 @@ module.exports = [{
 	set: ["73031"],
 	name: "Gorn Trooper",
 	cost: 2,
-	text: "For each Gorn Trooper Equipped to this ship, Increase teh Captain Skill of the Captain equipped to this ship by 1.\n-----------------------------------\n<b>WHEN ATTACKING:</b> Disable this card.\n\nRe-Roll 1 attack die.",
+	text: "For each Gorn Trooper Equipped to this ship, Increase the Captain Skill of the Captain equipped to this ship by 1.\n-----------------------------------\n<b>WHEN ATTACKING:</b> Disable this card.\n\nRe-Roll 1 attack die.",
 	unique: false,
 	factions: ["independent"]
 }, {
