@@ -8049,7 +8049,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			},
-			canEquip: onePerShip("Meridor - Gorn Ale"),
+			canEquip: function(upgrade,ship,fleet) {
+				return $factions.hasFaction( ship, "independent", ship, fleet ) || $factions.hasFaction( ship, "ferengi", ship, fleet ) || $factions.hasFaction( ship, "kazon", ship, fleet ) || $factions.hasFaction( ship, "xindi", ship, fleet ) && onePerShip("Meridor - Gorn Ale");
+			},
 			isSlotCompatible: function(slotTypes) {
 				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0;
 			},
