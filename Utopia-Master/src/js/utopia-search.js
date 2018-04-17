@@ -40,21 +40,6 @@ module.filter( "cardFilter", [ "$factions", "$filter", function($factions, $filt
 				}
 			}
 
-			if (card.type == "ship"){// && card.id == "u_s_s_enterprise_e_71531"){
-				var available_speeds = card.classData.maneuvers;
-				var maneuver_types = [];
-				$.each(available_speeds, function(i, speed){
-					maneuver_types = maneuver_types.concat(Object.keys(speed))
-				});
-				maneuver_types = maneuver_types.filter(
-					function(value, index, self){
-						return self.indexOf(value) === index;
-					}
-				);
-
-				if (!$.inArray($scope.search.maneuverType, maneuver_types)) return null;
-			}
-
 			// Text search
 			if( options.query ) {
 				if( card.name.toLowerCase().indexOf( options.query.toLowerCase() ) < 0 &&
@@ -78,7 +63,23 @@ module.filter( "cardFilter", [ "$factions", "$filter", function($factions, $filt
 			if( card.type == "resource" )
 				return card;
 
-			// if( card.type == "ship" && card.id == "u_s_s_enterprise_e_71531") console.log(card);
+			// Check if we are checking a ship card and we've filtered on a
+			// type of maneuver, check and see if this is a valid maneuver.
+			if (card.type == "ship" && options.maneuverType){
+				var maneuver_types = [];
+
+				// Gather all of the ship maneuvers
+				$.each(card.classData.maneuvers, function(i, speed){
+					maneuver_types = maneuver_types.concat(Object.keys(speed))
+				});
+
+				// Add a reverse maneuver for negative speed moves
+				if (card.classData.maneuvers.min < 0) maneuver_types.push('reverse');
+
+				// If the maneuver we are filtering on isn't in the list we built for
+				// this ship, return null to exclude this ship.
+				if ($.inArray(options.maneuverType, maneuver_types) < 0) return null;
+			}
 
 			// Faction selection
 			var noneSelected = true;
@@ -138,7 +139,7 @@ module.directive( "search", function() {
 				columns: 1,
 				sortBy: "cost",
 				ascending: "false",
-				manuverType: "",
+				maneuverType: "",
 				filterField: "",
 				filterOperator: "<=",
 				filterValue: "",
@@ -165,7 +166,7 @@ module.directive( "search", function() {
 				} );
 				$scope.search.sortBy = $scope.defaults.search.sortBy || "name";
 				$scope.search.ascending = $scope.defaults.search.ascending || "true";
-				$scope.search.manuverType = "";
+				$scope.search.maneuverType = "";
 				$scope.search.filterField = "";
 				$scope.search.filterOperator = "<=";
 				$scope.search.filterValue = "";
@@ -238,10 +239,11 @@ module.directive( "search", function() {
 			];
 
 			$scope.maneuvers = [
-				{
-					value: "straight",
-					name: "Straight"
-				},
+				// TODO Un-comment straight when we add more maneuver filters
+				// {
+				// 	value: "straight",
+				// 	name: "Straight"
+				// },
 				{
 					value: "bank",
 					name: "Bank"
@@ -253,6 +255,10 @@ module.directive( "search", function() {
 				{
 					value: "about",
 					name: "Come About"
+				},
+				{
+					value: "reverse",
+					name: "Reverse"
 				},
 				{
 					value: "spin",
