@@ -52,16 +52,18 @@ module.directive( "fleetExport", function() {
 
 			//allow script to use ttsExportStyle
 
-			$scope.$watch( "fleet", function(fleet) {
-				fleetToText(fleet);
-			}, true );
+			// $scope.$watch( "fleet", function(fleet) {
+			// 	fleetToText(fleet);
+			// }, true );
 
-			$scope.$watch( "ttsExportStyle", function() {
+			$scope.$watch( "exportType", function() {
 				fleetToText($scope.fleet);
 			});
 
 			function fleetToText(fleet) {
-				if ($scope.ttsExportStyle) ttsToText(fleet);
+				// if ($scope.ttsExportStyle) ttsToText(fleet);
+				if ($scope.exportType == "fleetSheet") fleetSheet(fleet);
+				else if ($scope.exportType == "tts") ttsToText(fleet);
 				else {
 					var fleetText = "";
 
@@ -250,6 +252,119 @@ module.directive( "fleetExport", function() {
 				});
 
 				return { cost: 0, text: text };
+			};
+
+			function fleetSheet(fleet) {
+				var fleetData = {cost:fleet.totalCost, ships:[], resource:{}};
+
+				$.each( fleet.ships, function(i,ship) {
+					var cards = [];
+					cardToFleetData(ship, ship, fleet, cards);
+					cards = $.grep(cards,function(n){ return n == 0 || n });
+					cards.sort(function(a,b){ return a.priority - b.priority; });
+					$.each( cards, function(j, card){
+						delete card['priority'];
+						card.index = j;
+					});
+					fleetData.ships.push({cards:cards.slice(), cost:ship.totalCost});
+				});
+
+				if( fleet.resource ) {
+					fleetData.resource.name = fleet.resource.name;
+					fleetData.resource.cost = valueOf(fleet.resource,"cost",{},fleet);
+				}
+
+				fleetData.ships.sort(function(a,b){ return b.cost - a.cost; });
+
+				$scope.fleetText = JSON.stringify(fleetData, null, 2);
+
+			};
+
+			function cardToFleetData(card, ship, fleet, card_stack) {
+				var data = {name:card.name,
+										type:typeConvert(card.type),
+										faction:factionConvert(card.factions),
+										cost:valueOf(card,"cost",ship,fleet),
+										priority:0
+									 };
+
+				if (card.type == "ship" && !card.unique)
+					data.name = "Generic " + card.class;
+
+				switch(data.type){
+					case "Ship":
+						data.priority = 0; break;
+					case "Captain":
+						data.priority = 1; break;
+					case "Admiral":
+						data.priority = 2; break;
+					default:
+						data.priority = 3;
+				}
+
+				card_stack.push(data);
+
+				if( card.resource ){
+					card_stack.push(cardToFleetData(card.resource, ship, fleet, card_stack));
+				}
+				if( card.captain ){
+					card_stack.push(cardToFleetData(card.captain, ship, fleet, card_stack));
+				}
+				if( card.admiral ){
+					card_stack.push(cardToFleetData(card.admiral, ship, fleet, card_stack));
+				}
+				if(card.upgrades && card.upgrades.length > 0){
+					$.each( card.upgrades, function(i,slot) {
+						if( slot.occupant )
+							card_stack.push(cardToFleetData(slot.occupant, ship, fleet, card_stack));
+					});
+				}
+				if(card.upgradeSlots && card.upgradeSlots.length > 0){
+					$.each( card.upgradeSlots || [], function(i,slot) {
+						if( slot.occupant )
+							card_stack.push(cardToFleetData(slot.occupant, ship, fleet, card_stack));
+					});
+				}
+			};
+
+			function factionConvert(factionList){
+			  var factions = {
+			    "federation":"FED",
+			    "klingon":"KLI",
+			    "romulan":"ROM",
+			    "dominion":"DOM",
+			    "borg":"BOR",
+			    "species-8472":"SPE",
+			    "kazon":"KAZ",
+			    "xindi":"XIN",
+			    "bajoran":"BAJ",
+			    "ferengi":"FER",
+			    "vulcan":"VUL",
+			    "independent":"IND",
+			    "mirror-universe":"MIR",
+			    "q-continuum":"Q"
+			  }
+			  var updatedFactionList = [];
+			  $.each( factionList, function(i, faction){
+			    if(faction in factions) updatedFactionList.push(factions[faction]);
+			    else console.error("Unknown Faction: " + faction);
+			  });
+			  return updatedFactionList.join('/');
+			};
+
+			function typeConvert(cardType){
+			  var typeTable = {
+			    "ship":"Ship",
+			    "captain":"Captain",
+			    "admiral":"Admiral",
+			    "crew":"C",
+			    "talent":"E",
+					"tech":"T",
+			    "weapon":"W",
+			    "borg":"B",
+			    "squadron":"S"
+			  };
+				return typeTable[cardType];
 			};
 
 		}]
