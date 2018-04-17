@@ -59,27 +59,34 @@ module.filter( "cardFilter", [ "$factions", "$filter", function($factions, $filt
 			if( !(noneSelected || options.types[card.type].search) )
 				return null;
 
+			// Check if we are checking a ship card and we've filtered on a
+			// type of maneuver, check and see if this is a valid maneuver.
+			if (options.maneuverType){
+					if (card.type == "ship"){
+					var maneuver_types = [];
+
+					// Gather all of the ship maneuvers
+					$.each(card.classData.maneuvers, function(i, speed){
+						maneuver_types = maneuver_types.concat(Object.keys(speed))
+					});
+
+					// Add a reverse maneuver for negative speed moves
+					if (card.classData.maneuvers.min < 0) maneuver_types.push('reverse');
+
+					// If the maneuver we are filtering on isn't in the list we built for
+					// this ship, return null to exclude this ship.
+					if ($.inArray(options.maneuverType, maneuver_types) < 0) return null;
+
+				} else {
+					// If we got here, we are filtering on ship manuevers but the current
+					// card isn't a ship, so skip it.
+					return null;
+				}
+			}
+
 			// Resources skip faction
 			if( card.type == "resource" )
 				return card;
-
-			// Check if we are checking a ship card and we've filtered on a
-			// type of maneuver, check and see if this is a valid maneuver.
-			if (card.type == "ship" && options.maneuverType){
-				var maneuver_types = [];
-
-				// Gather all of the ship maneuvers
-				$.each(card.classData.maneuvers, function(i, speed){
-					maneuver_types = maneuver_types.concat(Object.keys(speed))
-				});
-
-				// Add a reverse maneuver for negative speed moves
-				if (card.classData.maneuvers.min < 0) maneuver_types.push('reverse');
-
-				// If the maneuver we are filtering on isn't in the list we built for
-				// this ship, return null to exclude this ship.
-				if ($.inArray(options.maneuverType, maneuver_types) < 0) return null;
-			}
 
 			// Faction selection
 			var noneSelected = true;
