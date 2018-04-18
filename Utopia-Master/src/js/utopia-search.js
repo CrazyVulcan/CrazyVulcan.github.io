@@ -62,20 +62,48 @@ module.filter( "cardFilter", [ "$factions", "$filter", function($factions, $filt
 			// Check if we are checking a ship card and we've filtered on a
 			// type of maneuver, check and see if this is a valid maneuver.
 			if (options.maneuverType){
-					if (card.type == "ship"){
-					var maneuver_types = [];
+				if (card.type == "ship"){
+					maneuvers = [];
+					$.each(Object.keys(card.classData.maneuvers), function(i, speed){
+						if ($.isNumeric(speed)){
+							direction_keys = Object.keys(card.classData.maneuvers[speed]);
+							$.each(direction_keys, function(j, direction){
+								maneuver_object = {};
+								maneuver_object.direction = direction;
+								maneuver_object.difficulty = card.classData.maneuvers[speed][direction];
+								maneuver_object.speed = parseInt(speed, 10);
+								if (maneuver_object.speed < 0){
+									maneuver_object.direction = 'reverse';
+									maneuver_object.speed = Math.abs(maneuver_object.speed);
+								}
+								maneuvers.push(maneuver_object);
+							});
+						}
+					});
+					// if (card.id == "cube_112_71792") console.log(maneuvers);
+					// var maneuver_types = [];
 
-					// Gather all of the ship maneuvers
-					$.each(card.classData.maneuvers, function(i, speed){
-						maneuver_types = maneuver_types.concat(Object.keys(speed))
+					// Gather all of the ships matching maneuvers
+					valid_maneuvers = [];
+					$.each(maneuvers, function(i, maneuver){
+						if (maneuver.type == options.maneuverType)
+							valid_maneuvers.push(maneuver);
 					});
 
+					valid_pairs = [];
+					if (valid_maneuvers && options.maneuverDifficulty){
+						$.each(valid_maneuver, function(i, maneuver){
+							if (maneuver.difficulty == options.maneuverDifficulty)
+								valid_pairs.push(maneuver);
+						});
+					}
+
 					// Add a reverse maneuver for negative speed moves
-					if (card.classData.maneuvers.min < 0) maneuver_types.push('reverse');
+					// if (card.classData.maneuvers.min < 0) maneuver_types.push('reverse');
 
 					// If the maneuver we are filtering on isn't in the list we built for
 					// this ship, return null to exclude this ship.
-					if ($.inArray(options.maneuverType, maneuver_types) < 0) return null;
+					// if ($.inArray(options.maneuverType, maneuver_types) < 0) return null;
 
 				} else {
 					// If we got here, we are filtering on ship manuevers but the current
@@ -147,6 +175,7 @@ module.directive( "search", function() {
 				sortBy: "cost",
 				ascending: "false",
 				maneuverType: "",
+				maneuverDifficulty: "",
 				filterField: "",
 				filterOperator: "<=",
 				filterValue: "",
@@ -174,6 +203,7 @@ module.directive( "search", function() {
 				$scope.search.sortBy = $scope.defaults.search.sortBy || "name";
 				$scope.search.ascending = $scope.defaults.search.ascending || "true";
 				$scope.search.maneuverType = "";
+				$scope.search.maneuverDifficulty = "";
 				$scope.search.filterField = "";
 				$scope.search.filterOperator = "<=";
 				$scope.search.filterValue = "";
@@ -265,7 +295,7 @@ module.directive( "search", function() {
 				},
 				{
 					value: "reverse",
-					name: "Reverse"
+					name: "Full Astern"
 				},
 				{
 					value: "spin",
@@ -286,6 +316,21 @@ module.directive( "search", function() {
 				{
 					value: "90-degree-rotate",
 					name: "Rotate 90 Degrees"
+				}
+			]
+
+			$scope.difficulty_list = [
+				{
+					value: "green",
+					name: "Green"
+				},
+				{
+					value: "white",
+					name: "White"
+				},
+				{
+					value: "red",
+					name: "Red"
 				}
 			]
 
