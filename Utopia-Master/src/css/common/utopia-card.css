@@ -218,6 +218,18 @@
 	z-index: 1;
 	text-align: center;
 }
+
+.card-OP-banned-icon {
+	background: url("../img/restrictions/upgrade-OP-banned.png")no-repeat;
+	background-size: 1em;
+	width: 1.2em;
+	position: relative;
+	left: 0em;
+	top: -0.1em;
+	z-index: 1;
+	text-align: center;
+}
+
 .card-captainFederation-icon {
 	background: url("../img/restrictions/card-captainFederation-icon.png")no-repeat;
 	background-size: 1em;

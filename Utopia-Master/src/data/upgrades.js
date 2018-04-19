@@ -3042,6 +3042,7 @@ module.exports = [{
 	cost: 5,
 	text: "At the start of the Combat Phase before any attacks have been made, you my discard this card to remove your ship form the play area. At the end of the Combat Phase after all other ships have attacked, place your ship anywhere in the play area but not within Range 1-3 of any other ship. All Tokens that were beside your ship are removed. You can not attack during the round in which you use this ability.",
 	unique: false,
+	opBanned: true,
 	factions: ["federation"]
 }, {
 	type: "weapon",
