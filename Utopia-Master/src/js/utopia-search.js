@@ -63,10 +63,13 @@ module.filter( "cardFilter", [ "$factions", "$filter", function($factions, $filt
 			// type of maneuver, check and see if this is a valid maneuver.
 			if (options.maneuverType){
 				if (card.type == "ship"){
-					maneuvers = [];
+					var hasFilteredManeuver = false;
+					var maneuvers = [];
+
+					// Build a more useful maneuver object and define a reverse
 					$.each(Object.keys(card.classData.maneuvers), function(i, speed){
 						if ($.isNumeric(speed)){
-							direction_keys = Object.keys(card.classData.maneuvers[speed]);
+							var direction_keys = Object.keys(card.classData.maneuvers[speed]);
 							$.each(direction_keys, function(j, direction){
 								maneuver_object = {};
 								maneuver_object.direction = direction;
@@ -80,36 +83,29 @@ module.filter( "cardFilter", [ "$factions", "$filter", function($factions, $filt
 							});
 						}
 					});
-					// if (card.id == "cube_112_71792") console.log(maneuvers);
-					// var maneuver_types = [];
 
-					// Gather all of the ships matching maneuvers
-					valid_maneuvers = [];
+					// Check all of the maneuvers against the selected maneuver direction
+					// and, if specified, the maneuver difficulty (color)
 					$.each(maneuvers, function(i, maneuver){
-						if (maneuver.type == options.maneuverType)
-							valid_maneuvers.push(maneuver);
+						if (options.maneuverDifficulty){
+							if (maneuver.direction == options.maneuverType &&
+								  maneuver.difficulty == options.maneuverDifficulty)
+								hasFilteredManeuver = true;
+						} else {
+							if (maneuver.direction == options.maneuverType){
+								hasFilteredManeuver = true;
+							}
+						}
 					});
 
-					valid_pairs = [];
-					if (valid_maneuvers && options.maneuverDifficulty){
-						$.each(valid_maneuver, function(i, maneuver){
-							if (maneuver.difficulty == options.maneuverDifficulty)
-								valid_pairs.push(maneuver);
-						});
-					}
-
-					// Add a reverse maneuver for negative speed moves
-					// if (card.classData.maneuvers.min < 0) maneuver_types.push('reverse');
-
-					// If the maneuver we are filtering on isn't in the list we built for
-					// this ship, return null to exclude this ship.
-					// if ($.inArray(options.maneuverType, maneuver_types) < 0) return null;
+					if (!hasFilteredManeuver) return null;
 
 				} else {
 					// If we got here, we are filtering on ship manuevers but the current
 					// card isn't a ship, so skip it.
 					return null;
 				}
+
 			}
 
 			// Resources skip faction
