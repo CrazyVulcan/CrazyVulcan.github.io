@@ -1248,7 +1248,7 @@ module.exports = [{
 	text: "<b>ACTION:</b> Perform a [sensor-echo] Action with a 1 [forward] Maneuver Template, even if your ship is not cloaked or does not have the [sensor-echo] icon on its Action Bar. Each time you defend this round, during the Modify Defense Dice step, you may re-roll one of your blank results. Place an Auxiliary Power Token beside your ship.",
 	factions: ["mirror-universe"],
 	cost: 3,
-	skill: 4,
+	skill: 5,
 	talents: 1
 }, {
 	type: "captain",
