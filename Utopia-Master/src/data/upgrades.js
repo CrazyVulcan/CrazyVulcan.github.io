@@ -2499,7 +2499,7 @@ module.exports = [{
 	attack: 4,
 	range: "1",
 	text: "<b>ATTACK: </b>Disable this card to perform this attack. You may fire this weapon in any direction. This Upgrade may only be purchased for a Xindi Weapon.",
-	unique: false,
+	unique: false, 
 	factions: ["xindi"]
 }, {
 	type: "tech",
@@ -2509,6 +2509,7 @@ module.exports = [{
 	cost: 6,
 	text: "<b>ACTION:</b> Discard this card to remove your ship from the play area and discard all Tokens that are beside your ship except for Auxiliary Power Tokens. Immediately place your ship back anywhere in the play area but not within Range 1-3 of any enemy ship. You cannot attack during the round that you use this Action. This Upgrade can only be purchased for a Xindi ship.",
 	unique: true,
+	opBanned: true,
 	factions: ["xindi"]
 }, {
 	type: "tech",
@@ -5100,6 +5101,7 @@ module.exports = [{
 	set: ["71281", "72291"],
 	name: "Quantum Singularity",
 	unique: false,
+	opBanned: true,
 	text: "<b>ACTION:</b> Discard this card to remove your ship from the play area and discard all Tokens that are beside your ship except for Auxiliary Power Tokens. During the End Phase, place your ship back in the play area. You cannot place your ship within Range 1-3 of any other ship. This Upgrade may only be purchased for a Species 8472 ship.",
 	factions: ["species-8472"],
 	cost: 6,
@@ -6162,6 +6164,7 @@ module.exports = [{
 	set: ["71522"],
 	name: "Transwarp Conduit",
 	unique: false,
+	opBanned: true,
 	text: "<b>ACTION:</b> Discard this card to remove your ship from the play area and discard all Tokens that are beside your ship except Auxiliary Power Tokens.  During the End Phase, place your ship back in the play area.  You cannot place your ship within Range 1-3 of any enemy ship.  This Upgrade may only be purchased for a Borg ship.",
 	factions: ["borg"],
 	cost: 6,
@@ -9161,6 +9164,7 @@ module.exports = [{
 	set: ["71799"],
 	name: "Spatial Distortion",
 	unique: false,
+	opBanned: true,
 	text: "<b>ACTION:</b> Discard this card to remove your ship from the play area and discard all Tokens that are beside your ship except for Auxiliary Power Tokens. During the End Phase, place your ship back in the play area. You cannot place your ship within Range 1-3 of any enemy ship. This Upgrade may only be purchased for Krenim weapon ship.",
 	factions: ["independent", "mirror-universe"],
 	cost: 6,
@@ -9855,6 +9859,7 @@ module.exports = [{
 	cost: 6,
 	text: "Instead of making a normal move, you may discard this card to remove your ship from the play area and immediately place it back anywhere in the play area, but not within Range 1-2 of any other ship. You cannot attack or perform any Actions on the round you use this ability.\nThis Upgrade costs +5SP if purchased for a non-Species 8472 ship and no ship may be equipped with more than 1 Fluidic Space Upgrade.",
 	unique: false,
+	opBanned: true,
 	factions: ["species-8472"]
 }, {
 	type: "weapon",
@@ -9949,6 +9954,7 @@ module.exports = [{
 	cost: 6,
 	text: "If you reveal an maneuver with a speed of 5 or greater, before performing the maneuver, you may discard this card to remove your ship from the play area and discard all tokens from beside your ship except for Auxiliary Power Tokens. Then, immediately place it back in the play area, but not within Range 1-3 of any other ship. You cannot attack during the round you use this ability.",
 	unique: true,
+	opBanned: true,
 	factions: ["independent"],
 	intercept: {
 		ship: {},
