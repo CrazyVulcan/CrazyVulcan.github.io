@@ -5,13 +5,13 @@
 		"name": "Your Set Name",
 		"releaseDate": "YYYY-MM-DD",
 		"parentSet": "Wave 0"
-	},{
+	}, {
 		"type": "set",
 		"id": "001",
 		"name": "Discovery",
 		"releaseDate": "YYYY-MM-DD",
 		"parentSet": "Wave 0"
-	},{
+	}, {
 		"type": "set",
 		"id": "002",
 		"name": "Bioship Card Pack",
@@ -34,7 +34,7 @@
 		"text": "Ship Ability",
 		"unique": true,
 		"factions": ["faction"]
-	},{
+	}, {
 		"type": "ship",
 		"id": "_001",
 		"set": ["001"],
@@ -50,7 +50,7 @@
 		"text": "This ship may equip the 'Spore Drive' Upgrade without requiring a [tech] slot.\n----------------------------------\nWhen activating the text of any [tech] Upgrade that requires it to be disabled, place 2 [time] Tokens on this ship instead.",
 		"unique": true,
 		"factions": ["federation"]
-	},{
+	}, {
 		"type": "ship",
 		"id": "crossfield_class_ship",
 		"set": ["001"],
@@ -66,38 +66,38 @@
 		"text": "",
 		"unique": false,
 		"factions": ["federation"]
-	},{
-	"type": "ship",
-	"id": "bioship_gamma_002",
-	"set": ["002"],
-	"name": "Bioship Gamma",
-	"class": "Species 8472 Bioship",
-	"actions": ["evade", "target-lock", "scan", "regenerate"],
-	"upgrades": ["tech", "tech", "tech", "weapon", "weapon"],
-	"attack": 6,
-	"agility": 2,
-	"hull": 5,
-	"shields": 6,
-	"cost": 37,
-	"text": "<b>ACTIVATION PHASE:</b> Place 2 [time] Tokens on this card.\n\This ship may perform an [regenerate] Action as a Free Action. ",
-	"unique": true,
-	"factions": ["species-8472"],
-	},{
-	"type": "ship",
-	"id": "bioship_002",
-	"set": ["002"],
-	"name": "Species 8472 Starship",
-	"class": "Species 8472 Bioship",
-	"actions": ["evade", "target-lock", "scan", "regenerate"],
-	"upgrades": ["tech", "tech", "tech", "weapon"],
-	"attack": 6,
-	"agility": 2,
-	"hull": 5,
-	"shields": 5,
-	"cost": 33,
-	"text": "",
-	"unique": false,
-	"factions": ["species-8472"],
+	}, {
+		"type": "ship",
+		"id": "bioship_gamma_002",
+		"set": ["002"],
+		"name": "Bioship Gamma",
+		"class": "Species 8472 Bioship",
+		"actions": ["evade", "target-lock", "scan", "regenerate"],
+		"upgrades": ["tech", "tech", "tech", "weapon", "weapon"],
+		"attack": 6,
+		"agility": 2,
+		"hull": 5,
+		"shields": 6,
+		"cost": 37,
+		"text": "<b>ACTIVATION PHASE:</b> Place 2 [time] Tokens on this card.\n\nThis ship may perform an [regenerate] Action as a Free Action.",
+		"unique": true,
+		"factions": ["species-8472"]
+	}, {
+		"type": "ship",
+		"id": "bioship_002",
+		"set": ["002"],
+		"name": "Species 8472 Starship",
+		"class": "Species 8472 Bioship",
+		"actions": ["evade", "target-lock", "scan", "regenerate"],
+		"upgrades": ["tech", "tech", "tech", "weapon"],
+		"attack": 6,
+		"agility": 2,
+		"hull": 5,
+		"shields": 5,
+		"cost": 33,
+		"text": "",
+		"unique": false,
+		"factions": ["species-8472"]
 	}],
 	"shipClasses": [{
 		"type": "ship-class",
@@ -128,7 +128,7 @@
 				"straight": "red"
 			}
 		}
-	},{
+	}, {
 		"type": "ship-class",
 		"id": "ship_class_setnum",
 		"name": "Ship Class",
@@ -200,7 +200,7 @@
 		"cost": 0,
 		"skill": 1,
 		"talents": 0
-	},{
+	}, {
 		"type": "captain",
 		"id": "gabriel_lorca_001",
 		"set": ["001"],
@@ -211,7 +211,7 @@
 		"cost": 3,
 		"skill": 5,
 		"talents": 1
-	},{
+	}, {
 		"type": "captain",
 		"id": "bioship_gamma_pilot_002",
 		"set": ["002"],
@@ -223,7 +223,7 @@
 		"cost": 4,
 		"skill": 6,
 		"talents": 1
-	},{
+	}, {
 		"type": "captain",
 		"id": "pack_hunter_002",
 		"set": ["002"],
@@ -296,7 +296,7 @@
 		"OnePerShip": true,
 		"shipLimit": true,
 		"factions": ["federation"]
-	},{
+	}, {
 		"type": "talent",
 		"id": "infiltration_002",
 		"set": ["002"],
@@ -307,7 +307,7 @@
 		"text": "<b>DURING THE ACTIVATION PHASE:</b> Target one Captain equipped to an Opposing ship and place 3 [time] Tokens on this card.\n\n Replace the Captains Text equipped to this ship with the text on the target ships Captain until the End Phase.",
 		"unique": true,
 		"factions": ["species-8472"]
-	},{
+	}, {
 		"type": "tech",
 		"id": "fluidic_rift_002",
 		"set": ["002"],
@@ -317,7 +317,7 @@
 		"text": "<b>DURING THE PLANNING PHASE:</b> Discard this card to place one Fluidic Rift minefield token within Range 1 of your ship but not within Range 3 of an enemy ship.\n\n<b>DURING THE PLANNING PHASE:</b> If a ship is within Range 1 of the minefield Token and is not a Species 8472 ship, treat all white Maneuvers as Red Maneuvers. ",
 		"unique": true,
 		"factions": ["species-8472"]
-	},{
+	}, {
 		"type": "tech",
 		"id": "quantum_singularity_002",
 		"set": ["002"],
@@ -327,7 +327,7 @@
 		"text": "<b>COMBAT PHASE:</b> Discard this card to perform a [sensor-echo] with either an 2 or 3 Maneuver Template. Even if you ship is not cloaked.",
 		"OnePerShip": true,
 		"factions": ["species-8472"]
-	},{
+	}, {
 		"type": "tech",
 		"id": "primal_instinct_002",
 		"set": ["002"],
@@ -337,7 +337,7 @@
 		"text": "<b>ACTION:</b> If your ship receives a [crit] to its hull this round you may, if possible, make a free attack against that ship with -2 Attack Dice.\n\nThe target ship rolls -1 Defense Dice.\n\n(<i>8472 Bioship Only</i>)",
 		"unique": true,
 		"factions": ["species-8472"]
-	},{
+	}, {
 		"type": "tech",
 		"id": "biogenic_field_002",
 		"set": ["002"],
@@ -347,7 +347,7 @@
 		"text": "Increase this ships Agelity by 1.\n-----------------------------------------\nWhen an enemy Upgrade targets this ship roll 1 Defence Die, 3 against a Borg Upgrade. If you roll at least one [battlestations] cancel its effect.\n\n If That canceled Upgrade is a [crew] Upgrade, immediately Discard it. \n(<i>8472 Bioship Only</i>)",
 		"OnePerShip": true,
 		"factions": ["species-8472"]
-	},{
+	}, {
 		"type": "weapon",
 		"id": "energy_blast_002",
 		"set": ["002"],
@@ -358,7 +358,7 @@
 		"text": "<b>ATTACK:</b> Spend Your [target-lock] Token, Discard this card.\n\nIf your ship has a [scan] Token next to it you may spend that Token in order to convert all your [battlestations] into [hit].\n\n(<i>8472 Bioship Only</i>)",
 		"shipLimit": true,
 		"factions": ["species-8472"]
-	},{
+	}, {
 		"type": "weapon",
 		"id": "biological_toxin_002",
 		"set": ["002"],
@@ -366,9 +366,9 @@
 		"cost": 4,
 		"text": "<b>DURING THE ACTIVATION PHASE AFTER THIS SHIP PERFORMS IT’S MANEUVER:</b>\n\nIf this ships base is touching an Opposing ships base, You may discard this card in order to place 2 [time] Tokens on all Captains and [crew] Upgrades equipped to that ship even if it is Cloaked or Has Active Shields. ",
 		"unique": true,
-		"ship8472": true, 
+		"ship8472": true,
 		"factions": ["species-8472"]
-	},{
+	}, {
 		"type": "question",
 		"id": "hatred_002",
 		"set": ["002"],
