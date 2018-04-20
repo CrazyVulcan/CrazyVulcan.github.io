@@ -386,7 +386,7 @@
 		"name": "Boothby ",
 		"cost": 3,
 		"ship8472": true,
-		"text": "This card counts as either a [tech], [weapon] or [crew] Upgrade.\n<b>AFTER SETUP:</b> Transpher this card to an opposing ship that has an open slot.\n-----------------------------------------\n<b>ACTION:</b> Place three Time Tokens on this card. <b>CONTUNIOUS EFFECT:</b> This ship playes its manouver dial face up during the Planing Phase. Discard this card when there are no more time tokens left on this card.",
+		"text": "This card counts as either a [tech], [weapon] or [crew] Upgrade.\n<b>AFTER SETUP:</b> Transpher this card to an opposing ship that has an open slot.\n-----------------------------------------\n<b>PLANING PHASE:</b> You may place two Time Tokens on this card. <b>CONTUNIOUS EFFECT:</b> This ship playes its manouver dial face up during the Planing Phase. Discard this card when there are no more time tokens left on it.",
 		"unique": true,
 		"factions": ["species-8472"]
 	}],
