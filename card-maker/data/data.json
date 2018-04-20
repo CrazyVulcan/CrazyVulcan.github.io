@@ -379,6 +379,16 @@
 		"text": "This Upgrade does not require a Slot.\n-----------------------------------------\n<b>DURING SETUP AFTER ALL SHIPS HAVE BEEN PLACED:</b> Chose a Faction, when attacking Ships or Ships with Captains of that faction you may choose to roll -2 Attack Dice in order to add 1 [crit] to your roll.",
 		"OnePerShip": true,
 		"factions": ["species-8472"]
+	},{
+		"type": "question",
+		"id": "boothby_002",
+		"set": ["002"],
+		"name": "Boothby ",
+		"cost": 3,
+		"ship8472": true,
+		"text": "This card counts as either a [tech], [weapon] or [crew] Upgrade.\n\n<b>DURING SETUP AFTER ALL SHIPS HAVE BEEN PLACED:</b> Transpher this card to an opposing ship that has an open slot.\n-----------------------------------------\n<b>ACTION:</b> Place three Time Tokens on this card\n<b>CONTUNIOUS EFFECT:</b> This ship must place its manouver dial face up during the Planing Phase as long as there are [time] Tokens on this card. Discard this card when there are no more time tokens left on this card.",
+		"unique": true,
+		"factions": ["species-8472"]
 	}],
 	"resources": [{
 		"type": "resource",
