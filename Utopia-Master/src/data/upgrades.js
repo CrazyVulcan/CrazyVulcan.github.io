@@ -1838,7 +1838,7 @@ module.exports = [{
 	cost: 5,
 	attack: 5,
 	range: "2 - 3",
-	text: "<b>ATTACK: (Target Lock)</b> Spend your target lock and place 3 Time Tokens on this card to perform this attack. You may convert 1 of your [battlestations] results into 1 [crit] result. You may fire this weapon form your forward or rear firing arcs.",
+	text: "<b>ATTACK: (Target Lock)</b> Spend your target lock and place 3 Time Tokens on this card to perform this attack. You may convert 1 of your [battlestations] results into 1 [crit] result. You may fire this weapon from your forward or rear firing arcs.",
 	unique: false,
 	factions: ["federation"]
 }, {
@@ -2499,7 +2499,7 @@ module.exports = [{
 	attack: 4,
 	range: "1",
 	text: "<b>ATTACK: </b>Disable this card to perform this attack. You may fire this weapon in any direction. This Upgrade may only be purchased for a Xindi Weapon.",
-	unique: false, 
+	unique: false,
 	factions: ["xindi"]
 }, {
 	type: "tech",
@@ -9555,7 +9555,7 @@ module.exports = [{
 	set: ["71802"],
 	name: "Ablative Hull Armor",
 	unique: true,
-	text: "When defending, during the Modify Defense Dice step, convert all of your opponent's [crit] results into [hit] results. Place all t he damage cards that your ship receives beneath this card. Once there are 3 damage cards beneath this card, discard this Upgrade and all damage cards beneath it. All excess damage affects the ship as normal. This Upgrade may only be purchased for a Prometheus Class ship.",
+	text: "When defending, during the Modify Defense Dice step, convert all of your opponent's [crit] results into [hit] results. Place all the damage cards that your ship receives beneath this card. Once there are 3 damage cards beneath this card, discard this Upgrade and all damage cards beneath it. All excess damage affects the ship as normal. This Upgrade may only be purchased for a Prometheus Class ship.",
 	factions: ["federation"],
 	cost: 7,
 	skill: 0,
