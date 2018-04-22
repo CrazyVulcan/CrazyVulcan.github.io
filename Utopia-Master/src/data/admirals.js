@@ -103,7 +103,7 @@ module.exports = [{
 	set: ["71526"],
 	name: "Maxwell Forrest",
 	unique: true,
-	text: "<b>FLEET ACTION:</b> Perform and additional 1 Maneuver (straight, bank or turn).",
+	text: "<b>FLEET ACTION:</b> Perform an additional 1 Maneuver (straight, bank or turn).",
 	factions: ["federation"],
 	cost: 3,
 	skill: 1,

@@ -2761,7 +2761,7 @@ module.exports = [{
 	set: ["71786", "71810"],
 	name: "Benjamin Sisko",
 	unique: true,
-	text: "During the Roll Defense Dice step of the Combat Phase, if your ship is in the forward firing arc of 2 or more ships, roll 1 extra defense die against all attacks from those ships. Each time your ship receives a Damage Card (normal or critical), incrase your Captain Skill by +1 for the rest of the game (max +2). The bonus Skill remains even if the damage is later repaired.",
+	text: "During the Roll Defense Dice step of the Combat Phase, if your ship is in the forward firing arc of 2 or more ships, roll 1 extra defense die against all attacks from those ships. Each time your ship receives a Damage Card (normal or critical), increase your Captain Skill by +1 for the rest of the game (max +2). The bonus Skill remains even if the damage is later repaired.",
 	factions: ["federation"],
 	cost: 4,
 	skill: 7,

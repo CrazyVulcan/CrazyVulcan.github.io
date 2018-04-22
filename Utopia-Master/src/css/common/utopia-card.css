@@ -40,6 +40,10 @@
 	height: 4em;
 }
 
+.card-image-large {
+	height: 2em;
+}
+
 .card-corner-top-left {
 	background: #a8b6bf;
 	height: 1.6em;
@@ -804,6 +808,13 @@
 	margin-top: 0.2em;
 }
 
+.card-border-right-tall {
+	background: #a8b6bf;
+	width: 0.8em;
+	height: 8.35em;
+	margin-top: 0.2em;
+}
+
 .card-faction-federation {
 	background-image: url("../img/faction-federation.png");
 }
@@ -967,6 +978,14 @@
 	background: #a8b6bf;
 	width: 0.8em;
 	height: 4.11em;
+	margin-top: 0.2em;
+	clear: left;
+}
+
+.card-border-left-tall {
+	background: #a8b6bf;
+	width: 0.8em;
+	height: 8.31em;
 	margin-top: 0.2em;
 	clear: left;
 }
@@ -1306,6 +1325,15 @@
 	color: white;
 	margin: 0.2em 1em 0em 1em;
 	height: 7em;
+	position: relative;
+	top: -0.35em;
+	padding: 0 0.3em;
+}
+
+.card-class-maneuvers-tall {
+	color: white;
+	margin: 0.2em 1em 0em 1em;
+	height: 9em;
 	position: relative;
 	top: -0.35em;
 	padding: 0 0.3em;
