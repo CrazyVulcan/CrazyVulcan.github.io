@@ -15,7 +15,8 @@
 		<div class="arc-actions"><i ng-repeat="action in ship.actions" class="fs fs-{{action}}"></i></div>
 	</div>
 
-	<div class="card-image"></div>
+	<!-- <div class="card-image" ng-class="{'card-image-large': Object.keys(shipClass.maneuvers).length > 9}"></div> -->
+	<div ng-class="(shipClass.id == 'borg_cube') ? 'card-image-large' : 'card-image'"></div>
 
 	<div class="card-corner-top-left pull-left">
 		<div class="card-corner-inner pull-right"></div>
@@ -27,11 +28,11 @@
 		<span class="card-shipclass-title" ng-class="{'card-title-long': shipClass.name.length >= 20 }">{{shipClass.name | uppercase}}</span>
 	</div>
 
-	<div class="card-border-left pull-left"></div>
+	<div ng-class="(shipClass.id == 'borg_cube') ? 'card-border-left-tall pull-left' : 'card-border-left pull-left'"></div>
 
-	<div class="card-border-right pull-right"></div>
+	<div ng-class="(shipClass.id == 'borg_cube') ? 'card-border-right-tall pull-right' : 'card-border-right pull-right'"></div>
 
-	<div class="card-class-maneuvers">
+	<div ng-class="(shipClass.id == 'borg_cube') ? 'card-class-maneuvers-tall' : 'card-class-maneuvers'">
 		<div class="card-maneuver-row" ng-repeat="speed in speeds track by $index">
 			<div class="card-maneuver-box" ng-class="{'speed-reverse': speed < 0}"><span ng-show="speed != 9">{{abs(speed)}}</span></div>
 			<div class="card-maneuver-box" ng-class="{'card-maneuver-box-highlight': shipClass.maneuvers[speed].turn || shipClass.maneuvers[speed]['90-degree-rotate']}">
