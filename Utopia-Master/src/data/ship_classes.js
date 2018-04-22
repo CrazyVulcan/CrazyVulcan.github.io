@@ -1534,7 +1534,7 @@ module.exports = [{
 	id: "bajoran_solar_sailor",
 	name: "BAJORAN SOLAR SAILOR",
 	frontArc: "90",
-	rearArc: "0",
+	rearArc: "",
 	maneuvers: {
 		1: {
 			straight: "green",
