@@ -2871,6 +2871,7 @@ module.exports = [{
 	cost: 20,
 	text: "If you initiate an attack at Range 1, you may re-roll 1 of your attack dice. [Initial Captain skill 6]",
 	unique: true,
+	opBanned: true,
 	factions: ["federation"],
 	intercept: {
 		ship: {},
@@ -2892,6 +2893,7 @@ module.exports = [{
 	cost: 20,
 	text: "Instead of making a normal attack, you may make an attack with 2 dice from your rear firing arc. [Initial Captain skill 6]",
 	unique: true,
+	opBanned: true,
 	factions: ["dominion"],
 	intercept: {
 		ship: {},

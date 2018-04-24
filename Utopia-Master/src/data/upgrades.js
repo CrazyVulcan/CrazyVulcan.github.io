@@ -1331,7 +1331,7 @@ module.exports = [{
 	type: "weapon",
 	id: "particle_beam_weapon_muratas",
 	set: ["72293"],
-	name: "Particle Beam Weapon",
+	name: "Particle Beam Weapon ",
 	cost: 0,
 	attack: "*",
 	range: "1 - 3",
