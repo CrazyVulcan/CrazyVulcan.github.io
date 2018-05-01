@@ -856,6 +856,16 @@ module.exports = [{
 	}
 }, {
 	type: "ship-resource",
+	id: "senior_staff_crew",
+	set: ["72002h"],
+	name: "Senior Staff",
+	cost: 0,
+	factionPenalty: 0,
+	text: "This card adds an extra [crew] and [talent] slot which applies the special rules from the Senior Staff OP Resource.\n\nThis [crew] may equip a [talent] at the cost of +1SP.",
+	unique: false,
+	factions: ["no-faction"]
+}, {
+	type: "ship-resource",
 	id: "fleet_commander_ship_hull",
 	set: ["72280r"],
 	name: "Fleet Commander",

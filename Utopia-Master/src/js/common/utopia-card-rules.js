@@ -6250,7 +6250,6 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					    var candidates = [];
 					    var occupied_slots = $filter("upgradeSlots")(ship);
 					    $.each(occupied_slots, function(i, slot) {
-							if (slot.occupant && card.talentAdd != "talent" && (slot.occupant.cost == 5 || slot.occupant.cost == 6))
 					        candidates.push(slot);
 					    });
 
@@ -9038,8 +9037,27 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 	//Senior Staff
 		"resource:senior_staff":{
-
+		
+		},
+		"ship-resource:senior_staff_crew":{
+			isSlotCompatible: function(slotTypes) {
+				$.inArray( "crew", slotTypes ) >= 0;
+			},
+			upgradeSlots: [
+				{
+					type: ["crew", "talent"],
+					rules: "",
+					faceDown: true,
+					canEquip: function(card,ship,fleet) {
+						return $factions.match(card,ship) && valueOf(card,"cost",ship,fleet) <= 5;
+					},
+					intercept: {
+						ship: {
+							free: function() { return true; },
+						}
+					}
+				}
+			]
 		}
-
-	};
+	};	
 }]);
