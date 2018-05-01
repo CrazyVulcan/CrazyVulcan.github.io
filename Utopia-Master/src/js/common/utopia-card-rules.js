@@ -9042,7 +9042,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				fleet: {
 					type: function(card,fleet,type) {
 						if( $.inArray("crew",type) >= 0 )
-							return type.concat(["ship-resource"]);
+							return type.concat(["talent"]);
 						return type;
 					}
 				}
@@ -9050,7 +9050,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		"ship-resource:senior_staff_crew":{
 			isSlotCompatible: function(slotTypes) {
-				$.inArray( "crew", slotTypes ) >= 0 || $.inArray( "ship-resource", slotTypes ) >= 0;
+				$.inArray( "crew", slotTypes ) >= 0;
 			},
 			upgradeSlots: [
 				{
