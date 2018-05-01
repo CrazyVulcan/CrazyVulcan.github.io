@@ -9040,9 +9040,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			//Add Ship Resource to all crew
 			intercept: {
 				fleet: {
-					type: function(card,fleet,type) {
+					type: function(card,ship,fleet,type) {
 						if( $.inArray("crew",type) >= 0 )
-							return type.concat(["talent"]);
+							return type.concat(["ship-resource"]);
 						return type;
 					}
 				}
