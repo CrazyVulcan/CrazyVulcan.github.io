@@ -9049,7 +9049,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 		},
 		"ship-resource:senior_staff_crew":{
-			upgradeSlots: [ { type: ["crew"] }, { type: ["weapon"] } ]
+			upgradeSlots: [ { type: ["crew"] }, { type: ["talent"] } ]
 		}
 	};	
 }]);

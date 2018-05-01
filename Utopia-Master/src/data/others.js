@@ -862,10 +862,8 @@ module.exports = [{
 	factions: ["federation", "klingon", "romulan", "dominion", "independent"],
 	text: "This card adds an extra [crew] and [talent] slot which applies the special rules from the Senior Staff OP Resource.\n\nThis [crew] may equip a [talent] at the cost of +1SP.",
 	cost: 0,
-	showType: true,
 	canEquip: true,
 	canEquipFaction: true,
-	isShipModifier: true,
 	intercept: {
 		ship: {},
 		fleet: {}
