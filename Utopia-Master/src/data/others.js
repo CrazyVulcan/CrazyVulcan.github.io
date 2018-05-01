@@ -856,8 +856,8 @@ module.exports = [{
 	}
 }, {
 	type: "ship-resource",
-	id: "senior_staff_crew",
-	set: ["72002h"],
+	id: "senior_staff_72284r",
+	set: ["72284r"],
 	name: "Senior Staff",
 	cost: 0,
 	factionPenalty: 0,
