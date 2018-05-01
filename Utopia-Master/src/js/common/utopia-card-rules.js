@@ -9051,10 +9051,20 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"ship-resource:senior_staff_crew":{
 			upgradeSlots: [
 				{
-					type: ["crew", "talent"],
-					rules: "",
+					type: ["crew"],
+					type: ["talent"],
+					rules: "talent must have crew and costs +1SP",
 				}
-			]
+			],
+			intercept: {
+				ship: {
+					cost: function(upgrade,ship,fleet,cost) {
+						if( upgrade == ship.captain )
+							return resolve(upgrade,ship,fleet,cost) + 1;
+						return cost;
+					}
+				}
+			}
 		}
 	};	
 }]);
