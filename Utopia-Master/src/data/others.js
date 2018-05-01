@@ -858,7 +858,7 @@ module.exports = [{
 	type: "ship-resource",
 	id: "senior_staff_72284r",
 	set: ["72284r"],
-	name: "Senior Staff",
+	name: "Senior Staff ",
 	factions: ["federation", "klingon", "romulan", "dominion", "independent"],
 	text: "This card adds an extra [crew] and [talent] slot which applies the special rules from the Senior Staff OP Resource.\n\nThis [crew] may equip a [talent] at the cost of +1SP.",
 	cost: 0,
