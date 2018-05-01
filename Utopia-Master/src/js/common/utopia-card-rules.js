@@ -9056,7 +9056,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					ship: {
 						// Reduce cost of Borg Ablative Hull Armor
 						cost: function(upgrade, ship, fleet, cost) {
-								return resolve(upgrade, ship, fleet, cost) - 3;
+								return resolve(upgrade, ship, fleet, cost) + 1;
 							return cost;
 						}
 					}
