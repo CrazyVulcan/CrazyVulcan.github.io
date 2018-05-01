@@ -9051,16 +9051,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"ship-resource:senior_staff_crew":{
 			upgradeSlots: [ 
 				{	type: ["crew"] }, 
-				{	type: ["talent"],
-					intercept: {
-						ship: {
-							cost: function(upgrade, ship, fleet, cost) {
-								return resolve(upgrade, ship, fleet, cost) - 1;
-							return cost;
-							}
-						}
-					}
-				} 
+				{	type: ["talent"] } 
 			]
 		}
 	};	
