@@ -9048,8 +9048,20 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		"ship-resource:senior_staff_crew":{
-			upgradeSlots: [ { type: ["crew"] }, { type: ["talent"] } ]
+		"ship-resource:senior_staff_72284r":{
+			upgradeSlots: [ 
+				{ type: ["crew"] }, 
+				{ type: ["talent"],
+				intercept: {
+					ship: {
+						// Reduce cost of Borg Ablative Hull Armor
+						cost: function(upgrade, ship, fleet, cost) {
+								return resolve(upgrade, ship, fleet, cost) - 3;
+							return cost;
+						}
+					}
+				}
+			} ]
 		}
 	};	
 }]);
