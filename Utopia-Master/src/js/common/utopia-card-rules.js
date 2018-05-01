@@ -9037,7 +9037,16 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 	//Senior Staff
 		"resource:senior_staff":{
-		
+			//Add Ship Resource to all crew
+			intercept: {
+				fleet: {
+					type: function(card,fleet,type) {
+						if( $.inArray("crew",type) >= 0 )
+							return type.concat(["ship-resource"]);
+						return type;
+					}
+				}
+			}
 		},
 		"ship-resource:senior_staff_crew":{
 			isSlotCompatible: function(slotTypes) {
