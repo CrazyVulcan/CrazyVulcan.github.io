@@ -9041,7 +9041,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		"ship-resource:senior_staff_crew":{
 			isSlotCompatible: function(slotTypes) {
-				$.inArray( "crew", slotTypes ) >= 0;
+				$.inArray( "crew", slotTypes ) >= 0 || $.inArray( "ship-resource", slotTypes ) >= 0;
 			},
 			upgradeSlots: [
 				{
