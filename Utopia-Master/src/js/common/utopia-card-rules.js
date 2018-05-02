@@ -6250,6 +6250,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					    var candidates = [];
 					    var occupied_slots = $filter("upgradeSlots")(ship);
 					    $.each(occupied_slots, function(i, slot) {
+							if (slot.occupant && (slot.occupant.cost == 5 || slot.occupant.cost == 6))
 					        candidates.push(slot);
 					    });
 
