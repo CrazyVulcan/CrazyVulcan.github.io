@@ -221,7 +221,7 @@ module.directive( "fleetExport", function() {
 **/				
 				if( card.type == "ship" && !card.unique) {
 					// Show class name for generic ships
-					text = card.class;
+					text = card.id;
 				} else text = card.id;
 				
 				text += "\n";
