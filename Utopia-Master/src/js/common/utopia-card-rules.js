@@ -71,7 +71,7 @@ module.factory( "$factions", [ "$filter", function($filter) {
 			});
 			return match;
 		},
-		list: [ "Federation", "Klingon", "Romulan", "Dominion", "Borg", "Species 8472", "Kazon", "Xindi", "Bajoran", "Ferengi", "Vulcan", "Independent", "Mirror Universe", "Q Continuum" ],
+		list: [ "Federation", "Klingon", "Vulcan", "Romulan", "Bajoran", "Dominion", "Independent", "Borg", "Ferengi", "Species 8472", "Kazon", "Mirror Universe", "Xindi", "Q Continuum" ],
 	}
 	factions.listCodified = $.map( factions.list, function(name) {
 		return name.toLowerCase().replace(/ /g,"-");
@@ -8104,7 +8104,12 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-
+		//Kai-if-fee 
+		"talent:kal_if_fee_72321":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "federation", ship, fleet ) ? 0 : 1;
+			}
+		},
 		//4th wing patrol ship
 		"weapon:tac_command_reticle_73032":{
 			canEquip: onePerShip("Tactical Command Reticle"),
