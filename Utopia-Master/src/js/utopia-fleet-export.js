@@ -263,7 +263,7 @@ module.directive( "fleetExport", function() {
 						// 	cost += res.cost;
 					}
 				});
-				cardToAltTextTTS();
+				//cardToAltTextTTS();
 			};
 			/////////////////////////////////////////////////////////////	
 			//Trying to see if I can make it only spit out the needed card by using the ID instead of the Name
