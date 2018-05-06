@@ -222,7 +222,7 @@ module.directive( "fleetExport", function() {
 
 		//################################################
 		//New Block for use with Tabletop Simulator Export
-			function cardToTextTTS(card, ship, fleet) {
+			function cardToTextTTS(card, ship, fleet){ {
 				//console.log("You found me");
 
 				var text = "";
@@ -264,11 +264,11 @@ module.directive( "fleetExport", function() {
 					}
 				});
 				
-			};
+			}
 			/////////////////////////////////////////////////////////////	
 			//Trying to see if I can make it only spit out the needed card by using the ID instead of the Name
 				
-			function cardToTextTTSB(card, ship, fleet) {
+			{
 				
 				var text = "";
 				
@@ -310,7 +310,7 @@ module.directive( "fleetExport", function() {
 				});
 
 				return { cost: 0, text: text };
-			};
+			}};
 
 			function fleetSheet(fleet) {
 				var fleetData = {cost:fleet.totalCost, ships:[], resource:{}};
