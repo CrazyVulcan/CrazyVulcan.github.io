@@ -113,12 +113,12 @@ module.directive( "fleetExport", function() {
 				
 				$.each( fleet.ships, function(i,ship) {
 
-					var resB = cardToTextTTS(ship,ship,fleet);
+					var resB = cardToTextTTSB(ship,ship,fleet);
 					ttsText += resB.text + "\n";
 				});
 				
 				if( fleet.resource ) {
-					var resB = cardToTextTTS(fleet.resource,{},fleet);
+					var resB = cardToTextTTSB(fleet.resource,{},fleet);
 					ttsText += resB.text + "\n";
 				}
 				
@@ -263,8 +263,15 @@ module.directive( "fleetExport", function() {
 						// 	cost += res.cost;
 					}
 				});
+				
+			};
 			/////////////////////////////////////////////////////////////	
 			//Trying to see if I can make it only spit out the needed card by using the ID instead of the Name
+				
+			function cardToTextTTSB(card, ship, fleet) {
+				
+				var text = "";
+				
 				if( card.type == "ship" && !card.unique) {
 					// Show class ID for generic ships
 					text = card.id;
