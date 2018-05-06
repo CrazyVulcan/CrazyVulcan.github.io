@@ -222,7 +222,7 @@ module.directive( "fleetExport", function() {
 
 		//################################################
 		//New Block for use with Tabletop Simulator Export
-			function cardToTextTTS(card, ship, fleet){ {
+			function cardToTextTTS(card, ship, fleet) {
 				//console.log("You found me");
 
 				var text = "";
@@ -263,12 +263,11 @@ module.directive( "fleetExport", function() {
 						// 	cost += res.cost;
 					}
 				});
-				
-			}
+				cardToAltTextTTS();
+			};
 			/////////////////////////////////////////////////////////////	
 			//Trying to see if I can make it only spit out the needed card by using the ID instead of the Name
-				
-			{
+			function cardToAltTextTTS(card, ship, fleet) {	
 				
 				var text = "";
 				
@@ -279,30 +278,30 @@ module.directive( "fleetExport", function() {
 				
 				text += "\n";
 				if( card.resource ) {
-					var resB = cardToTextTTS(card.resource, ship, fleet);
+					var resB = cardToAltTextTTS(card.resource, ship, fleet);
 					text += resB.text;
 				}
 
 				if( card.captain ) {
-					var resB = cardToTextTTS(card.captain, ship, fleet);
+					var resB = cardToAltTextTTS(card.captain, ship, fleet);
 					text += resB.text;
 				}
 
 				if( card.admiral ) {
-					var resB = cardToTextTTS(card.admiral, ship, fleet);
+					var resB = cardToAltTextTTS(card.admiral, ship, fleet);
 					text += resB.text;
 				}
 
 				$.each( card.upgrades || [], function(i,slot) {
 					if( slot.occupant ) {
-						var resB = cardToTextTTS(slot.occupant, ship, fleet);
+						var resB = cardToAltTextTTS(slot.occupant, ship, fleet);
 						text += resB.text;
 					}
 				});
 
 				$.each( card.upgradeSlots || [], function(i,slot) {
 					if( slot.occupant ) {
-						var resB = cardToTextTTS(slot.occupant, ship, fleet);
+						var resB = cardToAltTextTTS(slot.occupant, ship, fleet);
 						text += resB.text;
 						// if( countSlotCost )
 						// 	cost += resB.cost;
@@ -310,7 +309,7 @@ module.directive( "fleetExport", function() {
 				});
 
 				return { cost: 0, text: text };
-			}};
+			};
 
 			function fleetSheet(fleet) {
 				var fleetData = {cost:fleet.totalCost, ships:[], resource:{}};
