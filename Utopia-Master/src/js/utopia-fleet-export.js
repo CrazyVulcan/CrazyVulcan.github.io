@@ -113,12 +113,12 @@ module.directive( "fleetExport", function() {
 				
 				$.each( fleet.ships, function(i,ship) {
 
-					var resB = cardToTextTTS(ship,ship,fleet);
+					var resB = cardToAltTextTTS(ship,ship,fleet);
 					ttsText += resB.text + "\n";
 				});
 				
 				if( fleet.resource ) {
-					var resB = cardToTextTTS(fleet.resource,{},fleet);
+					var resB = cardToAltTextTTS(fleet.resource,{},fleet);
 					ttsText += resB.text + "\n";
 				}
 				
