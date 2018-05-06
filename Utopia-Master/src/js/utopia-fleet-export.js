@@ -226,19 +226,12 @@ module.directive( "fleetExport", function() {
 				//console.log("You found me");
 
 				var text = "";
-
+				
 				if( card.type == "ship" && !card.unique) {
 					// Show class name for generic ships
 					text = card.class;
 				} else text = card.name;
-			
-					//Trying to see if I can make it only spit out the needed card by using the ID instead of the Name
-				if( card.type == "ship" && !card.unique) {
-					// Show class ID for generic ships
-					text = card.id;
-				} else text = card.id;
-
-			
+						
 				text += "\n";
 				if( card.resource ) {
 					var res = cardToTextTTS(card.resource, ship, fleet);
@@ -271,6 +264,12 @@ module.directive( "fleetExport", function() {
 					}
 				});
 			/////////////////////////////////////////////////////////////	
+			//Trying to see if I can make it only spit out the needed card by using the ID instead of the Name
+				if( card.type == "ship" && !card.unique) {
+					// Show class ID for generic ships
+					text = card.id;
+				} else text = card.id;
+				
 				text += "\n";
 				if( card.resource ) {
 					var resB = cardToTextTTS(card.resource, ship, fleet);
