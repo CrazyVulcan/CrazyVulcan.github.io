@@ -7843,8 +7843,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				ship: {
 					valueOf: function(upgrade, ship, fleet) {
 						if ( upgrade.cost > 3 )
-							return valueOf(upgrade,"opBanned",ship,fleet);
-						return true;
+							return valueOf(upgrade,"opBanned",ship,fleet) = true;
 					}
 				}
 			}
