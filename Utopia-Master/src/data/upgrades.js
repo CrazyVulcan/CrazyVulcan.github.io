@@ -103,6 +103,7 @@ module.exports = [{
 	cost: 5,
 	text: "<b>ACTION:</b> Remove this card from play and target an opposing ship.\n\nDisable 1 [crew] Upgrade equipped to the target ship and deal 1 [crit] to the target ships Hull.",
 	unique: true,
+	opBanned: false,
 	range: "1",
 	factions: ["independent"]
 }, {
