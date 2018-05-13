@@ -6813,7 +6813,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			],
 			canEquip: function(upgrade,ship,fleet) {
-				return ship.captain && ship.captain.name == "B'Etor";
+				return ship.captain && ship.captain.id == "betor_72282p";
 			},
 			intercept: {
 				ship: {
@@ -6832,7 +6832,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			],
 			canEquip: function(upgrade,ship,fleet) {
-				return ship.captain && ship.captain.name == "Lursa";
+				return ship.captain && ship.captain.id == "lursa_72282p";
 			},
 			intercept: {
 				ship: {
@@ -7839,14 +7839,14 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 	//Ferengi Faction Pack: 75003
 		"ship:ferengi_starship_75003":{
-			showOpLegal: function(upgrade, ship, fleet) {
-				var opBanned = false;
-				canEquip: {
-					if( upgrade.cost > 3 ) {
-						opBanned: true
+			intercept: {
+				ship: {
+					valueOf: function(upgrade, ship, fleet) {
+						if ( upgrade.cost > 3 )
+							return valueOf(upgrade,"opBanned",ship,fleet);
+						return true;
 					}
-				};
-				return opBanned;
+				}
 			}
 		},
 		//Birta
