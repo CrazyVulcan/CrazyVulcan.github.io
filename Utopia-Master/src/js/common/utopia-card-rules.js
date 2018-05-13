@@ -7841,9 +7841,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"ship:ferengi_starship_75003":{
 			intercept: {
 				ship: {
-					valueOf: function(upgrade, ship, fleet) {
+					opBanned: function(upgrade, ship, fleet) {
 						if ( upgrade.cost > 3 )
 							return valueOf(upgrade,"opBanned",ship,fleet) = true;
+						return opBanned;
 					}
 				}
 			}
@@ -8048,7 +8049,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 		},
 		//Slar
-		"crew:shanthi_cap_72008":{
+		"crew:slar_73031":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}},
