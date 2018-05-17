@@ -235,10 +235,6 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 
 	//Core Starter Set :71120
-		//Enterprise-D 360
-		"ship:1001":{
-			slotType: "resource"
-		},
 		//Will Riker 5
 		"captain:2002":{
 			factionPenalty: function(upgrade, ship, fleet) {
@@ -1519,7 +1515,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						priority: 100,
 						fn: function(upgrade,ship,fleet,cost) {
 							if( checkUpgrade("weapon", upgrade, ship)
-							     && upgrade.name != "Torpedo Fusillade" && upgrade.name != "Dorsal Phaser Array" && upgrade.name != "Aft Phaser Emitters" && upgrade.name != "Particle Beam Weapon " ) {
+							     && upgrade.name != "Torpedo Fusillade" && upgrade.name != "Dorsal Phaser Array" && upgrade.name != "Aft Phaser Emitters" && upgrade.id != "particle_beam_weapon_muratas" ) {
 								cost = resolve(upgrade,ship,fleet,cost);
 								if( cost <= 5 )
 									cost -= 2;
@@ -1691,7 +1687,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		// Self-Destruct Sequence
 		"talent:self_destruct_sequence_71523": {
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return $factions.hasFaction( ship, "federation", ship, fleet );
+				return $factions.hasFaction( ship, "federation", ship, fleet ) || $factions.hasFaction(ship,"bajoran",ship,fleet) || $factions.hasFaction(ship,"vulcan",ship,fleet);
 			}
 		},
 		//Montgomery Scott
@@ -2176,8 +2172,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			// Only one per ship
 			canEquip: onePerShip("Enhanced Hull Plating"),
-			canEquipFaction: function(upgrade,ship,fleet) {
-				return $factions.hasFaction( ship, "federation", ship, fleet );
+			canEquipFaction: function(card,ship,fleet) {
+				return $factions.hasFaction(ship,"federation",ship,fleet) || $factions.hasFaction(ship,"bajoran",ship,fleet) || $factions.hasFaction(ship,"vulcan",ship,fleet);
 			}
 		},
 		// T'Pol
@@ -2588,7 +2584,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			attack: 0,
 			// Equip only on a Federation ship with hull 4 or more
 			canEquip: function(upgrade,ship,fleet) {
-				return $factions.hasFaction(ship,"federation", ship, fleet) && ship.hull >= 4;
+				return ship && $factions.hasFaction(ship,"federation", ship, fleet) || $factions.hasFaction(ship,"bajoran", ship, fleet) || ship.hull >= 4;
 			},
 			intercept: {
 				self: {
@@ -3487,12 +3483,17 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"captain:robert_desoto_71998p":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
-			}},
+			}
+		},
 		//Tachyon Detection Grid
 		"talent:tachyon_detection_grid_71998p":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
-			}},
+			},
+			canEquipFaction: function(card,ship,fleet) {
+				return $factions.hasFaction(ship,"federation",ship,fleet) || $factions.hasFaction(ship,"bajoran",ship,fleet) || $factions.hasFaction(ship,"vulcan",ship,fleet);
+			}
+		},
 		//William T. Riker
 		"crew:william_t_riker_71998p":{
 			factionPenalty: function(upgrade, ship, fleet) {
@@ -3796,6 +3797,12 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"crew:dawn_velazquez_71801":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			},
+			canEquipFaction: function(card,ship,fleet) {
+				return hasFaction (ship,"federation",ship,fleet) || hasFaction(ship,"bajoran",ship,fleet) || hasFaction(ship,"vulcan",ship,fleet);
+			},
+			canEquip: function(upgrade,ship,fleet) {
+				return ship.hull <= 3;
 			}},
 		// Eric Motz
 		"crew:eric_motz_71801": {
@@ -4118,7 +4125,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					},
 					// No faction penalty for romulan upgrades
 					factionPenalty: function(card,ship,fleet,factionPenalty) {
-						if( isUpgrade(card) && $factions.hasFaction(card,"romulan", ship, fleet) )
+						if( card.type == "captain" || isUpgrade(card) && $factions.hasFaction(card,"romulan", ship, fleet) )
 							return 0;
 						return factionPenalty;
 					}
@@ -4484,6 +4491,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"talent:federation_task_force_72008": {
 			canEquipFaction: function(upgrade,ship,fleet) {
 				return hasFaction(ship, "federation", ship, fleet) && ship.captain && hasFaction(ship.captain, "federation", ship, fleet);
+			},
+			canEquipFaction: function(card,ship,fleet) {
+				return $factions.hasFaction(ship,"federation",ship,fleet) && $factions.hasFaction(ship.captain,"federation",ship,fleet) || $factions.hasFaction(ship,"bajoran",ship,fleet) && $factions.hasFaction(ship.captain,"bajoran",ship,fleet) || $factions.hasFaction(ship,"vulcan",ship,fleet) && $factions.hasFaction(ship.captain,"vulcan",ship,fleet);
 			}
 		},
 		//Intercept
@@ -4769,7 +4779,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				self: {
 					cost: function(upgrade,ship,fleet,cost) {
-						if( ship && !hasFaction(ship,"federation",ship,fleet) )
+						if( ship && (!hasFaction(ship,"federation", ship, fleet) && !hasFaction(ship,"bajoran", ship, fleet) && !hasFaction(ship,"vulcan", ship, fleet) ) )
 							return resolve(upgrade,ship,fleet,cost) + 5;
 						return cost;
 					}
@@ -4806,7 +4816,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		// Dual Phaser Banks
 		"weapon:dual_phaser_banks_72002p": {
 			canEquip: function(card,ship,fleet) {
-				if( !hasFaction(ship, "federation", ship, fleet) )
+				if( ship && (!hasFaction(ship,"federation", ship, fleet) && !hasFaction(ship,"bajoran", ship, fleet) && !hasFaction(ship,"vulcan", ship, fleet) ) )
 					return false;
 				return onePerShip("Dual Phaser Banks")(card,ship,fleet);
 			},
@@ -4993,7 +5003,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				self: {
 					cost: function(card,ship,fleet,cost) {
-						if( ship && !hasFaction(ship,"federation", ship, fleet) )
+						if( ship && (!hasFaction(ship,"federation", ship, fleet) && !hasFaction(ship,"bajoran", ship, fleet) && !hasFaction(ship,"vulcan", ship, fleet) ) )
 							return resolve(card,ship,fleet,cost) + 3;
 						return cost;
 					}
@@ -5010,7 +5020,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				self: {
 					cost: function(card,ship,fleet,cost) {
 						if( ship && ( !hasFaction(ship,"federation", ship, fleet) && !hasFaction(ship,"bajoran", ship, fleet) && !hasFaction(ship,"vulcan", ship, fleet)) )
-							return resolve(card,ship,fleet,cost) + 2;
+							return resolve(card,ship,fleet,cost) + 3;
 						return cost;
 					}
 				},
@@ -5499,7 +5509,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				self: {
 					cost: function(card,ship,fleet,cost) {
-						if( ship && !hasFaction(ship,"vulcan", ship, fleet) || !hasFaction(ship,"bajoran", ship, fleet) || !hasFaction(ship,"federation", ship, fleet))
+						if( ship && !hasFaction(ship,"vulcan", ship, fleet) )
 							return resolve(card,ship,fleet,cost) + 4;
 						return cost;
 					}
@@ -5864,6 +5874,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"talent:red_squad_valiant":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			},
+			canEquipFaction: function(card,ship,fleet) {
+				return hasFaction(ship,"federation",ship,fleet) && hasFaction(ship.captain,"federation",ship,fleet) || hasFaction(ship,"bajoran",ship,fleet) && hasFaction(ship.captain,"bajoran",ship,fleet) || hasFaction(ship,"vulcan",ship,fleet) && hasFaction(ship.captain,"vulcan",ship,fleet);
 			}},
 		//Riley Aldrin Shepard
 		"crew:riley_aldrin_shepard_valiant":{
@@ -7061,7 +7074,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			attack: 0,
 			// Equip only on a Federation ship with hull 4 or more
 			canEquip: function(upgrade,ship,fleet) {
-				return $factions.hasFaction(ship,"federation", ship, fleet) && ship.hull >= 4;
+				return $factions.hasFaction(ship,"federation", ship, fleet) || $factions.hasFaction(ship,"bajoran", ship, fleet) || ship.hull >= 4;
 			},
 			intercept: {
 				self: {
