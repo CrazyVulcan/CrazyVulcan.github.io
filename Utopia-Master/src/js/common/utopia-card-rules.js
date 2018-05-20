@@ -4866,9 +4866,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		"talent:secret_research_72016": {
 			intercept: {
-				ship: {
+				self: {
 					cost: function(card,ship,fleet,cost) {
-						if( ship && ship.class != "Romulan Science Vessel" )
+						if( ship && ship.class != "Romulan Science Vessel" )  
 							return resolve(card,ship,fleet,cost) + 5;
 						return cost;
 					}
@@ -4882,7 +4882,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		"tech:advanced_scanning_72016": {
 			intercept: {
-				ship: {
+				self: {
 					cost: function(card,ship,fleet,cost) {
 						if( ship && ship.class != "Romulan Science Vessel" )
 							return resolve(card,ship,fleet,cost) + 5;
@@ -4893,7 +4893,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		"tech:signal_amplifier_72016": {
 			intercept: {
-				ship: {
+				self: {
 					cost: function(card,ship,fleet,cost) {
 						if( ship && ship.class != "Romulan Science Vessel" )
 							return resolve(card,ship,fleet,cost) + 5;
@@ -5604,12 +5604,14 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquip: function(upgrade,ship,fleet) {
 				return onePerShip("Counter Measures")(upgrade,ship,fleet);
 			},
+		intercept: {
+			self: {
 			cost: function(upgrade,ship,fleet,cost) {
 				if( ship && ship.class != "Cardassian ATR-4107" )
 					return resolve(upgrade,ship,fleet,cost) + 5;
 				return cost;
-			}
-		},
+			}}
+		}},
 		// Maintenance Crew
 		"question:maintenance_crew_71212": {
 			upgradeSlots: [
