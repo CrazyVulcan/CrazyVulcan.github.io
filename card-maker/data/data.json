@@ -117,7 +117,7 @@
 		"hull": 2,
 		"shields": 2,
 		"cost": 12,
-		"text": "This shuttle may chose to fill its Captain slot with a [crew] Upgrade whos Captain Skill is there SP cost +2.\n-----------------------------------------\nDURING THE ACTIVATION PHASE: You may place 2 [time] Tokens on this captain to perform any ACTION on this card as a free action.",
+		"text": "This shuttle may chose to fill its Captain slot with a [crew] Upgrade whos Captain Skill is their SP cost +2.\nDURING THE ACTIVATION PHASE: You may place 2 [time] Tokens on this captain to perform any ACTION on this card as a free action.",
 		"unique": true,
 		"factions": ["independent"]
 	},	{
