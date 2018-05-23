@@ -15,8 +15,14 @@
 		"type": "set",
 		"id": "002",
 		"name": "Bioship Card Pack",
-		"Release Date": "2018-12-31",
+		"Release Date": "2017-12-31",
 		"parentSet": "Demo"
+	},	{
+		"type": "set",
+		"id": "james_c",
+		"name": "James Campbell",
+		"Release Date": "2018-5-22",
+		"parentSet": "Submitted"
 	}],
 	"ships": [{
 		"type": "ship",
@@ -98,6 +104,38 @@
 		"text": "",
 		"unique": false,
 		"factions": ["species-8472"]
+	}, {
+		"type": "ship",
+		"id": "allices_shuttle_james_c",
+		"set": ["james_c"],
+		"name": "Alice's Shuttle",
+		"class": "Salvaged Shuttlecraft",
+		"actions": ["evade", "target-lock", "scan"],
+		"upgrades": ["tech", "weapon", "crew"],
+		"attack": 2,
+		"agility": 2,
+		"hull": 2,
+		"shields": 2,
+		"cost": 12,
+		"text": "This shuttle may chose to fill its Captain slot with a [crew] Upgrade whos Captain Skill is there SP cost +2.\n-----------------------------------------\nDURING THE ACTIVATION PHASE: You may place 2 [time] Tokens on this captain to perform any ACTION on this card as a free action.",
+		"unique": true,
+		"factions": ["independent"]
+	},	{
+		"type": "ship",
+		"id": "derelict_shuttle_james_c",
+		"set": ["james_c"],
+		"name": "Derelict  Shuttle",
+		"class": "Salvaged Shuttlecraft",
+		"actions": ["evade", "target-lock", "scan"],
+		"upgrades": ["tech", "weapon"],
+		"attack": 2,
+		"agility": 2,
+		"hull": 2,
+		"shields": 1,
+		"cost": 8,
+		"text": "",
+		"unique": false,
+		"factions": ["independent"]
 	}],
 	"shipClasses": [{
 		"type": "ship-class",
@@ -389,6 +427,15 @@
 		"text": "This card counts as either a [tech], [weapon] or [crew] Upgrade.\n<b>AFTER SETUP:</b> Transpher this card to an opposing ship that has an open slot.\n-----------------------------------------\n<b>PLANING PHASE:</b> You may place two Time Tokens on this card. <b>CONTUNIOUS EFFECT:</b> This ship playes its manouver dial face up during the Planing Phase. Discard this card when there are no more time tokens left on it.",
 		"unique": true,
 		"factions": ["species-8472"]
+	},{
+		"type": "question",
+		"id": "alice_james_c",
+		"set": ["james_c"],
+		"name": "Alice",
+		"cost": 2,
+		"text": "This card counts as either a [tech] or [crew] Upgrade. All equipped [crew] Upgrades cost -2sp.\n\nThis card may only be equipped to a Shuttlecraft",
+		"unique": true,
+		"factions": ["independent"]
 	}],
 	"resources": [{
 		"type": "resource",
