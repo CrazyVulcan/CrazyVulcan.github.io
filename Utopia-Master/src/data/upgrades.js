@@ -598,6 +598,7 @@ module.exports = [{
 	cost: 3,
 	text: "<b>ACTIVATION PHASE:</b> Discard this card and target a Captain or [crew] Upgrade equipped to an opposing ship.\n\nThe target Captain or [crew] Upgrade cannot perfrom Actions this game round.",
 	unique: true,
+	range:"1 - 2",
 	factions: ["romulan"]
 }, {
 	type: "tech",

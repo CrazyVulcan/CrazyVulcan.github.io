@@ -5614,6 +5614,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		}},
 		// Maintenance Crew
 		"question:maintenance_crew_71212": {
+			isSlotCompatible: function(slotTypes) {
+				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0;
+			},
 			upgradeSlots: [
 				{
 					type: function(upgrade,ship) {
@@ -7818,14 +7821,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			],
 			canEquip: onePerShip("Neonatal Borg"),
-			canEquipFaction: function(upgrade,ship,fleet) {
-				return $factions.hasFaction( ship, "borg", ship, fleet )
-			},
 			intercept: {
 				ship: {
 					// Add the "crew" type to all Tech and Borg slots
 					type: function(card,ship,fleet,type) {
-						if( $.inArray("tech",type) >= 0 || $.inArray("borg",type) >= 0 )
+						if( ship.hasFaction == "borg" && $.inArray("tech",type) >= 0 || $.inArray("borg",type) >= 0 )
 							return type.concat(["crew"]);
 						return type;
 					}
