@@ -137,9 +137,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		}
 	}
 	//Add a new var to serch for the value of the modifyer "Printed Value"
-	var printedValue = function(upgrade,ship) {
-		$.each
-	}
+	var printedValue = $source.printedValue;
 	
 	var getSlotType = function(upgrade,ship) {
 		var type = ["weapon"];
@@ -1908,8 +1906,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 								var cost = valueOf(upgrade,"cost",ship,fleet);
 								return cost <= 5;
 								
-								var printedValue = valueOf(upgrade,"Printed Value",ship,fleet);
-								return printedValue < 0;
+								if(source.printedValue == 0)
+								return false;
+							return canEquip;
 							},
 							canEquipFaction: function(upgrade,ship,fleet) {
 								return !$factions.hasFaction(upgrade,"borg", ship, fleet);
@@ -3346,7 +3345,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						ship: {
 							free: function() { return true; },
 							canEquip: function(upgrade, ship, fleet, canEquip) {
-								if( valueOf(upgrade,"printedValue",ship,fleet) == 0 || hasFaction(upgrade,"borg", ship, fleet) || valueOf(upgrade,"cost",ship,fleet) > 5 )
+								if( source.printedValue == 0 || hasFaction(upgrade,"borg", ship, fleet) || valueOf(upgrade,"cost",ship,fleet) > 5 )
 									return false;
 								return canEquip;
 							}
@@ -7477,7 +7476,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						ship: {
 							free: function() { return true; },
 							canEquip: function(upgrade, ship, fleet, canEquip) { 
-								if( slot.occupant.printedValue == 0 || hasFaction(upgrade,"borg", ship, fleet) || valueOf(upgrade,"cost",ship,fleet) > 5 )
+								if( source.printedValue == 0 || hasFaction(upgrade,"borg", ship, fleet) || valueOf(upgrade,"cost",ship,fleet) > 5 )
 									return false;
 								return canEquip;
 							}
