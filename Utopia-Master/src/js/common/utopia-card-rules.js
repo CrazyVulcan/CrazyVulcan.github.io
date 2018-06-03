@@ -136,7 +136,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 		}
 	}
-
+	//Add a new var to serch for the value of the modifyer "Printed Value"
+	var printedValue = function(upgrade,ship) {
+		$.each
+	}
+	
 	var getSlotType = function(upgrade,ship) {
 		var type = ["weapon"];
 		$.each( $filter("upgradeSlots")(ship), function(i, slot) {
@@ -1903,6 +1907,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 								// TODO Prevent use of upgrades without a defined cost (e.g. Dorsal Phaser Array)
 								var cost = valueOf(upgrade,"cost",ship,fleet);
 								return cost <= 5;
+								
+								var printedValue = valueOf(upgrade,"Printed Value",ship,fleet);
+								return printedValue < 0;
 							},
 							canEquipFaction: function(upgrade,ship,fleet) {
 								return !$factions.hasFaction(upgrade,"borg", ship, fleet);
