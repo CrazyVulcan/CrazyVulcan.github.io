@@ -1905,9 +1905,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 								// TODO Prevent use of upgrades without a defined cost (e.g. Dorsal Phaser Array)
 								var cost = valueOf(upgrade,"cost",ship,fleet);
 								return cost <= 5;
-								
-								if(source.printedValue == 0)
-								return false;
+
 							return canEquip;
 							},
 							canEquipFaction: function(upgrade,ship,fleet) {
