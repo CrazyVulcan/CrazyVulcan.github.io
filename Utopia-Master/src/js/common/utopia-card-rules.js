@@ -3339,7 +3339,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						ship: {
 							free: function() { return true; },
 							canEquip: function(upgrade, ship, fleet, canEquip) {
-								if( hasFaction(upgrade,"borg", ship, fleet) || valueOf(upgrade,"cost",ship,fleet) > 5 )
+								if( valueOf(upgrade,"printedValue",ship,fleet) == 0 || hasFaction(upgrade,"borg", ship, fleet) || valueOf(upgrade,"cost",ship,fleet) > 5 )
 									return false;
 								return canEquip;
 							}
@@ -7469,8 +7469,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					intercept: {
 						ship: {
 							free: function() { return true; },
-							canEquip: function(upgrade, ship, fleet, canEquip) {
-								if( hasFaction(upgrade,"borg", ship, fleet) || valueOf(upgrade,"cost",ship,fleet) > 5 )
+							canEquip: function(upgrade, ship, fleet, canEquip) { 
+								if( slot.occupant.printedValue == 0 || hasFaction(upgrade,"borg", ship, fleet) || valueOf(upgrade,"cost",ship,fleet) > 5 )
 									return false;
 								return canEquip;
 							}
