@@ -136,9 +136,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 		}
 	}
-	//Add a new var to serch for the value of the modifyer "Printed Value"
-	//var printedValue = $source.printedValue;
-	
+
 	var getSlotType = function(upgrade,ship) {
 		var type = ["weapon"];
 		$.each( $filter("upgradeSlots")(ship), function(i, slot) {
