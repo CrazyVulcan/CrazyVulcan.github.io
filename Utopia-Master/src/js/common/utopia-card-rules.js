@@ -1019,11 +1019,13 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					rules: "Costs exactly 3 SP",
 					intercept: {
 						ship: {
-							cost: {
-								priority: 100,
-								fn: function(upgrade, ship, fleet, cost) {
-									return 3 + factionPenalty;
-								}
+							cost: function(upgrade, ship, fleet, cost) {
+								var modifier = 0
+								if ( card.type == ship && $factions.hasFaction(ship,"bajoran",ship,fleet) || $factions.hasFaction(ship,"federation",ship,fleet) || $factions.hasFaction(ship,"vulcan",ship,fleet) ) 
+									modifier = 0;
+								else if ( card.type == ship )
+									modifier = 1;
+								return cost + modifier;
 							}
 						}
 					}
