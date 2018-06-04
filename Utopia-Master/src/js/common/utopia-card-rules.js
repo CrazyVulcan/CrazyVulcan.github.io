@@ -109,7 +109,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 	};
 
 	var hasFaction = $factions.hasFaction;
-
+	
+	//Add a new var to serch for the value of the modifyer "Printed Value"
+	var printedValue = $source.printedValue;
+	
+	
 	var cloneSlot = function(count, slot) {
 		var slots = [slot];
 		for( var i = 1; i < count; i++ )
