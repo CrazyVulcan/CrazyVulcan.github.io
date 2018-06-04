@@ -111,7 +111,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 	var hasFaction = $factions.hasFaction;
 	
 	//Add a new var to serch for the value of the modifyer "Printed Value"
-	var printedValue = upgrade.printedValue;
+//	var printedValue = upgrade.printedValue;
 	
 	
 	var cloneSlot = function(count, slot) {
@@ -1025,13 +1025,17 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 									return 3;
 								}
 							},
-							// TODO Does this invoke faction penalty?
-							factionPenalty: function() { return 0; }
+							factionPenalty: function(upgrade, ship, fleet, factionPenalty) {
+								if( hasFaction(upgrade,"federation",ship,fleet) || hasFaction(upgrade,"bajoran",ship,fleet) || hasFaction(upgrade,"vulcan",ship,fleet) )
+									return 0;
+								return factionPenalty;
+							}
 						}
 					}
 				}
 			]
 		},
+		
 		//Blockade
 		"talent:blockade_op6prize":{
 			factionPenalty: function(upgrade, ship, fleet) {
