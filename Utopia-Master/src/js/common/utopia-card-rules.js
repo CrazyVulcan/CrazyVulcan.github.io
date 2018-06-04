@@ -111,7 +111,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 	var hasFaction = $factions.hasFaction;
 	
 	//Add a new var to serch for the value of the modifyer "Printed Value"
-	var printedValue = $source.printedValue;
+	var printedValue = upgrade.printedValue;
 	
 	
 	var cloneSlot = function(count, slot) {
@@ -3345,7 +3345,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						ship: {
 							free: function() { return true; },
 							canEquip: function(upgrade, ship, fleet, canEquip) {
-								if( source.printedValue == 0 || hasFaction(upgrade,"borg", ship, fleet) || valueOf(upgrade,"cost",ship,fleet) > 5 )
+								if( upgrade.printedValue == 0 || hasFaction(upgrade,"borg", ship, fleet) || valueOf(upgrade,"cost",ship,fleet) > 5 )
 									return false;
 								return canEquip;
 							}
@@ -7476,7 +7476,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						ship: {
 							free: function() { return true; },
 							canEquip: function(upgrade, ship, fleet, canEquip) { 
-								if( source.printedValue == 0 || hasFaction(upgrade,"borg", ship, fleet) || valueOf(upgrade,"cost",ship,fleet) > 5 )
+								if( upgrade.printedValue == 0 || hasFaction(upgrade,"borg", ship, fleet) || valueOf(upgrade,"cost",ship,fleet) > 5 )
 									return false;
 								return canEquip;
 							}

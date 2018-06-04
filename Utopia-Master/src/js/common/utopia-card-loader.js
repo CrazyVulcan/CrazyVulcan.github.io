@@ -82,17 +82,6 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 				}
 			});
 			
-			ship.intercept.ship.cost.push( {
-				source: "Printed Value",
-				priority: 1,
-				fn: function(upgrade, ship, fleet, cost) {
-					if( !$factions.match( upgrade, ship, ship, fleet ) ) {
-						var printedValue = valueOf(upgrade,"printedValue",ship,fleet);
-						return (cost instanceof Function ? cost(upgrade, ship, fleet, 0) : cost );
-					}
-					return cost;
-				}
-			});
 
 			cards.push(ship);
 
