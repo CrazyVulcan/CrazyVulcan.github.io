@@ -1022,10 +1022,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 							cost: function(upgrade, ship, fleet, cost) {
 								var modifier = 0
 								if ( card.type == ship && $factions.hasFaction(ship,"bajoran",ship,fleet) || $factions.hasFaction(ship,"federation",ship,fleet) || $factions.hasFaction(ship,"vulcan",ship,fleet) ) 
-									modifier = 0;
+									return resolve(upgrade,ship,fleet,cost) + 0;
 								else if ( card.type == ship )
-									modifier = 1;
-								return cost + modifier;
+									return resolve(upgrade,ship,fleet,cost) + 1;
+								return cost;
 							}
 						}
 					}
