@@ -406,14 +406,18 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					faceDown: true,
 					intercept: {
 						ship: {
-							cost: function(card,ship,fleet,cost) { 
-							// Check for a Faction Penalty
-							if( ship.factions != card.factions )
-								return 4;
-							// Check for no Faction Penalty
-							else if( ship.factions == card.factions )
-								return 3;
+							cost: function(upgrade, ship, fleet, cost) {
+								if ( ship && $factions.hasFaction(ship,"bajoran",ship,fleet) || $factions.hasFaction(ship,"federation",ship,fleet) || $factions.hasFaction(ship,"vulcan",ship,fleet) ) ;
+									return (valueOf(card,"cost",ship,fleet) = 3 );
+								if ( ship && !$factions.hasFaction(ship,"bajoran",ship,fleet) || !$factions.hasFaction(ship,"federation",ship,fleet) || !$factions.hasFaction(ship,"vulcan",ship,fleet) )
+									return (valueOf(card,"cost",ship,fleet) = 4 );
 							return cost;
+							},
+							// TODO Check if faction penalty should be applied
+							factionPenalty: function(upgrade, ship, fleet, factionPenalty) {
+								if( hasFaction(upgrade,"federation",ship,fleet) || hasFaction(upgrade,"bajoran",ship,fleet) || hasFaction(upgrade,"vulcan",ship,fleet) )
+									return 1;
+								return factionPenalty;
 							}
 						}
 					}
@@ -1016,14 +1020,14 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						ship: {
 							//Upgrades cost 3 SP
 							cost: function(card,ship,fleet,cost) { 
-							// Check for a Faction Penalty
 							if( ship.factions != card.factions )
 								return 4;
-							// Check for no Faction Penalty
 							else if( ship.factions == card.factions )
 								return 3;
 							return cost;
-							},							
+							},
+							// Check for a Faction Penalty
+							
 						}
 					}
 				}
