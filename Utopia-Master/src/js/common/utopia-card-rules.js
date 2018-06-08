@@ -1019,11 +1019,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					intercept: {
 						ship: {
 							cost: function(upgrade, ship, fleet, cost) {
-								if ( ship && $factions.hasFaction(ship,"bajoran",ship,fleet) || $factions.hasFaction(ship,"federation",ship,fleet) || $factions.hasFaction(ship,"vulcan",ship,fleet) ) ;
-									return (valueOf(card,"cost",ship,fleet) = 3 );
-								if ( ship && !$factions.hasFaction(ship,"bajoran",ship,fleet) || !$factions.hasFaction(ship,"federation",ship,fleet) || !$factions.hasFaction(ship,"vulcan",ship,fleet) )
-									return (valueOf(card,"cost",ship,fleet) = 4 );
-							return cost;
+						
+							return 3;
 							}
 						}
 					}
