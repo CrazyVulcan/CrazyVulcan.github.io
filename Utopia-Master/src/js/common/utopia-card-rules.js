@@ -1018,14 +1018,15 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					rules: "Costs exactly 3 SP",
 					intercept: {
 						ship: {
-							cost: function(upgrade, ship, fleet, cost) {
-						
-							return 3;
-							},
-							// costs for if there is a faction penelaty. 
-							factionPenalty: function(card,ship,fleet,factionPenalty) {
+							//Upgrades cost 3 SP
+							cost: function(card,ship,fleet,cost) { 
+								return 3;
+							if( ship.factions != card.factions )
 								return 4;
-							}
+							return cost;
+							},
+							// Check for a Faction Penalty
+							
 						}
 					}
 				}
