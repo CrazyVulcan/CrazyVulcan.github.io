@@ -409,7 +409,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 							cost: function(upgrade,ship,fleet,cost) { 
 							if( !$factions.match( upgrade, ship, ship, fleet ) && ( hasFaction(upgrade,"federation",ship,fleet) || hasFaction(upgrade,"bajoran",ship,fleet) || hasFaction(upgrade,"vulcan",ship,fleet) ) )
 								return 4; 
-							else if ( $factions.match( upgrade, ship, ship, fleet ) && ( hasFaction(upgrade,"federation",ship,fleet) || hasFaction(upgrade,"bajoran",ship,fleet) || hasFaction(upgrade,"vulcan",ship,fleet) ) )
+							else if ( $factions.match( upgrade, ship, ship, fleet ) && hasFaction(upgrade,"federation",ship,fleet) || $factions.match( upgrade, ship, ship, fleet ) && hasFaction(upgrade,"bajoran",ship,fleet) || $factions.match( upgrade, ship, ship, fleet ) && hasFaction(upgrade,"vulcan",ship,fleet) )
 								return 3;
 							return cost;
 							}
