@@ -1021,6 +1021,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 							cost: function(upgrade, ship, fleet, cost) {
 						
 							return 3;
+							},
+							// costs for if there is a faction penelaty. 
+							factionPenalty: function(card,ship,fleet,factionPenalty) {
+								return 4;
 							}
 						}
 					}
