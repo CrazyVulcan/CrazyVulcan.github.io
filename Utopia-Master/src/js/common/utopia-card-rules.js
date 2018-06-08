@@ -406,18 +406,12 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					faceDown: true,
 					intercept: {
 						ship: {
-							cost: function(upgrade, ship, fleet, cost) {
-								if ( ship && $factions.hasFaction(ship,"bajoran",ship,fleet) || $factions.hasFaction(ship,"federation",ship,fleet) || $factions.hasFaction(ship,"vulcan",ship,fleet) ) ;
-									return (valueOf(card,"cost",ship,fleet) = 3 );
-								if ( ship && !$factions.hasFaction(ship,"bajoran",ship,fleet) || !$factions.hasFaction(ship,"federation",ship,fleet) || !$factions.hasFaction(ship,"vulcan",ship,fleet) )
-									return (valueOf(card,"cost",ship,fleet) = 4 );
+							cost: function(upgrade,ship,fleet,cost) { 
+							if( !$factions.match( upgrade, ship, ship, fleet ) && hasFaction(upgrade,"federation",ship,fleet) || hasFaction(upgrade,"bajoran",ship,fleet) || hasFaction(upgrade,"vulcan",ship,fleet) )
+								return 4; 
+							else if( $factions.match( upgrade, ship, ship, fleet ) && hasFaction(upgrade,"federation",ship,fleet) || hasFaction(upgrade,"bajoran",ship,fleet) || hasFaction(upgrade,"vulcan",ship,fleet) )
+								return 3;
 							return cost;
-							},
-							// TODO Check if faction penalty should be applied
-							factionPenalty: function(upgrade, ship, fleet, factionPenalty) {
-								if( hasFaction(upgrade,"federation",ship,fleet) || hasFaction(upgrade,"bajoran",ship,fleet) || hasFaction(upgrade,"vulcan",ship,fleet) )
-									return 1;
-								return factionPenalty;
 							}
 						}
 					}
