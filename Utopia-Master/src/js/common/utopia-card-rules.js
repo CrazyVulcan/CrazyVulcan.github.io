@@ -1020,11 +1020,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						ship: {
 							//Upgrades cost 3 SP
 							cost: function(card,ship,fleet,cost) { 
-							if( !$factions.match( upgrade, ship, ship, fleet ) )
+							if( !$factions.match( card, ship, ship, fleet ) )
 								return 4;
 							},
 							cost: function(card,ship,fleet,cost) { 
-							if( $factions.match( upgrade, ship, ship, fleet ) )
+							if( $factions.match( card, ship, ship, fleet ) )
 							return 3;
 							}
 							// Check for a Faction Penalty
