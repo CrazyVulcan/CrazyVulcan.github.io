@@ -6412,6 +6412,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						else if (card.type == "ship")
 							modifier = 10;
 						return cost - modifier;
+					},
+					factionPenalty: function(upgrade, ship, fleet, factionPenalty) {
+						return upgrade.id == "borg_support_vehicle_token_72255", factionPenalty;
 					}
 				}
 			}
