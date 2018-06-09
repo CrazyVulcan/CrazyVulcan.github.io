@@ -6414,7 +6414,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						return cost - modifier;
 					},
 					factionPenalty: function(upgrade, ship, fleet, factionPenalty) {
-						return upgrade.id == "borg_support_vehicle_token_72255";
+						return upgrade.name == "Borg Support Vehicle Token";
 					},
 					upgradeSlots: [
 						{
