@@ -6421,7 +6421,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						return cost - modifier;
 					},
 					factionPenalty: function(upgrade, ship, fleet, factionPenalty) {
-						return card && card.name == "Borg Support Vehicle Token";
+						if ( card && card.name == "Borg Support Vehicle Token" )
+					return false;
 					},
 				}
 			}
