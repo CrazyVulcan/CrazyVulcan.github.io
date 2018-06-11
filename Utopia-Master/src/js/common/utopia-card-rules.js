@@ -407,7 +407,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					intercept: {
 						ship: {
 							cost: function(upgrade,ship,fleet,cost) { 
-							if( ship.factions && $factions.hasFaction(ship.factions,"federation", ship, fleet) )
+							if( upgrade.hasFaction(ship.factions,"federation", ship, fleet) || upgrade.hasFaction(ship.factions,"bajoran", ship, fleet) ||upgrade.hasFaction(ship.factions,"vulcan", ship, fleet) )
 								return 3; 
 							else if ( !$factions.match( upgrade, ship, ship, fleet ) && ( hasFaction(upgrade,"federation",ship,fleet) || hasFaction(upgrade,"bajoran",ship,fleet) || hasFaction(upgrade,"vulcan",ship,fleet) ) )
 								return 4;
