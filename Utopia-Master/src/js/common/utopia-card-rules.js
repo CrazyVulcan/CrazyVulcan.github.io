@@ -6397,6 +6397,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		// Borg Support Vehicle Token
 		"question:borg_support_vehicle_token_72255":{
 			canEquip: onePerShip("Borg Support Vehicle Token"),
+			factionPenalty: function(upgrade, ship, fleet) {
+				return upgrade && upgrade.name == "Borg Support Vehicle Token" ? 0 : 1 ;
+			},
 			isSlotCompatible: function(slotTypes) {
 				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0 || $.inArray( "borg", slotTypes ) >= 0;
 			},
@@ -6419,11 +6422,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						else if (card.type == "ship")
 							modifier = 10;
 						return cost - modifier;
-					},
-					factionPenalty: function(upgrade, ship, fleet, factionPenalty) {
-						if ( upgrade && upgrade.name == "Borg Support Vehicle Token" )
-					return false;
-					},
+					}
 				}
 			}
 		},
