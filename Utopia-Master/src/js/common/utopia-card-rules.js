@@ -6404,8 +6404,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship.hull <= 7;
 			},
 			factionPenalty: function(upgrade, ship, fleet, factionPenalty) {
-						return upgrade.name == "Borg Support Vehicle Token";
-					},
+				return card && card.name == "Borg Support Vehicle Token";
+			},
 			upgradeSlots: [
 				{
 					type: function(upgrade,ship) {
