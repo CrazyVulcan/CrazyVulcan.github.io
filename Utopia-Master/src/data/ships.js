@@ -28,7 +28,7 @@ module.exports = [{
 	hull: 3,
 	shields: 3,
 	cost: 18,
-	text: "You may equip the Inertial Compensators upgrade to this ship for free and without requiring an upgrade slot.\n\n<b>WHEN ATTACKING:</b> If the defending ship is hit: Place an [aux] token beside the defending ship.",
+	text: "You may equip the Inertial Compensators upgrade to this ship for free and without requiring an upgrade slot.\n<b>WHEN ATTACKING:</b> If the defending ship is hit: Place an [aux] token beside the defending ship.",
 	unique: true,
 	factions: ["independent"],
 	squadron: false
@@ -79,7 +79,7 @@ module.exports = [{
 	hull: 1,
 	shields: 1,
 	cost: 24,
-	text: "ATTACK SQUADRON TOKENS: 5\r\n<b>ACTION:</b> Place 2 [time] Tokens on this card.\n\nPerform an [sensor-echo] action using a 1 [straight] Maneuver Template as a Free Action, even if this Attack Squadron is not Cloaked.",
+	text: "ATTACK SQUADRON TOKENS: 5\r\n<b>ACTION:</b> Place 2 [time] Tokens on this card.\nPerform an [sensor-echo] action using a 1 [straight] Maneuver Template as a Free Action, even if this Attack Squadron is not Cloaked.",
 	unique: true,
 	factions: ["federation"],
 	squadron: false
