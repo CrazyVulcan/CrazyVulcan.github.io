@@ -1,4 +1,107 @@
 module.exports = [{
+	type: "tech",
+	id: "inertial_compensators_75004",
+	set: ["75004"],
+	name: "Inertial Compensators",
+	cost: 2,
+	text: "This ship must have a [about] maneuver on its maneuver dial to equip this card.<b>AFTER PERFORMING A BANK OR TURN MANEUVER WITH A SPEED OF 2 OR GREATER:</b> Place an [aux] token beside this ship. Rotate this ship 180 degrees, even if this ship’s base overlapped another ship’s base.",
+	OnePerShip: true,
+	hullConstraint: "3-",
+	factions: ["independent"]
+}, {
+	type: "question",
+	id: "repurposed_cargo_hold_75004",
+	set: ["75004"],
+	name: "Repurposed Cargo Hold",
+	cost: 2,
+	text: "This card counts as a [crew] Upgrade, [tech] Upgrade, or [weapon] upgrade.\n\nAdd one [tech] or [weapon] Upgrade to this ship’s Upgrade bar.",
+	OnePerShip: true,
+	shipIndependent: true,
+	factions: ["independent"]
+}, {
+	type: "crew",
+	id: "tarah",
+	set: ["75004"],
+	name: "Tarah",
+	cost: 5,
+	text: "<b>ACTION:</b> Remove this card from play and target an opposing ship. Discard a Captain Card or Admiral Card equipped to that ship.",
+	unique: true,
+	range: "1 - 3",
+	shipLimit: true,
+	factions: ["independent"]
+}, {
+	type: "crew",
+	id: "james_t_kirk_75005",
+	set: ["75005"],
+	name: "James T. Kirk",
+	cost: 4,
+	text: "<b>ACTIVATION PHASE:</b> Place 3 [time] Tokens on this card. Increase the Captain Skill of the Captain equipped to this ship by 2 this game round and perform a [battlestations] Action as a free Action.",
+	unique: true,
+	talent: 1, 
+	range: "1 - 3",
+	factions: ["mirror-universe","federation"]
+}, {
+	type: "talent",
+	id: "overwhelm_75005",
+	set: ["75005"],
+	name: "Overwhelm",
+	cost: 4,
+	text: "<b>WHEN ATTACKING:</b> Place 2 [time] Tokens on this card. This game round, for each other friendly ship that attacked the defending ship this game round, this ship rolls +1 attack die and may convert 1 [blank] into 1 [battlestations].",
+	unique: true,
+	shipKlingon: true,
+	captainKlingon: true,
+	factions: ["klingon"]
+}, {
+	type: "crew",
+	id: "koth_75005",
+	set: ["75005"],
+	name: "Koth",
+	cost: 2,
+	text: "<b>SETUP:</b> Place 1 Disabled Token on 1 [crew] upgrade equipped to each opposing ship.",
+	unique: true,
+	shipKlingon: true,
+	factions: ["mirror-universe","klingon"]
+}, {
+	type: "weapon",
+	id: "advanced_long_range_torpedo_75005",
+	set: ["75005"],
+	name: "Advanced Long Range Torpedo",
+	cost: 3,
+	text: "The Attack Value of this [WEAPON] is this ship’s Primary Weapon Value +1.\n-----------------------------------\n<b>ATTACK:</b> Spend this ship’s [target-lock] token, place 2 [time] Tokens on this card, and target an opposing ship.\n\nIf the attack hits, every other ship within Range 1 of the opposing ship suffers 1 [hit].",
+	attack: 0,
+	unique: true,
+	range: "3",
+	shipLimit: true,
+	factions: ["mirror-universe","federation"]
+}, {
+	type: "squadron",
+	id: "lead_squadron_73041",
+	set: ["73041"],
+	name: "Lead Squadron",
+	cost: 5,
+	text: "Add 1 [squadron] Upgrade to this Attack Squadron’s Upgrade Bar. Add the [battlestations] Action to this Attack Squadron’s Action Bar. Increase the Captain Skill of this Attack Squadron by 2.",
+	unique: true,
+	factions: ["federation"]
+}, {
+	type: "squadron",
+	id: "flanking_maneuver_delta_73041",
+	set: ["73041"],
+	name: "Flanking Maneuver Delta",
+	cost: 2,
+	text: "<b>AFTER THIS ATTACK SQUADRON PERFORMS A [bank-left] or [bank-right] MANEUVER:</b> Discard this card and place an [aux] Token beside this Attack Squadron. Rotate this Attack Squadron 180 degrees.",
+	OnePerShip: true,
+	factions: ["federation"]
+}, {
+	type: "tech",
+	id: "tractor_beam_73042",
+	set: ["73042"],
+	name: "Tractor Beam",
+	cost: 3,
+	text: "<b>ACTION:</b> Target an opposing ship. The target ship treats all White Maneuvers as Red Maneuvers and all Green Maneuvers as White Maneuvers this game round.",
+	OnePerShip: true,
+	range: "1 - 2",
+	factions: ["independent"]
+}, {
 	type: "talent",
 	id: "kal_if_fee_72321",
 	set: ["72321"],

@@ -1,5 +1,29 @@
 module.exports = [{
 	type: "set",
+	id: "75005",
+	name: "Kelvin Timeline",
+	releaseDate: "2018-09-02",
+	parentSet: "Faction Pack"
+}, {
+	type: "set",
+	id: "75004",
+	name: "A Motley Fleet",
+	releaseDate: "2018-09-01",
+	parentSet: "Faction Pack"
+}, {
+	type: "set",
+	id: "73042",
+	name: "Hirogen Hunting Vessel",
+	releaseDate: "2018-07-02",
+	parentSet: "Card Pack 4"
+}, {
+	type: "set",
+	id: "73041",
+	name: "Fighter Squadron 3",
+	releaseDate: "2018-07-01",
+	parentSet: "Card Pack 4"
+}, {
+	type: "set",
 	id: "72321r",
 	name: "Sickbay Resource",
 	releaseDate: "2018-04-02",

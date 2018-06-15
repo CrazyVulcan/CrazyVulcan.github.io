@@ -1403,6 +1403,17 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "captain",
+	id: "hirogen_hunter_73042",
+	set: ["73042"],
+	name: "Hirogen Hunter",
+	cost: 4,
+	skill: 5,
+	talents: 1,
+	text: "Hirogen Hunter counts as a Hirogen Captain.\n\nThis ship may use the action on a Tractor Beam Upgrade as a free Action.",
+	unique: false,
+	factions: ["independent"]
+}, {
+	type: "captain",
 	id: "vorta_commander_73032",
 	set: ["73032"],
 	name: "Vorta Commander",
@@ -1893,6 +1904,17 @@ module.exports = [{
 	cost: 3,
 	skill: "*",
 	range: "1 - 2"
+}, {
+	type: "captain",
+	id: "thomas_riker_75004",
+	set: ["75004"],
+	name: "Thomas Riker",
+	unique: true,
+	text: "You do not pay a faction penalty when equipping this card to a [FED] ship.\n----------------------------------------\n<b>END PHASE:</b> This ship may perform a maneuver on its dial with a speed of 2 or less.",
+	factions: ["independent"],
+	cost: 4,
+	skill: 6,
+	talents: 1
 }, {
 	type: "captain",
 	id: "prak_75003",
