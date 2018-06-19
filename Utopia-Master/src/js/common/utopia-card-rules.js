@@ -407,7 +407,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					intercept: {
 						ship: {
 							cost: function(upgrade,ship,fleet,cost) { 
-							if( upgrade.hasFaction(ship.factions,"federation", ship, fleet) || upgrade.hasFaction(ship.factions,"bajoran", ship, fleet) ||upgrade.hasFaction(ship.factions,"vulcan", ship, fleet) )
+							if( upgrade.hasFaction == "federation" || upgrade.hasFaction == "bajoran" || upgrade.hasFaction == "vulcan" && ship.hasFaction == "federation" || ship.hasFaction == "bajoran" || ship.hasFaction == "vulcan" )
 								return 3; 
 							else if ( !$factions.match( upgrade, ship, ship, fleet ) && ( hasFaction(upgrade,"federation",ship,fleet) || hasFaction(upgrade,"bajoran",ship,fleet) || hasFaction(upgrade,"vulcan",ship,fleet) ) )
 								return 4;
@@ -551,27 +551,27 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 	//Krayton
 	"captain:2026":{
 			factionPenalty: function(upgrade, ship, fleet) {
-				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+				return ship && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}
 		},
 	"talent:3060":{
 			factionPenalty: function(upgrade, ship, fleet) {
-				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+				return ship && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}
 		},
 	"crew:3062":{
 			factionPenalty: function(upgrade, ship, fleet) {
-				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+				return ship && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}
 		},
 	"weapon:3063":{
 			factionPenalty: function(upgrade, ship, fleet) {
-				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+				return ship && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}
 		},
 	"tech:3061":{
 			factionPenalty: function(upgrade, ship, fleet) {
-				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+				return ship && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}
 		},
 
@@ -8175,6 +8175,103 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			]
 		},
+		
+		
+	//Fighter Squadron 3
+		//Lead Squadron
+		"squadron:lead_squadron_73041":{
+			upgradeSlots: [
+				{
+					type: ["squadron"]
+				}
+			]
+		},
+	//Hirogen Hunting Vessel
+		"captain:hirogen_hunter_73042":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			}},
+		"tech:tractor_beam_73042":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			}},
+		
+	//A Motley Fleet
+		"ship:gurngouin_75004":{
+			upgradeSlots: [ {
+					type: ["tech"],
+					rules: "Free Inertial Compensators Only",
+					canEquip: function(upgrade) {
+						return upgrade.name == "Inertial Compensators";
+					},
+					intercept: {
+						ship: {
+							cost: function() { return 0; }
+						}
+					}
+				} ]
+		},
+		"captain:thomas_riker_75004":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "federation", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			}
+		},
+		"crew:tarah_75004":{
+			canEquip: function(upgrade,ship,fleet) {
+				return ship.class == "Andorian Battle Cruiser";
+			}
+		},
+		"tech:inertial_compensators":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			},
+			intercept: {
+				self: {
+					canEquip: function(upgrade,ship,fleet) {
+						if ( ship && ship.hull <= 3 && ship.classData && ship.classData.maneuvers )
+							for (i = 1; i < ship.classData.maneuvers.max; i++ )
+							{
+								if ( ship.classData.maneuvers[i].about !== undefined )
+									return true;
+							}
+						return false;
+					}
+				}
+			}
+		},
+	//Kelvin Timeline
+		"talent:overwhelm_75005":{
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return ship.hasFaction == "klingon" && ship.captain == "klingon";
+			}
+		},
+		"crew:james_t_kirk_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}
+		},
+		"crew:koth_75005":{
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return ship.hasFaction == "klingon";
+			}
+		},
+		"weapon:advanced_long_range_torpedo_75005":{
+			canEquip: function(upgrade,ship,fleet) {
+				return ship.class == "Kelvin Constitution Class";
+			},
+			attack: 0,
+			intercept: {
+				self: {
+					// Attack is same as ship primary + 1
+					attack: function(upgrade,ship,fleet,attack) {
+						if( ship )
+							return valueOf(ship,"attack",ship,fleet) + 1;
+						return attack;
+					}
+				}
+			}
+		},
+	
 //Faction Penalty For Subfactions
 		//Federation
 		":":{
@@ -8298,7 +8395,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		//Captains Chair
 		"ship-resource:captains_chair_ship":{
 			canEquip: function(upgrade,ship,fleet) {
-				return ship.captain && ship.captain.skill >= 5;
+				return //ship.captain && 
+				ship.captain.skill >= 5;
 			} 
 		},
 		

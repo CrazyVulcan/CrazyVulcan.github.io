@@ -4,7 +4,7 @@ module.exports = [{
 	set: ["75004"],
 	name: "Inertial Compensators",
 	cost: 2,
-	text: "This ship must have a [about] maneuver on its maneuver dial to equip this card.<b>AFTER PERFORMING A BANK OR TURN MANEUVER WITH A SPEED OF 2 OR GREATER:</b> Place an [aux] token beside this ship. Rotate this ship 180 degrees, even if this ship’s base overlapped another ship’s base.",
+	text: "This ship must have a [come-about] maneuver on its maneuver dial to equip this card.<b>AFTER PERFORMING A BANK OR TURN MANEUVER WITH A SPEED OF 2 OR GREATER:</b> Place an [aux] token beside this ship. Rotate this ship 180 degrees, even if this ship’s base overlapped another ship’s base.",
 	OnePerShip: true,
 	hullConstraint: "3-",
 	factions: ["independent"]

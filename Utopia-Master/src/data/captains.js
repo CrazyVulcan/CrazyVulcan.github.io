@@ -1910,7 +1910,7 @@ module.exports = [{
 	set: ["75004"],
 	name: "Thomas Riker",
 	unique: true,
-	text: "You do not pay a faction penalty when equipping this card to a [FED] ship.\n----------------------------------------\n<b>END PHASE:</b> This ship may perform a maneuver on its dial with a speed of 2 or less.",
+	text: "You do not pay a faction penalty when equipping this card to a Federation ship.\n----------------------------------------\n<b>END PHASE:</b> This ship may perform a maneuver on its dial with a speed of 2 or less.",
 	factions: ["independent"],
 	cost: 4,
 	skill: 6,
