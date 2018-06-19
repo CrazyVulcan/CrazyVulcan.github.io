@@ -409,7 +409,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 							cost: function(upgrade,ship,fleet,cost) { 
 							if( $factions.hasFaction( upgrade, "federation", ship, fleet ) || $factions.hasFaction( upgrade, "bajoran", ship, fleet ) || $factions.hasFaction( upgrade, "vulcan", ship, fleet ) && ship.hasFaction == "federation" || ship.hasFaction == "bajoran" || ship.hasFaction == "vulcan" )
 								return 3; 
-							else if ( !$factions.match( upgrade, ship, ship, fleet ) && ( hasFaction(upgrade,"federation",ship,fleet) || hasFaction(upgrade,"bajoran",ship,fleet) || hasFaction(upgrade,"vulcan",ship,fleet) ) )
+							else if ( !$factions.hasFaction( upgrade, "federation", ship, fleet ) || !$factions.hasFaction( upgrade, "bajoran", ship, fleet ) || !$factions.hasFaction( upgrade, "vulcan", ship, fleet ) && ship.hasFaction != "federation" || ship.hasFaction != "bajoran" || ship.hasFaction != "vulcan" )
 								return 4;
 							return cost;
 							}
@@ -8405,11 +8405,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 
 		//Captains Chair
-		"ship-resource:captains_chair_ship":{
-			canEquip: function(upgrade,ship,fleet) {
-				return ship.captain.skill >= 5;
-			} 
-		},
+		//"ship-resource:captains_chair_ship":{
+		//	canEquip: function(upgrade,ship,fleet) {
+		//		return ship.captain.skill >= 5;
+		//	} 
+		//},
 		
 		"resource:captains_chair_resource":{
 			slotType: "ship-resource",
