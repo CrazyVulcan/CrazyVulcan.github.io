@@ -8239,6 +8239,18 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
+		"question:repurposed_cargo_hold_75004":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			},
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("Repurposed Cargo Hold")(upgrade,ship,fleet) && $factions.hasFaction( ship, "independent", ship, fleet ) || onePerShip("Repurposed Cargo Hold")(upgrade,ship,fleet) && $factions.hasFaction( ship, "ferengi", ship, fleet ) || onePerShip("Repurposed Cargo Hold")(upgrade,ship,fleet) && $factions.hasFaction( ship, "kazon", ship, fleet ) || onePerShip("Repurposed Cargo Hold")(upgrade,ship,fleet) && $factions.hasFaction( ship, "xindi", ship, fleet );
+			},
+			isSlotCompatible: function(slotTypes) {
+				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0;
+			},
+			upgradeSlots: [ { type: ["tech", "weapon"] } ]
+		},
 	//Kelvin Timeline
 		"talent:overwhelm_75005":{
 			canEquipFaction: function(upgrade,ship,fleet) {
@@ -8395,8 +8407,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		//Captains Chair
 		"ship-resource:captains_chair_ship":{
 			canEquip: function(upgrade,ship,fleet) {
-				return //ship.captain && 
-				ship.captain.skill >= 5;
+				return ship.captain.skill >= 5;
 			} 
 		},
 		
