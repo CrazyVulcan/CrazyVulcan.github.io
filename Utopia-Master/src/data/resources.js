@@ -296,6 +296,7 @@ module.exports = [{
 	name: "Auxiliary Power",
 	text: "At the start od the battle, place 5 Auxiliary Power Tokens on top of this card\n\nOnce per round, one ship in your fleet may use one of the following abilities.\n\n1. Roll 1 extra attack or defense die, OR\n\n2. Place 1 Evade Token beside your ship, even if there was one already there, OR\n\n3. Repair 1 Shield Token.\n\nIf you use any of their abilities, remove one Auxiliary Power Token from this card beside the ship that used this ability. Discard this card when there no more Auxiliary Power Tokens.",
 	cost: 5,
+	opBanned: true,
 	showShipResourceSlot: false
 }, {
 	type: "resource",
