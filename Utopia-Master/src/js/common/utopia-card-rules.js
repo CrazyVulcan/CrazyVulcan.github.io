@@ -8256,19 +8256,17 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 	//Kelvin Timeline
 		"talent:overwhelm_75005":{
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return ship.hasFaction == "klingon" && ship.captain == "klingon";
-			}
-		},
+				return ship.captain && $factions.hasFaction(ship.captain,"klingon", ship, fleet);
+		}},
 		"crew:james_t_kirk_75005":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}
 		},
 		"crew:koth_75005":{
-			canEquipFaction: function(upgrade,ship,fleet) {
-				return ship.hasFaction == "klingon";
-			}
-		},
+			canEquip: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship,"klingon", ship, fleet);
+			}},
 		"weapon:advanced_long_range_torpedo_75005":{
 			canEquip: function(upgrade,ship,fleet) {
 				return ship.class == "Kelvin Constitution Class";
