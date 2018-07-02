@@ -64,7 +64,7 @@ module.exports = [{
 	type: "weapon",
 	id: "advanced_long_range_torpedo_75005",
 	set: ["75005"],
-	name: "Advanced Long Range Torpedo",
+	name: "Advanced Long-Range Torpedo",
 	cost: 3,
 	text: "The Attack Value of this [weapon] is this ship’s Primary Weapon Value +1.\n-----------------------------------\n<b>ATTACK:</b> Spend this ship’s [target-lock] token, place 2 [time] Tokens on this card, and target an opposing ship.\n\nIf the attack hits, every other ship within Range 1 of the opposing ship suffers 1 [hit].\n(<i>Kelvin Constitution Class Only</i>)",
 	attack: 0,
@@ -2494,17 +2494,6 @@ module.exports = [{
 	name: "Klingon Tactical Officer",
 	cost: 3,
 	text: "When attacking with your primary Weapon, during the Modify Attack Dice step, you may disable this card to spend your [evade] Token to convert 1 of your [battlestations] results into a [hit] result.",
-	unique: false,
-	factions: ["klingon"]
-}, {
-	type: "weapon",
-	id: "photon_torpedoes_amar",
-	set: ["72232"],
-	name: "Photon Torpedoes",
-	cost: 5,
-	attack: 5,
-	range: "2 - 3",
-	text: "<b>ATTACK: (Target Lock)</b> Spend your target lock and place 3 Time Tokens on this card to perform this attack. You may convert 1 of your [battlestations] results into 1 [crit] result. You may fire this weapon form your forward or rear firing arcs.",
 	unique: false,
 	factions: ["klingon"]
 }, {
