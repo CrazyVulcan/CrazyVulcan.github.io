@@ -1,5 +1,49 @@
 module.exports = [{
 	type: "ship-class",
+	id: "kelvin_constitution_class",
+	name: "Kelvin Constitution Class",
+	frontArc: "",
+	rearArc: "",
+	maneuvers: {
+		1: {
+			
+		},
+		2: {
+			
+		},
+		3: {
+			
+		},
+		4: {
+			
+		},
+		min: 1,
+		max: 4
+	}
+}, {
+	type: "ship-class",
+	id: "warbird_class",
+	name: "Warbird Class",
+	frontArc: "",
+	rearArc: "",
+	maneuvers: {
+		1: {
+			
+		},
+		2: {
+			
+		},
+		3: {
+			
+		},
+		4: {
+			
+		},
+		min: 1,
+		max: 4
+	}
+},{
+	type: "ship-class",
 	id: "72224p",
 	name: "Xindi Reptilian Warship",
 	frontArc: "90",

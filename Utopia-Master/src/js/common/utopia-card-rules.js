@@ -2244,7 +2244,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		"captain:third_of_five_71525": {
+		"captain:third_of_five_Cap_71525": {
 			// Can't equip if fleet contains Hugh
 			canEquip: function(upgrade, ship, fleet) {
 				return !$filter("fleetCardNamed")(fleet, "Hugh");

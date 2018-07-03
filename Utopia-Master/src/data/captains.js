@@ -678,7 +678,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "third_of_five_71525",
+	id: "third_of_five_Cap_71525",
 	set: ["71525"],
 	name: "Third of Five",
 	unique: true,

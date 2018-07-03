@@ -37,7 +37,7 @@ module.exports = [{
 	cost: 4,
 	text: "<b>ACTIVATION PHASE:</b> Place 3 [time] Tokens on this card. Increase the Captain Skill of the Captain equipped to this ship by 2 this game round and perform a [battlestations] Action as a free Action.",
 	unique: true,
-	talent: 1, 
+	talents: 1, 
 	factions: ["mirror-universe","federation"]
 }, {
 	type: "talent",
