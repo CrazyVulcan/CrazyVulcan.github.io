@@ -7708,8 +7708,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 	//2017 Dominion Faction Set
 		//All Power to Weapons
 		"talent:all_power_to_weapons_75002":{
-			canEquip: function(upgrade,ship,fleet) {
-				return $factions.hasFaction(ship,"dominion", ship, fleet) && ship.hull >= 5;
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return ship.captain && $factions.hasFaction(ship.captain,"dominion", ship, fleet);
 			}
 		},
 		//Talak'Talan

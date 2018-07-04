@@ -554,7 +554,7 @@ module.exports = [{
 	range: "1 - 2",
 	text: "<b>COMBAT PHASE:</b> Place 3 [time] Tokens on this card and disable this ships Shields.\n\n<b>Continuous Effect:</b> This ships Shields remain disabled. This ship can only perform Green Maneuvers. This ship rolls +3 attack dice.",
 	unique: true,
-	shipDominion: true,
+	captainDominion: true,
 	hullConstraint: "5+",
 	factions: ["dominion"]
 }, {
