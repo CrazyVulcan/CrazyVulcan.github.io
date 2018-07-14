@@ -220,7 +220,7 @@ module.directive( "search", function() {
 
 			// Reset result display count when search changes
 			$scope.$watch( "search", function() {
-				$scope.resultLimit = 20;
+				$scope.resultLimit = 25;
 			}, true);
 
 			// Store changes to expansions filter
@@ -329,7 +329,34 @@ module.directive( "search", function() {
 					name: "Red"
 				}
 			]
-
+			
+			$scope.speed_list = [
+				{
+					value: 1,
+					name: "1"
+				},
+				{
+					value: 2,
+					name: "2"
+				},
+				{
+					value: 3,
+					name: "3"
+				},
+				{
+					value: 4,
+					name: "4"
+				},
+				{
+					value: 5,
+					name: "5"
+				},
+				{
+					value: 6,
+					name: "6"
+				}
+			]
+			
 			$scope.$on( "cardsLoaded", function() {
 				// Construct list of card types from those available
 				$.each( $scope.cards, function(i, card) {
