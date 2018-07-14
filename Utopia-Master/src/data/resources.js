@@ -305,6 +305,7 @@ module.exports = [{
 	name: "All Stop",
 	text: "At the start of the game, place 5 Mission Tokens on top of this card.\n\nEach round, during the Activation Phase, one ship in your fleet may disregard its chosen maneuver and not move. A ship that uses this ability must skip its Perform Action step.\n\nDiscard this card when there are no more Mission Tokens on this card",
 	cost: 5,
+	opBanned: true,
 	showShipResourceSlot: false
 }, {
 	type: "resource",

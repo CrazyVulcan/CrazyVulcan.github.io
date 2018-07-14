@@ -220,7 +220,7 @@ module.directive( "search", function() {
 
 			// Reset result display count when search changes
 			$scope.$watch( "search", function() {
-				$scope.resultLimit = 10;
+				$scope.resultLimit = 20;
 			}, true);
 
 			// Store changes to expansions filter
