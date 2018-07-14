@@ -171,6 +171,7 @@ module.directive( "search", function() {
 				sortBy: "cost",
 				ascending: "false",
 				maneuverType: "",
+				maneuverSpeed: "",
 				maneuverDifficulty: "",
 				filterField: "",
 				filterOperator: "<=",
@@ -199,6 +200,7 @@ module.directive( "search", function() {
 				$scope.search.sortBy = $scope.defaults.search.sortBy || "name";
 				$scope.search.ascending = $scope.defaults.search.ascending || "true";
 				$scope.search.maneuverType = "";
+				$scope.search.maneuverSpeed = "";
 				$scope.search.maneuverDifficulty = "";
 				$scope.search.filterField = "";
 				$scope.search.filterOperator = "<=";
