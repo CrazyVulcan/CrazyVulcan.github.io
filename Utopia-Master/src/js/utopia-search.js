@@ -97,7 +97,7 @@ module.filter( "cardFilter", [ "$factions", "$filter", function($factions, $filt
 							}
 						}
 					});
-
+					
 					if (!hasFilteredManeuver) return null;
 
 				} else {
