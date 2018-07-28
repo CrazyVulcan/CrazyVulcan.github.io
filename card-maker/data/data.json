@@ -7,6 +7,12 @@
 		"parentSet": "Wave 0"
 	}, {
 		"type": "set",
+		"id": "TFS_Fed_A",
+		"name": "Federation Starter",
+		"releaseDate": "2020-01-01",
+		"parentSet": "Task Force Sigma"
+	}, {
+		"type": "set",
 		"id": "001",
 		"name": "Discovery",
 		"releaseDate": "YYYY-MM-DD",
@@ -29,6 +35,22 @@
 		"id": "ship_name_setnum",
 		"set": ["setnum"],
 		"name": "Ship Name",
+		"class": "Ship Class",
+		"actions": ["evade", "target-lock", "scan", "battlestations"],
+		"upgrades": ["tech", "weapon", "crew"],
+		"attack": 0,
+		"agility": 0,
+		"hull": 0,
+		"shields": 0,
+		"cost": 0,
+		"text": "Ship Ability",
+		"unique": true,
+		"factions": ["faction"]
+	}, {
+		"type": "ship",
+		"id": "Yorktown_TFS_Fed_A",
+		"set": ["TFS_Fed_A"],
+		"name": "U.S.S. Yorktown",
 		"class": "Ship Class",
 		"actions": ["evade", "target-lock", "scan", "battlestations"],
 		"upgrades": ["tech", "weapon", "crew"],

@@ -2,8 +2,8 @@ module.exports = [{
 	type: "ship-class",
 	id: "kelvin_constitution_class",
 	name: "Kelvin Constitution Class",
-	frontArc: "",
-	rearArc: "",
+	frontArc: "180",
+	rearArc: "90",
 	maneuvers: {
 		1: {
 			
@@ -24,8 +24,8 @@ module.exports = [{
 	type: "ship-class",
 	id: "warbird_class",
 	name: "Warbird Class",
-	frontArc: "",
-	rearArc: "",
+	frontArc: "90",
+	secondArc: "45",
 	maneuvers: {
 		1: {
 			
