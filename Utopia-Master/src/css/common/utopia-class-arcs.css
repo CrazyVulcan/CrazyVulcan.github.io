@@ -74,7 +74,7 @@
 	width: 5em;
 	height: 5em;
 	border: 0.1em dashed #aaa;
-	transform: scale(0.5) rotate(160deg) skewY(-50deg) skewX(10deg);
+	transform: scale(0.5) rotate(70deg) translateX(-50px) skewX(45deg);
 }
 
 /**
