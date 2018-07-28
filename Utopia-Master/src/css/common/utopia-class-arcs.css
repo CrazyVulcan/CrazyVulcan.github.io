@@ -67,6 +67,16 @@
 	border-bottom: 0.1em solid #aaa;
 }
 
+.arc-second-45 {
+	position: absolute;
+	top: 3.7em;
+	left: -0.275em;
+	width: 5em;
+	height: 5em;
+	border: 0.1em dashed #aaa;
+	transform: scale(0.5) rotate(-20deg) skewY(-50deg) skewX(10deg);
+}
+
 /**
  * Hole in the center of the tile.
  */
