@@ -74,7 +74,7 @@
 	width: 5em;
 	height: 5em;
 	border: 0.1em dashed #aaa;
-	transform: rotateZ(120deg) scaleX(0.5) translateX(-50px) skewX(45deg);
+	transform: rotateZ(50deg) scaleX(0.5) translateX(-50px) skewX(45deg);
 	transform-origin: 50% 100% 0;
 }
 
