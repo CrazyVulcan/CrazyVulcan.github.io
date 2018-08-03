@@ -1,5 +1,26 @@
 module.exports = [{
 	type: "ship",
+	id: "harvester_prime_75004",
+	set: ["75004"],
+	name: "Harvester Prime",
+	class: "Vidiian Battle Cruiser",
+	actions: ["evade", "target-lock", "scan", "battlestations"],
+	upgrades: ["weapon", "weapon", "crew", "crew"],
+	attack: 3,
+	agility: 2,
+	hull: 5,
+	shields: 3,
+	cost: 23,
+	text: "<b>COMBAT PHASE:</b> Disable any number of Active Shields on this ship and target an opposing ship within Range 1-3.\n\nDisable the same number of Active Shields -1 on the target ship.",
+	unique: true,
+	factions: ["independent"],
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	squadron: false
+}, {
+	type: "ship",
 	id: "televs_battle_cruiser_75004",
 	set: ["75004"],
 	name: "Telev's Battle Cruiser",
@@ -65,6 +86,23 @@ module.exports = [{
 	text: "<b>WHEN ATTACKING:</b> Place 2 [time] Tokens on this card. This game round, for each other friendly ship that attacked the defending ship this game round, this ship rolls +1 attack die and may convert 1 [blank] into 1 [battlestations].",
 	unique: true,
 	factions: ["mirror-universe", "klingon"],
+	squadron: false
+}, {
+	type: "ship",
+	id: "federation_attack_squadron_1_73041",
+	set: ["73041"],
+	name: "Fighter Squadron 1",
+	class: "Federation Attack Squadron",
+	actions: ["evade", "target-lock"],
+	upgrades: ["squadron", "squadron", "squadron"],
+	attack: 5,
+	agility: 0,
+	hull: 1,
+	shields: 1,
+	cost: 24,
+	text: "ATTACK SQUADRON TOKENS: 5\r\n<b>ACTION:</b> Place 3 [time] Tokens on this card.\n\nEquio a [squadron] Upgrade that was discarded from this Attack Squadron to this Attack Squadron.",
+	unique: true,
+	factions: ["federation"],
 	squadron: false
 }, {
 	type: "ship",
