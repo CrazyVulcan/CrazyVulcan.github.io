@@ -234,6 +234,17 @@
 	text-align: center;
 }
 
+.card-specialization-icon {
+	background: url("../img/restrictions/upgrade-specialization.png")no-repeat;
+	background-size: 1em;
+	width: 1.2em;
+	position: relative;
+	left: 0em;
+	top: 0.1em;
+	z-index: 3;
+	text-align: center;
+}
+
 .card-captainFederation-icon {
 	background: url("../img/restrictions/card-captainFederation-icon.png")no-repeat;
 	background-size: 1em;

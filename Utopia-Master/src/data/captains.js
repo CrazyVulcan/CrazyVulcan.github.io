@@ -2536,6 +2536,18 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "captain",
+	id: "james_t_kirk_cap_75005",
+	set: ["75005"],
+	name: "James T. Kirk",
+	cost: 4,
+	skill: 7,
+	talents: 1,
+	text: "<b>ACTIVATION PHASE:</b> Disable this card.\n\nRemove 1 [time] Token from all [crew] Upgrade equipped to this ship.",
+	unique: true,
+	specialization: true,
+	factions: ["mirror-universe", "federation"]
+}, {
+	type: "captain",
 	id: "lahr_73031",
 	set: ["73031"],
 	name: "Lahr",

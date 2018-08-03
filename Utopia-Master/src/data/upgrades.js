@@ -31,13 +31,14 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "crew",
-	id: "james_t_kirk_75005",
+	id: "james_t_kirk_crew_75005",
 	set: ["75005"],
 	name: "James T. Kirk",
 	cost: 4,
 	text: "<b>ACTIVATION PHASE:</b> Place 3 [time] Tokens on this card. Increase the Captain Skill of the Captain equipped to this ship by 2 this game round and perform a [battlestations] Action as a free Action.",
 	unique: true,
-	talents: 1, 
+	talents: 1,
+	specialization: true,
 	factions: ["mirror-universe","federation"]
 }, {
 	type: "talent",
