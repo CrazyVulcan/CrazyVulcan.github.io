@@ -240,9 +240,10 @@
 	width: 1.2em;
 	position: relative;
 	left: 0em;
-	top: 0.1em;
+	top: -0.1em;
 	z-index: 3;
 	text-align: center;
+	transform: translateY(1em);
 }
 
 .card-captainFederation-icon {

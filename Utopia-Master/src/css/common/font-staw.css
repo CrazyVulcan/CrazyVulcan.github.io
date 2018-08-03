@@ -306,6 +306,10 @@
   content: ".";
 }
 
+.fs-specialization:before {
+  content: ".";
+}
+
 .fs-ship:before {
   content: "E";
   margin-right: -0.1em;
