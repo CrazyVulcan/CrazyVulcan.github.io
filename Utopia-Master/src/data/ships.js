@@ -1,5 +1,26 @@
 module.exports = [{
 	type: "ship",
+	id: "u_s_s_dauntless_75004",
+	set: ["75004"],
+	name: "U.S.S. Dauntless",
+	class: "Dauntless Class",
+	actions: ["evade", "target-lock", "scan", "battlestations"],
+	upgrades: ["tech", "tech", "tech", "tech"],
+	attack: 2,
+	agility: 2,
+	hull: 4,
+	shields: 5,
+	cost: 23,
+	text: "You may equip a [crew] Upgrade as the Captain of this ship. If you do it counts as a Captain instead of a [crew] Upgrade and its Captain Skill is its Printed SP Cost +3.\n----------------------------------------\nYou may not equip an Admiral Card to this ship.",
+	unique: true,
+	factions: ["independent"],
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	squadron: false
+}, {
+	type: "ship",
 	id: "harvester_prime_75004",
 	set: ["75004"],
 	name: "Harvester Prime",
@@ -58,7 +79,7 @@ module.exports = [{
 	id: "uss_enterprise_75005",
 	set: ["75005"],
 	name: "U.S.S. Enterprise",
-	class: "Kelvin Constitution Class",
+	class: "Constitution Class |Kelvin|",
 	actions: ["evade", "target-lock", "scan", "battlestations"],
 	upgrades: ["tech", "weapon", "weapon", "crew", "crew"],
 	attack: 4,
@@ -75,7 +96,7 @@ module.exports = [{
 	id: "uss_enterprise_a_75005",
 	set: ["75005"],
 	name: "U.S.S. Enterprise-A",
-	class: "Kelvin Constitution Class",
+	class: "Constitution Class |Kelvin|",
 	actions: ["evade", "target-lock", "scan", "battlestations"],
 	upgrades: ["tech", "weapon", "weapon", "crew", "crew"],
 	attack: 4,
@@ -92,7 +113,7 @@ module.exports = [{
 	id: "kelvin_constitution_class_75005",
 	set: ["75005"],
 	name: "Federation/MU Starship",
-	class: "Kelvin Constitution Class",
+	class: "Constitution Class |Kelvin|",
 	actions: ["evade", "target-lock", "scan", "battlestations"],
 	upgrades: ["tech", "weapon", "weapon", "crew", "crew"],
 	attack: 4,
@@ -101,8 +122,25 @@ module.exports = [{
 	shields: 3,
 	cost: 24,
 	text: "",
-	unique: true,
+	unique: false,
 	factions: ["mirror-universe", "federation"],
+	squadron: false
+}, {
+	type: "ship",
+	id: "iks_amar_75005",
+	set: ["75005"],
+	name: "I.K.S. Amar",
+	class: "Warbird Class",
+	actions: ["target-lock", "battlestations", "cloak", "sensor-echo"],
+	upgrades: ["tech", "weapon", "weapon", "crew"],
+	attack: 4,
+	agility: 1,
+	hull: 4,
+	shields: 3,
+	cost: 21,
+	text: "<b>WHEN THIS SHIP SUFFERS DAMAGE TO ITS HULL:</b> Once per game, if this shiip is Cloaked:\n\nThis ship may perform an attack with its Primary Weapon",
+	unique: true,
+	factions: ["mirror-universe", "klingon"],
 	squadron: false
 }, {
 	type: "ship",
@@ -123,6 +161,23 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
+	id: "warbird_cladd_75005",
+	set: ["75005"],
+	name: "MU/Klingon Starship",
+	class: "Warbird Class",
+	actions: ["target-lock", "battlestations", "cloak", "sensor-echo"],
+	upgrades: ["tech", "weapon", "crew"],
+	attack: 4,
+	agility: 1,
+	hull: 4,
+	shields: 2,
+	cost: 16,
+	text: "",
+	unique: false,
+	factions: ["mirror-universe", "klingon"],
+	squadron: false
+}, {
+	type: "ship",
 	id: "federation_attack_squadron_1_73041",
 	set: ["73041"],
 	name: "Fighter Squadron 1",
@@ -137,7 +192,7 @@ module.exports = [{
 	text: "ATTACK SQUADRON TOKENS: 5\r\n<b>ACTION:</b> Place 3 [time] Tokens on this card.\n\nEquio a [squadron] Upgrade that was discarded from this Attack Squadron to this Attack Squadron.",
 	unique: true,
 	factions: ["federation"],
-	squadron: false
+	squadron: true
 }, {
 	type: "ship",
 	id: "federation_attack_squadron_73041",
@@ -154,7 +209,7 @@ module.exports = [{
 	text: "ATTACK SQUADRON TOKENS: 5\r\n<b>ACTION:</b> Place 2 [time] Tokens on this card.\nPerform an [sensor-echo] action using a 1 [straight] Maneuver Template as a Free Action, even if this Attack Squadron is not Cloaked.",
 	unique: true,
 	factions: ["federation"],
-	squadron: false
+	squadron: true
 }, {
 	type: "ship",
 	id: "hirogen_hunting_vessel_73042",
@@ -918,7 +973,7 @@ module.exports = [{
 	text: "You cannot equip a Captain or Admiral to this ship.\n\nWhile this ship has no Damage cards, treat its Captain Skill as 12.",
 	unique: true,
 	factions: ["dominion"],
-	squadron: false
+	squadron: true
 }, {
 	type: "ship",
 	id: "dominion_starship_dreadnought_72013wp",
@@ -935,7 +990,7 @@ module.exports = [{
 	text: "You cannot equip a Captain or Admiral to this ship.",
 	unique: false,
 	factions: ["dominion"],
-	squadron: false
+	squadron: true
 }, {
 	type: "ship",
 	id: "i_k_s_ves_balth_71448",
@@ -1712,7 +1767,7 @@ module.exports = [{
 	text: "You cannot assign a Captain or an Admiral to this ship. When defending during the Compare Results step you may discard up to 2 of your Upgrades to cancel an equal number of attacking ships dice.",
 	unique: true,
 	factions: ["dominion"],
-	squadron: false
+	squadron: true
 }, {
 	type: "ship",
 	id: "halik_raider_71192",
@@ -1852,7 +1907,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "andorian_starship_kumari",
-	set: ["71223"],
+	set: ["71223", "75004"],
 	name: "ANDORIAN STARSHIP",
 	class: "Andorian Battle Cruiser",
 	actions: ["evade", "target-lock", "scan", "battlestations"],
@@ -1861,7 +1916,7 @@ module.exports = [{
 	agility: 1,
 	hull: 4,
 	shields: 2,
-	cost: 20,
+	cost: 16,
 	text: "",
 	unique: false,
 	factions: ["independent"],
@@ -5629,7 +5684,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "independent_starship_71805",
-	set: ["71805"],
+	set: ["71805", "75004"],
 	name: "Independent Starship",
 	class: "Dauntless Class",
 	actions: ["evade", "target-lock", "scan", "battlestations"],
@@ -5638,7 +5693,7 @@ module.exports = [{
 	agility: 2,
 	hull: 4,
 	shields: 4,
-	cost: 24,
+	cost: 19,
 	text: "",
 	unique: false,
 	factions: ["independent"],

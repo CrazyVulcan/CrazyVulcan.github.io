@@ -1,4 +1,22 @@
 module.exports = [{
+	type: "talent",
+	id: "andorian_imperial_guard_75004",
+	set: ["75004"],
+	name: "Andorian Imperial Guard",
+	cost: 2,
+	text: "May only be equipped to Thy'lek Sharan or an Andorian Captain.\n-----------------------------------\n<b>WHEN ATTACKING WITH AN Independent [weapon] UPGRADE:</b> Place 2 [time] Tokens on this card.\nThis ship rolls additional attack dice this attack equal to the number of [time] Tokens on the Independent [weapon] Upgrade being used.",
+	factions: ["independent"]
+}, {
+	type: "tech",
+	id: "particle_synthesis_75004",
+	set: ["75004"],
+	name: "Particle Synthesis",
+	cost: 4,
+	text: "<b>WHEN DEFENDING:</b> Before the Roll Attack Dice Step:\nYou may roll excatly 1 defense die that cannnot be re-rolled or modified. If you roll a [blank], the attacking ship must choose a new legal target for the attack. If no other target can be chosen the attack is cancelled and this card must be discarded.\n|Dauntless Class|",
+	shipLimit: true,
+	OnePerShip: true,
+	factions: ["independent"]
+}, {
 	type: "tech",
 	id: "inertial_compensators_75004",
 	set: ["75004"],
@@ -91,6 +109,15 @@ module.exports = [{
 	text: "<b>AFTER THIS ATTACK SQUADRON PERFORMS A [bank-left] or [bank-right] MANEUVER:</b> Discard this card and place an [aux] Token beside this Attack Squadron. Rotate this Attack Squadron 180 degrees.",
 	OnePerShip: true,
 	factions: ["federation"]
+}, {
+	type: "question",
+	id: "optronic_data_core_73042",
+	set: ["73042"],
+	name: "Optronic Data Core",
+	cost: 4,
+	text: "This card counts as a [tech] or [weapon] Upgrade.\n<b>ACTIVATION PHASE:</b> Place 3 [time] Tokens on this card.\nPerform the Action on a <b>?</b> Upgrade equipped to this ship as a Free Action.\n-----------------------------------\n<b>ACTIVATION PHASE:</b> Disable this card.\nRemove a Disable Token from a <b>?</b> Upgrade equipped this ship.",
+	OnePerShip: true,
+	factions: ["federation", "independent"]
 }, {
 	type: "tech",
 	id: "tractor_beam_73042",
