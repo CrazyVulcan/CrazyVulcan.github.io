@@ -8211,7 +8211,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				ship: {
 					type: function(card,ship,fleet,type) {
-						if( upgradeSlot.type == ("captain") )
+						if( upgradeSlot.type == ("tech") )
 							return type.concat(["crew"]);
 						return type;
 					},
