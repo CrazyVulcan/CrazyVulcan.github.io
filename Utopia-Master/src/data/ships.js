@@ -11,7 +11,7 @@ module.exports = [{
 	hull: 4,
 	shields: 5,
 	cost: 23,
-	text: "You may equip a [crew] Upgrade as the Captain of this ship. If you do it counts as a Captain instead of a [crew] Upgrade and its Captain Skill is its Printed SP Cost +3.\n----------------------------------------\nYou may not equip an Admiral Card to this ship.",
+	text: "You may equip a [crew] Upgrade as the Captain of this ship. If you do it counts as a Captain instead of a [crew] Upgrade and its Captain Skill is its Printed SP Cost +3.\n----------------------------------\nYou may not equip an Admiral Card to this ship.",
 	unique: true,
 	factions: ["independent"],
 	intercept: {
