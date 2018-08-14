@@ -8206,6 +8206,25 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			canEquip: onePerShip("Optronic Data Core")},
 	//A Motley Fleet
+		"ship:u_s_s_dauntless_75004":{
+			//Add Crew to Captain Slot
+			intercept: {
+				fleet: {
+					type: function(card,ship,fleet,type) {
+						if( $.inArray("captain",type) >= 0 )
+							return type.concat(["crew"]);
+						return type;
+					}					
+				},
+				ship: {
+					skill: function(upgrade,ship,fleet,skill) {
+						if( upgrade.type == ("crew") )
+							return upgrade.cost + 3;
+						return skill;
+					}
+				}
+			}
+		},
 		"ship:gurngouin_75004":{
 			upgradeSlots: [ {
 					type: ["tech"],
@@ -8232,7 +8251,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"tech:particle_synthesis_75004":{
 			canEquip:function(upgrade,ship,fleet) { 
 				return ship.class == "Dauntless Class"
-			}
+			},
+			canEquip: onePerShip("Particle Synthesis")
 		},
 		"crew:tarah_75004":{
 			canEquip: function(upgrade,ship,fleet) {
