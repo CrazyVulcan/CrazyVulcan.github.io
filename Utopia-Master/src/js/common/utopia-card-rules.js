@@ -8208,15 +8208,19 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 	//A Motley Fleet
 		"ship:u_s_s_dauntless_75004":{
 			//Add Crew to Captain Slot
-			upgradeSlots: [ {
-			type: ["crew"],
-			rules: "Replaces Captain Slot\n\nCaptain Skill is Printed Cost +3",
-			skill: function(upgrade,ship,fleet,skill) {
-						if( upgrade.type == ("crew") )
-							return upgrade.cost + 3;
-						return skill;
-					}
-			} ]
+			intercept: {
+				ship: {
+					upgradeSlots: [ {
+					type: ["crew"],
+					rules: "Replaces Captain Slot\n\nCaptain Skill is Printed Cost +3",
+					skill: function(upgrade,ship,fleet,skill) {
+								if( upgrade.type == ("crew") )
+									return upgrade.cost + 3;
+								return skill;
+							}
+					} ]
+				}
+			}
 		},
 
 		"ship:gurngouin_75004":{
