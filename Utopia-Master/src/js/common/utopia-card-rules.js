@@ -8211,7 +8211,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				ship: {
 					type: function(card,ship,fleet,type) {
-						if( $.inArray("captain",type) >= 0 )
+						if( $.inArray("tech",type) >= 0 )
 							return type.concat(["crew"]);
 						return type;
 					},
