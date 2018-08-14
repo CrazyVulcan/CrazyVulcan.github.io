@@ -7870,7 +7870,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				ship: {
 					opBanned: function(upgrade, ship, fleet) {
 						if ( upgrade.cost > 3 )
-							return valueOf(upgrade,"opBanned",ship,fleet) = true;
+							return true
 						return opBanned;
 					}
 				}
@@ -8211,7 +8211,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				ship: {
 					type: function(card,ship,fleet,type) {
-						if( upgradeSlot.type == ("tech") )
+						if( $.inArray("tech",type) >= 0 )
 							return type.concat(["crew"]);
 						return type;
 					},
