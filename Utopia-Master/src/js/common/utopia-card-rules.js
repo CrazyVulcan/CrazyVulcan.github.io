@@ -7870,7 +7870,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				ship: {
 					opBanned: function(upgrade, ship, fleet) {
 						if ( upgrade.cost > 3 )
-							return true
+							return true;
 						return opBanned;
 					}
 				}
@@ -8208,13 +8208,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 	//A Motley Fleet
 		"ship:u_s_s_dauntless_75004":{
 			//Add Crew to Captain Slot
+			upgradeSlots: [ {
+			type: ["crew"],
+			rules: "Replaces Captain Slot\n\nCaptain Skill is Printed Cost +3",
 			intercept: {
-				ship: {
-					type: function(card,ship,fleet,type) {
-						if( $.inArray("tech",type) >= 0 )
-							return type.concat(["crew"]);
-						return type;
-					},
+				Ship:{
 					skill: function(upgrade,ship,fleet,skill) {
 						if( upgrade.type == ("crew") )
 							return upgrade.cost + 3;
@@ -8222,7 +8220,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					}
 				}
 			}
-		},
+		}]},
 		"ship:gurngouin_75004":{
 			upgradeSlots: [ {
 					type: ["tech"],
