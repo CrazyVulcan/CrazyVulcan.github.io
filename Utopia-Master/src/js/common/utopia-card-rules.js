@@ -8211,16 +8211,14 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			upgradeSlots: [ {
 			type: ["crew"],
 			rules: "Replaces Captain Slot\n\nCaptain Skill is Printed Cost +3",
-			intercept: {
-				Ship:{
-					skill: function(upgrade,ship,fleet,skill) {
+			skill: function(upgrade,ship,fleet,skill) {
 						if( upgrade.type == ("crew") )
 							return upgrade.cost + 3;
 						return skill;
 					}
-				}
-			}
-		}]},
+			} ]
+		},
+
 		"ship:gurngouin_75004":{
 			upgradeSlots: [ {
 					type: ["tech"],
