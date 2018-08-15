@@ -8269,6 +8269,15 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquip:function(upgrade,ship,fleet) { 
 				return ship.class == "Andorian Battle Cruiser"
 			},
+			intercept: {
+				ship: {
+					shields: function(card,ship,fleet,shields) {
+						if( card == ship )
+							return resolve(card,ship,fleet,shields) + 2;
+						return shields;
+					}
+				}
+			},
 			canEquip: onePerShip("Enhanced Shield Emitters")
 		},
 		"crew:tarah_75004":{
