@@ -8210,7 +8210,15 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			//Add Crew to Captain Slot
 			showShipResourceSlot: function(card,ship,fleet) {
 				if( ship.resource && ship.resource.type == "crew" )
-			return true;}
+					return true;
+
+				var show = true;
+				$.each( fleet.ships, function(i,ship) {
+					if( ship.resource )
+						show = false;
+				} );
+				return show;
+			}
 			/*upgradeSlots: [ {
 				type: ["captain", "crew"],
 				rules: "Replaces Captain Slot\n\nCaptain Skill is Printed Cost +3",
