@@ -8249,6 +8249,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"talent:andorian_imperial_guard_75004":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			},
+			canEquipFaction: function(upgrade,ship,fleet) {
+				// TODO Tholians are Independent so can't easily tell their race
+				return ship.captain && ( ship.captain.name == "Thy'Lek Sharan" || ship.captain.name == "Telev" ||ship.captain.name.indexOf("Andorian") >= 0 );
 			}},
 		"captain:thomas_riker_75004":{
 			factionPenalty: function(upgrade, ship, fleet) {
@@ -8260,6 +8264,12 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship.class == "Dauntless Class"
 			},
 			canEquip: onePerShip("Particle Synthesis")
+		},
+		"tech:enhanced_shield_emitters_75004":{
+			canEquip:function(upgrade,ship,fleet) { 
+				return ship.class == "Andorian Battle Cruiser"
+			},
+			canEquip: onePerShip("Enhanced Shield Emitters")
 		},
 		"crew:tarah_75004":{
 			canEquip: function(upgrade,ship,fleet) {

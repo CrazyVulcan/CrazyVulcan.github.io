@@ -1885,6 +1885,18 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "captain",
+	id: "telev_75004",
+	set: ["75004"],
+	name: "Telev",
+	cost: 3,
+	skill: 5,
+	talents: 1,
+	text: "This card counts as an Andorian Captain.\n----------------------------------------\n<b>WHEN THIS SHIP SPENDS AN [evade] OR [battlestations] TOKEN:</b> Target a friendly ship.\n\nPlace a token of the same type beside the target ship.",
+	unique: true,
+	range: "1 - 2",
+	factions: ["independent"]
+}, {
+	type: "captain",
 	id: "first_73002",
 	set: ["73002"],
 	name: "'First'",
@@ -2046,7 +2058,7 @@ module.exports = [{
 	type: "captain",
 	id: "thylek_shran_kumari",
 	set: ["71223"],
-	name: "THY'LEK SHRAN",
+	name: "Thy'Lek Sharan",
 	cost: 4,
 	skill: 6,
 	talents: 1,

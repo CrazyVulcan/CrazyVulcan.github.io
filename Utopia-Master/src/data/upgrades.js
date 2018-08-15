@@ -18,6 +18,16 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "tech",
+	id: "enhanced_shield_emitters_75004",
+	set: ["75004"],
+	name: "Enhanced Shield Emitters",
+	cost: 5,
+	text: "Increase this ship's Shield Value by 2.\n-----------------------------------\n<b>COMBAT PAHSE:</b>\nYou may flip up to 2 Disabled Shield Tokens on this ship to thier Active Sides.\n-----------------------------------\n<b>END PHASE:</b>\nYou may reppair 1 Shield on this ship.\n|Andorian Battle Cruiser|",
+	shipLimit: true,
+	OnePerShip: true,
+	factions: ["independent"]
+}, {
+	type: "tech",
 	id: "inertial_compensators_75004",
 	set: ["75004"],
 	name: "Inertial Compensators",
