@@ -2265,6 +2265,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
+		
 		// Third of Five
 		"crew:third_of_five_71525": {
 			// Can't equip if fleet contains Hugh
@@ -8208,16 +8209,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 	//A Motley Fleet
 		"ship:u_s_s_dauntless_75004":{
 			//Add Crew to Captain Slot
-			showShipResourceSlot: function(card,ship,fleet) {
-				if( ship.resource && ship.resource.type == "crew" )
+			
+			canEquipCaptain: function(upgrade, ship, fleet, canEquip) {
+				if(upgrade.type == "crew" )
 					return true;
-
-				var show = true;
-				$.each( fleet.ships, function(i,ship) {
-					if( ship.resource )
-						show = false;
-				} );
-				return show;
+				return canEquip;
 			}
 			/*upgradeSlots: [ {
 				type: ["captain", "crew"],
