@@ -8209,7 +8209,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"ship:u_s_s_dauntless_75004":{
 			//Add Crew to Captain Slot
 			slotType: "crew",
-			upgradeSlots: [ {
+			/*upgradeSlots: [ {
 				type: ["captain", "crew"],
 				rules: "Replaces Captain Slot\n\nCaptain Skill is Printed Cost +3",
 					intercept: {
@@ -8221,7 +8221,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						}
 					}
 			} ]		
-		},
+		},*/
+	},
 
 		"ship:gurngouin_75004":{
 			upgradeSlots: [ {
