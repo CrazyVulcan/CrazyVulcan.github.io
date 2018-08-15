@@ -8208,6 +8208,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 	//A Motley Fleet
 		"ship:u_s_s_dauntless_75004":{
 			//Add Crew to Captain Slot
+			slotType: "crew",
 			upgradeSlots: [ {
 				type: ["captain", "crew"],
 				rules: "Replaces Captain Slot\n\nCaptain Skill is Printed Cost +3",
