@@ -2548,6 +2548,18 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "captain",
+	id: "kor_75005",
+	set: ["75005"],
+	name: "Kor",
+	cost: 4,
+	skill: 7,
+	talents: 1,
+	text: "<b>SETUP:</b> Choose an opposing ship.\n<b>WHEN ATTACKING THE CHOSEN SHIP:</b>\nThis ship may roll +1 attack dice and convert up to 2 [battlestations] into [hit].\n----------------------------------------\n<b>WHEN DEFENDING AGAINST THE CHOSEN SHIP:</b>\nThis ship may roll +1 defense die and convert up to [battlestations] into [evade].",
+	unique: true,
+	specialization: true,
+	factions: ["mirror-universe", "klingon"]
+}, {
+	type: "captain",
 	id: "james_t_kirk_cap_75005",
 	set: ["75005"],
 	name: "James T. Kirk",

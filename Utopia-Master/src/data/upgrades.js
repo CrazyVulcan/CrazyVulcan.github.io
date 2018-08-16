@@ -81,6 +81,15 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
+	id: "klingon_guard_75005",
+	set: ["75005"],
+	name: "Klingon Guard",
+	cost: 2,
+	text: "<b>COMBAT PHASE:</b> Discard this card.\n\nPlace 1 [evade] Token beside this ship.",
+	shipKlingon: true,
+	factions: ["mirror-universe","klingon"]
+}, {
+	type: "crew",
 	id: "koth_75005",
 	set: ["75005"],
 	name: "Koth",
