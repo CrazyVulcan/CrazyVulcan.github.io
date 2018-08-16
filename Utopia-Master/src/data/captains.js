@@ -2556,7 +2556,6 @@ module.exports = [{
 	talents: 1,
 	text: "<b>SETUP:</b> Choose an opposing ship.\n<b>WHEN ATTACKING THE CHOSEN SHIP:</b>\nThis ship may roll +1 attack dice and convert up to 2 [battlestations] into [hit].\n----------------------------------------\n<b>WHEN DEFENDING AGAINST THE CHOSEN SHIP:</b>\nThis ship may roll +1 defense die and convert up to [battlestations] into [evade].",
 	unique: true,
-	specialization: true,
 	factions: ["mirror-universe", "klingon"]
 }, {
 	type: "captain",
