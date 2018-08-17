@@ -125,7 +125,7 @@ module.exports = [{
 	set: ["75005"],
 	name: "Advanced Long Range Torpedo",
 	cost: 3,
-	text: "The Attack Value of this [weapon] is this ship’s Primary Weapon Value +1.\n-----------------------------------\n<b>ATTACK:</b> Spend this ship’s [target-lock] token, place 2 [time] Tokens on this card, and target an opposing ship.\n\nIf the attack hits, every other ship within Range 1 of the opposing ship suffers 1 [hit].\n(<i>Kelvin Constitution Class Only</i>)",
+	text: "The Attack Value of this [weapon] is this ship’s Primary Weapon Value +1.\n-----------------------------------\n<b>ATTACK:</b> Spend this ship’s [target-lock] token, place 2 [time] Tokens on this card, and target an opposing ship.\n\nIf the attack hits, every other ship within Range 1 of the opposing ship suffers 1 [hit].\n(<i>Constitution Class (Kelvin) Only</i>)",
 	attack: 0,
 	unique: true,
 	range: "2 - 3",
@@ -137,7 +137,7 @@ module.exports = [{
 	set: ["75005"],
 	name: "Full Spread Phasers",
 	cost: 4,
-	text: "<b>WHEN ATTACKING WITH THIS SHIP'S PRIMARY WEAPON:\n\nThis ship rolls +1 attack die, or this ship may perform an dditional attack with its Primary Weapon from its Secondary Firing Arc with -1 attack die.\n(<i>Constitution Class |Kelvin| Only</i>)",
+	text: "<b>WHEN ATTACKING WITH THIS SHIP'S PRIMARY WEAPON:</b>\n\nThis ship rolls +1 attack die, or this ship may perform an dditional attack with its Primary Weapon from its Secondary Firing Arc with -1 attack die.\n(<i>Constitution Class (Kelvin) Only</i>)",
 	OnePerShip: true,
 	shipLimit: true,
 	factions: ["mirror-universe","federation"]
