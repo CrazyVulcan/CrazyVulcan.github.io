@@ -8354,7 +8354,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}},
 		"weapon:advanced_long_range_torpedo_75005":{
 			canEquip: function(upgrade,ship,fleet) {
-				return ship.class == "Kelvin Constitution Class";
+				return ship.class == "Constitution Class (Kelvin)";
 			},
 			attack: 0,
 			intercept: {
@@ -8370,7 +8370,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		"weapon:full_spread_phasers_75005":{
 			canEquip: function(upgrade,ship,fleet) {
-				return onePerShip("Full Spread Phasers"), ship.class == "Kelvin Constitution Class";
+				return onePerShip("Full Spread Phasers"), ship.class == "Constitution Class (Kelvin)";
 			}
 		},
 	

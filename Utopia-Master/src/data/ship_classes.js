@@ -1,7 +1,7 @@
 module.exports = [{
 	type: "ship-class",
 	id: "kelvin_constitution_class",
-	name: "Kelvin Constitution Class",
+	name: "Constitution Class (Kelvin)",
 	frontArc: "180",
 	rearArc: "90",
 	maneuvers: {
