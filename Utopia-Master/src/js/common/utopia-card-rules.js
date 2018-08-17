@@ -8320,12 +8320,26 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquipFaction: function(upgrade,ship,fleet) {
 				return ship.captain && $factions.hasFaction(ship.captain,"klingon", ship, fleet);
 		}},
+		"crew:klingon_guard_75005":{
+			canEquip: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship,"klingon", ship, fleet);
+			}},
 		"captain:james_t_kirk_cap_75005":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}
 		},
 		"crew:james_t_kirk_crew_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}
+		},
+		"captain:mr_spock_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}
+		},
+		"crew:mr_spock_crew_75005":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}
@@ -8352,6 +8366,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						return attack;
 					}
 				}
+			}
+		},
+		"weapon:full_spread_phasers_75005":{
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("Full Spread Phasers"), ship.class == "Kelvin Constitution Class";
 			}
 		},
 	

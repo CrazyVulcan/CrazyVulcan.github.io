@@ -2548,6 +2548,18 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "captain",
+	id: "mr_spock_75005",
+	set: ["75005"],
+	name: "Mr.Spock",
+	cost: 4,
+	skill: 6,
+	talents: 1,
+	text: "<b>WHEN ATTACKING:</b>\n\nThis ship may add 1 [battlestations]. If there is a [scan] Token beside this ship, this ship may add 1 [hit] instead.",
+	unique: true,
+	specialization: true,
+	factions: ["mirror-universe", "federation"]
+}, {
+	type: "captain",
 	id: "kor_75005",
 	set: ["75005"],
 	name: "Kor",

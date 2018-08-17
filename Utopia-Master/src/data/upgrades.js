@@ -69,6 +69,17 @@ module.exports = [{
 	specialization: true,
 	factions: ["mirror-universe","federation"]
 }, {
+	type: "crew",
+	id: "mr_spock_crew_75005",
+	set: ["75005"],
+	name: "Mr. Spock",
+	cost: 4,
+	text: "<b>ACTIVATION PHASE:</b> Place 3 [time] Tokens on this card. Increase the Captain Skill of the Captain equipped to this ship by 2 this game round and perform a [scan] Action as a free Action.",
+	unique: true,
+	talents: 1,
+	specialization: true,
+	factions: ["mirror-universe","federation"]
+}, {
 	type: "talent",
 	id: "overwhelm_75005",
 	set: ["75005"],
@@ -79,6 +90,16 @@ module.exports = [{
 	shipKlingon: true,
 	captainKlingon: true,
 	factions: ["klingon"]
+}, {
+	type: "tech",
+	id: "klingon_cloaking_device_75005",
+	set: ["75005"],
+	name: "Klingon Cloaking Device",
+	cost: 2,
+	text: "<b>WHEN DEFENDING:</b> If this ship is Cloaked:\n\nConvert 1 [blank] into 1 [evade].\n-----------------------------------\n<b>END PHASE:</b> Place 3 [time] Tokens on this card.\n\nFlip this ship's [cloak] Token to its green side.",
+	OnePerShip: true,
+	shipKlingon: true,
+	factions: ["mirror-universe", "klingon"]
 }, {
 	type: "crew",
 	id: "klingon_guard_75005",
@@ -111,6 +132,16 @@ module.exports = [{
 	shipLimit: true,
 	factions: ["mirror-universe","federation"]
 }, {
+	type: "weapon",
+	id: "full_spread_phasers_75005",
+	set: ["75005"],
+	name: "Full Spread Phasers",
+	cost: 4,
+	text: "<b>WHEN ATTACKING WITH THIS SHIP'S PRIMARY WEAPON:\n\nThis ship rolls +1 attack die, or this ship may perform an dditional attack with its Primary Weapon from its Secondary Firing Arc with -1 attack die.\n(<i>Constitution Class |Kelvin| Only</i>)",
+	OnePerShip: true,
+	shipLimit: true,
+	factions: ["mirror-universe","federation"]
+}, {
 	type: "squadron",
 	id: "lead_squadron_73041",
 	set: ["73041"],
@@ -127,6 +158,16 @@ module.exports = [{
 	cost: 2,
 	text: "<b>AFTER THIS ATTACK SQUADRON PERFORMS A [bank-left] or [bank-right] MANEUVER:</b> Discard this card and place an [aux] Token beside this Attack Squadron. Rotate this Attack Squadron 180 degrees.",
 	OnePerShip: true,
+	factions: ["federation"]
+}, {
+	type: "squadron",
+	id: "flanking_attack_omega_73041",
+	set: ["73041"],
+	name: "Flanking Attak Omega",
+	cost: 4,
+	text: "<b>COMBAT PHASE:</b> Discard this card and target a friendly Capital Ship.\n\nThe target ship rolls +3 attack dice this game round. This Attack Squadron cannot attack this game round.",
+	OnePerShip: true,
+	range: " 1 ",
 	factions: ["federation"]
 }, {
 	type: "question",
