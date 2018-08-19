@@ -8273,6 +8273,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 							cost: function() {
 								return 0;
 							},
+							// No faction penalties for Captain
+							factionPenalty: function(card,ship,fleet,factionPenalty) {
+									return 0;
+							return factionPenalty;
+							},
 							canEquipCaptain: function(upgrade, ship, fleet, canEquip) {
 								if( ship.captain.cost <= 4 )
 									return false;
