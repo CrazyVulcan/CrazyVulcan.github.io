@@ -8267,22 +8267,15 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				{
 					type: ["captain"],
 					rules: "Captain to place under Arturis",
-					intercept: {
-						ship: {
-							// No cost for this card
-							cost: function() {
-								return 0;
-							},
-							// Avoid any restrictions
-							canEquip: function() {
+					canEquip: function() {
 								if( captain.cost < 5 )
 							return true;
 							return canEquip;
 							},
-							canEquipFaction: function() {
-								return true;
-							},
-							factionPenalty: function() {
+					intercept: {
+						ship: {
+							// No cost for this card
+							cost: function() {
 								return 0;
 							}
 						}
