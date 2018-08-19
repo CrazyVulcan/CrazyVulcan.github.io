@@ -8275,7 +8275,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 							},
 							// Avoid any restrictions
 							canEquip: function() {
-								if( ship.captain.cost ==4 )
+								if( captain.cost < 5 )
 							return true;
 							return canEquip;
 							},
