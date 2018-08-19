@@ -2474,6 +2474,18 @@ module.exports = [{
 	factions: ["kazon"]
 }, {
 	type: "captain",
+	id: "arturis_75004",
+	set: ["75004"],
+	name: "Arturis",
+	cost: 4,
+	skill: 6,
+	talents: 1,
+	text: "You may not equip an Admiral to this ship.\n-----------------------------\n<b>SETUP:</b> Select a Captain Card with a printed cost of 4 SP or less.\n\nArturis has the ability of that Captain Card this game.\n(<i>Dauntless Class Only</i>)",
+	unique: true,
+	shipLimit: true,
+	factions: ["independent"]
+}, {
+	type: "captain",
 	id: "nunk_blind_nunks_marauder",
 	set: ["blind_nunks_marauder"],
 	name: "Nunk",

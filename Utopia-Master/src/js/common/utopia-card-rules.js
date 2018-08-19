@@ -8259,6 +8259,37 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship && $factions.hasFaction( ship, "federation", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}
 		},
+		"captain:arturis_75004":{
+			canEquip:function(upgrade,ship,fleet) { 
+				return ship.class == "Dauntless Class"
+			},
+			upgradeSlots: [
+				{
+					type: ["captain"],
+					rules: "Captain to place under Arturis",
+					intercept: {
+						ship: {
+							// No cost for this card
+							cost: function() {
+								return 0;
+							},
+							// Avoid any restrictions
+							canEquip: function() {
+								if( ship.captain.cost <=4 )
+							return true;
+							},
+							canEquipFaction: function() {
+								return true;
+							},
+							factionPenalty: function() {
+								return 0;
+							}
+						}
+					}
+				}
+			]
+		},
+	
 		"tech:particle_synthesis_75004":{
 			canEquip:function(upgrade,ship,fleet) { 
 				return ship.class == "Dauntless Class"

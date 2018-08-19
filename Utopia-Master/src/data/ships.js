@@ -4964,7 +4964,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "hirogen_starship_71808",
-	set: ["71808"],
+	set: ["71808", "73042"],
 	name: "Hirogen Starship",
 	class: "Hirogen Warship",
 	actions: ["evade", "target-lock", "scan", "battlestations"],
@@ -4973,7 +4973,7 @@ module.exports = [{
 	agility: 2,
 	hull: 3,
 	shields: 3,
-	cost: 24,
+	cost: 18,
 	text: "",
 	unique: false,
 	factions: ["independent"],
