@@ -111,6 +111,16 @@ module.exports = [{
 	factions: ["mirror-universe","klingon"]
 }, {
 	type: "crew",
+	id: "klingon_first_officer_75005",
+	set: ["75005"],
+	name: "Klingon Guard",
+	cost: 2,
+	text: "<b>END PHASE:</b> Once per game, discard the Captain equipped to this ship.\n\nPerfrom an attack with this ship's Primary Weapon. This card becomes this ship's Captain with a Captain Skill of 4",
+	shipKlingon: true,
+	OnePerShip: true,
+	factions: ["mirror-universe","klingon"]
+}, {
+	type: "crew",
 	id: "koth_75005",
 	set: ["75005"],
 	name: "Koth",

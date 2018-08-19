@@ -2537,6 +2537,17 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "captain",
+	id: "kang_75005",
+	set: ["75005"],
+	name: "Kang",
+	cost: 4,
+	skill: 6,
+	talents: 1,
+	text: "<b>PLANNING PHASE:</b> If an opposing Federation ship is in this ship's Primary Firing Arc:\n\nIncrease the Captain Skill of this Captain by 2 this game round.",
+	unique: true,
+	factions: ["mirror-universe","klingon"]
+}, {
+	type: "captain",
 	id: "suran_72010",
 	set: ["72010"],
 	name: "Suran",

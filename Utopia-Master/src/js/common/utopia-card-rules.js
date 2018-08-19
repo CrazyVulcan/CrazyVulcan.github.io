@@ -8348,6 +8348,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquip: function(upgrade,ship,fleet) {
 				return $factions.hasFaction(ship,"klingon", ship, fleet);
 			}},
+		"crew:klingon_first_officer_75005":{
+			canEquip: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship,"klingon", ship, fleet);
+			}},
 		"crew:klingon_guard_75005":{
 			canEquip: function(upgrade,ship,fleet) {
 				return $factions.hasFaction(ship,"klingon", ship, fleet);
