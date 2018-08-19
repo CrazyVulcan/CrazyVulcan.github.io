@@ -8282,6 +8282,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 								if( ship.captain.cost <= 4 )
 									return false;
 							return canEquip;
+							},
+							talents: function (captain, ship, fleet, talents) {
+								return resolve(card,ship,fleet,talents) == 0;
+							return talents;
 							}
 						}
 					}
