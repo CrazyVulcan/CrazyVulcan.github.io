@@ -8260,22 +8260,14 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 		},
 		"captain:arturis_75004":{
-			canEquip:function(captain,ship,fleet) { 
-				return ship.class == "Dauntless Class"
+			canEquipCaptain: function(upgrade, ship, fleet) {
+				return ship.class == "Dauntless Class";
 			},
 			upgradeSlots: [
 				{
 					type: ["captain"],
 					rules: "Captain to place under Arturis",
-					canEquip: function() {
-								if( captain.cost < 5 )
-							return true;
-							return canEquip;
-							},
-							// No cost for this card
-							cost: function() {
-								return 0;
-							}
+					
 				}
 			]
 		},
