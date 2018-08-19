@@ -8272,14 +8272,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 							return true;
 							return canEquip;
 							},
-					intercept: {
-						ship: {
 							// No cost for this card
 							cost: function() {
 								return 0;
 							}
-						}
-					}
 				}
 			]
 		},
