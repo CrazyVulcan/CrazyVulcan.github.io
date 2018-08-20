@@ -2573,7 +2573,7 @@ module.exports = [{
 	type: "captain",
 	id: "mr_spock_75005",
 	set: ["75005"],
-	name: "Mr.Spock",
+	name: "Mr. Spock",
 	cost: 4,
 	skill: 6,
 	talents: 1,
