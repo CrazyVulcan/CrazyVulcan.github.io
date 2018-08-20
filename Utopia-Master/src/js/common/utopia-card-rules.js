@@ -8263,7 +8263,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquipCaptain: function(upgrade, ship, fleet) {
 				return ship.class == "Dauntless Class";
 			},
-			upgradeSlots: [
+			/*upgradeSlots: [
 				{
 					type: ["captain"],
 					rules: "Captain to place under Arturis",
@@ -8282,7 +8282,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 								if( ship.captain.cost <= 4 )
 									return false;
 							return canEquip;
-							},
+							}
+						},
+						self: {
 							talents: function (captain, ship, fleet, talents) {
 								return resolve(card,ship,fleet,talents) == 0;
 							return talents;
@@ -8290,7 +8292,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						}
 					}
 				}
-			]
+			]*/
 		},
 	
 		"tech:particle_synthesis_75004":{
