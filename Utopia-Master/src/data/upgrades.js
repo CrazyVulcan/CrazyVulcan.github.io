@@ -157,7 +157,7 @@ module.exports = [{
 	set: ["73041"],
 	name: "Lead Squadron",
 	cost: 5,
-	text: "Add 1 [squadron] Upgrade to this Attack Squadron’s Upgrade Bar. Add the [battlestations] Action to this Attack Squadron’s Action Bar. Increase the Captain Skill of this Attack Squadron by 2.",
+	text: "\nAdd 1 [squadron] Upgrade to this Attack Squadron’s Upgrade Bar. Add the [battlestations] Action to this Attack Squadron’s Action Bar. Increase the Captain Skill of this Attack Squadron by 2.",
 	unique: true,
 	factions: ["federation"]
 }, {
@@ -166,7 +166,7 @@ module.exports = [{
 	set: ["73041"],
 	name: "Flanking Maneuver Epsilon",
 	cost: 3,
-	text: "<b>AFTER THIS ATTACK SQUADRON PERFORMS A MANEUVER:</b> Place 3 [time] Tokens on this card.\n\nPerform a [sensor-echo] Action using a 1 [straight] Maneuver Template as a Free Action even if this Attack Squadron is not Cloaked.",
+	text: "\n<b>AFTER THIS ATTACK SQUADRON PERFORMS A MANEUVER:</b> Place 3 [time] Tokens on this card.\n\nPerform a [sensor-echo] Action using a 1 [straight] Maneuver Template as a Free Action even if this Attack Squadron is not Cloaked.",
 	OnePerShip: true,
 	factions: ["federation"]
 }, {
@@ -175,7 +175,7 @@ module.exports = [{
 	set: ["73041"],
 	name: "Defensive Maneuver Alpha",
 	cost: 1,
-	text: "This Attack Squadron obstructs attacks targeting friendly ships.",
+	text: "\nThis Attack Squadron obstructs attacks targeting friendly ships.",
 	factions: ["federation"]
 }, {
 	type: "squadron",
@@ -183,7 +183,7 @@ module.exports = [{
 	set: ["73041"],
 	name: "Flanking Maneuver Delta",
 	cost: 2,
-	text: "<b>AFTER THIS ATTACK SQUADRON PERFORMS A [bank-left] or [bank-right] MANEUVER:</b> Discard this card and place an [aux] Token beside this Attack Squadron. Rotate this Attack Squadron 180 degrees.",
+	text: "\n<b>AFTER THIS ATTACK SQUADRON PERFORMS A [bank-left] or [bank-right] MANEUVER:</b> Discard this card and place an [aux] Token beside this Attack Squadron. Rotate this Attack Squadron 180 degrees.",
 	OnePerShip: true,
 	factions: ["federation"]
 }, {
@@ -192,7 +192,7 @@ module.exports = [{
 	set: ["73041"],
 	name: "Flanking Attak Omega",
 	cost: 4,
-	text: "<b>COMBAT PHASE:</b> Discard this card and target a friendly Capital Ship.\n\nThe target ship rolls +3 attack dice this game round. This Attack Squadron cannot attack this game round.",
+	text: "\n<b>COMBAT PHASE:</b> Discard this card and target a friendly Capital Ship.\n\nThe target ship rolls +3 attack dice this game round. This Attack Squadron cannot attack this game round.",
 	OnePerShip: true,
 	range: " 1 ",
 	factions: ["federation"]
@@ -211,7 +211,7 @@ module.exports = [{
 	set: ["73042"],
 	name: "Relics",
 	cost: 4,
-	text:"Can only be equipped to Karr or a Hirogen Captain.\n<b>WHEN ATTACKING:</b> Once per game round, when this ship hits an opposing ship with an attack:\nPlace 1 Mission Token on this card (max 3).\n\n<b>ACTIVATION PHASE:</b> Spend 1 Mission Token on this card.\nPerform an Action on this ship's Action Bar as a Free Action.",
+	text:"Can only be equipped to Karr or a Hirogen Captain.\n\n<b>WHEN ATTACKING:</b> Once per game round, when this ship hits an opposing ship with an attack:\nPlace 1 Mission Token on this card (max 3).\n\n<b>ACTIVATION PHASE:</b> Spend 1 Mission Token on this card.\nPerform an Action on this ship's Action Bar as a Free Action.",
 	factions: ["independent"]
 }, {
 	type: "tech",
@@ -229,7 +229,7 @@ module.exports = [{
 	set: ["73042"],
 	name: "Stealth Mode",
 	cost: 3,
-	text: "<b>ACTIVATION PHASE:</b> Place 2 [time] Tokens on this card. Perform a [sensor-echo] Action as a Free Action even if this ship is not Cloaked",
+	text: "<b>ACTIVATION PHASE:</b> Place 2 [time] Tokens on this card. Perform a [sensor-echo] Action as a Free Action even if this ship is not Cloaked\n(<i>Hirogen Warship Only</i>)",
 	OnePerShip: true,
 	shipLimit: true,
 	factions: ["independent"]

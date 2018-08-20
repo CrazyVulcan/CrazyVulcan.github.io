@@ -8189,15 +8189,36 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			]
 		},
+		//Flanking Maneuver Epsilon
+		"squadron:flanking_maneuver_epsilon_73041":{
+			canEquip: function(upgrade, ship, fleet) {
+			return onePerShip("Flanking Maneuver Epsilon");
+		}},
 	//Hirogen Hunting Vessel
 		"captain:hirogen_hunter_73042":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}},
+		//Relics
+		"talent:relics_73042":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			},
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return ship.captain && ( ship.captain.name == "Karr" ||ship.captain.name.indexOf("Hirogen") >= 0 );
+			}
+		},
+		//Stealth Mode
+		"tech:stealth_mode_73042":{
+			canEquip: function(upgrade,ship,fleet) {
+				return ship.class == "Hirogen Warship" && onePerShip("Stealth Mode");
+			}},
+		//Tractor Beam
 		"tech:tractor_beam_73042":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}},
+		//Optronic Data Core
 		"question:optronic_data_core_73042":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
