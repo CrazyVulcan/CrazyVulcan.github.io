@@ -1,4 +1,5 @@
-module.exports = [{
+module.exports = [
+{
 	type: "ship-class",
 	id: "kelvin_constitution_class",
 	name: "Constitution Class (Kelvin)",
@@ -33,6 +34,7 @@ module.exports = [{
 		"-1": {
 			straight: "red"
 		}
+	}
 }, {
 	type: "ship-class",
 	id: "warbird_class",
