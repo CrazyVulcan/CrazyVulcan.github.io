@@ -80,6 +80,36 @@ module.exports = [{
 	specialization: true,
 	factions: ["mirror-universe","federation"]
 }, {
+	type: "crew",
+	id: "hikaru_sulu_crew_75005",
+	set: ["75005"],
+	name: "Hikaru Sulu",
+	cost: 3,
+	text: "<b>WHEN THIS SHIP WOULD SUFFER DAMAGE FROM AN OBSTACLE OR MINEFIELD TOKEN:</b> Place 3 [time] Tokens on this card and roll 3 defence dice.\n\nFor each [evade] cancel 1 [hit] or [crit].",
+	unique: true,
+	specialization: true,
+	factions: ["mirror-universe","federation"]
+}, {
+	type: "crew",
+	id: "montgomery_scott_shield_75005",
+	set: ["75005"],
+	name: "Montgomery Scott",
+	cost: 3,
+	text: "<b>PLANNING PHASE:</b> Place 3 [time] Tokens on this card.\n\nRepair 1 Shield on this ship and flip this card.",
+	unique: true,
+	specialization: true,
+	factions: ["mirror-universe","federation"]
+}, {
+	type: "crew",
+	id: "montgomery_scott_hull_75005",
+	set: ["75005"],
+	name: "Montgomery Scott",
+	cost: 3,
+	text: "<b>PLANNING PHASE:</b> Place 3 [time] Tokens on this card.\n\nRepair 1 Hull on this ship and flip this card.",
+	unique: true,
+	specialization: true,
+	factions: ["mirror-universe","federation"]
+}, {
 	type: "talent",
 	id: "overwhelm_75005",
 	set: ["75005"],
@@ -108,6 +138,16 @@ module.exports = [{
 	cost: 2,
 	text: "<b>COMBAT PHASE:</b> Discard this card.\n\nPlace 1 [evade] Token beside this ship.",
 	shipKlingon: true,
+	factions: ["mirror-universe","klingon"]
+}, {
+	type: "crew",
+	id: "klingon_patrol_75005",
+	set: ["75005"],
+	name: "Klingon Patrol",
+	cost: 2,
+	text: "<b>END PHASE:</b> If this ship is not in the Primary Firing Arc of an opposing ship within Range:\n\nFlip this ship's [cloak] Token to its green side.",
+	shipKlingon: true,
+	range: "1 - 2",
 	factions: ["mirror-universe","klingon"]
 }, {
 	type: "crew",
@@ -141,6 +181,17 @@ module.exports = [{
 	range: "2 - 3",
 	shipLimit: true,
 	factions: ["mirror-universe","federation"]
+}, {
+	type: "weapon",
+	id: "disruptor_volley_75005",
+	set: ["75005"],
+	name: "Disruptor Volley",
+	cost: 3,
+	text: "<b>ATTACK:Disable this card and Target an opposing ship.\n\nThis attack deals no damage. f this attack his place an [aux] Token beside the defending ship. If the defending ship is an Attack Squadron, discard 1 Attack Squadron Token (AST) for each uncancelled [hit] or [crit]</b>\n(<i>Warbird Class Only</i>)",
+	shipLimit: true,
+	attack: 5,
+	range: "1 - 3",
+	factions: ["mirror-universe","klingon"]
 }, {
 	type: "weapon",
 	id: "full_spread_phasers_75005",

@@ -19,7 +19,7 @@ module.exports = [{
 }, {
 	type: "set",
 	id: "73041",
-	name: "Fighter Squadron 3",
+	name: "Fighter Squadron 1 & 3",
 	releaseDate: "2018-07-01",
 	parentSet: "Card Pack 4"
 }, {

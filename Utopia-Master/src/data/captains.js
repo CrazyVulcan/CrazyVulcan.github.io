@@ -1885,6 +1885,18 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "captain",
+	id: "hikaru_sule_75005",
+	set: ["75005"],
+	name: "Hikaru Sulu",
+	cost: 3,
+	skill: 5,
+	talents: 0,
+	text: "<b>Action:</b>\n\nPerfrom a 1 [bank-left] or 1 [bank-right] Maneuver and place 1 [evade] Token beside this ship.",
+	unique: true,
+	specialization: true,
+	factions: ["mirror-universe", "federation"]
+}, {
+	type: "captain",
 	id: "telev_75004",
 	set: ["75004"],
 	name: "Telev",

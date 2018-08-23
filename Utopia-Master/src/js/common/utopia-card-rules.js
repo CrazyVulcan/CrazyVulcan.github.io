@@ -8401,6 +8401,26 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}
 		},
+		"captain:hikaru_sule_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}
+		},
+		"crew:hikaru_sulu_crew_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}
+		},
+		"crew:montgomery_scott_hull_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}
+		},
+		"crew:montgomery_scott_shield_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}
+		},
 		"crew:koth_75005":{
 			canEquip: function(upgrade,ship,fleet) {
 				return $factions.hasFaction(ship,"klingon", ship, fleet);
@@ -8410,6 +8430,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return $factions.hasFaction(ship,"klingon", ship, fleet);
 			}},
 		"crew:klingon_guard_75005":{
+			canEquip: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship,"klingon", ship, fleet);
+			}},
+		"crew:klingon_patrol_75005":{
 			canEquip: function(upgrade,ship,fleet) {
 				return $factions.hasFaction(ship,"klingon", ship, fleet);
 			}},
@@ -8433,6 +8457,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquip: function(upgrade,ship,fleet) {
 				return onePerShip("Full Spread Phasers"), ship.class == "Constitution Class (Kelvin)";
 			}
+		},
+		"weapon:disruptor_volley_75005":{
+			canEquip:function(upgrade,ship,fleet) { 
+				return ship.class == "Warbird Class"
+			},
 		},
 	
 //Faction Penalty For Subfactions
