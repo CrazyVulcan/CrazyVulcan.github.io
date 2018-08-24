@@ -8270,11 +8270,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"talent:vidiian_sodality_75004":{
 			canEquipFaction: function(upgrade,ship,fleet) {
 				// TODO Tholians are Independent so can't easily tell their race
-				return ( ship.captain.name.indexOf("Vidiian") >= 0 );
+				return ship.captain && ( ship.captain.name.indexOf("Vidiian") >= 0 );
 			},
-			canEquip: function(upgrade, ship, fleet) {
+			canEquip: function(upgrade,ship,fleet) {
 				return ship.class == "Vidiian Battle Cruiser";
-			},
+			}
 		},
 		"talent:andorian_imperial_guard_75004":{
 			factionPenalty: function(upgrade, ship, fleet) {
