@@ -877,6 +877,18 @@ module.exports = [{
 	}
 }, {
 	type: "captain",
+	id: "vidiian_captain_75004",
+	set: ["75004"],
+	name: "Vidiian Captain",
+	cost: 3,
+	skill: 4,
+	talents: 1,
+	text: "<b>PLANNIG PHASE:</b> Target an opposing ship.\n\nDisable 1 [crew] Upgrade equipped to the target ship.",
+	unique: false,
+	range: 1,
+	factions: ["independent"]
+}, {
+	type: "captain",
 	id: "gorn_captain_73031",
 	set: ["73031"],
 	name: "Gorn Captain",

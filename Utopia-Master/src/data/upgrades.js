@@ -7,6 +7,15 @@ module.exports = [{
 	text: "May only be equipped to Thy'lek Sharan or an Andorian Captain.\n-----------------------------------\n<b>WHEN ATTACKING WITH AN Independent [weapon] UPGRADE:</b> Place 2 [time] Tokens on this card.\nThis ship rolls additional attack dice this attack equal to the number of [time] Tokens on the Independent [weapon] Upgrade being used.",
 	factions: ["independent"]
 }, {
+	type: "talent",
+	id: "vidiian_sodality_75004",
+	set: ["75004"],
+	name: "Vidiian Sodality",
+	cost: 1,
+	text: "May only be equipped to a Vidiian Captain.\n-----------------------------------\n<b>WHEN THIS SHIP OR A CARD EQUIPPED TO IT DISABLES OR DISCARDS A [crew] UPGRADE EQUIPPED TO AN OPPOSING SHIP:</b>\nPlace 1 Mission Token on this card.\n-----------------------------------\n<b>WHEN AN INDEPENDENT [crew] UPGRADE OR CAPTAIN EQUIPPED TO THIS SHIP WOULD BE DISCARDED:\nYou may discard 1 Mission Token on this card instead.</b>",
+	shipLimit: true,
+	factions: ["independent"]
+}, {
 	type: "tech",
 	id: "particle_synthesis_75004",
 	set: ["75004"],
@@ -37,6 +46,18 @@ module.exports = [{
 	hullConstraint: "3-",
 	factions: ["independent"]
 }, {
+	type: "weapon",
+	id: "hypothermic_charge_75004",
+	set: ["75004"],
+	name: "Hypothermic Charge",
+	cost: 4,
+	attack: 3,
+	text: "<b>ATTACK:</b> Place 2 [time] Tokens on this card and target an opposing ship.\n\nAll damage inflicted by this attacks ignores the defending ship's Shields. If the defending ship has no Active Shields, you may re-roll any number of your Attack Dice\n(<i>Vidiian Battle Cruiser</i>)",
+	unique: true,
+	shipLimit: true,
+	range: "1 - 2",
+	factions: ["independent"]
+}, {
 	type: "question",
 	id: "repurposed_cargo_hold_75004",
 	set: ["75004"],
@@ -56,6 +77,16 @@ module.exports = [{
 	unique: true,
 	range: "1",
 	shipLimit: true,
+	factions: ["independent"]
+}, {
+	type: "crew",
+	id: "motura_75004",
+	set: ["75004"],
+	name: "Motura",
+	cost: 5,
+	text: "<b>ACTION:</b> Discard this card and target an opposing ship.\n\nDiscard 1 [crew] Upgrade equipped to the target ship. This ship may perform a maneuver on its dial with a speed of 3 or less. If it does it cannot attack this game round.",
+	unique: true,
+	range: "1 - 2",
 	factions: ["independent"]
 }, {
 	type: "crew",

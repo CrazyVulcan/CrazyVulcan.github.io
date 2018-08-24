@@ -8267,6 +8267,15 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					}
 				} ]
 		},
+		"talent:vidiian_sodality_75004":{
+			canEquipFaction: function(upgrade,ship,fleet) {
+				// TODO Tholians are Independent so can't easily tell their race
+				return ( ship.captain.name.indexOf("Vidiian") >= 0 );
+			},
+			canEquip: function(upgrade, ship, fleet) {
+				return ship.class == "Vidiian Battle Cruiser";
+			},
+		},
 		"talent:andorian_imperial_guard_75004":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
@@ -8280,6 +8289,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship && $factions.hasFaction( ship, "federation", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}
 		},
+		"captain:vidiian_captain_75004":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			}},
 		"captain:arturis_75004":{
 			canEquipCaptain: function(upgrade, ship, fleet) {
 				return ship.class == "Dauntless Class";
@@ -8337,11 +8350,20 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			canEquip: onePerShip("Enhanced Shield Emitters")
 		},
+		"weapon:hypothermic_charge_75004":{
+			canEquip: function(upgrade,ship,fleet) {
+				return ship.class == "Vidiian Battle Cruiser";
+			}
+		},
 		"crew:tarah_75004":{
 			canEquip: function(upgrade,ship,fleet) {
 				return ship.class == "Andorian Battle Cruiser";
 			}
 		},
+		"crew:motura_75004":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			}},
 		"tech:inertial_compensators":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;

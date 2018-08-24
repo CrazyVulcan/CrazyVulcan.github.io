@@ -18,7 +18,6 @@ module.exports = [
 		3: {
 			straight: "white",
 			bank: "white",
-			turn: "white"
 		},
 		4: {
 			straight: "white"
