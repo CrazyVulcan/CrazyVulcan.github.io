@@ -106,12 +106,13 @@
 }
 
 .card-title {
+	font-size: 0.5em;
 	color: white;
 	background: black;
-	padding: 0.4em 0.4em 0;
+	padding: 0.2em 0.2em 0;
 	position: relative;
 	top: 0.05em;
-	height: 0.05em;
+	height: 1.2em;
 }
 
 .card-title-long {
