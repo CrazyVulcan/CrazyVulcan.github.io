@@ -973,7 +973,7 @@ module.exports = [{
 	text: "You cannot equip a Captain or Admiral to this ship.\n\nWhile this ship has no Damage cards, treat its Captain Skill as 12.",
 	unique: true,
 	factions: ["dominion"],
-	squadron: true
+	squadron: false
 }, {
 	type: "ship",
 	id: "dominion_starship_dreadnought_72013wp",
@@ -990,7 +990,7 @@ module.exports = [{
 	text: "You cannot equip a Captain or Admiral to this ship.",
 	unique: false,
 	factions: ["dominion"],
-	squadron: true
+	squadron: false
 }, {
 	type: "ship",
 	id: "i_k_s_ves_balth_71448",
@@ -1767,7 +1767,7 @@ module.exports = [{
 	text: "You cannot assign a Captain or an Admiral to this ship. When defending during the Compare Results step you may discard up to 2 of your Upgrades to cancel an equal number of attacking ships dice.",
 	unique: true,
 	factions: ["dominion"],
-	squadron: true
+	squadron: false
 }, {
 	type: "ship",
 	id: "halik_raider_71192",

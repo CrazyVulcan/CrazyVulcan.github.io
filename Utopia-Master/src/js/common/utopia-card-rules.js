@@ -5603,6 +5603,14 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 	//Dreadnought(old) :71212
 		// Counter Measures - one per ship only, +5 SP on any ship except ATR-4107
+		"ship_class:ardassian_ATR_4107":{
+			canEquipCaptain: function(slot,ship,fleet) {
+				return false;
+			},
+			canEquipAdmiral: function(slot,ship,fleet) {
+				return false;
+			}
+		},
 		"tech:counter_measures_71212": {
 			canEquip: function(upgrade,ship,fleet) {
 				return onePerShip("Counter Measures")(upgrade,ship,fleet);
