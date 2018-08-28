@@ -3124,7 +3124,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			},
 			canEquip: function(upgrade,ship,fleet) {
-				return ship.class.indexOf( "Hirogen" ) >= 0;
+				return ship.captain && ( ship.captain.name == "Karr" ) || ship.captain && ( ship.captain.name == "Idrin") || ship.class.indexOf( "Hirogen" ) >= 0;
 			},
 			intercept: {
 				self: {

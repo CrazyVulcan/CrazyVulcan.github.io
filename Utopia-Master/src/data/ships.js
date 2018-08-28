@@ -196,7 +196,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "federation_attack_squadron_73041",
-	set: ["73041"],
+	set: ["73041", "73042"],
 	name: "Fighter Squadron 3",
 	class: "Federation Attack Squadron",
 	actions: ["evade", "target-lock"],
