@@ -8232,8 +8232,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 		},
 		"talent:the_lone_hunt_73042":{
-			canEquip: function(upgrade,ship,fleet) {
-				return ship.class == "Hirogen Warship" && onePerShip("Stealth Mode");
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}},
 		//Stealth Mode
 		"tech:stealth_mode_73042":{
