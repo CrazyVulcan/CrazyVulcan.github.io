@@ -445,6 +445,17 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "captain",
+	id: "idrin_73042",
+	set: ["73042"],
+	name: "Idrin",
+	cost: 2,
+	skill: 3,
+	talents: 1,
+	text: "Idrin counts as a Hirogen Captain.\n----------------------------------------\n<b>ACTIVATION PHASE:</b> Place 2 [time] Tokens on this card.\n\nRemove 1 Disable Token or up to 2 [time] Tokens from a [tech] or [weapon]  Upgrade equipped to this ship.",
+	unique: true,
+	factions: ["independent"]
+}, {
+	type: "captain",
 	id: "romulan_captain_75001",
 	set: ["75001"],
 	name: "Romulan Captain",

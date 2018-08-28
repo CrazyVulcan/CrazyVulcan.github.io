@@ -261,6 +261,26 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "squadron",
+	id: "defensive_maneuver_beta_73041",
+	set: ["73041"],
+	name: "Defensive Maneuver Beta",
+	cost: 2,
+	OnePerShip: true,
+	range: " 1 ",
+	text: "<b>WHEN A FRIENDLY CAPITAL SHIP IS DEFENDING:</b> Discard this card and remove up to 2 ASTs from this Attack Squadron, and target that friendly Capital Ship.\n\nFor Each AST removed, cancel 1 [hit] against the target ship. ",
+	factions: ["federation"]
+}, {
+	type: "squadron",
+	id: "defensive_maneuver_theta_73041",
+	set: ["73041"],
+	name: "Defensive Maneuver Theta",
+	cost: 3,
+	OnePerShip: true,
+	range: " 1 ",
+	text: "<b>COMBAT PHASE:</b> Discard this card and target all friendly capital Ships.\n\nPlace an [evade] Token beside this Attack Squadron and all target ships.",
+	factions: ["federation"]
+}, {
+	type: "squadron",
 	id: "flanking_maneuver_delta_73041",
 	set: ["73041"],
 	name: "Flanking Maneuver Delta",
@@ -289,6 +309,15 @@ module.exports = [{
 	factions: ["federation", "independent"]
 }, {
 	type: "talent",
+	id: "the_lone_hunt_73042",
+	set: ["73042"],
+	name: "The Lone Hunt",
+	cost: 3,
+	range: "1 - 2",
+	text:"<b>WHEN ATTACKING:</b> If there are no friendly ships within range of this ship:\n\nThis ship rolls +1 Attack die this game round.",
+	factions: ["independent"]
+}, {
+	type: "talent",
 	id: "relics_73042",
 	set: ["73042"],
 	name: "Relics",
@@ -314,6 +343,36 @@ module.exports = [{
 	text: "<b>ACTIVATION PHASE:</b> Place 2 [time] Tokens on this card. Perform a [sensor-echo] Action as a Free Action even if this ship is not Cloaked\n(<i>Hirogen Warship Only</i>)",
 	OnePerShip: true,
 	shipLimit: true,
+	factions: ["independent"]
+}, {
+	type: "weapon",
+	id: "subnucleonic_beams_73042",
+	set: ["73042"],
+	name: "Subnucleonic Beams",
+	cost: 3,
+	attack: 4,
+	range: "1 - 2",
+	text: "<b>ATTACK:</b> Place 2 [time] Tokens on this card and target an opposing ship.\n\nFor each uncancelled [hit] or [crit], you may disable 1 [crew] Upgrade equipped to the target ship (max 3)\n(<i>Non Hirogen Warship +5sp</i>)",
+	shipLimit: "+5",
+	factions: ["independent"]
+}, {
+	type: "crew",
+	id: "donik_73042",
+	set: ["73042"],
+	name: "Donik",
+	cost: 2,
+	text: "This ship cannot be targeted by [weapon] Upgrades fried though a Secondary Firing Arc.\n\n(<i>Hirogen Warship Only</i>)",
+	unique: true,
+	shipLimit: true,
+	factions: ["independent"]
+}, {
+	type: "crew",
+	id: "beta_hirogen_73042",
+	set: ["73042"],
+	name: "Beta Hirogen",
+	cost: 3,
+	text: "Increase the Captain Skill of the Captain equipped to this ship by 1.\n----------------------------------------\n<b>WHEN THIS SHIP PERFROMS A [scan] ACTION:</b>\n\nPlace an additional [scan] Token beside this ship.",
+	OnePerShip: true,
 	factions: ["independent"]
 }, {
 	type: "talent",
