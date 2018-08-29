@@ -8459,13 +8459,17 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			},
-			upgradeSlots:[ { type: "crew" } ]
+			upgradeSlots:[ 
+			{ 
+			type: ["crew"] 
+			}
+			]
 		},
 		"captain:christopher_pike_cap_75005":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			},
-			upgradeSlots:[ { type: "crew" } ]
+			upgradeSlots:[ { type: ["crew"] } ]
 		},
 		"talent:overwhelm_75005":{
 			canEquipFaction: function(upgrade,ship,fleet) {
