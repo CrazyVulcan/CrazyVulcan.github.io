@@ -229,7 +229,7 @@ module.exports = [{
 	set: ["75005"],
 	name: "Intergrated Future Technology",
 	cost: 3,
-	text: "You do not pay Faction Penalty when equipping Romulan or Borg [tech] and/or [weapon] Upgrades to this ship.\n<b>SETUP:</b>\nPlace 1 [tech] Upgrade with a printed cost of 4 SP or less face down beneath this card.\n<b>PLANNING PHASE:</b> Discard this card.\nFlip the [tech] Upgrade beneath this card face up and equip it to this ship even if it exceeds this ships restrections.",
+	text: "You do not pay Faction Penalty when equipping Romulan or Borg [tech] and/or [weapon] Upgrades to this ship.\n<b>SETUP:</b>Place 1 [tech] Upgrade with a printed cost of 4 SP or less face down beneath this card.\n\n<b>PLANNING PHASE:</b> Discard this card.\nFlip the [tech] Upgrade beneath this card face up and equip it to this ship even if it exceeds this ships restrections.",
 	OnePerShip: true,
 	factions: ["mirror-universe"]
 }, {
@@ -311,7 +311,7 @@ module.exports = [{
 	set: ["75005"],
 	name: "Disruptor Volley",
 	cost: 3,
-	text: "<b>ATTACK:Disable this card and Target an opposing ship.\n\nThis attack deals no damage. f this attack his place an [aux] Token beside the defending ship. If the defending ship is an Attack Squadron, discard 1 Attack Squadron Token (AST) for each uncancelled [hit] or [crit]</b>\n(<i>Warbird Class Only</i>)",
+	text: "<b>ATTACK</b>:Disable this card and Target an opposing ship.\n\nThis attack deals no damage. f this attack his place an [aux] Token beside the defending ship. If the defending ship is an Attack Squadron, discard 1 Attack Squadron Token (AST) for each uncancelled [hit] or [crit]</b>\n(<i>Warbird Class Only</i>)",
 	shipLimit: true,
 	attack: 5,
 	range: "1 - 3",

@@ -8455,6 +8455,18 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			upgradeSlots: [ { type: ["tech", "weapon"] } ]
 		},
 	//Kelvin Timeline
+		"admiral:christopher_pike_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			},
+			upgradeSlots:[ { type: "crew" } ]
+		},
+		"captain:christopher_pike_cap_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			},
+			upgradeSlots:[ { type: "crew" } ]
+		},
 		"talent:overwhelm_75005":{
 			canEquipFaction: function(upgrade,ship,fleet) {
 				return ship.captain && $factions.hasFaction(ship.captain,"klingon", ship, fleet);
@@ -8503,6 +8515,53 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}
 		},
+		"crew:leonard_mccoy_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}
+		},
+		"crew:leonard_mccoy__addCrew_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			},
+			upgradeSlots: [
+				{
+					type: ["crew"],
+					rules: "Crew, 4SP or less",
+					intercept: {
+						ship: {
+							free: function() { return true; },
+							canEquip: function(upgrade, ship, fleet, canEquip) {
+								if( valueOf(upgrade,"cost",ship,fleet) > 4 )
+									return false;
+								return canEquip;
+							}
+						}
+
+					}
+				}
+			]
+		},
+		"crew:pavel_chekov_aux_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}
+		},
+		"crew:pavel_chekov_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}
+		},
+		"crew:nyota_uhura_comm_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}
+		},
+		"crew:nyota_uhura_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}
+		},
 		"crew:koth_75005":{
 			canEquip: function(upgrade,ship,fleet) {
 				return $factions.hasFaction(ship,"klingon", ship, fleet);
@@ -8535,6 +8594,19 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
+		"weapon:photon_torpedoes_75005":{
+			attack: 0,
+			intercept: {
+				self: {
+					// Attack is same as ship primary + 1
+					attack: function(upgrade,ship,fleet,attack) {
+						if( ship )
+							return valueOf(ship,"attack",ship,fleet) + 1;
+						return attack;
+					}
+				}
+			}
+		},
 		"weapon:full_spread_phasers_75005":{
 			canEquip: function(upgrade,ship,fleet) {
 				return onePerShip("Full Spread Phasers"), ship.class == "Constitution Class (Kelvin)";
@@ -8544,6 +8616,35 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquip:function(upgrade,ship,fleet) { 
 				return ship.class == "Warbird Class"
 			},
+		},
+		"tech:intergrated_future_technology_75005":{
+			upgradeSlots: [
+				{
+					type: ["tech"],
+					rules: "Tech, 4SP or less",
+					intercept: {
+						ship: {
+							free: function() { return true; },
+							canEquip: function(upgrade, ship, fleet, canEquip) {
+								if( valueOf(upgrade,"cost",ship,fleet) > 4 )
+									return false;
+								return canEquip;
+							}
+						}
+
+					}
+				}
+			],
+			canEquip: onePerShip("Intergrated Future Technology"),
+			intercept: { 
+				ship: {
+					factionPenalty: function(card,ship,fleet,factionPenalty) {
+						if( ( card.type == "tech" && $factions.hasFaction(card,"romulan", ship, fleet) ) || ( card.type == "weapon" && $factions.hasFaction(card,"romulan", ship, fleet) ) || ( card.type == "tech" && $factions.hasFaction(card,"borg", ship, fleet) ) || ( card.type == "weapon" && $factions.hasFaction(card,"borg", ship, fleet) ) )
+							return 0;
+						return factionPenalty;
+					}
+				}
+			}
 		},
 	
 //Faction Penalty For Subfactions
