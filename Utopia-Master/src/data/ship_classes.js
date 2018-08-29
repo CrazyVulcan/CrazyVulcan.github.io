@@ -42,16 +42,22 @@ module.exports = [
 	secondArc: "45",
 	maneuvers: {
 		1: {
-			
+			straight: "green",
+			bank: "green"
 		},
 		2: {
-			
+			straight: "green",
+			bank: "green",
+			turn: "white"
 		},
 		3: {
-			
+			straight: "white",
+			bank: "white",
+			turn: "red",
+			about: "red"
 		},
 		4: {
-			
+			straight: "white"
 		},
 		min: 1,
 		max: 4

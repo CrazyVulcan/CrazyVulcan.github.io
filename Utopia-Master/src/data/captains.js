@@ -2998,6 +2998,17 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "captain",
+	id: "christopher_pike_cap_75005",
+	set: ["75005"],
+	name: "Christopher Pike",
+	cost: 5,
+	skill: 8,
+	talents: 1,
+	text: "Add 1 [crew] to this ships Upgrade Bar.\n----------------------------------------\n<b>ACTION:</b>\n\nFlip up to 2 Specialization Cards equipped to this ship.",
+	unique: true,
+	factions: ["mirror-universe", "federation"]
+}, {
+	type: "captain",
 	id: "birta_75003",
 	set: ["75003"],
 	name: "Birta",

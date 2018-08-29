@@ -1,4 +1,15 @@
 module.exports = [{
+	type: "captain",
+	id: "christopher_pike_75005",
+	set: ["75005"],
+	name: "Christopher Pike",
+	cost: 5,
+	skill: 2,
+	talents: 1,
+	text: "Add 1 [crew] to this ships Upgrade Bar.\n----------------------------------------\n<b>FLEET ACTION:</b>\n\nFlip up to 2 Specialization Cards equipped to this ship.",
+	unique: true,
+	factions: ["mirror-universe", "federation"]
+}, {
 	type: "admiral",
 	id: "gint_admiral_75003",
 	set: ["75003"],

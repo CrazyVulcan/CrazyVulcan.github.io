@@ -1,5 +1,11 @@
 module.exports = [{
 	type: "token",
+	id: "rule_specialzation",
+	set: ["75005"],
+	name: "Specialization Cards (SCS)",
+	text: "Specialization Cards(SCs) are two-sided cards featuring the [specialization] symbol. This card contains additional rules that pertain to SCs.\n1. During Setup choose which side each of your SCs will start on.\n2. If a SC is flipped while it is disabled, it remains disabled.\n3. If a SC is flipped while it has [time] Tokens, the [time] Tokens remain on it.\n4 If a SC that has an [talent] Upgrade equipped to it is flipped the [talent] remains equipped to it.\n5 Players only earn Fleet Points for the SP cost that was paid during Fleet Construction.\n6. When flipping an SC that SC remains equipped to the ship, even if it exceeds taht ship's restrictions.\n7. You may not flip a SC to its Captain or Admiral side if it would cause you to have more then one Captain on a ship or more then one Admiral in your Fleet."
+}, {
+	type: "token",
 	id: "rule_BMGT",
 	set: ["75003"],
 	name: "Bio-Mimetic Gel Rules",

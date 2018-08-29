@@ -141,6 +141,68 @@ module.exports = [{
 	specialization: true,
 	factions: ["mirror-universe","federation"]
 }, {
+	type: "crew",
+	id: "leonard_mccoy_75005",
+	set: ["75005"],
+	name: "Leonard Mccoy",
+	cost: 3,
+	text: "<b>WHEN A CAPTAIN EQUIPPED TO THIS SHIP WOULD BE DISABLED</b>\nPlace 3 [time] Tokens on this card instead.\n----------------------------------------\n<b>WHEN A CAPTAIN EQUIPPED TO THIS SHIP WOULD BE DISCARDED</b>\nPlace 2 [time] Tokens on this card and the Captain that would be discarded instead.",
+	unique: true,
+	specialization: true,
+	factions: ["mirror-universe","federation"]
+}, {
+	type: "crew",
+	id: "leonard_mccoy__addCrew_75005",
+	set: ["75005"],
+	name: "Leonard Mccoy",
+	cost: 3,
+	text: "<b>SETUP:</b>\nPlace 1 [crew] Upgrade with a printed cost of 4 SP or less face down beneath this card.\n----------------------------------------\n<b>ACTIVATION PHASE:</b>\nFlip the [crew] Upgrade beneath this card face up and equip it to this shp even if it exceeds this ship's restrections. Place 3 [time] Tokens on that [crew] Upgrade.",
+	unique: true,
+	specialization: true,
+	factions: ["mirror-universe","federation"]
+}, {
+	type: "crew",
+	id: "pavel_chekov_aux_75005",
+	set: ["75005"],
+	name: "Pavel Chekov",
+	cost: 2,
+	text: "<b>ACTIVATION PHASE:</b> Place 3 [time] Tokens on this card.\n\nRemove 1 [aux] Token beside this ship",
+	unique: true,
+	specialization: true,
+	factions: ["mirror-universe","federation"]
+}, {
+	type: "crew",
+	id: "pavel_chekov_75005",
+	set: ["75005"],
+	name: "Pavel Chekov",
+	cost: 2,
+	text: "<b>COMBAT PHASE:</b> Place 3 [time] Tokens on this card and target an opposing ship.\n\nRemove 1 [scan] Token beside the target ship.",
+	unique: true,
+	specialization: true,
+	range: "1 - 2",
+	factions: ["mirror-universe","federation"]
+}, {
+	type: "crew",
+	id: "nyota_uhura_comm_75005",
+	set: ["75005"],
+	name: "Nyota Uhura",
+	cost: 3,
+	text: "<b>WHEN THIS CARD IS FLIPPED FACE UP OR AFTER THIS SHIP SUFFERS CRITICAL DAMAGE:</b>\n\nDiscard alll face up 'Communications Failurs' damage cards beside this ships Ship Card.",
+	unique: true,
+	specialization: true,
+	factions: ["mirror-universe","federation"]
+}, {
+	type: "crew",
+	id: "nyota_uhura_75005",
+	set: ["75005"],
+	name: "Nyota Uhura",
+	cost: 3,
+	text: "<b>ACTIVATION PHASE:</b> Place 3 [time] Tokens on this card and target this ship or a friendly ship.\nnIncrease the Range of all Upgrades equipped to the target ship by 1 this game round (Max Range 3).",
+	unique: true,
+	specialization: true,
+	range: "1 - 2",
+	factions: ["mirror-universe","federation"]
+}, {
 	type: "talent",
 	id: "overwhelm_75005",
 	set: ["75005"],
@@ -151,6 +213,25 @@ module.exports = [{
 	shipKlingon: true,
 	captainKlingon: true,
 	factions: ["klingon"]
+}, {
+	type: "tech",
+	id: "portable_transwarp_beaming_device_75005",
+	set: ["75005"],
+	name: "Portable Transwarp Beaming Device",
+	cost: 2,
+	text: "<b>WHEN A [crew] UPGRADE EQUIPPED TO THIS SHIP WOULD BE DISCARDED:</b> Discard this card and target a friendly ship.\n\nInstead place 1 [time] Token on the [crew] Upgrade that would be discarded and equip it to the target ship, even if it exceeds tath ship's restrictions.",
+	unique: true,
+	range: "1 - 3",
+	factions: ["mirror-universe"]
+}, {
+	type: "tech",
+	id: "intergrated_future_technology_75005",
+	set: ["75005"],
+	name: "Intergrated Future Technology",
+	cost: 3,
+	text: "You do not pay Faction Penalty when equipping Romulan or Borg [tech] and/or [weapon] Upgrades to this ship.\n<b>SETUP:</b>\nPlace 1 [tech] Upgrade with a printed cost of 4 SP or less face down beneath this card.\n<b>PLANNING PHASE:</b> Discard this card.\nFlip the [tech] Upgrade beneath this card face up and equip it to this ship even if it exceeds this ships restrections.",
+	OnePerShip: true,
+	factions: ["mirror-universe"]
 }, {
 	type: "tech",
 	id: "klingon_cloaking_device_75005",
@@ -206,13 +287,25 @@ module.exports = [{
 	set: ["75005"],
 	name: "Advanced Long Range Torpedo",
 	cost: 3,
-	text: "The Attack Value of this [weapon] is this ship’s Primary Weapon Value +1.\n-----------------------------------\n<b>ATTACK:</b> Spend this ship’s [target-lock] token, place 2 [time] Tokens on this card, and target an opposing ship.\n\nIf the attack hits, every other ship within Range 1 of the opposing ship suffers 1 [hit].\n(<i>Constitution Class (Kelvin) Only</i>)",
+	text: "The Attack Value of this [weapon] is this ship’s Primary Weapon Value +1.\n-----------------------------------\n<b>ATTACK:</b> Spend this ship’s [target-lock] Token, place 2 [time] Tokens on this card, and target an opposing ship.\n\nIf the attack hits, every other ship within Range 1 of the opposing ship suffers 1 [hit].\n(<i>Constitution Class (Kelvin) Only</i>)",
 	attack: 0,
 	unique: true,
 	range: "2 - 3",
 	shipLimit: true,
 	factions: ["mirror-universe","federation"]
 }, {
+	type: "weapon",
+	id: "photon_torpedoes_75005",
+	set: ["75005"],
+	name: "Photon Torpedoes",
+	cost: 3,
+	text: "The Attack Value of this [weapon] is this ship’s Primary Weapon Value +1.\n-----------------------------------\n<b>ATTACK:</b> Spend this ship’s [target-lock] Token, place 3 [time] Tokens on this card, and target an opposing ship.\n\nIf the defending ship has no Active Shields and is not Cloaked, convert all [battlestations] into [crit].",
+	attack: 0,
+	RearArc: true,
+	range: "1 - 3",
+	shipLimit: true,
+	factions: ["mirror-universe","klingon"]
+},{
 	type: "weapon",
 	id: "disruptor_volley_75005",
 	set: ["75005"],
