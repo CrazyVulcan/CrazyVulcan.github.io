@@ -1,5 +1,15 @@
 module.exports = [{
 	type: "talent",
+	id: "maquis_tactics_75004",
+	set: ["75004"],
+	name: "Maquis Tactics",
+	cost: 5,
+	text: "<b>AFTER ATTACKING:\n\nThis ship may perform a 1 [straight], 1 [bank-left] or  1 [bank-right] maneuver.\n(<i>Maquis Raider Only</i>)",
+	captainIndependent: true,
+	shipLimit: true,
+	factions: ["independent"]
+}, {
+	type: "talent",
 	id: "andorian_imperial_guard_75004",
 	set: ["75004"],
 	name: "Andorian Imperial Guard",
@@ -37,6 +47,16 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "tech",
+	id: "class_4_cloaking_device_75004",
+	set: ["75004"],
+	name: "Class 4 Cloaking Device",
+	cost: 4,
+	text: "<b>ACTION:</b> Place 2 [time] Tokens on this card.\n\nPerform a [cloak] Action as a Free Action even if its not on this ship's Action Bar. Then this ship may perform the [sensor-echo] Action as a Free Action even if its not on its Action Bar.\n(<i>Maquis Raider Only</i>)",
+	shipLimit: true,
+	OnePerShip: true,
+	factions: ["independent"]
+}, {
+	type: "tech",
 	id: "inertial_compensators_75004",
 	set: ["75004"],
 	name: "Inertial Compensators",
@@ -44,6 +64,15 @@ module.exports = [{
 	text: "This ship must have a [come-about] maneuver on its maneuver dial to equip this card.<b>AFTER PERFORMING A BANK OR TURN MANEUVER WITH A SPEED OF 2 OR GREATER:</b> Place an [aux] token beside this ship. Rotate this ship 180 degrees, even if this ship’s base overlapped another ship’s base.",
 	OnePerShip: true,
 	hullConstraint: "3-",
+	factions: ["independent"]
+}, {
+	type: "weapon",
+	id: "enhanced_phasers_75004",
+	set: ["75004"],
+	name: "Enhanced Phasers",
+	cost: 3,
+	text: "<b>AFTER THIS SHIP ATTACKS WITH ITS PRIMARY WEAPON:</b>\n\nThis ship may make an attack with its Primary Weapon targeting a different opposing ship in its Primary Firing Arc.",
+	attackConstraint: "2-",
 	factions: ["independent"]
 }, {
 	type: "weapon",
@@ -77,6 +106,26 @@ module.exports = [{
 	unique: true,
 	range: "1",
 	shipLimit: true,
+	factions: ["independent"]
+}, {
+	type: "crew",
+	id: "michael_jonas_75004",
+	set: ["75004"],
+	name: "Michael Jonas",
+	cost: 3,
+	text: "<b>PLANNING PAHSE:</b> Place 2 [time] Tokens on this card and target an opposing ship.\n\nThe target ship cannot perform a maneuver with a speed greater than 2 this game round.",
+	unique: true,
+	range: "1 - 2",
+	factions: ["independent"]
+}, {
+	type: "crew",
+	id: "teero_anaydis_75004",
+	set: ["75004"],
+	name: "Teero Anaydis",
+	cost: 3,
+	text: "<b>PLANNING PHASE:</b> Target a [crew] Upgrade equipped to an opposing ship.\nPlace 1 [time] Token on the target [crew] Upgrade.\n----------------------------------------\n<b>END PHASE</b> Target a [crew] Upgrade with a [time] Token on it equipped to an Opposing ship.\nAdd 1 [time] Token to the target [crew] Upgrade instead of removing 1 [time] Token.",	
+	unique: true,
+	range: "1 - 2",
 	factions: ["independent"]
 }, {
 	type: "crew",
@@ -11611,3 +11660,4 @@ module.exports = [{
 	unique: false,
 	factions: ["romulan"]
 }];
+

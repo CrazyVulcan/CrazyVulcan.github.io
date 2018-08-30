@@ -302,6 +302,10 @@
   content: ".";
 }
 
+.fs-attackConstraint:before {
+  content: ".";
+}
+
 .fs-shipLimit:before {
   content: ".";
 }
