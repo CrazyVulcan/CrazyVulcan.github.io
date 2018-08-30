@@ -1,5 +1,5 @@
 module.exports = [{
-	type: "captain",
+	type: "admiral",
 	id: "christopher_pike_75005",
 	set: ["75005"],
 	name: "Christopher Pike",
