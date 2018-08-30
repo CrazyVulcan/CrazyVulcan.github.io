@@ -201,7 +201,7 @@
 	background: url("../img/restrictions/upgrade-attack-limit.png")no-repeat;
 	font-size: 0.5em;
 	background-size: 2em;
-	color: red;
+	color: gray;
 	padding: 0.5em;
 	position: relative;
 	left: 0em;
