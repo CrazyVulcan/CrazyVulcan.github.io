@@ -97,7 +97,7 @@ module.filter( "cardFilter", [ "$factions", "$filter", function($factions, $filt
 							}
 						}
 					});
-					
+
 					if (!hasFilteredManeuver) return null;
 
 				} else {
@@ -171,7 +171,6 @@ module.directive( "search", function() {
 				sortBy: "cost",
 				ascending: "false",
 				maneuverType: "",
-				maneuverSpeed: "",
 				maneuverDifficulty: "",
 				filterField: "",
 				filterOperator: "<=",
@@ -200,7 +199,6 @@ module.directive( "search", function() {
 				$scope.search.sortBy = $scope.defaults.search.sortBy || "name";
 				$scope.search.ascending = $scope.defaults.search.ascending || "true";
 				$scope.search.maneuverType = "";
-				$scope.search.maneuverSpeed = "";
 				$scope.search.maneuverDifficulty = "";
 				$scope.search.filterField = "";
 				$scope.search.filterOperator = "<=";
@@ -222,7 +220,7 @@ module.directive( "search", function() {
 
 			// Reset result display count when search changes
 			$scope.$watch( "search", function() {
-				$scope.resultLimit = 25;
+				$scope.resultLimit = 10;
 			}, true);
 
 			// Store changes to expansions filter
@@ -331,34 +329,7 @@ module.directive( "search", function() {
 					name: "Red"
 				}
 			]
-			
-			$scope.speed_list = [
-				{
-					value: 1,
-					name: "1"
-				},
-				{
-					value: 2,
-					name: "2"
-				},
-				{
-					value: 3,
-					name: "3"
-				},
-				{
-					value: 4,
-					name: "4"
-				},
-				{
-					value: 5,
-					name: "5"
-				},
-				{
-					value: 6,
-					name: "6"
-				}
-			]
-			
+
 			$scope.$on( "cardsLoaded", function() {
 				// Construct list of card types from those available
 				$.each( $scope.cards, function(i, card) {

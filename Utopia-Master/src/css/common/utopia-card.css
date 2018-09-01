@@ -207,7 +207,7 @@
 	left: 0em;
 	margin-top:0.5em;
 	top: -0.1em;
-	z-index: 2;
+	z-index: 1;
 	text-align: center;
 }
 
@@ -221,7 +221,7 @@
 	left: 0em;
 	margin-top:0.5em;
 	top: -0.1em;
-	z-index: 2;
+	z-index: 1;
 	text-align: center;
 }
 

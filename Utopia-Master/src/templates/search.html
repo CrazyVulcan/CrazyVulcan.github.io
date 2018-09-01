@@ -53,9 +53,7 @@
 				<input ng-model="search.filterValue" placeholder="Value"></input>
 			</div>
 			<div class="u-search-filter-comment">
-				Filter On Maneuver: 
-				<select ng-model="search.maneuverType"><option value="">Any</option><option ng-repeat="maneuver in maneuvers" value="{{maneuver.value}}">{{maneuver.name}}</option></select>
-				<select ng-model="search.maneuverSpeed"><option value="">Any</option><option ng-repeat="speed in speed_list" value="{{speed.value}}">{{speed.name}}</option></select>
+				Filter On Maneuver: <select ng-model="search.maneuverType"><option value="">Any</option><option ng-repeat="maneuver in maneuvers" value="{{maneuver.value}}">{{maneuver.name}}</option></select>
 				<select ng-model="search.maneuverDifficulty"><option value="">Any</option><option ng-repeat="difficulty in difficulty_list" value="{{difficulty.value}}">{{difficulty.name}}</option></select>
 			</div>
 		</search-filter-group>
