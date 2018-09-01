@@ -7865,7 +7865,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}},
 
 	//Ferengi Faction Pack: 75003
-		/*"ship:ferengi_starship_75003":{
+		"ship:ferengi_starship_75003":{
 			intercept: {
 				ship: {
 					opBanned: function(upgrade, ship, fleet) {
@@ -7875,7 +7875,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					}
 				}
 			}
-		},*/
+		},
 		//Birta
 		"captain:birta_75003":{
 			factionPenalty: function(upgrade, ship, fleet) {
