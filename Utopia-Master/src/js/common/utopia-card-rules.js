@@ -2265,6 +2265,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
+		
 		// Third of Five
 		"crew:third_of_five_71525": {
 			// Can't equip if fleet contains Hugh
@@ -3123,7 +3124,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			},
 			canEquip: function(upgrade,ship,fleet) {
-				return ship.class.indexOf( "Hirogen" ) >= 0;
+				return ship.captain && ( ship.captain.name == "Karr" ) || ship.captain && ( ship.captain.name == "Idrin") || ship.class.indexOf( "Hirogen" ) >= 0;
 			},
 			intercept: {
 				self: {
@@ -5602,6 +5603,14 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 	//Dreadnought(old) :71212
 		// Counter Measures - one per ship only, +5 SP on any ship except ATR-4107
+		"ship-class:ardassian_ATR_4107":{
+			canEquipCaptain: function(slot,ship,fleet) {
+				return false;
+			},
+			canEquipAdmiral: function(slot,ship,fleet) {
+				return false;
+			}
+		},
 		"tech:counter_measures_71212": {
 			canEquip: function(upgrade,ship,fleet) {
 				return onePerShip("Counter Measures")(upgrade,ship,fleet);
@@ -7865,17 +7874,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}},
 
 	//Ferengi Faction Pack: 75003
-		"ship:ferengi_starship_75003":{
-			intercept: {
-				ship: {
-					opBanned: function(upgrade, ship, fleet) {
-						if ( upgrade.cost > 3 )
-							return valueOf(upgrade,"opBanned",ship,fleet) = true;
-						return opBanned;
-					}
-				}
-			}
-		},
+		
 		//Birta
 		"captain:birta_75003":{
 			factionPenalty: function(upgrade, ship, fleet) {
@@ -8188,17 +8187,122 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			]
 		},
+		//Flanking Maneuver Epsilon
+		"squadron:flanking_maneuver_epsilon_73041":{
+			canEquip: function(upgrade, ship, fleet) {
+			return onePerShip("Flanking Maneuver Epsilon");
+		}},
+		//Defensive Maneuver Theta
+		"squadron:defensive_maneuver_theta_73041":{
+			canEquip: function(upgrade, ship, fleet) {
+			return onePerShip("Defensive Maneuver Theta");
+		}},
+		//Defensive Maneuver Beta
+		"squadron:defensive_maneuver_Beta_73041":{
+			canEquip: function(upgrade, ship, fleet) {
+			return onePerShip("Defensive Maneuver Beta");
+		}},
 	//Hirogen Hunting Vessel
 		"captain:hirogen_hunter_73042":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}},
+		//Idrin
+		"captain:idrin_73042":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			}},
+		//Relics
+		"talent:relics_73042":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			},
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return ship.captain && ( ship.captain.name == "Karr" ) || ship.captain && ( ship.captain.name == "Idrin") || ship.captain.name.indexOf("Hirogen") >= 0 ;
+			}
+		},
+		"talent:the_lone_hunt_73042":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			}},
+		//Stealth Mode
+		"tech:stealth_mode_73042":{
+			canEquip: function(upgrade,ship,fleet) {
+				return ship.class == "Hirogen Warship" && onePerShip("Stealth Mode");
+			}},
+		//Tractor Beam
 		"tech:tractor_beam_73042":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}},
-		
+		"crew:donik_73042":{
+			canEquip: function(upgrade,ship,fleet) {
+				return ship.class == "Hirogen Warship" && onePerShip("Stealth Mode");
+			}},
+		"crew:beta_hirogen_73042":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			},
+			canEquip: onePerShip("Beta Hirogen"),
+			intercept: {
+				ship: {
+					skill: function(card,ship,fleet,skill) {
+						if( card == ship.captain )
+							return resolve(card,ship,fleet,skill) + 1;
+						return skill;
+					}
+				}
+			}
+		},
+		"weapon:subnucleonic_beams_73042":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			},
+			intercept: {
+				self: {
+					cost: function(upgrade,ship,fleet,cost) {
+						if( ship && ship.class.indexOf( "Hirogen" ) < 0 )
+							return resolve(upgrade,ship,fleet,cost) + 5;
+						return cost;
+					}
+				}
+			}
+		},
+		//Optronic Data Core
+		"question:optronic_data_core_73042":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			},
+			isSlotCompatible: function(slotTypes) {
+				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0;
+			},
+			canEquip: onePerShip("Optronic Data Core")},
 	//A Motley Fleet
+		"ship:u_s_s_dauntless_75004":{
+			//Add Crew to Captain Slot
+			/*
+			canEquipCaptain: function(upgrade, ship, fleet, canEquip) {
+				if(upgrade.type == "crew" )
+					return true;
+				return canEquip;
+			}*/
+			canEquipAdmiral: function(card,ship,fleet) {
+				return false;
+			},
+			upgradeSlots: [ {
+				type: ["crew"],
+				rules: "Replaces Captain Slot\n\nCaptain Skill is Printed Cost +3",
+					intercept: {
+						ship: {
+							skill: function(upgrade,ship,fleet,skill) {
+								return upgrade.cost + 3;
+							return skill;
+							}
+						}
+					}
+			} ]		
+		},
+
 		"ship:gurngouin_75004":{
 			upgradeSlots: [ {
 					type: ["tech"],
@@ -8213,9 +8317,92 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					}
 				} ]
 		},
+		"talent:vidiian_sodality_75004":{
+			canEquipFaction: function(upgrade,ship,fleet) {
+				// TODO Tholians are Independent so can't easily tell their race
+				return ship.captain && ( ship.captain.name.indexOf("Vidiian") >= 0 );
+			},
+			canEquip: function(upgrade,ship,fleet) {
+				return ship.class == "Vidiian Battle Cruiser";
+			}
+		},
+		"talent:andorian_imperial_guard_75004":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			},
+			canEquipFaction: function(upgrade,ship,fleet) {
+				// TODO Tholians are Independent so can't easily tell their race
+				return ship.captain && ( ship.captain.name == "Thy'Lek Sharan" || ship.captain.name == "Telev" ||ship.captain.name.indexOf("Andorian") >= 0 );
+			}},
 		"captain:thomas_riker_75004":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "federation", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			}
+		},
+		"captain:vidiian_captain_75004":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			}},
+		"captain:arturis_75004":{
+			canEquipCaptain: function(upgrade, ship, fleet) {
+				return ship.class == "Dauntless Class";
+			},
+			/*upgradeSlots: [
+				{
+					type: ["captain"],
+					rules: "Captain to place under Arturis",
+					intercept: {
+						ship: {
+							// No cost for this card
+							cost: function() {
+								return 0;
+							},
+							// No faction penalties for Captain
+							factionPenalty: function(card,ship,fleet,factionPenalty) {
+									return 0;
+							return factionPenalty;
+							},
+							canEquipCaptain: function(upgrade, ship, fleet, canEquip) {
+								if( ship.captain.cost <= 4 )
+									return false;
+							return canEquip;
+							}
+						},
+						self: {
+							talents: function (captain, ship, fleet, talents) {
+								return resolve(card,ship,fleet,talents) == 0;
+							return talents;
+							}
+						}
+					}
+				}
+			]*/
+		},
+	
+		"tech:particle_synthesis_75004":{
+			canEquip:function(upgrade,ship,fleet) { 
+				return ship.class == "Dauntless Class"
+			},
+			canEquip: onePerShip("Particle Synthesis")
+		},
+		"tech:enhanced_shield_emitters_75004":{
+			canEquip:function(upgrade,ship,fleet) { 
+				return ship.class == "Andorian Battle Cruiser"
+			},
+			intercept: {
+				ship: {
+					shields: function(card,ship,fleet,shields) {
+						if( card == ship )
+							return resolve(card,ship,fleet,shields) + 2;
+						return shields;
+					}
+				}
+			},
+			canEquip: onePerShip("Enhanced Shield Emitters")
+		},
+		"weapon:hypothermic_charge_75004":{
+			canEquip: function(upgrade,ship,fleet) {
+				return ship.class == "Vidiian Battle Cruiser";
 			}
 		},
 		"crew:tarah_75004":{
@@ -8223,6 +8410,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship.class == "Andorian Battle Cruiser";
 			}
 		},
+		"crew:motura_75004":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			}},
 		"tech:inertial_compensators":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
@@ -8254,11 +8445,113 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			upgradeSlots: [ { type: ["tech", "weapon"] } ]
 		},
 	//Kelvin Timeline
+		"admiral:christopher_pike_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			},
+			upgradeSlots:[ 
+			{ 
+			type: ["crew"] 
+			}
+			]
+		},
+		"captain:christopher_pike_cap_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			},
+			upgradeSlots:[ { type: ["crew"] } ]
+		},
 		"talent:overwhelm_75005":{
 			canEquipFaction: function(upgrade,ship,fleet) {
 				return ship.captain && $factions.hasFaction(ship.captain,"klingon", ship, fleet);
 		}},
-		"crew:james_t_kirk_75005":{
+		"crew:klingon_guard_75005":{
+			canEquip: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship,"klingon", ship, fleet);
+			}},
+		"captain:james_t_kirk_cap_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}
+		},
+		"crew:james_t_kirk_crew_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}
+		},
+		"captain:mr_spock_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}
+		},
+		"crew:mr_spock_crew_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}
+		},
+		"captain:hikaru_sule_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}
+		},
+		"crew:hikaru_sulu_crew_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}
+		},
+		"crew:montgomery_scott_hull_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}
+		},
+		"crew:montgomery_scott_shield_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}
+		},
+		"crew:leonard_mccoy_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}
+		},
+		"crew:leonard_mccoy__addCrew_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			},
+			upgradeSlots: [
+				{
+					type: ["crew"],
+					rules: "Crew, 4SP or less",
+					intercept: {
+						ship: {
+							free: function() { return true; },
+							canEquip: function(upgrade, ship, fleet, canEquip) {
+								if( valueOf(upgrade,"cost",ship,fleet) > 4 )
+									return false;
+								return canEquip;
+							}
+						}
+
+					}
+				}
+			]
+		},
+		"crew:pavel_chekov_aux_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}
+		},
+		"crew:pavel_chekov_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}
+		},
+		"crew:nyota_uhura_comm_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}
+		},
+		"crew:nyota_uhura_75005":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}
@@ -8267,9 +8560,21 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquip: function(upgrade,ship,fleet) {
 				return $factions.hasFaction(ship,"klingon", ship, fleet);
 			}},
+		"crew:klingon_first_officer_75005":{
+			canEquip: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship,"klingon", ship, fleet);
+			}},
+		"crew:klingon_guard_75005":{
+			canEquip: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship,"klingon", ship, fleet);
+			}},
+		"crew:klingon_patrol_75005":{
+			canEquip: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship,"klingon", ship, fleet);
+			}},
 		"weapon:advanced_long_range_torpedo_75005":{
 			canEquip: function(upgrade,ship,fleet) {
-				return ship.class == "Kelvin Constitution Class";
+				return ship.class == "Constitution Class (Kelvin)";
 			},
 			attack: 0,
 			intercept: {
@@ -8279,6 +8584,58 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						if( ship )
 							return valueOf(ship,"attack",ship,fleet) + 1;
 						return attack;
+					}
+				}
+			}
+		},
+		"weapon:photon_torpedoes_75005":{
+			attack: 0,
+			intercept: {
+				self: {
+					// Attack is same as ship primary + 1
+					attack: function(upgrade,ship,fleet,attack) {
+						if( ship )
+							return valueOf(ship,"attack",ship,fleet) + 1;
+						return attack;
+					}
+				}
+			}
+		},
+		"weapon:full_spread_phasers_75005":{
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("Full Spread Phasers"), ship.class == "Constitution Class (Kelvin)";
+			}
+		},
+		"weapon:disruptor_volley_75005":{
+			canEquip:function(upgrade,ship,fleet) { 
+				return ship.class == "Warbird Class"
+			},
+		},
+		"tech:intergrated_future_technology_75005":{
+			upgradeSlots: [
+				{
+					type: ["tech"],
+					rules: "Tech, 4SP or less",
+					intercept: {
+						ship: {
+							free: function() { return true; },
+							canEquip: function(upgrade, ship, fleet, canEquip) {
+								if( valueOf(upgrade,"cost",ship,fleet) > 4 )
+									return false;
+								return canEquip;
+							}
+						}
+
+					}
+				}
+			],
+			canEquip: onePerShip("Intergrated Future Technology"),
+			intercept: { 
+				ship: {
+					factionPenalty: function(card,ship,fleet,factionPenalty) {
+						if( ( card.type == "tech" && $factions.hasFaction(card,"romulan", ship, fleet) ) || ( card.type == "weapon" && $factions.hasFaction(card,"romulan", ship, fleet) ) || ( card.type == "tech" && $factions.hasFaction(card,"borg", ship, fleet) ) || ( card.type == "weapon" && $factions.hasFaction(card,"borg", ship, fleet) ) )
+							return 0;
+						return factionPenalty;
 					}
 				}
 			}
