@@ -1,16 +1,31 @@
+/**
+ * Style definitions of the ship tile and firing arcs.
+ */
+
+/**
+ * Parent division style. A square that holds the other tile elements.
+ */
 .card-shipclass-arcs {
+	display: inline-block;
+	box-sizing: border-box;
 	position: absolute;
 	width: 4.5em;
 	height: 5em;
 	border: 1px solid #333;
 	transform: rotate(-15deg);
+	-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 	left: 6em;
-	z-index: 1000;
+	z-index: 100;
 	overflow: hidden;
 	background: #111;
 	box-shadow: 0 0 0.4em #333;
 }
 
+/**
+ * 90 deg forward firing arc. A filled in square that is rotated 45 degrees to
+ * provide a triangle that is then clipped to within the parent box.
+ */
 .arc-fore-90 {
 	position: absolute;
 	top: -3.8em;
@@ -20,8 +35,28 @@
 	border: 0.1em solid #aaa;
 	background: #777;
 	transform: rotate(45deg);
+	clip: inherit;
 }
 
+/**
+ * 90 deg rear firing arc. An empty square that has a dashed border and is
+ * rotated 45 degrees to provide a triangle that is then clipped to within the
+ * parent box.
+ */
+.arc-rear-90 {
+	position: absolute;
+	top: 3.7em;
+	left: -0.275em;
+	width: 5em;
+	height: 5em;
+	border: 0.1em dashed #aaa;
+	transform: rotate(45deg);
+}
+
+/**
+ * 180 deg forward firing arc. A filled square that is rotated 45 degrees to
+ * provide a triangle that is then clipped to within the parent box.
+ */
 .arc-fore-180 {
 	position: absolute;
 	top: 0;
@@ -32,28 +67,9 @@
 	border-bottom: 0.1em solid #aaa;
 }
 
-.arc-second-45 {
-	display: block;
-	-webkit-box-sizing: content-box;
-	-moz-box-sizing: content-box;
-	box-sizing: content-box;
-	float: none;
-	z-index: auto;
-	width: 5em;
-	height: 5em;
-	position: absolute;
-	cursor: default;
-	opacity: 1;
-	top: -3.8em;
-	left: -0.275em;
-	overflow: visible;
-	border: 0.1em dashed rgb(170,170,170);
-	-webkit-transform: rotateZ(67.5deg)   skewX(45deg);
-	transform: rotateZ(67.5deg)   skewX(45deg);
-	-webkit-transform-origin: 99% 9% 0;
-	transform-origin: 99% 9% 0;
-}
-
+/**
+ * Hole in the center of the tile.
+ */
 .arc-hole {
 	position: absolute;
 	left: 1.5em;
@@ -65,16 +81,9 @@
 	border: 1px solid #333;
 }
 
-.arc-rear-90 {
-	position: absolute;
-	top: 3.7em;
-	left: -0.275em;
-	width: 5em;
-	height: 5em;
-	border: 0.1em dashed #aaa;
-	transform: rotate(45deg);
-}
-
+/**
+ * Style for the ship name on the arc tile.
+ */
 .arc-name {
 	position: absolute;
 	left: 0;
@@ -86,6 +95,9 @@
 	text-transform: uppercase;
 }
 
+/**
+ * Style for group of the ship stats printed on the tile.
+ */
 .arc-stats {
 	position: absolute;
 	top: 0.25em;
@@ -93,6 +105,9 @@
 	height: 100%;
 }
 
+/**
+ * Style for the individual stats within the arc-stats group.
+ */
 .arc-stat {
 	border-width: .1em;
 	border-style: solid;
@@ -103,6 +118,9 @@
 	margin-top: 0.3em;
 }
 
+/**
+ * Style for the actions group printed on the tile.
+ */
 .arc-actions {
 	position: absolute;
 	top: 0.25em;
@@ -111,10 +129,16 @@
 	color: green;
 }
 
+/**
+ * Style for the individaul actions in the actions group.
+ */
 .arc-actions .fs {
 	font-size: 0.5em;
 }
 
+/**
+ * Start of colors for the arcs for individual factions.
+ */
 .arc-faction-mirror-universe .arc {
 	border-color: #bb963c;
 }
