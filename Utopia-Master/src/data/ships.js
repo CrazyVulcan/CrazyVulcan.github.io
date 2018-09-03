@@ -160,7 +160,7 @@ module.exports = [{
 	hull: 4,
 	shields: 3,
 	cost: 21,
-	text: "<b>WHEN THIS SHIP SUFFERS DAMAGE TO ITS HULL:</b> Once per game, if this shiip is Cloaked:\n\nThis ship may perform an attack with its Primary Weapon",
+	text: "<b>WHEN THIS SHIP SUFFERS DAMAGE TO ITS HULL:</b> Once per game, if this ship is Cloaked:\n\nThis ship may perform an attack with its Primary Weapon",
 	unique: true,
 	factions: ["mirror-universe", "klingon"],
 	squadron: false

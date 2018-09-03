@@ -7865,7 +7865,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}},
 
 	//Ferengi Faction Pack: 75003
-		"ship:ferengi_starship_75003":{
+		/*"ship:ferengi_starship_75003":{
 			intercept: {
 				ship: {
 					opBanned: function(upgrade, ship, fleet) {
@@ -7876,6 +7876,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
+		*/
 		//Birta
 		"captain:birta_75003":{
 			factionPenalty: function(upgrade, ship, fleet) {
@@ -8188,14 +8189,80 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			]
 		},
+		"squadron:defensive_maneuver_beta_73041":{
+			canEquip: onePerShip("Defensive Maneuver Beta"),
+		},
+		"squadron:defensive_maneuver_theta_73041":{
+			canEquip: onePerShip("Defensive Maneuver Theta"),
+		},
+		"squadron:flanking_maneuver_delta_73041":{
+			canEquip: onePerShip("Flanking Maneuver Delta"),
+		},
+		"squadron:flanking_maneuver_epsilon_73041":{
+			canEquip: onePerShip("Flanking Maneuver Epsilon"),
+		},
+		"squadron:flanking_attack_omega_73041":{
+			canEquip: onePerShip("Flanking Attack Omega"),
+		},
 	//Hirogen Hunting Vessel
 		"captain:hirogen_hunter_73042":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}},
+		"captain:idrin_73042":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			}},
+		"talent:relics_73042":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			},
+			canEquipFaction: function(upgrade,ship,fleet) {
+				// TODO Tholians are Independent so can't easily tell their race
+				return ship.captain && ( ship.captain.name == "Idrin" || ship.captain.name == "Karr" ||ship.captain.name.indexOf("Hirogen") >= 0 );
+			}},
+		"talent:the_lone_hunt_73042":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			}},
+		"crew:beta_hirogen_73042":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			},
+			canEquip: onePerShip("Beta Hirogen"),
+			},
+		"crew:donik_73042":{
+			canEquip: function(upgrade,ship,fleet) {
+				return ship.class == "Hirogen Warship";
+			}},
+		"weapon:subnucleonic_beams_73042":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			},
+			intercept: {
+				self: {
+					cost: function(upgrade,ship,fleet,cost) {
+						if( ship && ship.class.indexOf( "Hirogen" ) < 0 )
+							return resolve(upgrade,ship,fleet,cost) + 5;
+						return cost;
+					}
+				}
+			}
+		},
 		"tech:tractor_beam_73042":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			},
+			canEquip: onePerShip("Tractor Beam"),
+		},
+		"tech:stealth_mode_73042":{
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("Stealth Mode") && ship.class == "Hirogen Warship";
+			}
+		},
+		"question:optronic_data_core_73042":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}},
 		
 	//A Motley Fleet
