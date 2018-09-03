@@ -8188,6 +8188,21 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			]
 		},
+		"squadron:defensive_maneuver_beta_73041":{
+			canEquip: onePerShip("Defensive Maneuver Beta"),
+		},
+		"squadron:defensive_maneuver_theta_73041":{
+			canEquip: onePerShip("Defensive Maneuver Theta"),
+		},
+		"squadron:flanking_maneuver_delta_73041":{
+			canEquip: onePerShip("Flanking Maneuver Delta"),
+		},
+		"squadron:flanking_maneuver_epsilon_73041":{
+			canEquip: onePerShip("Flanking Maneuver Epsilon"),
+		},
+		"squadron:flanking_attack_omega_73041":{
+			canEquip: onePerShip("Flanking Attack Omega"),
+		},
 	//Hirogen Hunting Vessel
 		"captain:hirogen_hunter_73042":{
 			factionPenalty: function(upgrade, ship, fleet) {
