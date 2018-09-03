@@ -8171,7 +8171,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 	//Fighter Squadron 3
 		//Lead Squadron
-		"squadron:lead_squadron_73041":{
+		/*"squadron:lead_squadron_73041":{
 			upgradeSlots: [
 				{
 					type: ["squadron"]
@@ -8194,7 +8194,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquip: onePerShip("Flanking Attack Omega"),
 		},
 	//Hirogen Hunting Vessel
-	/*	"captain:hirogen_hunter_73042":{
+		"captain:hirogen_hunter_73042":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}},
