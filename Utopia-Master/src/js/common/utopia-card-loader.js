@@ -81,6 +81,7 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 					return cost;
 				}
 			});
+			
 
 			cards.push(ship);
 

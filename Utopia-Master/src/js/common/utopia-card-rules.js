@@ -7865,7 +7865,17 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}},
 
 	//Ferengi Faction Pack: 75003
-		
+		"ship:ferengi_starship_75003":{
+			intercept: {
+				ship: {
+					opBanned: function(upgrade, ship, fleet) {
+						if ( upgrade.cost > 3 )
+							return valueOf(upgrade,"opBanned",ship,fleet) = true;
+						return opBanned;
+					}
+				}
+			}
+		},
 		//Birta
 		"captain:birta_75003":{
 			factionPenalty: function(upgrade, ship, fleet) {
@@ -8171,7 +8181,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 	//Fighter Squadron 3
 		//Lead Squadron
-		/*"squadron:lead_squadron_73041":{
+		"squadron:lead_squadron_73041":{
 			upgradeSlots: [
 				{
 					type: ["squadron"]
@@ -8253,7 +8263,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}},
-	*/	
+		
 	//A Motley Fleet
 		"ship:gurngouin_75004":{
 			upgradeSlots: [ {
