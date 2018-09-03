@@ -8194,7 +8194,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquip: onePerShip("Flanking Attack Omega"),
 		},
 	//Hirogen Hunting Vessel
-		"captain:hirogen_hunter_73042":{
+	/*	"captain:hirogen_hunter_73042":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}},
@@ -8253,7 +8253,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}},
-		
+	*/	
 	//A Motley Fleet
 		"ship:gurngouin_75004":{
 			upgradeSlots: [ {
