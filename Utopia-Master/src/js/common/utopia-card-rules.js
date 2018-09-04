@@ -8277,8 +8277,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				rules: "Replace's Captain",
 				intercept: {
 					ship: {
-						skill: function(card,ship,fleet,skill) {
-							return upgrade.cost + 3;
+						skill: function(upgrade,ship,fleet,skill) {
+							return resolve(upgrade,ship,fleet,cost) + 1;
 						return skill;
 						}
 					}
@@ -8288,7 +8288,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				ship: {
 					// Add the "crew" type to the Captain slot
 					type: function(card,ship,fleet,type) {
-						if( upgradeTypes.indexOf("captain") < 0 || card.type == "captain" )
+						if( upgradeTypes.indexOf("captain") < 0 || upgrade == ship.captain )
 							return type.concat(["crew"]);
 						return type;
 					}
