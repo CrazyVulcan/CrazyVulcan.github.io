@@ -8273,7 +8273,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				ship: {
 					// Add the "crew" type to the Captain slot
-					type: function(card,ship,fleet,type) {
+					type: function(upgrade,ship,fleet,type) {
 						if( $.inArray("captain",type) >= 0 || upgrade.type == "captain" )
 							return type.concat(["crew"]);
 						return type;
