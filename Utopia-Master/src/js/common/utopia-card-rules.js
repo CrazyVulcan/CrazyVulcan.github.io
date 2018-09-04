@@ -98,7 +98,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		};
 	};
 
-	var upgradeTypes = ["crew","weapon","tech","talent","question","borg"];
+	var upgradeTypes = ["crew","weapon","tech","talent","question","borg","captain"];
 
 	var isUpgrade = function(card) {
 		return $.inArray( card.type, upgradeTypes ) >= 0;
@@ -8268,6 +8268,18 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						}
 					}
 				} ]
+		},
+		"ship:u_s_s_dauntless_75004":{
+			intercept: {
+				ship: {
+					// Add the "crew" type to the Captain slot
+					type: function(card,ship,fleet,type) {
+						if( $.inArray("captain",type) >= 0 )
+							return type.concat(["crew"]);
+						return type;
+					}
+				}
+			}
 		},
 		"captain:thomas_riker_75004":{
 			factionPenalty: function(upgrade, ship, fleet) {
