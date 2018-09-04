@@ -98,7 +98,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		};
 	};
 
-	var upgradeTypes = ["crew","weapon","tech","talent","question","borg"];
+	var upgradeTypes = ["crew","weapon","tech","talent","question","borg","captain"];
 
 	var isUpgrade = function(card) {
 		return $.inArray( card.type, upgradeTypes ) >= 0;
@@ -7865,17 +7865,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}},
 
 	//Ferengi Faction Pack: 75003
-		"ship:ferengi_starship_75003":{
-			intercept: {
-				ship: {
-					opBanned: function(upgrade, ship, fleet) {
-						if ( upgrade.cost > 3 )
-							return valueOf(upgrade,"opBanned",ship,fleet) = true;
-						return opBanned;
-					}
-				}
-			}
-		},
+		
 		//Birta
 		"captain:birta_75003":{
 			factionPenalty: function(upgrade, ship, fleet) {
@@ -8265,6 +8255,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}},
 		
 	//A Motley Fleet
+		//Gurngouin
 		"ship:gurngouin_75004":{
 			upgradeSlots: [ {
 					type: ["tech"],
@@ -8279,11 +8270,26 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					}
 				} ]
 		},
+		//U.S.S. Dauntless
+		"ship:u_s_s_dauntless_75004":{
+			intercept: {
+				ship: {
+					// Add the "crew" type to the Captain slot
+					type: function(card,ship,fleet,type) {
+						if(  $.inArray("captain",type) >= 0 )
+							return type.concat(["crew"]);
+						return type;
+					}
+				}
+			}
+		},
+		//Thomas Riker
 		"captain:thomas_riker_75004":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "federation", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}
 		},
+		//Tarah
 		"crew:tarah_75004":{
 			canEquip: function(upgrade,ship,fleet) {
 				return ship.class == "Andorian Battle Cruiser";
