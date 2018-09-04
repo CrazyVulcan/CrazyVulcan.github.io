@@ -8278,7 +8278,6 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				intercept: {
 					ship: {
 						skill: function(card,ship,fleet,skill) {
-						if( card == ship.captain )
 							return resolve(card,ship,fleet,cost) + 3;
 						return skill;
 						}
