@@ -8303,12 +8303,61 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship.captain && ( $factions.hasFaction(ship.captain,"independent", ship, fleet) || $factions.hasFaction(ship.captain,"ferengi", ship, fleet) || $factions.hasFaction(ship.captain,"kazon", ship, fleet) || $factions.hasFaction(ship.captain,"xindi", ship, fleet) ) && ship.class == "Maquis Raider";
 			}
 		},
+		//Andorian Imperial Guard
+		"talent:andorian_imperial_guard_75004":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			},
+			canEquipFaction: function(upgrade,ship,fleet) {
+				// TODO Tholians are Independent so can't easily tell their race
+				return ship.captain && ( ship.captain.name == "Telev" || ship.captain.name == "Thy'lek Sharan" ||ship.captain.name.indexOf("Andorian") >= 0 );
+			}},
+		//Vidiian Sodality
+		"talent:vidiian_sodality_75004":{
+			canEquipFaction: function(upgrade,ship,fleet) {
+				// TODO Tholians are Independent so can't easily tell their race
+				return ship.captain && ship.captain.name.indexOf("Vidiian") >= 0 ;
+			},
+			canEquip: function(upgrade,ship,fleet) {
+				return ship.class == "Vidiian Battle Cruiser";
+			}
+		},
 		//Tarah
 		"crew:tarah_75004":{
 			canEquip: function(upgrade,ship,fleet) {
 				return ship.class == "Andorian Battle Cruiser";
 			}
 		},
+		//Hypothermic Charges
+		"weapon:hypothermic_charge_75004":{
+			canEquip: function(upgrade,ship,fleet) {
+				return ship.class == "Vidiian Battle Cruiser";
+			}
+		},
+		//Enhanced Phasers
+		"weapon:enhanced_phasers_75004":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			},
+			intercept: {
+				self: {
+					canEquip: function(upgrade,ship,fleet) {
+						if ( ship && ship.attack <= 2 )
+						return canEquip;
+					}
+				}
+			}
+		},
+		//Enhanced Shield Emitters
+		"tech:enhanced_shield_emitters_75004":{
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("Enhanced Shield Emitters") && ship.class == "Andorian Battle Cruiser";
+			}},
+		//Particle Synthesis
+		"tech:particle_synthesis_75004":{
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("Particle Synthesis") && ship.class == "Dauntless Class";
+			}},
 		//Inertial Compensators
 		"tech:inertial_compensators":{
 			factionPenalty: function(upgrade, ship, fleet) {
@@ -8328,6 +8377,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
+		//Class 4 Cloaking Device
+		"tech:class_4_cloaking_device_75004":{
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("Class 4 Cloaking Device") && ship.class == "Maquis Raider";
+			}},
 		//Repurposed Cargo Hold
 		"question:repurposed_cargo_hold_75004":{
 			factionPenalty: function(upgrade, ship, fleet) {
