@@ -8255,6 +8255,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}},
 		
 	//A Motley Fleet
+		//Gurngouin
 		"ship:gurngouin_75004":{
 			upgradeSlots: [ {
 					type: ["tech"],
@@ -8269,7 +8270,21 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					}
 				} ]
 		},
+		//USS Dauntless
 		"ship:u_s_s_dauntless_75004":{
+			upgradeSlots: [ {
+				type: ["crew"],
+				rules: "Replace's Captain",
+				intercept: {
+					ship: {
+						skill: function(card,ship,fleet,skill) {
+						if( card == ship.captain )
+							return resolve(card,ship,fleet,cost) + 3;
+						return skill;
+						}
+					}
+				}
+			} ],
 			intercept: {
 				ship: {
 					// Add the "crew" type to the Captain slot
@@ -8281,16 +8296,19 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
+		//Thomas Riker
 		"captain:thomas_riker_75004":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "federation", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}
 		},
+		//Tarah
 		"crew:tarah_75004":{
 			canEquip: function(upgrade,ship,fleet) {
 				return ship.class == "Andorian Battle Cruiser";
 			}
 		},
+		//Inertial Compensators
 		"tech:inertial_compensators":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
@@ -8309,6 +8327,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
+		//Repurposed Cargo Hold
 		"question:repurposed_cargo_hold_75004":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
@@ -8321,6 +8340,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			upgradeSlots: [ { type: ["tech", "weapon"] } ]
 		},
+		
+		
 	//Kelvin Timeline
 		"talent:overwhelm_75005":{
 			canEquipFaction: function(upgrade,ship,fleet) {
