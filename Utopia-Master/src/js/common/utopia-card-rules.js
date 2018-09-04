@@ -98,7 +98,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		};
 	};
 
-	var upgradeTypes = ["crew","weapon","tech","talent","question","borg","captain"];
+	var upgradeTypes = ["crew","weapon","tech","talent","question","borg"];
 
 	var isUpgrade = function(card) {
 		return $.inArray( card.type, upgradeTypes ) >= 0;
