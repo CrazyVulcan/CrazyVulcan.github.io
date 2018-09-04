@@ -8278,7 +8278,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				intercept: {
 					ship: {
 						skill: function(upgrade,ship,fleet,skill) {
-							return slot.occupant.cost + 3;
+							return upgrade.cost + 3;
 						return skill;
 						}
 					}
