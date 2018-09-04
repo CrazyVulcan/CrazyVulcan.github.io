@@ -8274,7 +8274,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				self: {
 					// Add the "crew" type to the Captain slot
 					type: function(card,ship,fleet,type) {
-						if( card.type == "captain" )
+						if( $.inArray("captain",type) >= 0 )
 							return type.concat(["crew"]);
 						return type;
 					}
