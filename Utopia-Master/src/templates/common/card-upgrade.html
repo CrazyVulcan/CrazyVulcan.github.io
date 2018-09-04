@@ -1,7 +1,9 @@
 <div class="card-outer card-upgrade font-staw" ng-class="{ 'card-unique': upgrade.unique, 'card-OnePerShip': upgrade.OnePerShip, 'card-factionFederation': upgrade.factionFederation, 'card-FrontArc': upgrade.FrontArc, 'card-RearArc': upgrade.RearArc, 'card-Hull': upgrade.Hull, 'card-mirror': upgrade.mirror, 'dragging': upgrade == dragStore.item }" draggable drag-item="upgrade" drag-store="dragStore" drag-source="dragSource">
 
 	<div class="card-image"></div>
-
+	
+	<i ng-if="upgrade.specialization" class="card-specialization-icon fs fs-specialization"></i>
+	
 	<div class="card-corner-top-left pull-left"><i ng-if="upgrade.unique" class="card-unique-icon fs fs-unique pull-left"></i><i ng-if="upgrade.OnePerShip" class="card-OnePerShip-icon fs fs-OnePerShip pull-left"></i>
 		<div class="card-corner-inner pull-right"></div>
 	</div>
@@ -58,6 +60,7 @@
 		<i ng-if="upgrade.cost8472" class="card-cost8472-icon">{{upgrade|valueOf:'cost8472':ship:fleet}}</i>
 		<i ng-if="upgrade.costMU" class="card-costMU-icon">{{upgrade|valueOf:'costMU':ship:fleet}}</i>
 		
+		<i ng-if="upgrade.attackConstraint" class="card-attackConstraint-icon">{{upgrade|valueOf:'attackConstraint':ship:fleet}}</i>
 		<i ng-if="upgrade.hullConstraint" class="card-hullConstraint-icon">{{upgrade|valueOf:'hullConstraint':ship:fleet}}</i>
 		<i ng-if="upgrade.FrontArc" class="card-FrontArc-icon fs fs-FrontArc"></i>		
 		<i ng-if="upgrade.RearArc" class="card-RearArc-icon fs fs-RearArc"></i>
