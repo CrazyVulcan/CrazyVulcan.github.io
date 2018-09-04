@@ -8291,6 +8291,18 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship && $factions.hasFaction( ship, "federation", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}
 		},
+		//Arturis
+		"captain:arturis_75004":{
+			canEquip: function(upgrade,ship,fleet) {
+				return ship.class == "Dauntless Class";
+			}
+		},
+		//Maquis Tactics
+		"talent:maquis_tactics_75004":{
+			canEquip: function(upgrade,ship,fleet) {
+				return ship.captain && ( $factions.hasFaction(ship.captain,"independent", ship, fleet) || $factions.hasFaction(ship.captain,"ferengi", ship, fleet) || $factions.hasFaction(ship.captain,"kazon", ship, fleet) || $factions.hasFaction(ship.captain,"xindi", ship, fleet) ) && ship.class == "Maquis Raider";
+			}
+		},
 		//Tarah
 		"crew:tarah_75004":{
 			canEquip: function(upgrade,ship,fleet) {
