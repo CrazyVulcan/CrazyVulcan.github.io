@@ -8271,10 +8271,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		"ship:u_s_s_dauntless_75004":{
 			intercept: {
-				self: {
+				ship: {
 					// Add the "crew" type to the Captain slot
 					type: function(card,ship,fleet,type) {
-						if( $.inArray("captain",type) >= 0 )
+						if( $.inArray("captain",type) >= 0 || upgrade.type == "captain" )
 							return type.concat(["crew"]);
 						return type;
 					}
