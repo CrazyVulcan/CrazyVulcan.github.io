@@ -8283,17 +8283,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						}
 					}
 				}
-			} ],
-			intercept: {
-				ship: {
-					// Add the "crew" type to the Captain slot
-					type: function(card,ship,fleet,type) {
-						if( upgradeTypes.indexOf("captain") < 0 || upgrade == ship.captain )
-							return type.concat(["crew"]);
-						return type;
-					}
-				}
-			}
+			} ]
 		},
 		//Thomas Riker
 		"captain:thomas_riker_75004":{
