@@ -8271,7 +8271,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		"ship:u_s_s_dauntless_75004":{
 			intercept: {
-				ship: {
+				self: {
 					// Add the "crew" type to the Captain slot
 					type: function(card,ship,fleet,type) {
 						if( card.type == "captain" )
