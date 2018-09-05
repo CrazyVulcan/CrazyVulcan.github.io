@@ -8496,9 +8496,25 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquip: function(upgrade,ship,fleet) {
 				return $factions.hasFaction(ship,"klingon", ship, fleet);
 			}},
+		"crew:klingon_first_officer_75005":{
+			canEquip: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship,"klingon", ship, fleet) && onePerShip("Klingon First Officer");
+			}},
+		"crew:klingon_patrol_75005":{
+			canEquip: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship,"klingon", ship, fleet) ;
+			}},
+		"crew:klingon_guard_75005":{
+			canEquip: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship,"klingon", ship, fleet) ;
+			}},
+		"weapon:full_spread_phasers_75005":{
+			canEquip: function(upgrade,ship,fleet) {
+				return ship.class == "Kelvin Constitution Class" && onePerShip("Full Spread Phasers");
+			}},
 		"weapon:advanced_long_range_torpedo_75005":{
 			canEquip: function(upgrade,ship,fleet) {
-				return ship.class == "Kelvin Constitution Class";
+				return ship.class == "Kelvin Constitution Class" ;
 			},
 			attack: 0,
 			intercept: {
@@ -8508,6 +8524,46 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						if( ship )
 							return valueOf(ship,"attack",ship,fleet) + 1;
 						return attack;
+					}
+				}
+			}
+		},
+		"weapon:photon_torpedoes_75005":{
+			canEquip: function(upgrade,ship,fleet) {
+				return ship.class == "Warbird Class" ;
+			},
+			attack: 0,
+			intercept: {
+				self: {
+					// Attack is same as ship primary + 1
+					attack: function(upgrade,ship,fleet,attack) {
+						if( ship )
+							return valueOf(ship,"attack",ship,fleet) + 1;
+						return attack;
+					}
+				}
+			}
+		},
+		"weapon:disruptor_volley_75005":{
+			canEquip: function(upgrade,ship,fleet) {
+				return ship.class == "Warbird Class" ;
+			}
+		},
+		"tech:klingon_cloaking_device_75005":{
+			canEquip: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship,"klingon", ship, fleet) && onePerShip("Klingon Cloaking Device");
+			}},
+		"tech:intergrated_future_technology_75005":{
+			canEquip: function(upgrade,ship,fleet) {
+				return onePerShip("Future Technology");
+			},
+			intercept: {
+				ship: {
+					// No faction penalty for romulan or borg upgrades
+					factionPenalty: function(card,ship,fleet,factionPenalty) {
+						if( (card.type == "tech" && $factions.hasFaction(card,"romulan", ship, fleet)) || (card.type == "weapon" && $factions.hasFaction(card,"romulan", ship, fleet)) || (card.type == "tech" && $factions.hasFaction(card,"borg", ship, fleet)) || (card.type == "weapon" && $factions.hasFaction(card,"borg", ship, fleet)) )
+							return 0;
+						return factionPenalty;
 					}
 				}
 			}
