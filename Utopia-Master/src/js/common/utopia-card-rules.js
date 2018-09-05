@@ -8398,15 +8398,100 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 		
 	//Kelvin Timeline
+		"captain:christopher_pike_cap_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			},
+		upgradeSlots: [	{ type: ["crew"] } ]
+		},
+		"admiral:christopher_pike_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			},
+		upgradeSlots: [	{ type: ["crew"] } ]
+		},
+		"captain:james_t_kirk_cap_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}},
+		"captain:hikaru_sule_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}},
+		"captain:mr_spock_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}},
+		
 		"talent:overwhelm_75005":{
 			canEquipFaction: function(upgrade,ship,fleet) {
 				return ship.captain && $factions.hasFaction(ship.captain,"klingon", ship, fleet);
 		}},
-		"crew:james_t_kirk_75005":{
+		"crew:james_t_kirk_crew_75005":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}
 		},
+		"crew:mr_spock_crew_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}},
+		"crew:hikaru_sulu_crew_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}},
+		"crew:montgomery_scott_shield_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}},
+		"crew:montgomery_scott_hull_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}},
+		"crew:leonard_mccoy_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}},
+		"crew:leonard_mccoy__addCrew_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			},
+			upgradeSlots: [
+				{
+					type: ["crew"],
+					faceDown: true,
+					intercept: {
+						ship: {
+							canEquip: function(upgrade,ship,fleet) {
+								// TODO Prevent use of upgrades without a defined cost (e.g. Dorsal Phaser Array)
+								var cost = valueOf(upgrade,"cost",ship,fleet);
+								return cost <= 4;
+
+							return canEquip;
+							},
+							free: function() {
+								return true;
+							}
+						}
+					}
+				}
+			]},
+		"crew:pavel_chekov_aux_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}},
+		"crew:pavel_chekov_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}},
+		"crew:nyota_uhura_comm_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}},
+		"crew:nyota_uhura_75005":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}},
 		"crew:koth_75005":{
 			canEquip: function(upgrade,ship,fleet) {
 				return $factions.hasFaction(ship,"klingon", ship, fleet);
