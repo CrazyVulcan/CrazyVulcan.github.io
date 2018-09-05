@@ -109,7 +109,7 @@ module.exports = [{
 	hull: 6,
 	shields: 4,
 	cost: 28,
-	text: "<b>ACTION:</b> Flip 1 Specialization card equipped to this ship and target one face up damage card beside this card.\n\nFlip the target damage card face down.",
+	text: "<b>END PHASE:</b> Flip 1 Specialization card equipped to this ship and target one face up damage card beside this card.\n\nFlip the target damage card face down.",
 	unique: true,
 	factions: ["mirror-universe", "federation"],
 	squadron: false
@@ -160,7 +160,7 @@ module.exports = [{
 	hull: 4,
 	shields: 3,
 	cost: 21,
-	text: "<b>WHEN THIS SHIP SUFFERS DAMAGE TO ITS HULL:</b> Once per game, if this shiip is Cloaked:\n\nThis ship may perform an attack with its Primary Weapon",
+	text: "<b>WHEN THIS SHIP SUFFERS DAMAGE TO ITS HULL:</b> Once per game, if this ship is Cloaked:\n\nThis ship may perform an attack with its Primary Weapon",
 	unique: true,
 	factions: ["mirror-universe", "klingon"],
 	squadron: false

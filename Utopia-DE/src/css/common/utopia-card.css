@@ -197,6 +197,34 @@
 	text-align: center;
 }
 
+.card-specialization-icon {
+	background: url("../img/restrictions/upgrade-specialization.png")no-repeat;
+	font-size: 0.5em;
+	background-size: 2em;
+	color: gray;
+	padding: 0.5em;
+	position: relative;
+	bottom: 6em;
+	left: 0em;
+	margin-top:0.5em;
+	z-index: 2;
+	text-align: center;
+}
+
+.card-attackConstraint-icon {
+	background: url("../img/restrictions/upgrade-attack-limit.png")no-repeat;
+	font-size: 0.5em;
+	background-size: 2em;
+	color: gray;
+	padding: 0.5em;
+	position: relative;
+	left: 0em;
+	margin-top:0.5em;
+	top: -0.1em;
+	z-index: 2;
+	text-align: center;
+}
+
 .card-hullConstraint-icon {
 	background: url("../img/restrictions/upgrade-hull-limit.png")no-repeat;
 	font-size: 0.5em;
