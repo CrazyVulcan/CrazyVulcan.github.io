@@ -8557,6 +8557,26 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquip: function(upgrade,ship,fleet) {
 				return onePerShip("Future Technology");
 			},
+			upgradeSlots: [
+				{
+					type: ["tech"],
+					faceDown: true,
+					intercept: {
+						ship: {
+							canEquip: function(upgrade,ship,fleet) {
+								// TODO Prevent use of upgrades without a defined cost (e.g. Dorsal Phaser Array)
+								var cost = valueOf(upgrade,"cost",ship,fleet);
+								return cost <= 4;
+
+							return canEquip;
+							},
+							free: function() {
+								return true;
+							}
+						}
+					}
+				}
+			],
 			intercept: {
 				ship: {
 					// No faction penalty for romulan or borg upgrades
