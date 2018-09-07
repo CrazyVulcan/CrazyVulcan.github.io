@@ -8352,7 +8352,17 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"tech:enhanced_shield_emitters_75004":{
 			canEquip: function(upgrade,ship,fleet) {
 				return onePerShip("Enhanced Shield Emitters") && ship.class == "Andorian Battle Cruiser";
-			}},
+			},
+			intercept: {
+				ship: {
+					shields: function(card,ship,fleet,shields) {
+						if( card == ship )
+							return resolve(card,ship,fleet,shields) + 2;
+						return shields;
+					}
+				}
+			}
+		},
 		//Particle Synthesis
 		"tech:particle_synthesis_75004":{
 			canEquip: function(upgrade,ship,fleet) {
