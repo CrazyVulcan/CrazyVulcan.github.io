@@ -98,7 +98,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		};
 	};
 
-	var upgradeTypes = ["crew","weapon","tech","talent","question","borg","captain"];
+	var upgradeTypes = ["crew","weapon","tech","talent","question","borg"];
 
 	var isUpgrade = function(card) {
 		return $.inArray( card.type, upgradeTypes ) >= 0;
@@ -8272,6 +8272,16 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		//USS Dauntless
 		"ship:u_s_s_dauntless_75004":{
+			intercept: {
+				ship: {
+					// Add the "crew" type to all Tech and Borg slots
+					type: function(card,ship,fleet,type) {
+						if( ship.captain && $.inArray(type, ship.captain) >= 0 )
+							return type.concat(["crew"]);
+						return type;
+					}
+				}
+			},
 			upgradeSlots: [ {
 				type: ["crew"],
 				rules: "Replace's Captain",

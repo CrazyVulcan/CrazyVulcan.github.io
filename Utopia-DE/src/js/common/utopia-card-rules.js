@@ -8310,7 +8310,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			canEquipFaction: function(upgrade,ship,fleet) {
 				// TODO Tholians are Independent so can't easily tell their race
-				return ship.captain && ( ship.captain.name == "Telev" || ship.captain.name == "Thy'lek Sharan" ||ship.captain.name.indexOf("Andorian") >= 0 );
+				return ship.captain && ( ship.captain.name == "Telev" || ship.captain.name == "THY'LEK SHARAN" ||ship.captain.name.indexOf("Andorian") >= 0 );
 			}},
 		//Vidiian Sodality
 		"talent:vidiian_sodality_75004":{
@@ -8340,7 +8340,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			},
 			intercept: {
-				self: {
+				ship: {
 					canEquip: function(upgrade,ship,fleet) {
 						if ( ship && ship.attack <= 2 )
 						return canEquip;
@@ -8352,7 +8352,17 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"tech:enhanced_shield_emitters_75004":{
 			canEquip: function(upgrade,ship,fleet) {
 				return onePerShip("Enhanced Shield Emitters") && ship.class == "Andorian Battle Cruiser";
-			}},
+			},
+			intercept: {
+				ship: {
+					shields: function(card,ship,fleet,shields) {
+						if( card == ship )
+							return resolve(card,ship,fleet,shields) + 2;
+						return shields;
+					}
+				}
+			}
+		},
 		//Particle Synthesis
 		"tech:particle_synthesis_75004":{
 			canEquip: function(upgrade,ship,fleet) {
