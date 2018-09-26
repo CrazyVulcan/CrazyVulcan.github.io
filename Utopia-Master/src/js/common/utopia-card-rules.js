@@ -352,7 +352,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 
 	//IKS Gr'oth :71125
-
+		"crew:3044":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			}},
 	//RIS Apnex :71124
 		// Varel
 		"crew:3039": {
