@@ -137,7 +137,7 @@ module.exports = [{
 	name: "Federation Starship",
 	class: "Constitution Class (Kelvin)",
 	actions: ["evade", "target-lock", "scan", "battlestations"],
-	upgrades: ["tech", "weapon", "weapon", "crew", "crew"],
+	upgrades: ["tech", "weapon", "crew", "crew"],
 	attack: 4,
 	agility: 1,
 	hull: 6,
