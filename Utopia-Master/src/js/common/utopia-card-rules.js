@@ -8354,6 +8354,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			canEquip: function(upgrade,ship,fleet) {
 				if( ship.attack <= 2 )
+					return;
 				return false;
 			}
 		},
