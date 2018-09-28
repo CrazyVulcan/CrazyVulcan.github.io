@@ -8352,13 +8352,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			},
-			intercept: {
-				ship: {
-					canEquip: function(upgrade,ship,fleet) {
-						if ( ship && ship.attack <= 2 )
-						return canEquip;
-					}
-				}
+			canEquip: function(upgrade,ship,fleet) {
+				if( ship.attack <= 2 )
+					return onePerShip("upgradeName")(upgrade,ship,fleet);
+				return false;
 			}
 		},
 		//Enhanced Shield Emitters
@@ -8533,11 +8530,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}},
 		"weapon:full_spread_phasers_75005":{
 			canEquip: function(upgrade,ship,fleet) {
-				return ship.class == "Kelvin Constitution Class" && onePerShip("Full Spread Phasers");
+				return ship.class == "Constitution Class (Kelvin)" && onePerShip("Full Spread Phasers");
 			}},
 		"weapon:advanced_long_range_torpedo_75005":{
 			canEquip: function(upgrade,ship,fleet) {
-				return ship.class == "Kelvin Constitution Class" ;
+				return ship.class == "Constitution Class (Kelvin)" ;
 			},
 			attack: 0,
 			intercept: {
