@@ -28,21 +28,21 @@
 			<a href="#missions">Missions</a>
 			<a href="#news">News</a>
 		</div>		
-			
+					<ul>
+						<li ng-repeat="set in setList | orderBy:'-releaseDate'" ng-click="viewer.set = set" ng-class="{'set-selected': viewer.set == set}">{{set.parentSet}}: {{set.name}}</li>
+					</ul>
 		<div class="mainpage">
 		
 			<div class="column left">
 				<h2>Table of Contents</h2>
 				<p>Explore all the cards based on thier set</p>			
-					<ul class="set-list">
-						<li ng-repeat="set in setList | orderBy:'-releaseDate'" ng-click="viewer.set = set" ng-class="{'set-selected': viewer.set == set}">{{set.parentSet}}: {{set.name}}</li>
-					</ul>			
+								
 			</div>
 			
 				
 			<div class="column main">
 				<h2>Main Content</h2>
-				<p> Edit 001 </p>
+				<p> Edit 002 </p>
 			</div>
 		
 		</div>
