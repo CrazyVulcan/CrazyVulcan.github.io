@@ -16,7 +16,7 @@
 
     </head>
     <body>
-				<p> Edit 011 </p>
+				<p> Edit 012 </p>
 				<div class="u-title"><i class="fs fs-unique"></i>Utopia Attack Wing Databse</div>
 
 				<div class="text-center">Build your fleet with <a href="./index.html">Utopia</a></div>
@@ -48,7 +48,7 @@
 				<div class="set-header" ng-show="viewer.set">{{viewer.set.parentSet}}: {{viewer.set.name}}</div>
 				
 				<ul class="set-list">
-					<li ng-repeat="card in setCards | orderBy:'set.parentSet.name'" ng-click= "viewer.set = card" ng-class="{'set-selected': viewer.set == set}">{{card.name}}</li>
+					<li ng-repeat="card in setCards | orderBy:'parentSet'" ng-click= "viewer.set = card" ng-class="{'set-selected': viewer.set == set}">{{card.name}}</li>
 				</ul>
 			
 			</div>
