@@ -1,6 +1,6 @@
 var module = angular.module("utopia-attackwing-database", ["utopia"]);
 
-module.controller( "UtopiaSetCtrl", [ "$scope", "$filter", "cardLoader", "$factions", function($scope, $filter, cardLoader, $factions) {
+module.controller( "UtopiaSetCtrl", [ "$scope", "$filter", "cardLoader", "cardListLoader", "$factions", function($scope, $filter, cardLoader, cardListLoader, $factions) {
 
 	$scope.cards = [];
 	$scope.cardList = [];
@@ -40,7 +40,7 @@ module.controller( "UtopiaSetCtrl", [ "$scope", "$filter", "cardLoader", "$facti
 		
 	} );
 	//A list of all the cards in a set////////////////
-	cardListLoader( $scope.cards, $scope.cards, $scope.shipClasses, $scope.token, function() {
+	cardListLoader( $scope.cards, $scope.sets, $scope.shipClasses, $scope.token, function() {
 
 		var cardId = location.hash ? location.hash.substring(1) : false;
 		
