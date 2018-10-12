@@ -31,25 +31,19 @@
 			
 		<div class="mainpage">
 		
-		<div class="column left">
-			<h2>Table of Contents</h2>
-			<p>Explore all the cards based on thier set</p>
+			<div class="column left">
+				<h2>Table of Contents</h2>
+				<p>Explore all the cards based on thier set</p>			
+					<ul class="set-list">
+						<li ng-repeat="set in setList | orderBy:'-releaseDate'" ng-click="viewer.set = set" ng-class="{'set-selected': viewer.set == set}">{{set.parentSet}}: {{set.name}}</li>
+					</ul>			
+			</div>
 			
-			<div class="u-container">
-			
-				<ul class="set-list">
-					<li ng-repeat="set in setList | orderBy:'-releaseDate'" ng-click="viewer.set = set" ng-class="{'set-selected': viewer.set == set}">{{set.parentSet}}: {{set.name}}</li>
-				</ul>	
+				
+			<div class="column main">
+				<h2>Main Content</h2>
 			</div>
 		
-			
-		</div>
-		
-			
-		<div class="column main">
-			<h2>Main Content</h2>
-			
-		</div>
 		</div>
 
 		<!--<script src="js/analytics.js"></script>-->
