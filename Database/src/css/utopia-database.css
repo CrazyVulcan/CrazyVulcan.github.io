@@ -1,6 +1,7 @@
 /* Add a black background color to the top navigation */
 .topnav {
-    background-color: #333;
+    background-color: #4d4d4d;
+	border: 1px solid #999999;
     overflow: hidden;
 }
 
@@ -12,6 +13,7 @@
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
+	border-right: 1px solid #bbb;
 }
 
 /* Change the color of links on hover */
@@ -22,6 +24,16 @@
 
 /* Add a color to the active/current link */
 .topnav a.active {
-    background-color: #4CAF50;
+    background-color: #1a1a1a;
     color: white;
+}
+
+/* Left Columb that contains a higharcical list of nagagation content, table of contnet if you will */
+.column.left {
+	float: left;
+    width: 33.33%;
+}
+
+.column.main {
+	width: 60%;
 }
