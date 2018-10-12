@@ -1,6 +1,6 @@
 var module = angular.module("utopia-attackwing-database", ["utopia"]);
 
-module.controller( "UtopiaSetCtrl", [ "$scope", "$filter", "cardLoader", "cardListLoader", "$factions", function($scope, $filter, cardLoader, cardListLoader, $factions) {
+module.controller( "UtopiaSetCtrl", [ "$scope", "$filter", "cardLoader", "$factions", function($scope, $filter, cardLoader, $factions) {
 
 	$scope.cards = [];
 	$scope.cardList = [];
