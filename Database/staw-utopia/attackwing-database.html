@@ -16,7 +16,7 @@
 
     </head>
     <body>
-				<p> Edit 007 </p>
+				<p> Edit 008 </p>
 				<div class="u-title"><i class="fs fs-unique"></i>Utopia Attack Wing Databse</div>
 
 				<div class="text-center">Build your fleet with <a href="./index.html">Utopia</a></div>
@@ -47,17 +47,7 @@
 			
 				<div class="set-header" ng-show="viewer.set">{{viewer.set.parentSet}}: {{viewer.set.name}}</div>
 				
-				<ngRepeat ng-repeat="card in setCards">
-					<div class="card-container">
-						<card card="card"></card>
-					</div>
-					<div class="card-container" ng-if="card.type == 'ship' && card.unique">
-						<card card="card.classData" ship="card"></card>
-					</div>
-					<div class="card-container" ng-if="card.hasTokenInfo">
-						<card card="card.tokenData"></card>
-					</div>
-				</ngRepeat>
+				
 			
 			</div>
 		
