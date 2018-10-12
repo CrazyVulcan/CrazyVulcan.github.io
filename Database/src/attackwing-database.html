@@ -42,26 +42,30 @@
 				<ul class="set-list">
 					<li ng-repeat="set in setList | orderBy:'-releaseDate'" ng-click="viewer.set = set" ng-class="{'set-selected': viewer.set == set}">{{set.parentSet}}: {{set.name}}</li>
 				</ul>
-			</div>		
-		</div>
-		
-		<div class="u-fleet set-cards">
-		
-			<div class="set-header" ng-show="viewer.set">{{viewer.set.parentSet}}: {{viewer.set.name}}</div>
+			</div>
 			
-			<ngRepeat ng-repeat="card in setCards">
-				<div class="card-container">
-					<card card="card"></card>
-				</div>
-				<div class="card-container" ng-if="card.type == 'ship' && card.unique">
-					<card card="card.classData" ship="card"></card>
-				</div>
-				<div class="card-container" ng-if="card.hasTokenInfo">
-					<card card="card.tokenData"></card>
-				</div>
-			</ngRepeat>
+			<div class="u-fleet set-cards">
+			
+				<div class="set-header" ng-show="viewer.set">{{viewer.set.parentSet}}: {{viewer.set.name}}</div>
+				
+				<ngRepeat ng-repeat="card in setCards">
+					<div class="card-container">
+						<card card="card"></card>
+					</div>
+					<div class="card-container" ng-if="card.type == 'ship' && card.unique">
+						<card card="card.classData" ship="card"></card>
+					</div>
+					<div class="card-container" ng-if="card.hasTokenInfo">
+						<card card="card.tokenData"></card>
+					</div>
+				</ngRepeat>
+			
+			</div>
 		
+			</div>
+				
 		</div>
+	
 			
 		</div>
 		
