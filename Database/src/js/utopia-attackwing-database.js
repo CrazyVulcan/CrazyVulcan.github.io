@@ -3,6 +3,7 @@ var module = angular.module("utopia-attackwing-database", ["utopia"]);
 module.controller( "UtopiaSetCtrl", [ "$scope", "$filter", "cardLoader", "$factions", function($scope, $filter, cardLoader, $factions) {
 
 	$scope.cards = [];
+	$scope.cardList = [];
 	$scope.sets = {};
 	$scope.setList = [];
 	$scope.shipClasses = {};
@@ -38,7 +39,34 @@ module.controller( "UtopiaSetCtrl", [ "$scope", "$filter", "cardLoader", "$facti
 		}
 		
 	} );
+	//A list of all the cards in a set////////////////
+	cardListLoader( $scope.cards, $scope.cards, $scope.shipClasses, $scope.token, function() {
+
+		var cardId = location.hash ? location.hash.substring(1) : false;
+		
+		$.each( Object.keys( $scope.cards ), function(i, id) {
+			var card = $scope.cards[id];
+			if( card.id == cardId || card.name == cardId )
+				$scope.viewer.card = card;
+			$scope.cardList.push(card);
+		});
+		
+	});
 	
+	$scope.$watch( "viewer.card", function(card) {
+		
+		$scope.setCards = [];
+		if( card ) {
+			location.hash = card.id;
+			$.each( $scope.cards, function(i, card) {
+				if( $.inArray( card.id, card.card ) >= 0 )
+					$scope.setCards.push( card );
+			});
+			$scope.setCards.sort(displaySort);
+		}
+		
+	} );
+	/////////////////////////////////////////////
 	function typeSort(a,b) {
 		if( a.cost > b.cost )
 			return -1;

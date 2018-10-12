@@ -45,7 +45,9 @@
 			<div class="u-fleet set-cards">
 			
 				<div class="set-header" ng-show="viewer.set">{{viewer.set.parentSet}}: {{viewer.set.name}}</div>
-				
+				<ul class="set-list">
+					<li ng-repeat="card in cardList | orderBy: 'name'" ng-click="viewer.card = card" ng-class="{'set-selected': viewer.card == card}">{{card.name}}</li>
+				</ul>
 				<ngRepeat ng-repeat="card in setCards">
 					<div class="card-container">
 						<card card="card"></card>
@@ -74,7 +76,7 @@
 				
 			<div class="column main">
 				<h2>Main Content</h2>
-				<p> Edit 003 </p>
+				<p> Edit 004 </p>
 			</div>
 		
 		</div>
