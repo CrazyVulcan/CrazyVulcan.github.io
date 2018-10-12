@@ -47,7 +47,9 @@
 			
 				<div class="set-header" ng-show="viewer.set">{{viewer.set.parentSet}}: {{viewer.set.name}}</div>
 				
-				
+				<ul class="set-list">
+					<li ng-repeat="set in setList | orderBy:'-releaseDate'" ng-click="viewer.set = set" ng-class="{'set-selected': viewer.set == set}">{{set.parentSet}}: {{set.name}}</li>
+				</ul>
 			
 			</div>
 		
