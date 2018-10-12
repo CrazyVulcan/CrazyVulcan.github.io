@@ -16,7 +16,7 @@
 
     </head>
     <body>
-				<p> Edit 008 </p>
+				<p> Edit 009 </p>
 				<div class="u-title"><i class="fs fs-unique"></i>Utopia Attack Wing Databse</div>
 
 				<div class="text-center">Build your fleet with <a href="./index.html">Utopia</a></div>
@@ -48,10 +48,23 @@
 				<div class="set-header" ng-show="viewer.set">{{viewer.set.parentSet}}: {{viewer.set.name}}</div>
 				
 				<ul class="set-list">
-					<li ng-repeat="set in setList | orderBy:'-releaseDate'" ng-click="viewer.set = set" ng-class="{'set-selected': viewer.set == set}">{{set.parentSet}}: {{set.name}}</li>
+					<li ng-repeat="card in setCards | orderBy:'-name'" ng-if="card.type == 'ship' && card.unique" ng-if="card.hasTokenInfo">{{card.name}}</li>
 				</ul>
 			
 			</div>
+		
+		<ngRepeat ng-repeat="card in setCards">
+					<div class="card-container">
+						<card card="card"></card>
+					</div>
+					<div class="card-container" ng-if="card.type == 'ship' && card.unique">
+						<card card="card.classData" ship="card"></card>
+					</div>
+					<div class="card-container" ng-if="card.hasTokenInfo">
+						<card card="card.tokenData"></card>
+					</div>
+				</ngRepeat>
+		
 		
 		</div>
 		--------------------------------------------------
