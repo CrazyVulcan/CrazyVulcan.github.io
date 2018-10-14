@@ -8323,7 +8323,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			canEquipFaction: function(upgrade,ship,fleet) {
 				// TODO Tholians are Independent so can't easily tell their race
-				return ship.captain && ( ship.captain.name == "Telev" || ship.captain.name == "THY'LEK SHARAN" ||ship.captain.name.indexOf("Andorian") >= 0 );
+				return ship.captain && ( ship.captain.name == "Telev" || ship.captain.name == "Thy'Lek Sharan" ||ship.captain.name.indexOf("Andorian") >= 0 );
 			}},
 		//Vidiian Sodality
 		"talent:vidiian_sodality_75004":{
@@ -8422,13 +8422,13 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			},
-		upgradeSlots: [	{ type: ["crew"] } ]
+		upgradeSlots: [	{}, { type: ["crew"] } ]
 		},
 		"admiral:christopher_pike_75005":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			},
-		upgradeSlots: [	{ type: ["crew"] } ]
+		upgradeSlots: [	{}, { type: ["crew"] } ]
 		},
 		"captain:james_t_kirk_cap_75005":{
 			factionPenalty: function(upgrade, ship, fleet) {

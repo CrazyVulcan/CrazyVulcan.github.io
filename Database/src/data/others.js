@@ -1,5 +1,11 @@
 module.exports = [{
 	type: "token",
+	id: "rule_specialzation",
+	set: ["75005"],
+	name: "Specialization Cards (SCS)",
+	text: "Specialization Cards(SCs) are two-sided cards featuring the [specialization] symbol. This card contains additional rules that pertain to SCs.\n1. During Setup choose which side each of your SCs will start on.\n2. If a SC is flipped while it is disabled, it remains disabled.\n3. If a SC is flipped while it has [time] Tokens, the [time] Tokens remain on it.\n4 If a SC that has an [talent] Upgrade equipped to it is flipped the [talent] remains equipped to it.\n5 Players only earn Fleet Points for the SP cost that was paid during Fleet Construction.\n6. When flipping an SC that SC remains equipped to the ship, even if it exceeds taht ship's restrictions.\n7. You may not flip a SC to its Captain or Admiral side if it would cause you to have more then one Captain on a ship or more then one Admiral in your Fleet."
+}, {
+	type: "token",
 	id: "rule_BMGT",
 	set: ["75003"],
 	name: "Bio-Mimetic Gel Rules",
@@ -10,6 +16,12 @@ module.exports = [{
 	set: ["AdditionalRules", "73001", "75003"],
 	name: "Gold-Pressed Latinum Token",
 	text: "Once per game round per ship, a Captain may spend their Gold-Pressed Latinum Token(s) (GPLT) to activate one of the following abilities:\n-----------------------------------\n<b>PLANING PHASE:</b> Spend 1 GPLT\nRemove an [aux] Token beside this ship.\n-----------------------------------\n<b>ACTIVATION PHASE:</b>Once per game, spend any of GPLT.\n\nEquip a [crew], [tech], or [weapon] Upgrade with a cost equal to the amount of GPLT spent that was discarded from this ship.\n-----------------------------------\n<b>COMBAT PHASE:</b> Spend 1 GPLT.\nPlace a [battlestations], [evade] or [scan] Token beside this ship."
+}, {
+	type: "token",
+	id: "rule_EWT",
+	set: ["AdditionalRules", "71795", "OPWebPrize"],
+	name: "Energy Web Token",
+	text: "ENERGY WEB\n\nEWT's are treated as Obstacles but do not inflict normal Obstacle damage.\n\nA ship whose base or Maneuver Template overlaps an EWT, or a ship that has an EWT placed on top of it, must roll 1 attack die for every 2 EWTs that you have in the play area, rounded up (max 10 dice) Any [hit] or [crit] Damages the target ship as Normal. The affected ship does not roll any defense dice.\n\nNOTE: Tholian ships are immune to the effects of EWTs and may move and/or fire though them without penalty."
 }, {
 	type: "token",
 	id: "rule_admiral",
@@ -28,6 +40,18 @@ module.exports = [{
 	set: ["AdditionalRules"],
 	name: "Regenerate",
 	text: "Ships with the [regenerate] icon in their Action Bar may perform the Regenerate Action. A ship that performs the [regenerate] Action immediately repairs 1 damage of its choice to its Hull (critical or normal). A ship cannot attack during the round that it performs the [regenerate] Action."
+}, {
+	type: "token",
+	id: "tribble_tokens",
+	set: ["AdditionalRules"],
+	name: "Tribble Tokens",
+	text: "A Ship Card with at least 1 Tribble Token assigned to it follows special rules:\n\n1) During the End Phase, add 1 Tribble Token to your Ship Card (reguardless of the number of Tribble Tokens it already has).\n2) If your Ship has 1-3 Tribble Tokens, add +1 attack die whenever you attack and +1 defense whenever you defend. Ignore this rule if your Ship includes any Klingon Captains or Crew.\n3) If your ship has 4-5 Tribble Tokens, there is no effect.\n4) If your ship has 6 or more Tribble Tokens, roll 1 less attack die whenever you attack and 1 less defense dice whenever you defend. This penalty is doubled if your ship includes any Klingon Captains or Klingon Crew.\n5) You gain the following Action:\nAction: If your ship is not Cloaked, disable all of your remaining Shields and target a ship at range 1-2 that is not cloaked and has no Active Shields. Place any number of your Tribble Tokens beside the target ship's Ship Card. You cannot transfer any Tribble Token that you recieved this round."
+}, {
+	type: "token",
+	id: "engery_dampening_tokens",
+	set: ["AdditionalRules"],
+	name: "Energy Dampening Tokens",
+	text: "1) As soon as the ship receives the EDT, disable all of its remaining Shields and remove its (cloak) Token, if any.\n2) While the ship has the EDT, it cannot attack or raise its Shields.\n3) During the Planning Phase the owner does not assign a maneuver dial to this ship.\n4) During the Activation Phase the owner moves the ship as if it were assigned a White 1 (straight) Maneuver. After executing this Maneuver, remove all EDTs from this ship It may now perform Actions and attack as normal."
 }, {
 	type: "token",
 	id: "rule_drone_tokens",
@@ -838,6 +862,40 @@ module.exports = [{
 	}
 }, {
 	type: "ship-resource",
+	id: "movars_ability_72282gp",
+	set: ["72282gp"],
+	name: "Movars Ability ",
+	factions: ["federation", "klingon", "romulan", "dominion", "independent"],
+	text: "This card functions with captain Movar, from the Seleas Warbird Grand Prize. Swap a [tech], [weapon] or [crew] slot with a [talent], [tech], [weapon] or [crew] slot",
+	cost: 0,	
+	showType: true,
+	canEquip: true,
+	canEquipFaction: true,
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	factionPenalty: 0,
+	unique: true
+},{
+	type: "ship-resource",
+	id: "senior_staff_72284r",
+	set: ["72284r"],
+	name: "Senior Staff ",
+	factions: ["federation", "klingon", "romulan", "dominion", "independent"],
+	text: "This card adds an extra [crew] and [talent] slot which applies the special rules from the Senior Staff OP Resource.\n\nThis [crew] may equip a [talent] at the cost of +1SP.",
+	cost: 0,	
+	showType: true,
+	canEquip: true,
+	canEquipFaction: true,
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	factionPenalty: 0,
+	unique: false
+}, {
+	type: "ship-resource",
 	id: "fleet_commander_ship_hull",
 	set: ["72280r"],
 	name: "Fleet Commander",
@@ -854,7 +912,7 @@ module.exports = [{
 	},
 	factionPenalty: 0,
 	unique: true
-	} , {
+}, {
 	type: "ship-resource",
 	id: "fleet_commander_ship_shield",
 	set: ["72280r"],
@@ -872,11 +930,11 @@ module.exports = [{
 	},
 	factionPenalty: 0,
 	unique: true
-	}, {
+}, {
 	type: "ship-resource",
 	id: "captains_chair_ship",
 	set: ["72301r"],
-	name: "Captains Chair",
+	name: "Captain's Chair",
 	factions: ["federation", "klingon", "romulan", "dominion", "independent"],
 	text: "Ship with Captain skill 5+\n\nAfter performing an Green or White Maneuver, remove a Disable Token from a Upgrade equipped to this ship.",
 	cost: 3,
@@ -908,6 +966,24 @@ module.exports = [{
 		source: "Retrofit Weapon"
 	}
 	],
+	showType: true,
+	canEquip: true,
+	canEquipFaction: true,
+	isShipModifier: true,
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	factionPenalty: 0,
+	unique: true
+}, {
+	type: "ship-resource",
+	id: "sickbay_ship",
+	set: ["72321r"],
+	name: "Sickbay",
+	factions: ["federation", "klingon", "romulan", "dominion", "independent"],
+	text: "Ship must have a hull of Hull 4 or more\n\nWhenever this ships Captain, Admiral, or [crew] would be disabled, you may place 2 [time] Tokens on that card instead.\n-OR-\nWhenever this ships Captain, Admiral, or [crew] would be discarded, you may discard this card instead.",
+	cost: 6,
 	showType: true,
 	canEquip: true,
 	canEquipFaction: true,

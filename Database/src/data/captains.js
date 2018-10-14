@@ -445,6 +445,17 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "captain",
+	id: "idrin_73042",
+	set: ["73042"],
+	name: "Idrin",
+	cost: 2,
+	skill: 3,
+	talents: 1,
+	text: "Idrin counts as a Hirogen Captain.\n----------------------------------------\n<b>ACTIVATION PHASE:</b> Place 2 [time] Tokens on this card.\n\nRemove 1 Disable Token or up to 2 [time] Tokens from a [tech] or [weapon]  Upgrade equipped to this ship.",
+	unique: true,
+	factions: ["independent"]
+}, {
+	type: "captain",
 	id: "romulan_captain_75001",
 	set: ["75001"],
 	name: "Romulan Captain",
@@ -476,7 +487,7 @@ module.exports = [{
 	range: "1 - 2",
 	text: "This card cannot be affected by anything that affects a Captain, and this card counts as a Romulan Drone Pilot.\n<b>ACTION:</b> Target an opposing ship in this ship's Primary Firing Arc.\nThe target ship rolls -2 attack dice against this ship.\n(<i>Romulan Drone Ship Only</i>)",
 	unique: true,
-	shipLimit:true,
+	shipLimit: true,
 	factions: ["independent", "romulan"]
 }, {
 	type: "captain",
@@ -678,7 +689,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "third_of_five_71525",
+	id: "third_of_five_Cap_71525",
 	set: ["71525"],
 	name: "Third of Five",
 	unique: true,
@@ -877,13 +888,36 @@ module.exports = [{
 	}
 }, {
 	type: "captain",
+	id: "vidiian_captain_75004",
+	set: ["75004"],
+	name: "Vidiian Captain",
+	cost: 3,
+	skill: 4,
+	talents: 1,
+	text: "<b>PLANNIG PHASE:</b> Target an opposing ship.\n\nDisable 1 [crew] Upgrade equipped to the target ship.",
+	unique: false,
+	range: 1,
+	factions: ["independent"]
+}, {
+	type: "captain",
+	id: "gorn_captain_73031",
+	set: ["73031"],
+	name: "Gorn Captain",
+	cost: 3,
+	skill: 4,
+	talents: 1,
+	text: "<b>ACTION:</b> Disable this card and target an opposing ship.\n\nDisable the Captain equipped to the target ship.",
+	unique: false,
+	factions: ["independent"]
+}, {
+	type: "captain",
 	id: "daimon_solok_75003",
 	set: ["75003"],
 	name: "Daimon Solok",
 	cost: 2,
 	skill: 4,
 	talents: 1,
-	text: "<b>SETUP:</b> Place 2 GPLT on this card and place 2 [crew] Upgrades each with a cost of 3 SP or less face down beneath this card.\n----------------------------------------\n<b>ACTIVATION PHASE:</b> Spend 1 GPLT.\nFlip a [crew] Upgrade beneath this card face up and equip it to this ship even if it exceeds this ships restrictions. Remove the other face down [crew] Upgrade beneath this card from the game.",
+	text: "<b>SETUP:</b> Place 2 GPLT on this card and place 2 [crew] Upgrades each with a printed cost of 3 SP or less face down beneath this card.\n----------------------------------------\n<b>ACTIVATION PHASE:</b> Spend 1 GPLT.\nFlip a [crew] Upgrade beneath this card face up and equip it to this ship even if it exceeds this ships restrictions. Remove the other face down [crew] Upgrade beneath this card from the game.",
 	unique: true,
 	factions: ["ferengi"]
 }, {
@@ -1237,7 +1271,7 @@ module.exports = [{
 	text: "<b>ACTION:</b> Perform a [sensor-echo] Action with a 1 [forward] Maneuver Template, even if your ship is not cloaked or does not have the [sensor-echo] icon on its Action Bar. Each time you defend this round, during the Modify Defense Dice step, you may re-roll one of your blank results. Place an Auxiliary Power Token beside your ship.",
 	factions: ["mirror-universe"],
 	cost: 3,
-	skill: 4,
+	skill: 5,
 	talents: 1
 }, {
 	type: "captain",
@@ -1392,6 +1426,17 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "captain",
+	id: "hirogen_hunter_73042",
+	set: ["73042"],
+	name: "Hirogen Hunter",
+	cost: 4,
+	skill: 5,
+	talents: 1,
+	text: "Hirogen Hunter counts as a Hirogen Captain.\n\nThis ship may use the action on a Tractor Beam Upgrade as a free Action.",
+	unique: false,
+	factions: ["independent"]
+}, {
+	type: "captain",
 	id: "vorta_commander_73032",
 	set: ["73032"],
 	name: "Vorta Commander",
@@ -1475,7 +1520,7 @@ module.exports = [{
 	cost: 3,
 	skill: 5,
 	talents: 1,
-	text: "When a friendly ship within range 1 of your ship is defending, during the Declare Target step, your ship may become the target of the attack instead of the friendly ship. Treat the attack as though your ship were at the same Range as the friendly ship.",
+	text: "<b>DECLARE TARGET STEP:</b> If this ship is within range and the firing arc of an opposing attacking ship, target a friendly defending ship within range 1.\n\nThis ship becomes the target of the attack instead of the friendly defending ship. Treat this ship as though it’s at the same range as the target friendly defending ship for this attack.",
 	unique: true,
 	factions: ["xindi"]
 }, {
@@ -1522,7 +1567,7 @@ module.exports = [{
 	cost: 3,
 	skill: 5,
 	talents: 0
-},  {
+}, {
 	type: "captain",
 	id: "daimon_goss_73001",
 	set: ["73001"],
@@ -1863,6 +1908,30 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "captain",
+	id: "hikaru_sule_75005",
+	set: ["75005"],
+	name: "Hikaru Sulu",
+	cost: 3,
+	skill: 5,
+	talents: 0,
+	text: "<b>Action:</b>\n\nPerfrom a 1 [bank-left] or 1 [bank-right] Maneuver and place 1 [evade] Token beside this ship.",
+	unique: true,
+	specialization: true,
+	factions: ["mirror-universe", "federation"]
+}, {
+	type: "captain",
+	id: "telev_75004",
+	set: ["75004"],
+	name: "Telev",
+	cost: 3,
+	skill: 5,
+	talents: 1,
+	text: "This card counts as an Andorian Captain.\n----------------------------------------\n<b>WHEN THIS SHIP SPENDS AN [evade] OR [battlestations] TOKEN:</b> Target a friendly ship.\n\nPlace a token of the same type beside the target ship.",
+	unique: true,
+	range: "1 - 2",
+	factions: ["independent"]
+}, {
+	type: "captain",
 	id: "first_73002",
 	set: ["73002"],
 	name: "'First'",
@@ -1882,6 +1951,17 @@ module.exports = [{
 	cost: 3,
 	skill: "*",
 	range: "1 - 2"
+}, {
+	type: "captain",
+	id: "thomas_riker_75004",
+	set: ["75004"],
+	name: "Thomas Riker",
+	unique: true,
+	text: "You do not pay a faction penalty when equipping this card to a Federation ship.\n----------------------------------------\n<b>END PHASE:</b> This ship may perform a maneuver on its dial with a speed of 2 or less.",
+	factions: ["independent"],
+	cost: 4,
+	skill: 6,
+	talents: 1
 }, {
 	type: "captain",
 	id: "prak_75003",
@@ -2013,7 +2093,7 @@ module.exports = [{
 	type: "captain",
 	id: "thylek_shran_kumari",
 	set: ["71223"],
-	name: "THY'LEK SHRAN",
+	name: "Thy'Lek Sharan",
 	cost: 4,
 	skill: 6,
 	talents: 1,
@@ -2429,6 +2509,18 @@ module.exports = [{
 	factions: ["kazon"]
 }, {
 	type: "captain",
+	id: "arturis_75004",
+	set: ["75004"],
+	name: "Arturis",
+	cost: 4,
+	skill: 6,
+	talents: 1,
+	text: "You may not equip an Admiral to this ship.\n-----------------------------\n<b>SETUP:</b> Select a Captain Card with a printed cost of 4 SP or less.\n\nArturis has the ability of that Captain Card this game.\n(<i>Dauntless Class Only</i>)",
+	unique: true,
+	shipLimit: true,
+	factions: ["independent"]
+}, {
+	type: "captain",
 	id: "nunk_blind_nunks_marauder",
 	set: ["blind_nunks_marauder"],
 	name: "Nunk",
@@ -2492,6 +2584,17 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "captain",
+	id: "kang_75005",
+	set: ["75005"],
+	name: "Kang",
+	cost: 4,
+	skill: 6,
+	talents: 1,
+	text: "<b>PLANNING PHASE:</b> If an opposing Federation ship is in this ship's Primary Firing Arc:\n\nIncrease the Captain Skill of this Captain by 2 this game round.",
+	unique: true,
+	factions: ["mirror-universe","klingon"]
+}, {
+	type: "captain",
 	id: "suran_72010",
 	set: ["72010"],
 	name: "Suran",
@@ -2501,6 +2604,41 @@ module.exports = [{
 	text: "<b>ACTION:</b> When attacking this round, during the Roll Attack Dice step, if you are within range 1 of a friendly ship, set 1 of your attack dice on the result of your choice. This die cannot be rolled or re-rolled.",
 	unique: true,
 	factions: ["romulan"]
+}, {
+	type: "captain",
+	id: "mr_spock_75005",
+	set: ["75005"],
+	name: "Mr. Spock",
+	cost: 4,
+	skill: 6,
+	talents: 1,
+	text: "<b>WHEN ATTACKING:</b>\n\nThis ship may add 1 [battlestations]. If there is a [scan] Token beside this ship, this ship may add 1 [hit] instead.",
+	unique: true,
+	specialization: true,
+	factions: ["mirror-universe", "federation"]
+}, {
+	type: "captain",
+	id: "kor_75005",
+	set: ["75005"],
+	name: "Kor",
+	cost: 4,
+	skill: 7,
+	talents: 1,
+	text: "<b>SETUP:</b> Choose an opposing ship.\n<b>WHEN ATTACKING THE CHOSEN SHIP:</b>\nThis ship may roll +1 attack dice and convert up to 2 [battlestations] into [hit].\n----------------------------------------\n<b>WHEN DEFENDING AGAINST THE CHOSEN SHIP:</b>\nThis ship may roll +1 defense die and convert up to [battlestations] into [evade].",
+	unique: true,
+	factions: ["mirror-universe", "klingon"]
+}, {
+	type: "captain",
+	id: "james_t_kirk_cap_75005",
+	set: ["75005"],
+	name: "James T. Kirk",
+	cost: 4,
+	skill: 7,
+	talents: 1,
+	text: "<b>ACTIVATION PHASE:</b> Disable this card.\n\nRemove 1 [time] Token from all [crew] Upgrade equipped to this ship.",
+	unique: true,
+	specialization: true,
+	factions: ["mirror-universe", "federation"]
 }, {
 	type: "captain",
 	id: "lahr_73031",
@@ -2750,7 +2888,7 @@ module.exports = [{
 	set: ["71786", "71810"],
 	name: "Benjamin Sisko",
 	unique: true,
-	text: "During the Roll Defense Dice step of the Combat Phase, if your ship is in the forward firing arc of 2 or more ships, roll 1 extra defense die against all attacks from those ships. Each time your ship receives a Damage Card (normal or critical), incrase your Captain Skill by +1 for the rest of the game (max +2). The bonus Skill remains even if the damage is later repaired.",
+	text: "During the Roll Defense Dice step of the Combat Phase, if your ship is in the forward firing arc of 2 or more ships, roll 1 extra defense die against all attacks from those ships. Each time your ship receives a Damage Card (normal or critical), increase your Captain Skill by +1 for the rest of the game (max +2). The bonus Skill remains even if the damage is later repaired.",
 	factions: ["federation"],
 	cost: 4,
 	skill: 7,
@@ -2858,6 +2996,17 @@ module.exports = [{
 	text: "All of your Klingon Upgrades cost -1 SP.\n\nACTION: When attacking this round, during the Roll Attack Dice step, you may roll 2 less attack dice to add 1 [hit] result to your roll. If you have only Klingon cards assigned to your ship, roll 1 less attack die, instead of 2.",
 	unique: true,
 	factions: ["klingon"]
+}, {
+	type: "captain",
+	id: "christopher_pike_cap_75005",
+	set: ["75005"],
+	name: "Christopher Pike",
+	cost: 5,
+	skill: 8,
+	talents: 1,
+	text: "Add 1 [crew] to this ships Upgrade Bar.\n----------------------------------------\n<b>ACTION:</b>\n\nFlip up to 2 Specialization Cards equipped to this ship.",
+	unique: true,
+	factions: ["mirror-universe", "federation"]
 }, {
 	type: "captain",
 	id: "birta_75003",
@@ -3096,7 +3245,7 @@ module.exports = [{
 	text: "<b>ACTION:</b> Decrease the Captain Skill of this Captain by 1 this game round.\n\nPerfrom an Action on this ships Action Bar and an Action on a Dominion [crew] equipped to this ship as Free Actions.",
 	unique: true,
 	factions: ["dominion"]
-},  {
+}, {
 	type: "captain",
 	id: "james_t_kirk_enterprise_a",
 	set: ["72260gp"],

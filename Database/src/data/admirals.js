@@ -1,5 +1,16 @@
 module.exports = [{
 	type: "admiral",
+	id: "christopher_pike_75005",
+	set: ["75005"],
+	name: "Christopher Pike",
+	cost: 5,
+	skill: 2,
+	talents: 1,
+	text: "Add 1 [crew] to this ships Upgrade Bar.\n----------------------------------------\n<b>FLEET ACTION:</b>\n\nFlip up to 2 Specialization Cards equipped to this ship.",
+	unique: true,
+	factions: ["mirror-universe", "federation"]
+}, {
+	type: "admiral",
 	id: "gint_admiral_75003",
 	set: ["75003"],
 	name: "Gint",
@@ -103,7 +114,7 @@ module.exports = [{
 	set: ["71526"],
 	name: "Maxwell Forrest",
 	unique: true,
-	text: "<b>FLEET ACTION:</b> Perform and additional 1 Maneuver (straight, bank or turn).",
+	text: "<b>FLEET ACTION:</b> Perform an additional 1 Maneuver (straight, bank or turn).",
 	factions: ["federation"],
 	cost: 3,
 	skill: 1,

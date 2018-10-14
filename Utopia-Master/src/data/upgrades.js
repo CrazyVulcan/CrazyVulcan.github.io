@@ -338,7 +338,7 @@ module.exports = [{
 	cost: 3,
 	text: "The Attack Value of this [weapon] is this ship’s Primary Weapon Value +1.\n-----------------------------------\n<b>ATTACK:</b> Spend this ship’s [target-lock] Token, place 2 [time] Tokens on this card, and target an opposing ship.\n\nIf the attack hits, every other ship within Range 1 of the opposing ship suffers 1 [hit].\n(<i>Constitution Class (Kelvin) Only</i>)",
 	attack: 0,
-	unique: true,
+	unique: false,
 	range: "2 - 3",
 	shipLimit: true,
 	factions: ["mirror-universe","federation"]
