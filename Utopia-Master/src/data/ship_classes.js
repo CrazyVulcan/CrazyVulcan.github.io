@@ -1073,7 +1073,7 @@ module.exports = [
 	id: "Scorpion_Clas_Attack_Squadron",
 	name: "Scorpion Class Attack Squadron",
 	frontArc: "90",
-	rearArc: "90",
+	rearArc: "",
 	maneuvers: {
 		1: {
 			straight: "green",
