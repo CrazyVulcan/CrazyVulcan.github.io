@@ -1,6 +1,6 @@
 var module = angular.module("utopia-mission-database", ["utopia"]);
 
-module.controller( "UtopiamissionCtrl", [ "$scope", "$filter", "cardLoader", "$factions", function($scope, $filter, cardLoader, $factions) {
+module.controller( "UtopiaMissionCtrl", [ "$scope", "$filter", "cardLoader", "$factions", function($scope, $filter, cardLoader, $factions) {
 
 	$scope.cards = [];
 	$scope.missions = {};
