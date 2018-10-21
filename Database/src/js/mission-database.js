@@ -14,11 +14,11 @@ module.controller( "UtopiamissionCtrl", [ "$scope", "$filter", "cardLoader", "$f
 	
 	cardLoader( $scope.cards, $scope.missions, $scope.shipClasses, $scope.token, function() {
 
-		var missionmission = location.hash ? location.hash.substring(1) : false;
+		var missionId = location.hash ? location.hash.substring(1) : false;
 		
-		$.each( Object.keys( $scope.missions ), function(i, id) {
-			var mission = $scope.missions[id];
-			if( mission.id == missionmission || mission.name == missionmission )
+		$.each( Object.keys( $scope.missions ), function(i, missionSet) {
+			var mission = $scope.missions[missionSet];
+			if( mission.missionSet == missionId || mission.name == missionId )
 				$scope.viewer.mission = mission;
 			$scope.missionList.push(mission);
 		});
@@ -29,9 +29,9 @@ module.controller( "UtopiamissionCtrl", [ "$scope", "$filter", "cardLoader", "$f
 		
 		$scope.missionCards = [];
 		if( mission ) {
-			location.hash = mission.id;
+			location.hash = mission.missionSet;
 			$.each( $scope.cards, function(i, card) {
-				if( $.inArray( mission.id, card.mission ) >= 0 )
+				if( $.inArray( mission.missionSet, card.mission ) >= 0 )
 					$scope.missionCards.push( card );
 			});
 			$scope.missionCards.sort(displaySort);
