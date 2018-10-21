@@ -2,17 +2,15 @@ var module = angular.module("utopia-mission-database", ["utopia"]);
 
 module.controller( "UtopiaMissionCtrl", [ "$scope", "$filter", "cardLoader", "$factions", function($scope, $filter, cardLoader, $factions) {
 
-	$scope.cards = [];
+	$scope.missionData
 	$scope.missions = {};
 	$scope.missionList = [];
-	$scope.shipClasses = {};
-	$scope.token = {};
 
 	$scope.viewer = {};
 	$scope.activemission = false;
 	$scope.missionCards = [];
 	
-	cardLoader( $scope.cards, $scope.missions, $scope.shipClasses, $scope.token, function() {
+	cardLoader( $scope.missions, function() {
 
 		var missionId = location.hash ? location.hash.substring(1) : false;
 		
@@ -30,9 +28,9 @@ module.controller( "UtopiaMissionCtrl", [ "$scope", "$filter", "cardLoader", "$f
 		$scope.missionCards = [];
 		if( mission ) {
 			location.hash = mission.missionSet;
-			$.each( $scope.cards, function(i, card) {
-				if( $.inArray( mission.missionSet, card.mission ) >= 0 )
-					$scope.missionCards.push( card );
+			$.each( $scope.mission.Data, function(i, missionInfo) {
+				if( $.inArray( mission.missionSet, missionInfo.mission ) >= 0 )
+					$scope.missionCards.push( missionInfo );
 			});
 			$scope.missionCards.sort(displaySort);
 		}
