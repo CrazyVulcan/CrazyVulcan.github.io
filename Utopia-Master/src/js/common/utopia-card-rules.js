@@ -8379,7 +8379,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return onePerShip("Particle Synthesis") && ship.class == "Dauntless Class";
 			}},
 		//Inertial Compensators
-		"tech:inertial_compensators":{
+		"tech:inertial_compensators_75004":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			},
