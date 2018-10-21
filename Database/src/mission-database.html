@@ -25,10 +25,20 @@
 			<a href="#news">News</a>
 			<a href="./set-viewer" >Set Viewer</a>
 			<a href="#rules">Rules</a>
-			<a href="./attackwing-databae.html">WORF Database</a>
+			<a href="./attackwing-database.html">WORF Database</a>
 			<a href="#mission-database" class="active">Missions</a>
 		</div>	
-
+		
+		
+		<div class="u-search-results u-search-cols-1">
+		
+			<ul class="mission-list">
+				<li ng-repeat="missions in missionList | orderBy:'name'" ng-click="viewer.mission = mission" ng-class="{'mission-selected': viewer.mission == mission}">{{mission.name}}: {{mission.setName}}</li>
+			</ul>
+			
+		</div>
+		
+		
 		<!--<script src="js/analytics.js"></script>-->
 		
     </body>
