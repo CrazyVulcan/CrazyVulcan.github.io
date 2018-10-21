@@ -376,7 +376,7 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 				if( mission.type == "copy" )
 					copies.push(mission);
 				else
-					loadSet(mission);
+					loadMission(mission);
 			});
 			
 			$.each( data.sets || [], function(i,set) {

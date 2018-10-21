@@ -10,7 +10,7 @@ module.controller( "UtopiaMissionCtrl", [ "$scope", "$filter", "cardLoader", "$f
 	$scope.activemission = false;
 	$scope.missionCards = [];
 	
-	cardLoader( $scope.missions, function() {
+	cardLoader( $scope.missionData, $scope.missions, function() {
 
 		var missionId = location.hash ? location.hash.substring(1) : false;
 		
