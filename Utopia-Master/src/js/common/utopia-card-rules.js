@@ -8222,7 +8222,16 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			},
 			canEquip: onePerShip("Beta Hirogen"),
+			intercept: {
+					ship: {
+						skill: function(upgrade,ship,fleet,skill) {
+							return upgrade.cost + 1;
+						return skill;
+						}
+					}
+				}
 			},
+			
 		"crew:donik_73042":{
 			canEquip: function(upgrade,ship,fleet) {
 				return ship.class == "Hirogen Warship";
@@ -8255,6 +8264,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"question:optronic_data_core_73042":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+			},
+			isSlotCompatible: function(slotTypes) {
+				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0;
 			}},
 		
 	//A Motley Fleet
@@ -8296,6 +8308,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						}
 					}
 				}
+				
 			} ]
 		},
 		//Thomas Riker
@@ -8450,12 +8463,22 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"crew:james_t_kirk_crew_75005":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
-			}
+			},
+			upgradeSlots: [
+				{
+					type: ["talent"]
+				}
+			]
 		},
 		"crew:mr_spock_crew_75005":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
-			}},
+			},
+			upgradeSlots: [
+				{
+					type: ["talent"]
+				}
+			]},
 		"crew:hikaru_sulu_crew_75005":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;

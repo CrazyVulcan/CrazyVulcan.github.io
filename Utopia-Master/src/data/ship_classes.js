@@ -28,9 +28,9 @@ module.exports = [
 		6: {
 			straight: "red"
 		},
-		min: -1,
+		min: -2,
 		max: 6,
-		"-1": {
+		"-2": {
 			straight: "red"
 		}
 	}
