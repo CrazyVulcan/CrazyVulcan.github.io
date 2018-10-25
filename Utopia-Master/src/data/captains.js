@@ -2093,7 +2093,7 @@ module.exports = [{
 	type: "captain",
 	id: "thylek_shran_kumari",
 	set: ["71223"],
-	name: "Thy'Lek Sharan",
+	name: "Thy'Lek Shran",
 	cost: 4,
 	skill: 6,
 	talents: 1,

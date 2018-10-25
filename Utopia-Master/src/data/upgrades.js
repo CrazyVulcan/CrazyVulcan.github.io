@@ -14,7 +14,7 @@ module.exports = [{
 	set: ["75004"],
 	name: "Andorian Imperial Guard",
 	cost: 2,
-	text: "May only be equipped to Thy'lek Sharan or an Andorian Captain.\n-----------------------------------\n<b>WHEN ATTACKING WITH AN Independent [weapon] UPGRADE:</b> Place 2 [time] Tokens on this card.\nThis ship rolls additional attack dice this attack equal to the number of [time] Tokens on the Independent [weapon] Upgrade being used.",
+	text: "May only be equipped to Thy'lek Shran or an Andorian Captain.\n-----------------------------------\n<b>WHEN ATTACKING WITH AN Independent [weapon] UPGRADE:</b> Place 2 [time] Tokens on this card.\nThis ship rolls additional attack dice this attack equal to the number of [time] Tokens on the Independent [weapon] Upgrade being used.",
 	factions: ["independent"]
 }, {
 	type: "talent",
@@ -352,7 +352,6 @@ module.exports = [{
 	attack: 0,
 	RearArc: true,
 	range: "1 - 3",
-	shipLimit: true,
 	factions: ["mirror-universe","klingon"]
 },{
 	type: "weapon",

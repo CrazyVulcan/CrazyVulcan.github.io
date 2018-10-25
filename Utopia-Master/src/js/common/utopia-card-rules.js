@@ -8223,14 +8223,15 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			canEquip: onePerShip("Beta Hirogen"),
 			intercept: {
-					ship: {
-						skill: function(upgrade,ship,fleet,skill) {
-							return upgrade.cost + 1;
+				ship: {
+					skill: function(card,ship,fleet,skill) {
+						if( card == ship.captain )
+							return resolve(card,ship,fleet,skill) + 1;
 						return skill;
-						}
 					}
 				}
-			},
+			}
+		},
 			
 		"crew:donik_73042":{
 			canEquip: function(upgrade,ship,fleet) {
@@ -8336,7 +8337,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			canEquipFaction: function(upgrade,ship,fleet) {
 				// TODO Tholians are Independent so can't easily tell their race
-				return ship.captain && ( ship.captain.name == "Telev" || ship.captain.name == "Thy'Lek Sharan" ||ship.captain.name.indexOf("Andorian") >= 0 );
+				return ship.captain && ( ship.captain.name == "Telev" || ship.captain.name == "Thy'Lek Shran" ||ship.captain.name.indexOf("Andorian") >= 0 );
 			}},
 		//Vidiian Sodality
 		"talent:vidiian_sodality_75004":{
@@ -8572,9 +8573,6 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 		},
 		"weapon:photon_torpedoes_75005":{
-			canEquip: function(upgrade,ship,fleet) {
-				return ship.class == "Warbird Class" ;
-			},
 			attack: 0,
 			intercept: {
 				self: {
