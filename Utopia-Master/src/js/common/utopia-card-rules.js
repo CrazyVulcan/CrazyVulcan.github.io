@@ -1052,7 +1052,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 	//Borg Sphere 4270 :71283
 		// Cutting Beam
-		"tech:cutting_beam_71283": {
+		"weapon:cutting_beam_71283": {
 			canEquip: function(upgrade,ship,fleet) {
 				return $factions.hasFaction(ship,"borg", ship, fleet);
 			}
