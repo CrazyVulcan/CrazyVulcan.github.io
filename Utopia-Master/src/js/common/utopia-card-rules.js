@@ -6271,9 +6271,6 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					
 					  // Skip ship cards, save a little processing time
 					  if (card.type != "ship") {
-
-						// Must run after cost is figured
-						cost = resolve(upgrade,ship,fleet,cost);
 					    //Otherwise, grab all of the upgrade assigned to the ship
 					    var candidates = [];
 					    var occupied_slots = $filter("upgradeSlots")(ship);
@@ -6304,9 +6301,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					    }
 					  }
 
-						var return_value = 0;
+						var return_value = resolve(card, ship, fleet, cost);
 						if (replacement_cost) return_value = 4;
-					  else return_value = resolve(card, ship, fleet, cost);
 						
 					return cost;
 					return return_value;
