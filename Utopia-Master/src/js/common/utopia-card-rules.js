@@ -6273,6 +6273,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					    var candidates = [];
 					    var occupied_slots = $filter("upgradeSlots")(ship);
 					    $.each(occupied_slots, function(i, slot) {
+							priority: 100; // Must run after cost is figured
 							if (slot.occupant && (slot.occupant.cost == 5 || slot.occupant.cost == 6))
 					        candidates.push(slot);
 					    });
@@ -6906,7 +6907,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		//Klingon-Romulan Alliance
 		"talent:klingon_romulan_alliance_72282gp":{
 		canEquipFaction: function(upgrade,ship,fleet) {
-			return hasFaction(ship,"romulan", ship, fleet) && hasFaction(ship.captain,"romulan", ship, fleet);
+			return ( hasFaction(ship,"romulan", ship, fleet) || hasFaction(ship,"klingon", ship, fleet) ) && ( hasFaction(ship.captain,"romulan", ship, fleet) || hasFaction(ship.captain,"klingon", ship, fleet ));
 		}},
 		//Tachyon Pulse
 		"tech:tachyon_pulse_72282gp":{

@@ -966,7 +966,6 @@ module.exports = [{
 	set: ["75002"],
 	name: "All Power To Weapons",
 	cost: 5,
-	range: "1 - 2",
 	text: "<b>COMBAT PHASE:</b> Place 3 [time] Tokens on this card and disable this ships Shields.\n\n<b>Continuous Effect:</b> This ships Shields remain disabled. This ship can only perform Green Maneuvers. This ship rolls +3 attack dice.",
 	unique: true,
 	captainDominion: true,
@@ -2319,7 +2318,7 @@ module.exports = [{
 	attack: 3,
 	range: "1 - 3",
 	text: "Add 1 [weapon] Upgrade icon to your Upgrade Bar.\n\n<b>ATTACK:</b> Place 2 Time Tokens on this card to perform this attack. Treat this attack as if it were an attack made with a Primary Weapon. No ship may be equipped with more then one \"Main Batteries\" Upgrade.",
-	unique: true,
+	unique: false,
 	factions: ["romulan"]
 }, {
 	type: "crew",
