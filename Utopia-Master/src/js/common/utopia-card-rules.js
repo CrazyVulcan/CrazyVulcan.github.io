@@ -6273,8 +6273,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					    var candidates = [];
 					    var occupied_slots = $filter("upgradeSlots")(ship);
 					    $.each(occupied_slots, function(i, slot) {
-							priority: 100; // Must run after cost is figured
-							if (slot.occupant && (slot.occupant.cost == 5 || slot.occupant.cost == 6))
+						if (slot.occupant && (slot.occupant.cost == 5 || slot.occupant.cost == 6) )
+							// Must run after cost is figured
+							priority: 100,
 					        candidates.push(slot);
 					    });
 
