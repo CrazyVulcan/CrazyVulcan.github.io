@@ -6293,22 +6293,23 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 									candidates = candidates.slice(0, 3);
 					      }
 
-								// Now that we know the candidate cards for discount, apply the
-								// discount if the current card is one of the candidates
-								for (var i = 0; i < candidates.length; i++){
-									if (card.id == candidates[i].occupant.id){
-										replacement_cost = true;
-										break;
-									}
+							// Now that we know the candidate cards for discount, apply the
+							// discount if the current card is one of the candidates
+							for (var i = 0; i < candidates.length; i++){
+								if (card.id == candidates[i].occupant.id){
+									replacement_cost = true;
+									break;
 								}
+							}
 					    }
 					  }
 
 						var return_value = 0;
 						if (replacement_cost) return_value = 4;
 					  else return_value = resolve(card, ship, fleet, cost);
-
-						return return_value;
+						
+					return cost;
+					return return_value;
 						}	
 					}
 				}
