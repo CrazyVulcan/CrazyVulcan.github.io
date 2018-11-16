@@ -6263,8 +6263,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					},
 					//text: "Up to 3 of the Upgrades you purchase for your ship cost exactly 4 SP each and are placed face down beside your Ship Card, the printed cost on those Upgrades cannot be greater than 6",
 					// Discounting up to 3 Upgrades that cost 5 or 6 sp
-					cost: function(card,ship,fleet,cost) {
-					  var replacement_cost = false;
+					cost: {
+						// Run this interceptor after all other penalties and discounts
+						priority: 100,
+						fn: function(card,ship,fleet,cost) {
+						var replacement_cost = false;
 					
 					  // Skip ship cards, save a little processing time
 					  if (card.type != "ship") {
@@ -6306,6 +6309,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					  else return_value = resolve(card, ship, fleet, cost);
 
 						return return_value;
+						}	
 					}
 				}
 			}
