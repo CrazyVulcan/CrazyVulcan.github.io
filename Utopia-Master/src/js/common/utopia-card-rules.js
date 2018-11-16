@@ -6265,17 +6265,17 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					// Discounting up to 3 Upgrades that cost 5 or 6 sp
 					cost: function(card,ship,fleet,cost) {
 					  var replacement_cost = false;
-
+					
 					  // Skip ship cards, save a little processing time
 					  if (card.type != "ship") {
 
+						// Must run after cost is figured
+						cost = resolve(upgrade,ship,fleet,cost);
 					    //Otherwise, grab all of the upgrade assigned to the ship
 					    var candidates = [];
 					    var occupied_slots = $filter("upgradeSlots")(ship);
 					    $.each(occupied_slots, function(i, slot) {
 						if (slot.occupant && (slot.occupant.cost == 5 || slot.occupant.cost == 6) )
-							// Must run after cost is figured
-							cost = resolve(upgrade,ship,fleet,cost);
 					        candidates.push(slot);
 					    });
 
