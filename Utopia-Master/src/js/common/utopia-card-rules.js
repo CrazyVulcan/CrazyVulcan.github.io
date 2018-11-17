@@ -6269,7 +6269,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 							if( checkUpgrade("weapon", upgrade, ship)
 							     && upgrade.name != "Torpedo Fusillade" && upgrade.name != "Dorsal Phaser Array" && upgrade.name != "Aft Phaser Emitters" && upgrade.id != "particle_beam_weapon_muratas" ) {
 								cost = resolve(upgrade,ship,fleet,cost);
-								if( cost <= 6 )
+								if( cost == 6 || cost == 5)
 									cost == 4;
 							}
 							return cost;
