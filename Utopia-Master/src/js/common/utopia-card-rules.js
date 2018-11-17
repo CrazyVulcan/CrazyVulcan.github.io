@@ -6268,18 +6268,12 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						// Run this interceptor after all other penalties and discounts
 						priority: 100,
 						fn: function(upgrade,ship,fleet,cost) {
-							var candidates = [];
-							var occupied_slots = $filter("upgradeSlots")(ship);
-							
-							if (card.type != "ship") {
-								cost = resolve(upgrade,ship,fleet,cost);
-								if (slot.occupant && (slot.occupant.cost == 5 || slot.occupant.cost == 6) )
+								if( cost == 5 )
 									cost == 4;
-							}
-							
-						return cost;
-						}
+							return cost;
+						}					
 					}
+					
 				}
 			}
 		},
