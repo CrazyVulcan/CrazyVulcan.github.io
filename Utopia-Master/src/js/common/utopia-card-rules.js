@@ -6262,11 +6262,20 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						return factionPenalty;
 					},
 					
-					cost: function(upgrade,ship,fleet,cost) {
-								if( upgrade.cost == 5 )
+					cost: {
+						// Run this interceptor after all other penalties and discounts
+						priority: 100,
+						fn: function(upgrade,ship,fleet,cost) {
+							if( checkUpgrade("weapon", upgrade, ship)
+							     && upgrade.name != "Torpedo Fusillade" && upgrade.name != "Dorsal Phaser Array" && upgrade.name != "Aft Phaser Emitters" && upgrade.id != "particle_beam_weapon_muratas" ) {
+								cost = resolve(upgrade,ship,fleet,cost);
+								if( cost <= 6 )
 									cost == 4;
+							}
 							return cost;
 						}
+					}
+					
 					
 				}
 			}
