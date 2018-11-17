@@ -6263,50 +6263,22 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					},
 					//text: "Up to 3 of the Upgrades you purchase for your ship cost exactly 4 SP each and are placed face down beside your Ship Card, the printed cost on those Upgrades cannot be greater than 6",
 					// Discounting up to 3 Upgrades that cost 5 or 6 sp
+					
 					cost: {
 						// Run this interceptor after all other penalties and discounts
 						priority: 100,
-						fn: function(card,ship,fleet,cost) {
-						var replacement_cost = false;
-					
-					  // Skip ship cards, save a little processing time
-					  if (card.type != "ship") {
-					    //Otherwise, grab all of the upgrade assigned to the ship
-					    var candidates = [];
-					    var occupied_slots = $filter("upgradeSlots")(ship);
-					    $.each(occupied_slots, function(i, slot) {
-						if (slot.occupant && (slot.occupant.cost == 5 || slot.occupant.cost == 6) )
-					        candidates.push(slot);
-					    });
-
-					    // Only process if we have candidate cards
-					    if (candidates.length){
-
-								// Only worry about sorting if we have more than three candidates
-					      if (candidates.length > 3){
-					        candidates.sort(function(a,b){
-					          return b.occupant.cost - a.occupant.cost;
-					        });
-									candidates = candidates.slice(0, 3);
-					      }
-
-							// Now that we know the candidate cards for discount, apply the
-							// discount if the current card is one of the candidates
-							for (var i = 0; i < candidates.length; i++){
-								if (card.id == candidates[i].occupant.id){
-									replacement_cost = true;
-									break;
-								}
+						fn: function(upgrade,ship,fleet,cost) {
+							var candidates = [];
+							var occupied_slots = $filter("upgradeSlots")(ship);
+							
+							if (card.type != "ship") {
+								cost = resolve(upgrade,ship,fleet,cost);
+								if (slot.occupant && (slot.occupant.cost == 5 || slot.occupant.cost == 6) )
+									cost == 4;
 							}
-					    }
-					  }
-
-						var return_value = resolve(card, ship, fleet, cost);
-						if (replacement_cost) return_value = 4;
-						
-					return cost;
-					return return_value;
-						}	
+							
+						return cost;
+						}
 					}
 				}
 			}
