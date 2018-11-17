@@ -6262,15 +6262,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						return factionPenalty;
 					},
 					
-					cost: {
-						// Run this interceptor after all other penalties and discounts
-						priority: 100,
-						fn: function(upgrade,ship,fleet,cost) {
+					cost: function(upgrade,ship,fleet,cost) {
 								if( upgrade.cost == 5 )
 									cost == 4;
 							return cost;
-						}					
-					}
+						}
 					
 				}
 			}
