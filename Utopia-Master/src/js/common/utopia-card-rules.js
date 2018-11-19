@@ -6268,7 +6268,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						fn: function(upgrade,ship,fleet,cost) {
 							if( isUpgrade == true ) {
 								cost = resolve(upgrade,ship,fleet,cost);
-								if( cost == 6 || cost == 5)
+								if( upgrade.cost == 6 || upgrade.cost == 5)
 									cost == 4;
 							}
 							return cost;
