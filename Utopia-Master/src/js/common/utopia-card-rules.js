@@ -6266,11 +6266,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						// Run this interceptor after all other penalties and discounts
 						priority: 100,
 						fn: function(upgrade,ship,fleet,cost) {
-							if( isUpgrade == true ) {
 								cost = resolve(upgrade,ship,fleet,cost);
 								if( upgrade.cost == 6 || upgrade.cost == 5)
 									cost == 4;
-							}
 							return cost;
 						}
 					}
