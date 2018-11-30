@@ -2400,7 +2400,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				self: {
 					cost: function(upgrade,ship,fleet,cost) {
-						if( ship && ship.class != "Predator Class" )
+						if( ship.class != "Predator Class" )
 							return resolve(upgrade,ship,fleet,cost) + 4;
 						return cost;
 					}
