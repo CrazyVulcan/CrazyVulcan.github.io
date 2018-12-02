@@ -227,7 +227,7 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 			intercept: { ship: {}, fleet: {} },
 			canEquip: true,
 			canEquipFaction: true
-		};
+		}
 
 		function loadResource(resource) {
 
