@@ -316,14 +316,14 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 				};
 			}
 			
-			if( card.type == "token") {
-				if( token[card.id] ) {
-					console.log("Duplicate token",card.id,card.name);
-					return;
-				}
+//			if( card.type == "token") {
+//				if( token[card.id] ) {
+//					console.log("Duplicate token",card.id,card.name);
+//					return;
+//				}
 				
-				token[card.id] = card;
-			}
+//				token[card.id] = card;
+//			}
 			
 			// Apply specific card rules
 			if( cardRules[card.type+":"+card.id] )
