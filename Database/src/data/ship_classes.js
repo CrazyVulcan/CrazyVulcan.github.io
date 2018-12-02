@@ -1,5 +1,33 @@
 module.exports = [
-{},{
+ {
+	type: "ship-class",
+	id: "warbird_class",
+	name: "Warbird Class",
+	frontArc: "90",
+	secondArc: "45",
+	maneuvers: {
+		1: {
+			straight: "green",
+			bank: "green"
+		},
+		2: {
+			straight: "green",
+			bank: "green",
+			turn: "white"
+		},
+		3: {
+			straight: "white",
+			bank: "white",
+			turn: "red",
+			about: "red"
+		},
+		4: {
+			straight: "white"
+		},
+		min: 1,
+		max: 4
+	}
+}, {
 	type: "ship-class",
 	id: "kelvin_constitution_class",
 	name: "Constitution Class (Kelvin)",
@@ -35,34 +63,6 @@ module.exports = [
 		}
 	}
 }, {
-	type: "ship-class",
-	id: "warbird_class",
-	name: "Warbird Class",
-	frontArc: "90",
-	secondArc: "45",
-	maneuvers: {
-		1: {
-			straight: "green",
-			bank: "green"
-		},
-		2: {
-			straight: "green",
-			bank: "green",
-			turn: "white"
-		},
-		3: {
-			straight: "white",
-			bank: "white",
-			turn: "red",
-			about: "red"
-		},
-		4: {
-			straight: "white"
-		},
-		min: 1,
-		max: 4
-	}
-},{
 	type: "ship-class",
 	id: "72224p",
 	name: "Xindi Reptilian Warship",
