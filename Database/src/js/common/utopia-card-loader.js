@@ -97,7 +97,7 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 		function loadMission(mission) {
 			//add the ability to search JSON for missions 
 			missionData.push( mission );
-		};
+		}
 		//<>?<>?<>//
 		function loadCaptain(captain) {
 			
