@@ -404,12 +404,12 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 					loadShip(ship);
 			});
 			
-			$.each( data.shipClasses || [], function(i,shipClass) {
-				if( shipClass.type == "copy" )
-					copies.push(shipClass);
-				else
-					loadShipClass(shipClass);
-			});
+//			$.each( data.shipClasses || [], function(i,shipClass) {
+//				if( shipClass.type == "copy" )
+//					copies.push(shipClass);
+//				else
+//					loadShipClass(shipClass);
+//			});
 			
 			$.each( data.captains || [], function(i,captain) {
 				if( captain.type == "copy" )
