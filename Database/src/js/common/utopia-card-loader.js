@@ -333,7 +333,7 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 			
 		}
 		
-		function loadMission(set) {
+		function loadMission(mission) {
 			
 			if( missions[mission.id] ) {
 				console.log("Duplicate mission",mission.id,mission.name);
