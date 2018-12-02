@@ -28,9 +28,9 @@ module.exports = [
 		6: {
 			straight: "red"
 		},
-		min: -1,
+		min: -2,
 		max: 6,
-		"-1": {
+		"-2": {
 			straight: "red"
 		}
 	}
@@ -1073,7 +1073,7 @@ module.exports = [
 	id: "Scorpion_Clas_Attack_Squadron",
 	name: "Scorpion Class Attack Squadron",
 	frontArc: "90",
-	rearArc: "90",
+	rearArc: "",
 	maneuvers: {
 		1: {
 			straight: "green",
