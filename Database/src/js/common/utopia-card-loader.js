@@ -355,16 +355,16 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 			
 		}
 		
-		function loadShipClass(shipClass) {
+//		function loadShipClass(shipClass) {
+//			
+//			if( shipClasses[shipClass.id] ) {
+//				console.log("Duplicate ship class",shipClass.id,shipClass.name,shipClasses[shipClass.id].name);
+//				return;
+//			}
 			
-			if( shipClasses[shipClass.id] ) {
-				console.log("Duplicate ship class",shipClass.id,shipClass.name,shipClasses[shipClass.id].name);
-				return;
-			}
+//			shipClasses[shipClass.id] = shipClass;
 			
-			shipClasses[shipClass.id] = shipClass;
-			
-		}
+//		}
 		
 		function loadCopies( copies ) {
 			
