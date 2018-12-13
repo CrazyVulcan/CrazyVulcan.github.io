@@ -936,7 +936,7 @@ module.exports = [{
 	set: ["72301r"],
 	name: "Captain's Chair",
 	factions: ["federation", "klingon", "romulan", "dominion", "independent"],
-	text: "Ship with Captain skill 5+\n\nAfter performing an Green or White Maneuver, remove a Disable Token from a Upgrade equipped to this ship.",
+	text: "Ship with Captain skill 5+\n\nAfter performing a Green or White Maneuver, remove a Disable Token from a Upgrade equipped to this ship.",
 	cost: 3,
 	showType: true,
 	canEquip: true,
