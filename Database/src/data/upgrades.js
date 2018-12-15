@@ -359,7 +359,7 @@ module.exports = [{
 	set: ["75005"],
 	name: "Disruptor Volley",
 	cost: 3,
-	text: "<b>ATTACK</b>:Disable this card and Target an opposing ship.\n\nThis attack deals no damage. f this attack his place an [aux] Token beside the defending ship. If the defending ship is an Attack Squadron, discard 1 Attack Squadron Token (AST) for each uncanceled [hit] or [crit]</b>\n(<i>Warbird Class Only</i>)",
+	text: "<b>ATTACK</b>:Disable this card and Target an opposing ship.\n\nThis attack deals no damage. If this attack hits place an [aux] Token beside the defending ship. If the defending ship is an Attack Squadron, discard 1 Attack Squadron Token (AST) for each uncanceled [hit] or [crit]</b>\n(<i>Warbird Class Only</i>)",
 	shipLimit: true,
 	attack: 5,
 	range: "1 - 3",
