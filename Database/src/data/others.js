@@ -867,7 +867,7 @@ module.exports = [{
 	name: "Movars Ability ",
 	factions: ["federation", "klingon", "romulan", "dominion", "independent"],
 	text: "This card functions with captain Movar, from the Seleas Warbird Grand Prize. Swap a [tech], [weapon] or [crew] slot with a [talent], [tech], [weapon] or [crew] slot",
-	cost: 0,
+	cost: 0,	
 	showType: true,
 	canEquip: true,
 	canEquipFaction: true,
@@ -877,14 +877,14 @@ module.exports = [{
 	},
 	factionPenalty: 0,
 	unique: true
-}, {
+},{
 	type: "ship-resource",
 	id: "senior_staff_72284r",
 	set: ["72284r"],
 	name: "Senior Staff ",
 	factions: ["federation", "klingon", "romulan", "dominion", "independent"],
 	text: "This card adds an extra [crew] and [talent] slot which applies the special rules from the Senior Staff OP Resource.\n\nThis [crew] may equip a [talent] at the cost of +1SP.",
-	cost: 0,
+	cost: 0,	
 	showType: true,
 	canEquip: true,
 	canEquipFaction: true,

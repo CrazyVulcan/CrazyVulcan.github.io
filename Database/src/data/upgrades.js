@@ -123,7 +123,7 @@ module.exports = [{
 	set: ["75004"],
 	name: "Teero Anaydis",
 	cost: 3,
-	text: "<b>PLANNING PHASE:</b> Target a [crew] Upgrade equipped to an opposing ship.\nPlace 1 [time] Token on the target [crew] Upgrade.\n----------------------------------------\n<b>END PHASE</b> Target a [crew] Upgrade with a [time] Token on it equipped to an Opposing ship.\nAdd 1 [time] Token to the target [crew] Upgrade instead of removing 1 [time] Token.",
+	text: "<b>PLANNING PHASE:</b> Target a [crew] Upgrade equipped to an opposing ship.\nPlace 1 [time] Token on the target [crew] Upgrade.\n----------------------------------------\n<b>END PHASE</b> Target a [crew] Upgrade with a [time] Token on it equipped to an Opposing ship.\nAdd 1 [time] Token to the target [crew] Upgrade instead of removing 1 [time] Token.",	
 	unique: true,
 	range: "1 - 2",
 	factions: ["independent"]
@@ -147,7 +147,7 @@ module.exports = [{
 	unique: true,
 	talents: 1,
 	specialization: true,
-	factions: ["mirror-universe", "federation"]
+	factions: ["mirror-universe","federation"]
 }, {
 	type: "crew",
 	id: "mr_spock_crew_75005",
@@ -158,7 +158,7 @@ module.exports = [{
 	unique: true,
 	talents: 1,
 	specialization: true,
-	factions: ["mirror-universe", "federation"]
+	factions: ["mirror-universe","federation"]
 }, {
 	type: "crew",
 	id: "hikaru_sulu_crew_75005",
@@ -168,7 +168,7 @@ module.exports = [{
 	text: "<b>WHEN THIS SHIP WOULD SUFFER DAMAGE FROM AN OBSTACLE OR MINEFIELD TOKEN:</b> Place 3 [time] Tokens on this card and roll 3 defence dice.\n\nFor each [evade] cancel 1 [hit] or [crit].",
 	unique: true,
 	specialization: true,
-	factions: ["mirror-universe", "federation"]
+	factions: ["mirror-universe","federation"]
 }, {
 	type: "crew",
 	id: "montgomery_scott_shield_75005",
@@ -178,7 +178,7 @@ module.exports = [{
 	text: "<b>PLANNING PHASE:</b> Place 3 [time] Tokens on this card.\n\nRepair 1 Shield on this ship and flip this card.",
 	unique: true,
 	specialization: true,
-	factions: ["mirror-universe", "federation"]
+	factions: ["mirror-universe","federation"]
 }, {
 	type: "crew",
 	id: "montgomery_scott_hull_75005",
@@ -188,7 +188,7 @@ module.exports = [{
 	text: "<b>PLANNING PHASE:</b> Place 3 [time] Tokens on this card.\n\nRepair 1 Hull on this ship and flip this card.",
 	unique: true,
 	specialization: true,
-	factions: ["mirror-universe", "federation"]
+	factions: ["mirror-universe","federation"]
 }, {
 	type: "crew",
 	id: "leonard_mccoy_75005",
@@ -198,7 +198,7 @@ module.exports = [{
 	text: "<b>WHEN A CAPTAIN EQUIPPED TO THIS SHIP WOULD BE DISABLED</b>\nPlace 3 [time] Tokens on this card instead.\n----------------------------------------\n<b>WHEN A CAPTAIN EQUIPPED TO THIS SHIP WOULD BE DISCARDED</b>\nPlace 2 [time] Tokens on this card and the Captain that would be discarded instead.",
 	unique: true,
 	specialization: true,
-	factions: ["mirror-universe", "federation"]
+	factions: ["mirror-universe","federation"]
 }, {
 	type: "crew",
 	id: "leonard_mccoy__addCrew_75005",
@@ -208,7 +208,7 @@ module.exports = [{
 	text: "<b>SETUP:</b>\nPlace 1 [crew] Upgrade with a printed cost of 4 SP or less face down beneath this card.\n----------------------------------------\n<b>ACTIVATION PHASE:</b>\nFlip the [crew] Upgrade beneath this card face up and equip it to this ship even if it exceeds this ship's restrictions. Place 3 [time] Tokens on that [crew] Upgrade.",
 	unique: true,
 	specialization: true,
-	factions: ["mirror-universe", "federation"]
+	factions: ["mirror-universe","federation"]
 }, {
 	type: "crew",
 	id: "pavel_chekov_aux_75005",
@@ -218,7 +218,7 @@ module.exports = [{
 	text: "<b>ACTIVATION PHASE:</b> Place 3 [time] Tokens on this card.\n\nRemove 1 [aux] Token beside this ship",
 	unique: true,
 	specialization: true,
-	factions: ["mirror-universe", "federation"]
+	factions: ["mirror-universe","federation"]
 }, {
 	type: "crew",
 	id: "pavel_chekov_75005",
@@ -229,7 +229,7 @@ module.exports = [{
 	unique: true,
 	specialization: true,
 	range: "1 - 2",
-	factions: ["mirror-universe", "federation"]
+	factions: ["mirror-universe","federation"]
 }, {
 	type: "crew",
 	id: "nyota_uhura_comm_75005",
@@ -239,7 +239,7 @@ module.exports = [{
 	text: "<b>WHEN THIS CARD IS FLIPPED FACE UP OR AFTER THIS SHIP SUFFERS CRITICAL DAMAGE:</b>\n\nDiscard alll face up 'Communications Failurs' damage cards beside this ships Ship Card.",
 	unique: true,
 	specialization: true,
-	factions: ["mirror-universe", "federation"]
+	factions: ["mirror-universe","federation"]
 }, {
 	type: "crew",
 	id: "nyota_uhura_75005",
@@ -250,7 +250,7 @@ module.exports = [{
 	unique: true,
 	specialization: true,
 	range: "1 - 2",
-	factions: ["mirror-universe", "federation"]
+	factions: ["mirror-universe","federation"]
 }, {
 	type: "talent",
 	id: "overwhelm_75005",
@@ -299,7 +299,7 @@ module.exports = [{
 	cost: 2,
 	text: "<b>COMBAT PHASE:</b> Discard this card.\n\nPlace 1 [evade] Token beside this ship.",
 	shipKlingon: true,
-	factions: ["mirror-universe", "klingon"]
+	factions: ["mirror-universe","klingon"]
 }, {
 	type: "crew",
 	id: "klingon_patrol_75005",
@@ -309,7 +309,7 @@ module.exports = [{
 	text: "<b>END PHASE:</b> If this ship is not in the Primary Firing Arc of an opposing ship within Range:\n\nFlip this ship's [cloak] Token to its green side.",
 	shipKlingon: true,
 	range: "1 - 2",
-	factions: ["mirror-universe", "klingon"]
+	factions: ["mirror-universe","klingon"]
 }, {
 	type: "crew",
 	id: "klingon_first_officer_75005",
@@ -319,7 +319,7 @@ module.exports = [{
 	text: "<b>END PHASE:</b> Once per game, discard the Captain equipped to this ship.\n\nPerfrom an attack with this ship's Primary Weapon. This card becomes this ship's Captain with a Captain Skill of 4",
 	shipKlingon: true,
 	OnePerShip: true,
-	factions: ["mirror-universe", "klingon"]
+	factions: ["mirror-universe","klingon"]
 }, {
 	type: "crew",
 	id: "koth_75005",
@@ -329,7 +329,7 @@ module.exports = [{
 	text: "<b>SETUP:</b> Place 1 Disabled Token on 1 [crew] upgrade equipped to each opposing ship.",
 	unique: true,
 	shipKlingon: true,
-	factions: ["mirror-universe", "klingon"]
+	factions: ["mirror-universe","klingon"]
 }, {
 	type: "weapon",
 	id: "advanced_long_range_torpedo_75005",
@@ -341,7 +341,7 @@ module.exports = [{
 	unique: false,
 	range: "2 - 3",
 	shipLimit: true,
-	factions: ["mirror-universe", "federation"]
+	factions: ["mirror-universe","federation"]
 }, {
 	type: "weapon",
 	id: "photon_torpedoes_75005",
@@ -352,8 +352,8 @@ module.exports = [{
 	attack: 0,
 	RearArc: true,
 	range: "1 - 3",
-	factions: ["mirror-universe", "klingon"]
-}, {
+	factions: ["mirror-universe","klingon"]
+},{
 	type: "weapon",
 	id: "disruptor_volley_75005",
 	set: ["75005"],
@@ -363,7 +363,7 @@ module.exports = [{
 	shipLimit: true,
 	attack: 5,
 	range: "1 - 3",
-	factions: ["mirror-universe", "klingon"]
+	factions: ["mirror-universe","klingon"]
 }, {
 	type: "weapon",
 	id: "full_spread_phasers_75005",
@@ -373,7 +373,7 @@ module.exports = [{
 	text: "<b>WHEN ATTACKING WITH THIS SHIP'S PRIMARY WEAPON:</b>\n\nThis ship rolls +1 attack die, or this ship may perform an additional attack with its Primary Weapon from its Secondary Firing Arc with -1 attack die.\n(<i>Constitution Class (Kelvin) Only</i>)",
 	OnePerShip: true,
 	shipLimit: true,
-	factions: ["mirror-universe", "federation"]
+	factions: ["mirror-universe","federation"]
 }, {
 	type: "squadron",
 	id: "lead_squadron_73041",
@@ -455,7 +455,7 @@ module.exports = [{
 	name: "The Lone Hunt",
 	cost: 3,
 	range: "1 - 2",
-	text: "<b>WHEN ATTACKING:</b> If there are no friendly ships within range of this ship:\n\nThis ship rolls +1 Attack die this game round.",
+	text:"<b>WHEN ATTACKING:</b> If there are no friendly ships within range of this ship:\n\nThis ship rolls +1 Attack die this game round.",
 	factions: ["independent"]
 }, {
 	type: "talent",
@@ -463,7 +463,7 @@ module.exports = [{
 	set: ["73042"],
 	name: "Relics",
 	cost: 4,
-	text: "Can only be equipped to Karr or a Hirogen Captain.\n\n<b>WHEN ATTACKING:</b> Once per game round, when this ship hits an opposing ship with an attack:\nPlace 1 Mission Token on this card (max 3).\n\n<b>ACTIVATION PHASE:</b> Spend 1 Mission Token on this card.\nPerform an Action on this ship's Action Bar as a Free Action.",
+	text:"Can only be equipped to Karr or a Hirogen Captain.\n\n<b>WHEN ATTACKING:</b> Once per game round, when this ship hits an opposing ship with an attack:\nPlace 1 Mission Token on this card (max 3).\n\n<b>ACTIVATION PHASE:</b> Spend 1 Mission Token on this card.\nPerform an Action on this ship's Action Bar as a Free Action.",
 	factions: ["independent"]
 }, {
 	type: "tech",
@@ -1114,7 +1114,7 @@ module.exports = [{
 	cost: 3,
 	text: "<b>ACTIVATION PHASE:</b> Discard this card and target a Captain or [crew] Upgrade equipped to an opposing ship.\n\nThe target Captain or [crew] Upgrade cannot perfrom Actions this game round.",
 	unique: true,
-	range: "1 - 2",
+	range:"1 - 2",
 	factions: ["romulan"]
 }, {
 	type: "tech",
@@ -11658,3 +11658,4 @@ module.exports = [{
 	unique: false,
 	factions: ["romulan"]
 }];
+

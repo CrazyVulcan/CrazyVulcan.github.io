@@ -2592,7 +2592,7 @@ module.exports = [{
 	talents: 1,
 	text: "<b>PLANNING PHASE:</b> If an opposing Federation ship is in this ship's Primary Firing Arc:\n\nIncrease the Captain Skill of this Captain by 2 this game round.",
 	unique: true,
-	factions: ["mirror-universe", "klingon"]
+	factions: ["mirror-universe","klingon"]
 }, {
 	type: "captain",
 	id: "suran_72010",
