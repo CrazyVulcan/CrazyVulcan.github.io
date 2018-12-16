@@ -316,14 +316,14 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 				};
 			}
 			
-//			if( card.type == "token") {
-//				if( token[card.id] ) {
-//					console.log("Duplicate token",card.id,card.name);
-//					return;
-//				}
+			if( card.type == "token") {
+				if( token[card.id] ) {
+					console.log("Duplicate token",card.id,card.name);
+					return;
+				}
 				
-//				token[card.id] = card;
-//			}
+				token[card.id] = card;
+			}
 			
 			// Apply specific card rules
 			if( cardRules[card.type+":"+card.id] )
@@ -355,16 +355,16 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 			
 		}
 		
-//		function loadShipClass(shipClass) {
-//			
-//			if( shipClasses[shipClass.id] ) {
-//				console.log("Duplicate ship class",shipClass.id,shipClass.name,shipClasses[shipClass.id].name);
-//				return;
-//			}
+		function loadShipClass(shipClass) {
 			
-//			shipClasses[shipClass.id] = shipClass;
+			if( shipClasses[shipClass.id] ) {
+				console.log("Duplicate ship class",shipClass.id,shipClass.name,shipClasses[shipClass.id].name);
+				return;
+			}
 			
-//		}
+			shipClasses[shipClass.id] = shipClass;
+			
+		}
 		
 		function loadCopies( copies ) {
 			
@@ -404,12 +404,12 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 					loadShip(ship);
 			});
 			
-//			$.each( data.shipClasses || [], function(i,shipClass) {
-//				if( shipClass.type == "copy" )
-//					copies.push(shipClass);
-//				else
-//					loadShipClass(shipClass);
-//			});
+			$.each( data.shipClasses || [], function(i,shipClass) {
+				if( shipClass.type == "copy" )
+					copies.push(shipClass);
+				else
+					loadShipClass(shipClass);
+			});
 			
 			$.each( data.captains || [], function(i,captain) {
 				if( captain.type == "copy" )
