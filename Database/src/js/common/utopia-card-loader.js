@@ -4,7 +4,7 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 
 	var valueOf = $filter("valueOf");
 
-	return function(cards, missions, sets, shipClasses, token, callback) {
+	return function(cards, sets, shipClasses, token, callback, missions) {
 
 		function isDuplicate(card, cards) {
 			var dupe = false;
@@ -81,6 +81,7 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 					return cost;
 				}
 			});
+			
 
 			cards.push(ship);
 
@@ -93,12 +94,14 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 			canEquipFaction: true,
 			showType: true,
 		};
+		
 		//<>?<>?<>//
 		function loadMission(mission) {
 			//add the ability to search JSON for missions 
 			missionData.push( mission );
 		}
 		//<>?<>?<>//
+		
 		function loadCaptain(captain) {
 			
 			if( isDuplicate(captain, cards) ) {
@@ -227,7 +230,7 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 			intercept: { ship: {}, fleet: {} },
 			canEquip: true,
 			canEquipFaction: true
-		}
+		};
 
 		function loadResource(resource) {
 
@@ -333,6 +336,7 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 			
 		}
 		
+		//Function to load the Missions
 		function loadMission(mission) {
 			
 			if( missions[mission.id] ) {
@@ -383,6 +387,7 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 			
 			var copies = [];
 			
+			//Load mission data form data.json
 			$.each( data.missions || [], function(i,mission) {
 				if( mission.type == "copy" )
 					copies.push(mission);
