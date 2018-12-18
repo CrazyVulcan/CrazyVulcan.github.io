@@ -237,7 +237,7 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 		}
 
 		// For resource special cards or anything else that doesn't need any special handling
-		function loadOther(card) {
+		/*function loadOther(card) {
 			
 			// TODO Find a better home for this. Should strictly be in rules, but would be too verbose.
 			if( card.type == "fleet-captain" ) {
@@ -327,7 +327,7 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 			
 			cards.push(card);
 			
-		}
+		}*/
 		
 		function loadSet(set) {
 			
