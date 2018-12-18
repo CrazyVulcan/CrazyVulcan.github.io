@@ -4,7 +4,7 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 
 	var valueOf = $filter("valueOf");
 
-	return function(cards, sets, shipClasses, token, callback) {
+	return function(cards, sets, missions, shipClasses, token, callback) {
 
 		function isDuplicate(card, cards) {
 			var dupe = false;
@@ -329,6 +329,28 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 			
 		}
 		
+		function loadMission(missionSet) {
+			
+			if( missionSets[missionSet.sourceID] ) {
+				console.log("Duplicate mission set",missionSet.sourceID,missionSet.name);
+				return;
+			}
+			
+			missionSets[set.id] = missionSet;
+			
+		}
+		
+		function loadMissions(missions) {
+			
+			if( missions[mission.missionID] ) {
+				console.log("Duplicate mission",mission.missionID,mission.name);
+				return;
+			}
+			
+			missions[mission.id] = mission;
+			
+		}
+		
 		function loadSet(set) {
 			
 			if( sets[set.id] ) {
@@ -367,6 +389,20 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 		$http.get( "data/data.json" ).success( function(data) {
 			
 			var copies = [];
+			
+			$.each( data.missionSets || [], function(i,missionSet) {
+				if( missionSet.kind == "copy" )
+					copies.push(missionSet);
+				else
+					loadMission(missionSet);
+			});
+			
+			$.each( data.missions || [], function(i,mission) {
+				if( mission.kind == "copy" )
+					copies.push(mission);
+				else
+					loadMissions(ship);
+			});
 			
 			$.each( data.sets || [], function(i,set) {
 				if( set.type == "copy" )
