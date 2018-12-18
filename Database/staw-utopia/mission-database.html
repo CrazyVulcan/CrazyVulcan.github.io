@@ -31,9 +31,9 @@
 		
 		
 		<div class="u-search-results u-search-cols-1">
-		
+	
 			<ul class="mission-list">
-				<li ng-repeat="missions in missionList | orderBy:'name'" ng-click="viewer.mission = mission" ng-class="{'mission-selected': viewer.mission == mission}">{{mission.name}}: 001</li>
+				<li ng-repeat="missionSet in missionList | orderBy:'name'" ng-click="viewer.missionSet = missionSet" ng-class="{'missionSet-selected': viewer.missionSet == missionSet}">{{missionSet.name}}</li>
 			</ul>
 			
 		</div>
