@@ -371,7 +371,7 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 				return;
 			}
 			
-			missionSets[set.id] = missionSet;
+			missionSets[missionSet.sourceID] = missionSet;
 			
 		}
 		
