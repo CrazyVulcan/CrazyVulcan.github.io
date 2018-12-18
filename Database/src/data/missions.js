@@ -1,7 +1,8 @@
 module.exports = [{
 	kind: "mission",
 	name: "A New Source Of Dilithium",
-	missionID: "001",
+	missionSet: ["001"],
+	missionID: "a_new_source_of_dilithium",
 	Componets: "1 Planet Token and 12 Mission Tokens",
 	description: "Rumors of a new planet harboring dilithium crystals reach the ears of the Federation, as well as the Klingon and Romulan Empires. So rich is the new source that it threatens to provoke open war from the Romulan Empire, and even threatens the Khitomer Accords between the Federation and the Klingon Empire.\n\nEach great power sends its closest ship to the planet to discover if the rumors are true, hoping that open war can be averted, but first each side wants to retrieve dilithium samples for analysis. The first ship to reach the planet, secure the samples, and return to its home will be able to lay claim to the discovery.",
 	setUp: "FEDERATION PLAYER\n40 Squadron Points, including at least one Federation Ship and one [Crew] Upgrade.\n\nKLINGON PLAYER\n40 Squadron Points, including at least one Klingon Ship and one [Crew] Upgrade.\n\nROMULAN PLAYER\n40 Squadron Points, including at least one Romulan Ship and one [Crew] Upgrade.\n\nThe ships are set ups as in a standard 3-Player Game (see “3-Player Setup Diagram” on page 7). Place the Planet Token in the exact center of the play area and place the 12 Mission Tokens outside the play area.",
@@ -10,7 +11,8 @@ module.exports = [{
 }, {
 	kind: "mission",
 	name: "The Chase",
-	missionID: "002",
+	missionSet: ["002"],
+	missionID: "the_chase",
 	Componets: "1 Planet Token, 2 Objective Tokens, and 12 Mission Tokens",
 	description: "Rumors of a new planet harboring dilithium crystals reach the ears of the Federation, as well as the Klingon and Romulan Empires. So rich is the new source that it threatens to provoke open war from the Romulan Empire, and even threatens the Khitomer Accords between the Federation and the Klingon Empire.\n\nEach great power sends its closest ship to the planet to discover if the rumors are true, hoping that open war can be averted, but first each side wants to retrieve dilithium samples for analysis. The first ship to reach the planet, secure the samples, and return to its home will be able to lay claim to the discovery.",
 	setUp: "FEDERATION PLAYER\n40 Squadron Points, including at least one Federation Ship and one [Crew] Upgrade.\n\nKLINGON PLAYER\n40 Squadron Points, including at least one Klingon Ship and one [Crew] Upgrade.\n\nROMULAN PLAYER\n40 Squadron Points, including at least one Romulan Ship and one [Crew] Upgrade.\n\nThe ships are set ups as in a standard 3-Player Game (see “3-Player Setup Diagram” on page 7). Place the Planet Token in the exact center of the play area and place the 12 Mission Tokens outside the play area.",
