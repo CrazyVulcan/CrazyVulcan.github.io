@@ -4,7 +4,7 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 
 	var valueOf = $filter("valueOf");
 
-	return function(cards, sets, missionSets, missions, shipClasses, callback) {
+	return function(cards, token, sets, missionSets, missions, shipClasses, callback) {
 
 		function isDuplicate(card, cards) {
 			var dupe = false;
@@ -235,7 +235,8 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 
 			cards.push(resource);
 		}
-
+		
+		
 		// For resource special cards or anything else that doesn't need any special handling
 		function loadOther(card) {
 			
@@ -314,12 +315,12 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 			
 			if( card.type == "token") {
 				
-				if( "token"[card.id] ) {
+				if( token[card.id] ) {
 					console.log("Duplicate token",card.id,card.name);
 					return;
 				}
 				
-				"token"[card.id] = card;
+				token[card.id] = card;
 			}
 			
 			// Apply specific card rules
@@ -480,8 +481,8 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 					if( !card.classId || !card.classData || !shipClasses[card.classId] )
 						console.log( "No class for ship", card.id, card.name, card.class, card.classId );
 				}
-				if( card.hasTokenInfo && "token"[card.tokenId] ) {
-					card.tokenData = "token"[card.tokenId];
+				if( card.hasTokenInfo && token[card.tokenId] ) {
+					card.tokenData = token[card.tokenId];
 				}
 			});
 				
