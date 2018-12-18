@@ -166,7 +166,7 @@ module.directive( "search", function() {
 				unique: false,
 				generic: false,
 				factions: {},
-				types: {},
+				types: { "ship": {}, "captain": {}, "admiral": {} },
 				columns: 1,
 				sortBy: "cost",
 				ascending: "false",

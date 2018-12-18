@@ -294,7 +294,7 @@ module.exports = [{
 	id: "auxiliary_power",
 	set: ["72281r"],
 	name: "Auxiliary Power",
-	text: "At the start of the battle, place 5 Auxiliary Power Tokens on top of this card\n\nOnce per round, one ship in your fleet may use one of the following abilities.\n\n1. Roll 1 extra attack or defense die, OR\n\n2. Place 1 Evade Token beside your ship, even if there was one already there, OR\n\n3. Repair 1 Shield Token.\n\nIf you use any of their abilities, remove one Auxiliary Power Token from this card beside the ship that used this ability. Discard this card when there no more Auxiliary Power Tokens.",
+	text: "At the start od the battle, place 5 Auxiliary Power Tokens on top of this card\n\nOnce per round, one ship in your fleet may use one of the following abilities.\n\n1. Roll 1 extra attack or defense die, OR\n\n2. Place 1 Evade Token beside your ship, even if there was one already there, OR\n\n3. Repair 1 Shield Token.\n\nIf you use any of their abilities, remove one Auxiliary Power Token from this card beside the ship that used this ability. Discard this card when there no more Auxiliary Power Tokens.",
 	cost: 5,
 	opBanned: true,
 	showShipResourceSlot: false
@@ -305,6 +305,7 @@ module.exports = [{
 	name: "All Stop",
 	text: "At the start of the game, place 5 Mission Tokens on top of this card.\n\nEach round, during the Activation Phase, one ship in your fleet may disregard its chosen maneuver and not move. A ship that uses this ability must skip its Perform Action step.\n\nDiscard this card when there are no more Mission Tokens on this card",
 	cost: 5,
+	opBanned: true,
 	showShipResourceSlot: false
 }, {
 	type: "resource",
@@ -313,6 +314,7 @@ module.exports = [{
 	name: "Senior Staff",
 	text: "Each ship in your fleet may field 1 additional [talent] Upgrade for every [crew] Upgrade assigned to it.\n\nEach [talent] Upgrade is placed next to the [crew] Upgrade that fielded it. \n\nIf the [crew] Upgrade is ever discarded, you must also discard the [talent] Upgrade that was fielded by that [crew] Upgrade. The cost of this resource is 1 sp for each additional [talent] Upgrade you assign to your fleet.",
 	cost: 0,
+	opBanned: true,
 	showShipResourceSlot: false
 }, {
 	type: "resource",
@@ -321,6 +323,7 @@ module.exports = [{
 	name: "Mutiny",
 	text: "At the start of the game place 3 Mission Tokens on this card.\n\nOnce per round, during an opposing ship's Perform Action step, if that ship chooses to perform an Action from its Action Bar, you may remove 1 Mission Token from this card to prevent that ship from performing that Action.\n\nNOTE: This ability occurs after the Action is announced, but before the Action is performed and the opposing ship cannot perform any additional Actions during this round in which you use this ability\n\nRemove this card from the game when there are no Mission Tokens left on this card.",
 	cost: 10,
+	opBanned: true,
 	showShipResourceSlot: false
 }, {
 	type: "resource",
@@ -329,6 +332,7 @@ module.exports = [{
 	name: "Co Pilot",
 	text: "(<i>errata</i>)\n\nAt the start of the game, place 5 Mission Tokens on this card.\n\nOnce per game round, you may remove one Mission Token (at the appropriate time) from this card to use one of the following abilities for one of your ships.\n\n1) <b>Beginning of the Activation Phase</b>, Add 3 to the Captain Skill of the Captain equipped to this ship this game round.\n\n2) <b>During the Modify Attack Dice Step or Modify Defense Dice Step</b>, re-roll one of your attack or defense dice.\n\n3) <b>Beginning of the Activation Phase</b>, Place an [evade] or a [battlestations] Token beside this ship.",
 	cost: 5,
+	opBanned: true,
 	showShipResourceSlot: false
 }, {
 	type: "resource",

@@ -2400,7 +2400,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				self: {
 					cost: function(upgrade,ship,fleet,cost) {
-						if( ship && ship.class != "Predator Class" )
+						if( ship.class != "Predator Class" )
 							return resolve(upgrade,ship,fleet,cost) + 4;
 						return cost;
 					}
@@ -6906,7 +6906,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		//Klingon-Romulan Alliance
 		"talent:klingon_romulan_alliance_72282gp":{
 		canEquipFaction: function(upgrade,ship,fleet) {
-			return hasFaction(ship,"romulan", ship, fleet) && hasFaction(ship.captain,"romulan", ship, fleet);
+			return ( hasFaction(ship,"romulan", ship, fleet) || hasFaction(ship,"klingon", ship, fleet) ) && ( hasFaction(ship.captain,"romulan", ship, fleet) || hasFaction(ship.captain,"klingon", ship, fleet ));
 		}},
 		//Tachyon Pulse
 		"tech:tachyon_pulse_72282gp":{

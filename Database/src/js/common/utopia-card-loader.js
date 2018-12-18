@@ -1,10 +1,10 @@
-var module = angular.module("utopia-card-loader", ["utopia-card-rules","utopia-card-ship","utopia-card-upgrade","utopia-card-resource","utopia-card-faction","utopia-card-token", "utopia-card-missions", "utopia-valueof"]);
-//debug 001
+var module = angular.module("utopia-card-loader", ["utopia-card-rules","utopia-card-ship","utopia-card-upgrade","utopia-card-resource","utopia-card-faction","utopia-card-token"]);
+
 module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", function($http, $filter, cardRules, $factions) {
 
 	var valueOf = $filter("valueOf");
 
-	return function(cards, sets, shipClasses, missions, token, callback) {
+	return function(cards, sets, shipClasses, token, callback) {
 
 		function isDuplicate(card, cards) {
 			var dupe = false;
@@ -94,8 +94,7 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 			canEquipFaction: true,
 			showType: true,
 		};
-		
-		
+
 		function loadCaptain(captain) {
 			
 			if( isDuplicate(captain, cards) ) {
@@ -330,18 +329,6 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 			
 		}
 		
-		//Function to load the Missions
-		function loadMission(mission) {
-			
-			if( missions[mission.id] ) {
-				console.log("Duplicate mission",mission.id,mission.name);
-				return;
-			}
-			
-			missions[mission.id] = mission;
-			
-		}
-		
 		function loadSet(set) {
 			
 			if( sets[set.id] ) {
@@ -380,14 +367,6 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 		$http.get( "data/data.json" ).success( function(data) {
 			
 			var copies = [];
-			
-			//Load mission data form data.json
-			$.each( data.missions || [], function(i,mission) {
-				if( mission.typeX == "copy" )
-					copies.push(mission);
-				else
-					loadMission(mission);
-			});
 			
 			$.each( data.sets || [], function(i,set) {
 				if( set.type == "copy" )
