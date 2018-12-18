@@ -9175,6 +9175,37 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factions: $factions.listCodified,
 			upgradeSlots: [
 				{
+					type: ["captain"],
+					source: "Sideboard",
+					rules: "Combined cost 20 SP or less",
+					canEquip: function(card,ship,fleet,upgradeSlot) {
+
+						var total = 0;
+						$.each( fleet.resource.upgradeSlots, function(i,slot) {
+							if( slot.occupant && slot != upgradeSlot )
+								total += valueOf(slot.occupant,"cost",ship,fleet);
+						} );
+
+						var cost = valueOf(card,"cost",ship,fleet);
+						return total + cost <= 20;
+
+					},
+					intercept: {
+						ship: {
+							// Remove all restrictions
+							canEquip: {
+								priority: 100,
+								fn: function() { return true; }
+							},
+							canEquipFaction: {
+								priority: 100,
+								fn: function() { return true; }
+							},
+							factionPenalty: function() { return 0; }
+						}
+					},
+				},
+				{
 					type: ["talent"],
 					source: "Sideboard",
 					rules: "Combined cost 20 SP or less",
