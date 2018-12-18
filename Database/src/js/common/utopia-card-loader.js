@@ -396,7 +396,14 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 				else
 					loadMission(missionSet);
 			});
-				
+			
+			$.each( data.missions || [], function(i,mission) {
+				if( mission.kind == "copy" )
+					copies.push(mission);
+				else
+					loadMissions(mission);
+			});
+			
 			$.each( data.sets || [], function(i,set) {
 				if( set.type == "copy" )
 					copies.push(set);
@@ -476,14 +483,7 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 					card.tokenData = token[card.tokenId];
 				}
 			});
-			
-			$.each( data.missions || [], function(i,mission) {
-				if( mission.kind == "copy" )
-					copies.push(mission);
-				else
-					loadMissions(mission);
-			});
-			
+				
 			if( callback )
 				callback();
 			
