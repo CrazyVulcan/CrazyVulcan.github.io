@@ -1,7 +1,7 @@
 var module = angular.module("utopia-card-missions", []);
 
 module.directive( "cardMissions", function() {
-
+//debug line
 	return {
 
 		scope: {
