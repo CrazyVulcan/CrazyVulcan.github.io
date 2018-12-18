@@ -481,7 +481,7 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 				if( mission.kind == "copy" )
 					copies.push(mission);
 				else
-					loadMissions(ship);
+					loadMissions(mission);
 			});
 			
 			if( callback )
