@@ -480,8 +480,8 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 					if( !card.classId || !card.classData || !shipClasses[card.classId] )
 						console.log( "No class for ship", card.id, card.name, card.class, card.classId );
 				}
-				if( card.hasTokenInfo && token[card.tokenId] ) {
-					card.tokenData = token[card.tokenId];
+				if( card.hasTokenInfo && "token"[card.tokenId] ) {
+					card.tokenData = "token"[card.tokenId];
 				}
 			});
 				
