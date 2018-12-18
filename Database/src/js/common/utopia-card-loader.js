@@ -4,7 +4,7 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 
 	var valueOf = $filter("valueOf");
 
-	return function(cards, sets, missionSets, missions, shipClasses, callback) {
+	return function(cards, sets, token, missionSets, missions, shipClasses, callback) {
 
 		function isDuplicate(card, cards) {
 			var dupe = false;
@@ -239,6 +239,11 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 		// For resource special cards or anything else that doesn't need any special handling
 		function loadOther(card) {
 			
+			if( isDuplicate(token, cards) ) {
+				console.log( "Duplicate card definition ignored", card.id );
+				return;
+			}
+			
 			// TODO Find a better home for this. Should strictly be in rules, but would be too verbose.
 			if( card.type == "fleet-captain" ) {
 				
@@ -313,6 +318,7 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 			}
 			
 			if( card.type == "token") {
+				
 				if( token[card.id] ) {
 					console.log("Duplicate token",card.id,card.name);
 					return;
