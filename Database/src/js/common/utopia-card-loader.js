@@ -4,7 +4,7 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 
 	var valueOf = $filter("valueOf");
 
-	return function(cards, token, sets, missionSets, missions, shipClasses, callback) {
+	return function(cards, token, shipClasses, sets, missionSets, missions, callback) {
 
 		function isDuplicate(card, cards) {
 			var dupe = false;
