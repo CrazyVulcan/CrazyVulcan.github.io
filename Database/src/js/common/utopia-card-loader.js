@@ -383,7 +383,7 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 			
 			//Load mission data form data.json
 			$.each( data.missions || [], function(i,mission) {
-				if( mission.type == "copy" )
+				if( mission.typeX == "copy" )
 					copies.push(mission);
 				else
 					loadMission(mission);

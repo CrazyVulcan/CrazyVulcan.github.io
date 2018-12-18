@@ -12,7 +12,7 @@ module.exports = [
 //	},
 
 	{
-		type: "mission",
+		typeX: "mission",
 		name: "A New Source Of Dilithium",
 		id: "new_source_of_dilithium",
 		mission: ["new_source_of_dilithium"],
@@ -22,7 +22,7 @@ module.exports = [
 		specialRules: "Ships moving through, overlapping, or firing through the Planet Token must obey the rules for the “Planet Token” outlined on page 23.\n\nEach ship within Range 1 of the Planet Token gains the following two Actions:\nACTION: If your ship is not Cloaked, disable all of your remaining Shields and then disable your Captain and one Crew Upgrade of your choice (place Disabled Upgrade Tokens on these cards). These two cards are considered to have beamed down onto the planet as your 'Away Team.' You cannot remove these Disabled Upgrade Tokens without using the Action listed below.\n\nACTION: If your ship is not Cloaked, disable all of your remaining Shields to remove the Disabled Upgrade Tokens from your Captain and Crew Upgrade. These two cards are now considered on board the ship and are no longer the 'Away Team.'\n\nWhile beamed onto the surface of the planet, an Away Team cannot be targeted by any other cards or effects. While the Captain is part of the Away Team, his ship is considered to have a Skill of 1.\n\nDuring the End Phase, each ship with an Away Team places 1 Mission Token on top of its Captain Card. Once the Away Team beams back aboard the ship, transfer any Mission Tokens from the Captain Card to his Ship Card.",
 		objectives: "Any player who possesses at least 3 Mission Tokens on his Ship Card (not his Captain Card) may enter warp by moving through his starting area and off the play area. This player immediately wins the game.\n\nAny ship that leaves the play area without having 3 Mission Tokens on its Ship Card fails the Mission and loses the game. Also, any ship that leaves the play area without going through its starting area loses the game.\n\nAlternatively, a player can complete the Mission by eliminating all enemy ships."
 	}, {
-		type: "mission",
+		typeX: "mission",
 		name: "The Chase",
 		id: "the_chase",		
 		mission: ["the_chase"],
