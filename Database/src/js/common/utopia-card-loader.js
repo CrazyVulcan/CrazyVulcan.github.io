@@ -375,14 +375,14 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 			
 		}
 		
-		function loadMissions(missions) {
+		function loadMissions(mission) {
 			
 			if( missions[mission.missionID] ) {
 				console.log("Duplicate mission",mission.missionID,mission.name);
 				return;
 			}
 			
-			missions[mission.id] = mission;
+			missions[mission.missionID] = mission;
 			
 		}
 		
@@ -401,7 +401,7 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 				if( mission.kind == "copy" )
 					copies.push(mission);
 				else
-					loadMissions(missions);
+					loadMissions(mission);
 			});
 			
 			$.each( data.sets || [], function(i,set) {
