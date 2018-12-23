@@ -14,7 +14,7 @@ module.exports = [{
 	set: ["75004"],
 	name: "Andorian Imperial Guard",
 	cost: 2,
-	text: "May only be equipped to Thy'lek Sharan or an Andorian Captain.\n-----------------------------------\n<b>WHEN ATTACKING WITH AN Independent [weapon] UPGRADE:</b> Place 2 [time] Tokens on this card.\nThis ship rolls additional attack dice this attack equal to the number of [time] Tokens on the Independent [weapon] Upgrade being used.",
+	text: "May only be equipped to Thy'lek Shran or an Andorian Captain.\n-----------------------------------\n<b>WHEN ATTACKING WITH AN Independent [weapon] UPGRADE:</b> Place 2 [time] Tokens on this card.\nThis ship rolls additional attack dice this attack equal to the number of [time] Tokens on the Independent [weapon] Upgrade being used.",
 	factions: ["independent"]
 }, {
 	type: "talent",
@@ -31,7 +31,7 @@ module.exports = [{
 	set: ["75004"],
 	name: "Particle Synthesis",
 	cost: 4,
-	text: "<b>WHEN DEFENDING:</b> Before the Roll Attack Dice Step:\nYou may roll excatly 1 defense die that cannnot be re-rolled or modified. If you roll a [blank], the attacking ship must choose a new legal target for the attack. If no other target can be chosen the attack is cancelled and this card must be discarded.\n|Dauntless Class|",
+	text: "<b>WHEN DEFENDING:</b> Before the Roll Attack Dice Step:\nYou may roll excatly 1 defense die that cannnot be re-rolled or modified. If you roll a [blank], the attacking ship must choose a new legal target for the attack. If no other target can be chosen the attack is canceled and this card must be discarded.\n|Dauntless Class|",
 	shipLimit: true,
 	OnePerShip: true,
 	factions: ["independent"]
@@ -41,7 +41,7 @@ module.exports = [{
 	set: ["75004"],
 	name: "Enhanced Shield Emitters",
 	cost: 5,
-	text: "Increase this ship's Shield Value by 2.\n-----------------------------------\n<b>COMBAT PAHSE:</b>\nYou may flip up to 2 Disabled Shield Tokens on this ship to thier Active Sides.\n-----------------------------------\n<b>END PHASE:</b>\nYou may reppair 1 Shield on this ship.\n|Andorian Battle Cruiser|",
+	text: "Increase this ship's Shield Value by 2.\n-----------------------------------\n<b>COMBAT PAHSE:</b>\nYou may flip up to 2 Disabled Shield Tokens on this ship to thier Active Sides.\n-----------------------------------\n<b>END PHASE:</b>\nYou may repair 1 Shield on this ship.\n|Andorian Battle Cruiser|",
 	shipLimit: true,
 	OnePerShip: true,
 	factions: ["independent"]
@@ -205,7 +205,7 @@ module.exports = [{
 	set: ["75005"],
 	name: "Leonard Mccoy",
 	cost: 3,
-	text: "<b>SETUP:</b>\nPlace 1 [crew] Upgrade with a printed cost of 4 SP or less face down beneath this card.\n----------------------------------------\n<b>ACTIVATION PHASE:</b>\nFlip the [crew] Upgrade beneath this card face up and equip it to this shp even if it exceeds this ship's restrections. Place 3 [time] Tokens on that [crew] Upgrade.",
+	text: "<b>SETUP:</b>\nPlace 1 [crew] Upgrade with a printed cost of 4 SP or less face down beneath this card.\n----------------------------------------\n<b>ACTIVATION PHASE:</b>\nFlip the [crew] Upgrade beneath this card face up and equip it to this ship even if it exceeds this ship's restrictions. Place 3 [time] Tokens on that [crew] Upgrade.",
 	unique: true,
 	specialization: true,
 	factions: ["mirror-universe","federation"]
@@ -268,7 +268,7 @@ module.exports = [{
 	set: ["75005"],
 	name: "Portable Transwarp Beaming Device",
 	cost: 2,
-	text: "<b>WHEN A [crew] UPGRADE EQUIPPED TO THIS SHIP WOULD BE DISCARDED:</b> Discard this card and target a friendly ship.\n\nInstead place 1 [time] Token on the [crew] Upgrade that would be discarded and equip it to the target ship, even if it exceeds tath ship's restrictions.",
+	text: "<b>WHEN A [crew] UPGRADE EQUIPPED TO THIS SHIP WOULD BE DISCARDED:</b> Discard this card and target a friendly ship.\n\nInstead place 1 [time] Token on the [crew] Upgrade that would be discarded and equip it to the target ship, even if it exceeds that ship's restrictions.",
 	unique: true,
 	range: "1 - 3",
 	factions: ["mirror-universe"]
@@ -278,7 +278,7 @@ module.exports = [{
 	set: ["75005"],
 	name: "Intergrated Future Technology",
 	cost: 3,
-	text: "You do not pay Faction Penalty when equipping Romulan or Borg [tech] and/or [weapon] Upgrades to this ship.\n<b>SETUP:</b>Place 1 [tech] Upgrade with a printed cost of 4 SP or less face down beneath this card.\n\n<b>PLANNING PHASE:</b> Discard this card.\nFlip the [tech] Upgrade beneath this card face up and equip it to this ship even if it exceeds this ships restrections.",
+	text: "You do not pay Faction Penalty when equipping Romulan or Borg [tech] and/or [weapon] Upgrades to this ship.\n<b>SETUP:</b>Place 1 [tech] Upgrade with a printed cost of 4 SP or less face down beneath this card.\n\n<b>PLANNING PHASE:</b> Discard this card.\nFlip the [tech] Upgrade beneath this card face up and equip it to this ship even if it exceeds this ships restrictions.",
 	OnePerShip: true,
 	factions: ["mirror-universe"]
 }, {
@@ -338,7 +338,7 @@ module.exports = [{
 	cost: 3,
 	text: "The Attack Value of this [weapon] is this ship’s Primary Weapon Value +1.\n-----------------------------------\n<b>ATTACK:</b> Spend this ship’s [target-lock] Token, place 2 [time] Tokens on this card, and target an opposing ship.\n\nIf the attack hits, every other ship within Range 1 of the opposing ship suffers 1 [hit].\n(<i>Constitution Class (Kelvin) Only</i>)",
 	attack: 0,
-	unique: true,
+	unique: false,
 	range: "2 - 3",
 	shipLimit: true,
 	factions: ["mirror-universe","federation"]
@@ -352,7 +352,6 @@ module.exports = [{
 	attack: 0,
 	RearArc: true,
 	range: "1 - 3",
-	shipLimit: true,
 	factions: ["mirror-universe","klingon"]
 },{
 	type: "weapon",
@@ -360,7 +359,7 @@ module.exports = [{
 	set: ["75005"],
 	name: "Disruptor Volley",
 	cost: 3,
-	text: "<b>ATTACK</b>:Disable this card and Target an opposing ship.\n\nThis attack deals no damage. f this attack his place an [aux] Token beside the defending ship. If the defending ship is an Attack Squadron, discard 1 Attack Squadron Token (AST) for each uncancelled [hit] or [crit]</b>\n(<i>Warbird Class Only</i>)",
+	text: "<b>ATTACK</b>:Disable this card and Target an opposing ship.\n\nThis attack deals no damage. f this attack his place an [aux] Token beside the defending ship. If the defending ship is an Attack Squadron, discard 1 Attack Squadron Token (AST) for each uncanceled [hit] or [crit]</b>\n(<i>Warbird Class Only</i>)",
 	shipLimit: true,
 	attack: 5,
 	range: "1 - 3",
@@ -371,7 +370,7 @@ module.exports = [{
 	set: ["75005"],
 	name: "Full Spread Phasers",
 	cost: 4,
-	text: "<b>WHEN ATTACKING WITH THIS SHIP'S PRIMARY WEAPON:</b>\n\nThis ship rolls +1 attack die, or this ship may perform an dditional attack with its Primary Weapon from its Secondary Firing Arc with -1 attack die.\n(<i>Constitution Class (Kelvin) Only</i>)",
+	text: "<b>WHEN ATTACKING WITH THIS SHIP'S PRIMARY WEAPON:</b>\n\nThis ship rolls +1 attack die, or this ship may perform an additional attack with its Primary Weapon from its Secondary Firing Arc with -1 attack die.\n(<i>Constitution Class (Kelvin) Only</i>)",
 	OnePerShip: true,
 	shipLimit: true,
 	factions: ["mirror-universe","federation"]
@@ -434,7 +433,7 @@ module.exports = [{
 	type: "squadron",
 	id: "flanking_attack_omega_73041",
 	set: ["73041"],
-	name: "Flanking Attak Omega",
+	name: "Flanking Attack Omega",
 	cost: 4,
 	text: "\n<b>COMBAT PHASE:</b> Discard this card and target a friendly Capital Ship.\n\nThe target ship rolls +3 attack dice this game round. This Attack Squadron cannot attack this game round.",
 	OnePerShip: true,
@@ -967,7 +966,6 @@ module.exports = [{
 	set: ["75002"],
 	name: "All Power To Weapons",
 	cost: 5,
-	range: "1 - 2",
 	text: "<b>COMBAT PHASE:</b> Place 3 [time] Tokens on this card and disable this ships Shields.\n\n<b>Continuous Effect:</b> This ships Shields remain disabled. This ship can only perform Green Maneuvers. This ship rolls +3 attack dice.",
 	unique: true,
 	captainDominion: true,
@@ -2320,7 +2318,7 @@ module.exports = [{
 	attack: 3,
 	range: "1 - 3",
 	text: "Add 1 [weapon] Upgrade icon to your Upgrade Bar.\n\n<b>ATTACK:</b> Place 2 Time Tokens on this card to perform this attack. Treat this attack as if it were an attack made with a Primary Weapon. No ship may be equipped with more then one \"Main Batteries\" Upgrade.",
-	unique: true,
+	unique: false,
 	factions: ["romulan"]
 }, {
 	type: "crew",

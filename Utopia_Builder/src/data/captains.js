@@ -1520,7 +1520,7 @@ module.exports = [{
 	cost: 3,
 	skill: 5,
 	talents: 1,
-	text: "When a friendly ship within range 1 of your ship is defending, during the Declare Target step, your ship may become the target of the attack instead of the friendly ship. Treat the attack as though your ship were at the same Range as the friendly ship.",
+	text: "<b>DECLARE TARGET STEP:</b> If this ship is within range and the firing arc of an opposing attacking ship, target a friendly defending ship within range 1.\n\nThis ship becomes the target of the attack instead of the friendly defending ship. Treat this ship as though it’s at the same range as the target friendly defending ship for this attack.",
 	unique: true,
 	factions: ["xindi"]
 }, {
@@ -2093,7 +2093,7 @@ module.exports = [{
 	type: "captain",
 	id: "thylek_shran_kumari",
 	set: ["71223"],
-	name: "Thy'Lek Sharan",
+	name: "Thy'Lek Shran",
 	cost: 4,
 	skill: 6,
 	talents: 1,
