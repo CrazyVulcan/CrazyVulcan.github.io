@@ -3465,7 +3465,17 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquipFaction: function(card,ship,fleet) {
 				return hasFaction(ship,"kazon",ship,fleet) && hasFaction(ship.captain,"kazon",ship,fleet);
 			},
-			upgradeSlots: [{ type: ["tech"] }],
+			isSlotCompatible: function(slotTypes) {
+				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0;
+			},
+			upgradeSlots: [{ 
+			
+				type: ["tech"],
+				
+				type: function(upgrade,ship) {
+					return getSlotType(upgrade,ship);
+				}
+			}],
 			intercept: {
 				ship: {
 					skill: function(card,ship,fleet,skill) {
