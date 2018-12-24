@@ -229,7 +229,19 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"captain:kazon_captain_71282":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
-			}
+			},
+			upgradeSlots: [ {
+				type: ["talent"],
+				rules: "First Maje Only",
+				canEquip: function(upgrade) {
+					return upgrade.name == "First Maje";
+				},
+				intercept: {
+					ship: {
+						cost: function() { return 0; }
+					}
+				}
+			} ]
 		},
 		//Xindi
 		"captain:xindi_captain_72003p":{
@@ -1071,12 +1083,38 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"captain:rettik_71282":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
-			}},
+			},
+			upgradeSlots: [ {
+				type: ["talent"],
+				rules: "First Maje Only",
+				canEquip: function(upgrade) {
+					return upgrade.name == "First Maje";
+				},
+				intercept: {
+					ship: {
+						cost: function() { return 0; }
+					}
+				}
+			} ]
+		},
 		//Culluh
 		"captain:culluh_71282":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
-			}},
+			},
+			upgradeSlots: [ {
+				type: ["talent"],
+				rules: "First Maje Only",
+				canEquip: function(upgrade) {
+					return upgrade.name == "First Maje";
+				},
+				intercept: {
+					ship: {
+						cost: function() { return 0; }
+					}
+				}
+			} ]
+		},
 		// Kazon Raiding Party
 		"crew:kazon_raiding_party_71282": {
 			canEquip: function(upgrade,ship,fleet) {
@@ -2364,9 +2402,19 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			upgradeSlots: [
 				// Add one weapon slot
 				{
-					type: ["weapon"]
+					type: ["weapon"],
+	
+				type: ["talent"],
+				rules: "First Maje Only",
+				canEquip: function(upgrade) {
+					return upgrade.name == "First Maje";
+				},
+				intercept: {
+					ship: {
+						cost: function() { return 0; }
+					}
 				}
-			],
+			} ],
 			intercept: {
 				ship: {
 					// All Kazon weapons are -1 SP
@@ -3442,12 +3490,38 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"captain:jabin_71793":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
-			}},
+			},
+			upgradeSlots: [ {
+				type: ["talent"],
+				rules: "First Maje Only",
+				canEquip: function(upgrade) {
+					return upgrade.name == "First Maje";
+				},
+				intercept: {
+					ship: {
+						cost: function() { return 0; }
+					}
+				}
+			} ]
+		},
 		//Razik
 		"captain:razik_71793":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
-			}},
+			},
+			upgradeSlots: [ {
+				type: ["talent"],
+				rules: "First Maje Only",
+				canEquip: function(upgrade) {
+					return upgrade.name == "First Maje";
+				},
+				intercept: {
+					ship: {
+						cost: function() { return 0; }
+					}
+				}
+			} ]
+		},
 		// Karden
 		"crew:karden_71793": {
 			canEquipFaction: function(upgrade,ship,fleet) {
@@ -3461,7 +3535,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 		},
 		//First Maje
-		"question:first_maje_71793": {
+		"talent:first_maje_71793": {
 			canEquipFaction: function(card,ship,fleet) {
 				return hasFaction(ship,"kazon",ship,fleet) && hasFaction(ship.captain,"kazon",ship,fleet);
 			},
@@ -3469,10 +3543,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0;
 			},
 			upgradeSlots: [{ 
-				
-				type: ["tech" && function(upgrade,ship) {
-					return getSlotType(upgrade,ship);
-				}]
+				type: ["tech"]
 			}],
 			intercept: {
 				ship: {
@@ -5181,7 +5252,20 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"captain:surat_Halik":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
-			}},
+			},
+			upgradeSlots: [ {
+					type: ["talent"],
+					rules: "First Maje Only",
+					canEquip: function(upgrade) {
+						return upgrade.name == "First Maje";
+					},
+					intercept: {
+						ship: {
+							cost: function() { return 0; }
+						}
+					}
+				} ]
+		},
 		//Lorrum
 		"crew:lorrum_Halik":{
 			factionPenalty: function(upgrade, ship, fleet) {
@@ -5477,7 +5561,20 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"captain:culluh_nistrim_culluh":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
-			}},
+			},
+			upgradeSlots: [ {
+				type: ["talent"],
+				rules: "First Maje Only",
+				canEquip: function(upgrade) {
+					return upgrade.name == "First Maje";
+				},
+				intercept: {
+					ship: {
+						cost: function() { return 0; }
+					}
+				}
+			} ]
+		},
 		//Photonic Charges
 		"weapon:photonic_charges_71646c":{
 			factionPenalty: function(upgrade, ship, fleet) {
