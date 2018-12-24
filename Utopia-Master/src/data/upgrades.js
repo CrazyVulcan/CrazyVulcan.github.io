@@ -9146,7 +9146,7 @@ module.exports = [{
 	attack: 0,
 	range: ""
 }, {
-	type: "talent",
+	type: "question",
 	id: "first_maje_71793",
 	set: ["71793"],
 	name: "First Maje",

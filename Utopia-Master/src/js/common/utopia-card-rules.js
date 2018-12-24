@@ -3461,7 +3461,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 		},
 		//First Maje
-		"talent:first_maje_71793": {
+		"question:first_maje_71793": {
 			canEquipFaction: function(card,ship,fleet) {
 				return hasFaction(ship,"kazon",ship,fleet) && hasFaction(ship.captain,"kazon",ship,fleet);
 			},
