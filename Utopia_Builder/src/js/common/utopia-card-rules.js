@@ -5169,6 +5169,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 
 	//Halik Raider :71192
+		"ship:halik_raider_71192": {
+			upgradeSlots: [ createFirstMajeSlot() ]
+		},
 		//Surat
 		"captain:surat_Halik":{
 			factionPenalty: function(upgrade, ship, fleet) {
