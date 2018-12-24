@@ -3469,12 +3469,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0;
 			},
 			upgradeSlots: [{ 
-			
-				type: ["tech"],
 				
-				type: function(upgrade,ship) {
+				type: ["tech" && function(upgrade,ship) {
 					return getSlotType(upgrade,ship);
-				}
+				}]
 			}],
 			intercept: {
 				ship: {
