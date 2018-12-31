@@ -34,8 +34,15 @@
 		
 		
 		
-		<div class="mission-display">
+		<div class="u-container">
 		
+		<div class="u-search-results u-search-cols-1">
+		
+			<ul class="set-list">
+				<li ng-repeat="mission in missionList | orderBy:'-orderDate'" ng-click="viewer.missionSet = missionSet" ng-class="{'mission-selected': viewer.missionSet == missionSet}">{{missionSet.name}}</li>
+			</ul>
+			
+		</div>
 		</div>
 		<!--<script src="js/analytics.js"></script>-->
 		
