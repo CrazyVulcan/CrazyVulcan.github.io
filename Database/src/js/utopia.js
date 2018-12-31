@@ -21,6 +21,8 @@ module.controller( "UtopiaCtrl", [ "$scope", "$filter", "cardLoader", "$factions
 	$scope.cards = [];
 	$scope.sets = {};
 	$scope.setList = [];
+	$scope.missionSets = [];
+	$scope.missionList = [];
 	$scope.shipClasses = {};
 	$scope.token = {};
 	$scope.activeFleet = { ships: [] };
