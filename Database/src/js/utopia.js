@@ -29,7 +29,7 @@ module.controller( "UtopiaCtrl", [ "$scope", "$filter", "cardLoader", "$factions
 
 	$scope.loading = true;
 	
-	cardLoader( $scope.cards, $scope.sets, $scope.shipClasses, $scope.token, function() {
+	cardLoader( $scope.cards, $scope.sets, $scope.missionSets, $scope.shipClasses, $scope.token, function() {
 
 		$scope.$broadcast("cardsLoaded");
 		$scope.loading = false;
