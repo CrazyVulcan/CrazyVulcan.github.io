@@ -1,4 +1,4 @@
-var module = angular.module("utopia-missions", ["utopia"]);
+var module = angular.module("utopia-mission-database", ["utopia"]);
 
 module.controller( "UtopiaMissionCtrl", [ "$scope", "$filter", "cardLoader", "$factions", function($scope, $filter, cardLoader, $factions) {
 
