@@ -8,6 +8,7 @@ module.controller( "UtopiaMissionCtrl", [ "$scope", "$filter", "cardLoader", "$f
 	$scope.viewer = {};
 	$scope.activeSet = false;
 	$scope.setCards = [];
+	$scope.missionSetCards = [];
 	
 	cardLoader( $scope.missionSets, function() {
 
