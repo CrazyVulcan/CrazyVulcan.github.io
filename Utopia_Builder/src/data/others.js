@@ -356,7 +356,10 @@ module.exports = [{
 		source: "Flagship"
 	}
 	],
-	
+	attack: 1,
+	agility: 1,
+	hull: 0,
+	shields: 1,
 	showType: true,
 	canEquip: true,
 	canEquipFaction: true,
@@ -393,7 +396,10 @@ module.exports = [{
 		source: "Flagship"
 	}
 	],
-	
+	attack: 1,
+	agility: 1,
+	hull: 0,
+	shields: 1,
 	showType: true,
 	canEquip: true,
 	canEquipFaction: true,
@@ -430,7 +436,10 @@ module.exports = [{
 		source: "Flagship"
 	}
 	],
-	
+	attack: 1,
+	agility: 1,
+	hull: 1,
+	shields: 0,
 	showType: true,
 	canEquip: true,
 	canEquipFaction: true,
@@ -467,7 +476,10 @@ module.exports = [{
 		source: "Flagship"
 	}
 	],
-	
+	attack: 1,
+	agility: 1,
+	hull: 1,
+	shields: 0,
 	showType: true,
 	canEquip: true,
 	canEquipFaction: true,
@@ -504,7 +516,10 @@ module.exports = [{
 		source: "Flagship"
 	}
 	],
-	
+	attack: 0,
+	agility: 1,
+	hull: 1,
+	shields: 1,
 	showType: true,
 	canEquip: true,
 	canEquipFaction: true,
@@ -541,6 +556,10 @@ module.exports = [{
 		source: "Flagship"
 	}
 	],
+	attack: 0,
+	agility: 1,
+	hull: 1,
+	shields: 1,
 	showType: true,
 	canEquip: true,
 	canEquipFaction: true,
@@ -577,7 +596,10 @@ module.exports = [{
 		source: "Flagship"
 	}
 	],
-	
+	attack: 1,
+	agility: 0,
+	hull: 1,
+	shields: 1,
 	showType: true,
 	canEquip: true,
 	canEquipFaction: true,
@@ -614,7 +636,10 @@ module.exports = [{
 		source: "Flagship"
 	}
 	],
-	
+	attack: 1,
+	agility: 0,
+	hull: 1,
+	shields: 1,
 	showType: true,
 	canEquip: true,
 	canEquipFaction: true,
