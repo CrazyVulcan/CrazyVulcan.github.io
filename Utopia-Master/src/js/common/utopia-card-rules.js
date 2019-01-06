@@ -7444,7 +7444,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"tech:shield_adaptation_72013wp":{
 			//Hull is equal or greater then 4, needs to work with fleet commander
 			canEquip: function( ship, fleet, canEquip) { 
-				if( ship.printedValue == 0 || valueOf(ship,"hull",ship,fleet) >= 4 )
+				if( valueOf(ship,"hull",ship,fleet) >= 4 )
 					return false;
 				return canEquip;
 			}},
@@ -9368,6 +9368,25 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			// Only equip if ship matches faction
 			canEquip: function(upgrade,ship,fleet) {
 				return $factions.hasFaction(ship, "romulan", ship, fleet);
+			},
+			intercept: {
+				ship: {
+					attack: function(card,ship,fleet,attack) {
+						if( card == ship )
+							return resolve(card,ship,fleet,attack) + 1;
+						return attack;
+					},
+					agility: function(card,ship,fleet,agility) {
+						if( card == ship )
+							return resolve(card,ship,fleet,agility) + 1;
+						return agility;
+					},
+					shields: function(card,ship,fleet,shields) {
+						if( card == ship )
+							return resolve(card,ship,fleet,shields) + 1;
+						return shields;
+					}
+				}
 			}
 		},
 
@@ -9376,6 +9395,25 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			// Only equip if ship matches faction
 			canEquip: function(upgrade,ship,fleet) {
 				return $factions.hasFaction(ship, "klingon", ship, fleet);
+			},
+			intercept: {
+				ship: {
+					attack: function(card,ship,fleet,attack) {
+						if( card == ship )
+							return resolve(card,ship,fleet,attack) + 1;
+						return attack;
+					},
+					agility: function(card,ship,fleet,agility) {
+						if( card == ship )
+							return resolve(card,ship,fleet,agility) + 1;
+						return agility;
+					},
+					hull: function(card,ship,fleet,hull) {
+						if( card == ship )
+							return resolve(card,ship,fleet,hull) + 1;
+						return hull;
+					}
+				}
 			}
 		},
 
@@ -9384,6 +9422,25 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			// Only equip if ship matches faction
 			canEquip: function(upgrade,ship,fleet) {
 				return $factions.hasFaction(ship, "dominion", ship, fleet);
+			},
+			intercept: {
+				ship: {
+					agility: function(card,ship,fleet,agility) {
+						if( card == ship )
+							return resolve(card,ship,fleet,agility) + 1;
+						return agility;
+					},
+					hull: function(card,ship,fleet,hull) {
+						if( card == ship )
+							return resolve(card,ship,fleet,hull) + 1;
+						return hull;
+					},
+					shields: function(card,ship,fleet,shields) {
+						if( card == ship )
+							return resolve(card,ship,fleet,shields) + 1;
+						return shields;
+					}
+				}
 			}
 		},
 
@@ -9392,6 +9449,25 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			// Only equip if ship matches faction
 			canEquip: function(upgrade,ship,fleet) {
 				return $factions.hasFaction(ship, "federation", ship, fleet);
+			},
+			intercept: {
+				ship: {
+					attack: function(card,ship,fleet,attack) {
+						if( card == ship )
+							return resolve(card,ship,fleet,attack) + 1;
+						return attack;
+					},
+					hull: function(card,ship,fleet,hull) {
+						if( card == ship )
+							return resolve(card,ship,fleet,hull) + 1;
+						return hull;
+					},
+					shields: function(card,ship,fleet,shields) {
+						if( card == ship )
+							return resolve(card,ship,fleet,shields) + 1;
+						return shields;
+					}
+				}
 			}
 		},
 
@@ -9404,6 +9480,21 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						if( card == ship && factions.indexOf("independent") < 0 )
 							return factions.concat(["independent"]);
 						return factions;
+					},
+					attack: function(card,ship,fleet,attack) {
+						if( card == ship )
+							return resolve(card,ship,fleet,attack) + 1;
+						return attack;
+					},
+					agility: function(card,ship,fleet,agility) {
+						if( card == ship )
+							return resolve(card,ship,fleet,agility) + 1;
+						return agility;
+					},
+					shields: function(card,ship,fleet,shields) {
+						if( card == ship )
+							return resolve(card,ship,fleet,shields) + 1;
+						return shields;
 					}
 				}
 			}
@@ -9418,6 +9509,21 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						if( card == ship && factions.indexOf("independent") < 0 )
 							return factions.concat(["independent"]);
 						return factions;
+					},
+					attack: function(card,ship,fleet,attack) {
+						if( card == ship )
+							return resolve(card,ship,fleet,attack) + 1;
+						return attack;
+					},
+					agility: function(card,ship,fleet,agility) {
+						if( card == ship )
+							return resolve(card,ship,fleet,agility) + 1;
+						return agility;
+					},
+					hull: function(card,ship,fleet,hull) {
+						if( card == ship )
+							return resolve(card,ship,fleet,hull) + 1;
+						return hull;
 					}
 				}
 			}
@@ -9432,6 +9538,21 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						if( card == ship && factions.indexOf("independent") < 0 )
 							return factions.concat(["independent"]);
 						return factions;
+					},
+					agility: function(card,ship,fleet,agility) {
+						if( card == ship )
+							return resolve(card,ship,fleet,agility) + 1;
+						return agility;
+					},
+					hull: function(card,ship,fleet,hull) {
+						if( card == ship )
+							return resolve(card,ship,fleet,hull) + 1;
+						return hull;
+					},
+					shields: function(card,ship,fleet,shields) {
+						if( card == ship )
+							return resolve(card,ship,fleet,shields) + 1;
+						return shields;
 					}
 				}
 			}
@@ -9446,6 +9567,21 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						if( card == ship && factions.indexOf("independent") < 0 )
 							return factions.concat(["independent"]);
 						return factions;
+					},
+					attack: function(card,ship,fleet,attack) {
+						if( card == ship )
+							return resolve(card,ship,fleet,attack) + 1;
+						return attack;
+					},
+					hull: function(card,ship,fleet,hull) {
+						if( card == ship )
+							return resolve(card,ship,fleet,hull) + 1;
+						return hull;
+					},
+					shields: function(card,ship,fleet,shields) {
+						if( card == ship )
+							return resolve(card,ship,fleet,shields) + 1;
+						return shields;
 					}
 				}
 			}
