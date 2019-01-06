@@ -9392,6 +9392,31 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			// Only equip if ship matches faction
 			canEquip: function(upgrade,ship,fleet) {
 				return $factions.hasFaction(ship, "federation", ship, fleet);
+			},
+			intercept: {
+				ship: {
+					attack: {
+						primary: 100,
+						fn: function(card,ship,fleet,attack) {
+						if( card == ship )
+							return resolve(card,ship,fleet,attack) + 1;
+						return attack;
+					}},
+					hull: {
+						primary: 100,
+						fn: function(card,ship,fleet,hull) {
+						if( card == ship )
+							return resolve(card,ship,fleet,hull) + 1;
+						return hull;
+					}},
+					shields: {
+						primary: 100,
+						fn: function(card,ship,fleet,shields) {
+						if( card == ship )
+							return resolve(card,ship,fleet,shields) + 1;
+						return shields;
+					}},
+				}
 			}
 		},
 
