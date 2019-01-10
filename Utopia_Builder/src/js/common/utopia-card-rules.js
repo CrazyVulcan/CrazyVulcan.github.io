@@ -2589,7 +2589,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			attack: 0,
 			// Equip only on a Federation ship with hull 4 or more
 			canEquip: function(upgrade,ship,fleet) {
-				return ship && $factions.hasFaction(ship,"federation", ship, fleet) || $factions.hasFaction(ship,"bajoran", ship, fleet) || ship.hull >= 4;
+				return ship && ( $factions.hasFaction(ship,"federation", ship, fleet) || $factions.hasFaction(ship,"bajoran", ship, fleet) || $factions.hasFaction(ship,"vulcan", ship, fleet) ) && ship.hull >= 4;
 			},
 			intercept: {
 				self: {
@@ -7443,7 +7443,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		//Shield Adaption
 		"tech:shield_adaptation_72013wp":{
 			//Hull is equal or greater then 4, needs to work with fleet commander
-		},
+			canEquip: function( ship, fleet, canEquip) { 
+				if( valueOf(ship,"hull",ship,fleet) >= 4 )
+					return false;
+				return canEquip;
+			}},
 		//B'Elanna's codes
 		"tech:belannas_codes_72013wp":{
 			factionPenalty: function(upgrade, ship, fleet) {
@@ -9388,6 +9392,14 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			// Only equip if ship matches faction
 			canEquip: function(upgrade,ship,fleet) {
 				return $factions.hasFaction(ship, "federation", ship, fleet);
+			},
+			intercept: {
+				ship: {
+					canEquip: function(upgrade,ship,fleet) {
+				if( upgrade || (upgrade && upgrade.name == "Aft Torpedo Launcher" && ship.hull >= 3) || (upgrade && upgrade.name == "Shield Adaption" && ship.hull >= 3) )
+						return true;
+					}
+				}
 			}
 		},
 

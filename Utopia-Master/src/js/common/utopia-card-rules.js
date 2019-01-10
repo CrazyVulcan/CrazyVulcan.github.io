@@ -7444,7 +7444,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"tech:shield_adaptation_72013wp":{
 			//Hull is equal or greater then 4, needs to work with fleet commander
 			canEquip: function( ship, fleet, canEquip) { 
-				if( ship.printedValue == 0 || valueOf(ship,"hull",ship,fleet) >= 4 )
+				if( valueOf(ship,"hull",ship,fleet) >= 4 )
 					return false;
 				return canEquip;
 			}},
