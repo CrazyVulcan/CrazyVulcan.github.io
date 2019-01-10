@@ -9396,7 +9396,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				ship: {
 					canEquip: function(upgrade,ship,fleet) {
-				if( (upgrade && upgrade.name == "Aft Torpedo Launcher" && ship.hull >= 3) || (upgrade && upgrade.name == "Shield Adaption" && ship.hull >= 3) )
+				if( upgrade || (upgrade && upgrade.name == "Aft Torpedo Launcher" && ship.hull >= 3) || (upgrade && upgrade.name == "Shield Adaption" && ship.hull >= 3) )
 						return true;
 					}
 				}
