@@ -4791,7 +4791,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			},
 			canEquip: function(upgrade,ship,fleet) {
-				if( (ship.classData && ship.classData.rearArc && ship.hull >= 4 ) || (ship.classData && ship.classData.rearArc && ship.hull == 3 && ship.upgrade.name == "Federation") )
+				if(  (ship.classData && ship.classData.rearArc && ship.hull >= 4) )
 				return true;
 			},
 		},
@@ -9391,6 +9391,14 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			// Only equip if ship matches faction
 			canEquip: function(upgrade,ship,fleet) {
 				return $factions.hasFaction(ship, "federation", ship, fleet);
+			},
+			intercept: {
+				ship: {
+					canEquip: function(upgrade,ship,fleet) {
+							if(  upgrade && upgrade.name == "Aft Torpedo Launcher" && ship.hull >= 3)
+						return true;
+					}
+				}
 			}
 		},
 
