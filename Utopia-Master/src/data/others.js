@@ -339,6 +339,8 @@ module.exports = [{
 	factions: ["romulan"],
 	text: "When attacking, all other friendly, Romulan ships within Range 1-2 of your Flagship may choose any number of their attack dice and re-roll them once.",
 	cost: 10,
+	// Run this interceptor before all other penalties and discounts
+	priority: 1,
 	actions: ["sensor-echo"],
 	upgrades: [{
 		type: ["talent"],
@@ -356,7 +358,10 @@ module.exports = [{
 		source: "Flagship"
 	}
 	],
-	
+	attack: 1,
+	agility: 1,
+	hull: 0,
+	shields: 1,
 	showType: true,
 	canEquip: true,
 	canEquipFaction: true,
@@ -376,6 +381,8 @@ module.exports = [{
 	factions: ["independent"],
 	text: "When defending, all other friendly ships within Range 1 of your Flagship gain +1 defense die.",
 	cost: 10,
+	// Run this interceptor before all other penalties and discounts
+	priority: 1,
 	actions: ["battlestations"],
 	upgrades: [{
 		type: ["weapon"],
@@ -393,7 +400,10 @@ module.exports = [{
 		source: "Flagship"
 	}
 	],
-	
+	attack: 1,
+	agility: 1,
+	hull: 0,
+	shields: 1,
 	showType: true,
 	canEquip: true,
 	canEquipFaction: true,
@@ -413,6 +423,8 @@ module.exports = [{
 	factions: ["klingon"],
 	text: "When attacking, all other friendly Klingon ships within Range 1-2 of your Flagship may convert 1 blank result into 1 [hit] result.",
 	cost: 10,
+	// Run this interceptor before all other penalties and discounts
+	priority: 1,
 	actions: ["cloak"],
 	upgrades: [{
 		type: ["tech"],
@@ -430,7 +442,10 @@ module.exports = [{
 		source: "Flagship"
 	}
 	],
-	
+	attack: 1,
+	agility: 1,
+	hull: 1,
+	shields: 0,
 	showType: true,
 	canEquip: true,
 	canEquipFaction: true,
@@ -450,6 +465,8 @@ module.exports = [{
 	factions: ["independent"],
 	text: "All other friendly ships within Range 1 of your Flagship gain +1 attack die when attacking at Range 2-3.",
 	cost: 10,
+	// Run this interceptor before all other penalties and discounts
+	priority: 1,
 	actions: ["scan"],
 	upgrades: [{
 		type: ["talent"],
@@ -467,7 +484,10 @@ module.exports = [{
 		source: "Flagship"
 	}
 	],
-	
+	attack: 1,
+	agility: 1,
+	hull: 1,
+	shields: 0,
 	showType: true,
 	canEquip: true,
 	canEquipFaction: true,
@@ -487,6 +507,8 @@ module.exports = [{
 	factions: ["dominion"],
 	text: "When defending, all other friendly Dominion ships within Range 1-2 of your Flagship may convert 1 blank result into 1 [evade] result.",
 	cost: 10,
+	// Run this interceptor before all other penalties and discounts
+	priority: 1,
 	actions: ["scan"],
 	upgrades: [{
 		type: ["tech"],
@@ -504,7 +526,10 @@ module.exports = [{
 		source: "Flagship"
 	}
 	],
-	
+	attack: 0,
+	agility: 1,
+	hull: 1,
+	shields: 1,
 	showType: true,
 	canEquip: true,
 	canEquipFaction: true,
@@ -524,6 +549,8 @@ module.exports = [{
 	factions: ["independent"],
 	text: "After your Flagship moves, you may target 1 other Friendly ship within Range 1 of your Flagship. Target ship immediately performs an extra white or green Maneuver.",
 	cost: 10,
+	// Run this interceptor before all other penalties and discounts
+	priority: 1,
 	actions: ["target-lock"],
 	upgrades: [{
 		type: ["talent"],
@@ -541,7 +568,10 @@ module.exports = [{
 		source: "Flagship"
 	}
 	],
-	
+	attack: 0,
+	agility: 1,
+	hull: 1,
+	shields: 1,
 	showType: true,
 	canEquip: true,
 	canEquipFaction: true,
@@ -561,6 +591,8 @@ module.exports = [{
 	factions: ["federation"],
 	text: "When defending, all other friendly Federation ships within Range 1-2 of your Flagship may choose any number of their defense dice and re-roll them once.",
 	cost: 10,
+	// Run this interceptor before all other penalties and discounts
+	priority: 1,
 	actions: ["battlestations"],
 	upgrades: [{
 		type: ["talent"],
@@ -578,7 +610,10 @@ module.exports = [{
 		source: "Flagship"
 	}
 	],
-	
+	attack: 1,
+	agility: 0,
+	hull: 1,
+	shields: 1,
 	showType: true,
 	canEquip: true,
 	canEquipFaction: true,
@@ -598,6 +633,8 @@ module.exports = [{
 	factions: ["independent"],
 	text: "After your Flagship moves, you may target 1 other Friendly ship within Range 1 of your Flagship. Target ship immediately performs a 2nd Action listed on its Action Bar as a free Action this round.",
 	cost: 10,
+	// Run this interceptor before all other penalties and discounts
+	priority: 1,
 	actions: ["evade"],
 	upgrades: [{
 		type: ["tech"],
@@ -615,7 +652,10 @@ module.exports = [{
 		source: "Flagship"
 	}
 	],
-	
+	attack: 1,
+	agility: 0,
+	hull: 1,
+	shields: 1,
 	showType: true,
 	canEquip: true,
 	canEquipFaction: true,
