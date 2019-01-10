@@ -4791,7 +4791,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			},
 			canEquip: function(upgrade,ship,fleet) {
-				if( ship.classData && ship.classData.rearArc  || ( ship && ship.upgrade.name == "Federation" ) )
+				if( ship.classData && ship.classData.rearArc )
 					return false;
 				return ship.hull >= 4;
 			},
