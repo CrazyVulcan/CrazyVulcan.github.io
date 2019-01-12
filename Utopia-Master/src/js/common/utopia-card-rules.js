@@ -6524,7 +6524,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					type: ["weapon"],
 					rules: "Photon Torpedoes Only",
 					canEquip: function(upgrade) {
-						return upgrade.name == "Photon Torpedoes";
+						return upgrade.name.indexOf("Photon Torpedoes") >= 0;
 					},
 				}
 			]
@@ -9376,6 +9376,14 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			// Only equip if ship matches faction
 			canEquip: function(upgrade,ship,fleet) {
 				return $factions.hasFaction(ship, "klingon", ship, fleet);
+			},
+			intercept: {
+				ship: {
+					canEquip: function(upgrade,ship,fleet) {
+				if( upgrade || (upgrade && upgrade.name == "Shield Adaption" && ship.hull >= 3) )
+						return true;
+					}
+				}
 			}
 		},
 
@@ -9384,6 +9392,14 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			// Only equip if ship matches faction
 			canEquip: function(upgrade,ship,fleet) {
 				return $factions.hasFaction(ship, "dominion", ship, fleet);
+			},
+			intercept: {
+				ship: {
+					canEquip: function(upgrade,ship,fleet) {
+				if( upgrade || (upgrade && upgrade.name == "Shield Adaption" && ship.hull >= 3) )
+						return true;
+					}
+				}
 			}
 		},
 
@@ -9426,6 +9442,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						if( card == ship && factions.indexOf("independent") < 0 )
 							return factions.concat(["independent"]);
 						return factions;
+					},
+					canEquip: function(upgrade,ship,fleet) {
+						if( upgrade || (upgrade && upgrade.name == "Aft Torpedo Launcher" && ship.hull >= 3) || (upgrade && upgrade.name == "Shield Adaption" && ship.hull >= 3) )
+						return true;
 					}
 				}
 			}
@@ -9440,6 +9460,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						if( card == ship && factions.indexOf("independent") < 0 )
 							return factions.concat(["independent"]);
 						return factions;
+					},
+					canEquip: function(upgrade,ship,fleet) {
+						if( upgrade || (upgrade && upgrade.name == "Aft Torpedo Launcher" && ship.hull >= 3) || (upgrade && upgrade.name == "Shield Adaption" && ship.hull >= 3) )
+						return true;
 					}
 				}
 			}
@@ -9454,6 +9478,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						if( card == ship && factions.indexOf("independent") < 0 )
 							return factions.concat(["independent"]);
 						return factions;
+					},
+					canEquip: function(upgrade,ship,fleet) {
+						if( upgrade || (upgrade && upgrade.name == "Aft Torpedo Launcher" && ship.hull >= 3) || (upgrade && upgrade.name == "Shield Adaption" && ship.hull >= 3) )
+						return true;
 					}
 				}
 			}
