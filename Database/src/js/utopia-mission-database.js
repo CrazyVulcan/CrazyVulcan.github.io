@@ -2,41 +2,41 @@ var module = angular.module("utopia-mission-database", ["utopia"]);
 
 module.controller( "UtopiaMissionCtrlBackup", [ "$scope", "$filter", "cardLoader", "$factions", function($scope, $filter, cardLoader, $factions) {
 
-	$scope.missionData = [];
-	$scope.missions = {};
+	$scope.missionSets = {};
 	$scope.missionList = [];
 
 	$scope.viewer = {};
-	$scope.activemission = false;
-	$scope.missionCards = [];
+	$scope.activeSet = false;
+	$scope.setCards = [];
+	$scope.missionSetCards = [];
 	
-	cardLoader( $scope.missionData, $scope.missions, function() {
+	cardLoader( $scope.missionSets, function() {
 
-		var missionId = location.hash ? location.hash.substring(1) : false;
+		var sourceID = location.hash ? location.hash.substring(1) : false;
 		
-		$.each( Object.keys( $scope.missions ), function(i, missionSet) {
-			var mission = $scope.missions[missionSet];
-			if( mission.missionSet == missionId || mission.name == missionId )
-				$scope.viewer.mission = mission;
-			$scope.missionList.push(mission);
-		});
+		$.each( Object.keys( $scope.missionSets ), function(i, sourceID) {
+			var missionSet = $scope.missionSets[sourceID];
+			if( missionSet.sourceID == sourceID || missionSet.name == sourceID )
+			{$scope.viewer.missionSets = missionSet;
+			$scope.missionList.push(missionSet);
+		};
 		
 	});
 	
-	$scope.$watch( "viewer.mission", function(mission) {
+	$scope.$watch( "viewer.missionSets", function(missionSet) {
 		
-		$scope.missionCards = [];
-		if( mission ) {
-			location.hash = mission.missionSet;
-			$.each( $scope.mission.Data, function(i, missionInfo) {
-				if( $.inArray( mission.missionSet, missionInfo.mission ) >= 0 )
-					$scope.missionCards.push( missionInfo );
+		$scope.missionSetCards = [];
+		if( missionSet ) {
+			location.hash = missionSet.sourceID;
+			$.each( $scope.cards, function(i, card) {
+				if( $.inArray( missionSet.sourceID, card.missionSet ) >= 0 )
+					$scope.setCards.push( card );
 			});
-			$scope.missionCards.sort(displaySort);
+			$scope.setCards.sort(displaySort);
 		}
 		
 	} );
 	
-	
-	
-}] );
+} )
+
+}]);

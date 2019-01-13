@@ -1,4 +1,4 @@
-var module = angular.module("utopia-card-missions", []);
+var module = angular.module("utopia-card-missions", ["utopia-mission-database"]);
 
 module.directive( "cardMissions", function() {
 //debug line
