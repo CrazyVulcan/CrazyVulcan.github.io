@@ -1,7 +1,7 @@
-var module = angular.module("utopia-mission-database", ["ngSanitize", "utopia-search", "utopia-card", "utopia-fleet-builder", "utopia-fleet-export", "utopia-card-loader", "utopia-card-rules"]);
+var module = angular.module("utopia-mission-database", ["utopia"]);
 
 module.controller( "UtopiaMissionCtrlBackup", [ "$scope", "$filter", "cardLoader", "$factions", function($scope, $filter, cardLoader, $factions) {
-
+	$scope.emptynote = [];
 	$scope.missionSets = {};
 	$scope.missionList = [];
 
@@ -40,3 +40,5 @@ module.controller( "UtopiaMissionCtrlBackup", [ "$scope", "$filter", "cardLoader
 } )
 
 }]);
+
+//edit 1.15.19
