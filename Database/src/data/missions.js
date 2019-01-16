@@ -1,7 +1,7 @@
 module.exports = [{
 	type: "mission",
 	name: "A New Source Of Dilithium",
-	missionSet: ["fist"],
+	missionSet: ["a_new_source_of_dilithium"],
 	missionID: "a_new_source_of_dilithium",
 	Componets: "1 Planet Token and 12 Mission Tokens",
 	description: "Rumors of a new planet harboring dilithium crystals reach the ears of the Federation, as well as the Klingon and Romulan Empires. So rich is the new source that it threatens to provoke open war from the Romulan Empire, and even threatens the Khitomer Accords between the Federation and the Klingon Empire.\n\nEach great power sends its closest ship to the planet to discover if the rumors are true, hoping that open war can be averted, but first each side wants to retrieve dilithium samples for analysis. The first ship to reach the planet, secure the samples, and return to its home will be able to lay claim to the discovery.",
@@ -11,7 +11,7 @@ module.exports = [{
 }, {
 	type: "mission",
 	name: "The Chase",
-	missionSet: ["002"],
+	missionSet: ["the_chase"],
 	missionID: "the_chase",
 	Componets: "1 Planet Token, 2 Objective Tokens, and 12 Mission Tokens",
 	description: "Rumors of a new planet harboring dilithium crystals reach the ears of the Federation, as well as the Klingon and Romulan Empires. So rich is the new source that it threatens to provoke open war from the Romulan Empire, and even threatens the Khitomer Accords between the Federation and the Klingon Empire.\n\nEach great power sends its closest ship to the planet to discover if the rumors are true, hoping that open war can be averted, but first each side wants to retrieve dilithium samples for analysis. The first ship to reach the planet, secure the samples, and return to its home will be able to lay claim to the discovery.",
