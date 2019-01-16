@@ -393,14 +393,14 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 			var copies = [];
 			
 			$.each( data.missionSets || [], function(i,missionSet) {
-				if( missionSet.kind == "copy" )
+				if( missionSet.type == "copy" )
 					copies.push(missionSet);
 				else
 					loadMission(missionSet);
 			});
 			
 			$.each( data.missions || [], function(i,mission) {
-				if( mission.kind == "copy" )
+				if( mission.type == "copy" )
 					copies.push(mission);
 				else
 					loadMissions(mission);
