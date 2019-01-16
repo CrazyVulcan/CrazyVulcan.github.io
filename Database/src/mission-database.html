@@ -39,7 +39,7 @@
 		<div class="u-search-results u-search-cols-1">
 		
 			<ul class="set-list">
-				<li ng-repeat="missionSet in missionList | orderBy:'-orderDate'" ng-click="viewer.missionSet = missionSet" ng-class="{'mission-selected': viewer.missionSets == missionSet}">{{missionSet.name}}</li>
+				<li ng-repeat="missionSet in missionList | orderBy:'-orderDate'" ng-click="viewer.missionSet = missionSet" ng-class="{'missionSet-selected': viewer.missionSets == missionSet}">{{missionSet.name}}</li>
 			</ul>
 			
 		</div>
