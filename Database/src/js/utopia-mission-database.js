@@ -1,38 +1,37 @@
 var module = angular.module("utopia-mission-database", ["utopia"]);
 
 module.controller( "UtopiaMissionCtrlBackup", [ "$scope", "$filter", "cardLoader", "$factions", function($scope, $filter, cardLoader, $factions) {
-	$scope.emptynote = [];
+	$scope.missionData = [];
 	$scope.missionSets = {};
 	$scope.missionList = [];
 
 	$scope.viewer = {};
 	$scope.activeSet = false;
-	$scope.setCards = [];
 	$scope.missionSetCards = [];
 	
-	cardLoader( $scope.missionSets, function() {
+	cardLoader( $scope.missionData, $scope.missionSets, function() {
 
 		var sourceID = location.hash ? location.hash.substring(1) : false;
 		
 		$.each( Object.keys( $scope.missionSets ), function(i, sourceID) {
 			var missionSet = $scope.missionSets[sourceID];
 			if( missionSet.sourceID == sourceID || missionSet.name == sourceID )
-			{$scope.viewer.missionSets = missionSet;
+			{$scope.viewer.missionSet = missionSet;
 			$scope.missionList.push(missionSet);
 		};
 		
 	});
 	
-	$scope.$watch( "viewer.missionSets", function(missionSet) {
+	$scope.$watch( "viewer.missionSet", function(missionSet) {
 		
 		$scope.missionSetCards = [];
 		if( missionSet ) {
 			location.hash = missionSet.sourceID;
-			$.each( $scope.cards, function(i, card) {
+			$.each( $scope.missionData, function(i, card) {
 				if( $.inArray( missionSet.sourceID, card.missionSet ) >= 0 )
-					$scope.setCards.push( card );
+					$scope.missionSetCards.push( card );
 			});
-			$scope.setCards.sort(displaySort);
+			$scope.missionSetCards.sort(displaySort);
 		}
 		
 	} );

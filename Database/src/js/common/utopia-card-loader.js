@@ -366,7 +366,7 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 			
 		}
 		
-		function loadMission(missionSet) {
+		function loadAllMission(missionSet) {
 			
 			if( missionSets[missionSet.sourceID] ) {
 				console.log("Duplicate mission set",missionSet.sourceID,missionSet.name);
@@ -396,7 +396,7 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 				if( missionSet.type == "copy" )
 					copies.push(missionSet);
 				else
-					loadMission(missionSet);
+					loadAllMission(missionSet);
 			});
 			
 			$.each( data.missions || [], function(i,mission) {
