@@ -369,9 +369,9 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 		function loadMissionCopies( copies ) {
 			
 			$.each( copies || [], function(i,copy) {
-				$.each( missionData, function(i,data) {
-					if( data.id == copy.of ) {
-						data.missionSet = data.missionSet.concat(copy.missionSet);
+				$.each( missionData, function(i,cardMissions) {
+					if( cardMission.id == copy.of ) {
+						cardMission.missionSet = cardMission.missionSet.concat(copy.missionSet);
 						return false;
 					}
 				} );

@@ -1,11 +1,11 @@
 var module = angular.module("utopia-card-missions", ["utopia-mission-database"]);
 
-module.directive( "cardMissions", function() {
+module.directive( "cardMission", function() {
 //debug line
 	return {
 
 		scope: {
-			mission: "=",
+			cardMission: "=",
 			ship: "=",
 			fleet: "=",
 			dragStore: "=",
