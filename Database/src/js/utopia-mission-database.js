@@ -27,9 +27,9 @@ module.controller( "UtopiaMissionCtrlBackup", [ "$scope", "$filter", "cardLoader
 		$scope.missionSetCards = [];
 		if( missionSet ) {
 			location.hash = missionSet.sourceID;
-			$.each( $scope.missionData, function(i, card) {
-				if( $.inArray( missionSet.sourceID, card.missionSet ) >= 0 )
-					$scope.missionSetCards.push( card );
+			$.each( $scope.missionData, function(i, data) {
+				if( $.inArray( missionSet.sourceID, data.missionSet ) >= 0 )
+					$scope.missionSetCards.push( data );
 			});
 			$scope.missionSetCards.sort(displaySort);
 		}
