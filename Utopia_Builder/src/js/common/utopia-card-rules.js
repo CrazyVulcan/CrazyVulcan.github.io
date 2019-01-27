@@ -7897,6 +7897,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					type: ["talent"]
 				}, {
 					type: ["crew"],
+					faceDown: true,
 					rules: "Cost of 3sp or less",
 					intercept: {
 						ship: {
@@ -7910,6 +7911,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}}}},
 				{
 					type: ["crew"],
+					faceDown: true,
 					rules: "Cost of 3sp or less",
 					intercept: {
 						ship: {
