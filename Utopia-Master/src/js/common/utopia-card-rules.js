@@ -7902,8 +7902,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					rules: "Hidden cost 3 or less",
 					faceDown: true,
 					canEquip: function(card,ship,fleet,upgradeSlot) {
-						// Cost of 3 SP or less
-							if( upgradeSlot != slot && slot.occupant && slot.source == "Daimon Solok" )						
+						// Cost of 3 SP or less				
 						return valueOf(card,"cost",ship,fleet) <= 3;
 					},
 					intercept: {
