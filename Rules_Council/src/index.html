@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="rules_database" ng-controller="DatabaseCtrl">
+    <head>
+    <meta charset="UTF-8">
+        
+        <title>X-Wing Rules Council Database</title>
+
+    </head>
+    <body>
+	
+		<div class="u-container">
+
+			<div class="u-search-results u-search-cols-1">
+			
+				<div class="u-title">Rules Index</div>
+							
+				<ul class="rules-list">
+					<li ng-repeat="rule in ruleList | orderBy:'-index'" ng-click="viewer.rule = rule" ng-class="{'rule-selected': viewer.rule == rule}">{{rule.rulingSet}}: {{rule.ruleName}}</li>
+				</ul>
+			</div>
+			
+			<div class="u-rulign rule-display">
+			
+				<div class="set-header" ng-show="viewer.rule">{{viewer.rule.rulingSet}}: {{viewer.rule.ruleName}}</div>
+				
+				
+			
+			</div>
+		
+		</div>
+			
+    </body>
+</html>
