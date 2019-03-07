@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html ng-app="ruling-attack" ng-controller="DatabaseCtrl">
+    <head>
+		<title>Attack</title>
+	</head>
+	
+	<body>
+		<h1>Attack</h1>
+		<br><br>
+		<p>
+		Ships can perform attacks which thematically represents the ship firing its
+		blaster cannons, ordnance, or other weapons
+		<br>
+		If a ship performs an attack, it becomes the attacker then follows these steps:
+		<br><br>
+		1. <b>Declare Target:</b> During this step, the attacking player identifies and
+		names the defender of the attack.
+		<br>
+		a. <b>Measure Range:</b> The attacking player measures range from the
+		attacker to any number of enemy ships and determines which enemy
+		ships are in which of its arcs.
+		<br>
+		b. <b>Choose Weapon:</b> The attacking player chooses one of the
+		attacker’s primary or special weapons.
+		<br>
+		c. <b>Declare Defender:</b> The attacking player chooses an enemy ship
+		to be the defender. The defender must meet the requirements defined
+		by the weapon.
+		<br>
+		d. <b>Pay Costs:</b> The attacker must pay any costs for performing the
+		attack.
+		<br><br>
+		• During the Declare Target step, the attack arc is the arc that corresponds
+		to the chosen weapon. The attack range is determined by measuring
+		range from the closest point of the attacker to the closest point of the
+		defender that is in the attack arc.
+		<br><br>
+		• A primary weapon requires the attack range to be range 1–3. A primary
+		weapon has no cost by default.
+		<br><br>
+		• Special weapons have different requirements specified by the source of
+		the attack.
+		<br><br>
+		• If there is no valid target for the chosen weapon, or if the attacker cannot
+		pay the costs required for the attack, the attacking player either chooses
+		a different weapon or chooses not to attack.
+		<br><br><br>
+		2. <b>Attack Dice:</b> During this step, the attacking player rolls attack dice
+		and the players can modify the dice.
+		<br>
+		a. <b>Roll Attack Dice:</b> The attacking player determines the number of
+		attack dice to roll based on the chosen weapon’s attack value, range
+		bonus, and any abilities that add or remove attack dice. Then they roll
+		that many dice.
+		<br>
+		b. <b>Modify Attack Dice:</b> The players resolve abilities that modify the
+		attack dice. The defending player resolves their abilities first, then the
+		attacking player resolves their abilities.
+		<br><br>
+		• The most common ways the attacker modifies attack dice are by spending
+		a focus token or spending a lock it has on the defender.
+		<br><br>
+		• Each attack die cannot be rerolled more than once during an attack.
+		<br><br><br>
+		3. <b>Defense Dice:</b> During this step, the defending player rolls a number
+		of defense dice equal to the ship’s agility value and the players can modify
+		the dice.
+		<br>
+		a. <b>Roll Defense Dice:</b> The defending player determines a number
+		of defense dice to roll based on the defender’s agility value, as range
+		bonus, whether the attack is being obstructed by an obstacle, and any
+		abilities that increase or decrease the number of defense dice. Then
+		they roll that many dice.
+		<br>
+		b. <b>Modify Defense Dice:</b> The players resolve abilities that modify
+		the defense dice. The attacking player resolves their abilities first,
+		then the defending player resolves their abilities.
+		<br><br>
+		• The most common ways the defender modifies defense dice are by
+		spending a focus or evade token.
+		<br><br>
+		• Each defense die cannot be rerolled more than once during an attack.
+		<br><br><br>
+		4. <b>Neutralize Results:</b> During this step, pairs of attack and defense
+		dice neutralize each other. Dice are neutralized in the following order:
+		<br>
+		a. Pairs of 󲁄 and 󲁧 results are canceled.
+		<br>
+		b. Pairs of 󲁄 and 󲁨 results are canceled.
+		The attack hits if at least one 󲁧 or 󲁨 result remains uncanceled;
+		otherwise, the attack misses.
+		<br><br><br>
+		5. <b>Deal Damage:</b> If the attack hits, the defender suffers damage for each
+		uncanceled 󲁧 and 󲁨 result in the following order:
+		<br>
+		a. The defender suffers 1 󲁧 damage for each uncanceled 󲁧 result.
+		Then cancel all 󲁧 results.
+		<br>
+		b. The defender suffers 1 󲁨 damage for each uncanceled 󲁨 result.
+		Then cancel all 󲁨 results.
+		<br><br><br>
+		6. <b>Aftermath:</b> Abilities that trigger after an attack are resolved in the
+		following order.
+		<br>
+		a. Resolve any of the defending player’s abilities that trigger “after you
+		defend,” excluding abilities that grant a bonus attack.
+		<br>
+		b. Resolve any of the attacking player’s abilities that trigger “after you
+		perform an attack,” excluding abilities that grant a bonus attack.
+		<br>
+		c. Resolve any of the defending player’s abilities that trigger “after you
+		defend” that grant a bonus attack.
+		<br>
+		d. Resolve any of the attacking player’s abilities that trigger “after you
+		perform an attack” that grant a bonus attack.
+		<br><br>
+		• Each ship may perform one attack when it engages during the
+		Engagement Phase.
+		<br><br>
+		• If a ship is destroyed during the Engagement Phase, the ship is not
+		removed until all ships of the attacker’s initiative have engaged.
+		<br><br>
+		• During an attack, a ship cannot choose to roll fewer dice than it is
+		supposed to roll.
+		<br><br>
+		• If a player would roll more dice than they have available, keep track of the
+		rolled results and reroll the dice necessary to equal the total number of
+		dice the player would have rolled all at once. Note that these dice are not
+		considered rerolled for the purposes of modifying dice.
+		</p>
+	</body>
+</html>
