@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="damage" ng-controller="DatabaseCtrl">
+    <head>
+		<title> Damage </title>
+	</head>
+	
+	<body>
+		<h1> Damage </h1>
+		<br><br>
+		<p>
+		Damage represents the amount of structural damage a ship can take.
+		Damage is tracked by damage cards. A ship is destroyed when the number of
+		damage cards it has is equal to or greater than its hull value.
+		<br><br>
+		There are two types of damage: <span class="icon-hit"> (regular) damage and <span class="icon-crit"> (critical)
+		damage. When a ship suffers damage, that damage is suffered one at a
+		time. For each damage a ship suffers, it loses a shield by flipping the shield
+		to its inactive side. If it does not have an active shield remaining, it is dealt a
+		damage card instead. For <span class="icon-hit"> damage, the card is dealt <b>facedown</b>; for <span class="icon-crit">
+		damage, the card is dealt <b>faceup</b> and its text is resolved. All <span class="icon-hit"> damage is
+		suffered <b>before</b> <span class="icon-crit"> damage.
+		<br><br>
+		A ship is <b>damaged</b> while it has at least one damage card. A ship is
+		<b>critically damaged</b> while it has at least one faceup damage card.
+		<br><br>
+		• If an effect instructs a player to deal a damage card to a ship, this is
+		different from the ship suffering damage. The card is dealt to the ship
+		regardless of whether the ship has any active shields.
+		<br><br>
+		• When a ship suffers damage or otherwise is dealt damage cards that
+		would cause it to exceed its hull value, the excess damage cards are still
+		dealt.
+		</p>
+	</body>
+</html>
