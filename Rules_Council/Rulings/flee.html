@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="flee" ng-controller="DatabaseCtrl">
+    <head>
+		<link rel="stylesheet" type="text/css" href="css/icons.css">
+		<title> Flee </title>
+	</head>
+	
+	<body>
+		<h1> Flee </h1>
+		<br><br>
+		<p>
+		A ship <b>flees</b> if any part of its base is outside the play area after it executes a
+		maneuver. A ship that flees is removed from the game.
+		<br><br>
+		• While a ship moves, the ship does not flee if only the template is outside
+		the play area.
+		<br><br>
+		• Before a fleeing ship is removed from the game, the only effects it
+		resolves before being removed from the game are effects that trigger
+		when it flees.
+		<br><br>
+		• A ship cannot flee while resolving a boost, barrel roll, decloak, or SLAM.
+		<br><br>
+		• Partially executing a maneuver can cause a ship to flee if any part of its
+		base is outside the play area after the maneuver
+		</p>
+	</body>
+</html>
