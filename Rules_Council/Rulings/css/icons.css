@@ -2,6 +2,11 @@ p{
 	font-size: 16;
 }
 
+a:link{
+	font-size:16;
+	text-decoration: none;
+}
+
 @font-face {
   font-family: 'icomoon';
   src:  url('fonts/icomoon.eot?1yq750');
