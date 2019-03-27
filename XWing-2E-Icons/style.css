@@ -1,0 +1,194 @@
+@font-face {
+  font-family: 'XWing-2E-Icons';
+  src:  url('fonts/XWing-2E-Icons.eot?sxbs2s');
+  src:  url('fonts/XWing-2E-Icons.eot?sxbs2s#iefix') format('embedded-opentype'),
+    url('fonts/XWing-2E-Icons.ttf?sxbs2s') format('truetype'),
+    url('fonts/XWing-2E-Icons.woff?sxbs2s') format('woff'),
+    url('fonts/XWing-2E-Icons.svg?sxbs2s#XWing-2E-Icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'XWing-2E-Icons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-ArcB:before {
+  content: "\e900";
+}
+.icon-ArcBE:before {
+  content: "\e901";
+}
+.icon-ArcF:before {
+  content: "\e902";
+}
+.icon-ArcFB:before {
+  content: "\e903";
+}
+.icon-ArcFF:before {
+  content: "\e904";
+}
+.icon-ArcL:before {
+  content: "\e905";
+}
+.icon-ArcM:before {
+  content: "\e906";
+}
+.icon-ArcR:before {
+  content: "\e907";
+}
+.icon-boost:before {
+  content: "\e908";
+}
+.icon-b-rolll:before {
+  content: "\e909";
+}
+.icon-calculate:before {
+  content: "\e90a";
+}
+.icon-charge:before {
+  content: "\e90b";
+}
+.icon-cloak:before {
+  content: "\e90c";
+}
+.icon-coordinate:before {
+  content: "\e90d";
+}
+.icon-crit:before {
+  content: "\e90e";
+}
+.icon-evade:before {
+  content: "\e90f";
+}
+.icon-focus:before {
+  content: "\e910";
+}
+.icon-force:before {
+  content: "\e911";
+}
+.icon-hit:before {
+  content: "\e912";
+}
+.icon-jam:before {
+  content: "\e913";
+}
+.icon-k-turn:before {
+  content: "\e914";
+}
+.icon-l-bank:before {
+  content: "\e915";
+}
+.icon-limit:before {
+  content: "\e916";
+}
+.icon-lock:before {
+  content: "\e917";
+}
+.icon-lrev-bank:before {
+  content: "\e918";
+}
+.icon-ls-loop:before {
+  content: "\e919";
+}
+.icon-lt-roll:before {
+  content: "\e91a";
+}
+.icon-l-turn:before {
+  content: "\e91b";
+}
+.icon-r-bank:before {
+  content: "\e91c";
+}
+.icon-reinforce:before {
+  content: "\e91d";
+}
+.icon-reload:before {
+  content: "\e91e";
+}
+.icon-reverse:before {
+  content: "\e91f";
+}
+.icon-rotate:before {
+  content: "\e920";
+}
+.icon-rrev-bank:before {
+  content: "\e921";
+}
+.icon-rs-loop:before {
+  content: "\e922";
+}
+.icon-rt-roll:before {
+  content: "\e923";
+}
+.icon-r-turn:before {
+  content: "\e924";
+}
+.icon-slam:before {
+  content: "\e925";
+}
+.icon-stop:before {
+  content: "\e926";
+}
+.icon-straight:before {
+  content: "\e927";
+}
+.icon-up-astro:before {
+  content: "\e928";
+}
+.icon-up-cannon:before {
+  content: "\e929";
+}
+.icon-up-config:before {
+  content: "\e92a";
+}
+.icon-up-crew:before {
+  content: "\e92b";
+}
+.icon-up-device:before {
+  content: "\e92c";
+}
+.icon-up-force:before {
+  content: "\e92d";
+}
+.icon-up-gunner:before {
+  content: "\e92e";
+}
+.icon-up-illsit:before {
+  content: "\e92f";
+}
+.icon-up-missal:before {
+  content: "\e930";
+}
+.icon-up-modd:before {
+  content: "\e931";
+}
+.icon-up-sensor:before {
+  content: "\e932";
+}
+.icon-up-talent:before {
+  content: "\e933";
+}
+.icon-up-tech:before {
+  content: "\e934";
+}
+.icon-up-title:before {
+  content: "\e935";
+}
+.icon-up-torpedo:before {
+  content: "\e936";
+}
+.icon-up-turret:before {
+  content: "\e937";
+}
