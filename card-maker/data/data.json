@@ -48,7 +48,7 @@
 		"factions": ["faction"]
 	}, {
 		"type": "ship",
-		"id": "ship_name_setnum",
+		"id": "mjolnir_okie",
 		"set": ["james_c"],
 		"name": "Mjolnir",
 		"class": "Akira Class",
