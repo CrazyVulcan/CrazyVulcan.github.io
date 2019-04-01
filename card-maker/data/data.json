@@ -48,6 +48,22 @@
 		"factions": ["faction"]
 	}, {
 		"type": "ship",
+		"id": "ship_name_setnum",
+		"set": ["james_c"],
+		"name": "Mjolnir",
+		"class": "Akira Class",
+		"actions": ["evade", "target-lock", "scan", "battlestations"],
+		"upgrades": ["weapon", "weapon", "weapon", "crew"],
+		"attack": 4,
+		"agility": 2,
+		"hull": 5,
+		"shields": 3,
+		"cost": 28,
+		"text": "When attacking with Photon Torpedoes, you do not need to disable the Photon Torpedoes.",
+		"unique": true,
+		"factions": ["federation"]
+	}, {
+		"type": "ship",
 		"id": "Yorktown_TFS_Fed_A",
 		"set": ["TFS_Fed_A"],
 		"name": "U.S.S. Yorktown",
