@@ -7849,7 +7849,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				ship: {
 					// Add the "crew" type to all Tech and Borg slots
 					type: function(card,ship,fleet,type) {
-						if( ship.hasFaction == "borg" && ( $.inArray("tech",type) >= 0 || $.inArray("borg",type) >= 0 ) )
+						if( $.inArray("tech",type) >= 0 || $.inArray("borg",type) >= 0 && ship.hasFaction == "borg" )
 							return type.concat(["crew"]);
 						return type;
 					}
