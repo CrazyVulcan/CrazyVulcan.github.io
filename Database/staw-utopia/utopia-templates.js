@@ -337,22 +337,21 @@ angular.module('utopia').run(['$templateCache', function($templateCache) {
     "\n" +
     "<div class=\"export-container\">\r" +
     "\n" +
+    "\r" +
+    "\n" +
     "	<div class=\"u-search-header\"><div class=\"u-search-header-text\">Copy Text Listing</div></div>\r" +
     "\n" +
-    "	<label class=\"export-option\"><input type=\"checkbox\" ng-model=\"showSetNames\">Include Expansion Names</label>\r" +
+    "\r" +
     "\n" +
-    "	<!-- New checkbox here for the table-top simulator option. -->\r" +
+    "	<label class=\"export-option\"><input type=\"checkbox\" ng-model=\"showSetNames\"> Include Expansion Names</label>\r" +
     "\n" +
-    "	<label class=\"export-option\"><input type=\"radio\" ng-model=\"exportType\" value=\"traditional\">Traditional Export</label>\r" +
-    "\n" +
-    "	<label class=\"export-option\"><input type=\"radio\" ng-model=\"exportType\" value=\"tts\">Table-Top Sim Export</label>\r" +
-    "\n" +
-    "	<!-- <label class=\"export-option\"><input type=\"radio\" ng-model=\"exportType\" value=\"fleetSheet\">Export JSON for Fleet Sheet</label> -->\r" +
+    "	\r" +
     "\n" +
     "	<textarea class=\"export-text\" ng-model=\"fleetText\"></textarea>\r" +
     "\n" +
-    "</div>\r" +
-    "\n"
+    "	\r" +
+    "\n" +
+    "</div>"
   );
 
 
@@ -385,7 +384,7 @@ angular.module('utopia').run(['$templateCache', function($templateCache) {
   $templateCache.put('search.html',
     "<div class=\"u-search\">\r" +
     "\n" +
-    "\r" +
+    "	\r" +
     "\n" +
     "	<div class=\"search-query-container\">\r" +
     "\n" +
@@ -401,7 +400,7 @@ angular.module('utopia').run(['$templateCache', function($templateCache) {
     "\n" +
     "	<div ng-show=\"showAdvanced && (!dragStore.item || dragStore.source == 'search')\">\r" +
     "\n" +
-    "\r" +
+    "	\r" +
     "\n" +
     "		<div class=\"u-search-size\">\r" +
     "\n" +
@@ -413,7 +412,7 @@ angular.module('utopia').run(['$templateCache', function($templateCache) {
     "\n" +
     "		</div>\r" +
     "\n" +
-    "\r" +
+    "	\r" +
     "\n" +
     "		<search-filter-group title=\"Faction\" open>\r" +
     "\n" +
@@ -477,7 +476,7 @@ angular.module('utopia').run(['$templateCache', function($templateCache) {
     "\n" +
     "		</search-filter-group>\r" +
     "\n" +
-    "\r" +
+    "		\r" +
     "\n" +
     "		<search-filter-group title=\"Custom Filter\" open>\r" +
     "\n" +
@@ -488,14 +487,6 @@ angular.module('utopia').run(['$templateCache', function($templateCache) {
     "				<select ng-model=\"search.filterOperator\"><option value=\"<\">&lt;</option><option value=\"<=\">&lt;=</option><option value=\"=\">=</option><option value=\">=\">&gt;=</option><option value=\">\">&gt;</option></select>\r" +
     "\n" +
     "				<input ng-model=\"search.filterValue\" placeholder=\"Value\"></input>\r" +
-    "\n" +
-    "			</div>\r" +
-    "\n" +
-    "			<div class=\"u-search-filter-comment\">\r" +
-    "\n" +
-    "				Filter On Maneuver: <select ng-model=\"search.maneuverType\"><option value=\"\">Any</option><option ng-repeat=\"maneuver in maneuvers\" value=\"{{maneuver.value}}\">{{maneuver.name}}</option></select>\r" +
-    "\n" +
-    "				<select ng-model=\"search.maneuverDifficulty\"><option value=\"\">Any</option><option ng-repeat=\"difficulty in difficulty_list\" value=\"{{difficulty.value}}\">{{difficulty.name}}</option></select>\r" +
     "\n" +
     "			</div>\r" +
     "\n" +
@@ -521,12 +512,6 @@ angular.module('utopia').run(['$templateCache', function($templateCache) {
     "\n" +
     "			<button ng-click=\"checkAllSets()\">Check all sets</button>\r" +
     "\n" +
-    "			<button ng-click=\"exportSets()\">Export Sets</button>\r" +
-    "\n" +
-    "			<div class=\"u-search-filter-comment\">Import Sets...</div>\r" +
-    "\n" +
-    "			<input type=\"file\" multiple onchange=\"angular.element(this).scope().importSets(this)\">\r" +
-    "\n" +
     "			<div ng-repeat=\"set in setList | orderBy:'-releaseDate'\" class=\"u-search-set\" ng-hide=\"search.ignoreSetsFilter\">\r" +
     "\n" +
     "				<label class=\"u-label\"><input type=\"checkbox\" ng-model=\"search.sets[set.id].search\"> {{set.parentSet}}: {{set.name}}</label>\r" +
@@ -535,7 +520,7 @@ angular.module('utopia').run(['$templateCache', function($templateCache) {
     "\n" +
     "		</search-filter-group>\r" +
     "\n" +
-    "\r" +
+    "		\r" +
     "\n" +
     "	</div>\r" +
     "\n" +
@@ -571,7 +556,7 @@ angular.module('utopia').run(['$templateCache', function($templateCache) {
     "\n" +
     "	</div>\r" +
     "\n" +
-    "\r" +
+    "	\r" +
     "\n" +
     "	<div ng-hide=\"dragStore.item && dragStore.source != 'search'\">\r" +
     "\n" +
@@ -583,7 +568,7 @@ angular.module('utopia').run(['$templateCache', function($templateCache) {
     "\n" +
     "		</div>\r" +
     "\n" +
-    "\r" +
+    "		\r" +
     "\n" +
     "		<div>\r" +
     "\n" +
@@ -591,14 +576,13 @@ angular.module('utopia').run(['$templateCache', function($templateCache) {
     "\n" +
     "		</div>\r" +
     "\n" +
-    "\r" +
+    "		\r" +
     "\n" +
     "	</div>\r" +
     "\n" +
-    "\r" +
+    "	\r" +
     "\n" +
-    "</div>\r" +
-    "\n"
+    "</div>"
   );
 
 
@@ -619,6 +603,19 @@ angular.module('utopia').run(['$templateCache', function($templateCache) {
   );
 
 
+  $templateCache.put('card-missions.html',
+    "<div>\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "	<text> Demo Text for display Test </text>\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "</div>"
+  );
+
+
   $templateCache.put('card-resource.html',
     "<div class=\"card-outer card-resource font-staw\" ng-class=\"{ 'dragging': resource == dragStore.item }\" draggable drag-item=\"resource\" drag-store=\"dragStore\" drag-source=\"dragSource\">\r" +
     "\n" +
@@ -628,19 +625,9 @@ angular.module('utopia').run(['$templateCache', function($templateCache) {
     "\n" +
     "		<span class=\"card-title\" ng-class=\"{'card-title-long': resource.name.length > 20}\">{{resource.name | uppercase}}<span ng-hide=\"resource.hideCost\"> ({{resource|valueOf:'cost':ship:fleet}} SP)</span></span>\r" +
     "\n" +
-    "		\r" +
-    "\n" +
     "	</div>\r" +
     "\n" +
-    "	\r" +
-    "\n" +
-    "	<div class=\"card-resource-header pull-right\">\r" +
-    "\n" +
-    "		<i ng-if=\"resource.opBanned\" class=\"card-OP-banned-icon fs fs-opBanned\"></i>\r" +
-    "\n" +
-    "	</div>\r" +
-    "\n" +
-    "	\r" +
+    "\r" +
     "\n" +
     "	<div class=\"card-text\">\r" +
     "\n" +
@@ -667,6 +654,8 @@ angular.module('utopia').run(['$templateCache', function($templateCache) {
     "\n" +
     "		<div class=\"arc arc-rear-90\" ng-show=\"shipClass.rearArc == 90\"></div>\r" +
     "\n" +
+    "		<div class=\"arc arc-second-45\" ng-show=\"shipClass.secondArc == 45\"></div>\r" +
+    "\n" +
     "		<div class=\"arc-hole\"></div>\r" +
     "\n" +
     "		<div class=\"arc-name\">{{getBaseTileName(ship)}}</div>\r" +
@@ -689,9 +678,7 @@ angular.module('utopia').run(['$templateCache', function($templateCache) {
     "\n" +
     "\r" +
     "\n" +
-    "	<!-- <div class=\"card-image\" ng-class=\"{'card-image-large': Object.keys(shipClass.maneuvers).length > 9}\"></div> -->\r" +
-    "\n" +
-    "	<div ng-class=\"(shipClass.id == 'borg_cube' || shipClass.id == 'kelvin_constitution_class') ? 'card-image-large' : 'card-image'\"></div>\r" +
+    "	<div class=\"card-image\"></div>\r" +
     "\n" +
     "\r" +
     "\n" +
@@ -715,15 +702,15 @@ angular.module('utopia').run(['$templateCache', function($templateCache) {
     "\n" +
     "\r" +
     "\n" +
-    "	<div ng-class=\"(shipClass.id == 'borg_cube' || shipClass.id == 'kelvin_constitution_class') ? 'card-border-left-tall pull-left' : 'card-border-left pull-left'\"></div>\r" +
+    "	<div class=\"card-border-left pull-left\"></div>\r" +
     "\n" +
     "\r" +
     "\n" +
-    "	<div ng-class=\"(shipClass.id == 'borg_cube' || shipClass.id == 'kelvin_constitution_class') ? 'card-border-right-tall pull-right' : 'card-border-right pull-right'\"></div>\r" +
+    "	<div class=\"card-border-right pull-right\"></div>\r" +
     "\n" +
     "\r" +
     "\n" +
-    "	<div ng-class=\"(shipClass.id == 'borg_cube' || shipClass.id == 'kelvin_constitution_class') ? 'card-class-maneuvers-tall' : 'card-class-maneuvers'\">\r" +
+    "	<div class=\"card-class-maneuvers\">\r" +
     "\n" +
     "		<div class=\"card-maneuver-row\" ng-repeat=\"speed in speeds track by $index\">\r" +
     "\n" +
@@ -795,7 +782,7 @@ angular.module('utopia').run(['$templateCache', function($templateCache) {
     "\n" +
     "	</div>\r" +
     "\n" +
-    "\r" +
+    "	\r" +
     "\n" +
     "	<div class=\"card-corner-bottom-right pull-right\">\r" +
     "\n" +
@@ -803,7 +790,7 @@ angular.module('utopia').run(['$templateCache', function($templateCache) {
     "\n" +
     "	</div>\r" +
     "\n" +
-    "\r" +
+    "	\r" +
     "\n" +
     "	<div class=\"card-border-bottom\"></div>\r" +
     "\n" +
@@ -813,8 +800,7 @@ angular.module('utopia').run(['$templateCache', function($templateCache) {
     "\n" +
     "\r" +
     "\n" +
-    "</div>\r" +
-    "\n"
+    "</div>"
   );
 
 
@@ -897,7 +883,7 @@ angular.module('utopia').run(['$templateCache', function($templateCache) {
     "\n" +
     "\r" +
     "\n" +
-    "	<div class=\"card-ship-cost pull-right\">{{ship|valueOf:'cost':ship:fleet}}</div>\r" +
+    "	<div class=\"card-ship-cost pull-right\">{{ship.cost}}</div>\r" +
     "\n" +
     "\r" +
     "\n" +
@@ -913,8 +899,7 @@ angular.module('utopia').run(['$templateCache', function($templateCache) {
     "\n" +
     "\r" +
     "\n" +
-    "</div>\r" +
-    "\n"
+    "</div>"
   );
 
 
@@ -950,19 +935,9 @@ angular.module('utopia').run(['$templateCache', function($templateCache) {
     "\n" +
     "	<div class=\"card-image\"></div>\r" +
     "\n" +
-    "	\r" +
+    "\r" +
     "\n" +
-    "	\r" +
-    "\n" +
-    "	\r" +
-    "\n" +
-    "	<div class=\"card-corner-top-left pull-left\"> \r" +
-    "\n" +
-    "		<i ng-if=\"upgrade.unique\" class=\"card-unique-icon fs fs-unique pull-left\"></i>\r" +
-    "\n" +
-    "		<i ng-if=\"upgrade.OnePerShip\" class=\"card-OnePerShip-icon fs fs-OnePerShip pull-left\"></i>\r" +
-    "\n" +
-    "		<i ng-if=\"upgrade.specialization\" class=\"card-specialization-icon fs fs-specialization pull-left\"></i>\r" +
+    "	<div class=\"card-corner-top-left pull-left\"><i ng-if=\"upgrade.unique\" class=\"card-unique-icon fs fs-unique pull-left\"></i><i ng-if=\"upgrade.OnePerShip\" class=\"card-OnePerShip-icon fs fs-OnePerShip pull-left\"></i>\r" +
     "\n" +
     "		<div class=\"card-corner-inner pull-right\"></div>\r" +
     "\n" +
@@ -990,39 +965,7 @@ angular.module('utopia').run(['$templateCache', function($templateCache) {
     "\n" +
     "	<div class=\"card-border-left pull-left\">\r" +
     "\n" +
-    "		<i ng-if=\"upgrade.captainFederation\" class=\"card-captainFederation-icon fs fs-captainFederation\"></i>\r" +
-    "\n" +
-    "		<i ng-if=\"upgrade.captainBajoren\" class=\"card-captainBajoren-icon fs fs-captainBajoren\"></i>\r" +
-    "\n" +
-    "		<i ng-if=\"upgrade.captainVulcan\" class=\"card-captainVulcan-icon fs fs-captainVulcan\"></i>\r" +
-    "\n" +
-    "		<i ng-if=\"upgrade.captainKlingon\"  class=\"card-captainKlingon-icon fs fs-captainKlingon\"></i>	\r" +
-    "\n" +
-    "		<i ng-if=\"upgrade.captainRomulan\" class=\"card-captainRomulan-icon fs fs-captainRomulan\"></i>	\r" +
-    "\n" +
-    "		<i ng-if=\"upgrade.captainDominion\" class=\"card-captainDominion-icon fs fs-captainDominion\"></i>\r" +
-    "\n" +
-    "		<i ng-if=\"upgrade.captainIndependent\" class=\"card-captainIndependent-icon fs fs-captainIndependent\"></i>\r" +
-    "\n" +
-    "		<i ng-if=\"upgrade.captainFerengi\" class=\"card-captainFerengi-icon fs fs-captainFerengi\"></i>\r" +
-    "\n" +
-    "		<i ng-if=\"upgrade.captainKazon\" class=\"card-captainKazon-icon fs fs-captainKazon\"></i>\r" +
-    "\n" +
-    "		<i ng-if=\"upgrade.captainXindi\" class=\"card-captainFerengi-icon fs fs-captainFerengi\"></i>\r" +
-    "\n" +
-    "		<i ng-if=\"upgrade.captainBorg\" class=\"card-captainBorg-icon fs fs-captainBorg\"></i>\r" +
-    "\n" +
-    "		<i ng-if=\"upgrade.captain8472\" class=\"card-captain8472-icon fs fs-captain8472\"></i>\r" +
-    "\n" +
-    "		<i ng-if=\"upgrade.captainMU\" class=\"card-captainMU-icon fs fs-captainMU\"></i>\r" +
-    "\n" +
-    "		\r" +
-    "\n" +
     "		<i ng-if=\"upgrade.shipFederation\" class=\"card-shipFederation-icon fs fs-card-shipFederation\"></i>\r" +
-    "\n" +
-    "		<i ng-if=\"upgrade.shipBajoren\" class=\"card-shipBajoren-icon fs fs-card-shipBajoren\"></i>\r" +
-    "\n" +
-    "		<i ng-if=\"upgrade.shipVulcan\" class=\"card-shipVulcan-icon fs fs-card-shipVulcan\"></i>\r" +
     "\n" +
     "		<i ng-if=\"upgrade.shipKlingon\" class=\"card-shipKlingon-icon fs fs-shipKlingon\"></i>	\r" +
     "\n" +
@@ -1032,25 +975,29 @@ angular.module('utopia').run(['$templateCache', function($templateCache) {
     "\n" +
     "		<i ng-if=\"upgrade.shipIndependent\" class=\"card-shipIndependent-icon fs fs-shipIndependent\"></i>\r" +
     "\n" +
-    "		<i ng-if=\"upgrade.shipFerengi\" class=\"card-shipFerengi-icon fs fs-shipFerengi\"></i>\r" +
-    "\n" +
-    "		<i ng-if=\"upgrade.shipKazon\" class=\"card-shipKazon-icon fs fs-shipKazon\"></i>\r" +
-    "\n" +
-    "		<i ng-if=\"upgrade.shipXindi\" class=\"card-shipXindi-icon fs fs-shipXindi\"></i>\r" +
-    "\n" +
     "		<i ng-if=\"upgrade.shipBorg\" class=\"card-shipBorg-icon fs fs-shipBorg\"></i>\r" +
     "\n" +
-    "		<i ng-if=\"upgrade.ship8472\" class=\"card-ship8472-icon fs fs-ship8472\"></i>\r" +
+    "		<i ng-if=\"upgrade.shipFerengi\" class=\"card-shipFerengi-icon fs fs-shipFerengi\"></i>\r" +
     "\n" +
-    "		<i ng-if=\"upgrade.shipMU\" class=\"card-shipMU-icon fs fs-shipMU\"></i>\r" +
+    "		\r" +
+    "\n" +
+    "		<i ng-if=\"upgrade.captainFederation\" class=\"card-captainFederation-icon fs fs-captainFederation\"></i>\r" +
+    "\n" +
+    "		<i ng-if=\"upgrade.captainKlingon\"  class=\"card-captainKlingon-icon fs fs-captainKlingon\"></i>	\r" +
+    "\n" +
+    "		<i ng-if=\"upgrade.captainRomulan\" class=\"card-captainRomulan-icon fs fs-captainRomulan\"></i>	\r" +
+    "\n" +
+    "		<i ng-if=\"upgrade.captainDominion\" class=\"card-captainDominion-icon fs fs-captainDominion\"></i>\r" +
+    "\n" +
+    "		<i ng-if=\"upgrade.captainIndependent\" class=\"card-captainIndependent-icon fs fs-captainIndependent\"></i>\r" +
+    "\n" +
+    "		<i ng-if=\"upgrade.captainBorg\" class=\"card-captainBorg-icon fs fs-captainBorg\"></i>\r" +
+    "\n" +
+    "		<i ng-if=\"upgrade.captainFerengi\" class=\"card-captainFerengi-icon fs fs-captainFerengi\"></i>\r" +
     "\n" +
     "		\r" +
     "\n" +
     "		<i ng-if=\"upgrade.costFederation\" class=\"card-costFederation-icon\">{{upgrade|valueOf:'costFederation':ship:fleet}}</i>\r" +
-    "\n" +
-    "		<i ng-if=\"upgrade.costBajoren\" class=\"card-costBajoren-icon\">{{upgrade|valueOf:'costFederation':ship:fleet}}</i>\r" +
-    "\n" +
-    "		<i ng-if=\"upgrade.costVulcan\" class=\"card-costVulcan-icon\">{{upgrade|valueOf:'costVulcan':ship:fleet}}</i>\r" +
     "\n" +
     "		<i ng-if=\"upgrade.costKlingon\" class=\"card-costKlingon-icon\">{{upgrade|valueOf:'costKlingon':ship:fleet}}</i>	\r" +
     "\n" +
@@ -1060,21 +1007,11 @@ angular.module('utopia').run(['$templateCache', function($templateCache) {
     "\n" +
     "		<i ng-if=\"upgrade.costIndependent\" class=\"card-costIndependent-icon\">{{upgrade|valueOf:'costIndependent':ship:fleet}}</i>\r" +
     "\n" +
-    "		<i ng-if=\"upgrade.costFerengi\" class=\"card-costFerengi-icon\">{{upgrade|valueOf:'costFerengi':ship:fleet}}</i>\r" +
-    "\n" +
-    "		<i ng-if=\"upgrade.costKazon\" class=\"card-costKazon-icon\">{{upgrade|valueOf:'costKazon':ship:fleet}}</i>\r" +
-    "\n" +
-    "		<i ng-if=\"upgrade.costXindi\" class=\"card-costXindi-icon\">{{upgrade|valueOf:'costXindi':ship:fleet}}</i>\r" +
-    "\n" +
     "		<i ng-if=\"upgrade.costBorg\" class=\"card-costBorg-icon\">{{upgrade|valueOf:'costBorg':ship:fleet}}</i>\r" +
     "\n" +
-    "		<i ng-if=\"upgrade.cost8472\" class=\"card-cost8472-icon\">{{upgrade|valueOf:'cost8472':ship:fleet}}</i>\r" +
-    "\n" +
-    "		<i ng-if=\"upgrade.costMU\" class=\"card-costMU-icon\">{{upgrade|valueOf:'costMU':ship:fleet}}</i>\r" +
+    "		<i ng-if=\"upgrade.costFerengi\" class=\"card-costFerengi-icon\">{{upgrade|valueOf:'costFerengi':ship:fleet}}</i>\r" +
     "\n" +
     "		\r" +
-    "\n" +
-    "		<i ng-if=\"upgrade.attackConstraint\" class=\"card-attackConstraint-icon\">{{upgrade|valueOf:'attackConstraint':ship:fleet}}</i>\r" +
     "\n" +
     "		<i ng-if=\"upgrade.hullConstraint\" class=\"card-hullConstraint-icon\">{{upgrade|valueOf:'hullConstraint':ship:fleet}}</i>\r" +
     "\n" +
@@ -1085,10 +1022,6 @@ angular.module('utopia').run(['$templateCache', function($templateCache) {
     "		<i ng-if=\"upgrade.arc360\" class=\"card-360Arc-icon fs fs-360Arc\"></i>\r" +
     "\n" +
     "		<i ng-if=\"upgrade.shipLimit\" class=\"card-shipLimit-icon fs fs-shipLimit\"></i>\r" +
-    "\n" +
-    "		\r" +
-    "\n" +
-    "		<i ng-if=\"upgrade.opBanned\" class=\"card-OP-banned-icon fs fs-opBanned\"></i>\r" +
     "\n" +
     "	</div>\r" +
     "\n" +

@@ -6951,8 +6951,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1;
 			},
 			// Only one per ship
-			canEquip: onePerShip("Biometric Hologram")
-		},
+			canEquip: onePerShip("Biometric Hologram"),
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return ship.captain &&  $factions.hasFaction(ship,"xindi", ship, fleet) &&  $factions.hasFaction(ship.captain,"xindi", ship, fleet);
+		}},
 		//Subspace Vortex
 		"tech:subspace_vortex_72281":{
 			factionPenalty: function(upgrade, ship, fleet) {
@@ -7848,7 +7850,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					// Add the "crew" type to all Tech and Borg slots
 					type: function(card,ship,fleet,type) {
 						if( ship.hasFaction == "borg" && $.inArray("tech",type) >= 0 || $.inArray("borg",type) >= 0 )
-							return type.concat(["crew"]);
+							return type.concat(["crew","tech"]);
 						return type;
 					}
 				}
