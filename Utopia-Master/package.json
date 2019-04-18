@@ -23,7 +23,7 @@
     "start": "grunt",
     "data": "npm run lint-data && npm run generate-data",
     "generate-data": "node ./src/data/index.js",
-    "lint-data": "eslint --fix 'src/data/*.js'"
+    "lint-data": "eslint --fix --ext 'src/data/**/*.js'"
   },
   "devDependencies": {
     "eslint-config-fnd": "^1.6.0",
@@ -39,7 +39,12 @@
   },
   "dependencies": {
     "eslint": "^5.16.0",
+    "libcipm": "^3.0.3",
+    "lifecycle": "^1.0.4",
+    "node-gyp": "^3.8.0",
     "npm": "^6.9.0",
+    "npm-lifecycle": "^2.1.0",
+    "tar": "^4.4.8",
     "uglify-js": "^3.5.4"
   }
 }
