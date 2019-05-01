@@ -30,4 +30,4 @@ The repository's directory structure should be largely self-explanatory:
   Bug Reporting / Feature Requests
   --------------------------------
 
-  Report bugs and request features at the [KFNEXUS git hub site](https://github.com/CrazyVulcan/CrazyVulcan.github.io/issues)
+  Report bugs and request features at the [CrazyVulcan git hub site](https://github.com/CrazyVulcan/CrazyVulcan.github.io/issues)
