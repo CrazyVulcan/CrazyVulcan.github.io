@@ -24,7 +24,7 @@ module.exports = function(grunt) {
 				tasks: ["build-index"],
 			},
 			data: {
-				files: "src/data/*.js",
+				files: "src/data/**/*.js",
 				tasks: ["build-data"],
 			}
 		},

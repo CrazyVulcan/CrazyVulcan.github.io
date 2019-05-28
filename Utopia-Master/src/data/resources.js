@@ -359,6 +359,7 @@ module.exports = [{
 	name: "Long-Range Probe",
 	text: "At the start of the game, place 3 Mission Tokens on this card.\n\n<b>PLANNING PHASE:</b> Once per game round place 1 Mission Token from this card onto the play area withing Range 1-3 of one of your ships.\n\n<b>PLANNING PHASE:</b> Target an opposing ship within Range 1-2 of one of your Long-Range Probes and remove that Long-Range Probe from the play area. This game round, the target ship must plan its Maneuver first, face-up, and it cannot be changed after it is set.\n\nDiscard this card when there are no more Mission Tokens on it and there are no more of your Long-Range Probes on the play area.",
 	cost: 6,
+	opBanned: false,
 	showShipResourceSlot: false
 }, {
 	type: "resource",
@@ -367,5 +368,6 @@ module.exports = [{
 	name: "Sick Bay",
 	text: "This card can only be assigned to one of your ships that has a Hull Value of 4 or more.\n\nWhenever this ships Captain, Admiral, or [crew] would be disabled, you may place 2 [time] Tokens on that card instead.\n\n-OR-\n\nWhenever this ships Captain, Admiral, or [crew] would be discarded, you may discard this card instead.",
 	cost: 6,
+	opBanned: false,
 	showShipResourceSlot: false
 }];
