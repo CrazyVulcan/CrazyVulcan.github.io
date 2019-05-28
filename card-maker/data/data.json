@@ -7,12 +7,6 @@
 		"parentSet": "Wave 0"
 	}, {
 		"type": "set",
-		"id": "TFS_Fed_A",
-		"name": "Federation Starter",
-		"releaseDate": "2020-01-01",
-		"parentSet": "Task Force Sigma"
-	}, {
-		"type": "set",
 		"id": "001",
 		"name": "Discovery",
 		"releaseDate": "YYYY-MM-DD",
@@ -23,12 +17,6 @@
 		"name": "Bioship Card Pack",
 		"Release Date": "2017-12-31",
 		"parentSet": "Demo"
-	},	{
-		"type": "set",
-		"id": "james_c",
-		"name": "James Campbell",
-		"Release Date": "2018-5-22",
-		"parentSet": "Submitted"
 	}],
 	"ships": [{
 		"type": "ship",
@@ -46,70 +34,6 @@
 		"text": "Ship Ability",
 		"unique": true,
 		"factions": ["faction"]
-	}, {
-		"type": "ship",
-		"id": "mjolnir_okie",
-		"set": ["james_c"],
-		"name": "Mjolnir",
-		"class": "Akira Class",
-		"actions": ["evade", "target-lock", "scan", "battlestations"],
-		"upgrades": ["weapon", "weapon", "weapon", "crew"],
-		"attack": 4,
-		"agility": 2,
-		"hull": 5,
-		"shields": 3,
-		"cost": 28,
-		"text": "When attacking with Photon Torpedoes, you do not need to disable the Photon Torpedoes.",
-		"unique": true,
-		"factions": ["federation"]
-	}, {
-		"type": "ship",
-		"id": "Yorktown_TFS_Fed_A",
-		"set": ["TFS_Fed_A"],
-		"name": "U.S.S. Yorktown",
-		"class": "Ship Class",
-		"actions": ["evade", "target-lock", "scan", "battlestations"],
-		"upgrades": ["tech", "weapon", "crew"],
-		"attack": 0,
-		"agility": 0,
-		"hull": 0,
-		"shields": 0,
-		"cost": 0,
-		"text": "Ship Ability",
-		"unique": true,
-		"factions": ["faction"]
-	}, {
-		"type": "ship",
-		"id": "_001",
-		"set": ["001"],
-		"name": "USS Discovery",
-		"class": "Crossfield Class",
-		"actions": ["evade", "target-lock", "scan", "battlestations"],
-		"upgrades": ["tech", "tech", "weapon", "crew", "crew"],
-		"attack": 3,
-		"agility": 1,
-		"hull": 4,
-		"shields": 3,
-		"cost": 20,
-		"text": "This ship may equip the 'Spore Drive' Upgrade without requiring a [tech] slot.\n----------------------------------\nWhen activating the text of any [tech] Upgrade that requires it to be disabled, place 2 [time] Tokens on this ship instead.",
-		"unique": true,
-		"factions": ["federation"]
-	}, {
-		"type": "ship",
-		"id": "crossfield_class_ship",
-		"set": ["001"],
-		"name": "Federation Starship",
-		"class": "Crossfield Class",
-		"actions": ["evade", "target-lock", "scan", "battlestations"],
-		"upgrades": ["tech", "weapon", "crew"],
-		"attack": 3,
-		"agility": 1,
-		"hull": 4,
-		"shields": 2,
-		"cost": 16,
-		"text": "",
-		"unique": false,
-		"factions": ["federation"]
 	}, {
 		"type": "ship",
 		"id": "bioship_gamma_002",
@@ -142,69 +66,8 @@
 		"text": "",
 		"unique": false,
 		"factions": ["species-8472"]
-	}, {
-		"type": "ship",
-		"id": "allices_shuttle_james_c",
-		"set": ["james_c"],
-		"name": "Alice's Shuttle",
-		"class": "Salvaged Shuttlecraft",
-		"actions": ["evade", "target-lock", "scan"],
-		"upgrades": ["tech", "weapon", "crew"],
-		"attack": 2,
-		"agility": 2,
-		"hull": 2,
-		"shields": 2,
-		"cost": 12,
-		"text": "This shuttle may chose to fill its Captain slot with a [crew] Upgrade whos Captain Skill is their printed SP cost +2.\nDURING THE ACTIVATION PHASE: You may place 2 [time] Tokens on this captain to perform any ACTION on this card as a free action.",
-		"unique": true,
-		"factions": ["independent"]
-	},	{
-		"type": "ship",
-		"id": "derelict_shuttle_james_c",
-		"set": ["james_c"],
-		"name": "Derelict  Shuttle",
-		"class": "Salvaged Shuttlecraft",
-		"actions": ["evade", "target-lock", "scan"],
-		"upgrades": ["tech", "weapon"],
-		"attack": 2,
-		"agility": 2,
-		"hull": 2,
-		"shields": 1,
-		"cost": 8,
-		"text": "",
-		"unique": false,
-		"factions": ["independent"]
 	}],
 	"shipClasses": [{
-		"type": "ship-class",
-		"id": "crossfield_class_001",
-		"name": "Crossfield Class",
-		"frontArc": "180",
-		"maneuvers": {
-			"1": {
-				"straight": "green",
-				"bank": "green"
-			},
-			"2": {
-				"straight": "green",
-				"bank": "white",
-				"turn": "white"
-			},
-			"3": {
-				"straight": "white",
-				"bank": "white",
-				"turn": "red"
-			},
-			"4": {
-				"straight": "white"
-			},
-			"min": -2,
-			"max": 4,
-			"-2": {
-				"straight": "red"
-			}
-		}
-	}, {
 		"type": "ship-class",
 		"id": "ship_class_setnum",
 		"name": "Ship Class",
@@ -276,17 +139,6 @@
 		"cost": 0,
 		"skill": 1,
 		"talents": 0
-	}, {
-		"type": "captain",
-		"id": "gabriel_lorca_001",
-		"set": ["001"],
-		"name": "Gabriel Lorca",
-		"unique": true,
-		"text": "Add 1 [crew] Upgrade Slot you your Upgrade Bar.\n-----------------------------------------\n<b>WHEN ATTACKING</b> Discard one [crew] Upgrade in order to take one attack die and set it on a side of your choosing. This die can not be rolled or rerolled",
-		"factions": ["mirror-universe", "federation"],
-		"cost": 3,
-		"skill": 5,
-		"talents": 1
 	}, {
 		"type": "captain",
 		"id": "bioship_gamma_pilot_002",
@@ -362,16 +214,6 @@
 		"text": "Card Text",
 		"unique": false,
 		"factions": ["faction"]
-	}, {
-		"type": "tech",
-		"id": "spore_001",
-		"set": ["001"],
-		"name": "Spore Drive",
-		"cost": 5,
-		"text": "<b>WHEN THIS SHIP REVEALS ITS MANEUVER:</b> Disable this card and disregard this ships chosen maneuver. This ship performs a [sensor-echo], even if this ship does not have a [cloak] Token next to it.\n\n The Player may choose to use the 1[straight] or 2[straight] Maneuver Template\nOR\nUse a 4[straight] Then place an [aux] Token next to your ship\n(<i>Crossfield Class Only</i>)",
-		"OnePerShip": true,
-		"shipLimit": true,
-		"factions": ["federation"]
 	}, {
 		"type": "talent",
 		"id": "infiltration_002",
@@ -465,16 +307,7 @@
 		"text": "This card counts as either a [tech], [weapon] or [crew] Upgrade.\n<b>AFTER SETUP:</b> Transpher this card to an opposing ship that has an open slot.\n-----------------------------------------\n<b>PLANING PHASE:</b> You may place two Time Tokens on this card. <b>CONTUNIOUS EFFECT:</b> This ship playes its manouver dial face up during the Planing Phase. Discard this card when there are no more time tokens left on it.",
 		"unique": true,
 		"factions": ["species-8472"]
-	},{
-		"type": "question",
-		"id": "alice_james_c",
-		"set": ["james_c"],
-		"name": "Alice",
-		"cost": 2,
-		"text": "This card may fill either a [tech] or [crew] Upgrade slot. All equipped [crew] Upgrades cost -2sp.\n\nThis card may only be equipped to a Shuttlecraft",
-		"unique": true,
-		"factions": ["independent"]
-	}],
+	}     ],
 	"resources": [{
 		"type": "resource",
 		"id": "resource_name_setnum",

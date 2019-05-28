@@ -341,6 +341,7 @@ module.exports = [{
 	name: "Captain's Chair",
 	text: "This card can only be assigned to a ship that has a Captain with a printed Captain skill of 5 or higher.\n\n<b>ACTIVATION PHASE:</b> Once per game round, after this ship executes a Non-Red Maneuver:\n\nRemove a Disabled Token from 1 of the cards equipped to this ship.",
 	cost: 3,
+	opBanned: true,
 	showShipResourceSlot: false
 }, {
 	type: "resource",
@@ -349,6 +350,7 @@ module.exports = [{
 	name: "Front Line Retrofit",
 	text: "This card can only be assigned to a ship that has a printed Hull Value of 3 or less.\n\nThis ship gains the following:\n\n Increase this ships Shield Value by +1.\n\nAdd 1 additional [weapon] to this ships Upgrade Bar.\n\n Increase the Captain Skill of the Captain equiped to this ship by +1",
 	cost: 5,
+	opBanned: true,
 	showShipResourceSlot: false
 }, {
 	type: "resource",
