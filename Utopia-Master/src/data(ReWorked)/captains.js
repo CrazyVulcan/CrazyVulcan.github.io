@@ -1,6 +1,6 @@
 module.exports = [{
 	type: "captain",
-	id: "species_8472_captain_71281",
+	id: "Cap117",
 	set: ["71281", "72291", "72012"],
 	name: "Species 8472",
 	unique: false,
@@ -11,7 +11,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "xindi_captain_72003p",
+	id: "Cap116",
 	set: ["72003p", "71225", "72224p", "72004p", "72293"],
 	name: "Xindi",
 	cost: 0,
@@ -22,7 +22,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "captain",
-	id: "vulcan_captain_71446",
+	id: "Cap115",
 	set: ["71446", "71508", "71527", "71646e"],
 	name: "Vulcan",
 	unique: false,
@@ -33,7 +33,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "2027",
+	id: "Cap114",
 	set: ["OP1Prize", "71646a", "71806", "72013"],
 	name: "Ferengi",
 	unique: false,
@@ -44,7 +44,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "kazon_captain_71282",
+	id: "Cap113",
 	set: ["71282", "71646c", "71793", "71192"],
 	name: "Kazon",
 	unique: false,
@@ -55,7 +55,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "bajoran_captain_op6prize",
+	id: "Cap112",
 	set: ["OP6Prize", "71445", "71803", "71211"],
 	name: "Bajoran",
 	unique: false,
@@ -66,7 +66,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "drone_71522",
+	id: "Cap111",
 	set: ["71522", "71223", "71808", "71534", "gavroche", "71528", "OPArenaPrize", "71797", "OPWebPrize", "71795"],
 	name: "Independent",
 	unique: false,
@@ -77,7 +77,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "krenim_71799",
+	id: "Cap110",
 	set: ["71799"],
 	name: "Krenim",
 	unique: false,
@@ -88,7 +88,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "mirror_universe_captain_71510b",
+	id: "Cap109",
 	set: ["71510b", "71646b", "71529", "71535", "71796", "71800", "71807", "72290p"],
 	name: "Mirror Universe",
 	unique: false,
@@ -99,7 +99,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "drone_71510b",
+	id: "Cap108",
 	set: ["71510b"],
 	name: "Drone",
 	unique: false,
@@ -110,7 +110,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "drone_71283",
+	id: "Cap107",
 	set: ["71283", "71444", "71525", "71646d", "71511", "71513a", "71792", "71530", "72255", "72283"],
 	name: "Drone",
 	unique: false,
@@ -121,7 +121,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "2036",
+	id: "Cap106",
 	set: ["71128", "OP5Prize", "71127", "71275", "71798", "72262", "71271", "71279", "3rd_wing_attack_ship", "71524"],
 	name: "Dominion",
 	unique: false,
@@ -132,7 +132,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "gareb_71536",
+	id: "Cap105",
 	set: ["71536"],
 	name: "Gareb",
 	unique: true,
@@ -143,7 +143,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "romulan_drone_pilot_71536",
+	id: "Cap104",
 	set: ["71536", "72014wp"],
 	name: "Romulan Drone Pilot",
 	unique: false,
@@ -154,7 +154,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "2007",
+	id: "Cap103",
 	set: ["71120", "71123", "71124", "71270", "71278", "OP3Prize", "i_r_w_vorta_vor", "72252", "71533", "71274", "71794", "71511", "72242", "72010", "72016", "71222", "72233", "72221p"],
 	name: "Romulan",
 	unique: false,
@@ -165,7 +165,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "2005",
+	id: "Cap102",
 	set: ["71120", "71125", "71126", "OP2Prize", "71269", "71273", "71448", "i_k_s_b_moth", "71532", "71996", "71804", "72009", "72015", "72232", "72236p", "72241", "72272", "72281p"],
 	name: "Klingon",
 	unique: false,
@@ -176,7 +176,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "2003",
+	id: "Cap101",
 	set: ["72300p", "71120", "71121", "71122", "72240", "71268", "72282", "71272", "72292", "71276", "71280", "72261", "OP4Prize", "u_s_s_yaeger", "71523", "71509", "71526", "71510", "71531", "71997p", "71801", "71998p", "71802", "72008", "72011", "72014", "71201", "71213", "71221", "72231", "72271", "72284p"],
 	name: "Federation",
 	unique: false,
@@ -187,7 +187,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "gint_captain_75003",
+	id: "Cap223",
 	set: ["75003"],
 	name: "Gint",
 	cost: 3,
@@ -198,7 +198,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "captain",
-	id: "klaang_72012wp",
+	id: "Cap222",
 	set: ["72012wp"],
 	name: "Klaang",
 	cost: 2,
@@ -209,7 +209,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "captain",
-	id: "aquatic_councilor_72281",
+	id: "Cap221",
 	set: ["72281"],
 	name: "Aquatic Councilor",
 	cost: 1,
@@ -220,7 +220,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "captain",
-	id: "john_harriman_enterprise_b",
+	id: "Cap220",
 	set: ["72263"],
 	name: "John Harriman",
 	cost: 1,
@@ -231,7 +231,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "captain",
-	id: "akorem_laan_denorious",
+	id: "Cap219",
 	set: ["71211"],
 	name: "AKOREM LAAN",
 	cost: 1,
@@ -242,7 +242,7 @@ module.exports = [{
 	factions: ["bajoran"]
 }, {
 	type: "captain",
-	id: "bochra_pi",
+	id: "Cap218",
 	set: ["71222"],
 	name: "Bochra",
 	cost: 1,
@@ -253,7 +253,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "captain",
-	id: "2010",
+	id: "Cap217",
 	set: ["71121"],
 	name: "Clark Terrell",
 	unique: true,
@@ -264,7 +264,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "2024",
+	id: "Cap216",
 	set: ["71128"],
 	name: "Sar",
 	unique: true,
@@ -275,7 +275,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "maxwell_burke_71276",
+	id: "Cap215",
 	set: ["71276"],
 	name: "Maxwell Burke",
 	unique: true,
@@ -286,7 +286,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "rettik_71282",
+	id: "Cap214",
 	set: ["71282"],
 	name: "Rettik",
 	unique: true,
@@ -297,7 +297,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "tactical_drone_71525",
+	id: "Cap213",
 	set: ["71525"],
 	name: "Tactical Drone",
 	unique: true,
@@ -308,7 +308,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "tactical_drone_71646d",
+	id: "Cap212",
 	set: ["71646d"],
 	name: "Tactical Drone",
 	unique: false,
@@ -319,7 +319,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "hiren_cap_71533",
+	id: "Cap211",
 	set: ["71533", "72252"],
 	name: "Hiren",
 	unique: true,
@@ -330,7 +330,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "tholian_pilot_71795",
+	id: "Cap210",
 	set: ["71795"],
 	name: "Tholian Pilot",
 	unique: false,
@@ -341,7 +341,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "centurion_71794",
+	id: "Cap209",
 	set: ["71794"],
 	name: "Centurion",
 	unique: true,
@@ -352,7 +352,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "ronald_moore_71801",
+	id: "Cap208",
 	set: ["71801"],
 	name: "Ronald Moore",
 	unique: true,
@@ -363,7 +363,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "jaro_essa_cap_71803",
+	id: "Cap207",
 	set: ["71803"],
 	name: "Jaro Essa",
 	unique: true,
@@ -374,7 +374,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "the_doctor_71802",
+	id: "Cap206",
 	set: ["71802"],
 	name: "The Doctor",
 	unique: true,
@@ -385,7 +385,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "bioship_omega_pilot_blind_bioship",
+	id: "Cap205",
 	set: ["blind_bioship"],
 	name: "Bioship Omega Pilot",
 	cost: 1,
@@ -396,7 +396,7 @@ module.exports = [{
 	factions: ["species-8472"]
 }, {
 	type: "captain",
-	id: "matt_decker_cap_72002p",
+	id: "Cap204",
 	set: ["72002p"],
 	name: "Matt Decker",
 	cost: 1,
@@ -407,7 +407,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "captain",
-	id: "haden_cap_72011",
+	id: "Cap203",
 	set: ["72011"],
 	name: "Haden",
 	cost: 1,
@@ -418,7 +418,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "captain",
-	id: "q_cap_72000b",
+	id: "Cap202",
 	set: ["72000b"],
 	name: "Q",
 	cost: 1,
@@ -434,7 +434,7 @@ module.exports = [{
 	}
 }, {
 	type: "captain",
-	id: "zek_cap_72013",
+	id: "Cap201",
 	set: ["72013"],
 	name: "Zek",
 	cost: 1,
@@ -445,7 +445,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "captain",
-	id: "idrin_73042",
+	id: "Cap339",
 	set: ["73042"],
 	name: "Idrin",
 	cost: 2,
@@ -456,7 +456,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "captain",
-	id: "romulan_captain_75001",
+	id: "Cap338",
 	set: ["75001"],
 	name: "Romulan Captain",
 	cost: 2,
@@ -467,7 +467,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "captain",
-	id: "mirok_72001p",
+	id: "Cap337",
 	set: ["75001"],
 	name: "Mirok",
 	cost: 2,
@@ -478,7 +478,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "captain",
-	id: "jhamel_72001p",
+	id: "Cap336",
 	set: ["72014wp"],
 	name: "Jhamel",
 	cost: 2,
@@ -491,7 +491,7 @@ module.exports = [{
 	factions: ["independent", "romulan"]
 }, {
 	type: "captain",
-	id: "jt_esteban_72001p",
+	id: "Cap335",
 	set: ["72011wp"],
 	name: "J.T. Esteban",
 	cost: 2,
@@ -502,7 +502,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "captain",
-	id: "tal_72242",
+	id: "Cap334",
 	set: ["72242"],
 	name: "Tal",
 	cost: 2,
@@ -513,7 +513,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "captain",
-	id: "kohlar_kohlars_battle_cruiser",
+	id: "Cap333",
 	set: ["72270p"],
 	name: "Kohlar",
 	cost: 2,
@@ -524,7 +524,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "captain",
-	id: "matt_decker_constellation",
+	id: "Cap332",
 	set: ["72234p"],
 	name: "Matt Decker",
 	cost: 2,
@@ -535,7 +535,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "captain",
-	id: "vrax_jazkal",
+	id: "Cap331",
 	set: ["72233"],
 	name: "Vrax",
 	cost: 2,
@@ -546,7 +546,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "captain",
-	id: "barak_amar",
+	id: "Cap330",
 	set: ["72232"],
 	name: "Barak",
 	cost: 2,
@@ -557,7 +557,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "captain",
-	id: "tebok_tmet",
+	id: "Cap329",
 	set: ["72221p"],
 	name: "TEBOK",
 	cost: 2,
@@ -568,7 +568,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "captain",
-	id: "2014",
+	id: "Cap328",
 	set: ["71123"],
 	name: "Tomalak",
 	unique: true,
@@ -579,7 +579,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "2021",
+	id: "Cap327",
 	set: ["71127"],
 	name: "Gul Danar",
 	unique: true,
@@ -590,7 +590,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "2030",
+	id: "Cap326",
 	set: ["71268", "72282"],
 	name: "Kira Nerys",
 	unique: true,
@@ -601,7 +601,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "2035",
+	id: "Cap325",
 	set: ["71271"],
 	name: "Luaran",
 	unique: true,
@@ -612,7 +612,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "2038",
+	id: "Cap324",
 	set: ["71273"],
 	name: "Kurn",
 	unique: true,
@@ -623,7 +623,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "3106",
+	id: "Cap323",
 	set: ["71272", "72292"],
 	name: "Styles",
 	unique: true,
@@ -634,7 +634,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "tavek_71446",
+	id: "Cap322",
 	set: ["71446"],
 	name: "Tavek",
 	unique: true,
@@ -645,7 +645,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "lenaris_holem_71445",
+	id: "Cap321",
 	set: ["71445"],
 	name: "Lenaris Holem",
 	unique: true,
@@ -656,7 +656,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "will_decker_71523",
+	id: "Cap320",
 	set: ["71523"],
 	name: "Will Decker",
 	unique: true,
@@ -667,7 +667,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "magnus_hansen_71509",
+	id: "Cap319",
 	set: ["71509"],
 	name: "Magnus Hansen",
 	unique: true,
@@ -678,7 +678,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "j_hayes_71526",
+	id: "Cap318",
 	set: ["71526"],
 	name: "J. Hayes",
 	unique: true,
@@ -689,7 +689,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "third_of_five_Cap_71525",
+	id: "Cap317",
 	set: ["71525"],
 	name: "Third of Five",
 	unique: true,
@@ -700,7 +700,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "elim_garak_71646b",
+	id: "Cap316",
 	set: ["71646b"],
 	name: "Elim Garak",
 	unique: true,
@@ -711,7 +711,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "haron_71646c",
+	id: "Cap315",
 	set: ["71646c"],
 	name: "Haron",
 	unique: true,
@@ -722,7 +722,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "kerla_71532",
+	id: "Cap314",
 	set: ["71532"],
 	name: "Kerla",
 	unique: true,
@@ -733,7 +733,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "worf_cap_71535",
+	id: "Cap313",
 	set: ["71535"],
 	name: "Worf",
 	unique: true,
@@ -744,7 +744,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "slar_71797",
+	id: "Cap312",
 	set: ["71797"],
 	name: "Slar",
 	unique: true,
@@ -755,7 +755,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "gul_ocett_71798",
+	id: "Cap311",
 	set: ["71798"],
 	name: "Gul Ocett",
 	unique: true,
@@ -766,7 +766,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "data_71997p",
+	id: "Cap310",
 	set: ["71997p"],
 	name: "Data",
 	unique: true,
@@ -777,7 +777,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "gardner_cap_71800",
+	id: "Cap309",
 	set: ["71800"],
 	name: "Gardner",
 	unique: true,
@@ -788,7 +788,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "erik_pressman_cap_71801",
+	id: "Cap308",
 	set: ["71801"],
 	name: "Erik Pressman",
 	unique: true,
@@ -799,7 +799,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "lovok_blind_belak",
+	id: "Cap307",
 	set: ["blind_belak"],
 	name: "Lovok",
 	cost: 2,
@@ -810,7 +810,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "captain",
-	id: "arturis_71805",
+	id: "Cap306",
 	set: ["71805"],
 	name: "Arturis",
 	cost: 5,
@@ -825,7 +825,7 @@ module.exports = [{
 	}
 }, {
 	type: "captain",
-	id: "tarr_71806",
+	id: "Cap305",
 	set: ["71806"],
 	name: "Tarr",
 	cost: 2,
@@ -840,7 +840,7 @@ module.exports = [{
 	}
 }, {
 	type: "captain",
-	id: "quark_72013",
+	id: "Cap304",
 	set: ["72013"],
 	name: "Quark",
 	cost: 2,
@@ -851,7 +851,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "captain",
-	id: "telek_r_mor_72016",
+	id: "Cap303",
 	set: ["72016"],
 	name: "Telek R'Mor",
 	cost: 2,
@@ -862,7 +862,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "captain",
-	id: "kaybok_blind_tohkaht",
+	id: "Cap302",
 	set: ["blind_tohkaht"],
 	name: "Kaybok",
 	cost: 2,
@@ -873,7 +873,7 @@ module.exports = [{
 	factions: ["mirror-universe"]
 }, {
 	type: "captain",
-	id: "morag_72009",
+	id: "Cap301",
 	set: ["72009"],
 	name: "Morag",
 	cost: 2,
@@ -888,7 +888,7 @@ module.exports = [{
 	}
 }, {
 	type: "captain",
-	id: "vidiian_captain_75004",
+	id: "Cap448",
 	set: ["75004"],
 	name: "Vidiian Captain",
 	cost: 3,
@@ -900,7 +900,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "captain",
-	id: "gorn_captain_73031",
+	id: "Cap447",
 	set: ["73031"],
 	name: "Gorn Captain",
 	cost: 3,
@@ -911,7 +911,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "captain",
-	id: "daimon_solok_75003",
+	id: "Cap446",
 	set: ["75003"],
 	name: "Daimon Solok",
 	cost: 2,
@@ -922,7 +922,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "captain",
-	id: "lursa_2017core",
+	id: "Cap445",
 	set: ["2017core"],
 	name: "Lursa",
 	cost: 3,
@@ -933,7 +933,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "captain",
-	id: "betor_2017core",
+	id: "Cap444",
 	set: ["2017core"],
 	name: "B'Etor",
 	cost: 3,
@@ -944,7 +944,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "captain",
-	id: "data_2017core",
+	id: "Cap443",
 	set: ["2017core"],
 	name: "Data",
 	cost: 3,
@@ -956,7 +956,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "captain",
-	id: "kilana_75002",
+	id: "Cap442",
 	set: ["75002"],
 	name: "Kilana",
 	cost: 2,
@@ -967,7 +967,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "captain",
-	id: "degra_muratas",
+	id: "Cap441",
 	set: ["72293"],
 	name: "Degra",
 	cost: 3,
@@ -978,7 +978,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "captain",
-	id: "kiaphet_amman'sor_72281",
+	id: "Cap440",
 	set: ["72281"],
 	name: "Kiaphet Amman'Sor",
 	cost: 3,
@@ -989,7 +989,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "captain",
-	id: "betor_72282p",
+	id: "Cap439",
 	set: ["72282p"],
 	name: "B'Etor",
 	cost: 3,
@@ -1000,7 +1000,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "captain",
-	id: "lursa_72282p",
+	id: "Cap438",
 	set: ["72282p"],
 	name: "Lursa",
 	cost: 3,
@@ -1011,7 +1011,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "captain",
-	id: "tal_rateg",
+	id: "Cap437",
 	set: ["72262p"],
 	name: "Tal",
 	cost: 3,
@@ -1022,7 +1022,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "captain",
-	id: "donald_varley_venture",
+	id: "Cap436",
 	set: ["72253"],
 	name: "Donald Varley",
 	cost: 3,
@@ -1033,7 +1033,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "captain",
-	id: "tactial_drone_72255",
+	id: "Cap435",
 	set: ["72255"],
 	name: "Tactial Drone",
 	cost: 3,
@@ -1044,7 +1044,7 @@ module.exports = [{
 	factions: ["borg"]
 }, {
 	type: "captain",
-	id: "tim_watters_valiant",
+	id: "Cap434",
 	set: ["71221"],
 	name: "Tim Watters",
 	cost: 3,
@@ -1055,7 +1055,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "captain",
-	id: "2015",
+	id: "Cap433",
 	set: ["71124"],
 	name: "Mirok",
 	unique: true,
@@ -1066,7 +1066,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "2017",
+	id: "Cap432",
 	set: ["71125", "72272"],
 	name: "Krell",
 	unique: true,
@@ -1077,7 +1077,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "2040",
+	id: "Cap431",
 	set: ["71275", "72262"],
 	name: "Gul Evek",
 	unique: true,
@@ -1088,7 +1088,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "2043",
+	id: "Cap430",
 	set: ["OP4Prize"],
 	name: "Data",
 	unique: true,
@@ -1099,7 +1099,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "rudolph_ransom_71276",
+	id: "Cap429",
 	set: ["71276"],
 	name: "Rudolph Ransom",
 	unique: true,
@@ -1110,7 +1110,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "tactical_drone_71283",
+	id: "Cap428",
 	set: ["71283", "72283"],
 	name: "Tactical Drone",
 	unique: false,
@@ -1121,7 +1121,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "culluh_71282",
+	id: "Cap427",
 	set: ["71282"],
 	name: "Culluh",
 	unique: true,
@@ -1132,7 +1132,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "loskene_opwebprize",
+	id: "Cap426",
 	set: ["OPWebPrize", "71795"],
 	name: "Loskene",
 	unique: true,
@@ -1143,7 +1143,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "gorn_commander_oparenaprize",
+	id: "Cap425",
 	set: ["OPArenaPrize"],
 	name: "Gorn Commander",
 	unique: true,
@@ -1154,7 +1154,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "hugh_71522",
+	id: "Cap424",
 	set: ["71522"],
 	name: "Hugh",
 	unique: true,
@@ -1165,7 +1165,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "keevan_71524",
+	id: "Cap423",
 	set: ["71524"],
 	name: "Keevan",
 	unique: true,
@@ -1176,7 +1176,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "maxwell_forrest_cap_71526",
+	id: "Cap422",
 	set: ["71526"],
 	name: "Maxwell Forrest",
 	unique: true,
@@ -1187,7 +1187,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "kuvak_71527",
+	id: "Cap421",
 	set: ["71527"],
 	name: "Kuvak",
 	unique: true,
@@ -1198,7 +1198,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "matthew_dougherty_cap_71531",
+	id: "Cap420",
 	set: ["71531", "72271"],
 	name: "Matthew Dougherty",
 	unique: true,
@@ -1209,7 +1209,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "benjamin_sisko_71529",
+	id: "Cap419",
 	set: ["71529"],
 	name: "Benjamin Sisko",
 	unique: true,
@@ -1220,7 +1220,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "gorkon_cap_71532",
+	id: "Cap418",
 	set: ["71532"],
 	name: "Gorkon",
 	unique: true,
@@ -1231,7 +1231,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "kira_nerys_71535",
+	id: "Cap417",
 	set: ["71535"],
 	name: "Kira Nerys",
 	unique: true,
@@ -1242,7 +1242,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "gul_lemec_71798",
+	id: "Cap416",
 	set: ["71798"],
 	name: "Gul Lemec",
 	unique: true,
@@ -1253,7 +1253,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "soval_71800",
+	id: "Cap415",
 	set: ["71800"],
 	name: "Soval",
 	unique: true,
@@ -1264,7 +1264,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "black_cap_71800",
+	id: "Cap414",
 	set: ["71800"],
 	name: "Black",
 	unique: true,
@@ -1275,7 +1275,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "obrist_71799",
+	id: "Cap413",
 	set: ["71799"],
 	name: "Obrist",
 	unique: true,
@@ -1286,7 +1286,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "robert_desoto_71998p",
+	id: "Cap412",
 	set: ["71998p"],
 	name: "Robert DeSoto",
 	unique: true,
@@ -1297,7 +1297,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "day_kannu_71803",
+	id: "Cap411",
 	set: ["71803"],
 	name: "Day Kannu",
 	unique: true,
@@ -1308,7 +1308,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "kurn_71999p",
+	id: "Cap410",
 	set: ["71999p"],
 	name: "Kurn",
 	unique: true,
@@ -1319,7 +1319,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "worf_71804",
+	id: "Cap409",
 	set: ["71804"],
 	name: "Worf",
 	unique: true,
@@ -1330,7 +1330,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "tom_paris_72300p",
+	id: "Cap408",
 	set: ["72300p"],
 	name: "Tom Paris",
 	cost: 3,
@@ -1341,7 +1341,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "captain",
-	id: "tom_paris_72014",
+	id: "Cap407",
 	set: ["72014"],
 	name: "Tom Paris",
 	cost: 2,
@@ -1352,7 +1352,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "captain",
-	id: "bractor_71806",
+	id: "Cap406",
 	set: ["71806"],
 	name: "Bractor",
 	cost: 3,
@@ -1367,7 +1367,7 @@ module.exports = [{
 	}
 }, {
 	type: "captain",
-	id: "erika_benteen_blind_lakota",
+	id: "Cap405",
 	set: ["blind_lakota"],
 	name: "Erika Benteen",
 	cost: 3,
@@ -1378,7 +1378,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "captain",
-	id: "brunt_72013",
+	id: "Cap404",
 	set: ["72013"],
 	name: "Brunt",
 	cost: 3,
@@ -1389,7 +1389,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "captain",
-	id: "tavin_blind_seleya",
+	id: "Cap403",
 	set: ["blind_seleya"],
 	name: "Tavin",
 	cost: 3,
@@ -1400,7 +1400,7 @@ module.exports = [{
 	factions: ["vulcan"]
 }, {
 	type: "captain",
-	id: "tomalak_72000p",
+	id: "Cap402",
 	set: ["72000p"],
 	name: "Tomalak",
 	cost: 3,
@@ -1415,7 +1415,7 @@ module.exports = [{
 	}
 }, {
 	type: "captain",
-	id: "shanthi_cap_72008",
+	id: "Cap401",
 	set: ["72008"],
 	name: "Shanthi",
 	cost: 2,
@@ -1426,7 +1426,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "captain",
-	id: "hirogen_hunter_73042",
+	id: "Cap545",
 	set: ["73042"],
 	name: "Hirogen Hunter",
 	cost: 4,
@@ -1437,7 +1437,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "captain",
-	id: "vorta_commander_73032",
+	id: "Cap544",
 	set: ["73032"],
 	name: "Vorta Commander",
 	cost: 3,
@@ -1448,7 +1448,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "captain",
-	id: "captain_kmpec_2017core",
+	id: "Cap543",
 	set: ["2017core"],
 	name: "K'Mpec",
 	cost: 4,
@@ -1459,7 +1459,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "captain",
-	id: "movar_72282gp",
+	id: "Cap542",
 	set: ["72282gp"],
 	name: "Movar",
 	cost: 3,
@@ -1470,7 +1470,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "captain",
-	id: "gowron_bortas",
+	id: "Cap541",
 	set: ["72280p"],
 	name: "Gowron",
 	cost: 3,
@@ -1481,7 +1481,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "captain",
-	id: "liviana_charvanek_72242",
+	id: "Cap540",
 	set: ["72242"],
 	name: "Liviana Charvanek",
 	cost: 3,
@@ -1492,7 +1492,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "captain",
-	id: "kurn_72241",
+	id: "Cap539",
 	set: ["72241"],
 	name: "Kurn",
 	unique: true,
@@ -1503,7 +1503,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "gowron_72241",
+	id: "Cap538",
 	set: ["72241"],
 	name: "Gowron",
 	unique: true,
@@ -1514,7 +1514,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "kolo_xindus",
+	id: "Cap537",
 	set: ["72224p"],
 	name: "Kolo",
 	cost: 3,
@@ -1525,7 +1525,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "captain",
-	id: "orfil_quinteros_montgolfier",
+	id: "Cap536",
 	set: ["72231"],
 	name: "Orfil Quinteros",
 	cost: 3,
@@ -1536,7 +1536,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "captain",
-	id: "surat_Halik",
+	id: "Cap535",
 	set: ["71192"],
 	name: "Surat",
 	cost: 3,
@@ -1547,7 +1547,7 @@ module.exports = [{
 	factions: ["kazon"]
 }, {
 	type: "captain",
-	id: "2004",
+	id: "Cap534",
 	set: ["71120"],
 	name: "Nu'Daq",
 	unique: true,
@@ -1558,7 +1558,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "2020",
+	id: "Cap533",
 	set: ["71127"],
 	name: "Gul Ranor",
 	unique: true,
@@ -1569,7 +1569,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "daimon_goss_73001",
+	id: "Cap532",
 	set: ["73001"],
 	name: "Daimon Goss",
 	unique: true,
@@ -1581,7 +1581,7 @@ module.exports = [{
 	range: "1 - 2"
 }, {
 	type: "captain",
-	id: "2026",
+	id: "Cap531",
 	set: ["OP1Prize"],
 	name: "Daimon Tog",
 	unique: true,
@@ -1592,7 +1592,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "2031",
+	id: "Cap530",
 	set: ["71269"],
 	name: "Gorkon",
 	unique: true,
@@ -1603,7 +1603,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "2033",
+	id: "Cap529",
 	set: ["71270"],
 	name: "Valdore",
 	unique: true,
@@ -1614,7 +1614,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "2037",
+	id: "Cap528",
 	set: ["71273"],
 	name: "Worf",
 	unique: true,
@@ -1625,7 +1625,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "somraw_commander_71448",
+	id: "Cap527",
 	set: ["71448"],
 	name: "Somraw Cmdr",
 	unique: true,
@@ -1636,7 +1636,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "gelnon_71279",
+	id: "Cap526",
 	set: ["71279"],
 	name: "Gelnon",
 	unique: true,
@@ -1647,7 +1647,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "kira_nerys_op6prize",
+	id: "Cap525",
 	set: ["OP6Prize"],
 	name: "Kira Nerys",
 	unique: true,
@@ -1658,7 +1658,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "tahna_los_op6prize",
+	id: "Cap524",
 	set: ["OP6Prize"],
 	name: "Tahna Los",
 	unique: true,
@@ -1669,7 +1669,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "chakotay_71280",
+	id: "Cap523",
 	set: ["71280", "72261"],
 	name: "Chakotay",
 	unique: true,
@@ -1680,7 +1680,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "vanik_71508",
+	id: "Cap522",
 	set: ["71508"],
 	name: "Vanik",
 	unique: true,
@@ -1691,7 +1691,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "jonathan_archer_71526",
+	id: "Cap521",
 	set: ["71526"],
 	name: "Jonathan Archer",
 	unique: true,
@@ -1702,7 +1702,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "v_las_cap_71527",
+	id: "Cap520",
 	set: ["71527"],
 	name: "V'Las",
 	unique: true,
@@ -1713,7 +1713,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "salatrel_71511",
+	id: "Cap519",
 	set: ["71511"],
 	name: "Salatrel",
 	unique: true,
@@ -1724,7 +1724,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "calvin_hudson_71528",
+	id: "Cap518",
 	set: ["71528"],
 	name: "Calvin Hudson",
 	unique: true,
@@ -1735,7 +1735,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "tactical_drone_71530",
+	id: "Cap517",
 	set: ["71530"],
 	name: "Tactical Drone",
 	unique: false,
@@ -1746,7 +1746,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "miles_o_brien_71529",
+	id: "Cap516",
 	set: ["71529"],
 	name: "Miles O'Brien",
 	unique: true,
@@ -1757,7 +1757,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "viceroy_71533",
+	id: "Cap515",
 	set: ["71533", "72252"],
 	name: "Viceroy",
 	unique: true,
@@ -1768,7 +1768,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "gul_macet_71513b",
+	id: "Cap514",
 	set: ["71513b"],
 	name: "Gul Macet",
 	unique: true,
@@ -1779,7 +1779,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "jabin_71793",
+	id: "Cap513",
 	set: ["71793"],
 	name: "Jabin",
 	unique: true,
@@ -1790,7 +1790,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "taris_71794",
+	id: "Cap512",
 	set: ["71794"],
 	name: "Taris",
 	unique: true,
@@ -1801,7 +1801,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "s_sesslak_71797",
+	id: "Cap511",
 	set: ["71797"],
 	name: "S'Sesslak",
 	unique: true,
@@ -1812,7 +1812,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "rekar_71802",
+	id: "Cap510",
 	set: ["71802"],
 	name: "Rekar",
 	unique: true,
@@ -1823,7 +1823,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "gul_jasad_blind_aldara",
+	id: "Cap509",
 	set: ["blind_aldara"],
 	name: "Gul Jasad",
 	cost: 3,
@@ -1834,7 +1834,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "captain",
-	id: "kiaphet_amman_sor_72004p",
+	id: "Cap508",
 	set: ["72004p"],
 	name: "Kiaphet Amman'sor",
 	cost: 3,
@@ -1845,7 +1845,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "captain",
-	id: "tuvok_72014",
+	id: "Cap507",
 	set: ["72014"],
 	name: "Tuvok",
 	cost: 3,
@@ -1856,7 +1856,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "captain",
-	id: "beverly_crusher_71807",
+	id: "Cap506",
 	set: ["71807"],
 	name: "Beverly Crusher",
 	cost: 3,
@@ -1871,7 +1871,7 @@ module.exports = [{
 	}
 }, {
 	type: "captain",
-	id: "hayes_cap_72008",
+	id: "Cap505",
 	set: ["72008"],
 	name: "Hayes",
 	cost: 3,
@@ -1882,7 +1882,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "captain",
-	id: "k_temoc_72009",
+	id: "Cap504",
 	set: ["72009"],
 	name: "K'Temoc",
 	cost: 3,
@@ -1897,7 +1897,7 @@ module.exports = [{
 	}
 }, {
 	type: "captain",
-	id: "velal_cap_72010",
+	id: "Cap503",
 	set: ["72010"],
 	name: "Velal",
 	cost: 3,
@@ -1908,7 +1908,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "captain",
-	id: "hikaru_sule_75005",
+	id: "Cap502",
 	set: ["75005"],
 	name: "Hikaru Sulu",
 	cost: 3,
@@ -1920,7 +1920,7 @@ module.exports = [{
 	factions: ["mirror-universe", "federation"]
 }, {
 	type: "captain",
-	id: "telev_75004",
+	id: "Cap501",
 	set: ["75004"],
 	name: "Telev",
 	cost: 3,
@@ -1932,7 +1932,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "captain",
-	id: "first_73002",
+	id: "Cap661",
 	set: ["73002"],
 	name: "'First'",
 	unique: true,
@@ -1942,7 +1942,7 @@ module.exports = [{
 	skill: "*"
 }, {
 	type: "captain",
-	id: "tactical_drone_73002",
+	id: "Cap660",
 	set: ["73002"],
 	name: "Tactical Drone",
 	unique: false,
@@ -1953,7 +1953,7 @@ module.exports = [{
 	range: "1 - 2"
 }, {
 	type: "captain",
-	id: "thomas_riker_75004",
+	id: "Cap659",
 	set: ["75004"],
 	name: "Thomas Riker",
 	unique: true,
@@ -1964,7 +1964,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "prak_75003",
+	id: "Cap658",
 	set: ["75003"],
 	name: "Prak",
 	unique: true,
@@ -1976,7 +1976,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "duras_2017core",
+	id: "Cap657",
 	set: ["2017core"],
 	name: "Duras",
 	unique: true,
@@ -1987,7 +1987,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "william_riker_2017core",
+	id: "Cap656",
 	set: ["2017core"],
 	name: "William T. Riker",
 	unique: true,
@@ -1999,7 +1999,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "yelgrun_75002",
+	id: "Cap655",
 	set: ["75002"],
 	name: "Yelgrun",
 	unique: true,
@@ -2011,7 +2011,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "alidar_jarok_75001",
+	id: "Cap654",
 	set: ["75001"],
 	name: "Alidar Jarok",
 	unique: true,
@@ -2023,7 +2023,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "deyos_75001",
+	id: "Cap653",
 	set: ["75002"],
 	name: "Deyos",
 	unique: true,
@@ -2035,7 +2035,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "kurn_72281p",
+	id: "Cap652",
 	set: ["72281p"],
 	name: "Kurn",
 	cost: 4,
@@ -2046,7 +2046,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "captain",
-	id: "duras_son_of_toral_72012wp",
+	id: "Cap651",
 	set: ["72012wp"],
 	name: "Duras, Son of Toral",
 	cost: 4,
@@ -2058,7 +2058,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "captain",
-	id: "edward_jellico_cairo",
+	id: "Cap650",
 	set: ["72261p"],
 	name: "Edward Jellico",
 	cost: 4,
@@ -2069,7 +2069,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "captain",
-	id: "james_t_kirk_bounty",
+	id: "Cap649",
 	set: ["72260p"],
 	name: "James T. Kirk",
 	cost: 5,
@@ -2080,7 +2080,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "captain",
-	id: "borg_queen_72255",
+	id: "Cap648",
 	set: ["72255"],
 	name: "Borg Queen",
 	cost: 4,
@@ -2091,7 +2091,7 @@ module.exports = [{
 	factions: ["borg"]
 }, {
 	type: "captain",
-	id: "thylek_shran_kumari",
+	id: "Cap647",
 	set: ["71223"],
 	name: "Thy'Lek Shran",
 	cost: 4,
@@ -2102,7 +2102,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "captain",
-	id: "2002",
+	id: "Cap646",
 	set: ["71120"],
 	name: "William T. Riker",
 	unique: true,
@@ -2113,7 +2113,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "2009",
+	id: "Cap645",
 	set: ["GenCon2013Promo"],
 	name: "Khan Singh",
 	unique: true,
@@ -2124,7 +2124,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "2012",
+	id: "Cap644",
 	set: ["71122", "72240"],
 	name: "Christopher Pike",
 	unique: true,
@@ -2135,7 +2135,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "2013",
+	id: "Cap643",
 	set: ["71123"],
 	name: "Donatra",
 	unique: true,
@@ -2146,7 +2146,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "2019",
+	id: "Cap642",
 	set: ["71126", "72251"],
 	name: "Gowron",
 	unique: true,
@@ -2157,7 +2157,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "2023",
+	id: "Cap641",
 	set: ["71128"],
 	name: "Thot Gor",
 	unique: true,
@@ -2168,7 +2168,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "2041",
+	id: "Cap640",
 	set: ["OP3Prize"],
 	name: "Letant",
 	unique: true,
@@ -2179,7 +2179,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "2029",
+	id: "Cap639",
 	set: ["71268", "72282"],
 	name: "Benjamin Sisko",
 	unique: true,
@@ -2190,7 +2190,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "2032",
+	id: "Cap638",
 	set: ["71269"],
 	name: "Chang",
 	unique: true,
@@ -2201,7 +2201,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "2034",
+	id: "Cap637",
 	set: ["71271"],
 	name: "Weyoun",
 	unique: true,
@@ -2212,7 +2212,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "2046",
+	id: "Cap636",
 	set: ["71272", "72292"],
 	name: "Hikaru Sulu",
 	unique: true,
@@ -2223,7 +2223,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "tactical_drone_71444",
+	id: "Cap635",
 	set: ["71444"],
 	name: "Tactical Drone",
 	unique: false,
@@ -2234,7 +2234,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "liviana_charvanek_i_r_w_vorta_vor",
+	id: "Cap634",
 	set: ["i_r_w_vorta_vor"],
 	name: "Liviana Charvanek",
 	unique: true,
@@ -2245,7 +2245,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "michael_eddington_gavroche",
+	id: "Cap633",
 	set: ["gavroche"],
 	name: "Michael Eddington",
 	unique: true,
@@ -2256,7 +2256,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "gul_damar_3rd_wing_attack_ship",
+	id: "Cap632",
 	set: ["3rd_wing_attack_ship"],
 	name: "Gul Damar",
 	unique: true,
@@ -2267,7 +2267,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "mr_spock_71523",
+	id: "Cap631",
 	set: ["71523"],
 	name: "Mr. Spock",
 	unique: true,
@@ -2278,7 +2278,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "sopek_71527",
+	id: "Cap630",
 	set: ["71527"],
 	name: "Sopek",
 	unique: true,
@@ -2289,7 +2289,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "jean_luc_picard_71510",
+	id: "Cap629",
 	set: ["71510"],
 	name: "Jean-Luc Picard",
 	unique: true,
@@ -2300,7 +2300,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "bok_71646a",
+	id: "Cap628",
 	set: ["71646a"],
 	name: "Bok",
 	unique: true,
@@ -2311,7 +2311,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "solok_71646e",
+	id: "Cap627",
 	set: ["71646e"],
 	name: "Solok",
 	unique: true,
@@ -2322,7 +2322,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "chakotay_71528",
+	id: "Cap626",
 	set: ["71528"],
 	name: "Chakotay",
 	unique: true,
@@ -2333,7 +2333,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "korok_71512",
+	id: "Cap625",
 	set: ["71512"],
 	name: "Korok",
 	unique: true,
@@ -2344,7 +2344,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "korok_b_71512",
+	id: "Cap624",
 	set: ["71512"],
 	name: "Korok",
 	unique: true,
@@ -2355,7 +2355,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "tactical_drone_71513b",
+	id: "Cap623",
 	set: ["71513b"],
 	name: "Tactical Drone",
 	unique: false,
@@ -2366,7 +2366,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "alpha_hirogen_71808",
+	id: "Cap622",
 	set: ["71808"],
 	name: "Alpha Hirogen",
 	unique: false,
@@ -2377,7 +2377,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "valdore_71536",
+	id: "Cap621",
 	set: ["71536"],
 	name: "Valdore",
 	unique: true,
@@ -2388,7 +2388,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "kargan_71996",
+	id: "Cap620",
 	set: ["71996"],
 	name: "Kargan",
 	unique: true,
@@ -2399,7 +2399,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "razik_71793",
+	id: "Cap619",
 	set: ["71793"],
 	name: "Razik",
 	unique: true,
@@ -2410,7 +2410,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "captain",
-	id: "mendak_cap_71794",
+	id: "Cap618",
 	set: ["71794"],
 	name: "Mendak",
 	unique: true,
@@ -2421,7 +2421,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "james_t_kirk_71796",
+	id: "Cap617",
 	set: ["71796"],
 	name: "James T. Kirk",
 	unique: true,
@@ -2432,7 +2432,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "krim_71803",
+	id: "Cap616",
 	set: ["71803"],
 	name: "Krim",
 	unique: true,
@@ -2443,7 +2443,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "kor_b_71804",
+	id: "Cap615",
 	set: ["71804"],
 	name: "Kor",
 	unique: true,
@@ -2454,7 +2454,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "william_ross_cap_72001p",
+	id: "Cap614",
 	set: ["72001p"],
 	name: "William Ross",
 	cost: 4,
@@ -2465,7 +2465,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "captain",
-	id: "duras_blind_buruk",
+	id: "Cap613",
 	set: ["blind_buruk"],
 	name: "Duras",
 	cost: 4,
@@ -2476,7 +2476,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "captain",
-	id: "insectoid_commander_72003p",
+	id: "Cap612",
 	set: ["72003p"],
 	name: "Insectoid Commander",
 	cost: 4,
@@ -2487,7 +2487,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "captain",
-	id: "shakaar_edon_blind_interceptor8",
+	id: "Cap611",
 	set: ["blind_interceptor8"],
 	name: "Shakaar Edon",
 	cost: 4,
@@ -2498,7 +2498,7 @@ module.exports = [{
 	factions: ["bajoran"]
 }, {
 	type: "captain",
-	id: "culluh_nistrim_culluh",
+	id: "Cap610",
 	set: ["blind_nistrim_culluh"],
 	name: "Culluh",
 	cost: 4,
@@ -2509,7 +2509,7 @@ module.exports = [{
 	factions: ["kazon"]
 }, {
 	type: "captain",
-	id: "arturis_75004",
+	id: "Cap609",
 	set: ["75004"],
 	name: "Arturis",
 	cost: 4,
@@ -2521,7 +2521,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "captain",
-	id: "nunk_blind_nunks_marauder",
+	id: "Cap608",
 	set: ["blind_nunks_marauder"],
 	name: "Nunk",
 	cost: 4,
@@ -2532,7 +2532,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "captain",
-	id: "jonathan_archer_72290p",
+	id: "Cap607",
 	set: ["72290p"],
 	name: "Jonathan Archer",
 	cost: 4,
@@ -2547,7 +2547,7 @@ module.exports = [{
 	}
 }, {
 	type: "captain",
-	id: "worf_71807",
+	id: "Cap606",
 	set: ["71807"],
 	name: "Worf",
 	cost: 4,
@@ -2562,7 +2562,7 @@ module.exports = [{
 	}
 }, {
 	type: "captain",
-	id: "benjamin_maxwell_72011",
+	id: "Cap605",
 	set: ["72011"],
 	name: "Benjamin Maxwell",
 	cost: 4,
@@ -2573,7 +2573,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "captain",
-	id: "alidar_jarok_cap_72016",
+	id: "Cap604",
 	set: ["72016"],
 	name: "Alidar Jarok",
 	cost: 4,
@@ -2584,7 +2584,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "captain",
-	id: "kang_75005",
+	id: "Cap603",
 	set: ["75005"],
 	name: "Kang",
 	cost: 4,
@@ -2595,7 +2595,7 @@ module.exports = [{
 	factions: ["mirror-universe","klingon"]
 }, {
 	type: "captain",
-	id: "suran_72010",
+	id: "Cap602",
 	set: ["72010"],
 	name: "Suran",
 	cost: 4,
@@ -2606,7 +2606,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "captain",
-	id: "mr_spock_75005",
+	id: "Cap601",
 	set: ["75005"],
 	name: "Mr. Spock",
 	cost: 4,
@@ -2618,7 +2618,7 @@ module.exports = [{
 	factions: ["mirror-universe", "federation"]
 }, {
 	type: "captain",
-	id: "kor_75005",
+	id: "Cap735",
 	set: ["75005"],
 	name: "Kor",
 	cost: 4,
@@ -2629,7 +2629,7 @@ module.exports = [{
 	factions: ["mirror-universe", "klingon"]
 }, {
 	type: "captain",
-	id: "james_t_kirk_cap_75005",
+	id: "Cap733",
 	set: ["75005"],
 	name: "James T. Kirk",
 	cost: 4,
@@ -2641,7 +2641,7 @@ module.exports = [{
 	factions: ["mirror-universe", "federation"]
 }, {
 	type: "captain",
-	id: "lahr_73031",
+	id: "Cap732",
 	set: ["73031"],
 	name: "Lahr",
 	cost: 5,
@@ -2652,7 +2652,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "captain",
-	id: "gul_damar_73032",
+	id: "Cap731",
 	set: ["73032"],
 	name: "Gul Damar",
 	cost: 5,
@@ -2664,7 +2664,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "captain",
-	id: "lurin_75003",
+	id: "Cap730",
 	set: ["73001"],
 	name: "Lurin",
 	cost: 5,
@@ -2675,7 +2675,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "captain",
-	id: "sela_72282gp",
+	id: "Cap729",
 	set: ["72282gp"],
 	name: "Sela",
 	cost: 4,
@@ -2686,7 +2686,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "captain",
-	id: "insectoid_councilor_orassin",
+	id: "Cap728",
 	set: ["72273"],
 	name: "Insectoid Councilor",
 	cost: 4,
@@ -2697,7 +2697,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "captain",
-	id: "the_classic_movies_kruge",
+	id: "Cap727",
 	set: ["72236p"],
 	name: "Kruge",
 	cost: 4,
@@ -2708,7 +2708,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "captain",
-	id: "temporal_cold_war_vosk",
+	id: "Cap726",
 	set: ["72224gp"],
 	name: "Vosk",
 	unique: true,
@@ -2719,7 +2719,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "the_classic_movies_khan_singh",
+	id: "Cap725",
 	set: ["72235p"],
 	name: "Khan Singh",
 	unique: true,
@@ -2730,7 +2730,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "william_t_riker_71201",
+	id: "Cap724",
 	set: ["71201"],
 	name: "William T. Riker",
 	cost: 4,
@@ -2741,7 +2741,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "captain",
-	id: "2006",
+	id: "Cap723",
 	set: ["71120"],
 	name: "Toreth",
 	unique: true,
@@ -2752,7 +2752,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "2016",
+	id: "Cap722",
 	set: ["71125", "72272"],
 	name: "Koloth",
 	unique: true,
@@ -2763,7 +2763,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "2039",
+	id: "Cap721",
 	set: ["71275", "72262"],
 	name: "Gul Dukat",
 	unique: true,
@@ -2774,7 +2774,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "3121",
+	id: "Cap720",
 	set: ["71274"],
 	name: "Alidar Jarok",
 	unique: true,
@@ -2785,7 +2785,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "thot_pran_op5prize",
+	id: "Cap719",
 	set: ["OP5Prize"],
 	name: "Thot Pran",
 	unique: true,
@@ -2796,7 +2796,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "romulan_commander_71278",
+	id: "Cap718",
 	set: ["71278"],
 	name: "Romulan Commander",
 	unique: true,
@@ -2807,7 +2807,7 @@ module.exports = [{
 	talents: 2
 }, {
 	type: "captain",
-	id: "weyoun_71279",
+	id: "Cap717",
 	set: ["71279"],
 	name: "Weyoun",
 	unique: true,
@@ -2818,7 +2818,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "bioship_alpha_pilot_71281",
+	id: "Cap716",
 	set: ["71281", "72291"],
 	name: "Bioship Alpha Pilot",
 	unique: true,
@@ -2829,7 +2829,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "soval_71446",
+	id: "Cap715",
 	set: ["71446"],
 	name: "Soval",
 	unique: true,
@@ -2840,7 +2840,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "hazar_71445",
+	id: "Cap714",
 	set: ["71445"],
 	name: "Hazar",
 	unique: true,
@@ -2851,7 +2851,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "k_nera_i_k_s_b_moth",
+	id: "Cap713",
 	set: ["i_k_s_b_moth"],
 	name: "K'Nera",
 	unique: true,
@@ -2862,7 +2862,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "benjamin_maxwell_u_s_s_yaeger",
+	id: "Cap712",
 	set: ["u_s_s_yaeger"],
 	name: "Benjamin Maxwell",
 	unique: true,
@@ -2873,7 +2873,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "lore_71522",
+	id: "Cap711",
 	set: ["71522"],
 	name: "Lore",
 	unique: true,
@@ -2884,7 +2884,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "benjamin_sisko_71786",
+	id: "Cap710",
 	set: ["71786", "71810"],
 	name: "Benjamin Sisko",
 	unique: true,
@@ -2895,7 +2895,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "william_t_riker_71510b",
+	id: "Cap709",
 	set: ["71510b"],
 	name: "William T. Riker",
 	unique: true,
@@ -2906,7 +2906,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "borg_queen_cap_71530",
+	id: "Cap708",
 	set: ["71530"],
 	name: "Borg Queen",
 	unique: true,
@@ -2917,7 +2917,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "chang_71532",
+	id: "Cap707",
 	set: ["71532"],
 	name: "Chang",
 	unique: true,
@@ -2928,7 +2928,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "vidiian_commander_71534",
+	id: "Cap706",
 	set: ["71534"],
 	name: "Vidiian Commander",
 	unique: true,
@@ -2939,7 +2939,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "gul_madred_cap_71798",
+	id: "Cap705",
 	set: ["71798"],
 	name: "Gul Madred",
 	unique: true,
@@ -2950,7 +2950,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "mr_spock_71796",
+	id: "Cap704",
 	set: ["71796"],
 	name: "Mr. Spock",
 	unique: true,
@@ -2961,7 +2961,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "martok_cap_71804",
+	id: "Cap703",
 	set: ["71804"],
 	name: "Martok",
 	unique: true,
@@ -2972,7 +2972,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "william_t_riker_cap_71807",
+	id: "Cap702",
 	set: ["71807"],
 	name: "William T. Riker",
 	cost: 4,
@@ -2987,7 +2987,7 @@ module.exports = [{
 	}
 }, {
 	type: "captain",
-	id: "martok_72015",
+	id: "Cap701",
 	set: ["72015"],
 	name: "Martok",
 	cost: 4,
@@ -2998,7 +2998,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "captain",
-	id: "christopher_pike_cap_75005",
+	id: "Cap820",
 	set: ["75005"],
 	name: "Christopher Pike",
 	cost: 5,
@@ -3009,7 +3009,7 @@ module.exports = [{
 	factions: ["mirror-universe", "federation"]
 }, {
 	type: "captain",
-	id: "birta_75003",
+	id: "Cap819",
 	set: ["75003"],
 	name: "Birta",
 	cost: 5,
@@ -3021,7 +3021,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "captain",
-	id: "picard_2017core",
+	id: "Cap818",
 	set: ["2017core"],
 	name: "Jean-Luc Picard",
 	cost: 6,
@@ -3033,7 +3033,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "captain",
-	id: "tomalak_75001",
+	id: "Cap817",
 	set: ["75001"],
 	name: "Tomalak",
 	cost: 5,
@@ -3044,7 +3044,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "captain",
-	id: "dolim_weapon_zero",
+	id: "Cap816",
 	set: ["71225"],
 	name: "Dolim",
 	cost: 5,
@@ -3055,7 +3055,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "captain",
-	id: "benjamin_sisko_71213",
+	id: "Cap815",
 	set: ["71213"],
 	name: "Benjamin Sisko",
 	cost: 5,
@@ -3066,7 +3066,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "captain",
-	id: "2008",
+	id: "Cap814",
 	set: ["71121"],
 	name: "Khan Singh",
 	unique: true,
@@ -3077,7 +3077,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "2018",
+	id: "Cap813",
 	set: ["71126", "72251"],
 	name: "Martok",
 	unique: true,
@@ -3088,7 +3088,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "kathryn_janeway_71280",
+	id: "Cap812",
 	set: ["71280", "72261"],
 	name: "Kathryn Janeway",
 	unique: true,
@@ -3099,7 +3099,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "borg_queen_71444",
+	id: "Cap811",
 	set: ["71444"],
 	name: "Borg Queen",
 	unique: true,
@@ -3110,7 +3110,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "weyoun_71524",
+	id: "Cap810",
 	set: ["71524"],
 	name: "Weyoun",
 	unique: true,
@@ -3121,7 +3121,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "james_t_kirk_cap_71523",
+	id: "Cap809",
 	set: ["71523"],
 	name: "James T. Kirk",
 	unique: true,
@@ -3132,7 +3132,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "gul_dukat_cap_71524",
+	id: "Cap808",
 	set: ["71524"],
 	name: "Gul Dukat",
 	unique: true,
@@ -3143,7 +3143,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "jean_luc_picard_b_71531",
+	id: "Cap807",
 	set: ["71531", "72271"],
 	name: "Jean-Luc Picard",
 	unique: true,
@@ -3154,7 +3154,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "karr_71808",
+	id: "Cap806",
 	set: ["71808"],
 	name: "Karr",
 	unique: true,
@@ -3165,7 +3165,7 @@ module.exports = [{
 	talents: 2
 }, {
 	type: "captain",
-	id: "annorax_71799",
+	id: "Cap805",
 	set: ["71799"],
 	name: "Annorax",
 	unique: true,
@@ -3176,7 +3176,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "kor_71804",
+	id: "Cap804",
 	set: ["71804"],
 	name: "Kor",
 	unique: true,
@@ -3187,7 +3187,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "jean_luc_picard_enterprise_72284p",
+	id: "Cap803",
 	set: ["72284p"],
 	name: "Jean-Luc Picard",
 	unique: true,
@@ -3198,7 +3198,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "captain",
-	id: "bioship_beta_pilot_72012",
+	id: "Cap802",
 	set: ["72012"],
 	name: "Bioship Beta Pilot",
 	cost: 6,
@@ -3209,7 +3209,7 @@ module.exports = [{
 	factions: ["species-8472"]
 }, {
 	type: "captain",
-	id: "dolim_muratas",
+	id: "Cap801",
 	set: ["72293"],
 	name: "Dolim",
 	text: "During the Gather Forces step, you may treat any of the [crew] or [tech] Upgrade slots on your Upgrade Bar as [weapon] Upgrade slots\n\nAll of your [weapon] Upgrades cost -1SP, -5 Max",
@@ -3220,7 +3220,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "captain",
-	id: "q_female__72000b",
+	id: "Cap1001",
 	set: ["72000b"],
 	name: "Q (Female)",
 	cost: 7,
@@ -3236,7 +3236,7 @@ module.exports = [{
 	}
 }, {
 	type: "captain",
-	id: "female_changeling_75002",
+	id: "Cap908",
 	set: ["75002"],
 	name: "Female Changeling",
 	cost: 6,
@@ -3247,7 +3247,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "captain",
-	id: "james_t_kirk_enterprise_a",
+	id: "Cap907",
 	set: ["72260gp"],
 	name: "James T. Kirk",
 	cost: 6,
@@ -3258,7 +3258,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "captain",
-	id: "2001",
+	id: "Cap906",
 	set: ["71120"],
 	name: "Jean-Luc Picard",
 	unique: true,
@@ -3269,7 +3269,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "2011",
+	id: "Cap905",
 	set: ["71122", "72240"],
 	name: "James T. Kirk",
 	unique: true,
@@ -3280,7 +3280,7 @@ module.exports = [{
 	talents: 2
 }, {
 	type: "captain",
-	id: "2028",
+	id: "Cap904",
 	set: ["OP2Prize"],
 	name: "Martok",
 	unique: true,
@@ -3291,7 +3291,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "shinzon_71533",
+	id: "Cap903",
 	set: ["71533", "72252"],
 	name: "Shinzon",
 	unique: true,
@@ -3302,7 +3302,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "borg_queen_71513a",
+	id: "Cap902",
 	set: ["71513a"],
 	name: "Borg Queen",
 	unique: true,
@@ -3313,7 +3313,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "captain",
-	id: "locutus_71792",
+	id: "Cap901",
 	set: ["71792"],
 	name: "Locutus",
 	unique: true,

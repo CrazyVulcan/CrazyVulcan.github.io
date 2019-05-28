@@ -35,6 +35,8 @@
   },
   "dependencies": {
     "eslint": "^5.16.0",
+    "fstream": "^1.0.12",
+    "libcipm": "^3.0.3",
     "npm": "^6.9.0",
     "uglify-js": "^3.4.9"
   }

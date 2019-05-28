@@ -341,6 +341,7 @@ module.exports = [{
 	name: "Captain's Chair",
 	text: "This card can only be assigned to a ship that has a Captain with a printed Captain skill of 5 or higher.\n\n<b>ACTIVATION PHASE:</b> Once per game round, after this ship executes a Non-Red Maneuver:\n\nRemove a Disabled Token from 1 of the cards equipped to this ship.",
 	cost: 3,
+	opBanned: true,
 	showShipResourceSlot: false
 }, {
 	type: "resource",
@@ -349,6 +350,7 @@ module.exports = [{
 	name: "Front Line Retrofit",
 	text: "This card can only be assigned to a ship that has a printed Hull Value of 3 or less.\n\nThis ship gains the following:\n\n Increase this ships Shield Value by +1.\n\nAdd 1 additional [weapon] to this ships Upgrade Bar.\n\n Increase the Captain Skill of the Captain equiped to this ship by +1",
 	cost: 5,
+	opBanned: true,
 	showShipResourceSlot: false
 }, {
 	type: "resource",
@@ -357,6 +359,7 @@ module.exports = [{
 	name: "Long-Range Probe",
 	text: "At the start of the game, place 3 Mission Tokens on this card.\n\n<b>PLANNING PHASE:</b> Once per game round place 1 Mission Token from this card onto the play area withing Range 1-3 of one of your ships.\n\n<b>PLANNING PHASE:</b> Target an opposing ship within Range 1-2 of one of your Long-Range Probes and remove that Long-Range Probe from the play area. This game round, the target ship must plan its Maneuver first, face-up, and it cannot be changed after it is set.\n\nDiscard this card when there are no more Mission Tokens on it and there are no more of your Long-Range Probes on the play area.",
 	cost: 6,
+	opBanned: false,
 	showShipResourceSlot: false
 }, {
 	type: "resource",
@@ -365,5 +368,6 @@ module.exports = [{
 	name: "Sick Bay",
 	text: "This card can only be assigned to one of your ships that has a Hull Value of 4 or more.\n\nWhenever this ships Captain, Admiral, or [crew] would be disabled, you may place 2 [time] Tokens on that card instead.\n\n-OR-\n\nWhenever this ships Captain, Admiral, or [crew] would be discarded, you may discard this card instead.",
 	cost: 6,
+	opBanned: false,
 	showShipResourceSlot: false
 }];

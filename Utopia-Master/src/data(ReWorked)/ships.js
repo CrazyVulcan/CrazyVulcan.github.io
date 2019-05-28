@@ -1,6 +1,6 @@
 module.exports = [{
 	type: "ship",
-	id: "u_s_s_dauntless_75004",
+	id: "475004",
 	set: ["75004"],
 	name: "U.S.S. Dauntless",
 	class: "Dauntless Class",
@@ -21,7 +21,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "harvester_prime_75004",
+	id: "375004",
 	set: ["75004"],
 	name: "Harvester Prime",
 	class: "Vidiian Battle Cruiser",
@@ -42,7 +42,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "televs_battle_cruiser_75004",
+	id: "275004",
 	set: ["75004"],
 	name: "Telev's Battle Cruiser",
 	class: "Andorian Battle Cruiser",
@@ -59,7 +59,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "gurngouin_75004",
+	id: "175004",
 	set: ["75004"],
 	name: "Gurngouin",
 	class: "Maquis Raider",
@@ -76,7 +76,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "maquis_starship_75004",
+	id: "075004",
 	set: ["75004"],
 	name: "Maquis Starship",
 	class: "Maquis Raider",
@@ -98,7 +98,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "uss_enterprise_75005",
+	id: "675005",
 	set: ["75005"],
 	name: "U.S.S. Enterprise",
 	class: "Constitution Class (Kelvin)",
@@ -115,7 +115,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "uss_enterprise_a_75005",
+	id: "575005",
 	set: ["75005"],
 	name: "U.S.S. Enterprise-A",
 	class: "Constitution Class (Kelvin)",
@@ -132,7 +132,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "kelvin_constitution_class_75005",
+	id: "475005",
 	set: ["75005"],
 	name: "Federation Starship",
 	class: "Constitution Class (Kelvin)",
@@ -149,7 +149,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "iks_amar_75005",
+	id: "375005",
 	set: ["75005"],
 	name: "I.K.S. Amar",
 	class: "Warbird Class",
@@ -166,7 +166,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "iks_suvwl_75005",
+	id: "275005",
 	set: ["75005"],
 	name: "I.K.S. Suvwl",
 	class: "Warbird Class",
@@ -183,7 +183,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "warbird_cladd_75005",
+	id: "075005",
 	set: ["75005"],
 	name: "Klingon Starship",
 	class: "Warbird Class",
@@ -200,7 +200,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "federation_attack_squadron_1_73041",
+	id: "173041",
 	set: ["73041"],
 	name: "Fighter Squadron 1",
 	class: "Federation Attack Squadron",
@@ -217,7 +217,7 @@ module.exports = [{
 	squadron: true
 }, {
 	type: "ship",
-	id: "federation_attack_squadron_73041",
+	id: "273041",
 	set: ["73041"],
 	name: "Fighter Squadron 3",
 	class: "Federation Attack Squadron",
@@ -234,7 +234,7 @@ module.exports = [{
 	squadron: true
 }, {
 	type: "ship",
-	id: "hirogen_hunting_vessel_73042",
+	id: "073042",
 	set: ["73042"],
 	name: "Hirogen Hunting Vessel",
 	class: "Hirogen Warship",
@@ -251,7 +251,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "4th_wing_patrol_ship_75002",
+	id: "75002",
 	set: ["73032"],
 	name: "4th Wing Patrol Ship",
 	class: "Jem'Hadar Attack Ship",
@@ -268,7 +268,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "gress'sril_73031",
+	id: "73031",
 	set: ["73031"],
 	name: "Gress'sril",
 	class: "Gorn Raider",
@@ -289,7 +289,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "gorn_starship_73031",
+	id: "073031",
 	set: ["73031"],
 	name: "Gorn Starship",
 	class: "Gorn Raider",
@@ -310,7 +310,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "lurins_bop_75003",
+	id: "575003",
 	set: ["75003"],
 	name: "Lurin's Bird-of-Prey",
 	class: "B'Rel Class",
@@ -331,7 +331,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "brel_class_75003",
+	id: "475003",
 	set: ["75003"],
 	name: "Ferengi/Klingon Starship",
 	class: "B'Rel Class",
@@ -351,7 +351,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "praks_marauder_75003",
+	id: "375003",
 	set: ["75003"],
 	name: "Prak's Marauder",
 	class: "D'Kora Class",
@@ -372,7 +372,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "soloks_marauder_75003",
+	id: "275003",
 	set: ["75003"],
 	name: "Solok's Marauder",
 	class: "D'Kora Class",
@@ -393,7 +393,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "goss_shuttle_75003",
+	id: "175003",
 	set: ["75003"],
 	name: "Goss' Shuttle",
 	class: "Ferengi Shuttle",
@@ -410,7 +410,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "ferengi_starship_75003",
+	id: "075003",
 	set: ["75003", "72013"],
 	name: "Ferengi Starship",
 	class: "Ferengi Shuttle",
@@ -427,7 +427,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "queen_vessel_prime_73001",
+	id: "73001",
 	set: ["73002"],
 	name: "Queen Vessel Prime",
 	class: "Borg Octahedron",
@@ -448,7 +448,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "generic_octahedron_73002",
+	id: "073002",
 	set: ["73002", "71530"],
 	name: "Borg Starship",
 	class: "Borg Octahedron",
@@ -468,7 +468,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "goss_marauder_73001",
+	id: "73001",
 	set: ["73001"],
 	name: "Goss' Marauder",
 	class: "D'Kora Class",
@@ -489,7 +489,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "2nd_division_battleship_75002",
+	id: "675002",
 	set: ["75002"],
 	name: "2nd Division Battleship",
 	class: "Jem'Hadar Battleship ",
@@ -510,7 +510,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "generic_battleship_75002",
+	id: "575002",
 	set: ["75002"],
 	name: "Jem'Hadar Battleship",
 	class: "Jem'Hadar Battleship ",
@@ -531,7 +531,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "3rd_division_cruiser_71524",
+	id: "471524",
 	set: ["75002"],
 	name: "3rd Division Battle Cruiser",
 	class: "Jem'Hadar Battle Cruiser",
@@ -552,7 +552,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "jemhadar_cruiser_71524",
+	id: "371524",
 	set: ["75002", "71524"],
 	name: "Dominion Starship",
 	class: "Jem'Hadar Battle Cruiser",
@@ -573,7 +573,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "2nd_wing_patrol_ship_75002",
+	id: "275002",
 	set: ["75002"],
 	name: "2nd Wing Patrol Ship",
 	class: "Jem'Hadar Attack Ship",
@@ -590,7 +590,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "6th_wing_patrol_ship_75002",
+	id: "175002",
 	set: ["75002"],
 	name: "6th Wing Patrol Ship",
 	class: "Jem'Hadar Attack Ship",
@@ -607,7 +607,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "jemhadar_attack_ship_75002",
+	id: "075002",
 	set: ["75002", "73032", "71271", "3rd_wing_attack_ship"],
 	name: "Dominion Starship",
 	class: "Jem'Hadar Attack Ship",
@@ -624,7 +624,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "pwb_tomal_75001",
+	id: "875001",
 	set: ["75001"],
 	name: "P.W.B. Tomal",
 	class: "D'deridex Class",
@@ -645,7 +645,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "dderidex_generic_75001",
+	id: "775001",
 	set: ["75001"],
 	name: "Romulan Starship",
 	class: "D'deridex Class",
@@ -666,7 +666,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "irw_75001",
+	id: "675001",
 	set: ["75001"],
 	name: "I.R.W. Suran",
 	class: "Valdore Class",
@@ -687,7 +687,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "valdore_class_75001",
+	id: "575001",
 	set: ["75001", "71123", "72010"],
 	name: "Romulan Starship",
 	class: "Valdore Class",
@@ -708,7 +708,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "jaroks_scout_vessel_75001",
+	id: "475001",
 	set: ["75001"],
 	name: "Jarok's Scout Vessel",
 	class: "Romulan Scout Vessel",
@@ -729,7 +729,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "romulan_scout_vessel_75001",
+	id: "375001",
 	set: ["75001", "71274"],
 	name: "Romulan Starship",
 	class: "Romulan Scout Vessel",
@@ -750,7 +750,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "miroks_science_vessel_75001",
+	id: "275001",
 	set: ["75001"],
 	name: "Mirok's Science Vessel",
 	class: "Romulan Science Vessel",
@@ -771,7 +771,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "science_vessel_75001",
+	id: "075001",
 	set: ["75001"],
 	name: "Romulan Starship",
 	class: "Romulan Science Vessel",
@@ -792,7 +792,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "enterprise_d_2017core",
+	id: "52017core",
 	set: ["2017core"],
 	name: "U.S.S. Enterprise-D",
 	class: "Galaxy Class",
@@ -813,7 +813,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "galaxy_class_2017core",
+	id: "42017core",
 	set: ["2017core"],
 	name: "Federation Starship",
 	class: "Galaxy Class",
@@ -834,7 +834,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "sutherland_2017core",
+	id: "32017core",
 	set: ["2017core"],
 	name: "U.S.S. Sutherland",
 	class: "Nebula Class",
@@ -855,7 +855,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "nebula_class_2017core",
+	id: "072011",
 	set: ["2017core", "OP4Prize", "72011"],
 	name: "Federation Starship",
 	class: "Nebula Class",
@@ -876,7 +876,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "attack_cruiser_2017core",
+	id: "22017core",
 	set: ["2017core"],
 	name: "K'mpec's Attack Cruiser",
 	class: "Vor'cha Class",
@@ -897,7 +897,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "vorcha_class_2017core",
+	id: "071120",
 	set: ["2017core", "71120", "72241", "72280p"],
 	name: "Klingon Starship",
 	class: "Vor'cha Class",
@@ -918,7 +918,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "iks_vorn_2017core",
+	id: "12017core",
 	set: ["2017core"],
 	name: "I.K.S. Vorn",
 	class: "K'Vort Class ",
@@ -939,7 +939,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "prototype_02_72014wp",
+	id: "72014wp",
 	set: ["72014wp"],
 	name: "Prototype 02",
 	class: "Romulan Drone Ship",
@@ -960,7 +960,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "romulan_starship_72014wp",
+	id: "071536",
 	set: ["72014wp", "71536"],
 	name: "Romulan Starship",
 	class: "Romulan Drone Ship",
@@ -981,7 +981,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "dreadnought_72013wp",
+	id: "72013wp",
 	set: ["72013wp"],
 	name: "Dreadnought",
 	class: "Cardassian ATR-4107",
@@ -998,7 +998,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "dominion_starship_dreadnought_72013wp",
+	id: "071212",
 	set: ["72013wp", "71212"],
 	name: "Dominion Starship",
 	class: "Cardassian ATR-4107",
@@ -1015,7 +1015,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "i_k_s_ves_balth_71448",
+	id: "72012wp",
 	set: ["72012wp"],
 	name: "I.K.S. Ves Batlh",
 	class: "Raptor Class",
@@ -1036,7 +1036,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "ship_71448",
+	id: "071448",
 	set: ["72012wp", "71448"],
 	name: "Klingon Starship",
 	class: "Raptor Class",
@@ -1057,7 +1057,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "uss_grissom_72001wp",
+	id: "72001wp",
 	set: ["72011wp"],
 	name: "U.S.S. Grissom",
 	class: "Oberth Class",
@@ -1078,7 +1078,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "ufederation_starship_72001wp",
+	id: "071801",
 	set: ["72011wp", "71801"],
 	name: "Federation Starship",
 	class: "Oberth Class",
@@ -1099,7 +1099,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "delta_flyer_2_72300p",
+	id: "72300p",
 	set: ["72300p"],
 	name: "Delta Flyer II",
 	class: "Delta Flyer Class Shuttlecraft",
@@ -1116,7 +1116,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "uss_defiant_72290p",
+	id: "72290p",
 	set: ["72290p"],
 	name: "U.S.S. Defiant NCC-1764",
 	class: "Constitution Class",
@@ -1133,7 +1133,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "muratas_72293",
+	id: "72293",
 	set: ["72293"],
 	name: "Muratas",
 	class: "Xindi Reptilian Warship",
@@ -1150,7 +1150,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "uss_enterprise_d_72284p",
+	id: "72284p",
 	set: ["72284p"],
 	name: "U.S.S. Enterprise-D",
 	class: "Galaxy Class",
@@ -1171,7 +1171,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "calindra_72004p",
+	id: "72281",
 	set: ["72281"],
 	name: "Calindra",
 	class: "Xindi Aquatic Cruiser",
@@ -1188,7 +1188,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "selas_warbrid_72282gp",
+	id: "72282gp",
 	set: ["72282gp"],
 	name: "Sela's Warbird",
 	class: "D'deridex Class",
@@ -1205,7 +1205,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "klingon_civil_war_iks_toral",
+	id: "72282p",
 	set: ["72282p"],
 	name: "I.K.S. Toral",
 	class: "B'Rel Class",
@@ -1226,7 +1226,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "brel_generic_crew",
+	id: "072015",
 	set: ["72282p", "72015"],
 	name: "Klingon Starship",
 	class: "B'Rel Class",
@@ -1247,7 +1247,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "72281p_heghta",
+	id: "72281p",
 	set: ["72281p"],
 	name: "I.K.S. Hegh'ta",
 	class: "K'Vort Class",
@@ -1264,7 +1264,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "72273_orassin",
+	id: "72273",
 	set: ["72273"],
 	name: "Orassin",
 	class: "Xindi Insectoid Starship",
@@ -1281,7 +1281,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "i_k_s_bortas",
+	id: "72280p",
 	set: ["72280p"],
 	name: "I.K.S. Bortas",
 	class: "Vor'cha Class",
@@ -1298,7 +1298,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "u_s_s_enterprise_b",
+	id: "72263",
 	set: ["72263"],
 	name: "U.S.S. Enterprise-B",
 	class: "Excelsior Class",
@@ -1315,7 +1315,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "kohlars_battle_cruiser",
+	id: "72270p",
 	set: ["72270p"],
 	name: "Kohlars Battle Cruiser",
 	class: "D7 Class",
@@ -1332,7 +1332,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "i_r_w_rateg",
+	id: "72262p",
 	set: ["72262p"],
 	name: "I.R.W. Rateg",
 	class: "Romulan Bird-of-Prey",
@@ -1353,7 +1353,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "u_s_s_venture",
+	id: "72253",
 	set: ["72253"],
 	name: "U.S.S. Venture",
 	class: "Galaxy Class",
@@ -1370,7 +1370,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "u_s_s_cairo",
+	id: "72261p",
 	set: ["72261p"],
 	name: "U.S.S. Cairo",
 	class: "Excelsior Class",
@@ -1387,7 +1387,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "u_s_s_enterprise_a",
+	id: "72260gp",
 	set: ["72260gp"],
 	name: "U.S.S. Enterprise-A",
 	class: "Constitution Refit Class",
@@ -1404,7 +1404,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "h_m_s_bounty",
+	id: "72260p",
 	set: ["72260p"],
 	name: "H.M.S. Bounty",
 	class: "B'Rel Class",
@@ -1421,7 +1421,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "cube_384_72255",
+	id: "72255",
 	set: ["72255"],
 	name: "Cube 384",
 	class: "Borg Cube",
@@ -1438,7 +1438,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "sphere_936_72255",
+	id: "72255",
 	set: ["72255"],
 	name: "Sphere 936",
 	class: "Borg Sphere",
@@ -1455,7 +1455,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "the_classic_movies_kruges_bird_of_prey",
+	id: "72236p",
 	set: ["72236p"],
 	name: "Kruge's Bird-of-Prey",
 	class: "B'Rel Class",
@@ -1476,7 +1476,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "i_r_w_algeron",
+	id: "72242",
 	set: ["72242"],
 	name: "I.R.W. Algeron",
 	class: "D7 Class",
@@ -1493,7 +1493,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "d7_class",
+	id: "072242",
 	set: ["72242"],
 	name: "Romulan Battlecruiser",
 	class: "D7 Class",
@@ -1510,7 +1510,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "the_classic_movies_u_s_s_reliant",
+	id: "72235p",
 	set: ["72235p"],
 	name: "U.S.S. Reliant",
 	class: "Miranda Class",
@@ -1531,7 +1531,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "drovana_72241",
+	id: "72241",
 	set: ["72241"],
 	name: "I.K.S. Drovana",
 	class: "Vor'cha Class",
@@ -1552,7 +1552,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "u_s_s_constellation",
+	id: "72234p",
 	set: ["72234p"],
 	name: "U.S.S. Constellation",
 	class: "Constitution Class",
@@ -1569,7 +1569,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "xindus",
+	id: "72224p",
 	set: ["72224p"],
 	name: "Xindus",
 	class: "Xindi Reptilian Warship",
@@ -1586,7 +1586,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "xindi_reptilian_warship",
+	id: "072224p",
 	set: ["72224p", "72293"],
 	name: "Xindi Starship",
 	class: "Xindi Reptilian Warship",
@@ -1603,7 +1603,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "i_r_w_jazkal",
+	id: "72233",
 	set: ["72233"],
 	name: "I.R.W. Jazkal",
 	class: "Romulan Bird-of-Prey",
@@ -1620,7 +1620,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "i_k_s_amar",
+	id: "72232",
 	set: ["72232"],
 	name: "I.K.S. Amar",
 	class: "K'T'Inga Class",
@@ -1637,7 +1637,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "u_s_s_montgolfier",
+	id: "72231",
 	set: ["72231"],
 	name: "U.S.S. Montgolfier",
 	class: "Saber Class",
@@ -1654,7 +1654,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "federation_starship_montgolfier",
+	id: "072231",
 	set: ["72231"],
 	name: "Federation Starship",
 	class: "Saber Class",
@@ -1671,7 +1671,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "weapon_0_71225",
+	id: "71225",
 	set: ["71225"],
 	name: "Weapon Zero",
 	class: "Xindi Weapon",
@@ -1688,7 +1688,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "xindi_starship_71225",
+	id: "071225",
 	set: ["71225"],
 	name: "Xindi Starship",
 	class: "Xindi Weapon",
@@ -1705,7 +1705,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "scorpion_4_71203",
+	id: "71203",
 	set: ["71203"],
 	name: "Scorpion 4",
 	class: "Scorpion Class Attack Squadron",
@@ -1723,7 +1723,7 @@ module.exports = [{
 	squadron: true
 }, {
 	type: "ship",
-	id: "romulan_attack_fighters_71203",
+	id: "071203",
 	set: ["71203"],
 	name: "ROMULAN ATTACK FIGHTERS",
 	class: "Scorpion Class Attack Squadron",
@@ -1741,7 +1741,7 @@ module.exports = [{
 	squadron: true
 }, {
 	type: "ship",
-	id: "i_r_w_tmet",
+	id: "72221p",
 	set: ["72221p"],
 	name: "I.R.W. T'MET",
 	class: "D'deridex Class",
@@ -1758,7 +1758,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "romulan_starship_tmet",
+	id: "072221p",
 	set: ["72221p", "OP3Prize", "71511", "72282gp"],
 	name: "ROMULAN STARSHIP",
 	class: "D'deridex Class",
@@ -1775,7 +1775,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "dreadnought_71212",
+	id: "71212",
 	set: ["71212"],
 	name: "Dreadnought",
 	class: "Cardassian ATR-4107",
@@ -1792,7 +1792,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "halik_raider_71192",
+	id: "71192",
 	set: ["71192"],
 	name: "Halik Raider",
 	class: "Kazon Raider",
@@ -1809,7 +1809,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "kazon_starship_71192",
+	id: "071192",
 	set: ["71192"],
 	name: "Kazon Starship",
 	class: "Kazon Raider",
@@ -1826,7 +1826,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "denorios_71211",
+	id: "71211",
 	set: ["71211"],
 	name: "DENORIOS",
 	class: "BAJORAN SOLAR SAILOR",
@@ -1843,7 +1843,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "bajoran_starship_denorios",
+	id: "071211",
 	set: ["71211"],
 	name: "Bajoran Starship",
 	class: "BAJORAN SOLAR SAILOR",
@@ -1860,7 +1860,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "robinson_71213",
+	id: "71213",
 	set: ["71213"],
 	name: "Robinson",
 	class: "Jem'Hadar Attack Ship",
@@ -1877,7 +1877,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "u_s_s_valiant",
+	id: "71221",
 	set: ["71221"],
 	name: "U.S.S. Valiant",
 	class: "Defiant Class",
@@ -1894,7 +1894,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "federation_starship_71221",
+	id: "071221",
 	set: ["71221"],
 	name: "Federation Starship",
 	class: "Defiant Class",
@@ -1911,7 +1911,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "kumari_71223",
+	id: "71223",
 	set: ["71223"],
 	name: "KUMARI",
 	class: "Andorian Battle Cruiser",
@@ -1928,7 +1928,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "andorian_starship_kumari",
+	id: "071223",
 	set: ["71223", "75004"],
 	name: "ANDORIAN STARSHIP",
 	class: "Andorian Battle Cruiser",
@@ -1945,7 +1945,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "u_s_s_hathaway_71201",
+	id: "71201",
 	set: ["71201"],
 	name: "U.S.S. Hathaway",
 	class: "Constellation Class",
@@ -1962,7 +1962,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "federation_starship_constellation_71201",
+	id: "071201",
 	set: ["71201"],
 	name: "Federation Starship",
 	class: "Constellation Class",
@@ -1979,7 +1979,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "r_i_s_pi",
+	id: "71222",
 	set: ["71222"],
 	name: "R.I.S. Pi",
 	class: "Romulan Scout Vessel",
@@ -2000,7 +2000,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "romulan_starship_71222",
+	id: "071222",
 	set: ["71222"],
 	name: "Romulan Starship",
 	class: "Romulan Scout Vessel",
@@ -2017,7 +2017,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1001",
+	id: "571120",
 	set: ["71120"],
 	name: "U.S.S. Enterprise-D",
 	class: "Galaxy Class",
@@ -2038,7 +2038,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1002",
+	id: "471120",
 	set: ["71120", "72253", "72284p"],
 	name: "Federation Starship",
 	class: "Galaxy Class",
@@ -2059,7 +2059,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1003",
+	id: "371120",
 	set: ["71120"],
 	name: "I.R.W. Khazara",
 	class: "D'deridex Class",
@@ -2080,7 +2080,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1004",
+	id: "171120",
 	set: ["71120", "blind_belak"],
 	name: "Romulan Starship",
 	class: "D'deridex Class",
@@ -2101,7 +2101,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1005",
+	id: "071120",
 	set: ["71120"],
 	name: "I.K.S. Maht-H'A",
 	class: "Vor'cha Class",
@@ -2122,7 +2122,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1007",
+	id: "71121",
 	set: ["71121"],
 	name: "U.S.S. Reliant",
 	class: "Miranda Class",
@@ -2143,7 +2143,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1008",
+	id: "071121",
 	set: ["71121", "72235p"],
 	name: "Federation Starship",
 	class: "Miranda Class",
@@ -2164,7 +2164,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1009",
+	id: "71122",
 	set: ["71122", "72240"],
 	name: "U.S.S. Enterprise",
 	class: "Constitution Class",
@@ -2185,7 +2185,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1010",
+	id: "071122",
 	set: ["72290p", "71122", "72240", "72234p", "72002p"],
 	name: "Federation Starship",
 	class: "Constitution Class",
@@ -2206,7 +2206,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1011",
+	id: "71123",
 	set: ["71123"],
 	name: "I.R.W. Valdore",
 	class: "Valdore Class",
@@ -2227,7 +2227,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1013",
+	id: "71124",
 	set: ["71124"],
 	name: "R.I.S. Apnex",
 	class: "Romulan Science Vessel",
@@ -2248,7 +2248,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1014",
+	id: "071124",
 	set: ["71124", "72016"],
 	name: "Romulan Science Vessel",
 	class: "Romulan Science Vessel",
@@ -2269,7 +2269,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1015",
+	id: "71125",
 	set: ["71125", "72272"],
 	name: "I.K.S. Gr'oth",
 	class: "D7 Class",
@@ -2290,7 +2290,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1016",
+	id: "071125",
 	set: ["71125", "72270p", "72272"],
 	name: "Klingon Battlecruiser",
 	class: "D7 Class",
@@ -2311,7 +2311,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1017",
+	id: "71126",
 	set: ["71126", "72251"],
 	name: "I.K.S. Negh'var",
 	class: "Negh'var Class",
@@ -2332,7 +2332,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1018",
+	id: "071126",
 	set: ["71126", "72251"],
 	name: "Klingon Starship",
 	class: "Negh'var Class",
@@ -2353,7 +2353,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1019",
+	id: "71127",
 	set: ["71127"],
 	name: "Kraxon",
 	class: "Cardassian Galor Class",
@@ -2374,7 +2374,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1020",
+	id: "071127",
 	set: ["71127", "71513b", "71798", "blind_aldara"],
 	name: "Dominion Starship",
 	class: "Cardassian Galor Class",
@@ -2395,7 +2395,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1021",
+	id: "71128",
 	set: ["71128"],
 	name: "Gor Portas",
 	class: "Breen Battle Cruiser",
@@ -2416,7 +2416,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1022",
+	id: "071128",
 	set: ["71128"],
 	name: "Dominion Starship",
 	class: "Breen Battle Cruiser",
@@ -2437,7 +2437,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1023",
+	id: "00028",
 	set: ["OP1Prize"],
 	name: "Krayton",
 	class: "D'Kora Class",
@@ -2458,7 +2458,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1024",
+	id: "071806",
 	set: ["OP1Prize", "71646a", "71806", "blind_nunks_marauder", "75003", "73001"],
 	name: "Ferengi Marauder",
 	class: "D'Kora Class",
@@ -2479,7 +2479,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1025",
+	id: "00028",
 	set: ["OP1Participation"],
 	name: "Deep Space 9",
 	class: "Nor Class Orbital Space Station",
@@ -2500,7 +2500,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1027",
+	id: "000028",
 	set: ["OP1Participation"],
 	name: "Abandoned Space Station",
 	class: "Nor Class Orbital Space Station",
@@ -2521,7 +2521,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1028",
+	id: "00027",
 	set: ["OP2Prize"],
 	name: "I.K.S. Ch'tang",
 	class: "B'Rel Class",
@@ -2542,7 +2542,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1029",
+	id: "071512",
 	set: ["OP2Prize", "71512", "72236p"],
 	name: "Klingon Starship",
 	class: "B'Rel Class",
@@ -2563,7 +2563,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1042",
+	id: "00026",
 	set: ["OP3Prize"],
 	name: "P.W.B. Aj'Rmr",
 	class: "D'deridex Class",
@@ -2584,7 +2584,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1030",
+	id: "71268",
 	set: ["71268", "72282"],
 	name: "U.S.S. Defiant",
 	class: "Defiant Class",
@@ -2605,7 +2605,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1031",
+	id: "071268",
 	set: ["71268", "72282"],
 	name: "Federation Starship",
 	class: "Defiant Class",
@@ -2626,7 +2626,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1032",
+	id: "71269",
 	set: ["71269"],
 	name: "I.K.S. Kronos One",
 	class: "K'T'Inga Class",
@@ -2647,7 +2647,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1033",
+	id: "071269",
 	set: ["71269", "72232", "72009"],
 	name: "Klingon Starship",
 	class: "K'T'Inga Class",
@@ -2668,7 +2668,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1034",
+	id: "71270",
 	set: ["71270"],
 	name: "I.R.W. Praetus",
 	class: "Romulan Bird-of-Prey",
@@ -2689,7 +2689,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1035",
+	id: "071270",
 	set: ["71270", "72233"],
 	name: "Romulan Starship",
 	class: "Romulan Bird-of-Prey",
@@ -2710,7 +2710,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1036",
+	id: "71271",
 	set: ["71271"],
 	name: "5th Wing Patrol Ship",
 	class: "Jem'Hadar Attack Ship",
@@ -2731,7 +2731,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1038",
+	id: "71273",
 	set: ["71273"],
 	name: "I.K.S. Koraga",
 	class: "K'Vort Class",
@@ -2752,7 +2752,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1039",
+	id: "071273",
 	set: ["2017core", "71273", "71996", "blind_buruk", "72281p"],
 	name: "Klingon Starship",
 	class: "K'Vort Class",
@@ -2773,7 +2773,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1040",
+	id: "71275",
 	set: ["71275", "72262"],
 	name: "Koranak",
 	class: "Cardassian Keldon Class",
@@ -2794,7 +2794,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1041",
+	id: "071275",
 	set: ["71275", "72262"],
 	name: "Dominion Starship",
 	class: "Cardassian Keldon Class",
@@ -2815,7 +2815,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1044",
+	id: "71272",
 	set: ["71272", "72292"],
 	name: "U.S.S. Excelsior",
 	class: "Excelsior Class",
@@ -2836,7 +2836,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1045",
+	id: "071272",
 	set: ["71272", "72292", "72261p", "72263", "blind_lakota"],
 	name: "Federation Starship",
 	class: "Excelsior Class",
@@ -2857,7 +2857,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1046",
+	id: "071274",
 	set: ["71274"],
 	name: "R.I.S. Vo",
 	class: "Romulan Scout Vessel",
@@ -2878,7 +2878,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1048",
+	id: "00025",
 	set: ["OP4Prize"],
 	name: "U.S.S. Sutherland",
 	class: "Nebula Class",
@@ -2899,7 +2899,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "rav_laerst_op5prize",
+	id: "00024",
 	set: ["OP5Prize"],
 	name: "Rav Laerst",
 	class: "Breen Battle Cruiser",
@@ -2920,7 +2920,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "dominion_starship_op5prize",
+	id: "000024",
 	set: ["OP5Prize"],
 	name: "Dominion Starship",
 	class: "Breen Battle Cruiser",
@@ -2941,7 +2941,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "u_s_s_equinox_71276",
+	id: "71276",
 	set: ["71276"],
 	name: "U.S.S. Equinox",
 	class: "Nova Class",
@@ -2962,7 +2962,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "federation_starship_71276",
+	id: "071276",
 	set: ["71276"],
 	name: "Federation Starship",
 	class: "Nova Class",
@@ -2983,7 +2983,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "i_k_s_somraw_71448",
+	id: "71448",
 	set: ["71448"],
 	name: "I.K.S. Somraw",
 	class: "Raptor Class",
@@ -3004,7 +3004,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "i_r_w_gal_gath_thong_71278",
+	id: "71278",
 	set: ["71278"],
 	name: "I.R.W. Gal Gath'thong",
 	class: "Romulan Bird-of-Prey",
@@ -3025,7 +3025,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "romulan_starship_71278",
+	id: "071278",
 	set: ["71278", "72262p"],
 	name: "Romulan Starship",
 	class: "Romulan Bird-of-Prey",
@@ -3046,7 +3046,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "4th_division_battleship_71279",
+	id: "71279",
 	set: ["71279"],
 	name: "4th Division Battleship",
 	class: "Jem'Hadar Battleship",
@@ -3067,7 +3067,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "akorem_op6prize",
+	id: "00023",
 	set: ["OP6Prize"],
 	name: "Akorem",
 	class: "Bajoran Scout Ship",
@@ -3088,7 +3088,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "bajoran_starship_op6prize",
+	id: "000023",
 	set: ["OP6Prize", "71803"],
 	name: "Bajoran Starship",
 	class: "Bajoran Scout Ship",
@@ -3109,7 +3109,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "federation_attack_fighter_op6prize",
+	id: "00022",
 	set: ["OP6Participation"],
 	name: "Federation Attack Fighter",
 	class: "Federation Attack Squadron",
@@ -3131,7 +3131,7 @@ module.exports = [{
 	squadron: true
 }, {
 	type: "ship",
-	id: "hideki_class_attack_fighter_op5prize",
+	id: "00021",
 	set: ["OP5Participation"],
 	name: "Hideki Class Attack Fighter",
 	class: "Hideki Class Attack Squadron",
@@ -3153,7 +3153,7 @@ module.exports = [{
 	squadron: true
 }, {
 	type: "ship",
-	id: "borg_sphere_4270_71283",
+	id: "71283",
 	set: ["71283", "72283"],
 	name: "Borg Sphere 4270",
 	class: "Borg Sphere",
@@ -3174,7 +3174,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "borg_sphere_71283",
+	id: "071283",
 	set: ["71283", "72283"],
 	name: "Borg Starship",
 	class: "Borg Sphere",
@@ -3195,7 +3195,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "borg_sphere_72255",
+	id: "072255",
 	set: ["72255"],
 	name: "Borg Starship",
 	class: "Borg Sphere",
@@ -3216,7 +3216,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "u_s_s_voyager_71280",
+	id: "71280",
 	set: ["71280", "72261"],
 	name: "U.S.S. Voyager",
 	class: "Intrepid Class",
@@ -3237,7 +3237,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "federation_starship_71280",
+	id: "071280",
 	set: ["71280", "72261"],
 	name: "Federation Starship",
 	class: "Intrepid Class",
@@ -3258,7 +3258,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "nistrim_raider_71282",
+	id: "71282",
 	set: ["71282"],
 	name: "Nistrim Raider",
 	class: "Kazon Raider",
@@ -3279,7 +3279,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "kazon_raider_71282",
+	id: "071282",
 	set: ["71282"],
 	name: "Kazon Raider",
 	class: "Kazon Raider",
@@ -3300,7 +3300,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "bioship_alpha_71281",
+	id: "71281",
 	set: ["71281", "72291"],
 	name: "Bioship Alpha",
 	class: "Species 8472 Bioship",
@@ -3321,7 +3321,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "species_8472_bioship_71281",
+	id: "071281",
 	set: ["71281", "72291", "72012", "blind_bioship"],
 	name: "Species 8472 Starship",
 	class: "Species 8472 Bioship",
@@ -3342,7 +3342,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "tholia_one_opwebprize",
+	id: "00020",
 	set: ["OPWebPrize", "71795"],
 	name: "Tholia One",
 	class: "Tholian Vessel",
@@ -3363,7 +3363,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "tholian_vessel_opwebprize",
+	id: "000020",
 	set: ["OPWebPrize", "71795"],
 	name: "Tholian Starship",
 	class: "Tholian Vessel",
@@ -3384,7 +3384,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "d_kyr_71446",
+	id: "71446",
 	set: ["71446"],
 	name: "D'Kyr",
 	class: "D'Kyr Class",
@@ -3405,7 +3405,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "interceptor_5_71445",
+	id: "71445",
 	set: ["71445"],
 	name: "Interceptor 5",
 	class: "Bajoran Interceptor",
@@ -3426,7 +3426,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "tactical_cube_138_71444",
+	id: "71444",
 	set: ["71444"],
 	name: "Tactical Cube 138",
 	class: "Borg Tactical Cube",
@@ -3447,7 +3447,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "borg_tactical_cube_71444",
+	id: "071444",
 	set: ["71444", "71513a"],
 	name: "Borg Tactical Cube",
 	class: "Borg Tactical Cube",
@@ -3468,7 +3468,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "bajoran_interceptor_71445",
+	id: "071445",
 	set: ["71445", "blind_interceptor8"],
 	name: "Bajoran Interceptor",
 	class: "Bajoran Interceptor",
@@ -3489,7 +3489,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "d_kyr_class_71446",
+	id: "071446",
 	set: ["71446", "71646e", "blind_seleya"],
 	name: "Vulcan Starship",
 	class: "D'Kyr Class",
@@ -3510,7 +3510,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "s_gorn_oparenaprize",
+	id: "00019",
 	set: ["OPArenaPrize"],
 	name: "S'Gorn",
 	class: "Gorn Raider",
@@ -3531,7 +3531,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "gorn_starship_oparenaprize",
+	id: "000019",
 	set: ["OPArenaPrize", "71797"],
 	name: "Gorn Starship",
 	class: "Gorn Raider",
@@ -3552,7 +3552,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "i_k_s_b_moth_i_k_s_b_moth",
+	id: "00018",
 	set: ["i_k_s_b_moth"],
 	name: "I.K.S. B'Moth",
 	class: "K'T'Inga Class",
@@ -3573,7 +3573,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "k_t_inga_class_i_k_s_b_moth",
+	id: "000018",
 	set: ["i_k_s_b_moth"],
 	name: "K'T'Inga Class",
 	class: "K'T'Inga Class",
@@ -3594,7 +3594,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "gavroche_gavroche",
+	id: "00017",
 	set: ["gavroche"],
 	name: "Gavroche",
 	class: "Maquis Raider",
@@ -3616,7 +3616,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "maquis_starship_gavroche",
+	id: "000017",
 	set: ["gavroche"],
 	name: "Maquis Starship",
 	class: "Maquis Raider",
@@ -3638,7 +3638,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "i_r_w_vorta_vor_i_r_w_vorta_vor",
+	id: "00016",
 	set: ["i_r_w_vorta_vor"],
 	name: "I.R.W. Vorta Vor",
 	class: "Romulan Bird-of-Prey",
@@ -3659,7 +3659,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "romulan_bird_of_prey_class_i_r_w_vorta_vor",
+	id: "000016",
 	set: ["i_r_w_vorta_vor"],
 	name: "Romulan Bird-of-Prey",
 	class: "Romulan Bird-of-Prey",
@@ -3680,7 +3680,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "3rd_wing_attack_ship_3rd_wing_attack_ship",
+	id: "00015",
 	set: ["3rd_wing_attack_ship"],
 	name: "3rd Wing Attack Ship",
 	class: "Jem'Hadar Attack Ship",
@@ -3701,7 +3701,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "u_s_s_yaeger_u_s_s_yaeger",
+	id: "000014",
 	set: ["u_s_s_yaeger"],
 	name: "U.S.S. Yeager",
 	class: "Saber Class",
@@ -3722,7 +3722,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "federation_starship_u_s_s_yaeger",
+	id: "00014",
 	set: ["u_s_s_yaeger"],
 	name: "Federation Starship",
 	class: "Saber Class",
@@ -3743,7 +3743,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "u_s_s_enterprise_71523",
+	id: "71523",
 	set: ["71523"],
 	name: "U.S.S. Enterprise",
 	class: "Constitution Refit Class",
@@ -3764,7 +3764,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "federation_starship_71523",
+	id: "071523",
 	set: ["71523", "72260gp"],
 	name: "Federation Starship",
 	class: "Constitution Refit Class",
@@ -3785,7 +3785,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "soong_71522",
+	id: "71522",
 	set: ["71522"],
 	name: "Soong",
 	class: "Borg Type 03",
@@ -3806,7 +3806,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "borg_starship_71522",
+	id: "071522",
 	set: ["71522"],
 	name: "Borg Starship",
 	class: "Borg Type 03",
@@ -3827,7 +3827,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "2nd_division_cruiser_71524",
+	id: "71524",
 	set: ["71524"],
 	name: "2nd Division Cruiser",
 	class: "Jem'Hadar Battle Cruiser",
@@ -3848,7 +3848,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "ti_mur_71508",
+	id: "71508",
 	set: ["71508"],
 	name: "Ti'Mur",
 	class: "Suurok Class",
@@ -3869,7 +3869,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "vulcan_starship_71508",
+	id: "071508",
 	set: ["71508", "71527"],
 	name: "Vulcan Starship",
 	class: "Suurok Class",
@@ -3890,7 +3890,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "u_s_s_raven_71509",
+	id: "71509",
 	set: ["71509"],
 	name: "U.S.S. Raven",
 	class: "Aerie Class",
@@ -3911,7 +3911,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "federation_starship_71509",
+	id: "071509",
 	set: ["71509"],
 	name: "Federation Starship",
 	class: "Aerie Class",
@@ -3932,7 +3932,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "enterprise_nx_01_71526",
+	id: "71526",
 	set: ["71526"],
 	name: "Enterprise NX-01",
 	class: "Federation NX Class",
@@ -3953,7 +3953,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "ni_var_71527",
+	id: "71527",
 	set: ["71527"],
 	name: "Ni'Var",
 	class: "Suurok Class",
@@ -3974,7 +3974,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "scout_608_71525",
+	id: "71525",
 	set: ["71525"],
 	name: "Scout 608",
 	class: "Borg Scout Cube",
@@ -3995,7 +3995,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "federation_starship_71526",
+	id: "071526",
 	set: ["71526"],
 	name: "Federation Starship",
 	class: "Federation NX Class",
@@ -4016,7 +4016,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "borg_starship_71525",
+	id: "071525",
 	set: ["71525", "71646d"],
 	name: "Borg Starship",
 	class: "Borg Scout Cube",
@@ -4037,7 +4037,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "u_s_s_stargazer_71510",
+	id: "71510",
 	set: ["71510"],
 	name: "U.S.S. Stargazer",
 	class: "Constellation Class",
@@ -4058,7 +4058,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "federation_starship_71510",
+	id: "071510",
 	set: ["71510"],
 	name: "Federation Starship",
 	class: "Constellation Class",
@@ -4079,7 +4079,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "u_s_s_enterprise_d_71510b",
+	id: "371510b",
 	set: ["71510b"],
 	name: "U.S.S. Enterprise-D",
 	class: "Galaxy Class (MU)",
@@ -4100,7 +4100,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "mirror_universe_starship_71510b",
+	id: "271510b",
 	set: ["71510b"],
 	name: "Mirror Universe Starship",
 	class: "Galaxy Class (MU)",
@@ -4121,7 +4121,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "assimilation_target_prime_71510b",
+	id: "171510b",
 	set: ["71510b"],
 	name: "Assimilation Target Prime",
 	class: "Galaxy Class (MU)",
@@ -4142,7 +4142,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "mirror_universe_borg_starship_71510b",
+	id: "071510b",
 	set: ["71510b"],
 	name: "Mirror Universe/Borg Starship",
 	class: "Galaxy Class (MU)",
@@ -4163,7 +4163,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "bok_s_marauder_71646a",
+	id: "71646a",
 	set: ["71646a"],
 	name: "Bok's Marauder",
 	class: "D'Kora Class",
@@ -4184,7 +4184,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "mirror_universe_starship_71646b",
+	id: "071646b",
 	set: ["71646b"],
 	name: "Mirror Universe Starship",
 	class: "Cardassian Galor Class",
@@ -4205,7 +4205,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "prakesh_71646b",
+	id: "71646b",
 	set: ["71646b"],
 	name: "Prakesh",
 	class: "Cardassian Galor Class",
@@ -4226,7 +4226,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "kazon_starship_71646c",
+	id: "071646c",
 	set: ["71646c", "71793"],
 	name: "Kazon Starship",
 	class: "Predator Class",
@@ -4247,7 +4247,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "relora_sankur_71646c",
+	id: "71646c",
 	set: ["71646c"],
 	name: "Relora-Sankur",
 	class: "Predator Class",
@@ -4268,7 +4268,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "scout_255_71646d",
+	id: "71646d",
 	set: ["71646d"],
 	name: "Scout 255",
 	class: "Borg Scout Cube",
@@ -4289,7 +4289,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "tal_kir_71646e",
+	id: "71646e",
 	set: ["71646e"],
 	name: "Tal'Kir",
 	class: "D'Kyr Class",
@@ -4310,7 +4310,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "val_jean_71528",
+	id: "71528",
 	set: ["71528"],
 	name: "Val Jean",
 	class: "Maquis Raider",
@@ -4332,7 +4332,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "maquis_starship_71528",
+	id: "071528",
 	set: ["71528"],
 	name: "Maquis Starship",
 	class: "Maquis Raider",
@@ -4354,7 +4354,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "romulan_borg_starship_71511",
+	id: "071511",
 	set: ["71511"],
 	name: "Romulan/Borg Starship",
 	class: "D'deridex Class",
@@ -4375,7 +4375,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "i_r_w_avatar_of_tomed_71511",
+	id: "171511",
 	set: ["71511"],
 	name: "I.R.W. Avatar of Tomed",
 	class: "D'deridex Class",
@@ -4396,7 +4396,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "i_r_w_avatar_of_tomed_b_71511",
+	id: "71511",
 	set: ["71511"],
 	name: "I.R.W. Avatar of Tomed",
 	class: "D'deridex Class",
@@ -4417,7 +4417,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "queen_vessel_prime_71530",
+	id: "71530",
 	set: ["71530"],
 	name: "Queen Vessel Prime",
 	class: "Borg Octahedron",
@@ -4438,7 +4438,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "u_s_s_enterprise_e_71531",
+	id: "71531",
 	set: ["71531", "72271"],
 	name: "U.S.S. Enterprise-E",
 	class: "Sovereign Class",
@@ -4459,7 +4459,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "federation_starship_71531",
+	id: "071531",
 	set: ["71531", "72271"],
 	name: "Federation Starship",
 	class: "Sovereign Class",
@@ -4480,7 +4480,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "klingon_borg_starship_71512",
+	id: "071512",
 	set: ["71512"],
 	name: "Klingon/Borg Starship",
 	class: "B'Rel Class",
@@ -4501,7 +4501,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "assimilated_vessel_80279_71512",
+	id: "171512",
 	set: ["71512"],
 	name: "Assimilated Vessel 80279",
 	class: "B'Rel Class",
@@ -4522,7 +4522,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "korok_s_bird_of_prey_71512",
+	id: "71512",
 	set: ["71512"],
 	name: "Korok's Bird-of-Prey",
 	class: "B'Rel Class",
@@ -4543,7 +4543,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "tactical_cube_001_71513a",
+	id: "71513a",
 	set: ["71513a"],
 	name: "Tactical Cube 001",
 	class: "Borg Tactical Cube",
@@ -4564,7 +4564,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "chang_s_bird_of_prey_71532",
+	id: "71532",
 	set: ["71532"],
 	name: "Chang's Bird-of-Prey",
 	class: "Klingon Bird-of-Prey",
@@ -4585,7 +4585,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "i_s_s_defiant_71529",
+	id: "71529",
 	set: ["71529"],
 	name: "I.S.S. Defiant",
 	class: "Defiant Class (Mirror)",
@@ -4606,7 +4606,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "scimitar_71533",
+	id: "71533",
 	set: ["71533", "72252"],
 	name: "Scimitar",
 	class: "Reman Warbird",
@@ -4627,7 +4627,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "reman_starship_71533",
+	id: "071533",
 	set: ["71533", "72252"],
 	name: "Reman Starship",
 	class: "Reman Warbird",
@@ -4648,7 +4648,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "klingon_starhip_71532",
+	id: "071532",
 	set: ["71532"],
 	name: "Klingon Starship",
 	class: "Klingon Bird-of-Prey",
@@ -4669,7 +4669,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "mirror_universe_starship_71529",
+	id: "071529",
 	set: ["71529"],
 	name: "Mirror Universe Starship",
 	class: "Defiant Class (Mirror)",
@@ -4690,7 +4690,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "cube_112_71792",
+	id: "71792",
 	set: ["71792"],
 	name: "Cube 112",
 	class: "Borg Cube",
@@ -4711,7 +4711,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "borg_starship_71792",
+	id: "071792",
 	set: ["71792", "72255"],
 	name: "Borg Starship",
 	class: "Borg Cube",
@@ -4732,7 +4732,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "fina_prime_71534",
+	id: "71534",
 	set: ["71534"],
 	name: "Fina Prime",
 	class: "Vidiian Battle Cruiser",
@@ -4753,7 +4753,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "vidiian_starship_71534",
+	id: "071534",
 	set: ["71534", "75004"],
 	name: "Vidiian Starship",
 	class: "Vidiian Battle Cruiser",
@@ -4774,7 +4774,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "terok_nor_71810",
+	id: "171810",
 	set: ["71810"],
 	name: "Terok Nor",
 	class: "Nor Class Orbital Space Station",
@@ -4795,7 +4795,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "deep_space_nine_71810",
+	id: "71810",
 	set: ["71810"],
 	name: "Deep Space 9",
 	class: "Nor Class Orbital Space Station",
@@ -4816,7 +4816,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "1st_wave_attack_fighters_71754",
+	id: "71754",
 	set: ["71754"],
 	name: "1st Wave Attack Fighters",
 	class: "Hideki Class Attack Squadron",
@@ -4837,7 +4837,7 @@ module.exports = [{
 	squadron: true
 }, {
 	type: "ship",
-	id: "dominion_attack_fighters_71754",
+	id: "071754",
 	set: ["71754"],
 	name: "Dominion Attack Fighters",
 	class: "Hideki Class Attack Squadron",
@@ -4858,7 +4858,7 @@ module.exports = [{
 	squadron: true
 }, {
 	type: "ship",
-	id: "trager_71513b",
+	id: "71513b",
 	set: ["71513b"],
 	name: "Trager",
 	class: "Cardassian Galor Class",
@@ -4879,7 +4879,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "assimilated_vessel_64758_71513b",
+	id: "171513b",
 	set: ["71513b"],
 	name: "Assimilated Vessel 64758",
 	class: "Cardassian Galor Class",
@@ -4900,7 +4900,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "dominion_borg_starship_71513b",
+	id: "071513b",
 	set: ["71513b"],
 	name: "Dominion/Borg Starship",
 	class: "Cardassian Galor Class",
@@ -4921,7 +4921,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "regent_s_flagship_71535",
+	id: "71535",
 	set: ["71535"],
 	name: "Regent's Flagship",
 	class: "Negh'var Class (Mirror)",
@@ -4942,7 +4942,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "mirror_universe_starship_71535",
+	id: "071535",
 	set: ["71535"],
 	name: "Mirror Universe Starship",
 	class: "Negh'var Class (Mirror)",
@@ -4963,7 +4963,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "alpha_hunter_71808",
+	id: "71808",
 	set: ["71808"],
 	name: "Alpha Hunter",
 	class: "Hirogen Warship",
@@ -4984,7 +4984,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "hirogen_starship_71808",
+	id: "071808",
 	set: ["71808", "73042"],
 	name: "Hirogen Starship",
 	class: "Hirogen Warship",
@@ -5005,7 +5005,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "fighter_squadron_6_71753",
+	id: "71753",
 	set: ["71753"],
 	name: "Fighter Squadron 6",
 	class: "Federation Attack Squadron",
@@ -5026,7 +5026,7 @@ module.exports = [{
 	squadron: true
 }, {
 	type: "ship",
-	id: "federation_attack_squadron_71753",
+	id: "071753",
 	set: ["71753", "73041"],
 	name: "Federation Attack Squadron",
 	class: "Federation Attack Squadron",
@@ -5047,7 +5047,7 @@ module.exports = [{
 	squadron: true
 }, {
 	type: "ship",
-	id: "prototype_01_71536",
+	id: "71536",
 	set: ["71536"],
 	name: "Prototype 01",
 	class: "Romulan Drone Ship",
@@ -5068,7 +5068,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "i_k_s_pagh_71996",
+	id: "71996",
 	set: ["71996"],
 	name: "I.K.S. Pagh",
 	class: "K'Vort Class",
@@ -5089,7 +5089,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "ogla_razik_71793",
+	id: "71793",
 	set: ["71793"],
 	name: "Ogla-Razik",
 	class: "Predator Class",
@@ -5110,7 +5110,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "i_r_w_haakona_71794",
+	id: "71794",
 	set: ["71794"],
 	name: "I.R.W. Haakona",
 	class: "D'deridex Class",
@@ -5131,7 +5131,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "romulan_starship_71794",
+	id: "71794",
 	set: ["71794"],
 	name: "Romulan Starship",
 	class: "D'deridex Class",
@@ -5152,7 +5152,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "gornarus_71797",
+	id: "71797",
 	set: ["71797"],
 	name: "Gornarus",
 	class: "Gorn Raider",
@@ -5173,7 +5173,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "reklar_71798",
+	id: "71798",
 	set: ["71798"],
 	name: "Reklar",
 	class: "Cardassian Galor Class",
@@ -5194,7 +5194,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "mirror_universe_starship_71796",
+	id: "071796",
 	set: ["71796"],
 	name: "Mirror Universe Starship",
 	class: "Constitution Class",
@@ -5215,7 +5215,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "i_s_s_enterprise_71796",
+	id: "71796",
 	set: ["71796"],
 	name: "I.S.S. Enterprise",
 	class: "Constitution Class",
@@ -5236,7 +5236,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "federation_starship_71997p",
+	id: "071997p",
 	set: ["71997p"],
 	name: "Federation Starship",
 	class: "Type 7 Shuttlecraft",
@@ -5257,7 +5257,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "sakharov_71997p",
+	id: "71997p",
 	set: ["71997p"],
 	name: "Sakharov",
 	class: "Type 7 Shuttlecraft",
@@ -5278,7 +5278,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "i_s_s_avenger_71800",
+	id: "71800",
 	set: ["71800"],
 	name: "I.S.S. Avenger",
 	class: "Terran NX Class",
@@ -5299,7 +5299,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "kyana_prime_71799",
+	id: "71799",
 	set: ["71799"],
 	name: "Kyana Prime",
 	class: "Krenim Weapon Ship",
@@ -5320,7 +5320,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "u_s_s_hood_71998p",
+	id: "71998p",
 	set: ["71998p"],
 	name: "U.S.S. Hood",
 	class: "Excelsior Class",
@@ -5341,7 +5341,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "u_s_s_pegasus_71801",
+	id: "71801",
 	set: ["71801"],
 	name: "U.S.S. Pegasus",
 	class: "Oberth Class",
@@ -5362,7 +5362,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "mirror_universe_starship_71800",
+	id: "071800",
 	set: ["71800"],
 	name: "Mirror Universe Starship",
 	class: "Terran NX Class",
@@ -5383,7 +5383,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "krenim_starship_71799",
+	id: "071799",
 	set: ["71799"],
 	name: "Krenim Starship",
 	class: "Krenim Weapon Ship",
@@ -5404,7 +5404,7 @@ module.exports = [{
 	squadron: false
 },	{
 	type: "ship",
-	id: "ratosha_71803",
+	id: "71803",
 	set: ["71803"],
 	name: "Ratosha",
 	class: "Bajoran Scout Ship",
@@ -5425,7 +5425,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "i_k_s_korinar_71999p",
+	id: "071999p",
 	set: ["71999p"],
 	name: "I.K.S. Korinar",
 	class: "B'Rel Class",
@@ -5446,7 +5446,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "klingon_starship_71999p",
+	id: "071999p",
 	set: ["71999p", "71804"],
 	name: "Klingon Starship",
 	class: "B'Rel Class",
@@ -5467,7 +5467,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "federation_starship_71802",
+	id: "071802",
 	set: ["71802"],
 	name: "Federation Starship",
 	class: "Prometheus Class",
@@ -5488,7 +5488,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "i_k_s_ning_tao_71804",
+	id: "71804",
 	set: ["71804"],
 	name: "I.K.S. Ning'tao",
 	class: "B'Rel Class",
@@ -5509,7 +5509,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "u_s_s_prometheus_71802",
+	id: "71802",
 	set: ["71802"],
 	name: "U.S.S. Prometheus",
 	class: "Prometheus Class",
@@ -5530,7 +5530,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "aldara_blind_aldara",
+	id: "00012",
 	set: ["blind_aldara"],
 	name: "Aldara",
 	class: "Cardassian Galor Class",
@@ -5547,7 +5547,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "azati_prime_72004p",
+	id: "72004p",
 	set: ["72004p"],
 	name: "Azati Prime",
 	class: "Xindi Aquatic Cruiser",
@@ -5564,7 +5564,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "xindi_starship_72004p",
+	id: "072004p",
 	set: ["72004p"],
 	name: "Xindi Starship",
 	class: "Xindi Aquatic Cruiser",
@@ -5581,7 +5581,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "i_r_w_belak_blind_belak",
+	id: "00011",
 	set: ["blind_belak"],
 	name: "I.R.W. Belak",
 	class: "D'deridex Class",
@@ -5598,7 +5598,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "u_s_s_bellerophon_72001p",
+	id: "72001p",
 	set: ["72001p"],
 	name: "U.S.S. Bellerophon",
 	class: "Intrepid Class",
@@ -5615,7 +5615,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "federation_starship_72001p",
+	id: "072001p",
 	set: ["72001p"],
 	name: "Federation Starship",
 	class: "Intrepid Class",
@@ -5632,7 +5632,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "bioship_beta_72012",
+	id: "72012",
 	set: ["72012"],
 	name: "Bioship Beta",
 	class: "Species 8472 Bioship",
@@ -5649,7 +5649,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "bioship_omega_blind_bioship",
+	id: "00010",
 	set: ["blind_bioship"],
 	name: "Bioship Omega",
 	class: "Species 8472 Bioship",
@@ -5666,7 +5666,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "i_k_s_buruk_blind_buruk",
+	id: "00009",
 	set: ["blind_buruk"],
 	name: "I.K.S. Buruk",
 	class: "K'Vort Class",
@@ -5683,7 +5683,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "u_s_s_dauntless_71805",
+	id: "71805",
 	set: ["71805"],
 	name: "U.S.S. Dauntless",
 	class: "Dauntless Class",
@@ -5704,7 +5704,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "independent_starship_71805",
+	id: "071805",
 	set: ["71805", "75004"],
 	name: "Independent Starship",
 	class: "Dauntless Class",
@@ -5721,7 +5721,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "delta_flyer_72014",
+	id: "72014",
 	set: ["72014"],
 	name: "Delta Flyer",
 	class: "Delta Flyer Class Shuttlecraft",
@@ -5738,7 +5738,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "federation_starship_72014",
+	id: "072014",
 	set: ["72014", "72300p"],
 	name: "Federation Starship",
 	class: "Delta Flyer Class Shuttlecraft",
@@ -5755,7 +5755,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "diaspora_72003p",
+	id: "72003p",
 	set: ["72003p"],
 	name: "Diaspora",
 	class: "Xindi Insectoid Starship",
@@ -5772,7 +5772,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "xindi_starship_72003p",
+	id: "072003p",
 	set: ["72003p", "72273"],
 	name: "Xindi Starship",
 	class: "Xindi Insectoid Starship",
@@ -5789,7 +5789,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "interceptor_8_blind_interceptor8",
+	id: "00008",
 	set: ["blind_interceptor8"],
 	name: "Interceptor 8",
 	class: "Bajoran Interceptor",
@@ -5806,7 +5806,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "u_s_s_intrepid_72002p",
+	id: "72002p",
 	set: ["72002p"],
 	name: "U.S.S. Intrepid",
 	class: "Constitution Class",
@@ -5823,7 +5823,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "kreechta_71806",
+	id: "71806",
 	set: ["71806"],
 	name: "Kreechta",
 	class: "D'Kora Class",
@@ -5844,7 +5844,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "u_s_s_lakota_blind_lakota",
+	id: "00007",
 	set: ["blind_lakota"],
 	name: "U.S.S. Lakota",
 	class: "Excelsior Class",
@@ -5861,7 +5861,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "nistrim_culluh_blind_nistrim_culluh",
+	id: "00006",
 	set: ["blind_nistrim_culluh"],
 	name: "Nistrim-Culluh",
 	class: "Predator Class",
@@ -5878,7 +5878,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "kazon_starship_blind_nistrim_culluh",
+	id: "00005",
 	set: ["blind_nistrim_culluh"],
 	name: "Kazon Starship",
 	class: "Predator Class",
@@ -5895,7 +5895,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "nunks_marauder_blind_nunks_marauder",
+	id: "00004",
 	set: ["blind_nunks_marauder"],
 	name: "Nunk's Marauder",
 	class: "D'Kora Class",
@@ -5912,7 +5912,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "u_s_s_pasteur_71807",
+	id: "71807",
 	set: ["71807"],
 	name: "U.S.S. Pasteur",
 	class: "Olympic Class",
@@ -5933,7 +5933,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "mirror_universe_starship_71807",
+	id: "071807",
 	set: ["71807"],
 	name: "Mirror Universe Starship",
 	class: "Olympic Class",
@@ -5950,7 +5950,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "u_s_s_phoenix_72011",
+	id: "72011",
 	set: ["72011"],
 	name: "U.S.S. Phoenix",
 	class: "Nebula Class",
@@ -5967,7 +5967,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "quark_s_treasure_72013",
+	id: "72013",
 	set: ["72013"],
 	name: "Quark's Treasure",
 	class: "Ferengi Shuttle",
@@ -5984,7 +5984,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "i_k_s_rotarran_72015",
+	id: "72015",
 	set: ["72015"],
 	name: "I.K.S. Rotarran",
 	class: "B'Rel Class",
@@ -6001,7 +6001,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "seleya_blind_seleya",
+	id: "00000",
 	set: ["blind_seleya"],
 	name: "Seleya",
 	class: "D'Kyr Class",
@@ -6018,7 +6018,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "r_i_s_talvath_72016",
+	id: "72016",
 	set: ["72016"],
 	name: "R.I.S. Talvath",
 	class: "Romulan Science Vessel",
@@ -6035,7 +6035,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "i_r_w_terix_72000p",
+	id: "72000p",
 	set: ["72000p"],
 	name: "I.R.W. Terix",
 	class: "D'deridex Class",
@@ -6056,7 +6056,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "mirror_universe_starship_72000p",
+	id: "72000p",
 	set: ["72000p"],
 	name: "Mirror Universe Starship",
 	class: "D'deridex Class",
@@ -6077,7 +6077,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "u_s_s_thunderchild_72008",
+	id: "72008",
 	set: ["72008"],
 	name: "U.S.S. Thunderchild",
 	class: "Akira Class",
@@ -6094,7 +6094,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "federation_starship_72008",
+	id: "72008",
 	set: ["72008"],
 	name: "Federation Starship",
 	class: "Akira Class",
@@ -6111,7 +6111,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "i_k_s_toh_kaht_blind_tohkaht",
+	id: "00001",
 	set: ["blind_tohkaht"],
 	name: "I.K.S. Toh'Kaht",
 	class: "Vor'cha Class",
@@ -6128,7 +6128,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "mirror_universe_starship_blind_tohkaht",
+	id: "00002",
 	set: ["blind_tohkaht"],
 	name: "Mirror Universe Starship",
 	class: "Vor'cha Class",
@@ -6145,7 +6145,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "i_k_s_t_ong_72009",
+	id: "72009",
 	set: ["72009"],
 	name: "I.K.S. T'Ong",
 	class: "K'T'Inga Class",
@@ -6166,7 +6166,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "i_r_w_vrax_72010",
+	id: "72010",
 	set: ["72010"],
 	name: "I.R.W. Vrax",
 	class: "Valdore Class",
