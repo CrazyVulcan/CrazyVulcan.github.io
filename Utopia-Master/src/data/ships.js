@@ -5666,7 +5666,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "00009"
+	id: "00009",
 	set: ["blind_buruk"],
 	name: "I.K.S. Buruk",
 	class: "K'Vort Class",

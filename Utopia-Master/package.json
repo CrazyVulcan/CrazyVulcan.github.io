@@ -10,7 +10,11 @@
     "wiegeabo",
     "SpinStabilized"
   ],
- 
+  "license": "LGPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CrazyVulcan/CrazyVulcan.github.io.git"
+  },
   "scripts": {
     "start": "grunt",
     "data": "npm run lint-data && npm run generate-data",
@@ -31,7 +35,7 @@
   },
   "dependencies": {
     "eslint": "^5.16.0",
-    "npm": "^5.7.1",
+    "npm": "^6.9.0",
     "uglify-js": "^3.4.9"
   }
 }
