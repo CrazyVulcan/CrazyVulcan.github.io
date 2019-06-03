@@ -1060,11 +1060,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 
 	//Nistrim Raider :71282
-		"ship:71282": {
+		"ship:S148": {
 			upgradeSlots: [ createFirstMajeSlot() ]
 		},
 		//Raider Generic
-		"ship:071282": {
+		"ship:S147": {
 			upgradeSlots: [ createFirstMajeSlot() ]
 		},
 		//Rettik
@@ -1438,7 +1438,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 
 	//Tactical Cube :71444
-		"ship:71444": {
+		"ship:S139": {
 			intercept: {
 				ship: {
 					// Reduce cost of Borg Ablative Hull Armor
@@ -1962,25 +1962,25 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 
 	//Assimilation Target Prime
-		"ship:171510b": {
+		"ship:S106": {
 			// Restore class on card text
 			class: "Galaxy Class",
 			// TODO use this field to pick the correct maneuver card
 			classId: "galaxy__class_mu",
 		},
-		"ship:071510b": {
+		"ship:S107": {
 			// Restore class on card text
 			class: "Galaxy Class",
 			// TODO use this field to pick the correct maneuver card
 			classId: "galaxy__class_mu",
 		},
-		"ship:271510b": {
+		"ship:S108": {
 			// Restore class on card text
 			class: "Galaxy Class",
 			// TODO use this field to pick the correct maneuver card
 			classId: "galaxy__class_mu",
 		},
-		"ship:371510b": {
+		"ship:S105": {
 			// Restore class on card text
 			class: "Galaxy Class",
 			// TODO use this field to pick the correct maneuver card
@@ -2128,7 +2128,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 
 	//Enterprise NX-01 :71526
-		"ship:71526": {
+		"ship:S115": {
 			upgradeSlots: [ {
 				type: ["tech"],
 				rules: "Free EHP Only",
@@ -2225,7 +2225,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 
 	//Scout Cube 608 :71525
-		"ship:71525": {
+		"ship:S113": {
 			intercept: {
 				ship: {
 					canEquip: function(upgrade,ship,fleet,canEquip) {
@@ -2236,7 +2236,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		"ship:071525": {
+		"ship:S111": {
 			intercept: {
 				ship: {
 					canEquip: function(upgrade,ship,fleet,canEquip) {
@@ -2349,11 +2349,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 
 	//Relora-Sankur :71646c
-		"ship:071646c": {
+		"ship:S100": {
 			upgradeSlots: [ createFirstMajeSlot() ]
 		},
 
-		"ship:71646c": {
+		"ship:S101": {
 			upgradeSlots: [ createFirstMajeSlot() ]
 		},
 		// Haron
@@ -2415,7 +2415,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 
 	//Scout 255 :71646d
-		"ship:71646d": {
+		"ship:S099": {
 			intercept: {
 				ship: {
 					canEquip: function(upgrade,ship,fleet,canEquip) {
@@ -2719,7 +2719,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 
 	//Assimilated Vessel 80279 :71512
-		"ship:71512": {
+		"ship:S087": {
 			// Can't join fleet with AV80279 in it
 			canJoinFleet: function(ship, ship2, fleet) {
 				var canJoin = true;
@@ -2833,11 +2833,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 
 	//I.S.S. Defiant :71529
-		"ship:71529": {
+		"ship:S084": {
 			class: "Defiant Class",
 			classId: "defiant_class_mirror"
 		},
-		"ship:071529": {
+		"ship:S080": {
 			class: "Defiant Class",
 			classId: "defiant_class_mirror"
 		},
@@ -2890,7 +2890,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 
 	//Assimilated Vessel 64758 :71513b
-		"ship:71513b": {
+		"ship:S070": {
 			// Can't join fleet with AV64758 in it
 			canJoinFleet: function(ship, ship2, fleet) {
 				var canJoin = true;
@@ -2979,11 +2979,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 
 	//Regent's Flagship :71535
-		"ship:71535": {
+		"ship:S067": {
 			class: "Negh'var Class",
 			classId: "negh_var_class_mirror"
 		},
-		"ship:071535": {
+		"ship:S066": {
 			class: "Negh'var Class",
 			classId: "negh_var_class_mirror"
 		},
@@ -3211,7 +3211,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 	//Prototype 01 :71536
 		// Only Gareb or Romulan Drone Pilot as Captain
-		"ship:71536": {
+		"ship:S061": {
 			intercept: {
 				ship: {
 					canEquipCaptain: function(captain,ship,fleet) {
@@ -3220,7 +3220,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		"ship:071536": {
+		"ship:S266": {
 			intercept: {
 				ship: {
 					canEquipCaptain: function(captain,ship,fleet) {
@@ -3435,7 +3435,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 
 	//Ogla-Razik :71793
-		"ship:71793": {
+		"ship:S059": {
 			upgradeSlots: [ createFirstMajeSlot() ]
 		},
 		//Jabin
@@ -3668,7 +3668,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 
 	//Sakharov :71997p
-		"ship:71997p": {
+		"ship:S051": {
 			upgradeSlots: [
 				{
 					type: ["crew","tech"],
@@ -3719,7 +3719,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 
 	//U.S.S. Pegasus :71801
-		"ship:71801": {
+		"ship:S047": {
 			intercept: {
 				ship: {
 					cost: function(upgrade,ship,fleet,cost) {
@@ -4576,7 +4576,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 
 	//Quark's Treasure :72013
-		"ship:72013": {
+		"ship:S013": {
 			intercept: {
 				ship: {
 					factionPenalty: function(card,ship,fleet,factionPenalty) {
@@ -5169,7 +5169,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 
 	//Halik Raider :71192
-		"ship:71192": {
+		"ship:S220": {
 			upgradeSlots: [ createFirstMajeSlot() ]
 		},
 		//Surat
@@ -5465,7 +5465,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 
 	//Nistrim-Culluh :blind_nistrim_culluh
-		"ship:00006": {
+		"ship:S019": {
 			upgradeSlots: [ createFirstMajeSlot() ]
 		},
 		//Culluh
@@ -7458,7 +7458,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}},
 
 	//Prototype 02 :72014wp
-		"ship:72014wp": {
+		"ship:S267": {
 			intercept: {
 				ship: {
 					canEquipCaptain: function(captain,ship,fleet) {
@@ -7467,7 +7467,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		"ship:072014wp": {
+		"ship:S266": {
 			intercept: {
 				ship: {
 					canEquipCaptain: function(captain,ship,fleet) {
@@ -8284,7 +8284,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 	//A Motley Fleet
 		//Gurngouin
-		"ship:175004":{
+		"ship:S313":{
 			upgradeSlots: [ {
 					type: ["tech"],
 					rules: "Free Inertial Compensators Only",
@@ -8299,7 +8299,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				} ]
 		},
 		//USS Dauntless
-		"ship:475004":{
+		"ship:S316":{
 			intercept: {
 				ship: {
 					// Add the "crew" type to all Tech and Borg slots
