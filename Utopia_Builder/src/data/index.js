@@ -3,6 +3,9 @@ var path = require("path");
 
 var data = {
 	sets: require("./sets"),
+	rulings: require("./rulings"),
+	missionSets: require("./missionSets"),
+	missions: require("./missions"),
 	ships: require("./ships"),
 	shipClasses: require("./ship_classes"),
 	captains: require("./captains"),
