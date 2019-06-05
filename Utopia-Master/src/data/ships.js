@@ -1,5 +1,26 @@
 module.exports = [{
 	type: "ship",
+	id: "S317",
+	set: ["75006"],
+	name: "U.S.S. Enterprise",
+	class: "Constitution Class",
+	actions: ["evade", "target-lock", "scan", "battlestations"],
+	upgrades: ["weapon", "crew", "crew", "crew", "crew"],
+	attack: 3,
+	agility: 1,
+	hull: 4,
+	shields: 3,
+	cost: 20,
+	text: "\n<b>ACTION:</b>\n\nRepair up to 3 Shields on this ship.",
+	unique: true,
+	factions: ["federation"],
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	squadron: false
+}, {
+	type: "ship",
 	id: "S316",
 	set: ["75004"],
 	name: "U.S.S. Dauntless",

@@ -27,7 +27,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "tech",
-	id: "particle_synthesis_75004",
+	id: "T251",
 	set: ["75004"],
 	name: "Particle Synthesis",
 	cost: 4,
@@ -37,7 +37,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "tech",
-	id: "enhanced_shield_emitters_75004",
+	id: "T184",
 	set: ["75004"],
 	name: "Enhanced Shield Emitters",
 	cost: 5,
@@ -47,7 +47,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "tech",
-	id: "class_4_cloaking_device_75004",
+	id: "T183",
 	set: ["75004"],
 	name: "Class 4 Cloaking Device",
 	cost: 4,
@@ -57,7 +57,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "tech",
-	id: "inertial_compensators_75004",
+	id: "T182",
 	set: ["75004"],
 	name: "Inertial Compensators",
 	cost: 2,
@@ -67,7 +67,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "weapon",
-	id: "enhanced_phasers_75004",
+	id: "W194",
 	set: ["75004"],
 	name: "Enhanced Phasers",
 	cost: 3,
@@ -76,7 +76,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "weapon",
-	id: "hypothermic_charge_75004",
+	id: "W193",
 	set: ["75004"],
 	name: "Hypothermic Charge",
 	cost: 4,
@@ -264,7 +264,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "tech",
-	id: "portable_transwarp_beaming_device_75005",
+	id: "T181",
 	set: ["75005"],
 	name: "Portable Transwarp Beaming Device",
 	cost: 2,
@@ -274,7 +274,7 @@ module.exports = [{
 	factions: ["mirror-universe"]
 }, {
 	type: "tech",
-	id: "intergrated_future_technology_75005",
+	id: "T180",
 	set: ["75005"],
 	name: "Intergrated Future Technology",
 	cost: 3,
@@ -283,7 +283,7 @@ module.exports = [{
 	factions: ["mirror-universe"]
 }, {
 	type: "tech",
-	id: "klingon_cloaking_device_75005",
+	id: "T179",
 	set: ["75005"],
 	name: "Klingon Cloaking Device",
 	cost: 2,
@@ -332,7 +332,7 @@ module.exports = [{
 	factions: ["mirror-universe","klingon"]
 }, {
 	type: "weapon",
-	id: "advanced_long_range_torpedo_75005",
+	id: "W192",
 	set: ["75005"],
 	name: "Advanced Long Range Torpedo",
 	cost: 3,
@@ -344,7 +344,7 @@ module.exports = [{
 	factions: ["mirror-universe","federation"]
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_75005",
+	id: "W191",
 	set: ["75005"],
 	name: "Photon Torpedoes",
 	cost: 3,
@@ -355,7 +355,7 @@ module.exports = [{
 	factions: ["mirror-universe","klingon"]
 },{
 	type: "weapon",
-	id: "disruptor_volley_75005",
+	id: "W190",
 	set: ["75005"],
 	name: "Disruptor Volley",
 	cost: 3,
@@ -366,7 +366,7 @@ module.exports = [{
 	factions: ["mirror-universe","klingon"]
 }, {
 	type: "weapon",
-	id: "full_spread_phasers_75005",
+	id: "W189",
 	set: ["75005"],
 	name: "Full Spread Phasers",
 	cost: 4,
@@ -467,7 +467,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "tech",
-	id: "tractor_beam_73042",
+	id: "T178",
 	set: ["73042"],
 	name: "Tractor Beam",
 	cost: 3,
@@ -477,7 +477,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "tech",
-	id: "stealth_mode_73042",
+	id: "T177",
 	set: ["73042"],
 	name: "Stealth Mode",
 	cost: 3,
@@ -487,7 +487,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "weapon",
-	id: "subnucleonic_beams_73042",
+	id: "W188",
 	set: ["73042"],
 	name: "Subnucleonic Beams",
 	cost: 3,
@@ -537,7 +537,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "tech",
-	id: "cloning_facility_73032",
+	id: "T176",
 	set: ["73032"],
 	name: "Cloning Facility",
 	cost: 4,
@@ -547,7 +547,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "tech",
-	id: "antiproton_blast_73032",
+	id: "T175",
 	set: ["73032"],
 	name: "Antiproton Blast",
 	cost: 2,
@@ -585,7 +585,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "weapon",
-	id: "tac_command_reticle_73032",
+	id: "W187",
 	set: ["73032"],
 	name: "Tactical Command Reticle",
 	cost: 2,
@@ -643,7 +643,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "weapon",
-	id: "hidden_explosives_73031",
+	id: "W186",
 	set: ["73031"],
 	name: "Hidden Explosives",
 	cost: 3,
@@ -652,7 +652,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "tech",
-	id: "enhanced_durabilty_73031",
+	id: "T174",
 	set: ["73031"],
 	name: "Enhanced Durability",
 	cost: 4,
@@ -662,7 +662,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "tech",
-	id: "gorn_sensors_73031",
+	id: "T173",
 	set: ["73031"],
 	name: "Gorn Sensors",
 	cost: 3,
@@ -672,7 +672,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "weapon",
-	id: "disruptor_bombardment_73031",
+	id: "W185",
 	set: ["73031"],
 	name: "Disruptor Bombardment",
 	cost: 2,
@@ -695,7 +695,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "tech",
-	id: "kemocite_75003",
+	id: "T172",
 	set: ["75003"],
 	name: "Kemocite",
 	cost: 2,
@@ -704,7 +704,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "tech",
-	id: "t9_energy_converter_75003",
+	id: "T171",
 	set: ["75003"],
 	name: "T-9 Energy Converter",
 	cost: 2,
@@ -713,7 +713,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "weapon",
-	id: "weapon_ports_75003",
+	id: "W184",
 	set: ["75003"],
 	name: "Weapon Ports",
 	cost: 2,
@@ -724,7 +724,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_75003",
+	id: "W183",
 	set: ["75003"],
 	name: "Photon Torpedoes",
 	cost: 2,
@@ -735,7 +735,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "weapon",
-	id: "verteron_pulse_trap_75003",
+	id: "W182",
 	set: ["75003"],
 	name: "Verteron Pulse Trap",
 	cost: 2,
@@ -824,7 +824,7 @@ module.exports = [{
 	factions: ["borg"]
 }, {
 	type: "tech",
-	id: "technological_analysis_73002",
+	id: "T170",
 	set: ["73002"],
 	name: "Technological Analysis",
 	cost: 4,
@@ -834,7 +834,7 @@ module.exports = [{
 	factions: ["borg"]
 }, {
 	type: "weapon",
-	id: "tractor_beam_73002",
+	id: "W181",
 	set: ["73002"],
 	name: "Tractor Beam",
 	cost: 5,
@@ -929,7 +929,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "weapon",
-	id: "missile_launchers_72311p",
+	id: "W180",
 	set: ["73001"],
 	name: "Missile Launchers",
 	cost: 3,
@@ -941,7 +941,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "tech",
-	id: "metaphasic_shields_72311p",
+	id: "T170",
 	set: ["73001"],
 	name: "Metaphasic Shields",
 	cost: 4,
@@ -951,7 +951,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "weapon",
-	id: "photonic_cannon_72311p",
+	id: "W179",
 	set: ["72311p"],
 	name: "Photonic Cannon",
 	cost: 10,
@@ -983,7 +983,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "tech",
-	id: "sucide_attack_75002",
+	id: "T169",
 	set: ["75002"],
 	name: "Suicide Attack",
 	cost: 5,
@@ -993,7 +993,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "tech",
-	id: "secondary_matter_system_75002",
+	id: "T168",
 	set: ["75002"],
 	name: "Secondary Matter System",
 	cost: 3,
@@ -1002,7 +1002,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "weapon",
-	id: "disruptor_cannon_75002",
+	id: "W178",
 	set: ["75002"],
 	name: "Disruptor Cannon",
 	cost: 3,
@@ -1015,7 +1015,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_75002",
+	id: "W177",
 	set: ["75002"],
 	name: "Photon Torpedoes",
 	cost: 5,
@@ -1027,7 +1027,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "weapon",
-	id: "phased_polaron_beam_75002",
+	id: "W176",
 	set: ["75002", "73032"],
 	name: "Phased Polaron Beams",
 	cost: 3,
@@ -1040,7 +1040,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "weapon",
-	id: "minesweeper_75002",
+	id: "W175",
 	set: ["75002"],
 	name: "Minesweeper",
 	cost: 2,
@@ -1050,7 +1050,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "weapon",
-	id: "energy_dissipator_75002",
+	id: "W174",
 	set: ["75002"],
 	name: "Engery Dissipator",
 	cost: 2,
@@ -1108,7 +1108,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "tech",
-	id: "quantum_stasis_module_75001",
+	id: "T167",
 	set: ["75001"],
 	name: "Quantum Stasis Module",
 	cost: 3,
@@ -1118,7 +1118,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "tech",
-	id: "auxiliary_power_core_75001",
+	id: "T166",
 	set: ["75001"],
 	name: "Auxiliary Power Core",
 	cost: 3,
@@ -1129,7 +1129,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "tech",
-	id: "reinforced_shields_75001",
+	id: "T165",
 	set: ["75001"],
 	name: "Reinforced Shields",
 	cost: 1,
@@ -1159,7 +1159,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "weapon",
-	id: "disruptor_beams_75001",
+	id: "W173",
 	set: ["75001"],
 	name: "Disruptor Beams",
 	cost: 5,
@@ -1169,7 +1169,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "weapon",
-	id: "forward_disruptor_banks_75001",
+	id: "W172",
 	set: ["75001"],
 	name: "Forward Disruptor Banks",
 	cost: 3,
@@ -1177,7 +1177,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "weapon",
-	id: "additional_weapons_array_75001",
+	id: "W171",
 	set: ["75001"],
 	name: "Additional Weapons Array",
 	cost: 3,
@@ -1250,7 +1250,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "reinforced_bulkheads_2017core",
+	id: "T164",
 	set: ["2017core"],
 	name: "Reinforced Bulkheads",
 	cost: 3,
@@ -1258,7 +1258,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "tech",
-	id: "exocomp_2017core",
+	id: "T163",
 	set: ["2017core"],
 	name: "Exocomp",
 	cost: 4,
@@ -1266,7 +1266,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "tactical_station_2017core",
+	id: "W170",
 	set: ["2017core", "71510"],
 	name: "Tactical Station",
 	cost: 4,
@@ -1275,7 +1275,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_2017core",
+	id: "W169",
 	set: ["2017core"],
 	name: "Photon Torpedoes",
 	cost: 2,
@@ -1286,7 +1286,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "disruptor_cannon_2017core",
+	id: "W168",
 	set: ["2017core"],
 	name: "Disruptor Cannon",
 	cost: 2,
@@ -1297,7 +1297,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "weapon",
-	id: "torpedoe_fusillade_2017core",
+	id: "W167",
 	set: ["2017core"],
 	name: "Torpedo Fusillade",
 	cost: 0,
@@ -1418,7 +1418,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "tech",
-	id: "sabotaged_systems_22303p",
+	id: "T162",
 	set: ["72302p"],
 	name: "Sabotaged Systems",
 	cost: 3,
@@ -1438,7 +1438,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "weapon",
-	id: "triphasic_emitters_72014wp",
+	id: "W166",
 	set: ["72014wp"],
 	name: "Triphasic Emitters",
 	cost: 2,
@@ -1449,7 +1449,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "tech",
-	id: "propulsion_matrix_72014wp",
+	id: "T161",
 	set: ["72014wp"],
 	name: "Propulsion Matrix",
 	cost: 3,
@@ -1458,7 +1458,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "tech",
-	id: "repair_protocol_72014wp",
+	id: "T160",
 	set: ["72014wp"],
 	name: "Repair Protocol",
 	cost: 4,
@@ -1468,7 +1468,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "weapon",
-	id: "tellarite_disruptor_banks_72014wp",
+	id: "W165",
 	set: ["72014wp"],
 	name: "Tellarite Disruptor Banks",
 	cost: 3,
@@ -1479,7 +1479,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "tech",
-	id: "evasive_protocol_72014wp",
+	id: "T159",
 	set: ["72014wp"],
 	name: "Evasive Protocol",
 	cost: 3,
@@ -1489,7 +1489,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "tech",
-	id: "disguise_protocol_72014wp",
+	id: "T158",
 	set: ["72014wp"],
 	name: "Disguise Protocol",
 	cost: 4,
@@ -1499,7 +1499,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "weapon",
-	id: "thoron_shock_emitter_72013wp",
+	id: "W164",
 	set: ["72013wp"],
 	name: "Thoron Shock Emitter",
 	cost: 2,
@@ -1511,7 +1511,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "weapon",
-	id: "plasma_wave_72013wp",
+	id: "W163",
 	set: ["72013wp"],
 	name: "Plasma Wave",
 	cost: 3,
@@ -1523,7 +1523,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "weapon",
-	id: "plasma_pulse_72013wp",
+	id: "W162",
 	set: ["72013wp"],
 	name: "Plasma Pulse",
 	cost: 3,
@@ -1536,7 +1536,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "weapon",
-	id: "quantum_torpedoes_72013wp",
+	id: "W161",
 	set: ["72013wp"],
 	name: "Quantum Torpedoes",
 	cost: 3,
@@ -1557,7 +1557,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "tech",
-	id: "belannas_codes_72013wp",
+	id: "T157",
 	set: ["72013wp"],
 	name: "B'Elanna's Codes",
 	cost: 3,
@@ -1566,7 +1566,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "tech",
-	id: "final_stage_targeting_72013wp",
+	id: "T156",
 	set: ["72013wp"],
 	name: "Final Stage Targeting",
 	cost: 3,
@@ -1575,7 +1575,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "tech",
-	id: "shield_adaptation_72013wp",
+	id: "T155",
 	set: ["72013wp"],
 	name: "Shield Adaptation",
 	cost: 5,
@@ -1622,7 +1622,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_72012wp",
+	id: "W160",
 	set: ["72012wp"],
 	name: "Photon Torpedoes",
 	cost: 2,
@@ -1635,7 +1635,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "tech",
-	id: "dispersive_armor_72012wp",
+	id: "T154",
 	set: ["72012wp"],
 	name: "Dispersive Armor",
 	cost: 4,
@@ -1646,7 +1646,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "tech",
-	id: "reactor_pit_72012wp",
+	id: "T153",
 	set: ["72012wp"],
 	name: "Reactor Pit",
 	cost: 3,
@@ -1703,7 +1703,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "comm_station_72001wp",
+	id: "T152",
 	set: ["72011wp"],
 	name: "Comm Station",
 	cost: 4,
@@ -1713,7 +1713,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "close-range_scan_72001wp",
+	id: "T151",
 	set: ["72011wp"],
 	name: "Close-Range Scan",
 	cost: 3,
@@ -1722,7 +1722,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "genesis_effect_72001wp",
+	id: "T150",
 	set: ["72011wp"],
 	name: "Genesis Effect",
 	cost: 2,
@@ -1760,7 +1760,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "impulse_thrusters_72300p",
+	id: "T149",
 	set: ["72300p"],
 	name: "Impulse Thrusters",
 	cost: 4,
@@ -1769,7 +1769,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "pulse_phased_weapons_72300p",
+	id: "W159",
 	set: ["72300p"],
 	name: "Pulse Phased Weapons",
 	attack: 3,
@@ -1789,7 +1789,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "aft_Photon_torpedoes_72290p",
+	id: "W158",
 	set: ["72290p"],
 	name: "Aft Photon Torpedoes",
 	cost: 4,
@@ -1836,7 +1836,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "weapon",
-	id: "xindi_torpedoes_muratas",
+	id: "W157",
 	set: ["72293"],
 	name: "Xindi Torpedoes",
 	attack: 4,
@@ -1847,7 +1847,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "weapon",
-	id: "particle_beam_weapon_muratas",
+	id: "W156",
 	set: ["72293"],
 	name: "Particle Beam Weapon ",
 	cost: 0,
@@ -1867,7 +1867,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "tech",
-	id: "thermal_chamber_muratas",
+	id: "T148",
 	set: ["72293"],
 	name: "Thermal Chamber",
 	cost: 3,
@@ -1876,7 +1876,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "tech",
-	id: "sensor_encoders_muratas",
+	id: "T147",
 	set: ["72293"],
 	name: "Sensor Encoders",
 	cost: 3,
@@ -1894,7 +1894,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "transporter_72284p",
+	id: "T146",
 	set: ["72284p"],
 	name: "Transporter",
 	cost: 3,
@@ -1903,7 +1903,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "aft_phaser_emitters_72284p",
+	id: "W155",
 	set: ["72284p"],
 	name: "Aft Phaser Emitters",
 	cost: 0,
@@ -1923,7 +1923,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "xindi_torpedoes_72281",
+	id: "W154",
 	set: ["72281"],
 	name: "Xindi Torpedoes",
 	attack: 4,
@@ -1934,7 +1934,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "tech",
-	id: "biometric_hologram_72281",
+	id: "T145",
 	set: ["72281"],
 	name: "Biometric Hologram",
 	cost: 5,
@@ -1943,7 +1943,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "tech",
-	id: "subspace_vortex_72281",
+	id: "T144",
 	set: ["72281"],
 	name: "Subspace Vortex",
 	cost: 5,
@@ -1952,7 +1952,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "tech",
-	id: "trellium_d_72281",
+	id: "T143",
 	set: ["72281"],
 	name: "Trellium-D",
 	cost: 4,
@@ -2006,7 +2006,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "tech",
-	id: "tachyon_pulse_72282gp",
+	id: "T142",
 	set: ["72282gp"],
 	name: "Tachyon Pulse",
 	cost: 4,
@@ -2042,7 +2042,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "tech",
-	id: "aft_shields_72282p",
+	id: "T141",
 	set: ["72282p"],
 	name: "Aft Shields",
 	cost: 4,
@@ -2089,7 +2089,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "tech",
-	id: "auxiliary_power_to_shields_72281p",
+	id: "T140",
 	set: ["72281p"],
 	name: "Auxiliary Power to Shields",
 	cost: 4,
@@ -2134,7 +2134,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "weapon",
-	id: "pulse-firing_particle_cannon_orassin",
+	id: "W153",
 	set: ["72273"],
 	name: "Pulse-Firing Particle Cannon",
 	cost: 4,
@@ -2145,7 +2145,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "weapon",
-	id: "xindi_torpedoes_orassin",
+	id: "W152",
 	set: ["72273"],
 	name: "Xindi Torpedoes",
 	cost: 2,
@@ -2156,7 +2156,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "tech",
-	id: "hatchery_orassin",
+	id: "T139",
 	set: ["72273"],
 	name: "Hatchery",
 	cost: 2,
@@ -2192,7 +2192,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "tech",
-	id: "emergency_override_bortas",
+	id: "T138",
 	set: ["72280p"],
 	name: "Emergency Override",
 	cost: 2,
@@ -2210,7 +2210,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "holo_communicator_enterprise_b",
+	id: "T137",
 	set: ["72263"],
 	name: "Holo-Communicator",
 	cost: 5,
@@ -2219,7 +2219,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "full_reverse_enterprise_b",
+	id: "T136",
 	set: ["72263"],
 	name: "Full Reverse",
 	cost: 2,
@@ -2228,7 +2228,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "deflector_control_enterprise_b",
+	id: "T135",
 	set: ["72263"],
 	name: "Deflector Control",
 	cost: 5,
@@ -2237,7 +2237,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "resonance_burst_enterprise_b",
+	id: "T134",
 	set: ["72263"],
 	name: "Resonance Burst",
 	cost: 5,
@@ -2246,7 +2246,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "improved_phasers_enterprise_b",
+	id: "W151",
 	set: ["72263"],
 	name: "Improved Phasers",
 	cost: 3,
@@ -2302,7 +2302,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "tech",
-	id: "control_central_rateg",
+	id: "T133",
 	set: ["72262p"],
 	name: "Control Central",
 	cost: 4,
@@ -2311,7 +2311,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "weapon",
-	id: "main_batteries_rateg",
+	id: "W150",
 	set: ["72262p"],
 	name: "Main Batteries",
 	cost: 3,
@@ -2341,7 +2341,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "additional_phaser_arrays_venture",
+	id: "W149",
 	set: ["72253"],
 	name: "Additional Phaser Arrays",
 	cost: 5,
@@ -2350,7 +2350,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_venture",
+	id: "W148",
 	set: ["72253"],
 	name: "Photon Torpedoes",
 	cost: 5,
@@ -2361,7 +2361,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "maximum_warp_venture",
+	id: "T132",
 	set: ["72253"],
 	name: "Maximum Warp",
 	cost: 5,
@@ -2370,7 +2370,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "high_cpaacity_deflector_shield_grid_venture",
+	id: "T131",
 	set: ["72253"],
 	name: "High-Capacty Deflector Shield Grid",
 	cost: 5,
@@ -2397,7 +2397,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "high_yield_photon_torpedoes_cairo",
+	id: "W147",
 	set: ["72261p"],
 	name: "High Yield Photon Torpedoes",
 	cost: 6,
@@ -2408,7 +2408,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "deuterium_tank_cairo",
+	id: "T130",
 	set: ["72261p"],
 	name: "Deuterium Tank",
 	cost: 3,
@@ -2453,7 +2453,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "torpedo_bay_enterprise_a",
+	id: "W146",
 	set: ["72260gp"],
 	name: "Torpedo Bay",
 	cost: 2,
@@ -2462,7 +2462,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "isolation_door_enterprise_a",
+	id: "T129",
 	set: ["72260gp"],
 	name: "Isolation Door",
 	cost: 3,
@@ -2507,7 +2507,7 @@ module.exports = [{
 	factions: ["borg"]
 }, {
 	type: "tech",
-	id: "temporal_vortex_72255",
+	id: "T128",
 	set: ["72255"],
 	name: "Temporal Vortex",
 	cost: 5,
@@ -2597,7 +2597,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "weapon",
-	id: "plasma_torpedoes_722242",
+	id: "W145",
 	set: ["72242"],
 	name: "Plasma Torpedoes",
 	cost: 3,
@@ -2608,7 +2608,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "tech",
-	id: "impulse_drive_72242",
+	id: "T127",
 	set: ["72242"],
 	name: "Impulse Drive",
 	cost: 2,
@@ -2635,7 +2635,7 @@ module.exports = [{
 	factions: ["mirror-universe"]
 }, {
 	type: "tech",
-	id: "temporal_conduit_72224gp",
+	id: "T126",
 	set: ["72224gp"],
 	name: "Temporal Conduit",
 	cost: 5,
@@ -2653,7 +2653,7 @@ module.exports = [{
 	factions: ["mirror-universe"]
 }, {
 	type: "tech",
-	id: "temporal_cold_war_temporal_temporal_observatory_tech",
+	id: "T125",
 	set: ["72224gp"],
 	name: "Temporal Observatory",
 	cost: 6,
@@ -2662,7 +2662,7 @@ module.exports = [{
 	factions: ["mirror-universe"]
 }, {
 	type: "weapon",
-	id: "temporal_cold_war_temporal_temporal_observatory_weapon",
+	id: "W144",
 	set: ["72224gp"],
 	name: "Temporal Observatory",
 	cost: 6,
@@ -2698,7 +2698,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "weapon",
-	id: "the_classic_movies_all_power_to_phasers",
+	id: "W143",
 	set: ["72235p"],
 	name: "All Power To Phasers",
 	cost: 5,
@@ -2716,7 +2716,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "tech",
-	id: "emergency_power_72241",
+	id: "T124",
 	set: ["72241"],
 	name: "Emergency Power",
 	unique: false,
@@ -2729,7 +2729,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "security_sensors_72241",
+	id: "T123",
 	set: ["72241"],
 	name: "Security Sensors",
 	unique: false,
@@ -2751,7 +2751,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_72241",
+	id: "W142",
 	set: ["72241"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -2818,7 +2818,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_xindus",
+	id: "W141",
 	set: ["72224p"],
 	name: "Photon Torpedoes",
 	cost: 3,
@@ -2829,7 +2829,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "tech",
-	id: "sensor_encoders_xindus",
+	id: "T122",
 	set: ["72224p"],
 	name: "Sensor Encoders",
 	cost: 3,
@@ -2865,7 +2865,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "weapon",
-	id: "distuptor_banks_jazkel",
+	id: "W140",
 	set: ["72233"],
 	name: "Disruptor Banks",
 	cost: 4,
@@ -2876,7 +2876,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "tech",
-	id: "prototype_cloaking_device_jazkel",
+	id: "T121",
 	set: ["72233"],
 	name: "Prototype Cloaking Device",
 	cost: 4,
@@ -2912,7 +2912,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "weapon",
-	id: "stand_by_torpedoes_amar",
+	id: "W139",
 	set: ["72232"],
 	name: "Stand By Torpedoes",
 	cost: 3,
@@ -2930,7 +2930,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "heavy_gravition_beam_montgolfier",
+	id: "W138",
 	set: ["72231"],
 	name: "Heavy Gravition Beam",
 	cost: 4,
@@ -2941,7 +2941,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_montgolfier",
+	id: "W137",
 	set: ["72231", "72011"],
 	name: "Photon Torpedoes",
 	cost: 5,
@@ -2952,7 +2952,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "subspace_ransmitter_montgolfier",
+	id: "T119",
 	set: ["72231"],
 	name: "Subspace Transmitter",
 	cost: 5,
@@ -2961,7 +2961,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "thruster_array_montgolfier",
+	id: "T118",
 	set: ["72231"],
 	name: "Thruster Array",
 	cost: 3,
@@ -2988,7 +2988,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "weapon",
-	id: "destructive_blast_weapon_zero",
+	id: "W136",
 	set: ["71225"],
 	name: "Destructive Blast",
 	cost: 6,
@@ -2999,7 +2999,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "weapon",
-	id: "rotating_emitters_weapon_zero",
+	id: "W135",
 	set: ["71225"],
 	name: "Rotating Emitters",
 	cost: 4,
@@ -3010,7 +3010,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "tech",
-	id: "subspace_vortex_weapon_zero",
+	id: "T117",
 	set: ["71225"],
 	name: "Subspace Vortex",
 	cost: 6,
@@ -3020,7 +3020,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "tech",
-	id: "self_destruct_weapon_zero",
+	id: "T116",
 	set: ["71225"],
 	name: "Self-Destruct",
 	cost: 5,
@@ -3047,7 +3047,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "weapon",
-	id: "charging_Weapons_tmet",
+	id: "W134",
 	set: ["72221p"],
 	name: "CHARGING WEAPONS",
 	cost: 1,
@@ -3056,7 +3056,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "tech",
-	id: "self_repair_technology_tmet",
+	id: "T115",
 	set: ["72221p"],
 	name: "SELF REPAIR TECHNOLOGY",
 	cost: 4,
@@ -3148,7 +3148,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "weapon",
-	id: "matter_antimatter_warhead_71212",
+	id: "W133",
 	set: ["71212"],
 	name: "Matter-Antimatter Warhead",
 	cost: 7,
@@ -3159,7 +3159,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "weapon",
-	id: "quantum_torpedoes_71212",
+	id: "W132",
 	set: ["71212"],
 	name: "Quantum Torpedoes",
 	cost: 6,
@@ -3170,7 +3170,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "weapon",
-	id: "thoron_shock_emitter_71212",
+	id: "W131",
 	set: ["71212"],
 	name: "Thoron Shock Emitter",
 	cost: 5,
@@ -3181,7 +3181,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "weapon",
-	id: "plasma_wave_71212",
+	id: "W130",
 	set: ["71212"],
 	name: "Plasma Wave",
 	cost: 5,
@@ -3192,7 +3192,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "tech",
-	id: "kinetic_detonator_71212",
+	id: "T113",
 	set: ["71212"],
 	name: "Kinetic Detonator",
 	cost: 4,
@@ -3201,7 +3201,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "tech",
-	id: "counter_measures_71212",
+	id: "T112",
 	set: ["71212"],
 	name: "Counter Measures",
 	cost: 5,
@@ -3210,7 +3210,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "tech",
-	id: "evasive_attack_route_71212",
+	id: "T111",
 	set: ["71212"],
 	name: "Evasive Attack Route",
 	cost: 5,
@@ -3237,7 +3237,7 @@ module.exports = [{
 	factions: ["kazon"]
 }, {
 	type: "weapon",
-	id: "photonic_charges_Halik",
+	id: "W129",
 	set: ["71192"],
 	name: "Photonic Charges",
 	cost: 3,
@@ -3248,7 +3248,7 @@ module.exports = [{
 	factions: ["kazon"]
 }, {
 	type: "weapon",
-	id: "aft_torpedo_launcher_Halik",
+	id: "W128",
 	set: ["71192"],
 	name: "Aft Torpedo Launcher",
 	cost: 3,
@@ -3259,7 +3259,7 @@ module.exports = [{
 	factions: ["kazon"]
 }, {
 	type: "weapon",
-	id: "variable_yield_Charges_Halik",
+	id: "W127",
 	set: ["71192"],
 	name: "Variale Yield Charges",
 	cost: 2,
@@ -3304,7 +3304,7 @@ module.exports = [{
 	factions: ["bajoran"]
 }, {
 	type: "tech",
-	id: "tachyon_eddies_denorious",
+	id: "T110",
 	set: ["71211"],
 	name: "TACHYON EDDIES",
 	cost: 5,
@@ -3313,7 +3313,7 @@ module.exports = [{
 	factions: ["bajoran"]
 }, {
 	type: "tech",
-	id: "mainsails_denorious",
+	id: "T109",
 	set: ["71211"],
 	name: "MAINSAILS",
 	cost: 4,
@@ -3322,7 +3322,7 @@ module.exports = [{
 	factions: ["bajoran"]
 }, {
 	type: "tech",
-	id: "solar_sail_powered_denorious",
+	id: "T108",
 	set: ["71211"],
 	name: "SOLAR SAIL POWERED",
 	cost: 3,
@@ -3430,7 +3430,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_valiant",
+	id: "W126",
 	set: ["71221"],
 	name: "Photon Torpedoes",
 	cost: 5,
@@ -3459,7 +3459,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "weapon",
-	id: "advanced_weaponry_kumari",
+	id: "W125",
 	set: ["71223"],
 	name: "ADVANCED WEAPONRY",
 	cost: 5,
@@ -3470,7 +3470,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "weapon",
-	id: "particle_cannon_array_kumari",
+	id: "W124",
 	set: ["71223"],
 	name: "PARTICLE CANNON ARRAY",
 	cost: 3,
@@ -3481,7 +3481,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "tech",
-	id: "tractor_beam_kumari",
+	id: "T107",
 	set: ["71223"],
 	name: "TRACTOR BEAM",
 	cost: 4,
@@ -3490,7 +3490,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "tech",
-	id: "long_range_sensors_kumari",
+	id: "T106",
 	set: ["71223"],
 	name: "LONG RANGE SENSORS",
 	cost: 3,
@@ -3535,7 +3535,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "navigational_station_71201",
+	id: "T105",
 	set: ["71201"],
 	name: "Navigational Station",
 	cost: 4,
@@ -3544,7 +3544,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "warp_jump_71201",
+	id: "T104",
 	set: ["71201"],
 	name: "Warp Jump",
 	cost: 5,
@@ -3554,7 +3554,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_71201",
+	id: "W123",
 	set: ["71201"],
 	name: "Photon Torpedoes",
 	cost: 5,
@@ -3592,7 +3592,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "tech",
-	id: "distress_signal_pi",
+	id: "T103",
 	set: ["71222"],
 	name: "Distress Signal",
 	cost: 2,
@@ -3601,7 +3601,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "tech",
-	id: "graviton_field_generator_pi",
+	id: "T102",
 	set: ["71222"],
 	name: "Graviton Field Generator",
 	cost: 2,
@@ -3636,7 +3636,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "self_destruct_sequence_pi",
+	id: "T101",
 	set: ["71222"],
 	name: "Self Destruct Sequence",
 	cost: 3,
@@ -3684,7 +3684,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "3006",
+	id: "W122",
 	set: ["71120", "71268", "72282", "71276", "71280", "72261"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -3697,7 +3697,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "weapon",
-	id: "3007",
+	id: "W121",
 	set: ["71120"],
 	name: "Antimatter Mines",
 	unique: false,
@@ -3736,7 +3736,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "3010",
+	id: "W120",
 	set: ["71120"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -3749,7 +3749,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "tech",
-	id: "3011",
+	id: "T100",
 	set: ["71120", "71126", "72251"],
 	name: "Tractor Beam",
 	unique: false,
@@ -3761,7 +3761,7 @@ module.exports = [{
 	attack: null
 }, {
 	type: "tech",
-	id: "3012",
+	id: "T250",
 	set: ["71120", "71273"],
 	name: "Advanced Weapon System",
 	unique: false,
@@ -3812,7 +3812,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "3016",
+	id: "W119",
 	set: ["71120", "71123", "71511", "71794"],
 	name: "Plasma Torpedoes",
 	unique: false,
@@ -3825,7 +3825,7 @@ module.exports = [{
 	range: "1 - 2"
 }, {
 	type: "tech",
-	id: "3017",
+	id: "T249",
 	set: ["71120"],
 	name: "Artificial Quantum Singularity",
 	unique: false,
@@ -3916,7 +3916,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "3024",
+	id: "W118",
 	set: ["71121", "71122", "72240", "71272", "72292"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -4059,7 +4059,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "3036",
+	id: "W117",
 	set: ["71123"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -4098,7 +4098,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "IPG_75001",
+	id: "T248",
 	set: ["71124", "75001"],
 	name: "Interphase Generator",
 	OnePerShip: true,
@@ -4107,7 +4107,7 @@ module.exports = [{
 	cost: 3
 }, {
 	type: "tech",
-	id: "3041",
+	id: "T247",
 	set: ["71124"],
 	name: "Muon Feedback Wave",
 	unique: false,
@@ -4161,7 +4161,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "3045",
+	id: "W116",
 	set: ["71125", "71448", "72272"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -4174,7 +4174,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "weapon",
-	id: "3046",
+	id: "W115",
 	set: ["71125", "72272"],
 	name: "Magnetic Pulse",
 	unique: false,
@@ -4187,7 +4187,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "tech",
-	id: "3047",
+	id: "T246",
 	set: ["71125", "72272"],
 	name: "Projected Stasis Field",
 	unique: false,
@@ -4239,7 +4239,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "3051",
+	id: "W114",
 	set: ["71126", "72251"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -4265,7 +4265,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "3054",
+	id: "W113",
 	set: ["71127"],
 	name: "Forward Weapons Grid",
 	unique: false,
@@ -4278,7 +4278,7 @@ module.exports = [{
 	range: "1 - 3"
 }, {
 	type: "tech",
-	id: "3055",
+	id: "T245",
 	set: ["71127"],
 	name: "Antiproton Scan",
 	unique: false,
@@ -4291,7 +4291,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "3056",
+	id: "T244",
 	set: ["71127"],
 	name: "EM Pulse",
 	unique: false,
@@ -4317,7 +4317,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "3058",
+	id: "W112",
 	set: ["71128", "71271"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -4330,7 +4330,7 @@ module.exports = [{
 	range: "1 - 3"
 }, {
 	type: "weapon",
-	id: "3059",
+	id: "W111",
 	set: ["71128", "OP5Prize"],
 	name: "Energy Dissipator",
 	unique: false,
@@ -4356,7 +4356,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "3061",
+	id: "T243",
 	set: ["OP1Prize"],
 	name: "EM Pulse",
 	unique: false,
@@ -4382,7 +4382,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "3063",
+	id: "W110",
 	set: ["OP1Prize"],
 	name: "Missile Launchers",
 	unique: false,
@@ -4408,7 +4408,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "3087",
+	id: "W109",
 	set: ["OP2Prize"],
 	name: "Barrage of Fire",
 	unique: false,
@@ -4421,7 +4421,7 @@ module.exports = [{
 	range: "1 - 2"
 }, {
 	type: "tech",
-	id: "3065",
+	id: "T242",
 	set: ["OP2Prize"],
 	name: "Secondary Shield Emitters",
 	unique: false,
@@ -4473,7 +4473,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "3103",
+	id: "W108",
 	set: ["OP3Prize"],
 	name: "Additional Weapons Array",
 	unique: false,
@@ -4486,7 +4486,7 @@ module.exports = [{
 	range: "1 - 2"
 }, {
 	type: "tech",
-	id: "3104",
+	id: "T241",
 	set: ["OP3Prize"],
 	name: "Nullifier Core",
 	unique: false,
@@ -4499,7 +4499,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "3067",
+	id: "W107",
 	set: ["71268", "72282", "71531", "72271"],
 	name: "Quantum Torpedoes",
 	unique: false,
@@ -4512,7 +4512,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "tech",
-	id: "3068",
+	id: "T240",
 	set: ["71268", "72282"],
 	name: "Cloaking Device",
 	unique: false,
@@ -4603,7 +4603,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "3085",
+	id: "W106",
 	set: ["71269"],
 	name: "Concussive Charges",
 	unique: false,
@@ -4616,7 +4616,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "weapon",
-	id: "3073",
+	id: "W105",
 	set: ["71269", "71273", "71532", "71512", "71804"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -4655,7 +4655,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "3076",
+	id: "T239",
 	set: ["71270"],
 	name: "Cloaked Mines",
 	unique: false,
@@ -4668,7 +4668,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "3077",
+	id: "T238",
 	set: ["71270"],
 	name: "Polarized Hull Plating",
 	unique: false,
@@ -4681,7 +4681,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "3078",
+	id: "W104",
 	set: ["71270"],
 	name: "Nuclear Missiles",
 	unique: false,
@@ -4694,7 +4694,7 @@ module.exports = [{
 	range: "1 - 2"
 }, {
 	type: "tech",
-	id: "3079",
+	id: "T237",
 	set: ["71271"],
 	name: "Long Range Tachyon Scan",
 	unique: false,
@@ -4707,7 +4707,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "3080",
+	id: "T236",
 	set: ["71271"],
 	name: "Suicide Attack",
 	unique: false,
@@ -4720,7 +4720,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "3081",
+	id: "W103",
 	set: ["71271"],
 	name: "Phased Polaron Beam",
 	unique: false,
@@ -4811,7 +4811,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "3094",
+	id: "T235",
 	set: ["71273"],
 	name: "EM Pulse",
 	unique: false,
@@ -4837,7 +4837,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "3096",
+	id: "W102",
 	set: ["71275", "72262"],
 	name: "Enhanced Weaponry",
 	unique: false,
@@ -4850,7 +4850,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "weapon",
-	id: "3097",
+	id: "W101",
 	set: ["71275", "72262"],
 	name: "Dorsal Weapons Array",
 	unique: false,
@@ -4863,7 +4863,7 @@ module.exports = [{
 	range: "1 - 3"
 }, {
 	type: "tech",
-	id: "3098",
+	id: "T234",
 	set: ["71275", "72262"],
 	name: "Tetryon Emissions",
 	unique: false,
@@ -4876,7 +4876,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "3099",
+	id: "T233",
 	set: ["71275", "72262"],
 	name: "Cloaking Device",
 	unique: false,
@@ -4954,7 +4954,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "3112",
+	id: "T232",
 	set: ["71272", "72292"],
 	name: "Positron Beam",
 	unique: false,
@@ -4967,7 +4967,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "3113",
+	id: "T231",
 	set: ["71272", "72292"],
 	name: "Transwarp Drive",
 	unique: false,
@@ -5006,7 +5006,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "3124",
+	id: "T230",
 	set: ["71274"],
 	name: "Ultritium Explosives",
 	unique: false,
@@ -5045,7 +5045,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "3136",
+	id: "W100",
 	set: ["OP4Prize"],
 	name: "Secondary Torpedo Launcher",
 	unique: false,
@@ -5058,7 +5058,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "tech",
-	id: "3137",
+	id: "T229",
 	set: ["OP4Prize"],
 	name: "High Energy Sensor Sweep",
 	unique: false,
@@ -5097,7 +5097,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "cold_storage_unit_op5prize",
+	id: "T228",
 	set: ["OP5Prize"],
 	name: "Cold Storage Unit",
 	unique: false,
@@ -5149,7 +5149,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "emergency_medical_hologram_tech_upgrade_lines71276",
+	id: "T227",
 	set: ["71276"],
 	name: "Emergency Medical Hologram",
 	unique: true,
@@ -5162,7 +5162,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "navigational_deflector_71276",
+	id: "T226",
 	set: ["71276"],
 	name: "Navigational Deflector",
 	unique: false,
@@ -5201,7 +5201,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "shockwave_71448",
+	id: "T225",
 	set: ["71448"],
 	name: "Shockwave",
 	unique: false,
@@ -5214,7 +5214,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "tactical_sensors_71448",
+	id: "T224",
 	set: ["71448"],
 	name: "Tactical Sensors",
 	unique: false,
@@ -5279,7 +5279,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "plasma_torpedoes_71278",
+	id: "W099",
 	set: ["71278"],
 	name: "Plasma Torpedoes",
 	unique: false,
@@ -5292,7 +5292,7 @@ module.exports = [{
 	range: "1 - 2"
 }, {
 	type: "weapon",
-	id: "nuclear_warhead_71278",
+	id: "W098",
 	set: ["71278"],
 	name: "Nuclear Warhead",
 	unique: false,
@@ -5344,7 +5344,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_71279",
+	id: "W097",
 	set: ["71279"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -5370,7 +5370,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "shroud_71279",
+	id: "T223",
 	set: ["71279"],
 	name: "Shroud",
 	unique: false,
@@ -5383,7 +5383,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "phased_polaron_beam_71279",
+	id: "W096",
 	set: ["71279", "71524"],
 	name: "Phased Polaron Beam",
 	unique: false,
@@ -5448,7 +5448,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "ablative_generator_71280",
+	id: "T222",
 	set: ["71280", "72261"],
 	name: "Ablative Generator",
 	unique: false,
@@ -5474,7 +5474,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "bio_electric_interference_71281",
+	id: "T221",
 	set: ["71281", "72291"],
 	name: "Bio-Electric Interference",
 	unique: false,
@@ -5487,7 +5487,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "bio_neural_circuitry_71280",
+	id: "T220",
 	set: ["71280", "72261"],
 	name: "Bio-Neural Circuitry",
 	unique: false,
@@ -5539,7 +5539,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "extraordinary_immune_response_71281",
+	id: "T219",
 	set: ["71281", "72291"],
 	name: "Extraordinary Immune Response",
 	unique: false,
@@ -5552,7 +5552,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "feedback_pulse_71283",
+	id: "T218",
 	set: ["71283", "72283"],
 	name: "Feedback Pulse",
 	unique: true,
@@ -5591,7 +5591,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "masking_circuitry_71282",
+	id: "T217",
 	set: ["71282"],
 	name: "Masking Circuitry",
 	unique: false,
@@ -5604,7 +5604,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "quantum_singularity_71281",
+	id: "T216",
 	set: ["71281", "72291"],
 	name: "Quantum Singularity",
 	unique: false,
@@ -5683,7 +5683,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "the_doctor_tech_71280",
+	id: "T215",
 	set: ["71280", "72261"],
 	name: "The Doctor",
 	unique: true,
@@ -5748,7 +5748,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "biological_attack_71281",
+	id: "W095",
 	set: ["71281", "72291"],
 	name: "Biological Attack",
 	unique: false,
@@ -5761,7 +5761,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "cutting_beam_71283",
+	id: "W094",
 	set: ["71283", "71444", "71513a", "72283"],
 	name: "Cutting Beam",
 	unique: false,
@@ -5774,7 +5774,7 @@ module.exports = [{
 	range: "1"
 }, {
 	type: "weapon",
-	id: "energy_blast_71281",
+	id: "W093",
 	set: ["71281", "72291"],
 	name: "Energy Blast",
 	unique: false,
@@ -5787,7 +5787,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "weapon",
-	id: "energy_focusing_ship_71281",
+	id: "W092",
 	set: ["71281", "72291"],
 	name: "Energy Focusing Ship",
 	unique: true,
@@ -5800,7 +5800,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "weapon",
-	id: "photonic_charges_71282",
+	id: "W091",
 	set: ["71282"],
 	name: "Photonic Charges",
 	unique: false,
@@ -5813,7 +5813,7 @@ module.exports = [{
 	range: "1 - 2"
 }, {
 	type: "weapon",
-	id: "transphasic_torpedoes_71280",
+	id: "W090",
 	set: ["71280", "72261"],
 	name: "Transphasic Torpedoes",
 	unique: false,
@@ -5839,7 +5839,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "energy_web_opwebprize",
+	id: "W089",
 	set: ["OPWebPrize", "71795"],
 	name: "Energy Web",
 	unique: false,
@@ -5852,7 +5852,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "plasma_torpedoes_opwebprize",
+	id: "W088",
 	set: ["OPWebPrize", "71795"],
 	name: "Plasma Torpedoes",
 	unique: false,
@@ -5904,7 +5904,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "auxiliary_control_room_71446",
+	id: "T214",
 	set: ["71446"],
 	name: "Auxiliary Control Room",
 	unique: false,
@@ -5917,7 +5917,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "sensor_grid_71446",
+	id: "T213",
 	set: ["71446"],
 	name: "Sensor Grid",
 	unique: false,
@@ -5969,7 +5969,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "warp_drive_refit_71445",
+	id: "T212",
 	set: ["71445"],
 	name: "Warp Drive Refit",
 	unique: false,
@@ -5982,7 +5982,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "maneuverability_71445",
+	id: "T211",
 	set: ["71445"],
 	name: "Maneuverability",
 	unique: false,
@@ -6047,7 +6047,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "self_destruct_sequence_71444",
+	id: "T210",
 	set: ["71444"],
 	name: "Self Destruct Sequence",
 	unique: false,
@@ -6060,7 +6060,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "photonic_weapon_71446",
+	id: "W087",
 	set: ["71446", "71527"],
 	name: "Photonic Weapon",
 	unique: false,
@@ -6073,7 +6073,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "weapon",
-	id: "aft_particle_beam_71446",
+	id: "W086",
 	set: ["71446"],
 	name: "Aft Particle Beam",
 	unique: false,
@@ -6086,7 +6086,7 @@ module.exports = [{
 	range: "1 - 3"
 }, {
 	type: "weapon",
-	id: "phaser_strike_71445",
+	id: "W085",
 	set: ["71445"],
 	name: "Phaser Strike",
 	unique: false,
@@ -6099,7 +6099,7 @@ module.exports = [{
 	range: "1 - 3"
 }, {
 	type: "weapon",
-	id: "full_assault_71444",
+	id: "W084",
 	set: ["71444"],
 	name: "Full Assault",
 	unique: false,
@@ -6112,7 +6112,7 @@ module.exports = [{
 	range: "1 - 3"
 }, {
 	type: "weapon",
-	id: "borg_missile_71444",
+	id: "W083",
 	set: ["71444", "71513a"],
 	name: "Borg Missile",
 	unique: false,
@@ -6125,7 +6125,7 @@ module.exports = [{
 	range: "1 - 2"
 }, {
 	type: "tech",
-	id: "jammed_communications_oparenaprize",
+	id: "T209",
 	set: ["OPArenaPrize", "71797"],
 	name: "Jammed Communications",
 	unique: false,
@@ -6151,7 +6151,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "impulse_overload_oparenaprize",
+	id: "T208",
 	set: ["OPArenaPrize"],
 	name: "Impulse Overload",
 	unique: false,
@@ -6164,7 +6164,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "impulse_overload_gornarus",
+	id: "T207",
 	set: ["71797"],
 	name: "Impulse Overload",
 	unique: false,
@@ -6229,7 +6229,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "tritium_intermix_i_k_s_b_moth",
+	id: "T206",
 	set: ["i_k_s_b_moth"],
 	name: "Tritium Intermix",
 	unique: false,
@@ -6255,7 +6255,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "advanced_cloaking_i_r_w_vorta_vor",
+	id: "T205",
 	set: ["i_r_w_vorta_vor"],
 	name: "Advanced Cloaking",
 	unique: false,
@@ -6346,7 +6346,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "ion_thrusters_3rd_wing_attack_ship",
+	id: "T204",
 	set: ["3rd_wing_attack_ship"],
 	name: "Ion Thrusters",
 	unique: false,
@@ -6394,7 +6394,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_i_k_s_b_moth",
+	id: "W082",
 	set: ["i_k_s_b_moth"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -6407,7 +6407,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "weapon",
-	id: "plasma_torpedoes_i_r_w_vorta_vor",
+	id: "W081",
 	set: ["i_r_w_vorta_vor"],
 	name: "Plasma Torpedoes",
 	unique: false,
@@ -6420,7 +6420,7 @@ module.exports = [{
 	range: "1 - 3"
 }, {
 	type: "weapon",
-	id: "focused_particle_beam_gavroche",
+	id: "W080",
 	set: ["gavroche"],
 	name: "Focused Particle Beam",
 	unique: false,
@@ -6433,7 +6433,7 @@ module.exports = [{
 	range: "1 - 3"
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_3rd_wing_attack_ship",
+	id: "W079",
 	set: ["3rd_wing_attack_ship"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -6446,7 +6446,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_u_s_s_yaeger",
+	id: "W078",
 	set: ["u_s_s_yaeger", "71523"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -6654,7 +6654,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "subspace_distortion_71522",
+	id: "T203",
 	set: ["71522"],
 	name: "Subspace Distortion",
 	unique: false,
@@ -6733,7 +6733,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "sensor_array_71524",
+	id: "T202",
 	set: ["71524"],
 	name: "Sensor Array",
 	unique: false,
@@ -6746,7 +6746,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_71522",
+	id: "W077",
 	set: ["71522"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -6759,7 +6759,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "weapon",
-	id: "forward_weapons_array_71522",
+	id: "W076",
 	set: ["71522"],
 	name: "Forward Weapons Array",
 	unique: false,
@@ -6772,7 +6772,7 @@ module.exports = [{
 	range: "1 - 3"
 }, {
 	type: "weapon",
-	id: "volley_of_torpedoes_71524",
+	id: "W075",
 	set: ["71524"],
 	name: "Volley of Torpedoes",
 	unique: false,
@@ -6785,7 +6785,7 @@ module.exports = [{
 	range: "1 - 3"
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_71524",
+	id: "W074",
 	set: ["71524"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -6798,7 +6798,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "tech",
-	id: "combat_vessel_variant_71508",
+	id: "T201",
 	set: ["71508"],
 	name: "Combat Vessel Variant",
 	unique: true,
@@ -6811,7 +6811,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "tractor_beam_71508",
+	id: "T200",
 	set: ["71508"],
 	name: "Tractor Beam",
 	unique: false,
@@ -6850,7 +6850,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "mutli_adaptive_shields_71509",
+	id: "T099",
 	set: ["71509"],
 	name: "Mutli-adaptive Shields",
 	unique: true,
@@ -6863,7 +6863,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "reinforced_structural_integrity_71509",
+	id: "T098",
 	set: ["71509"],
 	name: "Reinforced Structural Integrity",
 	unique: true,
@@ -6941,7 +6941,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "vic_fontaine_tech_71786",
+	id: "T097",
 	set: ["71786", "71810"],
 	name: "Vic Fontaine",
 	unique: true,
@@ -7006,7 +7006,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "enhanced_hull_plating_71526",
+	id: "T096",
 	set: ["71526"],
 	name: "Enhanced Hull Plating",
 	unique: false,
@@ -7123,7 +7123,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "combat_vessel_variant_71527",
+	id: "T095",
 	set: ["71527"],
 	name: "Combat Vessel Variant",
 	unique: false,
@@ -7136,7 +7136,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "tractor_beam_71527",
+	id: "T094",
 	set: ["71527"],
 	name: "Tractor Beam",
 	unique: false,
@@ -7201,7 +7201,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "subspace_beacon_71525",
+	id: "T093",
 	set: ["71525"],
 	name: "Subspace Beacon",
 	unique: false,
@@ -7214,7 +7214,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "long_range_scan_71525",
+	id: "T092",
 	set: ["71525"],
 	name: "Long Range Scan",
 	unique: false,
@@ -7240,7 +7240,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "aft_phase_cannon_71526",
+	id: "W073",
 	set: ["71526"],
 	name: "Aft Phase Cannon",
 	unique: false,
@@ -7253,7 +7253,7 @@ module.exports = [{
 	range: "1 - 3"
 }, {
 	type: "weapon",
-	id: "photonic_torpedoes_71526",
+	id: "W072",
 	set: ["71526"],
 	name: "Photonic Torpedoes",
 	unique: false,
@@ -7266,7 +7266,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "weapon",
-	id: "magnetometric_guided_charge_71525",
+	id: "W071",
 	set: ["71525", "71513b"],
 	name: "Magnetometric Guided Charge",
 	unique: false,
@@ -7279,7 +7279,7 @@ module.exports = [{
 	range: "1 - 3"
 }, {
 	type: "tech",
-	id: "secondary_impulse_reactor_71510",
+	id: "T091",
 	set: ["71510"],
 	name: "Secondary Impulse Reactor",
 	unique: false,
@@ -7357,7 +7357,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "fire_all_weapons_71510b",
+	id: "W070",
 	set: ["71510b"],
 	name: "Fire All Weapons",
 	unique: false,
@@ -7370,7 +7370,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "weapon",
-	id: "quantum_torpedoes_71510b",
+	id: "W069",
 	set: ["71510b", "71529"],
 	name: "Quantum Torpedoes",
 	unique: false,
@@ -7383,7 +7383,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "weapon",
-	id: "biogenic_weapon_71510b",
+	id: "W068",
 	set: ["71510b"],
 	name: "Biogenic Charge",
 	unique: false,
@@ -7409,7 +7409,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "thought_maker_71646a",
+	id: "T090",
 	set: ["71646a"],
 	name: "Thought Maker",
 	unique: true,
@@ -7461,7 +7461,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "cloaking_device_71646b",
+	id: "T089",
 	set: ["71646b"],
 	name: "Cloaking Device",
 	unique: false,
@@ -7487,7 +7487,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "tractor_beam_71646c",
+	id: "T088",
 	set: ["71646c", "71793"],
 	name: "Tractor Beam",
 	unique: false,
@@ -7500,7 +7500,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "access_terminal_71646d",
+	id: "T087",
 	set: ["71646d"],
 	name: "Access Terminal",
 	unique: false,
@@ -7565,7 +7565,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "power_grid_71646e",
+	id: "T086",
 	set: ["71646e"],
 	name: "Power Grid",
 	unique: false,
@@ -7578,7 +7578,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_71646a",
+	id: "W067",
 	set: ["71646a"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -7591,7 +7591,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "weapon",
-	id: "forward_weapons_grid_71646b",
+	id: "W066",
 	set: ["71646b"],
 	name: "Forward Weapons Grid",
 	unique: false,
@@ -7604,7 +7604,7 @@ module.exports = [{
 	range: "1 - 2"
 }, {
 	type: "weapon",
-	id: "dorsal_weapons_array_71646b",
+	id: "W065",
 	set: ["71646b"],
 	name: "Dorsal Weapons Array",
 	unique: false,
@@ -7617,7 +7617,7 @@ module.exports = [{
 	range: "1 - 2"
 }, {
 	type: "weapon",
-	id: "photonic_charges_71646c",
+	id: "W064",
 	set: ["71646c", "71793", "blind_nistrim_culluh"],
 	name: "Photonic Charges",
 	unique: false,
@@ -7630,7 +7630,7 @@ module.exports = [{
 	range: "1"
 }, {
 	type: "weapon",
-	id: "particle_beam_weapon_71646c",
+	id: "W063",
 	set: ["71646c"],
 	name: "Particle Beam Weapon",
 	unique: false,
@@ -7643,7 +7643,7 @@ module.exports = [{
 	range: "1 - 2"
 }, {
 	type: "weapon",
-	id: "proton_beam_71646d",
+	id: "W062",
 	set: ["71646d"],
 	name: "Proton beam",
 	unique: false,
@@ -7656,7 +7656,7 @@ module.exports = [{
 	range: "1"
 }, {
 	type: "weapon",
-	id: "photonic_weapon_71646e",
+	id: "W061",
 	set: ["71646e"],
 	name: "Photonic Weapon",
 	unique: false,
@@ -7708,7 +7708,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "advanced_shields_71531",
+	id: "T085",
 	set: ["71531", "72271"],
 	name: "Advanced Shields",
 	unique: false,
@@ -7877,7 +7877,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "power_node_71530",
+	id: "T084",
 	set: ["71530"],
 	name: "Power Node",
 	unique: false,
@@ -7968,7 +7968,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "ramming_attack_71528",
+	id: "W060",
 	set: ["71528"],
 	name: "Ramming Attack",
 	unique: false,
@@ -7981,7 +7981,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_71528",
+	id: "W059",
 	set: ["71528", "71808"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -7994,7 +7994,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_71531",
+	id: "W058",
 	set: ["71531", "72271"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -8007,7 +8007,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "weapon",
-	id: "dorsal_phaser_array_71531",
+	id: "W057",
 	set: ["71531", "72271"],
 	name: "Dorsal Phaser Array",
 	unique: false,
@@ -8020,7 +8020,7 @@ module.exports = [{
 	range: "1 - 2"
 }, {
 	type: "weapon",
-	id: "multi_kinetic_neutronic_mines_71530",
+	id: "W056",
 	set: ["71530"],
 	name: "Multi Kinetic Neutronic Mines",
 	unique: true,
@@ -8046,7 +8046,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "data_node_71512",
+	id: "T083",
 	set: ["71512"],
 	name: "Data Node",
 	unique: false,
@@ -8124,7 +8124,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "multi_targeting_phaser_banks_71529",
+	id: "T082",
 	set: ["71529"],
 	name: "Multi-Targeting Phaser Banks",
 	unique: false,
@@ -8150,7 +8150,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "prototype_cloaking_device_71532",
+	id: "T081",
 	set: ["71532"],
 	name: "Prototype Cloaking Device",
 	unique: false,
@@ -8345,7 +8345,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "secondary_shields_71533",
+	id: "T080",
 	set: ["71533", "72252"],
 	name: "Secondary Shields",
 	unique: false,
@@ -8358,7 +8358,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "improved_cloaking_device_71533",
+	id: "T079",
 	set: ["71533", "72252"],
 	name: "Improved Cloaking Device",
 	unique: false,
@@ -8371,7 +8371,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "aft_phaser_emitter_71529",
+	id: "W055",
 	set: ["71529"],
 	name: "Aft Phaser Emitter",
 	unique: false,
@@ -8384,7 +8384,7 @@ module.exports = [{
 	range: "1 - 3"
 }, {
 	type: "weapon",
-	id: "thalaron_weapon_71533",
+	id: "W054",
 	set: ["71533", "72252"],
 	name: "Thalaron Weapon",
 	unique: true,
@@ -8397,7 +8397,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_71533",
+	id: "W053",
 	set: ["71533", "72252"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -8462,7 +8462,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "hypothermic_charge_71534",
+	id: "W052",
 	set: ["71534"],
 	name: "Hypothermic Charge",
 	unique: false,
@@ -8475,7 +8475,7 @@ module.exports = [{
 	range: "1 - 2"
 }, {
 	type: "weapon",
-	id: "grappler_71534",
+	id: "W051",
 	set: ["71534"],
 	name: "Grappler",
 	unique: false,
@@ -8735,7 +8735,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "cloaking_device_71535",
+	id: "T078",
 	set: ["71535"],
 	name: "Cloaking Device",
 	unique: false,
@@ -8748,7 +8748,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "tractor_beam_71535",
+	id: "T077",
 	set: ["71535"],
 	name: "Tractor Beam",
 	unique: false,
@@ -8761,7 +8761,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_71535",
+	id: "W050",
 	set: ["71535"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -8774,7 +8774,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "tech",
-	id: "monotanium_armor_plating_71808",
+	id: "T076",
 	set: ["71808"],
 	name: "Monotanium Armor Plating",
 	unique: false,
@@ -8787,7 +8787,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "sensor_network_71808",
+	id: "T075",
 	set: ["71808"],
 	name: "Sensor Network",
 	unique: false,
@@ -8839,7 +8839,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "subnucleonic_beam_71808",
+	id: "W049",
 	set: ["71808"],
 	name: "Subnucleonic Beam",
 	unique: false,
@@ -8956,7 +8956,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "maneuvering_thrusters_71536",
+	id: "T074",
 	set: ["71536"],
 	name: "Maneuvering Thrusters",
 	unique: false,
@@ -8969,7 +8969,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "multi_spectral_emitters_71536",
+	id: "T073",
 	set: ["71536"],
 	name: "Multi-Spectral Emitters",
 	unique: false,
@@ -8995,7 +8995,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "backup_sequencer_71536",
+	id: "T072",
 	set: ["71536"],
 	name: "Backup Sequencer",
 	unique: false,
@@ -9008,7 +9008,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "reinforced_hull_plating_71536",
+	id: "T071",
 	set: ["71536"],
 	name: "Reinforced Hull Plating",
 	unique: false,
@@ -9021,7 +9021,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "triphasic_emitter_71536",
+	id: "W048",
 	set: ["71536"],
 	name: "Triphasic Emitter",
 	unique: false,
@@ -9034,7 +9034,7 @@ module.exports = [{
 	range: "0"
 }, {
 	type: "tech",
-	id: "propulsion_matrix_71536",
+	id: "T070",
 	set: ["71536"],
 	name: "Propulsion Matrix",
 	unique: false,
@@ -9073,7 +9073,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "tunneling_neutrino_beam_71996",
+	id: "T069",
 	set: ["71996"],
 	name: "Tunneling Neutrino Beam",
 	unique: false,
@@ -9086,7 +9086,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "phaser_array_retrofit_71996",
+	id: "W047",
 	set: ["71996"],
 	name: "Phaser Array Retrofit",
 	unique: false,
@@ -9160,7 +9160,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "particle_beam_weapon_71793",
+	id: "W046",
 	set: ["71793"],
 	name: "Particle Beam Weapon",
 	unique: false,
@@ -9225,7 +9225,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "tricobalt_warhead_71795",
+	id: "W045",
 	set: ["71795"],
 	name: "Tricobalt Warhead",
 	unique: false,
@@ -9238,7 +9238,7 @@ module.exports = [{
 	range: "3"
 }, {
 	type: "weapon",
-	id: "disruptor_pulse_71794",
+	id: "W044",
 	set: ["71794"],
 	name: "Disruptor Pulse",
 	unique: false,
@@ -9251,7 +9251,7 @@ module.exports = [{
 	range: "1 - 2"
 }, {
 	type: "weapon",
-	id: "disruptor_beams_71794",
+	id: "W043",
 	set: ["71794"],
 	name: "Disruptor Beams",
 	unique: false,
@@ -9290,7 +9290,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "improved_deflector_screens_71797",
+	id: "T068",
 	set: ["71797"],
 	name: "Improved Deflector Screens",
 	unique: false,
@@ -9303,7 +9303,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "targeted_phaser_strike_71797",
+	id: "W042",
 	set: ["71797"],
 	name: "Targeted Phaser Strike",
 	unique: false,
@@ -9342,7 +9342,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "subspace_carrier_wave_71798",
+	id: "T067",
 	set: ["71798"],
 	name: "Subspace Carrier Wave",
 	unique: false,
@@ -9381,7 +9381,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "aft_weapons_array_71798",
+	id: "W041",
 	set: ["71798"],
 	name: "Aft Weapons Array",
 	unique: false,
@@ -9446,7 +9446,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "agony_booth_71796",
+	id: "T066",
 	set: ["71796"],
 	name: "Agony Booth",
 	unique: false,
@@ -9459,7 +9459,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "phaser_barrage_71796",
+	id: "W040",
 	set: ["71796"],
 	name: "Phaser Barrage",
 	unique: false,
@@ -9472,7 +9472,7 @@ module.exports = [{
 	range: "3"
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_71796",
+	id: "W039",
 	set: ["71796"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -9511,7 +9511,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "escape_transporter_71997p",
+	id: "T065",
 	set: ["71997p"],
 	name: "Escape Transporter",
 	unique: false,
@@ -9524,7 +9524,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "warp_drive_71997p",
+	id: "T064",
 	set: ["71997p"],
 	name: "Warp Drive",
 	unique: false,
@@ -9576,7 +9576,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "emergency_bulkheads_71800",
+	id: "T063",
 	set: ["71800"],
 	name: "Emergency Bulkheads",
 	unique: false,
@@ -9589,7 +9589,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "enhanced_hull_plating_71800",
+	id: "T062",
 	set: ["71800"],
 	name: "Enhanced Hull Plating",
 	unique: false,
@@ -9602,7 +9602,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "photonic_torpedoes_71800",
+	id: "W038",
 	set: ["71800"],
 	name: "Photonic Torpedoes",
 	unique: false,
@@ -9615,7 +9615,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "weapon",
-	id: "plasma_cannons_71800",
+	id: "W037",
 	set: ["71800"],
 	name: "Plasma Cannons",
 	unique: false,
@@ -9641,7 +9641,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "temporal_wave_front_71799",
+	id: "T061",
 	set: ["71799"],
 	name: "Temporal Wave Front",
 	unique: true,
@@ -9654,7 +9654,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "temporal_core_71799",
+	id: "T060",
 	set: ["71799"],
 	name: "Temporal Core",
 	unique: false,
@@ -9667,7 +9667,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "spatial_distortion_71799",
+	id: "T059",
 	set: ["71799"],
 	name: "Spatial Distortion",
 	unique: false,
@@ -9681,7 +9681,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "tachyon_detection_grid_71998p",
+	id: "T058",
 	set: ["71998p"],
 	name: "Tachyon Detection Grid",
 	unique: true,
@@ -9707,7 +9707,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "systems_upgrade_71998p",
+	id: "T057",
 	set: ["71998p"],
 	name: "Systems Upgrade",
 	unique: false,
@@ -9720,7 +9720,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "specialized_shields_71801",
+	id: "T056",
 	set: ["71801"],
 	name: "Specialized Shields",
 	unique: false,
@@ -9733,7 +9733,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "phasing_cloaking_device_71801",
+	id: "T055",
 	set: ["71801"],
 	name: "Phasing Cloaking Device",
 	unique: true,
@@ -9746,7 +9746,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "escape_pod_71801",
+	id: "T054",
 	set: ["71801"],
 	name: "Escape Pod",
 	unique: false,
@@ -9824,7 +9824,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "assault_vessel_upgrade_t_71803",
+	id: "T053",
 	set: ["71803"],
 	name: "Assault Vessel Upgrade",
 	unique: false,
@@ -9863,7 +9863,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "chroniton_torpedoes_71799",
+	id: "W036",
 	set: ["71799"],
 	name: "Chroniton Torpedoes",
 	unique: false,
@@ -9876,7 +9876,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "weapon",
-	id: "temporal_incursion_71799",
+	id: "W035",
 	set: ["71799"],
 	name: "Temporal Incursion",
 	unique: false,
@@ -9889,7 +9889,7 @@ module.exports = [{
 	range: "3"
 }, {
 	type: "weapon",
-	id: "type_8_phaser_array_71998p",
+	id: "W034",
 	set: ["71998p"],
 	name: "Type 8 Phaser Array",
 	unique: false,
@@ -9915,7 +9915,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "cloaked_mines_71999p",
+	id: "T052",
 	set: ["71999p", "72241"],
 	name: "Cloaked Mines",
 	unique: false,
@@ -9941,7 +9941,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "ambush_attack_71999p",
+	id: "W033",
 	set: ["71999p"],
 	name: "Ambush Attack",
 	unique: false,
@@ -9967,7 +9967,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "emh_mark_ii_t_71802",
+	id: "T051",
 	set: ["71802"],
 	name: "EMH Mark II",
 	unique: true,
@@ -9980,7 +9980,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "tactical_prototype_71802",
+	id: "T050",
 	set: ["71802"],
 	name: "Tactical Prototype",
 	unique: true,
@@ -10019,7 +10019,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "inverse_graviton_burst_71804",
+	id: "T049",
 	set: ["71804"],
 	name: "Inverse Graviton Burst",
 	unique: true,
@@ -10045,7 +10045,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "regenerative_shielding_71802",
+	id: "T048",
 	set: ["71802"],
 	name: "Regenerative Shielding",
 	unique: false,
@@ -10058,7 +10058,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "ablative_hull_armor_71802",
+	id: "T047",
 	set: ["71802"],
 	name: "Ablative Hull Armor",
 	unique: true,
@@ -10071,7 +10071,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "strafing_attack_71804",
+	id: "W032",
 	set: ["71804"],
 	name: "Strafing Attack",
 	unique: false,
@@ -10084,7 +10084,7 @@ module.exports = [{
 	range: "1"
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_71802",
+	id: "W031",
 	set: ["71802"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -10097,7 +10097,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "weapon",
-	id: "multi_vector_assault_mode_71802",
+	id: "W030",
 	set: ["71802"],
 	name: "Multi-Vector Assault Mode",
 	unique: true,
@@ -10128,7 +10128,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "tech",
-	id: "high_energy_subspace_field_blind_aldara",
+	id: "T046",
 	set: ["blind_aldara"],
 	name: "High Energy Subspace Field",
 	cost: 5,
@@ -10137,7 +10137,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "weapon",
-	id: "aft_weapons_array_blind_aldara",
+	id: "W029",
 	set: ["blind_aldara"],
 	name: "Aft Weapons Array",
 	cost: 3,
@@ -10166,7 +10166,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "weapon",
-	id: "prototype_weapon_72004p",
+	id: "W028",
 	set: ["72004p"],
 	name: "Prototype Weapon",
 	cost: 5,
@@ -10177,7 +10177,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "tech",
-	id: "escape_pod_72004p",
+	id: "T045",
 	set: ["72004p"],
 	name: "Escape Pod",
 	cost: 1,
@@ -10206,7 +10206,7 @@ module.exports = [{
 	factions: ["no-faction"]
 }, {
 	type: "tech",
-	id: "balance_of_terror_t_72002h",
+	id: "T044",
 	set: ["72002h"],
 	name: "Balance of Terror",
 	cost: 3,
@@ -10216,7 +10216,7 @@ module.exports = [{
 	factions: ["no-faction"]
 }, {
 	type: "weapon",
-	id: "balance_of_terror_w_72002h",
+	id: "W027",
 	set: ["72002h"],
 	name: "Balance of Terror",
 	cost: 3,
@@ -10244,7 +10244,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "tech",
-	id: "modified_cloaking_device_blind_belak",
+	id: "T043",
 	set: ["blind_belak"],
 	name: "Modified Cloaking Device",
 	cost: 5,
@@ -10253,7 +10253,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "weapon",
-	id: "aft_disruptor_emitters_blind_belak",
+	id: "W026",
 	set: ["blind_belak"],
 	name: "Aft Disruptor Emitters",
 	cost: 2,
@@ -10282,7 +10282,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "weapon",
-	id: "tricobalt_device_72001p",
+	id: "W025",
 	set: ["72001p"],
 	name: "Tricobalt Device",
 	cost: 6,
@@ -10293,7 +10293,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "variable_geometry_pylons_72001p",
+	id: "T042",
 	set: ["72001p"],
 	name: "Variable Geometry Pylons",
 	cost: 5,
@@ -10311,7 +10311,7 @@ module.exports = [{
 	factions: ["species-8472"]
 }, {
 	type: "weapon",
-	id: "biological_weapon_72012",
+	id: "W024",
 	set: ["72012"],
 	name: "Biological Weapon",
 	cost: 6,
@@ -10322,7 +10322,7 @@ module.exports = [{
 	factions: ["species-8472"]
 }, {
 	type: "weapon",
-	id: "energy_blast_72012",
+	id: "W023",
 	set: ["72012"],
 	name: "Energy Blast",
 	cost: 8,
@@ -10333,7 +10333,7 @@ module.exports = [{
 	factions: ["species-8472"]
 }, {
 	type: "tech",
-	id: "biological_technology_72012",
+	id: "T041",
 	set: ["72012"],
 	name: "Biological Technology",
 	cost: 5,
@@ -10342,7 +10342,7 @@ module.exports = [{
 	factions: ["species-8472"]
 }, {
 	type: "tech",
-	id: "biogenic_field_72012",
+	id: "T040",
 	set: ["72012"],
 	name: "Biogenic Field",
 	cost: 6,
@@ -10351,7 +10351,7 @@ module.exports = [{
 	factions: ["species-8472"]
 }, {
 	type: "tech",
-	id: "electrodynamic_fluid_72012",
+	id: "T039",
 	set: ["72012"],
 	name: "Electrodynamic Fluid",
 	cost: 5,
@@ -10360,7 +10360,7 @@ module.exports = [{
 	factions: ["species-8472"]
 }, {
 	type: "tech",
-	id: "fluidic_space_72012",
+	id: "T038",
 	set: ["72012"],
 	name: "Fluidic Space",
 	cost: 6,
@@ -10370,7 +10370,7 @@ module.exports = [{
 	factions: ["species-8472"]
 }, {
 	type: "weapon",
-	id: "energy_weapon_blind_bioship",
+	id: "W022",
 	set: ["blind_bioship"],
 	name: "Energy Weapon",
 	cost: 4,
@@ -10379,7 +10379,7 @@ module.exports = [{
 	factions: ["species-8472"]
 }, {
 	type: "tech",
-	id: "neuro_peptides_blind_bioship",
+	id: "T037",
 	set: ["blind_bioship"],
 	name: "Neuro Peptides",
 	cost: 2,
@@ -10388,7 +10388,7 @@ module.exports = [{
 	factions: ["species-8472"]
 }, {
 	type: "tech",
-	id: "organic_conduits_blind_bioship",
+	id: "T036",
 	set: ["blind_bioship"],
 	name: "Organic Conduits",
 	cost: 1,
@@ -10397,7 +10397,7 @@ module.exports = [{
 	factions: ["species-8472"]
 }, {
 	type: "tech",
-	id: "resisitant_hull_blind_bioship",
+	id: "T035",
 	set: ["blind_bioship"],
 	name: "Resistant Hull",
 	cost: 1,
@@ -10424,7 +10424,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "weapon",
-	id: "ambush_attack_blind_buruk",
+	id: "W021",
 	set: ["blind_buruk"],
 	name: "Ambush Attack",
 	cost: 5,
@@ -10433,7 +10433,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "tech",
-	id: "targeting_systems_blind_buruk",
+	id: "T034",
 	set: ["blind_buruk"],
 	name: "Targeting Systems",
 	cost: 4,
@@ -10442,7 +10442,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "tech",
-	id: "auto_navigation_71805",
+	id: "T033",
 	set: ["71805"],
 	name: "Auto-Navigation",
 	cost: 2,
@@ -10455,7 +10455,7 @@ module.exports = [{
 	}
 }, {
 	type: "tech",
-	id: "quantum_slipstream_drive_71805",
+	id: "T032",
 	set: ["71805"],
 	name: "Quantum Slipstream Drive",
 	cost: 6,
@@ -10469,7 +10469,7 @@ module.exports = [{
 	}
 }, {
 	type: "tech",
-	id: "power_distribution_grid_71805",
+	id: "T031",
 	set: ["71805"],
 	name: "Power Distribution Grid",
 	cost: 2,
@@ -10482,7 +10482,7 @@ module.exports = [{
 	}
 }, {
 	type: "tech",
-	id: "force_field_71805",
+	id: "T030",
 	set: ["71805"],
 	name: "Force Field",
 	cost: 3,
@@ -10495,7 +10495,7 @@ module.exports = [{
 	}
 }, {
 	type: "tech",
-	id: "navigational_deflector_71805",
+	id: "T029",
 	set: ["71805"],
 	name: "Navigational Deflector",
 	cost: 4,
@@ -10508,7 +10508,7 @@ module.exports = [{
 	}
 }, {
 	type: "tech",
-	id: "particle_synthesis_71805",
+	id: "T028",
 	set: ["71805"],
 	name: "Particle Synthesis",
 	cost: 5,
@@ -10574,7 +10574,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "parametallic_hull_plating_72014",
+	id: "T027",
 	set: ["72014"],
 	name: "Parametallic Hull Plating",
 	cost: 2,
@@ -10583,7 +10583,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "immersion_shielding_72014",
+	id: "T026",
 	set: ["72014"],
 	name: "Immersion Shielding",
 	cost: 3,
@@ -10592,7 +10592,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "unimatrix_shielding_72014",
+	id: "T025",
 	set: ["72014"],
 	name: "Unimatrix Shielding",
 	cost: 5,
@@ -10601,7 +10601,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "photonic_missiles_72014",
+	id: "W020",
 	set: ["72014"],
 	name: "Photonic Missiles",
 	cost: 3,
@@ -10612,7 +10612,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_72014",
+	id: "W019",
 	set: ["72014"],
 	name: "Photon Torpedoes",
 	cost: 4,
@@ -10641,7 +10641,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "weapon",
-	id: "pulse_firing_particle_cannon_72003p",
+	id: "W019",
 	set: ["72003p"],
 	name: "Pulse-Firing Particle Cannon",
 	cost: 4,
@@ -10652,7 +10652,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "tech",
-	id: "phase_deflector_pulse_72003p",
+	id: "T024",
 	set: ["72003p"],
 	name: "Phase Deflector Pulse",
 	cost: 5,
@@ -10679,7 +10679,7 @@ module.exports = [{
 	factions: ["bajoran"]
 }, {
 	type: "weapon",
-	id: "phaser_strike_blind_interceptor8",
+	id: "W018",
 	set: ["blind_interceptor8"],
 	name: "Phaser Strike",
 	cost: 5,
@@ -10690,7 +10690,7 @@ module.exports = [{
 	factions: ["bajoran"]
 }, {
 	type: "tech",
-	id: "navigational_sensors_blind_interceptor8",
+	id: "T023",
 	set: ["blind_interceptor8"],
 	name: "Navigational Sensors",
 	cost: 5,
@@ -10717,7 +10717,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "dual_phaser_banks_72002p",
+	id: "W017",
 	set: ["72002p"],
 	name: "Dual Phaser Banks",
 	cost: 3,
@@ -10761,7 +10761,7 @@ module.exports = [{
 	}
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_71806",
+	id: "W016",
 	set: ["71806"],
 	name: "Photon Torpedoes",
 	cost: 5,
@@ -10776,7 +10776,7 @@ module.exports = [{
 	}
 }, {
 	type: "weapon",
-	id: "missile_launchers_71806",
+	id: "W015",
 	set: ["71806"],
 	name: "Missile Launchers",
 	cost: 3,
@@ -10804,7 +10804,7 @@ module.exports = [{
 	}
 }, {
 	type: "tech",
-	id: "em_pulse_71806",
+	id: "T022",
 	set: ["71806"],
 	name: "EM Pulse",
 	cost: 4,
@@ -10817,7 +10817,7 @@ module.exports = [{
 	}
 }, {
 	type: "tech",
-	id: "maximum_shields_71806",
+	id: "T021",
 	set: ["71806"],
 	name: "Maximum Shields",
 	cost: 4,
@@ -10830,7 +10830,7 @@ module.exports = [{
 	}
 }, {
 	type: "tech",
-	id: "ferengi_probe_71806",
+	id: "T020",
 	set: ["71806"],
 	name: "Ferengi Probe",
 	cost: 4,
@@ -10861,7 +10861,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "micro_power_relays_blind_lakota",
+	id: "T019",
 	set: ["blind_lakota"],
 	name: "Micro Power Relays",
 	cost: 3,
@@ -10870,7 +10870,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "upgraded_phasers_blind_lakota",
+	id: "W014",
 	set: ["blind_lakota"],
 	name: "Upgraded Phasers",
 	cost: 3,
@@ -10897,7 +10897,7 @@ module.exports = [{
 	factions: ["kazon"]
 }, {
 	type: "tech",
-	id: "stolen_technology_blind_nistrim_culluh",
+	id: "T018",
 	set: ["blind_nistrim_culluh"],
 	name: "Stolen Technology",
 	cost: 3,
@@ -10924,7 +10924,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "weapon",
-	id: "weapon_ports_blind_nunks_marauder",
+	id: "W013",
 	set: ["blind_nunks_marauder"],
 	name: "Weapon Ports",
 	cost: 4,
@@ -10935,7 +10935,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "tech",
-	id: "geodesic_pulse_blind_nunks_marauder",
+	id: "T017",
 	set: ["blind_nunks_marauder"],
 	name: "Geodesic Pulse",
 	cost: 5,
@@ -10970,7 +10970,7 @@ module.exports = [{
 	}
 }, {
 	type: "tech",
-	id: "impulse_drive_71807",
+	id: "T016",
 	set: ["71807"],
 	name: "Impulse Drive",
 	cost: 3,
@@ -10983,7 +10983,7 @@ module.exports = [{
 	}
 }, {
 	type: "tech",
-	id: "inverse_tachyon_pulse_71807",
+	id: "T015",
 	set: ["71807"],
 	name: "Inverse Tachyon Pulse",
 	cost: 2,
@@ -11049,7 +11049,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "high_energy_sensor_sweep_72011",
+	id: "T014",
 	set: ["72011"],
 	name: "High Energy Sensor Sweep",
 	cost: 5,
@@ -11058,7 +11058,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "arsenal_72011",
+	id: "W012",
 	set: ["72011"],
 	name: "Arsenal",
 	cost: 4,
@@ -11104,7 +11104,7 @@ module.exports = [{
 	}
 }, {
 	type: "question",
-	id: "q2_c_72000b",
+	id: "-----",
 	set: ["72000b"],
 	name: "Q2",
 	cost: 5,
@@ -11160,7 +11160,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "tech",
-	id: "cargo_hold_72013",
+	id: "T013",
 	set: ["72013"],
 	name: "Cargo Hold",
 	cost: 1,
@@ -11169,7 +11169,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "tech",
-	id: "inversion_wave_72013",
+	id: "T012",
 	set: ["72013"],
 	name: "Inversion Wave",
 	cost: 4,
@@ -11268,7 +11268,7 @@ module.exports = [{
 	factions: ["vulcan"]
 }, {
 	type: "weapon",
-	id: "aft_particle_beam_blind_seleya",
+	id: "W011",
 	set: ["blind_seleya"],
 	name: "Aft Particle Beam",
 	cost: 3,
@@ -11279,7 +11279,7 @@ module.exports = [{
 	factions: ["vulcan"]
 }, {
 	type: "tech",
-	id: "power_distribution_net_blind_seleya",
+	id: "T011",
 	set: ["blind_seleya"],
 	name: "Power Distribution Net",
 	cost: 5,
@@ -11297,7 +11297,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "tech",
-	id: "warp_core_ejection_system_72016",
+	id: "T010",
 	set: ["72016"],
 	name: "Warp Core Ejection System",
 	cost: 4,
@@ -11306,7 +11306,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "tech",
-	id: "test_cylinder_72016",
+	id: "T009",
 	set: ["72016"],
 	name: "Test Cylinder",
 	cost: 3,
@@ -11315,7 +11315,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "tech",
-	id: "temporal_displacement_72016",
+	id: "T008",
 	set: ["72016"],
 	name: "Temporal Displacement",
 	cost: 5,
@@ -11324,7 +11324,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "tech",
-	id: "advanced_scanning_72016",
+	id: "T007",
 	set: ["72016"],
 	name: "Advanced Scanning",
 	cost: 5,
@@ -11333,7 +11333,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "tech",
-	id: "signal_amplifier_72016",
+	id: "T006",
 	set: ["72016"],
 	name: "Signal Amplifier",
 	cost: 5,
@@ -11342,7 +11342,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "tech",
-	id: "graviton_field_generator_72016",
+	id: "T005",
 	set: ["72016"],
 	name: "Graviton Field Generator",
 	cost: 5,
@@ -11377,7 +11377,7 @@ module.exports = [{
 	}
 }, {
 	type: "tech",
-	id: "long_range_scanners_72000p",
+	id: "T004",
 	set: ["72000p"],
 	name: "Long Range Scanners",
 	cost: 3,
@@ -11390,7 +11390,7 @@ module.exports = [{
 	}
 }, {
 	type: "weapon",
-	id: "additional_phaser_array_72000p",
+	id: "W010",
 	set: ["72000p"],
 	name: "Additional Phaser Array",
 	cost: 2,
@@ -11430,7 +11430,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_72008",
+	id: "W009",
 	set: ["72008"],
 	name: "Photon Torpedoes",
 	cost: 5,
@@ -11441,7 +11441,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "quantum_torpedoes_72008",
+	id: "W008",
 	set: ["72008", "72011"],
 	name: "Quantum Torpedoes",
 	cost: 6,
@@ -11461,7 +11461,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "rapid_reload_w_72008",
+	id: "W007",
 	set: ["72008"],
 	name: "Rapid Reload",
 	cost: 2,
@@ -11470,7 +11470,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "rapid_reload_t_72008",
+	id: "T003",
 	set: ["72008"],
 	name: "Rapid Reload",
 	cost: 2,
@@ -11488,7 +11488,7 @@ module.exports = [{
 	factions: ["mirror-universe"]
 }, {
 	type: "crew",
-	id: "hon_tihl_blind_tohkaht",
+	id: "-----",
 	set: ["blind_tohkaht"],
 	name: "Hon-Tihl",
 	cost: 5,
@@ -11497,7 +11497,7 @@ module.exports = [{
 	factions: ["mirror-universe"]
 }, {
 	type: "weapon",
-	id: "thalmerite_explosive_blind_tohkaht",
+	id: "W006",
 	set: ["blind_tohkaht"],
 	name: "Thalmerite Explosive",
 	cost: 5,
@@ -11508,7 +11508,7 @@ module.exports = [{
 	factions: ["mirror-universe"]
 }, {
 	type: "tech",
-	id: "reactor_core_blind_tohkaht",
+	id: "T002",
 	set: ["blind_tohkaht"],
 	name: "Reactor Core",
 	cost: 2,
@@ -11556,7 +11556,7 @@ module.exports = [{
 	}
 }, {
 	type: "weapon",
-	id: "concussive_charges_72009",
+	id: "W005",
 	set: ["72009"],
 	name: "Concussive Charges",
 	cost: 4,
@@ -11571,7 +11571,7 @@ module.exports = [{
 	}
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_72009",
+	id: "W004",
 	set: ["72009", "72015", "72232"],
 	name: "Photon Torpedoes",
 	cost: 5,
@@ -11586,7 +11586,7 @@ module.exports = [{
 	}
 }, {
 	type: "tech",
-	id: "cryogenic_stasis_72009",
+	id: "T001",
 	set: ["72009"],
 	name: "Cryogenic Stasis",
 	cost: 5,
@@ -11599,7 +11599,7 @@ module.exports = [{
 	}
 }, {
 	type: "talent",
-	id: "coordinated_attack_72010",
+	id: "E001",
 	set: ["72010"],
 	name: "Coordinated Attack",
 	cost: 5,
@@ -11608,7 +11608,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "crew",
-	id: "bridge_officer_72010",
+	id: "C002",
 	set: ["72010"],
 	name: "Bridge Officer",
 	cost: 3,
@@ -11617,7 +11617,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "crew",
-	id: "tal_aura_72010",
+	id: "C001",
 	set: ["72010"],
 	name: "Tal'aura",
 	cost: 5,
@@ -11626,7 +11626,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_72010",
+	id: "W003",
 	set: ["72010"],
 	name: "Photon Torpedoes",
 	cost: 5,
@@ -11637,7 +11637,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "weapon",
-	id: "plasma_torpedoes_72010",
+	id: "W002",
 	set: ["72010"],
 	name: "Plasma Torpedoes",
 	cost: 5,
@@ -11648,7 +11648,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "weapon",
-	id: "flanking_attack_72010",
+	id: "W001",
 	set: ["72010"],
 	name: "Flanking Attack",
 	cost: 6,

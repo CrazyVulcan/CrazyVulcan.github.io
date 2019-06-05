@@ -8651,6 +8651,17 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
+		
+		// Tha Animated Series : 75006
+		
+		// The USS Enterprise
+		
+		// James T. Kirk
+		"captain:Cap822":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}			
+		},
 	
 //Faction Penalty For Subfactions
 		//Federation
