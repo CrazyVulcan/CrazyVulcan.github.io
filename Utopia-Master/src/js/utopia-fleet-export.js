@@ -320,8 +320,8 @@ module.directive( "fleetExport", function() {
 				
 				if( card.type == "ship" && !card.unique) {
 					// Show class ID for generic ships
-					text = card.id;
-				} else text = card.id ;
+					text = card.id + ":";
+			} else text = card.id + ":";
 				
 				if( card.resource ) {
 					var resB = cardToAltTextURL(card.resource, ship, fleet);
