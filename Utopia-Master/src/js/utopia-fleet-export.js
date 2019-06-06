@@ -114,7 +114,7 @@ module.directive( "fleetExport", function() {
 				$.each( fleet.ships, function(i,ship) {
 
 					var resB = cardToAltTextURL(ship,ship,fleet);
-					ttsText += resB.text + ",";
+					ttsText += resB.text;
 				});
 				
 				if( fleet.resource ) {
