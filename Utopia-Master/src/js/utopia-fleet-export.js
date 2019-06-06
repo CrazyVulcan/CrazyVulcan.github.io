@@ -348,7 +348,7 @@ module.directive( "fleetExport", function() {
 				$.each( card.upgradeSlots || [], function(i,slot) {
 					if( slot.occupant ) {
 						var resB = cardToAltTextURL(slot.occupant, ship, fleet);
-						text += resB.text += ",";
+						text += resB.text + ",";
 						// if( countSlotCost )
 						// 	cost += resB.cost;
 					}
