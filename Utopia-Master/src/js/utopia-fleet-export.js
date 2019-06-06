@@ -320,7 +320,7 @@ module.directive( "fleetExport", function() {
 				
 				if( card.type == "ship" && !card.unique) {
 					// Show class ID for generic ships
-					text = card.id + ":";
+					text = card.id;
 				} else text = card.id ;
 				
 				if( card.resource ) {
@@ -348,7 +348,7 @@ module.directive( "fleetExport", function() {
 				$.each( card.upgradeSlots || [], function(i,slot) {
 					if( slot.occupant ) {
 						var resB = cardToAltTextURL(slot.occupant, ship, fleet);
-						text += resB.text + ",";
+						text += resB.text + ",0,";
 						// if( countSlotCost )
 						// 	cost += resB.cost;
 					}
