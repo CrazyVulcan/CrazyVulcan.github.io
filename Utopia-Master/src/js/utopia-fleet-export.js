@@ -321,27 +321,27 @@ module.directive( "fleetExport", function() {
 				if( card.type == "ship" && !card.unique) {
 					// Show class ID for generic ships
 					text = card.id;
-				} else text = card.id += ":";
+				} else text = card.id + ":";
 				
 				if( card.resource ) {
 					var resB = cardToAltTextURL(card.resource, ship, fleet);
-					text += resB.text += ",";
+					text += resB.text + ",";
 				}
 
 				if( card.captain ) {
 					var resB = cardToAltTextURL(card.captain, ship, fleet);
-					text += resB.text += ",";
+					text += resB.text +",";
 				}
 
 				if( card.admiral ) {
 					var resB = cardToAltTextURL(card.admiral, ship, fleet);
-					text += resB.text += ",";
+					text += resB.text + ",";
 				}
 
 				$.each( card.upgrades || [], function(i,slot) {
 					if( slot.occupant ) {
 						var resB = cardToAltTextURL(slot.occupant, ship, fleet);
-						text += resB.text += ",";
+						text += resB.text + ",";
 					}
 				});
 
