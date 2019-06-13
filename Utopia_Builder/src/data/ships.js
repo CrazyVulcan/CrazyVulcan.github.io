@@ -1,5 +1,26 @@
 module.exports = [{
 	type: "ship",
+	id: "S318",
+	set: ["75007"],
+	name: "Assimilation Target Prime",
+	class: "Galaxy Class",
+	actions: ["evade", "target-lock", "scan", "regenerate"],
+	upgrades: ["borg", "tech", "weapon", "crew", "crew"],
+	attack: 5,
+	agility: 1,
+	hull: 5,
+	shields: 4,
+	cost: 30,
+	text: "You do not pay a faction penalty for cards equipped to this ship.\n-----------------------------------\nAll [tech] Upgrades equipped to this ship cost -1 SP.",
+	unique: true,
+	factions: ["mirror-universe", "borg"],
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	squadron: false
+}, {
+	type: "ship",
 	id: "S317",
 	set: ["75006"],
 	name: "U.S.S. Enterprise",

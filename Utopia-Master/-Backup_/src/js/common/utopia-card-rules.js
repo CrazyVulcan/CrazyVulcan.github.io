@@ -8672,6 +8672,73 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}			
 		},
+		
+		// Resistance is Futile : 75007
+		
+		//Assimilation Target Prime : 71510b
+		"ship:S318": {
+			// Restore class on card text
+			class: "Galaxy Class",
+			// TODO use this field to pick the correct maneuver card
+			classId: "galaxy__class_mu",
+			intercept: {
+				ship: {
+					// No faction penalty for upgrades
+					factionPenalty: function(card, ship, fleet, factionPenalty) {
+						if( isUpgrade(card) )
+							return 0;
+						return factionPenalty;
+					},
+					cost: function(upgrade,ship,fleet,cost) {
+						if( checkUpgrade("tech", upgrade, ship) )
+							return resolve(upgrade,ship,fleet,cost) - 1;
+						return cost;
+					}
+				}
+			}
+		},
+		
+		//Locutus
+		// Locutus
+		"captain:Cap910":{
+			// Can't equip if fleet contains Jean-Luc Picard
+			canEquipCaptain: function(upgrade, ship, fleet) {
+				return !$filter("fleetCardNamed")(fleet, "Jean-Luc Picard");
+			},
+			canEquip: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship,"borg", ship, fleet);
+			},
+			upgradeSlots: [
+				{
+					type: ["crew"]
+				},
+				{
+					type: ["crew"]
+				}
+			],
+			// While equipped, can't equip a card named Jean-Luc Picard on any ship
+			intercept: {
+				fleet: {
+					canEquip: function(upgrade, ship, fleet, canEquip) {
+						if( upgrade.name == "Jean-Luc Picard" )
+							return false;
+						return canEquip;
+					},
+					canEquipCaptain: function(upgrade, ship, fleet, canEquip) {
+						if( upgrade.name == "Jean-Luc Picard" )
+							return false;
+						return canEquip;
+					}
+				},
+				ship:{
+					factionPenalty: function(upgrade, ship, fleet, factionPenalty) {
+						if( isUpgrade(upgrade) && $factions.hasFaction(upgrade,"crew", ship, fleet) )
+							return 0;
+						return factionPenalty;
+					}
+				}
+			}
+		},
 	
 //Faction Penalty For Subfactions
 		//Federation
