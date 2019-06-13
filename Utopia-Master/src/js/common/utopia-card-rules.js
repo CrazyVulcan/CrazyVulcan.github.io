@@ -8683,7 +8683,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			// TODO use this field to pick the correct maneuver card
 //			classId: "galaxy__class_mu",
 			hasFaction: function (card, faction, ship, fleet) {
-				return ship && !$factions.hasFaction(ship,"mirror-universe", ship, fleet);
+				return $.inArray( faction, valueOf(card,"factions",ship,fleet) ) >= 0;
 			},
 			intercept: {
 				ship: {
