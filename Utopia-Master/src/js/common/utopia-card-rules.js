@@ -8705,8 +8705,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquipCaptain: function(upgrade, ship, fleet) {
 				return !$filter("fleetCardNamed")(fleet, "Jean-Luc Picard");
 			},
-			canEquip: function(upgrade,ship,fleet) {
-				return $factions.hasFaction(ship,"borg", ship, fleet);
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return $factions.hasFaction( ship, "borg", ship, fleet )
 			},
 			upgradeSlots: [
 				{
