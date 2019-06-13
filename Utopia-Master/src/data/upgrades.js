@@ -824,7 +824,7 @@ module.exports = [{
 	factions: ["borg"]
 }, {
 	type: "tech",
-	id: "T170",
+	id: "T190",
 	set: ["73002"],
 	name: "Technological Analysis",
 	cost: 4,
@@ -2098,7 +2098,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "question",
-	id: "Q009",
+	id: "Q016",
 	set: ["72281p"],
 	name: "Course Change",
 	cost: 4,
@@ -2379,7 +2379,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "question",
-	id: "Q008",
+	id: "Q017",
 	set: ["72253"],
 	name: "Computer Core",
 	cost: 5,
@@ -3219,7 +3219,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "crew",
-	id: "C228",
+	id: "C342",
 	set: ["71192"],
 	name: "Lorrum",
 	cost: 4,
@@ -10235,7 +10235,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "crew",
-	id: "C043",
+	id: "C343",
 	set: ["blind_belak"],
 	name: "Tallera",
 	cost: 3,
@@ -10612,7 +10612,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "W019",
+	id: "W195",
 	set: ["72014"],
 	name: "Photon Torpedoes",
 	cost: 4,

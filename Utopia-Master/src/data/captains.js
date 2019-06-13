@@ -3247,6 +3247,17 @@ module.exports = [{
 	}
 }, {
 	type: "captain",
+	id: "Cap910",
+	set: ["75007"],
+	name: "Locutus",
+	cost: 4,
+	skill: 9,
+	talents: 1,
+	text: "Cannot equippe to a ship in the same fleet as Jean-Luc Picard.\n----------------------------------------\n<b>SETUP:</b> Place 9 Drone Tokens on this card\n----------------------------------------\nAdd two [crew] to this ships Upgrade Bar.\n----------------------------------------\nYou do not pay a faction penality when equiping a [crew] Upgrade to this ship.",
+	unique: true,
+	factions: ["borg"]
+}, {
+	type: "captain",
 	id: "Cap908",
 	set: ["75002"],
 	name: "Female Changeling",
