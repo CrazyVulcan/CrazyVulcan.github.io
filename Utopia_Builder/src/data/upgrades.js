@@ -8111,7 +8111,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "C080",
+	id: "C341",
 	set: ["71513a"],
 	name: "Data",
 	unique: true,
