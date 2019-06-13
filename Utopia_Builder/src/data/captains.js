@@ -2069,17 +2069,6 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "captain",
-	id: "Cap821",
-	set: ["72260p"],
-	name: "James T. Kirk",
-	cost: 5,
-	skill: 8,
-	talents: 1,
-	text: "All of your Federation [crew] Upgrades cost -1 SP.\n\n Whenever one of your [crew] is supposed to be disabled you may place 3 Time Tokens on that Upgrade instead.",
-	unique: true,
-	factions: ["federation"]
-}, {
-	type: "captain",
 	id: "Cap648",
 	set: ["72255"],
 	name: "Borg Queen",
@@ -2996,6 +2985,28 @@ module.exports = [{
 	text: "All of your Klingon Upgrades cost -1 SP.\n\nACTION: When attacking this round, during the Roll Attack Dice step, you may roll 2 less attack dice to add 1 [hit] result to your roll. If you have only Klingon cards assigned to your ship, roll 1 less attack die, instead of 2.",
 	unique: true,
 	factions: ["klingon"]
+}, {
+	type: "captain",
+	id: "Cap822",
+	set: ["75006"],
+	name: "James T. Kirk",
+	cost: 5,
+	skill: 8,
+	talents: 1,
+	text: "<b>ACTION:</b>\n\nPlace a [scan] or a [battlestations] Token beside this ship, and perform the Action of a [crew] Upgrade equipped to this ship as a Free Action.",
+	unique: true,
+	factions: ["federation"]
+}, {
+	type: "captain",
+	id: "Cap821",
+	set: ["72260p"],
+	name: "James T. Kirk",
+	cost: 5,
+	skill: 8,
+	talents: 1,
+	text: "All of your Federation [crew] Upgrades cost -1 SP.\n\n Whenever one of your [crew] is supposed to be disabled you may place 3 Time Tokens on that Upgrade instead.",
+	unique: true,
+	factions: ["federation"]
 }, {
 	type: "captain",
 	id: "Cap820",

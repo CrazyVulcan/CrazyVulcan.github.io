@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="utopia-mission-database" ng-controller="UtopiaMissionCtrlBackup">
+<html ng-app="utopia-missions" ng-controller="UtopiaSetCtrl">
     <head>
         <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
 		<link rel="stylesheet" type="text/css" href="css/jquery.powertip.min.css">
@@ -17,33 +17,29 @@
     </head>
     <body>
 
-		<div class="u-title"><i class="fs fs-unique"></i>Utopia Set Viewer</div>
-				
-		<div class="text-center">Build your fleet with <a href="./index.html">Utopia</a></div>
-			
-		<div class="topnav">
-			<a href="#news">News</a>
-			<a href="./set-viewer" >Set Viewer</a>
-			<a href="#rules">Rules</a>
-			<a href="./attackwing-database.html">WORF Database</a>
-			<a href="#mission-database" class="active">Missions</a>
-		</div>	
-		
-		
-
-		
-		
-		
 		<div class="u-container">
-		
-		<div class="u-search-results u-search-cols-1">
-		
-			<ul class="set-list">
-				<li ng-repeat="missionSet in missionList | orderBy:'-orderDate'" ng-click="viewer.missionSet = missionSet" ng-class="{'missionSet-selected': viewer.missionSets == missionSet}">{{missionSet.name}}</li>
-			</ul>
+
+			<div class="u-search-results u-search-cols-1">
 			
+				<div class="u-title"><i class="fs fs-unique"></i>Utopia Missions</div>
+				
+				<div class="text-center">Build your fleet with <a href="./index.html">Utopia</a></div>
+				<div class="text-center">Browse all sets with the <a href="./set-viewer.html">Utopia Set Viewer</a></div><br />
+			
+				<ul class="mission-list">
+					<li ng-repeat="missionSet in missionList | orderBy:'orderDate'" ng-click="viewer.missionSets = missionSet" ng-class="{'missionSet-selected': viewer.missionSet == missionSet}">-{{missionSet.name}}</li>
+				</ul>
+			</div>
+			
+			<div class="u-fleet missionSet-cards">
+			
+				<div class="mission-header" ng-show="mission.name">{{viewer.mission.name}}</div>
+				<div class="mission-header" ng-show="mission.description">{{viewer.mission.description}}</div>
+							
+			</div>
+		
 		</div>
-		</div>
+
 		<!--<script src="js/analytics.js"></script>-->
 		
     </body>

@@ -60,7 +60,7 @@ module.exports = [{
 	text: "Each Drone Token has a Drone number list on the face, as well as a Captain Skill Number listed on the back. The Drone Tokens are placed in a stack on top of the Captain Card in descending order (from highest to lowest) of their Drone numbers. \n\nNOTE: The Drone number listed on the token at the top of the stack is always considered the ship’s current Captain Skill. At the start of the game, place the Drone Token that has the starting Captain Skill beside the ship (this will be the reverse side of the Drone Token that reads “START” on the face).\n\nWhen a Drone Token is used, remove one Token from the top of the stack and flip it over. Then remove the Drone Token that is beside the ship from play and replace it with the token that you just removed from the stack. NOTE: The Captain Skill that is listed on the Token beside the ship should always be equal to the number of Drone Tokens left on the Captain Card.\n\n You may use Drone Tokens for other Upgrade effects, but not for the text on a disabled Captain if your Captain is disabled."
 }, {
 	type: "fleet-captain",
-	id: "federation_collectiveop2",
+	id: "R010a",
 	set: ["CollectiveOP2"],
 	name: "Federation",
 	factions: ["federation"],
@@ -83,7 +83,7 @@ module.exports = [{
 	crewAdd: 0
 }, {
 	type: "fleet-captain",
-	id: "dominion_collectiveop2",
+	id: "R010b",
 	set: ["CollectiveOP2"],
 	name: "Dominion",
 	factions: ["dominion"],
@@ -106,7 +106,7 @@ module.exports = [{
 	crewAdd: 1
 }, {
 	type: "fleet-captain",
-	id: "romulan_collectiveop2",
+	id: "R010c",
 	set: ["CollectiveOP2"],
 	name: "Romulan",
 	factions: ["romulan"],
@@ -129,7 +129,7 @@ module.exports = [{
 	crewAdd: 1
 }, {
 	type: "fleet-captain",
-	id: "klingon_collectiveop2",
+	id: "R010d",
 	set: ["CollectiveOP2"],
 	name: "Klingon",
 	factions: ["klingon"],
@@ -152,7 +152,7 @@ module.exports = [{
 	crewAdd: 0
 }, {
 	type: "fleet-captain",
-	id: "independent_klingon_collectiveop2",
+	id: "R010e",
 	set: ["CollectiveOP2"],
 	name: "Independent (Klingon)",
 	factions: ["independent"],
@@ -175,7 +175,7 @@ module.exports = [{
 	crewAdd: 2
 }, {
 	type: "fleet-captain",
-	id: "independent_federation_collectiveop2",
+	id: "R010f",
 	set: ["CollectiveOP2"],
 	name: "Independent (Federation)",
 	factions: ["independent"],
@@ -198,7 +198,7 @@ module.exports = [{
 	crewAdd: 0
 }, {
 	type: "fleet-captain",
-	id: "independent_romulan_collectiveop2",
+	id: "R010g",
 	set: ["CollectiveOP2"],
 	name: "Independent (Romulan)",
 	factions: ["independent"],
@@ -221,7 +221,7 @@ module.exports = [{
 	crewAdd: 0
 }, {
 	type: "fleet-captain",
-	id: "independent_dominion_collectiveop2",
+	id: "R010g",
 	set: ["CollectiveOP2"],
 	name: "Independent (Dominion)",
 	factions: ["independent"],
@@ -244,7 +244,7 @@ module.exports = [{
 	crewAdd: 0
 }, {
 	type: "officer",
-	id: "first_officer_collectiveop3",
+	id: "R011a",
 	set: ["CollectiveOP3"],
 	name: "First Officer",
 	factions: ["independent"],
@@ -266,7 +266,7 @@ module.exports = [{
 	unique: true
 }, {
 	type: "officer",
-	id: "tactical_officer_collectiveop3",
+	id: "R011b",
 	set: ["CollectiveOP3"],
 	name: "Tactical Officer",
 	factions: ["independent"],
@@ -288,7 +288,7 @@ module.exports = [{
 	unique: true
 }, {
 	type: "officer",
-	id: "operations_officer_collectiveop3",
+	id: "R011c",
 	set: ["CollectiveOP3"],
 	name: "Operations Officer",
 	factions: ["independent"],
@@ -310,7 +310,7 @@ module.exports = [{
 	unique: true
 }, {
 	type: "officer",
-	id: "science_officer_collectiveop3",
+	id: "R011d",
 	set: ["CollectiveOP3"],
 	name: "Science Officer",
 	factions: ["independent"],
@@ -332,7 +332,7 @@ module.exports = [{
 	unique: true
 }, {
 	type: "flagship",
-	id: "6001",
+	id: "R004a",
 	set: ["OP4Participation"],
 	name: "Romulan",
 	class: "Flagship",
@@ -372,7 +372,7 @@ module.exports = [{
 	unique: true
 }, {
 	type: "flagship",
-	id: "6002",
+	id: "R004f",
 	set: ["OP4Participation"],
 	name: "Independent (Romulan)",
 	class: "Flagship",
@@ -412,7 +412,7 @@ module.exports = [{
 	unique: true
 }, {
 	type: "flagship",
-	id: "6003",
+	id: "R004b",
 	set: ["OP4Participation"],
 	name: "Klingon",
 	class: "Flagship",
@@ -452,7 +452,7 @@ module.exports = [{
 	unique: true
 }, {
 	type: "flagship",
-	id: "6004",
+	id: "R004g",
 	set: ["OP4Participation"],
 	name: "Independent (Klingon)",
 	class: "Flagship",
@@ -492,7 +492,7 @@ module.exports = [{
 	unique: true
 }, {
 	type: "flagship",
-	id: "6005",
+	id: "R004c",
 	set: ["OP4Participation"],
 	name: "Dominion",
 	class: "Flagship",
@@ -532,7 +532,7 @@ module.exports = [{
 	unique: true
 }, {
 	type: "flagship",
-	id: "6006",
+	id: "R004h",
 	set: ["OP4Participation"],
 	name: "Independent (Dominion)",
 	class: "Flagship",
@@ -572,7 +572,7 @@ module.exports = [{
 	unique: true
 }, {
 	type: "flagship",
-	id: "6007",
+	id: "R004e",
 	set: ["OP4Participation"],
 	name: "Federation",
 	class: "Flagship",
@@ -612,7 +612,7 @@ module.exports = [{
 	unique: true
 }, {
 	type: "flagship",
-	id: "6008",
+	id: "R004i",
 	set: ["OP4Participation"],
 	name: "Independent (Federation)",
 	class: "Flagship",
@@ -862,7 +862,7 @@ module.exports = [{
 	}
 }, {
 	type: "ship-resource",
-	id: "movars_ability_72282gp",
+	id: "Rs01",
 	set: ["72282gp"],
 	name: "Movars Ability ",
 	factions: ["federation", "klingon", "romulan", "dominion", "independent"],
@@ -879,7 +879,7 @@ module.exports = [{
 	unique: true
 },{
 	type: "ship-resource",
-	id: "senior_staff_72284r",
+	id: "R036a",
 	set: ["72284r"],
 	name: "Senior Staff ",
 	factions: ["federation", "klingon", "romulan", "dominion", "independent"],
@@ -896,7 +896,7 @@ module.exports = [{
 	unique: false
 }, {
 	type: "ship-resource",
-	id: "fleet_commander_ship_hull",
+	id: "R033b",
 	set: ["72280r"],
 	name: "Fleet Commander",
 	factions: ["federation", "klingon", "romulan", "dominion", "independent"],
@@ -914,7 +914,7 @@ module.exports = [{
 	unique: true
 }, {
 	type: "ship-resource",
-	id: "fleet_commander_ship_shield",
+	id: "R033a",
 	set: ["72280r"],
 	name: "Fleet Commander",
 	factions: ["federation", "klingon", "romulan", "dominion", "independent"],
@@ -932,7 +932,7 @@ module.exports = [{
 	unique: true
 }, {
 	type: "ship-resource",
-	id: "captains_chair_ship",
+	id: "R039a",
 	set: ["72301r"],
 	name: "Captain's Chair",
 	factions: ["federation", "klingon", "romulan", "dominion", "independent"],
@@ -950,7 +950,7 @@ module.exports = [{
 	unique: true
 }, {
 	type: "ship-resource",
-	id: "front_line_retrofit_ship",
+	id: "Rs40",
 	set: ["72302r"],
 	name: "Front Line Retrofit",
 	factions: ["federation", "klingon", "romulan", "dominion", "independent"],
@@ -978,7 +978,7 @@ module.exports = [{
 	unique: true
 }, {
 	type: "ship-resource",
-	id: "sickbay_ship",
+	id: "R042a",
 	set: ["72321r"],
 	name: "Sickbay",
 	factions: ["federation", "klingon", "romulan", "dominion", "independent"],

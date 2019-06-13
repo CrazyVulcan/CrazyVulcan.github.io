@@ -1,6 +1,6 @@
 module.exports = [{
 	type: "admiral",
-	id: "christopher_pike_75005",
+	id: "A034",
 	set: ["75005"],
 	name: "Christopher Pike",
 	cost: 5,
@@ -11,7 +11,7 @@ module.exports = [{
 	factions: ["mirror-universe", "federation"]
 }, {
 	type: "admiral",
-	id: "gint_admiral_75003",
+	id: "A033",
 	set: ["75003"],
 	name: "Gint",
 	cost: 3,
@@ -22,7 +22,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "admiral",
-	id: "femal_changeling_admral_75002",
+	id: "A032",
 	set: ["75002"],
 	name: "Female Changeling",
 	cost: 6,
@@ -33,7 +33,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "admiral",
-	id: "admiral_kmpec_2017core",
+	id: "A031",
 	set: ["2017core"],
 	name: "K'Mpec",
 	cost: 4,
@@ -44,7 +44,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "admiral",
-	id: "admiral_sela_72282gp",
+	id: "A030",
 	set: ["72282gp"],
 	name: "Sela",
 	cost: 4,
@@ -55,7 +55,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "admiral",
-	id: "kiaphet_amman'sor_admiral_72281",
+	id: "A029",
 	set: ["72281"],
 	name: "Kiaphet Amman'Sor",
 	cost: 3,
@@ -66,7 +66,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "admiral",
-	id: "liviana_charvanek_admiral_72242",
+	id: "A028",
 	set: ["72242"],
 	name: "Liviana Charvanek",
 	unique: true,
@@ -77,7 +77,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "admiral",
-	id: "gowron_admiral_72241",
+	id: "A027",
 	set: ["72241"],
 	name: "Gowron",
 	unique: true,
@@ -88,7 +88,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "admiral",
-	id: "james_t_kirk_71523",
+	id: "A026",
 	set: ["71523"],
 	name: "James T. Kirk",
 	unique: true,
@@ -99,7 +99,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "admiral",
-	id: "gul_dukat_71524",
+	id: "A025",
 	set: ["71524"],
 	name: "Gul Dukat",
 	unique: true,
@@ -110,7 +110,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "admiral",
-	id: "maxwell_forrest_71526",
+	id: "A024",
 	set: ["71526"],
 	name: "Maxwell Forrest",
 	unique: true,
@@ -121,7 +121,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "admiral",
-	id: "v_las_71527",
+	id: "A023",
 	set: ["71527"],
 	name: "V'Las",
 	unique: true,
@@ -132,7 +132,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "admiral",
-	id: "borg_queen_71530",
+	id: "A022",
 	set: ["71530"],
 	name: "Borg Queen",
 	unique: true,
@@ -143,7 +143,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "admiral",
-	id: "matthew_dougherty_71531",
+	id: "A021",
 	set: ["71531", "72271"],
 	name: "Matthew Dougherty",
 	unique: true,
@@ -154,7 +154,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "admiral",
-	id: "gorkon_71532",
+	id: "A020",
 	set: ["71532"],
 	name: "Gorkon",
 	unique: true,
@@ -165,7 +165,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "admiral",
-	id: "hiren_71533",
+	id: "A019",
 	set: ["71533", "72252"],
 	name: "Hiren",
 	unique: true,
@@ -176,7 +176,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "admiral",
-	id: "worf_71535",
+	id: "A018",
 	set: ["71535"],
 	name: "Worf",
 	unique: true,
@@ -187,7 +187,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "admiral",
-	id: "mendak_71794",
+	id: "A017",
 	set: ["71794"],
 	name: "Mendak",
 	unique: true,
@@ -198,7 +198,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "admiral",
-	id: "gul_madred_71798",
+	id: "A016",
 	set: ["71798"],
 	name: "Gul Madred",
 	unique: true,
@@ -209,7 +209,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "admiral",
-	id: "black_71800",
+	id: "A015",
 	set: ["71800"],
 	name: "Black",
 	unique: true,
@@ -220,7 +220,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "admiral",
-	id: "gardner_71800",
+	id: "A014",
 	set: ["71800"],
 	name: "Gardner",
 	unique: true,
@@ -231,7 +231,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "admiral",
-	id: "erik_pressman_71801",
+	id: "A013",
 	set: ["71801"],
 	name: "Erik Pressman",
 	unique: true,
@@ -242,7 +242,7 @@ module.exports = [{
 	talents: 0
 }, {
 	type: "admiral",
-	id: "jaro_essa_71803",
+	id: "A012",
 	set: ["71803"],
 	name: "Jaro Essa",
 	unique: true,
@@ -253,7 +253,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "admiral",
-	id: "martok_71804",
+	id: "A011",
 	set: ["71804"],
 	name: "Martok",
 	unique: true,
@@ -264,7 +264,7 @@ module.exports = [{
 	talents: 1
 }, {
 	type: "admiral",
-	id: "william_ross_72001p",
+	id: "A010",
 	set: ["72001p"],
 	name: "William Ross",
 	cost: 4,
@@ -275,7 +275,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "admiral",
-	id: "matt_decker_72002p",
+	id: "A009",
 	set: ["72002p"],
 	name: "Matt Decker",
 	cost: 1,
@@ -286,7 +286,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "admiral",
-	id: "william_t_riker_71807",
+	id: "A008",
 	set: ["71807"],
 	name: "William T. Riker",
 	cost: 4,
@@ -301,7 +301,7 @@ module.exports = [{
 	}
 }, {
 	type: "admiral",
-	id: "haden_72011",
+	id: "A007",
 	set: ["72011"],
 	name: "Haden",
 	cost: 1,
@@ -312,7 +312,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "admiral",
-	id: "q_72000b",
+	id: "A006",
 	set: ["72000b"],
 	name: "Q",
 	cost: 1,
@@ -328,7 +328,7 @@ module.exports = [{
 	}
 }, {
 	type: "admiral",
-	id: "zek_72013",
+	id: "A005",
 	set: ["72013"],
 	name: "Zek",
 	cost: 1,
@@ -339,7 +339,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "admiral",
-	id: "alidar_jarok_72016",
+	id: "A004",
 	set: ["72016"],
 	name: "Alidar Jarok",
 	cost: 4,
@@ -350,7 +350,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "admiral",
-	id: "hayes_72008",
+	id: "A003",
 	set: ["72008"],
 	name: "Hayes",
 	cost: 3,
@@ -361,7 +361,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "admiral",
-	id: "shanthi_72008",
+	id: "A002",
 	set: ["72008"],
 	name: "Shanthi",
 	cost: 2,
@@ -372,7 +372,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "admiral",
-	id: "velal_72010",
+	id: "A001",
 	set: ["72010"],
 	name: "Velal",
 	cost: 3,

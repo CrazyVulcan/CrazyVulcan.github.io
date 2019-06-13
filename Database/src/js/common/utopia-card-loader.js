@@ -4,7 +4,7 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 
 	var valueOf = $filter("valueOf");
 
-	return function(cards, missionData, token, shipClasses, sets, missionSets, missions, callback) {
+	return function(cards, sets, shipClasses, token, callback) {
 
 		function isDuplicate(card, cards) {
 			var dupe = false;
@@ -235,8 +235,7 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 
 			cards.push(resource);
 		}
-		
-		
+
 		// For resource special cards or anything else that doesn't need any special handling
 		function loadOther(card) {
 			
@@ -314,7 +313,6 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 			}
 			
 			if( card.type == "token") {
-				
 				if( token[card.id] ) {
 					console.log("Duplicate token",card.id,card.name);
 					return;
@@ -366,58 +364,9 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 			
 		}
 		
-		function loadMissionCopies( copies ) {
-			
-			$.each( copies || [], function(i,copy) {
-				$.each( missionData, function(i,cardMissions) {
-					if( cardMission.id == copy.of ) {
-						cardMission.missionSet = cardMission.missionSet.concat(copy.missionSet);
-						return false;
-					}
-				} );
-			} );
-			
-		}
-		
-		function loadAllMissions(missionSet) {
-			
-			if( missionSets[missionSet.sourceID] ) {
-				console.log("Duplicate mission set",missionSet.sourceID,missionSet.name);
-				return;
-			}
-			
-			missionSets[missionSet.sourceID] = missionSet;
-			
-		}
-		
-		function loadMission(mission) {
-			
-			if( missions[mission.missionID] ) {
-				console.log("Duplicate mission",mission.missionID,mission.name);
-				return;
-			}
-			
-			missions[mission.missionID] = mission;
-			
-		}
-		
 		$http.get( "data/data.json" ).success( function(data) {
 			
 			var copies = [];
-			
-			$.each( data.missionSets || [], function(i,missionSet) {
-				if( missionSet.type == "copy" )
-					copies.push(missionSet);
-				else
-					loadAllMissions(missionSet);
-			});
-			
-			$.each( data.missions || [], function(i,mission) {
-				if( mission.type == "copy" )
-					copies.push(mission);
-				else
-					loadMission(mission);
-			});
 			
 			$.each( data.sets || [], function(i,set) {
 				if( set.type == "copy" )
@@ -498,7 +447,7 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 					card.tokenData = token[card.tokenId];
 				}
 			});
-				
+			
 			if( callback )
 				callback();
 			

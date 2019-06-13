@@ -1,5 +1,11 @@
 module.exports = [{
 	type: "set",
+	id: "75006",
+	name: "The Animated Series",
+	releaseDate: "2019-07-30",
+	parentSet: "Faction Pack"
+}, {
+	type: "set",
 	id: "75005",
 	name: "Kelvin Timeline",
 	releaseDate: "2018-09-02",

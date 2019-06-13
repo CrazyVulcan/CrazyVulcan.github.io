@@ -1,5 +1,5 @@
 <div class="u-search">
-	
+
 	<div class="search-query-container">
 		<input class="u-search-query" ng-model="search.query" placeholder="Search" spellcheck="false" autocorrect="off">
 		<button ng-click="resetSearch()">Reset</button>
@@ -7,13 +7,13 @@
 	</div>
 
 	<div ng-show="showAdvanced && (!dragStore.item || dragStore.source == 'search')">
-	
+
 		<div class="u-search-size">
 			<button class="u-search-smaller" ng-click="modifySearchColumns(-1)"><i class="fa fa-chevron-left"></i></button>
 			<div class="u-search-size-text">Resize Search Results</div>
 			<button class="u-search-bigger" ng-click="modifySearchColumns(1)"><i class="fa fa-chevron-right"></i></button>
 		</div>
-	
+
 		<search-filter-group title="Faction" open>
 			<span ng-repeat="(faction,data) in search.factions">
 				<label class="u-label"><input type="checkbox" ng-model="data.search" > <div class="u-faction card-faction-{{faction}}"></div> {{faction|removeDashes}}</label>
@@ -45,12 +45,16 @@
 				</div>
 			</div>
 		</search-filter-group>
-		
+
 		<search-filter-group title="Custom Filter" open>
 			<div class="u-search-filter-comment" ng-init="search.filterOperator = '<'">
 				<select ng-model="search.filterField"><option value="">- No Filter -</option><option ng-repeat="sortable in sortables" value="{{sortable.value}}">{{sortable.name}}</option></select>
 				<select ng-model="search.filterOperator"><option value="<">&lt;</option><option value="<=">&lt;=</option><option value="=">=</option><option value=">=">&gt;=</option><option value=">">&gt;</option></select>
 				<input ng-model="search.filterValue" placeholder="Value"></input>
+			</div>
+			<div class="u-search-filter-comment">
+				Filter On Maneuver: <select ng-model="search.maneuverType"><option value="">Any</option><option ng-repeat="maneuver in maneuvers" value="{{maneuver.value}}">{{maneuver.name}}</option></select>
+				<select ng-model="search.maneuverDifficulty"><option value="">Any</option><option ng-repeat="difficulty in difficulty_list" value="{{difficulty.value}}">{{difficulty.name}}</option></select>
 			</div>
 		</search-filter-group>
 
@@ -63,11 +67,14 @@
 			</div>
 			<button ng-click="uncheckAllSets()">Uncheck all sets</button>
 			<button ng-click="checkAllSets()">Check all sets</button>
+			<button ng-click="exportSets()">Export Sets</button>
+			<div class="u-search-filter-comment">Import Sets...</div>
+			<input type="file" multiple onchange="angular.element(this).scope().importSets(this)">
 			<div ng-repeat="set in setList | orderBy:'-releaseDate'" class="u-search-set" ng-hide="search.ignoreSetsFilter">
 				<label class="u-label"><input type="checkbox" ng-model="search.sets[set.id].search"> {{set.parentSet}}: {{set.name}}</label>
 			</div>
 		</search-filter-group>
-		
+
 	</div>
 
 </div>
@@ -85,17 +92,17 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<div ng-hide="dragStore.item && dragStore.source != 'search'">
 
 		<div class="card-container" ng-repeat="card in cards | cardFilter:search | sortBy:search.sortBy:search.ascending | limitTo:resultLimit*search.columns">
 			<card card="card" drag-store="dragStore" drag-source="search"></card>
 		</div>
-		
+
 		<div>
 			<button class="u-show-more" ng-hide="loading" ng-click="resultLimit = resultLimit + 10">Show More</button>
 		</div>
-		
+
 	</div>
-	
+
 </div>

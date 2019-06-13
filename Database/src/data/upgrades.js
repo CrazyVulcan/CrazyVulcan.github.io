@@ -1,6 +1,6 @@
 module.exports = [{
 	type: "talent",
-	id: "maquis_tactics_75004",
+	id: "E192",
 	set: ["75004"],
 	name: "Maquis Tactics",
 	cost: 5,
@@ -10,7 +10,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "talent",
-	id: "andorian_imperial_guard_75004",
+	id: "E191",
 	set: ["75004"],
 	name: "Andorian Imperial Guard",
 	cost: 2,
@@ -18,7 +18,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "talent",
-	id: "vidiian_sodality_75004",
+	id: "E190",
 	set: ["75004"],
 	name: "Vidiian Sodality",
 	cost: 1,
@@ -27,7 +27,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "tech",
-	id: "particle_synthesis_75004",
+	id: "T251",
 	set: ["75004"],
 	name: "Particle Synthesis",
 	cost: 4,
@@ -37,7 +37,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "tech",
-	id: "enhanced_shield_emitters_75004",
+	id: "T184",
 	set: ["75004"],
 	name: "Enhanced Shield Emitters",
 	cost: 5,
@@ -47,7 +47,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "tech",
-	id: "class_4_cloaking_device_75004",
+	id: "T183",
 	set: ["75004"],
 	name: "Class 4 Cloaking Device",
 	cost: 4,
@@ -57,7 +57,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "tech",
-	id: "inertial_compensators_75004",
+	id: "T182",
 	set: ["75004"],
 	name: "Inertial Compensators",
 	cost: 2,
@@ -67,7 +67,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "weapon",
-	id: "enhanced_phasers_75004",
+	id: "W194",
 	set: ["75004"],
 	name: "Enhanced Phasers",
 	cost: 3,
@@ -76,7 +76,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "weapon",
-	id: "hypothermic_charge_75004",
+	id: "W193",
 	set: ["75004"],
 	name: "Hypothermic Charge",
 	cost: 4,
@@ -88,7 +88,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "question",
-	id: "repurposed_cargo_hold_75004",
+	id: "Q015",
 	set: ["75004"],
 	name: "Repurposed Cargo Hold",
 	cost: 2,
@@ -98,7 +98,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "crew",
-	id: "tarah",
+	id: "C340",
 	set: ["75004"],
 	name: "Tarah",
 	cost: 5,
@@ -109,7 +109,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "crew",
-	id: "michael_jonas_75004",
+	id: "C339",
 	set: ["75004"],
 	name: "Michael Jonas",
 	cost: 3,
@@ -119,7 +119,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "crew",
-	id: "teero_anaydis_75004",
+	id: "C338",
 	set: ["75004"],
 	name: "Teero Anaydis",
 	cost: 3,
@@ -129,7 +129,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "crew",
-	id: "motura_75004",
+	id: "C337",
 	set: ["75004"],
 	name: "Motura",
 	cost: 2,
@@ -139,7 +139,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "crew",
-	id: "james_t_kirk_crew_75005",
+	id: "C336",
 	set: ["75005"],
 	name: "James T. Kirk",
 	cost: 4,
@@ -150,7 +150,7 @@ module.exports = [{
 	factions: ["mirror-universe","federation"]
 }, {
 	type: "crew",
-	id: "mr_spock_crew_75005",
+	id: "C335",
 	set: ["75005"],
 	name: "Mr. Spock",
 	cost: 4,
@@ -161,7 +161,7 @@ module.exports = [{
 	factions: ["mirror-universe","federation"]
 }, {
 	type: "crew",
-	id: "hikaru_sulu_crew_75005",
+	id: "C334",
 	set: ["75005"],
 	name: "Hikaru Sulu",
 	cost: 3,
@@ -171,7 +171,7 @@ module.exports = [{
 	factions: ["mirror-universe","federation"]
 }, {
 	type: "crew",
-	id: "montgomery_scott_shield_75005",
+	id: "C333",
 	set: ["75005"],
 	name: "Montgomery Scott",
 	cost: 3,
@@ -181,7 +181,7 @@ module.exports = [{
 	factions: ["mirror-universe","federation"]
 }, {
 	type: "crew",
-	id: "montgomery_scott_hull_75005",
+	id: "C332",
 	set: ["75005"],
 	name: "Montgomery Scott",
 	cost: 3,
@@ -191,7 +191,7 @@ module.exports = [{
 	factions: ["mirror-universe","federation"]
 }, {
 	type: "crew",
-	id: "leonard_mccoy_75005",
+	id: "C331",
 	set: ["75005"],
 	name: "Leonard Mccoy",
 	cost: 3,
@@ -201,7 +201,7 @@ module.exports = [{
 	factions: ["mirror-universe","federation"]
 }, {
 	type: "crew",
-	id: "leonard_mccoy__addCrew_75005",
+	id: "C330",
 	set: ["75005"],
 	name: "Leonard Mccoy",
 	cost: 3,
@@ -211,7 +211,7 @@ module.exports = [{
 	factions: ["mirror-universe","federation"]
 }, {
 	type: "crew",
-	id: "pavel_chekov_aux_75005",
+	id: "C329",
 	set: ["75005"],
 	name: "Pavel Chekov",
 	cost: 2,
@@ -221,7 +221,7 @@ module.exports = [{
 	factions: ["mirror-universe","federation"]
 }, {
 	type: "crew",
-	id: "pavel_chekov_75005",
+	id: "C328",
 	set: ["75005"],
 	name: "Pavel Chekov",
 	cost: 2,
@@ -232,7 +232,7 @@ module.exports = [{
 	factions: ["mirror-universe","federation"]
 }, {
 	type: "crew",
-	id: "nyota_uhura_comm_75005",
+	id: "C327",
 	set: ["75005"],
 	name: "Nyota Uhura",
 	cost: 3,
@@ -242,7 +242,7 @@ module.exports = [{
 	factions: ["mirror-universe","federation"]
 }, {
 	type: "crew",
-	id: "nyota_uhura_75005",
+	id: "C326",
 	set: ["75005"],
 	name: "Nyota Uhura",
 	cost: 3,
@@ -253,7 +253,7 @@ module.exports = [{
 	factions: ["mirror-universe","federation"]
 }, {
 	type: "talent",
-	id: "overwhelm_75005",
+	id: "E189",
 	set: ["75005"],
 	name: "Overwhelm",
 	cost: 4,
@@ -264,7 +264,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "tech",
-	id: "portable_transwarp_beaming_device_75005",
+	id: "T181",
 	set: ["75005"],
 	name: "Portable Transwarp Beaming Device",
 	cost: 2,
@@ -274,7 +274,7 @@ module.exports = [{
 	factions: ["mirror-universe"]
 }, {
 	type: "tech",
-	id: "intergrated_future_technology_75005",
+	id: "T180",
 	set: ["75005"],
 	name: "Intergrated Future Technology",
 	cost: 3,
@@ -283,7 +283,7 @@ module.exports = [{
 	factions: ["mirror-universe"]
 }, {
 	type: "tech",
-	id: "klingon_cloaking_device_75005",
+	id: "T179",
 	set: ["75005"],
 	name: "Klingon Cloaking Device",
 	cost: 2,
@@ -293,7 +293,7 @@ module.exports = [{
 	factions: ["mirror-universe", "klingon"]
 }, {
 	type: "crew",
-	id: "klingon_guard_75005",
+	id: "C325",
 	set: ["75005"],
 	name: "Klingon Guard",
 	cost: 2,
@@ -302,7 +302,7 @@ module.exports = [{
 	factions: ["mirror-universe","klingon"]
 }, {
 	type: "crew",
-	id: "klingon_patrol_75005",
+	id: "C324",
 	set: ["75005"],
 	name: "Klingon Patrol",
 	cost: 2,
@@ -312,7 +312,7 @@ module.exports = [{
 	factions: ["mirror-universe","klingon"]
 }, {
 	type: "crew",
-	id: "klingon_first_officer_75005",
+	id: "C323",
 	set: ["75005"],
 	name: "Klingon First Officer",
 	cost: 4,
@@ -322,7 +322,7 @@ module.exports = [{
 	factions: ["mirror-universe","klingon"]
 }, {
 	type: "crew",
-	id: "koth_75005",
+	id: "C322",
 	set: ["75005"],
 	name: "Koth",
 	cost: 2,
@@ -332,7 +332,7 @@ module.exports = [{
 	factions: ["mirror-universe","klingon"]
 }, {
 	type: "weapon",
-	id: "advanced_long_range_torpedo_75005",
+	id: "W192",
 	set: ["75005"],
 	name: "Advanced Long Range Torpedo",
 	cost: 3,
@@ -344,7 +344,7 @@ module.exports = [{
 	factions: ["mirror-universe","federation"]
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_75005",
+	id: "W191",
 	set: ["75005"],
 	name: "Photon Torpedoes",
 	cost: 3,
@@ -355,7 +355,7 @@ module.exports = [{
 	factions: ["mirror-universe","klingon"]
 },{
 	type: "weapon",
-	id: "disruptor_volley_75005",
+	id: "W190",
 	set: ["75005"],
 	name: "Disruptor Volley",
 	cost: 3,
@@ -366,7 +366,7 @@ module.exports = [{
 	factions: ["mirror-universe","klingon"]
 }, {
 	type: "weapon",
-	id: "full_spread_phasers_75005",
+	id: "W189",
 	set: ["75005"],
 	name: "Full Spread Phasers",
 	cost: 4,
@@ -376,7 +376,7 @@ module.exports = [{
 	factions: ["mirror-universe","federation"]
 }, {
 	type: "squadron",
-	id: "lead_squadron_73041",
+	id: "D032",
 	set: ["73041"],
 	name: "Lead Squadron",
 	cost: 5,
@@ -385,7 +385,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "squadron",
-	id: "flanking_maneuver_esilon_73041",
+	id: "D031",
 	set: ["73041"],
 	name: "Flanking Maneuver Epsilon",
 	cost: 3,
@@ -394,7 +394,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "squadron",
-	id: "defensive_maneuver_alpha_73041",
+	id: "D030",
 	set: ["73041"],
 	name: "Defensive Maneuver Alpha",
 	cost: 1,
@@ -402,7 +402,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "squadron",
-	id: "defensive_maneuver_beta_73041",
+	id: "D029",
 	set: ["73041"],
 	name: "Defensive Maneuver Beta",
 	cost: 2,
@@ -412,7 +412,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "squadron",
-	id: "defensive_maneuver_theta_73041",
+	id: "D028",
 	set: ["73041"],
 	name: "Defensive Maneuver Theta",
 	cost: 3,
@@ -422,7 +422,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "squadron",
-	id: "flanking_maneuver_delta_73041",
+	id: "D027",
 	set: ["73041"],
 	name: "Flanking Maneuver Delta",
 	cost: 2,
@@ -431,7 +431,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "squadron",
-	id: "flanking_attack_omega_73041",
+	id: "D026",
 	set: ["73041"],
 	name: "Flanking Attack Omega",
 	cost: 4,
@@ -441,7 +441,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "question",
-	id: "optronic_data_core_73042",
+	id: "Q014",
 	set: ["73042"],
 	name: "Optronic Data Core",
 	cost: 4,
@@ -450,7 +450,7 @@ module.exports = [{
 	factions: ["federation", "independent"]
 }, {
 	type: "talent",
-	id: "the_lone_hunt_73042",
+	id: "E188",
 	set: ["73042"],
 	name: "The Lone Hunt",
 	cost: 3,
@@ -459,7 +459,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "talent",
-	id: "relics_73042",
+	id: "E187",
 	set: ["73042"],
 	name: "Relics",
 	cost: 4,
@@ -467,7 +467,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "tech",
-	id: "tractor_beam_73042",
+	id: "T178",
 	set: ["73042"],
 	name: "Tractor Beam",
 	cost: 3,
@@ -477,7 +477,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "tech",
-	id: "stealth_mode_73042",
+	id: "T177",
 	set: ["73042"],
 	name: "Stealth Mode",
 	cost: 3,
@@ -487,7 +487,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "weapon",
-	id: "subnucleonic_beams_73042",
+	id: "W188",
 	set: ["73042"],
 	name: "Subnucleonic Beams",
 	cost: 3,
@@ -498,7 +498,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "crew",
-	id: "donik_73042",
+	id: "C321",
 	set: ["73042"],
 	name: "Donik",
 	cost: 2,
@@ -508,7 +508,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "crew",
-	id: "beta_hirogen_73042",
+	id: "C320",
 	set: ["73042"],
 	name: "Beta Hirogen",
 	cost: 3,
@@ -517,7 +517,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "talent",
-	id: "kal_if_fee_72321",
+	id: "E186",
 	set: ["72321"],
 	name: "Kal-If-Fee",
 	cost: 1,
@@ -527,7 +527,7 @@ module.exports = [{
 	factions: ["vulcan"]
 }, {
 	type: "talent",
-	id: "victory_is_life_73031",
+	id: "E185",
 	set: ["73032"],
 	name: "Victory Is Life",
 	cost: 6,
@@ -537,7 +537,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "tech",
-	id: "cloning_facility_73032",
+	id: "T176",
 	set: ["73032"],
 	name: "Cloning Facility",
 	cost: 4,
@@ -547,7 +547,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "tech",
-	id: "antiproton_blast_73032",
+	id: "T175",
 	set: ["73032"],
 	name: "Antiproton Blast",
 	cost: 2,
@@ -557,7 +557,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "crew",
-	id: "changeling_infiltrator_73032",
+	id: "C319",
 	set: ["73032"],
 	name: "Changeling Infiltrator",
 	cost: 4,
@@ -567,7 +567,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "crew",
-	id: "elim_garak_73032",
+	id: "C318",
 	set: ["73032"],
 	name: "Elim Garak",
 	cost: 1,
@@ -576,7 +576,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "crew",
-	id: "seskal_73032",
+	id: "C317",
 	set: ["73032"],
 	name: "Seskal",
 	cost: 4,
@@ -585,7 +585,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "weapon",
-	id: "tac_command_reticle_73032",
+	id: "W187",
 	set: ["73032"],
 	name: "Tactical Command Reticle",
 	cost: 2,
@@ -595,7 +595,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "talent",
-	id: "gorn_hegemony_73031",
+	id: "E184",
 	set: ["73031"],
 	name: "Gorn Hegemony",
 	cost: 4,
@@ -604,7 +604,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "question",
-	id: "meridor_gorn_ale_73031",
+	id: "Q013",
 	set: ["73031"],
 	name: "Meridor - Gorn Ale",
 	cost: 2,
@@ -614,7 +614,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "crew",
-	id: "slar_73031",
+	id: "C316",
 	set: ["73031"],
 	name: "Slar",
 	cost: 5,
@@ -625,7 +625,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "crew",
-	id: "gorn_pilot_73031",
+	id: "C315",
 	set: ["73031"],
 	name: "Gorn Pilot",
 	cost: 3,
@@ -634,7 +634,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "crew",
-	id: "gorn_trooper_73031",
+	id: "C314",
 	set: ["73031"],
 	name: "Gorn Trooper",
 	cost: 2,
@@ -643,7 +643,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "weapon",
-	id: "hidden_explosives_73031",
+	id: "W186",
 	set: ["73031"],
 	name: "Hidden Explosives",
 	cost: 3,
@@ -652,7 +652,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "tech",
-	id: "enhanced_durabilty_73031",
+	id: "T174",
 	set: ["73031"],
 	name: "Enhanced Durability",
 	cost: 4,
@@ -662,7 +662,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "tech",
-	id: "gorn_sensors_73031",
+	id: "T173",
 	set: ["73031"],
 	name: "Gorn Sensors",
 	cost: 3,
@@ -672,7 +672,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "weapon",
-	id: "disruptor_bombardment_73031",
+	id: "W185",
 	set: ["73031"],
 	name: "Disruptor Bombardment",
 	cost: 2,
@@ -684,7 +684,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "talent",
-	id: "grand_nagus_75003",
+	id: "E183",
 	set: ["75003"],
 	name: "Grand Nagus",
 	cost: 2,
@@ -695,7 +695,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "tech",
-	id: "kemocite_75003",
+	id: "T172",
 	set: ["75003"],
 	name: "Kemocite",
 	cost: 2,
@@ -704,7 +704,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "tech",
-	id: "t9_energy_converter_75003",
+	id: "T171",
 	set: ["75003"],
 	name: "T-9 Energy Converter",
 	cost: 2,
@@ -713,7 +713,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "weapon",
-	id: "weapon_ports_75003",
+	id: "W184",
 	set: ["75003"],
 	name: "Weapon Ports",
 	cost: 2,
@@ -724,7 +724,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_75003",
+	id: "W183",
 	set: ["75003"],
 	name: "Photon Torpedoes",
 	cost: 2,
@@ -735,7 +735,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "weapon",
-	id: "verteron_pulse_trap_75003",
+	id: "W182",
 	set: ["75003"],
 	name: "Verteron Pulse Trap",
 	cost: 2,
@@ -744,7 +744,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "crew",
-	id: "gegis_75003",
+	id: "C313",
 	set: ["75003"],
 	name: "Gegis",
 	cost: 3,
@@ -754,7 +754,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "crew",
-	id: "par_lenor_75003",
+	id: "C312",
 	set: ["75003"],
 	name: "Par Lenor",
 	cost: 3,
@@ -763,7 +763,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "crew",
-	id: "letek_75003",
+	id: "C311",
 	set: ["75003"],
 	name: "Letek",
 	cost: 2,
@@ -772,7 +772,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "crew",
-	id: "gral_75003",
+	id: "C310",
 	set: ["75003"],
 	name: "Gral",
 	cost: 1,
@@ -782,7 +782,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "crew",
-	id: "nava_75003",
+	id: "C309",
 	set: ["75003"],
 	name: "Nava",
 	cost: 1,
@@ -792,7 +792,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "crew",
-	id: "grilka_75003",
+	id: "C308",
 	set: ["75003"],
 	name: "Grilka",
 	cost: 1,
@@ -801,7 +801,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "question",
-	id: "bio_mimetic_gel_75003",
+	id: "Q012",
 	set: ["75003"],
 	name: "Bio-Mimetic Gel",
 	cost: 3,
@@ -812,7 +812,7 @@ module.exports = [{
 	countsAsUpgrade: true
 }, 	{
 	type: "talent",
-	id: "neural_transponder_73002",
+	id: "E182",
 	set: ["73002"],
 	name: "Neural Transponder",
 	cost: 2,
@@ -824,7 +824,7 @@ module.exports = [{
 	factions: ["borg"]
 }, {
 	type: "tech",
-	id: "technological_analysis_73002",
+	id: "T170",
 	set: ["73002"],
 	name: "Technological Analysis",
 	cost: 4,
@@ -834,7 +834,7 @@ module.exports = [{
 	factions: ["borg"]
 }, {
 	type: "weapon",
-	id: "tractor_beam_73002",
+	id: "W181",
 	set: ["73002"],
 	name: "Tractor Beam",
 	cost: 5,
@@ -845,7 +845,7 @@ module.exports = [{
 	factions: ["borg"]
 }, {
 	type: "borg",
-	id: "threat_analysis_73002",
+	id: "B018",
 	set: ["73002"],
 	name: "Threat Analysis",
 	cost: 1,
@@ -853,7 +853,7 @@ module.exports = [{
 	factions: ["borg"]
 }, {
 	type: "crew",
-	id: "one_73002",
+	id: "C307",
 	set: ["73002"],
 	name: "One",
 	cost: 4,
@@ -862,7 +862,7 @@ module.exports = [{
 	factions: ["borg"]
 }, {
 	type: "crew",
-	id: "second_73002",
+	id: "C306",
 	set: ["73002"],
 	name: "'Second'",
 	cost: 4,
@@ -871,7 +871,7 @@ module.exports = [{
 	factions: ["borg"]
 }, {
 	type: "crew",
-	id: "neonatal_borg_73002",
+	id: "C305",
 	set: ["73002"],
 	name: "Neonatal Borg",
 	cost: 2,
@@ -880,7 +880,7 @@ module.exports = [{
 	factions: ["borg"]
 }, {
 	type: "crew",
-	id: "mezoti_73002",
+	id: "C304",
 	set: ["73002"],
 	name: "Mezoti",
 	cost: 2,
@@ -889,7 +889,7 @@ module.exports = [{
 	factions: ["borg"]
 }, {
 	type: "talent",
-	id: "rules_of_acquisition_73001",
+	id: "E181",
 	set: ["73001", "75003"],
 	name: "The Rules Of Acquisition",
 	cost: 5,
@@ -899,7 +899,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "crew",
-	id: "arridor_73001",
+	id: "C303",
 	set: ["73001"],
 	name: "Arridor",
 	cost: 3,
@@ -909,7 +909,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "crew",
-	id: "doctor_reyga_73001",
+	id: "C302",
 	set: ["73001"],
 	name: "Doctor Reyga",
 	cost: 3,
@@ -918,7 +918,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "crew",
-	id: "kol_73001",
+	id: "C301",
 	set: ["73001"],
 	name: "Kol",
 	cost: 2,
@@ -929,7 +929,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "weapon",
-	id: "missile_launchers_72311p",
+	id: "W180",
 	set: ["73001"],
 	name: "Missile Launchers",
 	cost: 3,
@@ -941,7 +941,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "tech",
-	id: "metaphasic_shields_72311p",
+	id: "T170",
 	set: ["73001"],
 	name: "Metaphasic Shields",
 	cost: 4,
@@ -951,7 +951,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "weapon",
-	id: "photonic_cannon_72311p",
+	id: "W179",
 	set: ["72311p"],
 	name: "Photonic Cannon",
 	cost: 10,
@@ -962,7 +962,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "talent",
-	id: "all_power_to_weapons_75002",
+	id: "E180",
 	set: ["75002"],
 	name: "All Power To Weapons",
 	cost: 5,
@@ -973,7 +973,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "talent",
-	id: "spread_despair_and_demoralization_75002",
+	id: "E179",
 	set: ["75002"],
 	name: "Spread Despair and Demoralization",
 	cost: 5,
@@ -983,7 +983,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "tech",
-	id: "sucide_attack_75002",
+	id: "T169",
 	set: ["75002"],
 	name: "Suicide Attack",
 	cost: 5,
@@ -993,7 +993,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "tech",
-	id: "secondary_matter_system_75002",
+	id: "T168",
 	set: ["75002"],
 	name: "Secondary Matter System",
 	cost: 3,
@@ -1002,7 +1002,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "weapon",
-	id: "disruptor_cannon_75002",
+	id: "W178",
 	set: ["75002"],
 	name: "Disruptor Cannon",
 	cost: 3,
@@ -1015,7 +1015,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_75002",
+	id: "W177",
 	set: ["75002"],
 	name: "Photon Torpedoes",
 	cost: 5,
@@ -1027,7 +1027,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "weapon",
-	id: "phased_polaron_beam_75002",
+	id: "W176",
 	set: ["75002", "73032"],
 	name: "Phased Polaron Beams",
 	cost: 3,
@@ -1040,7 +1040,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "weapon",
-	id: "minesweeper_75002",
+	id: "W175",
 	set: ["75002"],
 	name: "Minesweeper",
 	cost: 2,
@@ -1050,7 +1050,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "weapon",
-	id: "energy_dissipator_75002",
+	id: "W174",
 	set: ["75002"],
 	name: "Engery Dissipator",
 	cost: 2,
@@ -1063,7 +1063,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "crew",
-	id: "jemhadar_first_75002",
+	id: "C300",
 	set: ["75002"],
 	name: "Jem'Hadar First",
 	cost: 3,
@@ -1071,7 +1071,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "crew",
-	id: "jemhadar_elder_75002",
+	id: "C299",
 	set: ["75002"],
 	name: "Jem'Hadar Elder",
 	cost: 3,
@@ -1079,7 +1079,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "crew",
-	id: "duranadar_75002",
+	id: "C298",
 	set: ["75002"],
 	name: "Duran'Adar",
 	cost: 3,
@@ -1088,7 +1088,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "crew",
-	id: "talaktalan_75002",
+	id: "C297",
 	set: ["75002"],
 	name: "Talak'Talan",
 	cost: 2,
@@ -1099,7 +1099,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "crew",
-	id: "lamatukan_75002",
+	id: "C296",
 	set: ["75002"],
 	name: "Lamat'Ukan",
 	cost: 2,
@@ -1108,7 +1108,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "tech",
-	id: "quantum_stasis_module_75001",
+	id: "T167",
 	set: ["75001"],
 	name: "Quantum Stasis Module",
 	cost: 3,
@@ -1118,7 +1118,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "tech",
-	id: "auxiliary_power_core_75001",
+	id: "T166",
 	set: ["75001"],
 	name: "Auxiliary Power Core",
 	cost: 3,
@@ -1129,7 +1129,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "tech",
-	id: "reinforced_shields_75001",
+	id: "T165",
 	set: ["75001"],
 	name: "Reinforced Shields",
 	cost: 1,
@@ -1139,7 +1139,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "talent",
-	id: "strike_from_the_shadows_75001",
+	id: "E178",
 	set: ["75001"],
 	name: "Strike From The Shadows",
 	cost: 3,
@@ -1148,7 +1148,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "talent",
-	id: "tal_shiar_75001",
+	id: "E177",
 	set: ["75001"],
 	name: "Tal Shiar",
 	cost: 2,
@@ -1159,7 +1159,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "weapon",
-	id: "disruptor_beams_75001",
+	id: "W173",
 	set: ["75001"],
 	name: "Disruptor Beams",
 	cost: 5,
@@ -1169,7 +1169,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "weapon",
-	id: "forward_disruptor_banks_75001",
+	id: "W172",
 	set: ["75001"],
 	name: "Forward Disruptor Banks",
 	cost: 3,
@@ -1177,7 +1177,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "weapon",
-	id: "additional_weapons_array_75001",
+	id: "W171",
 	set: ["75001"],
 	name: "Additional Weapons Array",
 	cost: 3,
@@ -1187,7 +1187,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "crew",
-	id: "romulan_medical_team_75001",
+	id: "C295",
 	set: ["75001"],
 	name: "Romulan Medical Team",
 	cost: 3,
@@ -1196,7 +1196,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "crew",
-	id: "romulan_spy_75001",
+	id: "C294",
 	set: ["75001"],
 	name: "Romulan Spy",
 	cost: 2,
@@ -1205,7 +1205,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "crew",
-	id: "tal_shiar_subcommander_75001",
+	id: "C293",
 	set: ["75001"],
 	name: "Tal Shiar Sub-Commander",
 	cost: 2,
@@ -1214,7 +1214,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "crew",
-	id: "parem_75001",
+	id: "C292",
 	set: ["75001"],
 	name: "Parem",
 	cost: 1,
@@ -1223,7 +1223,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "crew",
-	id: "bochra_75001",
+	id: "C291",
 	set: ["75001"],
 	name: "Bochra",
 	cost: 1,
@@ -1232,7 +1232,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "talent",
-	id: "riker_maneuver_2017core",
+	id: "E176",
 	set: ["2017core"],
 	name: "Riker Maneuver",
 	cost: 4,
@@ -1241,7 +1241,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "talent",
-	id: "make_it_so_2017core",
+	id: "E175",
 	set: ["2017core"],
 	name: "Make It So",
 	cost: 3,
@@ -1250,7 +1250,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "reinforced_bulkheads_2017core",
+	id: "T164",
 	set: ["2017core"],
 	name: "Reinforced Bulkheads",
 	cost: 3,
@@ -1258,7 +1258,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "tech",
-	id: "exocomp_2017core",
+	id: "T163",
 	set: ["2017core"],
 	name: "Exocomp",
 	cost: 4,
@@ -1266,7 +1266,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "tactical_station_2017core",
+	id: "W170",
 	set: ["2017core", "71510"],
 	name: "Tactical Station",
 	cost: 4,
@@ -1275,7 +1275,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_2017core",
+	id: "W169",
 	set: ["2017core"],
 	name: "Photon Torpedoes",
 	cost: 2,
@@ -1286,7 +1286,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "disruptor_cannon_2017core",
+	id: "W168",
 	set: ["2017core"],
 	name: "Disruptor Cannon",
 	cost: 2,
@@ -1297,7 +1297,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "weapon",
-	id: "torpedoe_fusillade_2017core",
+	id: "W167",
 	set: ["2017core"],
 	name: "Torpedo Fusillade",
 	cost: 0,
@@ -1308,7 +1308,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "worf_2017core",
+	id: "C290",
 	set: ["2017core"],
 	name: "Worf",
 	cost: 5,
@@ -1318,7 +1318,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "kurn_2017core",
+	id: "C289",
 	set: ["2017core"],
 	name: "Kurn",
 	cost: 4,
@@ -1327,7 +1327,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "klingon_helmsman_2017core",
+	id: "C288",
 	set: ["2017core"],
 	name: "Klingon Helmsman",
 	cost: 3,
@@ -1335,7 +1335,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "toral_2017core",
+	id: "C287",
 	set: ["2017core"],
 	name: "Toral",
 	cost: 2,
@@ -1344,7 +1344,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "klingon_bekk_2017core",
+	id: "C286",
 	set: ["2017core"],
 	name: "Klingon Bekk",
 	cost: 1,
@@ -1352,7 +1352,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "geordi_la_forge_2017core",
+	id: "C285",
 	set: ["2017core"],
 	name: "Geordi La Forge",
 	cost: 3,
@@ -1361,7 +1361,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "miles_obrien_2017core",
+	id: "C284",
 	set: ["2017core"],
 	name: "Miles O'Brien",
 	cost: 2,
@@ -1370,7 +1370,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "deanna_troi_2017core",
+	id: "C283",
 	set: ["2017core"],
 	name: "Deanna Troi",
 	cost: 2,
@@ -1380,7 +1380,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "beverly_crusher_2017core",
+	id: "C282",
 	set: ["2017core"],
 	name: "Beverly Crusher",
 	cost: 3,
@@ -1389,7 +1389,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "christopher_hobson_2017core",
+	id: "C281",
 	set: ["2017core"],
 	name: "Christopher Hobson",
 	cost: 2,
@@ -1398,7 +1398,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "talent",
-	id: "blood_oath_2017core",
+	id: "E174",
 	set: ["2017core"],
 	name: "Blood Oath",
 	cost: 3,
@@ -1409,7 +1409,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "talent",
-	id: "good_day_to_die_2017core",
+	id: "E173",
 	set: ["2017core"],
 	name: "Today Is A Good Day To Die",
 	cost: 5,
@@ -1418,7 +1418,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "tech",
-	id: "sabotaged_systems_22303p",
+	id: "T162",
 	set: ["72302p"],
 	name: "Sabotaged Systems",
 	cost: 3,
@@ -1428,7 +1428,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "crew",
-	id: "bounty_hunter_72012wp",
+	id: "C280",
 	set: ["72012wp"],
 	name: "Tellarite Bounty Hunter",
 	cost: 1,
@@ -1438,7 +1438,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "weapon",
-	id: "triphasic_emitters_72014wp",
+	id: "W166",
 	set: ["72014wp"],
 	name: "Triphasic Emitters",
 	cost: 2,
@@ -1449,7 +1449,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "tech",
-	id: "propulsion_matrix_72014wp",
+	id: "T161",
 	set: ["72014wp"],
 	name: "Propulsion Matrix",
 	cost: 3,
@@ -1458,7 +1458,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "tech",
-	id: "repair_protocol_72014wp",
+	id: "T160",
 	set: ["72014wp"],
 	name: "Repair Protocol",
 	cost: 4,
@@ -1468,7 +1468,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "weapon",
-	id: "tellarite_disruptor_banks_72014wp",
+	id: "W165",
 	set: ["72014wp"],
 	name: "Tellarite Disruptor Banks",
 	cost: 3,
@@ -1479,7 +1479,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "tech",
-	id: "evasive_protocol_72014wp",
+	id: "T159",
 	set: ["72014wp"],
 	name: "Evasive Protocol",
 	cost: 3,
@@ -1489,7 +1489,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "tech",
-	id: "disguise_protocol_72014wp",
+	id: "T158",
 	set: ["72014wp"],
 	name: "Disguise Protocol",
 	cost: 4,
@@ -1499,7 +1499,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "weapon",
-	id: "thoron_shock_emitter_72013wp",
+	id: "W164",
 	set: ["72013wp"],
 	name: "Thoron Shock Emitter",
 	cost: 2,
@@ -1511,7 +1511,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "weapon",
-	id: "plasma_wave_72013wp",
+	id: "W163",
 	set: ["72013wp"],
 	name: "Plasma Wave",
 	cost: 3,
@@ -1523,7 +1523,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "weapon",
-	id: "plasma_pulse_72013wp",
+	id: "W162",
 	set: ["72013wp"],
 	name: "Plasma Pulse",
 	cost: 3,
@@ -1536,7 +1536,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "weapon",
-	id: "quantum_torpedoes_72013wp",
+	id: "W161",
 	set: ["72013wp"],
 	name: "Quantum Torpedoes",
 	cost: 3,
@@ -1548,7 +1548,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "question",
-	id: "captured_72013wp",
+	id: "Q011",
 	set: ["72013wp"],
 	name: "Captured",
 	cost: 1,
@@ -1557,7 +1557,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "tech",
-	id: "belannas_codes_72013wp",
+	id: "T157",
 	set: ["72013wp"],
 	name: "B'Elanna's Codes",
 	cost: 3,
@@ -1566,7 +1566,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "tech",
-	id: "final_stage_targeting_72013wp",
+	id: "T156",
 	set: ["72013wp"],
 	name: "Final Stage Targeting",
 	cost: 3,
@@ -1575,7 +1575,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "tech",
-	id: "shield_adaptation_72013wp",
+	id: "T155",
 	set: ["72013wp"],
 	name: "Shield Adaptation",
 	cost: 5,
@@ -1585,7 +1585,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "crew",
-	id: "belanna_torres_72013wp",
+	id: "C279",
 	set: ["72013wp"],
 	name: "B'Elanna Torres",
 	cost: 1,
@@ -1594,7 +1594,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "talent",
-	id: "dna_encoding_72012wp",
+	id: "E172",
 	set: ["72012wp"],
 	name: "DNA Encoded Message",
 	cost: 5,
@@ -1603,7 +1603,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "goroth_72012wp",
+	id: "C278",
 	set: ["72012wp"],
 	name: "Goroth",
 	cost: 2,
@@ -1613,7 +1613,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "kolos_72012wpwp",
+	id: "C277",
 	set: ["72012wp"],
 	name: "Kolos",
 	cost: 3,
@@ -1622,7 +1622,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_72012wp",
+	id: "W160",
 	set: ["72012wp"],
 	name: "Photon Torpedoes",
 	cost: 2,
@@ -1635,7 +1635,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "tech",
-	id: "dispersive_armor_72012wp",
+	id: "T154",
 	set: ["72012wp"],
 	name: "Dispersive Armor",
 	cost: 4,
@@ -1646,7 +1646,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "tech",
-	id: "reactor_pit_72012wp",
+	id: "T153",
 	set: ["72012wp"],
 	name: "Reactor Pit",
 	cost: 3,
@@ -1655,7 +1655,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "question",
-	id: "photon_detonation_tech_72012wp",
+	id: "Q010",
 	set: ["72012wp"],
 	name: "Photon Detonation",
 	cost: 3,
@@ -1666,7 +1666,7 @@ module.exports = [{
 	countsAsUpgrade: true
 }, {
 	type: "talent",
-	id: "captains_discretion_72001wp",
+	id: "E171",
 	set: ["72011wp"],
 	name: "Captain's Discretion",
 	cost: 4,
@@ -1675,7 +1675,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "david_marcus_72001wp",
+	id: "C276",
 	set: ["72011wp"],
 	name: "David Marcus",
 	cost: 3,
@@ -1684,7 +1684,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "saavik_72001wp",
+	id: "C275",
 	set: ["72011wp"],
 	name: "Saavik",
 	cost: 1,
@@ -1694,7 +1694,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "federation_helmsman_72001wp",
+	id: "C274",
 	set: ["72011wp"],
 	name: "Federation Helmsman",
 	cost: 3,
@@ -1703,7 +1703,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "comm_station_72001wp",
+	id: "T152",
 	set: ["72011wp"],
 	name: "Comm Station",
 	cost: 4,
@@ -1713,7 +1713,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "close-range_scan_72001wp",
+	id: "T151",
 	set: ["72011wp"],
 	name: "Close-Range Scan",
 	cost: 3,
@@ -1722,7 +1722,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "genesis_effect_72001wp",
+	id: "T150",
 	set: ["72011wp"],
 	name: "Genesis Effect",
 	cost: 2,
@@ -1732,7 +1732,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "william_t_riker_72001wp",
+	id: "C273",
 	set: ["72011wp", "71801"],
 	name: "William T. Riker",
 	cost: 4,
@@ -1741,7 +1741,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "data_72301p",
+	id: "C272",
 	set: ["72301rp"],
 	name: "Data",
 	cost: 5,
@@ -1751,7 +1751,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "talent",
-	id: "quick_thinking72300p",
+	id: "E170",
 	set: ["72300p"],
 	name: "Quick Thinking",
 	cost: 5,
@@ -1760,7 +1760,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "impulse_thrusters_72300p",
+	id: "T149",
 	set: ["72300p"],
 	name: "Impulse Thrusters",
 	cost: 4,
@@ -1769,7 +1769,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "pulse_phased_weapons_72300p",
+	id: "W159",
 	set: ["72300p"],
 	name: "Pulse Phased Weapons",
 	attack: 3,
@@ -1780,7 +1780,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "belanna_torres_72300p",
+	id: "C271",
 	set: ["72300p"],
 	name: "B'Elanna Torres",
 	cost: 3,
@@ -1789,7 +1789,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "aft_Photon_torpedoes_72290p",
+	id: "W158",
 	set: ["72290p"],
 	name: "Aft Photon Torpedoes",
 	cost: 4,
@@ -1800,7 +1800,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "assault_team_72290p",
+	id: "C270",
 	set: ["72290p"],
 	name: "Assault Team",
 	cost: 5,
@@ -1809,7 +1809,7 @@ module.exports = [{
 	factions: ["mirror-universe"]
 }, {
 	type: "crew",
-	id: "charles_tucker_iii_72290p",
+	id: "C269",
 	set: ["72290p"],
 	name: "Charles Tucker III",
 	cost: 4,
@@ -1818,7 +1818,7 @@ module.exports = [{
 	factions: ["mirror-universe"]
 }, {
 	type: "crew",
-	id: "tpol_72290p",
+	id: "C268",
 	set: ["72290p"],
 	name: "T'Pol",
 	cost: 4,
@@ -1827,7 +1827,7 @@ module.exports = [{
 	factions: ["mirror-universe"]
 }, {
 	type: "talent",
-	id: "patience_is_for_the_dead_muratas",
+	id: "E169",
 	set: ["72293"],
 	name: "Patience is for the Dead",
 	cost: 5,
@@ -1836,7 +1836,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "weapon",
-	id: "xindi_torpedoes_muratas",
+	id: "W157",
 	set: ["72293"],
 	name: "Xindi Torpedoes",
 	attack: 4,
@@ -1847,7 +1847,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "weapon",
-	id: "particle_beam_weapon_muratas",
+	id: "W156",
 	set: ["72293"],
 	name: "Particle Beam Weapon ",
 	cost: 0,
@@ -1858,7 +1858,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "crew",
-	id: "reptilian_analysis_team_muratas",
+	id: "C267",
 	set: ["72293"],
 	name: "Reptilian Analysis Team",
 	cost: 5,
@@ -1867,7 +1867,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "tech",
-	id: "thermal_chamber_muratas",
+	id: "T148",
 	set: ["72293"],
 	name: "Thermal Chamber",
 	cost: 3,
@@ -1876,7 +1876,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "tech",
-	id: "sensor_encoders_muratas",
+	id: "T147",
 	set: ["72293"],
 	name: "Sensor Encoders",
 	cost: 3,
@@ -1885,7 +1885,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "talent",
-	id: "dispersal_pattern_sierra_72284p",
+	id: "E168",
 	set: ["72284p"],
 	name: "Dispersal Pattern Sierra",
 	cost: 5,
@@ -1894,7 +1894,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "transporter_72284p",
+	id: "T146",
 	set: ["72284p"],
 	name: "Transporter",
 	cost: 3,
@@ -1903,7 +1903,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "aft_phaser_emitters_72284p",
+	id: "W155",
 	set: ["72284p"],
 	name: "Aft Phaser Emitters",
 	cost: 0,
@@ -1914,7 +1914,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "natasha_yar_72284p",
+	id: "C266",
 	set: ["72284p"],
 	name: "Natasha Yar",
 	cost: 4,
@@ -1923,7 +1923,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "xindi_torpedoes_72281",
+	id: "W154",
 	set: ["72281"],
 	name: "Xindi Torpedoes",
 	attack: 4,
@@ -1934,7 +1934,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "tech",
-	id: "biometric_hologram_72281",
+	id: "T145",
 	set: ["72281"],
 	name: "Biometric Hologram",
 	cost: 5,
@@ -1943,7 +1943,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "tech",
-	id: "subspace_vortex_72281",
+	id: "T144",
 	set: ["72281"],
 	name: "Subspace Vortex",
 	cost: 5,
@@ -1952,7 +1952,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "tech",
-	id: "trellium_d_72281",
+	id: "T143",
 	set: ["72281"],
 	name: "Trellium-D",
 	cost: 4,
@@ -1961,7 +1961,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "crew",
-	id: "raijin_72281",
+	id: "C265",
 	set: ["72281"],
 	name: "Raijin",
 	cost: 4,
@@ -1970,7 +1970,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "talent",
-	id: "retaliation_72281",
+	id: "E167",
 	set: ["72281"],
 	name: "Retaliation",
 	cost: 5,
@@ -1979,7 +1979,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "talent",
-	id: "klingon_romulan_alliance_72282gp",
+	id: "E166",
 	set: ["72282gp"],
 	name: "Klingon-Romulan Alliance",
 	cost: 4,
@@ -1988,7 +1988,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "talent",
-	id: "reverse_course_72282gp",
+	id: "E165",
 	set: ["72282gp"],
 	name: "Reverse Course",
 	cost: 5,
@@ -1997,7 +1997,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "crew",
-	id: "tokath_72282gp",
+	id: "C264",
 	set: ["72282gp"],
 	name: "Tokath",
 	cost: 2,
@@ -2006,7 +2006,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "tech",
-	id: "tachyon_pulse_72282gp",
+	id: "T142",
 	set: ["72282gp"],
 	name: "Tachyon Pulse",
 	cost: 4,
@@ -2015,7 +2015,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "talent",
-	id: "interrogation_72282p",
+	id: "E164",
 	set: ["72282p"],
 	name: "Interrogation",
 	cost: 5,
@@ -2024,7 +2024,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "talent",
-	id: "enemy_of_the_empire_72282p",
+	id: "E163",
 	set: ["72282p"],
 	name: "Enemy Of The Empire",
 	cost: 5,
@@ -2033,7 +2033,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "kulge_72282p",
+	id: "C263",
 	set: ["72282p"],
 	name: "Kulge",
 	cost: 5,
@@ -2042,7 +2042,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "tech",
-	id: "aft_shields_72282p",
+	id: "T141",
 	set: ["72282p"],
 	name: "Aft Shields",
 	cost: 4,
@@ -2051,7 +2051,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "lursa_crew_72282p",
+	id: "C262",
 	set: ["72282p"],
 	name: "Lursa",
 	cost: 3,
@@ -2061,7 +2061,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "betor_crew_72282p",
+	id: "C261",
 	set: ["72282p"],
 	name: "B'Etor",
 	cost: 3,
@@ -2071,7 +2071,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "talent",
-	id: "on_my_command_72281p",
+	id: "E162",
 	set: ["72281p"],
 	name: "On My Command",
 	cost: 5,
@@ -2080,7 +2080,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "toral_72281p",
+	id: "C260",
 	set: ["72281p"],
 	name: "Toral",
 	cost: 4,
@@ -2089,7 +2089,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "tech",
-	id: "auxiliary_power_to_shields_72281p",
+	id: "T140",
 	set: ["72281p"],
 	name: "Auxiliary Power to Shields",
 	cost: 4,
@@ -2098,7 +2098,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "question",
-	id: "change_course_72281p",
+	id: "Q009",
 	set: ["72281p"],
 	name: "Course Change",
 	cost: 4,
@@ -2107,7 +2107,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "talent",
-	id: "thalen_orassin",
+	id: "E161",
 	set: ["72273"],
 	name: "Thalen",
 	cost: 5,
@@ -2116,7 +2116,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "talent",
-	id: "xindi_council_orassin",
+	id: "E160",
 	set: ["72273"],
 	name: "Xindi Council",
 	cost: 4,
@@ -2125,7 +2125,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "crew",
-	id: "insectoid_raiding_party_orassin",
+	id: "C259",
 	set: ["72273"],
 	name: "Insecetoid Raiding Party",
 	cost: 3,
@@ -2134,7 +2134,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "weapon",
-	id: "pulse-firing_particle_cannon_orassin",
+	id: "W153",
 	set: ["72273"],
 	name: "Pulse-Firing Particle Cannon",
 	cost: 4,
@@ -2145,7 +2145,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "weapon",
-	id: "xindi_torpedoes_orassin",
+	id: "W152",
 	set: ["72273"],
 	name: "Xindi Torpedoes",
 	cost: 2,
@@ -2156,7 +2156,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "tech",
-	id: "hatchery_orassin",
+	id: "T139",
 	set: ["72273"],
 	name: "Hatchery",
 	cost: 2,
@@ -2165,7 +2165,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "talent",
-	id: "cry_of_the_warrior_bortas",
+	id: "E159",
 	set: ["72280p"],
 	name: "Cry of the Warrior",
 	cost: 5,
@@ -2174,7 +2174,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "talent",
-	id: "aim_and_fire_bortas",
+	id: "E158",
 	set: ["72280p"],
 	name: "Aim and Fire!",
 	cost: 5,
@@ -2183,7 +2183,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "worf_bortas",
+	id: "C258",
 	set: ["72280p"],
 	name: "Worf",
 	cost: 3,
@@ -2192,7 +2192,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "tech",
-	id: "emergency_override_bortas",
+	id: "T138",
 	set: ["72280p"],
 	name: "Emergency Override",
 	cost: 2,
@@ -2201,7 +2201,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "demora_sulu_enterprise_b",
+	id: "C257",
 	set: ["72263"],
 	name: "Demora Sulu",
 	cost: 4,
@@ -2210,7 +2210,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "holo_communicator_enterprise_b",
+	id: "T137",
 	set: ["72263"],
 	name: "Holo-Communicator",
 	cost: 5,
@@ -2219,7 +2219,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "full_reverse_enterprise_b",
+	id: "T136",
 	set: ["72263"],
 	name: "Full Reverse",
 	cost: 2,
@@ -2228,7 +2228,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "deflector_control_enterprise_b",
+	id: "T135",
 	set: ["72263"],
 	name: "Deflector Control",
 	cost: 5,
@@ -2237,7 +2237,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "resonance_burst_enterprise_b",
+	id: "T134",
 	set: ["72263"],
 	name: "Resonance Burst",
 	cost: 5,
@@ -2246,7 +2246,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "improved_phasers_enterprise_b",
+	id: "W151",
 	set: ["72263"],
 	name: "Improved Phasers",
 	cost: 3,
@@ -2257,7 +2257,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "talent",
-	id: "kuvahmagh_kohlar_battle_cruiser",
+	id: "E157",
 	set: ["72270p"],
 	name: "Kuvah'Magh",
 	cost: 5,
@@ -2266,7 +2266,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "morak_kohlar_battle_cruiser",
+	id: "C256",
 	set: ["72270p"],
 	name: "Morak",
 	cost: 5,
@@ -2275,7 +2275,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "tgreth_kohlar_battle_cruiser",
+	id: "C255",
 	set: ["72270p"],
 	name: "T'Greth",
 	cost: 4,
@@ -2284,7 +2284,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "chrega_kohlar_battle_cruiser",
+	id: "C254",
 	set: ["72270p"],
 	name: "Ch’rega",
 	cost: 2,
@@ -2293,7 +2293,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "talent",
-	id: "military_sectets_rateg",
+	id: "E156",
 	set: ["72262p"],
 	name: "Military Secrets",
 	cost: 4,
@@ -2302,7 +2302,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "tech",
-	id: "control_central_rateg",
+	id: "T133",
 	set: ["72262p"],
 	name: "Control Central",
 	cost: 4,
@@ -2311,7 +2311,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "weapon",
-	id: "main_batteries_rateg",
+	id: "W150",
 	set: ["72262p"],
 	name: "Main Batteries",
 	cost: 3,
@@ -2322,7 +2322,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "crew",
-	id: "nanclus_rateg",
+	id: "C253",
 	set: ["72262p", "72301rp"],
 	name: "Nanclus",
 	cost: 5,
@@ -2332,7 +2332,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "talent",
-	id: "galaxy_wing_squadron_venture",
+	id: "E155",
 	set: ["72253"],
 	name: "Galaxy Wing Squadron",
 	cost: 5,
@@ -2341,7 +2341,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "additional_phaser_arrays_venture",
+	id: "W149",
 	set: ["72253"],
 	name: "Additional Phaser Arrays",
 	cost: 5,
@@ -2350,7 +2350,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_venture",
+	id: "W148",
 	set: ["72253"],
 	name: "Photon Torpedoes",
 	cost: 5,
@@ -2361,7 +2361,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "maximum_warp_venture",
+	id: "T132",
 	set: ["72253"],
 	name: "Maximum Warp",
 	cost: 5,
@@ -2370,7 +2370,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "high_cpaacity_deflector_shield_grid_venture",
+	id: "T131",
 	set: ["72253"],
 	name: "High-Capacty Deflector Shield Grid",
 	cost: 5,
@@ -2379,7 +2379,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "question",
-	id: "computer_core_venture",
+	id: "Q008",
 	set: ["72253"],
 	name: "Computer Core",
 	cost: 5,
@@ -2388,7 +2388,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "talent",
-	id: "task_force_cairo",
+	id: "E154",
 	set: ["72261p"],
 	name: "Task Force",
 	cost: 5,
@@ -2397,7 +2397,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "high_yield_photon_torpedoes_cairo",
+	id: "W147",
 	set: ["72261p"],
 	name: "High Yield Photon Torpedoes",
 	cost: 6,
@@ -2408,7 +2408,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "deuterium_tank_cairo",
+	id: "T130",
 	set: ["72261p"],
 	name: "Deuterium Tank",
 	cost: 3,
@@ -2417,7 +2417,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "question",
-	id: "delta_shift_cairo",
+	id: "Q009",
 	set: ["72261p"],
 	name: "Delta Shift",
 	cost: 5,
@@ -2426,7 +2426,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "hikaru_sulu_bounty",
+	id: "C252",
 	set: ["72260p"],
 	name: "Hikaru Sulu",
 	cost: 3,
@@ -2435,7 +2435,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "leonard_mccoy_enterprise_a",
+	id: "C251",
 	set: ["72260gp"],
 	name: "Leonard McCoy",
 	cost: 4,
@@ -2444,7 +2444,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "valeris_enterprise_a",
+	id: "C250",
 	set: ["72260gp"],
 	name: "Valeris",
 	cost: 3,
@@ -2453,7 +2453,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "torpedo_bay_enterprise_a",
+	id: "W146",
 	set: ["72260gp"],
 	name: "Torpedo Bay",
 	cost: 2,
@@ -2462,7 +2462,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "isolation_door_enterprise_a",
+	id: "T129",
 	set: ["72260gp"],
 	name: "Isolation Door",
 	cost: 3,
@@ -2471,7 +2471,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "checkov_bounty",
+	id: "C249",
 	set: ["72260p"],
 	name: "Pavel Chekov",
 	cost: 4,
@@ -2480,7 +2480,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "montgomery_scott_bounty",
+	id: "C248",
 	set: ["72260p"],
 	name: "Montgomery Scott",
 	cost: 4,
@@ -2489,7 +2489,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "nyota_uhura_bounty",
+	id: "C247",
 	set: ["72260p"],
 	name: "Nyota Uhura",
 	cost: 5,
@@ -2498,7 +2498,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "talent",
-	id: "i_am_the_borg_72255",
+	id: "E153",
 	set: ["72255"],
 	name: "I Am The Borg",
 	cost: 3,
@@ -2507,7 +2507,7 @@ module.exports = [{
 	factions: ["borg"]
 }, {
 	type: "tech",
-	id: "temporal_vortex_72255",
+	id: "T128",
 	set: ["72255"],
 	name: "Temporal Vortex",
 	cost: 5,
@@ -2516,7 +2516,7 @@ module.exports = [{
 	factions: ["borg"]
 }, {
 	type: "borg",
-	id: "borg_support_vehicle_dock_72255",
+	id: "B017",
 	set: ["72255"],
 	name: "Borg Support Vehicle Dock",
 	cost: 0,
@@ -2525,7 +2525,7 @@ module.exports = [{
 	factions: ["borg"]
 }, {
 	type: "question",
-	id: "borg_support_vehicle_token_72255",
+	id: "Q008",
 	set: ["72255"],
 	name: "Borg Support Vehicle Token",
 	cost: 0,
@@ -2534,7 +2534,7 @@ module.exports = [{
 	factions: ["borg"]
 }, {
 	type: "talent",
-	id: "the_classic_movies_retaliatory_strike",
+	id: "E152",
 	set: ["72236p"],
 	name: "Retaliatory Strike",
 	cost: 5,
@@ -2543,7 +2543,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "the_classic_movies_valkris",
+	id: "C246",
 	set: ["72236p"],
 	name: "Valkris",
 	cost: 5,
@@ -2552,7 +2552,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "the_classic_movies_torg",
+	id: "C245",
 	set: ["72236p"],
 	name: "Torg",
 	cost: 6,
@@ -2561,7 +2561,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "the_classic_movies_maltz",
+	id: "C244",
 	set: ["72236p"],
 	name: "Maltz",
 	cost: 5,
@@ -2570,7 +2570,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "talent",
-	id: "command_pod_72242",
+	id: "E151",
 	set: ["72242"],
 	name: "Command Pod",
 	cost: 4,
@@ -2579,7 +2579,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "talent",
-	id: "cloaked_attack_72242",
+	id: "E150",
 	set: ["72242"],
 	name: "Cloaked Attack",
 	cost: 5,
@@ -2588,7 +2588,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "crew",
-	id: "romulan_technical_officer_72242",
+	id: "C243",
 	set: ["72242"],
 	name: "Romulan Technical Officer",
 	cost: 2,
@@ -2597,7 +2597,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "weapon",
-	id: "plasma_torpedoes_722242",
+	id: "W145",
 	set: ["72242"],
 	name: "Plasma Torpedoes",
 	cost: 3,
@@ -2608,7 +2608,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "tech",
-	id: "impulse_drive_72242",
+	id: "T127",
 	set: ["72242"],
 	name: "Impulse Drive",
 	cost: 2,
@@ -2617,7 +2617,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "talent",
-	id: "temporal_cold_war_the_benefactor",
+	id: "E149",
 	set: ["72224gp"],
 	name: "The Benefactor",
 	cost: 5,
@@ -2626,7 +2626,7 @@ module.exports = [{
 	factions: ["mirror-universe"]
 }, {
 	type: "crew",
-	id: "temporal_cold_war_daniels",
+	id: "C242",
 	set: ["72224gp"],
 	name: "Daniels",
 	cost: 5,
@@ -2635,7 +2635,7 @@ module.exports = [{
 	factions: ["mirror-universe"]
 }, {
 	type: "tech",
-	id: "temporal_conduit_72224gp",
+	id: "T126",
 	set: ["72224gp"],
 	name: "Temporal Conduit",
 	cost: 5,
@@ -2644,7 +2644,7 @@ module.exports = [{
 	factions: ["mirror-universe"]
 }, {
 	type: "crew",
-	id: "temporal_cold_war_temporal_temporal_observatory_crew",
+	id: "C241",
 	set: ["72224gp"],
 	name: "Temporal Observatory",
 	cost: 6,
@@ -2653,7 +2653,7 @@ module.exports = [{
 	factions: ["mirror-universe"]
 }, {
 	type: "tech",
-	id: "temporal_cold_war_temporal_temporal_observatory_tech",
+	id: "T125",
 	set: ["72224gp"],
 	name: "Temporal Observatory",
 	cost: 6,
@@ -2662,7 +2662,7 @@ module.exports = [{
 	factions: ["mirror-universe"]
 }, {
 	type: "weapon",
-	id: "temporal_cold_war_temporal_temporal_observatory_weapon",
+	id: "W144",
 	set: ["72224gp"],
 	name: "Temporal Observatory",
 	cost: 6,
@@ -2671,7 +2671,7 @@ module.exports = [{
 	factions: ["mirror-universe"]
 }, {
 	type: "talent",
-	id: "the_classic_movies_ceti_eel",
+	id: "E148",
 	set: ["72235p"],
 	name: "Ceti Eel",
 	cost: 6,
@@ -2680,7 +2680,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "talent",
-	id: "the_classic_movies_fire",
+	id: "E147",
 	set: ["72235p"],
 	name: "Fire!",
 	cost: 6,
@@ -2689,7 +2689,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "crew",
-	id: "the_classic_movies_joachim",
+	id: "C240",
 	set: ["72235p"],
 	name: "Joachim",
 	cost: 5,
@@ -2698,7 +2698,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "weapon",
-	id: "the_classic_movies_all_power_to_phasers",
+	id: "W143",
 	set: ["72235p"],
 	name: "All Power To Phasers",
 	cost: 5,
@@ -2707,7 +2707,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "talent",
-	id: "detonation_codes_72241",
+	id: "E146",
 	set: ["72241"],
 	name: "Detonation Codes",
 	cost: 4,
@@ -2716,7 +2716,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "tech",
-	id: "emergency_power_72241",
+	id: "T124",
 	set: ["72241"],
 	name: "Emergency Power",
 	unique: false,
@@ -2729,7 +2729,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "security_sensors_72241",
+	id: "T123",
 	set: ["72241"],
 	name: "Security Sensors",
 	unique: false,
@@ -2742,7 +2742,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "borak_72241",
+	id: "C239",
 	set: ["72241"],
 	name: "Bo'Rak",
 	cost: 5,
@@ -2751,7 +2751,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_72241",
+	id: "W142",
 	set: ["72241"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -2764,7 +2764,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "talent",
-	id: "standby_battle_stations_constellation",
+	id: "E145",
 	set: ["72234p"],
 	name: "Standby Battle Stations",
 	cost: 4,
@@ -2773,7 +2773,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "damage_control_party_constellation",
+	id: "C238",
 	set: ["72234p"],
 	name: "Damage Control Party",
 	cost: 5,
@@ -2782,7 +2782,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "question",
-	id: "auxiliary_control_room_constellation",
+	id: "Q007",
 	set: ["72234p"],
 	name: "Auxiliary Control Room",
 	cost: 5,
@@ -2791,7 +2791,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "question",
-	id: "automated_distress_beacon_constellation",
+	id: "Q006",
 	set: ["72234p"],
 	name: "Automated Distress Beacon",
 	cost: 3,
@@ -2800,7 +2800,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "talent",
-	id: "dominant_species_xindus",
+	id: "E144",
 	set: ["72224p"],
 	name: "Dominant Species",
 	cost: 5,
@@ -2809,7 +2809,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "crew",
-	id: "damron_xindus",
+	id: "C237",
 	set: ["72224p"],
 	name: "Damron",
 	cost: 4,
@@ -2818,7 +2818,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_xindus",
+	id: "W141",
 	set: ["72224p"],
 	name: "Photon Torpedoes",
 	cost: 3,
@@ -2829,7 +2829,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "tech",
-	id: "sensor_encoders_xindus",
+	id: "T122",
 	set: ["72224p"],
 	name: "Sensor Encoders",
 	cost: 3,
@@ -2838,7 +2838,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "talent",
-	id: "destabilized_relations_jazkel",
+	id: "E143",
 	set: ["72233"],
 	name: "Destabilized Relations",
 	cost: 5,
@@ -2847,7 +2847,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "crew",
-	id: "reman_bodyguards_jazkel",
+	id: "C236",
 	set: ["72233"],
 	name: "Reman Bodyguards",
 	cost: 5,
@@ -2856,7 +2856,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "crew",
-	id: "nijil_jazkal",
+	id: "C235",
 	set: ["72233"],
 	name: "Nijil",
 	cost: 5,
@@ -2865,7 +2865,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "weapon",
-	id: "distuptor_banks_jazkel",
+	id: "W140",
 	set: ["72233"],
 	name: "Disruptor Banks",
 	cost: 4,
@@ -2876,7 +2876,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "tech",
-	id: "prototype_cloaking_device_jazkel",
+	id: "T121",
 	set: ["72233"],
 	name: "Prototype Cloaking Device",
 	cost: 4,
@@ -2885,7 +2885,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "crew",
-	id: "klingon_helmsman_amar",
+	id: "C234",
 	set: ["72232"],
 	name: "Klingon Helmsman",
 	cost: 3,
@@ -2894,7 +2894,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "klingon_navigator_amar",
+	id: "C233",
 	set: ["72232"],
 	name: "Klingon Navigator",
 	cost: 2,
@@ -2903,7 +2903,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "klingon_tactical_officer_amar",
+	id: "C232",
 	set: ["72232"],
 	name: "Klingon Tactical Officer",
 	cost: 3,
@@ -2912,7 +2912,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "weapon",
-	id: "stand_by_torpedoes_amar",
+	id: "W139",
 	set: ["72232"],
 	name: "Stand By Torpedoes",
 	cost: 3,
@@ -2921,7 +2921,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "wesley_crusher_montgolfier",
+	id: "C231",
 	set: ["72231"],
 	name: "Wesley Crusher",
 	cost: 5,
@@ -2930,7 +2930,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "heavy_gravition_beam_montgolfier",
+	id: "W138",
 	set: ["72231"],
 	name: "Heavy Gravition Beam",
 	cost: 4,
@@ -2941,7 +2941,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_montgolfier",
+	id: "W137",
 	set: ["72231", "72011"],
 	name: "Photon Torpedoes",
 	cost: 5,
@@ -2952,7 +2952,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "subspace_ransmitter_montgolfier",
+	id: "T119",
 	set: ["72231"],
 	name: "Subspace Transmitter",
 	cost: 5,
@@ -2961,7 +2961,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "thruster_array_montgolfier",
+	id: "T118",
 	set: ["72231"],
 	name: "Thruster Array",
 	cost: 3,
@@ -2970,7 +2970,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "talent",
-	id: "arming_sequence_weapon_zero",
+	id: "E142",
 	set: ["71225"],
 	name: "Arming Sequence",
 	cost: 8,
@@ -2979,7 +2979,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "crew",
-	id: "degra_weapon_zero",
+	id: "C230",
 	set: ["71225"],
 	name: "Degra",
 	cost: 4,
@@ -2988,7 +2988,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "weapon",
-	id: "destructive_blast_weapon_zero",
+	id: "W136",
 	set: ["71225"],
 	name: "Destructive Blast",
 	cost: 6,
@@ -2999,7 +2999,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "weapon",
-	id: "rotating_emitters_weapon_zero",
+	id: "W135",
 	set: ["71225"],
 	name: "Rotating Emitters",
 	cost: 4,
@@ -3010,7 +3010,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "tech",
-	id: "subspace_vortex_weapon_zero",
+	id: "T117",
 	set: ["71225"],
 	name: "Subspace Vortex",
 	cost: 6,
@@ -3020,7 +3020,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "tech",
-	id: "self_destruct_weapon_zero",
+	id: "T116",
 	set: ["71225"],
 	name: "Self-Destruct",
 	cost: 5,
@@ -3029,7 +3029,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "talent",
-	id: "intercept_tmet",
+	id: "E141",
 	set: ["72221p"],
 	name: "INTERCEPT",
 	cost: 5,
@@ -3038,7 +3038,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "crew",
-	id: "thei_tmet",
+	id: "C229",
 	set: ["72221p"],
 	name: "THEI",
 	cost: 1,
@@ -3047,7 +3047,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "weapon",
-	id: "charging_Weapons_tmet",
+	id: "W134",
 	set: ["72221p"],
 	name: "CHARGING WEAPONS",
 	cost: 1,
@@ -3056,7 +3056,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "tech",
-	id: "self_repair_technology_tmet",
+	id: "T115",
 	set: ["72221p"],
 	name: "SELF REPAIR TECHNOLOGY",
 	cost: 4,
@@ -3065,7 +3065,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "squadron",
-	id: "cloaked_fighters_71203",
+	id: "D025",
 	set: ["71203"],
 	name: "Cloaked Fighters",
 	cost: 4,
@@ -3074,7 +3074,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "squadron",
-	id: "hidden_formation_71203",
+	id: "D024",
 	set: ["71203"],
 	name: "Hidden Formation",
 	cost: 5,
@@ -3083,7 +3083,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "squadron",
-	id: "cover_fire_71203",
+	id: "D023",
 	set: ["71203"],
 	name: "Cover Fire",
 	cost: 4,
@@ -3092,7 +3092,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "squadron",
-	id: "focused_strike_71203",
+	id: "D022",
 	set: ["71203"],
 	name: "Focused Strike",
 	cost: 5,
@@ -3101,7 +3101,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "squadron",
-	id: "torpedo_attack_71203",
+	id: "D021",
 	set: ["71203"],
 	name: "Torpedo Attack",
 	cost: 4,
@@ -3112,7 +3112,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "squadron",
-	id: "reconnaissance_71203",
+	id: "D020",
 	set: ["71203"],
 	name: "Reconnaissance",
 	cost: 2,
@@ -3121,7 +3121,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "squadron",
-	id: "thrusters_71203",
+	id: "D019",
 	set: ["71203"],
 	name: "Thrusters",
 	cost: 3,
@@ -3130,7 +3130,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "squadron",
-	id: "support_ship_71203",
+	id: "D018",
 	set: ["71203"],
 	name: "Support Ship",
 	cost: 4,
@@ -3139,7 +3139,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "question",
-	id: "maintenance_crew_71212",
+	id: "Q005",
 	set: ["71212"],
 	name: "Maintenance Crew",
 	cost: 6,
@@ -3148,7 +3148,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "weapon",
-	id: "matter_antimatter_warhead_71212",
+	id: "W133",
 	set: ["71212"],
 	name: "Matter-Antimatter Warhead",
 	cost: 7,
@@ -3159,7 +3159,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "weapon",
-	id: "quantum_torpedoes_71212",
+	id: "W132",
 	set: ["71212"],
 	name: "Quantum Torpedoes",
 	cost: 6,
@@ -3170,7 +3170,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "weapon",
-	id: "thoron_shock_emitter_71212",
+	id: "W131",
 	set: ["71212"],
 	name: "Thoron Shock Emitter",
 	cost: 5,
@@ -3181,7 +3181,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "weapon",
-	id: "plasma_wave_71212",
+	id: "W130",
 	set: ["71212"],
 	name: "Plasma Wave",
 	cost: 5,
@@ -3192,7 +3192,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "tech",
-	id: "kinetic_detonator_71212",
+	id: "T113",
 	set: ["71212"],
 	name: "Kinetic Detonator",
 	cost: 4,
@@ -3201,7 +3201,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "tech",
-	id: "counter_measures_71212",
+	id: "T112",
 	set: ["71212"],
 	name: "Counter Measures",
 	cost: 5,
@@ -3210,7 +3210,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "tech",
-	id: "evasive_attack_route_71212",
+	id: "T111",
 	set: ["71212"],
 	name: "Evasive Attack Route",
 	cost: 5,
@@ -3219,7 +3219,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "crew",
-	id: "lorrum_Halik",
+	id: "C228",
 	set: ["71192"],
 	name: "Lorrum",
 	cost: 4,
@@ -3228,7 +3228,7 @@ module.exports = [{
 	factions: ["kazon"]
 }, {
 	type: "crew",
-	id: "kazon_guard_Halik",
+	id: "C228",
 	set: ["71192"],
 	name: "Kazon Guard",
 	cost: 4,
@@ -3237,7 +3237,7 @@ module.exports = [{
 	factions: ["kazon"]
 }, {
 	type: "weapon",
-	id: "photonic_charges_Halik",
+	id: "W129",
 	set: ["71192"],
 	name: "Photonic Charges",
 	cost: 3,
@@ -3248,7 +3248,7 @@ module.exports = [{
 	factions: ["kazon"]
 }, {
 	type: "weapon",
-	id: "aft_torpedo_launcher_Halik",
+	id: "W128",
 	set: ["71192"],
 	name: "Aft Torpedo Launcher",
 	cost: 3,
@@ -3259,7 +3259,7 @@ module.exports = [{
 	factions: ["kazon"]
 }, {
 	type: "weapon",
-	id: "variable_yield_Charges_Halik",
+	id: "W127",
 	set: ["71192"],
 	name: "Variale Yield Charges",
 	cost: 2,
@@ -3268,7 +3268,7 @@ module.exports = [{
 	factions: ["kazon"]
 }, {
 	type: "question",
-	id: "unremarkable_species_Halik",
+	id: "Q004",
 	set: ["71192"],
 	name: "Unremarkable Species",
 	cost: 5,
@@ -3277,7 +3277,7 @@ module.exports = [{
 	factions: ["kazon"]
 }, {
 	type: "talent",
-	id: "emissary_denorious",
+	id: "E140",
 	set: ["71211"],
 	name: "EMISSARY",
 	cost: 5,
@@ -3286,7 +3286,7 @@ module.exports = [{
 	factions: ["bajoran"]
 }, {
 	type: "talent",
-	id: "legendary_hero_denorious",
+	id: "E139",
 	set: ["71211"],
 	name: "LEGENDARY HERO",
 	cost: 5,
@@ -3295,7 +3295,7 @@ module.exports = [{
 	factions: ["bajoran"]
 }, {
 	type: "talent",
-	id: "djarras_denorious",
+	id: "E138",
 	set: ["71211"],
 	name: "D'Jarras",
 	cost: 5,
@@ -3304,7 +3304,7 @@ module.exports = [{
 	factions: ["bajoran"]
 }, {
 	type: "tech",
-	id: "tachyon_eddies_denorious",
+	id: "T110",
 	set: ["71211"],
 	name: "TACHYON EDDIES",
 	cost: 5,
@@ -3313,7 +3313,7 @@ module.exports = [{
 	factions: ["bajoran"]
 }, {
 	type: "tech",
-	id: "mainsails_denorious",
+	id: "T109",
 	set: ["71211"],
 	name: "MAINSAILS",
 	cost: 4,
@@ -3322,7 +3322,7 @@ module.exports = [{
 	factions: ["bajoran"]
 }, {
 	type: "tech",
-	id: "solar_sail_powered_denorious",
+	id: "T108",
 	set: ["71211"],
 	name: "SOLAR SAIL POWERED",
 	cost: 3,
@@ -3331,7 +3331,7 @@ module.exports = [{
 	factions: ["bajoran"]
 }, {
 	type: "talent",
-	id: "infiltration_71213",
+	id: "E137",
 	set: ["71213"],
 	name: "Infiltration",
 	cost: 5,
@@ -3340,7 +3340,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "miles_obrien_71213",
+	id: "C227",
 	set: ["71213"],
 	name: "Miles O'Brien",
 	cost: 5,
@@ -3349,7 +3349,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "jadzia_dax_71213",
+	id: "C226",
 	set: ["71213"],
 	name: "Jadzia Dax",
 	cost: 4,
@@ -3358,7 +3358,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "julian_bashir_71213",
+	id: "C225",
 	set: ["71213"],
 	name: "Julian Bashir",
 	cost: 4,
@@ -3367,7 +3367,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "nog_71213",
+	id: "C224",
 	set: ["71213"],
 	name: "Nog",
 	cost: 4,
@@ -3376,7 +3376,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "elim_garak_71213",
+	id: "C223",
 	set: ["71213"],
 	name: "Elim Garak",
 	cost: 3,
@@ -3385,7 +3385,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "talent",
-	id: "red_squad_valiant",
+	id: "E136",
 	set: ["71221"],
 	name: "Red Squad",
 	cost: 5,
@@ -3394,7 +3394,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "riley_aldrin_shepard_valiant",
+	id: "C222",
 	set: ["71221"],
 	name: "Riley Aldrin Shepard",
 	cost: 5,
@@ -3403,7 +3403,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "karen_ferris_valiant",
+	id: "C221",
 	set: ["71221"],
 	name: "Karen Ferris",
 	cost: 4,
@@ -3412,7 +3412,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "dorian_collins_valiant",
+	id: "C220",
 	set: ["71221"],
 	name: "Dorian Collins",
 	cost: 2,
@@ -3421,7 +3421,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "nog_valiant",
+	id: "C219",
 	set: ["71221"],
 	name: "Nog",
 	cost: 5,
@@ -3430,7 +3430,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_valiant",
+	id: "W126",
 	set: ["71221"],
 	name: "Photon Torpedoes",
 	cost: 5,
@@ -3441,7 +3441,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "talent",
-	id: "diversion_kumari",
+	id: "E135",
 	set: ["71223"],
 	name: "DIVERSION",
 	cost: 5,
@@ -3450,7 +3450,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "crew",
-	id: "talas_kumari",
+	id: "C218",
 	set: ["71223"],
 	name: "TALAS",
 	cost: 3,
@@ -3459,7 +3459,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "weapon",
-	id: "advanced_weaponry_kumari",
+	id: "W125",
 	set: ["71223"],
 	name: "ADVANCED WEAPONRY",
 	cost: 5,
@@ -3470,7 +3470,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "weapon",
-	id: "particle_cannon_array_kumari",
+	id: "W124",
 	set: ["71223"],
 	name: "PARTICLE CANNON ARRAY",
 	cost: 3,
@@ -3481,7 +3481,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "tech",
-	id: "tractor_beam_kumari",
+	id: "T107",
 	set: ["71223"],
 	name: "TRACTOR BEAM",
 	cost: 4,
@@ -3490,7 +3490,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "tech",
-	id: "long_range_sensors_kumari",
+	id: "T106",
 	set: ["71223"],
 	name: "LONG RANGE SENSORS",
 	cost: 3,
@@ -3499,7 +3499,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "talent",
-	id: "improvise_71201",
+	id: "E134",
 	set: ["71201"],
 	name: "Improvise",
 	cost: 5,
@@ -3508,7 +3508,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "wesley_crusher_71201",
+	id: "C217",
 	set: ["71201"],
 	name: "Wesley Crusher",
 	cost: 5,
@@ -3517,7 +3517,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "worf_71201",
+	id: "C216",
 	set: ["71201"],
 	name: "Worf",
 	cost: 5,
@@ -3526,7 +3526,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "geordi_la_forge_71201",
+	id: "C215",
 	set: ["71201"],
 	name: "Geordi La Forge",
 	cost: 5,
@@ -3535,7 +3535,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "navigational_station_71201",
+	id: "T105",
 	set: ["71201"],
 	name: "Navigational Station",
 	cost: 4,
@@ -3544,7 +3544,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "warp_jump_71201",
+	id: "T104",
 	set: ["71201"],
 	name: "Warp Jump",
 	cost: 5,
@@ -3554,7 +3554,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_71201",
+	id: "W123",
 	set: ["71201"],
 	name: "Photon Torpedoes",
 	cost: 5,
@@ -3565,7 +3565,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "talent",
-	id: "covert_mission_pi",
+	id: "E133",
 	set: ["71222"],
 	name: "Covert Mission",
 	cost: 5,
@@ -3574,7 +3574,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "crew",
-	id: "pardek_pi",
+	id: "C214",
 	set: ["71222"],
 	name: "Pardek",
 	cost: 5,
@@ -3583,7 +3583,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "crew",
-	id: "patahk_pi",
+	id: "C213",
 	set: ["71222"],
 	name: "Patahk",
 	cost: 1,
@@ -3592,7 +3592,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "tech",
-	id: "distress_signal_pi",
+	id: "T103",
 	set: ["71222"],
 	name: "Distress Signal",
 	cost: 2,
@@ -3601,7 +3601,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "tech",
-	id: "graviton_field_generator_pi",
+	id: "T102",
 	set: ["71222"],
 	name: "Graviton Field Generator",
 	cost: 2,
@@ -3610,7 +3610,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "talent",
-	id: "3001",
+	id: "E132",
 	set: ["71120"],
 	name: "Engage",
 	unique: false,
@@ -3623,7 +3623,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3002",
+	id: "C212",
 	set: ["71120"],
 	name: "Worf",
 	unique: true,
@@ -3636,7 +3636,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "self_destruct_sequence_pi",
+	id: "T101",
 	set: ["71222"],
 	name: "Self Destruct Sequence",
 	cost: 3,
@@ -3645,7 +3645,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "crew",
-	id: "3003",
+	id: "C211",
 	set: ["71120"],
 	name: "Miles O'Brien",
 	unique: true,
@@ -3658,7 +3658,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3004",
+	id: "C210",
 	set: ["71120"],
 	name: "Geordi La Forge",
 	unique: true,
@@ -3671,7 +3671,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3005",
+	id: "C209",
 	set: ["71120"],
 	name: "Data",
 	unique: true,
@@ -3684,7 +3684,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "3006",
+	id: "W122",
 	set: ["71120", "71268", "72282", "71276", "71280", "72261"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -3697,7 +3697,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "weapon",
-	id: "3007",
+	id: "W121",
 	set: ["71120"],
 	name: "Antimatter Mines",
 	unique: false,
@@ -3710,7 +3710,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3008",
+	id: "C208",
 	set: ["71120"],
 	name: "Konmel",
 	unique: true,
@@ -3723,7 +3723,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3009",
+	id: "C207",
 	set: ["71120"],
 	name: "Klag",
 	unique: true,
@@ -3736,7 +3736,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "3010",
+	id: "W120",
 	set: ["71120"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -3749,7 +3749,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "tech",
-	id: "3011",
+	id: "T100",
 	set: ["71120", "71126", "72251"],
 	name: "Tractor Beam",
 	unique: false,
@@ -3761,7 +3761,7 @@ module.exports = [{
 	attack: null
 }, {
 	type: "tech",
-	id: "3012",
+	id: "T250",
 	set: ["71120", "71273"],
 	name: "Advanced Weapon System",
 	unique: false,
@@ -3773,7 +3773,7 @@ module.exports = [{
 	attack: null
 }, {
 	type: "talent",
-	id: "3013",
+	id: "E131",
 	set: ["71120"],
 	name: "Counter Attack",
 	unique: false,
@@ -3786,7 +3786,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3014",
+	id: "C206",
 	set: ["71120"],
 	name: "N'Vek",
 	unique: true,
@@ -3799,7 +3799,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3015",
+	id: "C205",
 	set: ["71120"],
 	name: "Bochra",
 	unique: true,
@@ -3812,7 +3812,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "3016",
+	id: "W119",
 	set: ["71120", "71123", "71511", "71794"],
 	name: "Plasma Torpedoes",
 	unique: false,
@@ -3825,7 +3825,7 @@ module.exports = [{
 	range: "1 - 2"
 }, {
 	type: "tech",
-	id: "3017",
+	id: "T249",
 	set: ["71120"],
 	name: "Artificial Quantum Singularity",
 	unique: false,
@@ -3838,7 +3838,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "3018",
+	id: "E130",
 	set: ["71121"],
 	name: "I Stab at Thee",
 	unique: false,
@@ -3851,7 +3851,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "3019",
+	id: "E129",
 	set: ["71121"],
 	name: "Superior Intellect",
 	unique: false,
@@ -3864,7 +3864,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3020",
+	id: "C204",
 	set: ["71121"],
 	name: "Kyle",
 	unique: true,
@@ -3877,7 +3877,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3021",
+	id: "C203",
 	set: ["71121"],
 	name: "Pavel Chekov",
 	unique: true,
@@ -3890,7 +3890,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3022",
+	id: "C202",
 	set: ["71121"],
 	name: "Follower of Khan",
 	unique: false,
@@ -3903,7 +3903,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3023",
+	id: "C201",
 	set: ["71121"],
 	name: "Joachim",
 	unique: true,
@@ -3916,7 +3916,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "3024",
+	id: "W118",
 	set: ["71121", "71122", "72240", "71272", "72292"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -3929,7 +3929,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "talent",
-	id: "3025",
+	id: "E128",
 	set: ["71122", "72240"],
 	name: "Cheat Death",
 	unique: false,
@@ -3942,7 +3942,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "3026",
+	id: "E127",
 	set: ["71122", "72240"],
 	name: "Cochrane Deceleration Maneuver",
 	unique: false,
@@ -3955,7 +3955,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "3027",
+	id: "E126",
 	set: ["71122", "72240"],
 	name: "Corbomite Maneuver",
 	unique: false,
@@ -3968,7 +3968,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3028",
+	id: "C200",
 	set: ["71122", "72240"],
 	name: "Leonard McCoy",
 	unique: true,
@@ -3981,7 +3981,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3029",
+	id: "C199",
 	set: ["71122", "72240"],
 	name: "Hikaru Sulu",
 	unique: true,
@@ -3994,7 +3994,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3030",
+	id: "C198",
 	set: ["71122", "72240"],
 	name: "Mr. Spock",
 	unique: true,
@@ -4007,7 +4007,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3031",
+	id: "C197",
 	set: ["71122", "72240"],
 	name: "Nyota Uhura",
 	unique: true,
@@ -4020,7 +4020,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3032",
+	id: "C196",
 	set: ["71122", "72240"],
 	name: "Montgomery Scott",
 	unique: true,
@@ -4033,7 +4033,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "3034",
+	id: "E125",
 	set: ["71123"],
 	name: "All Forward Disruptor Banks",
 	unique: false,
@@ -4046,7 +4046,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3035",
+	id: "C195",
 	set: ["71123"],
 	name: "Tactical Officer",
 	unique: false,
@@ -4059,7 +4059,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "3036",
+	id: "W117",
 	set: ["71123"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -4072,7 +4072,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "crew",
-	id: "3038",
+	id: "C194",
 	set: ["71124"],
 	name: "Parem",
 	unique: true,
@@ -4085,7 +4085,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3039",
+	id: "C193",
 	set: ["71124"],
 	name: "Varel",
 	unique: true,
@@ -4098,7 +4098,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "IPG_75001",
+	id: "T248",
 	set: ["71124", "75001"],
 	name: "Interphase Generator",
 	OnePerShip: true,
@@ -4107,7 +4107,7 @@ module.exports = [{
 	cost: 3
 }, {
 	type: "tech",
-	id: "3041",
+	id: "T247",
 	set: ["71124"],
 	name: "Muon Feedback Wave",
 	unique: false,
@@ -4122,7 +4122,7 @@ module.exports = [{
 	tokenId: "muon_token"
 }, {
 	type: "talent",
-	id: "3042",
+	id: "E124",
 	set: ["71125", "72272"],
 	name: "Sabotage",
 	unique: false,
@@ -4135,7 +4135,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3043",
+	id: "C192",
 	set: ["71125", "72272"],
 	name: "Korax",
 	unique: true,
@@ -4148,7 +4148,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3044",
+	id: "C191",
 	set: ["71125", "72272"],
 	name: "Cyrano Jones",
 	unique: true,
@@ -4161,7 +4161,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "3045",
+	id: "W116",
 	set: ["71125", "71448", "72272"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -4174,7 +4174,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "weapon",
-	id: "3046",
+	id: "W115",
 	set: ["71125", "72272"],
 	name: "Magnetic Pulse",
 	unique: false,
@@ -4187,7 +4187,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "tech",
-	id: "3047",
+	id: "T246",
 	set: ["71125", "72272"],
 	name: "Projected Stasis Field",
 	unique: false,
@@ -4200,7 +4200,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3048",
+	id: "C190",
 	set: ["71126", "72251"],
 	name: "Klingon Boarding Party",
 	unique: false,
@@ -4213,7 +4213,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "3049",
+	id: "E123",
 	set: ["71126", "72251"],
 	name: "In'cha",
 	unique: false,
@@ -4226,7 +4226,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3050",
+	id: "C189",
 	set: ["71126", "72251"],
 	name: "Drex",
 	unique: true,
@@ -4239,7 +4239,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "3051",
+	id: "W114",
 	set: ["71126", "72251"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -4252,7 +4252,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "crew",
-	id: "3053",
+	id: "C188",
 	set: ["71127"],
 	name: "Glinn Telle",
 	unique: true,
@@ -4265,7 +4265,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "3054",
+	id: "W113",
 	set: ["71127"],
 	name: "Forward Weapons Grid",
 	unique: false,
@@ -4278,7 +4278,7 @@ module.exports = [{
 	range: "1 - 3"
 }, {
 	type: "tech",
-	id: "3055",
+	id: "T245",
 	set: ["71127"],
 	name: "Antiproton Scan",
 	unique: false,
@@ -4291,7 +4291,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "3056",
+	id: "T244",
 	set: ["71127"],
 	name: "EM Pulse",
 	unique: false,
@@ -4304,7 +4304,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3057",
+	id: "C187",
 	set: ["71128"],
 	name: "Breen Aide",
 	unique: false,
@@ -4317,7 +4317,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "3058",
+	id: "W112",
 	set: ["71128", "71271"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -4330,7 +4330,7 @@ module.exports = [{
 	range: "1 - 3"
 }, {
 	type: "weapon",
-	id: "3059",
+	id: "W111",
 	set: ["71128", "OP5Prize"],
 	name: "Energy Dissipator",
 	unique: false,
@@ -4343,7 +4343,7 @@ module.exports = [{
 	range: "1"
 }, {
 	type: "talent",
-	id: "3060",
+	id: "E122",
 	set: ["OP1Prize"],
 	name: "Conditional Surrender",
 	unique: false,
@@ -4356,7 +4356,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "3061",
+	id: "T243",
 	set: ["OP1Prize"],
 	name: "EM Pulse",
 	unique: false,
@@ -4369,7 +4369,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3062",
+	id: "C186",
 	set: ["OP1Prize"],
 	name: "Farek",
 	unique: true,
@@ -4382,7 +4382,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "3063",
+	id: "W110",
 	set: ["OP1Prize"],
 	name: "Missile Launchers",
 	unique: false,
@@ -4395,7 +4395,7 @@ module.exports = [{
 	range: "1 - 2"
 }, {
 	type: "talent",
-	id: "3086",
+	id: "E121",
 	set: ["OP2Prize"],
 	name: "Defense Condition One",
 	unique: false,
@@ -4408,7 +4408,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "3087",
+	id: "W109",
 	set: ["OP2Prize"],
 	name: "Barrage of Fire",
 	unique: false,
@@ -4421,7 +4421,7 @@ module.exports = [{
 	range: "1 - 2"
 }, {
 	type: "tech",
-	id: "3065",
+	id: "T242",
 	set: ["OP2Prize"],
 	name: "Secondary Shield Emitters",
 	unique: false,
@@ -4434,7 +4434,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3066",
+	id: "C185",
 	set: ["OP2Prize"],
 	name: "Synon",
 	unique: true,
@@ -4447,7 +4447,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "3101",
+	id: "E120",
 	set: ["OP3Prize"],
 	name: "Invasion Plans",
 	unique: true,
@@ -4460,7 +4460,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3102",
+	id: "C184",
 	set: ["OP3Prize", "72311p"],
 	name: "Romulan Pilot",
 	unique: false,
@@ -4473,7 +4473,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "3103",
+	id: "W108",
 	set: ["OP3Prize"],
 	name: "Additional Weapons Array",
 	unique: false,
@@ -4486,7 +4486,7 @@ module.exports = [{
 	range: "1 - 2"
 }, {
 	type: "tech",
-	id: "3104",
+	id: "T241",
 	set: ["OP3Prize"],
 	name: "Nullifier Core",
 	unique: false,
@@ -4499,7 +4499,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "3067",
+	id: "W107",
 	set: ["71268", "72282", "71531", "72271"],
 	name: "Quantum Torpedoes",
 	unique: false,
@@ -4512,7 +4512,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "tech",
-	id: "3068",
+	id: "T240",
 	set: ["71268", "72282"],
 	name: "Cloaking Device",
 	unique: false,
@@ -4525,7 +4525,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3069",
+	id: "C183",
 	set: ["71268", "72282"],
 	name: "Worf",
 	unique: true,
@@ -4538,7 +4538,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "3088",
+	id: "E119",
 	set: ["71268", "72282"],
 	name: "Attack Pattern Delta",
 	unique: true,
@@ -4551,7 +4551,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "3071",
+	id: "E118",
 	set: ["71268", "72282"],
 	name: "Attack Pattern Omega",
 	unique: true,
@@ -4564,7 +4564,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3089",
+	id: "C182",
 	set: ["71268", "72282"],
 	name: "Jadzia Dax",
 	unique: true,
@@ -4577,7 +4577,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3090",
+	id: "C181",
 	set: ["71268", "72282"],
 	name: "Miles O'Brien",
 	unique: true,
@@ -4590,7 +4590,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "3072",
+	id: "E117",
 	set: ["71269"],
 	name: "Once More Unto The Breach",
 	unique: true,
@@ -4603,7 +4603,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "3085",
+	id: "W106",
 	set: ["71269"],
 	name: "Concussive Charges",
 	unique: false,
@@ -4616,7 +4616,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "weapon",
-	id: "3073",
+	id: "W105",
 	set: ["71269", "71273", "71532", "71512", "71804"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -4629,7 +4629,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "crew",
-	id: "3074",
+	id: "C180",
 	set: ["71269"],
 	name: "Kerla",
 	unique: true,
@@ -4642,7 +4642,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3075",
+	id: "C179",
 	set: ["71269"],
 	name: "Stex",
 	unique: true,
@@ -4655,7 +4655,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "3076",
+	id: "T239",
 	set: ["71270"],
 	name: "Cloaked Mines",
 	unique: false,
@@ -4668,7 +4668,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "3077",
+	id: "T238",
 	set: ["71270"],
 	name: "Polarized Hull Plating",
 	unique: false,
@@ -4681,7 +4681,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "3078",
+	id: "W104",
 	set: ["71270"],
 	name: "Nuclear Missiles",
 	unique: false,
@@ -4694,7 +4694,7 @@ module.exports = [{
 	range: "1 - 2"
 }, {
 	type: "tech",
-	id: "3079",
+	id: "T237",
 	set: ["71271"],
 	name: "Long Range Tachyon Scan",
 	unique: false,
@@ -4707,7 +4707,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "3080",
+	id: "T236",
 	set: ["71271"],
 	name: "Suicide Attack",
 	unique: false,
@@ -4720,7 +4720,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "3081",
+	id: "W103",
 	set: ["71271"],
 	name: "Phased Polaron Beam",
 	unique: false,
@@ -4733,7 +4733,7 @@ module.exports = [{
 	range: "1 - 2"
 }, {
 	type: "crew",
-	id: "3082",
+	id: "C178",
 	set: ["71271"],
 	name: "Omet'Iklan",
 	unique: true,
@@ -4746,7 +4746,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3083",
+	id: "C177",
 	set: ["71271"],
 	name: "Virak'Kara",
 	unique: true,
@@ -4759,7 +4759,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3084",
+	id: "C176",
 	set: ["71271"],
 	name: "Toman'Torax",
 	unique: true,
@@ -4772,7 +4772,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3091",
+	id: "C175",
 	set: ["OP2Participation"],
 	name: "Redshirt",
 	unique: false,
@@ -4785,7 +4785,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3092",
+	id: "C174",
 	set: ["71273"],
 	name: "N'Garen",
 	unique: true,
@@ -4798,7 +4798,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3093",
+	id: "C173",
 	set: ["71273"],
 	name: "Alexander",
 	unique: true,
@@ -4811,7 +4811,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "3094",
+	id: "T235",
 	set: ["71273"],
 	name: "EM Pulse",
 	unique: false,
@@ -4824,7 +4824,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3095",
+	id: "C172",
 	set: ["71275", "72262"],
 	name: "Boheeka",
 	unique: true,
@@ -4837,7 +4837,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "3096",
+	id: "W102",
 	set: ["71275", "72262"],
 	name: "Enhanced Weaponry",
 	unique: false,
@@ -4850,7 +4850,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "weapon",
-	id: "3097",
+	id: "W101",
 	set: ["71275", "72262"],
 	name: "Dorsal Weapons Array",
 	unique: false,
@@ -4863,7 +4863,7 @@ module.exports = [{
 	range: "1 - 3"
 }, {
 	type: "tech",
-	id: "3098",
+	id: "T234",
 	set: ["71275", "72262"],
 	name: "Tetryon Emissions",
 	unique: false,
@@ -4876,7 +4876,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "3099",
+	id: "T233",
 	set: ["71275", "72262"],
 	name: "Cloaking Device",
 	unique: false,
@@ -4889,7 +4889,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "3100",
+	id: "E116",
 	set: ["71275", "72262"],
 	name: "Captured Intelligence",
 	unique: true,
@@ -4902,7 +4902,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "3107",
+	id: "E115",
 	set: ["71272", "72292"],
 	name: "Feint",
 	unique: false,
@@ -4915,7 +4915,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3108",
+	id: "C171",
 	set: ["71272", "72292"],
 	name: "Dmitri Valtane",
 	unique: true,
@@ -4928,7 +4928,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3109",
+	id: "C170",
 	set: ["71272", "72292"],
 	name: "Janice Rand",
 	unique: true,
@@ -4941,7 +4941,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3110",
+	id: "C169",
 	set: ["71272", "72292"],
 	name: "Lojur",
 	unique: true,
@@ -4954,7 +4954,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "3112",
+	id: "T232",
 	set: ["71272", "72292"],
 	name: "Positron Beam",
 	unique: false,
@@ -4967,7 +4967,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "3113",
+	id: "T231",
 	set: ["71272", "72292"],
 	name: "Transwarp Drive",
 	unique: false,
@@ -4980,7 +4980,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "3122",
+	id: "E114",
 	set: ["71274"],
 	name: "Massacre",
 	unique: true,
@@ -4993,7 +4993,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3123",
+	id: "C168",
 	set: ["71274"],
 	name: "Selok",
 	unique: true,
@@ -5006,7 +5006,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "3124",
+	id: "T230",
 	set: ["71274"],
 	name: "Ultritium Explosives",
 	unique: false,
@@ -5019,7 +5019,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "3134",
+	id: "E113",
 	set: ["OP4Prize"],
 	name: "Disobey Orders",
 	unique: false,
@@ -5032,7 +5032,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3135",
+	id: "C167",
 	set: ["OP4Prize"],
 	name: "Christopher Hobson",
 	unique: true,
@@ -5045,7 +5045,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "3136",
+	id: "W100",
 	set: ["OP4Prize"],
 	name: "Secondary Torpedo Launcher",
 	unique: false,
@@ -5058,7 +5058,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "tech",
-	id: "3137",
+	id: "T229",
 	set: ["OP4Prize"],
 	name: "High Energy Sensor Sweep",
 	unique: false,
@@ -5071,7 +5071,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "invaluable_advice_op5prize",
+	id: "E112",
 	set: ["OP5Prize"],
 	name: "Invaluable Advice",
 	unique: true,
@@ -5084,7 +5084,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "breen_guards_op5prize",
+	id: "C166",
 	set: ["OP5Prize"],
 	name: "Breen Guards",
 	unique: false,
@@ -5097,7 +5097,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "cold_storage_unit_op5prize",
+	id: "T228",
 	set: ["OP5Prize"],
 	name: "Cold Storage Unit",
 	unique: false,
@@ -5110,7 +5110,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "marla_gilmore_71276",
+	id: "C165",
 	set: ["71276"],
 	name: "Marla Gilmore",
 	unique: true,
@@ -5123,7 +5123,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "noah_lessing_71276",
+	id: "C164",
 	set: ["71276"],
 	name: "Noah Lessing",
 	unique: true,
@@ -5136,7 +5136,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "emergency_medical_hologram_71276",
+	id: "C163",
 	set: ["71276"],
 	name: "Emergency Medical Hologram",
 	unique: true,
@@ -5149,7 +5149,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "emergency_medical_hologram_tech_upgrade_lines71276",
+	id: "T227",
 	set: ["71276"],
 	name: "Emergency Medical Hologram",
 	unique: true,
@@ -5162,7 +5162,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "navigational_deflector_71276",
+	id: "T226",
 	set: ["71276"],
 	name: "Navigational Deflector",
 	unique: false,
@@ -5175,7 +5175,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "klingon_honor_71448",
+	id: "E111",
 	set: ["71448"],
 	name: "Klingon Honor",
 	unique: true,
@@ -5188,7 +5188,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "bu_kah_71448",
+	id: "C162",
 	set: ["71448"],
 	name: "Bu'Kah",
 	unique: true,
@@ -5201,7 +5201,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "shockwave_71448",
+	id: "T225",
 	set: ["71448"],
 	name: "Shockwave",
 	unique: false,
@@ -5214,7 +5214,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "tactical_sensors_71448",
+	id: "T224",
 	set: ["71448"],
 	name: "Tactical Sensors",
 	unique: false,
@@ -5227,7 +5227,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "centurion_71278",
+	id: "C161",
 	set: ["71278"],
 	name: "Centurion",
 	unique: false,
@@ -5240,7 +5240,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "romulan_officer_71278",
+	id: "C160",
 	set: ["71278"],
 	name: "Romulan Officer",
 	unique: true,
@@ -5253,7 +5253,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "decoy_71278",
+	id: "E110",
 	set: ["71278"],
 	name: "Decoy",
 	unique: true,
@@ -5266,7 +5266,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "double_back_71278",
+	id: "E109",
 	set: ["71278"],
 	name: "Double Back",
 	unique: true,
@@ -5279,7 +5279,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "plasma_torpedoes_71278",
+	id: "W099",
 	set: ["71278"],
 	name: "Plasma Torpedoes",
 	unique: false,
@@ -5292,7 +5292,7 @@ module.exports = [{
 	range: "1 - 2"
 }, {
 	type: "weapon",
-	id: "nuclear_warhead_71278",
+	id: "W098",
 	set: ["71278"],
 	name: "Nuclear Warhead",
 	unique: false,
@@ -5305,7 +5305,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "kudak_etan_71279",
+	id: "C159",
 	set: ["71279"],
 	name: "Kudak'Etan",
 	unique: true,
@@ -5318,7 +5318,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "ixtana_rax_71279",
+	id: "C158",
 	set: ["71279"],
 	name: "Ixtana'Rax",
 	unique: true,
@@ -5331,7 +5331,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "ikat_ika_71279",
+	id: "C157",
 	set: ["71279"],
 	name: "Ikat'Ika",
 	unique: true,
@@ -5344,7 +5344,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_71279",
+	id: "W097",
 	set: ["71279"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -5357,7 +5357,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "talent",
-	id: "ketracel_white_71279",
+	id: "E108",
 	set: ["71279"],
 	name: "Ketracel-White",
 	unique: true,
@@ -5370,7 +5370,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "shroud_71279",
+	id: "T223",
 	set: ["71279"],
 	name: "Shroud",
 	unique: false,
@@ -5383,7 +5383,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "phased_polaron_beam_71279",
+	id: "W096",
 	set: ["71279", "71524"],
 	name: "Phased Polaron Beam",
 	unique: false,
@@ -5396,7 +5396,7 @@ module.exports = [{
 	range: "1"
 }, {
 	type: "talent",
-	id: "blockade_op6prize",
+	id: "E107",
 	set: ["OP6Prize"],
 	name: "Blockade",
 	unique: true,
@@ -5409,7 +5409,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "i_am_kohn_ma_op6prize",
+	id: "E106",
 	set: ["OP6Prize"],
 	name: "I Am Kohn-Ma",
 	unique: true,
@@ -5422,7 +5422,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "li_nalas_op6prize",
+	id: "C156",
 	set: ["OP6Prize"],
 	name: "Li Nalas",
 	unique: true,
@@ -5435,7 +5435,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "day_kannu_op6prize",
+	id: "C155",
 	set: ["OP6Prize"],
 	name: "Day Kannu",
 	unique: true,
@@ -5448,7 +5448,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "ablative_generator_71280",
+	id: "T222",
 	set: ["71280", "72261"],
 	name: "Ablative Generator",
 	unique: false,
@@ -5461,7 +5461,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "b_elanna_torres_71280",
+	id: "C154",
 	set: ["71280", "72261"],
 	name: "B'elanna Torres",
 	unique: true,
@@ -5474,7 +5474,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "bio_electric_interference_71281",
+	id: "T221",
 	set: ["71281", "72291"],
 	name: "Bio-Electric Interference",
 	unique: false,
@@ -5487,7 +5487,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "bio_neural_circuitry_71280",
+	id: "T220",
 	set: ["71280", "72261"],
 	name: "Bio-Neural Circuitry",
 	unique: false,
@@ -5500,7 +5500,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "borg",
-	id: "borg_ablative_hull_armor_71283",
+	id: "B016",
 	set: ["71283", "71444", "72283"],
 	name: "Borg Ablative Hull Armor",
 	unique: false,
@@ -5513,7 +5513,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "borg",
-	id: "borg_assimilation_tubules_71283",
+	id: "B015",
 	set: ["71283", "71530", "72283"],
 	name: "Borg Assimilation Tubules",
 	unique: false,
@@ -5526,7 +5526,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "borg",
-	id: "borg_tractor_beam_71283",
+	id: "B014",
 	set: ["71283", "71444", "71513a", "72283"],
 	name: "Borg Tractor Beam",
 	unique: false,
@@ -5539,7 +5539,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "extraordinary_immune_response_71281",
+	id: "T219",
 	set: ["71281", "72291"],
 	name: "Extraordinary Immune Response",
 	unique: false,
@@ -5552,7 +5552,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "feedback_pulse_71283",
+	id: "T218",
 	set: ["71283", "72283"],
 	name: "Feedback Pulse",
 	unique: true,
@@ -5565,7 +5565,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "harry_kim_71280",
+	id: "C153",
 	set: ["71280", "72261"],
 	name: "Harry Kim",
 	unique: true,
@@ -5578,7 +5578,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "kazon_raiding_party_71282",
+	id: "C152",
 	set: ["71282"],
 	name: "Kazon Raiding Party",
 	unique: false,
@@ -5591,7 +5591,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "masking_circuitry_71282",
+	id: "T217",
 	set: ["71282"],
 	name: "Masking Circuitry",
 	unique: false,
@@ -5604,7 +5604,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "quantum_singularity_71281",
+	id: "T216",
 	set: ["71281", "72291"],
 	name: "Quantum Singularity",
 	unique: false,
@@ -5618,7 +5618,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "sacrifice_71280",
+	id: "E105",
 	set: ["71280", "72261"],
 	name: "Sacrifice",
 	unique: true,
@@ -5631,7 +5631,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "seska_71282",
+	id: "C150",
 	set: ["71282"],
 	name: "Seska",
 	unique: true,
@@ -5644,7 +5644,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "seven_of_nine_71283",
+	id: "C149",
 	set: ["71283", "72283"],
 	name: "Seven of Nine",
 	unique: true,
@@ -5657,7 +5657,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "seven_of_nine_71280",
+	id: "C148",
 	set: ["71280", "72261"],
 	name: "Seven of Nine",
 	unique: true,
@@ -5670,7 +5670,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "the_doctor_71280",
+	id: "C147",
 	set: ["71280", "72261"],
 	name: "The Doctor",
 	unique: true,
@@ -5683,7 +5683,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "the_doctor_tech_71280",
+	id: "T215",
 	set: ["71280", "72261"],
 	name: "The Doctor",
 	unique: true,
@@ -5696,7 +5696,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "the_weak_will_perish_71281",
+	id: "E104",
 	set: ["71281", "72291"],
 	name: "The Weak Will Perish",
 	unique: true,
@@ -5709,7 +5709,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "tierna_71282",
+	id: "C146",
 	set: ["71282"],
 	name: "Tierna",
 	unique: true,
@@ -5722,7 +5722,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "tom_paris_71280",
+	id: "C145",
 	set: ["71280", "72261"],
 	name: "Tom Paris",
 	unique: true,
@@ -5735,7 +5735,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "tuvok_71280",
+	id: "C144",
 	set: ["71280", "72261"],
 	name: "Tuvok",
 	unique: true,
@@ -5748,7 +5748,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "biological_attack_71281",
+	id: "W095",
 	set: ["71281", "72291"],
 	name: "Biological Attack",
 	unique: false,
@@ -5761,7 +5761,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "cutting_beam_71283",
+	id: "W094",
 	set: ["71283", "71444", "71513a", "72283"],
 	name: "Cutting Beam",
 	unique: false,
@@ -5774,7 +5774,7 @@ module.exports = [{
 	range: "1"
 }, {
 	type: "weapon",
-	id: "energy_blast_71281",
+	id: "W093",
 	set: ["71281", "72291"],
 	name: "Energy Blast",
 	unique: false,
@@ -5787,7 +5787,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "weapon",
-	id: "energy_focusing_ship_71281",
+	id: "W092",
 	set: ["71281", "72291"],
 	name: "Energy Focusing Ship",
 	unique: true,
@@ -5800,7 +5800,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "weapon",
-	id: "photonic_charges_71282",
+	id: "W091",
 	set: ["71282"],
 	name: "Photonic Charges",
 	unique: false,
@@ -5813,7 +5813,7 @@ module.exports = [{
 	range: "1 - 2"
 }, {
 	type: "weapon",
-	id: "transphasic_torpedoes_71280",
+	id: "W090",
 	set: ["71280", "72261"],
 	name: "Transphasic Torpedoes",
 	unique: false,
@@ -5826,7 +5826,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "talent",
-	id: "tholian_punctuality_opwebprize",
+	id: "E103",
 	set: ["OPWebPrize", "71795"],
 	name: "Tholian Punctuality",
 	unique: true,
@@ -5839,7 +5839,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "energy_web_opwebprize",
+	id: "W089",
 	set: ["OPWebPrize", "71795"],
 	name: "Energy Web",
 	unique: false,
@@ -5852,7 +5852,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "plasma_torpedoes_opwebprize",
+	id: "W088",
 	set: ["OPWebPrize", "71795"],
 	name: "Plasma Torpedoes",
 	unique: false,
@@ -5865,7 +5865,7 @@ module.exports = [{
 	range: "1 - 2"
 }, {
 	type: "talent",
-	id: "red_alert_opwebparticipation",
+	id: "E102",
 	set: ["OPWebParticipation"],
 	name: "Red Alert",
 	unique: true,
@@ -5878,7 +5878,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "muroc_71446",
+	id: "C143",
 	set: ["71446"],
 	name: "Muroc",
 	unique: true,
@@ -5891,7 +5891,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "t_pol_71446",
+	id: "C142",
 	set: ["71446"],
 	name: "T'Pol",
 	unique: true,
@@ -5904,7 +5904,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "auxiliary_control_room_71446",
+	id: "T214",
 	set: ["71446"],
 	name: "Auxiliary Control Room",
 	unique: false,
@@ -5917,7 +5917,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "sensor_grid_71446",
+	id: "T213",
 	set: ["71446"],
 	name: "Sensor Grid",
 	unique: false,
@@ -5930,7 +5930,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "vulcan_high_command_71446",
+	id: "E101",
 	set: ["71446"],
 	name: "Vulcan High Command",
 	unique: true,
@@ -5943,7 +5943,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "neela_71445",
+	id: "C141",
 	set: ["71445"],
 	name: "Neela",
 	unique: true,
@@ -5956,7 +5956,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "anara_71445",
+	id: "C140",
 	set: ["71445"],
 	name: "Anara",
 	unique: true,
@@ -5969,7 +5969,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "warp_drive_refit_71445",
+	id: "T212",
 	set: ["71445"],
 	name: "Warp Drive Refit",
 	unique: false,
@@ -5982,7 +5982,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "maneuverability_71445",
+	id: "T211",
 	set: ["71445"],
 	name: "Maneuverability",
 	unique: false,
@@ -5995,7 +5995,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "militia_71445",
+	id: "E100",
 	set: ["71445"],
 	name: "Militia",
 	unique: true,
@@ -6008,7 +6008,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "four_of_twelve_71444",
+	id: "C139",
 	set: ["71444"],
 	name: "Four of Twelve",
 	unique: true,
@@ -6021,7 +6021,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "borg",
-	id: "borg_alcove_71444",
+	id: "B013",
 	set: ["71444", "71525"],
 	name: "Borg Alcove",
 	unique: false,
@@ -6034,7 +6034,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "assimilated_access_codes_71444",
+	id: "E099",
 	set: ["71444"],
 	name: "Assimilated Access Codes",
 	unique: true,
@@ -6047,7 +6047,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "self_destruct_sequence_71444",
+	id: "T210",
 	set: ["71444"],
 	name: "Self Destruct Sequence",
 	unique: false,
@@ -6060,7 +6060,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "photonic_weapon_71446",
+	id: "W087",
 	set: ["71446", "71527"],
 	name: "Photonic Weapon",
 	unique: false,
@@ -6073,7 +6073,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "weapon",
-	id: "aft_particle_beam_71446",
+	id: "W086",
 	set: ["71446"],
 	name: "Aft Particle Beam",
 	unique: false,
@@ -6086,7 +6086,7 @@ module.exports = [{
 	range: "1 - 3"
 }, {
 	type: "weapon",
-	id: "phaser_strike_71445",
+	id: "W085",
 	set: ["71445"],
 	name: "Phaser Strike",
 	unique: false,
@@ -6099,7 +6099,7 @@ module.exports = [{
 	range: "1 - 3"
 }, {
 	type: "weapon",
-	id: "full_assault_71444",
+	id: "W084",
 	set: ["71444"],
 	name: "Full Assault",
 	unique: false,
@@ -6112,7 +6112,7 @@ module.exports = [{
 	range: "1 - 3"
 }, {
 	type: "weapon",
-	id: "borg_missile_71444",
+	id: "W083",
 	set: ["71444", "71513a"],
 	name: "Borg Missile",
 	unique: false,
@@ -6125,7 +6125,7 @@ module.exports = [{
 	range: "1 - 2"
 }, {
 	type: "tech",
-	id: "jammed_communications_oparenaprize",
+	id: "T209",
 	set: ["OPArenaPrize", "71797"],
 	name: "Jammed Communications",
 	unique: false,
@@ -6138,7 +6138,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "gorn_pilot_oparenaprize",
+	id: "C138",
 	set: ["OPArenaPrize"],
 	name: "Gorn Pilot",
 	unique: true,
@@ -6151,7 +6151,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "impulse_overload_oparenaprize",
+	id: "T208",
 	set: ["OPArenaPrize"],
 	name: "Impulse Overload",
 	unique: false,
@@ -6164,7 +6164,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "impulse_overload_gornarus",
+	id: "T207",
 	set: ["71797"],
 	name: "Impulse Overload",
 	unique: false,
@@ -6177,7 +6177,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "faked_messages_oparenaprize",
+	id: "E098",
 	set: ["OPArenaPrize", "71797"],
 	name: "Faked Messages",
 	unique: true,
@@ -6190,7 +6190,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "full_alert_oparenaprize",
+	id: "E097",
 	set: ["OPArenaParticipation"],
 	name: "Full Alert",
 	unique: true,
@@ -6203,7 +6203,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "kunivas_i_k_s_b_moth",
+	id: "C137",
 	set: ["i_k_s_b_moth"],
 	name: "Kunivas",
 	unique: true,
@@ -6216,7 +6216,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "qapla__i_k_s_b_moth",
+	id: "E096",
 	set: ["i_k_s_b_moth"],
 	name: "Qapla'",
 	unique: true,
@@ -6229,7 +6229,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "tritium_intermix_i_k_s_b_moth",
+	id: "T206",
 	set: ["i_k_s_b_moth"],
 	name: "Tritium Intermix",
 	unique: false,
@@ -6242,7 +6242,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "tal_i_r_w_vorta_vor",
+	id: "C136",
 	set: ["i_r_w_vorta_vor"],
 	name: "Tal",
 	unique: true,
@@ -6255,7 +6255,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "advanced_cloaking_i_r_w_vorta_vor",
+	id: "T205",
 	set: ["i_r_w_vorta_vor"],
 	name: "Advanced Cloaking",
 	unique: false,
@@ -6268,7 +6268,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "lon_suder_gavroche",
+	id: "C135",
 	set: ["gavroche"],
 	name: "Lon Suder",
 	unique: true,
@@ -6281,7 +6281,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "direct_command_i_r_w_vorta_vor",
+	id: "E095",
 	set: ["i_r_w_vorta_vor"],
 	name: "Direct Command",
 	unique: true,
@@ -6294,7 +6294,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "sakonna_gavroche",
+	id: "C134",
 	set: ["gavroche", "72321"],
 	name: "Sakonna",
 	unique: true,
@@ -6307,7 +6307,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "hijack_gavroche",
+	id: "E094",
 	set: ["gavroche"],
 	name: "Hijack",
 	unique: true,
@@ -6320,7 +6320,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "seskal_3rd_wing_attack_ship",
+	id: "C133",
 	set: ["3rd_wing_attack_ship"],
 	name: "Seskal",
 	unique: true,
@@ -6333,7 +6333,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "first_strike_3rd_wing_attack_ship",
+	id: "E093",
 	set: ["3rd_wing_attack_ship"],
 	name: "First Strike",
 	unique: true,
@@ -6346,7 +6346,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "ion_thrusters_3rd_wing_attack_ship",
+	id: "T204",
 	set: ["3rd_wing_attack_ship"],
 	name: "Ion Thrusters",
 	unique: false,
@@ -6359,7 +6359,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "preemptive_strike_u_s_s_yaeger",
+	id: "E092",
 	set: ["u_s_s_yaeger"],
 	name: "Preemptive Strike",
 	unique: true,
@@ -6372,7 +6372,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "elizabeth_shelby_u_s_s_yaeger",
+	id: "C132",
 	set: ["u_s_s_yaeger", "72302p"],
 	name: "Elizabeth Shelby",
 	unique: true,
@@ -6381,7 +6381,7 @@ module.exports = [{
 	cost: 2
 }, {
 	type: "crew",
-	id: "reginald_barclay_u_s_s_yaeger",
+	id: "C131",
 	set: ["u_s_s_yaeger"],
 	name: "Reginald Barclay",
 	unique: true,
@@ -6394,7 +6394,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_i_k_s_b_moth",
+	id: "W082",
 	set: ["i_k_s_b_moth"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -6407,7 +6407,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "weapon",
-	id: "plasma_torpedoes_i_r_w_vorta_vor",
+	id: "W081",
 	set: ["i_r_w_vorta_vor"],
 	name: "Plasma Torpedoes",
 	unique: false,
@@ -6420,7 +6420,7 @@ module.exports = [{
 	range: "1 - 3"
 }, {
 	type: "weapon",
-	id: "focused_particle_beam_gavroche",
+	id: "W080",
 	set: ["gavroche"],
 	name: "Focused Particle Beam",
 	unique: false,
@@ -6433,7 +6433,7 @@ module.exports = [{
 	range: "1 - 3"
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_3rd_wing_attack_ship",
+	id: "W079",
 	set: ["3rd_wing_attack_ship"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -6446,7 +6446,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_u_s_s_yaeger",
+	id: "W078",
 	set: ["u_s_s_yaeger", "71523"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -6459,7 +6459,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "talent",
-	id: "the_needs_of_the_many__71523",
+	id: "E091",
 	set: ["71523"],
 	name: "The Needs of the Many...",
 	unique: true,
@@ -6472,7 +6472,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "leonard_mccoy_71523",
+	id: "C130",
 	set: ["71523"],
 	name: "Leonard McCoy",
 	unique: true,
@@ -6485,7 +6485,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "saavik_71523",
+	id: "C129",
 	set: ["71523"],
 	name: "Saavik",
 	unique: true,
@@ -6498,7 +6498,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "ilia_71523",
+	id: "C128",
 	set: ["71523"],
 	name: "Ilia",
 	unique: true,
@@ -6511,7 +6511,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "hikaru_sulu_71523",
+	id: "C127",
 	set: ["71523"],
 	name: "Hikaru Sulu",
 	unique: true,
@@ -6524,7 +6524,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "self_destruct_sequence_71523",
+	id: "E090",
 	set: ["71523"],
 	name: "Self-Destruct Sequence",
 	unique: true,
@@ -6537,7 +6537,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "montgomery_scott_71523",
+	id: "C126",
 	set: ["71523"],
 	name: "Montgomery Scott",
 	unique: true,
@@ -6550,7 +6550,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "pavel_chekov_71523",
+	id: "C125",
 	set: ["71523"],
 	name: "Pavel Chekov",
 	unique: true,
@@ -6563,7 +6563,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "nyota_uhura_71523",
+	id: "C124",
 	set: ["71523"],
 	name: "Nyota Uhura",
 	unique: true,
@@ -6576,7 +6576,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "goval_71522",
+	id: "C123",
 	set: ["71522"],
 	name: "Goval",
 	unique: true,
@@ -6589,7 +6589,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "bosus_71522",
+	id: "C122",
 	set: ["71522"],
 	name: "Bosus",
 	unique: true,
@@ -6602,7 +6602,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "crosis_71522",
+	id: "C121",
 	set: ["71522"],
 	name: "Crosis",
 	unique: true,
@@ -6615,7 +6615,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "torsus_71522",
+	id: "C120",
 	set: ["71522"],
 	name: "Torsus",
 	unique: true,
@@ -6628,7 +6628,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "diversionary_tactics_71522",
+	id: "E089",
 	set: ["71522"],
 	name: "Diversionary Tactics",
 	unique: true,
@@ -6641,7 +6641,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "experimental_link_71522",
+	id: "E088",
 	set: ["71522"],
 	name: "Experimental Link",
 	unique: true,
@@ -6654,7 +6654,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "subspace_distortion_71522",
+	id: "T203",
 	set: ["71522"],
 	name: "Subspace Distortion",
 	unique: false,
@@ -6667,7 +6667,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "borg",
-	id: "transwarp_conduit_71522",
+	id: "B012",
 	set: ["71522"],
 	name: "Transwarp Conduit",
 	unique: false,
@@ -6681,7 +6681,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "unnecessary_bloodshed_71524",
+	id: "E087",
 	set: ["71524"],
 	name: "Unnecessary Bloodshed",
 	unique: true,
@@ -6694,7 +6694,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "lamat_ukan_71524",
+	id: "C119",
 	set: ["71524"],
 	name: "Lamat'Ukan",
 	unique: true,
@@ -6707,7 +6707,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "remata_klan_71524",
+	id: "C118",
 	set: ["71524"],
 	name: "Remata'Klan",
 	unique: true,
@@ -6720,7 +6720,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "amat_igan_71524",
+	id: "C117",
 	set: ["71524"],
 	name: "Amat'Igan",
 	unique: true,
@@ -6733,7 +6733,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "sensor_array_71524",
+	id: "T202",
 	set: ["71524"],
 	name: "Sensor Array",
 	unique: false,
@@ -6746,7 +6746,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_71522",
+	id: "W077",
 	set: ["71522"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -6759,7 +6759,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "weapon",
-	id: "forward_weapons_array_71522",
+	id: "W076",
 	set: ["71522"],
 	name: "Forward Weapons Array",
 	unique: false,
@@ -6772,7 +6772,7 @@ module.exports = [{
 	range: "1 - 3"
 }, {
 	type: "weapon",
-	id: "volley_of_torpedoes_71524",
+	id: "W075",
 	set: ["71524"],
 	name: "Volley of Torpedoes",
 	unique: false,
@@ -6785,7 +6785,7 @@ module.exports = [{
 	range: "1 - 3"
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_71524",
+	id: "W074",
 	set: ["71524"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -6798,7 +6798,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "tech",
-	id: "combat_vessel_variant_71508",
+	id: "T201",
 	set: ["71508"],
 	name: "Combat Vessel Variant",
 	unique: true,
@@ -6811,7 +6811,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "tractor_beam_71508",
+	id: "T200",
 	set: ["71508"],
 	name: "Tractor Beam",
 	unique: false,
@@ -6824,7 +6824,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "diplomacy_71508",
+	id: "E086",
 	set: ["71508"],
 	name: "Diplomacy",
 	unique: true,
@@ -6837,7 +6837,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "koss_71508",
+	id: "C116",
 	set: ["71508"],
 	name: "Koss",
 	unique: true,
@@ -6850,7 +6850,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "mutli_adaptive_shields_71509",
+	id: "T099",
 	set: ["71509"],
 	name: "Mutli-adaptive Shields",
 	unique: true,
@@ -6863,7 +6863,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "reinforced_structural_integrity_71509",
+	id: "T098",
 	set: ["71509"],
 	name: "Reinforced Structural Integrity",
 	unique: true,
@@ -6876,7 +6876,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "research_mission_71509",
+	id: "E085",
 	set: ["71509"],
 	name: "Research Mission",
 	unique: false,
@@ -6889,7 +6889,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "erin_hansen_71509",
+	id: "C115",
 	set: ["71509"],
 	name: "Erin Hansen",
 	unique: true,
@@ -6902,7 +6902,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "quark_71786",
+	id: "C114",
 	set: ["71786", "71810"],
 	name: "Quark",
 	unique: true,
@@ -6915,7 +6915,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "odo_71786",
+	id: "C113",
 	set: ["71786", "71810"],
 	name: "Odo",
 	unique: true,
@@ -6928,7 +6928,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "vic_fontaine_crew_71786",
+	id: "C112",
 	set: ["71786", "71810"],
 	name: "Vic Fontaine",
 	unique: true,
@@ -6941,7 +6941,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "vic_fontaine_tech_71786",
+	id: "T097",
 	set: ["71786", "71810"],
 	name: "Vic Fontaine",
 	unique: true,
@@ -6954,7 +6954,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "t_kar_71786",
+	id: "C111",
 	set: ["71786", "71810"],
 	name: "T'Kar",
 	unique: true,
@@ -6967,7 +6967,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "t_rul_71786",
+	id: "C110",
 	set: ["71786", "71810"],
 	name: "T'Rul",
 	unique: true,
@@ -6980,7 +6980,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "elim_garak_71786",
+	id: "C109",
 	set: ["71786", "71810"],
 	name: "Elim Garak",
 	unique: true,
@@ -6993,7 +6993,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "julian_bashir_71786",
+	id: "C108",
 	set: ["71786", "71810"],
 	name: "Julian Bashir",
 	unique: true,
@@ -7006,7 +7006,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "enhanced_hull_plating_71526",
+	id: "T096",
 	set: ["71526"],
 	name: "Enhanced Hull Plating",
 	unique: false,
@@ -7019,7 +7019,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "t_pol_71526",
+	id: "C107",
 	set: ["71526"],
 	name: "T'Pol",
 	unique: true,
@@ -7032,7 +7032,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "malcolm_reed_71526",
+	id: "C106",
 	set: ["71526"],
 	name: "Malcolm Reed",
 	unique: true,
@@ -7045,7 +7045,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "hoshi_sato_71526",
+	id: "C105",
 	set: ["71526"],
 	name: "Hoshi Sato",
 	unique: true,
@@ -7058,7 +7058,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "charles_tucker_iii_71526",
+	id: "C104",
 	set: ["71526"],
 	name: "Charles Tucker III",
 	unique: true,
@@ -7071,7 +7071,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "travis_mayweather_71526",
+	id: "C103",
 	set: ["71526"],
 	name: "Travis Mayweather",
 	unique: true,
@@ -7084,7 +7084,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "phlox_71526",
+	id: "C102",
 	set: ["71526"],
 	name: "Phlox",
 	unique: true,
@@ -7097,7 +7097,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "tactical_alert_71526",
+	id: "E084",
 	set: ["71526"],
 	name: "Tactical Alert",
 	unique: true,
@@ -7110,7 +7110,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "vulcan_commandos_71527",
+	id: "C101",
 	set: ["71527"],
 	name: "Vulcan Commandos",
 	unique: false,
@@ -7123,7 +7123,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "combat_vessel_variant_71527",
+	id: "T095",
 	set: ["71527"],
 	name: "Combat Vessel Variant",
 	unique: false,
@@ -7136,7 +7136,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "tractor_beam_71527",
+	id: "T094",
 	set: ["71527"],
 	name: "Tractor Beam",
 	unique: false,
@@ -7149,7 +7149,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "decisive_action_71527",
+	id: "E083",
 	set: ["71527"],
 	name: "Decisive Action",
 	unique: true,
@@ -7162,7 +7162,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "third_of_five_71525",
+	id: "C100",
 	set: ["71525"],
 	name: "Third of Five",
 	unique: true,
@@ -7175,7 +7175,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "second_of_five_71525",
+	id: "C099",
 	set: ["71525"],
 	name: "Second of Five",
 	unique: true,
@@ -7188,7 +7188,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "fourth_of_five_71525",
+	id: "C098",
 	set: ["71525"],
 	name: "Fourth of Five",
 	unique: true,
@@ -7201,7 +7201,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "subspace_beacon_71525",
+	id: "T093",
 	set: ["71525"],
 	name: "Subspace Beacon",
 	unique: false,
@@ -7214,7 +7214,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "long_range_scan_71525",
+	id: "T092",
 	set: ["71525"],
 	name: "Long Range Scan",
 	unique: false,
@@ -7227,7 +7227,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "borg",
-	id: "scavenged_parts_71525",
+	id: "B011",
 	set: ["71525"],
 	name: "Scavenged Parts",
 	unique: false,
@@ -7240,7 +7240,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "aft_phase_cannon_71526",
+	id: "W073",
 	set: ["71526"],
 	name: "Aft Phase Cannon",
 	unique: false,
@@ -7253,7 +7253,7 @@ module.exports = [{
 	range: "1 - 3"
 }, {
 	type: "weapon",
-	id: "photonic_torpedoes_71526",
+	id: "W072",
 	set: ["71526"],
 	name: "Photonic Torpedoes",
 	unique: false,
@@ -7266,7 +7266,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "weapon",
-	id: "magnetometric_guided_charge_71525",
+	id: "W071",
 	set: ["71525", "71513b"],
 	name: "Magnetometric Guided Charge",
 	unique: false,
@@ -7279,7 +7279,7 @@ module.exports = [{
 	range: "1 - 3"
 }, {
 	type: "tech",
-	id: "secondary_impulse_reactor_71510",
+	id: "T091",
 	set: ["71510"],
 	name: "Secondary Impulse Reactor",
 	unique: false,
@@ -7292,7 +7292,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "jack_crusher_71510",
+	id: "C097",
 	set: ["71510"],
 	name: "Jack Crusher",
 	unique: true,
@@ -7305,7 +7305,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "picard_maneuver_71510",
+	id: "E082",
 	set: ["71510"],
 	name: "Picard Maneuver",
 	unique: true,
@@ -7318,7 +7318,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "borg",
-	id: "regeneration_sequencers_71510b",
+	id: "B010",
 	set: ["71510b"],
 	name: "Regeneration Sequencers",
 	unique: false,
@@ -7331,7 +7331,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "we_won_t_go_back__71510b",
+	id: "E081",
 	set: ["71510b"],
 	name: "We Won't Go Back!",
 	unique: true,
@@ -7344,7 +7344,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "worf_71510b",
+	id: "C096",
 	set: ["71510b"],
 	name: "Worf",
 	unique: true,
@@ -7357,7 +7357,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "fire_all_weapons_71510b",
+	id: "W070",
 	set: ["71510b"],
 	name: "Fire All Weapons",
 	unique: false,
@@ -7370,7 +7370,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "weapon",
-	id: "quantum_torpedoes_71510b",
+	id: "W069",
 	set: ["71510b", "71529"],
 	name: "Quantum Torpedoes",
 	unique: false,
@@ -7383,7 +7383,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "weapon",
-	id: "biogenic_weapon_71510b",
+	id: "W068",
 	set: ["71510b"],
 	name: "Biogenic Charge",
 	unique: false,
@@ -7396,7 +7396,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "borg",
-	id: "biogenic_weapon_borg_71510b",
+	id: "B009",
 	set: ["71510b"],
 	name: "Biogenic Charge",
 	unique: false,
@@ -7409,7 +7409,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "thought_maker_71646a",
+	id: "T090",
 	set: ["71646a"],
 	name: "Thought Maker",
 	unique: true,
@@ -7422,7 +7422,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "vengeance_71646a",
+	id: "E080",
 	set: ["71646a"],
 	name: "Vengeance",
 	unique: true,
@@ -7435,7 +7435,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "kazago_71646a",
+	id: "C095",
 	set: ["71646a"],
 	name: "Kazago",
 	unique: true,
@@ -7448,7 +7448,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "tasha_yar_71646b",
+	id: "C094",
 	set: ["71646b"],
 	name: "Tasha Yar",
 	unique: true,
@@ -7461,7 +7461,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "cloaking_device_71646b",
+	id: "T089",
 	set: ["71646b"],
 	name: "Cloaking Device",
 	unique: false,
@@ -7474,7 +7474,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "tersa_71646c",
+	id: "C093",
 	set: ["71646c"],
 	name: "Tersa",
 	unique: true,
@@ -7487,7 +7487,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "tractor_beam_71646c",
+	id: "T088",
 	set: ["71646c", "71793"],
 	name: "Tractor Beam",
 	unique: false,
@@ -7500,7 +7500,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "access_terminal_71646d",
+	id: "T087",
 	set: ["71646d"],
 	name: "Access Terminal",
 	unique: false,
@@ -7513,7 +7513,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "one_71646d",
+	id: "C092",
 	set: ["71646d"],
 	name: "One",
 	unique: true,
@@ -7526,7 +7526,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "borg",
-	id: "dispersion_field_71646d",
+	id: "B008",
 	set: ["71646d"],
 	name: "Dispersion Field",
 	unique: true,
@@ -7539,7 +7539,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "vulcan_logic_71646e",
+	id: "E079",
 	set: ["71646e"],
 	name: "Vulcan Logic",
 	unique: true,
@@ -7552,7 +7552,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "kov_71646e",
+	id: "C091",
 	set: ["71646e"],
 	name: "Kov",
 	unique: true,
@@ -7565,7 +7565,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "power_grid_71646e",
+	id: "T086",
 	set: ["71646e"],
 	name: "Power Grid",
 	unique: false,
@@ -7578,7 +7578,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_71646a",
+	id: "W067",
 	set: ["71646a"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -7591,7 +7591,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "weapon",
-	id: "forward_weapons_grid_71646b",
+	id: "W066",
 	set: ["71646b"],
 	name: "Forward Weapons Grid",
 	unique: false,
@@ -7604,7 +7604,7 @@ module.exports = [{
 	range: "1 - 2"
 }, {
 	type: "weapon",
-	id: "dorsal_weapons_array_71646b",
+	id: "W065",
 	set: ["71646b"],
 	name: "Dorsal Weapons Array",
 	unique: false,
@@ -7617,7 +7617,7 @@ module.exports = [{
 	range: "1 - 2"
 }, {
 	type: "weapon",
-	id: "photonic_charges_71646c",
+	id: "W064",
 	set: ["71646c", "71793", "blind_nistrim_culluh"],
 	name: "Photonic Charges",
 	unique: false,
@@ -7630,7 +7630,7 @@ module.exports = [{
 	range: "1"
 }, {
 	type: "weapon",
-	id: "particle_beam_weapon_71646c",
+	id: "W063",
 	set: ["71646c"],
 	name: "Particle Beam Weapon",
 	unique: false,
@@ -7643,7 +7643,7 @@ module.exports = [{
 	range: "1 - 2"
 }, {
 	type: "weapon",
-	id: "proton_beam_71646d",
+	id: "W062",
 	set: ["71646d"],
 	name: "Proton beam",
 	unique: false,
@@ -7656,7 +7656,7 @@ module.exports = [{
 	range: "1"
 }, {
 	type: "weapon",
-	id: "photonic_weapon_71646e",
+	id: "W061",
 	set: ["71646e"],
 	name: "Photonic Weapon",
 	unique: false,
@@ -7669,7 +7669,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "borg",
-	id: "hive_mind_71511",
+	id: "B007",
 	set: ["71511"],
 	name: "Hive Mind",
 	unique: false,
@@ -7682,7 +7682,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "vox_71511",
+	id: "C090",
 	set: ["71511"],
 	name: "Vox",
 	unique: true,
@@ -7695,7 +7695,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "borg_alliance_71511",
+	id: "E078",
 	set: ["71511"],
 	name: "Borg Alliance",
 	unique: true,
@@ -7708,7 +7708,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "advanced_shields_71531",
+	id: "T085",
 	set: ["71531", "72271"],
 	name: "Advanced Shields",
 	unique: false,
@@ -7721,7 +7721,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "fire_at_will__71531",
+	id: "E077",
 	set: ["71531", "72271"],
 	name: "Fire At Will!",
 	unique: true,
@@ -7734,7 +7734,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "make_it_so_71531",
+	id: "E076",
 	set: ["71531", "72271"],
 	name: "Make It So",
 	unique: true,
@@ -7747,7 +7747,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "data_71531",
+	id: "C080",
 	set: ["71531", "72271"],
 	name: "Data",
 	unique: true,
@@ -7760,7 +7760,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "william_t_riker_71531",
+	id: "C089",
 	set: ["71531", "72271"],
 	name: "William T. Riker",
 	unique: true,
@@ -7773,7 +7773,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "geordi_la_forge_71531",
+	id: "C088",
 	set: ["71531", "72271"],
 	name: "Geordi La Forge",
 	unique: true,
@@ -7786,7 +7786,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "tuvok_71528",
+	id: "C087",
 	set: ["71528"],
 	name: "Tuvok",
 	unique: true,
@@ -7799,7 +7799,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "b_elanna_torres_71528",
+	id: "C086",
 	set: ["71528"],
 	name: "B'Elanna Torres",
 	unique: true,
@@ -7812,7 +7812,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "magnus_hansen_71530",
+	id: "C085",
 	set: ["71530"],
 	name: "Magnus Hansen",
 	unique: true,
@@ -7825,7 +7825,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "resistance_is_futile_71530",
+	id: "E075",
 	set: ["71530"],
 	name: "Resistance Is Futile",
 	unique: true,
@@ -7838,7 +7838,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "we_are_the_borg_71530",
+	id: "E074",
 	set: ["71530"],
 	name: "We Are the Borg",
 	unique: true,
@@ -7851,7 +7851,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "borg",
-	id: "transwarp_signal_71530",
+	id: "B006",
 	set: ["71530"],
 	name: "Transwarp Signal",
 	unique: false,
@@ -7864,7 +7864,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "borg",
-	id: "borg_shield_matrix_71530",
+	id: "B005",
 	set: ["71530"],
 	name: "Borg Shield Matrix",
 	unique: false,
@@ -7877,7 +7877,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "power_node_71530",
+	id: "T084",
 	set: ["71530"],
 	name: "Power Node",
 	unique: false,
@@ -7890,7 +7890,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "beverly_crusher_71531",
+	id: "C084",
 	set: ["71531", "72271"],
 	name: "Beverly Crusher",
 	unique: true,
@@ -7903,7 +7903,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "deanna_troi_71531",
+	id: "C083",
 	set: ["71531", "72271"],
 	name: "Deanna Troi",
 	unique: true,
@@ -7916,7 +7916,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "kenneth_dalby_71528",
+	id: "C082",
 	set: ["71528"],
 	name: "Kenneth Dalby",
 	unique: true,
@@ -7929,7 +7929,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "seska_71528",
+	id: "C081",
 	set: ["71528"],
 	name: "Seska",
 	unique: true,
@@ -7942,7 +7942,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "evasive_pattern_omega_71528",
+	id: "E073",
 	set: ["71528"],
 	name: "Evasive Pattern Omega",
 	unique: true,
@@ -7955,7 +7955,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "be_creative_71528",
+	id: "E072",
 	set: ["71528"],
 	name: "Be Creative",
 	unique: true,
@@ -7968,7 +7968,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "ramming_attack_71528",
+	id: "W060",
 	set: ["71528"],
 	name: "Ramming Attack",
 	unique: false,
@@ -7981,7 +7981,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_71528",
+	id: "W059",
 	set: ["71528", "71808"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -7994,7 +7994,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_71531",
+	id: "W058",
 	set: ["71531", "72271"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -8007,7 +8007,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "weapon",
-	id: "dorsal_phaser_array_71531",
+	id: "W057",
 	set: ["71531", "72271"],
 	name: "Dorsal Phaser Array",
 	unique: false,
@@ -8020,7 +8020,7 @@ module.exports = [{
 	range: "1 - 2"
 }, {
 	type: "weapon",
-	id: "multi_kinetic_neutronic_mines_71530",
+	id: "W056",
 	set: ["71530"],
 	name: "Multi Kinetic Neutronic Mines",
 	unique: true,
@@ -8033,7 +8033,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "borg",
-	id: "vinculum_71512",
+	id: "B004",
 	set: ["71512"],
 	name: "Vinculum",
 	unique: false,
@@ -8046,7 +8046,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "data_node_71512",
+	id: "T083",
 	set: ["71512"],
 	name: "Data Node",
 	unique: false,
@@ -8059,7 +8059,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "warrior_spirit_71512",
+	id: "E071",
 	set: ["71512"],
 	name: "Warrior Spirit",
 	unique: true,
@@ -8072,7 +8072,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "command_interface_71513a",
+	id: "E070",
 	set: ["71513a"],
 	name: "Command Interface",
 	unique: true,
@@ -8085,7 +8085,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "borg",
-	id: "borg_maturation_chamber_71513a",
+	id: "B003",
 	set: ["71513a"],
 	name: "Borg Maturation Chamber",
 	unique: false,
@@ -8098,7 +8098,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "borg",
-	id: "interplexing_beacon_71513a",
+	id: "B002",
 	set: ["71513a"],
 	name: "Interplexing Beacon",
 	unique: false,
@@ -8111,7 +8111,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "data_71513a",
+	id: "C080",
 	set: ["71513a"],
 	name: "Data",
 	unique: true,
@@ -8124,7 +8124,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "multi_targeting_phaser_banks_71529",
+	id: "T082",
 	set: ["71529"],
 	name: "Multi-Targeting Phaser Banks",
 	unique: false,
@@ -8137,7 +8137,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "azetbur_71532",
+	id: "C079",
 	set: ["71532"],
 	name: "Azetbur",
 	unique: true,
@@ -8150,7 +8150,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "prototype_cloaking_device_71532",
+	id: "T081",
 	set: ["71532"],
 	name: "Prototype Cloaking Device",
 	unique: false,
@@ -8163,7 +8163,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "the_game_s_afoot_71532",
+	id: "E069",
 	set: ["71532"],
 	name: "The Game's Afoot",
 	unique: true,
@@ -8176,7 +8176,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "cry_havoc_71532",
+	id: "E068",
 	set: ["71532"],
 	name: "Cry Havoc",
 	unique: true,
@@ -8189,7 +8189,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "jennifer_sisko_71529",
+	id: "C078",
 	set: ["71529"],
 	name: "Jennifer Sisko",
 	unique: true,
@@ -8202,7 +8202,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "ezri_tigan_71529",
+	id: "C077",
 	set: ["71529"],
 	name: "Ezri Tigan",
 	unique: true,
@@ -8215,7 +8215,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "rom_71529",
+	id: "C076",
 	set: ["71529"],
 	name: "Rom",
 	unique: true,
@@ -8228,7 +8228,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "rebellion_71529",
+	id: "E067",
 	set: ["71529"],
 	name: "Rebellion",
 	unique: true,
@@ -8241,7 +8241,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "strafing_run_71529",
+	id: "E066",
 	set: ["71529"],
 	name: "Strafing Run",
 	unique: true,
@@ -8254,7 +8254,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "julian_bashir_71529",
+	id: "C075",
 	set: ["71529"],
 	name: "Julian Bashir",
 	unique: true,
@@ -8267,7 +8267,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "jadzia_dax_71529",
+	id: "C074",
 	set: ["71529"],
 	name: "Jadzia Dax",
 	unique: true,
@@ -8280,7 +8280,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "reman_boarding_party_71533",
+	id: "C073",
 	set: ["71533", "72252"],
 	name: "Reman Boarding Party",
 	unique: false,
@@ -8293,7 +8293,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "target_weapons_systems_71533",
+	id: "E065",
 	set: ["71533", "72252"],
 	name: "Target Weapons Systems",
 	unique: true,
@@ -8306,7 +8306,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "attack_pattern_shinzon_theta_71533",
+	id: "E064",
 	set: ["71533", "72252"],
 	name: "Attack Pattern Shinzon Theta",
 	unique: true,
@@ -8319,7 +8319,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "shinzon_romulan_talents_71533",
+	id: "E063",
 	set: ["71533", "72252"],
 	name: "Shinzon Romulan Talents",
 	unique: true,
@@ -8332,7 +8332,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "full_stop_71533",
+	id: "E062",
 	set: ["71533", "72252"],
 	name: "Full Stop",
 	unique: true,
@@ -8345,7 +8345,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "secondary_shields_71533",
+	id: "T080",
 	set: ["71533", "72252"],
 	name: "Secondary Shields",
 	unique: false,
@@ -8358,7 +8358,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "improved_cloaking_device_71533",
+	id: "T079",
 	set: ["71533", "72252"],
 	name: "Improved Cloaking Device",
 	unique: false,
@@ -8371,7 +8371,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "aft_phaser_emitter_71529",
+	id: "W055",
 	set: ["71529"],
 	name: "Aft Phaser Emitter",
 	unique: false,
@@ -8384,7 +8384,7 @@ module.exports = [{
 	range: "1 - 3"
 }, {
 	type: "weapon",
-	id: "thalaron_weapon_71533",
+	id: "W054",
 	set: ["71533", "72252"],
 	name: "Thalaron Weapon",
 	unique: true,
@@ -8397,7 +8397,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_71533",
+	id: "W053",
 	set: ["71533", "72252"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -8410,7 +8410,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "crew",
-	id: "vidiian_boarding_party_71534",
+	id: "C072",
 	set: ["71534"],
 	name: "Vidiian Boarding Party",
 	unique: true,
@@ -8423,7 +8423,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "dereth_71534",
+	id: "C071",
 	set: ["71534"],
 	name: "Dereth",
 	unique: true,
@@ -8436,7 +8436,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "denara_pel_71534",
+	id: "C070",
 	set: ["71534"],
 	name: "Denara Pel",
 	unique: true,
@@ -8449,7 +8449,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "sulan_71534",
+	id: "C069",
 	set: ["71534"],
 	name: "Sulan",
 	unique: true,
@@ -8462,7 +8462,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "hypothermic_charge_71534",
+	id: "W052",
 	set: ["71534"],
 	name: "Hypothermic Charge",
 	unique: false,
@@ -8475,7 +8475,7 @@ module.exports = [{
 	range: "1 - 2"
 }, {
 	type: "weapon",
-	id: "grappler_71534",
+	id: "W051",
 	set: ["71534"],
 	name: "Grappler",
 	unique: false,
@@ -8488,7 +8488,7 @@ module.exports = [{
 	range: "1"
 }, {
 	type: "talent",
-	id: "devisive_orders_71534",
+	id: "E061",
 	set: ["71534"],
 	name: "Decisive Orders",
 	unique: true,
@@ -8501,7 +8501,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "squadron",
-	id: "escort_71754",
+	id: "D017",
 	set: ["71754"],
 	name: "Escort",
 	unique: false,
@@ -8514,7 +8514,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "squadron",
-	id: "cover_fire_71754",
+	id: "D016",
 	set: ["71754"],
 	name: "Cover Fire",
 	unique: false,
@@ -8527,7 +8527,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "squadron",
-	id: "flanking_attack_71754",
+	id: "D015",
 	set: ["71754"],
 	name: "Flanking Attack",
 	unique: false,
@@ -8540,7 +8540,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "squadron",
-	id: "break_formation_71754",
+	id: "D014",
 	set: ["71754"],
 	name: "Break Formation",
 	unique: false,
@@ -8553,7 +8553,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "squadron",
-	id: "support_ship_71754",
+	id: "D013",
 	set: ["71754"],
 	name: "Support Ship",
 	unique: false,
@@ -8566,7 +8566,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "squadron",
-	id: "photo_lock_on_71754",
+	id: "D012",
 	set: ["71754"],
 	name: "Photo Lock-On",
 	unique: false,
@@ -8579,7 +8579,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "squadron",
-	id: "aft_disruptor_wave_cannons_71754",
+	id: "D011",
 	set: ["71754"],
 	name: "Aft Disruptor Wave Cannons",
 	unique: false,
@@ -8592,7 +8592,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "squadron",
-	id: "galor_class_phaser_banks_71754",
+	id: "D010",
 	set: ["71754"],
 	name: "Galor Class Phaser Banks",
 	unique: false,
@@ -8605,7 +8605,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "borg",
-	id: "neural_link_71513b",
+	id: "B001",
 	set: ["71513b"],
 	name: "Neural Link",
 	unique: false,
@@ -8618,7 +8618,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "glinn_daro_71513b",
+	id: "C068",
 	set: ["71513b"],
 	name: "Glinn Daro",
 	unique: true,
@@ -8631,7 +8631,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "truce_71513b",
+	id: "E060",
 	set: ["71513b"],
 	name: "Truce",
 	unique: true,
@@ -8644,7 +8644,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "intendant_s_orders_71535",
+	id: "E059",
 	set: ["71535"],
 	name: "Intendant's Orders",
 	unique: true,
@@ -8657,7 +8657,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "make_it_so__71535",
+	id: "E058",
 	set: ["71535"],
 	name: "Make It So!",
 	unique: true,
@@ -8670,7 +8670,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "i_will_deal_with_them_myself_71535",
+	id: "E057",
 	set: ["71535"],
 	name: "I Will Deal With Them Myself",
 	unique: true,
@@ -8683,7 +8683,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "elim_garak_71535",
+	id: "C067",
 	set: ["71535"],
 	name: "Elim Garak",
 	unique: true,
@@ -8696,7 +8696,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "brunt_71535",
+	id: "C066",
 	set: ["71535"],
 	name: "Brunt",
 	unique: true,
@@ -8709,7 +8709,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "bareil_antos_71535",
+	id: "C065",
 	set: ["71535"],
 	name: "Bareil Antos",
 	unique: true,
@@ -8722,7 +8722,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "odo_71535",
+	id: "C064",
 	set: ["71535"],
 	name: "Odo",
 	unique: true,
@@ -8735,7 +8735,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "cloaking_device_71535",
+	id: "T078",
 	set: ["71535"],
 	name: "Cloaking Device",
 	unique: false,
@@ -8748,7 +8748,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "tractor_beam_71535",
+	id: "T077",
 	set: ["71535"],
 	name: "Tractor Beam",
 	unique: false,
@@ -8761,7 +8761,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_71535",
+	id: "W050",
 	set: ["71535"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -8774,7 +8774,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "tech",
-	id: "monotanium_armor_plating_71808",
+	id: "T076",
 	set: ["71808"],
 	name: "Monotanium Armor Plating",
 	unique: false,
@@ -8787,7 +8787,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "sensor_network_71808",
+	id: "T075",
 	set: ["71808"],
 	name: "Sensor Network",
 	unique: false,
@@ -8800,7 +8800,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "intercept_course_71808",
+	id: "E056",
 	set: ["71808"],
 	name: "Intercept Course",
 	unique: true,
@@ -8813,7 +8813,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "stalking_mode_71808",
+	id: "E055",
 	set: ["71808"],
 	name: "Stalking Mode",
 	unique: true,
@@ -8826,7 +8826,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "full_reverse_71808",
+	id: "E054",
 	set: ["71808"],
 	name: "Full Reverse",
 	unique: true,
@@ -8839,7 +8839,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "subnucleonic_beam_71808",
+	id: "W049",
 	set: ["71808"],
 	name: "Subnucleonic Beam",
 	unique: false,
@@ -8852,7 +8852,7 @@ module.exports = [{
 	range: "1 - 2"
 }, {
 	type: "squadron",
-	id: "defensive_maneuvers_71753",
+	id: "D009",
 	set: ["71753"],
 	name: "Defensive Maneuvers",
 	unique: false,
@@ -8865,7 +8865,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "squadron",
-	id: "support_ship_71753",
+	id: "D008",
 	set: ["71753"],
 	name: "Support Ship",
 	unique: false,
@@ -8878,7 +8878,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "squadron",
-	id: "attack_wave_71753",
+	id: "D006",
 	set: ["71753"],
 	name: "Attack Wave",
 	unique: false,
@@ -8891,7 +8891,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "squadron",
-	id: "squad_leader_71753",
+	id: "D005",
 	set: ["71753"],
 	name: "Squad Leader",
 	unique: false,
@@ -8904,7 +8904,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "squadron",
-	id: "attack_formation_71753",
+	id: "D004",
 	set: ["71753"],
 	name: "Attack Formation",
 	unique: false,
@@ -8917,7 +8917,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "squadron",
-	id: "tactical_pattern_theta_71753",
+	id: "D003",
 	set: ["71753"],
 	name: "Tactical Pattern Theta",
 	unique: false,
@@ -8930,7 +8930,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "squadron",
-	id: "cover_fire_71753",
+	id: "D002",
 	set: ["71753"],
 	name: "Cover Fire",
 	unique: false,
@@ -8943,7 +8943,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "squadron",
-	id: "coordinated_attack_71753",
+	id: "D001",
 	set: ["71753"],
 	name: "Coordinated Attack",
 	unique: false,
@@ -8956,7 +8956,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "maneuvering_thrusters_71536",
+	id: "T074",
 	set: ["71536"],
 	name: "Maneuvering Thrusters",
 	unique: false,
@@ -8969,7 +8969,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "multi_spectral_emitters_71536",
+	id: "T073",
 	set: ["71536"],
 	name: "Multi-Spectral Emitters",
 	unique: false,
@@ -8982,7 +8982,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "core_overload_71536",
+	id: "E053",
 	set: ["71536"],
 	name: "Core Overload",
 	unique: true,
@@ -8995,7 +8995,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "backup_sequencer_71536",
+	id: "T072",
 	set: ["71536"],
 	name: "Backup Sequencer",
 	unique: false,
@@ -9008,7 +9008,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "reinforced_hull_plating_71536",
+	id: "T071",
 	set: ["71536"],
 	name: "Reinforced Hull Plating",
 	unique: false,
@@ -9021,7 +9021,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "triphasic_emitter_71536",
+	id: "W048",
 	set: ["71536"],
 	name: "Triphasic Emitter",
 	unique: false,
@@ -9034,7 +9034,7 @@ module.exports = [{
 	range: "0"
 }, {
 	type: "tech",
-	id: "propulsion_matrix_71536",
+	id: "T070",
 	set: ["71536"],
 	name: "Propulsion Matrix",
 	unique: false,
@@ -9047,7 +9047,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "surrender_as_ordered_71996",
+	id: "E052",
 	set: ["71996"],
 	name: "Surrender As Ordered",
 	unique: true,
@@ -9060,7 +9060,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "william_t_riker_71996",
+	id: "C063",
 	set: ["71996"],
 	name: "William T. Riker",
 	unique: true,
@@ -9073,7 +9073,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "tunneling_neutrino_beam_71996",
+	id: "T069",
 	set: ["71996"],
 	name: "Tunneling Neutrino Beam",
 	unique: false,
@@ -9086,7 +9086,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "phaser_array_retrofit_71996",
+	id: "W047",
 	set: ["71996"],
 	name: "Phaser Array Retrofit",
 	unique: false,
@@ -9096,7 +9096,7 @@ module.exports = [{
 	range: "3"
 }, {
 	type: "crew",
-	id: "turanj_71808",
+	id: "C062",
 	set: ["71808"],
 	name: "Turanj",
 	unique: true,
@@ -9108,7 +9108,7 @@ module.exports = [{
 	attack: null
 }, {
 	type: "talent",
-	id: "tholian_assembly_71795",
+	id: "E051",
 	set: ["71795"],
 	name: "Tholian Assembly",
 	unique: true,
@@ -9121,7 +9121,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "karden_71793",
+	id: "C061",
 	set: ["71793"],
 	name: "Karden",
 	unique: true,
@@ -9134,7 +9134,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "haliz_71793",
+	id: "C060",
 	set: ["71793"],
 	name: "Haliz",
 	unique: true,
@@ -9147,7 +9147,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "first_maje_71793",
+	id: "E050",
 	set: ["71793"],
 	name: "First Maje",
 	unique: true,
@@ -9160,7 +9160,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "particle_beam_weapon_71793",
+	id: "W046",
 	set: ["71793"],
 	name: "Particle Beam Weapon",
 	unique: false,
@@ -9173,7 +9173,7 @@ module.exports = [{
 	range: "1 - 2"
 }, {
 	type: "crew",
-	id: "romulan_helmsman_71794",
+	id: "C059",
 	set: ["71794"],
 	name: "Romulan Helmsman",
 	unique: false,
@@ -9186,7 +9186,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "romulan_security_officer_71794",
+	id: "C058",
 	set: ["71794"],
 	name: "Romulan Security Officer",
 	unique: false,
@@ -9199,7 +9199,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "make_them_see_us__71794",
+	id: "E049",
 	set: ["71794"],
 	name: "Make Them See Us!",
 	unique: true,
@@ -9212,7 +9212,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "romulan_sub_lieutenant_71794",
+	id: "C057",
 	set: ["71794"],
 	name: "Romulan Sub Lieutenant",
 	unique: false,
@@ -9225,7 +9225,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "tricobalt_warhead_71795",
+	id: "W045",
 	set: ["71795"],
 	name: "Tricobalt Warhead",
 	unique: false,
@@ -9238,7 +9238,7 @@ module.exports = [{
 	range: "3"
 }, {
 	type: "weapon",
-	id: "disruptor_pulse_71794",
+	id: "W044",
 	set: ["71794"],
 	name: "Disruptor Pulse",
 	unique: false,
@@ -9251,7 +9251,7 @@ module.exports = [{
 	range: "1 - 2"
 }, {
 	type: "weapon",
-	id: "disruptor_beams_71794",
+	id: "W043",
 	set: ["71794"],
 	name: "Disruptor Beams",
 	unique: false,
@@ -9264,7 +9264,7 @@ module.exports = [{
 	range: "1 - 3"
 }, {
 	type: "talent",
-	id: "salvage_71797",
+	id: "E048",
 	set: ["71797"],
 	name: "Salvage",
 	unique: true,
@@ -9277,7 +9277,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "gorn_raiding_party_71797",
+	id: "C056",
 	set: ["71797"],
 	name: "Gorn Raiding Party",
 	unique: true,
@@ -9290,7 +9290,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "improved_deflector_screens_71797",
+	id: "T068",
 	set: ["71797"],
 	name: "Improved Deflector Screens",
 	unique: false,
@@ -9303,7 +9303,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "targeted_phaser_strike_71797",
+	id: "W042",
 	set: ["71797"],
 	name: "Targeted Phaser Strike",
 	unique: false,
@@ -9316,7 +9316,7 @@ module.exports = [{
 	range: "1 - 3"
 }, {
 	type: "crew",
-	id: "corak_71798",
+	id: "C055",
 	set: ["71798"],
 	name: "Corak",
 	unique: true,
@@ -9329,7 +9329,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "glinn_tajor_71798",
+	id: "C054",
 	set: ["71798"],
 	name: "Glinn Tajor",
 	unique: true,
@@ -9342,7 +9342,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "subspace_carrier_wave_71798",
+	id: "T067",
 	set: ["71798"],
 	name: "Subspace Carrier Wave",
 	unique: false,
@@ -9355,7 +9355,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "standard_attack_formation_71798",
+	id: "E047",
 	set: ["71798"],
 	name: "Standard Attack Formation",
 	unique: true,
@@ -9368,7 +9368,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "coded_messages_71798",
+	id: "E046",
 	set: ["71798"],
 	name: "Coded Messages",
 	unique: true,
@@ -9381,7 +9381,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "aft_weapons_array_71798",
+	id: "W041",
 	set: ["71798"],
 	name: "Aft Weapons Array",
 	unique: false,
@@ -9394,7 +9394,7 @@ module.exports = [{
 	range: "1 - 3"
 }, {
 	type: "crew",
-	id: "hikaru_sulu_71796",
+	id: "C053",
 	set: ["71796"],
 	name: "Hikaru Sulu",
 	unique: true,
@@ -9407,7 +9407,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "pavel_chekov_71796",
+	id: "C052",
 	set: ["71796"],
 	name: "Pavel Chekov",
 	unique: true,
@@ -9420,7 +9420,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "marlena_moreau_71796",
+	id: "C051",
 	set: ["71796"],
 	name: "Marlena Moreau",
 	unique: true,
@@ -9433,7 +9433,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "tantalus_field_71796",
+	id: "E045",
 	set: ["71796"],
 	name: "Tantalus Field",
 	unique: true,
@@ -9446,7 +9446,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "agony_booth_71796",
+	id: "T066",
 	set: ["71796"],
 	name: "Agony Booth",
 	unique: false,
@@ -9459,7 +9459,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "phaser_barrage_71796",
+	id: "W040",
 	set: ["71796"],
 	name: "Phaser Barrage",
 	unique: false,
@@ -9472,7 +9472,7 @@ module.exports = [{
 	range: "3"
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_71796",
+	id: "W039",
 	set: ["71796"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -9485,7 +9485,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "crew",
-	id: "sirna_kolrami_71997p",
+	id: "C050",
 	set: ["71997p"],
 	name: "Sirna Kolrami",
 	unique: true,
@@ -9498,7 +9498,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "computer_analysis_71997p",
+	id: "E044",
 	set: ["71997p"],
 	name: "Computer Analysis",
 	unique: true,
@@ -9511,7 +9511,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "escape_transporter_71997p",
+	id: "T065",
 	set: ["71997p"],
 	name: "Escape Transporter",
 	unique: false,
@@ -9524,7 +9524,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "warp_drive_71997p",
+	id: "T064",
 	set: ["71997p"],
 	name: "Warp Drive",
 	unique: false,
@@ -9537,7 +9537,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "sabotage_71800",
+	id: "E043",
 	set: ["71800"],
 	name: "Sabotage",
 	unique: true,
@@ -9550,7 +9550,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "orion_tactical_officer_71800",
+	id: "C049",
 	set: ["71800"],
 	name: "Orion Tactical Officer",
 	unique: false,
@@ -9563,7 +9563,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "andorian_helmsman_71800",
+	id: "C048",
 	set: ["71800"],
 	name: "Andorian Helmsman",
 	unique: false,
@@ -9576,7 +9576,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "emergency_bulkheads_71800",
+	id: "T063",
 	set: ["71800"],
 	name: "Emergency Bulkheads",
 	unique: false,
@@ -9589,7 +9589,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "enhanced_hull_plating_71800",
+	id: "T062",
 	set: ["71800"],
 	name: "Enhanced Hull Plating",
 	unique: false,
@@ -9602,7 +9602,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "photonic_torpedoes_71800",
+	id: "W038",
 	set: ["71800"],
 	name: "Photonic Torpedoes",
 	unique: false,
@@ -9615,7 +9615,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "weapon",
-	id: "plasma_cannons_71800",
+	id: "W037",
 	set: ["71800"],
 	name: "Plasma Cannons",
 	unique: false,
@@ -9628,7 +9628,7 @@ module.exports = [{
 	range: "1 - 3"
 }, {
 	type: "talent",
-	id: "causality_paradox_71799",
+	id: "E042",
 	set: ["71799"],
 	name: "Causality Paradox",
 	unique: true,
@@ -9641,7 +9641,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "temporal_wave_front_71799",
+	id: "T061",
 	set: ["71799"],
 	name: "Temporal Wave Front",
 	unique: true,
@@ -9654,7 +9654,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "temporal_core_71799",
+	id: "T060",
 	set: ["71799"],
 	name: "Temporal Core",
 	unique: false,
@@ -9667,7 +9667,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "spatial_distortion_71799",
+	id: "T059",
 	set: ["71799"],
 	name: "Spatial Distortion",
 	unique: false,
@@ -9681,7 +9681,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "tachyon_detection_grid_71998p",
+	id: "T058",
 	set: ["71998p"],
 	name: "Tachyon Detection Grid",
 	unique: true,
@@ -9694,7 +9694,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "william_t_riker_71998p",
+	id: "C047",
 	set: ["71998p"],
 	name: "William T. Riker",
 	unique: true,
@@ -9707,7 +9707,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "systems_upgrade_71998p",
+	id: "T057",
 	set: ["71998p"],
 	name: "Systems Upgrade",
 	unique: false,
@@ -9720,7 +9720,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "specialized_shields_71801",
+	id: "T056",
 	set: ["71801"],
 	name: "Specialized Shields",
 	unique: false,
@@ -9733,7 +9733,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "phasing_cloaking_device_71801",
+	id: "T055",
 	set: ["71801"],
 	name: "Phasing Cloaking Device",
 	unique: true,
@@ -9746,7 +9746,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "escape_pod_71801",
+	id: "T054",
 	set: ["71801"],
 	name: "Escape Pod",
 	unique: false,
@@ -9759,7 +9759,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "andy_simonson_71801",
+	id: "C046",
 	set: ["71801"],
 	name: "Andy Simonson",
 	unique: true,
@@ -9772,7 +9772,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "phil_wallace_71801",
+	id: "C045",
 	set: ["71801"],
 	name: "Phil Wallace",
 	unique: true,
@@ -9785,7 +9785,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "dawn_velazquez_71801",
+	id: "C044",
 	set: ["71801"],
 	name: "Dawn Velazquez",
 	unique: true,
@@ -9798,7 +9798,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "eric_motz_71801",
+	id: "C043",
 	set: ["71801"],
 	name: "Eric Motz",
 	unique: true,
@@ -9811,7 +9811,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "provisional_government_71803",
+	id: "E041",
 	set: ["71803"],
 	name: "Provisional Government",
 	unique: true,
@@ -9824,7 +9824,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "assault_vessel_upgrade_t_71803",
+	id: "T053",
 	set: ["71803"],
 	name: "Assault Vessel Upgrade",
 	unique: false,
@@ -9837,7 +9837,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "bajoran_militia_71803",
+	id: "C042",
 	set: ["71803"],
 	name: "Bajoran Militia",
 	unique: false,
@@ -9850,7 +9850,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "more_than_meets_the_eye_71803",
+	id: "E040",
 	set: ["71803"],
 	name: "More Than Meets the Eye",
 	unique: true,
@@ -9863,7 +9863,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "chroniton_torpedoes_71799",
+	id: "W036",
 	set: ["71799"],
 	name: "Chroniton Torpedoes",
 	unique: false,
@@ -9876,7 +9876,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "weapon",
-	id: "temporal_incursion_71799",
+	id: "W035",
 	set: ["71799"],
 	name: "Temporal Incursion",
 	unique: false,
@@ -9889,7 +9889,7 @@ module.exports = [{
 	range: "3"
 }, {
 	type: "weapon",
-	id: "type_8_phaser_array_71998p",
+	id: "W034",
 	set: ["71998p"],
 	name: "Type 8 Phaser Array",
 	unique: false,
@@ -9902,7 +9902,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "klingon_stealth_team_71999p",
+	id: "C041",
 	set: ["71999p"],
 	name: "Klingon Stealth Team",
 	unique: false,
@@ -9915,7 +9915,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "cloaked_mines_71999p",
+	id: "T052",
 	set: ["71999p", "72241"],
 	name: "Cloaked Mines",
 	unique: false,
@@ -9928,7 +9928,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "mauk_to_vor_71999p",
+	id: "E039",
 	set: ["71999p"],
 	name: "Mauk-to'Vor",
 	unique: true,
@@ -9941,7 +9941,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "ambush_attack_71999p",
+	id: "W033",
 	set: ["71999p"],
 	name: "Ambush Attack",
 	unique: false,
@@ -9954,7 +9954,7 @@ module.exports = [{
 	range: "1 - 2"
 }, {
 	type: "crew",
-	id: "emh_mark_ii_c_71802",
+	id: "C040",
 	set: ["71802"],
 	name: "EMH Mark II",
 	unique: true,
@@ -9967,7 +9967,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "emh_mark_ii_t_71802",
+	id: "T051",
 	set: ["71802"],
 	name: "EMH Mark II",
 	unique: true,
@@ -9980,7 +9980,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "tactical_prototype_71802",
+	id: "T050",
 	set: ["71802"],
 	name: "Tactical Prototype",
 	unique: true,
@@ -9993,7 +9993,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "romulan_hijackers_71802",
+	id: "C039",
 	set: ["71802"],
 	name: "Romulan Hijackers",
 	unique: true,
@@ -10006,7 +10006,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "darok_71804",
+	id: "C038",
 	set: ["71804"],
 	name: "Darok",
 	unique: true,
@@ -10019,7 +10019,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "inverse_graviton_burst_71804",
+	id: "T049",
 	set: ["71804"],
 	name: "Inverse Graviton Burst",
 	unique: true,
@@ -10032,7 +10032,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "talent",
-	id: "long_live_the_empire__71804",
+	id: "E038",
 	set: ["71804"],
 	name: "Long Live the Empire!",
 	unique: true,
@@ -10045,7 +10045,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "regenerative_shielding_71802",
+	id: "T048",
 	set: ["71802"],
 	name: "Regenerative Shielding",
 	unique: false,
@@ -10058,7 +10058,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "tech",
-	id: "ablative_hull_armor_71802",
+	id: "T047",
 	set: ["71802"],
 	name: "Ablative Hull Armor",
 	unique: true,
@@ -10071,7 +10071,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "weapon",
-	id: "strafing_attack_71804",
+	id: "W032",
 	set: ["71804"],
 	name: "Strafing Attack",
 	unique: false,
@@ -10084,7 +10084,7 @@ module.exports = [{
 	range: "1"
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_71802",
+	id: "W031",
 	set: ["71802"],
 	name: "Photon Torpedoes",
 	unique: false,
@@ -10097,7 +10097,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "weapon",
-	id: "multi_vector_assault_mode_71802",
+	id: "W030",
 	set: ["71802"],
 	name: "Multi-Vector Assault Mode",
 	unique: true,
@@ -10110,7 +10110,7 @@ module.exports = [{
 	range: "1"
 }, {
 	type: "talent",
-	id: "concentrated_firepower_blind_aldara",
+	id: "E037",
 	set: ["blind_aldara"],
 	name: "Concentrated Firepower",
 	cost: 5,
@@ -10119,7 +10119,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "crew",
-	id: "glinn_lasaran_blind_aldara",
+	id: "C037",
 	set: ["blind_aldara"],
 	name: "Glinn Lasaran",
 	cost: 3,
@@ -10128,7 +10128,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "tech",
-	id: "high_energy_subspace_field_blind_aldara",
+	id: "T046",
 	set: ["blind_aldara"],
 	name: "High Energy Subspace Field",
 	cost: 5,
@@ -10137,7 +10137,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "weapon",
-	id: "aft_weapons_array_blind_aldara",
+	id: "W029",
 	set: ["blind_aldara"],
 	name: "Aft Weapons Array",
 	cost: 3,
@@ -10148,7 +10148,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "talent",
-	id: "ibix_dynasty_72004p",
+	id: "E036",
 	set: ["72004p"],
 	name: "Ibix Dynasty",
 	cost: 5,
@@ -10157,7 +10157,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "crew",
-	id: "aquatic_councilor_72004p",
+	id: "C036",
 	set: ["72004p"],
 	name: "Aquatic Councilor",
 	cost: 5,
@@ -10166,7 +10166,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "weapon",
-	id: "prototype_weapon_72004p",
+	id: "W028",
 	set: ["72004p"],
 	name: "Prototype Weapon",
 	cost: 5,
@@ -10177,7 +10177,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "tech",
-	id: "escape_pod_72004p",
+	id: "T045",
 	set: ["72004p"],
 	name: "Escape Pod",
 	cost: 1,
@@ -10186,7 +10186,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "talent",
-	id: "balance_of_terror_e_72002h",
+	id: "E035",
 	set: ["72002h"],
 	name: "Balance of Terror",
 	cost: 3,
@@ -10196,7 +10196,7 @@ module.exports = [{
 	factions: ["no-faction"]
 }, {
 	type: "crew",
-	id: "balance_of_terror_c_72002h",
+	id: "C035",
 	set: ["72002h"],
 	name: "Balance of Terror",
 	cost: 3,
@@ -10206,7 +10206,7 @@ module.exports = [{
 	factions: ["no-faction"]
 }, {
 	type: "tech",
-	id: "balance_of_terror_t_72002h",
+	id: "T044",
 	set: ["72002h"],
 	name: "Balance of Terror",
 	cost: 3,
@@ -10216,7 +10216,7 @@ module.exports = [{
 	factions: ["no-faction"]
 }, {
 	type: "weapon",
-	id: "balance_of_terror_w_72002h",
+	id: "W027",
 	set: ["72002h"],
 	name: "Balance of Terror",
 	cost: 3,
@@ -10226,7 +10226,7 @@ module.exports = [{
 	factions: ["no-faction"]
 }, {
 	type: "talent",
-	id: "tal_shiar_blind_belak",
+	id: "E034",
 	set: ["blind_belak"],
 	name: "Tal Shiar",
 	cost: 5,
@@ -10235,7 +10235,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "crew",
-	id: "tallera_blind_belak",
+	id: "C043",
 	set: ["blind_belak"],
 	name: "Tallera",
 	cost: 3,
@@ -10244,7 +10244,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "tech",
-	id: "modified_cloaking_device_blind_belak",
+	id: "T043",
 	set: ["blind_belak"],
 	name: "Modified Cloaking Device",
 	cost: 5,
@@ -10253,7 +10253,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "weapon",
-	id: "aft_disruptor_emitters_blind_belak",
+	id: "W026",
 	set: ["blind_belak"],
 	name: "Aft Disruptor Emitters",
 	cost: 2,
@@ -10264,7 +10264,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "talent",
-	id: "section_31_72001p",
+	id: "E033",
 	set: ["72001p"],
 	name: "Section 31",
 	cost: 3,
@@ -10273,7 +10273,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "crew",
-	id: "luther_sloan_72001p",
+	id: "C033",
 	set: ["72001p"],
 	name: "Luther Sloan",
 	cost: 3,
@@ -10282,7 +10282,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "weapon",
-	id: "tricobalt_device_72001p",
+	id: "W025",
 	set: ["72001p"],
 	name: "Tricobalt Device",
 	cost: 6,
@@ -10293,7 +10293,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "variable_geometry_pylons_72001p",
+	id: "T042",
 	set: ["72001p"],
 	name: "Variable Geometry Pylons",
 	cost: 5,
@@ -10302,7 +10302,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "talent",
-	id: "telepathy_72012",
+	id: "E032",
 	set: ["72012"],
 	name: "Telepathy",
 	cost: 4,
@@ -10311,7 +10311,7 @@ module.exports = [{
 	factions: ["species-8472"]
 }, {
 	type: "weapon",
-	id: "biological_weapon_72012",
+	id: "W024",
 	set: ["72012"],
 	name: "Biological Weapon",
 	cost: 6,
@@ -10322,7 +10322,7 @@ module.exports = [{
 	factions: ["species-8472"]
 }, {
 	type: "weapon",
-	id: "energy_blast_72012",
+	id: "W023",
 	set: ["72012"],
 	name: "Energy Blast",
 	cost: 8,
@@ -10333,7 +10333,7 @@ module.exports = [{
 	factions: ["species-8472"]
 }, {
 	type: "tech",
-	id: "biological_technology_72012",
+	id: "T041",
 	set: ["72012"],
 	name: "Biological Technology",
 	cost: 5,
@@ -10342,7 +10342,7 @@ module.exports = [{
 	factions: ["species-8472"]
 }, {
 	type: "tech",
-	id: "biogenic_field_72012",
+	id: "T040",
 	set: ["72012"],
 	name: "Biogenic Field",
 	cost: 6,
@@ -10351,7 +10351,7 @@ module.exports = [{
 	factions: ["species-8472"]
 }, {
 	type: "tech",
-	id: "electrodynamic_fluid_72012",
+	id: "T039",
 	set: ["72012"],
 	name: "Electrodynamic Fluid",
 	cost: 5,
@@ -10360,7 +10360,7 @@ module.exports = [{
 	factions: ["species-8472"]
 }, {
 	type: "tech",
-	id: "fluidic_space_72012",
+	id: "T038",
 	set: ["72012"],
 	name: "Fluidic Space",
 	cost: 6,
@@ -10370,7 +10370,7 @@ module.exports = [{
 	factions: ["species-8472"]
 }, {
 	type: "weapon",
-	id: "energy_weapon_blind_bioship",
+	id: "W022",
 	set: ["blind_bioship"],
 	name: "Energy Weapon",
 	cost: 4,
@@ -10379,7 +10379,7 @@ module.exports = [{
 	factions: ["species-8472"]
 }, {
 	type: "tech",
-	id: "neuro_peptides_blind_bioship",
+	id: "T037",
 	set: ["blind_bioship"],
 	name: "Neuro Peptides",
 	cost: 2,
@@ -10388,7 +10388,7 @@ module.exports = [{
 	factions: ["species-8472"]
 }, {
 	type: "tech",
-	id: "organic_conduits_blind_bioship",
+	id: "T036",
 	set: ["blind_bioship"],
 	name: "Organic Conduits",
 	cost: 1,
@@ -10397,7 +10397,7 @@ module.exports = [{
 	factions: ["species-8472"]
 }, {
 	type: "tech",
-	id: "resisitant_hull_blind_bioship",
+	id: "T035",
 	set: ["blind_bioship"],
 	name: "Resistant Hull",
 	cost: 1,
@@ -10406,7 +10406,7 @@ module.exports = [{
 	factions: ["species-8472"]
 }, {
 	type: "talent",
-	id: "dishonorable_tactics_blind_buruk",
+	id: "E031",
 	set: ["blind_buruk"],
 	name: "Dishonorable Tactics",
 	cost: 3,
@@ -10415,7 +10415,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "kurak_blind_buruk",
+	id: "C032",
 	set: ["blind_buruk"],
 	name: "Kurak",
 	cost: 3,
@@ -10424,7 +10424,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "weapon",
-	id: "ambush_attack_blind_buruk",
+	id: "W021",
 	set: ["blind_buruk"],
 	name: "Ambush Attack",
 	cost: 5,
@@ -10433,7 +10433,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "tech",
-	id: "targeting_systems_blind_buruk",
+	id: "T034",
 	set: ["blind_buruk"],
 	name: "Targeting Systems",
 	cost: 4,
@@ -10442,7 +10442,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "tech",
-	id: "auto_navigation_71805",
+	id: "T033",
 	set: ["71805"],
 	name: "Auto-Navigation",
 	cost: 2,
@@ -10455,7 +10455,7 @@ module.exports = [{
 	}
 }, {
 	type: "tech",
-	id: "quantum_slipstream_drive_71805",
+	id: "T032",
 	set: ["71805"],
 	name: "Quantum Slipstream Drive",
 	cost: 6,
@@ -10469,7 +10469,7 @@ module.exports = [{
 	}
 }, {
 	type: "tech",
-	id: "power_distribution_grid_71805",
+	id: "T031",
 	set: ["71805"],
 	name: "Power Distribution Grid",
 	cost: 2,
@@ -10482,7 +10482,7 @@ module.exports = [{
 	}
 }, {
 	type: "tech",
-	id: "force_field_71805",
+	id: "T030",
 	set: ["71805"],
 	name: "Force Field",
 	cost: 3,
@@ -10495,7 +10495,7 @@ module.exports = [{
 	}
 }, {
 	type: "tech",
-	id: "navigational_deflector_71805",
+	id: "T029",
 	set: ["71805"],
 	name: "Navigational Deflector",
 	cost: 4,
@@ -10508,7 +10508,7 @@ module.exports = [{
 	}
 }, {
 	type: "tech",
-	id: "particle_synthesis_71805",
+	id: "T028",
 	set: ["71805"],
 	name: "Particle Synthesis",
 	cost: 5,
@@ -10521,7 +10521,7 @@ module.exports = [{
 	}
 }, {
 	type: "talent",
-	id: "emergency_shutdown_71805",
+	id: "E030",
 	set: ["71805"],
 	name: "Emergency Shutdown",
 	cost: 3,
@@ -10534,7 +10534,7 @@ module.exports = [{
 	}
 }, {
 	type: "talent",
-	id: "lure_71805",
+	id: "E029",
 	set: ["71805"],
 	name: "Lure",
 	cost: 5,
@@ -10547,7 +10547,7 @@ module.exports = [{
 	}
 }, {
 	type: "crew",
-	id: "b_elanna_torres_72014",
+	id: "C031",
 	set: ["72014"],
 	name: "B'Elanna Torres",
 	cost: 4,
@@ -10556,7 +10556,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "harry_kim_72014",
+	id: "C030",
 	set: ["72014"],
 	name: "Harry Kim",
 	cost: 3,
@@ -10565,7 +10565,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "seven_of_nine_72014",
+	id: "C029",
 	set: ["72014"],
 	name: "Seven of Nine",
 	cost: 4,
@@ -10574,7 +10574,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "parametallic_hull_plating_72014",
+	id: "T027",
 	set: ["72014"],
 	name: "Parametallic Hull Plating",
 	cost: 2,
@@ -10583,7 +10583,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "immersion_shielding_72014",
+	id: "T026",
 	set: ["72014"],
 	name: "Immersion Shielding",
 	cost: 3,
@@ -10592,7 +10592,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "unimatrix_shielding_72014",
+	id: "T025",
 	set: ["72014"],
 	name: "Unimatrix Shielding",
 	cost: 5,
@@ -10601,7 +10601,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "photonic_missiles_72014",
+	id: "W020",
 	set: ["72014"],
 	name: "Photonic Missiles",
 	cost: 3,
@@ -10612,7 +10612,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_72014",
+	id: "W019",
 	set: ["72014"],
 	name: "Photon Torpedoes",
 	cost: 4,
@@ -10623,7 +10623,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "talent",
-	id: "neuro_toxin_72003p",
+	id: "E028",
 	set: ["72003p"],
 	name: "Neuro Toxin",
 	cost: 5,
@@ -10632,7 +10632,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "crew",
-	id: "insectoid_riflemen_72003p",
+	id: "C028",
 	set: ["72003p"],
 	name: "Insectoid Riflemen",
 	cost: 5,
@@ -10641,7 +10641,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "weapon",
-	id: "pulse_firing_particle_cannon_72003p",
+	id: "W019",
 	set: ["72003p"],
 	name: "Pulse-Firing Particle Cannon",
 	cost: 4,
@@ -10652,7 +10652,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "tech",
-	id: "phase_deflector_pulse_72003p",
+	id: "T024",
 	set: ["72003p"],
 	name: "Phase Deflector Pulse",
 	cost: 5,
@@ -10661,7 +10661,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "talent",
-	id: "pursuit_blind_interceptor8",
+	id: "E027",
 	set: ["blind_interceptor8"],
 	name: "Pursuit",
 	cost: 5,
@@ -10670,7 +10670,7 @@ module.exports = [{
 	factions: ["bajoran"]
 }, {
 	type: "crew",
-	id: "ro_laren_blind_interceptor8",
+	id: "C027",
 	set: ["blind_interceptor8"],
 	name: "Ro Laren",
 	cost: 5,
@@ -10679,7 +10679,7 @@ module.exports = [{
 	factions: ["bajoran"]
 }, {
 	type: "weapon",
-	id: "phaser_strike_blind_interceptor8",
+	id: "W018",
 	set: ["blind_interceptor8"],
 	name: "Phaser Strike",
 	cost: 5,
@@ -10690,7 +10690,7 @@ module.exports = [{
 	factions: ["bajoran"]
 }, {
 	type: "tech",
-	id: "navigational_sensors_blind_interceptor8",
+	id: "T023",
 	set: ["blind_interceptor8"],
 	name: "Navigational Sensors",
 	cost: 5,
@@ -10699,7 +10699,7 @@ module.exports = [{
 	factions: ["bajoran"]
 }, {
 	type: "talent",
-	id: "flag_officer_72002p",
+	id: "E026",
 	set: ["72002p"],
 	name: "Flag Officer",
 	cost: 4,
@@ -10708,7 +10708,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "vulcan_engineer_72002p",
+	id: "C026",
 	set: ["72002p"],
 	name: "Vulcan Engineer",
 	cost: 3,
@@ -10717,7 +10717,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "dual_phaser_banks_72002p",
+	id: "W017",
 	set: ["72002p"],
 	name: "Dual Phaser Banks",
 	cost: 3,
@@ -10726,7 +10726,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "question",
-	id: "astrogator_72002p",
+	id: "Q003",
 	set: ["72002p"],
 	name: "Astrogator",
 	cost: 3,
@@ -10735,7 +10735,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "talent",
-	id: "marauder_71806",
+	id: "E025",
 	set: ["71806"],
 	name: "Marauder",
 	cost: 2,
@@ -10748,7 +10748,7 @@ module.exports = [{
 	}
 }, {
 	type: "talent",
-	id: "acquisition_71806",
+	id: "E024",
 	set: ["71806"],
 	name: "Acquisition",
 	cost: 4,
@@ -10761,7 +10761,7 @@ module.exports = [{
 	}
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_71806",
+	id: "W016",
 	set: ["71806"],
 	name: "Photon Torpedoes",
 	cost: 5,
@@ -10776,7 +10776,7 @@ module.exports = [{
 	}
 }, {
 	type: "weapon",
-	id: "missile_launchers_71806",
+	id: "W015",
 	set: ["71806"],
 	name: "Missile Launchers",
 	cost: 3,
@@ -10791,7 +10791,7 @@ module.exports = [{
 	}
 }, {
 	type: "crew",
-	id: "tactical_officer_71806",
+	id: "C025",
 	set: ["71806"],
 	name: "Tactical Officer",
 	cost: 4,
@@ -10804,7 +10804,7 @@ module.exports = [{
 	}
 }, {
 	type: "tech",
-	id: "em_pulse_71806",
+	id: "T022",
 	set: ["71806"],
 	name: "EM Pulse",
 	cost: 4,
@@ -10817,7 +10817,7 @@ module.exports = [{
 	}
 }, {
 	type: "tech",
-	id: "maximum_shields_71806",
+	id: "T021",
 	set: ["71806"],
 	name: "Maximum Shields",
 	cost: 4,
@@ -10830,7 +10830,7 @@ module.exports = [{
 	}
 }, {
 	type: "tech",
-	id: "ferengi_probe_71806",
+	id: "T020",
 	set: ["71806"],
 	name: "Ferengi Probe",
 	cost: 4,
@@ -10843,7 +10843,7 @@ module.exports = [{
 	}
 }, {
 	type: "talent",
-	id: "defy_orders_blind_lakota",
+	id: "E023",
 	set: ["blind_lakota"],
 	name: "Defy Orders",
 	cost: 4,
@@ -10852,7 +10852,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "tuvok_blind_lakota",
+	id: "C024",
 	set: ["blind_lakota"],
 	name: "Tuvok",
 	cost: 3,
@@ -10861,7 +10861,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "micro_power_relays_blind_lakota",
+	id: "T019",
 	set: ["blind_lakota"],
 	name: "Micro Power Relays",
 	cost: 3,
@@ -10870,7 +10870,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "upgraded_phasers_blind_lakota",
+	id: "W014",
 	set: ["blind_lakota"],
 	name: "Upgraded Phasers",
 	cost: 3,
@@ -10879,7 +10879,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "talent",
-	id: "ambition_blind_nistrim_culluh",
+	id: "E022",
 	set: ["blind_nistrim_culluh"],
 	name: "Ambition",
 	cost: 5,
@@ -10888,7 +10888,7 @@ module.exports = [{
 	factions: ["kazon"]
 }, {
 	type: "crew",
-	id: "rulat_blind_nistrim_culluh",
+	id: "C023",
 	set: ["blind_nistrim_culluh"],
 	name: "Rulat",
 	cost: 3,
@@ -10897,7 +10897,7 @@ module.exports = [{
 	factions: ["kazon"]
 }, {
 	type: "tech",
-	id: "stolen_technology_blind_nistrim_culluh",
+	id: "T018",
 	set: ["blind_nistrim_culluh"],
 	name: "Stolen Technology",
 	cost: 3,
@@ -10906,7 +10906,7 @@ module.exports = [{
 	factions: ["kazon"]
 }, {
 	type: "talent",
-	id: "kidnap_blind_nunks_marauder",
+	id: "E021",
 	set: ["blind_nunks_marauder"],
 	name: "Kidnap",
 	cost: 5,
@@ -10915,7 +10915,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "crew",
-	id: "omag_blind_nunks_marauder",
+	id: "C022",
 	set: ["blind_nunks_marauder"],
 	name: "Omag",
 	cost: 5,
@@ -10924,7 +10924,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "weapon",
-	id: "weapon_ports_blind_nunks_marauder",
+	id: "W013",
 	set: ["blind_nunks_marauder"],
 	name: "Weapon Ports",
 	cost: 4,
@@ -10935,7 +10935,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "tech",
-	id: "geodesic_pulse_blind_nunks_marauder",
+	id: "T017",
 	set: ["blind_nunks_marauder"],
 	name: "Geodesic Pulse",
 	cost: 5,
@@ -10944,7 +10944,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "crew",
-	id: "nell_chilton_71807",
+	id: "C021",
 	set: ["71807"],
 	name: "Nell Chilton",
 	cost: 3,
@@ -10957,7 +10957,7 @@ module.exports = [{
 	}
 }, {
 	type: "crew",
-	id: "alyssa_ogawa_71807",
+	id: "C020",
 	set: ["71807"],
 	name: "Alyssa Ogawa",
 	cost: 2,
@@ -10970,7 +10970,7 @@ module.exports = [{
 	}
 }, {
 	type: "tech",
-	id: "impulse_drive_71807",
+	id: "T016",
 	set: ["71807"],
 	name: "Impulse Drive",
 	cost: 3,
@@ -10983,7 +10983,7 @@ module.exports = [{
 	}
 }, {
 	type: "tech",
-	id: "inverse_tachyon_pulse_71807",
+	id: "T015",
 	set: ["71807"],
 	name: "Inverse Tachyon Pulse",
 	cost: 2,
@@ -10996,7 +10996,7 @@ module.exports = [{
 	}
 }, {
 	type: "talent",
-	id: "yellow_alert_71807",
+	id: "E020",
 	set: ["71807"],
 	name: "Yellow Alert",
 	cost: 2,
@@ -11009,7 +11009,7 @@ module.exports = [{
 	}
 }, {
 	type: "talent",
-	id: "starfleet_intelligence_71807",
+	id: "E019",
 	set: ["71807"],
 	name: "Starfleet Intelligence",
 	cost: 3,
@@ -11022,7 +11022,7 @@ module.exports = [{
 	}
 }, {
 	type: "talent",
-	id: "prefix_code_72011",
+	id: "E018",
 	set: ["72011"],
 	name: "Prefix Code",
 	cost: 5,
@@ -11031,7 +11031,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "elizabeth_lense_72011",
+	id: "C019",
 	set: ["72011"],
 	name: "Elizabeth Lense",
 	cost: 1,
@@ -11040,7 +11040,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "terry_72011",
+	id: "C018",
 	set: ["72011"],
 	name: "Terry",
 	cost: 4,
@@ -11049,7 +11049,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "high_energy_sensor_sweep_72011",
+	id: "T014",
 	set: ["72011"],
 	name: "High Energy Sensor Sweep",
 	cost: 5,
@@ -11058,7 +11058,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "arsenal_72011",
+	id: "W012",
 	set: ["72011"],
 	name: "Arsenal",
 	cost: 4,
@@ -11067,7 +11067,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "question",
-	id: "aft_torpedo_launcher_72011",
+	id: "Q002",
 	set: ["72011"],
 	name: "Aft Torpedo Launcher",
 	cost: 3,
@@ -11076,7 +11076,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "quinn_72000b",
+	id: "C017",
 	set: ["72000b"],
 	name: "Quinn",
 	cost: 2,
@@ -11090,7 +11090,7 @@ module.exports = [{
 	}
 }, {
 	type: "talent",
-	id: "think_fast_72000b",
+	id: "E017",
 	set: ["72000b"],
 	name: "Think Fast",
 	cost: 1,
@@ -11104,7 +11104,7 @@ module.exports = [{
 	}
 }, {
 	type: "question",
-	id: "q2_c_72000b",
+	id: "Q001",
 	set: ["72000b"],
 	name: "Q2",
 	cost: 5,
@@ -11115,7 +11115,7 @@ module.exports = [{
 	countsAsUpgrade: true
 }, {
 	type: "talent",
-	id: "grand_nagus_72013",
+	id: "E016",
 	set: ["72013"],
 	name: "Grand Nagus",
 	cost: 5,
@@ -11124,7 +11124,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "talent",
-	id: "smugglers_72013",
+	id: "E015",
 	set: ["72013"],
 	name: "Smugglers",
 	cost: 5,
@@ -11133,7 +11133,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "crew",
-	id: "odo_72013",
+	id: "C016",
 	set: ["72013"],
 	name: "Odo",
 	cost: 5,
@@ -11142,7 +11142,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "crew",
-	id: "nog_72013",
+	id: "C015",
 	set: ["72013"],
 	name: "Nog",
 	cost: 3,
@@ -11151,7 +11151,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "crew",
-	id: "rom_72013",
+	id: "C014",
 	set: ["72013"],
 	name: "Rom",
 	cost: 3,
@@ -11160,7 +11160,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "tech",
-	id: "cargo_hold_72013",
+	id: "T013",
 	set: ["72013"],
 	name: "Cargo Hold",
 	cost: 1,
@@ -11169,7 +11169,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "tech",
-	id: "inversion_wave_72013",
+	id: "T012",
 	set: ["72013"],
 	name: "Inversion Wave",
 	cost: 4,
@@ -11178,7 +11178,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "talent",
-	id: "the_day_is_ours_72015",
+	id: "E013",
 	set: ["72015"],
 	name: "The Day is Ours!",
 	cost: 4,
@@ -11187,7 +11187,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "talent",
-	id: "alert_status_one_72015",
+	id: "E012",
 	set: ["72015"],
 	name: "Alert Status One",
 	cost: 3,
@@ -11196,7 +11196,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "talent",
-	id: "supreme_commander_72015",
+	id: "E011",
 	set: ["72015"],
 	name: "Supreme Commander",
 	cost: 5,
@@ -11205,7 +11205,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "worf_72015",
+	id: "C013",
 	set: ["72015"],
 	name: "Worf",
 	cost: 2,
@@ -11214,7 +11214,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "jadzia_dax_72015",
+	id: "C012",
 	set: ["72015"],
 	name: "Jadzia Dax",
 	cost: 5,
@@ -11223,7 +11223,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "leskit_72015",
+	id: "C011",
 	set: ["72015"],
 	name: "Leskit",
 	cost: 3,
@@ -11232,7 +11232,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "tavana_72015",
+	id: "C010",
 	set: ["72015"],
 	name: "Tavana",
 	cost: 5,
@@ -11241,7 +11241,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "kornan_72015",
+	id: "C009",
 	set: ["72015"],
 	name: "Kornan",
 	cost: 5,
@@ -11250,7 +11250,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "talent",
-	id: "v_tosh_ka_tur_blind_seleya",
+	id: "E010",
 	set: ["blind_seleya"],
 	name: "V'Tosh Ka'Tur",
 	cost: 5,
@@ -11259,7 +11259,7 @@ module.exports = [{
 	factions: ["vulcan"]
 }, {
 	type: "crew",
-	id: "solin_blind_seleya",
+	id: "C008",
 	set: ["blind_seleya"],
 	name: "Solin",
 	cost: 4,
@@ -11268,7 +11268,7 @@ module.exports = [{
 	factions: ["vulcan"]
 }, {
 	type: "weapon",
-	id: "aft_particle_beam_blind_seleya",
+	id: "W011",
 	set: ["blind_seleya"],
 	name: "Aft Particle Beam",
 	cost: 3,
@@ -11279,7 +11279,7 @@ module.exports = [{
 	factions: ["vulcan"]
 }, {
 	type: "tech",
-	id: "power_distribution_net_blind_seleya",
+	id: "T011",
 	set: ["blind_seleya"],
 	name: "Power Distribution Net",
 	cost: 5,
@@ -11288,7 +11288,7 @@ module.exports = [{
 	factions: ["vulcan"]
 }, {
 	type: "talent",
-	id: "secret_research_72016",
+	id: "E009",
 	set: ["72016"],
 	name: "Secret Research",
 	cost: 5,
@@ -11297,7 +11297,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "tech",
-	id: "warp_core_ejection_system_72016",
+	id: "T010",
 	set: ["72016"],
 	name: "Warp Core Ejection System",
 	cost: 4,
@@ -11306,7 +11306,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "tech",
-	id: "test_cylinder_72016",
+	id: "T009",
 	set: ["72016"],
 	name: "Test Cylinder",
 	cost: 3,
@@ -11315,7 +11315,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "tech",
-	id: "temporal_displacement_72016",
+	id: "T008",
 	set: ["72016"],
 	name: "Temporal Displacement",
 	cost: 5,
@@ -11324,7 +11324,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "tech",
-	id: "advanced_scanning_72016",
+	id: "T007",
 	set: ["72016"],
 	name: "Advanced Scanning",
 	cost: 5,
@@ -11333,7 +11333,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "tech",
-	id: "signal_amplifier_72016",
+	id: "T006",
 	set: ["72016"],
 	name: "Signal Amplifier",
 	cost: 5,
@@ -11342,7 +11342,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "tech",
-	id: "graviton_field_generator_72016",
+	id: "T005",
 	set: ["72016"],
 	name: "Graviton Field Generator",
 	cost: 5,
@@ -11351,7 +11351,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "talent",
-	id: "deception_72000p",
+	id: "E008",
 	set: ["72000p"],
 	name: "Deception",
 	cost: 5,
@@ -11364,7 +11364,7 @@ module.exports = [{
 	}
 }, {
 	type: "crew",
-	id: "taibak_72000p",
+	id: "C007",
 	set: ["72000p"],
 	name: "Taibak",
 	cost: 4,
@@ -11377,7 +11377,7 @@ module.exports = [{
 	}
 }, {
 	type: "tech",
-	id: "long_range_scanners_72000p",
+	id: "T004",
 	set: ["72000p"],
 	name: "Long Range Scanners",
 	cost: 3,
@@ -11390,7 +11390,7 @@ module.exports = [{
 	}
 }, {
 	type: "weapon",
-	id: "additional_phaser_array_72000p",
+	id: "W010",
 	set: ["72000p"],
 	name: "Additional Phaser Array",
 	cost: 2,
@@ -11403,7 +11403,7 @@ module.exports = [{
 	}
 }, {
 	type: "talent",
-	id: "persistence_72008",
+	id: "E006",
 	set: ["72008"],
 	name: "Persistence",
 	cost: 5,
@@ -11412,7 +11412,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "talent",
-	id: "federation_task_force_72008",
+	id: "E005",
 	set: ["72008"],
 	name: "Federation Task Force",
 	cost: 5,
@@ -11421,7 +11421,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "talent",
-	id: "intercept_72008",
+	id: "E004",
 	set: ["72008"],
 	name: "Intercept",
 	cost: 5,
@@ -11430,7 +11430,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_72008",
+	id: "W009",
 	set: ["72008"],
 	name: "Photon Torpedoes",
 	cost: 5,
@@ -11441,7 +11441,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "quantum_torpedoes_72008",
+	id: "W008",
 	set: ["72008", "72011"],
 	name: "Quantum Torpedoes",
 	cost: 6,
@@ -11452,7 +11452,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "rapid_reload_c_72008",
+	id: "C006",
 	set: ["72008"],
 	name: "Rapid Reload",
 	cost: 2,
@@ -11461,7 +11461,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "weapon",
-	id: "rapid_reload_w_72008",
+	id: "W007",
 	set: ["72008"],
 	name: "Rapid Reload",
 	cost: 2,
@@ -11470,7 +11470,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "rapid_reload_t_72008",
+	id: "T003",
 	set: ["72008"],
 	name: "Rapid Reload",
 	cost: 2,
@@ -11479,7 +11479,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "talent",
-	id: "covert_mission_blind_tohkaht",
+	id: "E003",
 	set: ["blind_tohkaht"],
 	name: "Covert Mission",
 	cost: 5,
@@ -11488,7 +11488,7 @@ module.exports = [{
 	factions: ["mirror-universe"]
 }, {
 	type: "crew",
-	id: "hon_tihl_blind_tohkaht",
+	id: "C005",
 	set: ["blind_tohkaht"],
 	name: "Hon-Tihl",
 	cost: 5,
@@ -11497,7 +11497,7 @@ module.exports = [{
 	factions: ["mirror-universe"]
 }, {
 	type: "weapon",
-	id: "thalmerite_explosive_blind_tohkaht",
+	id: "W006",
 	set: ["blind_tohkaht"],
 	name: "Thalmerite Explosive",
 	cost: 5,
@@ -11508,7 +11508,7 @@ module.exports = [{
 	factions: ["mirror-universe"]
 }, {
 	type: "tech",
-	id: "reactor_core_blind_tohkaht",
+	id: "T002",
 	set: ["blind_tohkaht"],
 	name: "Reactor Core",
 	cost: 2,
@@ -11517,7 +11517,7 @@ module.exports = [{
 	factions: ["mirror-universe"]
 }, {
 	type: "talent",
-	id: "devotion_to_duty_72009",
+	id: "E002",
 	set: ["72009"],
 	name: "Devotion to Duty",
 	cost: 4,
@@ -11530,7 +11530,7 @@ module.exports = [{
 	}
 }, {
 	type: "crew",
-	id: "tactical_officer_72009",
+	id: "C004",
 	set: ["72009"],
 	name: "Tactical Officer",
 	cost: 2,
@@ -11543,7 +11543,7 @@ module.exports = [{
 	}
 }, {
 	type: "crew",
-	id: "k_ehleyr_72009",
+	id: "C003",
 	set: ["72009"],
 	name: "K'Ehleyr",
 	cost: 5,
@@ -11556,7 +11556,7 @@ module.exports = [{
 	}
 }, {
 	type: "weapon",
-	id: "concussive_charges_72009",
+	id: "W005",
 	set: ["72009"],
 	name: "Concussive Charges",
 	cost: 4,
@@ -11571,7 +11571,7 @@ module.exports = [{
 	}
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_72009",
+	id: "W004",
 	set: ["72009", "72015", "72232"],
 	name: "Photon Torpedoes",
 	cost: 5,
@@ -11586,7 +11586,7 @@ module.exports = [{
 	}
 }, {
 	type: "tech",
-	id: "cryogenic_stasis_72009",
+	id: "T001",
 	set: ["72009"],
 	name: "Cryogenic Stasis",
 	cost: 5,
@@ -11599,7 +11599,7 @@ module.exports = [{
 	}
 }, {
 	type: "talent",
-	id: "coordinated_attack_72010",
+	id: "E001",
 	set: ["72010"],
 	name: "Coordinated Attack",
 	cost: 5,
@@ -11608,7 +11608,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "crew",
-	id: "bridge_officer_72010",
+	id: "C002",
 	set: ["72010"],
 	name: "Bridge Officer",
 	cost: 3,
@@ -11617,7 +11617,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "crew",
-	id: "tal_aura_72010",
+	id: "C001",
 	set: ["72010"],
 	name: "Tal'aura",
 	cost: 5,
@@ -11626,7 +11626,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "weapon",
-	id: "photon_torpedoes_72010",
+	id: "W003",
 	set: ["72010"],
 	name: "Photon Torpedoes",
 	cost: 5,
@@ -11637,7 +11637,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "weapon",
-	id: "plasma_torpedoes_72010",
+	id: "W002",
 	set: ["72010"],
 	name: "Plasma Torpedoes",
 	cost: 5,
@@ -11648,7 +11648,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "weapon",
-	id: "flanking_attack_72010",
+	id: "W001",
 	set: ["72010"],
 	name: "Flanking Attack",
 	cost: 6,

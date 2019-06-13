@@ -151,8 +151,6 @@ module.directive( "search", function() {
 			cards: "=",
 			sets: "=",
 			setList: "=",
-			misionSets: "=",
-			missionList: "=",
 			dragStore: "=",
 			search: "=searchOptions",
 			defaults: "=",
@@ -230,13 +228,7 @@ module.directive( "search", function() {
 				if( sets )
 					localStorage.sets = angular.toJson( sets );
 			}, true);
-			
-			// Store changes to expansions filter
-			$scope.$watch( "search.misionSets", function(misionSets) {
-				if( misionSets )
-					localStorage.misionSets = angular.toJson( misionSets );
-			}, true);
-			
+
 			// Store changes to expansions filter
 			$scope.$watch( "defaults", function(defaults) {
 				if( defaults )
@@ -362,15 +354,6 @@ module.directive( "search", function() {
 					}
 					$scope.setList.push( set );
 				});
-				
-				// Add new missionSets to filter sets=missionSets set=misionSet
-				$.each( $scope.missionSets, function(i, misionSet) {
-					if( !$scope.search.missionSets[misionSet.sourceID] ) {
-						console.log("New misionSet: " + misionSet.name);
-						$scope.search.missionSets[misionSet.sourceID] = { search: true };
-					}
-					$scope.missionList.push( misionSet );
-				});
 			});
 
 			// Uncheck all sets
@@ -379,7 +362,7 @@ module.directive( "search", function() {
 					set.search = false;
 				} );
 			};
-			
+
 			/**
 			 * Export owned sets for import into another browser session
 			 */
@@ -458,7 +441,7 @@ module.directive( "search", function() {
 					window.location.reload(true);
 				}
 			};
-			
+
 			// Check all sets
 			$scope.checkAllSets = function() {
 				$.each( $scope.search.sets, function(i,set) {
