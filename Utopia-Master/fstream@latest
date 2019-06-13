@@ -1,0 +1,4 @@
++ npm@6.9.0
+updated 1 package and audited 14488 packages in 19.191s
+found 13 vulnerabilities (1 low, 12 high)
+  run `npm audit fix` to fix them, or `npm audit` for details

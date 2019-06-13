@@ -98,7 +98,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "crew",
-	id: "tarah",
+	id: "C340",
 	set: ["75004"],
 	name: "Tarah",
 	cost: 5,
@@ -109,7 +109,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "crew",
-	id: "michael_jonas_75004",
+	id: "C339",
 	set: ["75004"],
 	name: "Michael Jonas",
 	cost: 3,
@@ -119,7 +119,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "crew",
-	id: "teero_anaydis_75004",
+	id: "C338",
 	set: ["75004"],
 	name: "Teero Anaydis",
 	cost: 3,
@@ -129,7 +129,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "crew",
-	id: "motura_75004",
+	id: "C337",
 	set: ["75004"],
 	name: "Motura",
 	cost: 2,
@@ -139,7 +139,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "crew",
-	id: "james_t_kirk_crew_75005",
+	id: "C336",
 	set: ["75005"],
 	name: "James T. Kirk",
 	cost: 4,
@@ -150,7 +150,7 @@ module.exports = [{
 	factions: ["mirror-universe","federation"]
 }, {
 	type: "crew",
-	id: "mr_spock_crew_75005",
+	id: "C335",
 	set: ["75005"],
 	name: "Mr. Spock",
 	cost: 4,
@@ -161,7 +161,7 @@ module.exports = [{
 	factions: ["mirror-universe","federation"]
 }, {
 	type: "crew",
-	id: "hikaru_sulu_crew_75005",
+	id: "C334",
 	set: ["75005"],
 	name: "Hikaru Sulu",
 	cost: 3,
@@ -171,7 +171,7 @@ module.exports = [{
 	factions: ["mirror-universe","federation"]
 }, {
 	type: "crew",
-	id: "montgomery_scott_shield_75005",
+	id: "C333",
 	set: ["75005"],
 	name: "Montgomery Scott",
 	cost: 3,
@@ -181,7 +181,7 @@ module.exports = [{
 	factions: ["mirror-universe","federation"]
 }, {
 	type: "crew",
-	id: "montgomery_scott_hull_75005",
+	id: "C332",
 	set: ["75005"],
 	name: "Montgomery Scott",
 	cost: 3,
@@ -191,7 +191,7 @@ module.exports = [{
 	factions: ["mirror-universe","federation"]
 }, {
 	type: "crew",
-	id: "leonard_mccoy_75005",
+	id: "C331",
 	set: ["75005"],
 	name: "Leonard Mccoy",
 	cost: 3,
@@ -201,7 +201,7 @@ module.exports = [{
 	factions: ["mirror-universe","federation"]
 }, {
 	type: "crew",
-	id: "leonard_mccoy__addCrew_75005",
+	id: "C330",
 	set: ["75005"],
 	name: "Leonard Mccoy",
 	cost: 3,
@@ -211,7 +211,7 @@ module.exports = [{
 	factions: ["mirror-universe","federation"]
 }, {
 	type: "crew",
-	id: "pavel_chekov_aux_75005",
+	id: "C329",
 	set: ["75005"],
 	name: "Pavel Chekov",
 	cost: 2,
@@ -221,7 +221,7 @@ module.exports = [{
 	factions: ["mirror-universe","federation"]
 }, {
 	type: "crew",
-	id: "pavel_chekov_75005",
+	id: "C328",
 	set: ["75005"],
 	name: "Pavel Chekov",
 	cost: 2,
@@ -232,7 +232,7 @@ module.exports = [{
 	factions: ["mirror-universe","federation"]
 }, {
 	type: "crew",
-	id: "nyota_uhura_comm_75005",
+	id: "C327",
 	set: ["75005"],
 	name: "Nyota Uhura",
 	cost: 3,
@@ -242,7 +242,7 @@ module.exports = [{
 	factions: ["mirror-universe","federation"]
 }, {
 	type: "crew",
-	id: "nyota_uhura_75005",
+	id: "C326",
 	set: ["75005"],
 	name: "Nyota Uhura",
 	cost: 3,
@@ -293,7 +293,7 @@ module.exports = [{
 	factions: ["mirror-universe", "klingon"]
 }, {
 	type: "crew",
-	id: "klingon_guard_75005",
+	id: "C325",
 	set: ["75005"],
 	name: "Klingon Guard",
 	cost: 2,
@@ -302,7 +302,7 @@ module.exports = [{
 	factions: ["mirror-universe","klingon"]
 }, {
 	type: "crew",
-	id: "klingon_patrol_75005",
+	id: "C324",
 	set: ["75005"],
 	name: "Klingon Patrol",
 	cost: 2,
@@ -312,7 +312,7 @@ module.exports = [{
 	factions: ["mirror-universe","klingon"]
 }, {
 	type: "crew",
-	id: "klingon_first_officer_75005",
+	id: "C323",
 	set: ["75005"],
 	name: "Klingon First Officer",
 	cost: 4,
@@ -322,7 +322,7 @@ module.exports = [{
 	factions: ["mirror-universe","klingon"]
 }, {
 	type: "crew",
-	id: "koth_75005",
+	id: "C322",
 	set: ["75005"],
 	name: "Koth",
 	cost: 2,
@@ -376,7 +376,7 @@ module.exports = [{
 	factions: ["mirror-universe","federation"]
 }, {
 	type: "squadron",
-	id: "lead_squadron_73041",
+	id: "D032",
 	set: ["73041"],
 	name: "Lead Squadron",
 	cost: 5,
@@ -385,7 +385,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "squadron",
-	id: "flanking_maneuver_esilon_73041",
+	id: "D031",
 	set: ["73041"],
 	name: "Flanking Maneuver Epsilon",
 	cost: 3,
@@ -394,7 +394,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "squadron",
-	id: "defensive_maneuver_alpha_73041",
+	id: "D030",
 	set: ["73041"],
 	name: "Defensive Maneuver Alpha",
 	cost: 1,
@@ -402,7 +402,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "squadron",
-	id: "defensive_maneuver_beta_73041",
+	id: "D029",
 	set: ["73041"],
 	name: "Defensive Maneuver Beta",
 	cost: 2,
@@ -412,7 +412,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "squadron",
-	id: "defensive_maneuver_theta_73041",
+	id: "D028",
 	set: ["73041"],
 	name: "Defensive Maneuver Theta",
 	cost: 3,
@@ -422,7 +422,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "squadron",
-	id: "flanking_maneuver_delta_73041",
+	id: "D027",
 	set: ["73041"],
 	name: "Flanking Maneuver Delta",
 	cost: 2,
@@ -431,7 +431,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "squadron",
-	id: "flanking_attack_omega_73041",
+	id: "D026",
 	set: ["73041"],
 	name: "Flanking Attack Omega",
 	cost: 4,
@@ -498,7 +498,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "crew",
-	id: "donik_73042",
+	id: "C321",
 	set: ["73042"],
 	name: "Donik",
 	cost: 2,
@@ -508,7 +508,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "crew",
-	id: "beta_hirogen_73042",
+	id: "C320",
 	set: ["73042"],
 	name: "Beta Hirogen",
 	cost: 3,
@@ -557,7 +557,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "crew",
-	id: "changeling_infiltrator_73032",
+	id: "C319",
 	set: ["73032"],
 	name: "Changeling Infiltrator",
 	cost: 4,
@@ -567,7 +567,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "crew",
-	id: "elim_garak_73032",
+	id: "C318",
 	set: ["73032"],
 	name: "Elim Garak",
 	cost: 1,
@@ -576,7 +576,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "crew",
-	id: "seskal_73032",
+	id: "C317",
 	set: ["73032"],
 	name: "Seskal",
 	cost: 4,
@@ -614,7 +614,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "crew",
-	id: "slar_73031",
+	id: "C316",
 	set: ["73031"],
 	name: "Slar",
 	cost: 5,
@@ -625,7 +625,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "crew",
-	id: "gorn_pilot_73031",
+	id: "C315",
 	set: ["73031"],
 	name: "Gorn Pilot",
 	cost: 3,
@@ -634,7 +634,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "crew",
-	id: "gorn_trooper_73031",
+	id: "C314",
 	set: ["73031"],
 	name: "Gorn Trooper",
 	cost: 2,
@@ -744,7 +744,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "crew",
-	id: "gegis_75003",
+	id: "C313",
 	set: ["75003"],
 	name: "Gegis",
 	cost: 3,
@@ -754,7 +754,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "crew",
-	id: "par_lenor_75003",
+	id: "C312",
 	set: ["75003"],
 	name: "Par Lenor",
 	cost: 3,
@@ -763,7 +763,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "crew",
-	id: "letek_75003",
+	id: "C311",
 	set: ["75003"],
 	name: "Letek",
 	cost: 2,
@@ -772,7 +772,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "crew",
-	id: "gral_75003",
+	id: "C310",
 	set: ["75003"],
 	name: "Gral",
 	cost: 1,
@@ -782,7 +782,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "crew",
-	id: "nava_75003",
+	id: "C309",
 	set: ["75003"],
 	name: "Nava",
 	cost: 1,
@@ -792,7 +792,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "crew",
-	id: "grilka_75003",
+	id: "C308",
 	set: ["75003"],
 	name: "Grilka",
 	cost: 1,
@@ -853,7 +853,7 @@ module.exports = [{
 	factions: ["borg"]
 }, {
 	type: "crew",
-	id: "one_73002",
+	id: "C307",
 	set: ["73002"],
 	name: "One",
 	cost: 4,
@@ -862,7 +862,7 @@ module.exports = [{
 	factions: ["borg"]
 }, {
 	type: "crew",
-	id: "second_73002",
+	id: "C306",
 	set: ["73002"],
 	name: "'Second'",
 	cost: 4,
@@ -871,7 +871,7 @@ module.exports = [{
 	factions: ["borg"]
 }, {
 	type: "crew",
-	id: "neonatal_borg_73002",
+	id: "C305",
 	set: ["73002"],
 	name: "Neonatal Borg",
 	cost: 2,
@@ -880,7 +880,7 @@ module.exports = [{
 	factions: ["borg"]
 }, {
 	type: "crew",
-	id: "mezoti_73002",
+	id: "C304",
 	set: ["73002"],
 	name: "Mezoti",
 	cost: 2,
@@ -899,7 +899,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "crew",
-	id: "arridor_73001",
+	id: "C303",
 	set: ["73001"],
 	name: "Arridor",
 	cost: 3,
@@ -909,7 +909,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "crew",
-	id: "doctor_reyga_73001",
+	id: "C302",
 	set: ["73001"],
 	name: "Doctor Reyga",
 	cost: 3,
@@ -918,7 +918,7 @@ module.exports = [{
 	factions: ["ferengi"]
 }, {
 	type: "crew",
-	id: "kol_73001",
+	id: "C301",
 	set: ["73001"],
 	name: "Kol",
 	cost: 2,
@@ -1063,7 +1063,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "crew",
-	id: "jemhadar_first_75002",
+	id: "C300",
 	set: ["75002"],
 	name: "Jem'Hadar First",
 	cost: 3,
@@ -1071,7 +1071,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "crew",
-	id: "jemhadar_elder_75002",
+	id: "C299",
 	set: ["75002"],
 	name: "Jem'Hadar Elder",
 	cost: 3,
@@ -1079,7 +1079,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "crew",
-	id: "duranadar_75002",
+	id: "C298",
 	set: ["75002"],
 	name: "Duran'Adar",
 	cost: 3,
@@ -1088,7 +1088,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "crew",
-	id: "talaktalan_75002",
+	id: "C297",
 	set: ["75002"],
 	name: "Talak'Talan",
 	cost: 2,
@@ -1099,7 +1099,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "crew",
-	id: "lamatukan_75002",
+	id: "C296",
 	set: ["75002"],
 	name: "Lamat'Ukan",
 	cost: 2,
@@ -1187,7 +1187,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "crew",
-	id: "romulan_medical_team_75001",
+	id: "C295",
 	set: ["75001"],
 	name: "Romulan Medical Team",
 	cost: 3,
@@ -1196,7 +1196,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "crew",
-	id: "romulan_spy_75001",
+	id: "C294",
 	set: ["75001"],
 	name: "Romulan Spy",
 	cost: 2,
@@ -1205,7 +1205,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "crew",
-	id: "tal_shiar_subcommander_75001",
+	id: "C293",
 	set: ["75001"],
 	name: "Tal Shiar Sub-Commander",
 	cost: 2,
@@ -1214,7 +1214,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "crew",
-	id: "parem_75001",
+	id: "C292",
 	set: ["75001"],
 	name: "Parem",
 	cost: 1,
@@ -1223,7 +1223,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "crew",
-	id: "bochra_75001",
+	id: "C291",
 	set: ["75001"],
 	name: "Bochra",
 	cost: 1,
@@ -1308,7 +1308,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "worf_2017core",
+	id: "C290",
 	set: ["2017core"],
 	name: "Worf",
 	cost: 5,
@@ -1318,7 +1318,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "kurn_2017core",
+	id: "C289",
 	set: ["2017core"],
 	name: "Kurn",
 	cost: 4,
@@ -1327,7 +1327,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "klingon_helmsman_2017core",
+	id: "C288",
 	set: ["2017core"],
 	name: "Klingon Helmsman",
 	cost: 3,
@@ -1335,7 +1335,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "toral_2017core",
+	id: "C287",
 	set: ["2017core"],
 	name: "Toral",
 	cost: 2,
@@ -1344,7 +1344,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "klingon_bekk_2017core",
+	id: "C286",
 	set: ["2017core"],
 	name: "Klingon Bekk",
 	cost: 1,
@@ -1352,7 +1352,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "geordi_la_forge_2017core",
+	id: "C285",
 	set: ["2017core"],
 	name: "Geordi La Forge",
 	cost: 3,
@@ -1361,7 +1361,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "miles_obrien_2017core",
+	id: "C284",
 	set: ["2017core"],
 	name: "Miles O'Brien",
 	cost: 2,
@@ -1370,7 +1370,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "deanna_troi_2017core",
+	id: "C283",
 	set: ["2017core"],
 	name: "Deanna Troi",
 	cost: 2,
@@ -1380,7 +1380,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "beverly_crusher_2017core",
+	id: "C282",
 	set: ["2017core"],
 	name: "Beverly Crusher",
 	cost: 3,
@@ -1389,7 +1389,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "christopher_hobson_2017core",
+	id: "C281",
 	set: ["2017core"],
 	name: "Christopher Hobson",
 	cost: 2,
@@ -1428,7 +1428,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "crew",
-	id: "bounty_hunter_72012wp",
+	id: "C280",
 	set: ["72012wp"],
 	name: "Tellarite Bounty Hunter",
 	cost: 1,
@@ -1585,7 +1585,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "crew",
-	id: "belanna_torres_72013wp",
+	id: "C279",
 	set: ["72013wp"],
 	name: "B'Elanna Torres",
 	cost: 1,
@@ -1603,7 +1603,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "goroth_72012wp",
+	id: "C278",
 	set: ["72012wp"],
 	name: "Goroth",
 	cost: 2,
@@ -1613,7 +1613,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "kolos_72012wpwp",
+	id: "C277",
 	set: ["72012wp"],
 	name: "Kolos",
 	cost: 3,
@@ -1675,7 +1675,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "david_marcus_72001wp",
+	id: "C276",
 	set: ["72011wp"],
 	name: "David Marcus",
 	cost: 3,
@@ -1684,7 +1684,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "saavik_72001wp",
+	id: "C275",
 	set: ["72011wp"],
 	name: "Saavik",
 	cost: 1,
@@ -1694,7 +1694,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "federation_helmsman_72001wp",
+	id: "C274",
 	set: ["72011wp"],
 	name: "Federation Helmsman",
 	cost: 3,
@@ -1732,7 +1732,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "william_t_riker_72001wp",
+	id: "C273",
 	set: ["72011wp", "71801"],
 	name: "William T. Riker",
 	cost: 4,
@@ -1741,7 +1741,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "data_72301p",
+	id: "C272",
 	set: ["72301rp"],
 	name: "Data",
 	cost: 5,
@@ -1780,7 +1780,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "belanna_torres_72300p",
+	id: "C271",
 	set: ["72300p"],
 	name: "B'Elanna Torres",
 	cost: 3,
@@ -1800,7 +1800,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "assault_team_72290p",
+	id: "C270",
 	set: ["72290p"],
 	name: "Assault Team",
 	cost: 5,
@@ -1809,7 +1809,7 @@ module.exports = [{
 	factions: ["mirror-universe"]
 }, {
 	type: "crew",
-	id: "charles_tucker_iii_72290p",
+	id: "C269",
 	set: ["72290p"],
 	name: "Charles Tucker III",
 	cost: 4,
@@ -1818,7 +1818,7 @@ module.exports = [{
 	factions: ["mirror-universe"]
 }, {
 	type: "crew",
-	id: "tpol_72290p",
+	id: "C268",
 	set: ["72290p"],
 	name: "T'Pol",
 	cost: 4,
@@ -1858,7 +1858,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "crew",
-	id: "reptilian_analysis_team_muratas",
+	id: "C267",
 	set: ["72293"],
 	name: "Reptilian Analysis Team",
 	cost: 5,
@@ -1914,7 +1914,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "natasha_yar_72284p",
+	id: "C266",
 	set: ["72284p"],
 	name: "Natasha Yar",
 	cost: 4,
@@ -1961,7 +1961,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "crew",
-	id: "raijin_72281",
+	id: "C265",
 	set: ["72281"],
 	name: "Raijin",
 	cost: 4,
@@ -1997,7 +1997,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "crew",
-	id: "tokath_72282gp",
+	id: "C264",
 	set: ["72282gp"],
 	name: "Tokath",
 	cost: 2,
@@ -2033,7 +2033,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "kulge_72282p",
+	id: "C263",
 	set: ["72282p"],
 	name: "Kulge",
 	cost: 5,
@@ -2051,7 +2051,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "lursa_crew_72282p",
+	id: "C262",
 	set: ["72282p"],
 	name: "Lursa",
 	cost: 3,
@@ -2061,7 +2061,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "betor_crew_72282p",
+	id: "C261",
 	set: ["72282p"],
 	name: "B'Etor",
 	cost: 3,
@@ -2080,7 +2080,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "toral_72281p",
+	id: "C260",
 	set: ["72281p"],
 	name: "Toral",
 	cost: 4,
@@ -2125,7 +2125,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "crew",
-	id: "insectoid_raiding_party_orassin",
+	id: "C259",
 	set: ["72273"],
 	name: "Insecetoid Raiding Party",
 	cost: 3,
@@ -2183,7 +2183,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "worf_bortas",
+	id: "C258",
 	set: ["72280p"],
 	name: "Worf",
 	cost: 3,
@@ -2201,7 +2201,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "demora_sulu_enterprise_b",
+	id: "C257",
 	set: ["72263"],
 	name: "Demora Sulu",
 	cost: 4,
@@ -2266,7 +2266,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "morak_kohlar_battle_cruiser",
+	id: "C256",
 	set: ["72270p"],
 	name: "Morak",
 	cost: 5,
@@ -2275,7 +2275,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "tgreth_kohlar_battle_cruiser",
+	id: "C255",
 	set: ["72270p"],
 	name: "T'Greth",
 	cost: 4,
@@ -2284,7 +2284,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "chrega_kohlar_battle_cruiser",
+	id: "C254",
 	set: ["72270p"],
 	name: "Ch’rega",
 	cost: 2,
@@ -2322,7 +2322,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "crew",
-	id: "nanclus_rateg",
+	id: "C253",
 	set: ["72262p", "72301rp"],
 	name: "Nanclus",
 	cost: 5,
@@ -2426,7 +2426,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "hikaru_sulu_bounty",
+	id: "C252",
 	set: ["72260p"],
 	name: "Hikaru Sulu",
 	cost: 3,
@@ -2435,7 +2435,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "leonard_mccoy_enterprise_a",
+	id: "C251",
 	set: ["72260gp"],
 	name: "Leonard McCoy",
 	cost: 4,
@@ -2444,7 +2444,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "valeris_enterprise_a",
+	id: "C250",
 	set: ["72260gp"],
 	name: "Valeris",
 	cost: 3,
@@ -2471,7 +2471,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "checkov_bounty",
+	id: "C249",
 	set: ["72260p"],
 	name: "Pavel Chekov",
 	cost: 4,
@@ -2480,7 +2480,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "montgomery_scott_bounty",
+	id: "C248",
 	set: ["72260p"],
 	name: "Montgomery Scott",
 	cost: 4,
@@ -2489,7 +2489,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "nyota_uhura_bounty",
+	id: "C247",
 	set: ["72260p"],
 	name: "Nyota Uhura",
 	cost: 5,
@@ -2543,7 +2543,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "the_classic_movies_valkris",
+	id: "C246",
 	set: ["72236p"],
 	name: "Valkris",
 	cost: 5,
@@ -2552,7 +2552,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "the_classic_movies_torg",
+	id: "C245",
 	set: ["72236p"],
 	name: "Torg",
 	cost: 6,
@@ -2561,7 +2561,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "the_classic_movies_maltz",
+	id: "C244",
 	set: ["72236p"],
 	name: "Maltz",
 	cost: 5,
@@ -2588,7 +2588,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "crew",
-	id: "romulan_technical_officer_72242",
+	id: "C243",
 	set: ["72242"],
 	name: "Romulan Technical Officer",
 	cost: 2,
@@ -2626,7 +2626,7 @@ module.exports = [{
 	factions: ["mirror-universe"]
 }, {
 	type: "crew",
-	id: "temporal_cold_war_daniels",
+	id: "C242",
 	set: ["72224gp"],
 	name: "Daniels",
 	cost: 5,
@@ -2644,7 +2644,7 @@ module.exports = [{
 	factions: ["mirror-universe"]
 }, {
 	type: "crew",
-	id: "temporal_cold_war_temporal_temporal_observatory_crew",
+	id: "C241",
 	set: ["72224gp"],
 	name: "Temporal Observatory",
 	cost: 6,
@@ -2689,7 +2689,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "crew",
-	id: "the_classic_movies_joachim",
+	id: "C240",
 	set: ["72235p"],
 	name: "Joachim",
 	cost: 5,
@@ -2742,7 +2742,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "borak_72241",
+	id: "C239",
 	set: ["72241"],
 	name: "Bo'Rak",
 	cost: 5,
@@ -2773,7 +2773,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "damage_control_party_constellation",
+	id: "C238",
 	set: ["72234p"],
 	name: "Damage Control Party",
 	cost: 5,
@@ -2809,7 +2809,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "crew",
-	id: "damron_xindus",
+	id: "C237",
 	set: ["72224p"],
 	name: "Damron",
 	cost: 4,
@@ -2847,7 +2847,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "crew",
-	id: "reman_bodyguards_jazkel",
+	id: "C236",
 	set: ["72233"],
 	name: "Reman Bodyguards",
 	cost: 5,
@@ -2856,7 +2856,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "crew",
-	id: "nijil_jazkal",
+	id: "C235",
 	set: ["72233"],
 	name: "Nijil",
 	cost: 5,
@@ -2885,7 +2885,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "crew",
-	id: "klingon_helmsman_amar",
+	id: "C234",
 	set: ["72232"],
 	name: "Klingon Helmsman",
 	cost: 3,
@@ -2894,7 +2894,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "klingon_navigator_amar",
+	id: "C233",
 	set: ["72232"],
 	name: "Klingon Navigator",
 	cost: 2,
@@ -2903,7 +2903,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "klingon_tactical_officer_amar",
+	id: "C232",
 	set: ["72232"],
 	name: "Klingon Tactical Officer",
 	cost: 3,
@@ -2921,7 +2921,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "wesley_crusher_montgolfier",
+	id: "C231",
 	set: ["72231"],
 	name: "Wesley Crusher",
 	cost: 5,
@@ -2979,7 +2979,7 @@ module.exports = [{
 	factions: ["xindi"]
 }, {
 	type: "crew",
-	id: "degra_weapon_zero",
+	id: "C230",
 	set: ["71225"],
 	name: "Degra",
 	cost: 4,
@@ -3038,7 +3038,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "crew",
-	id: "thei_tmet",
+	id: "C229",
 	set: ["72221p"],
 	name: "THEI",
 	cost: 1,
@@ -3065,7 +3065,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "squadron",
-	id: "cloaked_fighters_71203",
+	id: "D025",
 	set: ["71203"],
 	name: "Cloaked Fighters",
 	cost: 4,
@@ -3074,7 +3074,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "squadron",
-	id: "hidden_formation_71203",
+	id: "D024",
 	set: ["71203"],
 	name: "Hidden Formation",
 	cost: 5,
@@ -3083,7 +3083,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "squadron",
-	id: "cover_fire_71203",
+	id: "D023",
 	set: ["71203"],
 	name: "Cover Fire",
 	cost: 4,
@@ -3092,7 +3092,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "squadron",
-	id: "focused_strike_71203",
+	id: "D022",
 	set: ["71203"],
 	name: "Focused Strike",
 	cost: 5,
@@ -3101,7 +3101,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "squadron",
-	id: "torpedo_attack_71203",
+	id: "D021",
 	set: ["71203"],
 	name: "Torpedo Attack",
 	cost: 4,
@@ -3112,7 +3112,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "squadron",
-	id: "reconnaissance_71203",
+	id: "D020",
 	set: ["71203"],
 	name: "Reconnaissance",
 	cost: 2,
@@ -3121,7 +3121,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "squadron",
-	id: "thrusters_71203",
+	id: "D019",
 	set: ["71203"],
 	name: "Thrusters",
 	cost: 3,
@@ -3130,7 +3130,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "squadron",
-	id: "support_ship_71203",
+	id: "D018",
 	set: ["71203"],
 	name: "Support Ship",
 	cost: 4,
@@ -3219,7 +3219,7 @@ module.exports = [{
 	factions: ["dominion"]
 }, {
 	type: "crew",
-	id: "lorrum_Halik",
+	id: "C228",
 	set: ["71192"],
 	name: "Lorrum",
 	cost: 4,
@@ -3228,7 +3228,7 @@ module.exports = [{
 	factions: ["kazon"]
 }, {
 	type: "crew",
-	id: "kazon_guard_Halik",
+	id: "C228",
 	set: ["71192"],
 	name: "Kazon Guard",
 	cost: 4,
@@ -3340,7 +3340,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "miles_obrien_71213",
+	id: "C227",
 	set: ["71213"],
 	name: "Miles O'Brien",
 	cost: 5,
@@ -3349,7 +3349,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "jadzia_dax_71213",
+	id: "C226",
 	set: ["71213"],
 	name: "Jadzia Dax",
 	cost: 4,
@@ -3358,7 +3358,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "julian_bashir_71213",
+	id: "C225",
 	set: ["71213"],
 	name: "Julian Bashir",
 	cost: 4,
@@ -3367,7 +3367,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "nog_71213",
+	id: "C224",
 	set: ["71213"],
 	name: "Nog",
 	cost: 4,
@@ -3376,7 +3376,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "elim_garak_71213",
+	id: "C223",
 	set: ["71213"],
 	name: "Elim Garak",
 	cost: 3,
@@ -3394,7 +3394,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "riley_aldrin_shepard_valiant",
+	id: "C222",
 	set: ["71221"],
 	name: "Riley Aldrin Shepard",
 	cost: 5,
@@ -3403,7 +3403,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "karen_ferris_valiant",
+	id: "C221",
 	set: ["71221"],
 	name: "Karen Ferris",
 	cost: 4,
@@ -3412,7 +3412,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "dorian_collins_valiant",
+	id: "C220",
 	set: ["71221"],
 	name: "Dorian Collins",
 	cost: 2,
@@ -3421,7 +3421,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "nog_valiant",
+	id: "C219",
 	set: ["71221"],
 	name: "Nog",
 	cost: 5,
@@ -3450,7 +3450,7 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "crew",
-	id: "talas_kumari",
+	id: "C218",
 	set: ["71223"],
 	name: "TALAS",
 	cost: 3,
@@ -3508,7 +3508,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "wesley_crusher_71201",
+	id: "C217",
 	set: ["71201"],
 	name: "Wesley Crusher",
 	cost: 5,
@@ -3517,7 +3517,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "worf_71201",
+	id: "C216",
 	set: ["71201"],
 	name: "Worf",
 	cost: 5,
@@ -3526,7 +3526,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
-	id: "geordi_la_forge_71201",
+	id: "C215",
 	set: ["71201"],
 	name: "Geordi La Forge",
 	cost: 5,
@@ -3574,7 +3574,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "crew",
-	id: "pardek_pi",
+	id: "C214",
 	set: ["71222"],
 	name: "Pardek",
 	cost: 5,
@@ -3583,7 +3583,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "crew",
-	id: "patahk_pi",
+	id: "C213",
 	set: ["71222"],
 	name: "Patahk",
 	cost: 1,
@@ -3623,7 +3623,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3002",
+	id: "C212",
 	set: ["71120"],
 	name: "Worf",
 	unique: true,
@@ -3645,7 +3645,7 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "crew",
-	id: "3003",
+	id: "C211",
 	set: ["71120"],
 	name: "Miles O'Brien",
 	unique: true,
@@ -3658,7 +3658,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3004",
+	id: "C210",
 	set: ["71120"],
 	name: "Geordi La Forge",
 	unique: true,
@@ -3671,7 +3671,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3005",
+	id: "C209",
 	set: ["71120"],
 	name: "Data",
 	unique: true,
@@ -3710,7 +3710,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3008",
+	id: "C208",
 	set: ["71120"],
 	name: "Konmel",
 	unique: true,
@@ -3723,7 +3723,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3009",
+	id: "C207",
 	set: ["71120"],
 	name: "Klag",
 	unique: true,
@@ -3786,7 +3786,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3014",
+	id: "C206",
 	set: ["71120"],
 	name: "N'Vek",
 	unique: true,
@@ -3799,7 +3799,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3015",
+	id: "C205",
 	set: ["71120"],
 	name: "Bochra",
 	unique: true,
@@ -3864,7 +3864,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3020",
+	id: "C204",
 	set: ["71121"],
 	name: "Kyle",
 	unique: true,
@@ -3877,7 +3877,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3021",
+	id: "C203",
 	set: ["71121"],
 	name: "Pavel Chekov",
 	unique: true,
@@ -3890,7 +3890,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3022",
+	id: "C202",
 	set: ["71121"],
 	name: "Follower of Khan",
 	unique: false,
@@ -3903,7 +3903,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3023",
+	id: "C201",
 	set: ["71121"],
 	name: "Joachim",
 	unique: true,
@@ -3968,7 +3968,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3028",
+	id: "C200",
 	set: ["71122", "72240"],
 	name: "Leonard McCoy",
 	unique: true,
@@ -3981,7 +3981,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3029",
+	id: "C199",
 	set: ["71122", "72240"],
 	name: "Hikaru Sulu",
 	unique: true,
@@ -3994,7 +3994,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3030",
+	id: "C198",
 	set: ["71122", "72240"],
 	name: "Mr. Spock",
 	unique: true,
@@ -4007,7 +4007,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3031",
+	id: "C197",
 	set: ["71122", "72240"],
 	name: "Nyota Uhura",
 	unique: true,
@@ -4020,7 +4020,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3032",
+	id: "C196",
 	set: ["71122", "72240"],
 	name: "Montgomery Scott",
 	unique: true,
@@ -4046,7 +4046,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3035",
+	id: "C195",
 	set: ["71123"],
 	name: "Tactical Officer",
 	unique: false,
@@ -4072,7 +4072,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "crew",
-	id: "3038",
+	id: "C194",
 	set: ["71124"],
 	name: "Parem",
 	unique: true,
@@ -4085,7 +4085,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3039",
+	id: "C193",
 	set: ["71124"],
 	name: "Varel",
 	unique: true,
@@ -4135,7 +4135,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3043",
+	id: "C192",
 	set: ["71125", "72272"],
 	name: "Korax",
 	unique: true,
@@ -4148,7 +4148,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3044",
+	id: "C191",
 	set: ["71125", "72272"],
 	name: "Cyrano Jones",
 	unique: true,
@@ -4200,7 +4200,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3048",
+	id: "C190",
 	set: ["71126", "72251"],
 	name: "Klingon Boarding Party",
 	unique: false,
@@ -4226,7 +4226,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3050",
+	id: "C189",
 	set: ["71126", "72251"],
 	name: "Drex",
 	unique: true,
@@ -4252,7 +4252,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "crew",
-	id: "3053",
+	id: "C188",
 	set: ["71127"],
 	name: "Glinn Telle",
 	unique: true,
@@ -4304,7 +4304,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3057",
+	id: "C187",
 	set: ["71128"],
 	name: "Breen Aide",
 	unique: false,
@@ -4369,7 +4369,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3062",
+	id: "C186",
 	set: ["OP1Prize"],
 	name: "Farek",
 	unique: true,
@@ -4434,7 +4434,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3066",
+	id: "C185",
 	set: ["OP2Prize"],
 	name: "Synon",
 	unique: true,
@@ -4460,7 +4460,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3102",
+	id: "C184",
 	set: ["OP3Prize", "72311p"],
 	name: "Romulan Pilot",
 	unique: false,
@@ -4525,7 +4525,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3069",
+	id: "C183",
 	set: ["71268", "72282"],
 	name: "Worf",
 	unique: true,
@@ -4564,7 +4564,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3089",
+	id: "C182",
 	set: ["71268", "72282"],
 	name: "Jadzia Dax",
 	unique: true,
@@ -4577,7 +4577,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3090",
+	id: "C181",
 	set: ["71268", "72282"],
 	name: "Miles O'Brien",
 	unique: true,
@@ -4629,7 +4629,7 @@ module.exports = [{
 	range: "2 - 3"
 }, {
 	type: "crew",
-	id: "3074",
+	id: "C180",
 	set: ["71269"],
 	name: "Kerla",
 	unique: true,
@@ -4642,7 +4642,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3075",
+	id: "C179",
 	set: ["71269"],
 	name: "Stex",
 	unique: true,
@@ -4733,7 +4733,7 @@ module.exports = [{
 	range: "1 - 2"
 }, {
 	type: "crew",
-	id: "3082",
+	id: "C178",
 	set: ["71271"],
 	name: "Omet'Iklan",
 	unique: true,
@@ -4746,7 +4746,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3083",
+	id: "C177",
 	set: ["71271"],
 	name: "Virak'Kara",
 	unique: true,
@@ -4759,7 +4759,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3084",
+	id: "C176",
 	set: ["71271"],
 	name: "Toman'Torax",
 	unique: true,
@@ -4772,7 +4772,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3091",
+	id: "C175",
 	set: ["OP2Participation"],
 	name: "Redshirt",
 	unique: false,
@@ -4785,7 +4785,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3092",
+	id: "C174",
 	set: ["71273"],
 	name: "N'Garen",
 	unique: true,
@@ -4798,7 +4798,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3093",
+	id: "C173",
 	set: ["71273"],
 	name: "Alexander",
 	unique: true,
@@ -4824,7 +4824,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3095",
+	id: "C172",
 	set: ["71275", "72262"],
 	name: "Boheeka",
 	unique: true,
@@ -4915,7 +4915,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3108",
+	id: "C171",
 	set: ["71272", "72292"],
 	name: "Dmitri Valtane",
 	unique: true,
@@ -4928,7 +4928,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3109",
+	id: "C170",
 	set: ["71272", "72292"],
 	name: "Janice Rand",
 	unique: true,
@@ -4941,7 +4941,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3110",
+	id: "C169",
 	set: ["71272", "72292"],
 	name: "Lojur",
 	unique: true,
@@ -4993,7 +4993,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3123",
+	id: "C168",
 	set: ["71274"],
 	name: "Selok",
 	unique: true,
@@ -5032,7 +5032,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "3135",
+	id: "C167",
 	set: ["OP4Prize"],
 	name: "Christopher Hobson",
 	unique: true,
@@ -5084,7 +5084,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "breen_guards_op5prize",
+	id: "C166",
 	set: ["OP5Prize"],
 	name: "Breen Guards",
 	unique: false,
@@ -5110,7 +5110,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "marla_gilmore_71276",
+	id: "C165",
 	set: ["71276"],
 	name: "Marla Gilmore",
 	unique: true,
@@ -5123,7 +5123,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "noah_lessing_71276",
+	id: "C164",
 	set: ["71276"],
 	name: "Noah Lessing",
 	unique: true,
@@ -5136,7 +5136,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "emergency_medical_hologram_71276",
+	id: "C163",
 	set: ["71276"],
 	name: "Emergency Medical Hologram",
 	unique: true,
@@ -5188,7 +5188,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "bu_kah_71448",
+	id: "C162",
 	set: ["71448"],
 	name: "Bu'Kah",
 	unique: true,
@@ -5227,7 +5227,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "centurion_71278",
+	id: "C161",
 	set: ["71278"],
 	name: "Centurion",
 	unique: false,
@@ -5240,7 +5240,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "romulan_officer_71278",
+	id: "C160",
 	set: ["71278"],
 	name: "Romulan Officer",
 	unique: true,
@@ -5305,7 +5305,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "kudak_etan_71279",
+	id: "C159",
 	set: ["71279"],
 	name: "Kudak'Etan",
 	unique: true,
@@ -5318,7 +5318,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "ixtana_rax_71279",
+	id: "C158",
 	set: ["71279"],
 	name: "Ixtana'Rax",
 	unique: true,
@@ -5331,7 +5331,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "ikat_ika_71279",
+	id: "C157",
 	set: ["71279"],
 	name: "Ikat'Ika",
 	unique: true,
@@ -5422,7 +5422,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "li_nalas_op6prize",
+	id: "C156",
 	set: ["OP6Prize"],
 	name: "Li Nalas",
 	unique: true,
@@ -5435,7 +5435,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "day_kannu_op6prize",
+	id: "C155",
 	set: ["OP6Prize"],
 	name: "Day Kannu",
 	unique: true,
@@ -5461,7 +5461,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "b_elanna_torres_71280",
+	id: "C154",
 	set: ["71280", "72261"],
 	name: "B'elanna Torres",
 	unique: true,
@@ -5565,7 +5565,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "harry_kim_71280",
+	id: "C153",
 	set: ["71280", "72261"],
 	name: "Harry Kim",
 	unique: true,
@@ -5578,7 +5578,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "kazon_raiding_party_71282",
+	id: "C152",
 	set: ["71282"],
 	name: "Kazon Raiding Party",
 	unique: false,
@@ -5631,7 +5631,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "seska_71282",
+	id: "C150",
 	set: ["71282"],
 	name: "Seska",
 	unique: true,
@@ -5644,7 +5644,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "seven_of_nine_71283",
+	id: "C149",
 	set: ["71283", "72283"],
 	name: "Seven of Nine",
 	unique: true,
@@ -5657,7 +5657,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "seven_of_nine_71280",
+	id: "C148",
 	set: ["71280", "72261"],
 	name: "Seven of Nine",
 	unique: true,
@@ -5670,7 +5670,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "the_doctor_71280",
+	id: "C147",
 	set: ["71280", "72261"],
 	name: "The Doctor",
 	unique: true,
@@ -5709,7 +5709,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "tierna_71282",
+	id: "C146",
 	set: ["71282"],
 	name: "Tierna",
 	unique: true,
@@ -5722,7 +5722,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "tom_paris_71280",
+	id: "C145",
 	set: ["71280", "72261"],
 	name: "Tom Paris",
 	unique: true,
@@ -5735,7 +5735,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "tuvok_71280",
+	id: "C144",
 	set: ["71280", "72261"],
 	name: "Tuvok",
 	unique: true,
@@ -5878,7 +5878,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "muroc_71446",
+	id: "C143",
 	set: ["71446"],
 	name: "Muroc",
 	unique: true,
@@ -5891,7 +5891,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "t_pol_71446",
+	id: "C142",
 	set: ["71446"],
 	name: "T'Pol",
 	unique: true,
@@ -5943,7 +5943,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "neela_71445",
+	id: "C141",
 	set: ["71445"],
 	name: "Neela",
 	unique: true,
@@ -5956,7 +5956,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "anara_71445",
+	id: "C140",
 	set: ["71445"],
 	name: "Anara",
 	unique: true,
@@ -6008,7 +6008,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "four_of_twelve_71444",
+	id: "C139",
 	set: ["71444"],
 	name: "Four of Twelve",
 	unique: true,
@@ -6138,7 +6138,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "gorn_pilot_oparenaprize",
+	id: "C138",
 	set: ["OPArenaPrize"],
 	name: "Gorn Pilot",
 	unique: true,
@@ -6203,7 +6203,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "kunivas_i_k_s_b_moth",
+	id: "C137",
 	set: ["i_k_s_b_moth"],
 	name: "Kunivas",
 	unique: true,
@@ -6242,7 +6242,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "tal_i_r_w_vorta_vor",
+	id: "C136",
 	set: ["i_r_w_vorta_vor"],
 	name: "Tal",
 	unique: true,
@@ -6268,7 +6268,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "lon_suder_gavroche",
+	id: "C135",
 	set: ["gavroche"],
 	name: "Lon Suder",
 	unique: true,
@@ -6294,7 +6294,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "sakonna_gavroche",
+	id: "C134",
 	set: ["gavroche", "72321"],
 	name: "Sakonna",
 	unique: true,
@@ -6320,7 +6320,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "seskal_3rd_wing_attack_ship",
+	id: "C133",
 	set: ["3rd_wing_attack_ship"],
 	name: "Seskal",
 	unique: true,
@@ -6372,7 +6372,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "elizabeth_shelby_u_s_s_yaeger",
+	id: "C132",
 	set: ["u_s_s_yaeger", "72302p"],
 	name: "Elizabeth Shelby",
 	unique: true,
@@ -6381,7 +6381,7 @@ module.exports = [{
 	cost: 2
 }, {
 	type: "crew",
-	id: "reginald_barclay_u_s_s_yaeger",
+	id: "C131",
 	set: ["u_s_s_yaeger"],
 	name: "Reginald Barclay",
 	unique: true,
@@ -6472,7 +6472,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "leonard_mccoy_71523",
+	id: "C130",
 	set: ["71523"],
 	name: "Leonard McCoy",
 	unique: true,
@@ -6485,7 +6485,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "saavik_71523",
+	id: "C129",
 	set: ["71523"],
 	name: "Saavik",
 	unique: true,
@@ -6498,7 +6498,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "ilia_71523",
+	id: "C128",
 	set: ["71523"],
 	name: "Ilia",
 	unique: true,
@@ -6511,7 +6511,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "hikaru_sulu_71523",
+	id: "C127",
 	set: ["71523"],
 	name: "Hikaru Sulu",
 	unique: true,
@@ -6537,7 +6537,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "montgomery_scott_71523",
+	id: "C126",
 	set: ["71523"],
 	name: "Montgomery Scott",
 	unique: true,
@@ -6550,7 +6550,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "pavel_chekov_71523",
+	id: "C125",
 	set: ["71523"],
 	name: "Pavel Chekov",
 	unique: true,
@@ -6563,7 +6563,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "nyota_uhura_71523",
+	id: "C124",
 	set: ["71523"],
 	name: "Nyota Uhura",
 	unique: true,
@@ -6576,7 +6576,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "goval_71522",
+	id: "C123",
 	set: ["71522"],
 	name: "Goval",
 	unique: true,
@@ -6589,7 +6589,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "bosus_71522",
+	id: "C122",
 	set: ["71522"],
 	name: "Bosus",
 	unique: true,
@@ -6602,7 +6602,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "crosis_71522",
+	id: "C121",
 	set: ["71522"],
 	name: "Crosis",
 	unique: true,
@@ -6615,7 +6615,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "torsus_71522",
+	id: "C120",
 	set: ["71522"],
 	name: "Torsus",
 	unique: true,
@@ -6694,7 +6694,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "lamat_ukan_71524",
+	id: "C119",
 	set: ["71524"],
 	name: "Lamat'Ukan",
 	unique: true,
@@ -6707,7 +6707,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "remata_klan_71524",
+	id: "C118",
 	set: ["71524"],
 	name: "Remata'Klan",
 	unique: true,
@@ -6720,7 +6720,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "amat_igan_71524",
+	id: "C117",
 	set: ["71524"],
 	name: "Amat'Igan",
 	unique: true,
@@ -6837,7 +6837,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "koss_71508",
+	id: "C116",
 	set: ["71508"],
 	name: "Koss",
 	unique: true,
@@ -6889,7 +6889,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "erin_hansen_71509",
+	id: "C115",
 	set: ["71509"],
 	name: "Erin Hansen",
 	unique: true,
@@ -6902,7 +6902,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "quark_71786",
+	id: "C114",
 	set: ["71786", "71810"],
 	name: "Quark",
 	unique: true,
@@ -6915,7 +6915,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "odo_71786",
+	id: "C113",
 	set: ["71786", "71810"],
 	name: "Odo",
 	unique: true,
@@ -6928,7 +6928,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "vic_fontaine_crew_71786",
+	id: "C112",
 	set: ["71786", "71810"],
 	name: "Vic Fontaine",
 	unique: true,
@@ -6954,7 +6954,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "t_kar_71786",
+	id: "C111",
 	set: ["71786", "71810"],
 	name: "T'Kar",
 	unique: true,
@@ -6967,7 +6967,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "t_rul_71786",
+	id: "C110",
 	set: ["71786", "71810"],
 	name: "T'Rul",
 	unique: true,
@@ -6980,7 +6980,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "elim_garak_71786",
+	id: "C109",
 	set: ["71786", "71810"],
 	name: "Elim Garak",
 	unique: true,
@@ -6993,7 +6993,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "julian_bashir_71786",
+	id: "C108",
 	set: ["71786", "71810"],
 	name: "Julian Bashir",
 	unique: true,
@@ -7019,7 +7019,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "t_pol_71526",
+	id: "C107",
 	set: ["71526"],
 	name: "T'Pol",
 	unique: true,
@@ -7032,7 +7032,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "malcolm_reed_71526",
+	id: "C106",
 	set: ["71526"],
 	name: "Malcolm Reed",
 	unique: true,
@@ -7045,7 +7045,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "hoshi_sato_71526",
+	id: "C105",
 	set: ["71526"],
 	name: "Hoshi Sato",
 	unique: true,
@@ -7058,7 +7058,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "charles_tucker_iii_71526",
+	id: "C104",
 	set: ["71526"],
 	name: "Charles Tucker III",
 	unique: true,
@@ -7071,7 +7071,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "travis_mayweather_71526",
+	id: "C103",
 	set: ["71526"],
 	name: "Travis Mayweather",
 	unique: true,
@@ -7084,7 +7084,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "phlox_71526",
+	id: "C102",
 	set: ["71526"],
 	name: "Phlox",
 	unique: true,
@@ -7110,7 +7110,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "vulcan_commandos_71527",
+	id: "C101",
 	set: ["71527"],
 	name: "Vulcan Commandos",
 	unique: false,
@@ -7162,7 +7162,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "third_of_five_71525",
+	id: "C100",
 	set: ["71525"],
 	name: "Third of Five",
 	unique: true,
@@ -7175,7 +7175,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "second_of_five_71525",
+	id: "C099",
 	set: ["71525"],
 	name: "Second of Five",
 	unique: true,
@@ -7188,7 +7188,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "fourth_of_five_71525",
+	id: "C098",
 	set: ["71525"],
 	name: "Fourth of Five",
 	unique: true,
@@ -7292,7 +7292,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "jack_crusher_71510",
+	id: "C097",
 	set: ["71510"],
 	name: "Jack Crusher",
 	unique: true,
@@ -7344,7 +7344,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "worf_71510b",
+	id: "C096",
 	set: ["71510b"],
 	name: "Worf",
 	unique: true,
@@ -7435,7 +7435,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "kazago_71646a",
+	id: "C095",
 	set: ["71646a"],
 	name: "Kazago",
 	unique: true,
@@ -7448,7 +7448,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "tasha_yar_71646b",
+	id: "C094",
 	set: ["71646b"],
 	name: "Tasha Yar",
 	unique: true,
@@ -7474,7 +7474,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "tersa_71646c",
+	id: "C093",
 	set: ["71646c"],
 	name: "Tersa",
 	unique: true,
@@ -7513,7 +7513,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "one_71646d",
+	id: "C092",
 	set: ["71646d"],
 	name: "One",
 	unique: true,
@@ -7552,7 +7552,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "kov_71646e",
+	id: "C091",
 	set: ["71646e"],
 	name: "Kov",
 	unique: true,
@@ -7682,7 +7682,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "vox_71511",
+	id: "C090",
 	set: ["71511"],
 	name: "Vox",
 	unique: true,
@@ -7747,7 +7747,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "data_71531",
+	id: "C080",
 	set: ["71531", "72271"],
 	name: "Data",
 	unique: true,
@@ -7760,7 +7760,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "william_t_riker_71531",
+	id: "C089",
 	set: ["71531", "72271"],
 	name: "William T. Riker",
 	unique: true,
@@ -7773,7 +7773,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "geordi_la_forge_71531",
+	id: "C088",
 	set: ["71531", "72271"],
 	name: "Geordi La Forge",
 	unique: true,
@@ -7786,7 +7786,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "tuvok_71528",
+	id: "C087",
 	set: ["71528"],
 	name: "Tuvok",
 	unique: true,
@@ -7799,7 +7799,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "b_elanna_torres_71528",
+	id: "C086",
 	set: ["71528"],
 	name: "B'Elanna Torres",
 	unique: true,
@@ -7812,7 +7812,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "magnus_hansen_71530",
+	id: "C085",
 	set: ["71530"],
 	name: "Magnus Hansen",
 	unique: true,
@@ -7890,7 +7890,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "beverly_crusher_71531",
+	id: "C084",
 	set: ["71531", "72271"],
 	name: "Beverly Crusher",
 	unique: true,
@@ -7903,7 +7903,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "deanna_troi_71531",
+	id: "C083",
 	set: ["71531", "72271"],
 	name: "Deanna Troi",
 	unique: true,
@@ -7916,7 +7916,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "kenneth_dalby_71528",
+	id: "C082",
 	set: ["71528"],
 	name: "Kenneth Dalby",
 	unique: true,
@@ -7929,7 +7929,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "seska_71528",
+	id: "C081",
 	set: ["71528"],
 	name: "Seska",
 	unique: true,
@@ -8111,7 +8111,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "data_71513a",
+	id: "C080",
 	set: ["71513a"],
 	name: "Data",
 	unique: true,
@@ -8137,7 +8137,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "azetbur_71532",
+	id: "C079",
 	set: ["71532"],
 	name: "Azetbur",
 	unique: true,
@@ -8189,7 +8189,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "jennifer_sisko_71529",
+	id: "C078",
 	set: ["71529"],
 	name: "Jennifer Sisko",
 	unique: true,
@@ -8202,7 +8202,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "ezri_tigan_71529",
+	id: "C077",
 	set: ["71529"],
 	name: "Ezri Tigan",
 	unique: true,
@@ -8215,7 +8215,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "crew",
-	id: "rom_71529",
+	id: "C076",
 	set: ["71529"],
 	name: "Rom",
 	unique: true,
@@ -8501,7 +8501,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "squadron",
-	id: "escort_71754",
+	id: "D017",
 	set: ["71754"],
 	name: "Escort",
 	unique: false,
@@ -8514,7 +8514,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "squadron",
-	id: "cover_fire_71754",
+	id: "D016",
 	set: ["71754"],
 	name: "Cover Fire",
 	unique: false,
@@ -8527,7 +8527,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "squadron",
-	id: "flanking_attack_71754",
+	id: "D015",
 	set: ["71754"],
 	name: "Flanking Attack",
 	unique: false,
@@ -8540,7 +8540,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "squadron",
-	id: "break_formation_71754",
+	id: "D014",
 	set: ["71754"],
 	name: "Break Formation",
 	unique: false,
@@ -8553,7 +8553,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "squadron",
-	id: "support_ship_71754",
+	id: "D013",
 	set: ["71754"],
 	name: "Support Ship",
 	unique: false,
@@ -8566,7 +8566,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "squadron",
-	id: "photo_lock_on_71754",
+	id: "D012",
 	set: ["71754"],
 	name: "Photo Lock-On",
 	unique: false,
@@ -8579,7 +8579,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "squadron",
-	id: "aft_disruptor_wave_cannons_71754",
+	id: "D011",
 	set: ["71754"],
 	name: "Aft Disruptor Wave Cannons",
 	unique: false,
@@ -8592,7 +8592,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "squadron",
-	id: "galor_class_phaser_banks_71754",
+	id: "D010",
 	set: ["71754"],
 	name: "Galor Class Phaser Banks",
 	unique: false,
@@ -8852,7 +8852,7 @@ module.exports = [{
 	range: "1 - 2"
 }, {
 	type: "squadron",
-	id: "defensive_maneuvers_71753",
+	id: "D009",
 	set: ["71753"],
 	name: "Defensive Maneuvers",
 	unique: false,
@@ -8865,7 +8865,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "squadron",
-	id: "support_ship_71753",
+	id: "D008",
 	set: ["71753"],
 	name: "Support Ship",
 	unique: false,
@@ -8878,7 +8878,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "squadron",
-	id: "attack_wave_71753",
+	id: "D006",
 	set: ["71753"],
 	name: "Attack Wave",
 	unique: false,
@@ -8891,7 +8891,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "squadron",
-	id: "squad_leader_71753",
+	id: "D005",
 	set: ["71753"],
 	name: "Squad Leader",
 	unique: false,
@@ -8904,7 +8904,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "squadron",
-	id: "attack_formation_71753",
+	id: "D004",
 	set: ["71753"],
 	name: "Attack Formation",
 	unique: false,
@@ -8917,7 +8917,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "squadron",
-	id: "tactical_pattern_theta_71753",
+	id: "D003",
 	set: ["71753"],
 	name: "Tactical Pattern Theta",
 	unique: false,
@@ -8930,7 +8930,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "squadron",
-	id: "cover_fire_71753",
+	id: "D002",
 	set: ["71753"],
 	name: "Cover Fire",
 	unique: false,
@@ -8943,7 +8943,7 @@ module.exports = [{
 	range: ""
 }, {
 	type: "squadron",
-	id: "coordinated_attack_71753",
+	id: "D001",
 	set: ["71753"],
 	name: "Coordinated Attack",
 	unique: false,
