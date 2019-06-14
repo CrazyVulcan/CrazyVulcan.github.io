@@ -8683,13 +8683,14 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			// TODO use this field to pick the correct maneuver card
 //			classId: "galaxy__class_mu",
 			hasFaction: function (card, faction, ship, fleet) {
-				return $.inArray( faction, valueOf(card,"mirror-Universe",ship,fleet) ) >= 0;
+				return $.inArray( faction, !valueOf(card,"mirror-Universe",ship,fleet) ) >= 0;
 			},
+			
 			intercept: {
 				ship: {
 					// No faction penalty for upgrades
 					factionPenalty: function(card, ship, fleet, factionPenalty) {
-						if( isUpgrade(card) )
+						if( card )
 							return 0;
 						return factionPenalty;
 					},
