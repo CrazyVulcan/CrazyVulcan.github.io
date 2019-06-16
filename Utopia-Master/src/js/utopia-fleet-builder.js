@@ -458,17 +458,17 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 					return {};
 
 				var saved = {
-					id: card.type+":"+card.id
+					id: card.id
 				};
 
 				if( card.resource )
-					saved.resource = saveCard(card.resource);
+					saved.resource = saveCard(card.resource.id);
 
 				if( card.captain )
-					saved.captain = saveCard(card.captain);
+					saved.captain = saveCard(card.captain.id);
 
 				if( card.admiral )
-					saved.admiral = saveCard(card.admiral);
+					saved.admiral = saveCard(card.admiral.id);
 
 				var upgrades = [];
 				// TODO Consider switching ship.upgrades to .upgradeSlots
@@ -501,7 +501,7 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 
 				var match = false;
 				$.each( cards, function(i, card) {
-					if( card.type+":"+card.id == id ) {
+					if( card.id == id ) {
 						match = card;
 						return false;
 					}
@@ -614,9 +614,9 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 			}
 
 //			var hashFleet = false;
-//			try {
-//				hashFleet = location.hash ? angular.fromJson( atob( location.hash.substring(1) ) ) : false;
-//			} catch(e) {}
+			try {
+				hashFleet = location.hash ? angular.fromJson( atob( location.hash.substring(1) ) ) : false;
+			} catch(e) {}
 
 			
 
