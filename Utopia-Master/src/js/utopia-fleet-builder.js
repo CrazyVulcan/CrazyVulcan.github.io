@@ -613,10 +613,12 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 
 			}
 
-			var hashFleet = false;
-			try {
-				hashFleet = location.hash ? angular.fromJson( atob( location.hash.substring(1) ) ) : false;
-			} catch(e) {}
+//			var hashFleet = false;
+//			try {
+//				hashFleet = location.hash ? angular.fromJson( atob( location.hash.substring(1) ) ) : false;
+//			} catch(e) {}
+
+			
 
 			$scope.$on("cardsLoaded", function() {
 				if( hashFleet ) {

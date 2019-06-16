@@ -70,10 +70,6 @@ module.controller( "UtopiaSetCtrl", [ "$scope", "$filter", "cardLoader", "$facti
 			return -1;
 		if( b.type == "talent" )
 			return 1;
-		if( a.type == "crew" )
-			return -1;
-		if( b.type == "crew" )
-			return 1;
 		if( a.type == "weapon" )
 			return -1;
 		if( b.type == "weapon" )
@@ -81,6 +77,10 @@ module.controller( "UtopiaSetCtrl", [ "$scope", "$filter", "cardLoader", "$facti
 		if( a.type == "tech" )
 			return -1;
 		if( b.type == "tech" )
+			return 1;
+		if( a.type == "crew" )
+			return -1;
+		if( b.type == "crew" )
 			return 1;
 		return 0;
 	}
