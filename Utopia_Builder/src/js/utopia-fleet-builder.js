@@ -501,7 +501,7 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 
 				var match = false;
 				$.each( cards, function(i, card) {
-					if( card.id == id ) {
+					if( card.type+":"+card.id == id ) {
 						match = card;
 						return false;
 					}
