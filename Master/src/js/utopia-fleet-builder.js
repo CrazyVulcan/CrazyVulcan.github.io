@@ -451,8 +451,8 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 				return savedFleet;
 
 			};
-
-			function saveCard(card) {
+			
+			function o0osaveCard(card) {
 
 				if( !card )
 					return {};
@@ -642,7 +642,7 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 			});
 */
 	//FUnction to write string for replacing URL. 
-			function cardToAltTextURL(card, ship, fleet) {	
+			function saveCard(card, ship, fleet) {	
 				
 				var FleetStringID = "";
 				
