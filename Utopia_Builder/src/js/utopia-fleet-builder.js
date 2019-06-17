@@ -458,7 +458,7 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 					return {};
 
 				var saved = {
-					id: card.type+":"+card.id
+					id: card.id
 				};
 
 				if( card.resource )
@@ -501,7 +501,7 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 
 				var match = false;
 				$.each( cards, function(i, card) {
-					if( card.type+":"+card.id == id ) {
+					if( card.id == id ) {
 						match = card;
 						return false;
 					}
