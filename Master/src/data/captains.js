@@ -2607,6 +2607,17 @@ module.exports = [{
 	factions: ["mirror-universe", "federation"]
 }, {
 	type: "captain",
+	id: "Cap735",
+	set: ["75006"],
+	name: "Larus",
+	cost: 4,
+	skill: 7,
+	talents: 1,
+	text: "<b>COMBAT PHASE:</b> If this ship performed a [sensor-echo] Action this game round.\n\nPlace a [battlestations] Token beside this ship and this ship rolls +1 attack die this game round.",
+	unique: true,
+	factions: ["romulan"]
+}, {
+	type: "captain",
 	id: "Cap734",
 	set: ["75005"],
 	name: "Kor",

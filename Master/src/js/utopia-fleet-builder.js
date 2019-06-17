@@ -452,7 +452,7 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 
 			};
 			
-			function o0osaveCard(card) {
+			function saveCard(card) {
 
 				if( !card )
 					return {};
@@ -496,6 +496,7 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 				return saved;
 
 			}
+
 
 			$scope.findCardById = function(cards, id) {
 
@@ -562,6 +563,7 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 
 					} );
 
+
 					$.each( savedCard.upgradeSlots || [], function(i, savedUpgrade) {
 
 						if( savedUpgrade && savedUpgrade.id ) {
@@ -580,6 +582,11 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 
 				return { card: card, promulgate: promulgate };
 
+			}
+
+			
+			function o0oloadCard(fleet, cards, savedCard, ship) {
+				
 			}
 
 			$scope.loadFleet = function(cards, savedFleet) {
@@ -612,7 +619,7 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 				return fleet;
 
 			}
-/*
+
 			var hashFleet = false;
 			try {
 				hashFleet = location.hash ? angular.fromJson( atob( location.hash.substring(1) ) ) : false;
@@ -640,9 +647,9 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 					}
 				}
 			});
-*/
+
 	//FUnction to write string for replacing URL. 
-			function saveCard(card, ship, fleet) {	
+			function o0osaveCard(card, ship, fleet) {	
 				
 				var FleetStringID = "";
 				
@@ -683,7 +690,6 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 					}
 				});
 
-				return { cost: 0, FleetStringID: FleetStringID };
 			};
 	//	//	//	//	//	//
 
