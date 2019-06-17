@@ -465,7 +465,7 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 					saved.resource = saveCard(card.resource.id);
 
 				if( card.captain )
-					saved.captain = saveCard(card.captain,id);
+					saved.captain = saveCard(card.captain.id);
 
 				if( card.admiral )
 					saved.admiral = saveCard(card.admiral.id);
