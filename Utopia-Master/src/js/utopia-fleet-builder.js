@@ -458,7 +458,7 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 					return {};
 
 				var saved = {
-					id: card.type+":"+card.id
+					id: card.type+card.id
 				};
 
 				if( card.resource )
