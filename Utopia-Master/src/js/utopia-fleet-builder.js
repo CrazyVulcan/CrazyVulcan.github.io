@@ -462,17 +462,17 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 				};
 
 				if( card.resource )
-					saved.resource = saveCard(card.resource.id);
+					saved.resource = saveCard(card.resource);
 
 				if( card.captain )
-					saved.captain = saveCard(card.captain.id);
+					saved.captain = saveCard(card.captain);
 
 				if( card.admiral )
-					saved.admiral = saveCard(card.admiral.id);
+					saved.admiral = saveCard(card.admiral);
 
 				var upgrades = [];
 				// TODO Consider switching ship.upgrades to .upgradeSlots
-				$.each( card.upgrades.id || [], function(i, slot) {
+				$.each( card.upgrades || [], function(i, slot) {
 					var savedSlot = {};
 					if( slot.occupant ) {
 						savedSlot = saveCard(slot.occupant);
@@ -501,7 +501,7 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 
 				var match = false;
 				$.each( cards, function(i, card) {
-					if( card.id == id ) {
+					if( card.type+":"+card.id == id ) {
 						match = card;
 						return false;
 					}
@@ -613,12 +613,10 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 
 			}
 
-//			var hashFleet = false;
+			var hashFleet = false;
 			try {
 				hashFleet = location.hash ? angular.fromJson( atob( location.hash.substring(1) ) ) : false;
 			} catch(e) {}
-
-			
 
 			$scope.$on("cardsLoaded", function() {
 				if( hashFleet ) {
