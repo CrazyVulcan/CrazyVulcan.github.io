@@ -472,7 +472,7 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 
 				var upgrades = [];
 				// TODO Consider switching ship.upgrades to .upgradeSlots
-				$.each( card.upgrades || [], function(i, slot) {
+				$.each( card.upgrades.id || [], function(i, slot) {
 					var savedSlot = {};
 					if( slot.occupant ) {
 						savedSlot = saveCard(slot.occupant);
