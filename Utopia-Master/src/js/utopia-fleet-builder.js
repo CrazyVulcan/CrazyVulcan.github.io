@@ -462,17 +462,17 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 				};
 
 				if( card.resource )
-					saved.resource = saveCard(card.resource);
+					saved.resource = saveCard(card.resource.id);
 
 				if( card.captain )
-					saved.captain = saveCard(card.captain);
+					saved.captain = saveCard(card.captain,id);
 
 				if( card.admiral )
-					saved.admiral = saveCard(card.admiral);
+					saved.admiral = saveCard(card.admiral.id);
 
 				var upgrades = [];
 				// TODO Consider switching ship.upgrades to .upgradeSlots
-				$.each( card.upgrades || [], function(i, slot) {
+				$.each( card.upgrades.id || [], function(i, slot) {
 					var savedSlot = {};
 					if( slot.occupant ) {
 						savedSlot = saveCard(slot.occupant);
