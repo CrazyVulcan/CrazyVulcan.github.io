@@ -1,4 +1,4 @@
-/*var module = angular.module("utopia-fleet-builder", ["utopia-card-upgrade","utopia-dragdrop"]);
+var module = angular.module("utopia-fleet-builder", ["utopia-card-upgrade","utopia-dragdrop"]);
 
 module.directive( "fleetBuilder", [ "$filter", function($filter) {
 
