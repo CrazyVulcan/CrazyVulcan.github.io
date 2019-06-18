@@ -1,4 +1,4 @@
-			/////////////////////////////////////////////////////////////	
+/*			
 			//Trying to make it build a better URL by only listing the ship ID's concated by ship. 
 			function cardToAltTextURL(card, ship, fleet) {	
 				
@@ -748,3 +748,4 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 
 }]);
 
+*/
