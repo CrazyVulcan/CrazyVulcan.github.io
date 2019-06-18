@@ -451,14 +451,14 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 				return savedFleet;
 
 			};
-			
+
 			function saveCard(card) {
 
 				if( !card )
 					return {};
 
 				var saved = {
-					id: card.type+card.id
+					id: card.type+":"+card.id
 				};
 
 				if( card.resource )
@@ -496,7 +496,6 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 				return saved;
 
 			}
-
 
 			$scope.findCardById = function(cards, id) {
 
@@ -563,7 +562,6 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 
 					} );
 
-
 					$.each( savedCard.upgradeSlots || [], function(i, savedUpgrade) {
 
 						if( savedUpgrade && savedUpgrade.id ) {
@@ -582,11 +580,6 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 
 				return { card: card, promulgate: promulgate };
 
-			}
-
-			
-			function o0oloadCard(fleet, cards, savedCard, ship) {
-				
 			}
 
 			$scope.loadFleet = function(cards, savedFleet) {
@@ -648,54 +641,8 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 				}
 			});
 
-	//FUnction to write string for replacing URL. 
-			function o0osaveCard(card, ship, fleet) {	
-				
-				var FleetStringID = "";
-				
-				if( card.type == "ship") {
-					// Show class ID for generic ships
-					FleetStringID = card.id;
-				} else FleetStringID = card.id;
-				
-				FleetStringID += ",";
-				if( card.resource ) {
-					var resB = cardToAltTextURL(card.resource, ship, fleet);
-					FleetStringID += resB.FleetStringID;
-				}
-
-				if( card.captain ) {
-					var resB = cardToAltTextURL(card.captain, ship, fleet);
-					FleetStringID += resB.FleetStringID;
-				}
-
-				if( card.admiral ) {
-					var resB = cardToAltTextURL(card.admiral, ship, fleet);
-					FleetStringID += resB.FleetStringID;
-				}
-
-				$.each( card.upgrades || [], function(i,slot) {
-					if( slot.occupant ) {
-						var resB = cardToAltTextURL(slot.occupant, ship, fleet);
-						FleetStringID += resB.FleetStringID;
-					}
-				});
-
-				$.each( card.upgradeSlots || [], function(i,slot) {
-					if( slot.occupant ) {
-						var resB = cardToAltTextURL(slot.occupant, ship, fleet);
-						FleetStringID += resB.FleetStringID;
-						// if( countSlotCost )
-						// 	cost += resB.cost;
-					}
-				});
-
-			};
-	//	//	//	//	//	//
-
 		}]
 
 	};
 
 }]);
-

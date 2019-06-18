@@ -11,7 +11,7 @@ module.exports = [{
 	hull: 3,
 	shields: 2,
 	cost: 14,
-	text: "<b>BEFORE THIS SHIP REVEALS ITS MANEUVER DIAL:</b> If this ship is Cloaked: Perform a white 1 [bank-left], 1 [straight], 1 [bank-right], OR perform a [sensor-echo] Action as a Free Action.",
+	text: "<b>BEFORE THIS SHIP REVEALS ITS MANEUVER DIAL:</b> If this ship is Cloaked: \n\nPerform a white 1 [bank-left], 1 [straight], 1 [bank-right], OR perform a [sensor-echo] Action as a Free Action.",
 	unique: true,
 	factions: ["romulan"],
 	squadron: false
