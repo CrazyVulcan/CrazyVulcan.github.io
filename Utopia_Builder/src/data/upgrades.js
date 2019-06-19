@@ -6,7 +6,7 @@ module.exports = [{
 	cost: 3,
 	attack: 3,
 	range: "1-2",
-	text: "<b>ATTACK:Place 3 [time] Tokens on this card and target an opposing ship.\n\nMake this attack twice against the defending ship. If this ship is a D7 Class you may convert 1 [blank] into 1 [battlestations] during each attack.",
+	text: "<b>ATTACK:</b>Place 3 [time] Tokens on this card and target an opposing ship.\n\nMake this attack twice against the defending ship. If this ship is a D7 Class you may convert 1 [blank] into 1 [battlestations] during each attack.",
 	FrontArc: true,
 	factions: ["klingon","romulan"]
 }, {
