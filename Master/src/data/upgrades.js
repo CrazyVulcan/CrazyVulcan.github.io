@@ -1,13 +1,14 @@
 module.exports = [{
-	type: "talent",
-	id: "E192",
-	set: ["75004"],
-	name: "Maquis Tactics",
-	cost: 5,
-	text: "<b>AFTER ATTACKING:\n\nThis ship may perform a 1 [straight], 1 [bank-left] or  1 [bank-right] maneuver.\n(<i>Maquis Raider Only</i>)",
-	captainIndependent: true,
-	shipLimit: true,
-	factions: ["independent"]
+	type: "weapon",
+	id: "W196",
+	set: ["75006"],
+	name: "Disruptor Blast",
+	cost: 3,
+	attack: 3,
+	range: "1-2",
+	text: "<b>ATTACK:Place 3 [time] Tokens on this card and target an opposing ship.\n\nMake this attack twice against the defending ship. If this ship is a D7 Class you may convert 1 [blank] into 1 [battlestations] during each attack.",
+	FrontArc: true,
+	factions: ["klingon","romulan"]
 }, {
 	type: "talent",
 	id: "E191",
