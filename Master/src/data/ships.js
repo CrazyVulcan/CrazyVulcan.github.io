@@ -2245,7 +2245,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "S199",
-	set: ["72290p", "71122", "72240", "72234p", "72002p"],
+	set: ["72290p", "71122", "72240", "72234p", "72002p","75006"],
 	name: "Federation Starship",
 	class: "Constitution Class",
 	actions: ["evade", "target-lock", "scan", "battlestations"],
@@ -2254,7 +2254,7 @@ module.exports = [{
 	agility: 1,
 	hull: 4,
 	shields: 2,
-	cost: 20,
+	cost: 16,
 	text: "\r\n      ",
 	unique: false,
 	factions: ["federation"],
