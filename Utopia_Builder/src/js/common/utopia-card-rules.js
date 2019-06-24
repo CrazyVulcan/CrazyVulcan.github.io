@@ -1526,7 +1526,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						priority: 100,
 						fn: function(upgrade,ship,fleet,cost) {
 							if( checkUpgrade("weapon", upgrade, ship)
-							     && upgrade.name != "Torpedo Fusillade" && upgrade.name != "Dorsal Phaser Array" && upgrade.name != "Aft Phaser Emitters" && upgrade.id != "particle_beam_weapon_muratas" ) {
+							     && upgrade.name != "Torpedo Fusillade" && upgrade.name != "Dorsal Phaser Array" && upgrade.name != "Aft Phaser Emitters" && upgrade.id != "W156" ) {
 								cost = resolve(upgrade,ship,fleet,cost);
 								if( cost <= 5 )
 									cost -= 2;
