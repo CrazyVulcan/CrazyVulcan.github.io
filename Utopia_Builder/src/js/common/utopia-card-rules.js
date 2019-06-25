@@ -8717,6 +8717,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			upgradeSlots: [
 				{
+					type: ["talent"]
+				},
+				{
 					type: ["crew"]
 				},
 				{
