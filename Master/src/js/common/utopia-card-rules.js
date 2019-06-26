@@ -8742,7 +8742,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				},
 				ship:{
 					factionPenalty: function(upgrade, ship, fleet, factionPenalty) {
-						if( isUpgrade(upgrade) && $factions.hasFaction(upgrade,"crew", ship, fleet) )
+						if( card.type == "crew" )
 							return 0;
 						return factionPenalty;
 					}
