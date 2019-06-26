@@ -8754,7 +8754,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"talent:E192":{
 			canEquip: onePerShip("Ocular Implants"),
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return ship && ship.captain && $factions.hasFaction(ship.captain,"borg", ship, fleet);
+				return hasFaction(ship,"borg", ship, fleet) && hasFaction(ship.captain,"borg", ship, fleet);
 			}},
 	
 //Faction Penalty For Subfactions
