@@ -8752,9 +8752,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 		//Ocular Implants
 		"talent:E192":{
-			canEquip: onePerShip("Neural Transponder"),
+			canEquip: onePerShip("Ocular Implants"),
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return ship.captain && $factions.hasFaction(ship.captain,"borg", ship, fleet);
+				return ship && ship.captain && $factions.hasFaction(ship.captain,"borg", ship, fleet);
 			}},
 	
 //Faction Penalty For Subfactions
