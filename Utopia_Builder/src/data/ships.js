@@ -38,6 +38,27 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
+	id: "S320",
+	set: ["75007"],
+	name: "Federation/Borg Starship",
+	class: "Galaxy Class",
+	actions: ["evade", "target-lock", "scan", "regenerate"],
+	upgrades: ["borg", "tech", "weapon", "crew"],
+	attack: 5,
+	agility: 1,
+	hull: 5,
+	shields: 3,
+	cost: 24,
+	text: "",
+	unique: false,
+	factions: ["federation", "borg"],
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	squadron: false
+}, {
+	type: "ship",
 	id: "S317",
 	set: ["75006"],
 	name: "U.S.S. Enterprise",
