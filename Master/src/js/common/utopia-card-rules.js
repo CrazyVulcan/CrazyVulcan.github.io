@@ -8750,6 +8750,19 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 		},
 		
+		//Crosis
+		"crew:C345":{
+			intercept: {
+				ship: {
+					skill: function(card,ship,fleet,skill) {
+						if( card == ship.captain )
+							return resolve(card,ship,fleet,skill) + ( hasFaction(card,"borg",ship,fleet) ? 3 : 1 );
+						return skill;
+					}
+				}
+			}				
+		},
+		
 		//Ocular Implants
 		"talent:E192":{
 			canEquip: onePerShip("Ocular Implants"),

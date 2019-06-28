@@ -8742,12 +8742,25 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				},
 				ship:{
 					factionPenalty: function(upgrade, ship, fleet, factionPenalty) {
-						if( isUpgrade(upgrade) && $factions.hasFaction(upgrade,"crew", ship, fleet) )
+						if( card.type == "crew" )
 							return 0;
 						return factionPenalty;
 					}
 				}
 			}
+		},
+		
+		//Crosis
+		"crew:C345":{
+			intercept: {
+				ship: {
+					skill: function(card,ship,fleet,skill) {
+						if( card == ship.captain )
+							return resolve(card,ship,fleet,skill) + ( hasFaction(card,"borg",ship,fleet) ? 3 : 1 );
+						return skill;
+					}
+				}
+			}				
 		},
 		
 		//Ocular Implants
