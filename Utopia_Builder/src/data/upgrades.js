@@ -14,6 +14,7 @@ module.exports = [{
 	set: ["75007"],
 	name: "Crosis",
 	cost: 3,
+	unique: true,
 	text: "Increase the Captain Skill of the Captain equiped to this ship by 1. If the Captain is a Borg Captain increase its Captain Skill by 3 instead.\n-----------------------------------\n<b>ONCE PER GAME, WHEN THE CAPTAIN OF THIS SHIP IS DISCSARDED:</b>\n\nThis Card becomes this ship's Captain. Place 5 Drone Tokens on this card.",
 	factions: ["borg"]
 }, {
