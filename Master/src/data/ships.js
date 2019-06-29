@@ -38,6 +38,27 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
+	id: "S321",
+	set: ["75007"],
+	name: "Sphere 634",
+	class: "Borg Sphere",
+	actions: ["target-lock", "scan", "regenerate"],
+	upgrades: ["borg", "borg", "tech", "weapon", "crew"],
+	attack: 6,
+	agility: 0,
+	hull: 7,
+	shields: 7,
+	cost: 40,
+	text: "<b>COMBAT PHASE:</b> Spend a [scan] Token beside this ship and target an opposing ship within Range 1-2.\n\nDiscard a [scan], [battlestations], [evade], or [target-lock] Token beside the target ship.",
+	unique: true,
+	factions: ["borg"],
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	squadron: false
+}, {
+	type: "ship",
 	id: "S320",
 	set: ["75007"],
 	name: "Federation/Borg Starship",
@@ -3255,7 +3276,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "S152",
-	set: ["71283", "72283"],
+	set: ["71283", "72283", "75007"],
 	name: "Borg Starship",
 	class: "Borg Sphere",
 	actions: ["target-lock", "scan", "regenerate"],
@@ -3276,7 +3297,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "S151",
-	set: ["72255"],
+	set: ["72255", "75007"],
 	name: "Borg Starship",
 	class: "Borg Sphere",
 	actions: ["target-lock", "scan", "regenerate"],
