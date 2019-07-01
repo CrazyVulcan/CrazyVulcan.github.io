@@ -18,6 +18,28 @@ module.exports = [{
 	text: "Increase the Captain Skill of the Captain equiped to this ship by 1. If the Captain is a Borg Captain increase its Captain Skill by 3 instead.\n-----------------------------------\n<b>ONCE PER GAME, WHEN THE CAPTAIN OF THIS SHIP IS DISCSARDED:</b>\n\nThis Card becomes this ship's Captain. Place 5 Drone Tokens on this card.",
 	factions: ["borg"]
 }, {
+	type: "weapon",
+	id: "W196",
+	set: ["75006"],
+	name: "Magnetic Pulse",
+	cost: 5,
+	range: "2 - 3",
+	attack: "*",
+	OnePerShip: true,
+	FrontArc: true,
+	text: "The Attack Value of this [weapon] is this ship's printed Primary Weapon Value.\n-----------------------------------\n<b>ATTACK:</b> Disable 1 Active shield on this ship and target an opposing ship.\n\nIf this [weapon] is equipped to a D7 Class ship, this ship rolls +2 attack dice. All [crit] that would damage a Shield on the defending ship inflicts 1 [hit] to the defending ship's Hull instead.",
+	factions: ["klingon"]
+}, {
+	type: "crew",
+	id: "C345",
+	set: ["75006"],
+	name: "Kali",
+	cost: 3,
+	range: "1",
+	shipKlingon: true,
+	text: "<b>ACTION:</b> Discard this card and target an opposing ship. Look at all face down damage cards beside the target ship's Ship Card. Flip 1 of those Damage Cards face up and resolve its effect if applicable.",
+	factions: ["romulan"]
+}, {
 	type: "crew",
 	id: "C344",
 	set: ["75006"],

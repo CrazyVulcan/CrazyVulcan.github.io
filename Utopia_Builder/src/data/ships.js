@@ -1,5 +1,22 @@
 module.exports = [{
 	type: "ship",
+	id: "S323",
+	set: ["75006"],
+	name: "I.K.S. Klothos",
+	class: "D7 Class",
+	actions: ["evade", "target-lock", "cloak", "sensor-echo"],
+	upgrades: ["tech", "weapon", "crew"],
+	attack: 3,
+	agility: 1,
+	hull: 3,
+	shields: 2,
+	cost: 14,
+	text: "<b>WHEN ATTACKING:</b> If this ship is CLoaked this ship rolls +1 attack die this attack.\n-----------------------------------\n<b>WHEN ATTACKING: </b> If this ship is not within the Primary Firing Arc of the defending ship.\n\nConvert 1 [battlestations] into 1 [crit] and all other [battlestations] into [hit].",
+	unique: true,
+	factions: ["klingon"],
+	squadron: false
+}, {
+	type: "ship",
 	id: "S322",
 	set: ["75006"],
 	name: "I.K.S. Devisor",
