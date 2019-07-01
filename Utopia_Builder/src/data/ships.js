@@ -11,7 +11,7 @@ module.exports = [{
 	hull: 3,
 	shields: 2,
 	cost: 14,
-	text: "<b>WHEN ATTACKING:</b> If this ship is CLoaked this ship rolls +1 attack die this attack.\n-----------------------------------\n<b>WHEN ATTACKING: </b> If this ship is not within the Primary Firing Arc of the defending ship.\n\nConvert 1 [battlestations] into 1 [crit] and all other [battlestations] into [hit].",
+	text: "<b>WHEN ATTACKING:</b> If this ship is CLoaked this ship rolls +1 attack die this attack.\n-----------------------------------\n<b>WHEN ATTACKING: </b> If this ship is not within the Primary Firing Arc of the defending ship. - Convert 1 [battlestations] into 1 [crit] and all other [battlestations] into [hit].",
 	unique: true,
 	factions: ["klingon"],
 	squadron: false
@@ -30,6 +30,23 @@ module.exports = [{
 	cost: 14,
 	text: "<b>WHEN ATTACKING:</b> If the defending ship performed a maneuver with a speed of 3 or greater this game round:\n\nAdd 1 [crit].",
 	unique: true,
+	factions: ["klingon"],
+	squadron: false
+}, {
+	type: "ship",
+	id: "S324",
+	set: ["75006"],
+	name: "Klingon Starship",
+	class: "D7 Class",
+	actions: ["evade", "target-lock", "cloak", "sensor-echo"],
+	upgrades: ["weapon", "crew"],
+	attack: 3,
+	agility: 1,
+	hull: 3,
+	shields: 1,
+	cost: 11,
+	text: "",
+	unique: false,
 	factions: ["klingon"],
 	squadron: false
 }, {
