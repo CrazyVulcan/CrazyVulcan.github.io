@@ -1,5 +1,22 @@
 module.exports = [{
 	type: "ship",
+	id: "S322",
+	set: ["75006"],
+	name: "I.K.S. Devisor",
+	class: "D7 Class",
+	actions: ["evade", "target-lock", "battlestations"],
+	upgrades: ["tech", "weapon", "crew"],
+	attack: 3,
+	agility: 1,
+	hull: 3,
+	shields: 2,
+	cost: 14,
+	text: "<b>WHEN ATTACKING:</b> If the defending ship performed a maneuver with a speed of 3 or greater this game round:\n\nAdd 1 [crit].",
+	unique: true,
+	factions: ["klingon"],
+	squadron: false
+}, {
+	type: "ship",
 	id: "S319",
 	set: ["75006"],
 	name: "I.R.W. Talon",

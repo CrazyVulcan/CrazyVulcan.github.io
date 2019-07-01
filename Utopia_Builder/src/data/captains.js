@@ -3009,6 +3009,17 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "captain",
+	id: "Cap823",
+	set: ["75006"],
+	name: "Kor",
+	cost: 5,
+	skill: 8,
+	talents: 1,
+	text: "<b>WHEN ATTACKING:</b> If this ship is Cloaked place 2 [time] Tokens on this card.\n\nThis ship rolls +1 attack die this attack, and this ship's [cloak] Token dose not flip this attack. If this card is equipped ot a klingon ship, also add 1 [hit].",
+	unique: true,
+	factions: ["klingon"]
+}, {
+	type: "captain",
 	id: "Cap822",
 	set: ["75006"],
 	name: "James T. Kirk",
