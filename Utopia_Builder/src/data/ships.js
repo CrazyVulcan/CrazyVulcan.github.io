@@ -35,7 +35,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "S324",
-	set: ["75006"],
+	set: ["-75006-"],
 	name: "Klingon Starship",
 	class: "D7 Class",
 	actions: ["evade", "target-lock", "cloak", "sensor-echo"],
