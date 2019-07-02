@@ -31,7 +31,7 @@ module.exports = [{
 	factions: ["klingon"]
 }, {
 	type: "crew",
-	id: "C345",
+	id: "C346",
 	set: ["75006"],
 	name: "Kali",
 	cost: 3,
