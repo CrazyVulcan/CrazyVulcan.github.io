@@ -8677,7 +8677,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"crew:C345":{
 			canEquip: function(upgrade,ship,fleet) {
 				return $factions.hasFaction(ship,"klingon", ship, fleet) ;
-			}},
+		}},
 		//Magnetic Pulse
 		"weapon:W196":{
 			canEquip: onePerShip("Magnetic Pulse"),

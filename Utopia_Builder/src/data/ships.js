@@ -34,23 +34,6 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "S324",
-	set: ["-75006-"],
-	name: "Klingon Starship",
-	class: "D7 Class",
-	actions: ["evade", "target-lock", "cloak", "sensor-echo"],
-	upgrades: ["weapon", "crew"],
-	attack: 3,
-	agility: 1,
-	hull: 3,
-	shields: 1,
-	cost: 11,
-	text: "",
-	unique: false,
-	factions: ["klingon"],
-	squadron: false
-}, {
-	type: "ship",
 	id: "S319",
 	set: ["75006"],
 	name: "I.R.W. Talon",
