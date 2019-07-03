@@ -39,7 +39,7 @@ module.exports = [{
 	attack: "*",
 	OnePerShip: true,
 	FrontArc: true,
-	text: "The Attack Value of this [weapon] is this ship's printed Primary Weapon Value.\n-----------------------------------\n<b>ATTACK:</b> Disable 1 Active shield on this ship and target an opposing ship.\n\nIf this [weapon] is equipped to a D7 Class ship, this ship rolls +2 attack dice. All [crit] that would damage a Shield on the defending ship inflicts 1 [hit] to the defending ship's Hull instead.",
+	text: "The Attack Value of this [weapon] is this ship's printed Primary Weapon Value.\n-----------------------------------\n<b>ATTACK:</b> Disable 1 Active shield on this ship and target an opposing ship.\nIf this [weapon] is equipped to a D7 Class ship, this ship rolls +2 attack dice. All [crit] that would damage a Shield on the defending ship inflicts 1 [hit] to the defending ship's Hull instead.",
 	factions: ["klingon"]
 }, {
 	type: "crew",
