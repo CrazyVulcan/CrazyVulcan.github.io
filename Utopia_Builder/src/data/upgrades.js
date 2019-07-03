@@ -19,6 +19,18 @@ module.exports = [{
 	factions: ["borg"]
 }, {
 	type: "weapon",
+	id: "W197",
+	set: ["75006"],
+	name: "Full Power Phaser Barrage",
+	cost: 5,
+	range: "2 - 3",
+	attack: "*",
+	unique: true,
+	FrontArc: true,
+	text: "The Attack Value of this [weapon] is this ship's printed Primary Weapon Value.\n-----------------------------------\n<b>ATTACK:</b> Place 3 [time] Tokens on this card and an [aux] Token beside this ship.\nIf this [weapon] is equipped to a Consitution Class ship, this ship rolls +2 attack dice. During the Deal Damage Step if there is at least 2 uncanceled [hit] and/or [crit], roll 3 additional attack dice and add all [hit] and/or [crit] to the attack total.",
+	factions: ["federation"]
+}, {
+	type: "weapon",
 	id: "W196",
 	set: ["75006"],
 	name: "Magnetic Pulse",
@@ -27,8 +39,26 @@ module.exports = [{
 	attack: "*",
 	OnePerShip: true,
 	FrontArc: true,
-	text: "The Attack Value of this [weapon] is this ship's printed Primary Weapon Value.\n-----------------------------------\n<b>ATTACK:</b> Disable 1 Active shield on this ship and target an opposing ship.\n\nIf this [weapon] is equipped to a D7 Class ship, this ship rolls +2 attack dice. All [crit] that would damage a Shield on the defending ship inflicts 1 [hit] to the defending ship's Hull instead.",
+	text: "The Attack Value of this [weapon] is this ship's printed Primary Weapon Value.\n-----------------------------------\n<b>ATTACK:</b> Disable 1 Active shield on this ship and target an opposing ship.\nIf this [weapon] is equipped to a D7 Class ship, this ship rolls +2 attack dice. All [crit] that would damage a Shield on the defending ship inflicts 1 [hit] to the defending ship's Hull instead.",
 	factions: ["klingon"]
+}, {
+	type: "crew",
+	id: "C348",
+	set: ["75006"],
+	name: "Mr. Spock",
+	cost: 4,
+	unique: true,
+	text: "<b>COMBAT PHASE:</b> Discard this card and spend a [scan] Token beside this ship.\n\nThis ship's attacks cannot be canncelled this game round and this ship cannot be prevented from attack this game round.",
+	factions: ["federation"]
+}, {
+	type: "crew",
+	id: "C347",
+	set: ["75006"],
+	name: "M'ress",
+	cost: 3,
+	unique: true,
+	text: "<b>WHEN A [battlestations] TOKEN IS PLACED BESIDE THIS SHIP:</b>\n\nRemove a Disable Token from a [crew] Upgrade equipped to this ship.",
+	factions: ["federation"]
 }, {
 	type: "crew",
 	id: "C346",
@@ -38,7 +68,7 @@ module.exports = [{
 	range: "1",
 	shipKlingon: true,
 	text: "<b>ACTION:</b> Discard this card and target an opposing ship. Look at all face down damage cards beside the target ship's Ship Card. Flip 1 of those Damage Cards face up and resolve its effect if applicable.",
-	factions: ["romulan"]
+	factions: ["klingon"]
 }, {
 	type: "crew",
 	id: "C344",
@@ -48,6 +78,16 @@ module.exports = [{
 	range: "1-2",
 	text: "<b>ACTIVATION PHASE:</b> Target a [crew] Upgrade equipped to a Friendly Ship.\n\nThis card becomes a copy of the target [crew] Upgrade this game round.",
 	factions: ["romulan"]
+}, {
+	type: "crew",
+	id: "C349",
+	set: ["75006"],
+	name: "Harcourt Fenton Mudd",
+	cost: 3,
+	unique: true,
+	range: " 1 ",
+	text: "You do not pay a faction penalty for this card. \n-----------------------------------\n<b>PLANNING PHASE:</b> Disable this card and target an opposing ship.\n\nPlace a Love Crystal Token on two [crew] Upgrades equipped to the opposing ship.",
+	factions: ["independent"]
 }, {
 	type: "talent",
 	id: "E191",
