@@ -8678,6 +8678,46 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquip: function(upgrade,ship,fleet) {
 				return $factions.hasFaction(ship,"klingon", ship, fleet) ;
 		}},
+		//Mr. Spock
+		"crew:C348":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}},
+		//M'ress
+		"crew:C347":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}},
+		//Harcourt Fenton Mudd
+		"crew:C349":{
+			intercept: {
+				ship: {
+					// No faction penalty for Khan or Talents
+					factionPenalty: function(upgrade, ship, fleet, factionPenalty) {
+						return upgrade.id == "C349" ? 0 : factionPenalty;
+					}
+				}
+			}
+		},
+		//Full Power Phaser Barrage
+		"weapon:W197":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			},
+			attack: 0,
+			intercept: {
+				self: {
+					// Attack is same as ship primary except on Constution Class
+					attack: function(upgrade,ship,fleet,attack) {
+						if( ship.class == "Constitution Class" )
+							return valueOf(ship,"attack",ship,fleet) + 2;
+						else
+							return valueOf(ship,"attack",ship,fleet);
+						return attack;
+					}
+				}
+			}},
+			
 		//Magnetic Pulse
 		"weapon:W196":{
 			canEquip: onePerShip("Magnetic Pulse"),
@@ -8685,7 +8725,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				self: {
 					// Attack is same as ship primary + 1
 					attack: function(upgrade,ship,fleet,attack) {
-						if( ship )
+						if( ship.class == "D7 Class" )
+							return valueOf(ship,"attack",ship,fleet) + 2;
+						else
 							return valueOf(ship,"attack",ship,fleet);
 						return attack;
 					}
