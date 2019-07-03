@@ -8709,9 +8709,6 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				self: {
 					// Attack is same as ship primary except on Constution Class
 					attack: function(upgrade,ship,fleet,attack) {
-						if( ship.class == "Constitution Class" )
-							return valueOf(ship,"attack",ship,fleet) + 2;
-						else
 							return valueOf(ship,"attack",ship,fleet);
 						return attack;
 					}
@@ -8725,9 +8722,6 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				self: {
 					// Attack is same as ship primary + 1
 					attack: function(upgrade,ship,fleet,attack) {
-						if( ship.class == "D7 Class" )
-							return valueOf(ship,"attack",ship,fleet) + 2;
-						else
 							return valueOf(ship,"attack",ship,fleet);
 						return attack;
 					}

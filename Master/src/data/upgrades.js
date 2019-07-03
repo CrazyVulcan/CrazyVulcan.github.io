@@ -27,7 +27,7 @@ module.exports = [{
 	attack: "*",
 	unique: true,
 	FrontArc: true,
-	text: "The Attack Value of this [weapon] is this ship's printed Primary Weapon Value.\n-----------------------------------\n<b>ATTACK:</b> Place 3 [time] Tokens on this card and an [aux] Token beside this ship.\n\nIf this [weapon] is equipped to a Consitution Class ship, this ship rolls +2 attack dice. During the Deal Damage Step if there is at least 2 uncanceled [hit] and/or [crit], roll 3 additional attack dice and add all [hit] and/or [crit] to the attack total.",
+	text: "The Attack Value of this [weapon] is this ship's printed Primary Weapon Value.\n-----------------------------------\n<b>ATTACK:</b> Place 3 [time] Tokens on this card and an [aux] Token beside this ship.\nIf this [weapon] is equipped to a Consitution Class ship, this ship rolls +2 attack dice. During the Deal Damage Step if there is at least 2 uncanceled [hit] and/or [crit], roll 3 additional attack dice and add all [hit] and/or [crit] to the attack total.",
 	factions: ["federation"]
 }, {
 	type: "weapon",
@@ -87,7 +87,7 @@ module.exports = [{
 	unique: true,
 	range: " 1 ",
 	text: "You do not pay a faction penalty for this card. \n-----------------------------------\n<b>PLANNING PHASE:</b> Disable this card and target an opposing ship.\n\nPlace a Love Crystal Token on two [crew] Upgrades equipped to the opposing ship.",
-	factions: ["federation"]
+	factions: ["independent"]
 }, {
 	type: "talent",
 	id: "E191",
