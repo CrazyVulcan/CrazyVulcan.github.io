@@ -19,6 +19,18 @@ module.exports = [{
 	factions: ["borg"]
 }, {
 	type: "weapon",
+	id: "W198",
+	set: ["75006"],
+	name: "Disruptor Blast",
+	cost: 3,
+	range: "1 - 2",
+	attack: 3,
+	unique: false,
+	FrontArc: true,
+	text: "<b>ATTACK:</b> Place 3 [time] Tokens on this card and target an opposing ship.\n\nMake this attack Twice against the Defending ship. If this ship is a D7 Class you may convert 1 [blanl] into 1 [battlestations] during each attack.",
+	factions: ["Klingon","romulan"]
+}, {
+	type: "weapon",
 	id: "W197",
 	set: ["75006"],
 	name: "Full Power Phaser Barrage",
