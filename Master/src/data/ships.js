@@ -93,6 +93,27 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
+	id: "S324",
+	set: ["75007"],
+	name: "Federation/Borg Starship",
+	class: "Intrepid Class",
+	actions: ["evade", "target-lock", "scan", "regenerate"],
+	upgrades: ["borg", "tech", "weapon", "crew"],
+	attack: 5,
+	agility: 2,
+	hull: 4,
+	shields: 5,
+	cost: 29,
+	text: "",
+	unique: false,
+	factions: ["federation", "borg"],
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	squadron: false
+}, {
+	type: "ship",
 	id: "S320",
 	set: ["75007"],
 	name: "Federation/Borg Starship",

@@ -9,6 +9,29 @@ module.exports = [{
 	shipBorg: true,
 	factions: ["borg"]
 }, {
+	type: "weapon",
+	id: "W199",
+	set: ["75007"],
+	name: "Bio-Molecular Torpedo",
+	cost: "*",
+	range: "1 - 2",
+	attack: "*",
+	text: "The Attack Value and cost of this [weapon] are this ships Printed Primary Weapon Value.\n<b>ATTACK:</b> Spend 2 Drone Tokens on the Captain equipped to this ship and target an opposing ship.\n\nIf this attack hits place 2 [time] Tokens on the Captain and each [crew] Upgrade equuipped to the defending ship. If the defending ship is a 8472 ship, place 2 [time] Tokens on all the cards equipped to it instead.",
+	unique: true,
+	shipBorg: true,
+	FrontArc: true,
+	RearArc: true,
+	factions: ["federation","borg"]
+}, {
+	type: "crew",
+	id: "C350",
+	set: ["75007"],
+	name: "Tuvok",
+	cost: 5,
+	unique: true,
+	text: "<b>WHEN DEFENDING:</b> During the Modify Attack Dice Step, spend 1 Drone Token on the Captain equiped to this ship.\n\nThe Attacking ship cannot reroll any attack dice this attack. In addition if the attacking ship has any Federation[weapon] Upgrades equipped to it, convert 1 [hit] or [crit] into 1 [blank].",
+	factions: ["federation","borg"]
+}, {
 	type: "crew",
 	id: "C345",
 	set: ["75007"],
