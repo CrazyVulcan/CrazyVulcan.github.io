@@ -3015,7 +3015,7 @@ module.exports = [{
 	cost: 5,
 	skill: "*",
 	talents: 1,
-	range: "1 - 2"
+	range: "1 - 2",
 	text: "<b>SETUP:</b> Place 8 Drone Tokens on this card.\n-----------------------------------\n<b>EACH TIME AN OPPOSING SHIP WITHIN RANGE PERFORMS AN [evade],[scan],OR[battlestations] ACTION:</b> Spend 1 Drone Token on this card and target that opposing ship.\nPerform the same Action as a Free Action and Place an [aux] Token beside the target ship.",
 	unique: true,
 	factions: ["federation","borg"]
