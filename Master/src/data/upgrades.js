@@ -51,7 +51,7 @@ module.exports = [{
 	unique: false,
 	FrontArc: true,
 	text: "<b>ATTACK:</b> Place 3 [time] Tokens on this card and target an opposing ship.\n\nMake this attack Twice against the Defending ship. If this ship is a D7 Class you may convert 1 [blanl] into 1 [battlestations] during each attack.",
-	factions: ["Klingon","romulan"]
+	factions: ["klingon","romulan"]
 }, {
 	type: "weapon",
 	id: "W197",

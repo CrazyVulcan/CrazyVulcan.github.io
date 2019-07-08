@@ -8828,8 +8828,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		//Bio-Molecular Torpedo
 		"weapon:W199":{
 			canEquipFaction: function(upgrade,ship,fleet) {
-				if( hasFaction(ship,"borg", ship, fleet) )
-					return true;
+				return $factions.hasFaction( ship, "borg", ship, fleet )
 			},
 			intercept: {
 				self: {
