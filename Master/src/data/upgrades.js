@@ -13,7 +13,7 @@ module.exports = [{
 	id: "W199",
 	set: ["75007"],
 	name: "Bio-Molecular Torpedo",
-	cost: "*",
+	cost: 0,
 	range: "1 - 2",
 	attack: "*",
 	text: "The Attack Value and cost of this [weapon] are this ships Printed Primary Weapon Value.\n<b>ATTACK:</b> Spend 2 Drone Tokens on the Captain equipped to this ship and target an opposing ship.\n\nIf this attack hits place 2 [time] Tokens on the Captain and each [crew] Upgrade equuipped to the defending ship. If the defending ship is a 8472 ship, place 2 [time] Tokens on all the cards equipped to it instead.",

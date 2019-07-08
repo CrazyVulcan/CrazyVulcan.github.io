@@ -8795,10 +8795,13 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					}
 				},
 				ship:{
-					factionPenalty: function(upgrade, ship, fleet, factionPenalty) {
-						if( card.type == "crew" )
-							return 0;
-						return factionPenalty;
+					factionPenalty: {
+						priority: 100,
+						fn: function(card,ship,fleet,factionPenalty) {
+							if( card.type == "crew" )
+								return 0;
+							return factionPenalty;
+						}
 					}
 				}
 			}
