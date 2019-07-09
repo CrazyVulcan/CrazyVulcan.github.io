@@ -2,13 +2,13 @@ module.exports = [{
 	type: "set",
 	id: "75007",
 	name: "Resistance is Futile",
-	releaseDate: "2019-07-31",
+	releaseDate: "2019-08-31",
 	parentSet: "Faction Pack"
 }, {
 	type: "set",
 	id: "75006",
 	name: "The Animated Series",
-	releaseDate: "2019-07-30",
+	releaseDate: "2019-08-30",
 	parentSet: "Faction Pack"
 }, {
 	type: "set",

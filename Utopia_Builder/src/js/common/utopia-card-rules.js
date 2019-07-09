@@ -1526,7 +1526,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						priority: 100,
 						fn: function(upgrade,ship,fleet,cost) {
 							if( checkUpgrade("weapon", upgrade, ship)
-							     && upgrade.name != "Torpedo Fusillade" && upgrade.name != "Dorsal Phaser Array" && upgrade.name != "Aft Phaser Emitters" && upgrade.id != "W156" ) {
+							     && upgrade.name != "Torpedo Fusillade" && upgrade.name != "Dorsal Phaser Array" && upgrade.name != "Aft Phaser Emitters" && upgrade.id != "W156" && upgrade.id != "W199") {
 								cost = resolve(upgrade,ship,fleet,cost);
 								if( cost <= 5 )
 									cost -= 2;
@@ -8795,15 +8795,27 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					}
 				},
 				ship:{
-					factionPenalty: function(upgrade, ship, fleet, factionPenalty) {
-						if( card.type == "crew" )
-							return 0;
-						return factionPenalty;
+					factionPenalty: {
+						priority: 100,
+						fn: function(card,ship,fleet,factionPenalty) {
+							if( card.type == "crew" )
+								return 0;
+							return factionPenalty;
+						}
 					}
 				}
 			}
 		},
-		
+		//Kathryn Janeway
+		"captain:Cap824":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}},
+		//Tuvok
+		"crew:C350":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}},
 		//Crosis
 		"crew:C345":{
 			intercept: {
@@ -8815,6 +8827,26 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					}
 				}
 			}				
+		},
+		//Bio-Molecular Torpedo
+		"weapon:W199":{
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return $factions.hasFaction( ship, "borg", ship, fleet )
+			},
+			intercept: {
+				self: {
+					attack: function(upgrade,ship,fleet,attack) {
+						if( ship )
+							return valueOf(ship,"attack",ship,fleet);
+						return attack;
+					},
+					cost: function(upgrade,ship,fleet,cost) {
+						if( ship )
+							return valueOf(ship,"attack",ship,fleet);
+						return cost;
+					}
+				}
+			}
 		},
 		
 		//Ocular Implants
