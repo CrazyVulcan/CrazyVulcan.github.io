@@ -9,6 +9,16 @@ module.exports = [{
 	shipBorg: true,
 	factions: ["borg"]
 }, {
+	type: "borg",
+	id: "B019",
+	set: ["75007"],
+	name: "Distribution Nodes",
+	cost: 1,
+	text: "<b>ACTIVATION PHASE:</b> Target a friendly ship.\n\nRepair 1 Hull on this ship and deal 1 [hit] to the hull of the target ship.",
+	unique: true,
+	range: "1",
+	factions: ["borg"]
+}, {
 	type: "weapon",
 	id: "W199",
 	set: ["75007"],
@@ -21,6 +31,16 @@ module.exports = [{
 	shipBorg: true,
 	FrontArc: true,
 	RearArc: true,
+	factions: ["federation","borg"]
+}, {
+	type: "crew",
+	id: "C352",
+	set: ["75007"],
+	name: "Three of Nine",
+	cost: 5,
+	unique: true,
+	shipBorg: true,
+	text: "<b>WHEN THIS SHIP PERFORMES A [regenerate] ACTION:</b>\n\nRepair up to 1 Shield and 1 Hull instead. this ship dose not lose its attack from performing the [regenerate] Action.",
 	factions: ["federation","borg"]
 }, {
 	type: "crew",
@@ -39,6 +59,15 @@ module.exports = [{
 	cost: 3,
 	unique: true,
 	text: "Increase the Captain Skill of the Captain equiped to this ship by 1. If the Captain is a Borg Captain increase its Captain Skill by 3 instead.\n-----------------------------------\n<b>ONCE PER GAME, WHEN THE CAPTAIN OF THIS SHIP IS DISCSARDED:</b>\n\nThis Card becomes this ship's Captain. Place 5 Drone Tokens on this card.",
+	factions: ["borg"]
+}, {
+	type: "crew",
+	id: "C351",
+	set: ["75007"],
+	name: "Seven of Nine",
+	cost: 2,
+	unique: true,
+	text: "Add 1 [borg] to this ship's Upgrade Bar.\n-----------------------------------\nAll [borg] Upgrades equipped to this ship coast -1 SP.",
 	factions: ["borg"]
 }, {
 	type: "weapon",

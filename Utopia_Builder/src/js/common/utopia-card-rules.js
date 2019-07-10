@@ -8758,15 +8758,18 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
-		//Locutus
+		//Borg Queen
+		"captain:Cap911":{
+			canEquipFaction: function(captain,ship,fleet) {
+				return $factions.hasFaction( ship, "borg", ship, fleet )
+			}},
 		// Locutus
 		"captain:Cap910":{
 			// Can't equip if fleet contains Jean-Luc Picard
 			canEquipCaptain: function(upgrade, ship, fleet) {
 				return !$filter("fleetCardNamed")(fleet, "Jean-Luc Picard");
 			},
-			canEquipFaction: function(upgrade,ship,fleet) {
+			canEquipFaction: function(captain,ship,fleet) {
 				return $factions.hasFaction( ship, "borg", ship, fleet )
 			},
 			upgradeSlots: [
@@ -8816,6 +8819,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}},
+		//Three of Nine
+		"crew:C352":{
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return hasFaction(ship,"borg", ship, fleet);
+			}},
 		//Crosis
 		"crew:C345":{
 			intercept: {
@@ -8827,6 +8835,29 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					}
 				}
 			}				
+		},
+		//Seven of Nine
+		"crew:C351":{
+			upgradeSlots: [
+				{
+					type: ["borg"]
+				}
+			],
+			intercept: {
+				ship: {
+					cost: {
+						// Run this interceptor after all other penalties and discounts
+						priority: 100,
+						fn: function(upgrade,ship,fleet,cost) {
+							if( checkUpgrade("borg", upgrade, ship) ) {
+								cost = resolve(upgrade,ship,fleet,cost);
+								cost -= 1;
+							}
+							return cost;
+						}
+					}
+				}
+			}			
 		},
 		//Bio-Molecular Torpedo
 		"weapon:W199":{
