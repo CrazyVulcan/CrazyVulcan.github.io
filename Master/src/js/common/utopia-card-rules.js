@@ -8760,7 +8760,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		//Borg Queen
 		"captain:Cap911":{
-			canEquipFaction: function(captain,ship,fleet) {
+			canEquipFaction: function(card,ship,fleet) {
 				return $factions.hasFaction( ship, "borg", ship, fleet )
 			}},
 		// Locutus
@@ -8769,7 +8769,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquipCaptain: function(upgrade, ship, fleet) {
 				return !$filter("fleetCardNamed")(fleet, "Jean-Luc Picard");
 			},
-			canEquipFaction: function(captain,ship,fleet) {
+			canEquipFaction: function(card,ship,fleet) {
 				return $factions.hasFaction( ship, "borg", ship, fleet )
 			},
 			upgradeSlots: [
