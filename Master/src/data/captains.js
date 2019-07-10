@@ -1933,7 +1933,7 @@ module.exports = [{
 }, {
 	type: "captain",
 	id: "Cap661",
-	set: ["73002"],
+	set: ["75007"],
 	name: "Operations Drone",
 	unique: false,
 	text: "<b>Setup:</b>\n\nPlace 6 Drone Tokens on this card.\n----------------------------------------\n<b>PLANNING PHASE:</b> Spend 1 Drone Token on this card and target an opposing ship.\n\nPlace an [aux] Token beside the target ship.",
