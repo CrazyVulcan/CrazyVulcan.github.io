@@ -93,6 +93,27 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
+	id: "S325",
+	set: ["71525"],
+	name: "Scout 609",
+	class: "Borg Scout Cube",
+	actions: ["evade", "target-lock", "scan", "regenerate"],
+	upgrades: ["borg", "tech", "weapon", "crew"],
+	attack: 3,
+	agility: 3,
+	hull: 2,
+	shields: 4,
+	cost: 22,
+	text: "<b>ACTION:</b> Target a friendly ship within Range 1-2.\n\nRepair 1 Shield and 1 Hull on the target ship.",
+	unique: true,
+	factions: ["borg"],
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	squadron: false
+}, {
+	type: "ship",
 	id: "S324",
 	set: ["75007"],
 	name: "Federation/Borg Starship",

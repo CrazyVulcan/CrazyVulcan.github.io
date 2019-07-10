@@ -3292,6 +3292,18 @@ module.exports = [{
 	}
 }, {
 	type: "captain",
+	id: "Cap911",
+	set: ["75007"],
+	name: "Borg Queen",
+	cost: 5,
+	skill: 9,
+	talents: 1,
+	text: "<b><SETUP:</b>\nPlace 9 Drone Tokens on this card.\n----------------------------------------\nThis card has the ability text of all Captains in your fleet whose abilitys require one or more Drone Token to be spent.",
+	unique: true,
+	shipBorg: true,
+	factions: ["borg"]
+}, {
+	type: "captain",
 	id: "Cap910",
 	set: ["75007"],
 	name: "Locutus",
