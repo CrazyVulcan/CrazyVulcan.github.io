@@ -3298,7 +3298,7 @@ module.exports = [{
 	cost: 5,
 	skill: 9,
 	talents: 1,
-	text: "<b><SETUP:</b>\nPlace 9 Drone Tokens on this card.\n----------------------------------------\nThis card has the ability text of all Captains in your fleet whose abilitys require one or more Drone Token to be spent.",
+	text: "<b><SETUP:</b> \nPlace 9 Drone Tokens on this card.\n----------------------------------------\nThis card has the ability text of all Captains in your fleet whose abilitys require one or more Drone Token to be spent.",
 	unique: true,
 	shipBorg: true,
 	factions: ["borg"]
