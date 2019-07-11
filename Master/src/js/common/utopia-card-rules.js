@@ -7223,7 +7223,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			upgradeSlots: [
 				{
-					type: ["weapon"]
+					type: ["tech"]
 				}
 			],
 			canEquipFaction: function(upgrade,ship,fleet) {
