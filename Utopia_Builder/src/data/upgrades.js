@@ -125,6 +125,24 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "crew",
+	id: "C353",
+	set: ["75006"],
+	name: "Montgomery Scott",
+	cost: 3,
+	unique: true,
+	text: "<b>ACTION: </b>Disable this card.\n\nRepair up to 1 Shield and 1 Hull on this ship.",
+	factions: ["federation"]
+}, {
+	type: "crew",
+	id: "C354",
+	set: ["75006"],
+	name: "Arex",
+	cost: 2,
+	unique: true,
+	text: "<b>WHEN THIS SHIP REVEALS ITS MANEUVER DIAL: </b>Disable this card.\n\nRotate this ship's maneuver dial to a White or Green maneuver of the same speed as the maneuver revealed and perform that maneuver instead.",
+	factions: ["federation"]
+}, {
+	type: "crew",
 	id: "C346",
 	set: ["75006"],
 	name: "Kali",

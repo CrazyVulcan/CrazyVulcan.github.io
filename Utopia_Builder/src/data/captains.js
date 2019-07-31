@@ -2618,6 +2618,17 @@ module.exports = [{
 	factions: ["mirror-universe", "federation"]
 }, {
 	type: "captain",
+	id: "Cap736",
+	set: ["75006"],
+	name: "Koloth",
+	cost: 4,
+	skill: 7,
+	talents: 1,
+	text: "<b>WHEN ATTACKING:</b> Place 2 [time] TOkens on this card.\n\nThe defending player must disable a Captain or [crew] Upgrade equipped to the defending ship. If they can't place an [aux] Token beside the defending ship.",
+	unique: true,
+	factions: ["klingon"]
+}, {
+	type: "captain",
 	id: "Cap735",
 	set: ["75006"],
 	name: "Larus",
