@@ -1,6 +1,6 @@
 module.exports = [{
 	type: "talent",
-	id: "E192",
+	id: "E193",
 	set: ["75007"],
 	name: "Ocular Implants",
 	cost: 4,
@@ -169,6 +169,16 @@ module.exports = [{
 	unique: true,
 	range: " 1 ",
 	text: "You do not pay a faction penalty for this card. \n-----------------------------------\n<b>PLANNING PHASE:</b> Disable this card and target an opposing ship.\n\nPlace a Love Crystal Token on two [crew] Upgrades equipped to the opposing ship.",
+	factions: ["independent"]
+}, {
+	type: "talent",
+	id: "E192",
+	set: ["75004"],
+	name: "Maquis Tactics",
+	cost: 5,
+	text: "<b>AFTER ATTACKING:\n\nThis ship may perform a 1 [straight], 1 [bank-left] or  1 [bank-right] maneuver.\n(<i>Maquis Raider Only</i>)",
+	captainIndependent: true,
+	shipLimit: true,
 	factions: ["independent"]
 }, {
 	type: "talent",

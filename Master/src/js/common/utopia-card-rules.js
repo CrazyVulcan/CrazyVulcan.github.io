@@ -8891,7 +8891,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		
 		//Ocular Implants
-		"talent:E192":{
+		"talent:E193":{
 			canEquip: onePerShip("Ocular Implants"),
 			canEquipFaction: function(upgrade,ship,fleet) {
 				return hasFaction(ship,"borg", ship, fleet) && hasFaction(ship.captain,"borg", ship, fleet);
