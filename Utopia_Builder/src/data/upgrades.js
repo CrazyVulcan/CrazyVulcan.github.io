@@ -176,7 +176,7 @@ module.exports = [{
 	set: ["75004"],
 	name: "Maquis Tactics",
 	cost: 5,
-	text: "<b>AFTER ATTACKING:\n\nThis ship may perform a 1 [straight], 1 [bank-left] or  1 [bank-right] maneuver.\n(<i>Maquis Raider Only</i>)",
+	text: "<b>AFTER ATTACKING:</b>\n\nThis ship may perform a 1 [straight], 1 [bank-left] or  1 [bank-right] maneuver.\n(<i>Maquis Raider Only</i>)",
 	unique: true,
 	captainIndependent: true,
 	shipLimit: true,
