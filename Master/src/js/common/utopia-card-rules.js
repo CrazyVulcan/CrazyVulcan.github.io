@@ -7291,7 +7291,19 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"captain:Cap335":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
-			}},
+			},
+			upgradeSlots: [
+				{
+					type: ["talent"],
+					rules: "Captain's Discretion",
+					canEquip: function(card,ship,fleet,canEquip) {
+						if( card.name != "Captain's Discretion" )
+							return false;
+						return canEquip;
+					}
+				}
+			]
+			},
 		//Captain's Discretion
 		"talent:E171":{
 			factionPenalty: function(upgrade, ship, fleet) {
