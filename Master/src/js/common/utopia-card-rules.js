@@ -8881,6 +8881,22 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}			
 		},
+		//Intergrated Borg Technology
+		"tech:T252":{
+			intercept: {
+				ship: {
+					// No faction penalty for this card
+					factionPenalty: function(upgrade, ship, fleet, factionPenalty) {
+						return upgrade.id == "T252" ? 0 : factionPenalty;
+					}
+				}
+			},
+			upgradeSlots: [
+				{
+					type: ["borg"]
+				}
+			]
+		},
 		//Bio-Molecular Torpedo
 		"weapon:W199":{
 			canEquipFaction: function(upgrade,ship,fleet) {
@@ -8901,7 +8917,17 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-		
+		//Collective Consciousness
+		"talent:E195":{
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return hasFaction(ship.captain,"borg", ship, fleet);
+			}
+		},
+		//Root Command
+		"talent:E194":{
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return hasFaction(ship,"borg", ship, fleet);
+			}},
 		//Ocular Implants
 		"talent:E193":{
 			canEquip: onePerShip("Ocular Implants"),
