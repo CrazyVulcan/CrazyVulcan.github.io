@@ -1,5 +1,26 @@
 module.exports = [{
 	type: "talent",
+	id: "E195",
+	set: ["75007"],
+	name: "Collective Consciousness",
+	cost: 5,
+	text: "<b>Planning PHASE: </b>Place 3 [time] Tokens on this card and target all friendly ships with a Borg Captain equipped to them\n\nThe Captains equipped to the target ships replace their Captain Skill with the Captain Skill of the Captain equipped to this ship this game round.",
+	range: "1 - 3",
+	captainBorg: true,
+	factions: ["borg"]
+}, {
+	type: "talent",
+	id: "E194",
+	set: ["75007"],
+	name: "Root Command",
+	cost: 4,
+	text: "<b>COMBAT PHASE: </b>Discard this card and target an opposing ship\n\nDuring the target ship's Declar Target Step this game round, you choose that ship's target. The target must still be legal.",
+	range: "1 - 2",
+	shipBorg: true,
+	unique: true,
+	factions: ["borg"]
+}, {
+	type: "talent",
 	id: "E193",
 	set: ["75007"],
 	name: "Ocular Implants",
@@ -17,6 +38,15 @@ module.exports = [{
 	text: "<b>ACTIVATION PHASE:</b> Target a friendly ship.\n\nRepair 1 Hull on this ship and deal 1 [hit] to the hull of the target ship.",
 	unique: true,
 	range: "1",
+	factions: ["borg"]
+}, {
+	type: "tech",
+	id: "T252",
+	set: ["75007"],
+	name: "Intergrated Borg Technology",
+	cost: 1,
+	text: "Add 1 [borg] to this ship's Upgrade Bar\n----------------------------------------\nYou do not pay a faction penalty for this card.",
+	unique: true,
 	factions: ["borg"]
 }, {
 	type: "weapon",

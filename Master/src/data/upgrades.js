@@ -4,7 +4,7 @@ module.exports = [{
 	set: ["75007"],
 	name: "Collective Consciousness",
 	cost: 5,
-	text: "<b>Planning PHASE: </b>Place 3 [time] Tokens on this card and target all friendly ships with a Borg Captain equipped to them\nThe Captains equipped to the target ships replace their Captain Skill with the Captain Skill of the Captain equipped to this ship this game round.",
+	text: "<b>Planning PHASE: </b>Place 3 [time] Tokens on this card and target all friendly ships with a Borg Captain equipped to them\n\nThe Captains equipped to the target ships replace their Captain Skill with the Captain Skill of the Captain equipped to this ship this game round.",
 	range: "1 - 3",
 	captainBorg: true,
 	factions: ["borg"]
