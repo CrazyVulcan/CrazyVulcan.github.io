@@ -94,7 +94,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "S325",
-	set: ["71525"],
+	set: ["75007"],
 	name: "Scout 609",
 	class: "Borg Scout Cube",
 	actions: ["evade", "target-lock", "scan", "regenerate"],
