@@ -1,23 +1,17 @@
 {
-  "name": "staw-utopia",
-  "version": "1.0.0",
-  "description": "A Fleet Builder for Star Trek Attack Wing",
-  "author": "ComaToes",
-  "contributors": [
-    "KFNEXUS",
-    "jsterner73",
-    "CrazyVulcan",
-    "wiegeabo",
-    "SpinStabilized"
-  ],
+  "name": "attack_wing_2.0",
+  "version": "0.0.1",
+  "description": "A Fan Build 2.0 for Attack Wing on Tabletop Simulator",
+  "author": "CrazyVulcan",
+  "contributors": [],
   "license": "LGPL-3.0",
-  "homepage": "https://github.com/KFNEXUS/KFNEXUS.github.io#readme",
+  "homepage": "https://github.com/CrazyVulcan/CrazyVulcan.github.io/blob/master/utopia_frontiers/README.md",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/KFNEXUS/KFNEXUS.github.io.git"
+    "url": "git+https://github.com/CrazyVulcan/CrazyVulcan.github.io.git"
   },
   "bugs": {
-    "url": "https://github.com/KFNEXUS/KFNEXUS.github.io/issues"
+    "url": "https://github.com/CrazyVulcan/CrazyVulcan.github.io/issues"
   },
   "scripts": {
     "start": "grunt",
