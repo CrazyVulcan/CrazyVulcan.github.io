@@ -17,30 +17,10 @@
 
     </head>
     <body ng-keypress="keypress($event)">
-
-		<div class="u-container" ng-click="drag.item = false; drag.source = false;">
-
-			<div class="u-search-results text-center u-search-cols-{{search.columns}}">
-
-				<div class="u-title"><i class="fs fs-unique"></i>Utopia</div>
-
-				<div class="text-center">Broswe all sets with the <a href="./set-viewer.html">Utopia Set Viewer</a></div><br />
-
-				<search cards="cards" sets="sets" set-list="setList" drag-store="drag" search-options="search" defaults="defaults"></search>
-
-			</div>
-
-			<div class="u-fleet">
-				<fleet-builder fleet="activeFleet" cards="cards" drag-store="drag" search-options="search"></fleet-builder>
-			</div>
-
-			<div class="u-export" ng-show="search.showExport">
-				<fleet-export fleet="activeFleet" sets="sets" search-options="search"></fleet-export>
-			</div>
-
-		</div>
-
-		<!--<script src="js/analytics.js"></script>-->
+		
+		<div class="u-title"><i class="fs fs-unique"></i>Utopia Frontiers</div>
+		<a href="./builder.html">Builder</a>
+		<a href="./set-viewer.html">Card Viewer</a>
 
     </body>
 </html>
