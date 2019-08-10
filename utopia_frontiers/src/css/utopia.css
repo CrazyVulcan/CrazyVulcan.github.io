@@ -170,7 +170,7 @@ textarea {
 }
 
 .u-search-header-text {
-	background: #eee;
+	background: #000014;
 	padding: 0.2em;
 	float: left;
 }
@@ -213,7 +213,7 @@ textarea {
 
 .u-search-size-text {
 	float: left;
-	background: #eee;
+	background: #000014;
 	padding: 0.2em;
 	margin: 0 0.3em;
 }
@@ -268,7 +268,7 @@ textarea {
 		width: 1567px;
 	}
 	.u-fleet {
-		background: #eee;
+		background: #000014;
 	}
 }
 
