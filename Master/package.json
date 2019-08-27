@@ -26,9 +26,9 @@
     "lint-data": "eslint --force 'src/data/*.js'"
   },
   "devDependencies": {
-    "eslint-config-fnd": "^1.6.0",
+    "eslint-config-fnd": "^1.7.0",
     "grunt": "^1.0.4",
-    "grunt-angular-templates": "^1.1.0",
+    "grunt-angular-templates": "^1.2.0",
     "grunt-contrib-clean": "^2.0.0",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-copy": "^1.0.0",
@@ -45,7 +45,7 @@
     "fstream": "^1.0.12",
     "libcipm": "^3.0.3",
     "node-gyp": "^4.0.0",
-    "npm": "^6.9.0",
+    "npm": "^6.11.2",
     "tar": "^4.4.10",
     "uglify-js": "^3.6.0"
   }
