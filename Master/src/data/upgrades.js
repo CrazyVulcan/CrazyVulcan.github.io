@@ -31,6 +31,46 @@ module.exports = [{
 	factions: ["borg"]
 }, {
 	type: "borg",
+	id: "B023",
+	set: ["75007"],
+	name: "Interlink Transceiver",
+	cost: 2,
+	text: "This ship and all friendly Borg ships within Range increase thier Agility Value by 1.",
+	unique: true,
+	range: "1",
+	factions: ["borg"]
+}, {
+	type: "borg",
+	id: "B022",
+	set: ["75007"],
+	name: "Technological Distinctiveness",
+	cost: 3,
+	text: "<b>ACTION:</b>\nPlace one Mission Token on this card.\n-----------------------------------\n<b>WHEN ATTACKING WITH THIS SHIP'S PRIMARY WEAPON:</b>\n\nThis ship rolls +1 attack die for each Mission Token on this card.",
+	unique: true,
+	shipBorg: true,
+	factions: ["borg"]
+}, {
+	type: "borg",
+	id: "B021",
+	set: ["75007"],
+	name: "Assimilation Tubules",
+	cost: 3,
+	text: "<b>ACTION:</b> Discard this card and target an opposing ship that is not Cloaked and has no Active Shields.\n\nSteal 1 [crew] Upgrade equipped to the target ship, ignoring this ship's restrictions.",
+	unique: true,
+	range: "1 - 2",
+	factions: ["borg"]
+}, {
+	type: "borg",
+	id: "B020",
+	set: ["75007"],
+	name: "Borg Multi-Adaptive Shields",
+	cost: 5,
+	text: "You must discard this card if this ship has no Active Shields.\n-----------------------------------\n<b>WHEN DEFENDING:</b> During the Compare Results Step:\n\nCancel 1 [hit]",
+	OnePerShip: true,
+	shipBorg: true,
+	factions: ["borg"]
+}, {
+	type: "borg",
 	id: "B019",
 	set: ["75007"],
 	name: "Distribution Nodes",
@@ -50,6 +90,20 @@ module.exports = [{
 	factions: ["borg"]
 }, {
 	type: "weapon",
+	id: "W200",
+	set: ["75007"],
+	name: "Advanced Proton Beam",
+	cost: 3,
+	range: "1",
+	attack: "*",
+	text: "The Attack Value and cost of this [weapon] are this ships Printed Primary Weapon Value.\n<b>ATTACK:</b> Remove this card from play, spend 2 Drone Tokens on the Cpatain equipped to this ship, and target an Opposing ship.\n\nAll Damage inflicted by this attack ignores the defending ship's Shields",
+	unique: true,
+	shipBorg: true,
+	FrontArc: true,
+	arc360: true,
+	factions: ["borg"]
+}, {
+	type: "weapon",
 	id: "W199",
 	set: ["75007"],
 	name: "Bio-Molecular Torpedo",
@@ -61,6 +115,15 @@ module.exports = [{
 	shipBorg: true,
 	FrontArc: true,
 	RearArc: true,
+	factions: ["federation","borg"]
+}, {
+	type: "crew",
+	id: "C357",
+	set: ["75007"],
+	name: "B'Elanna Torres",
+	cost: 3,
+	unique: true,
+	text: "Add 1 [borg] to this ship's Upgrade Bar. The [borg] Upgrade equipped to this ship useing that [borg] Upgrade Slot cost -1SP for each unused Upgrade Slot on this ship's Printed Upgrade Bar.",
 	factions: ["federation","borg"]
 }, {
 	type: "crew",
@@ -100,6 +163,28 @@ module.exports = [{
 	text: "Add 1 [borg] to this ship's Upgrade Bar.\n-----------------------------------\nAll [borg] Upgrades equipped to this ship coast -1 SP.",
 	factions: ["borg"]
 }, {
+	type: "talent",
+	id: "E197",
+	set: ["75006"],
+	name: "Worthy Opponet",
+	cost: 3,
+	OnePerShip: true,
+	captainKlingon: true,
+	shipKlingon: true,
+	text: "<b>WHEN DEFENDING WHILE THERE IS AT LEAST 1 DAMAGE CARD BESIDE THIS SHIP'S SHIP CARD:</b> Discard this card.\n\nCOnvert all the attacking ship's [hit], [crit], and [battlestations] into [blank].",
+	factions: ["klingon"]
+}, {
+	type: "talent",
+	id: "E196",
+	set: ["75006"],
+	name: "Legacy of the Name",
+	cost: 3,
+	OnePerShip: true,
+	captainFederation: true,
+	shipFederation: true,
+	text: "Can only be equipped to a Unique ship.\n-----------------------------------\n<b>FREE ACTION:</b> Place 3 [time] Tokens on this card.\n\nPerfrom a [battlestations] Action or an [evade] Action as a Free Action. IF this card is equiped to a ship with 'Enterprise' in its name, you may perfrom any avalable Action as a Free Action instead",
+	factions: ["federation"]
+}, {
 	type: "weapon",
 	id: "W198",
 	set: ["75006"],
@@ -135,6 +220,15 @@ module.exports = [{
 	FrontArc: true,
 	text: "The Attack Value of this [weapon] is this ship's printed Primary Weapon Value.\n-----------------------------------\n<b>ATTACK:</b> Disable 1 Active shield on this ship and target an opposing ship.\nIf this [weapon] is equipped to a D7 Class ship, this ship rolls +2 attack dice. All [crit] that would damage a Shield on the defending ship inflicts 1 [hit] to the defending ship's Hull instead.",
 	factions: ["klingon"]
+}, {
+	type: "crew",
+	id: "C355",
+	set: ["75006"],
+	name: "Christine Chapel",
+	cost: 3,
+	unique: true,
+	text: "<b>PLANNING PHASE:</b> Disable this card or place 3 [time] Tokens on this card, and target a [crew] Upgrade equipped to this ship.\n\nRemove 1 [Disabled Token or all [time] Tokens from the target [crew] Upgrade.",
+	factions: ["federation"]
 }, {
 	type: "crew",
 	id: "C348",
@@ -180,6 +274,16 @@ module.exports = [{
 	range: "1",
 	shipKlingon: true,
 	text: "<b>ACTION:</b> Discard this card and target an opposing ship. Look at all face down damage cards beside the target ship's Ship Card. Flip 1 of those Damage Cards face up and resolve its effect if applicable.",
+	factions: ["klingon"]
+}, {
+	type: "crew",
+	id: "C356",
+	set: ["75006"],
+	name: "Kaz",
+	cost: 2,
+	range: "1",
+	shipKlingon: true,
+	text: "<b>When a Klingon [crew] UPGRADE EQUIPPED TO THIS SHIP OR ANOTHER FRIENDLY SHIP WITHING RANGE WOULD BE DISCARDED BY AN OPPOSING EFFECT:</b> \n\n You may discard this card instead",
 	factions: ["klingon"]
 }, {
 	type: "crew",

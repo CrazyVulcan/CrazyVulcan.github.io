@@ -1,5 +1,16 @@
 module.exports = [{
 	type: "admiral",
+	id: "A035",
+	set: ["75006"],
+	name: "Robert April",
+	cost: 4,
+	skill: 2,
+	talents: 1,
+	text: "<b>FLEET ACTION:</b> Target a [crew] Upgrade equipped to this ship.\n\nMove all [time] TOkens from this target [crew] Upgrade to this card if that [crew] Upgrade has an Action you may perform that Action as a Free Action.",
+	unique: true,
+	factions: ["federation"]
+}, {
+	type: "admiral",
 	id: "A034",
 	set: ["75005"],
 	name: "Christopher Pike",

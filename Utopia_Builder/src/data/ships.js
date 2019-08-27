@@ -114,6 +114,27 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
+	id: "S326",
+	set: ["75007"],
+	name: "U.S.S. Voyager",
+	class: "Intrepid Class",
+	actions: ["evade", "target-lock", "scan", "battlestations"],
+	upgrades: ["borg", "tech", "weapon", "crew", "crew"],
+	attack: 5,
+	agility: 2,
+	hull: 4,
+	shields: 6,
+	cost: 34,
+	text: "<b>FREE ACTION:</b> If this ship performed a Green Maneuver this game round: Perform a [target-lock] Action as a Free Action",
+	unique: true,
+	factions: ["federation", "borg"],
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	squadron: false
+}, {
+	type: "ship",
 	id: "S324",
 	set: ["75007"],
 	name: "Federation/Borg Starship",
