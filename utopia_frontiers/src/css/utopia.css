@@ -23,10 +23,10 @@
 }
 
 body {
-	background: #333;
+	background: #eee;
 	font-family: STAWAlternate;
 	font-size: 14px;
-	color: #ccc;
+	color: #333;
 	margin: 0;
 	line-height: 1;
 }
@@ -170,7 +170,7 @@ textarea {
 }
 
 .u-search-header-text {
-	background: #000014;
+	background: #eee;
 	padding: 0.2em;
 	float: left;
 }
@@ -213,7 +213,7 @@ textarea {
 
 .u-search-size-text {
 	float: left;
-	background: #000014;
+	background: #eee;
 	padding: 0.2em;
 	margin: 0 0.3em;
 }
@@ -268,7 +268,7 @@ textarea {
 		width: 1567px;
 	}
 	.u-fleet {
-		background: #000014;
+		background: #eee;
 	}
 }
 
