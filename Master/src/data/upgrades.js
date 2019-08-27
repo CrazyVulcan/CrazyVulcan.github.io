@@ -123,7 +123,7 @@ module.exports = [{
 	name: "B'Elanna Torres",
 	cost: 3,
 	unique: true,
-	text: "Add 1 [borg] to this ship's Upgrade Bar. The [borg] Upgrade equipped to this ship useing that [borg] Upgrade Slot cost -1SP for each unused Upgrade Slot on this ship's Printed Upgrade Bar.",
+	text: "Add 1 [borg] to this ship's Upgrade Bar. The [borg] Upgrade equipped to this ship useing that [borg] Upgrade Slot cost -1SP for each empty slot on that ships Upgrade Bar",
 	factions: ["federation","borg"]
 }, {
 	type: "crew",
