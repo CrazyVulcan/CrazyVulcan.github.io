@@ -77,7 +77,7 @@ module.exports = [{
 	cost: 1,
 	text: "<b>ACTIVATION PHASE:</b> Target a friendly ship.\n\nRepair 1 Hull on this ship and deal 1 [hit] to the hull of the target ship.",
 	unique: true,
-	range: "1",
+	range: 1,
 	factions: ["borg"]
 }, {
 	type: "tech",

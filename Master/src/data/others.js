@@ -1,4 +1,4 @@
-module.exports = [{{
+module.exports = [{
 	type: "token",
 	id: "rule_love_crysatal",
 	set: ["75006"],
