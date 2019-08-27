@@ -3032,13 +3032,13 @@ module.exports = [{
 	factions: ["federation","borg"]
 }, {
 	type: "captain",
-	id: "Cap824",
+	id: "Cap825",
 	set: ["75006"],
 	name: "Robert April",
 	cost: 5,
 	skill: 8,
 	talents: 1,
-	text: "If this card is equipped ot a COnstitution Class ship, add 1 to this Captain's Captain Skill.\n----------------------------------------\n<b>ACTION:</b> Target a [crew] Upgrade equipped to this ship.\nMove all [time] TOkens from this target [crew] Upgrade to this card if that [crew] Upgrade has an Action you may perform that Action as a Free Action.",
+	text: "If this card is equipped ot a Constitution Class ship, add 1 to this Captain's Captain Skill.\n----------------------------------------\n<b>ACTION:</b> Target a [crew] Upgrade equipped to this ship.\nMove all [time] TOkens from this target [crew] Upgrade to this card if that [crew] Upgrade has an Action you may perform that Action as a Free Action.",
 	unique: true,
 	factions: ["federation"]
 }, {
