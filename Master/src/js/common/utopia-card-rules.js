@@ -8925,16 +8925,15 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 							cost: function(upgrade,ship,fleet,cost) { 
 								var candidates = 0;
 
-						// Find the upgrade with the highest cost
+						// Count the number of empty upgrade slots
 						$.each( $filter("upgradeSlots")(ship), function(i, slot) {
 							if( slot.occupant == null) {
-								// Note: This doesn't account for other cost modifiers. Can't use valueOf without huge recursion.
+								// For Each count suptract form cost min of 0SP.
 								var candidates = valueOf(candidates) + 1;
-								return cost = cost - candidates;
 								}
 							});
 
-						return cost;
+						return cost = cost - candidates;
 							}
 						}
 				}}]
