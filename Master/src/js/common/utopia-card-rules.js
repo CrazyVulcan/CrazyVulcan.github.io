@@ -8929,7 +8929,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						$.each( $filter("upgradeSlots")(ship), function(i, slot) {
 							if( slot.occupant == null) {
 								// For Each count suptract form cost.
-								candidates = valueOf(candidates) + 1;
+								candidates = candidates + 1;
 								}
 							});
 
