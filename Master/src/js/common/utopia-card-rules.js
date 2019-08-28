@@ -8699,10 +8699,27 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						return skill;
 					}
 				}
-			}
+			}},
+		//Worty Oponet
+		"talent:E197":{
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return ship.captain && $factions.hasFaction(ship.captain,"klingon", ship, fleet);
+			}},
+		//Legacy Of the Name
+		"talent:E196":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			},
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return ship.captain && $factions.hasFaction(ship.captain,"federation", ship, fleet);
+			}},
 		//Kali
 		"crew:C345":{
+			canEquip: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship,"klingon", ship, fleet) ;
+		}},
+		//Kaz
+		"crew:C356":{
 			canEquip: function(upgrade,ship,fleet) {
 				return $factions.hasFaction(ship,"klingon", ship, fleet) ;
 		}},
