@@ -4,7 +4,7 @@ module.exports = [{
 	set: ["75006"],
 	name: "Love Crystal Token",
 	text: "When a [crew] Upgrade with a Love Crystal Token becomes disabled the player who placed that Love Crystal Token on that [crew] Upgrade chooses and disables another [crew] Upgrade with a Love Crystal Token equipped to the same ship.\n\nWhen a [crew] Upgrade with a Love Crystal Token is discarded the player who placed that Love Crystal Token on that [crew] Upgrade chooses and discards another [crew] Upgrade with a Love Crystal Token equipped to the same ship.\n\nWhen a [crew] Upgrade with a Love Crystal Token has one or more [time] Tokens placed on it, the player who placed that Love Crystal Token on that [crew] Upgrade choses another [crew] Upgrade with a Love Crystal Token equipped to the same ship and places the same amount of [time] Tokens on it."
-}, 
+}, {
 	type: "token",
 	id: "rule_specialzation",
 	set: ["75005"],
