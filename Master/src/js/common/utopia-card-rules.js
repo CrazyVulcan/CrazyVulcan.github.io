@@ -8914,6 +8914,31 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}			
 		},
+		//Blanna Torres
+		"crew:C357":{
+			upgradeSlots: [
+				{
+					type: ["borg"],
+					rules: "-1SP for each Empty Slot",
+				intercept: {
+						ship: {
+							cost: function(upgrade,ship,fleet,cost) { 
+								var candidates = 0;
+
+						// Find the upgrade with the highest cost
+						$.each( $filter("upgradeSlots")(ship), function(i, slot) {
+							if( slot.occupant == null) {
+								// Note: This doesn't account for other cost modifiers. Can't use valueOf without huge recursion.
+								var candidates = valueOf(candidates) + 1;
+								return cost = cost - candidates;
+								}
+							});
+
+						return cost;
+							}
+						}
+				}}]
+		},
 		//Intergrated Borg Technology
 		"tech:T252":{
 			intercept: {
