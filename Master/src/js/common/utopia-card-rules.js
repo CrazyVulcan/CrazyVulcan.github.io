@@ -8955,6 +8955,20 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			]
 		},
+		//Advanced Proton Beam
+		"weapon:W200":{
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return $factions.hasFaction( ship, "borg", ship, fleet )
+			},
+			intercept: {
+				self: {
+					attack: function(upgrade,ship,fleet,attack) {
+						if( ship )
+							return valueOf(ship,"attack",ship,fleet);
+						return attack;
+					}
+				}
+			}},
 		//Bio-Molecular Torpedo
 		"weapon:W199":{
 			canEquipFaction: function(upgrade,ship,fleet) {
@@ -8975,6 +8989,18 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
+		//Borg Multi Adaptive Shields
+		"borg:B020":{
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return $factions.hasFaction( ship, "borg", ship, fleet )
+			},
+			canEquip: onePerShip("Borg Multi-Adaptive Shields")
+		},
+		//Technological Distinctivness
+		"borg:B022":{
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return $factions.hasFaction( ship, "borg", ship, fleet )
+			}},
 		//Collective Consciousness
 		"talent:E195":{
 			canEquipFaction: function(upgrade,ship,fleet) {
