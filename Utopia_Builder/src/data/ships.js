@@ -4215,7 +4215,28 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "S111",
-	set: ["71525", "71646d", "75007"],
+	set: ["75007"],
+	name: "Borg Starship",
+	class: "Borg Scout Cube",
+	actions: ["evade", "target-lock", "scan", "regenerate"],
+	upgrades: ["borg", "tech", "crew"],
+	attack: 3,
+	agility: 3,
+	hull: 2,
+	shields: 3,
+	cost: 17,
+	text: "",
+	unique: false,
+	factions: ["borg"],
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	squadron: false
+}, {
+	type: "ship",
+	id: "S111",
+	set: ["71525", "71646d"],
 	name: "Borg Starship",
 	class: "Borg Scout Cube",
 	actions: ["evade", "target-lock", "scan", "regenerate"],
