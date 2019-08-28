@@ -8928,8 +8928,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						// Count the number of empty upgrade slots
 						$.each( $filter("upgradeSlots")(ship), function(i, slot) {
 							if( slot.occupant == null) {
-								// For Each count suptract form cost min of 0SP.
-								var candidates = valueOf(candidates) + 1;
+								// For Each count suptract form cost.
+								candidates = valueOf(candidates) + 1;
 								}
 							});
 
