@@ -15,5 +15,5 @@ var data = {
 	others: require("./others")
 };
 
-var filepath = path.resolve(__dirname, "../../staw-utopia/data/data.json");
+var filepath = path.resolve(__dirname, "../../attack_wing_2.0/data/data.json");
 fs.writeFileSync(filepath, JSON.stringify(data));
