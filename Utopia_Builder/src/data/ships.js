@@ -4214,7 +4214,7 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "S250",
+	id: "S328",
 	set: ["75007"],
 	name: "Borg Starship",
 	class: "Borg Scout Cube",

@@ -8685,8 +8685,41 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}			
 		},
+		//Robert April
+		"captain:Cap825":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			},
+			intercept: {
+				self: {
+					// Skill is +1 on a Connie
+					skill: function(upgrade,ship,fleet,skill) {
+						if( ship.class == "Constitution Class" )
+							return resolve(upgrade,ship,fleet,skill) + 1;
+						return skill;
+					}
+				}
+			}},
+		//Worty Oponet
+		"talent:E197":{
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return ship.captain && $factions.hasFaction(ship.captain,"klingon", ship, fleet);
+			}},
+		//Legacy Of the Name
+		"talent:E196":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			},
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return ship.captain && $factions.hasFaction(ship.captain,"federation", ship, fleet);
+			}},
 		//Kali
 		"crew:C345":{
+			canEquip: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship,"klingon", ship, fleet) ;
+		}},
+		//Kaz
+		"crew:C356":{
 			canEquip: function(upgrade,ship,fleet) {
 				return $factions.hasFaction(ship,"klingon", ship, fleet) ;
 		}},
@@ -8881,6 +8914,31 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}			
 		},
+		//Blanna Torres
+		"crew:C357":{
+			upgradeSlots: [
+				{
+					type: ["borg"],
+					rules: "-1SP for each Empty Slot",
+				intercept: {
+						ship: {
+							cost: function(upgrade,ship,fleet,cost) { 
+								var candidates = 0;
+								var UpgradeBarSlots = $.inArray( ship.upgrades )
+						// Count the number of empty upgrade slots
+						$.each( $filter("upgradeSlot")(ship), function(i, slot) {
+							if( slot.occupant == null && card.type != "talent" ) {
+								// For Each count suptract form cost.
+								candidates = candidates + 1;
+								}
+							});
+
+						cost = cost - candidates;
+						return cost;
+							}
+						}
+				}}]
+		},
 		//Intergrated Borg Technology
 		"tech:T252":{
 			intercept: {
@@ -8897,6 +8955,20 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			]
 		},
+		//Advanced Proton Beam
+		"weapon:W200":{
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return $factions.hasFaction( ship, "borg", ship, fleet )
+			},
+			intercept: {
+				self: {
+					attack: function(upgrade,ship,fleet,attack) {
+						if( ship )
+							return valueOf(ship,"attack",ship,fleet);
+						return attack;
+					}
+				}
+			}},
 		//Bio-Molecular Torpedo
 		"weapon:W199":{
 			canEquipFaction: function(upgrade,ship,fleet) {
@@ -8917,6 +8989,18 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
+		//Borg Multi Adaptive Shields
+		"borg:B020":{
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return $factions.hasFaction( ship, "borg", ship, fleet )
+			},
+			canEquip: onePerShip("Borg Multi-Adaptive Shields")
+		},
+		//Technological Distinctivness
+		"borg:B022":{
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return $factions.hasFaction( ship, "borg", ship, fleet )
+			}},
 		//Collective Consciousness
 		"talent:E195":{
 			canEquipFaction: function(upgrade,ship,fleet) {

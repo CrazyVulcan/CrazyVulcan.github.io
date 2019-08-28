@@ -171,7 +171,7 @@ module.exports = [{
 	OnePerShip: true,
 	captainKlingon: true,
 	shipKlingon: true,
-	text: "<b>WHEN DEFENDING WHILE THERE IS AT LEAST 1 DAMAGE CARD BESIDE THIS SHIP'S SHIP CARD:</b> Discard this card.\n\nCOnvert all the attacking ship's [hit], [crit], and [battlestations] into [blank].",
+	text: "<b>WHEN DEFENDING WHILE THERE IS AT LEAST 1 DAMAGE CARD BESIDE THIS SHIP'S SHIP CARD:</b> Discard this card.\n\nConvert all the attacking ship's [hit], [crit], and [battlestations] into [blank].",
 	factions: ["klingon"]
 }, {
 	type: "talent",
@@ -194,7 +194,7 @@ module.exports = [{
 	attack: 3,
 	unique: false,
 	FrontArc: true,
-	text: "<b>ATTACK:</b> Place 3 [time] Tokens on this card and target an opposing ship.\n\nMake this attack Twice against the Defending ship. If this ship is a D7 Class you may convert 1 [blanl] into 1 [battlestations] during each attack.",
+	text: "<b>ATTACK:</b> Place 3 [time] Tokens on this card and target an opposing ship.\n\nMake this attack Twice against the Defending ship. If this ship is a D7 Class you may convert 1 [blank] into 1 [battlestations] during each attack.",
 	factions: ["klingon","romulan"]
 }, {
 	type: "weapon",
@@ -227,7 +227,7 @@ module.exports = [{
 	name: "Christine Chapel",
 	cost: 3,
 	unique: true,
-	text: "<b>PLANNING PHASE:</b> Disable this card or place 3 [time] Tokens on this card, and target a [crew] Upgrade equipped to this ship.\n\nRemove 1 [Disabled Token or all [time] Tokens from the target [crew] Upgrade.",
+	text: "<b>PLANNING PHASE:</b> Disable this card or place 3 [time] Tokens on this card, and target a [crew] Upgrade equipped to this ship.\n\nRemove 1 Disabled Token or all [time] Tokens from the target [crew] Upgrade.",
 	factions: ["federation"]
 }, {
 	type: "crew",
