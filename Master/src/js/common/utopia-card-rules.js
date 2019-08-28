@@ -8933,7 +8933,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 								}
 							});
 
-						return cost = cost - candidates;
+						cost = cost - candidates;
+						return cost;
 							}
 						}
 				}}]
