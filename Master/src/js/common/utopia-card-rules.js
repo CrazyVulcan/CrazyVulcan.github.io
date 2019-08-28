@@ -8685,6 +8685,22 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}			
 		},
+		//Robert April
+		"captain:Cap825":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			},
+			intercept: {
+				self: {
+					// Skill is +1 on a Connie
+					skill: function(upgrade,captain,fleet,attack) {
+						if( ship.class == "Constitution Class" )
+							return valueOf(captain,"skill",ship,fleet) + 1;
+						return skill;
+					}
+				}
+			}
+			},
 		//Kali
 		"crew:C345":{
 			canEquip: function(upgrade,ship,fleet) {

@@ -171,7 +171,7 @@ module.exports = [{
 	OnePerShip: true,
 	captainKlingon: true,
 	shipKlingon: true,
-	text: "<b>WHEN DEFENDING WHILE THERE IS AT LEAST 1 DAMAGE CARD BESIDE THIS SHIP'S SHIP CARD:</b> Discard this card.\n\nCOnvert all the attacking ship's [hit], [crit], and [battlestations] into [blank].",
+	text: "<b>WHEN DEFENDING WHILE THERE IS AT LEAST 1 DAMAGE CARD BESIDE THIS SHIP'S SHIP CARD:</b> Discard this card.\n\nConvert all the attacking ship's [hit], [crit], and [battlestations] into [blank].",
 	factions: ["klingon"]
 }, {
 	type: "talent",
