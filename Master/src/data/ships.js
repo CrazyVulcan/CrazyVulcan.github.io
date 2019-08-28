@@ -4215,7 +4215,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "S111",
-	set: ["71525", "71646d"],
+	set: ["71525", "71646d", "75007"],
 	name: "Borg Starship",
 	class: "Borg Scout Cube",
 	actions: ["evade", "target-lock", "scan", "regenerate"],
@@ -4224,7 +4224,7 @@ module.exports = [{
 	agility: 3,
 	hull: 2,
 	shields: 3,
-	cost: 22,
+	cost: 17,
 	text: "You cannot deploy a [borg] Upgrade with a cost greater than 5 to this ship.",
 	unique: false,
 	factions: ["borg"],

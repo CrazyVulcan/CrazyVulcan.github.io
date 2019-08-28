@@ -96,7 +96,7 @@ module.exports = [{
 	cost: 3,
 	range: "1",
 	attack: "*",
-	text: "The Attack Value and cost of this [weapon] are this ships Printed Primary Weapon Value.\n<b>ATTACK:</b> Remove this card from play, spend 2 Drone Tokens on the Cpatain equipped to this ship, and target an Opposing ship.\n\nAll Damage inflicted by this attack ignores the defending ship's Shields",
+	text: "The Attack Value of this [weapon] are this ships Printed Primary Weapon Value.\n<b>ATTACK:</b> Remove this card from play, spend 2 Drone Tokens on the Cpatain equipped to this ship, and target an Opposing ship.\n\nAll Damage inflicted by this attack ignores the defending ship's Shields",
 	unique: true,
 	shipBorg: true,
 	FrontArc: true,
