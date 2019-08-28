@@ -2624,7 +2624,7 @@ module.exports = [{
 	cost: 4,
 	skill: 7,
 	talents: 1,
-	text: "<b>WHEN ATTACKING:</b> Place 2 [time] TOkens on this card.\n\nThe defending player must disable a Captain or [crew] Upgrade equipped to the defending ship. If they can't place an [aux] Token beside the defending ship.",
+	text: "<b>WHEN ATTACKING:</b> Place 2 [time] Tokens on this card.\n\nThe defending player must disable a Captain or [crew] Upgrade equipped to the defending ship. If they can't place an [aux] Token beside the defending ship.",
 	unique: true,
 	factions: ["klingon"]
 }, {
@@ -3038,7 +3038,7 @@ module.exports = [{
 	cost: 5,
 	skill: 8,
 	talents: 1,
-	text: "If this card is equipped ot a Constitution Class ship, add 1 to this Captain's Captain Skill.\n----------------------------------------\n<b>ACTION:</b> Target a [crew] Upgrade equipped to this ship.\nMove all [time] TOkens from this target [crew] Upgrade to this card if that [crew] Upgrade has an Action you may perform that Action as a Free Action.",
+	text: "If this card is equipped ot a Constitution Class ship, add 1 to this Captain's Captain Skill.\n----------------------------------------\n<b>ACTION:</b> Target a [crew] Upgrade equipped to this ship.\nMove all [time] Tokens from this target [crew] Upgrade to this card if that [crew] Upgrade has an Action you may perform that Action as a Free Action.",
 	unique: true,
 	factions: ["federation"]
 }, {
