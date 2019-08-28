@@ -8926,14 +8926,17 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 								var candidates = 0;
 								var UpgradeBarSlots = $.inArray( ship.upgrades )
 						// Count the number of empty upgrade slots
-						$.each( $filter("upgradeSlot")(ship), function(i, slot) {
-							if( slot.occupant == null && card.type != "talent" ) {
+						$.each( $filter("upgradeSlots")(ship), function(i, slot) {
+							if( slot.occupant == null ) {
 								// For Each count suptract form cost.
 								candidates = candidates + 1;
 								}
 							});
 
 						cost = cost - candidates;
+						if (cost < 0) {
+							cost = 0;
+						};
 						return cost;
 							}
 						}
