@@ -8693,9 +8693,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				self: {
 					// Skill is +1 on a Connie
-					skill: function(upgrade,captain,fleet,attack) {
+					skill: function(upgrade,ship,fleet,skill) {
 						if( ship.class == "Constitution Class" )
-							return valueOf(captain,"skill",ship,fleet) + 1;
+							return resolve(upgrade,ship,fleet,skill) + 1;
 						return skill;
 					}
 				}
