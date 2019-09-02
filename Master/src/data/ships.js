@@ -10,7 +10,7 @@ module.exports = [{
 	agility: 1,
 	hull: 3,
 	shields: 2,
-	cost: 14,
+	cost: 16,
 	text: "<b>WHEN ATTACKING:</b> If this ship is CLoaked this ship rolls +1 attack die this attack.\n-----------------------------------\n<b>WHEN ATTACKING: </b> If this ship is not within the Primary Firing Arc of the defending ship. - Convert 1 [battlestations] into 1 [crit] and all other [battlestations] into [hit].",
 	unique: true,
 	factions: ["klingon"],
