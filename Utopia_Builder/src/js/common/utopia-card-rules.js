@@ -8788,9 +8788,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		//Assimilation Target Prime : 71510b
 		"ship:S318": {
 			// Restore class on card text
-//			class: "Galaxy Class",
+			class: "Galaxy Class",
 			// TODO use this field to pick the correct maneuver card
-//			classId: "galaxy__class_mu",
+			classId: "galaxy__class_mu",
 			
 			
 			intercept: {
