@@ -8792,8 +8792,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			// TODO use this field to pick the correct maneuver card
 //			classId: "galaxy__class_mu",
 			hasFaction: function(ship,fleet,hasFaction) {
-				if ( ship && $factions.hasFaction(ship, "mirror-universe") )
-					return 0;
+				ship.mirror = false;
 				return hasFaction;
 			},
 			
