@@ -64,7 +64,7 @@ module.exports = [{
 	cost: 30,
 	text: "You do not pay a faction penalty for cards equipped to this ship.\n-----------------------------------\nAll [tech] Upgrades equipped to this ship cost -1 SP.",
 	unique: true,
-	factions: ["borg", "mirror-universe"],
+	factions: ["borg"],
 	intercept: {
 		ship: {},
 		fleet: {}

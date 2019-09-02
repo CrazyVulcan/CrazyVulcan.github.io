@@ -8791,11 +8791,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 //			class: "Galaxy Class",
 			// TODO use this field to pick the correct maneuver card
 //			classId: "galaxy__class_mu",
-			hasFaction: function(ship,fleet,hasFaction) {
-				if( ship.mirror = $factions.hasFaction(ship, "mirror-universe") )
-				return false;
-				return hasFaction;
-			},
+			
 			
 			intercept: {
 				ship: {
@@ -8804,6 +8800,12 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						if( card )
 							return 0;
 						return factionPenalty;
+					},
+					// Add mirror-universe faction to captain
+					factions: function(card,ship,fleet,factions) {
+						if( card == ship && factions.indexOf("mirror-universe") < 0 )
+							return factions.concat(["mirror-universe"]);
+						return factions;
 					},
 					cost: function(upgrade,ship,fleet,cost) {
 						if( checkUpgrade("tech", upgrade, ship) )
