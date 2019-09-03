@@ -292,6 +292,7 @@ module.exports = [{
 	name: "Vendorian Spy",
 	cost: 4,
 	range: "1-2",
+	unique: true,
 	text: "<b>ACTIVATION PHASE:</b> Target a [crew] Upgrade equipped to a Friendly Ship.\n\nThis card becomes a copy of the target [crew] Upgrade this game round.",
 	factions: ["romulan"]
 }, {
