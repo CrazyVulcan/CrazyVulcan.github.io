@@ -79,8 +79,9 @@
 	</div>
 	
 	<div class="card-upgrade-cost pull-right">
+		<i ng-if="upgrade.alliance" class="card-alliance-icon fs fs-alliance"></i>
 		<div ng-repeat="faction in upgrade|valueOf:'factions':ship:fleet" class="card-upgrade-faction card-faction-{{ (upgrade|valueOf:'factions':ship:fleet).length - $index}}">
-			<i ng-if="upgrade.alliance" class="card-alliance-icon fs fs-alliance"></i>	
+				
 			<div class="card-upgrade-faction-black"></div>
 			<div class="card-upgrade-faction-icon card-faction-{{faction}}"></div>
 		</div>
