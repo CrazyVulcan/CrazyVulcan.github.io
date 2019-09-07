@@ -1937,10 +1937,11 @@ module.exports = [{
 	name: "T'Pol",
 	unique: true,
 	text: "<b>COMBAT PHASE:</b> Choose [evade] or [battlestations] Tokens\n\nYou may spend [scan] Tokens as though they were the chosen type of upgrade this Combat Phase.",
-	factions: ["borg"],
-	cost: 3,
-	skill: "*",
-	range: "1 - 2"
+	cost: 4,
+	skill: 6,
+	talents: 1,
+	factions: ["vulcan"]
+	
 }, {
 	type: "captain",
 	id: "Cap661",
