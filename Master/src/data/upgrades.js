@@ -7,7 +7,19 @@ module.exports = [{
 	text: "This upgrade can be equipped to a ship without requiring an Upgrade Slot\n-----------------------------------\n<b>Planning PHASE: </b>Place 2 [time] Tokens on the Captain equipped to this ship.\nPlan this ships Maneuver with the dial face up this game round. This ship does its Perfrom Action Step before its Revial Dial Step this game round.",
 	shipDominion: true,
 	OnePerShip: true,
-	factions: ["borg"]
+	factions: ["dominion"]
+}, {
+	type: "talent",
+	id: "E198",
+	set: ["75008"],
+	name: "Live Long And Prosper",
+	cost: 5,
+	text: "<b>ACTIVATION PHASE:</b> Discard this card and target an opposing ship.\n\nRoll 4 defense dice if at least 3 [evade] are rolled this ship and the target ship cannont attack this game round.",
+	range: "1 - 2",
+	captainVulcan: true,
+	shipVulcan: true,
+	unique: true,
+	factions: ["vulcan"]
 }, {
 	type: "talent",
 	id: "E195",

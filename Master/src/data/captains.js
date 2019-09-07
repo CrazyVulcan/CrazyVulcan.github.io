@@ -1932,6 +1932,17 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "captain",
+	id: "Cap662",
+	set: ["75008"],
+	name: "T'Pol",
+	unique: true,
+	text: "<b>COMBAT PHASE:</b> Choose [evade] or [battlestations] Tokens\n\nYou may spend [scan] Tokens as though they were the chosen type of upgrade this Combat Phase.",
+	factions: ["borg"],
+	cost: 3,
+	skill: "*",
+	range: "1 - 2"
+}, {
+	type: "captain",
 	id: "Cap661",
 	set: ["75007"],
 	name: "Operations Drone",
@@ -3038,7 +3049,7 @@ module.exports = [{
 	cost: 6,
 	skill: 8,
 	talents: 2,
-	text: "<b>WHEN ATTACKING:</b> During the roll attack dice step. Spend a ? and a ? from beside this ship.\n\nConvert up to 3 [battlestations] into 2 [hit] and 1 [crit]",
+	text: "<b>WHEN ATTACKING:</b> During the roll attack dice step. Spend a [evade] and a [scan] Token from beside this ship.\n\nConvert up to 3 [battlestations] into 2 [hit] each",
 	unique: true,
 	shipDominion: true,
 	factions: ["dominion"]

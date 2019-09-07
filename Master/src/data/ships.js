@@ -11,9 +11,9 @@ module.exports = [{
 	hull: 3,
 	shields: 3,
 	cost: 17,
-	text: "<b>COMBAT PHASE:</b> If this ship is ____:\n\nPlace a [battlestations],[scan],and [evade] Token beside this ship and increase the Captain Skill of the Captain equipped to this ship by 2 this Combat Phase",
+	text: "<b>COMBAT PHASE:</b> If this ship is cloaked.\nPlace a [battlestations],[scan],and [evade] Token beside this ship and increase the Captain Skill of the Captain equipped to this ship by 3 this Combat Phase",
 	unique: true,
-	factions: ["klingon"],
+	factions: ["dominion","klingon"],
 	intercept: {
 		ship: {},
 		fleet: {}
