@@ -262,6 +262,17 @@
 	text-align: center;
 }
 
+.card-alliance-icon {
+	background: url("../img/restrictions/alliance.png")no-repeat;
+	background-size: 1em;
+	width: 1.2em;
+	position: relative;
+	right: -1em;
+	top: -0.1em;
+	z-index: 3;
+	text-align: center;
+}
+
 .card-captainFederation-icon {
 	background: url("../img/restrictions/card-captainFederation-icon.png")no-repeat;
 	background-size: 1em;
