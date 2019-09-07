@@ -1,4 +1,14 @@
 module.exports = [{
+	type: "weapon",
+	id: "W201",
+	set: ["80001"],
+	name: "Full Spread",
+	cost: 5,
+	text: "<b>After ATTACKING WITH A TORPEDO UPGRADE:</b> Discard this card and the Torpedo Upgrade used.\n\nMake another attack with the same torpedo Upgrade against a diffrent target \(even if the torpedo is disabled, has time token, or you no longer have a [target-lock] Token to spend\).",
+	OnePerShip: true,
+	alliance: true,
+	factions: ["federation"]
+}, {
 	type: "question",
 	id: "Q018",
 	set: ["75009"],

@@ -1,5 +1,11 @@
 module.exports = [{
 	type: "set",
+	id: "80001",
+	name: "Alliance",
+	releaseDate: "2020-01-31",
+	parentSet: "Core"
+}, {
+	type: "set",
 	id: "75009",
 	name: "The Cardassian Union",
 	releaseDate: "2019-11-31",
