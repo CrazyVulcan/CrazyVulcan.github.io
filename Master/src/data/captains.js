@@ -3032,6 +3032,18 @@ module.exports = [{
 	factions: ["federation","borg"]
 }, {
 	type: "captain",
+	id: "Cap826",
+	set: ["75009"],
+	name: "Gul Dukat",
+	cost: 6,
+	skill: 8,
+	talents: 2,
+	text: "<b>WHEN ATTACKING:</b> During the roll attack dice step. Spend a ? and a ? from beside this ship.\n\nConvert up to 3 [battlestations] into 2 [hit] and 1 [crit]",
+	unique: true,
+	shipDominion: true,
+	factions: ["dominion"]
+}, {
+	type: "captain",
 	id: "Cap825",
 	set: ["75006"],
 	name: "Robert April",

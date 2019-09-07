@@ -1,4 +1,14 @@
 module.exports = [{
+	type: "question",
+	id: "Q018",
+	set: ["75009"],
+	name: "Kanar",
+	cost: 1,
+	text: "This upgrade can be equipped to a ship without requiring an Upgrade Slot\n-----------------------------------\n<b>Planning PHASE: </b>Place 2 [time] Tokens on the Captain equipped to this ship.\nPlan this ships Maneuver with the dial face up this game round. This ship does its Perfrom Action Step before its Revial Dial Step this game round.",
+	shipDominion: true,
+	OnePerShip: true,
+	factions: ["borg"]
+}, {
 	type: "talent",
 	id: "E195",
 	set: ["75007"],
