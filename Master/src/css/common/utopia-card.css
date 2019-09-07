@@ -268,7 +268,7 @@
 	width: 1em;
 	position: relative;
 	left: -0.2em;
-	top: 2em;
+	top: -2em;
 	z-index: 3;
 	text-align: center;
 }
