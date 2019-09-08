@@ -263,15 +263,16 @@
 }
 
 .card-alliance-icon {
-	background: url("../img/restrictions/alliance.png")no-repeat;
-	font-size: 0.5em;
-	background-size: 1em;
-	width: 1em;
-	position: relative;
-	left: 0em;
-	top: -1em;
-	z-index: 1;
-	text-align: center;
+	background: url(../img/restrictions/alliance.png) no-repeat;
+    font-size: .5em;
+    background-size: 1em;
+    width: 1em;
+    position: relative;
+    left: 0;
+    float: right;
+    top: -1.25em;
+    z-index: 1;
+    text-align: center;
 }
 
 .card-captainFederation-icon {
