@@ -79,8 +79,11 @@
 	</div>
 	
 	<div class="card-upgrade-cost pull-right">
-		<i ng-if="upgrade.alliance" class="card-alliance-icon fs fs-alliance">
 		</i><div ng-repeat="faction in upgrade|valueOf:'factions':ship:fleet" class="card-upgrade-faction card-faction-{{ (upgrade|valueOf:'factions':ship:fleet).length - $index}}"><div class="card-upgrade-faction-black"></div><div class="card-upgrade-faction-icon card-faction-{{faction}}"></div></div><div class="card-upgrade-cost-value" ng-class="{'card-upgrade-cost-free': '{{upgrade|valueOf:'free':ship:fleet}}' }" tooltip-show="ship" tooltip="upgrade|valueOf:'cost':ship:fleet:false:{modifiers:true}">{{upgrade|valueOf:'cost':ship:fleet}}</div>
+	</div>
+
+	<div class="card-upgrade-cost pull-left">
+		<i ng-if="upgrade.alliance" class="card-alliance-icon fs fs-alliance">
 	</div>
 
 	<div ng-if="upgrade.type == 'captain' || upgrade.type == 'admiral' || (upgrade|valueOf:'skill':ship:fleet)" class="card-skill-container pull-left">
