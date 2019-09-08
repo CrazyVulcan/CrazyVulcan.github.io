@@ -275,6 +275,7 @@
     text-align: center;
 }
 
+
 .card-captainFederation-icon {
 	background: url("../img/restrictions/card-captainFederation-icon.png")no-repeat;
 	background-size: 1em;
@@ -968,7 +969,7 @@
 	color: #777;
 }
 
-.card-ship {
+.card-ship-cost {
 	border: 0.1em solid #a8b6bf;
 	border-radius: 0.5em;
 	color: white;
