@@ -967,7 +967,7 @@
 	color: #777;
 }
 
-.card-ship-cost {
+.card-ship {
 	border: 0.1em solid #a8b6bf;
 	border-radius: 0.5em;
 	color: white;
@@ -1082,6 +1082,12 @@
 .card-border-bottom {
 	background: #a8b6bf;
 	width: 8em;
+	height: 0.8em;
+	margin-top: 0.2em;
+	text-align: center;
+}
+
+.card-border-bottom-icon {
 	height: 0.8em;
 	margin-top: 0.2em;
 	text-align: center;
