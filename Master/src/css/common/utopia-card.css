@@ -1091,6 +1091,7 @@
 	height: 0.8em;
 	margin-top: 0.2em;
 	text-align: center;
+	z-index: 2;
 }
 
 .card-border-bottom i {
