@@ -1,5 +1,47 @@
 module.exports = [{
 	type: "ship",
+	id: "S329",
+	set: ["75009"],
+	name: "Dukat's Bird-of-Prey",
+	class: "Klingon Bird-of-Prey",
+	actions: ["evade", "target-lock", "cloak", "sensor-echo"],
+	upgrades: ["tech", "weapon", "crew", "crew"],
+	attack: 4,
+	agility: 1,
+	hull: 3,
+	shields: 3,
+	cost: 17,
+	text: "<b>COMBAT PHASE:</b> If this ship is cloaked.\nPlace a [battlestations],[scan],and [evade] Token beside this ship and increase the Captain Skill of the Captain equipped to this ship by 3 this Combat Phase",
+	unique: true,
+	factions: ["dominion","klingon"],
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	squadron: false
+}, {
+	type: "ship",
+	id: "S330",
+	set: ["75008"],
+	name: "V'Shar",
+	class: "D'Kyr Class",
+	actions: ["evade", "target-lock", "scan", "battlestations"],
+	upgrades: ["tech", "tech", "weapon", "crew"],
+	attack: 3,
+	agility: 1,
+	hull: 5,
+	shields: 4,
+	cost: 25,
+	text: "<b>COMBAT PHASE:</b> Spend a [scan] Token from beside this ship.\n\nThe next attack this ship makes with its Primary Weapon this game round ignores the defending ship's Shields",
+	unique: true,
+	factions: ["vulcan"],
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	squadron: false
+}, {
+	type: "ship",
 	id: "S323",
 	set: ["75006"],
 	name: "I.K.S. Klothos",
@@ -4371,7 +4413,7 @@ module.exports = [{
 	agility: 1,
 	hull: 5,
 	shields: 3,
-	cost: 28,
+	cost: 24,
 	text: "",
 	unique: false,
 	factions: ["mirror-universe", "borg"],

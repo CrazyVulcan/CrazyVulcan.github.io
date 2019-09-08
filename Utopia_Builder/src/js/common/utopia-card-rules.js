@@ -9023,7 +9023,30 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquipFaction: function(upgrade,ship,fleet) {
 				return hasFaction(ship,"borg", ship, fleet) && hasFaction(ship.captain,"borg", ship, fleet);
 			}},
+			
+	//Vulcan Live Long and Prosper
+		//Live Long And Prospe
+		"talent:E198":{
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return hasFaction(ship,"vulcan", ship, fleet) && hasFaction(ship.captain,"vulcan", ship, fleet);
+		}},
+		
 	
+	//Dominion Cardassian Faction Pack
+		//Gul Dukat
+		"captain:Cap826":{
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return hasFaction(ship,"dominion", ship, fleet);
+			}},
+		//Kanar
+		"question:Q018":{
+			canEquip: onePerShip("Kanar"),
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return hasFaction(ship,"dominion", ship, fleet);
+			}},
+			
+			
+			
 //Faction Penalty For Subfactions
 		//Federation
 		":":{

@@ -1,4 +1,36 @@
 module.exports = [{
+	type: "weapon",
+	id: "W201",
+	set: ["80001"],
+	name: "Full Spread",
+	cost: 5,
+	text: "<b>After ATTACKING WITH A TORPEDO UPGRADE:</b> Discard this card and the Torpedo Upgrade used.\n\nMake another attack with the same torpedo Upgrade against a diffrent target \(even if the torpedo is disabled, has time token, or you no longer have a [target-lock] Token to spend\).",
+	OnePerShip: true,
+	alliance: true,
+	factions: ["federation"]
+}, {
+	type: "question",
+	id: "Q018",
+	set: ["75009"],
+	name: "Kanar",
+	cost: 1,
+	text: "This upgrade can be equipped to a ship without requiring an Upgrade Slot\n-----------------------------------\n<b>Planning PHASE: </b>Place 2 [time] Tokens on the Captain equipped to this ship.\nPlan this ships Maneuver with the dial face up this game round. This ship does its Perfrom Action Step before its Revial Dial Step this game round.",
+	shipDominion: true,
+	OnePerShip: true,
+	factions: ["dominion"]
+}, {
+	type: "talent",
+	id: "E198",
+	set: ["75008"],
+	name: "Live Long And Prosper",
+	cost: 5,
+	text: "<b>ACTIVATION PHASE:</b> Discard this card and target an opposing ship.\n\nRoll 4 defense dice if at least 3 [evade] are rolled this ship and the target ship cannont attack this game round.",
+	range: "1 - 2",
+	captainVulcan: true,
+	shipVulcan: true,
+	unique: true,
+	factions: ["vulcan"]
+}, {
 	type: "talent",
 	id: "E195",
 	set: ["75007"],

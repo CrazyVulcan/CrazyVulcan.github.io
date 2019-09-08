@@ -1,5 +1,23 @@
 module.exports = [{
 	type: "set",
+	id: "80001",
+	name: "Alliance",
+	releaseDate: "2020-01-31",
+	parentSet: "Core"
+}, {
+	type: "set",
+	id: "75009",
+	name: "The Cardassian Union",
+	releaseDate: "2019-11-31",
+	parentSet: "Faction Pack"
+}, {
+	type: "set",
+	id: "75008",
+	name: "Vulcan 'Live Long and Prosper'",
+	releaseDate: "2019-11-30",
+	parentSet: "Faction Pack"
+}, {
+	type: "set",
 	id: "75007",
 	name: "Resistance is Futile",
 	releaseDate: "2019-08-31",

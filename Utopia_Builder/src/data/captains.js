@@ -1932,6 +1932,18 @@ module.exports = [{
 	factions: ["independent"]
 }, {
 	type: "captain",
+	id: "Cap662",
+	set: ["75008"],
+	name: "T'Pol",
+	unique: true,
+	text: "<b>COMBAT PHASE:</b> Choose [evade] or [battlestations] Tokens\n\nYou may spend [scan] Tokens as though they were the chosen type of upgrade this Combat Phase.",
+	cost: 4,
+	skill: 6,
+	talents: 1,
+	factions: ["vulcan"]
+	
+}, {
+	type: "captain",
 	id: "Cap661",
 	set: ["75007"],
 	name: "Operations Drone",
@@ -3030,6 +3042,18 @@ module.exports = [{
 	text: "<b>SETUP:</b> Place 8 Drone Tokens on this card.\n-----------------------------------\n<b>EACH TIME AN OPPOSING SHIP WITHIN RANGE PERFORMS AN [evade],[scan],OR[battlestations] ACTION:</b> Spend 1 Drone Token on this card and target that opposing ship.\nPerform the same Action as a Free Action and Place an [aux] Token beside the target ship.",
 	unique: true,
 	factions: ["federation","borg"]
+}, {
+	type: "captain",
+	id: "Cap826",
+	set: ["75009"],
+	name: "Gul Dukat",
+	cost: 5,
+	skill: 8,
+	talents: 2,
+	text: "<b>WHEN ATTACKING:</b> During the roll attack dice step. Spend a [evade] and a [scan] Token from beside this ship.\n\nConvert up to 3 [battlestations] into 2 [hit] each",
+	unique: true,
+	shipDominion: true,
+	factions: ["dominion"]
 }, {
 	type: "captain",
 	id: "Cap825",
