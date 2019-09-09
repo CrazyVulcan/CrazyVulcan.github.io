@@ -1,4 +1,23 @@
 module.exports = [{
+	type: "tech",
+	id: "T253",
+	set: ["80001"],
+	name: "Impulse Upgrade",
+	cost: 2,
+	text: "Treat this ships 2 [bank-left], 2 [straight], and 2 [bank-right] maneuvers as green.",
+	alliance: true,
+	factions: ["federation"]
+}, {
+	type: "tech",
+	id: "T252",
+	set: ["80001"],
+	name: "Reinforced Shielding",
+	cost: 3,
+	text: "<b>SETUP:</b> This ships Shield Value is its printed Shield Value +2.",
+	OnePerShip: true,
+	alliance: true,
+	factions: ["federation"]
+}, {
 	type: "weapon",
 	id: "W201",
 	set: ["80001"],
