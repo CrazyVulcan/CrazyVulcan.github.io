@@ -1,6 +1,6 @@
 module.exports = [{
 	type: "tech",
-	id: "T253",
+	id: "T254",
 	set: ["80001"],
 	name: "Impulse Upgrade",
 	cost: 2,
@@ -9,7 +9,7 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "tech",
-	id: "T252",
+	id: "T253",
 	set: ["80001"],
 	name: "Reinforced Shielding",
 	cost: 3,
@@ -42,7 +42,7 @@ module.exports = [{
 	id: "E198",
 	set: ["75008"],
 	name: "Live Long And Prosper",
-	cost: 5,
+	cost: 3,
 	text: "<b>ACTIVATION PHASE:</b> Discard this card and target an opposing ship.\n\nRoll 4 defense dice if at least 3 [evade] are rolled this ship and the target ship cannont attack this game round.",
 	range: "1 - 2",
 	captainVulcan: true,
@@ -134,7 +134,7 @@ module.exports = [{
 	type: "tech",
 	id: "T252",
 	set: ["75007"],
-	name: "Intergrated Borg Technology",
+	name: "Integrated Borg Technology",
 	cost: 1,
 	text: "Add 1 [borg] to this ship's Upgrade Bar\n----------------------------------------\nYou do not pay a faction penalty for this card.",
 	unique: true,

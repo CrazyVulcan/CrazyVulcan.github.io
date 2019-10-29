@@ -3050,7 +3050,7 @@ module.exports = [{
 	cost: 5,
 	skill: 8,
 	talents: 2,
-	text: "<b>WHEN ATTACKING:</b> During the roll attack dice step. Spend a [evade] and a [scan] Token from beside this ship.\n\nConvert up to 3 [battlestations] into 2 [hit] each",
+	text: "<b>WHEN ATTACKING:</b> During the modify attack dice step. Spend a [evade] and a [scan] Token from beside this ship.\n\nConvert up to 3 [battlestations] into 2 [hit] each",
 	unique: true,
 	shipDominion: true,
 	factions: ["dominion"]

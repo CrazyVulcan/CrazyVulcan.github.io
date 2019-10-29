@@ -1020,7 +1020,7 @@ module.exports = [{
 	attack: 1,
 	agility: 2,
 	hull: 2,
-	shields: 2,
+	shields: 1,
 	cost: 6,
 	text: "",
 	unique: false,
