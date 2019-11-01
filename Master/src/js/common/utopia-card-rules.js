@@ -6842,7 +6842,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquip: onePerShip("Auxiliary Power to Shields")
 		},
 		// Course Change - I.K.S. Hegh'ta
-		"question:Q009": {
+		"question:Q016": {
 			isSlotCompatible: function(slotTypes) {
 				//console.log($.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0);
 				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0 || $.inArray( "talent", slotTypes ) >= 0;

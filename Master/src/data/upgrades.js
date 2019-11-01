@@ -2462,7 +2462,7 @@ module.exports = [{
 	name: "Course Change",
 	cost: 4,
 	text: "This card may fill a [crew], [talent], [tech], or [weapon] Upgrade slot. During the Activation Phase, when you reveal your maneuver, you may discard this card to change your maneuver to any maneuver on your Maneuver Dial.\n\nNo ship may be equipped with more than one 'Course Change' Upgrade.",
-	unique: true,
+	unique: false,
 	factions: ["klingon"]
 }, {
 	type: "talent",
