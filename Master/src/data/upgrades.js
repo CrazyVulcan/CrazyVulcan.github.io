@@ -2573,7 +2573,7 @@ module.exports = [{
 	set: ["72263"],
 	name: "Holo-Communicator",
 	cost: 5,
-	text: "During the Activation Phase you may disable this card to target a friendly ship within range 1-2. If you do so you may perform the Action listed on that ship's Captain Card.\n\nNo ship may be equipped with more than one ‘Holo-Communicator Upgrade.",
+	text: "<b>ACTIVATION PHASE:</b> Disable this card and target a Captain equipped to a friendly ship within Range 1-2.\n\nPerform the Action listed on the target Captain's card.\n\n<i>errata</i>",
 	unique: false,
 	factions: ["federation"]
 }, {
