@@ -2575,6 +2575,7 @@ module.exports = [{
 	cost: 5,
 	text: "<b>ACTIVATION PHASE:</b> Disable this card and target a Captain equipped to a friendly ship within Range 1-2.\n\nPerform the Action listed on the target Captain's card.\n\n<i>errata</i>",
 	unique: false,
+	OnePerShip: true,
 	factions: ["federation"]
 }, {
 	type: "tech",
