@@ -1,6 +1,6 @@
 module.exports = [{
 	type: "ship",
-	id: "S001",
+	id: "SF01",
 	set: ["Fed001"],
 	name: "Federation Starship",
 	class: "Galaxy Class",
@@ -17,7 +17,7 @@ module.exports = [{
 	squadron: false
 },{
 	type: "ship",
-	id: "S002",
+	id: "SF02",
 	set: ["Fed001"],
 	name: "U.S.S. Enterprise-D",
 	class: "Galaxy Class",
@@ -34,7 +34,7 @@ module.exports = [{
 	squadron: false
 },{
 	type: "ship",
-	id: "S003",
+	id: "SF03",
 	set: ["Fed001"],
 	name: "U.S.S. Enterprise-D",
 	class: "Galaxy Class",
@@ -51,7 +51,7 @@ module.exports = [{
 	squadron: false
 },{
 	type: "ship",
-	id: "S004",
+	id: "SF04",
 	set: ["Fed001"],
 	name: "U.S.S. Venture",
 	class: "Galaxy Class",
@@ -68,7 +68,7 @@ module.exports = [{
 	squadron: false
 },{
 	type: "ship",
-	id: "S005",
+	id: "SF05",
 	set: ["Fed001"],
 	name: "U.S.S. Odyssey ",
 	class: "Galaxy Class",
@@ -85,7 +85,7 @@ module.exports = [{
 	squadron: false
 },{
 	type: "ship",
-	id: "S006",
+	id: "SF06",
 	set: ["Fed001"],
 	name: "Future Federation Starship",
 	class: "Galaxy X Class",
@@ -102,7 +102,7 @@ module.exports = [{
 	squadron: false
 },{
 	type: "ship",
-	id: "S007",
+	id: "SF07",
 	set: ["Fed001"],
 	name: "U.S.S. Enterprise-D",
 	class: "Galaxy X Class",
@@ -113,13 +113,13 @@ module.exports = [{
 	hull: 8,
 	shields: 3,
 	cost: 28,
-	text: "<b>WHEN ATTACKING DURING THE ROLL ATTACK DICE STEP:</b> Disable 1 Active Shield to gain +1 Attack Die\n\nOR\n\nDiscard 1 Active Shield to gain +2 Attack Dice",
+	text: "<b>WHEN ATTACKING DURING THE ROLL ATTACK DICE STEP:</b> Disable 1 Active Shield to gain +1 Attack Die\nOR\nDiscard 1 Active Shield to gain +2 Attack Dice",
 	unique: true,
 	factions: ["federation", "mirror-universe"],
 	squadron: false
 },{
 	type: "ship",
-	id: "S008",
+	id: "SF08",
 	set: ["75007"],
 	name: "Assimilation Target Prime",
 	class: "Galaxy Class",
@@ -140,7 +140,7 @@ module.exports = [{
 	squadron: false
 },{
 	type: "ship",
-	id: "S008",
+	id: "SF08",
 	set: ["75007"],
 	name: "Borg/Federation Starship",
 	class: "Galaxy Class",

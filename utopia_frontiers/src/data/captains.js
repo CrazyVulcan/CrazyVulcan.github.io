@@ -1,6 +1,6 @@
 module.exports = [{
 	type: "captain",
-	id: "Cap000",
+	id: "Ca000",
 	set: ["00000"],
 	name: "Captain Name",
 	unique: true,
@@ -8,5 +8,95 @@ module.exports = [{
 	factions: [""],
 	cost: 0,
 	skill: 0,
+	talents: 0
+},{
+	type: "captain",
+	id: "CaF101",
+	set: [""],
+	name: "Federation",
+	unique: false,
+	text: "\r\n      ",
+	factions: ["federation"],
+	cost: 0,
+	skill: 1,
+	talents: 0
+},{
+	type: "captain",
+	id: "CaF901",
+	set: ["Fed001"],
+	name: "Jean-Luc Picard",
+	unique: true,
+	text: "<b>ACTIVATION PHASE DURING THE PERFORM ACTION STEP:</b> You may perform a [evade], [target-lock], [scan], or [battlestations] Action as a Free Action",
+	factions: ["federation"],
+	cost: 6,
+	skill: 9,
+	talents: 1
+},{
+	type: "captain",
+	id: "CaB902",
+	set: ["Fed001"],
+	name: "Locutus",
+	cost: 4,
+	skill: 9,
+	talents: 1,
+	text: "Cannot equippe to a ship in the same fleet as that has Jean-Luc Picard equiped to that ship.\n----------------------------------------\n<b>SETUP:</b> Place 9 Drone Tokens on this card\n----------------------------------------\nAdd two [crew] to this ships Upgrade Bar.\n----------------------------------------\nYou do not pay a faction penality when equiping a [crew] Upgrade to this ship.",
+	unique: true,
+	shipBorg: true,
+	factions: ["borg"]
+},{
+	type: "captain",
+	id: "CaF801",
+	set: ["Fed001"],
+	name: "Jean-Luc Picard",
+	cost: 6,
+	skill: 8,
+	talents: 2,
+	text: "<b>ACTION:</b> Place 2 [time] Tokens on this card and target all friendly ships.\n\nPlace a [battlestations] Token beside this ship and all target ships.",
+	unique: true,
+	range: "1 - 2",
+	factions: ["federation"]
+},{
+	type: "captain",
+	id: "CaF802",
+	set: ["Fed001"],
+	name: "Jean-Luc Picard",
+	unique: true,
+	text: "<b>GATHERING FORCES STEP:</b> Your ship costs -2SP. Any Upgrades assigned to your ship costs -1SP.\nThe Max SP saved can not value more then -5SP total",
+	cost: 5,
+	skill: 8,
+	talents: 1,
+	factions: ["federation"]
+},{
+	type: "captain",
+	id: "CaM701",
+	set: ["Fed001"],
+	name: "William T. Riker",
+	unique: true,
+	text: "<b>DURING THE PERFORM ACTION STEP:</b> For Each [battlestations], [evade], or a [target-lock] Action you preform, place 1 matching Token on this card.\n_________________________\n<b>ACTIVATION PHASE:</b> You may remove 1 Token from this card and preform that action as a Free Action.",
+	factions: ["mirror-universe"],
+	cost: 5,
+	skill: 7,
+	talents: 1
+},{
+	type: "captain",
+	id: "CaM702",
+	set: ["Fed001"],
+	name: "William T. Riker",
+	cost: 4,
+	skill: 7,
+	talents: 1,
+	text: "<b>ACTION:</b> Place a [scan] Token beside your ship. You may then perform 1 Action from your Upgrade bar as a free Action. You cannot perform [scan] Actions as a free Actions this round.",
+	unique: true,
+	factions: ["mirror-universe"],
+},{
+	type: "captain",
+	id: "CaF601",
+	set: ["Fed001"],
+	name: "William T. Riker",
+	unique: true,
+	text: "<b>WHEN DEFENDING DEARING THE ROLL ATTACK DICE STEP:</b> IF the attacking ship is at Range 1. You may place 3 Time Tokens on this card.\n\n Roll 2 attack dice. Any [hit] or [crit] result damages the attacking ship as normal.",
+	factions: ["federation"],
+	cost: 4,
+	skill: 6,
 	talents: 0
 }];
