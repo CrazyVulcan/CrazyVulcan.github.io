@@ -16,7 +16,7 @@ module.exports = [{
 	name: "Vor'Cha Class",
 	releaseDate: "2020-01-02",
 	parentSet: "Starships"
-}{
+},{
 	type: "set",
 	id: "Fed101",
 	name: "TNG Captains",
