@@ -120,7 +120,7 @@ module.exports = [{
 },{
 	type: "ship",
 	id: "SF08",
-	set: ["75007"],
+	set: ["Fed001"],
 	name: "Assimilation Target Prime",
 	class: "Galaxy Class",
 	actions: ["evade", "target-lock", "scan", "regenerate"],
