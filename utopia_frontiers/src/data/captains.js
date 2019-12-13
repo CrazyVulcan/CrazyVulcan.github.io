@@ -54,7 +54,7 @@ module.exports = [{
 	cost: 5,
 	skill: "*",
 	talents: 1
-}{
+},{
 	type: "captain",
 	id: "Cap807",
 	set: ["Fed101"],
