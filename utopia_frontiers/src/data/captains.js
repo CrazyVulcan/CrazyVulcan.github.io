@@ -11,7 +11,7 @@ module.exports = [{
 	talents: 0
 },{
 	type: "captain",
-	id: "CaF101",
+	id: "Cap101",
 	set: ["Fed101"],
 	name: "Federation",
 	unique: false,
@@ -22,7 +22,7 @@ module.exports = [{
 	talents: 0
 },{
 	type: "captain",
-	id: "CaF901",
+	id: "Cap906",
 	set: ["Fed101"],
 	name: "Jean-Luc Picard",
 	unique: true,
@@ -33,7 +33,7 @@ module.exports = [{
 	talents: 1
 },{
 	type: "captain",
-	id: "CaB902",
+	id: "Cap910",
 	set: ["Bor101"],
 	name: "Locutus",
 	cost: 4,
@@ -45,7 +45,29 @@ module.exports = [{
 	factions: ["borg"]
 },{
 	type: "captain",
-	id: "CaF801",
+	id: "Cap901",
+	set: ["Bor101"],
+	name: "Locutus",
+	unique: true,
+	text: "At the start of the game, place 9 Drone Tokens on this card.\n\n<b>ACTION:</b> Target a ship within Range 1-3 and spend up to 2 of your Drone Tokens. Disable 1 Active Shield on the target ship for each Drone Token you spent with this Action. You cannot deploy this card to the same ship or fleet as \"Jean-Luc Picard.\" ",
+	factions: ["borg"],
+	cost: 5,
+	skill: "*",
+	talents: 1
+}{
+	type: "captain",
+	id: "Cap807",
+	set: ["Fed101"],
+	name: "Jean-Luc Picard",
+	unique: true,
+	text: "<b>SETUP:</b> Add any 1 [crew], [tech], [weapon] or [talent] Upgrade to your Upgrade Bar.\n<b>AFTER THE DEPLOYMENT STEP:</b> Choose 1 Faction. Whenever you attack a ship of that Faction, you may roll 1 less attack die to add 1 [crit] result to your roll. Each time you defend against a ship of that Faction, roll +1 defense die.",
+	factions: ["federation"],
+	cost: 5,
+	skill: 8,
+	talents: 1
+},{
+	type: "captain",
+	id: "Cap818",
 	set: ["Fed101"],
 	name: "Jean-Luc Picard",
 	cost: 6,
@@ -57,7 +79,7 @@ module.exports = [{
 	factions: ["federation"]
 },{
 	type: "captain",
-	id: "CaF802",
+	id: "Cap803",
 	set: ["Fed101"],
 	name: "Jean-Luc Picard",
 	unique: true,
@@ -68,7 +90,7 @@ module.exports = [{
 	factions: ["federation"]
 },{
 	type: "captain",
-	id: "CaM701",
+	id: "",
 	set: ["MU101"],
 	name: "William T. Riker",
 	unique: true,
@@ -79,7 +101,7 @@ module.exports = [{
 	talents: 1
 },{
 	type: "captain",
-	id: "CaM702",
+	id: "",
 	set: ["MU101"],
 	name: "William T. Riker",
 	cost: 4,
@@ -90,7 +112,7 @@ module.exports = [{
 	factions: ["mirror-universe"],
 },{
 	type: "captain",
-	id: "CaF601",
+	id: "",
 	set: ["Fed101"],
 	name: "William T. Riker",
 	unique: true,
@@ -99,4 +121,15 @@ module.exports = [{
 	cost: 4,
 	skill: 6,
 	talents: 0
+},{
+	type: "captain",
+	id: "Cap629",
+	set: ["Fed101"],
+	name: "Jean-Luc Picard",
+	unique: true,
+	text: "<b>SETUP:</b> Add 1 [crew] slot to your Upgrade Bar. \n\n<b>ACTION:</b> Disable all of your remaining Shields and immediately perform an additional green or white maneuver.",
+	factions: ["federation"],
+	cost: 4,
+	skill: 6,
+	talents: 1
 }];
