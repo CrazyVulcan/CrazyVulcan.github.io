@@ -12,7 +12,7 @@ module.exports = [{
 },{
 	type: "captain",
 	id: "CaF101",
-	set: [""],
+	set: ["Fed101"],
 	name: "Federation",
 	unique: false,
 	text: "\r\n      ",
@@ -23,7 +23,7 @@ module.exports = [{
 },{
 	type: "captain",
 	id: "CaF901",
-	set: ["Fed001"],
+	set: ["Fed101"],
 	name: "Jean-Luc Picard",
 	unique: true,
 	text: "<b>ACTIVATION PHASE DURING THE PERFORM ACTION STEP:</b> You may perform a [evade], [target-lock], [scan], or [battlestations] Action as a Free Action",
@@ -34,7 +34,7 @@ module.exports = [{
 },{
 	type: "captain",
 	id: "CaB902",
-	set: ["Fed001"],
+	set: ["Bor101"],
 	name: "Locutus",
 	cost: 4,
 	skill: 9,
@@ -46,7 +46,7 @@ module.exports = [{
 },{
 	type: "captain",
 	id: "CaF801",
-	set: ["Fed001"],
+	set: ["Fed101"],
 	name: "Jean-Luc Picard",
 	cost: 6,
 	skill: 8,
@@ -58,7 +58,7 @@ module.exports = [{
 },{
 	type: "captain",
 	id: "CaF802",
-	set: ["Fed001"],
+	set: ["Fed101"],
 	name: "Jean-Luc Picard",
 	unique: true,
 	text: "<b>GATHERING FORCES STEP:</b> Your ship costs -2SP. Any Upgrades assigned to your ship costs -1SP.\nThe Max SP saved can not value more then -5SP total",
@@ -69,7 +69,7 @@ module.exports = [{
 },{
 	type: "captain",
 	id: "CaM701",
-	set: ["Fed001"],
+	set: ["MU101"],
 	name: "William T. Riker",
 	unique: true,
 	text: "<b>DURING THE PERFORM ACTION STEP:</b> For Each [battlestations], [evade], or a [target-lock] Action you preform, place 1 matching Token on this card.\n_________________________\n<b>ACTIVATION PHASE:</b> You may remove 1 Token from this card and preform that action as a Free Action.",
@@ -80,7 +80,7 @@ module.exports = [{
 },{
 	type: "captain",
 	id: "CaM702",
-	set: ["Fed001"],
+	set: ["MU101"],
 	name: "William T. Riker",
 	cost: 4,
 	skill: 7,
@@ -91,7 +91,7 @@ module.exports = [{
 },{
 	type: "captain",
 	id: "CaF601",
-	set: ["Fed001"],
+	set: ["Fed101"],
 	name: "William T. Riker",
 	unique: true,
 	text: "<b>WHEN DEFENDING DEARING THE ROLL ATTACK DICE STEP:</b> IF the attacking ship is at Range 1. You may place 3 Time Tokens on this card.\n\n Roll 2 attack dice. Any [hit] or [crit] result damages the attacking ship as normal.",
