@@ -90,7 +90,7 @@ module.exports = [{
 	factions: ["federation"]
 },{
 	type: "captain",
-	id: "",
+	id: "Cap709",
 	set: ["MU101"],
 	name: "William T. Riker",
 	unique: true,
@@ -101,7 +101,7 @@ module.exports = [{
 	talents: 1
 },{
 	type: "captain",
-	id: "",
+	id: "Cap702",
 	set: ["MU101"],
 	name: "William T. Riker",
 	cost: 4,
@@ -112,7 +112,7 @@ module.exports = [{
 	factions: ["mirror-universe"],
 },{
 	type: "captain",
-	id: "",
+	id: "Cap646",
 	set: ["Fed101"],
 	name: "William T. Riker",
 	unique: true,
