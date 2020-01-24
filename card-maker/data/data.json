@@ -17,6 +17,12 @@
 		"name": "Bioship Card Pack",
 		"Release Date": "2017-12-31",
 		"parentSet": "Demo"
+	},{
+		"type": "set",
+		"id": "003",
+		"name": "Card Doodles",
+		"Release Date": "2018-01-01",
+		"parentSet": "Ideas"
 	}],
 	"ships": [{
 		"type": "ship",
@@ -163,6 +169,17 @@
 		"cost": 3,
 		"skill": 4,
 		"talents": 0
+	},{
+		"type": "captain",
+		"id": "kivas_fajo",
+		"set": ["003"],
+		"name": "Kivas Fajo",
+		"unique": true,
+		"text": "<b>SETUP DURING THE GATHER FORCES STEP:</b> Add 1 [tech] slot and 1 [crew] slot to this ships Upgrade Bar. All equipped Upgardes to this ship must be [unique] and each costs -2sp",
+		"factions": ["independent"],
+		"cost": 3,
+		"skill": 5,
+		"talents": 1
 	}],
 	"admirals": [{
 		"type": "admiral",
