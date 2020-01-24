@@ -19,27 +19,12 @@
 
 		<div class="u-container">
 
-			<div class="u-search-results u-search-cols-1">
-			
-				<div class="u-title"><i class="fs fs-unique"></i>Utopia Missions</div>
+			<div class="u-starterPrint">
 				
-				<div class="text-center">Home<a href="./index.html">Utopia</a></div>
-			
-				<ul class="mission-list">
-					<li ng-repeat="missionSet in missionList | orderBy:'orderDate'" ng-click="viewer.missionSets = missionSet" ng-class="{'missionSet-selected': viewer.missionSet == missionSet}">-{{missionSet.name}}</li>
-				</ul>
 			</div>
-			
-			<div class="u-fleet missionSet-cards">
-			
-				<div class="mission-header" ng-show="mission.name">{{viewer.mission.name}}</div>
-				<div class="mission-header" ng-show="mission.description">{{viewer.mission.description}}</div>
-							
-			</div>
+
 		
 		</div>
-
-		<!--<script src="js/analytics.js"></script>-->
 		
     </body>
 </html>

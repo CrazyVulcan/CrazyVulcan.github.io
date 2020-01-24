@@ -24,21 +24,21 @@ module.exports = function(grunt) {
 				tasks: ["build-index"],
 			},
 			data: {
-				files: ["src/data/*.js"],
+				files: "src/data/*",
 				tasks: ["build-data"],
 			}
 		},
 		
 		clean: {
-			build: ["staw-utopia/*"],
-			templates: ["staw-utopia/utopia-templates.js"],
+			build: ["attack_wing_2.0/*"],
+			templates: ["attack_wing_2.0/utopia-templates.js"],
 		},
 		
 		ngtemplates: {
 			utopia: {
 				cwd: "src/templates",
 				src: ["*.html", "common/*.html"],
-				dest: "staw-utopia/utopia-templates.js",
+				dest: "attack_wing_2.0/utopia-templates.js",
 				options: {
 					url: function(url) {
 						var i = url.lastIndexOf("/");
@@ -53,7 +53,7 @@ module.exports = function(grunt) {
 		uglify: {
 			js: {
 				files: {
-					"staw-utopia/js/utopia.min.js": [ "src/js/*.js", "src/js/common/*.js", "<%= ngtemplates.utopia.dest %>" ]
+					"attack_wing_2.0/js/utopia.min.js": [ "src/js/*.js", "src/js/common/*.js", "<%= ngtemplates.utopia.dest %>" ]
 				},
 				options: {
 					sourceMap: true,
@@ -64,7 +64,7 @@ module.exports = function(grunt) {
 		cssmin: {
 			css: {
 				files: {
-					"staw-utopia/css/utopia.min.css": ["src/css/*.css", "src/css/common/*.css", "!src/css/utopia-print.css"],
+					"attack_wing_2.0/css/utopia.min.css": ["src/css/*.css", "src/css/common/*.css", "!src/css/utopia-print.css"],
 				}
 			}
 		},
@@ -74,37 +74,37 @@ module.exports = function(grunt) {
 				expand: true,
 				cwd: "src",
 				src: [ "js/lib/*", "fonts/*", "img/*" ],
-				dest: "staw-utopia/",
+				dest: "attack_wing_2.0/",
 			},
 			css: {
 				expand: true,
 				cwd: "src",
 				src: [ "css/utopia-print.css" ],
-				dest: "staw-utopia/",
+				dest: "attack_wing_2.0/",
 			},
 			csslib: {
 				expand: true,
 				cwd: "src/css/lib",
 				src: [ "*.css" ],
-				dest: "staw-utopia/css/",
+				dest: "attack_wing_2.0/css/",
 			},
 			index: {
 				expand: true,
 				cwd: "src",
 				src: [ "*.html" ],
-				dest: "staw-utopia/",
+				dest: "attack_wing_2.0/",
 			},
 			powertip: {
 				expand: true,
 				cwd: "node_modules/jquery-powertip/dist",
 				src: [ "jquery.powertip.min.js" ],
-				dest: "staw-utopia/js/lib/",
+				dest: "attack_wing_2.0/js/lib/",
 			},
 			powertip_css: {
 				expand: true,
 				cwd: "node_modules/jquery-powertip/dist/css",
 				src: [ "jquery.powertip.min.css" ],
-				dest: "staw-utopia/css/",
+				dest: "attack_wing_2.0/css/",
 			}
 		}
 	
@@ -125,9 +125,9 @@ module.exports = function(grunt) {
 		var done = this.async();
 		var exec = require('child_process').exec;
 
-		exec('npm run data ', function(err, stdout, stderr) {
+		exec('npm run data --force', function(err, stdout, stderr) {
 			if(err) {
-				grunt.warn('Failed generating Utopia data.');
+				grunt.warn('Failed generating Frontiers data.');
 				console.error(err);
 				done(false);
 				return;
