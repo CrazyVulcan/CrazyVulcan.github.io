@@ -1687,7 +1687,7 @@ module.exports = [
 }, {
 	type: "ship-class",
 	id: "galaxy__class_mu",
-	name: "Galaxy Class (MU)",
+	name: "Galaxy X Class",
 	frontArc: "90",
 	rearArc: "90",
 	maneuvers: {
