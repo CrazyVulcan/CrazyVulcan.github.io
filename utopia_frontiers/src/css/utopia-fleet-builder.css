@@ -8,7 +8,7 @@
 
 .fleet-ship-top-left {
 	float: left;
-	background: #999;
+	background: #c50000;
 	height: 100%;
 	width: 6em;
 }
@@ -36,19 +36,19 @@
 }
 
 .fleet-ship-cost {
-	background: #ddd;
+	background: #333;
 }
 
 .fleet-ship-top-spacer {
 	float: left;
-	background: #999;
+	background: #c50000;
 	height: 100%;
 	width: 2em;
 }
 
 .fleet-ship-top-right {
 	float: left;
-	background: #999;
+	background: #c50000;
 	border-top-right-radius: 1em;
 	border-bottom-right-radius: 1em;
 	height: 100%;
@@ -57,20 +57,20 @@
 
 .fleet-ship-middle {
 	display: flex;
-	background: #999;
+	background: #c50000;
 	clear: both;
 }
 
 .fleet-ship-left {
 	width: 1em;
-	background: #999;
+	background: #c50000;
 }
 
 .fleet-ship-inner {
-	border: 0.5em solid #eee;
+	border: 0.5em solid #333;
 	border-top-left-radius: 1em;
 	border-bottom-left-radius: 1em;
-	background: #eee;
+	background: #333;
 	width: 100%;
 }
 
@@ -80,7 +80,7 @@
 
 .fleet-ship-bottom-left {
 	float: left;
-	background: #999;
+	background: #c50000;
 	border-bottom-left-radius: 6em;
 	border-top-right-radius: 2em;
 	border-bottom-right-radius: 2em;
