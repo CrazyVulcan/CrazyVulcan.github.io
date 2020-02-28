@@ -6123,7 +6123,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				self: {
 					cost: function(upgrade,ship,fleet,cost) {
-						if( ship && ship.class.indexOf("Romulan") < 0)
+						if( ship && !$factions.hasFaction(ship,"romulan", ship, fleet))
 							return resolve(upgrade,ship,fleet,cost) + 5;
 						return cost;
 					},
