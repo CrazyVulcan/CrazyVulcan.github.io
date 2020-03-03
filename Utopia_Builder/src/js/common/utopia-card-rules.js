@@ -2379,7 +2379,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				ship: {
 					// All Kazon weapons are -1 SP
 					cost: function(upgrade, ship, fleet, cost) {
-						if( checkUpgrade("weapon", upgrade, ship) && $factions.hasFaction(upgrade,"kazon", ship, fleet) || $factions.hasFaction(upgrade,"independent", ship, fleet)) {
+						if( checkUpgrade("weapon", upgrade, ship) && $factions.hasFaction(upgrade,"kazon", ship, fleet) ) {
 							return resolve(upgrade, ship, fleet, cost) - 1;
 						}
 						return cost;
