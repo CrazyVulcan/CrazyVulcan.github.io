@@ -101,7 +101,7 @@ module.exports = function(grunt) {
 			resource: {
 				expand: true,
 				cwd: "src/resource/*",
-				src: [ "*" ],
+				src: [ "*html" ],
 				dest: "attack_wing_2.0/resource/",
 			},
 			powertip: {
