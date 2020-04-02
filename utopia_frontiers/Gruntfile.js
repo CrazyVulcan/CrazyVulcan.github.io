@@ -26,6 +26,10 @@ module.exports = function(grunt) {
 			data: {
 				files: "src/data/*",
 				tasks: ["build-data"],
+			},
+			resource: {
+				files: "src/resource/*",
+				tasks: ["build-resource"],
 			}
 		},
 		
@@ -94,6 +98,12 @@ module.exports = function(grunt) {
 				src: [ "*.html" ],
 				dest: "attack_wing_2.0/",
 			},
+			resource: {
+				expand: true,
+				cwd: "src",
+				src: [ "*" ],
+				dest: "attack_wing_2.0/resource/",
+			},
 			powertip: {
 				expand: true,
 				cwd: "node_modules/jquery-powertip/dist",
@@ -120,6 +130,7 @@ module.exports = function(grunt) {
 	
 	grunt.registerTask('build-js', ["ngtemplates","uglify"]);
 	grunt.registerTask('build-css', ["cssmin","copy:css"]);
+	grunt.registerTask('build-resource', ["copy:resource"]);
 	grunt.registerTask('build-index', ["copy:index"]);
 	grunt.registerTask('build-data', function() {
 		var done = this.async();
