@@ -100,7 +100,7 @@ module.exports = function(grunt) {
 			},
 			resource: {
 				expand: true,
-				cwd: "src",
+				cwd: "src/resource/*",
 				src: [ "*" ],
 				dest: "attack_wing_2.0/resource/",
 			},
