@@ -39,14 +39,14 @@ end
 #include TTS_lib/SaveManager/SaveManager
 
 -- Component sizes, unit conversion methods
-#include TTS_xwing/src/Dimensions
+#include TTS_STAW/src/Dimensions
 
 -- Data on ship types, sizes etc.
-#include TTS_xwing/src/ModelDB
+#include TTS_STAW/src/ModelDB
 
 
 -- Modules API, must be loaded last
-#include TTS_xwing/src/API
+#include TTS_STAW/src/API
 
 --------
 -- MISC FUNCTIONS
@@ -528,7 +528,7 @@ ArcCheck.SpawnObstructionRuler = function(data)
             snap_to_grid      = false
         })
         ruler.setCustomObject({
-            mesh =  '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/models/ArcCheckRuler'.. data.range .. '.obj',
+            mesh =  '{verifycache}https://raw.githubusercontent.com/CrazyVulcan/TTS_STAW2.0/master/assets/models/ArcCheckRuler'.. data.range .. '.obj',
             material = 3
         })
         local tintcolor = color(1.0, 1.0, 0.2, 1.0) -- Yellow obstructed tint
@@ -5045,43 +5045,43 @@ end
 RulerModule.meshes = {}
 RulerModule.meshes.smallBase = {}
 RulerModule.meshes.smallBase.scale = {0.629, 0.629, 0.629}
-RulerModule.meshes.smallBase.collider = '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/colliders/Small_base_Collider.obj'
-RulerModule.meshes.smallBase.front = '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/SmallFront.obj'
-RulerModule.meshes.smallBase.side = '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/SmallSide.obj'
-RulerModule.meshes.smallBase.rear = '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/SmallRear.obj'
-RulerModule.meshes.smallBase.sideArc = '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/SmallSide.obj'
+RulerModule.meshes.smallBase.collider = '{verifycache}https://raw.githubusercontent.com/CrazyVulcan/TTS_STAW2.0/master/assets/colliders/Small_base_Collider.obj'
+RulerModule.meshes.smallBase.front = '{verifycache}https://raw.githubusercontent.com/CrazyVulcan/TTS_STAW2.0/master/assets/Items/arcranges/SmallFront.obj'
+RulerModule.meshes.smallBase.side = '{verifycache}https://raw.githubusercontent.com/CrazyVulcan/TTS_STAW2.0/master/assets/Items/arcranges/SmallSide.obj'
+RulerModule.meshes.smallBase.rear = '{verifycache}https://raw.githubusercontent.com/CrazyVulcan/TTS_STAW2.0/master/assets/Items/arcranges/SmallRear.obj'
+RulerModule.meshes.smallBase.sideArc = '{verifycache}https://raw.githubusercontent.com/CrazyVulcan/TTS_STAW2.0/master/assets/Items/arcranges/SmallSide.obj'
 RulerModule.meshes.smallBase.range = {}
-RulerModule.meshes.smallBase.range[1] = '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/SmallR1.obj'
-RulerModule.meshes.smallBase.range[2] = '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/SmallR2.obj'
-RulerModule.meshes.smallBase.range[3] = '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/SmallR3.obj'
-RulerModule.meshes.smallBase.range[4] = '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/SmallR4.obj'
+RulerModule.meshes.smallBase.range[1] = '{verifycache}https://raw.githubusercontent.com/CrazyVulcan/TTS_STAW2.0/master/assets/Items/arcranges/SmallR1.obj'
+RulerModule.meshes.smallBase.range[2] = '{verifycache}https://raw.githubusercontent.com/CrazyVulcan/TTS_STAW2.0/master/assets/Items/arcranges/SmallR2.obj'
+RulerModule.meshes.smallBase.range[3] = '{verifycache}https://raw.githubusercontent.com/CrazyVulcan/TTS_STAW2.0/master/assets/Items/arcranges/SmallR3.obj'
+RulerModule.meshes.smallBase.range[4] = '{verifycache}https://raw.githubusercontent.com/CrazyVulcan/TTS_STAW2.0/master/assets/Items/arcranges/SmallR4.obj'
 
 -- Ruler meshes for medium base JC
 RulerModule.meshes.mediumBase = {}
 RulerModule.meshes.mediumBase.scale = {0.629, 0.629, 0.629}
-RulerModule.meshes.mediumBase.collider = '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/colliders/Medium_base_Collider.obj'
-RulerModule.meshes.mediumBase.front = '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/MediumFront.obj'
-RulerModule.meshes.mediumBase.rear = '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/MediumRear.obj'
-RulerModule.meshes.mediumBase.sideArc = '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/MediumSide.obj'
+RulerModule.meshes.mediumBase.collider = '{verifycache}https://raw.githubusercontent.com/CrazyVulcan/TTS_STAW2.0/master/assets/colliders/Medium_base_Collider.obj'
+RulerModule.meshes.mediumBase.front = '{verifycache}https://raw.githubusercontent.com/CrazyVulcan/TTS_STAW2.0/master/assets/Items/arcranges/MediumFront.obj'
+RulerModule.meshes.mediumBase.rear = '{verifycache}https://raw.githubusercontent.com/CrazyVulcan/TTS_STAW2.0/master/assets/Items/arcranges/MediumRear.obj'
+RulerModule.meshes.mediumBase.sideArc = '{verifycache}https://raw.githubusercontent.com/CrazyVulcan/TTS_STAW2.0/master/assets/Items/arcranges/MediumSide.obj'
 RulerModule.meshes.mediumBase.range = {}
-RulerModule.meshes.mediumBase.range[1] = '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/MediumR1.obj'
-RulerModule.meshes.mediumBase.range[2] = '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/MediumR2.obj'
-RulerModule.meshes.mediumBase.range[3] = '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/MediumR3.obj'
-RulerModule.meshes.mediumBase.range[4] = '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/MediumR4.obj'
+RulerModule.meshes.mediumBase.range[1] = '{verifycache}https://raw.githubusercontent.com/CrazyVulcan/TTS_STAW2.0/master/assets/Items/arcranges/MediumR1.obj'
+RulerModule.meshes.mediumBase.range[2] = '{verifycache}https://raw.githubusercontent.com/CrazyVulcan/TTS_STAW2.0/master/assets/Items/arcranges/MediumR2.obj'
+RulerModule.meshes.mediumBase.range[3] = '{verifycache}https://raw.githubusercontent.com/CrazyVulcan/TTS_STAW2.0/master/assets/Items/arcranges/MediumR3.obj'
+RulerModule.meshes.mediumBase.range[4] = '{verifycache}https://raw.githubusercontent.com/CrazyVulcan/TTS_STAW2.0/master/assets/Items/arcranges/MediumR4.obj'
 
 
 RulerModule.meshes.largeBase = {}
 RulerModule.meshes.largeBase.scale = {0.629, 0.629, 0.629}
-RulerModule.meshes.largeBase.collider = '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/colliders/Large_base_Collider.obj'
-RulerModule.meshes.largeBase.front = '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/LargeFront.obj'
-RulerModule.meshes.largeBase.side = '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/LargeSide.obj'
-RulerModule.meshes.largeBase.rear = '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/LargeRear.obj'
-RulerModule.meshes.largeBase.sideArc = '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/LargeSide.obj'
+RulerModule.meshes.largeBase.collider = '{verifycache}https://raw.githubusercontent.com/CrazyVulcan/TTS_STAW2.0/master/assets/colliders/Large_base_Collider.obj'
+RulerModule.meshes.largeBase.front = '{verifycache}https://raw.githubusercontent.com/CrazyVulcan/TTS_STAW2.0/master/assets/Items/arcranges/LargeFront.obj'
+RulerModule.meshes.largeBase.side = '{verifycache}https://raw.githubusercontent.com/CrazyVulcan/TTS_STAW2.0/master/assets/Items/arcranges/LargeSide.obj'
+RulerModule.meshes.largeBase.rear = '{verifycache}https://raw.githubusercontent.com/CrazyVulcan/TTS_STAW2.0/master/assets/Items/arcranges/LargeRear.obj'
+RulerModule.meshes.largeBase.sideArc = '{verifycache}https://raw.githubusercontent.com/CrazyVulcan/TTS_STAW2.0/master/assets/Items/arcranges/LargeSide.obj'
 RulerModule.meshes.largeBase.range = {}
-RulerModule.meshes.largeBase.range[1] = '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/LargeR1.obj'
-RulerModule.meshes.largeBase.range[2] = '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/LargeR2.obj'
-RulerModule.meshes.largeBase.range[3] = '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/LargeR3.obj'
-RulerModule.meshes.largeBase.range[4] = '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/LargeR4.obj'
+RulerModule.meshes.largeBase.range[1] = '{verifycache}https://raw.githubusercontent.com/CrazyVulcan/TTS_STAW2.0/master/assets/Items/arcranges/LargeR1.obj'
+RulerModule.meshes.largeBase.range[2] = '{verifycache}https://raw.githubusercontent.com/CrazyVulcan/TTS_STAW2.0/master/assets/Items/arcranges/LargeR2.obj'
+RulerModule.meshes.largeBase.range[3] = '{verifycache}https://raw.githubusercontent.com/CrazyVulcan/TTS_STAW2.0/master/assets/Items/arcranges/LargeR3.obj'
+RulerModule.meshes.largeBase.range[4] = '{verifycache}https://raw.githubusercontent.com/CrazyVulcan/TTS_STAW2.0/assets/Items/arcranges/LargeR4.obj'
 
 
 -- Avaialble ruler codes:
@@ -6004,11 +6004,11 @@ function newSpawner(listTable)
                 shipClone = newShip.clone()
                 newShip.setName(Pilots[shipIndex]['name']) --Corrects ship name for clones
                 if Pilots[shipIndex]['Size'] == 1 then
-                    newShip.setCustomObject({collider='{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/colliders/Small_base_Collider.obj'})
+                    newShip.setCustomObject({collider='{verifycache}https://raw.githubusercontent.com/CrazyVulcan/TTS_STAW2.0/master/assets/colliders/Small_base_Collider.obj'})
                 elseif Pilots[shipIndex]['Size'] == 2 then
-                    newShip.setCustomObject({collider='{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/colliders/Medium_base_Collider.obj'})
+                    newShip.setCustomObject({collider='{verifycache}https://raw.githubusercontent.com/CrazyVulcan/TTS_STAW2.0/master/assets/colliders/Medium_base_Collider.obj'})
                 elseif Pilots[shipIndex]['Size'] == 3 then
-                    newShip.setCustomObject({collider='{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/colliders/Large_base_Collider.obj'})
+                    newShip.setCustomObject({collider='{verifycache}https://raw.githubusercontent.com/CrazyVulcan/TTS_STAW2.0/master/assets/colliders/Large_base_Collider.obj'})
                 end
                 tempBagShp.putObject(shipClone)
                 newShip.setTable("Data", Pilots[shipIndex]['Data'])
