@@ -3389,7 +3389,7 @@ module.exports = [{
 	set: ["71120"],
 	name: "Jean-Luc Picard",
 	unique: true,
-	text: "DURING YOUR ACTIVATION PHASE\n\nFREE ACTION: You may perform an [Evade], [Target Lock], [Scan], or [Battlestation].\n\nYou may use this action even if your ship does not have it in the Action Bar.",
+	text: "DURING YOUR ACTIVATION PHASE\n\nFREE ACTION: You may perform an [evade], [target-lock], [scan], or [battlestations].\n\nYou may use this action even if your ship does not have it in the Action Bar.",
 	factions: ["federation"],
 	cost: 6,
 	skill: 9,

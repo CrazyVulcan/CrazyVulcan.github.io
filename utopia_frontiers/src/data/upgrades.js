@@ -4013,7 +4013,7 @@ module.exports = [{
 	set: ["71120"],
 	name: "Data",
 	unique: true,
-	text: "DURING YOUR ACTIVATION PHASE\n\nACTION:\nPlace 2 [evade] Tokens beside your ship. You cannot perform an [evade] Action this game round.\nTHEN\nDURING YOUR COMBAT PHASE: Roll -1 attack die this game round. ",
+	text: "DURING YOUR ACTIVATION PHASE\n\nACTION:\nPlace 2 [evade] Tokens beside your ship. You cannot perform an [evade] Action this game round.\n\nTHEN DURING YOUR COMBAT PHASE: Roll -1 attack die this game round. ",
 	factions: ["federation"],
 	cost: 3,
 	skill: 0,
