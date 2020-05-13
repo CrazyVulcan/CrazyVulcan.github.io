@@ -1,4 +1,4 @@
-module.exports = [{
+module.exports = [/* {
 	type: "set",
 	id: "80001",
 	name: "Alliance",
@@ -1439,7 +1439,7 @@ module.exports = [{
 	name: "U.S.S. Enterprise",
 	releaseDate: "2013-08-02",
 	parentSet: "Wave 0"
-}, {
+},  */{
 	type: "set",
 	id: "71121",
 	name: "U.S.S. Reliant",

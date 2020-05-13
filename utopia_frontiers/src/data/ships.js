@@ -2268,7 +2268,7 @@ module.exports = [{
 	hull: 5,
 	shields: 4,
 	cost: 26,
-	text: "Instead of making a normal attack with your primary weapon, you may fire in any direction at Range 1-2 with 3 attack dice.",
+	text: "DURING YOUR COMBAT PHASE\n\nWHEN ATTACKING: You may attack in any direction at Range 1-2 with 3 attack dice.",
 	unique: true,
 	factions: ["federation"],
 	intercept: {
@@ -2310,7 +2310,7 @@ module.exports = [{
 	hull: 6,
 	shields: 4,
 	cost: 29,
-	text: "If you initiate an attack while cloaked, add +1 attack die.",
+	text: "DURING YOUR COMBAT PHASE\n\nWHEN ATTACKING: If this ship is cloaked, roll +1 attack die.",
 	unique: true,
 	factions: ["romulan"],
 	intercept: {
@@ -2352,7 +2352,7 @@ module.exports = [{
 	hull: 5,
 	shields: 3,
 	cost: 25,
-	text: "Any ship attacking you at Range 1 rolls 1 less attack die.",
+	text: "DURING YOUR COMBAT PHASE\n\nWHEN DEFENDING AT RANGE 1: The attacking ship rolls -1 attack die.",
 	unique: true,
 	factions: ["klingon"],
 	intercept: {
