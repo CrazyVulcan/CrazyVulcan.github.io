@@ -2352,7 +2352,7 @@ module.exports = [{
 	hull: 5,
 	shields: 3,
 	cost: 25,
-	text: "DURING YOUR COMBAT PHASE\n\nWHEN DEFENDING AT RANGE 1: The attacking ship rolls -1 attack die.",
+	text: "COMBAT PHASE\n\nWHEN DEFENDING AT RANGE 1: The attacking ship rolls -1 attack die.",
 	unique: true,
 	factions: ["klingon"],
 	intercept: {
