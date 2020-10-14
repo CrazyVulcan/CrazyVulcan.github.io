@@ -4262,107 +4262,76 @@ module.exports = [{
 }, {
 	type: "talent",
 	id: "E128",
-	set: ["71122", "72240"],
+	set: ["71122"],
 	name: "Cheat Death",
 	unique: false,
-	text: "If your ship was just destroyed, discard this card to remove Damage Cards 1 at a time from your Ship Card until the amount of damage is 1 point less than your Hull Value. Flip all remaining Damage Cards face down. ",
+	text: "WHEN THIS SHIP IS DESTROYED: Cancel the Attack\n\nRepair all damage cards and deal Damage to this ship equal to the Hull Value -1",
 	factions: ["federation"],
 	cost: 5,
-	skill: 0,
-	talents: 0,
-	attack: 0,
-	range: ""
+	OnePerShip: true
 }, {
 	type: "talent",
 	id: "E127",
-	set: ["71122", "72240"],
+	set: ["71122"],
 	name: "Cochrane Deceleration Maneuver",
 	unique: false,
-	text: "<b>ACTION:</b> If you preformed a 1 [forward] Maneuver this round, discard this Upgrade to Come About [come-about]. Place an Auxiliary Power Token beside your ship. ",
+	text: "IF YOU REVEALED A 1 [forward] MANEUVER: ACTION: \nDISCARD THIS CARD. \n\nPerform a 1 [come-about] instead.\n\nPlace an [aux] beside your ship. ",
 	factions: ["federation"],
-	cost: 5,
-	skill: 0,
-	talents: 0,
-	attack: 0,
-	range: ""
+	cost: 5
 }, {
 	type: "talent",
 	id: "E126",
-	set: ["71122", "72240"],
+	set: ["71122"],
 	name: "Corbomite Maneuver",
 	unique: false,
-	text: "<b>ACTION:</b> Discard this Upgrade to prevent all enemy ships from attacking you this round. You cannot attack this round. ",
+	text: "DURING YOUR ACTIVATION PAHSE: ACTION:\n DISCARD THIS CARD\n\nThis ship can not be targeted in an Attack\n\nThis Ship can not perform Attacks.",
 	factions: ["federation"],
-	cost: 5,
-	skill: 0,
-	talents: 0,
-	attack: 0,
-	range: ""
+	cost: 5
 }, {
 	type: "crew",
 	id: "C200",
-	set: ["71122", "72240"],
+	set: ["71122"],
 	name: "Leonard McCoy",
 	unique: true,
-	text: "Discard McCoy to allow 1 of your [crew] Upgrades to preform its Action as a free Action this round. ",
+	text: "DURING YOUR ACTIVATION PHASE: DISCARD THIS CARD:\n\nSelect a [crew] ACTION: Treat this as a Free Action.",
 	factions: ["federation"],
-	cost: 3,
-	skill: 0,
-	talents: 0,
-	attack: 0,
-	range: ""
+	cost: 3
 }, {
 	type: "crew",
 	id: "C199",
-	set: ["71122", "72240"],
+	set: ["71122"],
 	name: "Hikaru Sulu",
 	unique: true,
-	text: "<b>ACTION:</b> Add 2 to your Agility for the rest of this round. Each time you defend this round, you may convert 1 [battlestations] result into 1 [evade] result. ",
+	text: "DURING YOUR ACTIVATION PHASE\nACTION: EVERY TIME THIS ROUND WHEN DEFENDING\n\nAdd +2 to this ships Agility.",
 	factions: ["federation"],
-	cost: 3,
-	skill: 0,
-	talents: 0,
-	attack: 0,
-	range: ""
+	cost: 3
 }, {
 	type: "crew",
 	id: "C198",
-	set: ["71122", "72240"],
+	set: ["71122"],
 	name: "Mr. Spock",
 	unique: true,
-	text: "If your ship has a [scan] Token beside it when you attack, you may convert all your [battlestations] results into [hit] results. ",
+	text: "DURING YOUR COMBAT PAHSE\nIF THIS SHIP HAS A [scan] TOKEN:\n\nConvert each [battlestations] result to [hit] result. ",
 	factions: ["federation"],
-	cost: 5,
-	skill: 0,
-	talents: 0,
-	attack: 0,
-	range: ""
+	cost: 5
 }, {
 	type: "crew",
 	id: "C197",
-	set: ["71122", "72240"],
+	set: ["71122"],
 	name: "Nyota Uhura",
 	unique: true,
-	text: "Discard Uhura immediately before you move in order to change your Maneuver for this round. ",
+	text: "DURING YOUR ACTIVATION PHASE\nAFTER YOU REVEAL YOUR DIAL: DISCARD THIS CARD\n\nChange your Maneuver for this round.",
 	factions: ["federation"],
-	cost: 3,
-	skill: 0,
-	talents: 0,
-	attack: 0,
-	range: ""
+	cost: 3
 }, {
 	type: "crew",
 	id: "C196",
-	set: ["71122", "72240"],
+	set: ["71122"],
 	name: "Montgomery Scott",
 	unique: true,
-	text: "<b>ACTION:</b> Disable 2 of your Shields in order to gain +2 attack dice this round. \n-OR- \nRepair 1 Shield Token and reduce your total attack dice by 2 this round. ",
+	text: "DURING YOUR ACTIVATION PHASE\nACTION: DISABLE 2 OF YOUR ACTIVE SHIELDS\nWhen Attacking Add 2 Attack Dice\n\nOR\n\nACTION: REPAIR 1 OF YOUR SHIELDS\nWhen Attacking Subtract 2 Attack Dice.",
 	factions: ["federation"],
-	cost: 5,
-	skill: 0,
-	talents: 0,
-	attack: 0,
-	range: ""
+	cost: 5
 }, {
 	type: "talent",
 	id: "E125",

@@ -1433,13 +1433,13 @@ module.exports = [/* {
 	name: "I.R.W. Valdore",
 	releaseDate: "2013-08-02",
 	parentSet: "Wave 0"
-}, {
+}, */{
 	type: "set",
 	id: "71122",
 	name: "U.S.S. Enterprise",
 	releaseDate: "2013-08-02",
 	parentSet: "Wave 0"
-},  */{
+},  {
 	type: "set",
 	id: "71121",
 	name: "U.S.S. Reliant",

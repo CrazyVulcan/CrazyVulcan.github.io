@@ -2405,7 +2405,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "S200",
-	set: ["71122", "72240"],
+	set: ["71122"],
 	name: "U.S.S. Enterprise",
 	class: "Constitution Class",
 	actions: ["evade", "target-lock", "scan", "battlestations"],
@@ -2415,7 +2415,7 @@ module.exports = [{
 	hull: 4,
 	shields: 3,
 	cost: 20,
-	text: "The U.S.S. Enterprise can perform an Action listed on its Action Bar while it has an Auxiliary Power Token.",
+	text: "DURING YOUR ACTIVATION PHASE:\n\nThis ship ignores [aux] during your Perform Action step",
 	unique: true,
 	factions: ["federation"],
 	intercept: {
