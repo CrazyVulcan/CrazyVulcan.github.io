@@ -34,15 +34,15 @@ module.exports = function(grunt) {
 		},
 		
 		clean: {
-			build: ["staw_spud/*"],
-			templates: ["staw_spud/utopia-templates.js"],
+			build: ["attack_wing_2.0/*"],
+			templates: ["attack_wing_2.0/utopia-templates.js"],
 		},
 		
 		ngtemplates: {
 			utopia: {
 				cwd: "src/templates",
 				src: ["*.html", "common/*.html"],
-				dest: "staw_spud/utopia-templates.js",
+				dest: "attack_wing_2.0/utopia-templates.js",
 				options: {
 					url: function(url) {
 						var i = url.lastIndexOf("/");
@@ -57,7 +57,7 @@ module.exports = function(grunt) {
 		uglify: {
 			js: {
 				files: {
-					"staw_spud/js/utopia.min.js": [ "src/js/*.js", "src/js/common/*.js", "<%= ngtemplates.utopia.dest %>" ]
+					"attack_wing_2.0/js/utopia.min.js": [ "src/js/*.js", "src/js/common/*.js", "<%= ngtemplates.utopia.dest %>" ]
 				},
 				options: {
 					sourceMap: true,
@@ -68,7 +68,7 @@ module.exports = function(grunt) {
 		cssmin: {
 			css: {
 				files: {
-					"staw_spud/css/utopia.min.css": ["src/css/*.css", "src/css/common/*.css", "!src/css/utopia-print.css"],
+					"attack_wing_2.0/css/utopia.min.css": ["src/css/*.css", "src/css/common/*.css", "!src/css/utopia-print.css"],
 				}
 			}
 		},
@@ -78,43 +78,43 @@ module.exports = function(grunt) {
 				expand: true,
 				cwd: "src",
 				src: [ "js/lib/*", "fonts/*", "img/*" ],
-				dest: "staw_spud/",
+				dest: "attack_wing_2.0/",
 			},
 			css: {
 				expand: true,
 				cwd: "src",
 				src: [ "css/utopia-print.css" ],
-				dest: "staw_spud/",
+				dest: "attack_wing_2.0/",
 			},
 			csslib: {
 				expand: true,
 				cwd: "src/css/lib",
 				src: [ "*.css" ],
-				dest: "staw_spud/css/",
+				dest: "attack_wing_2.0/css/",
 			},
 			index: {
 				expand: true,
 				cwd: "src",
 				src: [ "*.html" ],
-				dest: "staw_spud/",
+				dest: "attack_wing_2.0/",
 			},
 			resource: {
 				expand: true,
 				cwd: "src/resource/*",
 				src: [ "*html" ],
-				dest: "staw_spud/resource/",
+				dest: "attack_wing_2.0/resource/",
 			},
 			powertip: {
 				expand: true,
 				cwd: "node_modules/jquery-powertip/dist",
 				src: [ "jquery.powertip.min.js" ],
-				dest: "staw_spud/js/lib/",
+				dest: "attack_wing_2.0/js/lib/",
 			},
 			powertip_css: {
 				expand: true,
 				cwd: "node_modules/jquery-powertip/dist/css",
 				src: [ "jquery.powertip.min.css" ],
-				dest: "staw_spud/css/",
+				dest: "attack_wing_2.0/css/",
 			}
 		}
 	

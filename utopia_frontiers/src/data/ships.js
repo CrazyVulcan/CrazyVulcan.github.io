@@ -6659,7 +6659,7 @@ module.exports = [{
 	agility: 2,
 	hull: 5,
 	shields: 3,
-	cost: 23,
+	cost: 25,
 	text: "Each time you defend, if you take no damage from an attack, you may immediately roll 1 attack die. A [hit] or [crit] result damages the attacking ship.",
 	unique: true,
 	factions: ["federation"],
