@@ -568,54 +568,93 @@ intercept: {
 
     //Battle-Hardened
 		"talent:E202":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}
 			canEquip: onePerShip("Battle-Hardened")},
 
 		//Calculating
 	   "talent:E200":{
+		   factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}
 			canEquip: onePerShip("Calculating")},
 
 		//Full Spread
 	   "weapon:W201":{
+		   factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}
 			canEquip: onePerShip("Full Spread")},
 
 		//Enhanced Targeting
 		 "weapon:W207":{
+			 factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}
 			canEquip: onePerShip("Enhanced Targeting")},
 
 		//Overcharged Phasers
 		 "weapon:W205":{
+			 factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}
 			canEquip: onePerShip("Overcharged Phasers")},
 
 	  //Dorsal Phaser Array
 		 "weapon:W203":{
+			 factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}
 			canEquip: onePerShip("Dorsal Phaser Array")},
 
 		//Detection Grid
 		 "tech:T255":{
+			 factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}
 			canEquip: onePerShip("Detection Grid")},
 
 		//Reinforced Shielding
 		 "tech:T253":{
+			 factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}
 			canEquip: onePerShip("Reinforced Shielding")},
 
 		//Commander
 		 "crew:C362":{
+			 factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}
 			canEquip: onePerShip("Commander")},
 
 		//Tactical Officer
 		 "crew:C360":{
+			 factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}
 			canEquip: onePerShip("Tactical Officer")},
 
 		//Helmsman
 		 "crew:C361":{
+			 factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}
 			canEquip: onePerShip("Helmsman")},
 
 		//Science Officer
 		 "crew:C358":{
+			 factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}
 			canEquip: onePerShip("Science Officer")},
 
 	  //Operations Officer
 		 "crew:C359":{
+			 factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}
 			canEquip: onePerShip("Operations Officer")},
 
 		//Generic Captain 0 XP
@@ -6659,6 +6698,14 @@ intercept: {
 
 						if (romulanCount < 2)
 							return cost;
+						
+						upgradeSlots: [ {
+										type: ["talent"],
+										rules: "-1 SP",
+										canEquip: function(upgrade) {
+											return upgrade.faction == "romulan";
+										}
+									} ]						
 
 						// Find a talent on the ship
 						$.each( $filter("upgradeSlots")(ship), function(i, slot) {
@@ -7582,7 +7629,7 @@ intercept: {
 			// Only one per ship
 			canEquip: onePerShip("Biometric Hologram"),
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return ship.captain &&  $factions.hasFaction(ship,"xindi", ship, fleet) &&  $factions.hasFaction(ship.captain,"xindi", ship, fleet);
+				return  $factions.hasFaction(ship,"xindi", ship, fleet) &&  $factions.hasFaction(ship.captain,"xindi", ship, fleet);
 		}},
 		//Subspace Vortex
 		"tech:T144":{
@@ -9804,7 +9851,7 @@ intercept: {
 		//Photonic Auto-Cannon
 		"weapon:W212":{
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return hasFaction(ship,"vulcan", ship, fleet);
+				return onePerShip("Photonic Auto-Cannon") && hasFaction(ship,"vulcan", ship, fleet);
 		}},
 
 		//Aft Particle Beam
@@ -9996,6 +10043,10 @@ intercept: {
 		},
 		upgradeSlots: cloneSlot( 2, { type: ["crew"] } )
 	},
+	
+	
+//Klingon 'Blood Oath'
+	":":{},
 
 //Faction Penalty For Subfactions
 		//Federation
