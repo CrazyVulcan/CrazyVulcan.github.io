@@ -67,10 +67,10 @@
 }
 
 .fleet-ship-inner {
-	border: 0.5em solid #eee;
+	border: 0.5em solid #ffe5c4;
 	border-top-left-radius: 1em;
 	border-bottom-left-radius: 1em;
-	background: #eee;
+	background: #ffe5c4;
 	width: 100%;
 }
 
