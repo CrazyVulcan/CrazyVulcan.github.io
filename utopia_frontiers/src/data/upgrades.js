@@ -252,14 +252,14 @@ factions: ["federation"]
 		alliance: true,
 		factions: ["federation"]
 	},{
-	type:"tech",
-	id:"T256",
-	set:["80001"],
-	name:"Impulse Efficiency",
-	cost: 2,
-	text: "<b>EXECUTE MANEUVER STEP:</b> If this ship performs a white maneuver, place 2 [time] Tokens on this card.\n\nRemove 1 [aux] Token beside this ship.",
-	alliance: true,
-	factions: ["federation"]
+		type:"tech",
+		id:"T256",
+		set:["80001"],
+		name:"Impulse Efficiency",
+		cost: 2,
+		text: "<b>EXECUTE MANEUVER STEP:</b> If this ship performs a white maneuver, place 2 [time] Tokens on this card.\n\nRemove 1 [aux] Token beside this ship.",
+		alliance: true,
+		factions: ["federation"]
 },{
 		type: "weapon",
 		id: "W207",

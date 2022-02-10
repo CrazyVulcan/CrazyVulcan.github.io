@@ -89,10 +89,11 @@
 
 	<div class="card-border-bottom">
 		<i ng-if="upgrade.talents" ng-repeat="talent in range(upgrade.talents) track by $index" class="fs fs-talent"></i>
+		<i ng-if="upgrade.alliance" class="card-alliance-icon fs fs-alliance">
 		<i ng-repeat="slot in upgrade.upgradeSlots track by $index" ng-if="slot.showOnCard" class="fs fs-{{slot.type[0]}}" ng-class="{'card-upgrades-long': upgrade.upgradeSlots.length > 2}"></i>
 	</div>
 
-<i ng-if="upgrade.alliance" class="card-alliance-icon fs fs-alliance">
+	
 
 	<div style="clear: both"></div>
 
