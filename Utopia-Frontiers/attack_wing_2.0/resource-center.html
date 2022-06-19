@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html ng-app="utopia-missions" ng-controller="UtopiaSetCtrl">
+    <head>
+	
+		<style>
+		.dropbtn {
+		  background-color: #4CAF50;
+		  color: white;
+		  padding: 16px;
+		  font-size: 16px;
+		  border: none;
+		  cursor: pointer;
+		}
+
+		.dropbtn:hover, .dropbtn:focus {
+		  background-color: #3e8e41;
+		}
+
+		.dropdown {
+		  float: right;
+		  position: relative;
+		  display: inline-block;
+		}
+
+		.dropdown-content {
+		  display: none;
+		  position: absolute;
+		  background-color: #f1f1f1;
+		  min-width: 160px;
+		  overflow: auto;
+		  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		  right: 0;
+		  z-index: 1;
+		}
+
+		.dropdown-content a {
+		  color: black;
+		  padding: 12px 16px;
+		  text-decoration: none;
+		  display: block;
+		}
+
+		.dropdown a:hover {background-color: #ddd;}
+
+		.show {display: block;}
+		</style>
+
+
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+		<link rel="stylesheet" type="text/css" href="css/jquery.powertip.min.css">
+		<link rel="stylesheet" type="text/css" href="css/utopia.min.css">
+		<link rel="stylesheet" type="text/css" href="css/utopia-print.css" media="print">
+		
+        <title>Utopia Missions</title>
+
+		<script type="text/javascript" src="js/lib/jquery.js"></script>
+		<script type="text/javascript" src="js/lib/jquery.powertip.min.js"></script>
+        <script type="text/javascript" src="js/lib/angular.js"></script>
+        <script type="text/javascript" src="js/lib/angular-sanitize.js"></script>
+        <script type="text/javascript" src="js/utopia.min.js"></script>
+
+    </head>
+    <body>
+		<div class="dropdown">
+		  <button onclick="myFunction()" class="dropbtn">Federation</button>
+		  <div id="myDropdown" class="dropdown-content">
+			<a value="Soveregin Class" href="./resource/SoverginResource.html">Soveregin Class</a>
+			<a value="Constitution Class: Kelvin">Constitution Class: Kelvin</a>
+			<a value="Galaxy Class">Galaxy Class</a>
+			<a value="Intrepid Class">Intrepid Class</a>
+			<a value="Prometheus Class">Prometheus Class</a>
+			<a value="Akira Class">Akira Class</a>
+			<a value="Federation Attack Squadron">Federation Attack Squadron</a>
+			<a value="Excelsior Class">Excelsior Class</a>
+			<a value="Nebula Class">Nebula Class</a>
+			<a value="Constitution Refit Class">Constitution Refit Class</a>
+			<a value="Defiant Class">Defiant Class</a>
+			<a value="Constitution Class">Constitution Class</a>
+			<a value="Constellation Class">Constellation Class</a>
+			<a value="Saber Class">Saber Class</a>
+			<a value="Nova Class">NovaClass</a>
+			<a value="Miranda Class">Miranda Class</a>
+			<a value="Oberth Class">Oberth Class</a>
+			<a value="Delta Flyer Class">Delta Flyer Class</a>
+			<a value="NX Class">NX Class</a>
+			<a value="Aerie Class">Aerie Class</a>
+			<a value="Type 7 Shuttle">Type 7 Shuttle</a>
+		  </div>
+		</div>
+			<script>
+			/* When the user clicks on the button, 
+			toggle between hiding and showing the dropdown content */
+			function myFunction() {
+			  document.getElementById("myDropdown").classList.toggle("show");
+			}
+
+			// Close the dropdown if the user clicks outside of it
+			window.onclick = function(event) {
+			  if (!event.target.matches('.dropbtn')) {
+				var dropdowns = document.getElementsByClassName("dropdown-content");
+				var i;
+				for (i = 0; i < dropdowns.length; i++) {
+				  var openDropdown = dropdowns[i];
+				  if (openDropdown.classList.contains('show')) {
+					openDropdown.classList.remove('show');
+				  }
+				}
+			  }
+			}
+			</script>
+
+    </body>
+</html>
