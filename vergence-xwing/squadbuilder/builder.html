@@ -10,12 +10,16 @@
     <div class="container">
         <h1>Squadron Builder</h1>
         <form id="squadronBuilder">
+            <label for="factionSelect">Select a Faction:</label>
+            <select id="factionSelect">
+                <!-- Factions will be loaded here -->
+            </select>
             <label for="shipSelect">Select a Ship:</label>
             <select id="shipSelect">
-                <!-- Ships will be loaded here -->
+                <!-- Ships will be loaded here based on the selected faction -->
             </select>
             <div id="upgradeSlots">
-                <!-- Upgrade slots will be added here -->
+                <!-- Upgrade slots will be added here based on the selected ship -->
             </div>
         </form>
     </div>

@@ -1,29 +1,84 @@
-var exportObj,
-  __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
+// Placeholder data structure for factions and ships
+const factions = {
+  "Faction 1": ["Ship A", "Ship B"],
+  "Faction 2": ["Ship C", "Ship D"]
+};
 
-exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
+function loadFactions() {
+  const factionSelect = document.getElementById('factionSelect');
+  Object.keys(factions).forEach(faction => {
+    const option = document.createElement('option');
+    option.value = faction;
+    option.textContent = faction;
+    factionSelect.appendChild(option);
+  });
+}
 
-exportObj.unreleasedExpansions = [];
+function loadShips(faction) {
+  const shipSelect = document.getElementById('shipSelect');
+  shipSelect.innerHTML = ''; // Clear existing options
+  factions[faction].forEach(ship => {
+    const option = document.createElement('option');
+    option.value = ship;
+    option.textContent = ship;
+    shipSelect.appendChild(option);
+  });
+}
 
-exportObj.isReleased = function(data) {
-  var source, _i, _len, _ref;
-  _ref = data.sources;
-  for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-    source = _ref[_i];
-    if (__indexOf.call(exportObj.unreleasedExpansions, source) < 0) {
-      return true;
-    }
+document.getElementById('factionSelect').addEventListener('change', (event) => {
+  loadShips(event.target.value);
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  loadFactions();
+  // Optionally pre-load ships for the first faction
+  if (Object.keys(factions).length > 0) {
+    loadShips(Object.keys(factions)[0]);
   }
-  return false;
-};
+});
 
-String.prototype.canonicalize = function() {
-  return this.toLowerCase().replace(/[^a-z0-9]/g, '').replace(/\s+/g, '-');
-};
+document.addEventListener('DOMContentLoaded', function() {
+  initializeBuilder(shipData);
+});
 
-exportObj.basicCardData = function() {
-  return {
-    ships: {
+function initializeBuilder(data) {
+  const shipSelect = document.getElementById('shipSelect');
+  Object.keys(data).forEach(shipKey => {
+      const ship = data[shipKey];
+      const option = document.createElement('option');
+      option.value = ship.name;
+      option.textContent = ship.name;
+      shipSelect.appendChild(option);
+  });
+
+  shipSelect.addEventListener('change', function() {
+      const selectedShipName = this.value;
+      const selectedShip = data[Object.keys(data).find(key => data[key].name === selectedShipName)];
+      const upgradeSlotsContainer = document.getElementById('upgradeSlots');
+      upgradeSlotsContainer.innerHTML = ''; // Clear previous slots
+      if (selectedShip && selectedShip.actions) {
+          selectedShip.actions.forEach(action => {
+              const label = document.createElement('label');
+              label.textContent = `${action}: `;
+              const select = document.createElement('select');
+              // Assuming upgrades are related to actions for demonstration
+              // This part needs adjustment based on actual upgrade slot logic
+              const upgrades = ["Upgrade 1", "Upgrade 2"]; // Placeholder upgrades
+              upgrades.forEach(upgrade => {
+                  const option = document.createElement('option');
+                  option.value = upgrade;
+                  option.textContent = upgrade;
+                  select.appendChild(option);
+              });
+              upgradeSlotsContainer.appendChild(label);
+              upgradeSlotsContainer.appendChild(select);
+          });
+      }
+  });
+}
+
+// Example ship data structure embedded in script.js
+const shipData = {
       "T-65 X-wing": {
         name: "T-65 X-wing",
         factions: ["Rebel Alliance"],
