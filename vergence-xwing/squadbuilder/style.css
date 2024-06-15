@@ -4,7 +4,23 @@ body, html {
     padding: 0;
     font-family: Arial, sans-serif;
 }
+.build-modes {
+    margin-top: 20px;
+}
 
+.build-modes button {
+    margin: 5px;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.build-modes button:hover {
+    background-color: #45a049;
+}
 .container {
     width: 80%;
     margin: auto;
