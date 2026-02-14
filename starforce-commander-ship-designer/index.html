@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Starforce Commander SSD Designer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="layout">
+    <section class="panel controls">
+      <h1>Starforce Commander SSD Designer</h1>
+      <p class="muted">This version mirrors your blank SSD template: left-side editing, right-side live layout preview.</p>
+
+      <form id="ssdForm" class="stack">
+        <h2>Identity</h2>
+        <label>Ship Name / ID <input name="name" value="SHIP NAME / ID" /></label>
+        <label>Class Label <input name="classType" value="CLASSNAME ID-class Weight Class" /></label>
+        <div class="grid2">
+          <label>Faction <input name="faction" value="COMMON" /></label>
+          <label>Era <input name="era" value="ERA" /></label>
+        </div>
+
+        <h2>Engineering</h2>
+        <div class="grid2">
+          <label>Move <input name="move" type="number" min="0" value="0" /></label>
+          <label>Vector <input name="vector" type="number" min="0" value="0" /></label>
+          <label>Turn <input name="turn" type="number" min="0" value="0" /></label>
+          <label>Special <input name="special" type="number" min="0" value="0" /></label>
+        </div>
+
+        <h2>Shields</h2>
+        <div class="grid2">
+          <label>Forward <input name="shieldFwd" type="number" min="0" value="0" /></label>
+          <label>Aft <input name="shieldAft" type="number" min="0" value="0" /></label>
+          <label>Port <input name="shieldPort" type="number" min="0" value="0" /></label>
+          <label>Starboard <input name="shieldStbd" type="number" min="0" value="0" /></label>
+        </div>
+        <label>Shield Generators (single value for all facings) <input name="shieldGen" type="number" min="0" value="0" /></label>
+        <label>Ship Art (for shield center)
+          <input name="shipArt" id="shipArt" type="file" accept="image/*" />
+        </label>
+        <button type="button" id="clearArtBtn" class="ghost">Clear Ship Art</button>
+
+        <h2>Weapons (up to 4 lines)</h2>
+        <label><textarea name="weapons" rows="6" placeholder="MK-4 A/MAT TORPEDO|0-4|5-10|11-14|15-20"></textarea></label>
+
+        <h2>Functions / Power / Maneuvering</h2>
+        <label>Functions + Power Level <textarea name="functions" rows="3" placeholder="ACC/DEC, SIF, BTTY RECH..."></textarea></label>
+        <label>Power System <textarea name="powerSystem" rows="3" placeholder="L MAIN, R MAIN, BATTERY..."></textarea></label>
+        <label>Sublight Drive & Maneuvering <textarea name="maneuvering" rows="3" placeholder="MAX ACC/PHS, DMG, SPD, TURN..."></textarea></label>
+
+        <h2>Systems (one per line)</h2>
+        <label><textarea name="systems" rows="4" placeholder="SCNC:0"></textarea></label>
+
+        <h2>Structure</h2>
+        <div class="grid2">
+          <label>Repairable Structure Boxes <input name="structureBlack" type="number" min="0" value="20" /></label>
+          <label>Permanent Structure Boxes <input name="structureRed" type="number" min="0" value="4" /></label>
+        </div>
+
+        <div class="row">
+          <button type="button" id="saveBtn">Save Draft</button>
+          <button type="button" id="exportBtn">Export JSON</button>
+          <button type="button" id="clearBtn" class="ghost">Clear Drafts</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel preview-wrap">
+      <div class="preview-head">
+        <h2>SSD Preview</h2>
+        <span id="liveBadge" class="live-badge">LIVE</span>
+      </div>
+
+      <article class="ssd-template" id="ssdCard">
+        <header class="template-top">
+          <div class="template-ship" id="pvName">SHIP NAME / ID</div>
+          <div class="template-class" id="pvClass">CLASSNAME ID-class Weight Class</div>
+        </header>
+
+        <div class="template-columns">
+          <section class="col left-col">
+            <h3>ENGINEERING</h3>
+            <div class="eng-stats">
+              <span>🚀 <b id="pvMove">0</b></span>
+              <span>🟢 <b id="pvVector">0</b></span>
+              <span>↪ <b id="pvTurn">0</b></span>
+              <span>🔧 <b id="pvSpecial">0</b></span>
+            </div>
+            <div class="green-block">
+              <h4>FUNCTIONS / POWER LEVEL</h4>
+              <pre id="pvFunctions"></pre>
+            </div>
+            <div class="green-block">
+              <h4>POWER SYSTEM</h4>
+              <pre id="pvPowerSystem"></pre>
+            </div>
+            <div class="green-block">
+              <h4>SUBLIGHT DRIVE AND MANEUVERING</h4>
+              <pre id="pvManeuvering"></pre>
+            </div>
+          </section>
+
+          <section class="col middle-col">
+            <h3>SHIELDS</h3>
+            <div class="shield-top">FWD SHIELD <b id="pvShieldFwd">00</b></div>
+            <div class="shield-box-row" id="pvFwdShieldBoxes"></div>
+            <div class="shield-gen-row" id="pvFwdGenBoxes"></div>
+            <div class="shield-gen-label">SHIELD GEN <span id="pvShieldGenBlackBoxes" class="shield-gen-black-row"></span></div>
+            <div class="shield-body">
+              <div class="side side-port">
+                <span class="side-label">PORT SHIELD <b id="pvShieldPort">00</b></span>
+                <div class="shield-box-col" id="pvPortShieldBoxes"></div>
+                <div class="shield-gen-col" id="pvPortGenBoxes"></div>
+              </div>
+              <div class="ship-art-wrap">
+                <img id="pvShipArt" class="ship-art" alt="Ship art" />
+                <div class="ship-silhouette" id="pvShipSilhouette"></div>
+              </div>
+              <div class="side side-stbd">
+                <span class="side-label">STBD SHIELD <b id="pvShieldStbd">00</b></span>
+                <div class="shield-box-col" id="pvStbdShieldBoxes"></div>
+                <div class="shield-gen-col" id="pvStbdGenBoxes"></div>
+              </div>
+            </div>
+            <div class="shield-bottom">AFT SHIELD <b id="pvShieldAft">00</b></div>
+            <div class="shield-box-row" id="pvAftShieldBoxes"></div>
+            <div class="shield-gen-row" id="pvAftGenBoxes"></div>
+            <div class="systems-box">
+              <h3>SYSTEMS</h3>
+              <pre id="pvSystems"></pre>
+            </div>
+          </section>
+
+          <section class="col right-col">
+            <h3>WEAPONS</h3>
+            <div class="weapon-slot"><div class="slot-title" id="pvWpn1Title">WPN NAME TYP</div><div class="slot-body" id="pvWpn1Body"></div></div>
+            <div class="weapon-slot"><div class="slot-title" id="pvWpn2Title">WPN NAME TYP</div><div class="slot-body" id="pvWpn2Body"></div></div>
+            <div class="weapon-slot"><div class="slot-title" id="pvWpn3Title">WPN NAME TYP</div><div class="slot-body" id="pvWpn3Body"></div></div>
+            <div class="weapon-slot"><div class="slot-title" id="pvWpn4Title">WPN NAME TYP</div><div class="slot-body" id="pvWpn4Body"></div></div>
+          </section>
+        </div>
+
+        <footer class="template-bottom">
+          <span class="structure">STRUCTURE</span>
+          <span class="structure-row" id="pvStructureBoxes"></span>
+          <span class="structure-bands" id="pvStructureBands">5🔧 4🔧 3🔧 2🔧 1🔧</span>
+          <span id="pvFaction">COMMON</span>
+          <span id="pvEra">ERA</span>
+        </footer>
+      </article>
+
+      <h3>Saved Drafts</h3>
+      <ul id="drafts"></ul>
+      <h3>Current JSON</h3>
+      <pre id="jsonPreview"></pre>
+    </section>
+  </main>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>

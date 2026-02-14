@@ -1,0 +1,21 @@
+{
+  "modules": {
+    "weapon": [
+      { "name": "None", "power": 0 },
+      { "name": "Pulse Cannons", "power": 2 },
+      { "name": "Plasma Lance", "power": 4 },
+      { "name": "Rail Battery", "power": 5 }
+    ],
+    "engine": [
+      { "name": "None", "power": 0 },
+      { "name": "Vector Thrusters", "power": 2 },
+      { "name": "Warp Burst Drive", "power": 4 }
+    ],
+    "utility": [
+      { "name": "None", "power": 0 },
+      { "name": "Shield Matrix", "power": 2 },
+      { "name": "Sensor Suite", "power": 1 },
+      { "name": "Drone Bay", "power": 3 }
+    ]
+  }
+}
