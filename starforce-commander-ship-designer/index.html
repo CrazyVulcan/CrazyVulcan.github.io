@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Starforce Commander SSD Designer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="layout">
+    <section class="panel controls">
+      <h1>Starforce Commander SSD Designer</h1>
+      <p class="muted">Edit stats on the left — the SSD on the right updates live as you type.</p>
+
+      <form id="ssdForm" class="stack">
+        <h2>Identity</h2>
+        <label>Ship Name / ID <input name="name" value="YORKTOWN II-class Heavy Cruiser" /></label>
+        <label>Class Type <input name="classType" value="Heavy Cruiser" /></label>
+        <label>Faction <input name="faction" value="COMMON" /></label>
+        <label>Points <input name="points" type="number" min="0" value="3655" /></label>
+
+        <h2>Core Stats</h2>
+        <div class="grid2">
+          <label>Attack <input name="attack" type="number" min="0" value="4" /></label>
+          <label>Defense <input name="defense" type="number" min="0" value="3" /></label>
+          <label>Hull <input name="hull" type="number" min="0" value="40" /></label>
+          <label>Crew <input name="crew" type="number" min="0" value="11" /></label>
+        </div>
+
+        <h2>Engineering</h2>
+        <div class="grid2">
+          <label>Move <input name="move" type="number" min="0" value="5" /></label>
+          <label>Turn <input name="turn" type="number" min="0" value="2" /></label>
+          <label>Special <input name="special" type="number" min="0" value="4" /></label>
+          <label>PWR <input name="power" type="number" min="0" value="8" /></label>
+        </div>
+
+        <h2>Shields</h2>
+        <div class="grid2">
+          <label>Forward <input name="shieldFwd" type="number" min="0" value="16" /></label>
+          <label>Aft <input name="shieldAft" type="number" min="0" value="15" /></label>
+          <label>Port <input name="shieldPort" type="number" min="0" value="15" /></label>
+          <label>Starboard <input name="shieldStbd" type="number" min="0" value="15" /></label>
+        </div>
+
+        <h2>Weapons (one per line)</h2>
+        <label><textarea name="weapons" rows="5">MK-4 A/MAT TORPEDO|0-4|5-10|11-14|15-20
+LNC-447 PHASER|0-2|3-5|6-8|9-10|11-12</textarea></label>
+
+        <h2>Systems (one per line)</h2>
+        <label><textarea name="systems" rows="4">SCNC:4
+TRAC:2
+SENS:3
+TRN:2</textarea></label>
+
+        <div class="row">
+          <button type="button" id="saveBtn">Save Draft</button>
+          <button type="button" id="exportBtn">Export JSON</button>
+          <button type="button" id="clearBtn" class="ghost">Clear Drafts</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel preview-wrap">
+      <div class="preview-head">
+        <h2>SSD Preview</h2>
+        <span id="liveBadge" class="live-badge">LIVE</span>
+      </div>
+
+      <article class="ssd" id="ssdCard">
+        <header class="ssd-header">
+          <div id="pvName"></div>
+          <div id="pvClass" class="header-sub"></div>
+        </header>
+
+        <section class="ssd-grid">
+          <div class="block engineering">
+            <h3>ENGINEERING</h3>
+            <ul>
+              <li>MOVE: <strong id="pvMove"></strong></li>
+              <li>TURN: <strong id="pvTurn"></strong></li>
+              <li>SPECIAL: <strong id="pvSpecial"></strong></li>
+              <li>PWR: <strong id="pvPower"></strong></li>
+            </ul>
+          </div>
+
+          <div class="block shields">
+            <h3>SHIELDS</h3>
+            <ul>
+              <li>FWD: <strong id="pvShieldFwd"></strong></li>
+              <li>AFT: <strong id="pvShieldAft"></strong></li>
+              <li>PORT: <strong id="pvShieldPort"></strong></li>
+              <li>STBD: <strong id="pvShieldStbd"></strong></li>
+            </ul>
+          </div>
+
+          <div class="block weapons">
+            <h3>WEAPONS</h3>
+            <div id="pvWeapons"></div>
+          </div>
+
+          <div class="block systems">
+            <h3>SYSTEMS</h3>
+            <div id="pvSystems"></div>
+          </div>
+
+          <div class="block stats">
+            <h3>CORE STATS</h3>
+            <ul>
+              <li>ATT: <strong id="pvAttack"></strong></li>
+              <li>DEF: <strong id="pvDefense"></strong></li>
+              <li>HULL: <strong id="pvHull"></strong></li>
+              <li>CREW: <strong id="pvCrew"></strong></li>
+            </ul>
+          </div>
+        </section>
+
+        <footer class="ssd-footer">
+          <span id="pvFaction"></span>
+          <span id="pvPoints"></span>
+        </footer>
+      </article>
+
+      <h3>Saved Drafts</h3>
+      <ul id="drafts"></ul>
+      <h3>Current JSON</h3>
+      <pre id="jsonPreview"></pre>
+    </section>
+  </main>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
