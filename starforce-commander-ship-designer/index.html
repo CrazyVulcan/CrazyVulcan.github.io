@@ -36,12 +36,11 @@
           <label>Port <input name="shieldPort" type="number" min="0" value="0" /></label>
           <label>Starboard <input name="shieldStbd" type="number" min="0" value="0" /></label>
         </div>
-        <div class="grid2">
-          <label>Fwd Shield Generators <input name="shieldGenFwd" type="number" min="0" value="0" /></label>
-          <label>Aft Shield Generators <input name="shieldGenAft" type="number" min="0" value="0" /></label>
-          <label>Port Shield Generators <input name="shieldGenPort" type="number" min="0" value="0" /></label>
-          <label>Stbd Shield Generators <input name="shieldGenStbd" type="number" min="0" value="0" /></label>
-        </div>
+        <label>Shield Generators (single value for all facings) <input name="shieldGen" type="number" min="0" value="0" /></label>
+        <label>Ship Art (for shield center)
+          <input name="shipArt" id="shipArt" type="file" accept="image/*" />
+        </label>
+        <button type="button" id="clearArtBtn" class="ghost">Clear Ship Art</button>
 
         <h2>Weapons (up to 4 lines)</h2>
         <label><textarea name="weapons" rows="6" placeholder="MK-4 A/MAT TORPEDO|0-4|5-10|11-14|15-20"></textarea></label>
@@ -108,14 +107,17 @@
             <div class="shield-top">FWD SHIELD <b id="pvShieldFwd">00</b></div>
             <div class="shield-box-row" id="pvFwdShieldBoxes"></div>
             <div class="shield-gen-row" id="pvFwdGenBoxes"></div>
-            <div class="shield-gen-label">SHIELD GEN <b id="pvShieldGenTotal">0</b></div>
+            <div class="shield-gen-label">SHIELD GEN <span id="pvShieldGenBlackBoxes" class="shield-gen-black-row"></span></div>
             <div class="shield-body">
               <div class="side side-port">
                 <span class="side-label">PORT SHIELD <b id="pvShieldPort">00</b></span>
                 <div class="shield-box-col" id="pvPortShieldBoxes"></div>
                 <div class="shield-gen-col" id="pvPortGenBoxes"></div>
               </div>
-              <div class="ship-silhouette"></div>
+              <div class="ship-art-wrap">
+                <img id="pvShipArt" class="ship-art" alt="Ship art" />
+                <div class="ship-silhouette" id="pvShipSilhouette"></div>
+              </div>
               <div class="side side-stbd">
                 <span class="side-label">STBD SHIELD <b id="pvShieldStbd">00</b></span>
                 <div class="shield-box-col" id="pvStbdShieldBoxes"></div>

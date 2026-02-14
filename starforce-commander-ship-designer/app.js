@@ -3,6 +3,7 @@ const draftsEl = document.getElementById('drafts');
 const jsonPreview = document.getElementById('jsonPreview');
 const liveBadge = document.getElementById('liveBadge');
 const STORAGE_KEY = 'sfCommanderSsdDrafts';
+let shipArtDataUrl = '';
 
 function parseWeapons(raw) {
   return raw
@@ -50,12 +51,7 @@ function getBuild() {
       port: num('shieldPort'),
       starboard: num('shieldStbd')
     },
-    shieldGens: {
-      forward: num('shieldGenFwd'),
-      aft: num('shieldGenAft'),
-      port: num('shieldGenPort'),
-      starboard: num('shieldGenStbd')
-    },
+    shieldGen: num('shieldGen'),
     textBlocks: {
       functions: form.elements.functions.value,
       powerSystem: form.elements.powerSystem.value,
@@ -65,6 +61,7 @@ function getBuild() {
       repairable: num('structureBlack'),
       permanent: num('structureRed')
     },
+    shipArtDataUrl,
     weapons: parseWeapons(form.elements.weapons.value),
     systems: parseSystems(form.elements.systems.value)
   };
@@ -123,18 +120,35 @@ function renderPreview(build) {
   document.getElementById('pvShieldPort').textContent = String(build.shields.port).padStart(2, '0');
   document.getElementById('pvShieldStbd').textContent = String(build.shields.starboard).padStart(2, '0');
 
-  const totalShieldGens = build.shieldGens.forward + build.shieldGens.aft + build.shieldGens.port + build.shieldGens.starboard;
-  document.getElementById('pvShieldGenTotal').textContent = totalShieldGens;
+  const blackGenRow = document.getElementById('pvShieldGenBlackBoxes');
+  blackGenRow.innerHTML = '';
+  for (let i = 0; i < build.shieldGen; i += 1) {
+    const box = document.createElement('span');
+    box.className = 'shield-gen-black';
+    blackGenRow.appendChild(box);
+  }
 
   renderBoxes('pvFwdShieldBoxes', build.shields.forward, 'shield-box');
   renderBoxes('pvAftShieldBoxes', build.shields.aft, 'shield-box');
   renderBoxes('pvPortShieldBoxes', build.shields.port, 'shield-box');
   renderBoxes('pvStbdShieldBoxes', build.shields.starboard, 'shield-box');
 
-  renderBoxes('pvFwdGenBoxes', build.shieldGens.forward, 'shield-gen');
-  renderBoxes('pvAftGenBoxes', build.shieldGens.aft, 'shield-gen');
-  renderBoxes('pvPortGenBoxes', build.shieldGens.port, 'shield-gen');
-  renderBoxes('pvStbdGenBoxes', build.shieldGens.starboard, 'shield-gen');
+  renderBoxes('pvFwdGenBoxes', build.shieldGen, 'shield-gen');
+  renderBoxes('pvAftGenBoxes', build.shieldGen, 'shield-gen');
+  renderBoxes('pvPortGenBoxes', build.shieldGen, 'shield-gen');
+  renderBoxes('pvStbdGenBoxes', build.shieldGen, 'shield-gen');
+
+  const artEl = document.getElementById('pvShipArt');
+  const silhouetteEl = document.getElementById('pvShipSilhouette');
+  if (build.shipArtDataUrl) {
+    artEl.src = build.shipArtDataUrl;
+    artEl.style.display = 'block';
+    silhouetteEl.style.display = 'none';
+  } else {
+    artEl.removeAttribute('src');
+    artEl.style.display = 'none';
+    silhouetteEl.style.display = 'block';
+  }
 
   document.getElementById('pvFunctions').textContent = build.textBlocks.functions;
   document.getElementById('pvPowerSystem').textContent = build.textBlocks.powerSystem;
@@ -202,10 +216,7 @@ function restoreDraft(draft) {
   form.elements.shieldPort.value = draft.shields?.port ?? 0;
   form.elements.shieldStbd.value = draft.shields?.starboard ?? 0;
 
-  form.elements.shieldGenFwd.value = draft.shieldGens?.forward ?? 0;
-  form.elements.shieldGenAft.value = draft.shieldGens?.aft ?? 0;
-  form.elements.shieldGenPort.value = draft.shieldGens?.port ?? 0;
-  form.elements.shieldGenStbd.value = draft.shieldGens?.starboard ?? 0;
+  form.elements.shieldGen.value = draft.shieldGen ?? 0;
 
   form.elements.functions.value = draft.textBlocks?.functions ?? '';
   form.elements.powerSystem.value = draft.textBlocks?.powerSystem ?? '';
@@ -213,6 +224,7 @@ function restoreDraft(draft) {
   form.elements.structureBlack.value = draft.structure?.repairable ?? 0;
   form.elements.structureRed.value = draft.structure?.permanent ?? 0;
 
+  shipArtDataUrl = draft.shipArtDataUrl ?? '';
   form.elements.weapons.value = (draft.weapons ?? []).map((item) => [item.name, ...(item.ranges ?? [])].join('|')).join('\n');
   form.elements.systems.value = (draft.systems ?? []).map((item) => `${item.key}:${item.value ?? ''}`).join('\n');
 
@@ -247,6 +259,26 @@ form.addEventListener('change', render);
 document.getElementById('saveBtn').addEventListener('click', saveDraft);
 document.getElementById('clearBtn').addEventListener('click', clearDrafts);
 document.getElementById('exportBtn').addEventListener('click', exportCurrent);
+
+const shipArtInput = document.getElementById('shipArt');
+document.getElementById('clearArtBtn').addEventListener('click', () => {
+  shipArtDataUrl = '';
+  shipArtInput.value = '';
+  render();
+});
+
+shipArtInput.addEventListener('change', (event) => {
+  const [file] = event.target.files || [];
+  if (!file) {
+    return;
+  }
+  const reader = new FileReader();
+  reader.onload = () => {
+    shipArtDataUrl = String(reader.result || '');
+    render();
+  };
+  reader.readAsDataURL(file);
+});
 
 render();
 renderDrafts();

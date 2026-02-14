@@ -15,8 +15,9 @@ Open: `http://localhost:4173`
 
 - Left-side stat editor with right-side live SSD template preview
 - Template sections for engineering, shields, weapons, systems, and structure footer
-- Shield box + shield-generator box rendering per facing (Fwd/Port/Stbd/Aft)
+- Single shield-generator value that renders black generator boxes + matching green boxes on each facing
 - Multi-line text blocks for functions/power/maneuvering
 - Structure strip with repairable (gray) and permanent (red) box counts
+- Custom ship art upload rendered in the shield center
 - Save and restore drafts with `localStorage`
 - Export current SSD build as JSON
