@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Starforce Commander Ship Designer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="layout">
+    <section class="panel">
+      <h1>Starforce Commander — Ship Designer</h1>
+      <p class="muted">Create a custom chassis, choose modules, and export your build.</p>
+
+      <form id="shipForm" class="stack">
+        <label>Ship Name <input name="name" required placeholder="e.g. SF-91 Valkyrie" /></label>
+        <label>Faction <input name="faction" required placeholder="e.g. Union Navy" /></label>
+        <label>Class <input name="shipClass" required placeholder="e.g. Interceptor" /></label>
+        <label>Base Size
+          <select name="baseSize">
+            <option>Small</option>
+            <option>Medium</option>
+            <option>Large</option>
+          </select>
+        </label>
+
+        <div class="grid2">
+          <label>Attack <input name="attack" type="number" min="0" value="3" /></label>
+          <label>Defense <input name="defense" type="number" min="0" value="2" /></label>
+          <label>Hull <input name="hull" type="number" min="1" value="5" /></label>
+          <label>Shields <input name="shields" type="number" min="0" value="2" /></label>
+          <label>Power Budget <input name="powerBudget" type="number" min="0" value="8" /></label>
+        </div>
+
+        <h2>Module Slots</h2>
+        <label>Weapon
+          <select name="weapon"></select>
+        </label>
+        <label>Engine
+          <select name="engine"></select>
+        </label>
+        <label>Utility
+          <select name="utility"></select>
+        </label>
+
+        <div class="row">
+          <button type="button" id="saveBtn">Save Draft</button>
+          <button type="button" id="exportBtn">Export JSON</button>
+          <button type="button" id="clearBtn" class="ghost">Clear Drafts</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Live Build Preview</h2>
+      <pre id="card"></pre>
+      <h3>Saved Drafts</h3>
+      <ul id="drafts"></ul>
+    </section>
+  </main>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>

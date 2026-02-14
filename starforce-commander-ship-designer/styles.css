@@ -1,0 +1,20 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, Segoe UI, Roboto, sans-serif;
+}
+body { margin: 0; background: #0d1222; color: #eaf0ff; }
+.layout { display: grid; gap: 1rem; grid-template-columns: 1fr 1fr; padding: 1rem; }
+.panel { background: #151d35; border: 1px solid #25315c; border-radius: 10px; padding: 1rem; }
+.stack label { display: block; margin: 0.5rem 0; }
+input, select, button { width: 100%; margin-top: 0.25rem; padding: 0.5rem; border-radius: 8px; border: 1px solid #32427a; background: #0f1731; color: #eaf0ff; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem; margin-top: 0.75rem; }
+button { cursor: pointer; background: #3d62ff; border: none; font-weight: 600; }
+button.ghost { background: #273055; }
+pre { background: #0b1128; padding: 0.75rem; border-radius: 8px; min-height: 280px; overflow: auto; }
+.muted { color: #a7b4da; }
+#drafts { padding-left: 1.2rem; }
+#drafts li { margin-bottom: 0.4rem; }
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+}
