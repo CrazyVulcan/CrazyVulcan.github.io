@@ -17,5 +17,6 @@ Open: `http://localhost:4173`
 - Template sections for engineering, shields, weapons, systems, and structure footer
 - Shield box + shield-generator box rendering per facing (Fwd/Port/Stbd/Aft)
 - Multi-line text blocks for functions/power/maneuvering
+- Structure strip with repairable (gray) and permanent (red) box counts
 - Save and restore drafts with `localStorage`
 - Export current SSD build as JSON

@@ -61,6 +61,10 @@ function getBuild() {
       powerSystem: form.elements.powerSystem.value,
       maneuvering: form.elements.maneuvering.value
     },
+    structure: {
+      repairable: num('structureBlack'),
+      permanent: num('structureRed')
+    },
     weapons: parseWeapons(form.elements.weapons.value),
     systems: parseSystems(form.elements.systems.value)
   };
@@ -86,6 +90,21 @@ function weaponSlot(id, weapon) {
   }
   title.textContent = weapon.name || 'WPN NAME TYP';
   body.textContent = weapon.ranges.join('  •  ');
+}
+
+function renderStructure(build) {
+  const row = document.getElementById('pvStructureBoxes');
+  row.innerHTML = '';
+  for (let i = 0; i < build.structure.repairable; i += 1) {
+    const box = document.createElement('span');
+    box.className = 'structure-box';
+    row.appendChild(box);
+  }
+  for (let i = 0; i < build.structure.permanent; i += 1) {
+    const box = document.createElement('span');
+    box.className = 'structure-box permanent';
+    row.appendChild(box);
+  }
 }
 
 function renderPreview(build) {
@@ -128,6 +147,7 @@ function renderPreview(build) {
 
   const systemsText = build.systems.map((entry) => `${entry.key} ${entry.value}`.trim()).join('\n');
   document.getElementById('pvSystems').textContent = systemsText;
+  renderStructure(build);
 }
 
 function pulseLiveBadge() {
@@ -190,6 +210,8 @@ function restoreDraft(draft) {
   form.elements.functions.value = draft.textBlocks?.functions ?? '';
   form.elements.powerSystem.value = draft.textBlocks?.powerSystem ?? '';
   form.elements.maneuvering.value = draft.textBlocks?.maneuvering ?? '';
+  form.elements.structureBlack.value = draft.structure?.repairable ?? 0;
+  form.elements.structureRed.value = draft.structure?.permanent ?? 0;
 
   form.elements.weapons.value = (draft.weapons ?? []).map((item) => [item.name, ...(item.ranges ?? [])].join('|')).join('\n');
   form.elements.systems.value = (draft.systems ?? []).map((item) => `${item.key}:${item.value ?? ''}`).join('\n');

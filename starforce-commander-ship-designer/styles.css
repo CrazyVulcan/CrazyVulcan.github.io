@@ -82,8 +82,36 @@ button.ghost { background: #273055; }
 .slot-title { background: #ff0000; color: #fff; font-weight: 800; padding: 0.17rem 0.3rem; }
 .slot-body { white-space: pre-wrap; color: #233; padding: 0.35rem 0.38rem; min-height: 72px; }
 
-.template-bottom { display: grid; grid-template-columns: 1fr auto auto; gap: 0.3rem; background: #4a5a68; color: #fff; font-weight: 800; padding: 0.28rem 0.45rem; border-top: 3px solid #0d78c5; }
+.template-bottom {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto auto;
+  align-items: center;
+  gap: 0.35rem;
+  background: #4a5a68;
+  color: #fff;
+  font-weight: 800;
+  padding: 0.28rem 0.45rem;
+  border-top: 3px solid #0d78c5;
+}
 .structure { letter-spacing: 0.03em; }
+.structure-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  min-height: 14px;
+}
+.structure-bands { font-size: 0.85rem; opacity: 0.95; }
+.structure-box {
+  width: 12px;
+  height: 12px;
+  border: 2px solid #d7dce0;
+  box-sizing: border-box;
+  background: #5e6e7a;
+}
+.structure-box.permanent {
+  border-color: #ff3b3b;
+  background: #7a1f1f;
+}
 
 pre { background: #0b1128; color: #d5e2ff; padding: 0.65rem; border-radius: 8px; overflow: auto; max-height: 220px; }
 #drafts { padding-left: 1rem; }
@@ -96,4 +124,5 @@ pre { background: #0b1128; color: #d5e2ff; padding: 0.65rem; border-radius: 8px;
 @media (max-width: 980px) {
   .template-columns { grid-template-columns: 1fr; }
   .side.port,.side.stbd { position: static; transform: none; display: inline-block; margin: 0.2rem; }
+  .template-bottom { grid-template-columns: 1fr; }
 }

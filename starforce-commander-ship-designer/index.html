@@ -54,6 +54,12 @@
         <h2>Systems (one per line)</h2>
         <label><textarea name="systems" rows="4" placeholder="SCNC:0"></textarea></label>
 
+        <h2>Structure</h2>
+        <div class="grid2">
+          <label>Repairable Structure Boxes <input name="structureBlack" type="number" min="0" value="20" /></label>
+          <label>Permanent Structure Boxes <input name="structureRed" type="number" min="0" value="4" /></label>
+        </div>
+
         <div class="row">
           <button type="button" id="saveBtn">Save Draft</button>
           <button type="button" id="exportBtn">Export JSON</button>
@@ -136,6 +142,8 @@
 
         <footer class="template-bottom">
           <span class="structure">STRUCTURE</span>
+          <span class="structure-row" id="pvStructureBoxes"></span>
+          <span class="structure-bands" id="pvStructureBands">5🔧 4🔧 3🔧 2🔧 1🔧</span>
           <span id="pvFaction">COMMON</span>
           <span id="pvEra">ERA</span>
         </footer>
