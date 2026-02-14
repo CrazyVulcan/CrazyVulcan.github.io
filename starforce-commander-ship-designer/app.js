@@ -1,148 +1,85 @@
-const form = document.getElementById('ssdForm');
+const form = document.getElementById('shipForm');
+const card = document.getElementById('card');
 const draftsEl = document.getElementById('drafts');
-const jsonPreview = document.getElementById('jsonPreview');
-const STORAGE_KEY = 'sfCommanderSsdDrafts';
+const STORAGE_KEY = 'sfCommanderShipDrafts';
 
-function parseWeapons(raw) {
-  return raw
-    .split('\n')
-    .map((line) => line.trim())
-    .filter(Boolean)
-    .map((line) => {
-      const [name, ...ranges] = line.split('|').map((part) => part.trim());
-      return { name, ranges };
-    });
+let moduleData = null;
+
+async function init() {
+  const res = await fetch('./data.json');
+  moduleData = await res.json();
+  fillSelect('weapon');
+  fillSelect('engine');
+  fillSelect('utility');
+  form.addEventListener('input', render);
+  document.getElementById('saveBtn').addEventListener('click', saveDraft);
+  document.getElementById('exportBtn').addEventListener('click', exportCurrent);
+  document.getElementById('clearBtn').addEventListener('click', clearDrafts);
+  render();
+  renderDrafts();
 }
 
-function parseSystems(raw) {
-  return raw
-    .split('\n')
-    .map((line) => line.trim())
-    .filter(Boolean)
-    .map((line) => {
-      const [key, value] = line.split(':').map((part) => part.trim());
-      return { key, value: value ?? '' };
-    });
+function fillSelect(slot) {
+  const select = form.elements[slot];
+  moduleData.modules[slot].forEach((mod) => {
+    const option = document.createElement('option');
+    option.value = mod.name;
+    option.textContent = `${mod.name} (${mod.power}p)`;
+    select.appendChild(option);
+  });
 }
 
-function num(name) {
+function valNum(name) {
   return Number(form.elements[name].value || 0);
 }
 
 function getBuild() {
+  const slots = ['weapon', 'engine', 'utility'];
+  const selectedModules = Object.fromEntries(
+    slots.map((slot) => {
+      const name = form.elements[slot].value;
+      const mod = moduleData.modules[slot].find((m) => m.name === name);
+      return [slot, mod];
+    })
+  );
+
+  const usedPower = Object.values(selectedModules).reduce((sum, mod) => sum + (mod?.power ?? 0), 0);
+  const budget = valNum('powerBudget');
+
   return {
-    identity: {
-      name: form.elements.name.value,
-      classType: form.elements.classType.value,
-      faction: form.elements.faction.value,
-      points: num('points')
+    name: form.elements.name.value,
+    faction: form.elements.faction.value,
+    class: form.elements.shipClass.value,
+    baseSize: form.elements.baseSize.value,
+    stats: {
+      attack: valNum('attack'),
+      defense: valNum('defense'),
+      hull: valNum('hull'),
+      shields: valNum('shields')
     },
-    engineering: {
-      move: num('move'),
-      turn: num('turn'),
-      special: num('special'),
-      power: num('power')
+    power: {
+      budget,
+      used: usedPower,
+      valid: usedPower <= budget
     },
-    shields: {
-      forward: num('shieldFwd'),
-      aft: num('shieldAft'),
-      port: num('shieldPort'),
-      starboard: num('shieldStbd')
-    },
-    weapons: parseWeapons(form.elements.weapons.value),
-    systems: parseSystems(form.elements.systems.value)
+    modules: selectedModules
   };
-}
-
-function renderPreview(build) {
-  document.getElementById('pvName').textContent = `${build.identity.name}`;
-  document.getElementById('pvMove').textContent = build.engineering.move;
-  document.getElementById('pvTurn').textContent = build.engineering.turn;
-  document.getElementById('pvSpecial').textContent = build.engineering.special;
-  document.getElementById('pvPower').textContent = build.engineering.power;
-
-  document.getElementById('pvShieldFwd').textContent = build.shields.forward;
-  document.getElementById('pvShieldAft').textContent = build.shields.aft;
-  document.getElementById('pvShieldPort').textContent = build.shields.port;
-  document.getElementById('pvShieldStbd').textContent = build.shields.starboard;
-
-  const weaponsEl = document.getElementById('pvWeapons');
-  weaponsEl.innerHTML = '';
-  build.weapons.forEach((weapon) => {
-    const row = document.createElement('div');
-    row.className = 'weapon-row';
-    row.innerHTML = `<div class="weapon-name">${weapon.name}</div><div class="weapon-ranges">${weapon.ranges.join(' • ')}</div>`;
-    weaponsEl.appendChild(row);
-  });
-
-  const systemsEl = document.getElementById('pvSystems');
-  systemsEl.innerHTML = '';
-  build.systems.forEach((entry) => {
-    const key = document.createElement('span');
-    key.textContent = entry.key;
-    const val = document.createElement('strong');
-    val.textContent = entry.value;
-    systemsEl.appendChild(key);
-    systemsEl.appendChild(val);
-  });
-
-  document.getElementById('pvFaction').textContent = build.identity.faction;
-  document.getElementById('pvPoints').textContent = String(build.identity.points);
 }
 
 function render() {
   const build = getBuild();
-  renderPreview(build);
-  jsonPreview.textContent = JSON.stringify(build, null, 2);
+  card.textContent = JSON.stringify(build, null, 2);
+  card.style.border = build.power.valid ? '1px solid #285e43' : '1px solid #8a2f2f';
 }
 
 function loadDrafts() {
   return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
 }
 
-function renderDrafts() {
-  draftsEl.innerHTML = '';
-  const drafts = loadDrafts();
-  if (!drafts.length) {
-    draftsEl.innerHTML = '<li>No drafts saved yet.</li>';
-    return;
-  }
-
-  drafts.slice().reverse().forEach((entry) => {
-    const li = document.createElement('li');
-    const btn = document.createElement('button');
-    btn.type = 'button';
-    btn.textContent = `${entry.draft.identity.name} (${new Date(entry.savedAt).toLocaleString()})`;
-    btn.addEventListener('click', () => restoreDraft(entry.draft));
-    li.appendChild(btn);
-    draftsEl.appendChild(li);
-  });
-}
-
-function restoreDraft(draft) {
-  form.elements.name.value = draft.identity.name;
-  form.elements.classType.value = draft.identity.classType;
-  form.elements.faction.value = draft.identity.faction;
-  form.elements.points.value = draft.identity.points;
-
-  form.elements.move.value = draft.engineering.move;
-  form.elements.turn.value = draft.engineering.turn;
-  form.elements.special.value = draft.engineering.special;
-  form.elements.power.value = draft.engineering.power;
-
-  form.elements.shieldFwd.value = draft.shields.forward;
-  form.elements.shieldAft.value = draft.shields.aft;
-  form.elements.shieldPort.value = draft.shields.port;
-  form.elements.shieldStbd.value = draft.shields.starboard;
-
-  form.elements.weapons.value = draft.weapons.map((item) => [item.name, ...item.ranges].join('|')).join('\n');
-  form.elements.systems.value = draft.systems.map((item) => `${item.key}:${item.value}`).join('\n');
-  render();
-}
-
 function saveDraft() {
+  const draft = getBuild();
   const drafts = loadDrafts();
-  drafts.push({ id: crypto.randomUUID(), savedAt: new Date().toISOString(), draft: getBuild() });
+  drafts.push({ id: crypto.randomUUID(), savedAt: new Date().toISOString(), draft });
   localStorage.setItem(STORAGE_KEY, JSON.stringify(drafts));
   renderDrafts();
 }
@@ -153,20 +90,27 @@ function clearDrafts() {
 }
 
 function exportCurrent() {
-  const name = form.elements.name.value || 'starforce-ssd';
   const blob = new Blob([JSON.stringify(getBuild(), null, 2)], { type: 'application/json' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
-  a.download = `${name}.json`;
+  a.download = `${form.elements.name.value || 'ship-build'}.json`;
   a.click();
   URL.revokeObjectURL(url);
 }
 
-form.addEventListener('input', render);
-document.getElementById('saveBtn').addEventListener('click', saveDraft);
-document.getElementById('clearBtn').addEventListener('click', clearDrafts);
-document.getElementById('exportBtn').addEventListener('click', exportCurrent);
+function renderDrafts() {
+  draftsEl.innerHTML = '';
+  const drafts = loadDrafts();
+  if (drafts.length === 0) {
+    draftsEl.innerHTML = '<li>No drafts saved yet.</li>';
+    return;
+  }
+  drafts.slice().reverse().forEach((entry) => {
+    const li = document.createElement('li');
+    li.textContent = `${entry.draft.name || 'Unnamed Ship'} — ${new Date(entry.savedAt).toLocaleString()}`;
+    draftsEl.appendChild(li);
+  });
+}
 
-render();
-renderDrafts();
+init();
