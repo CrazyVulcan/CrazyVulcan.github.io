@@ -50,6 +50,12 @@ function getBuild() {
       port: num('shieldPort'),
       starboard: num('shieldStbd')
     },
+    shieldGens: {
+      forward: num('shieldGenFwd'),
+      aft: num('shieldGenAft'),
+      port: num('shieldGenPort'),
+      starboard: num('shieldGenStbd')
+    },
     textBlocks: {
       functions: form.elements.functions.value,
       powerSystem: form.elements.powerSystem.value,
@@ -58,6 +64,16 @@ function getBuild() {
     weapons: parseWeapons(form.elements.weapons.value),
     systems: parseSystems(form.elements.systems.value)
   };
+}
+
+function renderBoxes(containerId, count, className) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = '';
+  for (let i = 0; i < count; i += 1) {
+    const box = document.createElement('span');
+    box.className = className;
+    container.appendChild(box);
+  }
 }
 
 function weaponSlot(id, weapon) {
@@ -87,6 +103,19 @@ function renderPreview(build) {
   document.getElementById('pvShieldAft').textContent = String(build.shields.aft).padStart(2, '0');
   document.getElementById('pvShieldPort').textContent = String(build.shields.port).padStart(2, '0');
   document.getElementById('pvShieldStbd').textContent = String(build.shields.starboard).padStart(2, '0');
+
+  const totalShieldGens = build.shieldGens.forward + build.shieldGens.aft + build.shieldGens.port + build.shieldGens.starboard;
+  document.getElementById('pvShieldGenTotal').textContent = totalShieldGens;
+
+  renderBoxes('pvFwdShieldBoxes', build.shields.forward, 'shield-box');
+  renderBoxes('pvAftShieldBoxes', build.shields.aft, 'shield-box');
+  renderBoxes('pvPortShieldBoxes', build.shields.port, 'shield-box');
+  renderBoxes('pvStbdShieldBoxes', build.shields.starboard, 'shield-box');
+
+  renderBoxes('pvFwdGenBoxes', build.shieldGens.forward, 'shield-gen');
+  renderBoxes('pvAftGenBoxes', build.shieldGens.aft, 'shield-gen');
+  renderBoxes('pvPortGenBoxes', build.shieldGens.port, 'shield-gen');
+  renderBoxes('pvStbdGenBoxes', build.shieldGens.starboard, 'shield-gen');
 
   document.getElementById('pvFunctions').textContent = build.textBlocks.functions;
   document.getElementById('pvPowerSystem').textContent = build.textBlocks.powerSystem;
@@ -152,6 +181,11 @@ function restoreDraft(draft) {
   form.elements.shieldAft.value = draft.shields?.aft ?? 0;
   form.elements.shieldPort.value = draft.shields?.port ?? 0;
   form.elements.shieldStbd.value = draft.shields?.starboard ?? 0;
+
+  form.elements.shieldGenFwd.value = draft.shieldGens?.forward ?? 0;
+  form.elements.shieldGenAft.value = draft.shieldGens?.aft ?? 0;
+  form.elements.shieldGenPort.value = draft.shieldGens?.port ?? 0;
+  form.elements.shieldGenStbd.value = draft.shieldGens?.starboard ?? 0;
 
   form.elements.functions.value = draft.textBlocks?.functions ?? '';
   form.elements.powerSystem.value = draft.textBlocks?.powerSystem ?? '';

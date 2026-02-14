@@ -36,6 +36,12 @@
           <label>Port <input name="shieldPort" type="number" min="0" value="0" /></label>
           <label>Starboard <input name="shieldStbd" type="number" min="0" value="0" /></label>
         </div>
+        <div class="grid2">
+          <label>Fwd Shield Generators <input name="shieldGenFwd" type="number" min="0" value="0" /></label>
+          <label>Aft Shield Generators <input name="shieldGenAft" type="number" min="0" value="0" /></label>
+          <label>Port Shield Generators <input name="shieldGenPort" type="number" min="0" value="0" /></label>
+          <label>Stbd Shield Generators <input name="shieldGenStbd" type="number" min="0" value="0" /></label>
+        </div>
 
         <h2>Weapons (up to 4 lines)</h2>
         <label><textarea name="weapons" rows="6" placeholder="MK-4 A/MAT TORPEDO|0-4|5-10|11-14|15-20"></textarea></label>
@@ -94,12 +100,25 @@
           <section class="col middle-col">
             <h3>SHIELDS</h3>
             <div class="shield-top">FWD SHIELD <b id="pvShieldFwd">00</b></div>
+            <div class="shield-box-row" id="pvFwdShieldBoxes"></div>
+            <div class="shield-gen-row" id="pvFwdGenBoxes"></div>
+            <div class="shield-gen-label">SHIELD GEN <b id="pvShieldGenTotal">0</b></div>
             <div class="shield-body">
-              <span class="side port">PORT SHIELD <b id="pvShieldPort">00</b></span>
+              <div class="side side-port">
+                <span class="side-label">PORT SHIELD <b id="pvShieldPort">00</b></span>
+                <div class="shield-box-col" id="pvPortShieldBoxes"></div>
+                <div class="shield-gen-col" id="pvPortGenBoxes"></div>
+              </div>
               <div class="ship-silhouette"></div>
-              <span class="side stbd">STBD SHIELD <b id="pvShieldStbd">00</b></span>
+              <div class="side side-stbd">
+                <span class="side-label">STBD SHIELD <b id="pvShieldStbd">00</b></span>
+                <div class="shield-box-col" id="pvStbdShieldBoxes"></div>
+                <div class="shield-gen-col" id="pvStbdGenBoxes"></div>
+              </div>
             </div>
             <div class="shield-bottom">AFT SHIELD <b id="pvShieldAft">00</b></div>
+            <div class="shield-box-row" id="pvAftShieldBoxes"></div>
+            <div class="shield-gen-row" id="pvAftGenBoxes"></div>
             <div class="systems-box">
               <h3>SYSTEMS</h3>
               <pre id="pvSystems"></pre>

@@ -15,6 +15,7 @@ Open: `http://localhost:4173`
 
 - Left-side stat editor with right-side live SSD template preview
 - Template sections for engineering, shields, weapons, systems, and structure footer
+- Shield box + shield-generator box rendering per facing (Fwd/Port/Stbd/Aft)
 - Multi-line text blocks for functions/power/maneuvering
 - Save and restore drafts with `localStorage`
 - Export current SSD build as JSON

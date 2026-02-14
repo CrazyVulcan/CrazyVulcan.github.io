@@ -29,11 +29,49 @@ button.ghost { background: #273055; }
 
 .middle-col { border: 2px solid #09a6de; background: #f8f8f8; }
 .shield-top, .shield-bottom { background: #16a7dd; color: #fff; text-align: center; font-weight: 800; padding: 0.25rem; }
+.shield-box-row { display: flex; flex-wrap: wrap; gap: 4px; padding: 0.25rem 0.35rem; min-height: 22px; justify-content: center; }
+.shield-gen-row { display: flex; flex-wrap: wrap; gap: 4px; padding: 0 0.35rem 0.25rem; min-height: 22px; justify-content: center; }
+.shield-gen-label { text-align: center; font-weight: 800; color: #123; margin-bottom: 0.15rem; }
+.shield-box {
+  width: 12px;
+  height: 12px;
+  border: 2px solid #08a8df;
+  box-sizing: border-box;
+}
+.shield-gen {
+  width: 12px;
+  height: 12px;
+  border: 2px solid #00b050;
+  box-sizing: border-box;
+}
+
 .shield-body { position: relative; min-height: 285px; background: #e2e2e2; display: flex; align-items: center; justify-content: center; }
 .ship-silhouette { width: 32%; height: 56%; background: linear-gradient(180deg,#31b5ea,#0095d9); border-radius: 52% 52% 35% 35% / 60% 60% 40% 40%; }
-.side { position: absolute; top: 50%; transform: translateY(-50%) rotate(-90deg); color: #fff; background: #16a7dd; padding: 0.2rem 0.55rem; font-weight: 800; }
-.side.port { left: -42px; }
-.side.stbd { right: -44px; transform: translateY(-50%) rotate(90deg); }
+.side {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.side-port { left: 8px; }
+.side-stbd { right: 8px; flex-direction: row-reverse; }
+.side-label {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  color: #fff;
+  background: #16a7dd;
+  padding: 0.35rem 0.2rem;
+  font-weight: 800;
+}
+.shield-box-col, .shield-gen-col {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-height: 112px;
+  justify-content: center;
+}
 .systems-box { border-top: 2px solid #f0b500; margin-top: 0.2rem; }
 .systems-box h3 { border-color: #f0b500; }
 .systems-box pre { min-height: 92px; margin: 0; white-space: pre-wrap; color: #223; }
