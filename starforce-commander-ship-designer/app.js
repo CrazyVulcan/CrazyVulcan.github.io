@@ -36,19 +36,13 @@ function getBuild() {
       name: form.elements.name.value,
       classType: form.elements.classType.value,
       faction: form.elements.faction.value,
-      points: num('points')
-    },
-    coreStats: {
-      attack: num('attack'),
-      defense: num('defense'),
-      hull: num('hull'),
-      crew: num('crew')
+      era: form.elements.era.value
     },
     engineering: {
       move: num('move'),
+      vector: num('vector'),
       turn: num('turn'),
-      special: num('special'),
-      power: num('power')
+      special: num('special')
     },
     shields: {
       forward: num('shieldFwd'),
@@ -56,59 +50,91 @@ function getBuild() {
       port: num('shieldPort'),
       starboard: num('shieldStbd')
     },
+    shieldGens: {
+      forward: num('shieldGenFwd'),
+      aft: num('shieldGenAft'),
+      port: num('shieldGenPort'),
+      starboard: num('shieldGenStbd')
+    },
+    textBlocks: {
+      functions: form.elements.functions.value,
+      powerSystem: form.elements.powerSystem.value,
+      maneuvering: form.elements.maneuvering.value
+    },
     weapons: parseWeapons(form.elements.weapons.value),
     systems: parseSystems(form.elements.systems.value)
   };
 }
 
-function renderPreview(build) {
-  document.getElementById('pvName').textContent = build.identity.name || 'Unnamed Ship';
-  document.getElementById('pvClass').textContent = build.identity.classType || 'Unknown Class';
+function renderBoxes(containerId, count, className) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = '';
+  for (let i = 0; i < count; i += 1) {
+    const box = document.createElement('span');
+    box.className = className;
+    container.appendChild(box);
+  }
+}
 
-  document.getElementById('pvAttack').textContent = build.coreStats.attack;
-  document.getElementById('pvDefense').textContent = build.coreStats.defense;
-  document.getElementById('pvHull').textContent = build.coreStats.hull;
-  document.getElementById('pvCrew').textContent = build.coreStats.crew;
+function weaponSlot(id, weapon) {
+  const title = document.getElementById(`pvWpn${id}Title`);
+  const body = document.getElementById(`pvWpn${id}Body`);
+  if (!weapon) {
+    title.textContent = 'WPN NAME TYP';
+    body.textContent = '';
+    return;
+  }
+  title.textContent = weapon.name || 'WPN NAME TYP';
+  body.textContent = weapon.ranges.join('  •  ');
+}
+
+function renderPreview(build) {
+  document.getElementById('pvName').textContent = build.identity.name || 'SHIP NAME / ID';
+  document.getElementById('pvClass').textContent = build.identity.classType || 'CLASSNAME ID-class Weight Class';
+  document.getElementById('pvFaction').textContent = build.identity.faction || 'COMMON';
+  document.getElementById('pvEra').textContent = build.identity.era || 'ERA';
 
   document.getElementById('pvMove').textContent = build.engineering.move;
+  document.getElementById('pvVector').textContent = build.engineering.vector;
   document.getElementById('pvTurn').textContent = build.engineering.turn;
   document.getElementById('pvSpecial').textContent = build.engineering.special;
-  document.getElementById('pvPower').textContent = build.engineering.power;
 
-  document.getElementById('pvShieldFwd').textContent = build.shields.forward;
-  document.getElementById('pvShieldAft').textContent = build.shields.aft;
-  document.getElementById('pvShieldPort').textContent = build.shields.port;
-  document.getElementById('pvShieldStbd').textContent = build.shields.starboard;
+  document.getElementById('pvShieldFwd').textContent = String(build.shields.forward).padStart(2, '0');
+  document.getElementById('pvShieldAft').textContent = String(build.shields.aft).padStart(2, '0');
+  document.getElementById('pvShieldPort').textContent = String(build.shields.port).padStart(2, '0');
+  document.getElementById('pvShieldStbd').textContent = String(build.shields.starboard).padStart(2, '0');
 
-  const weaponsEl = document.getElementById('pvWeapons');
-  weaponsEl.innerHTML = '';
-  build.weapons.forEach((weapon) => {
-    const row = document.createElement('div');
-    row.className = 'weapon-row';
-    row.innerHTML = `<div class="weapon-name">${weapon.name}</div><div class="weapon-ranges">${weapon.ranges.join(' • ')}</div>`;
-    weaponsEl.appendChild(row);
-  });
+  const totalShieldGens = build.shieldGens.forward + build.shieldGens.aft + build.shieldGens.port + build.shieldGens.starboard;
+  document.getElementById('pvShieldGenTotal').textContent = totalShieldGens;
 
-  const systemsEl = document.getElementById('pvSystems');
-  systemsEl.innerHTML = '';
-  build.systems.forEach((entry) => {
-    const key = document.createElement('span');
-    key.textContent = entry.key;
-    const val = document.createElement('strong');
-    val.textContent = entry.value;
-    systemsEl.appendChild(key);
-    systemsEl.appendChild(val);
-  });
+  renderBoxes('pvFwdShieldBoxes', build.shields.forward, 'shield-box');
+  renderBoxes('pvAftShieldBoxes', build.shields.aft, 'shield-box');
+  renderBoxes('pvPortShieldBoxes', build.shields.port, 'shield-box');
+  renderBoxes('pvStbdShieldBoxes', build.shields.starboard, 'shield-box');
 
-  document.getElementById('pvFaction').textContent = build.identity.faction || 'UNKNOWN';
-  document.getElementById('pvPoints').textContent = String(build.identity.points);
+  renderBoxes('pvFwdGenBoxes', build.shieldGens.forward, 'shield-gen');
+  renderBoxes('pvAftGenBoxes', build.shieldGens.aft, 'shield-gen');
+  renderBoxes('pvPortGenBoxes', build.shieldGens.port, 'shield-gen');
+  renderBoxes('pvStbdGenBoxes', build.shieldGens.starboard, 'shield-gen');
+
+  document.getElementById('pvFunctions').textContent = build.textBlocks.functions;
+  document.getElementById('pvPowerSystem').textContent = build.textBlocks.powerSystem;
+  document.getElementById('pvManeuvering').textContent = build.textBlocks.maneuvering;
+
+  weaponSlot(1, build.weapons[0]);
+  weaponSlot(2, build.weapons[1]);
+  weaponSlot(3, build.weapons[2]);
+  weaponSlot(4, build.weapons[3]);
+
+  const systemsText = build.systems.map((entry) => `${entry.key} ${entry.value}`.trim()).join('\n');
+  document.getElementById('pvSystems').textContent = systemsText;
 }
 
 function pulseLiveBadge() {
-  liveBadge.style.opacity = '0.4';
+  liveBadge.style.opacity = '0.35';
   setTimeout(() => {
     liveBadge.style.opacity = '1';
-  }, 120);
+  }, 110);
 }
 
 function render() {
@@ -129,12 +155,11 @@ function renderDrafts() {
     draftsEl.innerHTML = '<li>No drafts saved yet.</li>';
     return;
   }
-
   drafts.slice().reverse().forEach((entry) => {
     const li = document.createElement('li');
     const btn = document.createElement('button');
     btn.type = 'button';
-    btn.textContent = `${entry.draft.identity.name} (${new Date(entry.savedAt).toLocaleString()})`;
+    btn.textContent = `${entry.draft.identity.name || 'Unnamed Ship'} (${new Date(entry.savedAt).toLocaleString()})`;
     btn.addEventListener('click', () => restoreDraft(entry.draft));
     li.appendChild(btn);
     draftsEl.appendChild(li);
@@ -142,28 +167,33 @@ function renderDrafts() {
 }
 
 function restoreDraft(draft) {
-  form.elements.name.value = draft.identity.name;
-  form.elements.classType.value = draft.identity.classType;
-  form.elements.faction.value = draft.identity.faction;
-  form.elements.points.value = draft.identity.points;
+  form.elements.name.value = draft.identity?.name ?? '';
+  form.elements.classType.value = draft.identity?.classType ?? '';
+  form.elements.faction.value = draft.identity?.faction ?? '';
+  form.elements.era.value = draft.identity?.era ?? '';
 
-  form.elements.attack.value = draft.coreStats?.attack ?? 0;
-  form.elements.defense.value = draft.coreStats?.defense ?? 0;
-  form.elements.hull.value = draft.coreStats?.hull ?? 0;
-  form.elements.crew.value = draft.coreStats?.crew ?? 0;
+  form.elements.move.value = draft.engineering?.move ?? 0;
+  form.elements.vector.value = draft.engineering?.vector ?? 0;
+  form.elements.turn.value = draft.engineering?.turn ?? 0;
+  form.elements.special.value = draft.engineering?.special ?? 0;
 
-  form.elements.move.value = draft.engineering.move;
-  form.elements.turn.value = draft.engineering.turn;
-  form.elements.special.value = draft.engineering.special;
-  form.elements.power.value = draft.engineering.power;
+  form.elements.shieldFwd.value = draft.shields?.forward ?? 0;
+  form.elements.shieldAft.value = draft.shields?.aft ?? 0;
+  form.elements.shieldPort.value = draft.shields?.port ?? 0;
+  form.elements.shieldStbd.value = draft.shields?.starboard ?? 0;
 
-  form.elements.shieldFwd.value = draft.shields.forward;
-  form.elements.shieldAft.value = draft.shields.aft;
-  form.elements.shieldPort.value = draft.shields.port;
-  form.elements.shieldStbd.value = draft.shields.starboard;
+  form.elements.shieldGenFwd.value = draft.shieldGens?.forward ?? 0;
+  form.elements.shieldGenAft.value = draft.shieldGens?.aft ?? 0;
+  form.elements.shieldGenPort.value = draft.shieldGens?.port ?? 0;
+  form.elements.shieldGenStbd.value = draft.shieldGens?.starboard ?? 0;
 
-  form.elements.weapons.value = draft.weapons.map((item) => [item.name, ...item.ranges].join('|')).join('\n');
-  form.elements.systems.value = draft.systems.map((item) => `${item.key}:${item.value}`).join('\n');
+  form.elements.functions.value = draft.textBlocks?.functions ?? '';
+  form.elements.powerSystem.value = draft.textBlocks?.powerSystem ?? '';
+  form.elements.maneuvering.value = draft.textBlocks?.maneuvering ?? '';
+
+  form.elements.weapons.value = (draft.weapons ?? []).map((item) => [item.name, ...(item.ranges ?? [])].join('|')).join('\n');
+  form.elements.systems.value = (draft.systems ?? []).map((item) => `${item.key}:${item.value ?? ''}`).join('\n');
+
   render();
 }
 

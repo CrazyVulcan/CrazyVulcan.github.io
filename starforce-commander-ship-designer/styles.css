@@ -1,44 +1,99 @@
-:root {
-  color-scheme: dark;
-  font-family: Inter, Segoe UI, Roboto, sans-serif;
-}
-
+:root { color-scheme: dark; font-family: Inter, Segoe UI, Roboto, sans-serif; }
 body { margin: 0; background: #0d1222; color: #eaf0ff; }
-.layout { display: grid; grid-template-columns: minmax(330px, 420px) 1fr; gap: 1rem; padding: 1rem; }
+.layout { display: grid; grid-template-columns: minmax(340px, 430px) 1fr; gap: 1rem; padding: 1rem; }
 .panel { background: #151d35; border: 1px solid #25315c; border-radius: 10px; padding: 1rem; }
 .controls { max-height: calc(100vh - 2rem); overflow: auto; }
 .preview-wrap { position: sticky; top: 1rem; align-self: start; }
 .stack label { display: block; margin: 0.5rem 0; }
-textarea, input, button { width: 100%; margin-top: 0.25rem; padding: 0.5rem; border-radius: 8px; border: 1px solid #32427a; background: #0f1731; color: #eaf0ff; }
+textarea, input, button { width: 100%; margin-top: 0.25rem; padding: 0.45rem; border-radius: 8px; border: 1px solid #32427a; background: #0f1731; color: #eaf0ff; }
 .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; }
 .row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem; margin-top: 0.75rem; }
 button { cursor: pointer; background: #3d62ff; border: none; font-weight: 600; }
 button.ghost { background: #273055; }
 .muted { color: #a7b4da; }
+.preview-head { display: flex; justify-content: space-between; align-items: center; }
+.live-badge { background: #11b96b; color: #072b19; font-size: 0.76rem; font-weight: 800; border-radius: 999px; padding: 0.12rem 0.5rem; }
 
-.preview-head { display: flex; align-items: center; justify-content: space-between; }
-.live-badge { background: #11b96b; color: #072b19; font-weight: 800; font-size: 0.76rem; border-radius: 999px; padding: 0.15rem 0.55rem; }
+.ssd-template { border: 3px solid #0d78c5; background: #dedede; color: #001a34; border-radius: 8px; overflow: hidden; }
+.template-top { display: grid; grid-template-columns: 1fr 1.4fr; border-bottom: 3px solid #0d78c5; }
+.template-ship, .template-class { padding: 0.45rem 0.6rem; font-weight: 800; font-size: 1.1rem; border-right: 3px solid #0d78c5; background: #edf4fa; }
+.template-class { border-right: 0; text-align: center; }
+.template-columns { display: grid; grid-template-columns: 1.12fr 1fr 0.82fr; gap: 0.28rem; padding: 0.25rem; }
+.col h3 { margin: 0 0 0.2rem; background: #4a5a68; color: #fff; text-align: center; padding: 0.25rem 0.4rem; border: 2px solid #1d2d3a; }
 
-.ssd { border: 4px solid #0098d7; background: #dce1e8; color: #002244; border-radius: 12px; overflow: hidden; }
-.ssd-header { background: #046eb6; color: #fff; font-weight: 800; font-size: 1.25rem; padding: 0.6rem 0.8rem; }
-.header-sub { font-size: 0.9rem; opacity: 0.9; }
-.ssd-grid { display: grid; grid-template-columns: 1.2fr 1.05fr 1fr; gap: 0.35rem; padding: 0.35rem; }
-.block { border: 3px solid #00a9e0; background: #f2f5fa; min-height: 150px; }
-.block h3 { margin: 0; padding: 0.35rem 0.5rem; background: #046eb6; color: #fff; font-size: 1rem; }
-.block ul { margin: 0; padding: 0.6rem 0.8rem; list-style: none; line-height: 1.45; font-weight: 700; }
-.weapons .weapon-row { border-top: 2px solid #ef2b2d; padding: 0.45rem 0.55rem; }
-.weapons .weapon-row:first-child { border-top: 0; }
-.weapon-name { color: #b30000; font-weight: 800; }
-.weapon-ranges { font-size: 0.85rem; color: #444; }
-#pvSystems { display: grid; grid-template-columns: 1fr 1fr; gap: 0.25rem 0.9rem; padding: 0.6rem 0.8rem; font-weight: 700; }
-.ssd-footer { display: flex; justify-content: space-between; background: #046eb6; color: #fff; padding: 0.4rem 0.6rem; font-weight: 800; }
+.eng-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.2rem; margin-bottom: 0.22rem; }
+.eng-stats span { background: #4a5a68; color: #fff; text-align: center; padding: 0.3rem 0.15rem; border: 2px solid #1d2d3a; font-size: 0.9rem; }
+.green-block { border: 2px solid #00a750; background: #f0f0f0; margin-bottom: 0.2rem; }
+.green-block h4 { margin: 0; background: #00b050; color: #fff; padding: 0.18rem 0.28rem; font-size: 0.8rem; }
+.green-block pre { min-height: 56px; margin: 0; background: transparent; color: #233; white-space: pre-wrap; }
 
-pre { background: #0b1128; color: #d5e2ff; padding: 0.65rem; border-radius: 8px; overflow: auto; max-height: 240px; }
+.middle-col { border: 2px solid #09a6de; background: #f8f8f8; }
+.shield-top, .shield-bottom { background: #16a7dd; color: #fff; text-align: center; font-weight: 800; padding: 0.25rem; }
+.shield-box-row { display: flex; flex-wrap: wrap; gap: 4px; padding: 0.25rem 0.35rem; min-height: 22px; justify-content: center; }
+.shield-gen-row { display: flex; flex-wrap: wrap; gap: 4px; padding: 0 0.35rem 0.25rem; min-height: 22px; justify-content: center; }
+.shield-gen-label { text-align: center; font-weight: 800; color: #123; margin-bottom: 0.15rem; }
+.shield-box {
+  width: 12px;
+  height: 12px;
+  border: 2px solid #08a8df;
+  box-sizing: border-box;
+}
+.shield-gen {
+  width: 12px;
+  height: 12px;
+  border: 2px solid #00b050;
+  box-sizing: border-box;
+}
+
+.shield-body { position: relative; min-height: 285px; background: #e2e2e2; display: flex; align-items: center; justify-content: center; }
+.ship-silhouette { width: 32%; height: 56%; background: linear-gradient(180deg,#31b5ea,#0095d9); border-radius: 52% 52% 35% 35% / 60% 60% 40% 40%; }
+.side {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.side-port { left: 8px; }
+.side-stbd { right: 8px; flex-direction: row-reverse; }
+.side-label {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  color: #fff;
+  background: #16a7dd;
+  padding: 0.35rem 0.2rem;
+  font-weight: 800;
+}
+.shield-box-col, .shield-gen-col {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-height: 112px;
+  justify-content: center;
+}
+.systems-box { border-top: 2px solid #f0b500; margin-top: 0.2rem; }
+.systems-box h3 { border-color: #f0b500; }
+.systems-box pre { min-height: 92px; margin: 0; white-space: pre-wrap; color: #223; }
+
+.right-col { border: 2px solid #ff0000; background: #fafafa; }
+.weapon-slot { border-top: 2px solid #ff0000; min-height: 104px; }
+.weapon-slot:first-of-type { border-top: 0; }
+.slot-title { background: #ff0000; color: #fff; font-weight: 800; padding: 0.17rem 0.3rem; }
+.slot-body { white-space: pre-wrap; color: #233; padding: 0.35rem 0.38rem; min-height: 72px; }
+
+.template-bottom { display: grid; grid-template-columns: 1fr auto auto; gap: 0.3rem; background: #4a5a68; color: #fff; font-weight: 800; padding: 0.28rem 0.45rem; border-top: 3px solid #0d78c5; }
+.structure { letter-spacing: 0.03em; }
+
+pre { background: #0b1128; color: #d5e2ff; padding: 0.65rem; border-radius: 8px; overflow: auto; max-height: 220px; }
 #drafts { padding-left: 1rem; }
 
-@media (max-width: 1100px) {
+@media (max-width: 1280px) {
   .layout { grid-template-columns: 1fr; }
   .controls { max-height: none; overflow: visible; }
   .preview-wrap { position: static; }
-  .ssd-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 980px) {
+  .template-columns { grid-template-columns: 1fr; }
+  .side.port,.side.stbd { position: static; transform: none; display: inline-block; margin: 0.2rem; }
 }

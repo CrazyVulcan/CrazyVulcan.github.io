@@ -1,6 +1,6 @@
 # Starforce Commander SSD Designer
 
-A static prototype for designing **Starforce Commander SSD-style ship cards** inspired by the Yorktown II layout.
+A static prototype for designing **Starforce Commander SSD-style ship cards** inspired by Yorktown-style layout blocks.
 
 ## Run locally
 
@@ -13,8 +13,9 @@ Open: `http://localhost:4173`
 
 ## Features
 
-- SSD-focused sections: identity, engineering, shields, weapons, and systems
-- Live SSD preview card while editing fields
-- Weapons/system parsing from simple line-based text inputs
+- Left-side stat editor with right-side live SSD template preview
+- Template sections for engineering, shields, weapons, systems, and structure footer
+- Shield box + shield-generator box rendering per facing (Fwd/Port/Stbd/Aft)
+- Multi-line text blocks for functions/power/maneuvering
 - Save and restore drafts with `localStorage`
 - Export current SSD build as JSON

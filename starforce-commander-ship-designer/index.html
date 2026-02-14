@@ -10,48 +10,49 @@
   <main class="layout">
     <section class="panel controls">
       <h1>Starforce Commander SSD Designer</h1>
-      <p class="muted">Edit stats on the left — the SSD on the right updates live as you type.</p>
+      <p class="muted">This version mirrors your blank SSD template: left-side editing, right-side live layout preview.</p>
 
       <form id="ssdForm" class="stack">
         <h2>Identity</h2>
-        <label>Ship Name / ID <input name="name" value="YORKTOWN II-class Heavy Cruiser" /></label>
-        <label>Class Type <input name="classType" value="Heavy Cruiser" /></label>
-        <label>Faction <input name="faction" value="COMMON" /></label>
-        <label>Points <input name="points" type="number" min="0" value="3655" /></label>
-
-        <h2>Core Stats</h2>
+        <label>Ship Name / ID <input name="name" value="SHIP NAME / ID" /></label>
+        <label>Class Label <input name="classType" value="CLASSNAME ID-class Weight Class" /></label>
         <div class="grid2">
-          <label>Attack <input name="attack" type="number" min="0" value="4" /></label>
-          <label>Defense <input name="defense" type="number" min="0" value="3" /></label>
-          <label>Hull <input name="hull" type="number" min="0" value="40" /></label>
-          <label>Crew <input name="crew" type="number" min="0" value="11" /></label>
+          <label>Faction <input name="faction" value="COMMON" /></label>
+          <label>Era <input name="era" value="ERA" /></label>
         </div>
 
         <h2>Engineering</h2>
         <div class="grid2">
-          <label>Move <input name="move" type="number" min="0" value="5" /></label>
-          <label>Turn <input name="turn" type="number" min="0" value="2" /></label>
-          <label>Special <input name="special" type="number" min="0" value="4" /></label>
-          <label>PWR <input name="power" type="number" min="0" value="8" /></label>
+          <label>Move <input name="move" type="number" min="0" value="0" /></label>
+          <label>Vector <input name="vector" type="number" min="0" value="0" /></label>
+          <label>Turn <input name="turn" type="number" min="0" value="0" /></label>
+          <label>Special <input name="special" type="number" min="0" value="0" /></label>
         </div>
 
         <h2>Shields</h2>
         <div class="grid2">
-          <label>Forward <input name="shieldFwd" type="number" min="0" value="16" /></label>
-          <label>Aft <input name="shieldAft" type="number" min="0" value="15" /></label>
-          <label>Port <input name="shieldPort" type="number" min="0" value="15" /></label>
-          <label>Starboard <input name="shieldStbd" type="number" min="0" value="15" /></label>
+          <label>Forward <input name="shieldFwd" type="number" min="0" value="0" /></label>
+          <label>Aft <input name="shieldAft" type="number" min="0" value="0" /></label>
+          <label>Port <input name="shieldPort" type="number" min="0" value="0" /></label>
+          <label>Starboard <input name="shieldStbd" type="number" min="0" value="0" /></label>
+        </div>
+        <div class="grid2">
+          <label>Fwd Shield Generators <input name="shieldGenFwd" type="number" min="0" value="0" /></label>
+          <label>Aft Shield Generators <input name="shieldGenAft" type="number" min="0" value="0" /></label>
+          <label>Port Shield Generators <input name="shieldGenPort" type="number" min="0" value="0" /></label>
+          <label>Stbd Shield Generators <input name="shieldGenStbd" type="number" min="0" value="0" /></label>
         </div>
 
-        <h2>Weapons (one per line)</h2>
-        <label><textarea name="weapons" rows="5">MK-4 A/MAT TORPEDO|0-4|5-10|11-14|15-20
-LNC-447 PHASER|0-2|3-5|6-8|9-10|11-12</textarea></label>
+        <h2>Weapons (up to 4 lines)</h2>
+        <label><textarea name="weapons" rows="6" placeholder="MK-4 A/MAT TORPEDO|0-4|5-10|11-14|15-20"></textarea></label>
+
+        <h2>Functions / Power / Maneuvering</h2>
+        <label>Functions + Power Level <textarea name="functions" rows="3" placeholder="ACC/DEC, SIF, BTTY RECH..."></textarea></label>
+        <label>Power System <textarea name="powerSystem" rows="3" placeholder="L MAIN, R MAIN, BATTERY..."></textarea></label>
+        <label>Sublight Drive & Maneuvering <textarea name="maneuvering" rows="3" placeholder="MAX ACC/PHS, DMG, SPD, TURN..."></textarea></label>
 
         <h2>Systems (one per line)</h2>
-        <label><textarea name="systems" rows="4">SCNC:4
-TRAC:2
-SENS:3
-TRN:2</textarea></label>
+        <label><textarea name="systems" rows="4" placeholder="SCNC:0"></textarea></label>
 
         <div class="row">
           <button type="button" id="saveBtn">Save Draft</button>
@@ -67,57 +68,76 @@ TRN:2</textarea></label>
         <span id="liveBadge" class="live-badge">LIVE</span>
       </div>
 
-      <article class="ssd" id="ssdCard">
-        <header class="ssd-header">
-          <div id="pvName"></div>
-          <div id="pvClass" class="header-sub"></div>
+      <article class="ssd-template" id="ssdCard">
+        <header class="template-top">
+          <div class="template-ship" id="pvName">SHIP NAME / ID</div>
+          <div class="template-class" id="pvClass">CLASSNAME ID-class Weight Class</div>
         </header>
 
-        <section class="ssd-grid">
-          <div class="block engineering">
+        <div class="template-columns">
+          <section class="col left-col">
             <h3>ENGINEERING</h3>
-            <ul>
-              <li>MOVE: <strong id="pvMove"></strong></li>
-              <li>TURN: <strong id="pvTurn"></strong></li>
-              <li>SPECIAL: <strong id="pvSpecial"></strong></li>
-              <li>PWR: <strong id="pvPower"></strong></li>
-            </ul>
-          </div>
+            <div class="eng-stats">
+              <span>🚀 <b id="pvMove">0</b></span>
+              <span>🟢 <b id="pvVector">0</b></span>
+              <span>↪ <b id="pvTurn">0</b></span>
+              <span>🔧 <b id="pvSpecial">0</b></span>
+            </div>
+            <div class="green-block">
+              <h4>FUNCTIONS / POWER LEVEL</h4>
+              <pre id="pvFunctions"></pre>
+            </div>
+            <div class="green-block">
+              <h4>POWER SYSTEM</h4>
+              <pre id="pvPowerSystem"></pre>
+            </div>
+            <div class="green-block">
+              <h4>SUBLIGHT DRIVE AND MANEUVERING</h4>
+              <pre id="pvManeuvering"></pre>
+            </div>
+          </section>
 
-          <div class="block shields">
+          <section class="col middle-col">
             <h3>SHIELDS</h3>
-            <ul>
-              <li>FWD: <strong id="pvShieldFwd"></strong></li>
-              <li>AFT: <strong id="pvShieldAft"></strong></li>
-              <li>PORT: <strong id="pvShieldPort"></strong></li>
-              <li>STBD: <strong id="pvShieldStbd"></strong></li>
-            </ul>
-          </div>
+            <div class="shield-top">FWD SHIELD <b id="pvShieldFwd">00</b></div>
+            <div class="shield-box-row" id="pvFwdShieldBoxes"></div>
+            <div class="shield-gen-row" id="pvFwdGenBoxes"></div>
+            <div class="shield-gen-label">SHIELD GEN <b id="pvShieldGenTotal">0</b></div>
+            <div class="shield-body">
+              <div class="side side-port">
+                <span class="side-label">PORT SHIELD <b id="pvShieldPort">00</b></span>
+                <div class="shield-box-col" id="pvPortShieldBoxes"></div>
+                <div class="shield-gen-col" id="pvPortGenBoxes"></div>
+              </div>
+              <div class="ship-silhouette"></div>
+              <div class="side side-stbd">
+                <span class="side-label">STBD SHIELD <b id="pvShieldStbd">00</b></span>
+                <div class="shield-box-col" id="pvStbdShieldBoxes"></div>
+                <div class="shield-gen-col" id="pvStbdGenBoxes"></div>
+              </div>
+            </div>
+            <div class="shield-bottom">AFT SHIELD <b id="pvShieldAft">00</b></div>
+            <div class="shield-box-row" id="pvAftShieldBoxes"></div>
+            <div class="shield-gen-row" id="pvAftGenBoxes"></div>
+            <div class="systems-box">
+              <h3>SYSTEMS</h3>
+              <pre id="pvSystems"></pre>
+            </div>
+          </section>
 
-          <div class="block weapons">
+          <section class="col right-col">
             <h3>WEAPONS</h3>
-            <div id="pvWeapons"></div>
-          </div>
+            <div class="weapon-slot"><div class="slot-title" id="pvWpn1Title">WPN NAME TYP</div><div class="slot-body" id="pvWpn1Body"></div></div>
+            <div class="weapon-slot"><div class="slot-title" id="pvWpn2Title">WPN NAME TYP</div><div class="slot-body" id="pvWpn2Body"></div></div>
+            <div class="weapon-slot"><div class="slot-title" id="pvWpn3Title">WPN NAME TYP</div><div class="slot-body" id="pvWpn3Body"></div></div>
+            <div class="weapon-slot"><div class="slot-title" id="pvWpn4Title">WPN NAME TYP</div><div class="slot-body" id="pvWpn4Body"></div></div>
+          </section>
+        </div>
 
-          <div class="block systems">
-            <h3>SYSTEMS</h3>
-            <div id="pvSystems"></div>
-          </div>
-
-          <div class="block stats">
-            <h3>CORE STATS</h3>
-            <ul>
-              <li>ATT: <strong id="pvAttack"></strong></li>
-              <li>DEF: <strong id="pvDefense"></strong></li>
-              <li>HULL: <strong id="pvHull"></strong></li>
-              <li>CREW: <strong id="pvCrew"></strong></li>
-            </ul>
-          </div>
-        </section>
-
-        <footer class="ssd-footer">
-          <span id="pvFaction"></span>
-          <span id="pvPoints"></span>
+        <footer class="template-bottom">
+          <span class="structure">STRUCTURE</span>
+          <span id="pvFaction">COMMON</span>
+          <span id="pvEra">ERA</span>
         </footer>
       </article>
 
