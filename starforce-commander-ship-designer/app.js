@@ -36,7 +36,7 @@ function getBuild() {
     identity: {
       name: form.elements.name.value,
       classType: form.elements.classType.value,
-      hullIcon: form.elements.hullIcon.value,
+      sizeClassIcon: form.elements.sizeClassIcon.value,
       faction: form.elements.faction.value,
       era: form.elements.era.value
     },
@@ -109,13 +109,13 @@ function renderPreview(build) {
   document.getElementById('pvName').textContent = build.identity.name || 'SHIP NAME / ID';
   document.getElementById('pvClass').textContent = build.identity.classType || 'CLASSNAME ID-class Weight Class';
   document.getElementById('pvFaction').textContent = build.identity.faction || 'COMMON';
-  const hullIcon = document.getElementById('pvHullIcon');
-  const defaultHullIcon = 'assets/hull-size-icon.svg';
-  hullIcon.onerror = () => {
-    if (hullIcon.src.endsWith(defaultHullIcon)) return;
-    hullIcon.src = defaultHullIcon;
+  const sizeClassIcon = document.getElementById('pvSizeClassIcon');
+  const defaultSizeClassIcon = 'assets/size-class-icon.svg';
+  sizeClassIcon.onerror = () => {
+    if (sizeClassIcon.src.endsWith(defaultSizeClassIcon)) return;
+    sizeClassIcon.src = defaultSizeClassIcon;
   };
-  hullIcon.src = build.identity.hullIcon || defaultHullIcon;
+  sizeClassIcon.src = build.identity.sizeClassIcon || build.identity.hullIcon || defaultSizeClassIcon;
   document.getElementById('pvEra').textContent = build.identity.era || 'ERA';
 
   document.getElementById('pvMove').textContent = build.engineering.move;
@@ -222,7 +222,7 @@ function renderDrafts() {
 function restoreDraft(draft) {
   form.elements.name.value = draft.identity?.name ?? '';
   form.elements.classType.value = draft.identity?.classType ?? '';
-  form.elements.hullIcon.value = draft.identity?.hullIcon ?? 'assets/hull-size-icon.svg';
+  form.elements.sizeClassIcon.value = draft.identity?.sizeClassIcon ?? draft.identity?.hullIcon ?? 'assets/size-class-icon.svg';
   form.elements.faction.value = draft.identity?.faction ?? '';
   form.elements.era.value = draft.identity?.era ?? '';
 
