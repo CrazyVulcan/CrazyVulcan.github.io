@@ -101,11 +101,16 @@ button.ghost { background: #273055; }
 .green-block h4 { margin: 0; background: #07af52; color: #fff; padding: 0.15rem 0.25rem; font-size: 0.74rem; letter-spacing: 0.01em; display: flex; justify-content: space-between; }
 .green-block pre { min-height: 80px; margin: 0; background: transparent; color: #233; white-space: pre-wrap; border-radius: 0; font-family: Arial, Helvetica, sans-serif; font-size: 0.8rem; }
 
-.middle-col { border: 3px solid #10a5df; background: #f8f8f8; }
-.shield-top, .shield-bottom { background: #17a8df; color: #fff; text-align: center; font-weight: 900; padding: 0.16rem; font-size: 0.95rem; }
-.shield-box-row { display: flex; flex-wrap: wrap; gap: 4px; padding: 0.25rem 0.35rem; min-height: 22px; justify-content: center; }
-.shield-gen-row { display: flex; flex-wrap: wrap; gap: 4px; padding: 0 0.35rem 0.25rem; min-height: 22px; justify-content: center; }
-.shield-gen-label { text-align: center; font-weight: 900; color: #0872c2; margin: 0.15rem 0 0.25rem; display: flex; justify-content: center; align-items: center; gap: 6px; font-size: 0.92rem; }
+.middle-col { border: 3px solid #10a5df; background: #14a7de; padding: 0.15rem; }
+.shield-frame { border: 3px solid #10a5df; background: #14a7de; padding: 0.18rem 0.18rem 0.12rem; }
+.shield-inner { background: #f8f8f8; border: 2px solid #fff; }
+.shield-top, .shield-bottom { background: #17a8df; color: #fff; text-align: center; font-weight: 900; padding: 0.12rem; font-size: 0.95rem; }
+.shield-top { margin-bottom: 0.12rem; }
+.shield-bottom { margin-top: 0.12rem; }
+.shield-box-row { display: flex; flex-wrap: wrap; gap: 4px; padding: 0.12rem 0.35rem; min-height: 20px; justify-content: center; }
+.shield-gen-row { display: flex; flex-wrap: wrap; gap: 4px; padding: 0.12rem 0.35rem; min-height: 18px; justify-content: center; }
+.fwd-gen-row { padding-top: 0.16rem; padding-bottom: 0.04rem; }
+.shield-gen-label { text-align: center; font-weight: 900; color: #0872c2; margin: 0.08rem 0 0.12rem; display: flex; justify-content: center; align-items: center; gap: 6px; font-size: 0.92rem; }
 .shield-gen-black-row { display: flex; gap: 4px; flex-wrap: wrap; }
 .shield-box {
   width: 12px;
@@ -140,7 +145,9 @@ button.ghost { background: #273055; }
   gap: 6px;
 }
 .side-port { left: 8px; }
-.side-stbd { right: 8px; flex-direction: row-reverse; }
+.side-stbd { right: 8px; }
+.side-port .shield-gen-col { order: 1; }
+.side-port .shield-box-col { order: 2; }
 .side-label {
   writing-mode: vertical-rl;
   text-orientation: mixed;
@@ -157,7 +164,7 @@ button.ghost { background: #273055; }
   min-height: 112px;
   justify-content: center;
 }
-.systems-box { border-top: 0; margin-top: 0.3rem; border: 2px solid #f0b500; }
+.systems-box { border-top: 0; margin-top: 0.3rem; border: 2px solid #f0b500; background: #f8f8f8; }
 .systems-box h3 { border-color: #f0b500; }
 .systems-box pre { height: 158px; max-height: 158px; margin: 0; white-space: pre-wrap; color: #223; background: transparent; border-radius: 0; font-family: Arial, Helvetica, sans-serif; font-size: 0.8rem; overflow: auto; }
 
