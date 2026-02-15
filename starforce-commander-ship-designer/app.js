@@ -36,6 +36,7 @@ function getBuild() {
     identity: {
       name: form.elements.name.value,
       classType: form.elements.classType.value,
+      sizeClassIcon: form.elements.sizeClassIcon.value,
       faction: form.elements.faction.value,
       era: form.elements.era.value
     },
@@ -108,6 +109,13 @@ function renderPreview(build) {
   document.getElementById('pvName').textContent = build.identity.name || 'SHIP NAME / ID';
   document.getElementById('pvClass').textContent = build.identity.classType || 'CLASSNAME ID-class Weight Class';
   document.getElementById('pvFaction').textContent = build.identity.faction || 'COMMON';
+  const sizeClassIcon = document.getElementById('pvSizeClassIcon');
+  const defaultSizeClassIcon = 'assets/size-class-icon.svg';
+  sizeClassIcon.onerror = () => {
+    if (sizeClassIcon.src.endsWith(defaultSizeClassIcon)) return;
+    sizeClassIcon.src = defaultSizeClassIcon;
+  };
+  sizeClassIcon.src = build.identity.sizeClassIcon || build.identity.hullIcon || defaultSizeClassIcon;
   document.getElementById('pvEra').textContent = build.identity.era || 'ERA';
 
   document.getElementById('pvMove').textContent = build.engineering.move;
@@ -164,6 +172,17 @@ function renderPreview(build) {
   renderStructure(build);
 }
 
+function getJsonPreview(build) {
+  if (!build.shipArtDataUrl) {
+    return JSON.stringify(build, null, 2);
+  }
+  const previewBuild = {
+    ...build,
+    shipArtDataUrl: `[image data url omitted: ${build.shipArtDataUrl.length} chars]`
+  };
+  return JSON.stringify(previewBuild, null, 2);
+}
+
 function pulseLiveBadge() {
   liveBadge.style.opacity = '0.35';
   setTimeout(() => {
@@ -174,7 +193,7 @@ function pulseLiveBadge() {
 function render() {
   const build = getBuild();
   renderPreview(build);
-  jsonPreview.textContent = JSON.stringify(build, null, 2);
+  jsonPreview.textContent = getJsonPreview(build);
   pulseLiveBadge();
 }
 
@@ -203,6 +222,7 @@ function renderDrafts() {
 function restoreDraft(draft) {
   form.elements.name.value = draft.identity?.name ?? '';
   form.elements.classType.value = draft.identity?.classType ?? '';
+  form.elements.sizeClassIcon.value = draft.identity?.sizeClassIcon ?? draft.identity?.hullIcon ?? 'assets/size-class-icon.svg';
   form.elements.faction.value = draft.identity?.faction ?? '';
   form.elements.era.value = draft.identity?.era ?? '';
 
