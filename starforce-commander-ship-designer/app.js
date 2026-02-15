@@ -164,6 +164,17 @@ function renderPreview(build) {
   renderStructure(build);
 }
 
+function getJsonPreview(build) {
+  if (!build.shipArtDataUrl) {
+    return JSON.stringify(build, null, 2);
+  }
+  const previewBuild = {
+    ...build,
+    shipArtDataUrl: `[image data url omitted: ${build.shipArtDataUrl.length} chars]`
+  };
+  return JSON.stringify(previewBuild, null, 2);
+}
+
 function pulseLiveBadge() {
   liveBadge.style.opacity = '0.35';
   setTimeout(() => {
@@ -174,7 +185,7 @@ function pulseLiveBadge() {
 function render() {
   const build = getBuild();
   renderPreview(build);
-  jsonPreview.textContent = JSON.stringify(build, null, 2);
+  jsonPreview.textContent = getJsonPreview(build);
   pulseLiveBadge();
 }
 
