@@ -109,15 +109,67 @@ function weaponSlot(id, weapon) {
 function renderStructure(build) {
   const row = document.getElementById('pvStructureBoxes');
   row.innerHTML = '';
-  for (let i = 0; i < build.structure.repairable; i += 1) {
-    const box = document.createElement('span');
-    box.className = 'structure-box';
-    row.appendChild(box);
+
+  const repairable = Math.max(0, Number(build.structure.repairable || 0));
+  const permanent = Math.max(0, Number(build.structure.permanent || 0));
+  const totalBoxes = repairable + permanent;
+  const teamCount = Math.max(1, Number(build.engineering?.special || 0));
+  const gapCount = Math.max(totalBoxes - 1, 0);
+  const markerCount = Math.min(teamCount, gapCount);
+
+  const labels = [];
+  for (let team = teamCount; team >= 1 && labels.length < markerCount; team -= 1) {
+    labels.push(team);
   }
-  for (let i = 0; i < build.structure.permanent; i += 1) {
+  if (markerCount > 0 && !labels.includes(1)) {
+    labels[labels.length - 1] = 1;
+  }
+
+  const markerByGap = new Map();
+  if (markerCount > 0) {
+    const lastGap = gapCount - 1;
+    markerByGap.set(lastGap, 1);
+
+    const earlierCount = markerCount - 1;
+    const maxEarlierGap = Math.max(lastGap - 1, 0);
+    for (let idx = 0; idx < earlierCount; idx += 1) {
+      let targetGap = Math.round(((idx + 1) * (lastGap + 1)) / (earlierCount + 1)) - 1;
+      targetGap = Math.max(0, Math.min(targetGap, maxEarlierGap));
+
+      let probe = targetGap;
+      while (markerByGap.has(probe) && probe < maxEarlierGap) {
+        probe += 1;
+      }
+      while (markerByGap.has(probe) && probe > 0) {
+        probe -= 1;
+      }
+      if (!markerByGap.has(probe)) {
+        markerByGap.set(probe, labels[idx]);
+      }
+    }
+  }
+
+  for (let i = 0; i < totalBoxes; i += 1) {
     const box = document.createElement('span');
-    box.className = 'structure-box permanent';
+    box.className = i < repairable ? 'structure-box repairable' : 'structure-box permanent';
     row.appendChild(box);
+
+    if (i < totalBoxes - 1 && markerByGap.has(i)) {
+      const marker = document.createElement('span');
+      marker.className = 'structure-inline-marker';
+
+      const count = document.createElement('span');
+      count.className = 'team-count';
+      count.textContent = String(markerByGap.get(i));
+
+      const icon = document.createElement('span');
+      icon.className = 'wrench-icon';
+      icon.setAttribute('aria-hidden', 'true');
+
+      marker.appendChild(count);
+      marker.appendChild(icon);
+      row.appendChild(marker);
+    }
   }
 }
 
