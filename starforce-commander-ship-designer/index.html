@@ -73,8 +73,8 @@
 
         <h2>Structure</h2>
         <div class="grid2">
-          <label>Repairable Structure Boxes <input name="structureBlack" type="number" min="0" value="20" /></label>
-          <label>Permanent Structure Boxes <input name="structureRed" type="number" min="0" value="4" /></label>
+          <label>Repairable Structure Boxes <input name="structureBlack" type="number" min="0" value="3" /></label>
+          <label>Permanent Structure Boxes <input name="structureRed" type="number" min="0" value="12" /></label>
         </div>
 
         <div class="row">
@@ -169,10 +169,13 @@
 
         <footer class="template-bottom">
           <span class="structure">STRUCTURE</span>
-          <span class="structure-row" id="pvStructureBoxes"></span>
-          <span class="structure-bands" id="pvStructureBands">3⚙ 2⚙ 1⚙</span>
-          <span id="pvFaction">COMMON</span>
-          <span id="pvEra">ERA</span>
+          <span class="structure-track" id="pvStructureTrack">
+            <span class="structure-row" id="pvStructureBoxes"></span>
+          </span>
+          <span class="footer-tags">
+            <span id="pvFaction">COMMON</span>
+            <span id="pvEra">ERA</span>
+          </span>
         </footer>
       </article>
 
