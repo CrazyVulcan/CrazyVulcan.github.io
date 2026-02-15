@@ -227,10 +227,10 @@ function renderPreview(build) {
   document.getElementById('pvTurn').textContent = build.engineering.turn;
   document.getElementById('pvSpecial').textContent = build.engineering.special;
 
-  document.getElementById('pvShieldFwd').textContent = String(build.shields.forward).padStart(2, '0');
-  document.getElementById('pvShieldAft').textContent = String(build.shields.aft).padStart(2, '0');
-  document.getElementById('pvShieldPort').textContent = String(build.shields.port).padStart(2, '0');
-  document.getElementById('pvShieldStbd').textContent = String(build.shields.starboard).padStart(2, '0');
+  document.getElementById('pvShieldFwd').textContent = String(build.shields.forward);
+  document.getElementById('pvShieldAft').textContent = String(build.shields.aft);
+  document.getElementById('pvShieldPort').textContent = String(build.shields.port);
+  document.getElementById('pvShieldStbd').textContent = String(build.shields.starboard);
 
   const blackGenRow = document.getElementById('pvShieldGenBlackBoxes');
   blackGenRow.innerHTML = '';

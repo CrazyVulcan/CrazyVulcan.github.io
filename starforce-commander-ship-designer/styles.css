@@ -171,6 +171,7 @@ button.ghost { background: #273055; }
   display: inline-flex;
   align-items: center;
   gap: 0.2rem;
+  padding: 0.2rem 0.08rem;
 }
 
 .side-label b {
