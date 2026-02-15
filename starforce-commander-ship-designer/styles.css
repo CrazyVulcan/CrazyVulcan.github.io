@@ -65,8 +65,23 @@ button.ghost { background: #273055; }
   color: #000;
   text-align: right;
 }
-.template-columns { display: grid; grid-template-columns: 1.06fr 0.94fr 0.72fr; gap: 0.4rem; padding: 0.25rem 0.15rem 0.2rem; }
+.template-columns { display: grid; grid-template-columns: 1.06fr 0.94fr 0.72fr; gap: 0.4rem; padding: 0.25rem 0.15rem 0.2rem; align-items: stretch; }
 .col h3 { margin: 0 0 0.2rem; background: #566674; color: #f3f3f3; text-align: center; padding: 0.1rem 0.3rem; border: 3px solid #111; font-size: 1.02rem; letter-spacing: 0.02em; }
+
+.left-col,
+.middle-col,
+.right-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.left-col {
+  min-height: 920px;
+}
+
+.block-functions pre { height: 220px; max-height: 220px; overflow: auto; }
+.block-power pre { height: 200px; max-height: 200px; overflow: auto; }
+.block-maneuver pre { height: 110px; max-height: 110px; overflow: auto; }
 
 .eng-stats { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.15rem; margin-bottom: 0.2rem; }
 .eng-stats span { background: #566674; color: #fff; text-align: center; padding: 0.25rem 0.1rem; border: 2px solid #f5f5f5; font-size: 0.9rem; font-weight: 900; }
@@ -133,13 +148,13 @@ button.ghost { background: #273055; }
 }
 .systems-box { border-top: 0; margin-top: 0.3rem; border: 2px solid #f0b500; }
 .systems-box h3 { border-color: #f0b500; }
-.systems-box pre { min-height: 96px; margin: 0; white-space: pre-wrap; color: #223; background: transparent; border-radius: 0; font-family: Arial, Helvetica, sans-serif; font-size: 0.8rem; }
+.systems-box pre { height: 158px; max-height: 158px; margin: 0; white-space: pre-wrap; color: #223; background: transparent; border-radius: 0; font-family: Arial, Helvetica, sans-serif; font-size: 0.8rem; overflow: auto; }
 
 .right-col { border: 3px solid #ff0000; background: #fafafa; }
-.weapon-slot { border-top: 2px solid #ff0000; min-height: 120px; }
+.weapon-slot { border-top: 2px solid #ff0000; height: 170px; min-height: 170px; display: flex; flex-direction: column; }
 .weapon-slot:first-of-type { border-top: 0; }
 .slot-title { background: #ff0000; color: #fff; font-weight: 900; padding: 0.17rem 0.3rem; }
-.slot-body { white-space: pre-wrap; color: #233; padding: 0.35rem 0.38rem; min-height: 88px; font-family: Arial, Helvetica, sans-serif; font-size: 0.8rem; }
+.slot-body { white-space: pre-wrap; color: #233; padding: 0.35rem 0.38rem; min-height: 0; flex: 1; overflow: auto; font-family: Arial, Helvetica, sans-serif; font-size: 0.8rem; }
 
 .template-bottom {
   display: grid;
@@ -155,9 +170,11 @@ button.ghost { background: #273055; }
 .structure { letter-spacing: 0.03em; background: #566674; border: 3px solid #111; padding: 0.03rem 0.6rem; }
 .structure-row {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 4px;
   min-height: 14px;
+  max-height: 14px;
+  overflow: hidden;
 }
 .structure-bands { font-size: 2rem; opacity: 1; color: #111; letter-spacing: 0.08em; line-height: 1; font-family: "Segoe UI Symbol", Arial, sans-serif; }
 .structure-box {
