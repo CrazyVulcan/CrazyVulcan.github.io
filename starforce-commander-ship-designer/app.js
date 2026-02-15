@@ -145,9 +145,16 @@ function renderManeuvering(sublight) {
   circleRun('pvRndGreen', data.greenCircles);
   circleRun('pvRndRed', data.redCircles);
 
-  document.getElementById('pvSpdVals').innerHTML = data.spd.map((value) => `<b>${value}</b>`).join('');
-  document.getElementById('pvTurnVals').innerHTML = data.turns.map((value) => `<b>${value}</b>`).join('');
-  document.getElementById('pvDmgStops').innerHTML = data.dmgStops.map((stop) => `<b>${stop ? '■' : '□'}</b>`).join('');
+  const previewColumns = 6;
+  const spdValues = data.spd.slice(-previewColumns);
+  const turnValues = data.turns.slice(-previewColumns);
+  const dmgValues = data.dmgStops.slice(-previewColumns);
+
+  document.getElementById('pvSpdVals').innerHTML = spdValues.map((value) => `<b>${value}</b>`).join('');
+  document.getElementById('pvTurnVals').innerHTML = turnValues.map((value) => `<b>${value}</b>`).join('');
+  document.getElementById('pvDmgStops').innerHTML = dmgValues
+    .map((stop) => `<span class="dmg-stop${stop ? '' : ' is-inactive'}"></span>`)
+    .join('');
 }
 
 function renderPreview(build) {
