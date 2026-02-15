@@ -68,6 +68,12 @@ function getBuild() {
       port: num('shieldPort'),
       starboard: num('shieldStbd')
     },
+    armor: {
+      forward: num('armorFwd'),
+      aft: num('armorAft'),
+      port: num('armorPort'),
+      starboard: num('armorStbd')
+    },
     shieldGen: num('shieldGen'),
     textBlocks: {
       functions: form.elements.functions.value,
@@ -227,10 +233,10 @@ function renderPreview(build) {
   document.getElementById('pvTurn').textContent = build.engineering.turn;
   document.getElementById('pvSpecial').textContent = build.engineering.special;
 
-  document.getElementById('pvShieldFwd').textContent = String(build.shields.forward).padStart(2, '0');
-  document.getElementById('pvShieldAft').textContent = String(build.shields.aft).padStart(2, '0');
-  document.getElementById('pvShieldPort').textContent = String(build.shields.port).padStart(2, '0');
-  document.getElementById('pvShieldStbd').textContent = String(build.shields.starboard).padStart(2, '0');
+  document.getElementById('pvShieldFwd').textContent = String(build.shields.forward);
+  document.getElementById('pvShieldAft').textContent = String(build.shields.aft);
+  document.getElementById('pvShieldPort').textContent = String(build.shields.port);
+  document.getElementById('pvShieldStbd').textContent = String(build.shields.starboard);
 
   const blackGenRow = document.getElementById('pvShieldGenBlackBoxes');
   blackGenRow.innerHTML = '';
@@ -244,6 +250,12 @@ function renderPreview(build) {
   renderBoxes('pvAftShieldBoxes', build.shields.aft, 'shield-box');
   renderBoxes('pvPortShieldBoxes', build.shields.port, 'shield-box');
   renderBoxes('pvStbdShieldBoxes', build.shields.starboard, 'shield-box');
+
+  const armor = build.armor || { forward: 0, aft: 0, port: 0, starboard: 0 };
+  renderBoxes('pvFwdArmorBoxes', armor.forward, 'armor-box');
+  renderBoxes('pvAftArmorBoxes', armor.aft, 'armor-box');
+  renderBoxes('pvPortArmorBoxes', armor.port, 'armor-box');
+  renderBoxes('pvStbdArmorBoxes', armor.starboard, 'armor-box');
 
   renderBoxes('pvFwdGenBoxes', build.shieldGen, 'shield-gen');
   renderBoxes('pvAftGenBoxes', build.shieldGen, 'shield-gen');
@@ -339,6 +351,11 @@ function restoreDraft(draft) {
   form.elements.shieldAft.value = draft.shields?.aft ?? 0;
   form.elements.shieldPort.value = draft.shields?.port ?? 0;
   form.elements.shieldStbd.value = draft.shields?.starboard ?? 0;
+
+  form.elements.armorFwd.value = draft.armor?.forward ?? 0;
+  form.elements.armorAft.value = draft.armor?.aft ?? 0;
+  form.elements.armorPort.value = draft.armor?.port ?? 0;
+  form.elements.armorStbd.value = draft.armor?.starboard ?? 0;
 
   form.elements.shieldGen.value = draft.shieldGen ?? 0;
 
