@@ -146,11 +146,14 @@ function renderManeuvering(sublight) {
   circleRun('pvRndRed', data.redCircles);
 
   const previewColumns = 6;
-  document.getElementById('pvSpdVals').innerHTML = data.spd.slice(0, previewColumns).map((value) => `<b>${value}</b>`).join('');
-  document.getElementById('pvTurnVals').innerHTML = data.turns.slice(0, previewColumns).map((value) => `<b>${value}</b>`).join('');
-  document.getElementById('pvDmgStops').innerHTML = data.dmgStops
-    .slice(0, previewColumns)
-    .map((stop) => `<b class="dmg-stop${stop ? '' : ' is-inactive'}">■</b>`)
+  const spdValues = data.spd.slice(-previewColumns);
+  const turnValues = data.turns.slice(-previewColumns);
+  const dmgValues = data.dmgStops.slice(-previewColumns);
+
+  document.getElementById('pvSpdVals').innerHTML = spdValues.map((value) => `<b>${value}</b>`).join('');
+  document.getElementById('pvTurnVals').innerHTML = turnValues.map((value) => `<b>${value}</b>`).join('');
+  document.getElementById('pvDmgStops').innerHTML = dmgValues
+    .map((stop) => `<span class="dmg-stop${stop ? '' : ' is-inactive'}"></span>`)
     .join('');
 }
 
