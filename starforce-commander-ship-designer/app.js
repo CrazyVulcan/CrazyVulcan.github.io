@@ -31,6 +31,22 @@ function num(name) {
   return Number(form.elements[name].value || 0);
 }
 
+function clamp(value, min, max) {
+  return Math.min(max, Math.max(min, value));
+}
+
+function readSublight() {
+  const speeds = [6, 5, 4, 3, 2, 1, 0];
+  return {
+    maxAccPhs: num('sublightMaxAcc'),
+    greenCircles: clamp(num('sublightGreen'), 0, 3),
+    redCircles: clamp(num('sublightRed'), 0, 3),
+    spd: speeds.map((speed) => speed),
+    turns: speeds.map((speed) => num(`sublightTurn${speed}`)),
+    dmgStops: speeds.map((speed) => Boolean(form.elements[`sublightDmg${speed}`]?.checked))
+  };
+}
+
 function getBuild() {
   return {
     identity: {
@@ -55,9 +71,9 @@ function getBuild() {
     shieldGen: num('shieldGen'),
     textBlocks: {
       functions: form.elements.functions.value,
-      powerSystem: form.elements.powerSystem.value,
-      maneuvering: form.elements.maneuvering.value
+      powerSystem: form.elements.powerSystem.value
     },
+    sublight: readSublight(),
     structure: {
       repairable: num('structureBlack'),
       permanent: num('structureRed')
@@ -103,6 +119,35 @@ function renderStructure(build) {
     box.className = 'structure-box permanent';
     row.appendChild(box);
   }
+}
+
+function circleRun(containerId, count) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = '';
+  for (let i = 0; i < clamp(count, 0, 3); i += 1) {
+    const circle = document.createElement('span');
+    circle.className = 'rnd-circle';
+    container.appendChild(circle);
+  }
+}
+
+function renderManeuvering(sublight) {
+  const data = sublight || {
+    maxAccPhs: 2,
+    greenCircles: 3,
+    redCircles: 3,
+    spd: [6, 5, 4, 3, 2, 1, 0],
+    turns: [20, 20, 20, 20, 20, 20, 20],
+    dmgStops: [false, false, false, false, false, false, false]
+  };
+
+  document.getElementById('pvMaxAcc').textContent = data.maxAccPhs;
+  circleRun('pvRndGreen', data.greenCircles);
+  circleRun('pvRndRed', data.redCircles);
+
+  document.getElementById('pvSpdVals').innerHTML = data.spd.map((value) => `<b>${value}</b>`).join('');
+  document.getElementById('pvTurnVals').innerHTML = data.turns.map((value) => `<b>${value}</b>`).join('');
+  document.getElementById('pvDmgStops').innerHTML = data.dmgStops.map((stop) => `<b>${stop ? '■' : '□'}</b>`).join('');
 }
 
 function renderPreview(build) {
@@ -160,7 +205,7 @@ function renderPreview(build) {
 
   document.getElementById('pvFunctions').textContent = build.textBlocks.functions;
   document.getElementById('pvPowerSystem').textContent = build.textBlocks.powerSystem;
-  document.getElementById('pvManeuvering').textContent = build.textBlocks.maneuvering;
+  renderManeuvering(build.sublight);
 
   weaponSlot(1, build.weapons[0]);
   weaponSlot(2, build.weapons[1]);
@@ -240,7 +285,23 @@ function restoreDraft(draft) {
 
   form.elements.functions.value = draft.textBlocks?.functions ?? '';
   form.elements.powerSystem.value = draft.textBlocks?.powerSystem ?? '';
-  form.elements.maneuvering.value = draft.textBlocks?.maneuvering ?? '';
+
+  const sublight = draft.sublight ?? {
+    maxAccPhs: 2,
+    greenCircles: 3,
+    redCircles: 3,
+    spd: [6, 5, 4, 3, 2, 1, 0],
+    turns: [20, 20, 20, 20, 20, 20, 20],
+    dmgStops: [false, false, false, false, false, false, false]
+  };
+  form.elements.sublightMaxAcc.value = sublight.maxAccPhs ?? 2;
+  form.elements.sublightGreen.value = sublight.greenCircles ?? 3;
+  form.elements.sublightRed.value = sublight.redCircles ?? 3;
+  [6, 5, 4, 3, 2, 1, 0].forEach((speed, index) => {
+    form.elements[`sublightTurn${speed}`].value = sublight.turns?.[index] ?? 20;
+    form.elements[`sublightDmg${speed}`].checked = Boolean(sublight.dmgStops?.[index]);
+  });
+
   form.elements.structureBlack.value = draft.structure?.repairable ?? 0;
   form.elements.structureRed.value = draft.structure?.permanent ?? 0;
 
