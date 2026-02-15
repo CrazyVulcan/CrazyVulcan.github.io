@@ -73,8 +73,8 @@
 
         <h2>Structure</h2>
         <div class="grid2">
-          <label>Repairable Structure Boxes <input name="structureBlack" type="number" min="0" value="20" /></label>
-          <label>Permanent Structure Boxes <input name="structureRed" type="number" min="0" value="4" /></label>
+          <label>Repairable Structure Boxes <input name="structureBlack" type="number" min="0" value="3" /></label>
+          <label>Permanent Structure Boxes <input name="structureRed" type="number" min="0" value="12" /></label>
         </div>
 
         <div class="row">
@@ -129,29 +129,33 @@
 
           <section class="col middle-col">
             <h3>SHIELDS</h3>
-            <div class="shield-top">FWD SHIELD <b id="pvShieldFwd">00</b></div>
-            <div class="shield-box-row" id="pvFwdShieldBoxes"></div>
-            <div class="shield-gen-row" id="pvFwdGenBoxes"></div>
-            <div class="shield-gen-label">SHIELD GEN <span id="pvShieldGenBlackBoxes" class="shield-gen-black-row"></span></div>
-            <div class="shield-body">
-              <div class="side side-port">
-                <span class="side-label">PORT SHIELD <b id="pvShieldPort">00</b></span>
-                <div class="shield-box-col" id="pvPortShieldBoxes"></div>
-                <div class="shield-gen-col" id="pvPortGenBoxes"></div>
+            <div class="shield-frame">
+              <div class="shield-top">FWD SHIELD <b id="pvShieldFwd">00</b></div>
+              <span class="side-label side-label-port">PORT SHIELD <b id="pvShieldPort">00</b></span>
+              <span class="side-label side-label-stbd">STBD SHIELD <b id="pvShieldStbd">00</b></span>
+              <div class="shield-inner">
+                <div class="shield-gen-row fwd-gen-row" id="pvFwdGenBoxes"></div>
+                <div class="shield-box-row" id="pvFwdShieldBoxes"></div>
+                <div class="shield-gen-label">SHIELD GEN <span id="pvShieldGenBlackBoxes" class="shield-gen-black-row"></span></div>
+                <div class="shield-body">
+                  <div class="side side-port">
+                    <div class="shield-box-col" id="pvPortShieldBoxes"></div>
+                    <div class="shield-gen-col" id="pvPortGenBoxes"></div>
+                  </div>
+                  <div class="ship-art-wrap">
+                    <img id="pvShipArt" class="ship-art" alt="Ship art" />
+                    <div class="ship-silhouette" id="pvShipSilhouette"></div>
+                  </div>
+                  <div class="side side-stbd">
+                    <div class="shield-box-col" id="pvStbdShieldBoxes"></div>
+                    <div class="shield-gen-col" id="pvStbdGenBoxes"></div>
+                  </div>
+                </div>
+                <div class="shield-box-row" id="pvAftShieldBoxes"></div>
+                <div class="shield-gen-row" id="pvAftGenBoxes"></div>
               </div>
-              <div class="ship-art-wrap">
-                <img id="pvShipArt" class="ship-art" alt="Ship art" />
-                <div class="ship-silhouette" id="pvShipSilhouette"></div>
-              </div>
-              <div class="side side-stbd">
-                <span class="side-label">STBD SHIELD <b id="pvShieldStbd">00</b></span>
-                <div class="shield-box-col" id="pvStbdShieldBoxes"></div>
-                <div class="shield-gen-col" id="pvStbdGenBoxes"></div>
-              </div>
+              <div class="shield-bottom">AFT SHIELD <b id="pvShieldAft">00</b></div>
             </div>
-            <div class="shield-bottom">AFT SHIELD <b id="pvShieldAft">00</b></div>
-            <div class="shield-box-row" id="pvAftShieldBoxes"></div>
-            <div class="shield-gen-row" id="pvAftGenBoxes"></div>
             <div class="systems-box">
               <h3>SYSTEMS</h3>
               <pre id="pvSystems"></pre>
@@ -169,10 +173,13 @@
 
         <footer class="template-bottom">
           <span class="structure">STRUCTURE</span>
-          <span class="structure-row" id="pvStructureBoxes"></span>
-          <span class="structure-bands" id="pvStructureBands">3⚙ 2⚙ 1⚙</span>
-          <span id="pvFaction">COMMON</span>
-          <span id="pvEra">ERA</span>
+          <span class="structure-track" id="pvStructureTrack">
+            <span class="structure-row" id="pvStructureBoxes"></span>
+          </span>
+          <span class="footer-tags">
+            <span id="pvFaction">COMMON</span>
+            <span id="pvEra">ERA</span>
+          </span>
         </footer>
       </article>
 
