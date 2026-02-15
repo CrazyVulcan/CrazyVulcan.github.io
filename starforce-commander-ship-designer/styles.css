@@ -233,6 +233,7 @@ pre { background: #0b1128; color: #d5e2ff; padding: 0.65rem; border-radius: 8px;
 .rnd-circle { width: 10px; height: 10px; border-radius: 999px; border: 2px solid currentColor; box-sizing: border-box; }
 .rnd-circles.green { color: #00b050; }
 .rnd-circles.red { color: #ff1f1f; }
-.man-values { display: inline-grid; grid-template-columns: repeat(7, minmax(16px, auto)); gap: 0.45rem; }
+.man-values { display: inline-grid; grid-template-columns: repeat(6, minmax(16px, auto)); gap: 0.45rem; }
 .man-values b { font-size: 1.05rem; line-height: 1; }
 .dmg-values b { font-size: 0.95rem; }
+.dmg-stop.is-inactive { visibility: hidden; }
