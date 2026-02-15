@@ -102,8 +102,8 @@ button.ghost { background: #273055; }
 .green-block pre { min-height: 80px; margin: 0; background: transparent; color: #233; white-space: pre-wrap; border-radius: 0; font-family: Arial, Helvetica, sans-serif; font-size: 0.8rem; }
 
 .middle-col { border: 3px solid #10a5df; background: #14a7de; padding: 0.15rem; }
-.shield-frame { border: 3px solid #10a5df; background: #14a7de; padding: 0.18rem 0.18rem 0.12rem; }
-.shield-inner { background: #f8f8f8; border: 2px solid #fff; }
+.shield-frame { border: 3px solid #10a5df; background: #14a7de; padding: 0.18rem 2rem 0.12rem; }
+.shield-inner { position: relative; overflow: visible; background: #f8f8f8; border: 2px solid #fff; }
 .shield-top, .shield-bottom { background: #17a8df; color: #fff; text-align: center; font-weight: 900; padding: 0.12rem; font-size: 0.95rem; }
 .shield-top { margin-bottom: 0.12rem; }
 .shield-bottom { margin-top: 0.12rem; }
@@ -140,22 +140,42 @@ button.ghost { background: #273055; }
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  display: flex;
+  display: grid;
   align-items: center;
-  gap: 6px;
+  column-gap: 6px;
 }
-.side-port { left: 8px; }
-.side-stbd { right: 8px; }
+.side-port {
+  left: 8px;
+  grid-template-columns: auto auto;
+}
+.side-stbd {
+  right: 8px;
+  grid-template-columns: auto auto;
+}
 .side-port .shield-gen-col { order: 1; }
 .side-port .shield-box-col { order: 2; }
+.side-stbd .shield-box-col { order: 1; }
+.side-stbd .shield-gen-col { order: 2; }
 .side-label {
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
+  position: absolute;
+  top: 50%;
   color: #fff;
   background: #16a7dd;
-  padding: 0.35rem 0.2rem;
+  padding: 0.2rem 0.35rem;
   font-weight: 900;
-  font-size: 0.95rem;
+  font-size: 0.82rem;
+  white-space: nowrap;
+  line-height: 1;
+}
+.side-port .side-label {
+  left: -2rem;
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: center;
+}
+.side-stbd .side-label {
+  right: -2rem;
+  transform: translateY(-50%) rotate(90deg);
+  transform-origin: center;
 }
 .shield-box-col, .shield-gen-col {
   display: flex;
