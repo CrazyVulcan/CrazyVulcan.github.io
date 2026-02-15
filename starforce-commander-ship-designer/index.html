@@ -16,6 +16,7 @@
         <h2>Identity</h2>
         <label>Ship Name / ID <input name="name" value="SHIP NAME / ID" /></label>
         <label>Class Label <input name="classType" value="CLASSNAME ID-class Weight Class" /></label>
+        <label>Size Class Icon URL <input name="sizeClassIcon" value="assets/size-class-icon.svg" /></label>
         <div class="grid2">
           <label>Faction <input name="faction" value="COMMON" /></label>
           <label>Era <input name="era" value="ERA" /></label>
@@ -23,10 +24,10 @@
 
         <h2>Engineering</h2>
         <div class="grid2">
-          <label>Move <input name="move" type="number" min="0" value="0" /></label>
-          <label>Vector <input name="vector" type="number" min="0" value="0" /></label>
-          <label>Turn <input name="turn" type="number" min="0" value="0" /></label>
-          <label>Special <input name="special" type="number" min="0" value="0" /></label>
+          <label>Size Class <input name="move" type="number" min="0" value="0" /></label>
+          <label>Acceleration <input name="vector" type="number" min="0" value="0" /></label>
+          <label>Stress Damage <input name="turn" type="number" min="0" value="0" /></label>
+          <label>Damage Control <input name="special" type="number" min="0" value="0" /></label>
         </div>
 
         <h2>Shields</h2>
@@ -48,7 +49,24 @@
         <h2>Functions / Power / Maneuvering</h2>
         <label>Functions + Power Level <textarea name="functions" rows="3" placeholder="ACC/DEC, SIF, BTTY RECH..."></textarea></label>
         <label>Power System <textarea name="powerSystem" rows="3" placeholder="L MAIN, R MAIN, BATTERY..."></textarea></label>
-        <label>Sublight Drive & Maneuvering <textarea name="maneuvering" rows="3" placeholder="MAX ACC/PHS, DMG, SPD, TURN..."></textarea></label>
+        <div class="maneuver-editor">
+          <strong>Sublight Drive & Maneuvering</strong>
+          <div class="grid3">
+            <label>MAX ACC / PHS <input name="sublightMaxAcc" type="number" min="0" value="2" /></label>
+            <label>Green RND Circles (0-3) <input name="sublightGreen" type="number" min="0" max="3" value="3" /></label>
+            <label>Red RND Circles (0-3) <input name="sublightRed" type="number" min="0" max="3" value="3" /></label>
+          </div>
+          <div class="maneuver-grid-head"><span>Speed</span><span>DMG Stop</span><span>TURN °</span></div>
+          <div class="maneuver-grid" id="maneuverGridInputs">
+            <label>6</label><input name="sublightDmg6" type="checkbox" /><input name="sublightTurn6" type="number" value="20" />
+            <label>5</label><input name="sublightDmg5" type="checkbox" /><input name="sublightTurn5" type="number" value="20" />
+            <label>4</label><input name="sublightDmg4" type="checkbox" /><input name="sublightTurn4" type="number" value="20" />
+            <label>3</label><input name="sublightDmg3" type="checkbox" /><input name="sublightTurn3" type="number" value="20" />
+            <label>2</label><input name="sublightDmg2" type="checkbox" /><input name="sublightTurn2" type="number" value="20" />
+            <label>1</label><input name="sublightDmg1" type="checkbox" /><input name="sublightTurn1" type="number" value="20" />
+            <label>0</label><input name="sublightDmg0" type="checkbox" /><input name="sublightTurn0" type="number" value="20" />
+          </div>
+        </div>
 
         <h2>Systems (one per line)</h2>
         <label><textarea name="systems" rows="4" placeholder="SCNC:0"></textarea></label>
@@ -83,22 +101,29 @@
           <section class="col left-col">
             <h3>ENGINEERING</h3>
             <div class="eng-stats">
-              <span>🚀 <b id="pvMove">0</b></span>
-              <span>🟢 <b id="pvVector">0</b></span>
-              <span>↪ <b id="pvTurn">0</b></span>
-              <span>🔧 <b id="pvSpecial">0</b></span>
+              <span><img id="pvSizeClassIcon" class="stat-icon" src="assets/size-class-icon.svg" alt="Size class icon" /> <b id="pvMove">0</b></span>
+              <span><img class="stat-icon" src="assets/acceleration-icon.svg" alt="Acceleration icon" /> <b id="pvVector">0</b></span>
+              <span><img class="stat-icon" src="assets/stress-icon.svg" alt="Stress damage icon" /> <b id="pvTurn">0</b></span>
+              <span><img class="stat-icon" src="assets/damage-control-icon.svg" alt="Damage control icon" /> <b id="pvSpecial">0</b></span>
+              <span class="stat-tag">PWR</span>
+              <span class="stat-tag">BAT</span>
             </div>
-            <div class="green-block">
-              <h4>FUNCTIONS / POWER LEVEL</h4>
+            <div class="green-block block-functions">
+              <h4><span>FUNCTIONS</span><span>POWER LEVEL</span></h4>
               <pre id="pvFunctions"></pre>
             </div>
-            <div class="green-block">
+            <div class="green-block block-power">
               <h4>POWER SYSTEM</h4>
               <pre id="pvPowerSystem"></pre>
             </div>
-            <div class="green-block">
+            <div class="green-block block-maneuver">
               <h4>SUBLIGHT DRIVE AND MANEUVERING</h4>
-              <pre id="pvManeuvering"></pre>
+              <div id="pvManeuver" class="maneuver-preview">
+                <div class="man-row man-top"><span>MAX ACC / PHS: <b id="pvMaxAcc">2</b></span><span>/ RND:</span><span id="pvRndGreen" class="rnd-circles green"></span><span id="pvRndRed" class="rnd-circles red"></span></div>
+                <div class="man-row"><span>DMG:</span><span id="pvDmgStops" class="man-values dmg-values"></span></div>
+                <div class="man-row"><span>SPD:</span><span id="pvSpdVals" class="man-values"></span></div>
+                <div class="man-row"><span>TURN:</span><span id="pvTurnVals" class="man-values"></span></div>
+              </div>
             </div>
           </section>
 
@@ -145,7 +170,7 @@
         <footer class="template-bottom">
           <span class="structure">STRUCTURE</span>
           <span class="structure-row" id="pvStructureBoxes"></span>
-          <span class="structure-bands" id="pvStructureBands">5🔧 4🔧 3🔧 2🔧 1🔧</span>
+          <span class="structure-bands" id="pvStructureBands">3⚙ 2⚙ 1⚙</span>
           <span id="pvFaction">COMMON</span>
           <span id="pvEra">ERA</span>
         </footer>

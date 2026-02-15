@@ -31,11 +31,28 @@ function num(name) {
   return Number(form.elements[name].value || 0);
 }
 
+function clamp(value, min, max) {
+  return Math.min(max, Math.max(min, value));
+}
+
+function readSublight() {
+  const speeds = [6, 5, 4, 3, 2, 1, 0];
+  return {
+    maxAccPhs: num('sublightMaxAcc'),
+    greenCircles: clamp(num('sublightGreen'), 0, 3),
+    redCircles: clamp(num('sublightRed'), 0, 3),
+    spd: speeds.map((speed) => speed),
+    turns: speeds.map((speed) => num(`sublightTurn${speed}`)),
+    dmgStops: speeds.map((speed) => Boolean(form.elements[`sublightDmg${speed}`]?.checked))
+  };
+}
+
 function getBuild() {
   return {
     identity: {
       name: form.elements.name.value,
       classType: form.elements.classType.value,
+      sizeClassIcon: form.elements.sizeClassIcon.value,
       faction: form.elements.faction.value,
       era: form.elements.era.value
     },
@@ -54,9 +71,9 @@ function getBuild() {
     shieldGen: num('shieldGen'),
     textBlocks: {
       functions: form.elements.functions.value,
-      powerSystem: form.elements.powerSystem.value,
-      maneuvering: form.elements.maneuvering.value
+      powerSystem: form.elements.powerSystem.value
     },
+    sublight: readSublight(),
     structure: {
       repairable: num('structureBlack'),
       permanent: num('structureRed')
@@ -104,10 +121,46 @@ function renderStructure(build) {
   }
 }
 
+function circleRun(containerId, count) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = '';
+  for (let i = 0; i < clamp(count, 0, 3); i += 1) {
+    const circle = document.createElement('span');
+    circle.className = 'rnd-circle';
+    container.appendChild(circle);
+  }
+}
+
+function renderManeuvering(sublight) {
+  const data = sublight || {
+    maxAccPhs: 2,
+    greenCircles: 3,
+    redCircles: 3,
+    spd: [6, 5, 4, 3, 2, 1, 0],
+    turns: [20, 20, 20, 20, 20, 20, 20],
+    dmgStops: [false, false, false, false, false, false, false]
+  };
+
+  document.getElementById('pvMaxAcc').textContent = data.maxAccPhs;
+  circleRun('pvRndGreen', data.greenCircles);
+  circleRun('pvRndRed', data.redCircles);
+
+  document.getElementById('pvSpdVals').innerHTML = data.spd.map((value) => `<b>${value}</b>`).join('');
+  document.getElementById('pvTurnVals').innerHTML = data.turns.map((value) => `<b>${value}</b>`).join('');
+  document.getElementById('pvDmgStops').innerHTML = data.dmgStops.map((stop) => `<b>${stop ? '■' : '□'}</b>`).join('');
+}
+
 function renderPreview(build) {
   document.getElementById('pvName').textContent = build.identity.name || 'SHIP NAME / ID';
   document.getElementById('pvClass').textContent = build.identity.classType || 'CLASSNAME ID-class Weight Class';
   document.getElementById('pvFaction').textContent = build.identity.faction || 'COMMON';
+  const sizeClassIcon = document.getElementById('pvSizeClassIcon');
+  const defaultSizeClassIcon = 'assets/size-class-icon.svg';
+  sizeClassIcon.onerror = () => {
+    if (sizeClassIcon.src.endsWith(defaultSizeClassIcon)) return;
+    sizeClassIcon.src = defaultSizeClassIcon;
+  };
+  sizeClassIcon.src = build.identity.sizeClassIcon || build.identity.hullIcon || defaultSizeClassIcon;
   document.getElementById('pvEra').textContent = build.identity.era || 'ERA';
 
   document.getElementById('pvMove').textContent = build.engineering.move;
@@ -152,7 +205,7 @@ function renderPreview(build) {
 
   document.getElementById('pvFunctions').textContent = build.textBlocks.functions;
   document.getElementById('pvPowerSystem').textContent = build.textBlocks.powerSystem;
-  document.getElementById('pvManeuvering').textContent = build.textBlocks.maneuvering;
+  renderManeuvering(build.sublight);
 
   weaponSlot(1, build.weapons[0]);
   weaponSlot(2, build.weapons[1]);
@@ -162,6 +215,17 @@ function renderPreview(build) {
   const systemsText = build.systems.map((entry) => `${entry.key} ${entry.value}`.trim()).join('\n');
   document.getElementById('pvSystems').textContent = systemsText;
   renderStructure(build);
+}
+
+function getJsonPreview(build) {
+  if (!build.shipArtDataUrl) {
+    return JSON.stringify(build, null, 2);
+  }
+  const previewBuild = {
+    ...build,
+    shipArtDataUrl: `[image data url omitted: ${build.shipArtDataUrl.length} chars]`
+  };
+  return JSON.stringify(previewBuild, null, 2);
 }
 
 function pulseLiveBadge() {
@@ -174,7 +238,7 @@ function pulseLiveBadge() {
 function render() {
   const build = getBuild();
   renderPreview(build);
-  jsonPreview.textContent = JSON.stringify(build, null, 2);
+  jsonPreview.textContent = getJsonPreview(build);
   pulseLiveBadge();
 }
 
@@ -203,6 +267,7 @@ function renderDrafts() {
 function restoreDraft(draft) {
   form.elements.name.value = draft.identity?.name ?? '';
   form.elements.classType.value = draft.identity?.classType ?? '';
+  form.elements.sizeClassIcon.value = draft.identity?.sizeClassIcon ?? draft.identity?.hullIcon ?? 'assets/size-class-icon.svg';
   form.elements.faction.value = draft.identity?.faction ?? '';
   form.elements.era.value = draft.identity?.era ?? '';
 
@@ -220,7 +285,23 @@ function restoreDraft(draft) {
 
   form.elements.functions.value = draft.textBlocks?.functions ?? '';
   form.elements.powerSystem.value = draft.textBlocks?.powerSystem ?? '';
-  form.elements.maneuvering.value = draft.textBlocks?.maneuvering ?? '';
+
+  const sublight = draft.sublight ?? {
+    maxAccPhs: 2,
+    greenCircles: 3,
+    redCircles: 3,
+    spd: [6, 5, 4, 3, 2, 1, 0],
+    turns: [20, 20, 20, 20, 20, 20, 20],
+    dmgStops: [false, false, false, false, false, false, false]
+  };
+  form.elements.sublightMaxAcc.value = sublight.maxAccPhs ?? 2;
+  form.elements.sublightGreen.value = sublight.greenCircles ?? 3;
+  form.elements.sublightRed.value = sublight.redCircles ?? 3;
+  [6, 5, 4, 3, 2, 1, 0].forEach((speed, index) => {
+    form.elements[`sublightTurn${speed}`].value = sublight.turns?.[index] ?? 20;
+    form.elements[`sublightDmg${speed}`].checked = Boolean(sublight.dmgStops?.[index]);
+  });
+
   form.elements.structureBlack.value = draft.structure?.repairable ?? 0;
   form.elements.structureRed.value = draft.structure?.permanent ?? 0;
 
