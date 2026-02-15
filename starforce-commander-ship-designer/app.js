@@ -145,7 +145,7 @@ function renderManeuvering(sublight) {
   circleRun('pvRndGreen', data.greenCircles);
   circleRun('pvRndRed', data.redCircles);
 
-  const previewColumns = 6;
+  const previewColumns = 7;
   const spdValues = data.spd.slice(-previewColumns);
   const turnValues = data.turns.slice(-previewColumns);
   const dmgValues = data.dmgStops.slice(-previewColumns);
