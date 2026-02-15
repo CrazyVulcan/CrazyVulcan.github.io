@@ -31,11 +31,27 @@
         </div>
 
         <h2>Shields</h2>
-        <div class="grid2">
-          <label>Forward <input name="shieldFwd" type="number" min="0" value="0" /></label>
-          <label>Aft <input name="shieldAft" type="number" min="0" value="0" /></label>
-          <label>Port <input name="shieldPort" type="number" min="0" value="0" /></label>
-          <label>Starboard <input name="shieldStbd" type="number" min="0" value="0" /></label>
+        <div class="shield-stat-grid">
+          <fieldset class="shield-stat-card">
+            <legend>Forward</legend>
+            <label>Shield <input name="shieldFwd" type="number" min="0" value="0" /></label>
+            <label>Armor <input name="armorFwd" type="number" min="0" value="0" /></label>
+          </fieldset>
+          <fieldset class="shield-stat-card">
+            <legend>Aft</legend>
+            <label>Shield <input name="shieldAft" type="number" min="0" value="0" /></label>
+            <label>Armor <input name="armorAft" type="number" min="0" value="0" /></label>
+          </fieldset>
+          <fieldset class="shield-stat-card">
+            <legend>Port</legend>
+            <label>Shield <input name="shieldPort" type="number" min="0" value="0" /></label>
+            <label>Armor <input name="armorPort" type="number" min="0" value="0" /></label>
+          </fieldset>
+          <fieldset class="shield-stat-card">
+            <legend>Starboard</legend>
+            <label>Shield <input name="shieldStbd" type="number" min="0" value="0" /></label>
+            <label>Armor <input name="armorStbd" type="number" min="0" value="0" /></label>
+          </fieldset>
         </div>
         <label>Shield Generators (single value for all facings) <input name="shieldGen" type="number" min="0" value="0" /></label>
         <label>Ship Art (for shield center)
@@ -136,11 +152,13 @@
               <div class="shield-inner">
                 <div class="shield-gen-row fwd-gen-row" id="pvFwdGenBoxes"></div>
                 <div class="shield-box-row" id="pvFwdShieldBoxes"></div>
+                <div class="armor-box-row" id="pvFwdArmorBoxes"></div>
                 <div class="shield-gen-label">SHIELD GEN <span id="pvShieldGenBlackBoxes" class="shield-gen-black-row"></span></div>
                 <div class="shield-body">
                   <div class="side side-port">
                     <div class="shield-box-col" id="pvPortShieldBoxes"></div>
                     <div class="shield-gen-col" id="pvPortGenBoxes"></div>
+                    <div class="armor-box-col" id="pvPortArmorBoxes"></div>
                   </div>
                   <div class="ship-art-wrap">
                     <img id="pvShipArt" class="ship-art" alt="Ship art" />
@@ -149,8 +167,10 @@
                   <div class="side side-stbd">
                     <div class="shield-box-col" id="pvStbdShieldBoxes"></div>
                     <div class="shield-gen-col" id="pvStbdGenBoxes"></div>
+                    <div class="armor-box-col" id="pvStbdArmorBoxes"></div>
                   </div>
                 </div>
+                <div class="armor-box-row" id="pvAftArmorBoxes"></div>
                 <div class="shield-box-row" id="pvAftShieldBoxes"></div>
                 <div class="shield-gen-row" id="pvAftGenBoxes"></div>
               </div>

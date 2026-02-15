@@ -68,6 +68,12 @@ function getBuild() {
       port: num('shieldPort'),
       starboard: num('shieldStbd')
     },
+    armor: {
+      forward: num('armorFwd'),
+      aft: num('armorAft'),
+      port: num('armorPort'),
+      starboard: num('armorStbd')
+    },
     shieldGen: num('shieldGen'),
     textBlocks: {
       functions: form.elements.functions.value,
@@ -245,6 +251,12 @@ function renderPreview(build) {
   renderBoxes('pvPortShieldBoxes', build.shields.port, 'shield-box');
   renderBoxes('pvStbdShieldBoxes', build.shields.starboard, 'shield-box');
 
+  const armor = build.armor || { forward: 0, aft: 0, port: 0, starboard: 0 };
+  renderBoxes('pvFwdArmorBoxes', armor.forward, 'armor-box');
+  renderBoxes('pvAftArmorBoxes', armor.aft, 'armor-box');
+  renderBoxes('pvPortArmorBoxes', armor.port, 'armor-box');
+  renderBoxes('pvStbdArmorBoxes', armor.starboard, 'armor-box');
+
   renderBoxes('pvFwdGenBoxes', build.shieldGen, 'shield-gen');
   renderBoxes('pvAftGenBoxes', build.shieldGen, 'shield-gen');
   renderBoxes('pvPortGenBoxes', build.shieldGen, 'shield-gen');
@@ -339,6 +351,11 @@ function restoreDraft(draft) {
   form.elements.shieldAft.value = draft.shields?.aft ?? 0;
   form.elements.shieldPort.value = draft.shields?.port ?? 0;
   form.elements.shieldStbd.value = draft.shields?.starboard ?? 0;
+
+  form.elements.armorFwd.value = draft.armor?.forward ?? 0;
+  form.elements.armorAft.value = draft.armor?.aft ?? 0;
+  form.elements.armorPort.value = draft.armor?.port ?? 0;
+  form.elements.armorStbd.value = draft.armor?.starboard ?? 0;
 
   form.elements.shieldGen.value = draft.shieldGen ?? 0;
 
