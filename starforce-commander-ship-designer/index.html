@@ -16,6 +16,7 @@
         <h2>Identity</h2>
         <label>Ship Name / ID <input name="name" value="SHIP NAME / ID" /></label>
         <label>Class Label <input name="classType" value="CLASSNAME ID-class Weight Class" /></label>
+        <label>Hull Icon URL <input name="hullIcon" value="assets/hull-size-icon.svg" /></label>
         <div class="grid2">
           <label>Faction <input name="faction" value="COMMON" /></label>
           <label>Era <input name="era" value="ERA" /></label>
@@ -83,7 +84,7 @@
           <section class="col left-col">
             <h3>ENGINEERING</h3>
             <div class="eng-stats">
-              <span>🚀 <b id="pvMove">0</b></span>
+              <span><img id="pvHullIcon" class="stat-icon" src="assets/hull-size-icon.svg" alt="Hull size icon" /> <b id="pvMove">0</b></span>
               <span>🟢 <b id="pvVector">0</b></span>
               <span>↪ <b id="pvTurn">0</b></span>
               <span>🔧 <b id="pvSpecial">0</b></span>

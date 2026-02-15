@@ -85,6 +85,7 @@ button.ghost { background: #273055; }
 
 .eng-stats { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.15rem; margin-bottom: 0.2rem; }
 .eng-stats span { background: #566674; color: #fff; text-align: center; padding: 0.25rem 0.1rem; border: 2px solid #f5f5f5; font-size: 0.9rem; font-weight: 900; }
+.stat-icon { width: 15px; height: 15px; object-fit: contain; vertical-align: text-bottom; }
 .stat-tag { color: #b8b8b8 !important; background: #e9eef3 !important; border-color: #10a5df !important; }
 .green-block { border: 2px solid #02a45c; background: #f0f0f0; margin-bottom: 0.2rem; }
 .green-block h4 { margin: 0; background: #07af52; color: #fff; padding: 0.15rem 0.25rem; font-size: 0.74rem; letter-spacing: 0.01em; display: flex; justify-content: space-between; }
