@@ -63,7 +63,23 @@
         <label><textarea name="weapons" rows="6" placeholder="MK-4 A/MAT TORPEDO|0-4|5-10|11-14|15-20"></textarea></label>
 
         <h2>Functions / Power / Maneuvering</h2>
-        <label>Functions + Power Level <textarea name="functions" rows="3" placeholder="ACC/DEC, SIF, BTTY RECH..."></textarea></label>
+        <div class="functions-editor">
+          <strong>Functions Tracks</strong>
+          <p class="muted">Use comma-separated values for exact power levels. Free pips render as filled green dots.</p>
+          <div class="functions-grid-head"><span>Function</span><span>Values</span><span>Free</span><span>Extra</span><span>Lvls</span></div>
+          <div class="functions-grid">
+            <label>ACC/DEC</label><input name="fnAccDecValues" value="1,2,3,4,5,6" /><input name="fnAccDecFree" type="number" min="0" max="4" value="1" /><span></span><span></span>
+            <label>SIF/IDF</label><input name="fnSifIdfValues" value="1,2,3" /><input name="fnSifIdfFree" type="number" min="0" max="4" value="0" /><label class="inline-check">EMER <input name="fnSifIdfEmer" type="checkbox" checked /></label><span></span>
+            <label>BAT RECH</label><input name="fnBatRechLinked" value="Linked to BATTERY points" readonly /><span class="muted tiny">auto</span><span></span><span></span>
+            <label>FTL</label><input name="fnFtlEmpty" type="number" min="0" max="6" value="2" /><span class="muted tiny">empty circles only</span><span></span><span></span>
+            <label>CLOAK</label><input name="fnCloakEmpty" type="number" min="0" max="6" value="3" /><input name="fnCloakEnabled" type="checkbox" /><span class="muted tiny">optional</span><span></span>
+            <label>SENSOR</label><input name="fnSensorValues" value="2,4,6" /><input name="fnSensorFree" type="number" min="0" max="3" value="1" /><span class="muted tiny">placeholder</span><span></span>
+            <label>GEN SYS</label><input name="fnGenSysValues" value="NRM,MAX" /><input name="fnGenSysFree" type="number" min="0" max="3" value="1" /><span></span><span></span>
+            <label>WPN A</label><input name="fnWpnALabel" value="A/MAT TRP" /><input name="fnWpnAFree" type="number" min="0" max="3" value="1" /><input name="fnWpnAValues" value="1,4" placeholder="values" /><input name="fnWpnALevels" type="number" min="0" max="8" value="2" />
+            <label>WPN B</label><input name="fnWpnBLabel" value="PHASER" /><input name="fnWpnBFree" type="number" min="0" max="3" value="1" /><input name="fnWpnBValues" value="1,4,6,8" placeholder="values" /><input name="fnWpnBLevels" type="number" min="0" max="8" value="4" />
+            <label>WPN C</label><input name="fnWpnCLabel" value="T-31 DISR" /><input name="fnWpnCFree" type="number" min="0" max="3" value="1" /><input name="fnWpnCValues" value="1,3,6" placeholder="values" /><input name="fnWpnCLevels" type="number" min="0" max="8" value="3" />
+          </div>
+        </div>
         <div class="power-system-editor">
           <strong>Power System Tracks</strong>
           <p class="muted">Set points, optional per-point box pattern (e.g. 1,2,1,2), and whether a track shows a green dot.</p>
@@ -139,7 +155,7 @@
             </div>
             <div class="green-block block-functions">
               <h4><span>FUNCTIONS</span><span>POWER LEVEL</span></h4>
-              <pre id="pvFunctions"></pre>
+              <div id="pvFunctions" class="functions-preview"></div>
             </div>
             <div class="green-block block-power">
               <h4><span>POWER SYSTEM</span><span id="pvMaxPower"></span></h4>
