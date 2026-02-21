@@ -13,6 +13,7 @@ textarea, input, button { width: 100%; margin-top: 0.25rem; padding: 0.45rem; bo
 .shield-stat-card label { margin: 0.28rem 0 0; }
 .shield-stat-card input { margin-top: 0.15rem; }
 .row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem; margin-top: 0.75rem; }
+.row-actions { grid-template-columns: 1fr 1fr; }
 
 .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.55rem; }
 .maneuver-editor { border: 1px solid #32427a; border-radius: 8px; padding: 0.6rem; margin-top: 0.5rem; background: #0f1731; }
@@ -53,6 +54,11 @@ button.ghost { background: #273055; }
 .live-badge { background: #11b96b; color: #072b19; font-size: 0.76rem; font-weight: 800; border-radius: 999px; padding: 0.12rem 0.5rem; }
 
 .ssd-template {
+  width: min(100%, 1400px);
+  margin: 0 auto;
+  aspect-ratio: 1403 / 1001;
+  display: flex;
+  flex-direction: column;
   border: 3px solid #0b71ba;
   background: #d9d9d9;
   color: #04111f;
@@ -103,7 +109,7 @@ button.ghost { background: #273055; }
   color: #000;
   text-align: right;
 }
-.template-columns { display: grid; grid-template-columns: 1.06fr 0.94fr 0.72fr; gap: 0.4rem; padding: 0.25rem 0.15rem 0.2rem; align-items: stretch; }
+.template-columns { display: grid; grid-template-columns: 1.06fr 0.94fr 0.72fr; gap: 0.35rem; padding: 0.2rem 0.15rem 0.12rem; align-items: stretch; flex: 1; min-height: 0; }
 .col h3 { margin: 0 0 0.2rem; background: #566674; color: #f3f3f3; text-align: center; padding: 0.1rem 0.3rem; border: 3px solid #111; font-size: 1.02rem; letter-spacing: 0.02em; }
 
 .left-col,
@@ -113,12 +119,13 @@ button.ghost { background: #273055; }
   flex-direction: column;
 }
 
-.left-col {
-  min-height: 920px;
-}
+.left-col { min-height: 0; }
 
-.functions-preview { height: 220px; max-height: 220px; overflow: auto; padding: 0.2rem 0.35rem 0.28rem; color: #111; font-family: Arial, Helvetica, sans-serif; }
+.functions-preview { min-height: 0; overflow: auto; padding: 0.2rem 0.35rem 0.28rem; color: #111; font-family: Arial, Helvetica, sans-serif; }
 .block-maneuver { display: flex; flex-direction: column; }
+.block-functions { flex: 1.05; min-height: 0; }
+.block-power { flex: 0.52; min-height: 0; }
+.block-maneuver { flex: 0.3; min-height: 0; }
 .block-maneuver .maneuver-preview { height: 110px; max-height: 110px; overflow: hidden; }
 
 .eng-stats { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.15rem; margin-bottom: 0.2rem; }
@@ -149,7 +156,7 @@ button.ghost { background: #273055; }
 }
 .fn-dot.filled { background: #09a84f; }
 .fn-end-round { font-size: 0.65rem; margin-left: 0.35rem; color: #2f2f2f; }
-.power-track-list { min-height: 156px; margin: 0; padding: 0.25rem 0.3rem; color: #111; font-family: Arial, Helvetica, sans-serif; overflow: auto; }
+.power-track-list { min-height: 0; margin: 0; padding: 0.25rem 0.3rem; color: #111; font-family: Arial, Helvetica, sans-serif; overflow: auto; }
 .power-track-row { display: grid; grid-template-columns: 132px minmax(0, 1fr); align-items: center; gap: 0.45rem; margin-bottom: 0.2rem; font-size: 0.72rem; font-weight: 700; }
 .power-track-name { text-transform: uppercase; white-space: nowrap; }
 .power-track-units { display: flex; flex-wrap: wrap; gap: 0.38rem; }
@@ -279,7 +286,7 @@ button.ghost { background: #273055; }
 .systems-box { border-top: 0; margin-top: 0.3rem; border: 2px solid #f0b500; background: #f8f8f8; padding-bottom: 0.25rem; }
 .systems-box h3 { border-color: #f0b500; }
 .systems-layout { display: grid; grid-template-columns: 1fr 72px; gap: 0.35rem; padding: 0.2rem 0.25rem 0.1rem; align-items: start; }
-.systems-grid { min-height: 158px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 0.4rem; align-content: start; }
+.systems-grid { min-height: 0; display: grid; grid-template-columns: 1fr 1fr; column-gap: 0.4rem; align-content: start; }
 .system-row { display: flex; align-items: center; gap: 3px; font-family: Arial, Helvetica, sans-serif; font-size: 0.72rem; font-weight: 900; color: #111; margin-bottom: 0.08rem; }
 .system-key { min-width: 42px; }
 .system-box { width: 10px; height: 10px; border: 2px solid #111; box-sizing: border-box; background: #f7f7f7; }
@@ -299,7 +306,7 @@ button.ghost { background: #273055; }
 .weapon-editor-card .grid3 { grid-template-columns: 1fr; gap: 0.45rem; }
 
 .right-col { border: 3px solid #ff0000; background: #fafafa; }
-.weapon-slot { border-top: 2px solid #ff0000; height: 170px; min-height: 170px; display: flex; flex-direction: column; }
+.weapon-slot { border-top: 2px solid #ff0000; min-height: 0; flex: 1; display: flex; flex-direction: column; }
 .weapon-slot:first-of-type { border-top: 0; }
 .slot-title { background: #ff0000; color: #fff; font-weight: 900; padding: 0.17rem 0.3rem; }
 .slot-body { color: #233; padding: 0.35rem 0.38rem; min-height: 0; flex: 1; overflow: auto; font-family: Arial, Helvetica, sans-serif; font-size: 0.74rem; }
@@ -434,6 +441,107 @@ pre { background: #0b1128; color: #d5e2ff; padding: 0.65rem; border-radius: 8px;
   .grid3 { grid-template-columns: 1fr; }
   .shield-stat-grid { grid-template-columns: 1fr; }
 }
+
+@media print {
+  @page {
+    size: letter landscape;
+    margin: 0.25in;
+  }
+
+  :root { color-scheme: light; }
+  body { background: #fff; }
+  .layout {
+    display: block;
+    padding: 0;
+  }
+  .controls,
+  .preview-head,
+  #drafts,
+  #jsonPreview,
+  .preview-wrap > h3,
+  .live-badge {
+    display: none !important;
+  }
+  .panel {
+    border: 0;
+    background: transparent;
+    padding: 0;
+  }
+  .preview-wrap {
+    position: static;
+  }
+  .ssd-template {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .ssd-template,
+  .ssd-template * {
+    text-rendering: geometricPrecision;
+  }
+
+  .template-ship,
+  .template-class,
+  .col h3,
+  .shield-top,
+  .shield-bottom,
+  .slot-title,
+  .structure,
+  #pvFaction,
+  #pvEra {
+    font-size: 1.18rem;
+  }
+
+  .eng-stats span,
+  .green-block h4,
+  .fn-row,
+  .power-track-row,
+  .man-row,
+  .system-row,
+  .wpn-range-band,
+  .wpn-special-row,
+  .wpn-trait-row,
+  .slot-body {
+    font-size: 0.96rem;
+    line-height: 1.2;
+  }
+
+  .wpn-die {
+    width: 18px;
+    height: 18px;
+    font-size: 0.62rem;
+  }
+
+  .wpn-power-circle,
+  .wpn-power-stop,
+  .wpn-structure-box,
+  .system-box,
+  .shield-box,
+  .shield-gen,
+  .shield-gen-black,
+  .armor-box,
+  .power-box,
+  .dmg-stop,
+  .structure-box,
+  .fn-dot,
+  .power-dot,
+  .rnd-circle {
+    transform: scale(1.28);
+    transform-origin: center;
+  }
+
+  .stat-icon,
+  .crew-img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
 @media (max-width: 980px) {
   .template-columns { grid-template-columns: 1fr; }
   .side-port,.side-stbd { position: static; transform: none; display: inline-flex; margin: 0.2rem; }
