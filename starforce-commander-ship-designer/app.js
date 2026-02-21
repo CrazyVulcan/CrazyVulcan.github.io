@@ -708,16 +708,19 @@ function renderManeuvering(sublight) {
     .join('');
 }
 
-function renderPreview(build) {
+function renderPreview(build, options = {}) {
+  const { recalculatePointValue = true } = options;
   document.getElementById('pvName').textContent = build.identity.name || 'SHIP NAME / ID';
   document.getElementById('pvClass').textContent = build.identity.classType || 'CLASSNAME ID-class Weight Class';
   document.getElementById('pvFaction').textContent = build.identity.faction || 'COMMON';
   document.getElementById('pvSizeClassIcon').src = 'assets/size-class-icon.svg';
-  const pointValue = calculatePointValue(build);
-  document.getElementById('pvPointValue').textContent = `${pointValue}PV`;
-  const pointValueField = form.elements.namedItem('pointValueCalculated');
-  if (pointValueField && 'value' in pointValueField) {
-    pointValueField.value = String(pointValue);
+  if (recalculatePointValue) {
+    const pointValue = calculatePointValue(build);
+    document.getElementById('pvPointValue').textContent = `${pointValue}PV`;
+    const pointValueField = form.elements.namedItem('pointValueCalculated');
+    if (pointValueField && 'value' in pointValueField) {
+      pointValueField.value = String(pointValue);
+    }
   }
   document.getElementById('pvEra').textContent = build.identity.era || 'ERA';
 
@@ -993,10 +996,11 @@ function pulseLiveBadge() {
   }, 110);
 }
 
-function render() {
+function render(options = {}) {
+  const { recalculatePointValue = true } = options;
   syncDerivedFunctionInputs();
   const build = getBuild();
-  renderPreview(build);
+  renderPreview(build, { recalculatePointValue });
   jsonPreview.textContent = getJsonPreview(build);
   pulseLiveBadge();
 }
@@ -1208,8 +1212,8 @@ function exportCurrent() {
   downloadBlob(blob, `${name}.json`);
 }
 
-form.addEventListener('input', render);
-form.addEventListener('change', render);
+form.addEventListener('input', () => render({ recalculatePointValue: false }));
+form.addEventListener('change', () => render({ recalculatePointValue: true }));
 document.getElementById('saveBtn').addEventListener('click', saveDraft);
 document.getElementById('clearBtn').addEventListener('click', clearDrafts);
 document.getElementById('exportBtn').addEventListener('click', exportCurrent);
