@@ -476,8 +476,72 @@ pre { background: #0b1128; color: #d5e2ff; padding: 0.65rem; border-radius: 8px;
     margin: 0;
     break-inside: avoid;
     page-break-inside: avoid;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .ssd-template,
+  .ssd-template * {
+    text-rendering: geometricPrecision;
+  }
+
+  .template-ship,
+  .template-class,
+  .col h3,
+  .shield-top,
+  .shield-bottom,
+  .slot-title,
+  .structure,
+  #pvFaction,
+  #pvEra {
+    font-size: 1.18rem;
+  }
+
+  .eng-stats span,
+  .green-block h4,
+  .fn-row,
+  .power-track-row,
+  .man-row,
+  .system-row,
+  .wpn-range-band,
+  .wpn-special-row,
+  .wpn-trait-row,
+  .slot-body {
+    font-size: 0.96rem;
+    line-height: 1.2;
+  }
+
+  .wpn-die {
+    width: 18px;
+    height: 18px;
+    font-size: 0.62rem;
+  }
+
+  .wpn-power-circle,
+  .wpn-power-stop,
+  .wpn-structure-box,
+  .system-box,
+  .shield-box,
+  .shield-gen,
+  .shield-gen-black,
+  .armor-box,
+  .power-box,
+  .dmg-stop,
+  .structure-box,
+  .fn-dot,
+  .power-dot,
+  .rnd-circle {
+    transform: scale(1.28);
+    transform-origin: center;
+  }
+
+  .stat-icon,
+  .crew-img {
+    width: 24px;
+    height: 24px;
   }
 }
+
 @media (max-width: 980px) {
   .template-columns { grid-template-columns: 1fr; }
   .side-port,.side-stbd { position: static; transform: none; display: inline-flex; margin: 0.2rem; }
