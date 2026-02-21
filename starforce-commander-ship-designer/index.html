@@ -67,8 +67,8 @@
               <label>Name <input name="wpn1Name" value="WPN NAME" /></label>
               <label>Traits (comma separated) <input name="wpn1Traits" value="HVY, FTL, NoBAT" /></label>
             </div>
-            <label>Mount arcs (up to 8, comma separated from: N, NE, E, SE, S, SW, W, NW)
-              <input name="wpn1MountArcs" value="N,NE" />
+            <label>Mount arcs (per mount as wedge values, e.g. <code>1,2|5,6</code>)
+              <input name="wpn1MountArcs" value="1,2|5,6" />
             </label>
             <div class="grid3">
               <label>Power circles (1-6) <input name="wpn1PowerCircles" type="number" min="1" max="6" value="3" /></label>
@@ -92,7 +92,7 @@
               <label>Name <input name="wpn2Name" value="" placeholder="Optional" /></label>
               <label>Traits (comma separated) <input name="wpn2Traits" value="" /></label>
             </div>
-            <label>Mount arcs <input name="wpn2MountArcs" value="" placeholder="N,E" /></label>
+            <label>Mount arcs <input name="wpn2MountArcs" value="" placeholder="1,2|5,6" /></label>
             <div class="grid3">
               <label>Power circles (1-6) <input name="wpn2PowerCircles" type="number" min="1" max="6" value="2" /></label>
               <label>Power stop positions (comma) <input name="wpn2PowerStops" value="" /></label>
