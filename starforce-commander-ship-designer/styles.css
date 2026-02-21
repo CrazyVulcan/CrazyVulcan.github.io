@@ -112,13 +112,29 @@ button.ghost { background: #273055; }
 .green-block h4 { margin: 0; background: #07af52; color: #fff; padding: 0.15rem 0.25rem; font-size: 0.74rem; letter-spacing: 0.01em; display: flex; justify-content: space-between; }
 .green-block pre { min-height: 80px; margin: 0; background: transparent; color: #233; white-space: pre-wrap; border-radius: 0; font-family: Arial, Helvetica, sans-serif; font-size: 0.8rem; }
 .power-track-list { min-height: 156px; margin: 0; padding: 0.25rem 0.3rem; color: #111; font-family: Arial, Helvetica, sans-serif; overflow: auto; }
-.power-track-row { display: grid; grid-template-columns: 132px minmax(0, 1fr); align-items: center; gap: 0.45rem; margin-bottom: 0.18rem; font-size: 0.72rem; font-weight: 700; }
+.power-track-row { display: grid; grid-template-columns: 132px minmax(0, 1fr); align-items: center; gap: 0.45rem; margin-bottom: 0.2rem; font-size: 0.72rem; font-weight: 700; }
 .power-track-name { text-transform: uppercase; white-space: nowrap; }
-.power-track-units { display: flex; flex-wrap: wrap; gap: 0.34rem; }
-.power-unit { display: inline-flex; align-items: center; gap: 0.15rem; }
-.power-dot { width: 10px; height: 10px; border: 2px solid #09a84f; border-radius: 50%; background: #09a84f; box-sizing: border-box; }
-.power-dot.is-ring { background: transparent; }
-.power-box { width: 10px; height: 10px; border: 3px solid #111; box-sizing: border-box; background: #f2f2f2; }
+.power-track-units { display: flex; flex-wrap: wrap; gap: 0.38rem; }
+.power-unit { display: inline-flex; align-items: center; gap: 0.2rem; }
+.power-dot {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #09a84f;
+  border-radius: 50%;
+  background: #09a84f;
+  box-sizing: border-box;
+  flex: 0 0 auto;
+}
+.power-dot.is-ring { background: transparent; border-width: 3px; }
+.power-box {
+  width: 14px;
+  height: 14px;
+  border: 3px solid #111;
+  box-sizing: border-box;
+  background: #f2f2f2;
+  display: inline-block;
+  flex: 0 0 auto;
+}
 
 .middle-col { border: 3px solid #10a5df; background: #14a7de; padding: 0.15rem; }
 .shield-frame { position: relative; border: 3px solid #10a5df; background: #14a7de; padding: 0.18rem 1rem 0.12rem; }
