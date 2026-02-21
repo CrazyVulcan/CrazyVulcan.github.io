@@ -409,9 +409,13 @@ function renderFunctions(functionsConfig) {
   };
 
   const addValueDots = (levelsEl, values = [], free = 0) => {
-    for (let i = 0; i < Number(free || 0); i += 1) addDot(levelsEl, true);
-    values.forEach((value) => {
-      addDot(levelsEl, false);
+    const freeCount = Number(free || 0);
+    for (let i = 0; i < freeCount; i += 1) addDot(levelsEl, true);
+
+    values.forEach((value, idx) => {
+      if (idx >= freeCount) {
+        addDot(levelsEl, false);
+      }
       addToken(levelsEl, String(value));
     });
   };
