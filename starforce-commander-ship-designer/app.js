@@ -1231,11 +1231,47 @@ function exportCurrent() {
   downloadBlob(blob, `${name}.json`);
 }
 
+function importJsonFile(file) {
+  if (!file) {
+    return;
+  }
+
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const importedDraft = JSON.parse(String(reader.result || '{}'));
+      if (!importedDraft || typeof importedDraft !== 'object') {
+        throw new Error('Invalid JSON');
+      }
+
+      const mergedDraft = {
+        ...importedDraft,
+        shipArtDataUrl: typeof importedDraft.shipArtDataUrl === 'string'
+          ? importedDraft.shipArtDataUrl
+          : shipArtDataUrl
+      };
+      restoreDraft(mergedDraft);
+    } catch {
+      window.alert('Could not import JSON. Please choose a valid SSD export file.');
+    }
+  };
+  reader.readAsText(file);
+}
+
 form.addEventListener('input', () => render({ recalculatePointValue: false }));
 form.addEventListener('change', () => render({ recalculatePointValue: false }));
 document.getElementById('saveBtn').addEventListener('click', saveDraft);
 document.getElementById('clearBtn').addEventListener('click', clearDrafts);
 document.getElementById('exportBtn').addEventListener('click', exportCurrent);
+const importJsonInput = document.getElementById('importJsonInput');
+document.getElementById('importBtn').addEventListener('click', () => {
+  importJsonInput.click();
+});
+importJsonInput.addEventListener('change', (event) => {
+  const [file] = event.target.files || [];
+  importJsonFile(file);
+  importJsonInput.value = '';
+});
 document.getElementById('printBtn').addEventListener('click', () => window.print());
 document.getElementById('updatePvBtn').addEventListener('click', () => render({ recalculatePointValue: true }));
 
