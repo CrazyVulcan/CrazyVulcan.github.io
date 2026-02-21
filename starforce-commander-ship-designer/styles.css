@@ -290,11 +290,11 @@ button.ghost { background: #273055; }
 .crew-img { width: 28px; height: 28px; display: block; }
 
 .weapon-editor-list { display: grid; gap: 0.5rem; }
-.weapon-editor-card { border: 2px solid #0fb366; border-radius: 0; padding: 0.45rem 0.5rem; background: #f3f4f6; }
-.weapon-editor-card legend { font-weight: 900; color: #0a3f5f; padding: 0 0.22rem; text-transform: uppercase; font-size: 0.8rem; }
+.weapon-editor-card { border: 1px solid #32427a; border-radius: 8px; padding: 0.45rem 0.5rem; background: #0f1731; }
+.weapon-editor-card legend { font-weight: 900; color: #dbe7ff; padding: 0 0.22rem; text-transform: uppercase; font-size: 0.8rem; }
 .weapon-editor-card code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.78rem; }
-.weapon-editor-card label { color: #1f2b46; font-weight: 700; }
-.weapon-editor-card input { border-color: #2b447f; }
+.weapon-editor-card label { color: #dbe7ff; font-weight: 700; }
+.weapon-editor-card input { border-color: #32427a; }
 .weapon-editor-card .grid2,
 .weapon-editor-card .grid3 { grid-template-columns: 1fr; gap: 0.45rem; }
 
