@@ -359,14 +359,16 @@ button.ghost { background: #273055; }
 }
 .structure-track {
   position: relative;
-  min-height: 45px;
+  min-height: 34px;
   border: 3px solid #f0b500;
   background: #fff;
-  padding: 0.18rem 0.26rem;
+  padding: 0.08rem 0.26rem;
+  display: flex;
+  align-items: center;
 }
 .structure-row {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   flex-wrap: nowrap;
   gap: var(--structure-box-gap);
   min-height: var(--structure-box-size);
