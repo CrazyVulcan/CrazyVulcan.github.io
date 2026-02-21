@@ -139,11 +139,11 @@ export function calculatePointValue(build) {
   // A ship that keeps firing while absorbing return fire scales faster than linearly.
   const sustainedCombatPressure = offense * (1 + (durability / 50));
 
-  // Calibrated targets:
-  // - Yorktown II baseline remains around 30 PV.
-  // - V-7D Raider counterpart lands near Yorktown II (~29-31 PV).
-  // - Yorktown V advanced fit lands in the low-mid 50s PV band.
+  // Main combat calibration path.
   const total = -50 + sustainedCombatPressure + (utility * 0.2);
 
-  return Math.max(1, Math.round(total));
+  // Survivability/utility floor prevents valid low-offense escorts from collapsing to 1 PV.
+  const survivabilityFloor = (durability * 0.5) + (utility * 0.8) - 8;
+
+  return Math.max(1, Math.round(Math.max(total, survivabilityFloor)));
 }
