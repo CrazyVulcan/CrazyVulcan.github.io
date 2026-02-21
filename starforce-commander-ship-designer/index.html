@@ -66,16 +66,16 @@
         <label>Functions + Power Level <textarea name="functions" rows="3" placeholder="ACC/DEC, SIF, BTTY RECH..."></textarea></label>
         <div class="power-system-editor">
           <strong>Power System Tracks</strong>
-          <p class="muted">Set points per track and structure boxes per point (1-3). Tracks with 0 points are hidden.</p>
-          <div class="power-grid-head"><span>Track</span><span>Points</span><span>Boxes/Point</span></div>
+          <p class="muted">Set points, optional per-point box pattern (e.g. 1,2,1,2), and whether a track shows a green dot.</p>
+          <div class="power-grid-head"><span>Track</span><span>Points</span><span>Boxes/Point</span><span>Pattern</span><span>Dot</span></div>
           <div class="power-grid">
-            <label>L MAIN</label><input name="powerLMainPoints" type="number" min="0" value="4" /><input name="powerLMainBoxes" type="number" min="1" max="3" value="2" />
-            <label>R MAIN</label><input name="powerRMainPoints" type="number" min="0" value="4" /><input name="powerRMainBoxes" type="number" min="1" max="3" value="2" />
-            <label>C MAIN</label><input name="powerCMainPoints" type="number" min="0" value="4" /><input name="powerCMainBoxes" type="number" min="1" max="3" value="2" />
-            <label>SL REAC</label><input name="powerSlReacPoints" type="number" min="0" value="1" /><input name="powerSlReacBoxes" type="number" min="1" max="3" value="2" />
-            <label>AUX PWR</label><input name="powerAuxPwrPoints" type="number" min="0" value="1" /><input name="powerAuxPwrBoxes" type="number" min="1" max="3" value="2" />
-            <label>BATTERY</label><input name="powerBatteryPoints" type="number" min="0" value="2" /><input name="powerBatteryBoxes" type="number" min="1" max="3" value="1" />
-            <label>FTL DRIVE</label><input name="powerFtlDrivePoints" type="number" min="0" value="1" /><input name="powerFtlDriveBoxes" type="number" min="1" max="3" value="3" />
+            <label>L MAIN</label><input name="powerLMainPoints" type="number" min="0" value="4" /><input name="powerLMainBoxes" type="number" min="1" max="3" value="2" /><input name="powerLMainPattern" value="" placeholder="1,2,1,2" /><input name="powerLMainHasDot" type="checkbox" checked />
+            <label>R MAIN</label><input name="powerRMainPoints" type="number" min="0" value="4" /><input name="powerRMainBoxes" type="number" min="1" max="3" value="2" /><input name="powerRMainPattern" value="" placeholder="1,2,1,2" /><input name="powerRMainHasDot" type="checkbox" checked />
+            <label>C MAIN</label><input name="powerCMainPoints" type="number" min="0" value="0" /><input name="powerCMainBoxes" type="number" min="1" max="3" value="2" /><input name="powerCMainPattern" value="" placeholder="1,2,1,2" /><input name="powerCMainHasDot" type="checkbox" checked />
+            <label>SL REAC</label><input name="powerSlReacPoints" type="number" min="0" value="1" /><input name="powerSlReacBoxes" type="number" min="1" max="3" value="2" /><input name="powerSlReacPattern" value="" placeholder="1,2,1,2" /><input name="powerSlReacHasDot" type="checkbox" checked />
+            <label>AUX PWR</label><input name="powerAuxPwrPoints" type="number" min="0" value="1" /><input name="powerAuxPwrBoxes" type="number" min="1" max="3" value="2" /><input name="powerAuxPwrPattern" value="" placeholder="1,2,1,2" /><input name="powerAuxPwrHasDot" type="checkbox" checked />
+            <label>BATTERY</label><input name="powerBatteryPoints" type="number" min="0" value="1" /><input name="powerBatteryBoxes" type="number" min="1" max="3" value="1" /><input name="powerBatteryPattern" value="" placeholder="1,2,1,2" /><input name="powerBatteryHasDot" type="checkbox" checked />
+            <label>FTL DRIVE</label><input name="powerFtlDrivePoints" type="number" min="0" value="1" /><input name="powerFtlDriveBoxes" type="number" min="1" max="3" value="2" /><input name="powerFtlDrivePattern" value="" placeholder="1,2,1,2" /><input name="powerFtlDriveHasDot" type="checkbox" />
           </div>
         </div>
         <div class="maneuver-editor">
@@ -142,7 +142,7 @@
               <pre id="pvFunctions"></pre>
             </div>
             <div class="green-block block-power">
-              <h4>POWER SYSTEM</h4>
+              <h4><span>POWER SYSTEM</span><span id="pvMaxPower"></span></h4>
               <div id="pvPowerTracks" class="power-track-list"></div>
             </div>
             <div class="green-block block-maneuver">

@@ -6,13 +6,13 @@ const STORAGE_KEY = 'sfCommanderSsdDrafts';
 let shipArtDataUrl = '';
 
 const POWER_TRACK_CONFIG = [
-  { key: 'lMain', label: 'L MAIN', pointsField: 'powerLMainPoints', boxesField: 'powerLMainBoxes' },
-  { key: 'rMain', label: 'R MAIN', pointsField: 'powerRMainPoints', boxesField: 'powerRMainBoxes' },
-  { key: 'cMain', label: 'C MAIN', pointsField: 'powerCMainPoints', boxesField: 'powerCMainBoxes' },
-  { key: 'slReac', label: 'SL REAC', pointsField: 'powerSlReacPoints', boxesField: 'powerSlReacBoxes' },
-  { key: 'auxPwr', label: 'AUX PWR', pointsField: 'powerAuxPwrPoints', boxesField: 'powerAuxPwrBoxes' },
-  { key: 'battery', label: 'BATTERY', pointsField: 'powerBatteryPoints', boxesField: 'powerBatteryBoxes' },
-  { key: 'ftlDrive', label: 'FTL DRIVE', pointsField: 'powerFtlDrivePoints', boxesField: 'powerFtlDriveBoxes' }
+  { key: 'lMain', label: 'L MAIN', pointsField: 'powerLMainPoints', boxesField: 'powerLMainBoxes', patternField: 'powerLMainPattern', hasDotField: 'powerLMainHasDot' },
+  { key: 'rMain', label: 'R MAIN', pointsField: 'powerRMainPoints', boxesField: 'powerRMainBoxes', patternField: 'powerRMainPattern', hasDotField: 'powerRMainHasDot' },
+  { key: 'cMain', label: 'C MAIN', pointsField: 'powerCMainPoints', boxesField: 'powerCMainBoxes', patternField: 'powerCMainPattern', hasDotField: 'powerCMainHasDot' },
+  { key: 'slReac', label: 'SL REAC', pointsField: 'powerSlReacPoints', boxesField: 'powerSlReacBoxes', patternField: 'powerSlReacPattern', hasDotField: 'powerSlReacHasDot' },
+  { key: 'auxPwr', label: 'AUX PWR', pointsField: 'powerAuxPwrPoints', boxesField: 'powerAuxPwrBoxes', patternField: 'powerAuxPwrPattern', hasDotField: 'powerAuxPwrHasDot' },
+  { key: 'battery', label: 'BATTERY', pointsField: 'powerBatteryPoints', boxesField: 'powerBatteryBoxes', patternField: 'powerBatteryPattern', hasDotField: 'powerBatteryHasDot' },
+  { key: 'ftlDrive', label: 'FTL DRIVE', pointsField: 'powerFtlDrivePoints', boxesField: 'powerFtlDriveBoxes', patternField: 'powerFtlDrivePattern', hasDotField: 'powerFtlDriveHasDot' }
 ];
 
 function parseWeapons(raw) {
@@ -57,13 +57,23 @@ function readSublight() {
   };
 }
 
+function parsePowerPattern(raw) {
+  return String(raw || '')
+    .split(/[\s,]+/)
+    .map((part) => Number(part.trim()))
+    .filter((value) => Number.isFinite(value) && value >= 1 && value <= 3)
+    .map((value) => clamp(Math.round(value), 1, 3));
+}
+
 function readPowerSystem() {
   return {
     tracks: POWER_TRACK_CONFIG.map((track) => ({
       key: track.key,
       label: track.label,
       points: Math.max(0, num(track.pointsField)),
-      boxesPerPoint: clamp(num(track.boxesField), 1, 3)
+      boxesPerPoint: clamp(num(track.boxesField), 1, 3),
+      boxPattern: parsePowerPattern(form.elements[track.patternField]?.value),
+      hasDot: Boolean(form.elements[track.hasDotField]?.checked)
     }))
   };
 }
@@ -312,43 +322,60 @@ function renderPreview(build) {
 
 function renderPowerSystem(powerSystem) {
   const tracks = powerSystem?.tracks ?? [];
+  const activeTracks = tracks.filter((track) => Number(track.points) > 0);
   const container = document.getElementById('pvPowerTracks');
+  const maxPowerEl = document.getElementById('pvMaxPower');
   container.innerHTML = '';
 
-  tracks
-    .filter((track) => Number(track.points) > 0)
-    .forEach((track) => {
-      const row = document.createElement('div');
-      row.className = 'power-track-row';
+  const basePower = activeTracks
+    .filter((track) => track.key !== 'battery' && track.key !== 'ftlDrive')
+    .reduce((sum, track) => sum + Number(track.points || 0), 0);
+  const batteryPower = activeTracks
+    .filter((track) => track.key === 'battery')
+    .reduce((sum, track) => sum + Number(track.points || 0), 0);
+  maxPowerEl.textContent = `MAX POWER:${basePower}+${batteryPower}`;
 
-      const name = document.createElement('span');
-      name.className = 'power-track-name';
-      name.textContent = track.label;
-      row.appendChild(name);
+  activeTracks.forEach((track) => {
+    const row = document.createElement('div');
+    row.className = 'power-track-row';
 
-      const units = document.createElement('span');
-      units.className = 'power-track-units';
+    const name = document.createElement('span');
+    name.className = 'power-track-name';
+    name.textContent = track.label;
+    row.appendChild(name);
 
-      for (let i = 0; i < track.points; i += 1) {
-        const unit = document.createElement('span');
-        unit.className = 'power-unit';
+    const units = document.createElement('span');
+    units.className = 'power-track-units';
 
+    const pointCount = Math.max(0, Number(track.points || 0));
+    const pattern = Array.isArray(track.boxPattern) ? track.boxPattern : [];
+
+    for (let i = 0; i < pointCount; i += 1) {
+      const unit = document.createElement('span');
+      unit.className = 'power-unit';
+
+      if (track.hasDot !== false) {
         const dot = document.createElement('span');
         dot.className = `power-dot${track.key === 'battery' ? ' is-ring' : ''}`;
         unit.appendChild(dot);
-
-        for (let boxIdx = 0; boxIdx < clamp(track.boxesPerPoint, 1, 3); boxIdx += 1) {
-          const box = document.createElement('span');
-          box.className = 'power-box';
-          unit.appendChild(box);
-        }
-
-        units.appendChild(unit);
       }
 
-      row.appendChild(units);
-      container.appendChild(row);
-    });
+      const boxesForPoint = pattern.length > 0
+        ? pattern[i % pattern.length]
+        : clamp(track.boxesPerPoint, 1, 3);
+
+      for (let boxIdx = 0; boxIdx < boxesForPoint; boxIdx += 1) {
+        const box = document.createElement('span');
+        box.className = 'power-box';
+        unit.appendChild(box);
+      }
+
+      units.appendChild(unit);
+    }
+
+    row.appendChild(units);
+    container.appendChild(row);
+  });
 }
 
 function getJsonPreview(build) {
@@ -432,6 +459,8 @@ function restoreDraft(draft) {
     const trackData = draftTracks.find((entry) => entry.key === track.key || entry.label === track.label);
     form.elements[track.pointsField].value = Math.max(0, Number(trackData?.points ?? form.elements[track.pointsField].value ?? 0));
     form.elements[track.boxesField].value = clamp(Number(trackData?.boxesPerPoint ?? form.elements[track.boxesField].value ?? 2), 1, 3);
+    form.elements[track.patternField].value = (trackData?.boxPattern ?? []).join(',');
+    form.elements[track.hasDotField].checked = Boolean(trackData?.hasDot ?? form.elements[track.hasDotField].checked);
   });
 
   const sublight = draft.sublight ?? {
