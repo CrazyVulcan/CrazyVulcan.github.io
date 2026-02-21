@@ -339,8 +339,8 @@ button.ghost { background: #273055; }
 .wpn-special-row b,.wpn-trait-row b { color: #0b67b2; }
 
 .template-bottom {
-  --structure-box-size: 12px;
-  --structure-box-gap: 4px;
+  --structure-box-size: 18px;
+  --structure-box-gap: 6px;
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
@@ -359,16 +359,18 @@ button.ghost { background: #273055; }
 }
 .structure-track {
   position: relative;
-  min-height: 30px;
+  min-height: 34px;
   border: 3px solid #f0b500;
   background: #fff;
-  padding: 0.14rem 0.2rem;
+  padding: 0.08rem 0.26rem;
+  display: flex;
+  align-items: center;
 }
 .structure-row {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   flex-wrap: nowrap;
-  gap: 3px;
+  gap: var(--structure-box-gap);
   min-height: var(--structure-box-size);
   overflow: hidden;
 }
@@ -376,20 +378,20 @@ button.ghost { background: #273055; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 24px;
+  min-width: 36px;
   color: #111;
-  font-size: 0.82rem;
+  font-size: 1.23rem;
   line-height: 1;
   font-family: Arial, Helvetica, sans-serif;
-  margin: 0 1px;
-  gap: 1px;
+  margin: 0 2px;
+  gap: 2px;
 }
 .team-count {
   font-weight: 900;
 }
 .wrench-icon {
-  width: 10px;
-  height: 10px;
+  width: 15px;
+  height: 15px;
   display: inline-block;
   background: center / contain no-repeat url("assets/wrench-icon.svg");
 }
@@ -422,6 +424,7 @@ button.ghost { background: #273055; }
   gap: 0.15rem;
 }
 #pvFaction,
+#pvPointValue,
 #pvEra {
   background: #566674;
   border: 3px solid #111;
@@ -493,6 +496,7 @@ pre { background: #0b1128; color: #d5e2ff; padding: 0.65rem; border-radius: 8px;
   .slot-title,
   .structure,
   #pvFaction,
+  #pvPointValue,
   #pvEra {
     font-size: 1.18rem;
   }

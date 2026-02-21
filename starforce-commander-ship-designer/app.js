@@ -1,3 +1,5 @@
+import { calculatePointValue } from './pv-calculator.js';
+
 const form = document.getElementById('ssdForm');
 const draftsEl = document.getElementById('drafts');
 const jsonPreview = document.getElementById('jsonPreview');
@@ -709,6 +711,9 @@ function renderPreview(build) {
   document.getElementById('pvClass').textContent = build.identity.classType || 'CLASSNAME ID-class Weight Class';
   document.getElementById('pvFaction').textContent = build.identity.faction || 'COMMON';
   document.getElementById('pvSizeClassIcon').src = 'assets/size-class-icon.svg';
+  const pointValue = calculatePointValue(build);
+  document.getElementById('pvPointValue').textContent = `${pointValue}PV`;
+  form.elements.pointValueCalculated.value = String(pointValue);
   document.getElementById('pvEra').textContent = build.identity.era || 'ERA';
 
   document.getElementById('pvMove').textContent = build.engineering.move;
