@@ -94,17 +94,20 @@ function readFunctionsConfig() {
       {
         label: form.elements.fnWpnALabel?.value || 'WPN A',
         values: parseFunctionValues(form.elements.fnWpnAValues?.value),
-        free: clamp(num('fnWpnAFree'), 0, 3)
+        free: clamp(num('fnWpnAFree'), 0, 3),
+        levels: clamp(num('fnWpnALevels'), 0, 8)
       },
       {
         label: form.elements.fnWpnBLabel?.value || 'WPN B',
         values: parseFunctionValues(form.elements.fnWpnBValues?.value),
-        free: clamp(num('fnWpnBFree'), 0, 3)
+        free: clamp(num('fnWpnBFree'), 0, 3),
+        levels: clamp(num('fnWpnBLevels'), 0, 8)
       },
       {
         label: form.elements.fnWpnCLabel?.value || 'WPN C',
         values: parseFunctionValues(form.elements.fnWpnCValues?.value),
-        free: clamp(num('fnWpnCFree'), 0, 3)
+        free: clamp(num('fnWpnCFree'), 0, 3),
+        levels: clamp(num('fnWpnCLevels'), 0, 8)
       }
     ]
   };
@@ -473,7 +476,9 @@ function renderFunctions(functionsConfig) {
   const weapons = Array.isArray(cfg.weapons) ? cfg.weapons : [];
   weapons.forEach((weapon, idx) => {
     const row = addRow(weapon.label || `WPN ${String.fromCharCode(65 + idx)}`, 'red');
-    addValueDots(row, Array.isArray(weapon.values) ? weapon.values : [], Number(weapon.free || 0));
+    const values = Array.isArray(weapon.values) ? weapon.values : [];
+    const levelCount = Math.max(0, Number(weapon.levels ?? values.length));
+    addValueDots(row, values.slice(0, levelCount), Number(weapon.free || 0));
   });
 }
 
@@ -622,14 +627,17 @@ function restoreDraft(draft) {
   form.elements.fnGenSysFree.value = fn.genSys?.free ?? 1;
   const fnWpn = fn.weapons ?? [];
   form.elements.fnWpnALabel.value = fnWpn[0]?.label ?? 'A/MAT TRP';
-  form.elements.fnWpnAValues.value = (fnWpn[0]?.values ?? ['2']).join(',');
-  form.elements.fnWpnAFree.value = fnWpn[0]?.free ?? 0;
-  form.elements.fnWpnBLabel.value = fnWpn[1]?.label ?? 'T-37 DISR';
-  form.elements.fnWpnBValues.value = (fnWpn[1]?.values ?? ['2']).join(',');
+  form.elements.fnWpnAValues.value = (fnWpn[0]?.values ?? ['1', '4']).join(',');
+  form.elements.fnWpnAFree.value = fnWpn[0]?.free ?? 1;
+  form.elements.fnWpnALevels.value = fnWpn[0]?.levels ?? 2;
+  form.elements.fnWpnBLabel.value = fnWpn[1]?.label ?? 'PHASER';
+  form.elements.fnWpnBValues.value = (fnWpn[1]?.values ?? ['1', '4', '6', '8']).join(',');
   form.elements.fnWpnBFree.value = fnWpn[1]?.free ?? 1;
+  form.elements.fnWpnBLevels.value = fnWpn[1]?.levels ?? 4;
   form.elements.fnWpnCLabel.value = fnWpn[2]?.label ?? 'T-31 DISR';
-  form.elements.fnWpnCValues.value = (fnWpn[2]?.values ?? ['3', '5']).join(',');
+  form.elements.fnWpnCValues.value = (fnWpn[2]?.values ?? ['1', '3', '6']).join(',');
   form.elements.fnWpnCFree.value = fnWpn[2]?.free ?? 1;
+  form.elements.fnWpnCLevels.value = fnWpn[2]?.levels ?? 3;
 
   if (form.elements.powerSystem) {
     form.elements.powerSystem.value = draft.textBlocks?.powerSystem ?? '';

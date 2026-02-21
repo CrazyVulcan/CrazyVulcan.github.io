@@ -33,7 +33,7 @@ textarea, input, button { width: 100%; margin-top: 0.25rem; padding: 0.45rem; bo
 .functions-editor { border: 1px solid #32427a; border-radius: 8px; padding: 0.6rem; margin-top: 0.5rem; background: #0f1731; }
 .functions-editor strong { display: block; margin-bottom: 0.2rem; }
 .functions-editor .muted { margin: 0 0 0.5rem; font-size: 0.82rem; }
-.functions-grid-head, .functions-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) 74px 74px minmax(0, 1fr); gap: 0.4rem; align-items: center; }
+.functions-grid-head, .functions-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) 74px 66px minmax(0, 1fr) 56px; gap: 0.35rem; align-items: center; }
 .functions-grid-head { margin: 0.2rem 0; color: #a7b4da; font-size: 0.78rem; }
 .functions-grid label { margin: 0; font-weight: 700; }
 .functions-grid input { margin: 0; }
