@@ -180,7 +180,11 @@ function getBuild() {
     },
     shipArtDataUrl,
     weapons: parseWeapons(form.elements.weapons.value),
-    systems: parseSystems(form.elements.systems.value)
+    systems: parseSystems(form.elements.systems.value),
+    crew: {
+      shuttleCraft: num('shuttleCraft'),
+      marinesStationed: num('marinesStationed')
+    }
   };
 }
 
@@ -388,8 +392,7 @@ function renderPreview(build) {
   weaponSlot(3, build.weapons[2], weaponPower[2] !== false);
   weaponSlot(4, build.weapons[3], weaponPower[3] !== false);
 
-  const systemsText = build.systems.map((entry) => `${entry.key} ${entry.value}`.trim()).join('\n');
-  document.getElementById('pvSystems').textContent = systemsText;
+  renderSystems(build.systems, build.crew);
   renderStructure(build);
 }
 
@@ -498,6 +501,35 @@ function renderFunctions(functionsConfig) {
     const row = addRow(weapon.label || `WPN ${String.fromCharCode(65 + idx)}`, 'red');
     addValueDots(row, values, Number(weapon.free || 0));
   });
+}
+
+
+function renderSystems(systems, crew) {
+  const container = document.getElementById('pvSystems');
+  container.innerHTML = '';
+  const rows = Array.isArray(systems) ? systems : [];
+
+  rows.forEach((entry) => {
+    const row = document.createElement('div');
+    row.className = 'system-row';
+
+    const key = document.createElement('span');
+    key.className = 'system-key';
+    key.textContent = String(entry.key || '').slice(0, 5).toUpperCase();
+    row.appendChild(key);
+
+    const count = Math.max(0, Number(entry.value || 0));
+    for (let i = 0; i < count; i += 1) {
+      const box = document.createElement('span');
+      box.className = 'system-box';
+      row.appendChild(box);
+    }
+
+    container.appendChild(row);
+  });
+
+  document.getElementById('pvShuttleCraft').textContent = String(Math.max(0, Number(crew?.shuttleCraft || 0)));
+  document.getElementById('pvMarines').textContent = String(Math.max(0, Number(crew?.marinesStationed || 0)));
 }
 
 function renderPowerSystem(powerSystem) {
@@ -696,6 +728,8 @@ function restoreDraft(draft) {
   shipArtDataUrl = draft.shipArtDataUrl ?? '';
   form.elements.weapons.value = (draft.weapons ?? []).map((item) => [item.name, ...(item.ranges ?? [])].join('|')).join('\n');
   form.elements.systems.value = (draft.systems ?? []).map((item) => `${item.key}:${item.value ?? ''}`).join('\n');
+  form.elements.shuttleCraft.value = draft.crew?.shuttleCraft ?? 4;
+  form.elements.marinesStationed.value = draft.crew?.marinesStationed ?? 10;
 
   render();
 }

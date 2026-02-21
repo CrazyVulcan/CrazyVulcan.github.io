@@ -170,7 +170,11 @@
         </div>
 
         <h2>Systems (one per line)</h2>
-        <label><textarea name="systems" rows="4" placeholder="SCNC:0"></textarea></label>
+        <label><textarea name="systems" rows="4" placeholder="SCNC:3\nSENS:4\nQTRS:2"></textarea></label>
+        <div class="grid2">
+          <label>Shuttle Craft <input name="shuttleCraft" type="number" min="0" value="4" /></label>
+          <label>Marines Stationed <input name="marinesStationed" type="number" min="0" value="10" /></label>
+        </div>
 
         <h2>Structure</h2>
         <div class="grid2">
@@ -263,7 +267,13 @@
             </div>
             <div class="systems-box">
               <h3>SYSTEMS</h3>
-              <pre id="pvSystems"></pre>
+              <div class="systems-layout">
+                <div id="pvSystems" class="systems-grid"></div>
+                <div class="systems-side">
+                  <div class="crew-box"><span class="crew-icon">🛸</span><b id="pvShuttleCraft">4</b></div>
+                  <div class="crew-box"><span class="crew-icon">🪖</span><b id="pvMarines">10</b></div>
+                </div>
+              </div>
             </div>
           </section>
 

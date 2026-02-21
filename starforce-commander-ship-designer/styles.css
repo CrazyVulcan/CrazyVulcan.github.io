@@ -276,9 +276,17 @@ button.ghost { background: #273055; }
   min-height: 112px;
   justify-content: center;
 }
-.systems-box { border-top: 0; margin-top: 0.3rem; border: 2px solid #f0b500; background: #f8f8f8; }
+.systems-box { border-top: 0; margin-top: 0.3rem; border: 2px solid #f0b500; background: #f8f8f8; padding-bottom: 0.25rem; }
 .systems-box h3 { border-color: #f0b500; }
-.systems-box pre { height: 158px; max-height: 158px; margin: 0; white-space: pre-wrap; color: #223; background: transparent; border-radius: 0; font-family: Arial, Helvetica, sans-serif; font-size: 0.8rem; overflow: auto; }
+.systems-layout { display: grid; grid-template-columns: 1fr 72px; gap: 0.35rem; padding: 0.2rem 0.25rem 0.1rem; align-items: start; }
+.systems-grid { min-height: 158px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 0.4rem; align-content: start; }
+.system-row { display: flex; align-items: center; gap: 3px; font-family: Arial, Helvetica, sans-serif; font-size: 0.72rem; font-weight: 900; color: #111; margin-bottom: 0.08rem; }
+.system-key { min-width: 42px; }
+.system-box { width: 10px; height: 10px; border: 2px solid #111; box-sizing: border-box; background: #f7f7f7; }
+.systems-side { display: flex; flex-direction: column; gap: 0.45rem; }
+.crew-box { border: 4px solid #f0b500; background: #fff; min-height: 64px; display: flex; align-items: center; justify-content: center; gap: 0.3rem; color: #16b15c; font-weight: 900; font-size: 1.8rem; }
+.crew-box b { color: #111; font-size: 2rem; line-height: 1; }
+.crew-icon { font-size: 1.6rem; line-height: 1; }
 
 .right-col { border: 3px solid #ff0000; background: #fafafa; }
 .weapon-slot { border-top: 2px solid #ff0000; height: 170px; min-height: 170px; display: flex; flex-direction: column; }
