@@ -14,6 +14,16 @@ textarea, input, button { width: 100%; margin-top: 0.25rem; padding: 0.45rem; bo
 .shield-stat-card input { margin-top: 0.15rem; }
 .row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem; margin-top: 0.75rem; }
 .row-actions { grid-template-columns: 1fr 1fr; }
+.row-pv-controls {
+  grid-template-columns: minmax(0, 1fr) 150px;
+  align-items: end;
+}
+.row-pv-controls label {
+  margin: 0;
+}
+.row-pv-controls button {
+  margin-top: 0;
+}
 
 .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.55rem; }
 .maneuver-editor { border: 1px solid #32427a; border-radius: 8px; padding: 0.6rem; margin-top: 0.5rem; background: #0f1731; }

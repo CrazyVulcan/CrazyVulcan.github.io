@@ -96,9 +96,14 @@ export function calculatePointValue(build) {
   const durability = durabilityScore(build);
   const utility = mobilityAndSystemsScore(build);
 
-  // Calibrated around the Yorktown II default loadout to land near 29 PV.
-  const baseline = 3;
-  const total = baseline + (offense * 0.36) + (durability * 0.33) + (utility * 0.24);
+  // Core philosophy: value sustained combat pressure over burst.
+  // A ship that keeps firing while absorbing return fire scales faster than linearly.
+  const sustainedCombatPressure = offense * (1 + (durability / 50));
+
+  // Calibrated targets:
+  // - Yorktown II baseline remains in the 25-35 PV band.
+  // - Yorktown V advanced fit lands in the 75-80 PV band.
+  const total = -30 + sustainedCombatPressure + (utility * 0.2);
 
   return Math.max(1, Math.round(total));
 }
