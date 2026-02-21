@@ -1,3 +1,5 @@
+import { calculatePointValue } from './pv-calculator.js';
+
 const form = document.getElementById('ssdForm');
 const draftsEl = document.getElementById('drafts');
 const jsonPreview = document.getElementById('jsonPreview');
@@ -709,6 +711,12 @@ function renderPreview(build) {
   document.getElementById('pvClass').textContent = build.identity.classType || 'CLASSNAME ID-class Weight Class';
   document.getElementById('pvFaction').textContent = build.identity.faction || 'COMMON';
   document.getElementById('pvSizeClassIcon').src = 'assets/size-class-icon.svg';
+  const pointValue = calculatePointValue(build);
+  document.getElementById('pvPointValue').textContent = `${pointValue}PV`;
+  const pointValueField = form.elements.namedItem('pointValueCalculated');
+  if (pointValueField && 'value' in pointValueField) {
+    pointValueField.value = String(pointValue);
+  }
   document.getElementById('pvEra').textContent = build.identity.era || 'ERA';
 
   document.getElementById('pvMove').textContent = build.engineering.move;
@@ -992,7 +1000,17 @@ function render() {
 }
 
 function loadDrafts() {
-  return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) {
+      return [];
+    }
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    localStorage.removeItem(STORAGE_KEY);
+    return [];
+  }
 }
 
 function renderDrafts() {
@@ -1014,70 +1032,98 @@ function renderDrafts() {
 }
 
 function restoreDraft(draft) {
-  form.elements.name.value = draft.identity?.name ?? '';
-  form.elements.classType.value = draft.identity?.classType ?? '';
-  form.elements.faction.value = draft.identity?.faction ?? '';
-  form.elements.era.value = draft.identity?.era ?? '';
+  const getField = (name) => form.elements.namedItem(name);
+  const setValue = (name, value) => {
+    const field = getField(name);
+    if (field && 'value' in field) {
+      field.value = value;
+    }
+  };
+  const setChecked = (name, checked) => {
+    const field = getField(name);
+    if (field && 'checked' in field) {
+      field.checked = Boolean(checked);
+    }
+  };
 
-  form.elements.move.value = draft.engineering?.move ?? 3;
-  form.elements.vector.value = draft.engineering?.vector ?? 2;
-  form.elements.turn.value = draft.engineering?.turn ?? 2;
-  form.elements.special.value = draft.engineering?.special ?? 3;
+  setValue('name', draft.identity?.name ?? '');
+  setValue('classType', draft.identity?.classType ?? '');
+  setValue('faction', draft.identity?.faction ?? '');
+  setValue('era', draft.identity?.era ?? '');
 
-  form.elements.shieldFwd.value = draft.shields?.forward ?? 0;
-  form.elements.shieldAft.value = draft.shields?.aft ?? 0;
-  form.elements.shieldPort.value = draft.shields?.port ?? 0;
-  form.elements.shieldStbd.value = draft.shields?.starboard ?? 0;
+  setValue('move', draft.engineering?.move ?? 3);
+  setValue('vector', draft.engineering?.vector ?? 2);
+  setValue('turn', draft.engineering?.turn ?? 2);
+  setValue('special', draft.engineering?.special ?? 3);
 
-  form.elements.armorFwd.value = draft.armor?.forward ?? 0;
-  form.elements.armorAft.value = draft.armor?.aft ?? 0;
-  form.elements.armorPort.value = draft.armor?.port ?? 0;
-  form.elements.armorStbd.value = draft.armor?.starboard ?? 0;
+  setValue('shieldFwd', draft.shields?.forward ?? 0);
+  setValue('shieldAft', draft.shields?.aft ?? 0);
+  setValue('shieldPort', draft.shields?.port ?? 0);
+  setValue('shieldStbd', draft.shields?.starboard ?? 0);
 
-  form.elements.shieldGen.value = draft.shieldGen ?? 0;
+  setValue('armorFwd', draft.armor?.forward ?? 0);
+  setValue('armorAft', draft.armor?.aft ?? 0);
+  setValue('armorPort', draft.armor?.port ?? 0);
+  setValue('armorStbd', draft.armor?.starboard ?? 0);
+
+  setValue('shieldGen', draft.shieldGen ?? 0);
 
   const fn = draft.functionsConfig || {};
-  form.elements.fnAccDecValues.value = (fn.accDec?.values ?? ['1', '2', '3', '4', '5', '6']).join(',');
-  form.elements.fnAccDecFree.checked = Boolean(fn.accDec?.free ?? 1);
-  form.elements.fnSifIdfValues.value = (fn.sifIdf?.values ?? ['1', '2', '3']).join(',');
-  form.elements.fnSifIdfFree.checked = Boolean(fn.sifIdf?.free ?? 0);
-  form.elements.fnSifIdfEmer.checked = Boolean(fn.sifIdf?.emer ?? true);
-  form.elements.fnFtlEmpty.value = fn.ftl?.empty ?? 2;
-  form.elements.fnCloakEnabled.checked = Boolean(fn.cloak?.enabled ?? false);
-  form.elements.fnCloakEmpty.value = fn.cloak?.empty ?? 3;
-  form.elements.fnSensorValues.value = (fn.sensor?.values ?? ['2', '4', '6']).join(',');
-  form.elements.fnSensorFree.checked = Boolean(fn.sensor?.free ?? 1);
-  form.elements.fnGenSysValues.value = (fn.genSys?.values ?? ['NRM', 'MAX']).join(',');
-  form.elements.fnGenSysFree.checked = Boolean(fn.genSys?.free ?? 1);
-  const fnWpn = fn.weapons ?? [];
-  form.elements.fnWpnALabel.value = fnWpn[0]?.label ?? 'A/MAT TRP';
-  form.elements.fnWpnAFree.checked = Boolean(fnWpn[0]?.free ?? 1);
-  form.elements.fnWpnAEnabled.checked = Boolean(fnWpn[0]?.enabled ?? true);
-  form.elements.fnWpnAValues.value = (fnWpn[0]?.values ?? ['2']).join(',');
-  form.elements.fnWpnBLabel.value = fnWpn[1]?.label ?? 'PHASER';
-  form.elements.fnWpnBFree.checked = Boolean(fnWpn[1]?.free ?? 1);
-  form.elements.fnWpnBEnabled.checked = Boolean(fnWpn[1]?.enabled ?? true);
-  form.elements.fnWpnBValues.value = (fnWpn[1]?.values ?? ['4']).join(',');
-  form.elements.fnWpnCLabel.value = fnWpn[2]?.label ?? 'WPN C';
-  form.elements.fnWpnCFree.checked = Boolean(fnWpn[2]?.free ?? 1);
-  form.elements.fnWpnCEnabled.checked = Boolean(fnWpn[2]?.enabled ?? true);
-  form.elements.fnWpnCValues.value = (fnWpn[2]?.values ?? []).join(',');
-  form.elements.fnWpnDLabel.value = fnWpn[3]?.label ?? 'WPN D';
-  form.elements.fnWpnDFree.checked = Boolean(fnWpn[3]?.free ?? 0);
-  form.elements.fnWpnDEnabled.checked = Boolean(fnWpn[3]?.enabled ?? false);
-  form.elements.fnWpnDValues.value = (fnWpn[3]?.values ?? []).join(',');
+  setValue('fnAccDecValues', (fn.accDec?.values ?? ['1', '2', '3', '4', '5', '6']).join(','));
+  setChecked('fnAccDecFree', fn.accDec?.free ?? 1);
+  setValue('fnSifIdfValues', (fn.sifIdf?.values ?? ['1', '2', '3']).join(','));
+  setChecked('fnSifIdfFree', fn.sifIdf?.free ?? 0);
+  setChecked('fnSifIdfEmer', fn.sifIdf?.emer ?? true);
+  setValue('fnFtlEmpty', fn.ftl?.empty ?? 2);
+  setChecked('fnCloakEnabled', fn.cloak?.enabled ?? false);
+  setValue('fnCloakEmpty', fn.cloak?.empty ?? 3);
+  setValue('fnSensorValues', (fn.sensor?.values ?? ['2', '4', '6']).join(','));
+  setChecked('fnSensorFree', fn.sensor?.free ?? 1);
+  setValue('fnGenSysValues', (fn.genSys?.values ?? ['NRM', 'MAX']).join(','));
+  setChecked('fnGenSysFree', fn.genSys?.free ?? 1);
 
-  if (form.elements.powerSystem) {
-    form.elements.powerSystem.value = draft.textBlocks?.powerSystem ?? '';
+  const fnWpn = fn.weapons ?? [];
+  setValue('fnWpnALabel', fnWpn[0]?.label ?? 'A/MAT TRP');
+  setChecked('fnWpnAFree', fnWpn[0]?.free ?? 1);
+  setChecked('fnWpnAEnabled', fnWpn[0]?.enabled ?? true);
+  setValue('fnWpnAValues', (fnWpn[0]?.values ?? ['2']).join(','));
+  setValue('fnWpnBLabel', fnWpn[1]?.label ?? 'PHASER');
+  setChecked('fnWpnBFree', fnWpn[1]?.free ?? 1);
+  setChecked('fnWpnBEnabled', fnWpn[1]?.enabled ?? true);
+  setValue('fnWpnBValues', (fnWpn[1]?.values ?? ['4']).join(','));
+  setValue('fnWpnCLabel', fnWpn[2]?.label ?? 'WPN C');
+  setChecked('fnWpnCFree', fnWpn[2]?.free ?? 1);
+  setChecked('fnWpnCEnabled', fnWpn[2]?.enabled ?? true);
+  setValue('fnWpnCValues', (fnWpn[2]?.values ?? []).join(','));
+  setValue('fnWpnDLabel', fnWpn[3]?.label ?? 'WPN D');
+  setChecked('fnWpnDFree', fnWpn[3]?.free ?? 0);
+  setChecked('fnWpnDEnabled', fnWpn[3]?.enabled ?? false);
+  setValue('fnWpnDValues', (fnWpn[3]?.values ?? []).join(','));
+
+  if (getField('powerSystem')) {
+    setValue('powerSystem', draft.textBlocks?.powerSystem ?? '');
   }
 
   const draftTracks = draft.powerSystem?.tracks ?? [];
   POWER_TRACK_CONFIG.forEach((track) => {
     const trackData = draftTracks.find((entry) => entry.key === track.key || entry.label === track.label);
-    form.elements[track.pointsField].value = Math.max(0, Number(trackData?.points ?? form.elements[track.pointsField].value ?? 0));
-    form.elements[track.boxesField].value = clamp(Number(trackData?.boxesPerPoint ?? form.elements[track.boxesField].value ?? 2), 1, 3);
-    form.elements[track.patternField].value = (trackData?.boxPattern ?? []).join(',');
-    form.elements[track.hasDotField].checked = Boolean(trackData?.hasDot ?? form.elements[track.hasDotField].checked);
+    const pointsField = getField(track.pointsField);
+    const boxesField = getField(track.boxesField);
+    const patternField = getField(track.patternField);
+    const hasDotField = getField(track.hasDotField);
+
+    if (pointsField) {
+      pointsField.value = Math.max(0, Number(trackData?.points ?? pointsField.value ?? 0));
+    }
+    if (boxesField) {
+      boxesField.value = clamp(Number(trackData?.boxesPerPoint ?? boxesField.value ?? 2), 1, 3);
+    }
+    if (patternField) {
+      patternField.value = (trackData?.boxPattern ?? []).join(',');
+    }
+    if (hasDotField) {
+      hasDotField.checked = Boolean(trackData?.hasDot ?? hasDotField.checked);
+    }
   });
 
   const sublight = draft.sublight ?? {
@@ -1088,37 +1134,38 @@ function restoreDraft(draft) {
     turns: [20, 20, 20, 20, 20, 20, 20],
     dmgStops: [false, false, false, false, false, false, false]
   };
-  form.elements.sublightMaxAcc.value = sublight.maxAccPhs ?? 2;
-  form.elements.sublightGreen.value = sublight.greenCircles ?? 3;
-  form.elements.sublightRed.value = sublight.redCircles ?? 3;
+  setValue('sublightMaxAcc', sublight.maxAccPhs ?? 2);
+  setValue('sublightGreen', sublight.greenCircles ?? 3);
+  setValue('sublightRed', sublight.redCircles ?? 3);
   [6, 5, 4, 3, 2, 1, 0].forEach((speed, index) => {
-    form.elements[`sublightTurn${speed}`].value = normalizeTurnOption(sublight.turns?.[index] ?? 20);
-    form.elements[`sublightDmg${speed}`].checked = Boolean(sublight.dmgStops?.[index]);
+    setValue(`sublightTurn${speed}`, normalizeTurnOption(sublight.turns?.[index] ?? 20));
+    setChecked(`sublightDmg${speed}`, sublight.dmgStops?.[index]);
   });
 
-  form.elements.structureBlack.value = draft.structure?.repairable ?? 0;
-  form.elements.structureRed.value = draft.structure?.permanent ?? 0;
+  setValue('structureBlack', draft.structure?.repairable ?? 0);
+  setValue('structureRed', draft.structure?.permanent ?? 0);
 
   shipArtDataUrl = draft.shipArtDataUrl ?? '';
   const normalizedWeapons = (Array.isArray(draft.weapons) ? draft.weapons : []).map((weapon) => normalizeWeapon(weapon));
   [1, 2, 3, 4].forEach((index) => {
     const weapon = normalizedWeapons[index - 1] || normalizeWeapon({});
-    form.elements[`wpn${index}Name`].value = weapon.name || '';
-    form.elements[`wpn${index}Traits`].value = (weapon.traits || []).join(', ');
-    form.elements[`wpn${index}MountArcs`].value = (weapon.mountFacings || []).map((mount) => mount.join(',')).join('|');
-    form.elements[`wpn${index}PowerCircles`].value = weapon.powerCircles || 1;
-    form.elements[`wpn${index}PowerStops`].value = (weapon.powerStops || []).join(', ');
-    form.elements[`wpn${index}Structure`].value = weapon.structure || 1;
-    form.elements[`wpn${index}Ranges`].value = (weapon.ranges || []).map((range) => `${range.band}:${range.type}`).join(',');
-    form.elements[`wpn${index}Dice`].value = (weapon.ranges || []).map((range) => {
+    setValue(`wpn${index}Name`, weapon.name || '');
+    setValue(`wpn${index}Traits`, (weapon.traits || []).join(', '));
+    setValue(`wpn${index}MountArcs`, (weapon.mountFacings || []).map((mount) => mount.join(',')).join('|'));
+    setValue(`wpn${index}PowerCircles`, weapon.powerCircles || 1);
+    setValue(`wpn${index}PowerStops`, (weapon.powerStops || []).join(', '));
+    setValue(`wpn${index}Structure`, weapon.structure || 1);
+    setValue(`wpn${index}Ranges`, (weapon.ranges || []).map((range) => `${range.band}:${range.type}`).join(','));
+    setValue(`wpn${index}Dice`, (weapon.ranges || []).map((range) => {
       const dice = (range.dice || []).join(',');
       return Number(range.bonus || 0) > 0 ? `${Number(range.bonus)},${dice}` : dice;
-    }).join('|');
-    form.elements[`wpn${index}Special`].value = weapon.special || '';
+    }).join('|'));
+    setValue(`wpn${index}Special`, weapon.special || '');
   });
-  form.elements.systems.value = (draft.systems ?? []).map((item) => `${item.key}:${item.value ?? ''}`).join('\n');
-  form.elements.shuttleCraft.value = draft.crew?.shuttleCraft ?? 4;
-  form.elements.marinesStationed.value = draft.crew?.marinesStationed ?? 10;
+
+  setValue('systems', (draft.systems ?? []).map((item) => `${item.key}:${item.value ?? ''}`).join('\n'));
+  setValue('shuttleCraft', draft.crew?.shuttleCraft ?? 4);
+  setValue('marinesStationed', draft.crew?.marinesStationed ?? 10);
 
   render();
 }
