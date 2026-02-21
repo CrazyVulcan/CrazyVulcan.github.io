@@ -21,7 +21,7 @@ textarea, input, button { width: 100%; margin-top: 0.25rem; padding: 0.45rem; bo
 .maneuver-grid-head { margin: 0.5rem 0 0.2rem; color: #a7b4da; font-size: 0.78rem; }
 .maneuver-grid label { margin: 0; font-weight: 700; }
 .maneuver-grid input[type="checkbox"] { width: 20px; height: 20px; margin: 0; justify-self: start; }
-.maneuver-grid input[type="number"] { margin: 0; }
+.maneuver-grid select { margin: 0; }
 .power-system-editor { border: 1px solid #32427a; border-radius: 8px; padding: 0.6rem; margin-top: 0.5rem; background: #0f1731; }
 .power-system-editor strong { display: block; margin-bottom: 0.2rem; }
 .power-system-editor .muted { margin: 0 0 0.5rem; font-size: 0.82rem; }

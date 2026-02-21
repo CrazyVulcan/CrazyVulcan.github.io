@@ -3,6 +3,7 @@ const draftsEl = document.getElementById('drafts');
 const jsonPreview = document.getElementById('jsonPreview');
 const liveBadge = document.getElementById('liveBadge');
 const STORAGE_KEY = 'sfCommanderSsdDrafts';
+const TURN_OPTIONS = [0, 20, 25, 30, 35, 40, 45, 65];
 let shipArtDataUrl = '';
 
 const POWER_TRACK_CONFIG = [
@@ -45,6 +46,10 @@ function clamp(value, min, max) {
   return Math.min(max, Math.max(min, value));
 }
 
+function normalizeTurnOption(value) {
+  return TURN_OPTIONS.includes(value) ? value : 20;
+}
+
 function readSublight() {
   const speeds = [6, 5, 4, 3, 2, 1, 0];
   return {
@@ -52,7 +57,7 @@ function readSublight() {
     greenCircles: clamp(num('sublightGreen'), 0, 3),
     redCircles: clamp(num('sublightRed'), 0, 3),
     spd: speeds.map((speed) => speed),
-    turns: speeds.map((speed) => num(`sublightTurn${speed}`)),
+    turns: speeds.map((speed) => normalizeTurnOption(num(`sublightTurn${speed}`))),
     dmgStops: speeds.map((speed) => Boolean(form.elements[`sublightDmg${speed}`]?.checked))
   };
 }
@@ -145,7 +150,6 @@ function getBuild() {
     identity: {
       name: form.elements.name.value,
       classType: form.elements.classType.value,
-      sizeClassIcon: form.elements.sizeClassIcon.value,
       faction: form.elements.faction.value,
       era: form.elements.era.value
     },
@@ -327,13 +331,7 @@ function renderPreview(build) {
   document.getElementById('pvName').textContent = build.identity.name || 'SHIP NAME / ID';
   document.getElementById('pvClass').textContent = build.identity.classType || 'CLASSNAME ID-class Weight Class';
   document.getElementById('pvFaction').textContent = build.identity.faction || 'COMMON';
-  const sizeClassIcon = document.getElementById('pvSizeClassIcon');
-  const defaultSizeClassIcon = 'assets/size-class-icon.svg';
-  sizeClassIcon.onerror = () => {
-    if (sizeClassIcon.src.endsWith(defaultSizeClassIcon)) return;
-    sizeClassIcon.src = defaultSizeClassIcon;
-  };
-  sizeClassIcon.src = build.identity.sizeClassIcon || build.identity.hullIcon || defaultSizeClassIcon;
+  document.getElementById('pvSizeClassIcon').src = 'assets/size-class-icon.svg';
   document.getElementById('pvEra').textContent = build.identity.era || 'ERA';
 
   document.getElementById('pvMove').textContent = build.engineering.move;
@@ -641,14 +639,13 @@ function renderDrafts() {
 function restoreDraft(draft) {
   form.elements.name.value = draft.identity?.name ?? '';
   form.elements.classType.value = draft.identity?.classType ?? '';
-  form.elements.sizeClassIcon.value = draft.identity?.sizeClassIcon ?? draft.identity?.hullIcon ?? 'assets/size-class-icon.svg';
   form.elements.faction.value = draft.identity?.faction ?? '';
   form.elements.era.value = draft.identity?.era ?? '';
 
-  form.elements.move.value = draft.engineering?.move ?? 0;
-  form.elements.vector.value = draft.engineering?.vector ?? 0;
-  form.elements.turn.value = draft.engineering?.turn ?? 0;
-  form.elements.special.value = draft.engineering?.special ?? 0;
+  form.elements.move.value = draft.engineering?.move ?? 3;
+  form.elements.vector.value = draft.engineering?.vector ?? 2;
+  form.elements.turn.value = draft.engineering?.turn ?? 2;
+  form.elements.special.value = draft.engineering?.special ?? 3;
 
   form.elements.shieldFwd.value = draft.shields?.forward ?? 0;
   form.elements.shieldAft.value = draft.shields?.aft ?? 0;
@@ -718,7 +715,7 @@ function restoreDraft(draft) {
   form.elements.sublightGreen.value = sublight.greenCircles ?? 3;
   form.elements.sublightRed.value = sublight.redCircles ?? 3;
   [6, 5, 4, 3, 2, 1, 0].forEach((speed, index) => {
-    form.elements[`sublightTurn${speed}`].value = sublight.turns?.[index] ?? 20;
+    form.elements[`sublightTurn${speed}`].value = normalizeTurnOption(sublight.turns?.[index] ?? 20);
     form.elements[`sublightDmg${speed}`].checked = Boolean(sublight.dmgStops?.[index]);
   });
 
