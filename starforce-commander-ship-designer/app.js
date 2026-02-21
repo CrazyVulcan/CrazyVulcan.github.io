@@ -6,6 +6,104 @@ const STORAGE_KEY = 'sfCommanderSsdDrafts';
 const TURN_OPTIONS = [0, 20, 25, 30, 35, 40, 45, 65];
 let shipArtDataUrl = '';
 
+
+const STANDARD_DEFAULT_LOADOUT = {
+  identity: {
+    name: 'SHIP NAME / ID',
+    classType: 'YORKTOWN II - Class Heavy Cruiser',
+    faction: 'COMMON',
+    era: '3655'
+  },
+  engineering: { move: 5, vector: 2, turn: 4, special: 4 },
+  shields: { forward: 16, aft: 15, port: 15, starboard: 15 },
+  armor: { forward: 0, aft: 0, port: 0, starboard: 0 },
+  shieldGen: 3,
+  textBlocks: { powerSystem: '' },
+  functionsConfig: {
+    accDec: { values: ['1', '2', '3', '4'], free: 1 },
+    sifIdf: { values: ['1', '2', '3'], free: 0, emer: true },
+    batRech: { values: ['1'], free: 0 },
+    ftl: { empty: 3 },
+    cloak: { enabled: false, empty: 3 },
+    sensor: { values: ['2', '4', '6'], free: 1 },
+    genSys: { values: ['NRM', 'MAX'], free: 1 },
+    weapons: [
+      { label: 'A/MAT TORP', enabled: true, free: 1, values: ['1', '4'] },
+      { label: 'PHASER', enabled: true, free: 1, values: ['1', '4', '6', '8'] },
+      { label: 'WPN C', enabled: false, free: 0, values: [] },
+      { label: 'WPN D', enabled: false, free: 0, values: [] }
+    ]
+  },
+  powerSystem: {
+    tracks: [
+      { key: 'lMain', label: 'L MAIN', points: 3, boxesPerPoint: 2, boxPattern: [], hasDot: true },
+      { key: 'rMain', label: 'R MAIN', points: 3, boxesPerPoint: 2, boxPattern: [], hasDot: true },
+      { key: 'cMain', label: 'C MAIN', points: 0, boxesPerPoint: 2, boxPattern: [], hasDot: true },
+      { key: 'slReac', label: 'SL REAC', points: 1, boxesPerPoint: 2, boxPattern: [], hasDot: true },
+      { key: 'auxPwr', label: 'AUX PWR', points: 1, boxesPerPoint: 2, boxPattern: [], hasDot: true },
+      { key: 'battery', label: 'BATTERY', points: 1, boxesPerPoint: 1, boxPattern: [], hasDot: true },
+      { key: 'ftlDrive', label: 'FTL DRIVE', points: 1, boxesPerPoint: 2, boxPattern: [], hasDot: false }
+    ]
+  },
+  sublight: {
+    maxAccPhs: 2,
+    greenCircles: 2,
+    redCircles: 2,
+    spd: [6, 5, 4, 3, 2, 1, 0],
+    turns: [0, 20, 30, 30, 35, 35, 40],
+    dmgStops: [true, true, true, false, true, true, true]
+  },
+  structure: { repairable: 3, permanent: 10 },
+  shipArtDataUrl: '',
+  weapons: [
+    {
+      name: 'MK-4 A\\MAT TORPEDO',
+      mountArcs: ['1', '2|1', '2|1', '2|1', '2'],
+      mountFacings: [[1, 2], [1, 2], [1, 2], [1, 2]],
+      powerCircles: 2,
+      powerStops: [1],
+      structure: 1,
+      ranges: [
+        { band: '0-4', type: 'green', bonus: 0, dice: ['R'] },
+        { band: '5-10', type: 'black', bonus: 0, dice: ['R'] },
+        { band: '11-14', type: 'red', bonus: 0, dice: ['R'] },
+        { band: '15-20', type: 'red', bonus: 0, dice: ['Y'] }
+      ],
+      traits: ['HVY', 'FTL', 'NoBAT'],
+      special: 'H(4+1), STR 1'
+    },
+    {
+      name: 'LNC-447 PHASER',
+      mountArcs: ['1', '6', '7', '8|8', '1', '2', '3|4', '5', '6', '7|2', '3', '4', '5'],
+      mountFacings: [[1, 6, 7, 8], [8, 1, 2, 3], [4, 5, 6, 7], [2, 3, 4, 5]],
+      powerCircles: 2,
+      powerStops: [],
+      structure: 2,
+      ranges: [
+        { band: '0-2', type: 'green', bonus: 0, dice: ['G', 'G'] },
+        { band: '3-5', type: 'green', bonus: 0, dice: ['G', 'B'] },
+        { band: '6-8', type: 'black', bonus: 0, dice: ['G', 'B'] },
+        { band: '9-10', type: 'black', bonus: 0, dice: ['B', 'B'] },
+        { band: '11-12', type: 'red', bonus: 0, dice: ['B'] }
+      ],
+      traits: ['PREC 1', 'PD MODE'],
+      special: ''
+    },
+    { name: '', mountArcs: [], mountFacings: [], powerCircles: 2, powerStops: [], structure: 2, ranges: [], traits: [], special: '' },
+    { name: '', mountArcs: [], mountFacings: [], powerCircles: 2, powerStops: [], structure: 2, ranges: [], traits: [], special: '' }
+  ],
+  systems: [
+    { key: 'SCNC', value: '4' },
+    { key: 'SENS', value: '3' },
+    { key: 'TRAC', value: '2' },
+    { key: 'TRAN', value: '2' },
+    { key: 'SHTL', value: '2' },
+    { key: 'QTRS', value: '4' },
+    { key: 'CRGO', value: '2' }
+  ],
+  crew: { shuttleCraft: 4, marinesStationed: 11 }
+};
+
 const POWER_TRACK_CONFIG = [
   { key: 'lMain', label: 'L MAIN', pointsField: 'powerLMainPoints', boxesField: 'powerLMainBoxes', patternField: 'powerLMainPattern', hasDotField: 'powerLMainHasDot' },
   { key: 'rMain', label: 'R MAIN', pointsField: 'powerRMainPoints', boxesField: 'powerRMainBoxes', patternField: 'powerRMainPattern', hasDotField: 'powerRMainHasDot' },
@@ -1074,5 +1172,5 @@ shipArtInput.addEventListener('change', (event) => {
   reader.readAsDataURL(file);
 });
 
-render();
+restoreDraft(STANDARD_DEFAULT_LOADOUT);
 renderDrafts();
