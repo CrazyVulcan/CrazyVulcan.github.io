@@ -310,6 +310,7 @@ button.ghost { background: #273055; }
 .wpn-sector.active { fill: #ff1212; }
 .wpn-mount-outline { fill: none; stroke: #6b1717; stroke-width: 1.4; }
 .wpn-mount-structure { display: inline-flex; gap: 0.08rem; }
+.wpn-mount-power { display: inline-flex; align-items: center; gap: 0.08rem; }
 .wpn-power-circle { width: 12px; height: 12px; border-radius: 999px; border: 3px solid #11a854; display: inline-block; box-sizing: border-box; }
 .wpn-power-stop { width: 8px; height: 8px; background: #11a854; transform: rotate(45deg); display: inline-block; }
 .wpn-structure-row b { margin-right: 0.25rem; }

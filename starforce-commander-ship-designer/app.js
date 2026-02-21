@@ -182,7 +182,7 @@ function mountSectorPath(sector) {
   return pair ? `M ${center} L ${pair} Z` : '';
 }
 
-function createMountDiagram(facings, structure) {
+function createMountDiagram(facings, structure, powerCircles, powerStops) {
   const mount = document.createElement('div');
   mount.className = 'wpn-mount';
 
@@ -215,6 +215,20 @@ function createMountDiagram(facings, structure) {
     struct.appendChild(box);
   }
   mount.appendChild(struct);
+
+  const power = document.createElement('div');
+  power.className = 'wpn-mount-power';
+  for (let i = 1; i <= powerCircles; i += 1) {
+    const circle = document.createElement('span');
+    circle.className = 'wpn-power-circle';
+    power.appendChild(circle);
+    if (powerStops.includes(i)) {
+      const stop = document.createElement('span');
+      stop.className = 'wpn-power-stop';
+      power.appendChild(stop);
+    }
+  }
+  mount.appendChild(power);
 
   return mount;
 }
@@ -421,28 +435,9 @@ function weaponSlot(id, rawWeapon, enabled = true) {
   mountRow.className = 'wpn-mount-row';
   const mounts = weapon.mountFacings.slice(0, 8);
   mounts.forEach((facings) => {
-    mountRow.appendChild(createMountDiagram(facings, weapon.structure));
+    mountRow.appendChild(createMountDiagram(facings, weapon.structure, weapon.powerCircles, weapon.powerStops));
   });
   body.appendChild(mountRow);
-
-  const powerRow = document.createElement('div');
-  powerRow.className = 'wpn-power-row';
-  for (let i = 1; i <= weapon.powerCircles; i += 1) {
-    const circle = document.createElement('span');
-    circle.className = 'wpn-power-circle';
-    powerRow.appendChild(circle);
-    if (weapon.powerStops.includes(i)) {
-      const stop = document.createElement('span');
-      stop.className = 'wpn-power-stop';
-      powerRow.appendChild(stop);
-    }
-  }
-  body.appendChild(powerRow);
-
-  const structureRow = document.createElement('div');
-  structureRow.className = 'wpn-structure-row';
-  structureRow.innerHTML = `<b>STR ${weapon.structure}</b>`;
-  body.appendChild(structureRow);
 
   const rangeGrid = document.createElement('div');
   rangeGrid.className = 'wpn-range-grid';
