@@ -16,15 +16,85 @@ const POWER_TRACK_CONFIG = [
   { key: 'ftlDrive', label: 'FTL DRIVE', pointsField: 'powerFtlDrivePoints', boxesField: 'powerFtlDriveBoxes', patternField: 'powerFtlDrivePattern', hasDotField: 'powerFtlDriveHasDot' }
 ];
 
-function parseWeapons(raw) {
-  return raw
+function parseList(raw, separator = ',') {
+  return String(raw || '')
+    .split(separator)
+    .map((part) => part.trim())
+    .filter(Boolean);
+}
+
+function parseLegacyWeapons(raw) {
+  return String(raw || '')
     .split('\n')
     .map((line) => line.trim())
     .filter(Boolean)
     .map((line) => {
       const [name, ...ranges] = line.split('|').map((part) => part.trim());
-      return { name, ranges };
+      return {
+        name,
+        mountArcs: [],
+        powerCircles: 1,
+        powerStops: [],
+        structure: 1,
+        ranges: ranges.map((band) => ({ band, type: 'black' })),
+        diceByRange: ranges.map(() => ['R']),
+        traits: [],
+        special: ''
+      };
     });
+}
+
+function parseWeaponRanges(raw) {
+  return parseList(raw).map((entry) => {
+    const [band, type] = entry.split(':').map((part) => part.trim());
+    const normalizedType = ['green', 'black', 'red'].includes((type || '').toLowerCase())
+      ? type.toLowerCase()
+      : 'black';
+    return { band: band || '?', type: normalizedType };
+  });
+}
+
+function parseWeaponDice(raw) {
+  return String(raw || '')
+    .split('|')
+    .map((group) => parseList(group).map((token) => token.toUpperCase()));
+}
+
+function readWeaponsFromForm() {
+  return [1, 2, 3, 4].map((index) => {
+    const name = form.elements[`wpn${index}Name`]?.value?.trim() || '';
+    return {
+      name,
+      mountArcs: parseList(form.elements[`wpn${index}MountArcs`]?.value),
+      powerCircles: clamp(num(`wpn${index}PowerCircles`), 1, 6),
+      powerStops: parseList(form.elements[`wpn${index}PowerStops`]?.value).map((value) => Number(value)).filter((value) => Number.isFinite(value)),
+      structure: clamp(num(`wpn${index}Structure`), 1, 4),
+      ranges: parseWeaponRanges(form.elements[`wpn${index}Ranges`]?.value),
+      diceByRange: parseWeaponDice(form.elements[`wpn${index}Dice`]?.value),
+      traits: parseList(form.elements[`wpn${index}Traits`]?.value),
+      special: form.elements[`wpn${index}Special`]?.value?.trim() || ''
+    };
+  });
+}
+
+function normalizeWeapon(weapon = {}) {
+  const rangeList = Array.isArray(weapon.ranges)
+    ? weapon.ranges.map((range) => (typeof range === 'string' ? { band: range, type: 'black' } : {
+      band: range.band || '?',
+      type: ['green', 'black', 'red'].includes((range.type || '').toLowerCase()) ? range.type.toLowerCase() : 'black'
+    }))
+    : [];
+  return {
+    name: weapon.name || '',
+    mountArcs: Array.isArray(weapon.mountArcs) ? weapon.mountArcs : [],
+    powerCircles: clamp(Number(weapon.powerCircles || 1), 1, 6),
+    powerStops: Array.isArray(weapon.powerStops) ? weapon.powerStops : [],
+    structure: clamp(Number(weapon.structure || 1), 1, 4),
+    ranges: rangeList,
+    diceByRange: Array.isArray(weapon.diceByRange) ? weapon.diceByRange : [],
+    traits: Array.isArray(weapon.traits) ? weapon.traits : [],
+    special: String(weapon.special || '')
+  };
 }
 
 function parseSystems(raw) {
@@ -183,7 +253,7 @@ function getBuild() {
       permanent: num('structureRed')
     },
     shipArtDataUrl,
-    weapons: parseWeapons(form.elements.weapons.value),
+    weapons: readWeaponsFromForm(),
     systems: parseSystems(form.elements.systems.value),
     crew: {
       shuttleCraft: num('shuttleCraft'),
@@ -202,7 +272,8 @@ function renderBoxes(containerId, count, className) {
   }
 }
 
-function weaponSlot(id, weapon, enabled = true) {
+function weaponSlot(id, rawWeapon, enabled = true) {
+  const weapon = normalizeWeapon(rawWeapon);
   const slot = document.getElementById(`pvWpn${id}Slot`);
   const title = document.getElementById(`pvWpn${id}Title`);
   const body = document.getElementById(`pvWpn${id}Body`);
@@ -210,18 +281,92 @@ function weaponSlot(id, weapon, enabled = true) {
   if (!enabled) {
     slot.style.display = 'none';
     title.textContent = 'WPN NAME TYP';
-    body.textContent = '';
+    body.innerHTML = '';
     return;
   }
 
   slot.style.display = 'flex';
-  if (!weapon) {
+  if (!weapon.name) {
     title.textContent = 'WPN NAME TYP';
-    body.textContent = '';
+    body.innerHTML = '';
     return;
   }
-  title.textContent = weapon.name || 'WPN NAME TYP';
-  body.textContent = weapon.ranges.join('  •  ');
+
+  title.textContent = weapon.name;
+  body.innerHTML = '';
+
+  const mountRow = document.createElement('div');
+  mountRow.className = 'wpn-mount-row';
+  const mounts = weapon.mountArcs.slice(0, 8);
+  mounts.forEach((arc) => {
+    const token = document.createElement('span');
+    token.className = 'wpn-mount-token';
+    token.textContent = arc.toUpperCase();
+    mountRow.appendChild(token);
+  });
+  body.appendChild(mountRow);
+
+  const powerRow = document.createElement('div');
+  powerRow.className = 'wpn-power-row';
+  for (let i = 1; i <= weapon.powerCircles; i += 1) {
+    const circle = document.createElement('span');
+    circle.className = 'wpn-power-circle';
+    powerRow.appendChild(circle);
+    if (weapon.powerStops.includes(i)) {
+      const stop = document.createElement('span');
+      stop.className = 'wpn-power-stop';
+      powerRow.appendChild(stop);
+    }
+  }
+  body.appendChild(powerRow);
+
+  const structureRow = document.createElement('div');
+  structureRow.className = 'wpn-structure-row';
+  structureRow.innerHTML = '<b>STR</b>';
+  for (let i = 0; i < weapon.structure; i += 1) {
+    const box = document.createElement('span');
+    box.className = 'wpn-structure-box';
+    structureRow.appendChild(box);
+  }
+  body.appendChild(structureRow);
+
+  const rangeGrid = document.createElement('div');
+  rangeGrid.className = 'wpn-range-grid';
+  weapon.ranges.forEach((range, idx) => {
+    const band = document.createElement('span');
+    band.className = `wpn-range-band ${range.type}`;
+    band.textContent = range.band;
+    rangeGrid.appendChild(band);
+
+    const dice = document.createElement('span');
+    dice.className = 'wpn-dice-row';
+    const diceValues = (weapon.diceByRange[idx] || []).slice(0, weapon.structure);
+    diceValues.forEach((die) => {
+      const pip = document.createElement('span');
+      pip.className = `wpn-die ${String(die).toLowerCase()}`;
+      pip.textContent = String(die).toUpperCase();
+      dice.appendChild(pip);
+    });
+    rangeGrid.appendChild(dice);
+  });
+  body.appendChild(rangeGrid);
+
+  const traits = weapon.traits.map((trait) => trait.trim()).filter(Boolean);
+  const hasHvy = traits.some((trait) => trait.toUpperCase() === 'HVY');
+
+  if (hasHvy && weapon.special) {
+    const special = document.createElement('div');
+    special.className = 'wpn-special-row';
+    special.innerHTML = `<b>SPECIAL:</b> ${weapon.special}`;
+    body.appendChild(special);
+  }
+
+  if (traits.length) {
+    const traitRow = document.createElement('div');
+    traitRow.className = 'wpn-trait-row';
+    traitRow.innerHTML = `<b>TRAIT:</b> ${traits.join(', ')}`;
+    body.appendChild(traitRow);
+  }
 }
 
 function renderStructure(build) {
@@ -723,7 +868,19 @@ function restoreDraft(draft) {
   form.elements.structureRed.value = draft.structure?.permanent ?? 0;
 
   shipArtDataUrl = draft.shipArtDataUrl ?? '';
-  form.elements.weapons.value = (draft.weapons ?? []).map((item) => [item.name, ...(item.ranges ?? [])].join('|')).join('\n');
+  const normalizedWeapons = (Array.isArray(draft.weapons) ? draft.weapons : []).map((weapon) => normalizeWeapon(weapon));
+  [1, 2, 3, 4].forEach((index) => {
+    const weapon = normalizedWeapons[index - 1] || normalizeWeapon({});
+    form.elements[`wpn${index}Name`].value = weapon.name || '';
+    form.elements[`wpn${index}Traits`].value = (weapon.traits || []).join(', ');
+    form.elements[`wpn${index}MountArcs`].value = (weapon.mountArcs || []).join(', ');
+    form.elements[`wpn${index}PowerCircles`].value = weapon.powerCircles || 1;
+    form.elements[`wpn${index}PowerStops`].value = (weapon.powerStops || []).join(', ');
+    form.elements[`wpn${index}Structure`].value = weapon.structure || 1;
+    form.elements[`wpn${index}Ranges`].value = (weapon.ranges || []).map((range) => `${range.band}:${range.type}`).join(',');
+    form.elements[`wpn${index}Dice`].value = (weapon.diceByRange || []).map((dice) => (dice || []).join(',')).join('|');
+    form.elements[`wpn${index}Special`].value = weapon.special || '';
+  });
   form.elements.systems.value = (draft.systems ?? []).map((item) => `${item.key}:${item.value ?? ''}`).join('\n');
   form.elements.shuttleCraft.value = draft.crew?.shuttleCraft ?? 4;
   form.elements.marinesStationed.value = draft.crew?.marinesStationed ?? 10;

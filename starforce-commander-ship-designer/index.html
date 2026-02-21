@@ -58,8 +58,85 @@
         </label>
         <button type="button" id="clearArtBtn" class="ghost">Clear Ship Art</button>
 
-        <h2>Weapons (up to 4 lines)</h2>
-        <label><textarea name="weapons" rows="6" placeholder="MK-4 A/MAT TORPEDO|0-4|5-10|11-14|15-20"></textarea></label>
+        <h2>Weapons (up to 4)</h2>
+        <p class="muted">Each weapon supports up to 8 mounts, power circles/stops, structure, per-range dice colors, and optional SPECIAL text (enabled by the HVY trait).</p>
+        <div class="weapon-editor-list">
+          <fieldset class="weapon-editor-card">
+            <legend>Weapon A</legend>
+            <div class="grid2">
+              <label>Name <input name="wpn1Name" value="WPN NAME" /></label>
+              <label>Traits (comma separated) <input name="wpn1Traits" value="HVY, FTL, NoBAT" /></label>
+            </div>
+            <label>Mount arcs (up to 8, comma separated from: N, NE, E, SE, S, SW, W, NW)
+              <input name="wpn1MountArcs" value="N,NE" />
+            </label>
+            <div class="grid3">
+              <label>Power circles (1-6) <input name="wpn1PowerCircles" type="number" min="1" max="6" value="3" /></label>
+              <label>Power stop positions (comma) <input name="wpn1PowerStops" value="2" placeholder="2,4" /></label>
+              <label>Structure per mount (1-4) <input name="wpn1Structure" type="number" min="1" max="4" value="2" /></label>
+            </div>
+            <label>Range bands (format band:color like <code>0-4:green</code>, comma separated)
+              <input name="wpn1Ranges" value="0-4:green,5-9:black,10-13:red,14-16:red" />
+            </label>
+            <label>Dice per band (use R,Y,G,B per structure point, separated by commas)
+              <input name="wpn1Dice" value="R,R,R,R|R,R,R,R|R,R,R,R|Y,Y,Y" />
+            </label>
+            <label>Special (shown only when HVY trait is present)
+              <input name="wpn1Special" value="H(4+1), STR 2" />
+            </label>
+          </fieldset>
+
+          <fieldset class="weapon-editor-card">
+            <legend>Weapon B</legend>
+            <div class="grid2">
+              <label>Name <input name="wpn2Name" value="" placeholder="Optional" /></label>
+              <label>Traits (comma separated) <input name="wpn2Traits" value="" /></label>
+            </div>
+            <label>Mount arcs <input name="wpn2MountArcs" value="" placeholder="N,E" /></label>
+            <div class="grid3">
+              <label>Power circles (1-6) <input name="wpn2PowerCircles" type="number" min="1" max="6" value="2" /></label>
+              <label>Power stop positions (comma) <input name="wpn2PowerStops" value="" /></label>
+              <label>Structure per mount (1-4) <input name="wpn2Structure" type="number" min="1" max="4" value="2" /></label>
+            </div>
+            <label>Range bands <input name="wpn2Ranges" value="" placeholder="0-6:green,7-12:black" /></label>
+            <label>Dice per band <input name="wpn2Dice" value="" placeholder="R,R|Y,Y" /></label>
+            <label>Special <input name="wpn2Special" value="" /></label>
+          </fieldset>
+
+          <fieldset class="weapon-editor-card">
+            <legend>Weapon C</legend>
+            <div class="grid2">
+              <label>Name <input name="wpn3Name" value="" placeholder="Optional" /></label>
+              <label>Traits (comma separated) <input name="wpn3Traits" value="" /></label>
+            </div>
+            <label>Mount arcs <input name="wpn3MountArcs" value="" /></label>
+            <div class="grid3">
+              <label>Power circles (1-6) <input name="wpn3PowerCircles" type="number" min="1" max="6" value="2" /></label>
+              <label>Power stop positions (comma) <input name="wpn3PowerStops" value="" /></label>
+              <label>Structure per mount (1-4) <input name="wpn3Structure" type="number" min="1" max="4" value="2" /></label>
+            </div>
+            <label>Range bands <input name="wpn3Ranges" value="" /></label>
+            <label>Dice per band <input name="wpn3Dice" value="" /></label>
+            <label>Special <input name="wpn3Special" value="" /></label>
+          </fieldset>
+
+          <fieldset class="weapon-editor-card">
+            <legend>Weapon D</legend>
+            <div class="grid2">
+              <label>Name <input name="wpn4Name" value="" placeholder="Optional" /></label>
+              <label>Traits (comma separated) <input name="wpn4Traits" value="" /></label>
+            </div>
+            <label>Mount arcs <input name="wpn4MountArcs" value="" /></label>
+            <div class="grid3">
+              <label>Power circles (1-6) <input name="wpn4PowerCircles" type="number" min="1" max="6" value="2" /></label>
+              <label>Power stop positions (comma) <input name="wpn4PowerStops" value="" /></label>
+              <label>Structure per mount (1-4) <input name="wpn4Structure" type="number" min="1" max="4" value="2" /></label>
+            </div>
+            <label>Range bands <input name="wpn4Ranges" value="" /></label>
+            <label>Dice per band <input name="wpn4Dice" value="" /></label>
+            <label>Special <input name="wpn4Special" value="" /></label>
+          </fieldset>
+        </div>
 
         <h2>Functions / Power / Maneuvering</h2>
         <div class="functions-editor">
