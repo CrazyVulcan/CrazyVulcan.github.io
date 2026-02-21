@@ -12,7 +12,8 @@ const STANDARD_DEFAULT_LOADOUT = {
     name: 'SHIP NAME / ID',
     classType: 'YORKTOWN II - Class Heavy Cruiser',
     faction: 'COMMON',
-    era: '3655'
+    era: '3655',
+    pointValue: 29
   },
   engineering: { move: 5, vector: 2, turn: 4, special: 4 },
   shields: { forward: 16, aft: 15, port: 15, starboard: 15 },
@@ -468,7 +469,8 @@ function getBuild() {
       name: form.elements.name.value,
       classType: form.elements.classType.value,
       faction: form.elements.faction.value,
-      era: form.elements.era.value
+      era: form.elements.era.value,
+      pointValue: num('pointValue')
     },
     engineering: {
       move: num('move'),
@@ -709,6 +711,7 @@ function renderPreview(build) {
   document.getElementById('pvClass').textContent = build.identity.classType || 'CLASSNAME ID-class Weight Class';
   document.getElementById('pvFaction').textContent = build.identity.faction || 'COMMON';
   document.getElementById('pvSizeClassIcon').src = 'assets/size-class-icon.svg';
+  document.getElementById('pvPointValue').textContent = `${Number(build.identity.pointValue) || 0}PV`;
   document.getElementById('pvEra').textContent = build.identity.era || 'ERA';
 
   document.getElementById('pvMove').textContent = build.engineering.move;
@@ -1018,6 +1021,7 @@ function restoreDraft(draft) {
   form.elements.classType.value = draft.identity?.classType ?? '';
   form.elements.faction.value = draft.identity?.faction ?? '';
   form.elements.era.value = draft.identity?.era ?? '';
+  form.elements.pointValue.value = draft.identity?.pointValue ?? 29;
 
   form.elements.move.value = draft.engineering?.move ?? 3;
   form.elements.vector.value = draft.engineering?.vector ?? 2;
