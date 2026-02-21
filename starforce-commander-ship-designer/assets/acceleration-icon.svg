@@ -1,4 +1,47 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-  <rect x="1.5" y="1.5" width="21" height="21" rx="4" fill="#0f5ea8" stroke="#00356d" stroke-width="3"/>
-  <path d="M12 4 18 11h-3.6v9H9.6v-9H6L12 4z" fill="#16d067"/>
-</svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="48.139439mm"
+   height="66.48674mm"
+   viewBox="0 0 48.139439 66.48674"
+   version="1.1"
+   id="svg5"
+   xml:space="preserve"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="Ship Foms Vector.svg"
+   inkscape:export-filename="..\damage-control-icon.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.50000001"
+     inkscape:cx="-7178.9998"
+     inkscape:cy="-1441"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showguides="false" /><defs
+     id="defs2" /><g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(899.02236,432.94219)"><path
+       style="fill:#00b050;fill-opacity:1;stroke:#ffffff;stroke-width:2.42803;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers;stop-color:#000000"
+       d="m -864.02126,-412.60398 h 9.92542 l -21.24865,-18.73242 -20.54974,17.47427 8.80701,0.41944 11.74273,46.69116 z"
+       id="path24540" /></g></svg>
