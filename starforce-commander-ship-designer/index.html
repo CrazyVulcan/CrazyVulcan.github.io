@@ -64,7 +64,20 @@
 
         <h2>Functions / Power / Maneuvering</h2>
         <label>Functions + Power Level <textarea name="functions" rows="3" placeholder="ACC/DEC, SIF, BTTY RECH..."></textarea></label>
-        <label>Power System <textarea name="powerSystem" rows="3" placeholder="L MAIN, R MAIN, BATTERY..."></textarea></label>
+        <div class="power-system-editor">
+          <strong>Power System Tracks</strong>
+          <p class="muted">Set points per track and structure boxes per point (1-3). Tracks with 0 points are hidden.</p>
+          <div class="power-grid-head"><span>Track</span><span>Points</span><span>Boxes/Point</span></div>
+          <div class="power-grid">
+            <label>L MAIN</label><input name="powerLMainPoints" type="number" min="0" value="4" /><input name="powerLMainBoxes" type="number" min="1" max="3" value="2" />
+            <label>R MAIN</label><input name="powerRMainPoints" type="number" min="0" value="4" /><input name="powerRMainBoxes" type="number" min="1" max="3" value="2" />
+            <label>C MAIN</label><input name="powerCMainPoints" type="number" min="0" value="4" /><input name="powerCMainBoxes" type="number" min="1" max="3" value="2" />
+            <label>SL REAC</label><input name="powerSlReacPoints" type="number" min="0" value="1" /><input name="powerSlReacBoxes" type="number" min="1" max="3" value="2" />
+            <label>AUX PWR</label><input name="powerAuxPwrPoints" type="number" min="0" value="1" /><input name="powerAuxPwrBoxes" type="number" min="1" max="3" value="2" />
+            <label>BATTERY</label><input name="powerBatteryPoints" type="number" min="0" value="2" /><input name="powerBatteryBoxes" type="number" min="1" max="3" value="1" />
+            <label>FTL DRIVE</label><input name="powerFtlDrivePoints" type="number" min="0" value="1" /><input name="powerFtlDriveBoxes" type="number" min="1" max="3" value="3" />
+          </div>
+        </div>
         <div class="maneuver-editor">
           <strong>Sublight Drive & Maneuvering</strong>
           <div class="grid3">
@@ -130,7 +143,7 @@
             </div>
             <div class="green-block block-power">
               <h4>POWER SYSTEM</h4>
-              <pre id="pvPowerSystem"></pre>
+              <div id="pvPowerTracks" class="power-track-list"></div>
             </div>
             <div class="green-block block-maneuver">
               <h4>SUBLIGHT DRIVE AND MANEUVERING</h4>

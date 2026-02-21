@@ -5,6 +5,16 @@ const liveBadge = document.getElementById('liveBadge');
 const STORAGE_KEY = 'sfCommanderSsdDrafts';
 let shipArtDataUrl = '';
 
+const POWER_TRACK_CONFIG = [
+  { key: 'lMain', label: 'L MAIN', pointsField: 'powerLMainPoints', boxesField: 'powerLMainBoxes' },
+  { key: 'rMain', label: 'R MAIN', pointsField: 'powerRMainPoints', boxesField: 'powerRMainBoxes' },
+  { key: 'cMain', label: 'C MAIN', pointsField: 'powerCMainPoints', boxesField: 'powerCMainBoxes' },
+  { key: 'slReac', label: 'SL REAC', pointsField: 'powerSlReacPoints', boxesField: 'powerSlReacBoxes' },
+  { key: 'auxPwr', label: 'AUX PWR', pointsField: 'powerAuxPwrPoints', boxesField: 'powerAuxPwrBoxes' },
+  { key: 'battery', label: 'BATTERY', pointsField: 'powerBatteryPoints', boxesField: 'powerBatteryBoxes' },
+  { key: 'ftlDrive', label: 'FTL DRIVE', pointsField: 'powerFtlDrivePoints', boxesField: 'powerFtlDriveBoxes' }
+];
+
 function parseWeapons(raw) {
   return raw
     .split('\n')
@@ -47,6 +57,17 @@ function readSublight() {
   };
 }
 
+function readPowerSystem() {
+  return {
+    tracks: POWER_TRACK_CONFIG.map((track) => ({
+      key: track.key,
+      label: track.label,
+      points: Math.max(0, num(track.pointsField)),
+      boxesPerPoint: clamp(num(track.boxesField), 1, 3)
+    }))
+  };
+}
+
 function getBuild() {
   return {
     identity: {
@@ -77,8 +98,9 @@ function getBuild() {
     shieldGen: num('shieldGen'),
     textBlocks: {
       functions: form.elements.functions.value,
-      powerSystem: form.elements.powerSystem.value
+      powerSystem: form.elements.powerSystem?.value ?? ''
     },
+    powerSystem: readPowerSystem(),
     sublight: readSublight(),
     structure: {
       repairable: num('structureBlack'),
@@ -275,7 +297,7 @@ function renderPreview(build) {
   }
 
   document.getElementById('pvFunctions').textContent = build.textBlocks.functions;
-  document.getElementById('pvPowerSystem').textContent = build.textBlocks.powerSystem;
+  renderPowerSystem(build.powerSystem);
   renderManeuvering(build.sublight);
 
   weaponSlot(1, build.weapons[0]);
@@ -286,6 +308,47 @@ function renderPreview(build) {
   const systemsText = build.systems.map((entry) => `${entry.key} ${entry.value}`.trim()).join('\n');
   document.getElementById('pvSystems').textContent = systemsText;
   renderStructure(build);
+}
+
+function renderPowerSystem(powerSystem) {
+  const tracks = powerSystem?.tracks ?? [];
+  const container = document.getElementById('pvPowerTracks');
+  container.innerHTML = '';
+
+  tracks
+    .filter((track) => Number(track.points) > 0)
+    .forEach((track) => {
+      const row = document.createElement('div');
+      row.className = 'power-track-row';
+
+      const name = document.createElement('span');
+      name.className = 'power-track-name';
+      name.textContent = track.label;
+      row.appendChild(name);
+
+      const units = document.createElement('span');
+      units.className = 'power-track-units';
+
+      for (let i = 0; i < track.points; i += 1) {
+        const unit = document.createElement('span');
+        unit.className = 'power-unit';
+
+        const dot = document.createElement('span');
+        dot.className = `power-dot${track.key === 'battery' ? ' is-ring' : ''}`;
+        unit.appendChild(dot);
+
+        for (let boxIdx = 0; boxIdx < clamp(track.boxesPerPoint, 1, 3); boxIdx += 1) {
+          const box = document.createElement('span');
+          box.className = 'power-box';
+          unit.appendChild(box);
+        }
+
+        units.appendChild(unit);
+      }
+
+      row.appendChild(units);
+      container.appendChild(row);
+    });
 }
 
 function getJsonPreview(build) {
@@ -360,7 +423,16 @@ function restoreDraft(draft) {
   form.elements.shieldGen.value = draft.shieldGen ?? 0;
 
   form.elements.functions.value = draft.textBlocks?.functions ?? '';
-  form.elements.powerSystem.value = draft.textBlocks?.powerSystem ?? '';
+  if (form.elements.powerSystem) {
+    form.elements.powerSystem.value = draft.textBlocks?.powerSystem ?? '';
+  }
+
+  const draftTracks = draft.powerSystem?.tracks ?? [];
+  POWER_TRACK_CONFIG.forEach((track) => {
+    const trackData = draftTracks.find((entry) => entry.key === track.key || entry.label === track.label);
+    form.elements[track.pointsField].value = Math.max(0, Number(trackData?.points ?? form.elements[track.pointsField].value ?? 0));
+    form.elements[track.boxesField].value = clamp(Number(trackData?.boxesPerPoint ?? form.elements[track.boxesField].value ?? 2), 1, 3);
+  });
 
   const sublight = draft.sublight ?? {
     maxAccPhs: 2,
