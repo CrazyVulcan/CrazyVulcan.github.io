@@ -14,7 +14,8 @@ const STANDARD_DEFAULT_LOADOUT = {
     name: 'SHIP NAME / ID',
     classType: 'YORKTOWN II - Class Heavy Cruiser',
     faction: 'COMMON',
-    era: '3655'
+    era: '3655',
+    pointValue: 29
   },
   engineering: { move: 5, vector: 2, turn: 4, special: 4 },
   shields: { forward: 16, aft: 15, port: 15, starboard: 15 },
@@ -479,7 +480,8 @@ function getBuild() {
       name: form.elements.name.value,
       classType: form.elements.classType.value,
       faction: form.elements.faction.value,
-      era: form.elements.era.value
+      era: form.elements.era.value,
+      pointValue: num('pointValue')
     },
     engineering: {
       move: num('move'),
