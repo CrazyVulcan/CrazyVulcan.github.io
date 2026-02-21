@@ -708,6 +708,16 @@ function renderManeuvering(sublight) {
     .join('');
 }
 
+
+function safeCalculatePointValue(build) {
+  try {
+    const pointValue = calculatePointValue(build);
+    return Number.isFinite(pointValue) ? pointValue : 29;
+  } catch {
+    return 29;
+  }
+}
+
 function renderPreview(build, options = {}) {
   const { recalculatePointValue = true } = options;
   document.getElementById('pvName').textContent = build.identity.name || 'SHIP NAME / ID';
@@ -715,7 +725,7 @@ function renderPreview(build, options = {}) {
   document.getElementById('pvFaction').textContent = build.identity.faction || 'COMMON';
   document.getElementById('pvSizeClassIcon').src = 'assets/size-class-icon.svg';
   if (recalculatePointValue) {
-    const pointValue = calculatePointValue(build);
+    const pointValue = safeCalculatePointValue(build);
     document.getElementById('pvPointValue').textContent = `${pointValue}PV`;
     const pointValueField = form.elements.namedItem('pointValueCalculated');
     if (pointValueField && 'value' in pointValueField) {
