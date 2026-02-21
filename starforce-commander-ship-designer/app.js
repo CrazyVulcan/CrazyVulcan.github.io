@@ -75,6 +75,9 @@ function parseFunctionValues(raw) {
 }
 
 function readFunctionsConfig() {
+  const batteryPoints = Math.max(0, num('powerBatteryPoints'));
+  const batteryValues = Array.from({ length: batteryPoints }, (_, idx) => String(idx + 1));
+
   return {
     accDec: { values: parseFunctionValues(form.elements.fnAccDecValues?.value), free: clamp(num('fnAccDecFree'), 0, 4) },
     sifIdf: {
@@ -82,8 +85,9 @@ function readFunctionsConfig() {
       free: clamp(num('fnSifIdfFree'), 0, 4),
       emer: Boolean(form.elements.fnSifIdfEmer?.checked)
     },
-    batRech: { values: parseFunctionValues(form.elements.fnBatRechValues?.value), free: clamp(num('fnBatRechFree'), 0, 4) },
-    warp: { values: parseFunctionValues(form.elements.fnWarpValues?.value), free: clamp(num('fnWarpFree'), 0, 4) },
+    batRech: { values: batteryValues, free: 0 },
+    ftl: { empty: clamp(num('fnFtlEmpty'), 0, 6) },
+    cloak: { enabled: Boolean(form.elements.fnCloakEnabled?.checked), empty: clamp(num('fnCloakEmpty'), 0, 6) },
     sensor: { values: parseFunctionValues(form.elements.fnSensorValues?.value), free: clamp(num('fnSensorFree'), 0, 3) },
     genSys: { values: parseFunctionValues(form.elements.fnGenSysValues?.value), free: clamp(num('fnGenSysFree'), 0, 3) },
     weapons: [
@@ -117,6 +121,13 @@ function readPowerSystem() {
       hasDot: Boolean(form.elements[track.hasDotField]?.checked)
     }))
   };
+}
+
+
+function syncDerivedFunctionInputs() {
+  if (form.elements.fnBatRechLinked) {
+    form.elements.fnBatRechLinked.value = `Linked to BATTERY points (${num('powerBatteryPoints')})`;
+  }
 }
 
 function getBuild() {
@@ -411,13 +422,31 @@ function renderFunctions(functionsConfig) {
   const sif = cfg.sifIdf || { values: ['1', '2', '3'], free: 0, emer: true };
   const sifLevels = addRow('SIF/IDF', 'green');
   addValueDots(sifLevels, sif.values, sif.free);
-  if (sif.emer) addToken(sifLevels, 'EMER');
+  if (sif.emer) {
+    const emer = document.createElement('span');
+    emer.className = 'fn-emer';
+    const emerDot = document.createElement('span');
+    emerDot.className = 'fn-dot';
+    const emerText = document.createElement('span');
+    emerText.className = 'fn-token';
+    emerText.textContent = 'EMER';
+    emer.appendChild(emerDot);
+    emer.appendChild(emerText);
+    sifLevels.appendChild(emer);
+  }
 
   const bat = cfg.batRech || { values: ['1'], free: 0 };
-  addValueDots(addRow('BAT RECH', 'green'), bat.values, bat.free);
+  addValueDots(addRow('BAT RECH', 'green'), bat.values, 0);
 
-  const warp = cfg.warp || { values: [], free: 3 };
-  addValueDots(addRow('WARP', 'green'), warp.values, warp.free);
+  const ftl = cfg.ftl || { empty: 2 };
+  const ftlLevels = addRow('FTL', 'green');
+  for (let i = 0; i < Number(ftl.empty || 0); i += 1) addDot(ftlLevels, false);
+
+  const cloak = cfg.cloak || { enabled: false, empty: 3 };
+  if (cloak.enabled) {
+    const cloakLevels = addRow('CLOAK', 'magenta');
+    for (let i = 0; i < Number(cloak.empty || 0); i += 1) addDot(cloakLevels, false);
+  }
 
   const shldRenf = addRow('SHLD RNFC', 'cyan');
   ['F', 'P', 'S', 'A'].forEach((part) => {
@@ -521,6 +550,7 @@ function pulseLiveBadge() {
 }
 
 function render() {
+  syncDerivedFunctionInputs();
   const build = getBuild();
   renderPreview(build);
   jsonPreview.textContent = getJsonPreview(build);
@@ -579,10 +609,9 @@ function restoreDraft(draft) {
   form.elements.fnSifIdfValues.value = (fn.sifIdf?.values ?? ['1', '2', '3']).join(',');
   form.elements.fnSifIdfFree.value = fn.sifIdf?.free ?? 0;
   form.elements.fnSifIdfEmer.checked = Boolean(fn.sifIdf?.emer ?? true);
-  form.elements.fnBatRechValues.value = (fn.batRech?.values ?? ['1']).join(',');
-  form.elements.fnBatRechFree.value = fn.batRech?.free ?? 0;
-  form.elements.fnWarpValues.value = (fn.warp?.values ?? []).join(',');
-  form.elements.fnWarpFree.value = fn.warp?.free ?? 3;
+  form.elements.fnFtlEmpty.value = fn.ftl?.empty ?? 2;
+  form.elements.fnCloakEnabled.checked = Boolean(fn.cloak?.enabled ?? false);
+  form.elements.fnCloakEmpty.value = fn.cloak?.empty ?? 3;
   form.elements.fnSensorValues.value = (fn.sensor?.values ?? ['2', '4', '6']).join(',');
   form.elements.fnSensorFree.value = fn.sensor?.free ?? 1;
   form.elements.fnGenSysValues.value = (fn.genSys?.values ?? ['NRM', 'MAX']).join(',');

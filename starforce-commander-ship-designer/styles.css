@@ -37,6 +37,7 @@ textarea, input, button { width: 100%; margin-top: 0.25rem; padding: 0.45rem; bo
 .functions-grid-head { margin: 0.2rem 0; color: #a7b4da; font-size: 0.78rem; }
 .functions-grid label { margin: 0; font-weight: 700; }
 .functions-grid input { margin: 0; }
+.functions-grid input[type="checkbox"] { width: 18px; height: 18px; justify-self: start; }
 .inline-check { display: inline-flex !important; align-items: center; gap: 0.4rem; font-weight: 700; }
 .inline-check input { width: 18px; margin: 0; }
 .tiny { font-size: 0.72rem; }
@@ -132,6 +133,7 @@ button.ghost { background: #273055; }
 .fn-name.red { color: #ff0000; }
 .fn-levels { display: flex; flex-wrap: wrap; align-items: center; gap: 0.24rem; font-weight: 900; }
 .fn-token { display: inline-flex; align-items: center; justify-content: center; min-width: 12px; }
+.fn-emer { margin-left: auto; display: inline-flex; align-items: center; gap: 0.24rem; }
 .fn-dot {
   width: 14px;
   height: 14px;
