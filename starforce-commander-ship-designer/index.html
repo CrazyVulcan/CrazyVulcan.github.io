@@ -68,16 +68,17 @@
           <p class="muted">Use comma-separated values for exact power levels. Free pips render as filled green dots.</p>
           <div class="functions-grid-head"><span>Function</span><span>Values</span><span>Free</span><span>Extra</span><span>Lvls</span></div>
           <div class="functions-grid">
-            <label>ACC/DEC</label><input name="fnAccDecValues" value="1,2,3,4,5,6" /><input name="fnAccDecFree" type="number" min="0" max="4" value="1" /><span></span><span></span>
-            <label>SIF/IDF</label><input name="fnSifIdfValues" value="1,2,3" /><input name="fnSifIdfFree" type="number" min="0" max="4" value="0" /><label class="inline-check">EMER <input name="fnSifIdfEmer" type="checkbox" checked /></label><span></span>
+            <label>ACC/DEC</label><input name="fnAccDecValues" value="1,2,3,4,5,6" /><input name="fnAccDecFree" type="checkbox" checked /><span></span><span></span>
+            <label>SIF/IDF</label><input name="fnSifIdfValues" value="1,2,3" /><input name="fnSifIdfFree" type="checkbox" /><label class="inline-check">EMER <input name="fnSifIdfEmer" type="checkbox" checked /></label><span></span>
             <label>BAT RECH</label><input name="fnBatRechLinked" value="Linked to BATTERY points" readonly /><span class="muted tiny">auto</span><span></span><span></span>
             <label>FTL</label><input name="fnFtlEmpty" type="number" min="0" max="6" value="2" /><span class="muted tiny">empty circles only</span><span></span><span></span>
             <label>CLOAK</label><input name="fnCloakEmpty" type="number" min="0" max="6" value="3" /><input name="fnCloakEnabled" type="checkbox" /><span class="muted tiny">optional</span><span></span>
-            <label>SENSOR</label><input name="fnSensorValues" value="2,4,6" /><input name="fnSensorFree" type="number" min="0" max="3" value="1" /><span class="muted tiny">placeholder</span><span></span>
-            <label>GEN SYS</label><input name="fnGenSysValues" value="NRM,MAX" /><input name="fnGenSysFree" type="number" min="0" max="3" value="1" /><span></span><span></span>
-            <label>WPN A</label><input name="fnWpnALabel" value="A/MAT TRP" /><input name="fnWpnAFree" type="number" min="0" max="3" value="1" /><input name="fnWpnAValues" value="1,4" placeholder="values" /><input name="fnWpnALevels" type="number" min="0" max="8" value="2" />
-            <label>WPN B</label><input name="fnWpnBLabel" value="PHASER" /><input name="fnWpnBFree" type="number" min="0" max="3" value="1" /><input name="fnWpnBValues" value="1,4,6,8" placeholder="values" /><input name="fnWpnBLevels" type="number" min="0" max="8" value="4" />
-            <label>WPN C</label><input name="fnWpnCLabel" value="T-31 DISR" /><input name="fnWpnCFree" type="number" min="0" max="3" value="1" /><input name="fnWpnCValues" value="1,3,6" placeholder="values" /><input name="fnWpnCLevels" type="number" min="0" max="8" value="3" />
+            <label>SENSOR</label><input name="fnSensorValues" value="2,4,6" /><input name="fnSensorFree" type="checkbox" checked /><span class="muted tiny">placeholder</span><span></span>
+            <label>GEN SYS</label><input name="fnGenSysValues" value="NRM,MAX" /><input name="fnGenSysFree" type="checkbox" checked /><span></span><span></span>
+            <label>WPN A</label><input name="fnWpnALabel" value="A/MAT TRP" /><input name="fnWpnAFree" type="checkbox" checked /><label class="inline-check">ON <input name="fnWpnAEnabled" type="checkbox" checked /></label><input name="fnWpnALevels" type="number" min="0" max="8" value="2" />
+            <label>WPN B</label><input name="fnWpnBLabel" value="PHASER" /><input name="fnWpnBFree" type="checkbox" checked /><label class="inline-check">ON <input name="fnWpnBEnabled" type="checkbox" checked /></label><input name="fnWpnBLevels" type="number" min="0" max="8" value="4" />
+            <label>WPN C</label><input name="fnWpnCLabel" value="WPN C" /><input name="fnWpnCFree" type="checkbox" checked /><label class="inline-check">ON <input name="fnWpnCEnabled" type="checkbox" checked /></label><input name="fnWpnCLevels" type="number" min="0" max="8" value="3" />
+            <label>WPN D</label><input name="fnWpnDLabel" value="WPN D" /><input name="fnWpnDFree" type="checkbox" /><label class="inline-check">ON <input name="fnWpnDEnabled" type="checkbox" /></label><input name="fnWpnDLevels" type="number" min="0" max="8" value="0" />
           </div>
         </div>
         <div class="power-system-editor">
@@ -213,10 +214,10 @@
 
           <section class="col right-col">
             <h3>WEAPONS</h3>
-            <div class="weapon-slot"><div class="slot-title" id="pvWpn1Title">WPN NAME TYP</div><div class="slot-body" id="pvWpn1Body"></div></div>
-            <div class="weapon-slot"><div class="slot-title" id="pvWpn2Title">WPN NAME TYP</div><div class="slot-body" id="pvWpn2Body"></div></div>
-            <div class="weapon-slot"><div class="slot-title" id="pvWpn3Title">WPN NAME TYP</div><div class="slot-body" id="pvWpn3Body"></div></div>
-            <div class="weapon-slot"><div class="slot-title" id="pvWpn4Title">WPN NAME TYP</div><div class="slot-body" id="pvWpn4Body"></div></div>
+            <div class="weapon-slot" id="pvWpn1Slot"><div class="slot-title" id="pvWpn1Title">WPN NAME TYP</div><div class="slot-body" id="pvWpn1Body"></div></div>
+            <div class="weapon-slot" id="pvWpn2Slot"><div class="slot-title" id="pvWpn2Title">WPN NAME TYP</div><div class="slot-body" id="pvWpn2Body"></div></div>
+            <div class="weapon-slot" id="pvWpn3Slot"><div class="slot-title" id="pvWpn3Title">WPN NAME TYP</div><div class="slot-body" id="pvWpn3Body"></div></div>
+            <div class="weapon-slot" id="pvWpn4Slot"><div class="slot-title" id="pvWpn4Title">WPN NAME TYP</div><div class="slot-body" id="pvWpn4Body"></div></div>
           </section>
         </div>
 
