@@ -1263,14 +1263,20 @@ form.addEventListener('change', () => render({ recalculatePointValue: false }));
 document.getElementById('saveBtn').addEventListener('click', saveDraft);
 document.getElementById('clearBtn').addEventListener('click', clearDrafts);
 document.getElementById('exportBtn').addEventListener('click', exportCurrent);
-const importJsonInput = document.getElementById('importJsonInput');
 document.getElementById('importBtn').addEventListener('click', () => {
-  importJsonInput.click();
-});
-importJsonInput.addEventListener('change', (event) => {
-  const [file] = event.target.files || [];
-  importJsonFile(file);
-  importJsonInput.value = '';
+  const picker = document.createElement('input');
+  picker.type = 'file';
+  picker.accept = 'application/json,.json';
+  picker.addEventListener('change', (event) => {
+    const [file] = event.target.files || [];
+    importJsonFile(file);
+  }, { once: true });
+
+  if (typeof picker.showPicker === 'function') {
+    picker.showPicker();
+  } else {
+    picker.click();
+  }
 });
 document.getElementById('printBtn').addEventListener('click', () => window.print());
 document.getElementById('updatePvBtn').addEventListener('click', () => render({ recalculatePointValue: true }));
