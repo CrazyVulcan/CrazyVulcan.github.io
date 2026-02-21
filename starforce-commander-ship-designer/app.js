@@ -359,7 +359,16 @@ function parseSystems(raw) {
 }
 
 function num(name) {
-  return Number(form.elements[name].value || 0);
+  const field = form.elements.namedItem(name);
+  if (!field || !('value' in field)) {
+    return 0;
+  }
+  const raw = String(field.value ?? '').trim();
+  if (raw === '') {
+    return 0;
+  }
+  const parsed = Number(raw);
+  return Number.isFinite(parsed) ? parsed : 0;
 }
 
 function clamp(value, min, max) {
