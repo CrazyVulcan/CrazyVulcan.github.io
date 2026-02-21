@@ -1223,11 +1223,12 @@ function exportCurrent() {
 }
 
 form.addEventListener('input', () => render({ recalculatePointValue: false }));
-form.addEventListener('change', () => render({ recalculatePointValue: true }));
+form.addEventListener('change', () => render({ recalculatePointValue: false }));
 document.getElementById('saveBtn').addEventListener('click', saveDraft);
 document.getElementById('clearBtn').addEventListener('click', clearDrafts);
 document.getElementById('exportBtn').addEventListener('click', exportCurrent);
 document.getElementById('printBtn').addEventListener('click', () => window.print());
+document.getElementById('updatePvBtn').addEventListener('click', () => render({ recalculatePointValue: true }));
 
 const shipArtInput = document.getElementById('shipArt');
 document.getElementById('clearArtBtn').addEventListener('click', () => {
