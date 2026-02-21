@@ -444,8 +444,8 @@ pre { background: #0b1128; color: #d5e2ff; padding: 0.65rem; border-radius: 8px;
 
 @media print {
   @page {
-    size: letter portrait;
-    margin: 0.35in;
+    size: letter landscape;
+    margin: 0.25in;
   }
 
   :root { color-scheme: light; }
@@ -475,6 +475,7 @@ pre { background: #0b1128; color: #d5e2ff; padding: 0.65rem; border-radius: 8px;
     max-width: 100%;
     margin: 0;
     break-inside: avoid;
+    page-break-inside: avoid;
   }
 }
 @media (max-width: 980px) {

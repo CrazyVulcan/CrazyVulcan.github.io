@@ -1144,15 +1144,6 @@ function slugifyFileName(raw) {
     .replace(/(^-|-$)/g, '') || 'starforce-ssd';
 }
 
-function blobToDataUrl(blob) {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onload = () => resolve(String(reader.result || ''));
-    reader.onerror = () => reject(reader.error || new Error('Failed to read blob')); 
-    reader.readAsDataURL(blob);
-  });
-}
-
 function downloadBlob(blob, filename) {
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
@@ -1160,95 +1151,6 @@ function downloadBlob(blob, filename) {
   a.download = filename;
   a.click();
   URL.revokeObjectURL(url);
-}
-
-function collectExportCss() {
-  return Array.from(document.styleSheets)
-    .map((sheet) => {
-      try {
-        return Array.from(sheet.cssRules || []).map((rule) => rule.cssText).join('\n');
-      } catch (_error) {
-        return '';
-      }
-    })
-    .join('\n');
-}
-
-async function inlineImagesForExport(container) {
-  const images = Array.from(container.querySelectorAll('img'));
-  await Promise.all(images.map(async (img) => {
-    const src = img.getAttribute('src') || '';
-    if (!src || src.startsWith('data:')) {
-      return;
-    }
-
-    const response = await fetch(new URL(src, window.location.href));
-    const blob = await response.blob();
-    img.setAttribute('src', await blobToDataUrl(blob));
-  }));
-}
-
-async function buildSsdSvgMarkup() {
-  const card = document.getElementById('ssdCard');
-  const width = Math.round(card.offsetWidth);
-  const height = Math.round(card.offsetHeight);
-
-  const wrapper = document.createElement('div');
-  wrapper.setAttribute('xmlns', 'http://www.w3.org/1999/xhtml');
-  const clone = card.cloneNode(true);
-  clone.style.margin = '0';
-  wrapper.appendChild(clone);
-
-  await inlineImagesForExport(wrapper);
-
-  const cssText = collectExportCss();
-  const html = new XMLSerializer().serializeToString(wrapper);
-
-  return `<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
-  <defs>
-    <style><![CDATA[${cssText}]]></style>
-  </defs>
-  <foreignObject x="0" y="0" width="100%" height="100%">${html}</foreignObject>
-</svg>`;
-}
-
-async function exportSsdSvg() {
-  render();
-  const svgMarkup = await buildSsdSvgMarkup();
-  const filename = `${slugifyFileName(form.elements.name.value)}.svg`;
-  downloadBlob(new Blob([svgMarkup], { type: 'image/svg+xml;charset=utf-8' }), filename);
-}
-
-async function exportSsdPng() {
-  render();
-  const svgMarkup = await buildSsdSvgMarkup();
-  const blob = new Blob([svgMarkup], { type: 'image/svg+xml;charset=utf-8' });
-  const url = URL.createObjectURL(blob);
-
-  try {
-    const image = await new Promise((resolve, reject) => {
-      const img = new Image();
-      img.onload = () => resolve(img);
-      img.onerror = reject;
-      img.src = url;
-    });
-
-    const canvas = document.createElement('canvas');
-    canvas.width = image.width;
-    canvas.height = image.height;
-    const ctx = canvas.getContext('2d');
-    ctx.drawImage(image, 0, 0);
-
-    const pngBlob = await new Promise((resolve) => canvas.toBlob(resolve, 'image/png', 1));
-    if (!pngBlob) {
-      throw new Error('Failed to create PNG image.');
-    }
-    const filename = `${slugifyFileName(form.elements.name.value)}.png`;
-    downloadBlob(pngBlob, filename);
-  } finally {
-    URL.revokeObjectURL(url);
-  }
 }
 
 function exportCurrent() {
@@ -1262,8 +1164,6 @@ form.addEventListener('change', render);
 document.getElementById('saveBtn').addEventListener('click', saveDraft);
 document.getElementById('clearBtn').addEventListener('click', clearDrafts);
 document.getElementById('exportBtn').addEventListener('click', exportCurrent);
-document.getElementById('exportSvgBtn').addEventListener('click', () => exportSsdSvg().catch((error) => console.error(error)));
-document.getElementById('exportPngBtn').addEventListener('click', () => exportSsdPng().catch((error) => console.error(error)));
 document.getElementById('printBtn').addEventListener('click', () => window.print());
 
 const shipArtInput = document.getElementById('shipArt');
