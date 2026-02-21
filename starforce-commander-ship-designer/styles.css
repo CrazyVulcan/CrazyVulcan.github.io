@@ -289,9 +289,9 @@ button.ghost { background: #273055; }
 .crew-icon { font-size: 1.6rem; line-height: 1; }
 .crew-img { width: 28px; height: 28px; display: block; }
 
-.weapon-editor-list { display: grid; gap: 0.55rem; }
-.weapon-editor-card { border: 1px solid #9ca3af; border-radius: 10px; padding: 0.55rem; background: #f8fafc; }
-.weapon-editor-card legend { font-weight: 800; color: #0f172a; padding: 0 0.3rem; }
+.weapon-editor-list { display: grid; gap: 0.5rem; }
+.weapon-editor-card { border: 2px solid #0fb366; border-radius: 0; padding: 0.45rem 0.5rem; background: #f3f4f6; }
+.weapon-editor-card legend { font-weight: 900; color: #0a3f5f; padding: 0 0.22rem; text-transform: uppercase; font-size: 0.8rem; }
 .weapon-editor-card code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.78rem; }
 
 .right-col { border: 3px solid #ff0000; background: #fafafa; }
@@ -305,7 +305,8 @@ button.ghost { background: #273055; }
 .wpn-power-stop { width: 8px; height: 8px; background: #11a854; transform: rotate(45deg); display: inline-block; }
 .wpn-structure-row b { margin-right: 0.25rem; }
 .wpn-structure-box { width: 10px; height: 10px; border: 2px solid #111; display: inline-block; }
-.wpn-range-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.12rem 0.2rem; align-items: center; }
+.wpn-range-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(56px, 1fr)); gap: 0.15rem 0.24rem; align-items: start; }
+.wpn-range-col { display: grid; grid-template-rows: auto auto; gap: 0.1rem; justify-items: center; }
 .wpn-range-band { text-align: center; font-weight: 800; font-size: 0.74rem; }
 .wpn-range-band.green { color: #10b981; }
 .wpn-range-band.black { color: #111827; }
