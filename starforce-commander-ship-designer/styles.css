@@ -30,16 +30,21 @@ textarea, input, button { width: 100%; margin-top: 0.25rem; padding: 0.45rem; bo
 .power-grid label { margin: 0; font-weight: 700; }
 .power-grid input { margin: 0; }
 .power-grid input[type="checkbox"] { width: 18px; height: 18px; justify-self: center; }
-.functions-editor { border: 1px solid #32427a; border-radius: 8px; padding: 0.6rem; margin-top: 0.5rem; background: #0f1731; }
-.functions-editor strong { display: block; margin-bottom: 0.2rem; }
-.functions-editor .muted { margin: 0 0 0.5rem; font-size: 0.82rem; }
-.functions-grid-head, .functions-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) 74px 66px minmax(0, 1fr) 56px; gap: 0.35rem; align-items: center; }
-.functions-grid-head { margin: 0.2rem 0; color: #a7b4da; font-size: 0.78rem; }
-.functions-grid label { margin: 0; font-weight: 700; }
-.functions-grid input { margin: 0; }
-.functions-grid input[type="checkbox"] { width: 18px; height: 18px; justify-self: start; }
-.inline-check { display: inline-flex !important; align-items: center; gap: 0.4rem; font-weight: 700; }
-.inline-check input { width: 18px; margin: 0; }
+.functions-editor { border: 1px solid #3557c7; border-radius: 8px; padding: 0.6rem; margin-top: 0.5rem; background: #07133e; }
+.functions-editor strong { display: block; margin-bottom: 0.15rem; font-size: 1.02rem; }
+.functions-editor .muted { margin: 0 0 0.5rem; font-size: 0.82rem; color: #bdd0ff; }
+.functions-mini-head { display: grid; grid-template-columns: 108px 1fr; margin-bottom: 0.2rem; color: #a7b4da; font-size: 0.85rem; }
+.fn-edit-row { display: grid; grid-template-columns: 108px minmax(0, 1fr) auto; gap: 0.35rem; align-items: center; margin-bottom: 0.34rem; }
+.fn-edit-row input { margin: 0; }
+.fn-edit-row input[type="checkbox"] { width: 16px; height: 16px; }
+.fn-edit-label { font-weight: 900; }
+.fn-edit-subrow { grid-template-columns: 108px auto; }
+.fn-divider { height: 1px; background: #1f3b8e; margin: 0.35rem 0 0.45rem; }
+.fn-wpn-row { grid-template-columns: 72px minmax(0, 1fr) auto 90px; }
+.fn-on-label { white-space: nowrap; }
+.inline-check { display: inline-flex !important; align-items: center; gap: 0.35rem; font-weight: 800; }
+.inline-check input { width: 16px; margin: 0; }
+.free-check { color: #e6ecff; }
 .tiny { font-size: 0.72rem; }
 button { cursor: pointer; background: #3d62ff; border: none; font-weight: 600; }
 button.ghost { background: #273055; }
