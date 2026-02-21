@@ -36,7 +36,7 @@ function normalizeWeapons(weapons) {
 function offenseScore(build) {
   const weapons = normalizeWeapons(build.weapons);
 
-  return weapons.reduce((score, weapon) => {
+  const weaponScore = weapons.reduce((score, weapon) => {
     const mountCount = Math.max(1, weapon.mountArcs?.length || weapon.mountFacings?.length || 1);
     const structure = Math.max(1, num(weapon.structure));
     const ranges = Array.isArray(weapon.ranges) ? weapon.ranges : [];
@@ -55,12 +55,16 @@ function offenseScore(build) {
     const weightedRangePower = sum(rangeWeights.map((entry) => entry.power * entry.span)) / spanTotal;
 
     const traitCount = Array.isArray(weapon.traits) ? weapon.traits.length : 0;
-    const traitBonus = traitCount * 0.18;
+    const traitBonus = traitCount * 1.4;
     const specialBonus = String(weapon.special || '').trim() ? 0.3 : 0;
     const powerReqBonus = num(weapon.powerCircles) * 0.08;
 
     return score + ((mountCount * structure * weightedRangePower * 0.62) + traitBonus + specialBonus + powerReqBonus);
   }, 0);
+
+  // Multiple active weapon systems improve pressure/coverage in sustained engagements.
+  const coordinatedBatteryBonus = Math.max(0, weapons.length - 1) * 6;
+  return weaponScore + coordinatedBatteryBonus;
 }
 
 function durabilityScore(build) {
@@ -101,9 +105,10 @@ export function calculatePointValue(build) {
   const sustainedCombatPressure = offense * (1 + (durability / 50));
 
   // Calibrated targets:
-  // - Yorktown II baseline remains in the 25-35 PV band.
+  // - Yorktown II baseline remains around 30 PV.
+  // - V-7D Raider counterpart lands near Yorktown II (~29-31 PV).
   // - Yorktown V advanced fit lands in the 75-80 PV band.
-  const total = -30 + sustainedCombatPressure + (utility * 0.2);
+  const total = -53 + sustainedCombatPressure + (utility * 0.2);
 
   return Math.max(1, Math.round(total));
 }
