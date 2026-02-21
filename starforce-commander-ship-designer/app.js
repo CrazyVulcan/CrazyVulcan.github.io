@@ -65,6 +65,47 @@ function parsePowerPattern(raw) {
     .map((value) => clamp(Math.round(value), 1, 3));
 }
 
+
+
+function parseFunctionValues(raw) {
+  return String(raw || '')
+    .split(',')
+    .map((part) => part.trim())
+    .filter(Boolean);
+}
+
+function readFunctionsConfig() {
+  return {
+    accDec: { values: parseFunctionValues(form.elements.fnAccDecValues?.value), free: clamp(num('fnAccDecFree'), 0, 4) },
+    sifIdf: {
+      values: parseFunctionValues(form.elements.fnSifIdfValues?.value),
+      free: clamp(num('fnSifIdfFree'), 0, 4),
+      emer: Boolean(form.elements.fnSifIdfEmer?.checked)
+    },
+    batRech: { values: parseFunctionValues(form.elements.fnBatRechValues?.value), free: clamp(num('fnBatRechFree'), 0, 4) },
+    warp: { values: parseFunctionValues(form.elements.fnWarpValues?.value), free: clamp(num('fnWarpFree'), 0, 4) },
+    sensor: { values: parseFunctionValues(form.elements.fnSensorValues?.value), free: clamp(num('fnSensorFree'), 0, 3) },
+    genSys: { values: parseFunctionValues(form.elements.fnGenSysValues?.value), free: clamp(num('fnGenSysFree'), 0, 3) },
+    weapons: [
+      {
+        label: form.elements.fnWpnALabel?.value || 'WPN A',
+        values: parseFunctionValues(form.elements.fnWpnAValues?.value),
+        free: clamp(num('fnWpnAFree'), 0, 3)
+      },
+      {
+        label: form.elements.fnWpnBLabel?.value || 'WPN B',
+        values: parseFunctionValues(form.elements.fnWpnBValues?.value),
+        free: clamp(num('fnWpnBFree'), 0, 3)
+      },
+      {
+        label: form.elements.fnWpnCLabel?.value || 'WPN C',
+        values: parseFunctionValues(form.elements.fnWpnCValues?.value),
+        free: clamp(num('fnWpnCFree'), 0, 3)
+      }
+    ]
+  };
+}
+
 function readPowerSystem() {
   return {
     tracks: POWER_TRACK_CONFIG.map((track) => ({
@@ -107,9 +148,9 @@ function getBuild() {
     },
     shieldGen: num('shieldGen'),
     textBlocks: {
-      functions: form.elements.functions.value,
       powerSystem: form.elements.powerSystem?.value ?? ''
     },
+    functionsConfig: readFunctionsConfig(),
     powerSystem: readPowerSystem(),
     sublight: readSublight(),
     structure: {
@@ -306,7 +347,7 @@ function renderPreview(build) {
     silhouetteEl.style.display = 'block';
   }
 
-  document.getElementById('pvFunctions').textContent = build.textBlocks.functions;
+  renderFunctions(build.functionsConfig);
   renderPowerSystem(build.powerSystem);
   renderManeuvering(build.sublight);
 
@@ -318,6 +359,89 @@ function renderPreview(build) {
   const systemsText = build.systems.map((entry) => `${entry.key} ${entry.value}`.trim()).join('\n');
   document.getElementById('pvSystems').textContent = systemsText;
   renderStructure(build);
+}
+
+
+
+function renderFunctions(functionsConfig) {
+  const container = document.getElementById('pvFunctions');
+  container.innerHTML = '';
+  const cfg = functionsConfig || {};
+
+  const addDot = (parent, filled = false) => {
+    const dot = document.createElement('span');
+    dot.className = `fn-dot${filled ? ' filled' : ''}`;
+    parent.appendChild(dot);
+  };
+
+  const addToken = (parent, text) => {
+    const tok = document.createElement('span');
+    tok.className = 'fn-token';
+    tok.textContent = text;
+    parent.appendChild(tok);
+  };
+
+  const addRow = (name, colorClass = '') => {
+    const row = document.createElement('div');
+    row.className = 'fn-row';
+    const label = document.createElement('span');
+    label.className = `fn-name${colorClass ? ` ${colorClass}` : ''}`;
+    label.textContent = name;
+    row.appendChild(label);
+
+    const levels = document.createElement('span');
+    levels.className = 'fn-levels';
+    row.appendChild(levels);
+
+    container.appendChild(row);
+    return levels;
+  };
+
+  const addValueDots = (levelsEl, values = [], free = 0) => {
+    for (let i = 0; i < Number(free || 0); i += 1) addDot(levelsEl, true);
+    values.forEach((value) => {
+      addDot(levelsEl, false);
+      addToken(levelsEl, String(value));
+    });
+  };
+
+  const acc = cfg.accDec || { values: ['1', '2', '3', '4', '5', '6'], free: 1 };
+  addValueDots(addRow('ACC/DEC', 'green'), acc.values, acc.free);
+
+  const sif = cfg.sifIdf || { values: ['1', '2', '3'], free: 0, emer: true };
+  const sifLevels = addRow('SIF/IDF', 'green');
+  addValueDots(sifLevels, sif.values, sif.free);
+  if (sif.emer) addToken(sifLevels, 'EMER');
+
+  const bat = cfg.batRech || { values: ['1'], free: 0 };
+  addValueDots(addRow('BAT RECH', 'green'), bat.values, bat.free);
+
+  const warp = cfg.warp || { values: [], free: 3 };
+  addValueDots(addRow('WARP', 'green'), warp.values, warp.free);
+
+  const shldRenf = addRow('SHLD RNFC', 'cyan');
+  ['F', 'P', 'S', 'A'].forEach((part) => {
+    addDot(shldRenf, false);
+    addToken(shldRenf, part);
+  });
+
+  const shldRepr = addRow('SHLD REPR', 'cyan');
+  ['F', 'P', 'S', 'A'].forEach((part) => {
+    addDot(shldRepr, false);
+    addToken(shldRepr, part);
+  });
+
+  const sensor = cfg.sensor || { values: ['2', '4', '6'], free: 1 };
+  addValueDots(addRow('SENSOR', 'gold'), sensor.values, sensor.free);
+
+  const gen = cfg.genSys || { values: ['NRM', 'MAX'], free: 1 };
+  addValueDots(addRow('GEN SYS', 'gold'), gen.values, gen.free);
+
+  const weapons = Array.isArray(cfg.weapons) ? cfg.weapons : [];
+  weapons.forEach((weapon, idx) => {
+    const row = addRow(weapon.label || `WPN ${String.fromCharCode(65 + idx)}`, 'red');
+    addValueDots(row, Array.isArray(weapon.values) ? weapon.values : [], Number(weapon.free || 0));
+  });
 }
 
 function renderPowerSystem(powerSystem) {
@@ -449,7 +573,31 @@ function restoreDraft(draft) {
 
   form.elements.shieldGen.value = draft.shieldGen ?? 0;
 
-  form.elements.functions.value = draft.textBlocks?.functions ?? '';
+  const fn = draft.functionsConfig || {};
+  form.elements.fnAccDecValues.value = (fn.accDec?.values ?? ['1', '2', '3', '4', '5', '6']).join(',');
+  form.elements.fnAccDecFree.value = fn.accDec?.free ?? 1;
+  form.elements.fnSifIdfValues.value = (fn.sifIdf?.values ?? ['1', '2', '3']).join(',');
+  form.elements.fnSifIdfFree.value = fn.sifIdf?.free ?? 0;
+  form.elements.fnSifIdfEmer.checked = Boolean(fn.sifIdf?.emer ?? true);
+  form.elements.fnBatRechValues.value = (fn.batRech?.values ?? ['1']).join(',');
+  form.elements.fnBatRechFree.value = fn.batRech?.free ?? 0;
+  form.elements.fnWarpValues.value = (fn.warp?.values ?? []).join(',');
+  form.elements.fnWarpFree.value = fn.warp?.free ?? 3;
+  form.elements.fnSensorValues.value = (fn.sensor?.values ?? ['2', '4', '6']).join(',');
+  form.elements.fnSensorFree.value = fn.sensor?.free ?? 1;
+  form.elements.fnGenSysValues.value = (fn.genSys?.values ?? ['NRM', 'MAX']).join(',');
+  form.elements.fnGenSysFree.value = fn.genSys?.free ?? 1;
+  const fnWpn = fn.weapons ?? [];
+  form.elements.fnWpnALabel.value = fnWpn[0]?.label ?? 'A/MAT TRP';
+  form.elements.fnWpnAValues.value = (fnWpn[0]?.values ?? ['2']).join(',');
+  form.elements.fnWpnAFree.value = fnWpn[0]?.free ?? 0;
+  form.elements.fnWpnBLabel.value = fnWpn[1]?.label ?? 'T-37 DISR';
+  form.elements.fnWpnBValues.value = (fnWpn[1]?.values ?? ['2']).join(',');
+  form.elements.fnWpnBFree.value = fnWpn[1]?.free ?? 1;
+  form.elements.fnWpnCLabel.value = fnWpn[2]?.label ?? 'T-31 DISR';
+  form.elements.fnWpnCValues.value = (fnWpn[2]?.values ?? ['3', '5']).join(',');
+  form.elements.fnWpnCFree.value = fnWpn[2]?.free ?? 1;
+
   if (form.elements.powerSystem) {
     form.elements.powerSystem.value = draft.textBlocks?.powerSystem ?? '';
   }
