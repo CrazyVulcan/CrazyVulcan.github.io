@@ -63,7 +63,79 @@
         <label><textarea name="weapons" rows="6" placeholder="MK-4 A/MAT TORPEDO|0-4|5-10|11-14|15-20"></textarea></label>
 
         <h2>Functions / Power / Maneuvering</h2>
-        <label>Functions + Power Level <textarea name="functions" rows="3" placeholder="ACC/DEC, SIF, BTTY RECH..."></textarea></label>
+        <div class="functions-editor">
+          <strong>Functions Tracks</strong>
+          <p class="muted">Use comma-separated values for exact power levels.<br />Free pips render as filled green dots.</p>
+          <div class="functions-mini-head"><span>Function</span><span>Values</span></div>
+
+          <div class="fn-edit-row">
+            <label class="fn-edit-label">ACC/DEC</label>
+            <input name="fnAccDecValues" value="1,2,3,4,5,6" />
+            <label class="inline-check free-check">FREE <input name="fnAccDecFree" type="checkbox" checked /></label>
+          </div>
+
+          <div class="fn-edit-row">
+            <label class="fn-edit-label">SIF/IDF</label>
+            <input name="fnSifIdfValues" value="1,2,3" />
+            <label class="inline-check free-check">FREE <input name="fnSifIdfFree" type="checkbox" /></label>
+          </div>
+
+          <div class="fn-edit-row fn-edit-subrow">
+            <label class="inline-check">EMER <input name="fnSifIdfEmer" type="checkbox" checked /></label>
+          </div>
+
+          <div class="fn-edit-row">
+            <label class="fn-edit-label">FTL</label>
+            <input name="fnFtlEmpty" type="number" min="0" max="6" value="2" />
+          </div>
+
+          <div class="fn-edit-row">
+            <label class="inline-check fn-edit-label">SPECIAL <input name="fnCloakEnabled" type="checkbox" /></label>
+            <input name="fnCloakEmpty" type="number" min="0" max="6" value="3" />
+          </div>
+
+          <div class="fn-edit-row">
+            <label class="fn-edit-label">SENSOR</label>
+            <input name="fnSensorValues" value="2,4,6" />
+            <label class="inline-check free-check">FREE <input name="fnSensorFree" type="checkbox" checked /></label>
+          </div>
+
+          <div class="fn-edit-row">
+            <label class="fn-edit-label">GEN SYS</label>
+            <input name="fnGenSysValues" value="NRM,MAX" />
+            <label class="inline-check free-check">FREE <input name="fnGenSysFree" type="checkbox" /></label>
+          </div>
+
+          <div class="fn-divider"></div>
+
+          <div class="fn-edit-row fn-wpn-row">
+            <label class="inline-check fn-on-label">ON <input name="fnWpnAEnabled" type="checkbox" checked /> A</label>
+            <input name="fnWpnALabel" value="A/MAT TRP" />
+            <label class="inline-check free-check">FREE <input name="fnWpnAFree" type="checkbox" checked /></label>
+            <input name="fnWpnALevels" type="number" min="0" max="8" value="2" />
+          </div>
+
+          <div class="fn-edit-row fn-wpn-row">
+            <label class="inline-check fn-on-label">ON <input name="fnWpnBEnabled" type="checkbox" checked /> B</label>
+            <input name="fnWpnBLabel" value="PHASER" />
+            <label class="inline-check free-check">FREE <input name="fnWpnBFree" type="checkbox" /></label>
+            <input name="fnWpnBLevels" type="number" min="0" max="8" value="4" />
+          </div>
+
+          <div class="fn-edit-row fn-wpn-row">
+            <label class="inline-check fn-on-label">ON <input name="fnWpnCEnabled" type="checkbox" /> C</label>
+            <input name="fnWpnCLabel" value="WPN C" />
+            <label class="inline-check free-check">FREE <input name="fnWpnCFree" type="checkbox" /></label>
+            <input name="fnWpnCLevels" type="number" min="0" max="8" value="0" />
+          </div>
+
+          <div class="fn-edit-row fn-wpn-row">
+            <label class="inline-check fn-on-label">ON <input name="fnWpnDEnabled" type="checkbox" /> D</label>
+            <input name="fnWpnDLabel" value="WPN D" />
+            <label class="inline-check free-check">FREE <input name="fnWpnDFree" type="checkbox" /></label>
+            <input name="fnWpnDLevels" type="number" min="0" max="8" value="0" />
+          </div>
+        </div>
         <div class="power-system-editor">
           <strong>Power System Tracks</strong>
           <p class="muted">Set points, optional per-point box pattern (e.g. 1,2,1,2), and whether a track shows a green dot.</p>
@@ -139,7 +211,7 @@
             </div>
             <div class="green-block block-functions">
               <h4><span>FUNCTIONS</span><span>POWER LEVEL</span></h4>
-              <pre id="pvFunctions"></pre>
+              <div id="pvFunctions" class="functions-preview"></div>
             </div>
             <div class="green-block block-power">
               <h4><span>POWER SYSTEM</span><span id="pvMaxPower"></span></h4>
@@ -197,10 +269,10 @@
 
           <section class="col right-col">
             <h3>WEAPONS</h3>
-            <div class="weapon-slot"><div class="slot-title" id="pvWpn1Title">WPN NAME TYP</div><div class="slot-body" id="pvWpn1Body"></div></div>
-            <div class="weapon-slot"><div class="slot-title" id="pvWpn2Title">WPN NAME TYP</div><div class="slot-body" id="pvWpn2Body"></div></div>
-            <div class="weapon-slot"><div class="slot-title" id="pvWpn3Title">WPN NAME TYP</div><div class="slot-body" id="pvWpn3Body"></div></div>
-            <div class="weapon-slot"><div class="slot-title" id="pvWpn4Title">WPN NAME TYP</div><div class="slot-body" id="pvWpn4Body"></div></div>
+            <div class="weapon-slot" id="pvWpn1Slot"><div class="slot-title" id="pvWpn1Title">WPN NAME TYP</div><div class="slot-body" id="pvWpn1Body"></div></div>
+            <div class="weapon-slot" id="pvWpn2Slot"><div class="slot-title" id="pvWpn2Title">WPN NAME TYP</div><div class="slot-body" id="pvWpn2Body"></div></div>
+            <div class="weapon-slot" id="pvWpn3Slot"><div class="slot-title" id="pvWpn3Title">WPN NAME TYP</div><div class="slot-body" id="pvWpn3Body"></div></div>
+            <div class="weapon-slot" id="pvWpn4Slot"><div class="slot-title" id="pvWpn4Title">WPN NAME TYP</div><div class="slot-body" id="pvWpn4Body"></div></div>
           </section>
         </div>
 
