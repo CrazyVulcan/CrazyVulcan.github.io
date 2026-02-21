@@ -293,6 +293,10 @@ button.ghost { background: #273055; }
 .weapon-editor-card { border: 2px solid #0fb366; border-radius: 0; padding: 0.45rem 0.5rem; background: #f3f4f6; }
 .weapon-editor-card legend { font-weight: 900; color: #0a3f5f; padding: 0 0.22rem; text-transform: uppercase; font-size: 0.8rem; }
 .weapon-editor-card code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.78rem; }
+.weapon-editor-card label { color: #1f2b46; font-weight: 700; }
+.weapon-editor-card input { border-color: #2b447f; }
+.weapon-editor-card .grid2,
+.weapon-editor-card .grid3 { grid-template-columns: 1fr; gap: 0.45rem; }
 
 .right-col { border: 3px solid #ff0000; background: #fafafa; }
 .weapon-slot { border-top: 2px solid #ff0000; height: 170px; min-height: 170px; display: flex; flex-direction: column; }
