@@ -1135,15 +1135,28 @@ function clearDrafts() {
   renderDrafts();
 }
 
-function exportCurrent() {
-  const name = form.elements.name.value || 'starforce-ssd';
-  const blob = new Blob([JSON.stringify(getBuild(), null, 2)], { type: 'application/json' });
+
+function slugifyFileName(raw) {
+  return String(raw || 'starforce-ssd')
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '') || 'starforce-ssd';
+}
+
+function downloadBlob(blob, filename) {
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
-  a.download = `${name}.json`;
+  a.download = filename;
   a.click();
   URL.revokeObjectURL(url);
+}
+
+function exportCurrent() {
+  const name = slugifyFileName(form.elements.name.value);
+  const blob = new Blob([JSON.stringify(getBuild(), null, 2)], { type: 'application/json' });
+  downloadBlob(blob, `${name}.json`);
 }
 
 form.addEventListener('input', render);
@@ -1151,6 +1164,7 @@ form.addEventListener('change', render);
 document.getElementById('saveBtn').addEventListener('click', saveDraft);
 document.getElementById('clearBtn').addEventListener('click', clearDrafts);
 document.getElementById('exportBtn').addEventListener('click', exportCurrent);
+document.getElementById('printBtn').addEventListener('click', () => window.print());
 
 const shipArtInput = document.getElementById('shipArt');
 document.getElementById('clearArtBtn').addEventListener('click', () => {
