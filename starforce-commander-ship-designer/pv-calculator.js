@@ -33,6 +33,42 @@ function normalizeWeapons(weapons) {
   return Array.isArray(weapons) ? weapons.filter((weapon) => weapon && weapon.name) : [];
 }
 
+function normalizeTrait(trait) {
+  return String(trait || '').trim().toUpperCase();
+}
+
+const TRAIT_BONUS_BY_PREFIX = [
+  { match: 'HOMING', bonus: 1.2 },
+  { match: 'HVY', bonus: 1.4 },
+  { match: 'PREC', bonus: 1.4 },
+  { match: 'PIERCE', bonus: 1.4 },
+  { match: 'PIRCE', bonus: 1.4 }, // common typo support
+  { match: 'PARICAL', bonus: 1.1 }, // custom rules typo support
+  { match: 'PARTIAL', bonus: 1.1 },
+  { match: 'LEAK', bonus: 1.1 },
+  { match: 'PD MODE', bonus: 1.1 },
+  { match: 'ATMO', bonus: 0.8 },
+  { match: 'NOBAT', bonus: 0.6 },
+  { match: 'FTL', bonus: 1.0 }
+];
+
+function traitBonusScore(traits) {
+  if (!Array.isArray(traits) || traits.length === 0) {
+    return 0;
+  }
+
+  return traits.reduce((score, trait) => {
+    const normalized = normalizeTrait(trait);
+    if (!normalized) {
+      return score;
+    }
+
+    const weighted = TRAIT_BONUS_BY_PREFIX.find((entry) => normalized.startsWith(entry.match));
+    // Default keeps unknown custom traits meaningful without overpricing flavor tags.
+    return score + (weighted ? weighted.bonus : 0.9);
+  }, 0);
+}
+
 function offenseScore(build) {
   const weapons = normalizeWeapons(build.weapons);
 
@@ -54,8 +90,7 @@ function offenseScore(build) {
     const spanTotal = sum(rangeWeights.map((entry) => entry.span)) || 1;
     const weightedRangePower = sum(rangeWeights.map((entry) => entry.power * entry.span)) / spanTotal;
 
-    const traitCount = Array.isArray(weapon.traits) ? weapon.traits.length : 0;
-    const traitBonus = traitCount * 1.4;
+    const traitBonus = traitBonusScore(weapon.traits);
     const specialBonus = String(weapon.special || '').trim() ? 0.3 : 0;
     const powerReqBonus = num(weapon.powerCircles) * 0.08;
 
@@ -107,8 +142,8 @@ export function calculatePointValue(build) {
   // Calibrated targets:
   // - Yorktown II baseline remains around 30 PV.
   // - V-7D Raider counterpart lands near Yorktown II (~29-31 PV).
-  // - Yorktown V advanced fit lands in the 75-80 PV band.
-  const total = -53 + sustainedCombatPressure + (utility * 0.2);
+  // - Yorktown V advanced fit lands in the low-mid 50s PV band.
+  const total = -50 + sustainedCombatPressure + (utility * 0.2);
 
   return Math.max(1, Math.round(total));
 }
