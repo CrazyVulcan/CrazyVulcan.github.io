@@ -289,11 +289,47 @@ button.ghost { background: #273055; }
 .crew-icon { font-size: 1.6rem; line-height: 1; }
 .crew-img { width: 28px; height: 28px; display: block; }
 
+.weapon-editor-list { display: grid; gap: 0.5rem; }
+.weapon-editor-card { border: 1px solid #32427a; border-radius: 8px; padding: 0.45rem 0.5rem; background: #0f1731; }
+.weapon-editor-card legend { font-weight: 900; color: #dbe7ff; padding: 0 0.22rem; text-transform: uppercase; font-size: 0.8rem; }
+.weapon-editor-card code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.78rem; }
+.weapon-editor-card label { color: #dbe7ff; font-weight: 700; }
+.weapon-editor-card input { border-color: #32427a; }
+.weapon-editor-card .grid2,
+.weapon-editor-card .grid3 { grid-template-columns: 1fr; gap: 0.45rem; }
+
 .right-col { border: 3px solid #ff0000; background: #fafafa; }
 .weapon-slot { border-top: 2px solid #ff0000; height: 170px; min-height: 170px; display: flex; flex-direction: column; }
 .weapon-slot:first-of-type { border-top: 0; }
 .slot-title { background: #ff0000; color: #fff; font-weight: 900; padding: 0.17rem 0.3rem; }
-.slot-body { white-space: pre-wrap; color: #233; padding: 0.35rem 0.38rem; min-height: 0; flex: 1; overflow: auto; font-family: Arial, Helvetica, sans-serif; font-size: 0.8rem; }
+.slot-body { color: #233; padding: 0.35rem 0.38rem; min-height: 0; flex: 1; overflow: auto; font-family: Arial, Helvetica, sans-serif; font-size: 0.74rem; }
+.wpn-mount-row,.wpn-power-row,.wpn-structure-row,.wpn-special-row,.wpn-trait-row { display: flex; align-items: center; gap: 0.18rem; margin-bottom: 0.18rem; flex-wrap: wrap; }
+.wpn-mount { display: grid; gap: 0.12rem; justify-items: center; }
+.wpn-mount-svg { width: 48px; height: 48px; display: block; }
+.wpn-sector { fill: #ffffff; stroke: #6b1717; stroke-width: 0.9; }
+.wpn-sector.active { fill: #ff1212; }
+.wpn-mount-outline { fill: none; stroke: #6b1717; stroke-width: 1.4; }
+.wpn-mount-structure { display: inline-flex; gap: 0.08rem; }
+.wpn-mount-power { display: inline-flex; align-items: center; gap: 0.08rem; }
+.wpn-power-circle { width: 12px; height: 12px; border-radius: 999px; border: 3px solid #11a854; display: inline-block; box-sizing: border-box; }
+.wpn-power-stop { width: 8px; height: 8px; background: #11a854; transform: rotate(45deg); display: inline-block; }
+.wpn-structure-row b { margin-right: 0.25rem; }
+.wpn-structure-box { width: 10px; height: 10px; border: 2px solid #111; display: inline-block; }
+.wpn-range-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(56px, 1fr)); gap: 0.15rem 0.24rem; align-items: start; }
+.wpn-range-col { display: grid; grid-template-rows: auto auto; gap: 0.1rem; justify-items: center; }
+.wpn-range-col.homing { border: 2px solid #ff0000; padding: 0.08rem 0.15rem 0.12rem; }
+.wpn-range-band { text-align: center; font-weight: 800; font-size: 0.74rem; }
+.wpn-range-band.green { color: #10b981; }
+.wpn-range-band.black { color: #111827; }
+.wpn-range-band.red { color: #dc2626; }
+.wpn-dice-row { display: flex; justify-content: center; gap: 0.08rem; flex-wrap: wrap; }
+.wpn-bonus { color: #111; font-weight: 900; font-size: 0.72rem; margin-right: 0.06rem; }
+.wpn-die { width: 13px; height: 13px; border-radius: 999px; color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 0.48rem; font-weight: 900; }
+.wpn-die.r { background: #ef4444; }
+.wpn-die.y { background: #eab308; color: #111; }
+.wpn-die.g { background: #22c55e; }
+.wpn-die.b { background: #3b82f6; }
+.wpn-special-row b,.wpn-trait-row b { color: #0b67b2; }
 
 .template-bottom {
   --structure-box-size: 12px;
