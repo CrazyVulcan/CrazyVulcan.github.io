@@ -65,19 +65,18 @@
         <h2>Functions / Power / Maneuvering</h2>
         <div class="functions-editor">
           <strong>Functions Tracks</strong>
-          <p class="muted">Tune power levels and free pips for the Engineering FUNCTIONS block.</p>
-          <div class="functions-grid-head"><span>Function</span><span>Levels</span><span>Free Pips</span><span>Extra</span></div>
+          <p class="muted">Use comma-separated values for exact power levels. Free pips render as filled green dots.</p>
+          <div class="functions-grid-head"><span>Function</span><span>Values</span><span>Free</span><span>Extra</span></div>
           <div class="functions-grid">
-            <label>ACC/DEC</label><input name="fnAccDecLevels" type="number" min="1" max="9" value="7" /><input name="fnAccDecFree" type="number" min="0" max="3" value="0" /><span></span>
-            <label>SIF/IDF</label><input name="fnSifIdfLevels" type="number" min="1" max="6" value="4" /><input name="fnSifIdfFree" type="number" min="0" max="3" value="0" /><label class="inline-check">EMER <input name="fnSifIdfEmer" type="checkbox" checked /></label>
-            <label>BAT RECH</label><input name="fnBatRechLevels" type="number" min="1" max="5" value="3" /><input name="fnBatRechFree" type="number" min="0" max="3" value="0" /><span></span>
-            <label>FTL</label><input name="fnFtlLevels" type="number" min="0" max="5" value="3" /><input name="fnFtlFree" type="number" min="0" max="3" value="0" /><span></span>
-            <label>OTHER</label><input name="fnOtherLevels" type="number" min="0" max="5" value="3" /><input name="fnOtherFree" type="number" min="0" max="3" value="0" /><span></span>
-            <label>SENSOR</label><input name="fnSensorLevels" type="number" min="0" max="5" value="3" /><input name="fnSensorFree" type="number" min="0" max="3" value="1" /><span class="muted tiny">future tuning</span>
-            <label>GEN SYS</label><input name="fnGenSysLevels" type="number" min="1" max="3" value="2" /><input name="fnGenSysFree" type="number" min="0" max="2" value="1" /><span></span>
-            <label>WPN A</label><input name="fnWpnALevels" type="number" min="0" max="6" value="4" /><input name="fnWpnAFree" type="number" min="0" max="3" value="0" /><input name="fnWpnAEndRound" type="number" min="0" max="6" value="0" />
-            <label>WPN B</label><input name="fnWpnBLevels" type="number" min="0" max="6" value="4" /><input name="fnWpnBFree" type="number" min="0" max="3" value="0" /><input name="fnWpnBEndRound" type="number" min="0" max="6" value="0" />
-            <label>WPN C</label><input name="fnWpnCLevels" type="number" min="0" max="6" value="4" /><input name="fnWpnCFree" type="number" min="0" max="3" value="0" /><input name="fnWpnCEndRound" type="number" min="0" max="6" value="0" />
+            <label>ACC/DEC</label><input name="fnAccDecValues" value="1,2,3,4,5,6" /><input name="fnAccDecFree" type="number" min="0" max="4" value="1" /><span></span>
+            <label>SIF/IDF</label><input name="fnSifIdfValues" value="1,2,3" /><input name="fnSifIdfFree" type="number" min="0" max="4" value="0" /><label class="inline-check">EMER <input name="fnSifIdfEmer" type="checkbox" checked /></label>
+            <label>BAT RECH</label><input name="fnBatRechValues" value="1" /><input name="fnBatRechFree" type="number" min="0" max="4" value="0" /><span></span>
+            <label>WARP</label><input name="fnWarpValues" value="" /><input name="fnWarpFree" type="number" min="0" max="4" value="3" /><span></span>
+            <label>SENSOR</label><input name="fnSensorValues" value="2,4,6" /><input name="fnSensorFree" type="number" min="0" max="3" value="1" /><span class="muted tiny">placeholder</span>
+            <label>GEN SYS</label><input name="fnGenSysValues" value="NRM,MAX" /><input name="fnGenSysFree" type="number" min="0" max="3" value="1" /><span></span>
+            <label>WPN A</label><input name="fnWpnALabel" value="A/MAT TRP" /><input name="fnWpnAFree" type="number" min="0" max="3" value="0" /><input name="fnWpnAValues" value="2" placeholder="values" />
+            <label>WPN B</label><input name="fnWpnBLabel" value="T-37 DISR" /><input name="fnWpnBFree" type="number" min="0" max="3" value="1" /><input name="fnWpnBValues" value="2" placeholder="values" />
+            <label>WPN C</label><input name="fnWpnCLabel" value="T-31 DISR" /><input name="fnWpnCFree" type="number" min="0" max="3" value="1" /><input name="fnWpnCValues" value="3,5" placeholder="values" />
           </div>
         </div>
         <div class="power-system-editor">

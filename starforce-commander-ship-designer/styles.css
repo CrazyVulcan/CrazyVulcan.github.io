@@ -123,8 +123,9 @@ button.ghost { background: #273055; }
 .green-block h4 { margin: 0; background: #07af52; color: #fff; padding: 0.15rem 0.25rem; font-size: 0.74rem; letter-spacing: 0.01em; display: flex; justify-content: space-between; }
 .block-power h4 span:last-child { color: #d8ffd8; }
 .green-block pre { min-height: 80px; margin: 0; background: transparent; color: #233; white-space: pre-wrap; border-radius: 0; font-family: Arial, Helvetica, sans-serif; font-size: 0.8rem; }
-.fn-row { display: grid; grid-template-columns: 120px minmax(0, 1fr); align-items: center; gap: 0.35rem; margin-bottom: 0.2rem; font-weight: 900; font-size: 0.72rem; }
-.fn-name { text-transform: uppercase; }
+.fn-row { display: grid; grid-template-columns: 120px minmax(0, 1fr); align-items: center; gap: 0.35rem; margin-bottom: 0.12rem; font-weight: 900; font-size: 0.75rem; }
+.fn-name { text-transform: uppercase; letter-spacing: 0.01em; }
+.fn-name.green { color: #0aa14e; }
 .fn-name.magenta { color: #d31ce0; }
 .fn-name.cyan { color: #08a7df; }
 .fn-name.gold { color: #e3ab00; }
