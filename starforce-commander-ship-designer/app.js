@@ -37,7 +37,7 @@ function parseLegacyWeapons(raw) {
         powerStops: [],
         structure: 1,
         ranges: ranges.map((band) => ({ band, type: 'black' })),
-        diceByRange: ranges.map(() => ['R']),
+        diceByRange: ranges.map(() => ({ bonus: 0, dice: ['R'] })),
         traits: [],
         special: ''
       };
@@ -75,7 +75,16 @@ function parseWeaponRanges(raw) {
 function parseWeaponDice(raw) {
   return String(raw || '')
     .split('|')
-    .map((group) => parseList(group).map((token) => token.toUpperCase()));
+    .map((group) => {
+      const tokens = parseList(group);
+      const [firstToken, ...rest] = tokens;
+      const maybeBonus = Number(firstToken);
+      const hasBonus = Number.isFinite(maybeBonus) && String(firstToken || '').trim() !== '';
+      return {
+        bonus: hasBonus ? maybeBonus : 0,
+        dice: (hasBonus ? rest : tokens).map((token) => token.toUpperCase())
+      };
+    });
 }
 
 function parseMountFacings(raw) {
@@ -90,7 +99,8 @@ function buildRangeProfile(ranges, diceByRange, structure = 1) {
   return (Array.isArray(ranges) ? ranges : []).map((range, index) => ({
     band: range.band || '?',
     type: ['green', 'black', 'red'].includes((range.type || '').toLowerCase()) ? range.type.toLowerCase() : 'black',
-    dice: (Array.isArray(diceByRange?.[index]) ? diceByRange[index] : []).slice(0, Math.max(1, Number(structure || 1)))
+    bonus: Number(diceByRange?.[index]?.bonus || 0),
+    dice: (Array.isArray(diceByRange?.[index]?.dice) ? diceByRange[index].dice : []).slice(0, Math.max(1, Number(structure || 1)))
   }));
 }
 
@@ -125,6 +135,7 @@ function normalizeWeapon(weapon = {}) {
       return {
         band: range.band || '?',
         type: ['green', 'black', 'red'].includes((range.type || '').toLowerCase()) ? range.type.toLowerCase() : 'black',
+        bonus: Number(range.bonus || 0),
         dice: (Array.isArray(range.dice) ? range.dice : []).slice(0, structure)
       };
     })
@@ -134,10 +145,12 @@ function normalizeWeapon(weapon = {}) {
     ? weapon.rangeProfile.map((range) => ({
       band: range.band || '?',
       type: ['green', 'black', 'red'].includes((range.type || '').toLowerCase()) ? range.type.toLowerCase() : 'black',
+      bonus: Number(range.bonus || 0),
       dice: (Array.isArray(range.dice) ? range.dice : []).slice(0, structure)
     }))
     : buildRangeProfile(normalizedRanges, Array.isArray(weapon.diceByRange) ? weapon.diceByRange : [], structure).map((range, index) => ({
       ...range,
+      bonus: Number(range.bonus || normalizedRanges[index]?.bonus || 0),
       dice: range.dice.length ? range.dice : (normalizedRanges[index]?.dice || []).slice(0, structure)
     }));
 
@@ -441,9 +454,13 @@ function weaponSlot(id, rawWeapon, enabled = true) {
 
   const rangeGrid = document.createElement('div');
   rangeGrid.className = 'wpn-range-grid';
+  const traits = weapon.traits.map((trait) => trait.trim()).filter(Boolean);
+  const hasHvy = traits.some((trait) => trait.toUpperCase() === 'HVY');
+  const hasHoming = traits.some((trait) => trait.toUpperCase() === 'HOMING');
+
   weapon.ranges.forEach((range) => {
     const rangeCol = document.createElement('div');
-    rangeCol.className = 'wpn-range-col';
+    rangeCol.className = `wpn-range-col${hasHoming ? ' homing' : ''}`;
 
     const band = document.createElement('span');
     band.className = `wpn-range-band ${range.type}`;
@@ -452,6 +469,12 @@ function weaponSlot(id, rawWeapon, enabled = true) {
 
     const dice = document.createElement('span');
     dice.className = 'wpn-dice-row';
+    if (Number(range.bonus || 0) > 0) {
+      const bonus = document.createElement('span');
+      bonus.className = 'wpn-bonus';
+      bonus.textContent = `+${Number(range.bonus)}`;
+      dice.appendChild(bonus);
+    }
     const diceValues = (range.dice || []).slice(0, weapon.structure);
     diceValues.forEach((die) => {
       const pip = document.createElement('span');
@@ -464,9 +487,6 @@ function weaponSlot(id, rawWeapon, enabled = true) {
     rangeGrid.appendChild(rangeCol);
   });
   body.appendChild(rangeGrid);
-
-  const traits = weapon.traits.map((trait) => trait.trim()).filter(Boolean);
-  const hasHvy = traits.some((trait) => trait.toUpperCase() === 'HVY');
 
   if (hasHvy && weapon.special) {
     const special = document.createElement('div');
@@ -992,7 +1012,10 @@ function restoreDraft(draft) {
     form.elements[`wpn${index}PowerStops`].value = (weapon.powerStops || []).join(', ');
     form.elements[`wpn${index}Structure`].value = weapon.structure || 1;
     form.elements[`wpn${index}Ranges`].value = (weapon.ranges || []).map((range) => `${range.band}:${range.type}`).join(',');
-    form.elements[`wpn${index}Dice`].value = (weapon.ranges || []).map((range) => (range.dice || []).join(',')).join('|');
+    form.elements[`wpn${index}Dice`].value = (weapon.ranges || []).map((range) => {
+      const dice = (range.dice || []).join(',');
+      return Number(range.bonus || 0) > 0 ? `${Number(range.bonus)},${dice}` : dice;
+    }).join('|');
     form.elements[`wpn${index}Special`].value = weapon.special || '';
   });
   form.elements.systems.value = (draft.systems ?? []).map((item) => `${item.key}:${item.value ?? ''}`).join('\n');

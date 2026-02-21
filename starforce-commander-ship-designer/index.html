@@ -59,7 +59,7 @@
         <button type="button" id="clearArtBtn" class="ghost">Clear Ship Art</button>
 
         <h2>Weapons (up to 4)</h2>
-        <p class="muted">Each weapon supports up to 8 mounts, power circles/stops, structure, per-range dice colors, and optional SPECIAL text (enabled by the HVY trait).</p>
+        <p class="muted">Each weapon supports up to 8 mounts, power circles/stops, structure, per-range dice colors, HOMING band boxes, and optional SPECIAL text (enabled by the HVY trait).</p>
         <div class="weapon-editor-list">
           <fieldset class="weapon-editor-card">
             <legend>Weapon A</legend>
@@ -78,8 +78,8 @@
             <label>Range bands (format <code>0-4:green,5-9:black</code> or <code>0-4,green,5-9,black</code>)
               <input name="wpn1Ranges" value="0-4:green,5-9:black,10-13:red,14-16:red" />
             </label>
-            <label>Dice per band (use R,Y,G,B per structure point, separated by commas)
-              <input name="wpn1Dice" value="R,R,R,R|R,R,R,R|R,R,R,R|Y,Y,Y" />
+            <label>Dice per band (optional bonus first: <code>8,R,R|4,R,R</code>)
+              <input name="wpn1Dice" value="8,R,R|4,R,R|4,R,R|2,R,R" />
             </label>
             <label>Special (shown only when HVY trait is present)
               <input name="wpn1Special" value="H(4+1), STR 2" />
