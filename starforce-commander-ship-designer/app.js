@@ -205,6 +205,54 @@ function buildRangeProfile(ranges, diceByRange, structure = 1) {
   }));
 }
 
+function splitDataUrl(dataUrl) {
+  const match = String(dataUrl || '').match(/^data:([^;]+);base64,(.+)$/i);
+  if (!match) {
+    return null;
+  }
+  return {
+    mimeType: match[1],
+    base64: match[2]
+  };
+}
+
+function buildDataUrlFromEmbedded(embeddedAsset) {
+  if (!embeddedAsset || typeof embeddedAsset !== 'object') {
+    return '';
+  }
+  const mimeType = String(embeddedAsset.mimeType || '').trim();
+  const base64 = String(embeddedAsset.base64 || '').trim();
+  if (!mimeType || !base64) {
+    return '';
+  }
+  return `data:${mimeType};base64,${base64}`;
+}
+
+function withEmbeddedShipArt(build) {
+  const normalizedDataUrl = typeof build?.shipArtDataUrl === 'string' ? build.shipArtDataUrl : '';
+  const split = splitDataUrl(normalizedDataUrl);
+  return {
+    ...build,
+    embeddedAssets: split
+      ? {
+        ...(build.embeddedAssets && typeof build.embeddedAssets === 'object' ? build.embeddedAssets : {}),
+        shipArt: split
+      }
+      : (build.embeddedAssets && typeof build.embeddedAssets === 'object' ? build.embeddedAssets : undefined)
+  };
+}
+
+function resolveImportedShipArt(importedDraft = {}) {
+  if (typeof importedDraft.shipArtDataUrl === 'string' && importedDraft.shipArtDataUrl.trim()) {
+    return importedDraft.shipArtDataUrl;
+  }
+  const embeddedDataUrl = buildDataUrlFromEmbedded(importedDraft.embeddedAssets?.shipArt);
+  if (embeddedDataUrl) {
+    return embeddedDataUrl;
+  }
+  return shipArtDataUrl;
+}
+
 function readWeaponsFromForm() {
   return [1, 2, 3, 4].map((index) => {
     const name = form.elements[`wpn${index}Name`]?.value?.trim() || '';
@@ -998,13 +1046,23 @@ function renderPowerSystem(powerSystem) {
 }
 
 function getJsonPreview(build) {
-  if (!build.shipArtDataUrl) {
-    return JSON.stringify(build, null, 2);
+  const previewBuild = { ...build };
+
+  if (previewBuild.shipArtDataUrl) {
+    previewBuild.shipArtDataUrl = `[image data url omitted: ${previewBuild.shipArtDataUrl.length} chars]`;
   }
-  const previewBuild = {
-    ...build,
-    shipArtDataUrl: `[image data url omitted: ${build.shipArtDataUrl.length} chars]`
-  };
+
+  const embeddedBase64 = previewBuild.embeddedAssets?.shipArt?.base64;
+  if (typeof embeddedBase64 === 'string' && embeddedBase64.length > 0) {
+    previewBuild.embeddedAssets = {
+      ...(previewBuild.embeddedAssets || {}),
+      shipArt: {
+        ...(previewBuild.embeddedAssets?.shipArt || {}),
+        base64: `[image base64 omitted: ${embeddedBase64.length} chars]`
+      }
+    };
+  }
+
   return JSON.stringify(previewBuild, null, 2);
 }
 
@@ -1018,7 +1076,7 @@ function pulseLiveBadge() {
 function render(options = {}) {
   const { recalculatePointValue = true } = options;
   syncDerivedFunctionInputs();
-  const build = getBuild();
+  const build = withEmbeddedShipArt(getBuild());
   renderPreview(build, { recalculatePointValue });
   jsonPreview.textContent = getJsonPreview(build);
   pulseLiveBadge();
@@ -1227,7 +1285,8 @@ function downloadBlob(blob, filename) {
 
 function exportCurrent() {
   const name = slugifyFileName(form.elements.name.value);
-  const blob = new Blob([JSON.stringify(getBuild(), null, 2)], { type: 'application/json' });
+  const shareableBuild = withEmbeddedShipArt(getBuild());
+  const blob = new Blob([JSON.stringify(shareableBuild, null, 2)], { type: 'application/json' });
   downloadBlob(blob, `${name}.json`);
 }
 
@@ -1246,9 +1305,7 @@ function importJsonFile(file) {
 
       const mergedDraft = {
         ...importedDraft,
-        shipArtDataUrl: typeof importedDraft.shipArtDataUrl === 'string'
-          ? importedDraft.shipArtDataUrl
-          : shipArtDataUrl
+        shipArtDataUrl: resolveImportedShipArt(importedDraft)
       };
       restoreDraft(mergedDraft);
     } catch {
