@@ -368,28 +368,14 @@ function scoreWeapons(build) {
 }
 
 
-function applyPointValueCurve(totalScore) {
-  const base = positivePart(totalScore) * 0.082;
+function compressScoreToPlayablePv(totalScore) {
+  const score = positivePart(totalScore);
 
-  // Keep modest/smaller ships from inflating too quickly.
-  const lowEndCompression = base <= 30
-    ? Math.pow((30 - base) / 30, 1.25) * 2.8
-    : 0;
+  // A gentle non-linear curve keeps capable ships affordable, while still
+  // allowing super-ships (dreadnaught range) to climb toward ~200 PV.
+  const compressed = Math.pow(score, 0.62) * 2.1;
 
-  // Push high-end capability into a higher class band.
-  const classSeparationBonus = base > 40
-    ? Math.pow(base - 40, 1.22) * 0.24
-    : 0;
-
-  return Math.max(2, base - lowEndCompression + classSeparationBonus);
-}
-
-function compressToPlayablePointValue(rawPointValue) {
-  const raw = positivePart(rawPointValue);
-  const shifted = Math.max(0, raw - 2);
-
-  // Log compression keeps low-end cheap while still allowing unlimited growth.
-  return 1 + (18 * Math.log10(1 + (shifted / 2)));
+  return Math.max(1, compressed);
 }
 
 export function calculatePointValue(build) {
@@ -404,6 +390,7 @@ export function calculatePointValue(build) {
     weapons: safeRun(() => scoreWeapons(build)) * SECTION_MULTIPLIERS.weapons
   };
 
-  const total = sum(Object.values(contributions)) * rank(build, 'rankGlobalScale');
-  return Math.max(1, Math.round(total));
+  const totalScore = sum(Object.values(contributions)) * rank(build, 'rankGlobalScale');
+  const playablePv = compressScoreToPlayablePv(totalScore);
+  return Math.max(1, Math.round(playablePv));
 }
