@@ -529,7 +529,7 @@ function getBuild() {
       classType: form.elements.classType.value,
       faction: form.elements.faction.value,
       era: form.elements.era.value,
-      pointValue: num('pointValue')
+      pointValue: num('pointValueCalculated')
     },
     engineering: {
       move: num('move'),
@@ -769,9 +769,9 @@ function renderManeuvering(sublight) {
 function safeCalculatePointValue(build) {
   try {
     const pointValue = calculatePointValue(build);
-    return Number.isFinite(pointValue) ? pointValue : 29;
+    return Number.isFinite(pointValue) ? pointValue : 1;
   } catch {
-    return 29;
+    return 1;
   }
 }
 
@@ -1336,7 +1336,9 @@ document.getElementById('importBtn').addEventListener('click', () => {
   }
 });
 document.getElementById('printBtn').addEventListener('click', () => window.print());
-document.getElementById('updatePvBtn').addEventListener('click', () => render({ recalculatePointValue: true }));
+document.querySelectorAll('.update-pv-btn').forEach((button) => {
+  button.addEventListener('click', () => render({ recalculatePointValue: true }));
+});
 
 const shipArtInput = document.getElementById('shipArt');
 document.getElementById('clearArtBtn').addEventListener('click', () => {
