@@ -183,5 +183,8 @@ export function calculatePointValue(build) {
     + (systems * 0.75)
     + (power * 0.8);
 
-  return Math.max(1, Math.round(total));
+  // Survivability/utility floor prevents valid low-offense escorts from collapsing to 1 PV.
+  const survivabilityFloor = (durability * 0.5) + (utility * 0.8) - 8;
+
+  return Math.max(1, Math.round(Math.max(total, survivabilityFloor)));
 }
