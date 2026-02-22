@@ -160,9 +160,32 @@ function scoreDefense(build) {
   const armor = build?.armor || {};
   const structure = build?.structure || {};
 
+  const repairable = positivePart(structure.repairable);
+  const permanent = positivePart(structure.permanent);
+  const totalStructure = repairable + permanent;
+
+  // Survival is non-linear: each extra hull box is worth more in staying power.
+  // This especially rewards high-total ships versus low-total ships.
+  const structureBase = totalStructure * 1.4;
+  const structureScaling = Math.pow(totalStructure, 1.45) * 0.62;
+
+  // Damage control has outsized value because it extends effective lifespan in combat.
+  const damageControlScore = Math.pow(repairable, 1.55) * 1.9;
+
+  // Permanent structure converts directly to scenario/VP durability and kill threshold.
+  const permanentHullScore = Math.pow(permanent, 1.35) * 1.2;
+
+  // Larger structure pools amplify value from shields/armor and vice versa.
+  const durabilitySynergy = (Math.sqrt(totalStructure) * 0.35)
+    * (sum([shields.forward, shields.aft, shields.port, shields.starboard]) * 0.05);
+
   const shieldScore = sum([shields.forward, shields.aft, shields.port, shields.starboard]) * 0.58;
   const armorScore = sum([armor.forward, armor.aft, armor.port, armor.starboard]) * 0.82;
-  const structureScore = (positivePart(structure.repairable) * 1.8) + (positivePart(structure.permanent) * 1.55);
+  const structureScore = structureBase
+    + structureScaling
+    + damageControlScore
+    + permanentHullScore
+    + durabilitySynergy;
   const generatorScore = positivePart(build?.shieldGen) * 1.3;
 
   return shieldScore + armorScore + structureScore + generatorScore;
