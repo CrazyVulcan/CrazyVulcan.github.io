@@ -33,6 +33,50 @@ function normalizeWeapons(weapons) {
   return Array.isArray(weapons) ? weapons.filter((weapon) => weapon && weapon.name) : [];
 }
 
+function normalizeArcValues(weapon) {
+  const fromFacings = Array.isArray(weapon?.mountFacings)
+    ? weapon.mountFacings.flatMap((mount) => (Array.isArray(mount) ? mount : []))
+    : [];
+
+  const fromArcs = Array.isArray(weapon?.mountArcs)
+    ? weapon.mountArcs
+      .flatMap((entry) => String(entry || '').split('|'))
+      .flatMap((group) => group.split(','))
+      .map((value) => Number(value.trim()))
+      .filter((value) => Number.isFinite(value))
+    : [];
+
+  const merged = [...fromFacings, ...fromArcs]
+    .map((value) => Number(value))
+    .filter((value) => Number.isFinite(value) && value >= 1 && value <= 8);
+
+  return merged.length > 0 ? merged : [1];
+}
+
+function arcFacingWeight(arc) {
+  if (arc === 1) {
+    return 1.6; // forward
+  }
+  if (arc === 2 || arc === 8) {
+    return 1.35; // forward flanks
+  }
+  if (arc === 3 || arc === 7) {
+    return 1.05; // side-forward quarters
+  }
+  if (arc === 4 || arc === 6) {
+    return 0.82; // side-rear quarters
+  }
+  return 0.6; // arc 5 rear
+}
+
+function mountFacingScore(weapon) {
+  const arcs = normalizeArcValues(weapon);
+  const summedFacing = sum(arcs.map((arc) => arcFacingWeight(arc)));
+  const averagedFacing = summedFacing / Math.max(1, arcs.length);
+  const arcCoverageBonus = Math.sqrt(Math.max(1, arcs.length));
+  return averagedFacing * arcCoverageBonus;
+}
+
 function normalizeTrait(trait) {
   return String(trait || '').trim().toUpperCase();
 }
@@ -194,13 +238,22 @@ function scoreWeapons(build) {
     }, 0);
 
     const mountCount = Math.max(1, weapon?.mountArcs?.length || weapon?.mountFacings?.length || 1);
+    const facingScore = mountFacingScore(weapon);
     const powerScore = positivePart(weapon?.powerCircles) * 0.85;
     const stopScore = (Array.isArray(weapon?.powerStops) ? weapon.powerStops.length : 0) * 0.45;
     const structureScore = positivePart(weapon?.structure) * 0.95;
     const traitScore = traitBonusScore(weapon?.traits) * 1.0;
     const specialScore = String(weapon?.special || '').trim() ? 1.3 : 0;
 
-    return total + rangeScore + (mountCount * 1.35) + powerScore + stopScore + structureScore + traitScore + specialScore;
+    return total
+      + rangeScore
+      + (mountCount * 1.1)
+      + (facingScore * 2.8)
+      + powerScore
+      + stopScore
+      + structureScore
+      + traitScore
+      + specialScore;
   }, 0);
 }
 
