@@ -76,6 +76,43 @@ const STANDARD_DEFAULT_LOADOUT = {
   crew: { shuttleCraft: 0, marinesStationed: 0 }
 };
 
+
+const PV_RANKING_DEFAULTS = {
+  rankIdentityFields: 1,
+  rankEngineeringMove: 1,
+  rankEngineeringVector: 1,
+  rankEngineeringTurn: 1,
+  rankEngineeringSpecial: 1,
+  rankDefenseShields: 1,
+  rankDefenseArmor: 1,
+  rankDefenseRepairable: 1,
+  rankDefensePermanent: 1,
+  rankDefenseShieldGen: 1,
+  rankManeuverMaxAcc: 1,
+  rankManeuverGreen: 1,
+  rankManeuverRed: 1,
+  rankManeuverTurnProfile: 1,
+  rankManeuverDmgStops: 1,
+  rankSystemsValues: 1,
+  rankSystemsBreadth: 1,
+  rankCrewShuttle: 1,
+  rankCrewMarines: 1,
+  rankPowerPoints: 1,
+  rankPowerBoxes: 1,
+  rankPowerReserve: 1,
+  rankPowerPattern: 1,
+  rankFunctionsValues: 1,
+  rankFunctionsFree: 1,
+  rankFunctionsState: 1,
+  rankFunctionsTrackSupport: 1,
+  rankWeaponsRange: 1,
+  rankWeaponsPower: 1,
+  rankWeaponsStructure: 1,
+  rankWeaponsTraitsSpecial: 1,
+  rankWeaponsMountArc: 1,
+  rankGlobalScale: 1
+};
+
 const POWER_TRACK_CONFIG = [
   { key: 'lMain', label: 'L MAIN', pointsField: 'powerLMainPoints', boxesField: 'powerLMainBoxes', patternField: 'powerLMainPattern', hasDotField: 'powerLMainHasDot' },
   { key: 'rMain', label: 'R MAIN', pointsField: 'powerRMainPoints', boxesField: 'powerRMainBoxes', patternField: 'powerRMainPattern', hasDotField: 'powerRMainHasDot' },
@@ -491,6 +528,17 @@ function syncDerivedFunctionInputs() {
   }
 }
 
+
+function readPvRankings() {
+  return Object.fromEntries(
+    Object.entries(PV_RANKING_DEFAULTS).map(([key, defaultValue]) => {
+      const raw = num(key);
+      const value = Number.isFinite(raw) && raw >= 0 ? raw : defaultValue;
+      return [key, value];
+    })
+  );
+}
+
 function getBuild() {
   return {
     identity: {
@@ -535,7 +583,8 @@ function getBuild() {
     crew: {
       shuttleCraft: num('shuttleCraft'),
       marinesStationed: num('marinesStationed')
-    }
+    },
+    pvRankings: readPvRankings()
   };
 }
 
@@ -1218,6 +1267,10 @@ function restoreDraft(draft) {
   setValue('systems', (draft.systems ?? []).map((item) => `${item.key}:${item.value ?? ''}`).join('\n'));
   setValue('shuttleCraft', draft.crew?.shuttleCraft ?? 0);
   setValue('marinesStationed', draft.crew?.marinesStationed ?? 0);
+
+  Object.entries(PV_RANKING_DEFAULTS).forEach(([key, defaultValue]) => {
+    setValue(key, draft.pvRankings?.[key] ?? defaultValue);
+  });
 
   render();
 }
