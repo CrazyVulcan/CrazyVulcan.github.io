@@ -278,12 +278,22 @@ function powerAndFunctionsScore(build) {
 }
 
 export function calculatePointValue(build) {
-  const offense = offenseScore(build);
-  const powerLimitedOffense = offense * powerConstraintMultiplier(build);
-  const durability = durabilityScore(build);
-  const mobility = mobilityScore(build);
-  const systems = systemsAndCrewScore(build);
-  const power = powerAndFunctionsScore(build);
+  const scorePart = (scorer, fallback = 0) => {
+    try {
+      const value = scorer();
+      return Number.isFinite(value) ? value : fallback;
+    } catch {
+      return fallback;
+    }
+  };
+
+  const offense = scorePart(() => offenseScore(build));
+  const powerLimitedOffense = scorePart(() => offense * powerConstraintMultiplier(build));
+  const durability = scorePart(() => durabilityScore(build));
+  const mobility = scorePart(() => mobilityScore(build));
+  const systems = scorePart(() => systemsAndCrewScore(build));
+  const power = scorePart(() => powerAndFunctionsScore(build));
+  const survivabilityFloor = scorePart(() => Math.max(1, Math.round((durability * 0.65) + 1)), 1);
 
   // Balanced model: every major ship section contributes to cost.
   const total = (powerLimitedOffense * 0.9)
