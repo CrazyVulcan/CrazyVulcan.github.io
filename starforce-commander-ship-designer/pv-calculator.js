@@ -368,16 +368,6 @@ function scoreWeapons(build) {
 }
 
 
-function compressScoreToPlayablePv(totalScore) {
-  const score = positivePart(totalScore);
-
-  // A gentle non-linear curve keeps capable ships affordable, while still
-  // allowing super-ships (dreadnaught range) to climb toward ~200 PV.
-  const compressed = Math.pow(score, 0.62) * 2.1;
-
-  return Math.max(1, compressed);
-}
-
 export function calculatePointValue(build) {
   const contributions = {
     identity: safeRun(() => scoreIdentity(build)) * SECTION_MULTIPLIERS.identity,
@@ -391,6 +381,5 @@ export function calculatePointValue(build) {
   };
 
   const totalScore = sum(Object.values(contributions)) * rank(build, 'rankGlobalScale');
-  const playablePv = compressScoreToPlayablePv(totalScore);
-  return Math.max(1, Math.round(playablePv));
+  return Math.max(1, Math.round(totalScore));
 }
