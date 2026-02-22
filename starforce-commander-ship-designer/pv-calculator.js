@@ -271,5 +271,5 @@ export function calculatePointValue(build) {
 
   const total = sum(Object.values(contributions));
   const normalizedTotal = total * 0.1;
-  return Math.max(1, Math.round(normalizedTotal));
+  return Math.max(2, Math.round(normalizedTotal));
 }
