@@ -161,6 +161,53 @@ function offenseScore(build) {
   return totalWeaponCost + coordinatedBatteryBonus;
 }
 
+
+function weaponPowerDemandScore(build) {
+  const weapons = normalizeWeapons(build.weapons);
+  return weapons.reduce((total, weapon) => {
+    const mountCount = Math.max(1, weapon.mountArcs?.length || weapon.mountFacings?.length || 1);
+    const circleDemand = num(weapon.powerCircles) * mountCount;
+    const stopDemand = (Array.isArray(weapon.powerStops) ? weapon.powerStops.length : 0) * 0.5;
+    return total + circleDemand + stopDemand;
+  }, 0);
+}
+
+function availableCombatPowerScore(build) {
+  const tracks = Array.isArray(build.powerSystem?.tracks) ? build.powerSystem.tracks : [];
+  return tracks.reduce((total, track) => {
+    const key = String(track?.key || '').toLowerCase();
+    const points = num(track?.points);
+
+    if (key === 'ftldrive' || key === 'ftl') {
+      return total;
+    }
+    if (key === 'battery') {
+      return total + (points * 0.5);
+    }
+
+    return total + points;
+  }, 0);
+}
+
+function powerConstraintMultiplier(build) {
+  const demand = weaponPowerDemandScore(build);
+  if (demand <= 0) {
+    return 1;
+  }
+
+  const available = availableCombatPowerScore(build);
+  const coverage = available / demand;
+
+  if (coverage >= 1) {
+    const utilization = demand / Math.max(1, available);
+    // Even when fully powered, weapon energy tax reduces effective offensive value somewhat.
+    return Math.max(0.82, 1 - (utilization * 0.18));
+  }
+
+  // Underpowered ships cannot realize full weapon card value in battle.
+  return Math.max(0.45, 0.58 + (coverage * 0.3));
+}
+
 function durabilityScore(build) {
   const structure = build.structure || {};
   const shields = build.shields || {};
@@ -232,20 +279,18 @@ function powerAndFunctionsScore(build) {
 
 export function calculatePointValue(build) {
   const offense = offenseScore(build);
+  const powerLimitedOffense = offense * powerConstraintMultiplier(build);
   const durability = durabilityScore(build);
   const mobility = mobilityScore(build);
   const systems = systemsAndCrewScore(build);
   const power = powerAndFunctionsScore(build);
 
   // Balanced model: every major ship section contributes to cost.
-  const total = (offense * 0.9)
+  const total = (powerLimitedOffense * 0.9)
     + (durability * 0.95)
     + (mobility * 0.85)
     + (systems * 0.75)
     + (power * 0.8);
-
-  // Survivability/utility floor prevents valid low-offense escorts from collapsing to 1 PV.
-  const survivabilityFloor = (durability * 0.5) + (utility * 0.8) - 8;
 
   return Math.max(1, Math.round(Math.max(total, survivabilityFloor)));
 }
