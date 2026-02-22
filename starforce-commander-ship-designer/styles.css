@@ -593,3 +593,29 @@ pre { background: #0b1128; color: #d5e2ff; padding: 0.65rem; border-radius: 8px;
   align-self: center;
 }
 .dmg-stop.is-inactive { visibility: hidden; }
+
+
+.pv-rank-table-wrap {
+  max-height: 320px;
+  overflow: auto;
+  border: 1px solid #2f3c5d;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.pv-rank-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.pv-rank-table th,
+.pv-rank-table td {
+  border-bottom: 1px solid #27314d;
+  padding: 6px;
+  text-align: left;
+}
+
+.pv-rank-table input {
+  width: 70px;
+}
