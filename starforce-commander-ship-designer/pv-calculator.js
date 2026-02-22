@@ -337,6 +337,23 @@ function scoreWeapons(build) {
   }, 0);
 }
 
+
+function applyPointValueCurve(totalScore) {
+  const base = positivePart(totalScore) * 0.082;
+
+  // Keep modest/smaller ships from inflating too quickly.
+  const lowEndCompression = base <= 30
+    ? Math.pow((30 - base) / 30, 1.25) * 2.8
+    : 0;
+
+  // Push high-end capability into a higher class band.
+  const classSeparationBonus = base > 40
+    ? Math.pow(base - 40, 1.22) * 0.24
+    : 0;
+
+  return Math.max(2, base - lowEndCompression + classSeparationBonus);
+}
+
 export function calculatePointValue(build) {
   const contributions = {
     identity: safeRun(() => scoreIdentity(build)) * SECTION_MULTIPLIERS.identity,
@@ -350,6 +367,6 @@ export function calculatePointValue(build) {
   };
 
   const total = sum(Object.values(contributions));
-  const normalizedTotal = total * 0.1;
-  return Math.max(2, Math.round(normalizedTotal));
+  const curvedTotal = applyPointValueCurve(total);
+  return Math.max(2, Math.round(curvedTotal));
 }
