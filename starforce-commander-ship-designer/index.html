@@ -258,6 +258,51 @@
           <label>Permanent Structure Boxes <input name="structureRed" type="number" min="0" value="12" /></label>
         </div>
 
+
+
+        <h2>PV Rank Weights</h2>
+        <p class="muted">Adjust each weighting factor (tuned defaults shown) to tune how strongly each input affects PV.</p>
+        <div class="pv-rank-table-wrap">
+          <table class="pv-rank-table">
+            <thead><tr><th>Section</th><th>Input</th><th>Rank</th></tr></thead>
+            <tbody>
+              <tr><td>Identity</td><td>Identity fields</td><td><input name="rankIdentityFields" type="number" min="0" step="0.1" value="0.6" /></td></tr>
+              <tr><td>Engineering</td><td>Size Class</td><td><input name="rankEngineeringMove" type="number" min="0" step="0.1" value="0.65" /></td></tr>
+              <tr><td>Engineering</td><td>Acceleration</td><td><input name="rankEngineeringVector" type="number" min="0" step="0.1" value="0.7" /></td></tr>
+              <tr><td>Engineering</td><td>Stress Damage</td><td><input name="rankEngineeringTurn" type="number" min="0" step="0.1" value="0.6" /></td></tr>
+              <tr><td>Engineering</td><td>Damage Control</td><td><input name="rankEngineeringSpecial" type="number" min="0" step="0.1" value="0.75" /></td></tr>
+              <tr><td>Defense</td><td>Shield values</td><td><input name="rankDefenseShields" type="number" min="0" step="0.1" value="0.42" /></td></tr>
+              <tr><td>Defense</td><td>Armor values</td><td><input name="rankDefenseArmor" type="number" min="0" step="0.1" value="0.4" /></td></tr>
+              <tr><td>Defense</td><td>Repairable structure</td><td><input name="rankDefenseRepairable" type="number" min="0" step="0.1" value="0.3" /></td></tr>
+              <tr><td>Defense</td><td>Permanent structure</td><td><input name="rankDefensePermanent" type="number" min="0" step="0.1" value="0.28" /></td></tr>
+              <tr><td>Defense</td><td>Shield generator</td><td><input name="rankDefenseShieldGen" type="number" min="0" step="0.1" value="0.45" /></td></tr>
+              <tr><td>Maneuver</td><td>MAX ACC / PHS</td><td><input name="rankManeuverMaxAcc" type="number" min="0" step="0.1" value="0.65" /></td></tr>
+              <tr><td>Maneuver</td><td>Green RND circles</td><td><input name="rankManeuverGreen" type="number" min="0" step="0.1" value="0.5" /></td></tr>
+              <tr><td>Maneuver</td><td>Red RND circles</td><td><input name="rankManeuverRed" type="number" min="0" step="0.1" value="0.45" /></td></tr>
+              <tr><td>Maneuver</td><td>TURN profile</td><td><input name="rankManeuverTurnProfile" type="number" min="0" step="0.1" value="0.35" /></td></tr>
+              <tr><td>Maneuver</td><td>DMG stop profile</td><td><input name="rankManeuverDmgStops" type="number" min="0" step="0.1" value="0.55" /></td></tr>
+              <tr><td>Systems/Crew</td><td>Systems values</td><td><input name="rankSystemsValues" type="number" min="0" step="0.1" value="0.55" /></td></tr>
+              <tr><td>Systems/Crew</td><td>System breadth</td><td><input name="rankSystemsBreadth" type="number" min="0" step="0.1" value="0.45" /></td></tr>
+              <tr><td>Systems/Crew</td><td>Shuttle craft</td><td><input name="rankCrewShuttle" type="number" min="0" step="0.1" value="0.6" /></td></tr>
+              <tr><td>Systems/Crew</td><td>Marines stationed</td><td><input name="rankCrewMarines" type="number" min="0" step="0.1" value="0.45" /></td></tr>
+              <tr><td>Power</td><td>Track points</td><td><input name="rankPowerPoints" type="number" min="0" step="0.1" value="0.5" /></td></tr>
+              <tr><td>Power</td><td>Boxes per point</td><td><input name="rankPowerBoxes" type="number" min="0" step="0.1" value="0.45" /></td></tr>
+              <tr><td>Power</td><td>Reserve flexibility</td><td><input name="rankPowerReserve" type="number" min="0" step="0.1" value="0.5" /></td></tr>
+              <tr><td>Power</td><td>Track pattern</td><td><input name="rankPowerPattern" type="number" min="0" step="0.1" value="0.4" /></td></tr>
+              <tr><td>Functions</td><td>Function values</td><td><input name="rankFunctionsValues" type="number" min="0" step="0.1" value="0.65" /></td></tr>
+              <tr><td>Functions</td><td>Free functions</td><td><input name="rankFunctionsFree" type="number" min="0" step="0.1" value="0.6" /></td></tr>
+              <tr><td>Functions</td><td>Emergency/Enabled bonus</td><td><input name="rankFunctionsState" type="number" min="0" step="0.1" value="0.6" /></td></tr>
+              <tr><td>Functions</td><td>FTL/Cloak support</td><td><input name="rankFunctionsTrackSupport" type="number" min="0" step="0.1" value="0.7" /></td></tr>
+              <tr><td>Weapons</td><td>Range bands & dice</td><td><input name="rankWeaponsRange" type="number" min="0" step="0.1" value="0.42" /></td></tr>
+              <tr><td>Weapons</td><td>Power circles/stops</td><td><input name="rankWeaponsPower" type="number" min="0" step="0.1" value="0.5" /></td></tr>
+              <tr><td>Weapons</td><td>Structure</td><td><input name="rankWeaponsStructure" type="number" min="0" step="0.1" value="0.45" /></td></tr>
+              <tr><td>Weapons</td><td>Traits/Special</td><td><input name="rankWeaponsTraitsSpecial" type="number" min="0" step="0.1" value="0.6" /></td></tr>
+              <tr><td>Weapons</td><td>Mount scaling & arcs</td><td><input name="rankWeaponsMountArc" type="number" min="0" step="0.1" value="0.4" /></td></tr>
+              <tr><td>Final</td><td>Global PV scale</td><td><input name="rankGlobalScale" type="number" min="0" step="0.1" value="0.25" /></td></tr>
+            </tbody>
+          </table>
+        </div>
+
         <div class="row row-pv-controls">
           <label>Point Value (Auto) <input name="pointValueCalculated" value="29" readonly /></label>
           <button type="button" class="update-pv-btn">Update PV</button>
