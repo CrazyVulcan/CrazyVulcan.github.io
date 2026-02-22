@@ -292,5 +292,5 @@ export function calculatePointValue(build) {
     + (systems * 0.75)
     + (power * 0.8);
 
-  return Math.max(1, Math.round(total));
+  return Math.max(1, Math.round(Math.max(total, survivabilityFloor)));
 }
