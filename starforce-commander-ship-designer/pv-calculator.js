@@ -379,6 +379,14 @@ function applyPointValueCurve(totalScore) {
   return Math.max(2, base - lowEndCompression + classSeparationBonus);
 }
 
+function compressToPlayablePointValue(rawPointValue) {
+  const raw = positivePart(rawPointValue);
+  const shifted = Math.max(0, raw - 2);
+
+  // Log compression keeps low-end cheap while still allowing unlimited growth.
+  return 1 + (18 * Math.log10(1 + (shifted / 2)));
+}
+
 export function calculatePointValue(build) {
   const contributions = {
     identity: safeRun(() => scoreIdentity(build)) * SECTION_MULTIPLIERS.identity,
@@ -393,5 +401,6 @@ export function calculatePointValue(build) {
 
   const total = sum(Object.values(contributions));
   const curvedTotal = applyPointValueCurve(total);
-  return Math.max(2, Math.round(curvedTotal));
+  const playablePointValue = compressToPlayablePointValue(curvedTotal);
+  return Math.max(1, Math.round(playablePointValue));
 }
