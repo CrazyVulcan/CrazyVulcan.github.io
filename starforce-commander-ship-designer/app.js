@@ -12,99 +12,68 @@ let shipArtDataUrl = '';
 const STANDARD_DEFAULT_LOADOUT = {
   identity: {
     name: 'SHIP NAME / ID',
-    classType: 'YORKTOWN II - Class Heavy Cruiser',
-    faction: 'COMMON',
-    era: '3655',
-    pointValue: 29
+    classType: 'Class Name - Class ship type',
+    faction: '/',
+    era: '/',
+    pointValue: 2
   },
-  engineering: { move: 5, vector: 2, turn: 4, special: 4 },
-  shields: { forward: 16, aft: 15, port: 15, starboard: 15 },
+  engineering: { move: 0, vector: 0, turn: 0, special: 0 },
+  shields: { forward: 0, aft: 0, port: 0, starboard: 0 },
   armor: { forward: 0, aft: 0, port: 0, starboard: 0 },
-  shieldGen: 3,
+  shieldGen: 0,
   textBlocks: { powerSystem: '' },
   functionsConfig: {
-    accDec: { values: ['1', '2', '3', '4'], free: 1 },
-    sifIdf: { values: ['1', '2', '3'], free: 0, emer: true },
-    batRech: { values: ['1'], free: 0 },
-    ftl: { empty: 3 },
-    cloak: { enabled: false, empty: 3 },
-    sensor: { values: ['2', '4', '6'], free: 1 },
-    genSys: { values: ['NRM', 'MAX'], free: 1 },
+    accDec: { values: [], free: 0 },
+    sifIdf: { values: [], free: 0, emer: false },
+    batRech: { values: [], free: 0 },
+    ftl: { empty: 0 },
+    cloak: { enabled: false, empty: 0 },
+    sensor: { values: [], free: 0 },
+    genSys: { values: [], free: 0 },
     weapons: [
-      { label: 'A/MAT TORP', enabled: true, free: 1, values: ['1', '4'] },
-      { label: 'PHASER', enabled: true, free: 1, values: ['1', '4', '6', '8'] },
+      { label: 'WPN A', enabled: false, free: 0, values: [] },
+      { label: 'WPN B', enabled: false, free: 0, values: [] },
       { label: 'WPN C', enabled: false, free: 0, values: [] },
       { label: 'WPN D', enabled: false, free: 0, values: [] }
     ]
   },
   powerSystem: {
     tracks: [
-      { key: 'lMain', label: 'L MAIN', points: 3, boxesPerPoint: 2, boxPattern: [], hasDot: true },
-      { key: 'rMain', label: 'R MAIN', points: 3, boxesPerPoint: 2, boxPattern: [], hasDot: true },
-      { key: 'cMain', label: 'C MAIN', points: 0, boxesPerPoint: 2, boxPattern: [], hasDot: true },
-      { key: 'slReac', label: 'SL REAC', points: 1, boxesPerPoint: 2, boxPattern: [], hasDot: true },
-      { key: 'auxPwr', label: 'AUX PWR', points: 1, boxesPerPoint: 2, boxPattern: [], hasDot: true },
-      { key: 'battery', label: 'BATTERY', points: 1, boxesPerPoint: 1, boxPattern: [], hasDot: true },
-      { key: 'ftlDrive', label: 'FTL DRIVE', points: 1, boxesPerPoint: 2, boxPattern: [], hasDot: false }
+      { key: 'lMain', label: 'L MAIN', points: 0, boxesPerPoint: 1, boxPattern: [], hasDot: true },
+      { key: 'rMain', label: 'R MAIN', points: 0, boxesPerPoint: 1, boxPattern: [], hasDot: true },
+      { key: 'cMain', label: 'C MAIN', points: 0, boxesPerPoint: 1, boxPattern: [], hasDot: true },
+      { key: 'slReac', label: 'SL REAC', points: 0, boxesPerPoint: 1, boxPattern: [], hasDot: true },
+      { key: 'auxPwr', label: 'AUX PWR', points: 0, boxesPerPoint: 1, boxPattern: [], hasDot: true },
+      { key: 'battery', label: 'BATTERY', points: 0, boxesPerPoint: 1, boxPattern: [], hasDot: true },
+      { key: 'ftlDrive', label: 'FTL DRIVE', points: 0, boxesPerPoint: 1, boxPattern: [], hasDot: false }
     ]
   },
   sublight: {
-    maxAccPhs: 2,
-    greenCircles: 2,
-    redCircles: 2,
+    maxAccPhs: 0,
+    greenCircles: 0,
+    redCircles: 0,
     spd: [6, 5, 4, 3, 2, 1, 0],
     turns: [0, 20, 30, 30, 35, 35, 40],
-    dmgStops: [true, true, true, false, true, true, true]
+    dmgStops: [false, false, false, false, false, false, false]
   },
-  structure: { repairable: 3, permanent: 10 },
+  structure: { repairable: 0, permanent: 0 },
   shipArtDataUrl: '',
   weapons: [
-    {
-      name: 'MK-4 A\\MAT TORPEDO',
-      mountArcs: ['1', '2|1', '2|1', '2|1', '2'],
-      mountFacings: [[1, 2], [1, 2], [1, 2], [1, 2]],
-      powerCircles: 2,
-      powerStops: [1],
-      structure: 1,
-      ranges: [
-        { band: '0-4', type: 'green', bonus: 0, dice: ['R'] },
-        { band: '5-10', type: 'black', bonus: 0, dice: ['R'] },
-        { band: '11-14', type: 'red', bonus: 0, dice: ['R'] },
-        { band: '15-20', type: 'red', bonus: 0, dice: ['Y'] }
-      ],
-      traits: ['HVY', 'FTL', 'NoBAT'],
-      special: 'H(4+1), STR 1'
-    },
-    {
-      name: 'LNC-447 PHASER',
-      mountArcs: ['1', '6', '7', '8|8', '1', '2', '3|4', '5', '6', '7|2', '3', '4', '5'],
-      mountFacings: [[1, 6, 7, 8], [8, 1, 2, 3], [4, 5, 6, 7], [2, 3, 4, 5]],
-      powerCircles: 2,
-      powerStops: [],
-      structure: 2,
-      ranges: [
-        { band: '0-2', type: 'green', bonus: 0, dice: ['G', 'G'] },
-        { band: '3-5', type: 'green', bonus: 0, dice: ['G', 'B'] },
-        { band: '6-8', type: 'black', bonus: 0, dice: ['G', 'B'] },
-        { band: '9-10', type: 'black', bonus: 0, dice: ['B', 'B'] },
-        { band: '11-12', type: 'red', bonus: 0, dice: ['B'] }
-      ],
-      traits: ['PREC 1', 'PD MODE'],
-      special: ''
-    },
-    { name: '', mountArcs: [], mountFacings: [], powerCircles: 2, powerStops: [], structure: 2, ranges: [], traits: [], special: '' },
-    { name: '', mountArcs: [], mountFacings: [], powerCircles: 2, powerStops: [], structure: 2, ranges: [], traits: [], special: '' }
+    { name: '', mountArcs: [], mountFacings: [], powerCircles: 1, powerStops: [], structure: 1, ranges: [], traits: [], special: '' },
+    { name: '', mountArcs: [], mountFacings: [], powerCircles: 1, powerStops: [], structure: 1, ranges: [], traits: [], special: '' },
+    { name: '', mountArcs: [], mountFacings: [], powerCircles: 1, powerStops: [], structure: 1, ranges: [], traits: [], special: '' },
+    { name: '', mountArcs: [], mountFacings: [], powerCircles: 1, powerStops: [], structure: 1, ranges: [], traits: [], special: '' }
   ],
   systems: [
-    { key: 'SCNC', value: '4' },
-    { key: 'SENS', value: '3' },
-    { key: 'TRAC', value: '2' },
-    { key: 'TRAN', value: '2' },
-    { key: 'SHTL', value: '2' },
-    { key: 'QTRS', value: '4' },
-    { key: 'CRGO', value: '2' }
+    { key: 'SCNC', value: '0' },
+    { key: 'SENS', value: '0' },
+    { key: 'TRAC', value: '0' },
+    { key: 'TRAN', value: '0' },
+    { key: 'SHTL', value: '0' },
+    { key: 'QTRS', value: '0' },
+    { key: 'CRGO', value: '0' }
   ],
-  crew: { shuttleCraft: 4, marinesStationed: 11 }
+  crew: { shuttleCraft: 0, marinesStationed: 0 }
 };
 
 const POWER_TRACK_CONFIG = [
@@ -741,9 +710,9 @@ function circleRun(containerId, count) {
 
 function renderManeuvering(sublight) {
   const data = sublight || {
-    maxAccPhs: 2,
-    greenCircles: 3,
-    redCircles: 3,
+    maxAccPhs: 0,
+    greenCircles: 0,
+    redCircles: 0,
     spd: [6, 5, 4, 3, 2, 1, 0],
     turns: [20, 20, 20, 20, 20, 20, 20],
     dmgStops: [false, false, false, false, false, false, false]
@@ -1134,10 +1103,10 @@ function restoreDraft(draft) {
   setValue('faction', draft.identity?.faction ?? '');
   setValue('era', draft.identity?.era ?? '');
 
-  setValue('move', draft.engineering?.move ?? 3);
-  setValue('vector', draft.engineering?.vector ?? 2);
-  setValue('turn', draft.engineering?.turn ?? 2);
-  setValue('special', draft.engineering?.special ?? 3);
+  setValue('move', draft.engineering?.move ?? 0);
+  setValue('vector', draft.engineering?.vector ?? 0);
+  setValue('turn', draft.engineering?.turn ?? 0);
+  setValue('special', draft.engineering?.special ?? 0);
 
   setValue('shieldFwd', draft.shields?.forward ?? 0);
   setValue('shieldAft', draft.shields?.aft ?? 0);
@@ -1152,31 +1121,31 @@ function restoreDraft(draft) {
   setValue('shieldGen', draft.shieldGen ?? 0);
 
   const fn = draft.functionsConfig || {};
-  setValue('fnAccDecValues', (fn.accDec?.values ?? ['1', '2', '3', '4', '5', '6']).join(','));
-  setChecked('fnAccDecFree', fn.accDec?.free ?? 1);
-  setValue('fnSifIdfValues', (fn.sifIdf?.values ?? ['1', '2', '3']).join(','));
+  setValue('fnAccDecValues', (fn.accDec?.values ?? []).join(','));
+  setChecked('fnAccDecFree', fn.accDec?.free ?? 0);
+  setValue('fnSifIdfValues', (fn.sifIdf?.values ?? []).join(','));
   setChecked('fnSifIdfFree', fn.sifIdf?.free ?? 0);
-  setChecked('fnSifIdfEmer', fn.sifIdf?.emer ?? true);
-  setValue('fnFtlEmpty', fn.ftl?.empty ?? 2);
+  setChecked('fnSifIdfEmer', fn.sifIdf?.emer ?? false);
+  setValue('fnFtlEmpty', fn.ftl?.empty ?? 0);
   setChecked('fnCloakEnabled', fn.cloak?.enabled ?? false);
-  setValue('fnCloakEmpty', fn.cloak?.empty ?? 3);
-  setValue('fnSensorValues', (fn.sensor?.values ?? ['2', '4', '6']).join(','));
-  setChecked('fnSensorFree', fn.sensor?.free ?? 1);
-  setValue('fnGenSysValues', (fn.genSys?.values ?? ['NRM', 'MAX']).join(','));
-  setChecked('fnGenSysFree', fn.genSys?.free ?? 1);
+  setValue('fnCloakEmpty', fn.cloak?.empty ?? 0);
+  setValue('fnSensorValues', (fn.sensor?.values ?? []).join(','));
+  setChecked('fnSensorFree', fn.sensor?.free ?? 0);
+  setValue('fnGenSysValues', (fn.genSys?.values ?? []).join(','));
+  setChecked('fnGenSysFree', fn.genSys?.free ?? 0);
 
   const fnWpn = fn.weapons ?? [];
-  setValue('fnWpnALabel', fnWpn[0]?.label ?? 'A/MAT TRP');
-  setChecked('fnWpnAFree', fnWpn[0]?.free ?? 1);
-  setChecked('fnWpnAEnabled', fnWpn[0]?.enabled ?? true);
-  setValue('fnWpnAValues', (fnWpn[0]?.values ?? ['2']).join(','));
-  setValue('fnWpnBLabel', fnWpn[1]?.label ?? 'PHASER');
-  setChecked('fnWpnBFree', fnWpn[1]?.free ?? 1);
-  setChecked('fnWpnBEnabled', fnWpn[1]?.enabled ?? true);
-  setValue('fnWpnBValues', (fnWpn[1]?.values ?? ['4']).join(','));
+  setValue('fnWpnALabel', fnWpn[0]?.label ?? 'WPN A');
+  setChecked('fnWpnAFree', fnWpn[0]?.free ?? 0);
+  setChecked('fnWpnAEnabled', fnWpn[0]?.enabled ?? false);
+  setValue('fnWpnAValues', (fnWpn[0]?.values ?? []).join(','));
+  setValue('fnWpnBLabel', fnWpn[1]?.label ?? 'WPN B');
+  setChecked('fnWpnBFree', fnWpn[1]?.free ?? 0);
+  setChecked('fnWpnBEnabled', fnWpn[1]?.enabled ?? false);
+  setValue('fnWpnBValues', (fnWpn[1]?.values ?? []).join(','));
   setValue('fnWpnCLabel', fnWpn[2]?.label ?? 'WPN C');
-  setChecked('fnWpnCFree', fnWpn[2]?.free ?? 1);
-  setChecked('fnWpnCEnabled', fnWpn[2]?.enabled ?? true);
+  setChecked('fnWpnCFree', fnWpn[2]?.free ?? 0);
+  setChecked('fnWpnCEnabled', fnWpn[2]?.enabled ?? false);
   setValue('fnWpnCValues', (fnWpn[2]?.values ?? []).join(','));
   setValue('fnWpnDLabel', fnWpn[3]?.label ?? 'WPN D');
   setChecked('fnWpnDFree', fnWpn[3]?.free ?? 0);
@@ -1196,32 +1165,32 @@ function restoreDraft(draft) {
     const hasDotField = getField(track.hasDotField);
 
     if (pointsField) {
-      pointsField.value = Math.max(0, Number(trackData?.points ?? pointsField.value ?? 0));
+      pointsField.value = Math.max(0, Number(trackData?.points ?? 0));
     }
     if (boxesField) {
-      boxesField.value = clamp(Number(trackData?.boxesPerPoint ?? boxesField.value ?? 2), 1, 3);
+      boxesField.value = clamp(Number(trackData?.boxesPerPoint ?? 1), 1, 3);
     }
     if (patternField) {
       patternField.value = (trackData?.boxPattern ?? []).join(',');
     }
     if (hasDotField) {
-      hasDotField.checked = Boolean(trackData?.hasDot ?? hasDotField.checked);
+      hasDotField.checked = Boolean(trackData?.hasDot ?? (track.key !== 'ftlDrive'));
     }
   });
 
   const sublight = draft.sublight ?? {
-    maxAccPhs: 2,
-    greenCircles: 3,
-    redCircles: 3,
+    maxAccPhs: 0,
+    greenCircles: 0,
+    redCircles: 0,
     spd: [6, 5, 4, 3, 2, 1, 0],
     turns: [20, 20, 20, 20, 20, 20, 20],
     dmgStops: [false, false, false, false, false, false, false]
   };
-  setValue('sublightMaxAcc', sublight.maxAccPhs ?? 2);
-  setValue('sublightGreen', sublight.greenCircles ?? 3);
-  setValue('sublightRed', sublight.redCircles ?? 3);
+  setValue('sublightMaxAcc', sublight.maxAccPhs ?? 0);
+  setValue('sublightGreen', sublight.greenCircles ?? 0);
+  setValue('sublightRed', sublight.redCircles ?? 0);
   [6, 5, 4, 3, 2, 1, 0].forEach((speed, index) => {
-    setValue(`sublightTurn${speed}`, normalizeTurnOption(sublight.turns?.[index] ?? 20));
+    setValue(`sublightTurn${speed}`, normalizeTurnOption(sublight.turns?.[index] ?? TURN_OPTIONS[index] ?? 0));
     setChecked(`sublightDmg${speed}`, sublight.dmgStops?.[index]);
   });
 
@@ -1235,9 +1204,9 @@ function restoreDraft(draft) {
     setValue(`wpn${index}Name`, weapon.name || '');
     setValue(`wpn${index}Traits`, (weapon.traits || []).join(', '));
     setValue(`wpn${index}MountArcs`, (weapon.mountFacings || []).map((mount) => mount.join(',')).join('|'));
-    setValue(`wpn${index}PowerCircles`, weapon.powerCircles || 1);
+    setValue(`wpn${index}PowerCircles`, weapon.powerCircles ?? 1);
     setValue(`wpn${index}PowerStops`, (weapon.powerStops || []).join(', '));
-    setValue(`wpn${index}Structure`, weapon.structure || 1);
+    setValue(`wpn${index}Structure`, weapon.structure ?? 1);
     setValue(`wpn${index}Ranges`, (weapon.ranges || []).map((range) => `${range.band}:${range.type}`).join(','));
     setValue(`wpn${index}Dice`, (weapon.ranges || []).map((range) => {
       const dice = (range.dice || []).join(',');
@@ -1247,8 +1216,8 @@ function restoreDraft(draft) {
   });
 
   setValue('systems', (draft.systems ?? []).map((item) => `${item.key}:${item.value ?? ''}`).join('\n'));
-  setValue('shuttleCraft', draft.crew?.shuttleCraft ?? 4);
-  setValue('marinesStationed', draft.crew?.marinesStationed ?? 10);
+  setValue('shuttleCraft', draft.crew?.shuttleCraft ?? 0);
+  setValue('marinesStationed', draft.crew?.marinesStationed ?? 0);
 
   render();
 }
