@@ -334,7 +334,7 @@ function effectiveMountCount(weapon) {
 
 function scoreWeapons(build) {
   const weapons = normalizeWeapons(build?.weapons);
-  return weapons.reduce((total, weapon) => {
+  const perWeaponScores = weapons.map((weapon) => {
     const mountCount = effectiveMountCount(weapon);
     const arcCount = new Set(normalizeArcValues(weapon)).size;
     const facingScore = mountFacingScore(weapon);
@@ -349,10 +349,17 @@ function scoreWeapons(build) {
     // Coverage breadth gives a smaller additive multiplier for tactical flexibility.
     const coverageScale = 0.9 + (Math.log2(Math.max(1, arcCount) + 1) * 0.22);
 
-    return total
-      + (weaponQuality * mountScale * arcQualityScale * coverageScale)
+    return (weaponQuality * mountScale * arcQualityScale * coverageScale)
       + (mountCount * 0.28);
-  }, 0);
+  });
+
+  // Multiple weapon lines are powerful, but stacking has diminishing returns in battle tempo.
+  return perWeaponScores
+    .sort((a, b) => b - a)
+    .reduce((total, score, index) => {
+      const stackingMultiplier = index === 0 ? 1 : Math.max(0.5, 1 - (index * 0.18));
+      return total + (score * stackingMultiplier);
+    }, 0);
 }
 
 
