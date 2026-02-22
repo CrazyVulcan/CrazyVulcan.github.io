@@ -70,7 +70,7 @@ function arcFacingWeight(arc) {
 }
 
 function mountFacingScore(weapon) {
-  const arcs = normalizeArcValues(weapon);
+  const arcs = [...new Set(normalizeArcValues(weapon))];
   const summedFacing = sum(arcs.map((arc) => arcFacingWeight(arc)));
   const averagedFacing = summedFacing / Math.max(1, arcs.length);
   const arcCoverageBonus = Math.sqrt(Math.max(1, arcs.length));
@@ -104,7 +104,7 @@ const SECTION_MULTIPLIERS = {
   systemsCrew: 1.0,
   powerTracks: 1.9,
   functions: 1.7,
-  weapons: 2.6
+  weapons: 1.35
 };
 
 function traitBonusScore(traits) {
@@ -304,36 +304,54 @@ function scoreFunctions(build) {
   return rowScore + trackSupport;
 }
 
+function scoreWeaponQuality(weapon) {
+  const ranges = Array.isArray(weapon?.ranges) ? weapon.ranges : [];
+
+  const rangeScore = ranges.reduce((rangeTotal, range) => {
+    const span = bandSpan(range?.band);
+    const dice = Array.isArray(range?.dice) ? range.dice.length : 0;
+    const bonus = positivePart(range?.bonus) * 0.45;
+    const color = rangeTypeWeight(String(range?.type || 'black').toLowerCase());
+    return rangeTotal + ((dice + bonus) * span * color * 0.62);
+  }, 0);
+
+  const powerScore = positivePart(weapon?.powerCircles) * 0.85;
+  const stopScore = (Array.isArray(weapon?.powerStops) ? weapon.powerStops.length : 0) * 0.45;
+  const structureScore = positivePart(weapon?.structure) * 0.95;
+  const traitScore = traitBonusScore(weapon?.traits) * 1.0;
+  const specialScore = String(weapon?.special || '').trim() ? 1.3 : 0;
+
+  return rangeScore + powerScore + stopScore + structureScore + traitScore + specialScore;
+}
+
+
+function effectiveMountCount(weapon) {
+  const facingMounts = Array.isArray(weapon?.mountFacings) ? weapon.mountFacings.length : 0;
+  const arcMounts = Array.isArray(weapon?.mountArcs) ? weapon.mountArcs.length : 0;
+  const rawCount = Math.max(facingMounts, arcMounts, 1);
+  return Math.min(8, rawCount);
+}
+
 function scoreWeapons(build) {
   const weapons = normalizeWeapons(build?.weapons);
   return weapons.reduce((total, weapon) => {
-    const ranges = Array.isArray(weapon?.ranges) ? weapon.ranges : [];
-
-    const rangeScore = ranges.reduce((rangeTotal, range) => {
-      const span = bandSpan(range?.band);
-      const dice = Array.isArray(range?.dice) ? range.dice.length : 0;
-      const bonus = positivePart(range?.bonus) * 0.45;
-      const color = rangeTypeWeight(String(range?.type || 'black').toLowerCase());
-      return rangeTotal + ((dice + bonus) * span * color * 0.6);
-    }, 0);
-
-    const mountCount = Math.max(1, weapon?.mountArcs?.length || weapon?.mountFacings?.length || 1);
+    const mountCount = effectiveMountCount(weapon);
+    const arcCount = new Set(normalizeArcValues(weapon)).size;
     const facingScore = mountFacingScore(weapon);
-    const powerScore = positivePart(weapon?.powerCircles) * 0.85;
-    const stopScore = (Array.isArray(weapon?.powerStops) ? weapon.powerStops.length : 0) * 0.45;
-    const structureScore = positivePart(weapon?.structure) * 0.95;
-    const traitScore = traitBonusScore(weapon?.traits) * 1.0;
-    const specialScore = String(weapon?.special || '').trim() ? 1.3 : 0;
+    const weaponQuality = Math.pow(Math.max(0.1, scoreWeaponQuality(weapon)), 0.82);
+
+    // Better weapons scale super-linearly when mounted more times.
+    const mountScale = 0.82 + (Math.pow(mountCount, 1.2) * 0.3) + (mountCount >= 4 ? (Math.sqrt(mountCount) * 0.12) : 0);
+
+    // Arc quality matters: forward-biased facings scale value harder than poor arcs.
+    const arcQualityScale = 0.82 + (Math.pow(facingScore, 1.12) * 0.55);
+
+    // Coverage breadth gives a smaller additive multiplier for tactical flexibility.
+    const coverageScale = 0.9 + (Math.log2(Math.max(1, arcCount) + 1) * 0.22);
 
     return total
-      + rangeScore
-      + (mountCount * 1.1)
-      + (facingScore * 2.8)
-      + powerScore
-      + stopScore
-      + structureScore
-      + traitScore
-      + specialScore;
+      + (weaponQuality * mountScale * arcQualityScale * coverageScale)
+      + (mountCount * 0.28);
   }, 0);
 }
 
