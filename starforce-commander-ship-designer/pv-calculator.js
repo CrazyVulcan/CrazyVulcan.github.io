@@ -102,8 +102,8 @@ const SECTION_MULTIPLIERS = {
   defense: 1.9,
   maneuvering: 1.4,
   systemsCrew: 1.0,
-  powerTracks: 1.35,
-  functions: 1.2,
+  powerTracks: 1.9,
+  functions: 1.7,
   weapons: 2.6
 };
 
@@ -195,11 +195,59 @@ function scoreSystemsAndCrew(build) {
 function scorePowerTracks(build) {
   const tracks = Array.isArray(build?.powerSystem?.tracks) ? build.powerSystem.tracks : [];
   return tracks.reduce((total, track) => {
+    const key = String(track?.key || '').toLowerCase();
     const points = positivePart(track?.points);
     const boxesPerPoint = Math.max(1, positivePart(track?.boxesPerPoint, 1));
-    const patternBonus = (Array.isArray(track?.boxPattern) ? track.boxPattern : []).length * 0.1;
-    const dotBonus = track?.hasDot === false ? 0 : 0.12;
-    return total + (points * (0.95 + (boxesPerPoint * 0.18))) + patternBonus + dotBonus;
+    const patternCount = (Array.isArray(track?.boxPattern) ? track.boxPattern : []).length;
+
+    const isBattery = key === 'battery';
+    const isFtl = key === 'ftldrive' || key === 'ftl';
+    const isMainOrReactor = key.includes('main') || key.includes('reac');
+    const isAux = key.includes('aux');
+
+    // More usable/free energy means more combat capability.
+    const basePointValue = isBattery
+      ? 2.5
+      : isMainOrReactor
+        ? 1.55
+        : isAux
+          ? 1.35
+          : isFtl
+            ? 0.65
+            : 1.1;
+
+    const freePowerFromBoxes = (boxesPerPoint - 1) * (isBattery ? 1.05 : 0.55);
+    const reserveFlexibility = isBattery ? (1.0 + (points * 0.35)) : 0;
+    const patternBonus = patternCount * (isBattery ? 0.2 : 0.12);
+    const freeDotBonus = track?.hasDot === false ? 0 : (isBattery ? 0.35 : 0.18);
+
+    return total
+      + (points * (basePointValue + freePowerFromBoxes))
+      + reserveFlexibility
+      + patternBonus
+      + freeDotBonus;
+  }, 0);
+}
+
+
+function parseFunctionMagnitude(values = []) {
+  if (!Array.isArray(values) || values.length === 0) {
+    return 0;
+  }
+
+  return values.reduce((total, value) => {
+    const raw = String(value || '').trim();
+    if (!raw) {
+      return total;
+    }
+
+    const numeric = Number(raw);
+    if (Number.isFinite(numeric)) {
+      return total + Math.max(0, numeric);
+    }
+
+    // Named function steps still have non-zero tactical value.
+    return total + 0.75;
   }, 0);
 }
 
@@ -213,15 +261,24 @@ function scoreFunctions(build) {
     }
 
     const valueCount = Array.isArray(row.values) ? row.values.length : 0;
+    const valueMagnitude = parseFunctionMagnitude(row.values);
     const free = positivePart(row.free);
     const emergency = row.emer ? 0.45 : 0;
-    return total + (valueCount * 0.75) + (free * 0.55) + emergency;
+    const enabledBonus = row.enabled === true ? 0.35 : 0;
+
+    return total
+      + (valueCount * 0.95)
+      + (valueMagnitude * 0.32)
+      + (free * 0.65)
+      + emergency
+      + enabledBonus;
   }, 0);
 
-  return rowScore
-    + (positivePart(cfg?.ftl?.empty) * 0.35)
-    + (positivePart(cfg?.cloak?.empty) * 0.35)
-    + (cfg?.cloak?.enabled ? 1.5 : 0);
+  const trackSupport = (positivePart(cfg?.ftl?.empty) * 0.5)
+    + (positivePart(cfg?.cloak?.empty) * 0.5)
+    + (cfg?.cloak?.enabled ? 1.8 : 0);
+
+  return rowScore + trackSupport;
 }
 
 function scoreWeapons(build) {
