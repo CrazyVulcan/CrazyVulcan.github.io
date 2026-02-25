@@ -1,0 +1,12 @@
+PRAGMA foreign_keys = OFF;
+DROP TABLE IF EXISTS activities;
+DROP TABLE IF EXISTS saved_views;
+DROP TABLE IF EXISTS card_links;
+DROP TABLE IF EXISTS card_tags;
+DROP TABLE IF EXISTS tags;
+DROP TABLE IF EXISTS cards;
+DROP TABLE IF EXISTS columns;
+DROP TABLE IF EXISTS boards;
+DROP TABLE IF EXISTS workspaces;
+DROP TABLE IF EXISTS users;
+PRAGMA foreign_keys = ON;
