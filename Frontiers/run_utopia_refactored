@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -euo pipefail
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR"
+
+if [[ ! -f "Utopia/main/run_utopia" ]]; then
+  echo "Utopia runner not found at Utopia/main/run_utopia" >&2
+  exit 1
+fi
+
+if [[ ! -f "Utopia/db/utopia.sqlite" ]]; then
+  echo "No sqlite DB found. Running initial migration/backfill..."
+  bash Utopia/migrate_utopia_data --rebuild
+fi
+
+echo "Starting Utopia at http://127.0.0.1:8787"
+exec bash Utopia/main/run_utopia
