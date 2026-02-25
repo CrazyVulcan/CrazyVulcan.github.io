@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Utopia</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Utopia</h1>
+      <div id="global-status" class="muted">Loading…</div>
+    </header>
+
+    <section id="toolbar">
+      <label>Board: <select id="board-select"></select></label>
+      <button id="create-board">New Board</button>
+      <button id="create-column">New List</button>
+      <label>Tag Filter: <input id="tag-filter" placeholder="e.g. faction:federation" /></label>
+      <button id="apply-filter">Apply</button>
+      <button id="save-view">Save View</button>
+      <select id="saved-view-select"><option value="">Saved Views</option></select>
+    </section>
+
+    <main id="app"></main>
+
+    <template id="column-template">
+      <section class="column" draggable="false">
+        <div class="column-header"></div>
+        <div class="cards"></div>
+        <button class="add-card">+ Add Card</button>
+      </section>
+    </template>
+
+    <template id="card-template">
+      <article class="card" draggable="true">
+        <h4 class="title"></h4>
+        <p class="desc"></p>
+        <div class="tags"></div>
+      </article>
+    </template>
+
+    <script type="module" src="/static/app.js"></script>
+  </body>
+</html>
