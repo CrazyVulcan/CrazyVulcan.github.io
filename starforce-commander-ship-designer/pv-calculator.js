@@ -20,13 +20,39 @@ function bandSpan(rawBand) {
 }
 
 function rangeTypeWeight(type) {
-  if (type === 'green') {
-    return 1.15;
-  }
   if (type === 'red') {
-    return 0.9;
+    return 1.35;
+  }
+  if (type === 'yellow') {
+    return 1.18;
+  }
+  if (type === 'green') {
+    return 1.05;
+  }
+  if (type === 'blue') {
+    return 0.82;
   }
   return 1;
+}
+
+function bandMax(rawBand) {
+  const [start, end] = String(rawBand || '')
+    .split('-')
+    .map((part) => Number(part.trim()));
+
+  if (Number.isFinite(start) && Number.isFinite(end)) {
+    return Math.max(start, end);
+  }
+
+  if (Number.isFinite(start)) {
+    return start;
+  }
+
+  if (Number.isFinite(end)) {
+    return end;
+  }
+
+  return 8;
 }
 
 function normalizeWeapons(weapons) {
@@ -54,19 +80,22 @@ function normalizeArcValues(weapon) {
 }
 
 function arcFacingWeight(arc) {
-  if (arc === 1) {
-    return 1.6; // forward
+  if (arc === 1 || arc === 2) {
+    return 1.35; // strongest firing arcs
   }
-  if (arc === 2 || arc === 8) {
-    return 1.35; // forward flanks
+  if (arc === 3) {
+    return 1.18;
   }
-  if (arc === 3 || arc === 7) {
-    return 1.05; // side-forward quarters
+  if (arc === 4 || arc === 8) {
+    return 1.0;
   }
-  if (arc === 4 || arc === 6) {
-    return 0.82; // side-rear quarters
+  if (arc === 5) {
+    return 0.9;
   }
-  return 0.6; // arc 5 rear
+  if (arc === 6 || arc === 7) {
+    return 0.7; // weakest firing arcs
+  }
+  return 1;
 }
 
 function mountFacingScore(weapon) {
@@ -107,21 +136,7 @@ const SECTION_MULTIPLIERS = {
   weapons: 1.35
 };
 
-function traitBonusScore(traits) {
-  if (!Array.isArray(traits) || traits.length === 0) {
-    return 0;
-  }
-
-  return traits.reduce((score, trait) => {
-    const normalized = normalizeTrait(trait);
-    if (!normalized) {
-      return score;
-    }
-
-    const weighted = TRAIT_BONUS_BY_PREFIX.find((entry) => normalized.startsWith(entry.match));
-    return score + (weighted ? weighted.bonus : 0.9);
-  }, 0);
-}
+function traitBonusScore() { return 0; }
 
 function positivePart(value, fallback = 0) {
   const parsed = num(value);
@@ -310,21 +325,22 @@ function scoreWeaponQuality(weapon, build) {
   const ranges = Array.isArray(weapon?.ranges) ? weapon.ranges : [];
 
   const rangeScore = ranges.reduce((rangeTotal, range) => {
-    const span = bandSpan(range?.band);
     const dice = Array.isArray(range?.dice) ? range.dice.length : 0;
-    const bonus = positivePart(range?.bonus) * 0.45;
+    const bonus = positivePart(range?.bonus);
     const color = rangeTypeWeight(String(range?.type || 'black').toLowerCase());
-    return rangeTotal + ((dice + bonus) * span * color * 0.62);
+    const maxDistance = bandMax(range?.band);
+    const distanceFactor = Math.max(0.5, maxDistance / 8);
+    return rangeTotal + ((dice + bonus) * color * distanceFactor);
   }, 0);
 
-  const powerScore = positivePart(weapon?.powerCircles) * 0.85;
-  const stopScore = (Array.isArray(weapon?.powerStops) ? weapon.powerStops.length : 0) * 0.45;
-  const structureScore = positivePart(weapon?.structure) * 0.95;
-  const traitScore = traitBonusScore(weapon?.traits) * 1.0;
-  const specialScore = String(weapon?.special || '').trim() ? 1.3 : 0;
+  const powerDiscount = (positivePart(weapon?.powerCircles) * 0.7)
+    + ((Array.isArray(weapon?.powerStops) ? weapon.powerStops.length : 0) * 1.1);
+  const structureScore = positivePart(weapon?.structure) * 0.25;
+  const traitScore = traitBonusScore(weapon?.traits);
+  const specialScore = 0;
 
   return (rangeScore * rank(build, 'rankWeaponsRange'))
-    + ((powerScore + stopScore) * rank(build, 'rankWeaponsPower'))
+    - (powerDiscount * rank(build, 'rankWeaponsPower'))
     + (structureScore * rank(build, 'rankWeaponsStructure'))
     + ((traitScore + specialScore) * rank(build, 'rankWeaponsTraitsSpecial'));
 }
@@ -339,32 +355,13 @@ function effectiveMountCount(weapon) {
 
 function scoreWeapons(build) {
   const weapons = normalizeWeapons(build?.weapons);
-  const perWeaponScores = weapons.map((weapon) => {
+  return weapons.reduce((total, weapon) => {
     const mountCount = effectiveMountCount(weapon);
-    const arcCount = new Set(normalizeArcValues(weapon)).size;
-    const facingScore = mountFacingScore(weapon);
-    const weaponQuality = Math.pow(Math.max(0.1, scoreWeaponQuality(weapon, build)), 0.82);
-
-    // Better weapons scale super-linearly when mounted more times.
-    const mountScale = 0.82 + (Math.pow(mountCount, 1.2) * 0.3) + (mountCount >= 4 ? (Math.sqrt(mountCount) * 0.12) : 0);
-
-    // Arc quality matters: forward-biased facings scale value harder than poor arcs.
-    const arcQualityScale = (0.82 + (Math.pow(facingScore, 1.12) * 0.55)) * rank(build, 'rankWeaponsMountArc');
-
-    // Coverage breadth gives a smaller additive multiplier for tactical flexibility.
-    const coverageScale = 0.9 + (Math.log2(Math.max(1, arcCount) + 1) * 0.22);
-
-    return (weaponQuality * mountScale * arcQualityScale * coverageScale)
-      + (mountCount * 0.28 * rank(build, 'rankWeaponsMountArc'));
-  });
-
-  // Multiple weapon lines are powerful, but stacking has diminishing returns in battle tempo.
-  return perWeaponScores
-    .sort((a, b) => b - a)
-    .reduce((total, score, index) => {
-      const stackingMultiplier = index === 0 ? 1 : Math.max(0.5, 1 - (index * 0.18));
-      return total + (score * stackingMultiplier);
-    }, 0);
+    const arcWeight = mountFacingScore(weapon) * rank(build, 'rankWeaponsMountArc');
+    const weaponQuality = Math.max(0, scoreWeaponQuality(weapon, build));
+    const singleMountValue = weaponQuality * arcWeight;
+    return total + (singleMountValue * mountCount);
+  }, 0);
 }
 
 
