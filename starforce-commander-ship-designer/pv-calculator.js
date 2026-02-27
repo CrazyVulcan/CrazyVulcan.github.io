@@ -64,6 +64,26 @@ function bandMax(rawBand) {
   return 8;
 }
 
+function bandMax(rawBand) {
+  const [start, end] = String(rawBand || '')
+    .split('-')
+    .map((part) => Number(part.trim()));
+
+  if (Number.isFinite(start) && Number.isFinite(end)) {
+    return Math.max(start, end);
+  }
+
+  if (Number.isFinite(start)) {
+    return start;
+  }
+
+  if (Number.isFinite(end)) {
+    return end;
+  }
+
+  return 8;
+}
+
 function normalizeWeapons(weapons) {
   return Array.isArray(weapons) ? weapons.filter((weapon) => weapon && weapon.name) : [];
 }
