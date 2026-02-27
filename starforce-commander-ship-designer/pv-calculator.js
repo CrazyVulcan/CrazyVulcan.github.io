@@ -7,32 +7,61 @@ function sum(values) {
   return values.reduce((total, value) => total + num(value), 0);
 }
 
-function bandSpan(rawBand) {
+function rangeTypeWeight(type) {
+  if (type === 'green') {
+    return 1.1;
+  }
+  if (type === 'black') {
+    return 1;
+  }
+  if (type === 'blue') {
+    return 0.9;
+  }
+  // Keep support for legacy color tags.
+  if (type === 'red') {
+    return 1.05;
+  }
+  if (type === 'yellow') {
+    return 1.02;
+  }
+  return 1;
+}
+
+function diceColorWeight(symbol) {
+  const normalized = String(symbol || '').trim().toUpperCase();
+  if (normalized === 'R') {
+    return 1.45;
+  }
+  if (normalized === 'Y') {
+    return 1.22;
+  }
+  if (normalized === 'G') {
+    return 1;
+  }
+  if (normalized === 'B') {
+    return 0.78;
+  }
+  return 1;
+}
+
+function bandMax(rawBand) {
   const [start, end] = String(rawBand || '')
     .split('-')
     .map((part) => Number(part.trim()));
 
-  if (Number.isFinite(start) && Number.isFinite(end) && end >= start) {
-    return Math.max(1, end - start + 1);
+  if (Number.isFinite(start) && Number.isFinite(end)) {
+    return Math.max(start, end);
   }
 
-  return 1;
-}
+  if (Number.isFinite(start)) {
+    return start;
+  }
 
-function rangeTypeWeight(type) {
-  if (type === 'red') {
-    return 1.35;
+  if (Number.isFinite(end)) {
+    return end;
   }
-  if (type === 'yellow') {
-    return 1.18;
-  }
-  if (type === 'green') {
-    return 1.05;
-  }
-  if (type === 'blue') {
-    return 0.82;
-  }
-  return 1;
+
+  return 8;
 }
 
 function bandMax(rawBand) {
@@ -106,25 +135,6 @@ function mountFacingScore(weapon) {
   return averagedFacing * arcCoverageBonus;
 }
 
-function normalizeTrait(trait) {
-  return String(trait || '').trim().toUpperCase();
-}
-
-const TRAIT_BONUS_BY_PREFIX = [
-  { match: 'HOMING', bonus: 1.2 },
-  { match: 'HVY', bonus: 1.4 },
-  { match: 'PREC', bonus: 1.4 },
-  { match: 'PIERCE', bonus: 1.4 },
-  { match: 'PIRCE', bonus: 1.4 },
-  { match: 'PARICAL', bonus: 1.1 },
-  { match: 'PARTIAL', bonus: 1.1 },
-  { match: 'LEAK', bonus: 1.1 },
-  { match: 'PD MODE', bonus: 1.1 },
-  { match: 'ATMO', bonus: 0.8 },
-  { match: 'NOBAT', bonus: 0.6 },
-  { match: 'FTL', bonus: 1.0 }
-];
-
 const SECTION_MULTIPLIERS = {
   identity: 0.4,
   engineering: 1.2,
@@ -135,8 +145,6 @@ const SECTION_MULTIPLIERS = {
   functions: 1.7,
   weapons: 1.35
 };
-
-function traitBonusScore() { return 0; }
 
 function positivePart(value, fallback = 0) {
   const parsed = num(value);
@@ -325,24 +333,21 @@ function scoreWeaponQuality(weapon, build) {
   const ranges = Array.isArray(weapon?.ranges) ? weapon.ranges : [];
 
   const rangeScore = ranges.reduce((rangeTotal, range) => {
-    const dice = Array.isArray(range?.dice) ? range.dice.length : 0;
+    const diceScore = sum((Array.isArray(range?.dice) ? range.dice : []).map((die) => diceColorWeight(die)));
     const bonus = positivePart(range?.bonus);
-    const color = rangeTypeWeight(String(range?.type || 'black').toLowerCase());
+    const rangeType = rangeTypeWeight(String(range?.type || 'black').toLowerCase());
     const maxDistance = bandMax(range?.band);
-    const distanceFactor = Math.max(0.5, maxDistance / 8);
-    return rangeTotal + ((dice + bonus) * color * distanceFactor);
+    const distanceFactor = Math.max(0.45, maxDistance / 8);
+    return rangeTotal + ((diceScore + bonus) * rangeType * distanceFactor);
   }, 0);
 
-  const powerDiscount = (positivePart(weapon?.powerCircles) * 0.7)
-    + ((Array.isArray(weapon?.powerStops) ? weapon.powerStops.length : 0) * 1.1);
-  const structureScore = positivePart(weapon?.structure) * 0.25;
-  const traitScore = traitBonusScore(weapon?.traits);
-  const specialScore = 0;
+  const powerDiscount = (positivePart(weapon?.powerCircles) * 0.32)
+    + ((Array.isArray(weapon?.powerStops) ? weapon.powerStops.length : 0) * 0.72);
+  const structureScore = positivePart(weapon?.structure) * 0.35;
 
-  return (rangeScore * rank(build, 'rankWeaponsRange'))
+  return (rangeScore * 1.35 * rank(build, 'rankWeaponsRange'))
     - (powerDiscount * rank(build, 'rankWeaponsPower'))
-    + (structureScore * rank(build, 'rankWeaponsStructure'))
-    + ((traitScore + specialScore) * rank(build, 'rankWeaponsTraitsSpecial'));
+    + (structureScore * rank(build, 'rankWeaponsStructure'));
 }
 
 
@@ -357,7 +362,7 @@ function scoreWeapons(build) {
   const weapons = normalizeWeapons(build?.weapons);
   return weapons.reduce((total, weapon) => {
     const mountCount = effectiveMountCount(weapon);
-    const arcWeight = mountFacingScore(weapon) * rank(build, 'rankWeaponsMountArc');
+    const arcWeight = 0.75 + (mountFacingScore(weapon) * rank(build, 'rankWeaponsMountArc'));
     const weaponQuality = Math.max(0, scoreWeaponQuality(weapon, build));
     const singleMountValue = weaponQuality * arcWeight;
     return total + (singleMountValue * mountCount);
