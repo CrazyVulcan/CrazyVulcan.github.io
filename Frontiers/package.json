@@ -1,0 +1,12 @@
+{
+  "name": "frontiers",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Frontiers workspace scripts",
+  "scripts": {
+    "utopia:run": "bash Utopia/main/run_utopia",
+    "utopia:migrate": "bash Utopia/migrate_utopia_data --rebuild",
+    "utopia:verify": "python3 Utopia/scripts/verify_utopia_data.py --db-path Utopia/db/utopia.sqlite",
+    "utopia:smoke": "python3 Utopia/tests/smoke_phase2.py"
+  }
+}
