@@ -319,12 +319,24 @@ function scoreWeaponQuality(weapon, build) {
     return rangeTotal + ((diceScore + bonus) * rangeType * distanceFactor);
   }, 0);
 
-  const powerDiscount = (positivePart(weapon?.powerCircles) * 0.32)
-    + ((Array.isArray(weapon?.powerStops) ? weapon.powerStops.length : 0) * 0.72);
+  const powerCircles = Math.max(1, positivePart(weapon?.powerCircles, 1));
+  const stopCount = Array.isArray(weapon?.powerStops) ? weapon.powerStops.length : 0;
+
+  // Baseline is 2 circles = 100% mount value impact.
+  // 1 circle is a surcharge (more expensive), while 3+ circles apply
+  // progressively larger discounts.
+  const circleAdjustment = powerCircles <= 2
+    ? (2 - powerCircles) * 2.4
+    : -Array.from({ length: powerCircles - 2 }, (_, index) => 1.05 + (index * 0.45)).reduce((a, b) => a + b, 0);
+
+  // Stops always discount and each additional stop discounts more than a circle step.
+  const stopDiscount = -Array.from({ length: stopCount }, (_, index) => 1.45 + (index * 0.65)).reduce((a, b) => a + b, 0);
+
+  const powerScore = (circleAdjustment + stopDiscount) * rank(build, 'rankWeaponsPower');
   const structureScore = positivePart(weapon?.structure) * 0.35;
 
   return (rangeScore * 1.35 * rank(build, 'rankWeaponsRange'))
-    - (powerDiscount * rank(build, 'rankWeaponsPower'))
+    + powerScore
     + (structureScore * rank(build, 'rankWeaponsStructure'));
 }
 
