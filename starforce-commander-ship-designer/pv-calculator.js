@@ -30,16 +30,16 @@ function rangeTypeWeight(type) {
 function diceColorWeight(symbol) {
   const normalized = String(symbol || '').trim().toUpperCase();
   if (normalized === 'R') {
-    return 1.45;
+    return 2.5;
   }
   if (normalized === 'Y') {
-    return 1.22;
+    return 1.5;
   }
   if (normalized === 'G') {
     return 1;
   }
   if (normalized === 'B') {
-    return 0.78;
+    return 0.5;
   }
   return 1;
 }
