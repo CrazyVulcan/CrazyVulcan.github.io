@@ -77,42 +77,6 @@ const STANDARD_DEFAULT_LOADOUT = {
 };
 
 
-const PV_RANKING_DEFAULTS = {
-  rankIdentityFields: 0,
-  rankEngineeringMove: 0.65,
-  rankEngineeringVector: 0.7,
-  rankEngineeringTurn: 0.6,
-  rankEngineeringSpecial: 0.75,
-  rankDefenseShields: 0.42,
-  rankDefenseArmor: 0.4,
-  rankDefenseRepairable: 0.3,
-  rankDefensePermanent: 0.28,
-  rankDefenseShieldGen: 0.45,
-  rankManeuverMaxAcc: 0.65,
-  rankManeuverGreen: 0.5,
-  rankManeuverRed: 0.45,
-  rankManeuverTurnProfile: 0.35,
-  rankManeuverDmgStops: 0.55,
-  rankSystemsValues: 0.55,
-  rankSystemsBreadth: 0.45,
-  rankCrewShuttle: 0.6,
-  rankCrewMarines: 0.45,
-  rankPowerPoints: 0.5,
-  rankPowerBoxes: 0.45,
-  rankPowerReserve: 0.5,
-  rankPowerPattern: 0.4,
-  rankFunctionsValues: 0.65,
-  rankFunctionsFree: 0.6,
-  rankFunctionsState: 0.6,
-  rankFunctionsTrackSupport: 0.7,
-  rankWeaponsRange: 0.42,
-  rankWeaponsPower: 0.5,
-  rankWeaponsStructure: 0.45,
-  rankWeaponsTraitsSpecial: 0.6,
-  rankWeaponsMountArc: 0.4,
-  rankGlobalScale: 0.2
-};
-
 const POWER_TRACK_CONFIG = [
   { key: 'lMain', label: 'L MAIN', pointsField: 'powerLMainPoints', boxesField: 'powerLMainBoxes', patternField: 'powerLMainPattern', hasDotField: 'powerLMainHasDot' },
   { key: 'rMain', label: 'R MAIN', pointsField: 'powerRMainPoints', boxesField: 'powerRMainBoxes', patternField: 'powerRMainPattern', hasDotField: 'powerRMainHasDot' },
@@ -529,10 +493,6 @@ function syncDerivedFunctionInputs() {
 }
 
 
-function readPvRankings() {
-  return { ...PV_RANKING_DEFAULTS };
-}
-
 function getBuild() {
   return {
     identity: {
@@ -577,8 +537,7 @@ function getBuild() {
     crew: {
       shuttleCraft: num('shuttleCraft'),
       marinesStationed: num('marinesStationed')
-    },
-    pvRankings: readPvRankings()
+    }
   };
 }
 

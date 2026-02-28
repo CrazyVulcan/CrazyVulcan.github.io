@@ -124,6 +124,42 @@ const SECTION_MULTIPLIERS = {
   weapons: 1.35
 };
 
+const PV_RANKING_BASELINE = {
+  rankIdentityFields: 0,
+  rankEngineeringMove: 0.65,
+  rankEngineeringVector: 0.7,
+  rankEngineeringTurn: 0.6,
+  rankEngineeringSpecial: 0.75,
+  rankDefenseShields: 0.42,
+  rankDefenseArmor: 0.4,
+  rankDefenseRepairable: 0.3,
+  rankDefensePermanent: 0.28,
+  rankDefenseShieldGen: 0.45,
+  rankManeuverMaxAcc: 0.65,
+  rankManeuverGreen: 0.5,
+  rankManeuverRed: 0.45,
+  rankManeuverTurnProfile: 0.35,
+  rankManeuverDmgStops: 0.55,
+  rankSystemsValues: 0.55,
+  rankSystemsBreadth: 0.45,
+  rankCrewShuttle: 0.6,
+  rankCrewMarines: 0.45,
+  rankPowerPoints: 0.5,
+  rankPowerBoxes: 0.45,
+  rankPowerReserve: 0.5,
+  rankPowerPattern: 0.4,
+  rankFunctionsValues: 0.65,
+  rankFunctionsFree: 0.6,
+  rankFunctionsState: 0.6,
+  rankFunctionsTrackSupport: 0.7,
+  rankWeaponsRange: 0.42,
+  rankWeaponsPower: 0.5,
+  rankWeaponsStructure: 0.45,
+  rankWeaponsTraitsSpecial: 0.6,
+  rankWeaponsMountArc: 0.4,
+  rankGlobalScale: 0.2
+};
+
 function positivePart(value, fallback = 0) {
   const parsed = num(value);
   if (!Number.isFinite(parsed)) {
@@ -141,9 +177,8 @@ function safeRun(scorer, fallback = 0) {
 }
 
 function rank(build, key) {
-  const raw = build?.pvRankings?.[key];
-  const parsed = Number(raw);
-  return Number.isFinite(parsed) ? Math.max(0, parsed) : 1;
+  const baseline = Number(PV_RANKING_BASELINE[key]);
+  return Number.isFinite(baseline) ? Math.max(0, baseline) : 1;
 }
 
 
