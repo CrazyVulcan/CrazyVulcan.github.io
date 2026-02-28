@@ -64,26 +64,6 @@ function bandMax(rawBand) {
   return 8;
 }
 
-function bandMax(rawBand) {
-  const [start, end] = String(rawBand || '')
-    .split('-')
-    .map((part) => Number(part.trim()));
-
-  if (Number.isFinite(start) && Number.isFinite(end)) {
-    return Math.max(start, end);
-  }
-
-  if (Number.isFinite(start)) {
-    return start;
-  }
-
-  if (Number.isFinite(end)) {
-    return end;
-  }
-
-  return 8;
-}
-
 function normalizeWeapons(weapons) {
   return Array.isArray(weapons) ? weapons.filter((weapon) => weapon && weapon.name) : [];
 }
@@ -130,9 +110,7 @@ function arcFacingWeight(arc) {
 function mountFacingScore(weapon) {
   const arcs = [...new Set(normalizeArcValues(weapon))];
   const summedFacing = sum(arcs.map((arc) => arcFacingWeight(arc)));
-  const averagedFacing = summedFacing / Math.max(1, arcs.length);
-  const arcCoverageBonus = Math.sqrt(Math.max(1, arcs.length));
-  return averagedFacing * arcCoverageBonus;
+  return summedFacing / Math.max(1, arcs.length);
 }
 
 const SECTION_MULTIPLIERS = {
@@ -362,7 +340,7 @@ function scoreWeapons(build) {
   const weapons = normalizeWeapons(build?.weapons);
   return weapons.reduce((total, weapon) => {
     const mountCount = effectiveMountCount(weapon);
-    const arcWeight = 0.75 + (mountFacingScore(weapon) * rank(build, 'rankWeaponsMountArc'));
+    const arcWeight = 0.12 + (mountFacingScore(weapon) * rank(build, 'rankWeaponsMountArc'));
     const weaponQuality = Math.max(0, scoreWeaponQuality(weapon, build));
     const singleMountValue = weaponQuality * arcWeight;
     return total + (singleMountValue * mountCount);
