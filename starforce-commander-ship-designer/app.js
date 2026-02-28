@@ -78,7 +78,7 @@ const STANDARD_DEFAULT_LOADOUT = {
 
 
 const PV_RANKING_DEFAULTS = {
-  rankIdentityFields: 0.6,
+  rankIdentityFields: 0,
   rankEngineeringMove: 0.65,
   rankEngineeringVector: 0.7,
   rankEngineeringTurn: 0.6,
@@ -110,7 +110,7 @@ const PV_RANKING_DEFAULTS = {
   rankWeaponsStructure: 0.45,
   rankWeaponsTraitsSpecial: 0.6,
   rankWeaponsMountArc: 0.4,
-  rankGlobalScale: 0.25
+  rankGlobalScale: 0.2
 };
 
 const POWER_TRACK_CONFIG = [
@@ -530,13 +530,7 @@ function syncDerivedFunctionInputs() {
 
 
 function readPvRankings() {
-  return Object.fromEntries(
-    Object.entries(PV_RANKING_DEFAULTS).map(([key, defaultValue]) => {
-      const raw = num(key);
-      const value = Number.isFinite(raw) && raw >= 0 ? raw : defaultValue;
-      return [key, value];
-    })
-  );
+  return { ...PV_RANKING_DEFAULTS };
 }
 
 function getBuild() {
@@ -1267,10 +1261,6 @@ function restoreDraft(draft) {
   setValue('systems', (draft.systems ?? []).map((item) => `${item.key}:${item.value ?? ''}`).join('\n'));
   setValue('shuttleCraft', draft.crew?.shuttleCraft ?? 0);
   setValue('marinesStationed', draft.crew?.marinesStationed ?? 0);
-
-  Object.entries(PV_RANKING_DEFAULTS).forEach(([key, defaultValue]) => {
-    setValue(key, draft.pvRankings?.[key] ?? defaultValue);
-  });
 
   render();
 }
