@@ -7,26 +7,61 @@ function sum(values) {
   return values.reduce((total, value) => total + num(value), 0);
 }
 
-function bandSpan(rawBand) {
+function rangeTypeWeight(type) {
+  if (type === 'green') {
+    return 1.1;
+  }
+  if (type === 'black') {
+    return 1;
+  }
+  if (type === 'blue') {
+    return 0.9;
+  }
+  // Keep support for legacy color tags.
+  if (type === 'red') {
+    return 1.05;
+  }
+  if (type === 'yellow') {
+    return 1.02;
+  }
+  return 1;
+}
+
+function diceColorWeight(symbol) {
+  const normalized = String(symbol || '').trim().toUpperCase();
+  if (normalized === 'R') {
+    return 2.5;
+  }
+  if (normalized === 'Y') {
+    return 1.5;
+  }
+  if (normalized === 'G') {
+    return 1;
+  }
+  if (normalized === 'B') {
+    return 0.5;
+  }
+  return 1;
+}
+
+function bandMax(rawBand) {
   const [start, end] = String(rawBand || '')
     .split('-')
     .map((part) => Number(part.trim()));
 
-  if (Number.isFinite(start) && Number.isFinite(end) && end >= start) {
-    return Math.max(1, end - start + 1);
+  if (Number.isFinite(start) && Number.isFinite(end)) {
+    return Math.max(start, end);
   }
 
-  return 1;
-}
+  if (Number.isFinite(start)) {
+    return start;
+  }
 
-function rangeTypeWeight(type) {
-  if (type === 'green') {
-    return 1.15;
+  if (Number.isFinite(end)) {
+    return end;
   }
-  if (type === 'red') {
-    return 0.9;
-  }
-  return 1;
+
+  return 8;
 }
 
 function normalizeWeapons(weapons) {
@@ -54,47 +89,29 @@ function normalizeArcValues(weapon) {
 }
 
 function arcFacingWeight(arc) {
-  if (arc === 1) {
-    return 1.6; // forward
+  if (arc === 1 || arc === 2) {
+    return 1.35; // strongest firing arcs
   }
-  if (arc === 2 || arc === 8) {
-    return 1.35; // forward flanks
+  if (arc === 3) {
+    return 1.18;
   }
-  if (arc === 3 || arc === 7) {
-    return 1.05; // side-forward quarters
+  if (arc === 4 || arc === 8) {
+    return 1.0;
   }
-  if (arc === 4 || arc === 6) {
-    return 0.82; // side-rear quarters
+  if (arc === 5) {
+    return 0.9;
   }
-  return 0.6; // arc 5 rear
+  if (arc === 6 || arc === 7) {
+    return 0.7; // weakest firing arcs
+  }
+  return 1;
 }
 
 function mountFacingScore(weapon) {
   const arcs = [...new Set(normalizeArcValues(weapon))];
   const summedFacing = sum(arcs.map((arc) => arcFacingWeight(arc)));
-  const averagedFacing = summedFacing / Math.max(1, arcs.length);
-  const arcCoverageBonus = Math.sqrt(Math.max(1, arcs.length));
-  return averagedFacing * arcCoverageBonus;
+  return summedFacing / Math.max(1, arcs.length);
 }
-
-function normalizeTrait(trait) {
-  return String(trait || '').trim().toUpperCase();
-}
-
-const TRAIT_BONUS_BY_PREFIX = [
-  { match: 'HOMING', bonus: 1.2 },
-  { match: 'HVY', bonus: 1.4 },
-  { match: 'PREC', bonus: 1.4 },
-  { match: 'PIERCE', bonus: 1.4 },
-  { match: 'PIRCE', bonus: 1.4 },
-  { match: 'PARICAL', bonus: 1.1 },
-  { match: 'PARTIAL', bonus: 1.1 },
-  { match: 'LEAK', bonus: 1.1 },
-  { match: 'PD MODE', bonus: 1.1 },
-  { match: 'ATMO', bonus: 0.8 },
-  { match: 'NOBAT', bonus: 0.6 },
-  { match: 'FTL', bonus: 1.0 }
-];
 
 const SECTION_MULTIPLIERS = {
   identity: 0.4,
@@ -106,22 +123,6 @@ const SECTION_MULTIPLIERS = {
   functions: 1.7,
   weapons: 1.35
 };
-
-function traitBonusScore(traits) {
-  if (!Array.isArray(traits) || traits.length === 0) {
-    return 0;
-  }
-
-  return traits.reduce((score, trait) => {
-    const normalized = normalizeTrait(trait);
-    if (!normalized) {
-      return score;
-    }
-
-    const weighted = TRAIT_BONUS_BY_PREFIX.find((entry) => normalized.startsWith(entry.match));
-    return score + (weighted ? weighted.bonus : 0.9);
-  }, 0);
-}
 
 function positivePart(value, fallback = 0) {
   const parsed = num(value);
@@ -310,23 +311,33 @@ function scoreWeaponQuality(weapon, build) {
   const ranges = Array.isArray(weapon?.ranges) ? weapon.ranges : [];
 
   const rangeScore = ranges.reduce((rangeTotal, range) => {
-    const span = bandSpan(range?.band);
-    const dice = Array.isArray(range?.dice) ? range.dice.length : 0;
-    const bonus = positivePart(range?.bonus) * 0.45;
-    const color = rangeTypeWeight(String(range?.type || 'black').toLowerCase());
-    return rangeTotal + ((dice + bonus) * span * color * 0.62);
+    const diceScore = sum((Array.isArray(range?.dice) ? range.dice : []).map((die) => diceColorWeight(die)));
+    const bonus = positivePart(range?.bonus);
+    const rangeType = rangeTypeWeight(String(range?.type || 'black').toLowerCase());
+    const maxDistance = bandMax(range?.band);
+    const distanceFactor = Math.max(0.45, maxDistance / 8);
+    return rangeTotal + ((diceScore + bonus) * rangeType * distanceFactor);
   }, 0);
 
-  const powerScore = positivePart(weapon?.powerCircles) * 0.85;
-  const stopScore = (Array.isArray(weapon?.powerStops) ? weapon.powerStops.length : 0) * 0.45;
-  const structureScore = positivePart(weapon?.structure) * 0.95;
-  const traitScore = traitBonusScore(weapon?.traits) * 1.0;
-  const specialScore = String(weapon?.special || '').trim() ? 1.3 : 0;
+  const powerCircles = Math.max(1, positivePart(weapon?.powerCircles, 1));
+  const stopCount = Array.isArray(weapon?.powerStops) ? weapon.powerStops.length : 0;
 
-  return (rangeScore * rank(build, 'rankWeaponsRange'))
-    + ((powerScore + stopScore) * rank(build, 'rankWeaponsPower'))
-    + (structureScore * rank(build, 'rankWeaponsStructure'))
-    + ((traitScore + specialScore) * rank(build, 'rankWeaponsTraitsSpecial'));
+  // Baseline is 2 circles = 100% mount value impact.
+  // 1 circle is a surcharge (more expensive), while 3+ circles apply
+  // progressively larger discounts.
+  const circleAdjustment = powerCircles <= 2
+    ? (2 - powerCircles) * 2.4
+    : -Array.from({ length: powerCircles - 2 }, (_, index) => 1.05 + (index * 0.45)).reduce((a, b) => a + b, 0);
+
+  // Stops always discount and each additional stop discounts more than a circle step.
+  const stopDiscount = -Array.from({ length: stopCount }, (_, index) => 1.45 + (index * 0.65)).reduce((a, b) => a + b, 0);
+
+  const powerScore = (circleAdjustment + stopDiscount) * rank(build, 'rankWeaponsPower');
+  const structureScore = positivePart(weapon?.structure) * 0.35;
+
+  return (rangeScore * 1.35 * rank(build, 'rankWeaponsRange'))
+    + powerScore
+    + (structureScore * rank(build, 'rankWeaponsStructure'));
 }
 
 
@@ -339,32 +350,13 @@ function effectiveMountCount(weapon) {
 
 function scoreWeapons(build) {
   const weapons = normalizeWeapons(build?.weapons);
-  const perWeaponScores = weapons.map((weapon) => {
+  return weapons.reduce((total, weapon) => {
     const mountCount = effectiveMountCount(weapon);
-    const arcCount = new Set(normalizeArcValues(weapon)).size;
-    const facingScore = mountFacingScore(weapon);
-    const weaponQuality = Math.pow(Math.max(0.1, scoreWeaponQuality(weapon, build)), 0.82);
-
-    // Better weapons scale super-linearly when mounted more times.
-    const mountScale = 0.82 + (Math.pow(mountCount, 1.2) * 0.3) + (mountCount >= 4 ? (Math.sqrt(mountCount) * 0.12) : 0);
-
-    // Arc quality matters: forward-biased facings scale value harder than poor arcs.
-    const arcQualityScale = (0.82 + (Math.pow(facingScore, 1.12) * 0.55)) * rank(build, 'rankWeaponsMountArc');
-
-    // Coverage breadth gives a smaller additive multiplier for tactical flexibility.
-    const coverageScale = 0.9 + (Math.log2(Math.max(1, arcCount) + 1) * 0.22);
-
-    return (weaponQuality * mountScale * arcQualityScale * coverageScale)
-      + (mountCount * 0.28 * rank(build, 'rankWeaponsMountArc'));
-  });
-
-  // Multiple weapon lines are powerful, but stacking has diminishing returns in battle tempo.
-  return perWeaponScores
-    .sort((a, b) => b - a)
-    .reduce((total, score, index) => {
-      const stackingMultiplier = index === 0 ? 1 : Math.max(0.5, 1 - (index * 0.18));
-      return total + (score * stackingMultiplier);
-    }, 0);
+    const arcWeight = 0.12 + (mountFacingScore(weapon) * rank(build, 'rankWeaponsMountArc'));
+    const weaponQuality = Math.max(0, scoreWeaponQuality(weapon, build));
+    const singleMountValue = weaponQuality * arcWeight;
+    return total + (singleMountValue * mountCount);
+  }, 0);
 }
 
 
