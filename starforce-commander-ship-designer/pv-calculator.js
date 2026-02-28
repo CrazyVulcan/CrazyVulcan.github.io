@@ -332,12 +332,19 @@ function scoreWeaponQuality(weapon, build) {
   // Stops always discount and each additional stop discounts more than a circle step.
   const stopDiscount = -Array.from({ length: stopCount }, (_, index) => 1.45 + (index * 0.65)).reduce((a, b) => a + b, 0);
 
-  const powerScore = (circleAdjustment + stopDiscount) * rank(build, 'rankWeaponsPower');
+  const powerScoreRaw = (circleAdjustment + stopDiscount) * rank(build, 'rankWeaponsPower');
   const structureScore = positivePart(weapon?.structure) * 0.35;
 
-  return (rangeScore * 1.35 * rank(build, 'rankWeaponsRange'))
-    + powerScore
+  const baseWeaponValue = (rangeScore * 1.35 * rank(build, 'rankWeaponsRange'))
     + (structureScore * rank(build, 'rankWeaponsStructure'));
+
+  // Discounts can be substantial, but never reduce a mount below 50% of base value.
+  const maxDiscount = baseWeaponValue * 0.5;
+  const powerScore = powerScoreRaw < 0
+    ? Math.max(powerScoreRaw, -maxDiscount)
+    : powerScoreRaw;
+
+  return baseWeaponValue + powerScore;
 }
 
 
