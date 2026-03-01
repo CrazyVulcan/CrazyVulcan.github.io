@@ -496,29 +496,6 @@ function scoreWeapons(build) {
     const singleMountValue = weaponQuality * arcWeight;
     return total + (singleMountValue * scaledMountCount(mountCount));
   }, 0);
-}
-
-function weaponProfileScale(build) {
-  const weapons = normalizeWeapons(build?.weapons);
-  if (!weapons.length) {
-    return 1;
-  }
-
-  const arsenalPressure = weapons.reduce((total, weapon) => {
-    const ranges = Array.isArray(weapon?.ranges) ? weapon.ranges : [];
-    const mountScale = scaledMountCount(effectiveMountCount(weapon));
-
-    const rangeDicePressure = ranges.reduce((rangeTotal, range) => {
-      const diceScore = sum((Array.isArray(range?.dice) ? range.dice : []).map((die) => diceColorWeight(die)));
-      const bonus = positivePart(range?.bonus);
-      const maxDistance = bandMax(range?.band);
-      const rangeReach = 0.55 + (Math.max(1, maxDistance) / 20);
-      const rangeType = rangeTypeWeight(String(range?.type || 'black').toLowerCase());
-      return rangeTotal + ((diceScore + bonus) * rangeReach * rangeType);
-    }, 0);
-
-    return total + (rangeDicePressure * mountScale * 0.12);
-  }, 0);
 
   const growthBand = Math.max(0, arsenalPressure - 2.2);
   const growth = Math.pow(growthBand, 1.08) * 0.045;
@@ -575,6 +552,59 @@ function hullScaleEscalation(build, contributions) {
   return 1 + Math.min(0.28, growth);
 }
 
+function weaponProfileScale(build) {
+  const weapons = normalizeWeapons(build?.weapons);
+  if (!weapons.length) {
+    return 1;
+  }
+
+  const arsenalPressure = weapons.reduce((total, weapon) => {
+    const ranges = Array.isArray(weapon?.ranges) ? weapon.ranges : [];
+    const mountScale = scaledMountCount(effectiveMountCount(weapon));
+
+    const rangeDicePressure = ranges.reduce((rangeTotal, range) => {
+      const diceScore = sum((Array.isArray(range?.dice) ? range.dice : []).map((die) => diceColorWeight(die)));
+      const bonus = positivePart(range?.bonus);
+      const maxDistance = bandMax(range?.band);
+      const rangeReach = 0.55 + (Math.max(1, maxDistance) / 20);
+      const rangeType = rangeTypeWeight(String(range?.type || 'black').toLowerCase());
+      return rangeTotal + ((diceScore + bonus) * rangeReach * rangeType);
+    }, 0);
+
+    return total + (rangeDicePressure * mountScale * 0.12);
+  }, 0);
+
+  const growthBand = Math.max(0, arsenalPressure - 2.2);
+  const growth = Math.pow(growthBand, 1.08) * 0.045;
+
+  // Keeps heavy arsenals expensive without exploding extreme edge-case profiles.
+  return 1 + Math.min(0.5, growth);
+}
+
+
+function hullScaleEscalation(build, contributions) {
+  const structure = build?.structure || {};
+  const structureTotal = positivePart(structure.repairable) + positivePart(structure.permanent);
+
+  const tracks = Array.isArray(build?.powerSystem?.tracks) ? build.powerSystem.tracks : [];
+  const powerPoints = sum(tracks.map((track) => positivePart(track?.points)));
+
+  const weapons = normalizeWeapons(build?.weapons);
+  const mountCoverage = sum(weapons.map((weapon) => effectiveMountCount(weapon)));
+
+  const capabilityIndex = (structureTotal * 0.06)
+    + (powerPoints * 0.05)
+    + (weapons.length * 0.4)
+    + (mountCoverage * 0.04)
+    + ((positivePart(contributions?.weapons) + positivePart(contributions?.defense)) * 0.008);
+
+  const growthBand = Math.max(0, capabilityIndex - 7.5);
+  const growth = Math.pow(growthBand, 1.15) * 0.028;
+
+  // Cap keeps escalation predictable while still separating capital builds from midline ships.
+  return 1 + Math.min(0.28, growth);
+}
+
 
 export function calculatePointValue(build) {
   const contributions = {
@@ -602,11 +632,11 @@ export function calculatePointValue(build) {
     functions: contributions.functions
   };
 
-  const weightedCoreScore = (sum(Object.values(nonWeaponContributions)) * sizeMultiplier)
-    + contributions.weapons;
+  const weightedCoreScore = sum(Object.values(nonWeaponContributions)) * sizeMultiplier;
+  const weightedWeaponScore = contributions.weapons * weaponScale;
 
-  const baseScore = weightedCoreScore * rank(build, 'rankGlobalScale');
+  const baseScore = (weightedCoreScore + weightedWeaponScore) * rank(build, 'rankGlobalScale');
   const escalation = hullScaleEscalation(build, contributions);
-  const totalScore = baseScore * escalation * weaponScale;
+  const totalScore = baseScore * escalation;
   return Math.max(1, Math.round(totalScore));
 }
