@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RPG Campaign Region Generator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>RPG Region & POI Generator</h1>
+    <p>Deterministic campaign generator for districts, POIs, NPCs, quest hooks, and follow-ups.</p>
+  </header>
+
+  <main class="layout">
+    <section class="panel map-panel" aria-label="Map canvas">
+      <h2>Map Canvas</h2>
+      <p class="help">Click a district tile to inspect details.</p>
+      <div id="mapCanvas" class="map-canvas" role="grid" aria-label="District map"></div>
+    </section>
+
+    <section class="panel detail-panel" aria-live="polite" aria-label="Detail panel">
+      <h2>Detail Panel</h2>
+      <div id="detailContent" class="detail-content">
+        <p>Select a district to view Place, POIs, NPC contact, and quest hook.</p>
+      </div>
+    </section>
+
+    <section class="panel controls-panel" aria-label="Controls and logs">
+      <h2>Controls & Logs</h2>
+
+      <label for="seedInput" title="Same seed + region size + CSV data = same output.">Seed</label>
+      <div class="inline-row">
+        <input id="seedInput" type="text" value="mistwatch-001" />
+        <button id="randomSeedBtn" title="Create a random seed value">Randomize</button>
+      </div>
+
+      <label for="sizeInput" title="How many districts to create">Region Size (1–8)</label>
+      <input id="sizeInput" type="number" min="1" max="8" value="6" />
+
+      <h3>Tables</h3>
+      <p class="help">This build uses bundled world tables based on your shared format (no CSV upload).</p>
+      <button id="generateBtn" title="Generate deterministic region">Generate Region</button>
+
+      <h3>Tag Filter</h3>
+      <p class="help">Click tags to highlight matching Places/POIs/NPCs and narrow POIs.</p>
+      <div id="tagFilters" class="tag-filters"></div>
+
+      <div class="button-row">
+        <button id="exportBtn" title="Export full region JSON">Export Region</button>
+      </div>
+
+      <h3>Generator Log</h3>
+      <ol id="logList" class="log-list"></ol>
+    </section>
+  </main>
+
+  <dialog id="exportModal">
+    <form method="dialog" class="modal-content">
+      <h3>Exported Region JSON</h3>
+      <textarea id="exportText" rows="14"></textarea>
+      <div class="button-row">
+        <button id="copyExportBtn" type="button">Copy to Clipboard</button>
+        <button id="downloadExportBtn" type="button">Download JSON</button>
+        <button type="submit">Close</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
