@@ -22,7 +22,7 @@ This version focuses on your requested **drill-down region flow** and removes CS
    - D: Guild HQ, Seat of Power
    - E: Docks, Warehouse, Trade, Bank
 5. Drill down to a specific site (for example `Factory -> Magic`, `Tower -> Armory`, `Seat of Power -> King`).
-6. Attach an **NPC placeholder** (race/class/motivation starter tables + d6 attitude) and generate a unique one-sentence story hook from the combination of motivation + region theme + district location.
+6. Attach an **NPC placeholder** (race/class/motivation starter tables + d6 attitude) and generate a unique one-sentence story hook from motivation + region theme + district location, plus a theme+district setting quirk for added context variety.
 
 ## Reproducibility
 Same **seed + population center count** gives identical output.
