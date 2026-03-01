@@ -116,12 +116,12 @@ function mountFacingScore(weapon) {
 const SECTION_MULTIPLIERS = {
   identity: 0.4,
   engineering: 1.2,
-  defense: 1.9,
+  defense: 2.05,
   maneuvering: 1.4,
   systemsCrew: 1.0,
   powerTracks: 1.9,
   functions: 1.7,
-  weapons: 1.35
+  weapons: 2.25
 };
 
 const PV_RANKING_BASELINE = {
@@ -132,8 +132,10 @@ const PV_RANKING_BASELINE = {
   rankEngineeringSpecial: 0.75,
   rankDefenseShields: 0.42,
   rankDefenseArmor: 0.4,
-  rankDefenseRepairable: 0.3,
-  rankDefensePermanent: 0.28,
+  // Structure durability was underpriced during battleship tuning passes.
+  // Boost both repairable and permanent structure weights by ~3x.
+  rankDefenseRepairable: 0.9,
+  rankDefensePermanent: 0.84,
   rankDefenseShieldGen: 0.45,
   rankManeuverMaxAcc: 0.65,
   rankManeuverGreen: 0.5,
@@ -181,6 +183,53 @@ function rank(build, key) {
   return Number.isFinite(baseline) ? Math.max(0, baseline) : 1;
 }
 
+function sizeClassFromStructure(build) {
+  const structure = build?.structure || {};
+  const total = positivePart(structure.repairable) + positivePart(structure.permanent);
+
+  if (total < 5) {
+    return 1;
+  }
+  if (total <= 8) {
+    return 2;
+  }
+  if (total <= 10) {
+    return 3;
+  }
+  if (total <= 12) {
+    return 4;
+  }
+  if (total <= 14) {
+    return 5;
+  }
+  if (total <= 16) {
+    return 6;
+  }
+  if (total <= 19) {
+    return 7;
+  }
+  return 8;
+}
+
+function sizeClassCostMultiplier(sizeClass) {
+  const normalized = clampSizeClass(sizeClass);
+  const sizeScale = {
+    1: 0.2,
+    2: 0.3,
+    3: 0.35,
+    4: 0.4,
+    5: 0.45,
+    6: 0.6,
+    7: 0.75,
+    8: 1.0
+  };
+  return sizeScale[normalized] ?? 1.0;
+}
+
+function clampSizeClass(value) {
+  return Math.min(8, Math.max(1, positivePart(value, 1)));
+}
+
 
 function scoreIdentity(build) {
   const identity = build?.identity || {};
@@ -193,7 +242,8 @@ function scoreIdentity(build) {
 
 function scoreEngineering(build) {
   const engineering = build?.engineering || {};
-  return (positivePart(engineering.move) * 1.4 * rank(build, 'rankEngineeringMove'))
+  const sizeClass = sizeClassFromStructure(build);
+  return (sizeClass * 1.4 * rank(build, 'rankEngineeringMove'))
     + (positivePart(engineering.vector) * 1.5 * rank(build, 'rankEngineeringVector'))
     + (positivePart(engineering.turn) * 1.2 * rank(build, 'rankEngineeringTurn'))
     + (positivePart(engineering.special) * 1.1 * rank(build, 'rankEngineeringSpecial'));
@@ -228,9 +278,16 @@ function scoreDefense(build) {
     * (sum([shields.forward, shields.aft, shields.port, shields.starboard]) * 0.05))
     * ((rank(build, 'rankDefenseRepairable') + rank(build, 'rankDefensePermanent')) / 2);
 
+  // Capital-hull premium: large structure pools and onboard repair scale better in long fights.
+  const capitalHullPremium = 1
+    + Math.min(0.55, Math.max(0, (totalStructure - 12) * 0.03) + (repairable * 0.05));
+
   const generatorScore = positivePart(build?.shieldGen) * 1.3 * rank(build, 'rankDefenseShieldGen');
 
-  return shieldScore + armorScore + repairableScore + permanentScore + durabilitySynergy + generatorScore;
+  return shieldScore
+    + armorScore
+    + ((repairableScore + permanentScore + durabilitySynergy) * capitalHullPremium)
+    + generatorScore;
 }
 
 function scoreManeuvering(build) {
@@ -370,8 +427,38 @@ function scoreWeaponQuality(weapon, build) {
   const powerScoreRaw = (circleAdjustment + stopDiscount) * rank(build, 'rankWeaponsPower');
   const structureScore = positivePart(weapon?.structure) * 0.35;
 
+  const traitKeywords = {
+    HVY: 1.2,
+    FTL: 1.0,
+    NOBAT: 0.85,
+    LEAK: 1.0,
+    STR: 1.0,
+    DMG: 1.1,
+    'PD MODE': 0.55
+  };
+  const traits = (Array.isArray(weapon?.traits) ? weapon.traits : [])
+    .map((trait) => String(trait || '').trim())
+    .filter(Boolean);
+  const traitKeywordScore = traits.reduce((total, trait) => {
+    const upper = trait.toUpperCase();
+    const direct = traitKeywords[upper];
+    if (Number.isFinite(direct)) {
+      return total + direct;
+    }
+    return total + 0.55;
+  }, 0);
+  const specialText = String(weapon?.special || '').trim();
+  const specialTokenCount = specialText
+    ? specialText.split(/[\s,/:;()]+/).filter(Boolean).length
+    : 0;
+  const traitsAndSpecialScore = ((traitKeywordScore * 0.65)
+    + (traits.length * 0.2)
+    + Math.min(3.25, (specialText ? 0.75 : 0) + (specialTokenCount * 0.16)))
+    * rank(build, 'rankWeaponsTraitsSpecial');
+
   const baseWeaponValue = (rangeScore * 1.35 * rank(build, 'rankWeaponsRange'))
-    + (structureScore * rank(build, 'rankWeaponsStructure'));
+    + (structureScore * rank(build, 'rankWeaponsStructure'))
+    + traitsAndSpecialScore;
 
   // Discounts can be substantial, but never reduce a mount below 50% of base value.
   const maxDiscount = baseWeaponValue * 0.5;
@@ -390,6 +477,16 @@ function effectiveMountCount(weapon) {
   return Math.min(8, rawCount);
 }
 
+function scaledMountCount(mountCount) {
+  const normalizedCount = Math.max(1, positivePart(mountCount, 1));
+  if (normalizedCount <= 1) {
+    return 1;
+  }
+
+  // Additional mounts improve coverage and redundancy, but with diminishing value.
+  return 1 + (Math.pow(normalizedCount - 1, 0.8) * 0.75);
+}
+
 function scoreWeapons(build) {
   const weapons = normalizeWeapons(build?.weapons);
   return weapons.reduce((total, weapon) => {
@@ -397,8 +494,61 @@ function scoreWeapons(build) {
     const arcWeight = 0.12 + (mountFacingScore(weapon) * rank(build, 'rankWeaponsMountArc'));
     const weaponQuality = Math.max(0, scoreWeaponQuality(weapon, build));
     const singleMountValue = weaponQuality * arcWeight;
-    return total + (singleMountValue * mountCount);
+    return total + (singleMountValue * scaledMountCount(mountCount));
   }, 0);
+}
+
+function weaponProfileScale(build) {
+  const weapons = normalizeWeapons(build?.weapons);
+  if (!weapons.length) {
+    return 1;
+  }
+
+  const arsenalPressure = weapons.reduce((total, weapon) => {
+    const ranges = Array.isArray(weapon?.ranges) ? weapon.ranges : [];
+    const mountScale = scaledMountCount(effectiveMountCount(weapon));
+
+    const rangeDicePressure = ranges.reduce((rangeTotal, range) => {
+      const diceScore = sum((Array.isArray(range?.dice) ? range.dice : []).map((die) => diceColorWeight(die)));
+      const bonus = positivePart(range?.bonus);
+      const maxDistance = bandMax(range?.band);
+      const rangeReach = 0.55 + (Math.max(1, maxDistance) / 20);
+      const rangeType = rangeTypeWeight(String(range?.type || 'black').toLowerCase());
+      return rangeTotal + ((diceScore + bonus) * rangeReach * rangeType);
+    }, 0);
+
+    return total + (rangeDicePressure * mountScale * 0.12);
+  }, 0);
+
+  const growthBand = Math.max(0, arsenalPressure - 2.2);
+  const growth = Math.pow(growthBand, 1.08) * 0.045;
+
+  // Keeps heavy arsenals expensive without exploding extreme edge-case profiles.
+  return 1 + Math.min(0.5, growth);
+}
+
+
+function hullScaleEscalation(build, contributions) {
+  const structure = build?.structure || {};
+  const structureTotal = positivePart(structure.repairable) + positivePart(structure.permanent);
+
+  const tracks = Array.isArray(build?.powerSystem?.tracks) ? build.powerSystem.tracks : [];
+  const powerPoints = sum(tracks.map((track) => positivePart(track?.points)));
+
+  const weapons = normalizeWeapons(build?.weapons);
+  const mountCoverage = sum(weapons.map((weapon) => effectiveMountCount(weapon)));
+
+  const capabilityIndex = (structureTotal * 0.06)
+    + (powerPoints * 0.05)
+    + (weapons.length * 0.4)
+    + (mountCoverage * 0.04)
+    + ((positivePart(contributions?.weapons) + positivePart(contributions?.defense)) * 0.008);
+
+  const growthBand = Math.max(0, capabilityIndex - 7.5);
+  const growth = Math.pow(growthBand, 1.15) * 0.028;
+
+  // Cap keeps escalation predictable while still separating capital builds from midline ships.
+  return 1 + Math.min(0.28, growth);
 }
 
 
@@ -414,6 +564,25 @@ export function calculatePointValue(build) {
     weapons: safeRun(() => scoreWeapons(build)) * SECTION_MULTIPLIERS.weapons
   };
 
-  const totalScore = sum(Object.values(contributions)) * rank(build, 'rankGlobalScale');
+  const sizeClass = sizeClassFromStructure(build);
+  const sizeMultiplier = sizeClassCostMultiplier(sizeClass);
+  const weaponScale = weaponProfileScale(build);
+
+  const nonWeaponContributions = {
+    identity: contributions.identity,
+    engineering: contributions.engineering,
+    defense: contributions.defense,
+    maneuvering: contributions.maneuvering,
+    systemsCrew: contributions.systemsCrew,
+    powerTracks: contributions.powerTracks,
+    functions: contributions.functions
+  };
+
+  const weightedCoreScore = sum(Object.values(nonWeaponContributions)) * sizeMultiplier;
+  const weightedWeaponScore = contributions.weapons * weaponScale;
+
+  const baseScore = (weightedCoreScore + weightedWeaponScore) * rank(build, 'rankGlobalScale');
+  const escalation = hullScaleEscalation(build, contributions);
+  const totalScore = baseScore * escalation;
   return Math.max(1, Math.round(totalScore));
 }
