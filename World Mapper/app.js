@@ -1,27 +1,67 @@
 /*
-Quick README:
-- Parse bundled Place/Shop + Travel/Realm tables (from local sample file) with schema checks.
-- Use seeded RNG + dice roller for deterministic generation.
-- Build region districts with place selection, POIs, NPC contacts, quest hooks, follow-ups.
-- Render map/detail/filter/log UI and support JSON export + localStorage notes/persistence.
+World Mapper Generator Pipeline
+1) Use built-in world tables (Theme -> Population Center -> District Letter -> Location Type -> Specific Site).
+2) Create deterministic RNG from seed so same seed/settings reproduces identical output.
+3) Build centers and districts with drill-down data.
+4) Add NPC + quest placeholders (using race/class/motivation starter tables).
+5) Render map/detail/logs and export JSON. Persist notes + persistent flags via localStorage.
 */
 
-const PLACE_COLUMNS = ["ID", "Category", "Label", "DistrictRange", "DistrictType", "D6Roll", "TypesPOI", "MechanicalEffect", "Tags", "FollowUps", "Persistence"];
-const TRAVEL_COLUMNS = ["ID", "Category", "Label", "TriggerRange", "MechanicalEffect", "FictionText", "Tags", "FollowUps", "Persistence"];
-
-const TOKEN_ALIASES = {
-  vilage: "village", distrects: "districts", distrect: "district", distrecttype: "districttype",
-  militaristic: "militaristic", milteristic: "militaristic", religios: "religious", anchint: "ancient",
-  industrual: "industrial", universty: "university", warhouse: "warehouse", luxery: "luxury",
-  theves: "thieves", merchents: "merchants", explores: "explorers", knowlage: "knowledge",
-  relec: "relic", "seat of power": "seat of power", seatofpower: "seat of power"
+const WORLD_TABLES = {
+  themes: ["Civilized", "Haunted", "Magical", "Isolated", "Frontier", "Militaristic", "Religious", "Decaying", "Ancient", "Industrial"],
+  centerTypes: [
+    { name: "Village", districtCount: 1, letters: ["A"] },
+    { name: "Town", districtCount: 3, letters: ["A", "A", "B"] },
+    { name: "City", districtCount: 5, letters: ["A", "A", "B", "B", "C"] },
+    { name: "Huge City", districtCount: 7, letters: ["B", "B", "C", "C", "C", "D", "E"] },
+    { name: "Port", districtCount: 2, letters: ["A", "E"] },
+  ],
+  letters: {
+    A: ["Farming", "Trade", "Housing", "Manor", "Tower"],
+    B: ["Trade", "Shops", "Factory", "Guilds", "Mansion"],
+    C: ["University", "Palace", "Fortress", "Temple", "Historic"],
+    D: ["Guild HQ", "Seat of Power"],
+    E: ["Docks", "Warehouse", "Trade", "Bank"],
+  },
+  specifics: {
+    Farming: ["Ranch", "Mill", "Farm Land"],
+    Trade: ["General Goods", "Luxury Goods", "Magic Goods"],
+    Housing: ["Town House", "Complexes", "Patchwork"],
+    Manor: ["Vacant", "Old Money", "Lavish", "Library"],
+    Tower: ["Guard Post", "Armory", "Magical Point", "Abandoned"],
+    Shops: ["Mini Market", "Caravan", "Potions", "Alchemy", "Mage Shop", "Blacksmith", "Black Market", "Guild Hall", "Tailor", "Antiquities"],
+    Factory: ["Goods", "Steel", "Weapons", "Magic"],
+    Guilds: ["Crafters", "Thieves", "Merchants", "Explorers", "Mages", "Navigators"],
+    Mansion: ["Judge", "Merchants", "Old Money", "Cryptic"],
+    University: ["Magic", "Arts", "Lore", "Fighting", "Adventuring", "Prep School"],
+    Palace: ["Prince/Princess", "Baron", "Duke", "Noble House"],
+    Fortress: ["Holy Seat", "Warlord", "Prison", "Stronghold"],
+    Temple: ["Arcane", "Knowledge", "Power", "Hope or Healing"],
+    Historic: ["Heroes Home", "Battle Site", "Relic"],
+    "Guild HQ": ["Crafters", "Thieves", "Merchants", "Explorers", "Mages", "Navigators"],
+    "Seat of Power": ["King", "Vassal", "Lord"],
+    Docks: ["Cargo Piers", "Fishing Quay", "Naval Berth"],
+    Warehouse: ["Grain Stores", "Customs Vault", "Smuggler Lockup"],
+    Bank: ["Coin House", "Loan Hall", "Vault Annex"],
+  },
 };
 
-const state = {
-  placeRows: [], travelRows: [], followUpIndex: new Map(),
-  region: null, selectedDistrictId: null, selectedTags: new Set(), logs: [],
-  notes: {}, persistentOverrides: {}
+const NPC_TABLES = {
+  rarity: [
+    { min: 1, max: 50, value: "Common" },
+    { min: 51, max: 80, value: "Uncommon" },
+    { min: 81, max: 100, value: "Rare" },
+  ],
+  races: {
+    Common: [[1, 30, "Human"], [31, 50, "Elf"], [51, 70, "Dwarf"], [71, 80, "Half-Orc"], [81, 90, "Halfling"], [91, 100, "Dragonborn"]],
+    Uncommon: [[1, 20, "Gnome"], [21, 40, "Tiefling"], [41, 60, "Half-Elf"], [61, 65, "Fairy Folk"], [66, 75, "Goblin"], [76, 90, "Tabaxi"], [91, 100, "Triton"]],
+    Rare: [[1, 20, "Tortle"], [21, 40, "Warforged"], [41, 60, "Centaur"], [61, 80, "Minotaur"], [81, 100, "Changeling"]],
+  },
+  classes: [[1,10,"Fighter"],[11,20,"Ranger"],[21,30,"Rogue"],[31,40,"Wizard"],[41,50,"Cleric"],[51,55,"Barbarian"],[56,60,"Bard"],[61,70,"Monk"],[71,80,"Druid"],[81,85,"Warlock"],[86,90,"Sorcerer"],[91,95,"Artificer"],[96,100,"Gunslinger"]],
+  motivations: [[1,9,"Wealth"],[10,18,"Fame"],[19,27,"Glory"],[28,38,"Adventure"],[39,46,"Truth"],[47,54,"Knowledge"],[55,60,"Revenge"],[61,65,"Romance"],[66,75,"Power"],[76,84,"Freedom"],[85,92,"Order"],[93,100,"Escape"]]
 };
+
+const state = { region: null, selectedDistrictKey: null, selectedTags: new Set(), logs: [], notes: {}, persistentOverrides: {} };
 
 const els = {
   seedInput: document.getElementById("seedInput"),
@@ -40,301 +80,95 @@ const els = {
 };
 
 const log = (msg) => { state.logs.push(`${new Date().toLocaleTimeString()} — ${msg}`); renderLogs(); };
-const nTok = (s) => {
-  const t = String(s || "").trim().toLowerCase();
-  return TOKEN_ALIASES[t] || t;
-};
-const listField = (v) => String(v || "").split(/[;,]/).map((x) => nTok(x)).filter(Boolean);
+const slug = (t) => String(t || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
-function parseRange(s) {
-  const m = String(s || "").trim().match(/^(\d+)\s*(?:-\s*(\d+))?$/);
-  if (!m) return null;
-  const min = Number(m[1]);
-  const max = Number(m[2] || m[1]);
-  return { min, max };
-}
+function hashSeed(seed) { let h = 1779033703 ^ seed.length; for (let i=0;i<seed.length;i++){ h = Math.imul(h ^ seed.charCodeAt(i), 3432918353); h = (h << 13) | (h >>> 19);} h = Math.imul(h ^ (h >>> 16), 2246822507); h = Math.imul(h ^ (h >>> 13), 3266489909); return (h ^= h >>> 16) >>> 0; }
+function mulberry32(a){ return ()=>{ let t=(a+=0x6d2b79f5); t=Math.imul(t^(t>>>15),t|1); t^=t+Math.imul(t^(t>>>7),t|61); return ((t^(t>>>14))>>>0)/4294967296; }; }
+function createRng(seed){ const rand=mulberry32(hashSeed(seed)); return { int:(min,max)=>Math.floor(rand()*(max-min+1))+min, pick:(arr)=>arr[Math.floor(rand()*arr.length)] }; }
+function rollDice(notation, rng){ const m=String(notation).toLowerCase().match(/^(\d*)d(\d+)$/); if(!m) throw new Error(`Invalid notation ${notation}`); const n=Number(m[1]||1),s=Number(m[2]); let total=0; for(let i=0;i<n;i++) total += rng.int(1,s); return total; }
 
-function hashSeed(seed) {
-  let h = 1779033703 ^ seed.length;
-  for (let i = 0; i < seed.length; i++) { h = Math.imul(h ^ seed.charCodeAt(i), 3432918353); h = (h << 13) | (h >>> 19); }
-  h = Math.imul(h ^ (h >>> 16), 2246822507);
-  h = Math.imul(h ^ (h >>> 13), 3266489909);
-  return (h ^= h >>> 16) >>> 0;
-}
-function mulberry32(a) { return () => { let t = (a += 0x6d2b79f5); t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
-function createRng(seed) {
-  const rand = mulberry32(hashSeed(seed));
-  return { int: (min, max) => Math.floor(rand() * (max - min + 1)) + min, pick: (arr) => arr[Math.floor(rand() * arr.length)] };
-}
-function rollDice(notation, rng) {
-  const m = String(notation).toLowerCase().trim().match(/^(\d*)d(\d+)$/);
-  if (!m) throw new Error(`Invalid dice notation: ${notation}`);
-  const count = Number(m[1] || 1), sides = Number(m[2]);
-  let total = 0;
-  for (let i = 0; i < count; i++) total += rng.int(1, sides);
-  return total;
-}
-
-function parseCSV(text) {
-  const rows = [];
-  let i = 0, inQuotes = false, field = "", row = [];
-  while (i < text.length) {
-    const ch = text[i];
-    if (ch === '"') {
-      if (inQuotes && text[i + 1] === '"') { field += '"'; i++; }
-      else inQuotes = !inQuotes;
-    } else if (ch === ',' && !inQuotes) { row.push(field); field = ""; }
-    else if ((ch === '\n' || ch === '\r') && !inQuotes) {
-      if (ch === '\r' && text[i + 1] === '\n') i++;
-      row.push(field); field = "";
-      if (row.some((c) => c.trim() !== "")) rows.push(row);
-      row = [];
-    } else field += ch;
-    i++;
+function fromRange(roll, arr, fallback="Unknown") {
+  for (const r of arr) {
+    const min = r.min ?? r[0];
+    const max = r.max ?? r[1];
+    const val = r.value ?? r[2];
+    if (roll >= min && roll <= max) return val;
   }
-  row.push(field);
-  if (row.some((c) => c.trim() !== "")) rows.push(row);
-  if (!rows.length) throw new Error("CSV is empty.");
-  const headers = rows[0].map((h) => h.trim());
-  const data = rows.slice(1).map((r) => {
-    const obj = {}; headers.forEach((h, idx) => { obj[h] = (r[idx] || "").trim(); }); return obj;
-  });
-  return { headers, data };
+  return fallback;
 }
 
-function requireColumns(headers, required, label) {
-  const missing = required.filter((c) => !headers.includes(c));
-  if (missing.length) throw new Error(`${label} CSV missing columns: ${missing.join(", ")}`);
-}
+function generateNpcPlaceholder(rng, district) {
+  const rarityRoll = rollDice("d100", rng);
+  const rarity = fromRange(rarityRoll, NPC_TABLES.rarity, "Common");
+  const raceRoll = rollDice("d100", rng);
+  const race = fromRange(raceRoll, NPC_TABLES.races[rarity], "Human");
+  const classRoll = rollDice("d100", rng);
+  const npcClass = fromRange(classRoll, NPC_TABLES.classes, "Fighter");
+  const motivationRoll = rollDice("d100", rng);
+  const motivation = fromRange(motivationRoll, NPC_TABLES.motivations, "Adventure");
 
-function setRows(placeRows, travelRows) {
-  state.placeRows = placeRows;
-  state.travelRows = travelRows;
-  if (!state.placeRows.length) throw new Error("No Place/Shop rows loaded.");
-  state.followUpIndex = new Map();
-  [...state.placeRows, ...state.travelRows].forEach((r) => state.followUpIndex.set(r.ID, r));
-  log(`Loaded ${state.placeRows.length} place/shop rows and ${state.travelRows.length} travel/realm rows.`);
-}
-
-function parseMixedSampleRows(rows) {
-  const placeRows = rows.filter((r) => /meetingplace|shop/i.test(r.Category || ""));
-  const travelRows = rows
-    .filter((r) => /travelevent|realmtrait/i.test(r.Category || ""))
-    .map((r) => ({
-      ID: r.ID, Category: r.Category, Label: r.Label,
-      TriggerRange: r.DistrictRange,
-      MechanicalEffect: r.DistrictType,
-      FictionText: r.D6Roll,
-      Tags: r.TypesPOI,
-      FollowUps: r.MechanicalEffect,
-      Persistence: r.Tags || "no"
-    }));
-  return { placeRows, travelRows };
-}
-
-function districtMatch(place, idx) {
-  const r = parseRange(place.DistrictRange);
-  return !!r && idx >= r.min && idx <= r.max;
-}
-
-
-function rollD100(rng) { return rollDice("d100", rng); }
-
-function pickFromRangeTable(roll, table, fallback = "Unknown") {
-  const hit = table.find((entry) => roll >= entry.min && roll <= entry.max);
-  return hit ? hit.value : fallback;
-}
-
-const NPC_RACE_TABLE = {
-  rarity: [
-    { min: 1, max: 50, value: "Common" },
-    { min: 51, max: 80, value: "Uncommon" },
-    { min: 81, max: 100, value: "Rare" },
-  ],
-  common: [
-    { min: 1, max: 30, value: "Human" },
-    { min: 31, max: 50, value: "Elf" },
-    { min: 51, max: 70, value: "Dwarf" },
-    { min: 71, max: 80, value: "Half-Orc" },
-    { min: 81, max: 90, value: "Halfling" },
-    { min: 91, max: 100, value: "Dragonborn" },
-  ],
-  uncommon: [
-    { min: 1, max: 20, value: "Gnome" },
-    { min: 21, max: 40, value: "Tiefling" },
-    { min: 41, max: 60, value: "Half-Elf" },
-    { min: 61, max: 65, value: "Fairy Folk" },
-    { min: 66, max: 75, value: "Goblin" },
-    { min: 76, max: 90, value: "Tabaxi" },
-    { min: 91, max: 100, value: "Triton" },
-  ],
-  rare: [
-    { min: 1, max: 20, value: "Tortle" },
-    { min: 21, max: 40, value: "Warforged" },
-    { min: 41, max: 60, value: "Centaur" },
-    { min: 61, max: 80, value: "Minotaur" },
-    { min: 81, max: 100, value: "Changeling" },
-  ],
-};
-
-const NPC_CLASS_TABLE = [
-  { min: 1, max: 10, value: "Fighter" },
-  { min: 11, max: 20, value: "Ranger" },
-  { min: 21, max: 30, value: "Rogue" },
-  { min: 31, max: 40, value: "Wizard" },
-  { min: 41, max: 50, value: "Cleric" },
-  { min: 51, max: 55, value: "Barbarian" },
-  { min: 56, max: 60, value: "Bard" },
-  { min: 61, max: 70, value: "Monk" },
-  { min: 71, max: 80, value: "Druid" },
-  { min: 81, max: 85, value: "Warlock" },
-  { min: 86, max: 90, value: "Sorcerer" },
-  { min: 91, max: 95, value: "Artificer" },
-  { min: 96, max: 100, value: "Gunslinger" },
-];
-
-const NPC_MOTIVATION_TABLE = [
-  { min: 1, max: 9, value: "Wealth" },
-  { min: 10, max: 18, value: "Fame" },
-  { min: 19, max: 27, value: "Glory" },
-  { min: 28, max: 38, value: "Adventure" },
-  { min: 39, max: 46, value: "Truth" },
-  { min: 47, max: 54, value: "Knowledge" },
-  { min: 55, max: 60, value: "Revenge" },
-  { min: 61, max: 65, value: "Romance" },
-  { min: 66, max: 75, value: "Power" },
-  { min: 76, max: 84, value: "Freedom" },
-  { min: 85, max: 92, value: "Order" },
-  { min: 93, max: 100, value: "Escape" },
-];
-
-function generateNpcRace(rng) {
-  const rarityRoll = rollD100(rng);
-  const rarity = pickFromRangeTable(rarityRoll, NPC_RACE_TABLE.rarity, "Common");
-  const raceRoll = rollD100(rng);
-  const racePool = rarity.toLowerCase() === "common" ? NPC_RACE_TABLE.common
-    : (rarity.toLowerCase() === "uncommon" ? NPC_RACE_TABLE.uncommon : NPC_RACE_TABLE.rare);
-  const race = pickFromRangeTable(raceRoll, racePool, "Human");
-  return { rarity, rarityRoll, raceRoll, race };
-}
-
-function attitude(roll) {
-  const table = {
-    1: ["Hostile", "Demands payment before cooperation."], 2: ["Wary", "Needs proof before helping."],
-    3: ["Neutral", "Shares only basic info."], 4: ["Open", "Will trade a favor for a favor."],
-    5: ["Helpful", "Offers useful lead or resource."], 6: ["Friendly", "Offers direct help and advocacy."]
-  };
-  return { label: table[roll][0], effect: table[roll][1] };
-}
-
-function makeNPC(dId, place, rng) {
-  const names = ["Ari", "Thorne", "Mara", "Brigg", "Sel", "Jun", "Kest", "Rook"];
-  const quirks = ["speaks in proverbs", "never removes gloves", "collects broken keys", "keeps coded notes"];
-
-  const raceMeta = generateNpcRace(rng);
-  const classRoll = rollD100(rng);
-  const npcClass = pickFromRangeTable(classRoll, NPC_CLASS_TABLE, "Fighter");
-  const motivationRoll = rollD100(rng);
-  const motivation = pickFromRangeTable(motivationRoll, NPC_MOTIVATION_TABLE, "Adventure");
-
-  const attitudeRoll = rollDice("d6", rng);
   return {
-    id: `NPC-${dId}-${rng.int(100, 999)}`,
-    name: rng.pick(names),
-    role: `${raceMeta.race} ${npcClass}`,
-    race: raceMeta.race,
-    raceRarity: raceMeta.rarity,
-    raceRolls: { rarityRoll: raceMeta.rarityRoll, raceRoll: raceMeta.raceRoll },
-    class: npcClass,
-    classRoll,
+    id: `npc-${district.id}`,
+    name: rng.pick(["Ari", "Thorne", "Mara", "Brigg", "Sel", "Jun", "Kest", "Rook"]),
+    race,
+    raceRarity: rarity,
+    npcClass,
     motivation,
-    motivationRoll,
-    attitudeRoll,
-    attitude: attitude(attitudeRoll),
-    goal: `${motivation.toLowerCase()}-driven objective near ${place.Label}`,
-    quirk: rng.pick(quirks),
-    contactTag: rng.pick(place.tags.length ? place.tags : ["local"])
+    attitudeRoll: rollDice("d6", rng),
+    placeholderQuestHook: `Placeholder: ${motivation}-driven objective tied to ${district.specific}.`,
+    rolls: { rarityRoll, raceRoll, classRoll, motivationRoll }
   };
 }
 
-function makeHook(place, npc, rng) {
-  const tag = rng.pick(place.tags.length ? place.tags : ["frontier"]);
-  const objective = rng.pick([
-    `Investigate escalating trouble around ${place.Label}`,
-    `Escort a team through the ${place.Label} district`,
-    `Retrieve evidence hidden near ${place.Label}`
-  ]);
-  const complication = rng.pick([
-    `${tag} hazards worsen every dusk`,
-    `a rival faction shadows ${npc.name}`,
-    `a local pact tied to ${place.Label} is collapsing`
-  ]);
-  const rewardHint = rng.pick(["favor with local powers", "access to restricted records", "payment plus a relic lead"]);
-  const urgency = Math.min(5, Math.ceil(rollDice("d6", rng) / 1.2));
-  return { objective, complication, rewardHint, urgency };
-}
-
-function enqueueFollowUps(entity, queue, rng) {
-  listField(entity.FollowUps).forEach((f) => queue.push({ name: f, source: entity.ID, roll: rollDice("d6", rng) }));
-}
-function resolveFollowUps(queue) {
-  while (queue.length) {
-    const item = queue.shift();
-    const found = [...state.followUpIndex.values()].find((r) => nTok(r.ID) === item.name || nTok(r.Label) === item.name);
-    if (found) log(`Resolved follow-up "${item.name}" from ${item.source} -> ${found.ID}.`);
-    else log(`Skipped follow-up "${item.name}" from ${item.source}: missing table row.`);
-  }
-}
-
-function buildRegion(seed, size) {
+function buildRegion(seed, centerCount) {
   const rng = createRng(seed);
-  const queue = [];
+  const theme = rng.pick(WORLD_TABLES.themes);
+
+  const centers = [];
   const districts = [];
 
-  for (let i = 1; i <= size; i++) {
-    const matches = state.placeRows.filter((p) => districtMatch(p, i));
-    const place = matches.length ? rng.pick(matches) : rng.pick(state.placeRows);
-    if (!matches.length) log(`District ${i}: no DistrictRange match, fallback random place used.`);
+  for (let c = 1; c <= centerCount; c++) {
+    const centerType = rng.pick(WORLD_TABLES.centerTypes);
+    const center = {
+      id: `center-${c}`,
+      name: `${centerType.name} ${c}`,
+      centerType: centerType.name,
+      theme,
+      districtCount: centerType.districtCount,
+      letters: centerType.letters.slice(),
+    };
 
-    const placeTags = listField(place.Tags);
-    const poiBase = listField(place.TypesPOI);
-    const poiCount = rng.int(1, 3);
-    const pois = Array.from({ length: poiCount }, (_, pIdx) => ({
-      id: `POI-${i}-${pIdx + 1}`,
-      type: poiBase.length ? rng.pick(poiBase) : "unknown",
-      summary: `${place.Label} point ${pIdx + 1}`,
-      tags: placeTags
-    }));
-
-    const npc = makeNPC(i, { ...place, tags: placeTags }, rng);
-    const questHook = makeHook({ ...place, tags: placeTags }, npc, rng);
-    const persistent = state.persistentOverrides[place.ID] ?? (nTok(place.Persistence) === "yes");
-
-    districts.push({
-      districtId: i,
-      place: { ...place, tags: placeTags, persistent },
-      pois,
-      npcs: [npc],
-      questHook,
-      note: state.notes[`district-${i}`] || ""
+    center.districts = centerType.letters.map((letter, i) => {
+      const broadType = rng.pick(WORLD_TABLES.letters[letter]);
+      const specific = rng.pick(WORLD_TABLES.specifics[broadType] || [broadType]);
+      const id = `${center.id}-d${i + 1}`;
+      const district = {
+        id,
+        key: id,
+        centerId: center.id,
+        centerName: center.name,
+        theme,
+        letter,
+        broadType,
+        specific,
+        tags: [slug(theme), slug(centerType.name), slug(letter), slug(broadType), slug(specific)].filter(Boolean),
+        persistent: state.persistentOverrides[id] ?? false,
+        note: state.notes[id] || "",
+      };
+      district.npc = generateNpcPlaceholder(rng, district);
+      return district;
     });
 
-    enqueueFollowUps(place, queue, rng);
+    centers.push(center);
+    districts.push(...center.districts);
   }
-
-  const travel = state.travelRows.length ? rng.pick(state.travelRows) : null;
-  if (travel) enqueueFollowUps(travel, queue, rng);
-  resolveFollowUps(queue);
 
   return {
     seed,
-    settings: { regionSize: size },
-    travelHint: travel ? {
-      ...travel,
-      tags: listField(travel.Tags),
-      suggestions: districts.filter((d) => d.place.tags.some((t) => listField(travel.Tags).includes(t))).map((d) => ({ districtId: d.districtId, placeId: d.place.ID, label: d.place.Label }))
-    } : null,
-    districts
+    settings: { centerCount },
+    theme,
+    centers,
+    districts,
   };
 }
 
@@ -347,85 +181,92 @@ function renderMap() {
   state.region.districts.forEach((d) => {
     const b = document.createElement("button");
     b.className = "tile";
-    if (d.districtId === state.selectedDistrictId) b.classList.add("selected");
-    if (d.place.persistent) b.classList.add("persistent");
+    if (d.key === state.selectedDistrictKey) b.classList.add("selected");
+    if (d.persistent) b.classList.add("persistent");
+    if (state.selectedTags.size && [...state.selectedTags].some((t) => d.tags.includes(t))) b.classList.add("highlight");
 
-    const tagHit = state.selectedTags.size && [...state.selectedTags].some((t) => d.place.tags.includes(t) || d.pois.some((p) => p.tags.includes(t) || p.type.includes(t)) || d.npcs.some((n) => n.contactTag === t));
-    if (tagHit) b.classList.add("highlight");
-
-    b.innerHTML = `<span class="idx">District ${d.districtId}</span>${d.place.Label}${d.place.persistent ? ' <span class="persistent-badge">★</span>' : ''}`;
-    b.addEventListener("click", () => { state.selectedDistrictId = d.districtId; renderMap(); renderDetail(); });
+    b.innerHTML = `<span class="idx">${d.centerName} · D${d.id.split('-d').pop()}</span>${d.letter} → ${d.broadType}${d.persistent ? ' <span class="persistent-badge">★</span>' : ''}`;
+    b.addEventListener("click", () => {
+      state.selectedDistrictKey = d.key;
+      renderMap();
+      renderDetail();
+    });
     els.mapCanvas.appendChild(b);
   });
 }
 
 function renderDetail() {
-  const d = state.region?.districts.find((x) => x.districtId === state.selectedDistrictId);
-  if (!d) { els.detailContent.innerHTML = "<p>Select a district to view details.</p>"; return; }
-
-  const visiblePois = d.pois.filter((p) => !state.selectedTags.size || [...state.selectedTags].some((t) => p.tags.includes(t) || p.type.includes(t)));
-  const hint = state.region.travelHint
-    ? `<p class="suggestion">Travel/Realm hint <strong>${state.region.travelHint.Label}</strong>: matching districts ${state.region.travelHint.suggestions.map((s) => s.districtId).join(", ") || "none"}.</p>`
-    : "";
+  const d = state.region?.districts.find((x) => x.key === state.selectedDistrictKey);
+  if (!d) {
+    els.detailContent.innerHTML = "<p>Select a district to view details.</p>";
+    return;
+  }
 
   els.detailContent.innerHTML = `
     <div class="card">
-      <h3>${d.place.Label} ${d.place.persistent ? '<span class="persistent-badge">★ persistent</span>' : ''}</h3>
-      <p>${d.place.MechanicalEffect}</p>
-      <p><strong>Tags:</strong> ${d.place.tags.join(", ") || "none"}</p>
-      ${hint}
+      <h3>${d.centerName} — District ${d.id.split('-d').pop()} ${d.persistent ? '<span class="persistent-badge">★ persistent</span>' : ''}</h3>
+      <p><strong>Theme:</strong> ${d.theme}</p>
+      <p><strong>Drill-down:</strong> Letter ${d.letter} → ${d.broadType} → ${d.specific}</p>
+      <p><strong>Tags:</strong> ${d.tags.join(", ")}</p>
     </div>
-    <div class="card"><h4>POIs (${visiblePois.length}/${d.pois.length})</h4><ul>${visiblePois.map((p) => `<li class="poi-item">${p.type} — ${p.summary}</li>`).join("")}</ul></div>
-    <div class="card"><h4>NPC Contact</h4>${d.npcs.map((n) => `<p><strong>${n.name}</strong> (${n.role}) | d6 ${n.attitudeRoll} ${n.attitude.label}: ${n.attitude.effect}<br/>Goal: ${n.goal}. Quirk: ${n.quirk}. Tag: ${n.contactTag}<br/>Race: ${n.race} (${n.raceRarity}, rolls ${n.raceRolls.rarityRoll}/${n.raceRolls.raceRoll}) | Class: ${n.class} (d100 ${n.classRoll}) | Motivation: ${n.motivation} (d100 ${n.motivationRoll})</p>`).join("")}</div>
-    <div class="card"><h4>Quest Hook</h4><p>${d.questHook.objective}; complication: ${d.questHook.complication}; reward: ${d.questHook.rewardHint}. <strong>Urgency:</strong> ${d.questHook.urgency}/5.</p></div>
     <div class="card">
-      <div class="button-row"><button id="followUpBtn">Roll Follow-up</button><button id="persistentBtn">Mark Persistent</button></div>
+      <h4>NPC Placeholder</h4>
+      <p><strong>${d.npc.name}</strong> — ${d.npc.race} ${d.npc.npcClass} (${d.npc.raceRarity})<br/>
+      Motivation: ${d.npc.motivation} | Attitude d6: ${d.npc.attitudeRoll}<br/>
+      ${d.npc.placeholderQuestHook}<br/>
+      <em>Rolls: rarity ${d.npc.rolls.rarityRoll}, race ${d.npc.rolls.raceRoll}, class ${d.npc.rolls.classRoll}, motivation ${d.npc.rolls.motivationRoll}</em></p>
+    </div>
+    <div class="card">
+      <div class="button-row">
+        <button id="persistentBtn">Mark Persistent</button>
+      </div>
       <label for="noteInput">Add Note</label>
       <textarea id="noteInput" rows="3" placeholder="Session note">${d.note || ""}</textarea>
     </div>
   `;
 
-  document.getElementById("followUpBtn").addEventListener("click", () => {
-    const rng = createRng(`${state.region.seed}-followup-${d.districtId}-${state.logs.length}`);
-    const q = []; enqueueFollowUps(d.place, q, rng); resolveFollowUps(q);
-  });
   document.getElementById("persistentBtn").addEventListener("click", () => {
-    d.place.persistent = !d.place.persistent;
-    state.persistentOverrides[d.place.ID] = d.place.persistent;
-    persistLocal(); renderMap(); renderDetail();
+    d.persistent = !d.persistent;
+    state.persistentOverrides[d.id] = d.persistent;
+    persistLocal();
+    renderMap();
+    renderDetail();
   });
+
   document.getElementById("noteInput").addEventListener("input", (e) => {
-    d.note = e.target.value; state.notes[`district-${d.districtId}`] = d.note; persistLocal();
+    d.note = e.target.value;
+    state.notes[d.id] = d.note;
+    persistLocal();
   });
 }
 
 function renderTagFilters() {
   const tags = new Set();
-  state.region?.districts.forEach((d) => {
-    d.place.tags.forEach((t) => tags.add(t));
-    d.pois.forEach((p) => p.tags.forEach((t) => tags.add(t)));
-    d.npcs.forEach((n) => tags.add(n.contactTag));
-  });
+  state.region?.districts.forEach((d) => d.tags.forEach((t) => tags.add(t)));
+
   els.tagFilters.innerHTML = "";
   [...tags].sort().forEach((tag) => {
     const b = document.createElement("button");
     b.className = `tag-chip${state.selectedTags.has(tag) ? " active" : ""}`;
     b.textContent = tag;
     b.addEventListener("click", () => {
-      if (state.selectedTags.has(tag)) state.selectedTags.delete(tag); else state.selectedTags.add(tag);
-      renderTagFilters(); renderMap(); renderDetail();
+      if (state.selectedTags.has(tag)) state.selectedTags.delete(tag);
+      else state.selectedTags.add(tag);
+      renderTagFilters();
+      renderMap();
     });
     els.tagFilters.appendChild(b);
   });
 }
 
 function persistLocal() {
-  localStorage.setItem("rpg-region-notes", JSON.stringify(state.notes));
-  localStorage.setItem("rpg-region-persistent", JSON.stringify(state.persistentOverrides));
+  localStorage.setItem("wm-notes", JSON.stringify(state.notes));
+  localStorage.setItem("wm-persistent", JSON.stringify(state.persistentOverrides));
 }
+
 function loadLocal() {
-  state.notes = JSON.parse(localStorage.getItem("rpg-region-notes") || "{}");
-  state.persistentOverrides = JSON.parse(localStorage.getItem("rpg-region-persistent") || "{}");
+  state.notes = JSON.parse(localStorage.getItem("wm-notes") || "{}");
+  state.persistentOverrides = JSON.parse(localStorage.getItem("wm-persistent") || "{}");
 }
 
 function exportRegion() {
@@ -434,18 +275,17 @@ function exportRegion() {
   els.exportModal.showModal();
 }
 
-
 els.generateBtn.addEventListener("click", () => {
   try {
-    if (!state.placeRows.length) throw new Error("Bundled tables are not loaded yet.");
-
     state.logs = [];
     const seed = els.seedInput.value.trim() || "default-seed";
-    const size = Math.min(8, Math.max(1, Number(els.sizeInput.value || 6)));
-    state.region = buildRegion(seed, size);
-    state.selectedDistrictId = 1;
-    renderTagFilters(); renderMap(); renderDetail();
-    log(`Generated region with seed="${seed}" and size=${size}.`);
+    const centerCount = Math.min(8, Math.max(1, Number(els.sizeInput.value || 3)));
+    state.region = buildRegion(seed, centerCount);
+    state.selectedDistrictKey = state.region.districts[0]?.key || null;
+    renderTagFilters();
+    renderMap();
+    renderDetail();
+    log(`Generated ${centerCount} population center(s) with theme "${state.region.theme}".`);
   } catch (e) {
     log(`Generation error: ${e.message}`);
   }
@@ -458,23 +298,10 @@ els.downloadExportBtn.addEventListener("click", () => {
   const blob = new Blob([els.exportText.value], { type: "application/json" });
   const a = document.createElement("a");
   a.href = URL.createObjectURL(blob);
-  a.download = `region-${state.region.seed}.json`;
+  a.download = `world-mapper-${state.region.seed}.json`;
   a.click();
   URL.revokeObjectURL(a.href);
 });
 
-async function bootstrapTables() {
-  try {
-    const sampleText = await (await fetch("sample-data.csv")).text();
-    const parsed = parseCSV(sampleText);
-    requireColumns(parsed.headers, PLACE_COLUMNS, "Sample");
-    const mixed = parseMixedSampleRows(parsed.data);
-    setRows(mixed.placeRows, mixed.travelRows);
-    log("Bundled tables loaded. Ready to generate.");
-  } catch (e) {
-    log(`Bootstrap error: ${e.message}`);
-  }
-}
-
 loadLocal();
-bootstrapTables();
+log("Ready. Generate a region from built-in World Mapper tables.");

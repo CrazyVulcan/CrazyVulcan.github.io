@@ -9,7 +9,7 @@
 <body>
   <header class="topbar">
     <h1>RPG Region & POI Generator</h1>
-    <p>Deterministic campaign generator for districts, POIs, NPCs, quest hooks, and follow-ups.</p>
+    <p>Deterministic campaign generator using built-in tables (theme → center type → district letter → location → specific site).</p>
   </header>
 
   <main class="layout">
@@ -29,13 +29,13 @@
     <section class="panel controls-panel" aria-label="Controls and logs">
       <h2>Controls & Logs</h2>
 
-      <label for="seedInput" title="Same seed + region size + CSV data = same output.">Seed</label>
+      <label for="seedInput" title="Same seed + population center count = same output.">Seed</label>
       <div class="inline-row">
         <input id="seedInput" type="text" value="mistwatch-001" />
         <button id="randomSeedBtn" title="Create a random seed value">Randomize</button>
       </div>
 
-      <label for="sizeInput" title="How many districts to create">Region Size (1–8)</label>
+      <label for="sizeInput" title="How many population centers to generate">Population Centers (1–8)</label>
       <input id="sizeInput" type="number" min="1" max="8" value="6" />
 
       <h3>Tables</h3>
