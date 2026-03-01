@@ -132,8 +132,10 @@ const PV_RANKING_BASELINE = {
   rankEngineeringSpecial: 0.75,
   rankDefenseShields: 0.42,
   rankDefenseArmor: 0.4,
-  rankDefenseRepairable: 0.3,
-  rankDefensePermanent: 0.28,
+  // Structure durability was underpriced during battleship tuning passes.
+  // Boost both repairable and permanent structure weights by ~3x.
+  rankDefenseRepairable: 0.9,
+  rankDefensePermanent: 0.84,
   rankDefenseShieldGen: 0.45,
   rankManeuverMaxAcc: 0.65,
   rankManeuverGreen: 0.5,
