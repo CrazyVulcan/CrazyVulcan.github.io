@@ -183,6 +183,44 @@ function rank(build, key) {
   return Number.isFinite(baseline) ? Math.max(0, baseline) : 1;
 }
 
+function sizeClassFromStructure(build) {
+  const structure = build?.structure || {};
+  const total = positivePart(structure.repairable) + positivePart(structure.permanent);
+
+  if (total < 5) {
+    return 1;
+  }
+  if (total <= 8) {
+    return 2;
+  }
+  if (total <= 10) {
+    return 3;
+  }
+  if (total <= 12) {
+    return 4;
+  }
+  if (total <= 14) {
+    return 5;
+  }
+  if (total <= 16) {
+    return 6;
+  }
+  if (total <= 19) {
+    return 7;
+  }
+  return 8;
+}
+
+function sizeClassCostMultiplier(sizeClass) {
+  const normalized = clampSizeClass(sizeClass);
+  // Requested curve anchor points: size 4 => 0.5, size 8 => 1.0.
+  return normalized * 0.125;
+}
+
+function clampSizeClass(value) {
+  return Math.min(8, Math.max(1, positivePart(value, 1)));
+}
+
 
 function scoreIdentity(build) {
   const identity = build?.identity || {};
@@ -195,7 +233,8 @@ function scoreIdentity(build) {
 
 function scoreEngineering(build) {
   const engineering = build?.engineering || {};
-  return (positivePart(engineering.move) * 1.4 * rank(build, 'rankEngineeringMove'))
+  const sizeClass = sizeClassFromStructure(build);
+  return (sizeClass * 1.4 * rank(build, 'rankEngineeringMove'))
     + (positivePart(engineering.vector) * 1.5 * rank(build, 'rankEngineeringVector'))
     + (positivePart(engineering.turn) * 1.2 * rank(build, 'rankEngineeringTurn'))
     + (positivePart(engineering.special) * 1.1 * rank(build, 'rankEngineeringSpecial'));
@@ -489,6 +528,8 @@ export function calculatePointValue(build) {
 
   const baseScore = sum(Object.values(contributions)) * rank(build, 'rankGlobalScale');
   const escalation = hullScaleEscalation(build, contributions);
-  const totalScore = baseScore * escalation;
+  const sizeClass = sizeClassFromStructure(build);
+  const sizeMultiplier = sizeClassCostMultiplier(sizeClass);
+  const totalScore = baseScore * escalation * sizeMultiplier;
   return Math.max(1, Math.round(totalScore));
 }

@@ -393,6 +393,41 @@ function clamp(value, min, max) {
   return Math.min(max, Math.max(min, value));
 }
 
+function sizeClassFromStructure(repairable, permanent) {
+  const total = Math.max(0, Number(repairable || 0)) + Math.max(0, Number(permanent || 0));
+  if (total < 5) {
+    return 1;
+  }
+  if (total <= 8) {
+    return 2;
+  }
+  if (total <= 10) {
+    return 3;
+  }
+  if (total <= 12) {
+    return 4;
+  }
+  if (total <= 14) {
+    return 5;
+  }
+  if (total <= 16) {
+    return 6;
+  }
+  if (total <= 19) {
+    return 7;
+  }
+  return 8;
+}
+
+function syncDerivedSizeClassInput() {
+  const sizeField = form.elements.namedItem('move');
+  if (!sizeField || !('value' in sizeField)) {
+    return;
+  }
+  const sizeClass = sizeClassFromStructure(num('structureBlack'), num('structureRed'));
+  sizeField.value = String(sizeClass);
+}
+
 function normalizeTurnOption(value) {
   return TURN_OPTIONS.includes(value) ? value : 20;
 }
@@ -494,6 +529,12 @@ function syncDerivedFunctionInputs() {
 
 
 function getBuild() {
+  const structure = {
+    repairable: num('structureBlack'),
+    permanent: num('structureRed')
+  };
+  const derivedSizeClass = sizeClassFromStructure(structure.repairable, structure.permanent);
+
   return {
     identity: {
       name: form.elements.name.value,
@@ -503,7 +544,7 @@ function getBuild() {
       pointValue: num('pointValueCalculated')
     },
     engineering: {
-      move: num('move'),
+      move: derivedSizeClass,
       vector: num('vector'),
       turn: num('turn'),
       special: num('special')
@@ -527,10 +568,7 @@ function getBuild() {
     functionsConfig: readFunctionsConfig(),
     powerSystem: readPowerSystem(),
     sublight: readSublight(),
-    structure: {
-      repairable: num('structureBlack'),
-      permanent: num('structureRed')
-    },
+    structure,
     shipArtDataUrl,
     weapons: readWeaponsFromForm(),
     systems: parseSystems(form.elements.systems.value),
@@ -1047,6 +1085,7 @@ function pulseLiveBadge() {
 function render(options = {}) {
   const { recalculatePointValue = true } = options;
   syncDerivedFunctionInputs();
+  syncDerivedSizeClassInput();
   const build = withEmbeddedShipArt(getBuild());
   renderPreview(build, { recalculatePointValue });
   jsonPreview.textContent = getJsonPreview(build);
@@ -1105,7 +1144,6 @@ function restoreDraft(draft) {
   setValue('faction', draft.identity?.faction ?? '');
   setValue('era', draft.identity?.era ?? '');
 
-  setValue('move', draft.engineering?.move ?? 0);
   setValue('vector', draft.engineering?.vector ?? 0);
   setValue('turn', draft.engineering?.turn ?? 0);
   setValue('special', draft.engineering?.special ?? 0);
@@ -1198,6 +1236,8 @@ function restoreDraft(draft) {
 
   setValue('structureBlack', draft.structure?.repairable ?? 0);
   setValue('structureRed', draft.structure?.permanent ?? 0);
+
+  syncDerivedSizeClassInput();
 
   shipArtDataUrl = draft.shipArtDataUrl ?? '';
   const normalizedWeapons = (Array.isArray(draft.weapons) ? draft.weapons : []).map((weapon) => normalizeWeapon(weapon));
