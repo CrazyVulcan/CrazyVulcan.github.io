@@ -213,8 +213,17 @@ function sizeClassFromStructure(build) {
 
 function sizeClassCostMultiplier(sizeClass) {
   const normalized = clampSizeClass(sizeClass);
-  // Requested curve anchor points: size 4 => 0.5, size 8 => 1.0.
-  return normalized * 0.125;
+  const sizeScale = {
+    1: 0.2,
+    2: 0.3,
+    3: 0.35,
+    4: 0.4,
+    5: 0.45,
+    6: 0.6,
+    7: 0.75,
+    8: 1.0
+  };
+  return sizeScale[normalized] ?? 1.0;
 }
 
 function clampSizeClass(value) {
