@@ -1,0 +1,13 @@
+ID,Category,Label,DistrictRange,DistrictType,D6Roll,TypesPOI,MechanicalEffect,Tags,FollowUps,Persistence
+PL-ML1,MeetingPlace,Magic Library,1-4,Village,1,"Farming;Trade;University;Guild HQ;Docks","Source of lore; +1 to research rolls; may host an Archivist NPC","library;university;docks","RumorTable;NPC-Archivist",yes
+PL-TV1,MeetingPlace,Tavern,1-3,Civilized,2,"Social hub;Rumor source;Lodging","Primary rumor source; hire mercs; low-cost lodging","tavern;rumor;lodging","HireTable;RumorTable",no
+PL-CS1,MeetingPlace,Coffee Shop,5-7,Town,3,"Trade;Shops;Seat of Power;Docks","Social hub; roll D6 for rumor quality; low-cost intel","social;trade;rumor","RumorTable;NPC-Fixer",no
+PL-SC1,MeetingPlace,School,8-9,City,5,"Housing;Factory;Fortress;Warehouse","Training site; offers a short training job (gain 1 XP)","education;training","TrainingTable;NPC-Teacher",no
+PL-TP1,MeetingPlace,Temple,10,Huge City,7,"Manner;Guilds;Temple;Trade","Place of sanctuary; healing services available; may host a quest","religion;healing","QuestTable;NPC-Priest",yes
+PL-MU1,MeetingPlace,Museum,11-12,Port,2,"Tower;Mansion;Historic;Bank","Historic artifacts; rumor seed about lost relic; hire a guide","history;relics","RumorTable;NPC-Curator",no
+PL-HH1,MeetingPlace,Hall of Heroes,1-4,City,4,"Historic;Heroes Home;Battle Site","Ceremony site; reputation gain for heroic acts","heroic;reputation","FactionTable;QuestTable",yes
+PL-CV1,MeetingPlace,Cave,7-8,Isolated,6,"Trade;Goods;Luxury;Magic","Hidden POI; good for secret meetings or smuggling","cave;secret","SmuggleTable;EncounterTable",no
+SH-MM1,Shop,Mini Market,14-15,Frontier,1,"Basic goods;Food;Local trade","Cheap supplies; barter possible; hire local courier","market;frontier","TradeTable",no
+SH-AL1,Shop,Alchemy,18,Ancient,4,"Factory;Goods;Steel;Weapons;Magic","Crafting services; can convert reagents into items","alchemy;craft","CraftTable;RepairTable",no
+TE-04,TravelEvent,Ghost Ship,18-25,"Gain 2 LootTable rolls","An ancient ship drifts in the warp; salvage what you can.","salvage;ship;relics","LootTable",no
+RT-01,RealmTrait,Mist Covered,1-3,"-1 to ranged sight checks; +tag fog","Low, clinging mists hide the streets and docks.","fog;visibility",no
