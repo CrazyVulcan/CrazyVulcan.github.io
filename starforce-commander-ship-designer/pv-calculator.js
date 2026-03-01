@@ -529,29 +529,6 @@ function hullScaleEscalation(build, contributions) {
 }
 
 
-function hullScaleEscalation(build, contributions) {
-  const structure = build?.structure || {};
-  const structureTotal = positivePart(structure.repairable) + positivePart(structure.permanent);
-
-  const tracks = Array.isArray(build?.powerSystem?.tracks) ? build.powerSystem.tracks : [];
-  const powerPoints = sum(tracks.map((track) => positivePart(track?.points)));
-
-  const weapons = normalizeWeapons(build?.weapons);
-  const mountCoverage = sum(weapons.map((weapon) => effectiveMountCount(weapon)));
-
-  const capabilityIndex = (structureTotal * 0.06)
-    + (powerPoints * 0.05)
-    + (weapons.length * 0.4)
-    + (mountCoverage * 0.04)
-    + ((positivePart(contributions?.weapons) + positivePart(contributions?.defense)) * 0.008);
-
-  const growthBand = Math.max(0, capabilityIndex - 7.5);
-  const growth = Math.pow(growthBand, 1.15) * 0.028;
-
-  // Cap keeps escalation predictable while still separating capital builds from midline ships.
-  return 1 + Math.min(0.28, growth);
-}
-
 function weaponProfileScale(build) {
   const weapons = normalizeWeapons(build?.weapons);
   if (!weapons.length) {
@@ -582,7 +559,7 @@ function weaponProfileScale(build) {
 }
 
 
-function hullScaleEscalation(build, contributions) {
+function weaponScaleEscalation(build, contributions) {
   const structure = build?.structure || {};
   const structureTotal = positivePart(structure.repairable) + positivePart(structure.permanent);
 
@@ -633,7 +610,8 @@ export function calculatePointValue(build) {
   };
 
   const weightedCoreScore = sum(Object.values(nonWeaponContributions)) * sizeMultiplier;
-  const weightedWeaponScore = contributions.weapons * weaponScale;
+  const weaponEscalation = weaponScaleEscalation(build, contributions);
+  const weightedWeaponScore = contributions.weapons * weaponScale * weaponEscalation;
 
   const baseScore = (weightedCoreScore + weightedWeaponScore) * rank(build, 'rankGlobalScale');
   const escalation = hullScaleEscalation(build, contributions);
