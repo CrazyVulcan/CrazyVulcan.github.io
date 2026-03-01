@@ -3,7 +3,7 @@ World Mapper Generator Pipeline
 1) Use built-in world tables (Theme -> Population Center -> District Letter -> Location Type -> Specific Site).
 2) Create deterministic RNG from seed so same seed/settings reproduces identical output.
 3) Build centers and districts with drill-down data.
-4) Add NPC + quest placeholders (using race/class/motivation starter tables).
+4) Add NPC placeholders and a unique one-sentence story hook per motivation/theme/location combination.
 5) Render map/detail/logs and export JSON. Persist notes + persistent flags via localStorage.
 */
 
@@ -61,6 +61,43 @@ const NPC_TABLES = {
   motivations: [[1,9,"Wealth"],[10,18,"Fame"],[19,27,"Glory"],[28,38,"Adventure"],[39,46,"Truth"],[47,54,"Knowledge"],[55,60,"Revenge"],[61,65,"Romance"],[66,75,"Power"],[76,84,"Freedom"],[85,92,"Order"],[93,100,"Escape"]]
 };
 
+
+
+const HOOK_INTENT_BY_MOTIVATION = {
+  Wealth: ["secure a profitable edge", "lock down a lucrative contract", "divert a fresh revenue stream"],
+  Fame: ["stage a reputation-saving reveal", "outshine a rival public figure", "turn a local scandal into applause"],
+  Glory: ["claim credit for a bold feat", "win an honor no one expects", "prove their name deserves songs"],
+  Adventure: ["drag someone into a risky excursion", "open a sealed opportunity", "test a path no one mapped"],
+  Truth: ["expose what officials keep hidden", "prove a quiet lie", "force records into the light"],
+  Knowledge: ["recover a missing source", "decode restricted notes", "verify a dangerous theory"],
+  Revenge: ["settle a humiliating slight", "undo a rival's unfair victory", "force a rival to publicly pay"],
+  Romance: ["win back a fractured bond", "protect a fragile courtship", "deliver a confession before it is too late"],
+  Power: ["remove a blocker to influence", "bind a faction to their side", "seize control of a critical office"],
+  Freedom: ["break a local chain of control", "erase a coercive obligation", "create an escape route"],
+  Order: ["restore strict protocol", "stabilize a failing hierarchy", "shut down a growing disorder"],
+  Escape: ["disappear before pursuit closes in", "fake a clean departure", "erase traces of a dangerous past"],
+};
+
+const HOOK_TONE_BY_THEME = {
+  Civilized: "amid polished etiquette and quiet politics",
+  Haunted: "while restless omens unsettle every witness",
+  Magical: "as volatile arcana distorts ordinary plans",
+  Isolated: "where distance leaves allies scarce",
+  Frontier: "on a hard edge where rules are negotiable",
+  Militaristic: "under a watchful chain of command",
+  Religious: "beneath vows that magnify every choice",
+  Decaying: "as failing systems rot beneath the surface",
+  Ancient: "among relic customs older than living memory",
+  Industrial: "inside relentless production and smoke",
+};
+
+function comboHookSentence(theme, broadType, specific, motivation, rng) {
+  const intents = HOOK_INTENT_BY_MOTIVATION[motivation] || ["push a personal agenda"];
+  const tone = HOOK_TONE_BY_THEME[theme] || "in tense local conditions";
+  const intent = rng.pick(intents);
+  return `In this ${theme} region, someone driven by ${motivation.toLowerCase()} at the ${specific} ${broadType} district wants your help to ${intent} ${tone}.`;
+}
+
 const state = { region: null, selectedDistrictKey: null, selectedTags: new Set(), logs: [], notes: {}, persistentOverrides: {} };
 
 const els = {
@@ -107,6 +144,8 @@ function generateNpcPlaceholder(rng, district) {
   const motivationRoll = rollDice("d100", rng);
   const motivation = fromRange(motivationRoll, NPC_TABLES.motivations, "Adventure");
 
+  const storyHook = comboHookSentence(district.theme, district.broadType, district.specific, motivation, rng);
+
   return {
     id: `npc-${district.id}`,
     name: rng.pick(["Ari", "Thorne", "Mara", "Brigg", "Sel", "Jun", "Kest", "Rook"]),
@@ -115,7 +154,7 @@ function generateNpcPlaceholder(rng, district) {
     npcClass,
     motivation,
     attitudeRoll: rollDice("d6", rng),
-    placeholderQuestHook: `Placeholder: ${motivation}-driven objective tied to ${district.specific}.`,
+    storyHook,
     rolls: { rarityRoll, raceRoll, classRoll, motivationRoll }
   };
 }
@@ -156,6 +195,7 @@ function buildRegion(seed, centerCount) {
         note: state.notes[id] || "",
       };
       district.npc = generateNpcPlaceholder(rng, district);
+      district.storyHook = district.npc.storyHook;
       return district;
     });
 
@@ -213,7 +253,7 @@ function renderDetail() {
       <h4>NPC Placeholder</h4>
       <p><strong>${d.npc.name}</strong> — ${d.npc.race} ${d.npc.npcClass} (${d.npc.raceRarity})<br/>
       Motivation: ${d.npc.motivation} | Attitude d6: ${d.npc.attitudeRoll}<br/>
-      ${d.npc.placeholderQuestHook}<br/>
+      <strong>Story Hook:</strong> ${d.storyHook}<br/>
       <em>Rolls: rarity ${d.npc.rolls.rarityRoll}, race ${d.npc.rolls.raceRoll}, class ${d.npc.rolls.classRoll}, motivation ${d.npc.rolls.motivationRoll}</em></p>
     </div>
     <div class="card">
