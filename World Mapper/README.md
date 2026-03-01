@@ -6,9 +6,9 @@ A self-contained HTML/CSS/JS app for deterministic RPG region generation.
 This version focuses on your requested **drill-down region flow** and removes CSV upload.
 
 ## Generator Flow (your table structure)
-1. **Pick a theme** from:
-   - Civilized, Haunted, Magical, Isolated, Frontier, Militaristic, Religious, Decaying, Ancient, Industrial.
-2. **Pick population centers** (count chosen by user).
+1. **Pick population centers** (count chosen by user).
+2. Each population center rolls its own theme from a focused set for variety:
+   - Civilized, Frontier, Industrial, Religious, Haunted.
 3. For each center, choose a center type template:
    - Village: `1` district, letters `A`
    - Town: `3` districts, letters `A A B`
@@ -22,7 +22,7 @@ This version focuses on your requested **drill-down region flow** and removes CS
    - D: Guild HQ, Seat of Power
    - E: Docks, Warehouse, Trade, Bank
 5. Drill down to a specific site (for example `Factory -> Magic`, `Tower -> Armory`, `Seat of Power -> King`).
-6. Attach an **NPC placeholder** (race/class/motivation starter tables + d6 attitude) and generate a unique one-sentence story hook from motivation + region theme + district location, plus a theme+district setting quirk for added context variety.
+6. Attach an **NPC placeholder** (race/class/motivation starter tables + d6 attitude) and generate a unique one-sentence story hook from motivation + center theme + district location with higher text variety (multiple templates + quirk/context pools).
 
 ## Reproducibility
 Same **seed + population center count** gives identical output.
