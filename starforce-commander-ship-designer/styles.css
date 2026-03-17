@@ -350,11 +350,11 @@ button.ghost { background: #6d7f8d; border-color: #465764; }
 
 
 .side-label-port {
-  left: 0.78rem;
+  left: -0.56rem;
   transform: translateY(-50%) rotate(180deg);
 }
 .side-label-stbd {
-  right: 0.78rem;
+  right: -0.56rem;
 }
 .shield-box-col, .shield-gen-col, .armor-box-col {
   display: flex;
