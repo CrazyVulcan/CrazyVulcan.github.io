@@ -183,32 +183,8 @@ function rank(build, key) {
   return Number.isFinite(baseline) ? Math.max(0, baseline) : 1;
 }
 
-function sizeClassFromStructure(build) {
-  const structure = build?.structure || {};
-  const total = positivePart(structure.repairable) + positivePart(structure.permanent);
-
-  if (total < 5) {
-    return 1;
-  }
-  if (total <= 8) {
-    return 2;
-  }
-  if (total <= 10) {
-    return 3;
-  }
-  if (total <= 12) {
-    return 4;
-  }
-  if (total <= 14) {
-    return 5;
-  }
-  if (total <= 16) {
-    return 6;
-  }
-  if (total <= 19) {
-    return 7;
-  }
-  return 8;
+function sizeClassFromEngineering(build) {
+  return clampSizeClass(build?.engineering?.move);
 }
 
 function sizeClassCostMultiplier(sizeClass) {
@@ -242,7 +218,7 @@ function scoreIdentity(build) {
 
 function scoreEngineering(build) {
   const engineering = build?.engineering || {};
-  const sizeClass = sizeClassFromStructure(build);
+  const sizeClass = sizeClassFromEngineering(build);
   return (sizeClass * 1.4 * rank(build, 'rankEngineeringMove'))
     + (positivePart(engineering.vector) * 1.5 * rank(build, 'rankEngineeringVector'))
     + (positivePart(engineering.turn) * 1.2 * rank(build, 'rankEngineeringTurn'))
@@ -595,7 +571,7 @@ export function calculatePointValue(build) {
     weapons: safeRun(() => scoreWeapons(build)) * SECTION_MULTIPLIERS.weapons
   };
 
-  const sizeClass = sizeClassFromStructure(build);
+  const sizeClass = sizeClassFromEngineering(build);
   const sizeMultiplier = sizeClassCostMultiplier(sizeClass);
   const weaponScale = weaponProfileScale(build);
 
