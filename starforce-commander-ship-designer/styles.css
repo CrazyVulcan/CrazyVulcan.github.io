@@ -254,7 +254,7 @@ button.ghost { background: #6d7f8d; border-color: #465764; }
 }
 
 .middle-col { border: 3px solid #10a5df; background: #14a7de; padding: 0.15rem; }
-.shield-frame { position: relative; border: 3px solid #10a5df; background: #14a7de; padding: 0.18rem 1rem 0.12rem; }
+.shield-frame { position: relative; border: 3px solid #10a5df; background: #14a7de; padding: 0.18rem 2rem 0.12rem; }
 .shield-inner { position: relative; z-index: 1; overflow: visible; background: #ececec; border: 2px solid #ececec; }
 .shield-top, .shield-bottom { background: #17a8df; color: #fff; text-align: center; font-weight: 900; padding: 0.28rem 0.22rem; font-size: 1.04rem; letter-spacing: 0.06em; line-height: 1.25; }
 .shield-top { margin-bottom: 0.22rem; }
