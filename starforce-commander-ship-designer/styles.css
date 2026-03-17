@@ -305,11 +305,11 @@ button.ghost { background: #6d7f8d; border-color: #465764; }
   column-gap: 6px;
 }
 .side-port {
-  left: 18px;
+  right: 18px;
   grid-template-columns: auto auto auto;
 }
 .side-stbd {
-  right: 18px;
+  left: 18px;
   grid-template-columns: auto auto auto;
 }
 .side-port .shield-gen-col { order: 1; }
