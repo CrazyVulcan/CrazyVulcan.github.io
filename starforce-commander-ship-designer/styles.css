@@ -305,11 +305,11 @@ button.ghost { background: #6d7f8d; border-color: #465764; }
   column-gap: 6px;
 }
 .side-port {
-  left: 14px;
+  left: 18px;
   grid-template-columns: auto auto auto;
 }
 .side-stbd {
-  right: 14px;
+  right: 18px;
   grid-template-columns: auto auto auto;
 }
 .side-port .shield-gen-col { order: 1; }
@@ -334,7 +334,7 @@ button.ghost { background: #6d7f8d; border-color: #465764; }
   align-items: center;
   justify-content: center;
   gap: 0.35rem;
-  padding: 0.42rem 0.2rem;
+  padding: 0.42rem 0.26rem;
   background: rgba(11, 123, 194, 0.32);
   border-radius: 6px;
 }
@@ -350,11 +350,11 @@ button.ghost { background: #6d7f8d; border-color: #465764; }
 
 
 .side-label-port {
-  left: 0.55rem;
+  left: 0.78rem;
   transform: translateY(-50%) rotate(180deg);
 }
 .side-label-stbd {
-  right: 0.55rem;
+  right: 0.78rem;
 }
 .shield-box-col, .shield-gen-col, .armor-box-col {
   display: flex;
