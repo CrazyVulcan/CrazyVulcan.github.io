@@ -204,7 +204,7 @@ button.ghost { background: #6d7f8d; border-color: #465764; }
 .eng-stats span { background: #566674; color: #fff; text-align: center; padding: 0.25rem 0.1rem; border: 2px solid #f5f5f5; font-size: 0.9rem; font-weight: 900; }
 .stat-icon { width: 18px; height: 18px; object-fit: contain; vertical-align: text-bottom; }
 .stat-tag { color: #b8b8b8 !important; background: #e9eef3 !important; border-color: #10a5df !important; }
-.green-block { border: 2px solid #02a45c; background: #f0f0f0; margin-bottom: 0.2rem; }
+.green-block { border: 12px solid #02a45c; background: #f0f0f0; margin-bottom: 0.2rem; }
 .green-block h4 { margin: 0; background: #07af52; color: #fff; padding: 0.15rem 0.25rem; font-size: 0.74rem; letter-spacing: 0.01em; display: flex; justify-content: space-between; }
 .block-power h4 span:last-child { color: #d8ffd8; }
 .green-block pre { min-height: 80px; margin: 0; background: transparent; color: #233; white-space: pre-wrap; border-radius: 0; font-family: Arial, Helvetica, sans-serif; font-size: 0.8rem; }
@@ -363,7 +363,7 @@ button.ghost { background: #6d7f8d; border-color: #465764; }
   min-height: 112px;
   justify-content: center;
 }
-.systems-box { border-top: 0; margin-top: 0.3rem; border: 2px solid #f0b500; background: #f8f8f8; padding-bottom: 0.25rem; }
+.systems-box { border-top: 0; margin-top: 0.8rem; border: 12px solid #f0b500; background: #f8f8f8; padding-bottom: 0.25rem; }
 .systems-box h3 { border-color: #f0b500; }
 .systems-layout { display: grid; grid-template-columns: 1fr 72px; gap: 0.35rem; padding: 0.2rem 0.25rem 0.1rem; align-items: start; }
 .systems-grid { min-height: 0; display: grid; grid-template-columns: 1fr 1fr; column-gap: 0.4rem; align-content: start; }
@@ -385,7 +385,7 @@ button.ghost { background: #6d7f8d; border-color: #465764; }
 .weapon-editor-card .grid2,
 .weapon-editor-card .grid3 { grid-template-columns: 1fr; gap: 0.45rem; }
 
-.right-col { border: 3px solid #ff0000; background: #fafafa; }
+.right-col { border: 12px solid #ff0000; background: #fafafa; }
 .weapon-slot { border-top: 2px solid #ff0000; min-height: 0; flex: 1; display: flex; flex-direction: column; }
 .weapon-slot:first-of-type { border-top: 0; }
 .slot-title { background: #ff0000; color: #fff; font-weight: 900; padding: 0.17rem 0.3rem; }
