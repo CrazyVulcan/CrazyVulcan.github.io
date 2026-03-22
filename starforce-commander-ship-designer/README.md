@@ -22,6 +22,17 @@ Open: `http://localhost:4173`
 - Save and restore drafts with `localStorage`
 - Export current SSD build as JSON
 
+## SVG sheet renderer architecture
+
+The printable SSD artifact now uses a **single fixed-size SVG artboard** (1100x850 viewBox) as the canonical layout source.
+
+- `sheet-layout.js` contains centralized numeric panel coordinates and dimensions.
+- `ship-sheet-svg.js` renders one root `<svg>` with explicit geometry for frame, title bars, engineering, shields, systems, weapons, and structure tracks.
+- The editor preview (`index.html`) now embeds this same SVG renderer.
+- The dedicated print route (`print.html`) renders only the same SVG sheet and applies print CSS solely for page placement (`@page` Letter landscape + margins).
+
+This keeps screen preview, print output, and future PDF export aligned to the exact same geometry and data mapping.
+
 ## Balance note: Aquila Bellum II (Aurelian heavy cruiser)
 
 For the current glass-cannon configuration (cloak access, one high-spike plasma-torpedo strike profile, and low sustained durability), a good starting point is:
