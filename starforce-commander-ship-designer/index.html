@@ -142,13 +142,24 @@
         </div>
 
         <h2>Weapons (up to 4)</h2>
-        <p class="muted">Each weapon supports up to 8 mounts, power circles/stops, structure, per-range dice colors (no longer capped by structure), HOMING band boxes, and optional SPECIAL text (enabled by the HVY trait).</p>
+        <p class="muted">Each weapon supports up to 8 mounts, power circles/stops, structure, per-range dice colors (no longer capped by structure), HOMING band boxes, and optional SPECIAL text (shown when red dice are present).</p>
         <div class="weapon-editor-list">
           <fieldset class="weapon-editor-card">
             <legend>Weapon A</legend>
             <div class="grid2">
               <label>Name <input name="wpn1Name" value="WPN NAME" /></label>
-              <label>Traits (comma separated) <input name="wpn1Traits" value="HVY, FTL, NoBAT" /></label>
+              <label>Traits (multi-select)
+                <select name="wpn1Traits" multiple size="4">
+                  <option value="HVY" selected>HVY</option>
+                  <option value="HOMING">HOMING</option>
+                  <option value="FTL" selected>FTL</option>
+                  <option value="NOBAT" selected>NOBAT</option>
+                  <option value="BEAM">BEAM</option>
+                  <option value="TORP">TORP</option>
+                  <option value="MINE">MINE</option>
+                  <option value="PD">PD</option>
+                </select>
+              </label>
             </div>
             <label>Mount arcs (per mount as wedge values, e.g. <code>1,2|5,6</code>)
               <input name="wpn1MountArcs" value="1,2|5,6" />
@@ -164,16 +175,41 @@
             <label>Dice per band (optional bonus first: <code>8,R,R|4,R,R</code>)
               <input name="wpn1Dice" value="8,R,R|4,R,R|4,R,R|2,R,R" />
             </label>
-            <label>Special (shown only when HVY trait is present)
-              <input name="wpn1Special" value="H(4+1), STR 2" />
-            </label>
+            <div class="grid3">
+              <label>Special DMG (0-8)
+                <select name="wpn1SpecialDmg">
+                  <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4" selected>4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option>
+                </select>
+              </label>
+              <label>Special LEAK (1-4)
+                <select name="wpn1SpecialLeak">
+                  <option value="" selected>—</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option>
+                </select>
+              </label>
+              <label>Special STR (1-4)
+                <select name="wpn1SpecialStr">
+                  <option value="">—</option><option value="1">1</option><option value="2" selected>2</option><option value="3">3</option><option value="4">4</option>
+                </select>
+              </label>
+            </div>
           </fieldset>
 
           <fieldset class="weapon-editor-card">
             <legend>Weapon B</legend>
             <div class="grid2">
               <label>Name <input name="wpn2Name" value="" placeholder="Optional" /></label>
-              <label>Traits (comma separated) <input name="wpn2Traits" value="" /></label>
+              <label>Traits (multi-select)
+                <select name="wpn2Traits" multiple size="4">
+                  <option value="HVY">HVY</option>
+                  <option value="HOMING">HOMING</option>
+                  <option value="FTL">FTL</option>
+                  <option value="NOBAT">NOBAT</option>
+                  <option value="BEAM">BEAM</option>
+                  <option value="TORP">TORP</option>
+                  <option value="MINE">MINE</option>
+                  <option value="PD">PD</option>
+                </select>
+              </label>
             </div>
             <label>Mount arcs <input name="wpn2MountArcs" value="" placeholder="1,2|5,6" /></label>
             <div class="grid3">
@@ -183,14 +219,41 @@
             </div>
             <label>Range bands <input name="wpn2Ranges" value="" placeholder="0-6:green,7-12:black" /></label>
             <label>Dice per band <input name="wpn2Dice" value="" placeholder="R,R|Y,Y" /></label>
-            <label>Special <input name="wpn2Special" value="" /></label>
+            <div class="grid3">
+              <label>Special DMG (0-8)
+                <select name="wpn2SpecialDmg">
+                  <option value="0" selected>0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option>
+                </select>
+              </label>
+              <label>Special LEAK (1-4)
+                <select name="wpn2SpecialLeak">
+                  <option value="" selected>—</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option>
+                </select>
+              </label>
+              <label>Special STR (1-4)
+                <select name="wpn2SpecialStr">
+                  <option value="" selected>—</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option>
+                </select>
+              </label>
+            </div>
           </fieldset>
 
           <fieldset class="weapon-editor-card">
             <legend>Weapon C</legend>
             <div class="grid2">
               <label>Name <input name="wpn3Name" value="" placeholder="Optional" /></label>
-              <label>Traits (comma separated) <input name="wpn3Traits" value="" /></label>
+              <label>Traits (multi-select)
+                <select name="wpn3Traits" multiple size="4">
+                  <option value="HVY">HVY</option>
+                  <option value="HOMING">HOMING</option>
+                  <option value="FTL">FTL</option>
+                  <option value="NOBAT">NOBAT</option>
+                  <option value="BEAM">BEAM</option>
+                  <option value="TORP">TORP</option>
+                  <option value="MINE">MINE</option>
+                  <option value="PD">PD</option>
+                </select>
+              </label>
             </div>
             <label>Mount arcs <input name="wpn3MountArcs" value="" /></label>
             <div class="grid3">
@@ -200,14 +263,41 @@
             </div>
             <label>Range bands <input name="wpn3Ranges" value="" /></label>
             <label>Dice per band <input name="wpn3Dice" value="" /></label>
-            <label>Special <input name="wpn3Special" value="" /></label>
+            <div class="grid3">
+              <label>Special DMG (0-8)
+                <select name="wpn3SpecialDmg">
+                  <option value="0" selected>0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option>
+                </select>
+              </label>
+              <label>Special LEAK (1-4)
+                <select name="wpn3SpecialLeak">
+                  <option value="" selected>—</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option>
+                </select>
+              </label>
+              <label>Special STR (1-4)
+                <select name="wpn3SpecialStr">
+                  <option value="" selected>—</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option>
+                </select>
+              </label>
+            </div>
           </fieldset>
 
           <fieldset class="weapon-editor-card">
             <legend>Weapon D</legend>
             <div class="grid2">
               <label>Name <input name="wpn4Name" value="" placeholder="Optional" /></label>
-              <label>Traits (comma separated) <input name="wpn4Traits" value="" /></label>
+              <label>Traits (multi-select)
+                <select name="wpn4Traits" multiple size="4">
+                  <option value="HVY">HVY</option>
+                  <option value="HOMING">HOMING</option>
+                  <option value="FTL">FTL</option>
+                  <option value="NOBAT">NOBAT</option>
+                  <option value="BEAM">BEAM</option>
+                  <option value="TORP">TORP</option>
+                  <option value="MINE">MINE</option>
+                  <option value="PD">PD</option>
+                </select>
+              </label>
             </div>
             <label>Mount arcs <input name="wpn4MountArcs" value="" /></label>
             <div class="grid3">
@@ -217,7 +307,23 @@
             </div>
             <label>Range bands <input name="wpn4Ranges" value="" /></label>
             <label>Dice per band <input name="wpn4Dice" value="" /></label>
-            <label>Special <input name="wpn4Special" value="" /></label>
+            <div class="grid3">
+              <label>Special DMG (0-8)
+                <select name="wpn4SpecialDmg">
+                  <option value="0" selected>0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option>
+                </select>
+              </label>
+              <label>Special LEAK (1-4)
+                <select name="wpn4SpecialLeak">
+                  <option value="" selected>—</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option>
+                </select>
+              </label>
+              <label>Special STR (1-4)
+                <select name="wpn4SpecialStr">
+                  <option value="" selected>—</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option>
+                </select>
+              </label>
+            </div>
           </fieldset>
         </div>
 

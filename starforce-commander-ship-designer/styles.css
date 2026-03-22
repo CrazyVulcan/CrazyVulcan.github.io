@@ -435,6 +435,12 @@ button.ghost { background: #6d7f8d; border-color: #465764; }
 .weapon-editor-card code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.78rem; }
 .weapon-editor-card label { color: #17344c; font-weight: 700; }
 .weapon-editor-card input { border-color: #95a9b8; }
+.weapon-editor-card select[multiple] {
+  border: 1px solid #95a9b8;
+  border-radius: 4px;
+  padding: 0.3rem;
+  background: #fff;
+}
 .weapon-editor-card .grid2,
 .weapon-editor-card .grid3 { grid-template-columns: 1fr; gap: 0.45rem; }
 

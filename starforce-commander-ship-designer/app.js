@@ -232,6 +232,25 @@ function resolveImportedShipArt(importedDraft = {}) {
 }
 
 function readWeaponsFromForm() {
+  const readWeaponTraits = (index) => {
+    const field = form.elements[`wpn${index}Traits`];
+    if (!field) return [];
+    if ('selectedOptions' in field && field.selectedOptions) {
+      return Array.from(field.selectedOptions).map((option) => option.value).filter(Boolean);
+    }
+    return parseList(field.value);
+  };
+  const readWeaponSpecial = (index) => {
+    const dmg = clamp(num(`wpn${index}SpecialDmg`), 0, 8);
+    const leak = clamp(num(`wpn${index}SpecialLeak`), 0, 4);
+    const str = clamp(num(`wpn${index}SpecialStr`), 0, 4);
+    const tags = [];
+    if (dmg > 0) tags.push(`DMG ${dmg}`);
+    if (leak > 0) tags.push(`LEAK ${leak}`);
+    if (str > 0) tags.push(`STR ${str}`);
+    return tags.join(', ');
+  };
+
   return [1, 2, 3, 4].map((index) => {
     const name = form.elements[`wpn${index}Name`]?.value?.trim() || '';
     return {
@@ -246,8 +265,8 @@ function readWeaponsFromForm() {
         const diceByRange = parseWeaponDice(form.elements[`wpn${index}Dice`]?.value);
         return buildRangeProfile(ranges, diceByRange);
       })(),
-      traits: parseList(form.elements[`wpn${index}Traits`]?.value),
-      special: form.elements[`wpn${index}Special`]?.value?.trim() || ''
+      traits: readWeaponTraits(index),
+      special: readWeaponSpecial(index)
     };
   });
 }
@@ -703,8 +722,9 @@ function weaponSlot(id, rawWeapon, enabled = true) {
   const rangeGrid = document.createElement('div');
   rangeGrid.className = 'wpn-range-grid';
   const traits = weapon.traits.map((trait) => trait.trim()).filter(Boolean);
-  const hasHvy = traits.some((trait) => trait.toUpperCase() === 'HVY');
   const hasHoming = traits.some((trait) => trait.toUpperCase() === 'HOMING');
+  const hasRedDice = weapon.ranges.some((range) => (Array.isArray(range?.dice) ? range.dice : [])
+    .some((die) => String(die).trim().toUpperCase() === 'R'));
 
   weapon.ranges.forEach((range) => {
     const rangeCol = document.createElement('div');
@@ -736,7 +756,7 @@ function weaponSlot(id, rawWeapon, enabled = true) {
   });
   body.appendChild(rangeGrid);
 
-  if (hasHvy && weapon.special) {
+  if (hasRedDice && weapon.special) {
     const special = document.createElement('div');
     special.className = 'wpn-special-row';
     special.innerHTML = `<b>SPECIAL:</b> ${weapon.special}`;
@@ -1261,6 +1281,44 @@ function restoreDraft(draft) {
       field.checked = Boolean(checked);
     }
   };
+  const setWeaponTraitSelections = (index, traits = []) => {
+    const field = getField(`wpn${index}Traits`);
+    if (!field || !('options' in field)) return;
+
+    const normalized = new Set((Array.isArray(traits) ? traits : [])
+      .map((trait) => String(trait || '').trim().toUpperCase())
+      .filter(Boolean));
+
+    normalized.forEach((trait) => {
+      if (![...field.options].some((option) => option.value.toUpperCase() === trait)) {
+        const option = document.createElement('option');
+        option.value = trait;
+        option.textContent = trait;
+        field.appendChild(option);
+      }
+    });
+
+    [...field.options].forEach((option) => {
+      option.selected = normalized.has(String(option.value || '').toUpperCase());
+    });
+  };
+  const setWeaponSpecialSelections = (index, specialText = '') => {
+    const matches = String(specialText || '').matchAll(/\b(DMG|LEAK|STR)\b\s*[:=]?\s*(\d+)/gi);
+    let dmg = 0;
+    let leak = 0;
+    let str = 0;
+    for (const [, keyRaw, valueRaw] of matches) {
+      const key = String(keyRaw || '').toUpperCase();
+      const value = Number(valueRaw || 0);
+      if (!Number.isFinite(value)) continue;
+      if (key === 'DMG') dmg = clamp(value, 0, 8);
+      if (key === 'LEAK') leak = clamp(value, 0, 4);
+      if (key === 'STR') str = clamp(value, 0, 4);
+    }
+    setValue(`wpn${index}SpecialDmg`, dmg > 0 ? dmg : 0);
+    setValue(`wpn${index}SpecialLeak`, leak > 0 ? leak : '');
+    setValue(`wpn${index}SpecialStr`, str > 0 ? str : '');
+  };
 
   setValue('name', safeDraft.identity?.name ?? '');
   setValue('classType', safeDraft.identity?.classType ?? '');
@@ -1368,7 +1426,7 @@ function restoreDraft(draft) {
   [1, 2, 3, 4].forEach((index) => {
     const weapon = normalizedWeapons[index - 1] || normalizeWeapon({});
     setValue(`wpn${index}Name`, weapon.name || '');
-    setValue(`wpn${index}Traits`, (weapon.traits || []).join(', '));
+    setWeaponTraitSelections(index, weapon.traits || []);
     setValue(`wpn${index}MountArcs`, (weapon.mountFacings || []).map((mount) => mount.join(',')).join('|'));
     setValue(`wpn${index}PowerCircles`, weapon.powerCircles ?? 1);
     setValue(`wpn${index}PowerStops`, (weapon.powerStops || []).join(', '));
@@ -1378,7 +1436,7 @@ function restoreDraft(draft) {
       const dice = (range.dice || []).join(',');
       return Number(range.bonus || 0) > 0 ? `${Number(range.bonus)},${dice}` : dice;
     }).join('|'));
-    setValue(`wpn${index}Special`, weapon.special || '');
+    setWeaponSpecialSelections(index, weapon.special || '');
   });
 
   const normalizedSystems = Array.isArray(safeDraft.systems)
