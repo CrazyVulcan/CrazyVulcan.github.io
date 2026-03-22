@@ -7,29 +7,30 @@ const liveBadge = document.getElementById('liveBadge');
 const STORAGE_KEY = 'sfCommanderSsdDrafts';
 const TURN_OPTIONS = [0, 20, 25, 30, 35, 40, 45, 65];
 let shipArtDataUrl = '';
+const SPECIAL_SYSTEM_KEYS = new Set(['CLOAK', 'CMND', 'FCON', 'HNGR', 'LNCH', 'LAND', 'SCOUT']);
 
 
 const STANDARD_DEFAULT_LOADOUT = {
   identity: {
     name: 'SHIP NAME / ID',
-    classType: 'Class Name - Class ship type',
+    classType: 'CLASSNAME ID-class Weight Class',
     faction: '/',
     era: '/',
-    pointValue: 2
+    pointValue: 4
   },
-  engineering: { move: 0, vector: 0, turn: 0, special: 0 },
+  engineering: { move: 1, vector: 2, turn: 1, special: 1 },
   shields: { forward: 0, aft: 0, port: 0, starboard: 0 },
   armor: { forward: 0, aft: 0, port: 0, starboard: 0 },
   shieldGen: 0,
   textBlocks: { powerSystem: '' },
   functionsConfig: {
-    accDec: { values: [], free: 0 },
-    sifIdf: { values: [], free: 0, emer: false },
+    accDec: { values: ['1', '2', '3'], free: 0 },
+    sifIdf: { values: ['1', '2', '3'], free: 0, emer: true },
     batRech: { values: [], free: 0 },
-    ftl: { empty: 0 },
+    ftl: { empty: 2 },
     cloak: { enabled: false, empty: 0 },
     sensor: { values: [], free: 0 },
-    genSys: { values: [], free: 0 },
+    genSys: { values: ['NRM', 'MAX'], free: 0 },
     weapons: [
       { label: 'WPN A', enabled: false, free: 0, values: [] },
       { label: 'WPN B', enabled: false, free: 0, values: [] },
@@ -45,24 +46,24 @@ const STANDARD_DEFAULT_LOADOUT = {
       { key: 'slReac', label: 'SL REAC', points: 0, boxesPerPoint: 1, boxPattern: [], hasDot: true },
       { key: 'auxPwr', label: 'AUX PWR', points: 0, boxesPerPoint: 1, boxPattern: [], hasDot: true },
       { key: 'battery', label: 'BATTERY', points: 0, boxesPerPoint: 1, boxPattern: [], hasDot: true },
-      { key: 'ftlDrive', label: 'FTL DRIVE', points: 0, boxesPerPoint: 1, boxPattern: [], hasDot: false }
+      { key: 'ftlDrive', label: 'FTL DRIVE', points: 1, boxesPerPoint: 1, boxPattern: [], hasDot: false }
     ]
   },
   sublight: {
-    maxAccPhs: 0,
-    greenCircles: 0,
-    redCircles: 0,
+    maxAccPhs: 2,
+    greenCircles: 3,
+    redCircles: 3,
     spd: [6, 5, 4, 3, 2, 1, 0],
-    turns: [0, 20, 30, 30, 35, 35, 40],
+    turns: [20, 20, 20, 20, 20, 20, 20],
     dmgStops: [false, false, false, false, false, false, false]
   },
-  structure: { repairable: 0, permanent: 0 },
+  structure: { repairable: 1, permanent: 4 },
   shipArtDataUrl: '',
   weapons: [
+    { name: 'WPN NAME', mountArcs: ['1', '2'], mountFacings: [[1, 2]], powerCircles: 1, powerStops: [], structure: 1, ranges: [], traits: [], special: '' },
     { name: '', mountArcs: [], mountFacings: [], powerCircles: 1, powerStops: [], structure: 1, ranges: [], traits: [], special: '' },
     { name: '', mountArcs: [], mountFacings: [], powerCircles: 1, powerStops: [], structure: 1, ranges: [], traits: [], special: '' },
-    { name: '', mountArcs: [], mountFacings: [], powerCircles: 1, powerStops: [], structure: 1, ranges: [], traits: [], special: '' },
-    { name: '', mountArcs: [], mountFacings: [], powerCircles: 1, powerStops: [], structure: 1, ranges: [], traits: [], special: '' }
+    { name: '', mountArcs: [], mountFacings: [], powerCircles: 2, powerStops: [], structure: 2, ranges: [], traits: [], special: '' }
   ],
   systems: [
     { key: 'SCNC', value: '0' },
@@ -366,13 +367,22 @@ function createMountDiagram(facings, structure, powerCircles, powerStops) {
 }
 
 function parseSystems(raw) {
-  return raw
+  return String(raw || '')
     .split('\n')
     .map((line) => line.trim())
     .filter(Boolean)
     .map((line) => {
-      const [key, value] = line.split(':').map((part) => part.trim());
-      return { key, value: value ?? '' };
+      const parts = line.split(':').map((part) => part.trim()).filter((part) => part.length > 0);
+      if (parts.length >= 3) {
+        const [powerRaw, keyRaw, valueRaw] = parts;
+        const normalizedKey = keyRaw.toUpperCase();
+        if (SPECIAL_SYSTEM_KEYS.has(normalizedKey)) {
+          return { key: normalizedKey, value: valueRaw ?? '0', power: powerRaw ?? '0' };
+        }
+      }
+
+      const [keyRaw, valueRaw] = parts;
+      return { key: String(keyRaw || '').toUpperCase(), value: valueRaw ?? '0' };
     });
 }
 
@@ -404,9 +414,9 @@ function normalizeTurnOption(value) {
 function readSublight() {
   const speeds = [6, 5, 4, 3, 2, 1, 0];
   return {
-    maxAccPhs: num('sublightMaxAcc'),
-    greenCircles: clamp(num('sublightGreen'), 0, 3),
-    redCircles: clamp(num('sublightRed'), 0, 3),
+    maxAccPhs: Math.max(0, num('vector')),
+    greenCircles: clamp(num('sublightGreen'), 0, 5),
+    redCircles: clamp(num('sublightRed'), 0, 5),
     spd: speeds.map((speed) => speed),
     turns: speeds.map((speed) => normalizeTurnOption(num(`sublightTurn${speed}`))),
     dmgStops: speeds.map((speed) => Boolean(form.elements[`sublightDmg${speed}`]?.checked))
@@ -554,6 +564,34 @@ function renderBoxes(containerId, count, className) {
     box.className = className;
     container.appendChild(box);
   }
+}
+
+function renderShieldFacingBoxes(containerId, count, orientation = 'row') {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+
+  container.innerHTML = '';
+  container.classList.add('is-split');
+
+  const total = Math.max(0, Number(count || 0));
+  if (total <= 0) {
+    return;
+  }
+
+  const outerCount = Math.ceil(total / 2);
+  const innerCount = total - outerCount;
+  const laneCounts = innerCount > 0 ? [outerCount, innerCount] : [outerCount];
+
+  laneCounts.forEach((laneCount) => {
+    const lane = document.createElement('div');
+    lane.className = `shield-split-lane ${orientation}-lane`;
+    for (let i = 0; i < laneCount; i += 1) {
+      const box = document.createElement('span');
+      box.className = 'shield-box';
+      lane.appendChild(box);
+    }
+    container.appendChild(lane);
+  });
 }
 
 function weaponSlot(id, rawWeapon, enabled = true) {
@@ -708,7 +746,7 @@ function renderStructure(build) {
 function circleRun(containerId, count) {
   const container = document.getElementById(containerId);
   container.innerHTML = '';
-  for (let i = 0; i < clamp(count, 0, 3); i += 1) {
+  for (let i = 0; i < clamp(count, 0, 5); i += 1) {
     const circle = document.createElement('span');
     circle.className = 'rnd-circle';
     container.appendChild(circle);
@@ -717,9 +755,9 @@ function circleRun(containerId, count) {
 
 function renderManeuvering(sublight) {
   const data = sublight || {
-    maxAccPhs: 0,
-    greenCircles: 0,
-    redCircles: 0,
+    maxAccPhs: 2,
+    greenCircles: 3,
+    redCircles: 3,
     spd: [6, 5, 4, 3, 2, 1, 0],
     turns: [20, 20, 20, 20, 20, 20, 20],
     dmgStops: [false, false, false, false, false, false, false]
@@ -786,10 +824,10 @@ function renderPreview(build, options = {}) {
     blackGenRow.appendChild(box);
   }
 
-  renderBoxes('pvFwdShieldBoxes', build.shields.forward, 'shield-box');
-  renderBoxes('pvAftShieldBoxes', build.shields.aft, 'shield-box');
-  renderBoxes('pvPortShieldBoxes', build.shields.port, 'shield-box');
-  renderBoxes('pvStbdShieldBoxes', build.shields.starboard, 'shield-box');
+  renderShieldFacingBoxes('pvFwdShieldBoxes', build.shields.forward, 'row');
+  renderShieldFacingBoxes('pvAftShieldBoxes', build.shields.aft, 'row');
+  renderShieldFacingBoxes('pvPortShieldBoxes', build.shields.port, 'column');
+  renderShieldFacingBoxes('pvStbdShieldBoxes', build.shields.starboard, 'column');
 
   const armor = build.armor || { forward: 0, aft: 0, port: 0, starboard: 0 };
   renderBoxes('pvFwdArmorBoxes', armor.forward, 'armor-box');
@@ -814,7 +852,7 @@ function renderPreview(build, options = {}) {
     silhouetteEl.style.display = 'block';
   }
 
-  renderFunctions(build.functionsConfig);
+  renderFunctions(build.functionsConfig, build.systems);
   renderPowerSystem(build.powerSystem);
   renderManeuvering(build.sublight);
 
@@ -840,7 +878,9 @@ function applyDynamicLayoutDensity(build) {
     return count + 1;
   }, 0);
 
-  const systemsCount = Array.isArray(build?.systems) ? build.systems.length : 0;
+  const systemsCount = Array.isArray(build?.systems)
+    ? build.systems.filter((entry) => Number(entry?.value || 0) > 0).length
+    : 0;
   const shieldDensity = Number(build?.shieldGen || 0) + Number(build?.shields?.forward || 0) + Number(build?.shields?.aft || 0);
 
   let density = 'normal';
@@ -854,7 +894,7 @@ function applyDynamicLayoutDensity(build) {
 }
 
 
-function renderFunctions(functionsConfig) {
+function renderFunctions(functionsConfig, systems = []) {
   const container = document.getElementById('pvFunctions');
   container.innerHTML = '';
   const cfg = functionsConfig || {};
@@ -900,7 +940,7 @@ function renderFunctions(functionsConfig) {
     });
   };
 
-  const acc = cfg.accDec || { values: ['1', '2', '3', '4', '5', '6'], free: 1 };
+  const acc = cfg.accDec || { values: ['1', '2', '3'], free: 0 };
   addValueDots(addRow('ACC/DEC', 'green'), acc.values, acc.free);
 
   const sif = cfg.sifIdf || { values: ['1', '2', '3'], free: 0, emer: true };
@@ -919,18 +959,12 @@ function renderFunctions(functionsConfig) {
     sifLevels.appendChild(emer);
   }
 
-  const bat = cfg.batRech || { values: ['1'], free: 0 };
+  const bat = cfg.batRech || { values: [], free: 0 };
   addValueDots(addRow('BAT RECH', 'green'), bat.values, 0);
 
   const ftl = cfg.ftl || { empty: 2 };
   const ftlLevels = addRow('FTL', 'green');
   for (let i = 0; i < Number(ftl.empty || 0); i += 1) addDot(ftlLevels, false);
-
-  const cloak = cfg.cloak || { enabled: false, empty: 3 };
-  if (cloak.enabled) {
-    const cloakLevels = addRow('CLOAK', 'magenta');
-    for (let i = 0; i < Number(cloak.empty || 0); i += 1) addDot(cloakLevels, false);
-  }
 
   const shldRenf = addRow('SHLD RNFC', 'cyan');
   ['F', 'P', 'S', 'A'].forEach((part) => {
@@ -944,11 +978,22 @@ function renderFunctions(functionsConfig) {
     addToken(shldRepr, part);
   });
 
-  const sensor = cfg.sensor || { values: ['2', '4', '6'], free: 1 };
+  const sensor = cfg.sensor || { values: [], free: 0 };
   addValueDots(addRow('SENSOR', 'gold'), sensor.values, sensor.free);
 
-  const gen = cfg.genSys || { values: ['NRM', 'MAX'], free: 1 };
+  const gen = cfg.genSys || { values: ['NRM', 'MAX'], free: 0 };
   addValueDots(addRow('GEN SYS', 'gold'), gen.values, gen.free);
+
+  const specialSystems = (Array.isArray(systems) ? systems : [])
+    .map((entry) => ({
+      key: String(entry?.key || '').toUpperCase(),
+      power: Math.max(0, Number(entry?.power || 0))
+    }))
+    .filter((entry) => SPECIAL_SYSTEM_KEYS.has(entry.key) && entry.power > 0);
+  specialSystems.forEach((entry) => {
+    const levels = addRow(entry.key, 'magenta');
+    for (let i = 0; i < entry.power; i += 1) addDot(levels, false);
+  });
 
   const weapons = Array.isArray(cfg.weapons) ? cfg.weapons : [];
   weapons.forEach((weapon, idx) => {
@@ -966,6 +1011,9 @@ function renderSystems(systems, crew) {
   const rows = Array.isArray(systems) ? systems : [];
 
   rows.forEach((entry) => {
+    const count = Math.max(0, Number(entry?.value || 0));
+    if (count <= 0) return;
+
     const row = document.createElement('div');
     row.className = 'system-row';
 
@@ -974,7 +1022,6 @@ function renderSystems(systems, crew) {
     key.textContent = String(entry.key || '').slice(0, 5).toUpperCase();
     row.appendChild(key);
 
-    const count = Math.max(0, Number(entry.value || 0));
     for (let i = 0; i < count; i += 1) {
       const box = document.createElement('span');
       box.className = 'system-box';
@@ -1211,14 +1258,13 @@ function restoreDraft(draft) {
   });
 
   const sublight = safeDraft.sublight ?? {
-    maxAccPhs: 0,
-    greenCircles: 0,
-    redCircles: 0,
+    maxAccPhs: 2,
+    greenCircles: 3,
+    redCircles: 3,
     spd: [6, 5, 4, 3, 2, 1, 0],
     turns: [20, 20, 20, 20, 20, 20, 20],
     dmgStops: [false, false, false, false, false, false, false]
   };
-  setValue('sublightMaxAcc', sublight.maxAccPhs ?? 0);
   setValue('sublightGreen', sublight.greenCircles ?? 0);
   setValue('sublightRed', sublight.redCircles ?? 0);
   [6, 5, 4, 3, 2, 1, 0].forEach((speed, index) => {
@@ -1253,7 +1299,11 @@ function restoreDraft(draft) {
   const normalizedSystems = Array.isArray(safeDraft.systems)
     ? safeDraft.systems
     : parseSystems(safeDraft.systems || '');
-  setValue('systems', normalizedSystems.map((item) => `${item.key}:${item.value ?? ''}`).join('\n'));
+  setValue('systems', normalizedSystems
+    .map((item) => (Number(item?.power || 0) > 0
+      ? `${item.power}:${item.key}:${item.value ?? '0'}`
+      : `${item.key}:${item.value ?? '0'}`))
+    .join('\n'));
   setValue('shuttleCraft', safeDraft.crew?.shuttleCraft ?? 0);
   setValue('marinesStationed', safeDraft.crew?.marinesStationed ?? 0);
 
