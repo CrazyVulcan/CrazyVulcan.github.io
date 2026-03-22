@@ -429,6 +429,14 @@ function getShieldGenTotal(rawShieldGen) {
   return cfg.count * cfg.value;
 }
 
+function getBalancedGeneratorSegments(value) {
+  const total = Math.max(0, Number(value || 0));
+  if (total <= 4) return [total];
+  const outer = Math.ceil(total / 2);
+  const inner = total - outer;
+  return inner > 0 ? [outer, inner] : [outer];
+}
+
 function clamp(value, min, max) {
   return Math.min(max, Math.max(min, value));
 }
@@ -647,14 +655,17 @@ function renderShieldGeneratorFacingBoxes(containerId, shieldGenConfig, orientat
   if (cfg.count <= 0 || cfg.value <= 0) return;
 
   for (let laneIdx = 0; laneIdx < cfg.count; laneIdx += 1) {
-    const lane = document.createElement('div');
-    lane.className = `shield-split-lane ${orientation}-lane`;
-    for (let boxIdx = 0; boxIdx < cfg.value; boxIdx += 1) {
-      const box = document.createElement('span');
-      box.className = 'shield-gen';
-      lane.appendChild(box);
-    }
-    container.appendChild(lane);
+    const segments = getBalancedGeneratorSegments(cfg.value);
+    segments.forEach((segmentValue) => {
+      const lane = document.createElement('div');
+      lane.className = `shield-split-lane ${orientation}-lane`;
+      for (let boxIdx = 0; boxIdx < segmentValue; boxIdx += 1) {
+        const box = document.createElement('span');
+        box.className = 'shield-gen';
+        lane.appendChild(box);
+      }
+      container.appendChild(lane);
+    });
   }
 }
 
@@ -884,14 +895,17 @@ function renderPreview(build, options = {}) {
   blackGenRow.innerHTML = '';
   const shieldGenConfig = normalizeShieldGenConfig(build.shieldGen);
   for (let laneIdx = 0; laneIdx < shieldGenConfig.count; laneIdx += 1) {
-    const lane = document.createElement('div');
-    lane.className = 'shield-split-lane row-lane';
-    for (let boxIdx = 0; boxIdx < shieldGenConfig.value; boxIdx += 1) {
-      const box = document.createElement('span');
-      box.className = 'shield-gen-black';
-      lane.appendChild(box);
-    }
-    blackGenRow.appendChild(lane);
+    const segments = getBalancedGeneratorSegments(shieldGenConfig.value);
+    segments.forEach((segmentValue) => {
+      const lane = document.createElement('div');
+      lane.className = 'shield-split-lane row-lane';
+      for (let boxIdx = 0; boxIdx < segmentValue; boxIdx += 1) {
+        const box = document.createElement('span');
+        box.className = 'shield-gen-black';
+        lane.appendChild(box);
+      }
+      blackGenRow.appendChild(lane);
+    });
   }
 
   renderShieldFacingBoxes('pvFwdShieldBoxes', build.shields.forward, 'row');
