@@ -293,7 +293,9 @@ button.ghost { background: #6d7f8d; border-color: #465764; }
 }
 
 .shield-body { position: relative; height: 385px; background: #ececec; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-.ship-art-wrap { width: 76%; height: 100%; max-height: 100%; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.ship-art-wrap { width: 74%; height: 100%; max-height: 100%; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.ssd-template[data-density="cozy"] .ship-art-wrap { width: 66%; }
+.ssd-template[data-density="compact"] .ship-art-wrap { width: 58%; }
 .ship-art { width: 100%; height: 100%; object-fit: contain; display: none; filter: saturate(0.9) contrast(1.02); }
 .ship-silhouette { width: 58%; height: 82%; background: linear-gradient(180deg,#d8d8d8,#b5b5b5); border: 3px solid #121212; border-radius: 46% 46% 30% 30% / 58% 58% 42% 42%; }
 .side {
@@ -528,7 +530,7 @@ pre { background: #f3f8fc; color: #12314a; padding: 0.55rem; border-radius: 6px;
 @media print {
   @page {
     size: letter landscape;
-    margin: 0.25in;
+    margin: 0.15in;
   }
 
   :root { color-scheme: light; }
@@ -552,16 +554,21 @@ pre { background: #f3f8fc; color: #12314a; padding: 0.55rem; border-radius: 6px;
   }
   .preview-wrap {
     position: static;
+    display: flex;
+    justify-content: center;
   }
   .ssd-template {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
+    --ssd-ratio: 1403 / 1001;
+    width: min(100%, 10.7in, calc((100vh - 0.35in) * (1403 / 1001)));
+    max-width: 10.7in;
+    margin: 0 auto;
     break-inside: avoid;
     page-break-inside: avoid;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
+
+  .ssd-template[data-density="compact"] .ship-art-wrap { width: 54%; }
 
   .ssd-template,
   .ssd-template * {
@@ -578,7 +585,7 @@ pre { background: #f3f8fc; color: #12314a; padding: 0.55rem; border-radius: 6px;
   #pvFaction,
   #pvPointValue,
   #pvEra {
-    font-size: 1.18rem;
+    font-size: 1.02rem;
   }
 
   .eng-stats span,
@@ -591,8 +598,8 @@ pre { background: #f3f8fc; color: #12314a; padding: 0.55rem; border-radius: 6px;
   .wpn-special-row,
   .wpn-trait-row,
   .slot-body {
-    font-size: 0.96rem;
-    line-height: 1.2;
+    font-size: 0.82rem;
+    line-height: 1.15;
   }
 
   .wpn-die {
@@ -615,14 +622,46 @@ pre { background: #f3f8fc; color: #12314a; padding: 0.55rem; border-radius: 6px;
   .fn-dot,
   .power-dot,
   .rnd-circle {
-    transform: scale(1.28);
+    transform: scale(1.08);
     transform-origin: center;
+  }
+
+  .template-columns {
+    gap: 0.22rem;
+    padding: 0.14rem 0.12rem 0.08rem;
+  }
+
+  .shield-frame {
+    padding: 0.12rem 1.65rem 0.08rem;
+  }
+
+  .shield-body {
+    height: 338px;
+  }
+
+  .shield-top,
+  .shield-bottom {
+    padding: 0.18rem 0.2rem;
+  }
+
+  .systems-box {
+    margin-top: 0.42rem;
+    border-width: 9px;
+  }
+
+  .block-maneuver .maneuver-preview {
+    height: 88px;
+    max-height: 88px;
+  }
+
+  .right-col .weapon-slot {
+    min-height: 0;
   }
 
   .stat-icon,
   .crew-img {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
   }
 }
 
