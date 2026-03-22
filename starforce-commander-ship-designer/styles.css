@@ -568,8 +568,8 @@ pre { background: #f3f8fc; color: #12314a; padding: 0.55rem; border-radius: 6px;
   }
 
   .ssd-template {
-    width: min(100%, var(--print-fit-width, 10.6in));
-    max-width: var(--print-fit-width, 10.6in);
+    width: min(100%, calc((100vh - 0.4in) * (1403 / 1001)));
+    max-width: 10.6in;
     margin: 0 auto;
     break-inside: avoid;
     page-break-inside: avoid;

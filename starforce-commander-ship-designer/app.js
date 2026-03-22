@@ -1315,38 +1315,6 @@ function importJsonFile(file) {
   reader.readAsText(file);
 }
 
-function applyCrossBrowserPrintFit() {
-  const root = document.documentElement;
-  const aspectRatio = 1403 / 1001;
-
-  const updatePrintWidth = () => {
-    const viewportWidth = window.innerWidth || 0;
-    const viewportHeight = window.innerHeight || 0;
-    if (!viewportWidth || !viewportHeight) return;
-
-    const fitByHeight = viewportHeight * aspectRatio;
-    const fitWidth = Math.floor(Math.min(viewportWidth, fitByHeight));
-    root.style.setProperty('--print-fit-width', `${Math.max(fitWidth, 600)}px`);
-  };
-
-  updatePrintWidth();
-  window.addEventListener('resize', updatePrintWidth);
-  window.addEventListener('beforeprint', updatePrintWidth);
-
-  if (typeof window.matchMedia === 'function') {
-    const mediaQueryList = window.matchMedia('print');
-    if (typeof mediaQueryList.addEventListener === 'function') {
-      mediaQueryList.addEventListener('change', (event) => {
-        if (event.matches) updatePrintWidth();
-      });
-    } else if (typeof mediaQueryList.addListener === 'function') {
-      mediaQueryList.addListener((event) => {
-        if (event.matches) updatePrintWidth();
-      });
-    }
-  }
-}
-
 form.addEventListener('input', () => render({ recalculatePointValue: false }));
 form.addEventListener('change', () => render({ recalculatePointValue: false }));
 document.getElementById('saveBtn').addEventListener('click', saveDraft);
@@ -1391,8 +1359,6 @@ shipArtInput.addEventListener('change', (event) => {
   };
   reader.readAsDataURL(file);
 });
-
-applyCrossBrowserPrintFit();
 
 restoreDraft(STANDARD_DEFAULT_LOADOUT);
 renderDrafts();
