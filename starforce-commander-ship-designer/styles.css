@@ -528,7 +528,7 @@ pre { background: #f3f8fc; color: #12314a; padding: 0.55rem; border-radius: 6px;
 @media print {
   @page {
     size: letter landscape;
-    margin: 0.25in;
+    margin: 0.15in;
   }
 
   :root { color-scheme: light; }
@@ -578,7 +578,7 @@ pre { background: #f3f8fc; color: #12314a; padding: 0.55rem; border-radius: 6px;
   #pvFaction,
   #pvPointValue,
   #pvEra {
-    font-size: 1.18rem;
+    font-size: 1.02rem;
   }
 
   .eng-stats span,
@@ -591,8 +591,8 @@ pre { background: #f3f8fc; color: #12314a; padding: 0.55rem; border-radius: 6px;
   .wpn-special-row,
   .wpn-trait-row,
   .slot-body {
-    font-size: 0.96rem;
-    line-height: 1.2;
+    font-size: 0.82rem;
+    line-height: 1.15;
   }
 
   .wpn-die {
@@ -615,14 +615,14 @@ pre { background: #f3f8fc; color: #12314a; padding: 0.55rem; border-radius: 6px;
   .fn-dot,
   .power-dot,
   .rnd-circle {
-    transform: scale(1.28);
+    transform: scale(1.08);
     transform-origin: center;
   }
 
   .stat-icon,
   .crew-img {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
   }
 }
 
