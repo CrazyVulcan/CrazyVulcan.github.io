@@ -7,6 +7,7 @@ const liveBadge = document.getElementById('liveBadge');
 const STORAGE_KEY = 'sfCommanderSsdDrafts';
 const TURN_OPTIONS = [0, 20, 25, 30, 35, 40, 45, 65];
 let shipArtDataUrl = '';
+const SPECIAL_SYSTEM_KEYS = new Set(['CLOAK', 'CMND', 'FCON', 'HNGR', 'LNCH', 'LAND', 'SCOUT']);
 
 
 const STANDARD_DEFAULT_LOADOUT = {
@@ -374,13 +375,22 @@ function createMountDiagram(facings, structure, powerCircles, powerStops) {
 }
 
 function parseSystems(raw) {
-  return raw
+  return String(raw || '')
     .split('\n')
     .map((line) => line.trim())
     .filter(Boolean)
     .map((line) => {
-      const [key, value] = line.split(':').map((part) => part.trim());
-      return { key, value: value ?? '' };
+      const parts = line.split(':').map((part) => part.trim()).filter((part) => part.length > 0);
+      if (parts.length >= 3) {
+        const [powerRaw, keyRaw, valueRaw] = parts;
+        const normalizedKey = keyRaw.toUpperCase();
+        if (SPECIAL_SYSTEM_KEYS.has(normalizedKey)) {
+          return { key: normalizedKey, value: valueRaw ?? '0', power: powerRaw ?? '0' };
+        }
+      }
+
+      const [keyRaw, valueRaw] = parts;
+      return { key: String(keyRaw || '').toUpperCase(), value: valueRaw ?? '0' };
     });
 }
 
@@ -859,7 +869,7 @@ function renderPreview(build, options = {}) {
     silhouetteEl.style.display = 'block';
   }
 
-  renderFunctions(build.functionsConfig);
+  renderFunctions(build.functionsConfig, build.systems);
   renderPowerSystem(build.powerSystem);
   renderManeuvering(build.sublight);
 
@@ -885,7 +895,9 @@ function applyDynamicLayoutDensity(build) {
     return count + 1;
   }, 0);
 
-  const systemsCount = Array.isArray(build?.systems) ? build.systems.length : 0;
+  const systemsCount = Array.isArray(build?.systems)
+    ? build.systems.filter((entry) => Number(entry?.value || 0) > 0).length
+    : 0;
   const shieldDensity = Number(build?.shieldGen || 0) + Number(build?.shields?.forward || 0) + Number(build?.shields?.aft || 0);
 
   let density = 'normal';
@@ -899,7 +911,7 @@ function applyDynamicLayoutDensity(build) {
 }
 
 
-function renderFunctions(functionsConfig) {
+function renderFunctions(functionsConfig, systems = []) {
   const container = document.getElementById('pvFunctions');
   container.innerHTML = '';
   const cfg = functionsConfig || {};
@@ -971,12 +983,6 @@ function renderFunctions(functionsConfig) {
   const ftlLevels = addRow('FTL', 'green');
   for (let i = 0; i < Number(ftl.empty || 0); i += 1) addDot(ftlLevels, false);
 
-  const cloak = cfg.cloak || { enabled: false, empty: 0 };
-  if (cloak.enabled) {
-    const cloakLevels = addRow('CLOAK', 'magenta');
-    for (let i = 0; i < Number(cloak.empty || 0); i += 1) addDot(cloakLevels, false);
-  }
-
   const shldRenf = addRow('SHLD RNFC', 'cyan');
   ['F', 'P', 'S', 'A'].forEach((part) => {
     addDot(shldRenf, false);
@@ -995,6 +1001,17 @@ function renderFunctions(functionsConfig) {
   const gen = cfg.genSys || { values: ['NRM', 'MAX'], free: 0 };
   addValueDots(addRow('GEN SYS', 'gold'), gen.values, gen.free);
 
+  const specialSystems = (Array.isArray(systems) ? systems : [])
+    .map((entry) => ({
+      key: String(entry?.key || '').toUpperCase(),
+      power: Math.max(0, Number(entry?.power || 0))
+    }))
+    .filter((entry) => SPECIAL_SYSTEM_KEYS.has(entry.key) && entry.power > 0);
+  specialSystems.forEach((entry) => {
+    const levels = addRow(entry.key, 'magenta');
+    for (let i = 0; i < entry.power; i += 1) addDot(levels, false);
+  });
+
   const weapons = Array.isArray(cfg.weapons) ? cfg.weapons : [];
   weapons.forEach((weapon, idx) => {
     const values = Array.isArray(weapon?.values) ? weapon.values : [];
@@ -1011,6 +1028,9 @@ function renderSystems(systems, crew) {
   const rows = Array.isArray(systems) ? systems : [];
 
   rows.forEach((entry) => {
+    const count = Math.max(0, Number(entry?.value || 0));
+    if (count <= 0) return;
+
     const row = document.createElement('div');
     row.className = 'system-row';
 
@@ -1019,7 +1039,6 @@ function renderSystems(systems, crew) {
     key.textContent = String(entry.key || '').slice(0, 5).toUpperCase();
     row.appendChild(key);
 
-    const count = Math.max(0, Number(entry.value || 0));
     for (let i = 0; i < count; i += 1) {
       const box = document.createElement('span');
       box.className = 'system-box';
@@ -1298,7 +1317,11 @@ function restoreDraft(draft) {
   const normalizedSystems = Array.isArray(safeDraft.systems)
     ? safeDraft.systems
     : parseSystems(safeDraft.systems || '');
-  setValue('systems', normalizedSystems.map((item) => `${item.key}:${item.value ?? ''}`).join('\n'));
+  setValue('systems', normalizedSystems
+    .map((item) => (Number(item?.power || 0) > 0
+      ? `${item.power}:${item.key}:${item.value ?? '0'}`
+      : `${item.key}:${item.value ?? '0'}`))
+    .join('\n'));
   setValue('shuttleCraft', safeDraft.crew?.shuttleCraft ?? 0);
   setValue('marinesStationed', safeDraft.crew?.marinesStationed ?? 0);
 

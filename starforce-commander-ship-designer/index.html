@@ -251,7 +251,8 @@
         <button type="button" id="clearArtBtn" class="ghost">Clear Ship Art</button>
 
         <h2>Systems (one per line)</h2>
-        <label><textarea name="systems" rows="4" placeholder="SCNC:3\nSENS:4\nQTRS:2"></textarea></label>
+        <label><textarea name="systems" rows="4" placeholder="SCNC:3\nSENS:4\nQTRS:2\n2:CLOAK:1"></textarea></label>
+        <p class="muted">General format: <code>KEY:boxes</code> (rows with 0 are hidden). Special systems format: <code>power:KEY:boxes</code> (adds a Functions row with that many power circles).</p>
         <div class="grid2">
           <label>Shuttle Craft <input name="shuttleCraft" type="number" min="0" value="4" /></label>
           <label>Marines Stationed <input name="marinesStationed" type="number" min="0" value="10" /></label>
