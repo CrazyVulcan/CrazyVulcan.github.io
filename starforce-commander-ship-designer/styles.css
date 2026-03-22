@@ -293,7 +293,9 @@ button.ghost { background: #6d7f8d; border-color: #465764; }
 }
 
 .shield-body { position: relative; height: 385px; background: #ececec; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-.ship-art-wrap { width: 76%; height: 100%; max-height: 100%; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.ship-art-wrap { width: 74%; height: 100%; max-height: 100%; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.ssd-template[data-density="cozy"] .ship-art-wrap { width: 66%; }
+.ssd-template[data-density="compact"] .ship-art-wrap { width: 58%; }
 .ship-art { width: 100%; height: 100%; object-fit: contain; display: none; filter: saturate(0.9) contrast(1.02); }
 .ship-silhouette { width: 58%; height: 82%; background: linear-gradient(180deg,#d8d8d8,#b5b5b5); border: 3px solid #121212; border-radius: 46% 46% 30% 30% / 58% 58% 42% 42%; }
 .side {
@@ -528,15 +530,20 @@ pre { background: #f3f8fc; color: #12314a; padding: 0.55rem; border-radius: 6px;
 @media print {
   @page {
     size: letter landscape;
-    margin: 0.25in;
+    margin: 0.2in;
   }
 
   :root { color-scheme: light; }
-  body { background: #fff; }
+  body {
+    margin: 0;
+    background: #fff;
+  }
+
   .layout {
     display: block;
     padding: 0;
   }
+
   .controls,
   .preview-head,
   #drafts,
@@ -545,84 +552,29 @@ pre { background: #f3f8fc; color: #12314a; padding: 0.55rem; border-radius: 6px;
   .live-badge {
     display: none !important;
   }
+
   .panel {
     border: 0;
     background: transparent;
     padding: 0;
+    box-shadow: none;
   }
+
   .preview-wrap {
     position: static;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
   }
+
   .ssd-template {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
+    width: min(100%, var(--print-fit-width, 10.6in));
+    max-width: var(--print-fit-width, 10.6in);
+    margin: 0 auto;
     break-inside: avoid;
     page-break-inside: avoid;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
-  }
-
-  .ssd-template,
-  .ssd-template * {
-    text-rendering: geometricPrecision;
-  }
-
-  .template-ship,
-  .template-class,
-  .col h3,
-  .shield-top,
-  .shield-bottom,
-  .slot-title,
-  .structure,
-  #pvFaction,
-  #pvPointValue,
-  #pvEra {
-    font-size: 1.18rem;
-  }
-
-  .eng-stats span,
-  .green-block h4,
-  .fn-row,
-  .power-track-row,
-  .man-row,
-  .system-row,
-  .wpn-range-band,
-  .wpn-special-row,
-  .wpn-trait-row,
-  .slot-body {
-    font-size: 0.96rem;
-    line-height: 1.2;
-  }
-
-  .wpn-die {
-    width: 18px;
-    height: 18px;
-    font-size: 0.62rem;
-  }
-
-  .wpn-power-circle,
-  .wpn-power-stop,
-  .wpn-structure-box,
-  .system-box,
-  .shield-box,
-  .shield-gen,
-  .shield-gen-black,
-  .armor-box,
-  .power-box,
-  .dmg-stop,
-  .structure-box,
-  .fn-dot,
-  .power-dot,
-  .rnd-circle {
-    transform: scale(1.28);
-    transform-origin: center;
-  }
-
-  .stat-icon,
-  .crew-img {
-    width: 24px;
-    height: 24px;
   }
 }
 
