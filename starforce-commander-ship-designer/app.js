@@ -72,7 +72,15 @@ const STANDARD_DEFAULT_LOADOUT = {
     { key: 'TRAN', value: '0' },
     { key: 'SHTL', value: '0' },
     { key: 'QTRS', value: '0' },
-    { key: 'CRGO', value: '0' }
+    { key: 'CRGO', value: '0' },
+    { key: 'SPCL', value: '0' },
+    { key: 'CLOAK', value: '0' },
+    { key: 'CMND', value: '0' },
+    { key: 'FCON', value: '0' },
+    { key: 'HNGR', value: '0' },
+    { key: 'LNCH', value: '0' },
+    { key: 'LAND', value: '0' },
+    { key: 'SCOUT', value: '0' }
   ],
   crew: { shuttleCraft: 0, marinesStationed: 0 }
 };
@@ -411,8 +419,17 @@ function normalizeTurnOption(value) {
   return TURN_OPTIONS.includes(value) ? value : 20;
 }
 
+function syncSublightMaxAccFromAcceleration() {
+  const acceleration = Math.max(0, num('vector'));
+  if (form.elements.sublightMaxAcc) {
+    form.elements.sublightMaxAcc.value = String(acceleration);
+  }
+  return acceleration;
+}
+
 function readSublight() {
   const speeds = [6, 5, 4, 3, 2, 1, 0];
+  const linkedMaxAcc = syncSublightMaxAccFromAcceleration();
   return {
     maxAccPhs: Math.max(0, num('vector')),
     greenCircles: clamp(num('sublightGreen'), 0, 5),
@@ -1186,6 +1203,7 @@ function restoreDraft(draft) {
   setValue('vector', safeDraft.engineering?.vector ?? 0);
   setValue('turn', safeDraft.engineering?.turn ?? 0);
   setValue('special', safeDraft.engineering?.special ?? 0);
+  syncSublightMaxAccFromAcceleration();
 
   setValue('shieldFwd', safeDraft.shields?.forward ?? 0);
   setValue('shieldAft', safeDraft.shields?.aft ?? 0);
