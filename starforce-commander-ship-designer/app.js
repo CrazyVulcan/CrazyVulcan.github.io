@@ -824,9 +824,32 @@ function renderPreview(build, options = {}) {
   weaponSlot(4, build.weapons[3], weaponPower[3] !== false);
 
   renderSystems(build.systems, build.crew);
+  applyDynamicLayoutDensity(build);
   renderStructure(build);
 }
 
+function applyDynamicLayoutDensity(build) {
+  const template = document.querySelector('.ssd-template');
+  if (!template) return;
+
+  const weaponSlots = [1, 2, 3, 4].reduce((count, id) => {
+    const slot = document.getElementById(`pvWpn${id}Slot`);
+    if (!slot || slot.style.display === 'none') return count;
+    return count + 1;
+  }, 0);
+
+  const systemsCount = Array.isArray(build?.systems) ? build.systems.length : 0;
+  const shieldDensity = Number(build?.shieldGen || 0) + Number(build?.shields?.forward || 0) + Number(build?.shields?.aft || 0);
+
+  let density = 'normal';
+  if (weaponSlots >= 3 || systemsCount >= 9 || shieldDensity >= 34) {
+    density = 'compact';
+  } else if (weaponSlots >= 2 || systemsCount >= 7 || shieldDensity >= 26) {
+    density = 'cozy';
+  }
+
+  template.dataset.density = density;
+}
 
 
 function renderFunctions(functionsConfig) {
