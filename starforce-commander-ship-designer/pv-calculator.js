@@ -113,6 +113,14 @@ function mountFacingScore(weapon) {
   return summedFacing / Math.max(1, arcs.length);
 }
 
+function curvedDiceValue(dice = []) {
+  const linear = sum((Array.isArray(dice) ? dice : []).map((die) => diceColorWeight(die)));
+  if (linear <= 0) {
+    return 0;
+  }
+  return Math.pow(linear, 1.18);
+}
+
 const SECTION_MULTIPLIERS = {
   identity: 0.4,
   engineering: 1.2,
@@ -379,7 +387,7 @@ function scoreWeaponQuality(weapon, build) {
   const ranges = Array.isArray(weapon?.ranges) ? weapon.ranges : [];
 
   const rangeScore = ranges.reduce((rangeTotal, range) => {
-    const diceScore = sum((Array.isArray(range?.dice) ? range.dice : []).map((die) => diceColorWeight(die)));
+    const diceScore = curvedDiceValue(range?.dice);
     const bonus = positivePart(range?.bonus);
     const rangeType = rangeTypeWeight(String(range?.type || 'black').toLowerCase());
     const maxDistance = bandMax(range?.band);
@@ -401,7 +409,7 @@ function scoreWeaponQuality(weapon, build) {
   const stopDiscount = -Array.from({ length: stopCount }, (_, index) => 1.45 + (index * 0.65)).reduce((a, b) => a + b, 0);
 
   const powerScoreRaw = (circleAdjustment + stopDiscount) * rank(build, 'rankWeaponsPower');
-  const structureScore = positivePart(weapon?.structure) * 0.35;
+  const structureScore = Math.pow(Math.max(1, positivePart(weapon?.structure, 1)), 1.2) * 0.42;
 
   const traitKeywords = {
     HVY: 1.2,
@@ -516,7 +524,7 @@ function weaponProfileScale(build) {
     const mountScale = scaledMountCount(effectiveMountCount(weapon));
 
     const rangeDicePressure = ranges.reduce((rangeTotal, range) => {
-      const diceScore = sum((Array.isArray(range?.dice) ? range.dice : []).map((die) => diceColorWeight(die)));
+      const diceScore = curvedDiceValue(range?.dice);
       const bonus = positivePart(range?.bonus);
       const maxDistance = bandMax(range?.band);
       const rangeReach = 0.55 + (Math.max(1, maxDistance) / 20);
