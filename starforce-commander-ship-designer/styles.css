@@ -138,7 +138,7 @@ button.ghost { background: #6d7f8d; border-color: #465764; }
   overflow: hidden;
   font-family: Arial Black, Arial, Helvetica, sans-serif;
 }
-<<<<<<< HEAD
+
 .svg-preview-frame {
   padding: 0;
 }
@@ -159,8 +159,7 @@ button.ghost { background: #6d7f8d; border-color: #465764; }
   background: #ffe7e7;
   border: 1px solid #b33;
 }
-=======
->>>>>>> parent of 79c76f59 (Refactor SSD preview/print to fixed SVG artboard renderer)
+
 .template-top {
   display: grid;
   grid-template-columns: minmax(220px, 1fr) 1.5fr;
