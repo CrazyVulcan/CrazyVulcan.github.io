@@ -564,6 +564,34 @@ function renderBoxes(containerId, count, className) {
   }
 }
 
+function renderShieldFacingBoxes(containerId, count, orientation = 'row') {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+
+  container.innerHTML = '';
+  container.classList.add('is-split');
+
+  const total = Math.max(0, Number(count || 0));
+  if (total <= 0) {
+    return;
+  }
+
+  const outerCount = Math.ceil(total / 2);
+  const innerCount = total - outerCount;
+  const laneCounts = innerCount > 0 ? [outerCount, innerCount] : [outerCount];
+
+  laneCounts.forEach((laneCount) => {
+    const lane = document.createElement('div');
+    lane.className = `shield-split-lane ${orientation}-lane`;
+    for (let i = 0; i < laneCount; i += 1) {
+      const box = document.createElement('span');
+      box.className = 'shield-box';
+      lane.appendChild(box);
+    }
+    container.appendChild(lane);
+  });
+}
+
 function weaponSlot(id, rawWeapon, enabled = true) {
   const weapon = normalizeWeapon(rawWeapon);
   const slot = document.getElementById(`pvWpn${id}Slot`);
@@ -794,10 +822,10 @@ function renderPreview(build, options = {}) {
     blackGenRow.appendChild(box);
   }
 
-  renderBoxes('pvFwdShieldBoxes', build.shields.forward, 'shield-box');
-  renderBoxes('pvAftShieldBoxes', build.shields.aft, 'shield-box');
-  renderBoxes('pvPortShieldBoxes', build.shields.port, 'shield-box');
-  renderBoxes('pvStbdShieldBoxes', build.shields.starboard, 'shield-box');
+  renderShieldFacingBoxes('pvFwdShieldBoxes', build.shields.forward, 'row');
+  renderShieldFacingBoxes('pvAftShieldBoxes', build.shields.aft, 'row');
+  renderShieldFacingBoxes('pvPortShieldBoxes', build.shields.port, 'column');
+  renderShieldFacingBoxes('pvStbdShieldBoxes', build.shields.starboard, 'column');
 
   const armor = build.armor || { forward: 0, aft: 0, port: 0, starboard: 0 };
   renderBoxes('pvFwdArmorBoxes', armor.forward, 'armor-box');
