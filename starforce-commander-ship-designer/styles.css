@@ -626,6 +626,38 @@ pre { background: #f3f8fc; color: #12314a; padding: 0.55rem; border-radius: 6px;
     transform-origin: center;
   }
 
+  .template-columns {
+    gap: 0.22rem;
+    padding: 0.14rem 0.12rem 0.08rem;
+  }
+
+  .shield-frame {
+    padding: 0.12rem 1.65rem 0.08rem;
+  }
+
+  .shield-body {
+    height: 338px;
+  }
+
+  .shield-top,
+  .shield-bottom {
+    padding: 0.18rem 0.2rem;
+  }
+
+  .systems-box {
+    margin-top: 0.42rem;
+    border-width: 9px;
+  }
+
+  .block-maneuver .maneuver-preview {
+    height: 88px;
+    max-height: 88px;
+  }
+
+  .right-col .weapon-slot {
+    min-height: 0;
+  }
+
   .stat-icon,
   .crew-img {
     width: 20px;
