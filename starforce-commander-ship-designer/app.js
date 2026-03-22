@@ -73,14 +73,13 @@ const STANDARD_DEFAULT_LOADOUT = {
     { key: 'SHTL', value: '0' },
     { key: 'QTRS', value: '0' },
     { key: 'CRGO', value: '0' },
-    { key: 'SPCL', value: '0' },
-    { key: 'CLOAK', value: '0' },
-    { key: 'CMND', value: '0' },
-    { key: 'FCON', value: '0' },
     { key: 'HNGR', value: '0' },
     { key: 'LNCH', value: '0' },
     { key: 'LAND', value: '0' },
-    { key: 'SCOUT', value: '0' }
+    { key: 'CLOAK', value: '0', power: '0' },
+    { key: 'CMND', value: '0', power: '0' },
+    { key: 'FCON', value: '0', power: '0' },
+    { key: 'SCOUT', value: '0', power: '0' }
   ],
   crew: { shuttleCraft: 0, marinesStationed: 0 }
 };
@@ -381,6 +380,13 @@ function parseSystems(raw) {
     .filter(Boolean)
     .map((line) => {
       const parts = line.split(':').map((part) => part.trim()).filter((part) => part.length > 0);
+      if (parts.length >= 3) {
+        const [keyRaw, valueRaw, powerRaw] = parts;
+        const normalizedKey = keyRaw.toUpperCase();
+        if (SPECIAL_SYSTEM_KEYS.has(normalizedKey)) {
+          return { key: normalizedKey, value: valueRaw ?? '0', power: powerRaw ?? '0' };
+        }
+      }
       if (parts.length >= 3) {
         const [powerRaw, keyRaw, valueRaw] = parts;
         const normalizedKey = keyRaw.toUpperCase();
@@ -1318,8 +1324,8 @@ function restoreDraft(draft) {
     ? safeDraft.systems
     : parseSystems(safeDraft.systems || '');
   setValue('systems', normalizedSystems
-    .map((item) => (Number(item?.power || 0) > 0
-      ? `${item.power}:${item.key}:${item.value ?? '0'}`
+    .map((item) => (item?.power !== undefined
+      ? `${item.key}:${item.value ?? '0'}:${item.power ?? '0'}`
       : `${item.key}:${item.value ?? '0'}`))
     .join('\n'));
   setValue('shuttleCraft', safeDraft.crew?.shuttleCraft ?? 0);

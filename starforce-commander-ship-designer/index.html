@@ -251,8 +251,8 @@
         <button type="button" id="clearArtBtn" class="ghost">Clear Ship Art</button>
 
         <h2>Systems (one per line)</h2>
-        <label><textarea name="systems" rows="4" placeholder="SCNC:3\nSENS:4\nQTRS:2\n2:CLOAK:1"></textarea></label>
-        <p class="muted">General format: <code>KEY:boxes</code> (rows with 0 are hidden). Special systems format: <code>power:KEY:boxes</code> (adds a Functions row with that many power circles).</p>
+        <label><textarea name="systems" rows="4" placeholder="SCNC:0\nSENS:0\nTRAC:0\nTRAN:0\nSHTL:0\nQTRS:0\nCRGO:0\nHNGR:0\nLNCH:0\nLAND:0\nCLOAK:0:0\nCMND:0:0\nFCON:0:0\nSCOUT:0:0"></textarea></label>
+        <p class="muted">Format: <code>KEY:boxes</code> or <code>KEY:boxes:power</code> for special systems. If <code>boxes</code> is 0, that line is hidden in the SSD systems panel.</p>
         <div class="grid2">
           <label>Shuttle Craft <input name="shuttleCraft" type="number" min="0" value="4" /></label>
           <label>Marines Stationed <input name="marinesStationed" type="number" min="0" value="10" /></label>
