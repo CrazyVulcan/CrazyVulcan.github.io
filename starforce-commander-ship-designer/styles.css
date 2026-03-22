@@ -91,7 +91,7 @@ textarea:focus, input:focus {
 .power-system-editor { border: 1px solid #7f93a2; border-radius: 6px; padding: 0.7rem; margin-top: 0.6rem; background: #edf3f7; }
 .power-system-editor strong { display: block; margin-bottom: 0.2rem; }
 .power-system-editor .muted { margin: 0 0 0.38rem; font-size: 0.8rem; color: #436079; }
-.power-grid-head, .power-grid { display: grid; grid-template-columns: minmax(0, 1fr) 74px 96px minmax(0, 1fr) 44px; gap: 0.4rem; align-items: center; }
+.power-grid-head, .power-grid { display: grid; grid-template-columns: minmax(0, 1fr) 74px minmax(0, 1fr) 44px; gap: 0.4rem; align-items: center; }
 .power-grid-head { margin: 0.15rem 0; color: #44617b; font-size: 0.76rem; }
 .power-grid label { margin: 0; font-weight: 700; }
 .power-grid input { margin: 0; }

@@ -86,13 +86,13 @@ const STANDARD_DEFAULT_LOADOUT = {
 
 
 const POWER_TRACK_CONFIG = [
-  { key: 'lMain', label: 'L MAIN', pointsField: 'powerLMainPoints', boxesField: 'powerLMainBoxes', patternField: 'powerLMainPattern', hasDotField: 'powerLMainHasDot' },
-  { key: 'rMain', label: 'R MAIN', pointsField: 'powerRMainPoints', boxesField: 'powerRMainBoxes', patternField: 'powerRMainPattern', hasDotField: 'powerRMainHasDot' },
-  { key: 'cMain', label: 'C MAIN', pointsField: 'powerCMainPoints', boxesField: 'powerCMainBoxes', patternField: 'powerCMainPattern', hasDotField: 'powerCMainHasDot' },
-  { key: 'slReac', label: 'SL REAC', pointsField: 'powerSlReacPoints', boxesField: 'powerSlReacBoxes', patternField: 'powerSlReacPattern', hasDotField: 'powerSlReacHasDot' },
-  { key: 'auxPwr', label: 'AUX PWR', pointsField: 'powerAuxPwrPoints', boxesField: 'powerAuxPwrBoxes', patternField: 'powerAuxPwrPattern', hasDotField: 'powerAuxPwrHasDot' },
-  { key: 'battery', label: 'BATTERY', pointsField: 'powerBatteryPoints', boxesField: 'powerBatteryBoxes', patternField: 'powerBatteryPattern', hasDotField: 'powerBatteryHasDot' },
-  { key: 'ftlDrive', label: 'FTL DRIVE', pointsField: 'powerFtlDrivePoints', boxesField: 'powerFtlDriveBoxes', patternField: 'powerFtlDrivePattern', hasDotField: 'powerFtlDriveHasDot' }
+  { key: 'lMain', label: 'L MAIN', pointsField: 'powerLMainPoints', patternField: 'powerLMainPattern', hasDotField: 'powerLMainHasDot' },
+  { key: 'rMain', label: 'R MAIN', pointsField: 'powerRMainPoints', patternField: 'powerRMainPattern', hasDotField: 'powerRMainHasDot' },
+  { key: 'cMain', label: 'C MAIN', pointsField: 'powerCMainPoints', patternField: 'powerCMainPattern', hasDotField: 'powerCMainHasDot' },
+  { key: 'slReac', label: 'SL REAC', pointsField: 'powerSlReacPoints', patternField: 'powerSlReacPattern', hasDotField: 'powerSlReacHasDot' },
+  { key: 'auxPwr', label: 'AUX PWR', pointsField: 'powerAuxPwrPoints', patternField: 'powerAuxPwrPattern', hasDotField: 'powerAuxPwrHasDot' },
+  { key: 'battery', label: 'BATTERY', pointsField: 'powerBatteryPoints', patternField: 'powerBatteryPattern', hasDotField: 'powerBatteryHasDot' },
+  { key: 'ftlDrive', label: 'FTL DRIVE', pointsField: 'powerFtlDrivePoints', patternField: 'powerFtlDrivePattern', hasDotField: 'powerFtlDriveHasDot' }
 ];
 
 function parseList(raw, separator = ',') {
@@ -515,7 +515,7 @@ function readPowerSystem() {
       key: track.key,
       label: track.label,
       points: Math.max(0, num(track.pointsField)),
-      boxesPerPoint: clamp(num(track.boxesField), 1, 3),
+      boxesPerPoint: 1,
       boxPattern: parsePowerPattern(form.elements[track.patternField]?.value),
       hasDot: Boolean(form.elements[track.hasDotField]?.checked)
     }))
@@ -1263,18 +1263,16 @@ function restoreDraft(draft) {
   POWER_TRACK_CONFIG.forEach((track) => {
     const trackData = draftTracks.find((entry) => entry.key === track.key || entry.label === track.label);
     const pointsField = getField(track.pointsField);
-    const boxesField = getField(track.boxesField);
     const patternField = getField(track.patternField);
     const hasDotField = getField(track.hasDotField);
 
     if (pointsField) {
       pointsField.value = Math.max(0, Number(trackData?.points ?? 0));
     }
-    if (boxesField) {
-      boxesField.value = clamp(Number(trackData?.boxesPerPoint ?? 1), 1, 3);
-    }
     if (patternField) {
-      patternField.value = (trackData?.boxPattern ?? []).join(',');
+      const pattern = Array.isArray(trackData?.boxPattern) ? trackData.boxPattern : [];
+      const fallback = clamp(Number(trackData?.boxesPerPoint ?? 1), 1, 3);
+      patternField.value = (pattern.length > 0 ? pattern : [fallback]).join(',');
     }
     if (hasDotField) {
       hasDotField.checked = Boolean(trackData?.hasDot ?? (track.key !== 'ftlDrive'));
