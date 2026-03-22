@@ -12,24 +12,24 @@ let shipArtDataUrl = '';
 const STANDARD_DEFAULT_LOADOUT = {
   identity: {
     name: 'SHIP NAME / ID',
-    classType: 'Class Name - Class ship type',
+    classType: 'CLASSNAME ID-class Weight Class',
     faction: '/',
     era: '/',
-    pointValue: 2
+    pointValue: 4
   },
-  engineering: { move: 0, vector: 0, turn: 0, special: 0 },
+  engineering: { move: 1, vector: 2, turn: 1, special: 1 },
   shields: { forward: 0, aft: 0, port: 0, starboard: 0 },
   armor: { forward: 0, aft: 0, port: 0, starboard: 0 },
   shieldGen: 0,
   textBlocks: { powerSystem: '' },
   functionsConfig: {
-    accDec: { values: [], free: 0 },
-    sifIdf: { values: [], free: 0, emer: false },
+    accDec: { values: ['1', '2', '3'], free: 0 },
+    sifIdf: { values: ['1', '2', '3'], free: 0, emer: true },
     batRech: { values: [], free: 0 },
-    ftl: { empty: 0 },
+    ftl: { empty: 2 },
     cloak: { enabled: false, empty: 0 },
     sensor: { values: [], free: 0 },
-    genSys: { values: [], free: 0 },
+    genSys: { values: ['NRM', 'MAX'], free: 0 },
     weapons: [
       { label: 'WPN A', enabled: false, free: 0, values: [] },
       { label: 'WPN B', enabled: false, free: 0, values: [] },
@@ -45,24 +45,24 @@ const STANDARD_DEFAULT_LOADOUT = {
       { key: 'slReac', label: 'SL REAC', points: 0, boxesPerPoint: 1, boxPattern: [], hasDot: true },
       { key: 'auxPwr', label: 'AUX PWR', points: 0, boxesPerPoint: 1, boxPattern: [], hasDot: true },
       { key: 'battery', label: 'BATTERY', points: 0, boxesPerPoint: 1, boxPattern: [], hasDot: true },
-      { key: 'ftlDrive', label: 'FTL DRIVE', points: 0, boxesPerPoint: 1, boxPattern: [], hasDot: false }
+      { key: 'ftlDrive', label: 'FTL DRIVE', points: 1, boxesPerPoint: 1, boxPattern: [], hasDot: false }
     ]
   },
   sublight: {
-    maxAccPhs: 0,
-    greenCircles: 0,
-    redCircles: 0,
+    maxAccPhs: 2,
+    greenCircles: 3,
+    redCircles: 3,
     spd: [6, 5, 4, 3, 2, 1, 0],
-    turns: [0, 20, 30, 30, 35, 35, 40],
+    turns: [20, 20, 20, 20, 20, 20, 20],
     dmgStops: [false, false, false, false, false, false, false]
   },
-  structure: { repairable: 0, permanent: 0 },
+  structure: { repairable: 1, permanent: 4 },
   shipArtDataUrl: '',
   weapons: [
+    { name: 'WPN NAME', mountArcs: ['1', '2'], mountFacings: [[1, 2]], powerCircles: 1, powerStops: [], structure: 1, ranges: [], traits: [], special: '' },
     { name: '', mountArcs: [], mountFacings: [], powerCircles: 1, powerStops: [], structure: 1, ranges: [], traits: [], special: '' },
     { name: '', mountArcs: [], mountFacings: [], powerCircles: 1, powerStops: [], structure: 1, ranges: [], traits: [], special: '' },
-    { name: '', mountArcs: [], mountFacings: [], powerCircles: 1, powerStops: [], structure: 1, ranges: [], traits: [], special: '' },
-    { name: '', mountArcs: [], mountFacings: [], powerCircles: 1, powerStops: [], structure: 1, ranges: [], traits: [], special: '' }
+    { name: '', mountArcs: [], mountFacings: [], powerCircles: 2, powerStops: [], structure: 2, ranges: [], traits: [], special: '' }
   ],
   systems: [
     { key: 'SCNC', value: '0' },
@@ -71,7 +71,15 @@ const STANDARD_DEFAULT_LOADOUT = {
     { key: 'TRAN', value: '0' },
     { key: 'SHTL', value: '0' },
     { key: 'QTRS', value: '0' },
-    { key: 'CRGO', value: '0' }
+    { key: 'CRGO', value: '0' },
+    { key: 'SPCL', value: '0' },
+    { key: 'CLOAK', value: '0' },
+    { key: 'CMND', value: '0' },
+    { key: 'FCON', value: '0' },
+    { key: 'HNGR', value: '0' },
+    { key: 'LNCH', value: '0' },
+    { key: 'LAND', value: '0' },
+    { key: 'SCOUT', value: '0' }
   ],
   crew: { shuttleCraft: 0, marinesStationed: 0 }
 };
@@ -556,6 +564,34 @@ function renderBoxes(containerId, count, className) {
   }
 }
 
+function renderShieldFacingBoxes(containerId, count, orientation = 'row') {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+
+  container.innerHTML = '';
+  container.classList.add('is-split');
+
+  const total = Math.max(0, Number(count || 0));
+  if (total <= 0) {
+    return;
+  }
+
+  const outerCount = Math.ceil(total / 2);
+  const innerCount = total - outerCount;
+  const laneCounts = innerCount > 0 ? [outerCount, innerCount] : [outerCount];
+
+  laneCounts.forEach((laneCount) => {
+    const lane = document.createElement('div');
+    lane.className = `shield-split-lane ${orientation}-lane`;
+    for (let i = 0; i < laneCount; i += 1) {
+      const box = document.createElement('span');
+      box.className = 'shield-box';
+      lane.appendChild(box);
+    }
+    container.appendChild(lane);
+  });
+}
+
 function weaponSlot(id, rawWeapon, enabled = true) {
   const weapon = normalizeWeapon(rawWeapon);
   const slot = document.getElementById(`pvWpn${id}Slot`);
@@ -717,9 +753,9 @@ function circleRun(containerId, count) {
 
 function renderManeuvering(sublight) {
   const data = sublight || {
-    maxAccPhs: 0,
-    greenCircles: 0,
-    redCircles: 0,
+    maxAccPhs: 2,
+    greenCircles: 3,
+    redCircles: 3,
     spd: [6, 5, 4, 3, 2, 1, 0],
     turns: [20, 20, 20, 20, 20, 20, 20],
     dmgStops: [false, false, false, false, false, false, false]
@@ -786,10 +822,10 @@ function renderPreview(build, options = {}) {
     blackGenRow.appendChild(box);
   }
 
-  renderBoxes('pvFwdShieldBoxes', build.shields.forward, 'shield-box');
-  renderBoxes('pvAftShieldBoxes', build.shields.aft, 'shield-box');
-  renderBoxes('pvPortShieldBoxes', build.shields.port, 'shield-box');
-  renderBoxes('pvStbdShieldBoxes', build.shields.starboard, 'shield-box');
+  renderShieldFacingBoxes('pvFwdShieldBoxes', build.shields.forward, 'row');
+  renderShieldFacingBoxes('pvAftShieldBoxes', build.shields.aft, 'row');
+  renderShieldFacingBoxes('pvPortShieldBoxes', build.shields.port, 'column');
+  renderShieldFacingBoxes('pvStbdShieldBoxes', build.shields.starboard, 'column');
 
   const armor = build.armor || { forward: 0, aft: 0, port: 0, starboard: 0 };
   renderBoxes('pvFwdArmorBoxes', armor.forward, 'armor-box');
@@ -900,7 +936,7 @@ function renderFunctions(functionsConfig) {
     });
   };
 
-  const acc = cfg.accDec || { values: ['1', '2', '3', '4', '5', '6'], free: 1 };
+  const acc = cfg.accDec || { values: ['1', '2', '3'], free: 0 };
   addValueDots(addRow('ACC/DEC', 'green'), acc.values, acc.free);
 
   const sif = cfg.sifIdf || { values: ['1', '2', '3'], free: 0, emer: true };
@@ -919,14 +955,14 @@ function renderFunctions(functionsConfig) {
     sifLevels.appendChild(emer);
   }
 
-  const bat = cfg.batRech || { values: ['1'], free: 0 };
+  const bat = cfg.batRech || { values: [], free: 0 };
   addValueDots(addRow('BAT RECH', 'green'), bat.values, 0);
 
   const ftl = cfg.ftl || { empty: 2 };
   const ftlLevels = addRow('FTL', 'green');
   for (let i = 0; i < Number(ftl.empty || 0); i += 1) addDot(ftlLevels, false);
 
-  const cloak = cfg.cloak || { enabled: false, empty: 3 };
+  const cloak = cfg.cloak || { enabled: false, empty: 0 };
   if (cloak.enabled) {
     const cloakLevels = addRow('CLOAK', 'magenta');
     for (let i = 0; i < Number(cloak.empty || 0); i += 1) addDot(cloakLevels, false);
@@ -944,10 +980,10 @@ function renderFunctions(functionsConfig) {
     addToken(shldRepr, part);
   });
 
-  const sensor = cfg.sensor || { values: ['2', '4', '6'], free: 1 };
+  const sensor = cfg.sensor || { values: [], free: 0 };
   addValueDots(addRow('SENSOR', 'gold'), sensor.values, sensor.free);
 
-  const gen = cfg.genSys || { values: ['NRM', 'MAX'], free: 1 };
+  const gen = cfg.genSys || { values: ['NRM', 'MAX'], free: 0 };
   addValueDots(addRow('GEN SYS', 'gold'), gen.values, gen.free);
 
   const weapons = Array.isArray(cfg.weapons) ? cfg.weapons : [];
@@ -1211,9 +1247,9 @@ function restoreDraft(draft) {
   });
 
   const sublight = safeDraft.sublight ?? {
-    maxAccPhs: 0,
-    greenCircles: 0,
-    redCircles: 0,
+    maxAccPhs: 2,
+    greenCircles: 3,
+    redCircles: 3,
     spd: [6, 5, 4, 3, 2, 1, 0],
     turns: [20, 20, 20, 20, 20, 20, 20],
     dmgStops: [false, false, false, false, false, false, false]
