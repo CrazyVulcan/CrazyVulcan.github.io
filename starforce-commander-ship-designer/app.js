@@ -765,18 +765,7 @@ function renderPreview(build, options = {}) {
       pointValueField.value = String(pointValue);
     }
   }
-<<<<<<< HEAD
-  const previewHost = document.getElementById('ssdSvgPreview');
-  try {
-    renderShipSheetSVG(previewHost, build);
-  } catch (error) {
-    previewHost.innerHTML = '';
-    const fallback = document.createElement('div');
-    fallback.className = 'svg-render-error';
-    fallback.textContent = `SVG render failed: ${error?.message || 'Unknown error'}`;
-    previewHost.appendChild(fallback);
-  }
-=======
+
   document.getElementById('pvEra').textContent = build.identity.era || 'ERA';
 
   document.getElementById('pvMove').textContent = build.engineering.move;
@@ -838,7 +827,7 @@ function renderPreview(build, options = {}) {
   renderSystems(build.systems, build.crew);
   applyDynamicLayoutDensity(build);
   renderStructure(build);
->>>>>>> parent of 79c76f59 (Refactor SSD preview/print to fixed SVG artboard renderer)
+
 }
 
 function applyDynamicLayoutDensity(build) {
