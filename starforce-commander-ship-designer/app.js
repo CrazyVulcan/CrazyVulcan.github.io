@@ -421,7 +421,7 @@ function readSublight() {
   const speeds = [6, 5, 4, 3, 2, 1, 0];
   const linkedMaxAcc = syncSublightMaxAccFromAcceleration();
   return {
-    maxAccPhs: linkedMaxAcc,
+    maxAccPhs: Math.max(0, num('vector')),
     greenCircles: clamp(num('sublightGreen'), 0, 5),
     redCircles: clamp(num('sublightRed'), 0, 5),
     spd: speeds.map((speed) => speed),
@@ -1264,7 +1264,6 @@ function restoreDraft(draft) {
     turns: [20, 20, 20, 20, 20, 20, 20],
     dmgStops: [false, false, false, false, false, false, false]
   };
-  setValue('sublightMaxAcc', safeDraft.engineering?.vector ?? sublight.maxAccPhs ?? 0);
   setValue('sublightGreen', sublight.greenCircles ?? 0);
   setValue('sublightRed', sublight.redCircles ?? 0);
   [6, 5, 4, 3, 2, 1, 0].forEach((speed, index) => {
