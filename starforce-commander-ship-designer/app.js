@@ -763,7 +763,15 @@ function renderPreview(build, options = {}) {
     }
   }
   const previewHost = document.getElementById('ssdSvgPreview');
-  renderShipSheetSVG(previewHost, build);
+  try {
+    renderShipSheetSVG(previewHost, build);
+  } catch (error) {
+    previewHost.innerHTML = '';
+    const fallback = document.createElement('div');
+    fallback.className = 'svg-render-error';
+    fallback.textContent = `SVG render failed: ${error?.message || 'Unknown error'}`;
+    previewHost.appendChild(fallback);
+  }
 }
 
 function applyDynamicLayoutDensity(build) {
@@ -1052,6 +1060,7 @@ function renderDrafts() {
 }
 
 function restoreDraft(draft) {
+  const safeDraft = draft && typeof draft === 'object' ? draft : {};
   const getField = (name) => form.elements.namedItem(name);
   const setValue = (name, value) => {
     const field = getField(name);
@@ -1066,28 +1075,28 @@ function restoreDraft(draft) {
     }
   };
 
-  setValue('name', draft.identity?.name ?? '');
-  setValue('classType', draft.identity?.classType ?? '');
-  setValue('faction', draft.identity?.faction ?? '');
-  setValue('era', draft.identity?.era ?? '');
+  setValue('name', safeDraft.identity?.name ?? '');
+  setValue('classType', safeDraft.identity?.classType ?? '');
+  setValue('faction', safeDraft.identity?.faction ?? '');
+  setValue('era', safeDraft.identity?.era ?? '');
 
-  setValue('vector', draft.engineering?.vector ?? 0);
-  setValue('turn', draft.engineering?.turn ?? 0);
-  setValue('special', draft.engineering?.special ?? 0);
+  setValue('vector', safeDraft.engineering?.vector ?? 0);
+  setValue('turn', safeDraft.engineering?.turn ?? 0);
+  setValue('special', safeDraft.engineering?.special ?? 0);
 
-  setValue('shieldFwd', draft.shields?.forward ?? 0);
-  setValue('shieldAft', draft.shields?.aft ?? 0);
-  setValue('shieldPort', draft.shields?.port ?? 0);
-  setValue('shieldStbd', draft.shields?.starboard ?? 0);
+  setValue('shieldFwd', safeDraft.shields?.forward ?? 0);
+  setValue('shieldAft', safeDraft.shields?.aft ?? 0);
+  setValue('shieldPort', safeDraft.shields?.port ?? 0);
+  setValue('shieldStbd', safeDraft.shields?.starboard ?? 0);
 
-  setValue('armorFwd', draft.armor?.forward ?? 0);
-  setValue('armorAft', draft.armor?.aft ?? 0);
-  setValue('armorPort', draft.armor?.port ?? 0);
-  setValue('armorStbd', draft.armor?.starboard ?? 0);
+  setValue('armorFwd', safeDraft.armor?.forward ?? 0);
+  setValue('armorAft', safeDraft.armor?.aft ?? 0);
+  setValue('armorPort', safeDraft.armor?.port ?? 0);
+  setValue('armorStbd', safeDraft.armor?.starboard ?? 0);
 
-  setValue('shieldGen', draft.shieldGen ?? 0);
+  setValue('shieldGen', safeDraft.shieldGen ?? 0);
 
-  const fn = draft.functionsConfig || {};
+  const fn = safeDraft.functionsConfig || {};
   setValue('fnAccDecValues', (fn.accDec?.values ?? []).join(','));
   setChecked('fnAccDecFree', fn.accDec?.free ?? 0);
   setValue('fnSifIdfValues', (fn.sifIdf?.values ?? []).join(','));
@@ -1120,10 +1129,10 @@ function restoreDraft(draft) {
   setValue('fnWpnDValues', (fnWpn[3]?.values ?? []).join(','));
 
   if (getField('powerSystem')) {
-    setValue('powerSystem', draft.textBlocks?.powerSystem ?? '');
+    setValue('powerSystem', safeDraft.textBlocks?.powerSystem ?? '');
   }
 
-  const draftTracks = draft.powerSystem?.tracks ?? [];
+  const draftTracks = safeDraft.powerSystem?.tracks ?? [];
   POWER_TRACK_CONFIG.forEach((track) => {
     const trackData = draftTracks.find((entry) => entry.key === track.key || entry.label === track.label);
     const pointsField = getField(track.pointsField);
@@ -1145,7 +1154,7 @@ function restoreDraft(draft) {
     }
   });
 
-  const sublight = draft.sublight ?? {
+  const sublight = safeDraft.sublight ?? {
     maxAccPhs: 0,
     greenCircles: 0,
     redCircles: 0,
@@ -1161,13 +1170,14 @@ function restoreDraft(draft) {
     setChecked(`sublightDmg${speed}`, sublight.dmgStops?.[index]);
   });
 
-  setValue('structureBlack', draft.structure?.repairable ?? 0);
-  setValue('structureRed', draft.structure?.permanent ?? 0);
+  setValue('structureBlack', safeDraft.structure?.repairable ?? 0);
+  setValue('structureRed', safeDraft.structure?.permanent ?? 0);
 
-  setValue('move', normalizeSizeClass(draft.engineering?.move ?? 1));
+  setValue('move', normalizeSizeClass(safeDraft.engineering?.move ?? 1));
 
-  shipArtDataUrl = draft.shipArtDataUrl ?? '';
-  const normalizedWeapons = (Array.isArray(draft.weapons) ? draft.weapons : []).map((weapon) => normalizeWeapon(weapon));
+  shipArtDataUrl = safeDraft.shipArtDataUrl ?? '';
+  const normalizedWeapons = (Array.isArray(safeDraft.weapons) ? safeDraft.weapons : parseLegacyWeapons(safeDraft.weapons))
+    .map((weapon) => normalizeWeapon(weapon));
   [1, 2, 3, 4].forEach((index) => {
     const weapon = normalizedWeapons[index - 1] || normalizeWeapon({});
     setValue(`wpn${index}Name`, weapon.name || '');
@@ -1184,9 +1194,12 @@ function restoreDraft(draft) {
     setValue(`wpn${index}Special`, weapon.special || '');
   });
 
-  setValue('systems', (draft.systems ?? []).map((item) => `${item.key}:${item.value ?? ''}`).join('\n'));
-  setValue('shuttleCraft', draft.crew?.shuttleCraft ?? 0);
-  setValue('marinesStationed', draft.crew?.marinesStationed ?? 0);
+  const normalizedSystems = Array.isArray(safeDraft.systems)
+    ? safeDraft.systems
+    : parseSystems(safeDraft.systems || '');
+  setValue('systems', normalizedSystems.map((item) => `${item.key}:${item.value ?? ''}`).join('\n'));
+  setValue('shuttleCraft', safeDraft.crew?.shuttleCraft ?? 0);
+  setValue('marinesStationed', safeDraft.crew?.marinesStationed ?? 0);
 
   render();
 }

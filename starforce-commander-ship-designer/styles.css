@@ -151,6 +151,13 @@ button.ghost { background: #6d7f8d; border-color: #465764; }
   width: 100%;
   height: auto;
 }
+.svg-render-error {
+  padding: 1rem;
+  color: #7f1010;
+  font-weight: 700;
+  background: #ffe7e7;
+  border: 1px solid #b33;
+}
 .template-top {
   display: grid;
   grid-template-columns: minmax(220px, 1fr) 1.5fr;

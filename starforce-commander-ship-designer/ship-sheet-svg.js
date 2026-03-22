@@ -79,7 +79,7 @@ export function createShipSheetSVG(build, options = {}) {
     xmlns: NS,
     viewBox: `0 0 ${width} ${height}`,
     width: options.width || '100%',
-    height: options.height || 'auto',
+    height: options.height || '100%',
     role: 'img',
     'aria-label': 'Starforce Commander ship sheet'
   });
