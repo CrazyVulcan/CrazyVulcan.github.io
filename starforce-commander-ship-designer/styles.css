@@ -554,9 +554,12 @@ pre { background: #f3f8fc; color: #12314a; padding: 0.55rem; border-radius: 6px;
   }
   .preview-wrap {
     position: static;
+    display: flex;
+    justify-content: center;
   }
   .ssd-template {
-    width: min(100%, 10.7in);
+    --ssd-ratio: 1403 / 1001;
+    width: min(100%, 10.7in, calc((100vh - 0.35in) * (1403 / 1001)));
     max-width: 10.7in;
     margin: 0 auto;
     break-inside: avoid;
