@@ -1,5 +1,4 @@
 import { calculatePointValue } from './pv-calculator.js';
-import { renderShipSheetSVG } from './ship-sheet-svg.js';
 
 const form = document.getElementById('ssdForm');
 const draftsEl = document.getElementById('drafts');
@@ -754,14 +753,19 @@ function safeCalculatePointValue(build) {
 
 function renderPreview(build, options = {}) {
   const { recalculatePointValue = true } = options;
+  document.getElementById('pvName').textContent = build.identity.name || 'SHIP NAME / ID';
+  document.getElementById('pvClass').textContent = build.identity.classType || 'CLASSNAME ID-class Weight Class';
+  document.getElementById('pvFaction').textContent = build.identity.faction || 'COMMON';
+  document.getElementById('pvSizeClassIcon').src = 'assets/size-class-icon.svg';
   if (recalculatePointValue) {
     const pointValue = safeCalculatePointValue(build);
-    build.identity.pointValue = pointValue;
+    document.getElementById('pvPointValue').textContent = `${pointValue}PV`;
     const pointValueField = form.elements.namedItem('pointValueCalculated');
     if (pointValueField && 'value' in pointValueField) {
       pointValueField.value = String(pointValue);
     }
   }
+<<<<<<< HEAD
   const previewHost = document.getElementById('ssdSvgPreview');
   try {
     renderShipSheetSVG(previewHost, build);
@@ -772,6 +776,69 @@ function renderPreview(build, options = {}) {
     fallback.textContent = `SVG render failed: ${error?.message || 'Unknown error'}`;
     previewHost.appendChild(fallback);
   }
+=======
+  document.getElementById('pvEra').textContent = build.identity.era || 'ERA';
+
+  document.getElementById('pvMove').textContent = build.engineering.move;
+  document.getElementById('pvVector').textContent = build.engineering.vector;
+  document.getElementById('pvTurn').textContent = build.engineering.turn;
+  document.getElementById('pvSpecial').textContent = build.engineering.special;
+
+  document.getElementById('pvShieldFwd').textContent = String(build.shields.forward);
+  document.getElementById('pvShieldAft').textContent = String(build.shields.aft);
+  document.getElementById('pvShieldPort').textContent = String(build.shields.port);
+  document.getElementById('pvShieldStbd').textContent = String(build.shields.starboard);
+
+  const blackGenRow = document.getElementById('pvShieldGenBlackBoxes');
+  blackGenRow.innerHTML = '';
+  for (let i = 0; i < build.shieldGen; i += 1) {
+    const box = document.createElement('span');
+    box.className = 'shield-gen-black';
+    blackGenRow.appendChild(box);
+  }
+
+  renderBoxes('pvFwdShieldBoxes', build.shields.forward, 'shield-box');
+  renderBoxes('pvAftShieldBoxes', build.shields.aft, 'shield-box');
+  renderBoxes('pvPortShieldBoxes', build.shields.port, 'shield-box');
+  renderBoxes('pvStbdShieldBoxes', build.shields.starboard, 'shield-box');
+
+  const armor = build.armor || { forward: 0, aft: 0, port: 0, starboard: 0 };
+  renderBoxes('pvFwdArmorBoxes', armor.forward, 'armor-box');
+  renderBoxes('pvAftArmorBoxes', armor.aft, 'armor-box');
+  renderBoxes('pvPortArmorBoxes', armor.port, 'armor-box');
+  renderBoxes('pvStbdArmorBoxes', armor.starboard, 'armor-box');
+
+  renderBoxes('pvFwdGenBoxes', build.shieldGen, 'shield-gen');
+  renderBoxes('pvAftGenBoxes', build.shieldGen, 'shield-gen');
+  renderBoxes('pvPortGenBoxes', build.shieldGen, 'shield-gen');
+  renderBoxes('pvStbdGenBoxes', build.shieldGen, 'shield-gen');
+
+  const artEl = document.getElementById('pvShipArt');
+  const silhouetteEl = document.getElementById('pvShipSilhouette');
+  if (build.shipArtDataUrl) {
+    artEl.src = build.shipArtDataUrl;
+    artEl.style.display = 'block';
+    silhouetteEl.style.display = 'none';
+  } else {
+    artEl.removeAttribute('src');
+    artEl.style.display = 'none';
+    silhouetteEl.style.display = 'block';
+  }
+
+  renderFunctions(build.functionsConfig);
+  renderPowerSystem(build.powerSystem);
+  renderManeuvering(build.sublight);
+
+  const weaponPower = (build.functionsConfig?.weapons ?? []).map((weapon) => Boolean(weapon?.enabled) && Array.isArray(weapon?.values) && weapon.values.length > 0);
+  weaponSlot(1, build.weapons[0], weaponPower[0] !== false);
+  weaponSlot(2, build.weapons[1], weaponPower[1] !== false);
+  weaponSlot(3, build.weapons[2], weaponPower[2] !== false);
+  weaponSlot(4, build.weapons[3], weaponPower[3] !== false);
+
+  renderSystems(build.systems, build.crew);
+  applyDynamicLayoutDensity(build);
+  renderStructure(build);
+>>>>>>> parent of 79c76f59 (Refactor SSD preview/print to fixed SVG artboard renderer)
 }
 
 function applyDynamicLayoutDensity(build) {
@@ -1286,12 +1353,7 @@ document.getElementById('importBtn').addEventListener('click', () => {
     picker.click();
   }
 });
-document.getElementById('printBtn').addEventListener('click', () => {
-  const build = withEmbeddedShipArt(getBuild());
-  build.identity.pointValue = safeCalculatePointValue(build);
-  sessionStorage.setItem('sfCommanderPrintBuild', JSON.stringify(build));
-  window.open('./print.html', '_blank', 'noopener,noreferrer');
-});
+document.getElementById('printBtn').addEventListener('click', () => window.print());
 document.querySelectorAll('.update-pv-btn').forEach((button) => {
   button.addEventListener('click', () => render({ recalculatePointValue: true }));
 });
@@ -1315,6 +1377,8 @@ shipArtInput.addEventListener('change', (event) => {
   };
   reader.readAsDataURL(file);
 });
+
+applyCrossBrowserPrintFit();
 
 restoreDraft(STANDARD_DEFAULT_LOADOUT);
 renderDrafts();

@@ -128,16 +128,17 @@ button.ghost { background: #6d7f8d; border-color: #465764; }
 .ssd-template {
   width: min(100%, 1400px);
   margin: 0 auto;
-  aspect-ratio: 11 / 8.5;
+  aspect-ratio: 1403 / 1001;
   display: flex;
   flex-direction: column;
-  border: 0;
-  background: transparent;
+  border: 3px solid #0b71ba;
+  background: #d9d9d9;
   color: #04111f;
   border-radius: 0;
-  overflow: visible;
+  overflow: hidden;
   font-family: Arial Black, Arial, Helvetica, sans-serif;
 }
+<<<<<<< HEAD
 .svg-preview-frame {
   padding: 0;
 }
@@ -158,6 +159,8 @@ button.ghost { background: #6d7f8d; border-color: #465764; }
   background: #ffe7e7;
   border: 1px solid #b33;
 }
+=======
+>>>>>>> parent of 79c76f59 (Refactor SSD preview/print to fixed SVG artboard renderer)
 .template-top {
   display: grid;
   grid-template-columns: minmax(220px, 1fr) 1.5fr;
