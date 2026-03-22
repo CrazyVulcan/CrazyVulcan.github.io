@@ -282,6 +282,11 @@ button.ghost { background: #6d7f8d; border-color: #465764; }
 .shield-top { margin-bottom: 0.22rem; }
 .shield-bottom { margin-top: 0.22rem; }
 .shield-box-row { display: flex; flex-wrap: wrap; gap: 4px; padding: 0.12rem 0.35rem; min-height: 20px; justify-content: center; }
+.shield-box-row.is-split {
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
+}
 .armor-box-row { display: flex; flex-wrap: wrap; gap: 4px; padding: 0.08rem 0.35rem; min-height: 18px; justify-content: center; }
 .shield-gen-row { display: flex; flex-wrap: wrap; gap: 4px; padding: 0.12rem 0.35rem; min-height: 18px; justify-content: center; }
 .fwd-gen-row { padding-top: 0.16rem; padding-bottom: 0.04rem; }
@@ -386,6 +391,21 @@ button.ghost { background: #6d7f8d; border-color: #465764; }
   gap: 4px;
   min-height: 112px;
   justify-content: center;
+}
+.shield-box-col.is-split {
+  flex-direction: row;
+  align-items: center;
+}
+.shield-split-lane {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+}
+.shield-split-lane.row-lane {
+  flex-direction: row;
+}
+.shield-split-lane.column-lane {
+  flex-direction: column;
 }
 .systems-box { border-top: 0; margin-top: 0.8rem; border: 12px solid #f0b500; background: #f8f8f8; padding-bottom: 0.25rem; }
 .systems-box h3 { border-color: #f0b500; }
