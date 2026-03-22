@@ -530,15 +530,20 @@ pre { background: #f3f8fc; color: #12314a; padding: 0.55rem; border-radius: 6px;
 @media print {
   @page {
     size: letter landscape;
-    margin: 0.15in;
+    margin: 0.2in;
   }
 
   :root { color-scheme: light; }
-  body { background: #fff; }
+  body {
+    margin: 0;
+    background: #fff;
+  }
+
   .layout {
     display: block;
     padding: 0;
   }
+
   .controls,
   .preview-head,
   #drafts,
@@ -547,121 +552,29 @@ pre { background: #f3f8fc; color: #12314a; padding: 0.55rem; border-radius: 6px;
   .live-badge {
     display: none !important;
   }
+
   .panel {
     border: 0;
     background: transparent;
     padding: 0;
+    box-shadow: none;
   }
+
   .preview-wrap {
     position: static;
     display: flex;
     justify-content: center;
+    align-items: flex-start;
   }
+
   .ssd-template {
-    --ssd-ratio: 1403 / 1001;
-    width: min(100%, 10.7in, calc((100vh - 0.35in) * (1403 / 1001)));
-    max-width: 10.7in;
+    width: min(100%, calc((100vh - 0.4in) * (1403 / 1001)));
+    max-width: 10.6in;
     margin: 0 auto;
     break-inside: avoid;
     page-break-inside: avoid;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
-  }
-
-  .ssd-template[data-density="compact"] .ship-art-wrap { width: 54%; }
-
-  .ssd-template,
-  .ssd-template * {
-    text-rendering: geometricPrecision;
-  }
-
-  .template-ship,
-  .template-class,
-  .col h3,
-  .shield-top,
-  .shield-bottom,
-  .slot-title,
-  .structure,
-  #pvFaction,
-  #pvPointValue,
-  #pvEra {
-    font-size: 1.02rem;
-  }
-
-  .eng-stats span,
-  .green-block h4,
-  .fn-row,
-  .power-track-row,
-  .man-row,
-  .system-row,
-  .wpn-range-band,
-  .wpn-special-row,
-  .wpn-trait-row,
-  .slot-body {
-    font-size: 0.82rem;
-    line-height: 1.15;
-  }
-
-  .wpn-die {
-    width: 18px;
-    height: 18px;
-    font-size: 0.62rem;
-  }
-
-  .wpn-power-circle,
-  .wpn-power-stop,
-  .wpn-structure-box,
-  .system-box,
-  .shield-box,
-  .shield-gen,
-  .shield-gen-black,
-  .armor-box,
-  .power-box,
-  .dmg-stop,
-  .structure-box,
-  .fn-dot,
-  .power-dot,
-  .rnd-circle {
-    transform: scale(1.08);
-    transform-origin: center;
-  }
-
-  .template-columns {
-    gap: 0.22rem;
-    padding: 0.14rem 0.12rem 0.08rem;
-  }
-
-  .shield-frame {
-    padding: 0.12rem 1.65rem 0.08rem;
-  }
-
-  .shield-body {
-    height: 338px;
-  }
-
-  .shield-top,
-  .shield-bottom {
-    padding: 0.18rem 0.2rem;
-  }
-
-  .systems-box {
-    margin-top: 0.42rem;
-    border-width: 9px;
-  }
-
-  .block-maneuver .maneuver-preview {
-    height: 88px;
-    max-height: 88px;
-  }
-
-  .right-col .weapon-slot {
-    min-height: 0;
-  }
-
-  .stat-icon,
-  .crew-img {
-    width: 20px;
-    height: 20px;
   }
 }
 
