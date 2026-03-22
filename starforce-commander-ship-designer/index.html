@@ -126,9 +126,8 @@
         <div class="maneuver-editor">
           <strong>Sublight Drive & Maneuvering</strong>
           <div class="grid3">
-            <label>MAX ACC / PHS <input name="sublightMaxAcc" type="number" min="0" value="2" /></label>
-            <label>Green RND Circles (0-3) <input name="sublightGreen" type="number" min="0" max="3" value="3" /></label>
-            <label>Red RND Circles (0-3) <input name="sublightRed" type="number" min="0" max="3" value="3" /></label>
+            <label>Green RND Circles (0-5) <input name="sublightGreen" type="number" min="0" max="5" value="3" /></label>
+            <label>Red RND Circles (0-5) <input name="sublightRed" type="number" min="0" max="5" value="3" /></label>
           </div>
           <div class="maneuver-grid-head"><span>Speed</span><span>DMG Stop</span><span>TURN °</span></div>
           <div class="maneuver-grid" id="maneuverGridInputs">
@@ -252,7 +251,21 @@
         <button type="button" id="clearArtBtn" class="ghost">Clear Ship Art</button>
 
         <h2>Systems (one per line)</h2>
-        <label><textarea name="systems" rows="4" placeholder="SCNC:3\nSENS:4\nQTRS:2"></textarea></label>
+        <label><textarea name="systems" rows="4">SCNC:0
+SENS:0
+TRAC:0
+TRAN:0
+SHTL:0
+QTRS:0
+CRGO:0
+HNGR:0
+LNCH:0
+LAND:0
+CLOAK:0:0
+CMND:0:0
+FCON:0:0
+SCOUT:0:0</textarea></label>
+        <p class="muted">Format: <code>KEY:boxes</code> or <code>KEY:boxes:power</code> for special systems. If <code>boxes</code> is 0, that line is hidden in the SSD systems panel.</p>
         <div class="grid2">
           <label>Shuttle Craft <input name="shuttleCraft" type="number" min="0" value="4" /></label>
           <label>Marines Stationed <input name="marinesStationed" type="number" min="0" value="10" /></label>
