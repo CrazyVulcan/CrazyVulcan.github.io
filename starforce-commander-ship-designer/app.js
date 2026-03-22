@@ -409,12 +409,21 @@ function normalizeTurnOption(value) {
   return TURN_OPTIONS.includes(value) ? value : 20;
 }
 
+function syncSublightMaxAccFromAcceleration() {
+  const acceleration = Math.max(0, num('vector'));
+  if (form.elements.sublightMaxAcc) {
+    form.elements.sublightMaxAcc.value = String(acceleration);
+  }
+  return acceleration;
+}
+
 function readSublight() {
   const speeds = [6, 5, 4, 3, 2, 1, 0];
+  const linkedMaxAcc = syncSublightMaxAccFromAcceleration();
   return {
-    maxAccPhs: num('sublightMaxAcc'),
-    greenCircles: clamp(num('sublightGreen'), 0, 3),
-    redCircles: clamp(num('sublightRed'), 0, 3),
+    maxAccPhs: linkedMaxAcc,
+    greenCircles: clamp(num('sublightGreen'), 0, 5),
+    redCircles: clamp(num('sublightRed'), 0, 5),
     spd: speeds.map((speed) => speed),
     turns: speeds.map((speed) => normalizeTurnOption(num(`sublightTurn${speed}`))),
     dmgStops: speeds.map((speed) => Boolean(form.elements[`sublightDmg${speed}`]?.checked))
@@ -744,7 +753,7 @@ function renderStructure(build) {
 function circleRun(containerId, count) {
   const container = document.getElementById(containerId);
   container.innerHTML = '';
-  for (let i = 0; i < clamp(count, 0, 3); i += 1) {
+  for (let i = 0; i < clamp(count, 0, 5); i += 1) {
     const circle = document.createElement('span');
     circle.className = 'rnd-circle';
     container.appendChild(circle);
@@ -1175,6 +1184,7 @@ function restoreDraft(draft) {
   setValue('vector', safeDraft.engineering?.vector ?? 0);
   setValue('turn', safeDraft.engineering?.turn ?? 0);
   setValue('special', safeDraft.engineering?.special ?? 0);
+  syncSublightMaxAccFromAcceleration();
 
   setValue('shieldFwd', safeDraft.shields?.forward ?? 0);
   setValue('shieldAft', safeDraft.shields?.aft ?? 0);
@@ -1254,7 +1264,7 @@ function restoreDraft(draft) {
     turns: [20, 20, 20, 20, 20, 20, 20],
     dmgStops: [false, false, false, false, false, false, false]
   };
-  setValue('sublightMaxAcc', sublight.maxAccPhs ?? 0);
+  setValue('sublightMaxAcc', safeDraft.engineering?.vector ?? sublight.maxAccPhs ?? 0);
   setValue('sublightGreen', sublight.greenCircles ?? 0);
   setValue('sublightRed', sublight.redCircles ?? 0);
   [6, 5, 4, 3, 2, 1, 0].forEach((speed, index) => {
