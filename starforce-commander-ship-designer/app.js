@@ -1515,6 +1515,17 @@ function importJsonFile(file) {
   reader.readAsText(file);
 }
 
+function enableSingleClickTraitToggle(selectEl) {
+  if (!selectEl) return;
+  selectEl.addEventListener('mousedown', (event) => {
+    const option = event.target;
+    if (!option || option.tagName !== 'OPTION') return;
+    event.preventDefault();
+    option.selected = !option.selected;
+    selectEl.dispatchEvent(new Event('input', { bubbles: true }));
+  });
+}
+
 form.addEventListener('input', () => render({ recalculatePointValue: false }));
 form.addEventListener('change', () => render({ recalculatePointValue: false }));
 document.getElementById('saveBtn').addEventListener('click', saveDraft);
@@ -1558,6 +1569,10 @@ shipArtInput.addEventListener('change', (event) => {
     render();
   };
   reader.readAsDataURL(file);
+});
+
+document.querySelectorAll('select[name$="Traits"]').forEach((selectEl) => {
+  enableSingleClickTraitToggle(selectEl);
 });
 
 applyCrossBrowserPrintFit();
