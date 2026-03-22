@@ -1,4 +1,5 @@
 import { calculatePointValue } from './pv-calculator.js';
+import { renderShipSheetSVG } from './ship-sheet-svg.js';
 
 const form = document.getElementById('ssdForm');
 const draftsEl = document.getElementById('drafts');
@@ -753,79 +754,24 @@ function safeCalculatePointValue(build) {
 
 function renderPreview(build, options = {}) {
   const { recalculatePointValue = true } = options;
-  document.getElementById('pvName').textContent = build.identity.name || 'SHIP NAME / ID';
-  document.getElementById('pvClass').textContent = build.identity.classType || 'CLASSNAME ID-class Weight Class';
-  document.getElementById('pvFaction').textContent = build.identity.faction || 'COMMON';
-  document.getElementById('pvSizeClassIcon').src = 'assets/size-class-icon.svg';
   if (recalculatePointValue) {
     const pointValue = safeCalculatePointValue(build);
-    document.getElementById('pvPointValue').textContent = `${pointValue}PV`;
+    build.identity.pointValue = pointValue;
     const pointValueField = form.elements.namedItem('pointValueCalculated');
     if (pointValueField && 'value' in pointValueField) {
       pointValueField.value = String(pointValue);
     }
   }
-  document.getElementById('pvEra').textContent = build.identity.era || 'ERA';
-
-  document.getElementById('pvMove').textContent = build.engineering.move;
-  document.getElementById('pvVector').textContent = build.engineering.vector;
-  document.getElementById('pvTurn').textContent = build.engineering.turn;
-  document.getElementById('pvSpecial').textContent = build.engineering.special;
-
-  document.getElementById('pvShieldFwd').textContent = String(build.shields.forward);
-  document.getElementById('pvShieldAft').textContent = String(build.shields.aft);
-  document.getElementById('pvShieldPort').textContent = String(build.shields.port);
-  document.getElementById('pvShieldStbd').textContent = String(build.shields.starboard);
-
-  const blackGenRow = document.getElementById('pvShieldGenBlackBoxes');
-  blackGenRow.innerHTML = '';
-  for (let i = 0; i < build.shieldGen; i += 1) {
-    const box = document.createElement('span');
-    box.className = 'shield-gen-black';
-    blackGenRow.appendChild(box);
+  const previewHost = document.getElementById('ssdSvgPreview');
+  try {
+    renderShipSheetSVG(previewHost, build);
+  } catch (error) {
+    previewHost.innerHTML = '';
+    const fallback = document.createElement('div');
+    fallback.className = 'svg-render-error';
+    fallback.textContent = `SVG render failed: ${error?.message || 'Unknown error'}`;
+    previewHost.appendChild(fallback);
   }
-
-  renderBoxes('pvFwdShieldBoxes', build.shields.forward, 'shield-box');
-  renderBoxes('pvAftShieldBoxes', build.shields.aft, 'shield-box');
-  renderBoxes('pvPortShieldBoxes', build.shields.port, 'shield-box');
-  renderBoxes('pvStbdShieldBoxes', build.shields.starboard, 'shield-box');
-
-  const armor = build.armor || { forward: 0, aft: 0, port: 0, starboard: 0 };
-  renderBoxes('pvFwdArmorBoxes', armor.forward, 'armor-box');
-  renderBoxes('pvAftArmorBoxes', armor.aft, 'armor-box');
-  renderBoxes('pvPortArmorBoxes', armor.port, 'armor-box');
-  renderBoxes('pvStbdArmorBoxes', armor.starboard, 'armor-box');
-
-  renderBoxes('pvFwdGenBoxes', build.shieldGen, 'shield-gen');
-  renderBoxes('pvAftGenBoxes', build.shieldGen, 'shield-gen');
-  renderBoxes('pvPortGenBoxes', build.shieldGen, 'shield-gen');
-  renderBoxes('pvStbdGenBoxes', build.shieldGen, 'shield-gen');
-
-  const artEl = document.getElementById('pvShipArt');
-  const silhouetteEl = document.getElementById('pvShipSilhouette');
-  if (build.shipArtDataUrl) {
-    artEl.src = build.shipArtDataUrl;
-    artEl.style.display = 'block';
-    silhouetteEl.style.display = 'none';
-  } else {
-    artEl.removeAttribute('src');
-    artEl.style.display = 'none';
-    silhouetteEl.style.display = 'block';
-  }
-
-  renderFunctions(build.functionsConfig);
-  renderPowerSystem(build.powerSystem);
-  renderManeuvering(build.sublight);
-
-  const weaponPower = (build.functionsConfig?.weapons ?? []).map((weapon) => Boolean(weapon?.enabled) && Array.isArray(weapon?.values) && weapon.values.length > 0);
-  weaponSlot(1, build.weapons[0], weaponPower[0] !== false);
-  weaponSlot(2, build.weapons[1], weaponPower[1] !== false);
-  weaponSlot(3, build.weapons[2], weaponPower[2] !== false);
-  weaponSlot(4, build.weapons[3], weaponPower[3] !== false);
-
-  renderSystems(build.systems, build.crew);
-  applyDynamicLayoutDensity(build);
-  renderStructure(build);
 }
 
 function applyDynamicLayoutDensity(build) {
@@ -1114,6 +1060,7 @@ function renderDrafts() {
 }
 
 function restoreDraft(draft) {
+  const safeDraft = draft && typeof draft === 'object' ? draft : {};
   const getField = (name) => form.elements.namedItem(name);
   const setValue = (name, value) => {
     const field = getField(name);
@@ -1128,28 +1075,28 @@ function restoreDraft(draft) {
     }
   };
 
-  setValue('name', draft.identity?.name ?? '');
-  setValue('classType', draft.identity?.classType ?? '');
-  setValue('faction', draft.identity?.faction ?? '');
-  setValue('era', draft.identity?.era ?? '');
+  setValue('name', safeDraft.identity?.name ?? '');
+  setValue('classType', safeDraft.identity?.classType ?? '');
+  setValue('faction', safeDraft.identity?.faction ?? '');
+  setValue('era', safeDraft.identity?.era ?? '');
 
-  setValue('vector', draft.engineering?.vector ?? 0);
-  setValue('turn', draft.engineering?.turn ?? 0);
-  setValue('special', draft.engineering?.special ?? 0);
+  setValue('vector', safeDraft.engineering?.vector ?? 0);
+  setValue('turn', safeDraft.engineering?.turn ?? 0);
+  setValue('special', safeDraft.engineering?.special ?? 0);
 
-  setValue('shieldFwd', draft.shields?.forward ?? 0);
-  setValue('shieldAft', draft.shields?.aft ?? 0);
-  setValue('shieldPort', draft.shields?.port ?? 0);
-  setValue('shieldStbd', draft.shields?.starboard ?? 0);
+  setValue('shieldFwd', safeDraft.shields?.forward ?? 0);
+  setValue('shieldAft', safeDraft.shields?.aft ?? 0);
+  setValue('shieldPort', safeDraft.shields?.port ?? 0);
+  setValue('shieldStbd', safeDraft.shields?.starboard ?? 0);
 
-  setValue('armorFwd', draft.armor?.forward ?? 0);
-  setValue('armorAft', draft.armor?.aft ?? 0);
-  setValue('armorPort', draft.armor?.port ?? 0);
-  setValue('armorStbd', draft.armor?.starboard ?? 0);
+  setValue('armorFwd', safeDraft.armor?.forward ?? 0);
+  setValue('armorAft', safeDraft.armor?.aft ?? 0);
+  setValue('armorPort', safeDraft.armor?.port ?? 0);
+  setValue('armorStbd', safeDraft.armor?.starboard ?? 0);
 
-  setValue('shieldGen', draft.shieldGen ?? 0);
+  setValue('shieldGen', safeDraft.shieldGen ?? 0);
 
-  const fn = draft.functionsConfig || {};
+  const fn = safeDraft.functionsConfig || {};
   setValue('fnAccDecValues', (fn.accDec?.values ?? []).join(','));
   setChecked('fnAccDecFree', fn.accDec?.free ?? 0);
   setValue('fnSifIdfValues', (fn.sifIdf?.values ?? []).join(','));
@@ -1182,10 +1129,10 @@ function restoreDraft(draft) {
   setValue('fnWpnDValues', (fnWpn[3]?.values ?? []).join(','));
 
   if (getField('powerSystem')) {
-    setValue('powerSystem', draft.textBlocks?.powerSystem ?? '');
+    setValue('powerSystem', safeDraft.textBlocks?.powerSystem ?? '');
   }
 
-  const draftTracks = draft.powerSystem?.tracks ?? [];
+  const draftTracks = safeDraft.powerSystem?.tracks ?? [];
   POWER_TRACK_CONFIG.forEach((track) => {
     const trackData = draftTracks.find((entry) => entry.key === track.key || entry.label === track.label);
     const pointsField = getField(track.pointsField);
@@ -1207,7 +1154,7 @@ function restoreDraft(draft) {
     }
   });
 
-  const sublight = draft.sublight ?? {
+  const sublight = safeDraft.sublight ?? {
     maxAccPhs: 0,
     greenCircles: 0,
     redCircles: 0,
@@ -1223,13 +1170,14 @@ function restoreDraft(draft) {
     setChecked(`sublightDmg${speed}`, sublight.dmgStops?.[index]);
   });
 
-  setValue('structureBlack', draft.structure?.repairable ?? 0);
-  setValue('structureRed', draft.structure?.permanent ?? 0);
+  setValue('structureBlack', safeDraft.structure?.repairable ?? 0);
+  setValue('structureRed', safeDraft.structure?.permanent ?? 0);
 
-  setValue('move', normalizeSizeClass(draft.engineering?.move ?? 1));
+  setValue('move', normalizeSizeClass(safeDraft.engineering?.move ?? 1));
 
-  shipArtDataUrl = draft.shipArtDataUrl ?? '';
-  const normalizedWeapons = (Array.isArray(draft.weapons) ? draft.weapons : []).map((weapon) => normalizeWeapon(weapon));
+  shipArtDataUrl = safeDraft.shipArtDataUrl ?? '';
+  const normalizedWeapons = (Array.isArray(safeDraft.weapons) ? safeDraft.weapons : parseLegacyWeapons(safeDraft.weapons))
+    .map((weapon) => normalizeWeapon(weapon));
   [1, 2, 3, 4].forEach((index) => {
     const weapon = normalizedWeapons[index - 1] || normalizeWeapon({});
     setValue(`wpn${index}Name`, weapon.name || '');
@@ -1246,9 +1194,12 @@ function restoreDraft(draft) {
     setValue(`wpn${index}Special`, weapon.special || '');
   });
 
-  setValue('systems', (draft.systems ?? []).map((item) => `${item.key}:${item.value ?? ''}`).join('\n'));
-  setValue('shuttleCraft', draft.crew?.shuttleCraft ?? 0);
-  setValue('marinesStationed', draft.crew?.marinesStationed ?? 0);
+  const normalizedSystems = Array.isArray(safeDraft.systems)
+    ? safeDraft.systems
+    : parseSystems(safeDraft.systems || '');
+  setValue('systems', normalizedSystems.map((item) => `${item.key}:${item.value ?? ''}`).join('\n'));
+  setValue('shuttleCraft', safeDraft.crew?.shuttleCraft ?? 0);
+  setValue('marinesStationed', safeDraft.crew?.marinesStationed ?? 0);
 
   render();
 }
@@ -1367,7 +1318,12 @@ document.getElementById('importBtn').addEventListener('click', () => {
     picker.click();
   }
 });
-document.getElementById('printBtn').addEventListener('click', () => window.print());
+document.getElementById('printBtn').addEventListener('click', () => {
+  const build = withEmbeddedShipArt(getBuild());
+  build.identity.pointValue = safeCalculatePointValue(build);
+  sessionStorage.setItem('sfCommanderPrintBuild', JSON.stringify(build));
+  window.open('./print.html', '_blank', 'noopener,noreferrer');
+});
 document.querySelectorAll('.update-pv-btn').forEach((button) => {
   button.addEventListener('click', () => render({ recalculatePointValue: true }));
 });
@@ -1391,8 +1347,6 @@ shipArtInput.addEventListener('change', (event) => {
   };
   reader.readAsDataURL(file);
 });
-
-applyCrossBrowserPrintFit();
 
 restoreDraft(STANDARD_DEFAULT_LOADOUT);
 renderDrafts();
