@@ -21,7 +21,7 @@ const STANDARD_DEFAULT_LOADOUT = {
   engineering: { move: 1, vector: 2, turn: 1, special: 1 },
   shields: { forward: 0, aft: 0, port: 0, starboard: 0 },
   armor: { forward: 0, aft: 0, port: 0, starboard: 0 },
-  shieldGen: 0,
+  shieldGen: { count: 0, value: 0 },
   textBlocks: { powerSystem: '' },
   functionsConfig: {
     accDec: { values: ['1', '2', '3'], free: 0 },
@@ -413,6 +413,22 @@ function num(name) {
   return Number.isFinite(parsed) ? parsed : 0;
 }
 
+function normalizeShieldGenConfig(rawShieldGen) {
+  if (rawShieldGen && typeof rawShieldGen === 'object') {
+    return {
+      count: Math.max(0, Number(rawShieldGen.count || 0)),
+      value: Math.max(0, Number(rawShieldGen.value || 0))
+    };
+  }
+  const legacyTotal = Math.max(0, Number(rawShieldGen || 0));
+  return { count: legacyTotal > 0 ? 1 : 0, value: legacyTotal };
+}
+
+function getShieldGenTotal(rawShieldGen) {
+  const cfg = normalizeShieldGenConfig(rawShieldGen);
+  return cfg.count * cfg.value;
+}
+
 function clamp(value, min, max) {
   return Math.min(max, Math.max(min, value));
 }
@@ -561,7 +577,10 @@ function getBuild() {
       port: num('armorPort'),
       starboard: num('armorStbd')
     },
-    shieldGen: num('shieldGen'),
+    shieldGen: {
+      count: Math.max(0, num('shieldGenCount')),
+      value: Math.max(0, num('shieldGenValue'))
+    },
     textBlocks: {
       powerSystem: form.elements.powerSystem?.value ?? ''
     },
@@ -615,6 +634,28 @@ function renderShieldFacingBoxes(containerId, count, orientation = 'row') {
     }
     container.appendChild(lane);
   });
+}
+
+function renderShieldGeneratorFacingBoxes(containerId, shieldGenConfig, orientation = 'row') {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+
+  container.innerHTML = '';
+  container.classList.add('is-split');
+
+  const cfg = normalizeShieldGenConfig(shieldGenConfig);
+  if (cfg.count <= 0 || cfg.value <= 0) return;
+
+  for (let laneIdx = 0; laneIdx < cfg.count; laneIdx += 1) {
+    const lane = document.createElement('div');
+    lane.className = `shield-split-lane ${orientation}-lane`;
+    for (let boxIdx = 0; boxIdx < cfg.value; boxIdx += 1) {
+      const box = document.createElement('span');
+      box.className = 'shield-gen';
+      lane.appendChild(box);
+    }
+    container.appendChild(lane);
+  }
 }
 
 function weaponSlot(id, rawWeapon, enabled = true) {
@@ -841,10 +882,16 @@ function renderPreview(build, options = {}) {
 
   const blackGenRow = document.getElementById('pvShieldGenBlackBoxes');
   blackGenRow.innerHTML = '';
-  for (let i = 0; i < build.shieldGen; i += 1) {
-    const box = document.createElement('span');
-    box.className = 'shield-gen-black';
-    blackGenRow.appendChild(box);
+  const shieldGenConfig = normalizeShieldGenConfig(build.shieldGen);
+  for (let laneIdx = 0; laneIdx < shieldGenConfig.count; laneIdx += 1) {
+    const lane = document.createElement('div');
+    lane.className = 'shield-split-lane row-lane';
+    for (let boxIdx = 0; boxIdx < shieldGenConfig.value; boxIdx += 1) {
+      const box = document.createElement('span');
+      box.className = 'shield-gen-black';
+      lane.appendChild(box);
+    }
+    blackGenRow.appendChild(lane);
   }
 
   renderShieldFacingBoxes('pvFwdShieldBoxes', build.shields.forward, 'row');
@@ -858,10 +905,10 @@ function renderPreview(build, options = {}) {
   renderBoxes('pvPortArmorBoxes', armor.port, 'armor-box');
   renderBoxes('pvStbdArmorBoxes', armor.starboard, 'armor-box');
 
-  renderBoxes('pvFwdGenBoxes', build.shieldGen, 'shield-gen');
-  renderBoxes('pvAftGenBoxes', build.shieldGen, 'shield-gen');
-  renderBoxes('pvPortGenBoxes', build.shieldGen, 'shield-gen');
-  renderBoxes('pvStbdGenBoxes', build.shieldGen, 'shield-gen');
+  renderShieldGeneratorFacingBoxes('pvFwdGenBoxes', shieldGenConfig, 'row');
+  renderShieldGeneratorFacingBoxes('pvAftGenBoxes', shieldGenConfig, 'row');
+  renderShieldGeneratorFacingBoxes('pvPortGenBoxes', shieldGenConfig, 'column');
+  renderShieldGeneratorFacingBoxes('pvStbdGenBoxes', shieldGenConfig, 'column');
 
   const artEl = document.getElementById('pvShipArt');
   const silhouetteEl = document.getElementById('pvShipSilhouette');
@@ -904,7 +951,7 @@ function applyDynamicLayoutDensity(build) {
   const systemsCount = Array.isArray(build?.systems)
     ? build.systems.filter((entry) => Number(entry?.value || 0) > 0).length
     : 0;
-  const shieldDensity = Number(build?.shieldGen || 0) + Number(build?.shields?.forward || 0) + Number(build?.shields?.aft || 0);
+  const shieldDensity = getShieldGenTotal(build?.shieldGen) + Number(build?.shields?.forward || 0) + Number(build?.shields?.aft || 0);
 
   let density = 'normal';
   if (weaponSlots >= 3 || systemsCount >= 9 || shieldDensity >= 34) {
@@ -1221,7 +1268,9 @@ function restoreDraft(draft) {
   setValue('armorPort', safeDraft.armor?.port ?? 0);
   setValue('armorStbd', safeDraft.armor?.starboard ?? 0);
 
-  setValue('shieldGen', safeDraft.shieldGen ?? 0);
+  const shieldGen = normalizeShieldGenConfig(safeDraft.shieldGen);
+  setValue('shieldGenCount', shieldGen.count);
+  setValue('shieldGenValue', shieldGen.value);
 
   const fn = safeDraft.functionsConfig || {};
   setValue('fnAccDecValues', (fn.accDec?.values ?? []).join(','));

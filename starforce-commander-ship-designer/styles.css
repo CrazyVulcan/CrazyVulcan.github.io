@@ -289,6 +289,11 @@ button.ghost { background: #6d7f8d; border-color: #465764; }
 }
 .armor-box-row { display: flex; flex-wrap: wrap; gap: 4px; padding: 0.08rem 0.35rem; min-height: 18px; justify-content: center; }
 .shield-gen-row { display: flex; flex-wrap: wrap; gap: 4px; padding: 0.12rem 0.35rem; min-height: 18px; justify-content: center; }
+.shield-gen-row.is-split {
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
+}
 .fwd-gen-row { padding-top: 0.16rem; padding-bottom: 0.04rem; }
 .shield-gen-label { text-align: center; font-weight: 900; color: #0872c2; margin: 0.18rem 0 0.24rem; display: flex; justify-content: center; align-items: center; gap: 10px; font-size: 1rem; letter-spacing: 0.04em; line-height: 1.2; }
 .shield-gen-black-row { display: flex; gap: 4px; flex-wrap: wrap; }
@@ -391,6 +396,10 @@ button.ghost { background: #6d7f8d; border-color: #465764; }
   gap: 4px;
   min-height: 112px;
   justify-content: center;
+}
+.shield-gen-col.is-split {
+  flex-direction: row;
+  align-items: center;
 }
 .shield-box-col.is-split {
   flex-direction: row;
