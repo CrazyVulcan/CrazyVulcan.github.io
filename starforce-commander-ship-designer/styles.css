@@ -128,15 +128,28 @@ button.ghost { background: #6d7f8d; border-color: #465764; }
 .ssd-template {
   width: min(100%, 1400px);
   margin: 0 auto;
-  aspect-ratio: 1403 / 1001;
+  aspect-ratio: 11 / 8.5;
   display: flex;
   flex-direction: column;
-  border: 3px solid #0b71ba;
-  background: #d9d9d9;
+  border: 0;
+  background: transparent;
   color: #04111f;
   border-radius: 0;
-  overflow: hidden;
+  overflow: visible;
   font-family: Arial Black, Arial, Helvetica, sans-serif;
+}
+.svg-preview-frame {
+  padding: 0;
+}
+.ssd-svg-host {
+  width: 100%;
+  height: 100%;
+  background: #eef2f5;
+}
+.ssd-svg-host svg {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 .template-top {
   display: grid;
