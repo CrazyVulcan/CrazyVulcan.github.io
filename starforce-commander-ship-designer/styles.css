@@ -444,9 +444,12 @@ button.ghost { background: #6d7f8d; border-color: #465764; }
   font-size: 0.88rem;
   font-weight: 700;
   line-height: 1.35;
+  width: 100%;
 }
 .weapon-editor-card select[multiple] option {
   padding: 0.2rem 0.35rem;
+  color: #17344c;
+  background: #fff;
 }
 .weapon-editor-card select[multiple] option:checked {
   background: #0f78c2 linear-gradient(0deg, #0f78c2, #0f78c2);
