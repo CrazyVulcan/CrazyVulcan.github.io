@@ -1549,25 +1549,32 @@ function buildPreviewSvgBlobUrl(previewElement, width, height) {
 }
 
 function drawPreviewToCanvas(previewElement) {
-  const { width, height } = previewElement.getBoundingClientRect();
-  const exportWidth = Math.max(1, Math.round(width));
-  const exportHeight = Math.max(1, Math.round(height));
+  const bounds = previewElement.getBoundingClientRect();
+  const exportWidth = Math.max(
+    1,
+    Math.ceil(Math.max(bounds.width, previewElement.scrollWidth, previewElement.offsetWidth))
+  );
+  const exportHeight = Math.max(
+    1,
+    Math.ceil(Math.max(bounds.height, previewElement.scrollHeight, previewElement.offsetHeight))
+  );
   const scale = Math.max(1, Math.ceil(window.devicePixelRatio || 1));
+  const bleed = 4;
 
   return new Promise((resolve, reject) => {
     const image = new Image();
     const svgUrl = buildPreviewSvgBlobUrl(previewElement, exportWidth, exportHeight);
     image.onload = () => {
       const canvas = document.createElement('canvas');
-      canvas.width = exportWidth * scale;
-      canvas.height = exportHeight * scale;
+      canvas.width = (exportWidth + bleed * 2) * scale;
+      canvas.height = (exportHeight + bleed * 2) * scale;
       const context = canvas.getContext('2d');
       if (!context) {
         reject(new Error('Unable to create drawing context.'));
         return;
       }
       context.scale(scale, scale);
-      context.drawImage(image, 0, 0, exportWidth, exportHeight);
+      context.drawImage(image, bleed, bleed, exportWidth, exportHeight);
       URL.revokeObjectURL(svgUrl);
       resolve(canvas);
     };
