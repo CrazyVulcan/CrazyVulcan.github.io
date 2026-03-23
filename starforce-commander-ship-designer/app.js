@@ -15,53 +15,53 @@ const STANDARD_DEFAULT_LOADOUT = {
   identity: {
     name: 'SHIP NAME / ID',
     classType: 'CLASSNAME ID-class Weight Class',
-    faction: '/',
-    era: '/',
-    pointValue: 4
+    faction: 'COMMON',
+    era: 'ERA',
+    pointValue: 1
   },
-  engineering: { move: 1, vector: 2, turn: 1, special: 1 },
+  engineering: { move: 1, vector: 1, turn: 1, special: 1 },
   shields: { forward: 0, aft: 0, port: 0, starboard: 0 },
   armor: { forward: 0, aft: 0, port: 0, starboard: 0 },
   shieldGen: { count: 0, value: 0 },
   textBlocks: { powerSystem: '' },
   functionsConfig: {
-    accDec: { values: ['1', '2', '3'], free: 0 },
-    sifIdf: { values: ['1', '2', '3'], free: 0, emer: true },
+    accDec: { values: [], free: 0 },
+    sifIdf: { values: [], free: 0, emer: true },
     batRech: { values: [], free: 0 },
     ftl: { empty: 2 },
     cloak: { enabled: false, empty: 0 },
     sensor: { values: [], free: 0 },
-    genSys: { values: ['NRM', 'MAX'], free: 0 },
+    genSys: { values: ['NRM', 'MAX'], free: 1 },
     weapons: [
-      { label: 'WPN A', enabled: false, free: 0, values: [] },
-      { label: 'WPN B', enabled: false, free: 0, values: [] },
-      { label: 'WPN C', enabled: false, free: 0, values: [] },
-      { label: 'WPN D', enabled: false, free: 0, values: [] }
+      { label: 'WPN A', enabled: true, free: 0, values: ['1', '2', '6'] },
+      { label: 'WPN B', enabled: false, free: 0, values: ['1', '2', '0'] },
+      { label: 'WPN C', enabled: false, free: 0, values: ['1', '2', '0'] },
+      { label: 'WPN D', enabled: false, free: 0, values: ['1', '2', '6'] }
     ]
   },
   powerSystem: {
     tracks: [
-      { key: 'lMain', label: 'L MAIN', points: 0, boxesPerPoint: 1, boxPattern: [], hasDot: true },
-      { key: 'rMain', label: 'R MAIN', points: 0, boxesPerPoint: 1, boxPattern: [], hasDot: true },
-      { key: 'cMain', label: 'C MAIN', points: 0, boxesPerPoint: 1, boxPattern: [], hasDot: true },
-      { key: 'slReac', label: 'SL REAC', points: 0, boxesPerPoint: 1, boxPattern: [], hasDot: true },
-      { key: 'auxPwr', label: 'AUX PWR', points: 0, boxesPerPoint: 1, boxPattern: [], hasDot: true },
-      { key: 'battery', label: 'BATTERY', points: 0, boxesPerPoint: 1, boxPattern: [], hasDot: true },
-      { key: 'ftlDrive', label: 'FTL DRIVE', points: 1, boxesPerPoint: 1, boxPattern: [], hasDot: false }
+      { key: 'lMain', label: 'L MAIN', points: 0, boxesPerPoint: 2, boxPattern: [2, 1, 2], hasDot: true },
+      { key: 'rMain', label: 'R MAIN', points: 0, boxesPerPoint: 2, boxPattern: [2, 1, 2], hasDot: true },
+      { key: 'cMain', label: 'C MAIN', points: 0, boxesPerPoint: 2, boxPattern: [2, 1, 2], hasDot: true },
+      { key: 'slReac', label: 'SL REAC', points: 0, boxesPerPoint: 2, boxPattern: [2, 1, 2], hasDot: true },
+      { key: 'auxPwr', label: 'AUX PWR', points: 0, boxesPerPoint: 2, boxPattern: [2, 1, 2], hasDot: true },
+      { key: 'battery', label: 'BATTERY', points: 0, boxesPerPoint: 2, boxPattern: [2, 1, 2], hasDot: true },
+      { key: 'ftlDrive', label: 'FTL DRIVE', points: 0, boxesPerPoint: 2, boxPattern: [2, 1, 2], hasDot: false }
     ]
   },
   sublight: {
     maxAccPhs: 2,
-    greenCircles: 3,
-    redCircles: 3,
+    greenCircles: 0,
+    redCircles: 0,
     spd: [6, 5, 4, 3, 2, 1, 0],
     turns: [20, 20, 20, 20, 20, 20, 20],
     dmgStops: [false, false, false, false, false, false, false]
   },
-  structure: { repairable: 1, permanent: 4 },
+  structure: { repairable: 1, permanent: 1 },
   shipArtDataUrl: '',
   weapons: [
-    { name: 'WPN NAME', mountArcs: ['1', '2'], mountFacings: [[1, 2]], powerCircles: 1, powerStops: [], structure: 1, ranges: [], traits: [], special: '' },
+    { name: '', mountArcs: ['1', '2', '5', '6'], mountFacings: [[1, 2], [5, 6]], powerCircles: 1, powerStops: [2, 4], structure: 1, ranges: [{ band: '0-6', type: 'green' }, { band: '7-12', type: 'black' }], diceByRange: [{ bonus: 0, dice: ['R', 'R'] }, { bonus: 0, dice: ['Y', 'Y'] }], traits: [], special: 'STR 4' },
     { name: '', mountArcs: [], mountFacings: [], powerCircles: 1, powerStops: [], structure: 1, ranges: [], traits: [], special: '' },
     { name: '', mountArcs: [], mountFacings: [], powerCircles: 1, powerStops: [], structure: 1, ranges: [], traits: [], special: '' },
     { name: '', mountArcs: [], mountFacings: [], powerCircles: 2, powerStops: [], structure: 2, ranges: [], traits: [], special: '' }
