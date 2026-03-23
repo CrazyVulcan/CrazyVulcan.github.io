@@ -345,6 +345,8 @@ SCOUT:0:0</textarea></label>
         <div class="row row-actions">
           <button type="button" id="saveBtn">Save Draft</button>
           <button type="button" id="exportBtn">Export JSON</button>
+          <button type="button" id="exportPngBtn">Export PNG</button>
+          <button type="button" id="exportJpegBtn">Export JPEG</button>
           <button type="button" id="importBtn">Import JSON</button>
           <button type="button" id="printBtn">Print to Paper</button>
           <button type="button" id="clearBtn" class="ghost">Clear Drafts</button>
@@ -467,6 +469,18 @@ SCOUT:0:0</textarea></label>
       <pre id="jsonPreview"></pre>
     </section>
   </main>
+
+  <dialog id="imageExportModal" class="export-image-modal">
+    <form method="dialog" class="export-image-modal-card">
+      <h3 id="imageExportTitle">Export Preview Image</h3>
+      <p class="muted">Right-click the image and choose <b>Save image as…</b>. You can also try the direct download button.</p>
+      <div id="imageExportPreviewWrap" class="export-image-preview-wrap"></div>
+      <div class="row row-actions">
+        <button type="button" id="imageExportDownloadBtn">Try Direct Download</button>
+        <button type="submit" class="ghost">Close</button>
+      </div>
+    </form>
+  </dialog>
 
   <script src="app.js" type="module"></script>
 </body>
