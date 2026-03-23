@@ -91,7 +91,7 @@ textarea:focus, input:focus {
 .power-system-editor { border: 1px solid #7f93a2; border-radius: 6px; padding: 0.7rem; margin-top: 0.6rem; background: #edf3f7; }
 .power-system-editor strong { display: block; margin-bottom: 0.2rem; }
 .power-system-editor .muted { margin: 0 0 0.38rem; font-size: 0.8rem; color: #436079; }
-.power-grid-head, .power-grid { display: grid; grid-template-columns: minmax(0, 1fr) 74px 96px minmax(0, 1fr) 44px; gap: 0.4rem; align-items: center; }
+.power-grid-head, .power-grid { display: grid; grid-template-columns: minmax(0, 1fr) 74px minmax(0, 1fr) 44px; gap: 0.4rem; align-items: center; }
 .power-grid-head { margin: 0.15rem 0; color: #44617b; font-size: 0.76rem; }
 .power-grid label { margin: 0; font-weight: 700; }
 .power-grid input { margin: 0; }
@@ -282,8 +282,18 @@ button.ghost { background: #6d7f8d; border-color: #465764; }
 .shield-top { margin-bottom: 0.22rem; }
 .shield-bottom { margin-top: 0.22rem; }
 .shield-box-row { display: flex; flex-wrap: wrap; gap: 4px; padding: 0.12rem 0.35rem; min-height: 20px; justify-content: center; }
+.shield-box-row.is-split {
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
+}
 .armor-box-row { display: flex; flex-wrap: wrap; gap: 4px; padding: 0.08rem 0.35rem; min-height: 18px; justify-content: center; }
 .shield-gen-row { display: flex; flex-wrap: wrap; gap: 4px; padding: 0.12rem 0.35rem; min-height: 18px; justify-content: center; }
+.shield-gen-row.is-split {
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
+}
 .fwd-gen-row { padding-top: 0.16rem; padding-bottom: 0.04rem; }
 .shield-gen-label { text-align: center; font-weight: 900; color: #0872c2; margin: 0.18rem 0 0.24rem; display: flex; justify-content: center; align-items: center; gap: 10px; font-size: 1rem; letter-spacing: 0.04em; line-height: 1.2; }
 .shield-gen-black-row { display: flex; gap: 4px; flex-wrap: wrap; }
@@ -387,6 +397,25 @@ button.ghost { background: #6d7f8d; border-color: #465764; }
   min-height: 112px;
   justify-content: center;
 }
+.shield-gen-col.is-split {
+  flex-direction: row;
+  align-items: center;
+}
+.shield-box-col.is-split {
+  flex-direction: row;
+  align-items: center;
+}
+.shield-split-lane {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+}
+.shield-split-lane.row-lane {
+  flex-direction: row;
+}
+.shield-split-lane.column-lane {
+  flex-direction: column;
+}
 .systems-box { border-top: 0; margin-top: 0.8rem; border: 12px solid #f0b500; background: #f8f8f8; padding-bottom: 0.25rem; }
 .systems-box h3 { border-color: #f0b500; }
 .systems-layout { display: grid; grid-template-columns: 1fr 72px; gap: 0.35rem; padding: 0.2rem 0.25rem 0.1rem; align-items: start; }
@@ -406,6 +435,26 @@ button.ghost { background: #6d7f8d; border-color: #465764; }
 .weapon-editor-card code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.78rem; }
 .weapon-editor-card label { color: #17344c; font-weight: 700; }
 .weapon-editor-card input { border-color: #95a9b8; }
+.weapon-editor-card select[multiple] {
+  border: 1px solid #95a9b8;
+  border-radius: 4px;
+  padding: 0.3rem;
+  background: #fff;
+  min-height: 7.2rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.35;
+  width: 100%;
+}
+.weapon-editor-card select[multiple] option {
+  padding: 0.2rem 0.35rem;
+  color: #17344c;
+  background: #fff;
+}
+.weapon-editor-card select[multiple] option:checked {
+  background: #0f78c2 linear-gradient(0deg, #0f78c2, #0f78c2);
+  color: #fff;
+}
 .weapon-editor-card .grid2,
 .weapon-editor-card .grid3 { grid-template-columns: 1fr; gap: 0.45rem; }
 

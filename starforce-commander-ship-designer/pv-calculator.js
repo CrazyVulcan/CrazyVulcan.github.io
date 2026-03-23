@@ -178,6 +178,15 @@ function positivePart(value, fallback = 0) {
   return Math.max(0, parsed);
 }
 
+function shieldGeneratorTotal(shieldGen) {
+  if (shieldGen && typeof shieldGen === 'object') {
+    const count = positivePart(shieldGen.count);
+    const value = positivePart(shieldGen.value);
+    return count * value;
+  }
+  return positivePart(shieldGen);
+}
+
 function safeRun(scorer, fallback = 0) {
   try {
     return positivePart(scorer(), fallback);
@@ -266,7 +275,7 @@ function scoreDefense(build) {
   const capitalHullPremium = 1
     + Math.min(0.55, Math.max(0, (totalStructure - 12) * 0.03) + (repairable * 0.05));
 
-  const generatorScore = positivePart(build?.shieldGen) * 1.3 * rank(build, 'rankDefenseShieldGen');
+  const generatorScore = shieldGeneratorTotal(build?.shieldGen) * 1.3 * rank(build, 'rankDefenseShieldGen');
 
   return shieldScore
     + armorScore
