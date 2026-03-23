@@ -468,6 +468,16 @@ button.ghost { background: #6d7f8d; border-color: #465764; }
 }
 .weapon-editor-card .grid2,
 .weapon-editor-card .grid3 { grid-template-columns: 1fr; gap: 0.45rem; }
+.weapon-editor-card .grid3 > label {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 4.35rem;
+}
+.weapon-editor-card .grid3 > label > input,
+.weapon-editor-card .grid3 > label > select {
+  margin-top: 0.3rem;
+}
 
 .right-col { border: 12px solid #ff0000; background: #fafafa; }
 .weapon-slot { border-top: 2px solid #ff0000; min-height: 0; flex: 1; display: flex; flex-direction: column; }
