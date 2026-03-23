@@ -458,6 +458,14 @@ button.ghost { background: #6d7f8d; border-color: #465764; }
   border-color: #0f78c2;
   color: #fff;
 }
+.weapon-editor-card .special-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.4rem;
+}
+.weapon-editor-card .special-row select {
+  width: 100%;
+}
 .weapon-editor-card .grid2,
 .weapon-editor-card .grid3 { grid-template-columns: 1fr; gap: 0.45rem; }
 
