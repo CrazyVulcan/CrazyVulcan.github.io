@@ -1514,6 +1514,91 @@ function exportCurrent() {
   downloadBlob(blob, `${name}.json`);
 }
 
+function cloneNodeWithInlineStyles(sourceNode) {
+  const clone = sourceNode.cloneNode(false);
+  if (sourceNode.nodeType !== Node.ELEMENT_NODE) {
+    return clone;
+  }
+
+  const computedStyle = window.getComputedStyle(sourceNode);
+  const styleText = Array.from(computedStyle)
+    .map((property) => `${property}:${computedStyle.getPropertyValue(property)};`)
+    .join('');
+  clone.setAttribute('style', styleText);
+
+  Array.from(sourceNode.childNodes).forEach((childNode) => {
+    clone.appendChild(cloneNodeWithInlineStyles(childNode));
+  });
+
+  return clone;
+}
+
+function buildPreviewSvgDataUrl(previewElement, width, height) {
+  const clonedPreview = cloneNodeWithInlineStyles(previewElement);
+  const serializedPreview = new XMLSerializer().serializeToString(clonedPreview);
+  const svgMarkup = `
+    <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">
+      <foreignObject x="0" y="0" width="100%" height="100%">
+        ${serializedPreview}
+      </foreignObject>
+    </svg>
+  `;
+
+  return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svgMarkup)}`;
+}
+
+function drawPreviewToCanvas(previewElement) {
+  const { width, height } = previewElement.getBoundingClientRect();
+  const exportWidth = Math.max(1, Math.round(width));
+  const exportHeight = Math.max(1, Math.round(height));
+  const scale = Math.max(1, Math.ceil(window.devicePixelRatio || 1));
+
+  return new Promise((resolve, reject) => {
+    const image = new Image();
+    image.onload = () => {
+      const canvas = document.createElement('canvas');
+      canvas.width = exportWidth * scale;
+      canvas.height = exportHeight * scale;
+      const context = canvas.getContext('2d');
+      if (!context) {
+        reject(new Error('Unable to create drawing context.'));
+        return;
+      }
+      context.scale(scale, scale);
+      context.drawImage(image, 0, 0, exportWidth, exportHeight);
+      resolve(canvas);
+    };
+    image.onerror = () => reject(new Error('Failed to render preview image.'));
+    image.src = buildPreviewSvgDataUrl(previewElement, exportWidth, exportHeight);
+  });
+}
+
+async function exportPreviewImage(format = 'png') {
+  const previewCard = document.getElementById('ssdCard');
+  if (!previewCard) {
+    window.alert('SSD preview area was not found.');
+    return;
+  }
+
+  const normalizedFormat = String(format).toLowerCase() === 'jpeg' ? 'jpeg' : 'png';
+  const name = slugifyFileName(form.elements.name.value);
+
+  try {
+    const canvas = await drawPreviewToCanvas(previewCard);
+    const mimeType = normalizedFormat === 'jpeg' ? 'image/jpeg' : 'image/png';
+    const extension = normalizedFormat === 'jpeg' ? 'jpg' : 'png';
+    canvas.toBlob((blob) => {
+      if (!blob) {
+        window.alert('Could not export image.');
+        return;
+      }
+      downloadBlob(blob, `${name}.${extension}`);
+    }, mimeType, 0.95);
+  } catch {
+    window.alert('Could not export image from preview. Please try again.');
+  }
+}
+
 function importJsonFile(file) {
   if (!file) {
     return;
@@ -1586,6 +1671,12 @@ form.addEventListener('change', () => render({ recalculatePointValue: false }));
 document.getElementById('saveBtn').addEventListener('click', saveDraft);
 document.getElementById('clearBtn').addEventListener('click', clearDrafts);
 document.getElementById('exportBtn').addEventListener('click', exportCurrent);
+document.getElementById('exportPngBtn').addEventListener('click', () => {
+  exportPreviewImage('png');
+});
+document.getElementById('exportJpegBtn').addEventListener('click', () => {
+  exportPreviewImage('jpeg');
+});
 document.getElementById('importBtn').addEventListener('click', () => {
   const picker = document.createElement('input');
   picker.type = 'file';
