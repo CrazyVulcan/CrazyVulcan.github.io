@@ -733,3 +733,38 @@ pre { background: #f3f8fc; color: #12314a; padding: 0.55rem; border-radius: 6px;
 .pv-rank-table input {
   width: 70px;
 }
+
+.export-image-modal {
+  width: min(92vw, 1200px);
+  border: 1px solid #32516b;
+  border-radius: 10px;
+  padding: 0;
+}
+
+.export-image-modal::backdrop {
+  background: rgba(10, 26, 39, 0.65);
+}
+
+.export-image-modal-card {
+  margin: 0;
+  padding: 1rem;
+  background: #dbe4ec;
+}
+
+.export-image-preview-wrap {
+  max-height: 72vh;
+  overflow: auto;
+  background: #9fb2c4;
+  border: 1px solid #5f7892;
+  border-radius: 8px;
+  padding: 0.75rem;
+  display: flex;
+  justify-content: center;
+}
+
+.export-image-preview-wrap canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  background: #fff;
+}

@@ -1607,6 +1607,39 @@ function canvasToBlob(canvas, mimeType, quality) {
   });
 }
 
+function showImageExportModal(canvas, format, fileName) {
+  const modal = document.getElementById('imageExportModal');
+  const title = document.getElementById('imageExportTitle');
+  const previewWrap = document.getElementById('imageExportPreviewWrap');
+  const downloadBtn = document.getElementById('imageExportDownloadBtn');
+
+  if (!modal || !title || !previewWrap || !downloadBtn) {
+    window.alert('Preview image is ready. Right-click the preview area to save.');
+    return;
+  }
+
+  title.textContent = `Export Preview Image (${String(format).toUpperCase()})`;
+  previewWrap.innerHTML = '';
+  previewWrap.appendChild(canvas);
+
+  const mimeType = String(format).toLowerCase() === 'jpeg' ? 'image/jpeg' : 'image/png';
+  downloadBtn.textContent = `Try Direct Download (${String(format).toUpperCase()})`;
+  downloadBtn.onclick = async () => {
+    try {
+      const blob = await canvasToBlob(canvas, mimeType, 0.95);
+      downloadBlob(blob, fileName);
+    } catch {
+      window.alert('Direct download is blocked by browser security for this image. Please right-click the image and choose "Save image as…".');
+    }
+  };
+
+  if (typeof modal.showModal === 'function') {
+    modal.showModal();
+  } else {
+    modal.setAttribute('open', 'open');
+  }
+}
+
 async function exportPreviewImage(format = 'png') {
   const previewCard = document.getElementById('ssdCard');
   if (!previewCard) {
@@ -1619,10 +1652,8 @@ async function exportPreviewImage(format = 'png') {
 
   try {
     const canvas = await drawPreviewToCanvas(previewCard);
-    const mimeType = normalizedFormat === 'jpeg' ? 'image/jpeg' : 'image/png';
     const extension = normalizedFormat === 'jpeg' ? 'jpg' : 'png';
-    const blob = await canvasToBlob(canvas, mimeType, 0.95);
-    downloadBlob(blob, `${name}.${extension}`);
+    showImageExportModal(canvas, normalizedFormat, `${name}.${extension}`);
   } catch (error) {
     console.error(error);
     window.alert('Could not export image from preview. Please try again.');
