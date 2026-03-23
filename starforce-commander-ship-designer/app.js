@@ -1564,6 +1564,23 @@ function initializeTraitToggleGrids() {
   });
 }
 
+function applyCrossBrowserPrintFit() {
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
+
+  const setPrintScale = () => {
+    if (window.innerWidth <= 700) {
+      document.body.classList.add('print-fit-mobile');
+    } else {
+      document.body.classList.remove('print-fit-mobile');
+    }
+  };
+
+  setPrintScale();
+  window.addEventListener('resize', setPrintScale);
+}
+
 form.addEventListener('input', () => render({ recalculatePointValue: false }));
 form.addEventListener('change', () => render({ recalculatePointValue: false }));
 document.getElementById('saveBtn').addEventListener('click', saveDraft);
