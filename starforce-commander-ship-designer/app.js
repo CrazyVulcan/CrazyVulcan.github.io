@@ -8,6 +8,7 @@ const STORAGE_KEY = 'sfCommanderSsdDrafts';
 const TURN_OPTIONS = [0, 20, 25, 30, 35, 40, 45, 65];
 let shipArtDataUrl = '';
 const SPECIAL_SYSTEM_KEYS = new Set(['CLOAK', 'CMND', 'FCON', 'HNGR', 'LNCH', 'LAND', 'SCOUT']);
+const TRAIT_OPTIONS = ['AMMO X', 'AREA EFC', 'ARMOR +X', 'ARRAY', 'ATMO', 'FTL', 'HOMING X', 'MISSILE-X', 'NOBAT', 'NOSTRCT', 'PARTCL', 'PD AREA', 'PDMODE', 'PDWPN', 'PREC X'];
 
 
 const STANDARD_DEFAULT_LOADOUT = {
@@ -722,7 +723,10 @@ function weaponSlot(id, rawWeapon, enabled = true) {
   const rangeGrid = document.createElement('div');
   rangeGrid.className = 'wpn-range-grid';
   const traits = weapon.traits.map((trait) => trait.trim()).filter(Boolean);
-  const hasHoming = traits.some((trait) => trait.toUpperCase() === 'HOMING');
+  const hasHoming = traits.some((trait) => {
+    const normalizedTrait = trait.toUpperCase();
+    return normalizedTrait === 'HOMING' || normalizedTrait.startsWith('HOMING ');
+  });
   const hasRedDice = weapon.ranges.some((range) => (Array.isArray(range?.dice) ? range.dice : [])
     .some((die) => String(die).trim().toUpperCase() === 'R'));
 
@@ -1526,6 +1530,25 @@ function enableSingleClickTraitToggle(selectEl) {
   });
 }
 
+function initializeTraitSelects() {
+  document.querySelectorAll('select[name$="Traits"]').forEach((selectEl) => {
+    const selectedByDefault = new Set(String(selectEl.dataset.defaultTraits || '')
+      .split(',')
+      .map((trait) => trait.trim().toUpperCase())
+      .filter(Boolean));
+
+    if (selectEl.options.length === 0) {
+      TRAIT_OPTIONS.forEach((trait) => {
+        const option = document.createElement('option');
+        option.value = trait;
+        option.textContent = trait;
+        option.selected = selectedByDefault.has(trait.toUpperCase());
+        selectEl.appendChild(option);
+      });
+    }
+  });
+}
+
 form.addEventListener('input', () => render({ recalculatePointValue: false }));
 form.addEventListener('change', () => render({ recalculatePointValue: false }));
 document.getElementById('saveBtn').addEventListener('click', saveDraft);
@@ -1571,6 +1594,7 @@ shipArtInput.addEventListener('change', (event) => {
   reader.readAsDataURL(file);
 });
 
+initializeTraitSelects();
 document.querySelectorAll('select[name$="Traits"]').forEach((selectEl) => {
   enableSingleClickTraitToggle(selectEl);
 });
