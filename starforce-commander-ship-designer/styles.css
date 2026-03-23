@@ -435,26 +435,27 @@ button.ghost { background: #6d7f8d; border-color: #465764; }
 .weapon-editor-card code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.78rem; }
 .weapon-editor-card label { color: #17344c; font-weight: 700; }
 .weapon-editor-card input { border-color: #95a9b8; }
-.weapon-editor-card select[multiple] {
+.trait-toggle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.28rem;
+  width: 100%;
+}
+.trait-toggle {
   border: 1px solid #95a9b8;
   border-radius: 4px;
-  padding: 0.3rem;
   background: #fff;
-  min-height: 7.2rem;
-  font-size: 0.88rem;
+  color: #17344c;
+  font-size: 0.78rem;
   font-weight: 700;
-  line-height: 1.35;
-  width: 100%;
-  color: #17344c;
-  -webkit-text-fill-color: #17344c;
+  line-height: 1.2;
+  padding: 0.28rem 0.25rem;
+  text-align: center;
+  cursor: pointer;
 }
-.weapon-editor-card select[multiple] option {
-  padding: 0.2rem 0.35rem;
-  color: #17344c;
-  background: #fff;
-}
-.weapon-editor-card select[multiple] option:checked {
-  background: #0f78c2 linear-gradient(0deg, #0f78c2, #0f78c2);
+.trait-toggle.active {
+  background: #0f78c2;
+  border-color: #0f78c2;
   color: #fff;
 }
 .weapon-editor-card .grid2,

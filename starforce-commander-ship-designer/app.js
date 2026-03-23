@@ -234,6 +234,12 @@ function resolveImportedShipArt(importedDraft = {}) {
 
 function readWeaponsFromForm() {
   const readWeaponTraits = (index) => {
+    const grid = document.getElementById(`wpn${index}TraitsGrid`);
+    if (grid) {
+      return Array.from(grid.querySelectorAll('.trait-toggle.active'))
+        .map((button) => button.dataset.value || '')
+        .filter(Boolean);
+    }
     const field = form.elements[`wpn${index}Traits`];
     if (!field) return [];
     if ('selectedOptions' in field && field.selectedOptions) {
@@ -1286,6 +1292,20 @@ function restoreDraft(draft) {
     }
   };
   const setWeaponTraitSelections = (index, traits = []) => {
+    const grid = getField(`wpn${index}TraitsGrid`) || document.getElementById(`wpn${index}TraitsGrid`);
+    if (grid) {
+      const normalized = new Set((Array.isArray(traits) ? traits : [])
+        .map((trait) => String(trait || '').trim().toUpperCase())
+        .filter(Boolean));
+      grid.querySelectorAll('.trait-toggle').forEach((button) => {
+        const value = String(button.dataset.value || '').toUpperCase();
+        const active = normalized.has(value);
+        button.classList.toggle('active', active);
+        button.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+      return;
+    }
+
     const field = getField(`wpn${index}Traits`);
     if (!field || !('options' in field)) return;
 
@@ -1519,33 +1539,28 @@ function importJsonFile(file) {
   reader.readAsText(file);
 }
 
-function enableSingleClickTraitToggle(selectEl) {
-  if (!selectEl) return;
-  selectEl.addEventListener('mousedown', (event) => {
-    const option = event.target;
-    if (!option || option.tagName !== 'OPTION') return;
-    event.preventDefault();
-    option.selected = !option.selected;
-    selectEl.dispatchEvent(new Event('input', { bubbles: true }));
-  });
-}
-
-function initializeTraitSelects() {
-  document.querySelectorAll('select[name$="Traits"]').forEach((selectEl) => {
-    const selectedByDefault = new Set(String(selectEl.dataset.defaultTraits || '')
+function initializeTraitToggleGrids() {
+  document.querySelectorAll('.trait-toggle-grid').forEach((gridEl) => {
+    const selectedByDefault = new Set(String(gridEl.dataset.defaultTraits || '')
       .split(',')
       .map((trait) => trait.trim().toUpperCase())
       .filter(Boolean));
 
-    if (selectEl.options.length === 0) {
-      TRAIT_OPTIONS.forEach((trait) => {
-        const option = document.createElement('option');
-        option.value = trait;
-        option.textContent = trait;
-        option.selected = selectedByDefault.has(trait.toUpperCase());
-        selectEl.appendChild(option);
+    gridEl.innerHTML = '';
+    TRAIT_OPTIONS.forEach((trait) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = `trait-toggle${selectedByDefault.has(trait.toUpperCase()) ? ' active' : ''}`;
+      button.dataset.value = trait;
+      button.setAttribute('aria-pressed', selectedByDefault.has(trait.toUpperCase()) ? 'true' : 'false');
+      button.textContent = trait;
+      button.addEventListener('click', () => {
+        const isActive = button.classList.toggle('active');
+        button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        gridEl.dispatchEvent(new Event('input', { bubbles: true }));
       });
-    }
+      gridEl.appendChild(button);
+    });
   });
 }
 
@@ -1594,10 +1609,7 @@ shipArtInput.addEventListener('change', (event) => {
   reader.readAsDataURL(file);
 });
 
-initializeTraitSelects();
-document.querySelectorAll('select[name$="Traits"]').forEach((selectEl) => {
-  enableSingleClickTraitToggle(selectEl);
-});
+initializeTraitToggleGrids();
 
 applyCrossBrowserPrintFit();
 
