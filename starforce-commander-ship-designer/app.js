@@ -1533,18 +1533,19 @@ function cloneNodeWithInlineStyles(sourceNode) {
   return clone;
 }
 
-function buildPreviewSvgDataUrl(previewElement, width, height) {
+function buildPreviewSvgBlobUrl(previewElement, width, height) {
   const clonedPreview = cloneNodeWithInlineStyles(previewElement);
   const serializedPreview = new XMLSerializer().serializeToString(clonedPreview);
   const svgMarkup = `
     <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">
       <foreignObject x="0" y="0" width="100%" height="100%">
-        ${serializedPreview}
+        <div xmlns="http://www.w3.org/1999/xhtml">${serializedPreview}</div>
       </foreignObject>
     </svg>
   `;
 
-  return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svgMarkup)}`;
+  const svgBlob = new Blob([svgMarkup], { type: 'image/svg+xml;charset=utf-8' });
+  return URL.createObjectURL(svgBlob);
 }
 
 function drawPreviewToCanvas(previewElement) {
@@ -1555,6 +1556,7 @@ function drawPreviewToCanvas(previewElement) {
 
   return new Promise((resolve, reject) => {
     const image = new Image();
+    const svgUrl = buildPreviewSvgBlobUrl(previewElement, exportWidth, exportHeight);
     image.onload = () => {
       const canvas = document.createElement('canvas');
       canvas.width = exportWidth * scale;
@@ -1566,10 +1568,42 @@ function drawPreviewToCanvas(previewElement) {
       }
       context.scale(scale, scale);
       context.drawImage(image, 0, 0, exportWidth, exportHeight);
+      URL.revokeObjectURL(svgUrl);
       resolve(canvas);
     };
-    image.onerror = () => reject(new Error('Failed to render preview image.'));
-    image.src = buildPreviewSvgDataUrl(previewElement, exportWidth, exportHeight);
+    image.onerror = () => {
+      URL.revokeObjectURL(svgUrl);
+      reject(new Error('Failed to render preview image.'));
+    };
+    image.src = svgUrl;
+  });
+}
+
+function canvasToBlob(canvas, mimeType, quality) {
+  return new Promise((resolve, reject) => {
+    if (typeof canvas.toBlob === 'function') {
+      canvas.toBlob((blob) => {
+        if (!blob) {
+          reject(new Error('Could not create image blob.'));
+          return;
+        }
+        resolve(blob);
+      }, mimeType, quality);
+      return;
+    }
+
+    try {
+      const dataUrl = canvas.toDataURL(mimeType, quality);
+      const [, base64 = ''] = dataUrl.split(',');
+      const binary = atob(base64);
+      const bytes = new Uint8Array(binary.length);
+      for (let index = 0; index < binary.length; index += 1) {
+        bytes[index] = binary.charCodeAt(index);
+      }
+      resolve(new Blob([bytes], { type: mimeType }));
+    } catch (error) {
+      reject(error);
+    }
   });
 }
 
@@ -1587,14 +1621,10 @@ async function exportPreviewImage(format = 'png') {
     const canvas = await drawPreviewToCanvas(previewCard);
     const mimeType = normalizedFormat === 'jpeg' ? 'image/jpeg' : 'image/png';
     const extension = normalizedFormat === 'jpeg' ? 'jpg' : 'png';
-    canvas.toBlob((blob) => {
-      if (!blob) {
-        window.alert('Could not export image.');
-        return;
-      }
-      downloadBlob(blob, `${name}.${extension}`);
-    }, mimeType, 0.95);
-  } catch {
+    const blob = await canvasToBlob(canvas, mimeType, 0.95);
+    downloadBlob(blob, `${name}.${extension}`);
+  } catch (error) {
+    console.error(error);
     window.alert('Could not export image from preview. Please try again.');
   }
 }
