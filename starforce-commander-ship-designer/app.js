@@ -1514,6 +1514,200 @@ function exportCurrent() {
   downloadBlob(blob, `${name}.json`);
 }
 
+function cloneNodeWithInlineStyles(sourceNode) {
+  const clone = sourceNode.cloneNode(false);
+  if (sourceNode.nodeType !== Node.ELEMENT_NODE) {
+    return clone;
+  }
+
+  const computedStyle = window.getComputedStyle(sourceNode);
+  const styleText = Array.from(computedStyle)
+    .map((property) => `${property}:${computedStyle.getPropertyValue(property)};`)
+    .join('');
+  clone.setAttribute('style', styleText);
+
+  Array.from(sourceNode.childNodes).forEach((childNode) => {
+    clone.appendChild(cloneNodeWithInlineStyles(childNode));
+  });
+
+  return clone;
+}
+
+function blobToDataUrl(blob) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(String(reader.result || ''));
+    reader.onerror = () => reject(new Error('Failed to read image blob.'));
+    reader.readAsDataURL(blob);
+  });
+}
+
+async function inlineImageSources(rootNode) {
+  const imageNodes = Array.from(rootNode.querySelectorAll('img'));
+  const cache = new Map();
+
+  await Promise.all(imageNodes.map(async (imageNode) => {
+    const src = imageNode.getAttribute('src');
+    if (!src || src.startsWith('data:') || src.startsWith('blob:')) {
+      return;
+    }
+
+    const absoluteUrl = new URL(src, window.location.href).href;
+    if (!cache.has(absoluteUrl)) {
+      cache.set(absoluteUrl, (async () => {
+        const response = await fetch(absoluteUrl);
+        if (!response.ok) {
+          throw new Error(`Image fetch failed: ${absoluteUrl}`);
+        }
+        const blob = await response.blob();
+        return blobToDataUrl(blob);
+      })());
+    }
+
+    try {
+      const dataUrl = await cache.get(absoluteUrl);
+      imageNode.setAttribute('src', dataUrl);
+    } catch (error) {
+      console.warn(error);
+    }
+  }));
+}
+
+async function buildPreviewSvgBlobUrl(previewElement, width, height) {
+  const clonedPreview = cloneNodeWithInlineStyles(previewElement);
+  await inlineImageSources(clonedPreview);
+  const serializedPreview = new XMLSerializer().serializeToString(clonedPreview);
+  const svgMarkup = `
+    <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">
+      <foreignObject x="0" y="0" width="100%" height="100%">
+        <div xmlns="http://www.w3.org/1999/xhtml">${serializedPreview}</div>
+      </foreignObject>
+    </svg>
+  `;
+
+  const svgBlob = new Blob([svgMarkup], { type: 'image/svg+xml;charset=utf-8' });
+  return URL.createObjectURL(svgBlob);
+}
+
+function drawPreviewToCanvas(previewElement) {
+  const bounds = previewElement.getBoundingClientRect();
+  const exportWidth = Math.max(
+    1,
+    Math.ceil(Math.max(bounds.width, previewElement.scrollWidth, previewElement.offsetWidth))
+  );
+  const exportHeight = Math.max(
+    1,
+    Math.ceil(Math.max(bounds.height, previewElement.scrollHeight, previewElement.offsetHeight))
+  );
+  const scale = Math.max(1, Math.ceil(window.devicePixelRatio || 1));
+  const bleed = 4;
+  const svgUrlPromise = buildPreviewSvgBlobUrl(previewElement, exportWidth, exportHeight);
+
+  return svgUrlPromise.then((svgUrl) => new Promise((resolve, reject) => {
+    const image = new Image();
+    image.onload = () => {
+      const canvas = document.createElement('canvas');
+      canvas.width = (exportWidth + bleed * 2) * scale;
+      canvas.height = (exportHeight + bleed * 2) * scale;
+      const context = canvas.getContext('2d');
+      if (!context) {
+        reject(new Error('Unable to create drawing context.'));
+        return;
+      }
+      context.scale(scale, scale);
+      context.drawImage(image, bleed, bleed, exportWidth, exportHeight);
+      URL.revokeObjectURL(svgUrl);
+      resolve(canvas);
+    };
+    image.onerror = () => {
+      URL.revokeObjectURL(svgUrl);
+      reject(new Error('Failed to render preview image.'));
+    };
+    image.src = svgUrl;
+  }));
+}
+
+function canvasToBlob(canvas, mimeType, quality) {
+  return new Promise((resolve, reject) => {
+    if (typeof canvas.toBlob === 'function') {
+      canvas.toBlob((blob) => {
+        if (!blob) {
+          reject(new Error('Could not create image blob.'));
+          return;
+        }
+        resolve(blob);
+      }, mimeType, quality);
+      return;
+    }
+
+    try {
+      const dataUrl = canvas.toDataURL(mimeType, quality);
+      const [, base64 = ''] = dataUrl.split(',');
+      const binary = atob(base64);
+      const bytes = new Uint8Array(binary.length);
+      for (let index = 0; index < binary.length; index += 1) {
+        bytes[index] = binary.charCodeAt(index);
+      }
+      resolve(new Blob([bytes], { type: mimeType }));
+    } catch (error) {
+      reject(error);
+    }
+  });
+}
+
+function showImageExportModal(canvas, format, fileName) {
+  const modal = document.getElementById('imageExportModal');
+  const title = document.getElementById('imageExportTitle');
+  const previewWrap = document.getElementById('imageExportPreviewWrap');
+  const downloadBtn = document.getElementById('imageExportDownloadBtn');
+
+  if (!modal || !title || !previewWrap || !downloadBtn) {
+    window.alert('Preview image is ready. Right-click the preview area to save.');
+    return;
+  }
+
+  title.textContent = `Export Preview Image (${String(format).toUpperCase()})`;
+  previewWrap.innerHTML = '';
+  previewWrap.appendChild(canvas);
+
+  const mimeType = String(format).toLowerCase() === 'jpeg' ? 'image/jpeg' : 'image/png';
+  downloadBtn.textContent = `Try Direct Download (${String(format).toUpperCase()})`;
+  downloadBtn.onclick = async () => {
+    try {
+      const blob = await canvasToBlob(canvas, mimeType, 0.95);
+      downloadBlob(blob, fileName);
+    } catch {
+      window.alert('Direct download is blocked by browser security for this image. Please right-click the image and choose "Save image as…".');
+    }
+  };
+
+  if (typeof modal.showModal === 'function') {
+    modal.showModal();
+  } else {
+    modal.setAttribute('open', 'open');
+  }
+}
+
+async function exportPreviewImage(format = 'png') {
+  const previewCard = document.getElementById('ssdCard');
+  if (!previewCard) {
+    window.alert('SSD preview area was not found.');
+    return;
+  }
+
+  const normalizedFormat = String(format).toLowerCase() === 'jpeg' ? 'jpeg' : 'png';
+  const name = slugifyFileName(form.elements.name.value);
+
+  try {
+    const canvas = await drawPreviewToCanvas(previewCard);
+    const extension = normalizedFormat === 'jpeg' ? 'jpg' : 'png';
+    showImageExportModal(canvas, normalizedFormat, `${name}.${extension}`);
+  } catch (error) {
+    console.error(error);
+    window.alert('Could not export image from preview. Please try again.');
+  }
+}
+
 function importJsonFile(file) {
   if (!file) {
     return;
@@ -1586,6 +1780,12 @@ form.addEventListener('change', () => render({ recalculatePointValue: false }));
 document.getElementById('saveBtn').addEventListener('click', saveDraft);
 document.getElementById('clearBtn').addEventListener('click', clearDrafts);
 document.getElementById('exportBtn').addEventListener('click', exportCurrent);
+document.getElementById('exportPngBtn').addEventListener('click', () => {
+  exportPreviewImage('png');
+});
+document.getElementById('exportJpegBtn').addEventListener('click', () => {
+  exportPreviewImage('jpeg');
+});
 document.getElementById('importBtn').addEventListener('click', () => {
   const picker = document.createElement('input');
   picker.type = 'file';
