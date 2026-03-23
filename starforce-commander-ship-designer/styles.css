@@ -497,10 +497,10 @@ button.ghost { background: #6d7f8d; border-color: #465764; }
 .wpn-power-stop { width: 8px; height: 8px; background: #11a854; transform: rotate(45deg); display: inline-block; }
 .wpn-structure-row b { margin-right: 0.25rem; }
 .wpn-structure-box { width: 10px; height: 10px; border: 2px solid #111; display: inline-block; }
-.wpn-range-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(56px, 1fr)); gap: 0.15rem 0.24rem; align-items: start; }
+.wpn-range-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(62px, 1fr)); gap: 0.15rem 0.24rem; align-items: start; }
 .wpn-range-col { display: grid; grid-template-rows: auto auto; gap: 0.1rem; justify-items: center; }
 .wpn-range-col.homing { border: 2px solid #ff0000; padding: 0.08rem 0.15rem 0.12rem; }
-.wpn-range-band { text-align: center; font-weight: 800; font-size: 0.74rem; }
+.wpn-range-band { text-align: center; font-weight: 800; font-size: 0.74rem; white-space: nowrap; line-height: 1; }
 .wpn-range-band.green { color: #10b981; }
 .wpn-range-band.black { color: #111827; }
 .wpn-range-band.red { color: #dc2626; }
