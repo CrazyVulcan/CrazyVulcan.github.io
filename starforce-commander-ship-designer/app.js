@@ -468,8 +468,17 @@ function normalizeTurnOption(value) {
   return TURN_OPTIONS.includes(value) ? value : 20;
 }
 
+function syncSublightMaxAccFromAcceleration() {
+  const acceleration = Math.max(0, num('vector'));
+  if (form.elements.sublightMaxAcc) {
+    form.elements.sublightMaxAcc.value = String(acceleration);
+  }
+  return acceleration;
+}
+
 function readSublight() {
   const speeds = [6, 5, 4, 3, 2, 1, 0];
+  const linkedMaxAcc = syncSublightMaxAccFromAcceleration();
   return {
     maxAccPhs: Math.max(0, num('vector')),
     greenCircles: clamp(num('sublightGreen'), 0, 5),
@@ -1319,6 +1328,7 @@ function restoreDraft(draft) {
   setValue('vector', safeDraft.engineering?.vector ?? 0);
   setValue('turn', safeDraft.engineering?.turn ?? 0);
   setValue('special', safeDraft.engineering?.special ?? 0);
+  syncSublightMaxAccFromAcceleration();
 
   setValue('shieldFwd', safeDraft.shields?.forward ?? 0);
   setValue('shieldAft', safeDraft.shields?.aft ?? 0);
