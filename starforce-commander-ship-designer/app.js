@@ -1533,8 +1533,49 @@ function cloneNodeWithInlineStyles(sourceNode) {
   return clone;
 }
 
-function buildPreviewSvgBlobUrl(previewElement, width, height) {
+function blobToDataUrl(blob) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(String(reader.result || ''));
+    reader.onerror = () => reject(new Error('Failed to read image blob.'));
+    reader.readAsDataURL(blob);
+  });
+}
+
+async function inlineImageSources(rootNode) {
+  const imageNodes = Array.from(rootNode.querySelectorAll('img'));
+  const cache = new Map();
+
+  await Promise.all(imageNodes.map(async (imageNode) => {
+    const src = imageNode.getAttribute('src');
+    if (!src || src.startsWith('data:') || src.startsWith('blob:')) {
+      return;
+    }
+
+    const absoluteUrl = new URL(src, window.location.href).href;
+    if (!cache.has(absoluteUrl)) {
+      cache.set(absoluteUrl, (async () => {
+        const response = await fetch(absoluteUrl);
+        if (!response.ok) {
+          throw new Error(`Image fetch failed: ${absoluteUrl}`);
+        }
+        const blob = await response.blob();
+        return blobToDataUrl(blob);
+      })());
+    }
+
+    try {
+      const dataUrl = await cache.get(absoluteUrl);
+      imageNode.setAttribute('src', dataUrl);
+    } catch (error) {
+      console.warn(error);
+    }
+  }));
+}
+
+async function buildPreviewSvgBlobUrl(previewElement, width, height) {
   const clonedPreview = cloneNodeWithInlineStyles(previewElement);
+  await inlineImageSources(clonedPreview);
   const serializedPreview = new XMLSerializer().serializeToString(clonedPreview);
   const svgMarkup = `
     <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">
@@ -1560,10 +1601,10 @@ function drawPreviewToCanvas(previewElement) {
   );
   const scale = Math.max(1, Math.ceil(window.devicePixelRatio || 1));
   const bleed = 4;
+  const svgUrlPromise = buildPreviewSvgBlobUrl(previewElement, exportWidth, exportHeight);
 
-  return new Promise((resolve, reject) => {
+  return svgUrlPromise.then((svgUrl) => new Promise((resolve, reject) => {
     const image = new Image();
-    const svgUrl = buildPreviewSvgBlobUrl(previewElement, exportWidth, exportHeight);
     image.onload = () => {
       const canvas = document.createElement('canvas');
       canvas.width = (exportWidth + bleed * 2) * scale;
@@ -1583,7 +1624,7 @@ function drawPreviewToCanvas(previewElement) {
       reject(new Error('Failed to render preview image.'));
     };
     image.src = svgUrl;
-  });
+  }));
 }
 
 function canvasToBlob(canvas, mimeType, quality) {
