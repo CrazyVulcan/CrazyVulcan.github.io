@@ -837,8 +837,10 @@ function renderStructure(build) {
       count.className = 'team-count';
       count.textContent = String(markerByGap.get(i));
 
-      const icon = document.createElement('span');
+      const icon = document.createElement('img');
       icon.className = 'wrench-icon';
+      icon.setAttribute('src', 'assets/wrench-icon.svg');
+      icon.setAttribute('alt', '');
       icon.setAttribute('aria-hidden', 'true');
 
       marker.appendChild(count);
