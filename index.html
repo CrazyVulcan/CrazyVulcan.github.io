@@ -4,22 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>X-Wing Alliance</title>
-  <meta name="description" content="X-Wing Alliance (XWA) is the community home for Star Wars X-Wing organized play, resources, and news." />
+  <meta name="description" content="X-Wing Alliance official community hub for players, tournament organizers, and creators." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
 
   <header class="site-header">
-    <div class="header-inner container">
-      <div class="brand-block" aria-label="X-Wing Alliance brand area">
-        <p class="eyebrow">Volunteer-run • Community-first</p>
-        <h1>X-Wing Alliance</h1>
-        <p class="tagline">The central hub for organized play, resources, and community support for Star Wars™ X-Wing.</p>
-      </div>
+    <div class="container header-inner">
+      <a class="logo-link" href="/" aria-label="X-Wing Alliance home">
+        <img id="brandWordmark" class="brand-wordmark" alt="X-Wing Alliance" />
+      </a>
       <nav aria-label="Primary">
         <ul id="primaryNav" class="primary-nav"></ul>
       </nav>
@@ -27,48 +25,41 @@
   </header>
 
   <main id="main-content">
-    <section class="hero container" aria-labelledby="hero-heading">
-      <div class="hero-copy">
-        <p class="hero-label">Live now</p>
-        <h2 id="hero-heading">Clear updates for players, organizers, and creators.</h2>
-        <p id="heroSummary"></p>
-        <div class="hero-actions" id="heroActions"></div>
+    <section class="container hero" aria-labelledby="hero-heading">
+      <div>
+        <p class="eyebrow" id="heroEyebrow"></p>
+        <h1 id="hero-heading"></h1>
+        <p id="heroSummary" class="lead"></p>
+        <div id="heroActions" class="button-row"></div>
       </div>
-      <aside class="hero-panel" aria-labelledby="next-event-heading">
-        <h3 id="next-event-heading">Next key milestone</h3>
-        <p id="nextEventText"></p>
+      <aside class="hero-note" aria-labelledby="hero-note-heading">
+        <h2 id="hero-note-heading">Latest priority</h2>
+        <p id="nextPriority"></p>
       </aside>
     </section>
 
-    <section class="container section" aria-labelledby="quick-links-heading">
-      <h2 id="quick-links-heading">Quick Links</h2>
-      <div id="quickLinks" class="card-grid"></div>
+    <section class="container section" aria-labelledby="audience-heading">
+      <h2 id="audience-heading">Start Here</h2>
+      <p class="section-intro">Audience-first navigation for the most common X-Wing Alliance tasks.</p>
+      <div id="audienceCards" class="card-grid"></div>
     </section>
 
-    <section class="container section" aria-labelledby="latest-heading">
-      <div class="section-heading-row">
-        <h2 id="latest-heading">Latest Communications</h2>
-        <p class="section-subtitle">Post updates in one JSON file so volunteers can publish quickly.</p>
-      </div>
+    <section class="container section" aria-labelledby="updates-heading">
+      <h2 id="updates-heading">Official Communications</h2>
+      <p class="section-intro">Post date-stamped updates here so every channel has one source of truth.</p>
       <div id="updatesList" class="stack"></div>
     </section>
 
-    <section class="container section" aria-labelledby="brand-heading">
-      <h2 id="brand-heading">Brand Consistency</h2>
-      <div class="brand-guidance">
-        <p>
-          This rebuild follows the XWA brand structure with a dedicated palette and reusable components.
-          For logos and future marketing graphics, reference the official XWA Brand Book.
-        </p>
-        <a class="text-link" href="https://www.xwing.life/resources/xwa-brand-book" target="_blank" rel="noopener noreferrer">Open XWA Brand Book</a>
-      </div>
+    <section class="container section" aria-labelledby="about-heading">
+      <h2 id="about-heading">About X-Wing Alliance</h2>
+      <p id="boilerplate"></p>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p id="footerText"></p>
-      <p class="legal">X-Wing Alliance is a volunteer community group and is not affiliated with Lucasfilm or Asmodee.</p>
+      <p id="footerMaintenance"></p>
+      <p id="legalLine" class="legal"></p>
     </div>
   </footer>
 
