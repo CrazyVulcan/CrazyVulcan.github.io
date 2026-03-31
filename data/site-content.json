@@ -1,0 +1,64 @@
+{
+  "hero": {
+    "summary": "XWA keeps X-Wing thriving through organized play, community resources, and transparent communication.",
+    "nextEvent": "Worlds 2026 registration opens January 11, 2026 at 12:00 PM Central (UTC-6).",
+    "actions": [
+      {
+        "label": "Join Discord",
+        "href": "https://discord.gg/x-wing",
+        "primary": true
+      },
+      {
+        "label": "View Organized Play",
+        "href": "https://www.xwing.life/organized-play"
+      }
+    ]
+  },
+  "nav": [
+    { "label": "News", "href": "https://www.xwing.life/news" },
+    { "label": "Organized Play", "href": "https://www.xwing.life/organized-play" },
+    { "label": "Resources", "href": "https://www.xwing.life/resources" },
+    { "label": "About", "href": "https://www.xwing.life/about-xwa" }
+  ],
+  "quickLinks": [
+    {
+      "title": "OP Resources",
+      "description": "Tournament documents, event kits, and policies for organizers.",
+      "href": "https://www.xwing.life/organized-play/op-resources"
+    },
+    {
+      "title": "OP Forms",
+      "description": "Submit event requests, reports, and feedback to the OP team.",
+      "href": "https://www.xwing.life/organized-play/op-forms"
+    },
+    {
+      "title": "Points Documents",
+      "description": "Official points updates and release history.",
+      "href": "https://www.xwing.life/resources/xwa-points-documents"
+    },
+    {
+      "title": "Player Map",
+      "description": "Find and connect with local X-Wing communities.",
+      "href": "https://www.xwing.life/resources/player-map"
+    }
+  ],
+  "updates": [
+    {
+      "title": "Worlds 2026 Sneak Peek",
+      "date": "2026-01-11",
+      "owner": "Organized Play Team",
+      "summary": "Event registration goes live at noon Central on the Adepticon website.",
+      "href": "https://www.xwing.life/news"
+    },
+    {
+      "title": "Brand Book 1.4",
+      "date": "2025-12-01",
+      "owner": "PR Team",
+      "summary": "Updated guidance for logo use, palette, and visual tone across community channels.",
+      "href": "https://www.xwing.life/resources/xwa-brand-book"
+    }
+  ],
+  "footer": {
+    "text": "Need a content update? Edit data/site-content.json and commit—no code changes required for standard updates."
+  }
+}

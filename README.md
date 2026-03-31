@@ -1,31 +1,34 @@
-# RPG Campaign Region Generator
+# X-Wing Alliance Website Rebuild
 
-A self-contained HTML/CSS/JS app for deterministic RPG campaign region generation.
+A lightweight static rebuild focused on three goals:
 
-## CSV Inputs
-The UI supports **two client-side CSV inputs**:
+1. **Easy volunteer upkeep** (content comes from one JSON file).
+2. **Clear audience communication** (hero, quick links, updates).
+3. **Brand-aligned presentation** (XWA-inspired palette and visual hierarchy).
 
-1. **Places/Shops CSV** (required)
-   - `ID,Category,Label,DistrictRange,DistrictType,D6Roll,TypesPOI,MechanicalEffect,Tags,FollowUps,Persistence`
-2. **Travel/Realm CSV** (optional if mixed rows are included in place file)
-   - `ID,Category,Label,TriggerRange,MechanicalEffect,FictionText,Tags,FollowUps,Persistence`
+## How to Update Content
+Most updates happen in `data/site-content.json`:
 
-`TypesPOI`, `Tags`, and `FollowUps` support comma or semicolon lists.
+- `hero`: top-of-page summary, milestone, buttons.
+- `nav`: primary navigation links.
+- `quickLinks`: featured destinations.
+- `updates`: latest communications.
+- `footer`: maintenance guidance.
 
-## Generator Flow
-1. Parse CSV files and validate required columns.
-2. Seed deterministic PRNG from seed string.
-3. Generate districts (size 1–8):
-   - Pick a place matching district index by `DistrictRange`.
-   - Fallback to random place if no match.
-   - Generate 1–3 POIs, at least one NPC, and one quest hook.
-4. Generate NPCs using your d100-inspired race rarity -> race table, class table, and motivation table, plus d6 attitude.
-5. Queue follow-ups from Place/Travel rows and resolve by table row name or ID.
-6. Render map/detail panels, tag filters, and logs.
-7. Export full JSON and persist notes/persistence flags in localStorage.
+No HTML/CSS changes are required for normal content updates.
 
-## Notes on Table Variants
-The app normalizes common table typos/aliases from hand-authored tables (for example: `vilage -> village`, `milteristic -> militaristic`, `universty -> university`).
+## Local Preview
+Because `app.js` fetches JSON, use a local server (instead of opening `index.html` directly):
 
-## Reproducibility
-Same **seed + region size + CSV data** => identical exported JSON.
+```bash
+python3 -m http.server 8080
+```
+
+Then open `http://localhost:8080`.
+
+## Brand Notes
+This implementation encodes brand color tokens in `styles.css` and links to the official brand book page for current guidance:
+
+- https://www.xwing.life/resources/xwa-brand-book
+
+If the PR team releases updated guidance, update the CSS variables and any typography choices to match.
