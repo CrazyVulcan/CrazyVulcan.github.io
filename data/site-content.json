@@ -1,0 +1,72 @@
+{
+  "brand": {
+    "wordmarkPath": "assets/brand/xwa-wordmark-full-color.png"
+  },
+  "nav": [
+    { "label": "News", "href": "https://www.xwing.life/news" },
+    { "label": "Organized Play", "href": "https://www.xwing.life/organized-play" },
+    { "label": "Resources", "href": "https://www.xwing.life/resources" },
+    { "label": "About", "href": "https://www.xwing.life/about-xwa" }
+  ],
+  "hero": {
+    "eyebrow": "Official communications hub",
+    "heading": "X-Wing Alliance",
+    "summary": "A volunteer-run organization supporting Star Wars: X-Wing with organized play, rules resources, and global community coordination.",
+    "priority": "Worlds 2026 registration opened on January 11, 2026 at 12:00 PM Central.",
+    "actions": [
+      {
+        "label": "Latest News",
+        "href": "https://www.xwing.life/news",
+        "primary": true
+      },
+      {
+        "label": "Brand Book",
+        "href": "https://www.xwing.life/resources/xwa-brand-book",
+        "primary": false
+      }
+    ]
+  },
+  "audiences": [
+    {
+      "title": "Players",
+      "summary": "Find points documents, rules updates, and your nearest active community.",
+      "cta": "Go to Player Resources",
+      "href": "https://www.xwing.life/resources"
+    },
+    {
+      "title": "Tournament Organizers",
+      "summary": "Access event kits, reporting forms, and policy documents for official events.",
+      "cta": "Go to OP Resources",
+      "href": "https://www.xwing.life/organized-play/op-resources"
+    },
+    {
+      "title": "Content Creators",
+      "summary": "Use official logos, naming, and color standards before publishing X-Wing Alliance materials.",
+      "cta": "Open Brand Resources",
+      "href": "https://www.xwing.life/resources/xwa-brand-book"
+    }
+  ],
+  "updates": [
+    {
+      "title": "Worlds 2026 Sneak Peek",
+      "date": "2026-01-11",
+      "owner": "Organized Play Team",
+      "summary": "Registration is managed through Adepticon and event communication is now live.",
+      "href": "https://www.xwing.life/news"
+    },
+    {
+      "title": "Brand Book 1.4 Reference",
+      "date": "2025-12-01",
+      "owner": "PR Team",
+      "summary": "Use official logo variants, clear space rules, and the approved palette in all new communication assets.",
+      "href": "https://www.xwing.life/resources/xwa-brand-book"
+    }
+  ],
+  "about": {
+    "boilerplate": "The official name of the organization is X-Wing Alliance. In official communications, XWA may be used as shorthand. Avoid alternate names or informal variants in external communications, print pieces, and web content."
+  },
+  "footer": {
+    "maintenance": "Volunteer update workflow: edit this JSON file for normal content changes, then commit.",
+    "legal": "X-Wing Alliance is a volunteer community organization and is not affiliated with Lucasfilm Ltd., Fantasy Flight Games, or Atomic Mass Games."
+  }
+}
