@@ -161,3 +161,23 @@ input {
   .note-row,
   .oracle-row { grid-template-columns: 1fr; }
 }
+
+.room-visual-panel {
+  margin-top: 0.8rem;
+  border-top: 1px solid rgba(80, 54, 31, 0.5);
+  padding-top: 0.6rem;
+}
+
+.room-sketch {
+  margin-top: 0.45rem;
+  border: 1px solid rgba(73, 50, 29, 0.7);
+  background: rgba(252, 241, 213, 0.7);
+  min-height: 220px;
+}
+
+.room-svg { width: 100%; height: auto; }
+.room-outline * { fill: rgba(196, 166, 120, 0.3); stroke: #3b2a1b; stroke-width: 3; }
+.room-exits circle { fill: #7d5a33; stroke: #2a1f14; stroke-width: 1; }
+.room-exits text, .room-notes text { font-family: "Crimson Text", serif; font-size: 12px; fill: #2b1e11; }
+.room-details { margin: 0.55rem 0 0; }
+.placeholder { padding: 0.8rem; margin: 0; font-style: italic; }
