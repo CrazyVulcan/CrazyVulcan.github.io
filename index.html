@@ -3,65 +3,81 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>X-Wing Alliance</title>
-  <meta name="description" content="X-Wing Alliance official community hub for players, tournament organizers, and creators." />
+  <title>Candlelight Delve — Solo Dungeon Journal</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="grain"></div>
+  <main class="page">
+    <header class="hero panel">
+      <p class="eyebrow">Dungeon Companion</p>
+      <h1>Candlelight Delve</h1>
+      <p class="lead">A browser-based solo GM assistant for a 3–4 character party, styled like a field journal from a forgotten age.</p>
+    </header>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo-link" href="/" aria-label="X-Wing Alliance home">
-        <img id="brandWordmark" class="brand-wordmark" alt="X-Wing Alliance" />
-      </a>
-      <nav aria-label="Primary">
-        <ul id="primaryNav" class="primary-nav"></ul>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main-content">
-    <section class="container hero" aria-labelledby="hero-heading">
-      <div>
-        <p class="eyebrow" id="heroEyebrow"></p>
-        <h1 id="hero-heading"></h1>
-        <p id="heroSummary" class="lead"></p>
-        <div id="heroActions" class="button-row"></div>
+    <section class="panel" aria-labelledby="party-heading">
+      <div class="panel-head">
+        <h2 id="party-heading">Party Panel</h2>
+        <button id="addCharacterBtn" class="ink-btn" type="button">Add Character</button>
       </div>
-      <aside class="hero-note" aria-labelledby="hero-note-heading">
-        <h2 id="hero-note-heading">Latest priority</h2>
-        <p id="nextPriority"></p>
-      </aside>
+      <p class="hint">Maintain three or four delvers in your company.</p>
+      <div id="partyList" class="party-list"></div>
     </section>
 
-    <section class="container section" aria-labelledby="audience-heading">
-      <h2 id="audience-heading">Start Here</h2>
-      <p class="section-intro">Audience-first navigation for the most common X-Wing Alliance tasks.</p>
-      <div id="audienceCards" class="card-grid"></div>
+    <section class="panel" aria-labelledby="state-heading">
+      <h2 id="state-heading">Dungeon State</h2>
+      <div class="state-grid">
+        <label>Dungeon Depth <input id="depth" type="text" placeholder="e.g. 3rd Stratum" /></label>
+        <label>Danger Meter <input id="dangerMeter" type="text" placeholder="e.g. Rising" /></label>
+        <label>Light / Resources <input id="lightResources" type="text" placeholder="e.g. 4 torches, low rations" /></label>
+        <label>Active Threat <input id="activeThreat" type="text" placeholder="e.g. Echoing hunter" /></label>
+        <label>Faction Pressure <input id="factionPressure" type="text" placeholder="e.g. Cult scouts closing in" /></label>
+      </div>
     </section>
 
-    <section class="container section" aria-labelledby="updates-heading">
-      <h2 id="updates-heading">Official Communications</h2>
-      <p class="section-intro">Post date-stamped updates here so every channel has one source of truth.</p>
-      <div id="updatesList" class="stack"></div>
+    <section class="panel" aria-labelledby="gen-heading">
+      <h2 id="gen-heading">Procedural Generators</h2>
+      <div class="generator-grid">
+        <article>
+          <div class="panel-head">
+            <h3>Room Generator</h3>
+            <button id="generateRoomBtn" class="ink-btn" type="button">Generate Room</button>
+          </div>
+          <div id="roomOutput" class="output-box">No chamber sketched yet.</div>
+        </article>
+        <article>
+          <div class="panel-head">
+            <h3>Situation Generator</h3>
+            <button id="generateSituationBtn" class="ink-btn" type="button">Generate Situation</button>
+          </div>
+          <div id="situationOutput" class="output-box">No situation recorded yet.</div>
+        </article>
+      </div>
     </section>
 
-    <section class="container section" aria-labelledby="about-heading">
-      <h2 id="about-heading">About X-Wing Alliance</h2>
-      <p id="boilerplate"></p>
+    <section class="panel" aria-labelledby="oracle-heading">
+      <h2 id="oracle-heading">Oracle</h2>
+      <label for="oracleQuestion">Question for fate:</label>
+      <div class="oracle-row">
+        <input id="oracleQuestion" type="text" placeholder="Will the stairwell hold our weight?" />
+        <button id="askOracleBtn" class="ink-btn" type="button">Ask</button>
+      </div>
+      <p id="oracleAnswer" class="oracle-answer">The oracle waits in silence.</p>
+    </section>
+
+    <section class="panel" aria-labelledby="log-heading">
+      <h2 id="log-heading">Campaign Log</h2>
+      <div class="note-row">
+        <input id="manualNote" type="text" placeholder="Add player note..." />
+        <button id="addNoteBtn" class="ink-btn" type="button">Add Note</button>
+        <button id="clearLogBtn" class="ink-btn danger" type="button">Clear Log</button>
+      </div>
+      <div id="campaignLog" class="campaign-log"></div>
     </section>
   </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p id="footerMaintenance"></p>
-      <p id="legalLine" class="legal"></p>
-    </div>
-  </footer>
 
   <script src="app.js" defer></script>
 </body>
